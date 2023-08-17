@@ -1,0 +1,25 @@
+---
+namespace: cisco
+name: meraki
+version: 1.0.0
+readme: README.md
+authors:
+  - Francisco Muñoz <fmunoz@cloverhound.com>
+  - Bryan Vargas <bvargas@cloverhound.com>
+  - William Astorga <wastorga@cloverhound.com>
+  - Jose Bogarin <jbogarin@cloverhound.com>
+description: Ansible Modules for Meraki
+license_file: "LICENSE"
+tags:
+  - cisco
+  - meraki
+  - cloud
+  - collection
+  - networking
+  - sdn
+dependencies:
+  ansible.utils: ">=2.0.0,<3.0"
+repository: https://github.com/meraki/dashboard-api-ansible
+documentation: https://meraki.github.io/dashboard-api-ansible/
+homepage: https://github.com/meraki/dashboard-api-ansible
+issues: https://github.com/meraki/dashboard-api-ansible/issues

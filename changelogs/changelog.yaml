@@ -1,0 +1,5 @@
+releases:
+  1.0.0:
+    release_date: "XXXX-XX-XX"
+    changes:
+      release_summary: This is the initial release of the collection.

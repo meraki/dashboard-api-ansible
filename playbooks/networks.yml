@@ -1,0 +1,31 @@
+---
+- hosts: meraki_servers
+  gather_facts: false
+  tasks:
+    # - name: Get all networks
+    #   cisco.meraki.networks_info:
+    #     # configTemplateId: string
+    #     # isBoundToConfigTemplate: True
+    #     # tags: []
+    #     # tagsFilterType: string
+    #     # perPage: 0
+    #     # startingAfter: string
+    #     # endingBefore: string
+    #     organizationId: "828099381482762270"
+    #   register: result
+    - name: Create
+      cisco.meraki.networks:
+        meraki_suppress_logging: true
+        state: present
+        # copyFromNetworkId: N_24329156
+        name: Site 1
+        notes: Additional description of the network 21
+        organizationId: "828099381482762270"
+        productTypes:
+        - camera
+        - switch
+        - wireless
+        tags:
+        - tag1
+        - tag3
+        timeZone: America/Los_Angeles
