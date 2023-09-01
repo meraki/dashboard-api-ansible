@@ -57,6 +57,11 @@ cisco.meraki.meraki_mr_settings module -- Manage general settings for Meraki wir
 
 .. Deprecated
 
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: 
 
 Synopsis
 --------
@@ -1230,6 +1235,15 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
 
 ..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
 
 
 .. Authors

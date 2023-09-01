@@ -57,6 +57,11 @@ cisco.meraki.meraki_action_batch module -- Manage Action Batch jobs within the M
 
 .. Deprecated
 
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: 
 
 Synopsis
 --------
@@ -90,198 +95,6 @@ Parameters
 
   * - Parameter
     - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-action_batch_id"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-action_batch_id:
-
-      .. rst-class:: ansible-option-title
-
-      **action_batch_id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-action_batch_id" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      ID of an existing Action Batch job.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-actions"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-actions:
-
-      .. rst-class:: ansible-option-title
-
-      **actions**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-actions" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      List of actions the job should execute.
-
-
-      .. raw:: html
-
-        </div>
-    
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-actions/body"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-actions/body:
-
-      .. rst-class:: ansible-option-title
-
-      **body**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-actions/body" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`any`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Required body of action.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-actions/operation"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-actions/operation:
-
-      .. rst-class:: ansible-option-title
-
-      **operation**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-actions/operation" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Operation type of action
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`"create"`
-      - :ansible-option-choices-entry:`"destroy"`
-      - :ansible-option-choices-entry:`"update"`
-      - :ansible-option-choices-entry:`"claim"`
-      - :ansible-option-choices-entry:`"bind"`
-      - :ansible-option-choices-entry:`"split"`
-      - :ansible-option-choices-entry:`"unbind"`
-      - :ansible-option-choices-entry:`"combine"`
-      - :ansible-option-choices-entry:`"update\_order"`
-      - :ansible-option-choices-entry:`"cycle"`
-      - :ansible-option-choices-entry:`"swap"`
-      - :ansible-option-choices-entry:`"assignSeats"`
-      - :ansible-option-choices-entry:`"move"`
-      - :ansible-option-choices-entry:`"moveSeats"`
-      - :ansible-option-choices-entry:`"renewSeats"`
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-actions/resource"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-actions/resource:
-
-      .. rst-class:: ansible-option-title
-
-      **resource**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-actions/resource" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
-
-      Path to Action Batch resource.
-
-
-      .. raw:: html
-
-        </div>
-
 
   * - .. raw:: html
 
@@ -320,21 +133,21 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-confirmed"></div>
+        <div class="ansibleOptionAnchor" id="parameter-body"></div>
 
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-confirmed:
+      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-body:
 
       .. rst-class:: ansible-option-title
 
-      **confirmed**
+      **body**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-confirmed" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-body" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`boolean`
+      :ansible-option-type:`any`
 
       .. raw:: html
 
@@ -344,15 +157,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Whether job is to be executed.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
-      - :ansible-option-choices-entry:`true`
+      Required body of action.
 
 
       .. raw:: html
@@ -440,17 +245,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-net_id"></div>
+        <div class="ansibleOptionAnchor" id="parameter-operation"></div>
 
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-net_id:
+      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-operation:
 
       .. rst-class:: ansible-option-title
 
-      **net_id**
+      **operation**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-net_id" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-operation" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -464,41 +269,28 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ID of network, if applicable.
+      Operation type of action
 
 
-      .. raw:: html
+      .. rst-class:: ansible-option-line
 
-        </div>
+      :ansible-option-choices:`Choices:`
 
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-net_name:
-
-      .. rst-class:: ansible-option-title
-
-      **net_name**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Name of network, if applicable.
+      - :ansible-option-choices-entry:`"create"`
+      - :ansible-option-choices-entry:`"destroy"`
+      - :ansible-option-choices-entry:`"update"`
+      - :ansible-option-choices-entry:`"claim"`
+      - :ansible-option-choices-entry:`"bind"`
+      - :ansible-option-choices-entry:`"split"`
+      - :ansible-option-choices-entry:`"unbind"`
+      - :ansible-option-choices-entry:`"combine"`
+      - :ansible-option-choices-entry:`"update\_order"`
+      - :ansible-option-choices-entry:`"cycle"`
+      - :ansible-option-choices-entry:`"swap"`
+      - :ansible-option-choices-entry:`"assignSeats"`
+      - :ansible-option-choices-entry:`"move"`
+      - :ansible-option-choices-entry:`"moveSeats"`
+      - :ansible-option-choices-entry:`"renewSeats"`
 
 
       .. raw:: html
@@ -704,17 +496,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+        <div class="ansibleOptionAnchor" id="parameter-resource"></div>
 
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-state:
+      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-resource:
 
       .. rst-class:: ansible-option-title
 
-      **state**
+      **resource**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-resource" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -728,58 +520,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specifies whether to lookup, create, or delete an Action Batch job.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`"query"`
-      - :ansible-option-choices-entry-default:`"present"` :ansible-option-choices-default-mark:`← (default)`
-      - :ansible-option-choices-entry:`"absent"`
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-synchronous"></div>
-
-      .. _ansible_collections.cisco.meraki.meraki_action_batch_module__parameter-synchronous:
-
-      .. rst-class:: ansible-option-title
-
-      **synchronous**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-synchronous" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Whether job is a synchronous or asynchronous job.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`false`
-      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+      Path to Action Batch resource.
 
 
       .. raw:: html
@@ -1526,6 +1267,15 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
 
 ..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
 
 
 .. Authors
