@@ -86,7 +86,6 @@ class NetworksApplianceStaticRoutes(object):
 
     def create_params(self):
         new_object_params = {}
-        #REVIEW {'name': {'type': 'str', 'description': 'The name of the new static route.'}, 'subnet': {'type': 'str', 'description': 'The subnet of the static route.'}, 'gatewayIp': {'type': 'str', 'description': 'The gateway IP (next hop) of the static route.'}, 'gatewayVlanId': {'type': 'str', 'description': 'The gateway IP (next hop) VLAN ID of the static route.'}, 'networkId': {'type': 'str', 'description': 'NetworkId path parameter. Network ID.'}}
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
