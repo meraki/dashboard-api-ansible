@@ -93,7 +93,7 @@ meraki_server
 Then, create a playbook `myplaybook.yml` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/tag.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
 ```
 ---
-- hosts: meraki_servers
+- hosts: localhost
   gather_facts: false
   tasks:
     - name: Get all administered _identities _me
@@ -169,3 +169,38 @@ Please read and familiarize yourself with this document.
 This collection follows [Semantic Versioning](https://semver.org/). More details on versioning can be found [in the Ansible docs](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html#collection-versions).
 
 New minor and major releases as well as deprecations will follow new releases and deprecations of the Cisco Meraki product, its REST API and the corresponding Python SDK, which this project relies on. 
+
+
+## New collection modules
+
+The modules that were there before, usually with a `meraki` prefix, are maintained until version 2.x.x, with the same structure used in previous versions, they will disappear in next major release and only the new modules will remain. Each old module has its deprecation marking, indicating which is the new equivalent.
+
+### Example
+- Old module:
+  ```yml
+  - name: Create webhook
+    cisco.meraki.meraki_webhook:
+      auth_key: abc123
+      state: present
+      org_name: YourOrg
+      net_name: YourNet
+      name: Test_Hook
+      url: https://webhook.url/
+      shared_secret: shhhdonttellanyone
+      payload_template_name: 'Slack (included)'
+    delegate_to: localhost
+  ```
+- New module:
+  ```yml
+  - name: Create webhook
+    cisco.meraki.networks_webhooks_http_servers:
+      meraki_api_key: "{{meraki_api_key}}"
+      state: present
+      name: Test_Hook
+      networkId: "{{network_id}}"
+      payloadTemplate:
+        name: Slack (included)
+        payloadTemplateId: wpt_00001
+      sharedSecret: shhhdonttellanyone
+      url: https://webhook.url/
+  ```

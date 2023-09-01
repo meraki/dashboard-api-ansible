@@ -4,7 +4,7 @@
 # 2. Mobile (WPA-PSK) on vlan 200
 # 3. Guests (Portal) on vlan 300
 
-- hosts: meraki_servers
+- hosts: localhost
   vars_files:
     - credentials.yml
   vars:

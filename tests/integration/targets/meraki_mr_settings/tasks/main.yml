@@ -1,0 +1,108 @@
+# Test code for the Meraki modules
+# Copyright: (c) 2020, Kevin Breit (@kbreit)
+
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+---
+- name: Block of tests
+  block:
+  - name: Create network with type wireless
+    cisco.meraki.meraki_network:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      type: wireless
+      timezone: America/Chicago
+    delegate_to: localhost
+
+  - name: Query all settings
+    cisco.meraki.meraki_mr_settings:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: query
+    delegate_to: localhost
+    register: query_all
+
+  - name: Debug query_all
+    ansible.builtin.debug:
+      var: query_all
+
+  - name: Assert query_all.data
+    ansible.builtin.assert:
+      that:
+        - query_all.data is defined
+
+  - name: Configure settings with check mode
+    cisco.meraki.meraki_mr_settings:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      upgrade_strategy: minimize_upgrade_time
+      ipv6_bridge_enabled: false
+      led_lights_on: true
+      location_analytics_enabled: true
+      meshing_enabled: true
+    delegate_to: localhost
+    register: settings_check
+    check_mode: true
+
+  - name: Assert settings_check
+    ansible.builtin.assert:
+      that:
+        - settings_check.data is defined
+        - settings_check is changed
+
+  - name: Configure settings
+    cisco.meraki.meraki_mr_settings:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      upgrade_strategy: minimize_upgrade_time
+      ipv6_bridge_enabled: false
+      led_lights_on: true
+      location_analytics_enabled: true
+      meshing_enabled: true
+    delegate_to: localhost
+    register: settings
+
+  - name: Assert settings.data
+    ansible.builtin.assert:
+      that:
+        - settings.data is defined
+        - settings is changed
+
+  - name: Configure settings with idempotency
+    cisco.meraki.meraki_mr_settings:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      upgrade_strategy: minimize_upgrade_time
+      ipv6_bridge_enabled: false
+      led_lights_on: true
+      location_analytics_enabled: true
+      meshing_enabled: true
+    delegate_to: localhost
+    register: settings_idempotent
+
+  - name: Assert settings_idempotent
+    ansible.builtin.assert:
+      that:
+        - settings_idempotent.data is defined
+        - settings_idempotent is not changed
+
+#############################################################################
+# Tear down starts here
+#############################################################################
+
+  always:
+    - name: Delete network
+      cisco.meraki.meraki_network:
+        auth_key: '{{ auth_key }}'
+        state: absent
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkWireless
+      delegate_to: localhost

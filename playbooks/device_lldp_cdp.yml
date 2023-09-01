@@ -1,6 +1,6 @@
 ---
 
-- hosts: meraki_servers
+- hosts: localhost
   vars:
     sn: Q4AC-YTF3-WQ66
   gather_facts: false

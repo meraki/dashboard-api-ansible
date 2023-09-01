@@ -1,10 +1,10 @@
 ---
-- hosts: meraki_servers
+- hosts: localhost
   gather_facts: false
   tasks:
     - name: Get all Organizations
       cisco.meraki.organizations_info:
-        meraki_suppress_logging: true
+        meraki_suppress_logging: false
         # meraki_username: "{{meraki_username}}"
         # meraki_password: "{{meraki_password}}"
         # meraki_verify: "{{meraki_verify}}"
@@ -12,7 +12,7 @@
         # meraki_version: "{{meraki_version}}"
         # meraki_debug: "{{meraki_debug}}"
         # headers: "{{my_headers | from_json}}"
-        organizationId: "575334852396583071"
+        organizationId: "828099381482762766"
       register: result
 
     - name: Show result

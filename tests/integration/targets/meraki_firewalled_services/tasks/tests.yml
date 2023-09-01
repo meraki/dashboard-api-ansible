@@ -1,0 +1,234 @@
+# Test code for the Meraki modules
+# Copyright: (c) 2019, Kevin Breit (@kbreit)
+
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+---
+- name: Block of tests
+  block:
+  - name: Create network
+    cisco.meraki.meraki_network:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      type: appliance
+    register: create
+
+  - name: Set fact net_id
+    ansible.builtin.set_fact:
+      net_id: '{{ create.data.id }}'
+
+  - name: Set icmp service to blocked with check mode
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: ICMP
+      access: blocked
+    register: icmp_blocked_check
+    check_mode: true
+
+  - name: Debug icmp_blocked_check
+    ansible.builtin.debug:
+      var: icmp_blocked_check
+
+  - name: Assert if icmp_blocked_check has been changed
+    ansible.builtin.assert:
+      that:
+        - icmp_blocked_check.data is defined
+        - icmp_blocked_check is changed
+
+  - name: Set icmp service to blocked
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: ICMP
+      access: blocked
+    register: icmp_blocked
+
+  - name: Debug icmp_blocked
+    ansible.builtin.debug:
+      var: icmp_blocked
+
+  - name: Assert ig icmp_blocked has been changed
+    ansible.builtin.assert:
+      that:
+        - icmp_blocked.data is defined
+        - icmp_blocked is changed
+
+  - name: Set icmp service to blocked with idempotency
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: ICMP
+      access: blocked
+    register: icmp_blocked_idempotent
+
+  - name: Debug icmp_blocked_idempotent
+    ansible.builtin.debug:
+      var: icmp_blocked_idempotent
+
+  - name: Assert icmp_blocked_idempotent
+    ansible.builtin.assert:
+      that:
+        - icmp_blocked_idempotent.data is defined
+        - icmp_blocked_idempotent is not changed
+
+  - name: Set icmp service to restricted with check mode
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: web
+      access: restricted
+      allowed_ips:
+        - 192.0.1.1
+        - 192.0.1.2
+    check_mode: true
+    register: web_restricted_check
+
+  - name: Debug web_restricted_check
+    ansible.builtin.debug:
+      var: web_restricted_check
+
+  - name: Assert web_restricted_check
+    ansible.builtin.assert:
+      that:
+        - web_restricted_check.data is defined
+        - web_restricted_check is changed
+
+  - name: Set icmp service to restricted
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: web
+      access: restricted
+      allowed_ips:
+        - 192.0.1.1
+        - 192.0.1.2
+    register: web_restricted
+
+  - name: Debug web_restricted
+    ansible.builtin.debug:
+      var: web_restricted
+
+  - name: Assert web_restricted
+    ansible.builtin.assert:
+      that:
+        - web_restricted.data is defined
+        - web_restricted is changed
+
+  - name: Set icmp service to restricted with idempotency
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: web
+      access: restricted
+      allowed_ips:
+        - 192.0.1.1
+        - 192.0.1.2
+    register: web_restricted_idempotent
+
+  - name: Debug web_restricted_idempotent
+    ansible.builtin.debug:
+      var: web_restricted_idempotent
+
+  - name: Assert web_restricted_idempotent
+    ansible.builtin.assert:
+      that:
+        - web_restricted_idempotent.data is defined
+        - web_restricted_idempotent is not changed
+
+  - name: Test error for access restricted and allowed_ips
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: web
+      access: unrestricted
+      allowed_ips:
+        - 192.0.1.1
+        - 192.0.1.2
+    register: access_error
+    failed_when: false
+    changed_when: false
+
+  - name: Assert access_error
+    ansible.builtin.assert:
+      that:
+        - 'access_error.msg == "allowed_ips is only allowed when access is restricted."'
+
+  - name: Query appliance services with net_id
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: query
+      org_name: '{{ test_org_name }}'
+      net_id: '{{ net_id }}'
+    register: query_appliance_id
+
+  - name: Debug query_appliance_id
+    ansible.builtin.debug:
+      var: query_appliance_id
+
+  - name: Assert query_appliance_id
+    ansible.builtin.assert:
+      that:
+        - query_appliance_id.data is defined
+
+
+  - name: Query appliance services
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: query
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+    register: query_appliance
+
+  - name: Debug query_appliance
+    ansible.builtin.debug:
+      var: query_appliance
+
+  - name: Assert query_appliance
+    ansible.builtin.assert:
+      that:
+        - query_appliance.data is defined
+
+  - name: Query services
+    cisco.meraki.meraki_firewalled_services:
+      auth_key: '{{ auth_key }}'
+      state: query
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkAppliance
+      service: ICMP
+    register: query_service
+
+  - name: Debug query_service
+    ansible.builtin.debug:
+      var: query_service
+
+  - name: Assert query_service
+    ansible.builtin.assert:
+      that:
+        - query_service.data is defined
+
+#############################################################################
+# Tear down starts here
+#############################################################################
+  always:
+    - name: Delete all networks
+      cisco.meraki.meraki_network:
+        auth_key: '{{ auth_key }}'
+        state: absent
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkAppliance

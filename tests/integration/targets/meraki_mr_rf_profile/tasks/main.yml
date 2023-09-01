@@ -1,0 +1,342 @@
+# Test code for the Meraki modules
+# Copyright: (c) 2020, Kevin Breit (@kbreit)
+
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+---
+- name: Block of tasks
+  block:
+  - name: Create network with type wireless
+    cisco.meraki.meraki_network:
+      auth_key: '{{ auth_key }}'
+      state: present
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      type: wireless
+      timezone: America/Chicago
+    delegate_to: localhost
+
+  - name: Create RF profile in check mode
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      name: Test Profile
+      band_selection_type: ap
+      client_balancing_enabled: true
+      ap_band_settings:
+        mode: dual
+        band_steering_enabled: true
+      five_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        channel_width: 20
+        valid_auto_channels:
+          - 36
+          - 40
+          - 44
+      two_four_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        ax_enabled: false
+        valid_auto_channels:
+          - 1
+    delegate_to: localhost
+    register: create_check
+    check_mode: true
+
+  - name: Assert create_check
+    ansible.builtin.assert:
+      that:
+        - create_check.data is defined
+        - create_check is changed
+
+  - name: Create RF profile
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      name: Test Profile
+      band_selection_type: ap
+      client_balancing_enabled: true
+      ap_band_settings:
+        mode: dual
+        band_steering_enabled: true
+      five_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        channel_width: 20
+        valid_auto_channels:
+          - 36
+          - 40
+          - 44
+      two_four_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        ax_enabled: false
+        valid_auto_channels:
+          - 1
+    delegate_to: localhost
+    register: create
+
+  - name: Set fact profile_id
+    ansible.builtin.set_fact:
+      profile_id: '{{ create.data.id }}'
+
+  - name: Query all RF profiles
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: query
+    delegate_to: localhost
+    register: query_one
+
+  - name: Assert query_one
+    ansible.builtin.assert:
+      that:
+        - query_one.data is defined
+
+  - name: Update profile with check mode
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      profile_id: '{{ profile_id }}'
+      band_selection_type: ap
+      client_balancing_enabled: true
+      ap_band_settings:
+        mode: dual
+        band_steering_enabled: true
+      five_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        channel_width: 20
+        valid_auto_channels:
+          - 36
+          - 44
+      two_four_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -75
+        ax_enabled: false
+        valid_auto_channels:
+          - 1
+    delegate_to: localhost
+    register: update_check
+    check_mode: true
+
+  - name: Assert update_check
+    ansible.builtin.assert:
+      that:
+        - update_check.data is defined
+        - update_check is changed
+
+  - name: Update profile
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      profile_id: '{{ profile_id }}'
+      band_selection_type: ap
+      client_balancing_enabled: true
+      ap_band_settings:
+        mode: dual
+        band_steering_enabled: true
+      five_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        channel_width: 20
+        valid_auto_channels:
+          - 36
+          - 44
+      two_four_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -75
+        ax_enabled: false
+        valid_auto_channels:
+          - 1
+    delegate_to: localhost
+    register: update
+
+  - name: Assert update
+    ansible.builtin.assert:
+      that:
+        - update.data is defined
+        - update is changed
+
+  - name: Update profile with idempotency
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: present
+      profile_id: '{{ profile_id }}'
+      band_selection_type: ap
+      client_balancing_enabled: true
+      ap_band_settings:
+        mode: dual
+        band_steering_enabled: true
+      five_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -65
+        channel_width: 20
+        valid_auto_channels:
+          - 36
+          - 44
+      two_four_ghz_settings:
+        max_power: 10
+        min_bitrate: 12
+        min_power: 8
+        rxsop: -75
+        ax_enabled: false
+        valid_auto_channels:
+          - 1
+    delegate_to: localhost
+    register: update_idempotent
+
+  - name: Assert update_idempotent
+    ansible.builtin.assert:
+      that:
+        - update_idempotent.data is defined
+        - update_idempotent is not changed
+
+  - name: Query one RF profile by ID
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: query
+      profile_id: '{{ profile_id }}'
+    delegate_to: localhost
+    register: query_one_id
+
+  - name: Assert query_one_id
+    ansible.builtin.assert:
+      that:
+        - query_one_id.data is defined
+
+  - name: Query one RF profile by name
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: query
+      name: Test Profile
+    delegate_to: localhost
+    register: query_one_name
+
+  - name: Assert query_one_name
+    ansible.builtin.assert:
+      that:
+        - query_one_name.data is defined
+
+  - name: Delete RF profile
+    cisco.meraki.meraki_mr_rf_profile:
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
+      net_name: IntTestNetworkWireless
+      state: absent
+      profile_id: '{{ profile_id }}'
+    delegate_to: localhost
+    register: delete
+
+  - name: Assert delete
+    ansible.builtin.assert:
+      that:
+        - delete.data is defined
+        - delete is changed
+
+- name: "Test RFProfile Bugfix from !281"
+  block:
+    - name: Create RF Profile
+      cisco.meraki.meraki_mr_rf_profile:
+        auth_key: '{{ auth_key }}'
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkWireless
+        name: "RF Profile - !281"
+        band_selection_type: ap
+        ap_band_settings:
+          mode: 'dual'
+        five_ghz_settings:
+          channel_width: 40
+        two_four_ghz_settings:
+          ax_enabled: 'no'
+        state: present
+      register: create_281
+
+    - name: Assert create_281
+      ansible.builtin.assert:
+        that:
+          - create_281.data is defined
+          - create_281 is changed
+
+    - name: Create RF Profile - Idempotent
+      cisco.meraki.meraki_mr_rf_profile:
+        auth_key: '{{ auth_key }}'
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkWireless
+        name: "RF Profile - !281"
+        band_selection_type: ap
+        ap_band_settings:
+          mode: 'dual'
+        five_ghz_settings:
+          channel_width: 40
+        two_four_ghz_settings:
+          ax_enabled: 'no'
+        state: present
+      register: idempotent_281
+
+    - name: Assert idempotent_281
+      ansible.builtin.assert:
+        that:
+          - idempotent_281.data is defined
+          - idempotent_281 is not changed
+
+    - name: Clean Up RF Profile
+      cisco.meraki.meraki_mr_rf_profile:
+        auth_key: '{{ auth_key }}'
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkWireless
+        name: "RF Profile - !281"
+        state: absent
+      register: delete_281
+
+    - name: Assert delete_281
+      ansible.builtin.assert:
+        that:
+          - delete_281.data is defined
+          - delete_281 is changed
+
+#############################################################################
+# Tear down starts here
+#############################################################################
+
+  always:
+    - name: Delete network
+      cisco.meraki.meraki_network:
+        auth_key: '{{ auth_key }}'
+        state: absent
+        org_name: '{{ test_org_name }}'
+        net_name: IntTestNetworkWireless
+      delegate_to: localhost

@@ -1,6 +1,6 @@
 ---
 
-- hosts: meraki_servers
+- hosts: localhost
   vars:
     org_id: "828099381482762270"
     corp_name: "ACME"

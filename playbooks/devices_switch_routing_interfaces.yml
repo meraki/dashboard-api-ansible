@@ -1,4 +1,4 @@
-- hosts: meraki_servers
+- hosts: localhost
   gather_facts: false
   tasks:
   - name: Create

@@ -1,6 +1,6 @@
 ---
 
-- hosts: meraki_servers
+- hosts: localhost
   vars:
     network_id: L_828099381482770866 # Site-2
     serial_number: QBSB-D5ZD-9CXT

@@ -1,5 +1,5 @@
 ---
-- hosts: meraki_servers
+- hosts: localhost
   gather_facts: false
   tasks:
     - name: update ports
