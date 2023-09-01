@@ -20,6 +20,9 @@ short_description: Manage MR access point layer 3 firewalls in the Meraki cloud
 description:
 - Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MR access points.
 - Module is not idempotent as of current release.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -55,7 +58,10 @@ options:
         - List of firewall rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             policy:
                 description:
                 - Specifies the action that should be taken when rule is hit.

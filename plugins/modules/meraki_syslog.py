@@ -23,6 +23,9 @@ description:
 notes:
 - Changes to existing syslog servers replaces existing configuration. If you need to add to an
   existing configuration set state to query to gather the existing configuration and then modify or add.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     auth_key:
         description:
@@ -49,7 +52,10 @@ options:
         - List of syslog server settings
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             host:
                 description:
                 - IP address or hostname of Syslog server.

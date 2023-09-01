@@ -20,6 +20,9 @@ short_description: Manage NAT rules in Meraki cloud
 description:
 - Allows for creation, management, and visibility of NAT rules (1:1, 1:many, port forwarding) within Meraki.
 
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -52,7 +55,10 @@ options:
         - List of 1:1 NAT rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             name:
                 description:
                 - A descriptive name for the rule.
@@ -75,7 +81,10 @@ options:
                 - The ports this mapping will provide access on, and the remote IPs that will be allowed access to the resource.
                 type: list
                 elements: dict
-                suboptions:
+                subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
                     protocol:
                         description:
                         - Protocol to apply NAT rule to.
@@ -97,7 +106,10 @@ options:
         - List of 1:many NAT rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             public_ip:
                 description:
                 - The IP address that will be used to access the internal resource from the WAN.
@@ -112,7 +124,10 @@ options:
                 - List of associated port rules.
                 type: list
                 elements: dict
-                suboptions:
+                subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
                     name:
                         description:
                         - A description of the rule.
@@ -145,7 +160,10 @@ options:
         - List of port forwarding rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             name:
                 description:
                 - A descriptive name for the rule.

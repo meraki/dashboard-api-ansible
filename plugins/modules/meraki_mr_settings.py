@@ -19,6 +19,9 @@ module: meraki_mr_settings
 short_description: Manage general settings for Meraki wireless networks
 description:
 - Allows for configuration of general settings in Meraki MR wireless networks.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

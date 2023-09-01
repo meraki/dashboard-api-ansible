@@ -23,6 +23,9 @@ description:
 notes:
 - Some of the options are likely only used for developers within Meraki.
 - Module was formerly named M(cisco.meraki.meraki_mx_uplink).
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
       description:
@@ -51,12 +54,18 @@ options:
       description:
       - Configuration of WAN1 uplink
       type: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          suboptions:
+          subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             limit_up:
               description:
               - Maximum upload speed for interface
@@ -69,12 +78,18 @@ options:
       description:
       - Configuration of WAN2 uplink
       type: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          suboptions:
+          subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             limit_up:
               description:
               - Maximum upload speed for interface
@@ -87,12 +102,18 @@ options:
       description:
       - Configuration of cellular uplink
       type: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          suboptions:
+          subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             limit_up:
               description:
               - Maximum upload speed for interface

@@ -21,6 +21,9 @@ description:
 - Allows for creation, management, and visibility into routed interfaces on Meraki MS switches.
 notes:
 - Once a layer 3 interface is created, the API does not allow updating the interface and specifying C(default_gateway).
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -68,7 +71,10 @@ options:
         description:
         - The OSPF routing settings of the interface.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             cost:
                 description:
                 - The path cost for this interface.

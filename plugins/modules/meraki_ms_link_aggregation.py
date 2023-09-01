@@ -22,6 +22,9 @@ description:
 - Allows for management of MS switch link aggregations in a Meraki environment.
 notes:
 - Switch profile ports are not supported in this module.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -46,7 +49,10 @@ options:
         - List of switchports to include in link aggregation.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             serial:
                 description:
                 - Serial number of switch to own link aggregation.

@@ -21,6 +21,9 @@ version_added: "2.1.0"
 description:
 - Allows for management and visibility of Merkai MX layer 2 ports.
 
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

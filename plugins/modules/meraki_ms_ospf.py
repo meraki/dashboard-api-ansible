@@ -19,6 +19,9 @@ module: meraki_ms_ospf
 short_description: Manage OSPF configuration on MS switches
 description:
 - Configure OSPF for compatible Meraki MS switches.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -58,7 +61,10 @@ options:
         description:
         - MD5 authentication credentials.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             id:
                 description:
                 - MD5 authentication key index.
@@ -73,7 +79,10 @@ options:
         - List of areas in OSPF network.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             area_id:
                 description:
                 - OSPF area ID

@@ -22,6 +22,9 @@ description:
 - Allows for management of SSIDs in a Meraki wireless environment.
 notes:
 - Deleting an SSID does not delete RADIUS servers.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -92,7 +95,10 @@ options:
         - List of RADIUS servers.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             host:
                 description:
                 - IP address or hostname of RADIUS server.
@@ -134,7 +140,10 @@ options:
         - List of RADIUS servers for RADIUS accounting.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             host:
                 description:
                 - IP address or hostname of RADIUS server.
@@ -189,7 +198,10 @@ options:
         - Requires C(use_vlan_tagging) to be C(True).
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             tags:
                 description:
                 - List of AP tags.

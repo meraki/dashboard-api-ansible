@@ -20,6 +20,9 @@ DOCUMENTATION = r"""
 module: meraki_ms_access_policies
 short_description: Manage Switch Access Policies in the Meraki cloud
 description: Module for managing a Switch Access Policies in the Meraki cloud
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -73,7 +76,10 @@ options:
         - List of RADIUS servers.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             host:
                 description:
                 - IP address or hostname of RADIUS server.
@@ -111,7 +117,10 @@ options:
         - List of RADIUS servers for RADIUS accounting.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             host:
                 description:
                 - IP address or hostname of RADIUS server.

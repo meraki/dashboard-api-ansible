@@ -22,6 +22,9 @@ description:
 - Allows for modification of Meraki MS switch stacks.
 notes:
 - Not all actions are idempotent. Specifically, creating a new stack will error if any switch is already in a stack.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

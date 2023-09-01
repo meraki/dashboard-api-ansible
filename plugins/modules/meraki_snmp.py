@@ -19,6 +19,9 @@ module: meraki_snmp
 short_description: Manage organizations in the Meraki cloud
 description:
 - Allows for management of SNMP settings for Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -83,7 +86,10 @@ options:
         - Only relevant if C(access) is set to C(users).
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             username:
                 description: Username of user with access.
                 type: str

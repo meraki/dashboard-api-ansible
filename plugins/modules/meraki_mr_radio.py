@@ -20,6 +20,9 @@ module: meraki_mr_radio
 short_description: Manage device radio settings for Meraki wireless networks
 description:
 - Allows for configuration of radio settings in Meraki MR wireless networks.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
   state:
     description:
@@ -56,7 +59,10 @@ options:
     - Manual radio settings for 5 GHz.
     type: dict
     default: {}
-    suboptions:
+    subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
       target_power:
         description:
         - Set a manual target power for 5 GHz.
@@ -107,7 +113,10 @@ options:
     - Manual radio settings for 2.4 GHz.
     type: dict
     default: {}
-    suboptions:
+    subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
       target_power:
         description:
         - Set a manual target power for 2.4 GHz.

@@ -20,6 +20,9 @@ module: meraki_mx_third_party_vpn_peers
 short_description: Manage third party (IPSec) VPN peers for MX devices
 description:
 - Create, edit, query, or delete third party VPN peers in a Meraki environment.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
       description:
@@ -32,7 +35,10 @@ options:
       - The list of VPN peers.
       type: list
       elements: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         name:
           description:
           - The name of the VPN peer.
@@ -78,7 +84,10 @@ options:
           description:
           - Custom IPSec policies for the VPN peer. If not included and a preset has not been chosen, the default preset for IPSec policies will be used.
           type: dict
-          suboptions:
+          subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             child_lifetime:
               description:
               - The lifetime of the Phase 2 SA in seconds.

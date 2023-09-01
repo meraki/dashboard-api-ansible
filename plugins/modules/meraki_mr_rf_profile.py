@@ -19,6 +19,9 @@ module: meraki_mr_rf_profile
 short_description: Manage RF profiles for Meraki wireless networks
 description:
 - Allows for configuration of radio frequency (RF)  profiles in Meraki MR wireless networks.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -63,7 +66,10 @@ options:
         description:
         - Settings that will be enabled if selectionType is set to 'ap'.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             mode:
                 description:
                 - Sets which RF band the AP will support.
@@ -78,7 +84,10 @@ options:
         description:
         - Settings related to 5Ghz band.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             max_power:
                 description:
                 - Sets max power (dBm) of 5Ghz band.
@@ -139,7 +148,10 @@ options:
         description:
         - Settings related to 2.4Ghz band
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             max_power:
                 description:
                 - Sets max power (dBm) of 2.4Ghz band.

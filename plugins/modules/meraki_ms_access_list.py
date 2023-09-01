@@ -22,6 +22,9 @@ description:
 - Configure and query information about access lists on Meraki switches within the Meraki cloud.
 notes:
 - Some of the options are likely only used for developers within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
       description:
@@ -43,7 +46,10 @@ options:
       - List of access control rules.
       type: list
       elements: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         comment:
             description:
             - Description of the rule.

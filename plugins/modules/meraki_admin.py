@@ -20,6 +20,9 @@ short_description: Manage administrators in the Meraki cloud
 version_added: '1.0.0'
 description:
 - Allows for creation, management, and visibility into administrators within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     name:
         description:
@@ -45,7 +48,10 @@ options:
         - If C(none) is specified, C(network) or C(tags) must be specified.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             tag:
                 description:
                 - Object tag which privileges should be assigned.
@@ -60,7 +66,10 @@ options:
         - When creating a new administrator, C(org_name), C(network), or C(tags) must be specified.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             id:
                 description:
                 - Network ID for which administrator should have privileges assigned.

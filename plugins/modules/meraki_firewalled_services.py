@@ -20,6 +20,9 @@ short_description: Edit firewall policies for administrative network services
 description:
 - Allows for setting policy firewalled services for Meraki network devices.
 
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     auth_key:
         description:

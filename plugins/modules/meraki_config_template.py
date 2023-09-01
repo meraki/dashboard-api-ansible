@@ -24,6 +24,9 @@ notes:
 - Module is not idempotent as the Meraki API is limited in what information it provides about configuration templates.
 - Meraki's API does not support creating new configuration templates.
 - To use the configuration template, simply pass its ID via C(net_id) parameters in Meraki modules.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

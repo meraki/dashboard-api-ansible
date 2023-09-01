@@ -22,6 +22,9 @@ description:
 - Allows for creation, management, and visibility into layer 7 firewalls implemented on Meraki MR access points.
 - Module assumes a complete list of firewall rules are passed as a parameter.
 - If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -52,7 +55,10 @@ options:
         - List of layer 7 firewall rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             policy:
                 description:
                 - Policy to apply if rule is hit.
@@ -72,7 +78,10 @@ options:
                 description:
                 - Application to filter.
                 type: dict
-                suboptions:
+                subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
                     name:
                         description:
                         - Name of application to filter as defined by Meraki.

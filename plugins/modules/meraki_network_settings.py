@@ -20,6 +20,9 @@ module: meraki_network_settings
 short_description: Manage the settings of networks in the Meraki cloud
 description:
 - Allows for management of settings of networks within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -52,12 +55,18 @@ options:
         description:
             - Configuration stanza of the local status page.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             authentication:
                 description:
                     - Local status page authentication settings.
                 type: dict
-                suboptions:
+                subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
                     enabled:
                         description:
                             - Set whether local status page authentication is enabled.
@@ -70,7 +79,10 @@ options:
         description:
             - Configuration of SecureConnect options applied to the network.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             enabled:
                 description:
                     - Set whether SecureConnect is enabled on the network.

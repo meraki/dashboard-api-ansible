@@ -23,6 +23,9 @@ notes:
 - This module does not support claiming of devices or licenses into a Meraki organization.
 - More information about the Meraki API can be found at U(https://dashboard.meraki.com/api_docs).
 - Some of the options are likely only used for developers within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

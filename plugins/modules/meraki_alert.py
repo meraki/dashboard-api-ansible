@@ -21,6 +21,9 @@ version_added: "2.1.0"
 short_description: Manage alerts in the Meraki cloud
 description:
 - Allows for creation, management, and visibility into alert settings within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -41,7 +44,10 @@ options:
         description:
         - Properties for destinations when alert specific destinations aren't specified.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             all_admins:
                 description:
                 - If true, all network admins will receive emails.
@@ -65,7 +71,10 @@ options:
         - Alert-specific configuration for each type.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             alert_type:
                 description:
                 - The type of alert.
@@ -84,7 +93,10 @@ options:
                 description:
                 - A hash of destinations for this specific alert.
                 type: dict
-                suboptions:
+                subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
                     all_admins:
                         description:
                         - If true, all network admins will receive emails.

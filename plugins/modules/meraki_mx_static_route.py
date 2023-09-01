@@ -21,6 +21,9 @@ short_description: Manage static routes in the Meraki cloud
 description:
 - Allows for creation, management, and visibility into static routes within Meraki.
 
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -61,7 +64,10 @@ options:
         - List of fixed MAC to IP bindings for DHCP.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             mac:
                 description:
                 - MAC address of endpoint.
@@ -79,7 +85,10 @@ options:
         - List of IP ranges reserved for static IP assignments.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             start:
                 description:
                 - First IP address of reserved range.

@@ -20,6 +20,9 @@ short_description: Manage intrustion prevention in the Meraki cloud
 description:
 - Allows for management of intrusion prevention rules networks within Meraki MX networks.
 
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -51,7 +54,10 @@ options:
         - List of IDs related to rules which are allowed for the organization.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             rule_id:
                 description:
                 - ID of rule as defined by Snort.
@@ -68,7 +74,10 @@ options:
         description:
         - Set included/excluded networks for Intrusion Prevention.
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             use_default:
                 description:
                 - Whether to use special IPv4 addresses per RFC 5735.

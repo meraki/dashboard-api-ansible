@@ -23,6 +23,9 @@ notes:
 - Meraki's API will return an error if VLANs aren't enabled on a network. VLANs are returned properly if VLANs are enabled on a network.
 - Some of the options are likely only used for developers within Meraki.
 - Meraki's API defaults to networks having VLAN support disabled and there is no way to enable VLANs support in the API. VLAN support must be enabled manually.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
       description:
@@ -68,7 +71,10 @@ options:
       - IP address ranges which should be reserve and not distributed via DHCP.
       type: list
       elements: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         start:
           description: First IP address of reserved IP address range, inclusive.
           type: str
@@ -87,7 +93,10 @@ options:
       - Static IP address assignments to be distributed via DHCP by MAC address.
       type: list
       elements: dict
-      suboptions:
+      subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         mac:
           description: MAC address for fixed IP assignment binding.
           type: str
@@ -134,12 +143,18 @@ options:
         description:
         - Filename to boot from for DHCP boot
         type: str
-    dhcp_options:
+    dhcp_deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
         description:
         - List of DHCP option values
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             code:
                 description:
                 - DHCP option number.
@@ -222,7 +237,10 @@ EXAMPLES = r'''
     dhcp_handling: server
     dhcp_lease_time: 1 hour
     dhcp_boot_options_enabled: false
-    dhcp_options:
+    dhcp_deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
       - code: 5
         type: ip
         value: 192.0.1.1
@@ -340,7 +358,10 @@ response:
       returned: success
       type: str
       sample: boot.txt
-    dhcp_options:
+    dhcp_deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
       description: DHCP options.
       returned: success
       type: complex

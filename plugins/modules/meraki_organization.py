@@ -19,6 +19,9 @@ module: meraki_organization
 short_description: Manage organizations in the Meraki cloud
 description:
 - Allows for creation, management, and visibility into organizations within Meraki.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:

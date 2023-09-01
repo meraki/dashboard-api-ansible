@@ -22,6 +22,9 @@ description:
 - Allows for creation, management, and visibility into firewall rules for site-to-site VPNs implemented on Meraki MX firewalls.
 notes:
 - Module assumes a complete list of firewall rules are passed as a parameter.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -34,7 +37,10 @@ options:
         - List of firewall rules.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             policy:
                 description:
                 - Policy to apply if rule is hit.

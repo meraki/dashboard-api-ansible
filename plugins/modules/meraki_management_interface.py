@@ -23,6 +23,9 @@ description:
 notes:
 - C(WAN2) parameter is only valid for MX appliances.
 - C(wan_enabled) should not be provided for non-MX devies.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -56,7 +59,10 @@ options:
         - Management interface details for management interface.
         aliases: [mgmt1]
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             wan_enabled:
                 description:
                 - States whether the management interface is enabled.
@@ -97,7 +103,10 @@ options:
         - Management interface details for management interface.
         type: dict
         aliases: [mgmt2]
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             wan_enabled:
                 description:
                 - States whether the management interface is enabled.

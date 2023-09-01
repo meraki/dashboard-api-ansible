@@ -20,6 +20,9 @@ short_description: Manage AutoVPN connections in Meraki
 version_added: "1.1.0"
 description:
 - Allows for creation, management, and visibility into AutoVPNs implemented on Meraki MX firewalls.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -45,7 +48,10 @@ options:
         - List of hubs to assign to a spoke.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             hub_id:
                 description:
                 - Network ID of hub
@@ -60,7 +66,10 @@ options:
         - List of subnets to advertise over VPN.
         type: list
         elements: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             local_subnet:
                 description:
                 - CIDR formatted subnet.

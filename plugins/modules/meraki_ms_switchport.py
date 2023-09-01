@@ -20,6 +20,9 @@ module: meraki_ms_switchport
 short_description: Manage switchports on a switch in the Meraki cloud
 description:
 - Allows for management of switchports settings for Meraki MS switches.
+deprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
 options:
     state:
         description:
@@ -134,7 +137,10 @@ options:
         - Only applicable to access port type.
         - Only applicable to access_policy_type "MAC allow list".
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             state:
                 description:
                 - The state the configuration should be left in.
@@ -155,7 +161,10 @@ options:
         - Only applicable to access port type.
         - Only applicable to access_policy_type "Sticky MAC allow list".
         type: dict
-        suboptions:
+        subdeprecated:
+  removed_in: '3.0.0'
+  why: Updated modules released with increased functionality
+options:
             state:
                 description:
                 - The state the configuration should be left in.
