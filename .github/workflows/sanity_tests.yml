@@ -1,6 +1,7 @@
 name: CI
 on:
   push:
+    branches: [ main ]
   pull_request:
   schedule:
     - cron: '0 6 * * *'
@@ -18,20 +19,20 @@ jobs:
           - stable-2.14
           - stable-2.15
           - devel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          path: meraki/meraki-ansible
+          path: meraki/dashboard-api-ansible
       - name: Create directory
         run: mkdir -p ./ansible_collections/${{env.NAMESPACE}}
       - name: Move repository
-        run: mv ./meraki/meraki-ansible ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
+        run: mv .meraki/dashboard-api-ansible ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.10
+          python-version: '3.10'
       - name: Install ansible-base (${{ matrix.ansible }})
         run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
       - name: Run sanity tests
