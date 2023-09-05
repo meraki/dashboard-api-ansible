@@ -54,7 +54,7 @@ cisco.meraki.networks_appliance_firewall_l7_firewall_rules_info module -- Inform
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

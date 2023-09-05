@@ -54,7 +54,7 @@ cisco.meraki.organizations_users module -- Resource module for organizations \_u
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

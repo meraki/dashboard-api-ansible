@@ -54,7 +54,7 @@ cisco.meraki.networks_insight_applications_health_by_time_info module -- Informa
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

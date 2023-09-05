@@ -54,7 +54,7 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info module -- Information mod
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

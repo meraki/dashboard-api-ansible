@@ -54,7 +54,7 @@ cisco.meraki.networks_devices_claim module -- Resource module for networks \_dev
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

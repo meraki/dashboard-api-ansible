@@ -54,7 +54,7 @@ cisco.meraki.networks_events_info module -- Information module for networks \_ev
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:

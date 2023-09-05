@@ -54,7 +54,7 @@ cisco.meraki.organizations_summary_top_devices_by_usage_info module -- Informati
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 1.0.0
+New in cisco.meraki 2.16.0
 
 .. contents::
    :local:
