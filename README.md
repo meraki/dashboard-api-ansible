@@ -6,7 +6,7 @@ The meraki-ansible project provides an Ansible collection for managing and autom
 
 This collection has been tested and supports Cisco Meraki v1.33.0
 
-*Note: This collection is not compatible with versions of Ansible before v2.8.*
+*Note: This collection is not compatible with versions of Ansible before v2.14.*
 
 Other versions of this collection have support for previous Cisco Meraki versions. The recommended versions are listed below on the [Compatibility matrix](https://github.com/cisco-en-programmability/meraki-ansible#compatibility-matrix).
 
