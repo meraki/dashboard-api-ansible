@@ -865,4 +865,4 @@ releases:
       - organizations_webhooks_logs_info - new plugin.
       - organizations_wireless_devices_ethernet_statuses_info - new plugin.
       - organizations - new plugin.
-    release_date: '2023-xx-xx'
+    release_date: '2023-09-05'
