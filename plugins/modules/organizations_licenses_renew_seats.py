@@ -13,7 +13,7 @@ description:
 - >
    Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this
    license.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

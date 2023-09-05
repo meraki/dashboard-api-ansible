@@ -11,7 +11,7 @@ short_description: Resource module for networks _cellulargateway _dhcp
 description:
 - Manage operation update of the resource networks _cellulargateway _dhcp.
 - Update common DHCP settings of MGs.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

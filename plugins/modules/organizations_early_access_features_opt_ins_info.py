@@ -13,7 +13,7 @@ description:
 - Get organizations _earlyaccess _features _optins by id.
 - List the early access feature opt-ins for an organization.
 - Show an early access feature opt-in for an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

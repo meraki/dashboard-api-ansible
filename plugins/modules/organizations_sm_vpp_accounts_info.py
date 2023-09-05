@@ -13,7 +13,7 @@ description:
 - Get organizations _sm _vppaccounts by id.
 - Get a hash containing the unparsed token of the VPP account with the given ID.
 - List the VPP accounts in the organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

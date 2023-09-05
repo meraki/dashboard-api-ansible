@@ -11,7 +11,7 @@ short_description: Information module for organizations _clients _search
 description:
 - Get all organizations _clients _search.
 - Return the client details in an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

@@ -15,7 +15,7 @@ description:
    Destroy a webhook payload template for a network. Does not work for included templates 'wpt_00001', 'wpt_00002',
    'wpt_00003', 'wpt_00004', 'wpt_00005' or 'wpt_00006' .
 - Update a webhook payload template for a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

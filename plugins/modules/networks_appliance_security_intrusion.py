@@ -11,7 +11,7 @@ short_description: Resource module for networks _appliance _security _intrusion
 description:
 - Manage operation update of the resource networks _appliance _security _intrusion.
 - Set the supported intrusion settings for an MX network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

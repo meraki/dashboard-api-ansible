@@ -11,7 +11,7 @@ short_description: Information module for organizations _clients _overview
 description:
 - Get all organizations _clients _overview.
 - Return summary information around client data usage in mb across the given organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

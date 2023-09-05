@@ -11,7 +11,7 @@ short_description: Information module for networks _sensor _alerts _overview _by
 description:
 - Get all networks _sensor _alerts _overview _bymetric.
 - Return an overview of alert occurrences over a timespan, by metric.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

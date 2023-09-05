@@ -11,7 +11,7 @@ short_description: Information module for organizations _devices _provisioning _
 description:
 - Get all organizations _devices _provisioning _statuses.
 - List the provisioning statuses information for devices in an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

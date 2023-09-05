@@ -13,7 +13,7 @@ description:
 - Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.
 - Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.
 - Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

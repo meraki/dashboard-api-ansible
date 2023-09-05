@@ -11,7 +11,7 @@ short_description: Resource module for networks _wireless _ssids _splash _settin
 description:
 - Manage operation update of the resource networks _wireless _ssids _splash _settings.
 - Modify the splash page settings for the given SSID.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

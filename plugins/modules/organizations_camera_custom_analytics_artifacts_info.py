@@ -13,7 +13,7 @@ description:
 - Get organizations _camera _customanalytics _artifacts by id.
 - Get Custom Analytics Artifact.
 - List Custom Analytics Artifacts.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

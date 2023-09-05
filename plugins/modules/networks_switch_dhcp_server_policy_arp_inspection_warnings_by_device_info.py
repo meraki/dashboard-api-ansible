@@ -11,7 +11,7 @@ short_description: Information module for networks _switch _dhcpserverpolicy _ar
 description:
 - Get all networks _switch _dhcpserverpolicy _arpinspection _warnings _bydevice.
 - Return the devices that have a Dynamic ARP Inspection warning and their warnings.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

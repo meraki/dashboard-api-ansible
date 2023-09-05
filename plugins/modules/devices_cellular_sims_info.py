@@ -11,7 +11,7 @@ short_description: Information module for devices _cellular _sims
 description:
 - Get all devices _cellular _sims.
 - Return the SIM and APN configurations for a cellular device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

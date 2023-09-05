@@ -11,7 +11,7 @@ short_description: Information module for networks _appliance _security _intrusi
 description:
 - Get all networks _appliance _security _intrusion.
 - Returns all supported intrusion settings for an MX network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

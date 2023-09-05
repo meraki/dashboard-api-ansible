@@ -13,7 +13,7 @@ description:
 - >
    List the availability information for devices in an organization. The data returned by this endpoint is updated
    every 5 minutes.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

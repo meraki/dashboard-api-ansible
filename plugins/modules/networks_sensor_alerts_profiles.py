@@ -13,7 +13,7 @@ description:
 - Creates a sensor alert profile for a network.
 - Deletes a sensor alert profile from a network.
 - Updates a sensor alert profile for a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

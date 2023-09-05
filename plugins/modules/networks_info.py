@@ -13,7 +13,7 @@ description:
 - Get networks by id.
 - List the networks that the user has privileges on in an organization.
 - Return a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

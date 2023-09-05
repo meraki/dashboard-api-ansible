@@ -15,7 +15,7 @@ description:
    List the access policies for a switch network. Only returns access policies with 'my RADIUS server' as
    authentication method.
 - Return a specific access policy for a switch network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

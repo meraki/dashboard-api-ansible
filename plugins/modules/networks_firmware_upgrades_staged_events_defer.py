@@ -11,7 +11,7 @@ short_description: Resource module for networks _firmwareupgrades _staged _event
 description:
 - Manage operation create of the resource networks _firmwareupgrades _staged _events _defer.
 - Postpone by 1 week all pending staged upgrade stages for a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

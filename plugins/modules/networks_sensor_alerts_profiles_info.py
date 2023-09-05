@@ -13,7 +13,7 @@ description:
 - Get networks _sensor _alerts _profiles by id.
 - Lists all sensor alert profiles for a network.
 - Show details of a sensor alert profile for a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

@@ -13,7 +13,7 @@ description:
 - Creates a new Policy Object Group.
 - Deletes a Policy Object Group.
 - Updates a Policy Object Group.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

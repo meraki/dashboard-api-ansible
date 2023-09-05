@@ -11,7 +11,7 @@ short_description: Resource module for organizations _users
 description:
 - Manage operation delete of the resource organizations _users.
 - Delete a user and all of its authentication methods.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

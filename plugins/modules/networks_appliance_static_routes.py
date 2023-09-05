@@ -13,7 +13,7 @@ description:
 - Add a static route for an MX or teleworker network.
 - Delete a static route from an MX or teleworker network.
 - Update a static route for an MX or teleworker network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

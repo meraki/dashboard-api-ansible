@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _meshstatuses
 description:
 - Get all networks _wireless _meshstatuses.
 - List wireless mesh statuses for repeaters.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

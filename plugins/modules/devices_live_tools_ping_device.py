@@ -11,7 +11,7 @@ short_description: Resource module for devices _livetools _pingdevice
 description:
 - Manage operation create of the resource devices _livetools _pingdevice.
 - Enqueue a job to check connectivity status to the device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

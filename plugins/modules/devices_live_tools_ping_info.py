@@ -11,7 +11,7 @@ short_description: Information module for devices _livetools _ping
 description:
 - Get devices _livetools _ping by id.
 - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

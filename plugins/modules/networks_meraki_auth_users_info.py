@@ -15,7 +15,7 @@ description:
    List the users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless
    network, or client VPN users for a wired network .
 - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

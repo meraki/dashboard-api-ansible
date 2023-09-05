@@ -11,7 +11,7 @@ short_description: Resource module for organizations _clone
 description:
 - Manage operation create of the resource organizations _clone.
 - Create a new organization by cloning the addressed organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

@@ -13,7 +13,7 @@ description:
 - Get networks _switch _qosrules _order by id.
 - List quality of service rules.
 - Return a quality of service rule.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

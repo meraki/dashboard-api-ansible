@@ -11,7 +11,7 @@ short_description: Resource module for devices _sensor _relationships
 description:
 - Manage operation update of the resource devices _sensor _relationships.
 - Assign one or more sensor roles to a given sensor or camera device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

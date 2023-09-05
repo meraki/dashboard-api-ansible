@@ -13,7 +13,7 @@ description:
 - Get organizations _adaptivepolicy _policies by id.
 - List adaptive policies in an organization.
 - Return an adaptive policy.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

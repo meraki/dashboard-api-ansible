@@ -13,7 +13,7 @@ description:
 - Create a new early access feature opt-in for an organization.
 - Delete an early access feature opt-in.
 - Update an early access feature opt-in for an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

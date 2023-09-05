@@ -11,7 +11,7 @@ short_description: Information module for networks _cellulargateway _uplink
 description:
 - Get all networks _cellulargateway _uplink.
 - Returns the uplink settings for your MG network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

@@ -11,7 +11,7 @@ short_description: Resource module for devices _blinkleds
 description:
 - Manage operation create of the resource devices _blinkleds.
 - Blink the LEDs on a device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

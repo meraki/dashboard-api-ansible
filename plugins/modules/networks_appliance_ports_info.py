@@ -13,7 +13,7 @@ description:
 - Get networks _appliance _ports by id.
 - List per-port VLAN settings for all ports of a MX.
 - Return per-port VLAN settings for a single MX port.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

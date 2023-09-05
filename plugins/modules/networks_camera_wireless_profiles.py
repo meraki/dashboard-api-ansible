@@ -13,7 +13,7 @@ description:
 - Creates a new camera wireless profile for this network.
 - Delete an existing camera wireless profile for this network.
 - Update an existing camera wireless profile in this network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

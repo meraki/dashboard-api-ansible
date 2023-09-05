@@ -11,7 +11,7 @@ short_description: Information module for organizations _firmware _upgrades _byd
 description:
 - Get all organizations _firmware _upgrades _bydevice.
 - Get firmware upgrade status for the filtered devices.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

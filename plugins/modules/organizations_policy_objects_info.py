@@ -13,7 +13,7 @@ description:
 - Get organizations _policyobjects by id.
 - Lists Policy Objects belonging to the organization.
 - Shows details of a Policy Object.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

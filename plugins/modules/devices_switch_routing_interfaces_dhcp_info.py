@@ -11,7 +11,7 @@ short_description: Information module for devices _switch _routing _interfaces _
 description:
 - Get all devices _switch _routing _interfaces _dhcp.
 - Return a layer 3 interface DHCP configuration for a switch.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

@@ -13,7 +13,7 @@ description:
 - Create a layer 3 static route for a switch.
 - Delete a layer 3 static route for a switch.
 - Update a layer 3 static route for a switch.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

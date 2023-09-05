@@ -13,7 +13,7 @@ description:
 - Add an HTTP server to a network.
 - Delete an HTTP server from a network.
 - Update an HTTP server. To change a URL, create a new HTTP server.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

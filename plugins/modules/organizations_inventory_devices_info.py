@@ -13,7 +13,7 @@ description:
 - Get organizations _inventory _devices by id.
 - Return a single device from the inventory of an organization.
 - Return the device inventory for an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

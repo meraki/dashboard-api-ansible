@@ -12,7 +12,7 @@ description:
 - Manage operations create and update of the resource networks _firmwareupgrades _staged _events.
 - Create a Staged Upgrade Event for a network.
 - Update the Staged Upgrade Event for a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

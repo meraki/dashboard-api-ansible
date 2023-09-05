@@ -12,7 +12,7 @@ description:
 - Manage operations create and update of the resource devices _managementinterface.
 - Reboot a device.
 - Update the management interface settings for a device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

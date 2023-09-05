@@ -13,7 +13,7 @@ description:
 - Get networks _floorplans by id.
 - Find a floor plan by ID.
 - List the floor plans that belong to your network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

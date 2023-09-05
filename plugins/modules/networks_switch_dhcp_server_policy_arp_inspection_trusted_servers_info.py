@@ -13,7 +13,7 @@ description:
 - >
    Return the list of servers trusted by Dynamic ARP Inspection on this network. These are also known as allow listed
    snoop entries.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

@@ -11,7 +11,7 @@ short_description: Resource module for networks _split
 description:
 - Manage operation create of the resource networks _split.
 - Split a combined network into individual networks for each type of device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

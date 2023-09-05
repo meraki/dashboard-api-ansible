@@ -11,7 +11,7 @@ short_description: Resource module for networks _clients _provision
 description:
 - Manage operation create of the resource networks _clients _provision.
 - Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

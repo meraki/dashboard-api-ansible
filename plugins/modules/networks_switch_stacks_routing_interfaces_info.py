@@ -13,7 +13,7 @@ description:
 - Get networks _switch _stacks _routing _interfaces by id.
 - List layer 3 interfaces for a switch stack.
 - Return a layer 3 interface from a switch stack.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

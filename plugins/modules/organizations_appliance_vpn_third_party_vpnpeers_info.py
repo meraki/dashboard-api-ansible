@@ -11,7 +11,7 @@ short_description: Information module for organizations _appliance _vpn _thirdpa
 description:
 - Get all organizations _appliance _vpn _thirdpartyvpnpeers.
 - Return the third party VPN peers for an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

@@ -11,7 +11,7 @@ short_description: Information module for networks _switch _dhcp v4 _servers _se
 description:
 - Get all networks _switch _dhcp v4 _servers _seen.
 - Return the network's DHCPv4 servers seen within the selected timeframe default 1 day .
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

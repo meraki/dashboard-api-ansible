@@ -11,7 +11,7 @@ short_description: Information module for organizations _summary _top _appliance
 description:
 - Get all organizations _summary _top _appliances _byutilization.
 - Return the top 10 appliances sorted by utilization over given time range.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

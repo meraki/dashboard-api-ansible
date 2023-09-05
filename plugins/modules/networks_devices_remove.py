@@ -11,7 +11,7 @@ short_description: Resource module for networks _devices _remove
 description:
 - Manage operation create of the resource networks _devices _remove.
 - Remove a single device.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

@@ -11,7 +11,7 @@ short_description: Information module for devices _wireless _latencystats
 description:
 - Get all devices _wireless _latencystats.
 - Aggregated latency info for a given AP on this network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

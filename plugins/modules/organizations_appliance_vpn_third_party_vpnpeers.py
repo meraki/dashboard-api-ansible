@@ -11,7 +11,7 @@ short_description: Resource module for organizations _appliance _vpn _thirdparty
 description:
 - Manage operation update of the resource organizations _appliance _vpn _thirdpartyvpnpeers.
 - Update the third party VPN peers for an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

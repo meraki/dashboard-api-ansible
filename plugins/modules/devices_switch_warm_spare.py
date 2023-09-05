@@ -13,7 +13,7 @@ description:
 - >
    Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note
    that this will irreversibly destroy any existing L3 configuration on the spare.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

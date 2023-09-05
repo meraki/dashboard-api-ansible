@@ -13,7 +13,7 @@ description:
 - >
    Return the performance score for a single MX. Only primary MX devices supported. If no data is available, a 204
    error code is returned.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

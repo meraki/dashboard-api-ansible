@@ -11,7 +11,7 @@ short_description: Resource module for devices _camera _qualityandretention
 description:
 - Manage operation update of the resource devices _camera _qualityandretention.
 - Update quality and retention settings for the given camera.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

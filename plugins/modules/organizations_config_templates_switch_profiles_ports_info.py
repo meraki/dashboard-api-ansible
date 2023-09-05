@@ -13,7 +13,7 @@ description:
 - Get organizations _configtemplates _switch _profiles _ports by id.
 - Return a switch profile port.
 - Return all the ports of a switch profile.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

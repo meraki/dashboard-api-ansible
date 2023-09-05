@@ -13,7 +13,7 @@ description:
 - Creates a new adaptive policy group.
 - Deletes the specified adaptive policy group and any associated policies and references.
 - Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

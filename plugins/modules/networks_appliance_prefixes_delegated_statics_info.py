@@ -13,7 +13,7 @@ description:
 - Get networks _appliance _prefixes _delegated _statics by id.
 - List static delegated prefixes for a network.
 - Return a static delegated prefix from a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

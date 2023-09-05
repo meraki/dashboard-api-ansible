@@ -11,7 +11,7 @@ short_description: Resource module for devices _switch _ports _cycle
 description:
 - Manage operation create of the resource devices _switch _ports _cycle.
 - Cycle a set of switch ports.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

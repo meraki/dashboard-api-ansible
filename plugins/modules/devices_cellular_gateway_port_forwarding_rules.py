@@ -11,7 +11,7 @@ short_description: Resource module for devices _cellulargateway _portforwardingr
 description:
 - Manage operation update of the resource devices _cellulargateway _portforwardingrules.
 - Updates the port forwarding rules for a single MG.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

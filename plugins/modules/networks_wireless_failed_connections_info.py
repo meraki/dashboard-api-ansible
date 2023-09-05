@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _failedconnections
 description:
 - Get all networks _wireless _failedconnections.
 - List of all failed client connection events on this network in a given time range.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

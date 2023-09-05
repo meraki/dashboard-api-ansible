@@ -13,7 +13,7 @@ description:
 - Get devices _switch _routing _staticroutes by id.
 - List layer 3 static routes for a switch.
 - Return a layer 3 static route for a switch.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

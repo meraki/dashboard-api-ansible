@@ -11,7 +11,7 @@ short_description: Information module for organizations _apirequests _overview
 description:
 - Get all organizations _apirequests _overview.
 - Return an aggregated overview of API requests data.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

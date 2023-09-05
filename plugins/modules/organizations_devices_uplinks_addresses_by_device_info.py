@@ -11,7 +11,7 @@ short_description: Information module for organizations _devices _uplinks _addre
 description:
 - Get all organizations _devices _uplinks _addresses _bydevice.
 - List the current uplink addresses for devices in an organization.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

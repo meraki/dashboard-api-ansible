@@ -11,7 +11,7 @@ short_description: Information module for networks _sm _devices
 description:
 - Get all networks _sm _devices.
 - List the devices enrolled in an SM network with various specified fields and filters.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

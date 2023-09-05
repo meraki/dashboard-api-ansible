@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _ssids _vpn
 description:
 - Get all networks _wireless _ssids _vpn.
 - List the VPN settings for the SSID.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

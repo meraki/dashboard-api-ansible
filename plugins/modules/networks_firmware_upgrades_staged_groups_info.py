@@ -13,7 +13,7 @@ description:
 - Get networks _firmwareupgrades _staged _groups by id.
 - Get a Staged Upgrade Group from a network.
 - List of Staged Upgrade Groups in a network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

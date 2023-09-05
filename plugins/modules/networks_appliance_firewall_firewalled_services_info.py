@@ -11,7 +11,7 @@ short_description: Information module for networks _appliance _firewall _firewal
 description:
 - Get networks _appliance _firewall _firewalledservices by id.
 - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP' .
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

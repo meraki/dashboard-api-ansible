@@ -11,7 +11,7 @@ short_description: Resource module for organizations _licenses _move
 description:
 - Manage operation create of the resource organizations _licenses _move.
 - Move licenses to another organization. This will also move any devices that the licenses are assigned to.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

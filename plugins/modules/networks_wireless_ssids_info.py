@@ -13,7 +13,7 @@ description:
 - Get networks _wireless _ssids by id.
 - List the MR SSIDs in a network.
 - Return a single MR SSID.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

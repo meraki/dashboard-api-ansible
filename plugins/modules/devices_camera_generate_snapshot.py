@@ -11,7 +11,7 @@ short_description: Resource module for devices _camera _generatesnapshot
 description:
 - Manage operation create of the resource devices _camera _generatesnapshot.
 - Generate a snapshot of what the camera sees at the specified time and return a link to that image.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

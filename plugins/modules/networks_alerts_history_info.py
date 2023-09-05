@@ -11,7 +11,7 @@ short_description: Information module for networks _alerts _history
 description:
 - Get all networks _alerts _history.
 - Return the alert history for this network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
