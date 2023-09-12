@@ -19,7 +19,7 @@ Other versions of this collection have support for previous Cisco Meraki version
 *Notes*:
 
 
-1. The "Python 'merakisdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "merakisdk" than those listed.
+1. The "Python 'meraki' SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
 2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
 
 ## Installing according to Compatibility Matrix
@@ -108,31 +108,6 @@ Execute the playbook:
 ansible-playbook -i hosts myplaybook.yml
 ```
 In the `playbooks` [directory](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks) you can find more examples and use cases.
-
-
-## Update
-Getting the latest/nightly collection build
-
-Clone the meraki-ansible repository.
-```
-git clone https://github.com/cisco-en-programmability/meraki-ansible.git
-```
-
-Go to the meraki-ansible directory
-```
-cd meraki-ansible
-```
-
-Pull the latest master from the repo
-```
-git pull origin master
-```
-
-Build and install a collection from source
-```
-ansible-galaxy collection build --force
-ansible-galaxy collection install cisco-meraki-* --force
-```
 
 ### See Also:
 
