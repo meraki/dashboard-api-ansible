@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: meraki
-version: 2.16.0
+version: 2.16.1
 readme: README.md
 authors:
   - Francisco Muñoz <fmunoz@cloverhound.com>
@@ -20,6 +20,6 @@ tags:
 dependencies:
   ansible.utils: ">=2.0.0,<3.0"
 repository: https://github.com/meraki/dashboard-api-ansible
-documentation: https://probable-robot-y2jl9yo.pages.github.io/
+documentation: https://meraki.github.io/dashboard-api-ansible/
 homepage: https://github.com/meraki/dashboard-api-ansible
 issues: https://github.com/meraki/dashboard-api-ansible/issues

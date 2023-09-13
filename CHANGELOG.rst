@@ -3,6 +3,15 @@ Cisco.Meraki Release Notes
 ==========================
 
 .. contents:: Topics
+
+v2.16.1
+=======
+
+Bugfixes
+-------------
+
+- Updating collection docs link.
+
 v2.16.0
 =======
 

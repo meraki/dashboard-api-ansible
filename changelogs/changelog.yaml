@@ -866,3 +866,8 @@ releases:
       - organizations_wireless_devices_ethernet_statuses_info - new plugin.
       - organizations - new plugin.
     release_date: '2023-09-05'
+
+  2.16.1:
+    changes:
+      bugfixes:
+      - Updating collection docs link.
