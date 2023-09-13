@@ -1,0 +1,2589 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.networks_sensor_alerts_profiles module -- Resource module for networks \_sensor \_alerts \_profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.1).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.networks_sensor_alerts_profiles`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.16.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource networks \_sensor \_alerts \_profiles.
+- Creates a sensor alert profile for a network.
+- Deletes a sensor alert profile from a network.
+- Updates a sensor alert profile for a network.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions:
+
+      .. rst-class:: ansible-option-title
+
+      **conditions**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of conditions that will cause the profile to send an alert.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/direction"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/direction:
+
+      .. rst-class:: ansible-option-title
+
+      **direction**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/direction" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If 'above', an alert will be sent when a sensor reads above the threshold. If 'below', an alert will be sent when a sensor reads below the threshold. Only applicable for temperature and humidity thresholds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/duration"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/duration:
+
+      .. rst-class:: ansible-option-title
+
+      **duration**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/duration" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Length of time in seconds that the triggering state must persist before an alert is sent. Available options are 0 seconds, 1 minute, 2 minutes, 3 minutes, 4 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, and 1 hour. Default is 0.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/metric"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/metric:
+
+      .. rst-class:: ansible-option-title
+
+      **metric**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/metric" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type of sensor metric that will be monitored for changes. Available metrics are door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold:
+
+      .. rst-class:: ansible-option-title
+
+      **threshold**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Threshold for sensor readings that will cause an alert to be sent. This object should contain a single property key matching the condition's 'metric' value.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/door"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/door:
+
+      .. rst-class:: ansible-option-title
+
+      **door**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/door" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Door open threshold. 'open' must be provided and set to true.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/door/open"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/door/open:
+
+      .. rst-class:: ansible-option-title
+
+      **open**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/door/open" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold for a door open event. Must be set to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/humidity"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/humidity:
+
+      .. rst-class:: ansible-option-title
+
+      **humidity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/humidity" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Humidity threshold. One of 'relativePercentage' or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/humidity/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/humidity/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/humidity/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative humidity level.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/humidity/relativePercentage"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/humidity/relativepercentage:
+
+      .. rst-class:: ansible-option-title
+
+      **relativePercentage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/humidity/relativePercentage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in %RH.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/indoorAirQuality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/indoorairquality:
+
+      .. rst-class:: ansible-option-title
+
+      **indoorAirQuality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/indoorAirQuality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Indoor air quality score threshold. One of 'score' or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/indoorAirQuality/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/indoorairquality/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/indoorAirQuality/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative indoor air quality level.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/indoorAirQuality/score"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/indoorairquality/score:
+
+      .. rst-class:: ansible-option-title
+
+      **score**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/indoorAirQuality/score" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as indoor air quality score.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/noise"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/noise:
+
+      .. rst-class:: ansible-option-title
+
+      **noise**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/noise" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Noise threshold. 'ambient' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/noise/ambient"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/noise/ambient:
+
+      .. rst-class:: ansible-option-title
+
+      **ambient**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/noise/ambient" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ambient noise threshold. One of 'level' or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/noise/ambient/level"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/noise/ambient/level:
+
+      .. rst-class:: ansible-option-title
+
+      **level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/noise/ambient/level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as adjusted decibels.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/noise/ambient/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/noise/ambient/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/noise/ambient/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative ambient noise level.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/pm25"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/pm25:
+
+      .. rst-class:: ansible-option-title
+
+      **pm25**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/pm25" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PM2.5 concentration threshold. One of 'concentration' or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/pm25/concentration"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/pm25/concentration:
+
+      .. rst-class:: ansible-option-title
+
+      **concentration**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/pm25/concentration" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as PM2.5 parts per million.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/pm25/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/pm25/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/pm25/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative PM2.5 level.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/temperature"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/temperature:
+
+      .. rst-class:: ansible-option-title
+
+      **temperature**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/temperature" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Temperature threshold. One of 'celsius', 'fahrenheit', or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/temperature/celsius"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/temperature/celsius:
+
+      .. rst-class:: ansible-option-title
+
+      **celsius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/temperature/celsius" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in degrees Celsius.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/temperature/fahrenheit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/temperature/fahrenheit:
+
+      .. rst-class:: ansible-option-title
+
+      **fahrenheit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/temperature/fahrenheit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in degrees Fahrenheit.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/temperature/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/temperature/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/temperature/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative temperature level.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/tvoc"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/tvoc:
+
+      .. rst-class:: ansible-option-title
+
+      **tvoc**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/tvoc" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      TVOC concentration threshold. One of 'concentration' or 'quality' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/tvoc/concentration"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/tvoc/concentration:
+
+      .. rst-class:: ansible-option-title
+
+      **concentration**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/tvoc/concentration" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as TVOC micrograms per cubic meter.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/tvoc/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/tvoc/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/tvoc/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as a qualitative TVOC level.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/water"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/water:
+
+      .. rst-class:: ansible-option-title
+
+      **water**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/water" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Water detection threshold. 'present' must be provided and set to true.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/water/present"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/water/present:
+
+      .. rst-class:: ansible-option-title
+
+      **present**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/water/present" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold for a water detection event. Must be set to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Id path parameter.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of the sensor alert profile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkId path parameter. Network ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-recipients"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-recipients:
+
+      .. rst-class:: ansible-option-title
+
+      **recipients**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-recipients" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of recipients that will recieve the alert.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-recipients/emails"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-recipients/emails:
+
+      .. rst-class:: ansible-option-title
+
+      **emails**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-recipients/emails" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of emails that will receive information about the alert.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-recipients/httpServerIds"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-recipients/httpserverids:
+
+      .. rst-class:: ansible-option-title
+
+      **httpServerIds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-recipients/httpServerIds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of webhook endpoint IDs that will receive information about the alert.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-recipients/smsNumbers"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-recipients/smsnumbers:
+
+      .. rst-class:: ansible-option-title
+
+      **smsNumbers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-recipients/smsNumbers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of SMS numbers that will receive information about the alert.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-schedule"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-schedule:
+
+      .. rst-class:: ansible-option-title
+
+      **schedule**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-schedule" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The sensor schedule to use with the alert profile.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-schedule/id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-schedule/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-schedule/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ID of the sensor schedule to use with the alert profile. If not defined, the alert profile will be active at all times.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-serials"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-serials:
+
+      .. rst-class:: ansible-option-title
+
+      **serials**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-serials" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of device serials assigned to this sensor alert profile.
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are sensor.Sensor.create\_network\_sensor\_alerts\_profile, sensor.Sensor.delete\_network\_sensor\_alerts\_profile, sensor.Sensor.update\_network\_sensor\_alerts\_profile,
+   - Paths used are post /networks/{networkId}/sensor/alerts/profiles, delete /networks/{networkId}/sensor/alerts/profiles/{id}, put /networks/{networkId}/sensor/alerts/profiles/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for sensor createNetworkSensorAlertsProfile <https://developer.cisco.com/meraki/api-v1/#!create-network-sensor-alerts-profile>`_
+       Complete reference of the createNetworkSensorAlertsProfile API.
+   `Cisco Meraki documentation for sensor deleteNetworkSensorAlertsProfile <https://developer.cisco.com/meraki/api-v1/#!delete-network-sensor-alerts-profile>`_
+       Complete reference of the deleteNetworkSensorAlertsProfile API.
+   `Cisco Meraki documentation for sensor updateNetworkSensorAlertsProfile <https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-alerts-profile>`_
+       Complete reference of the updateNetworkSensorAlertsProfile API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.meraki.networks_sensor_alerts_profiles:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        conditions:
+        - direction: above
+          duration: 60
+          metric: temperature
+          threshold:
+            door:
+              open: true
+            humidity:
+              quality: inadequate
+              relativePercentage: 65
+            indoorAirQuality:
+              quality: fair
+              score: 80
+            noise:
+              ambient:
+                level: 120
+                quality: poor
+            pm25:
+              concentration: 90
+              quality: fair
+            temperature:
+              celsius: 20.5
+              fahrenheit: 70
+              quality: good
+            tvoc:
+              concentration: 400
+              quality: poor
+            water:
+              present: true
+        name: My Sensor Alert Profile
+        networkId: string
+        recipients:
+          emails:
+          - miles@meraki.com
+          httpServerIds:
+          - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+          smsNumbers:
+          - '+15555555555'
+        schedule:
+          id: '5'
+        serials:
+        - Q234-ABCD-0001
+        - Q234-ABCD-0002
+        - Q234-ABCD-0003
+
+    - name: Update by id
+      cisco.meraki.networks_sensor_alerts_profiles:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        conditions:
+        - direction: above
+          duration: 60
+          metric: temperature
+          threshold:
+            door:
+              open: true
+            humidity:
+              quality: inadequate
+              relativePercentage: 65
+            indoorAirQuality:
+              quality: fair
+              score: 80
+            noise:
+              ambient:
+                level: 120
+                quality: poor
+            pm25:
+              concentration: 90
+              quality: fair
+            temperature:
+              celsius: 20.5
+              fahrenheit: 70
+              quality: good
+            tvoc:
+              concentration: 400
+              quality: poor
+            water:
+              present: true
+        id: string
+        name: My Sensor Alert Profile
+        networkId: string
+        recipients:
+          emails:
+          - miles@meraki.com
+          httpServerIds:
+          - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+          smsNumbers:
+          - '+15555555555'
+        schedule:
+          id: '5'
+        serials:
+        - Q234-ABCD-0001
+        - Q234-ABCD-0002
+        - Q234-ABCD-0003
+
+    - name: Delete by id
+      cisco.meraki.networks_sensor_alerts_profiles:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: absent
+        id: string
+        networkId: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"conditions": [{"direction": "string", "duration": 0, "metric": "string", "threshold": {"door": {"open": true}, "humidity": {"quality": "string", "relativePercentage": 0}, "indoorAirQuality": {"quality": "string", "score": 0}, "noise": {"ambient": {"level": 0, "quality": "string"}}, "pm25": {"concentration": 0, "quality": "string"}, "temperature": {"celsius": 0, "fahrenheit": 0, "quality": "string"}, "tvoc": {"concentration": 0, "quality": "string"}, "water": {"present": true}}}], "name": "string", "profileId": "string", "recipients": {"emails": ["string"], "httpServerIds": ["string"], "smsNumbers": ["string"]}, "schedule": {"id": "string", "name": "string"}, "serials": ["string"]}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
