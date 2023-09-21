@@ -1,0 +1,33 @@
+
+.. Document meta section
+
+:orphan:
+
+.. Document body
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_network_settings_module:
+
+.. Title
+
+cisco.meraki.meraki_network_settings module
++++++++++++++++++++++++++++++++++++++++++++
+
+
+The documentation for the module plugin, cisco.meraki.meraki_network_settings,  was malformed.
+
+The errors were:
+
+* ::
+
+        3 validation errors for ModuleDocSchema
+        doc -> options -> local_status_page -> suboptions -> authentication -> subdeprecated
+          extra fields not permitted (type=value_error.extra)
+        doc -> options -> local_status_page -> subdeprecated
+          extra fields not permitted (type=value_error.extra)
+        doc -> options -> secure_port -> subdeprecated
+          extra fields not permitted (type=value_error.extra)
+
+
+File a bug with the `cisco.meraki collection <https://github.com/meraki/dashboard-api-ansible/issues>`_ in order to have it corrected.

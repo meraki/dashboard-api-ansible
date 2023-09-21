@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cisco.meraki.networks_switch_stacks_info module – Information module for networks _switch _stacks &mdash; MerakiAnsibleActions  documentation</title>
+  <title>cisco.meraki.meraki_network_settings module &mdash; MerakiAnsibleActions  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/ansible-basic-sphinx-ext.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cisco.meraki.networks_switch_stacks_remove module – Resource module for networks _switch _stacks _remove" href="networks_switch_stacks_remove_module.html" />
-    <link rel="prev" title="cisco.meraki.networks_switch_stacks_add module – Resource module for networks _switch _stacks _add" href="networks_switch_stacks_add_module.html" /> 
+    <link rel="next" title="cisco.meraki.meraki_organization module – Manage organizations in the Meraki cloud" href="meraki_organization_module.html" />
+    <link rel="prev" title="cisco.meraki.meraki_network module – Manage networks in the Meraki cloud" href="meraki_network_module.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -116,7 +116,7 @@
 <li class="toctree-l4"><a class="reference internal" href="meraki_mx_l2_interface_module.html">cisco.meraki.meraki_mx_l2_interface module – Configure MX layer 2 interfaces</a></li>
 <li class="toctree-l4"><a class="reference internal" href="meraki_mx_network_vlan_settings_module.html">cisco.meraki.meraki_mx_network_vlan_settings module – Manage VLAN settings for Meraki Networks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="meraki_network_module.html">cisco.meraki.meraki_network module – Manage networks in the Meraki cloud</a></li>
-<li class="toctree-l4"><a class="reference internal" href="meraki_network_settings_module.html">cisco.meraki.meraki_network_settings module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.meraki.meraki_network_settings module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="meraki_organization_module.html">cisco.meraki.meraki_organization module – Manage organizations in the Meraki cloud</a></li>
 <li class="toctree-l4"><a class="reference internal" href="meraki_webhook_module.html">cisco.meraki.meraki_webhook module – Manage webhooks configured in the Meraki cloud</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_module.html">cisco.meraki.networks module – Resource module for networks</a></li>
@@ -312,7 +312,7 @@
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_settings_info_module.html">cisco.meraki.networks_switch_settings_info module – Information module for networks _switch _settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_module.html">cisco.meraki.networks_switch_stacks module – Resource module for networks _switch _stacks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_add_module.html">cisco.meraki.networks_switch_stacks_add module – Resource module for networks _switch _stacks _add</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.meraki.networks_switch_stacks_info module – Information module for networks _switch _stacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_info_module.html">cisco.meraki.networks_switch_stacks_info module – Information module for networks _switch _stacks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_remove_module.html">cisco.meraki.networks_switch_stacks_remove module – Resource module for networks _switch _stacks _remove</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_routing_interfaces_module.html">cisco.meraki.networks_switch_stacks_routing_interfaces module – Resource module for networks _switch _stacks _routing _interfaces</a></li>
 <li class="toctree-l4"><a class="reference internal" href="networks_switch_stacks_routing_interfaces_dhcp_module.html">cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp module – Resource module for networks _switch _stacks _routing _interfaces _dhcp</a></li>
@@ -515,9 +515,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Cisco.Meraki</a></li>
-      <li class="breadcrumb-item active">cisco.meraki.networks_switch_stacks_info module – Information module for networks _switch _stacks</li>
+      <li class="breadcrumb-item active">cisco.meraki.meraki_network_settings module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/plugins/networks_switch_stacks_info_module.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/plugins/meraki_network_settings_module.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -525,403 +525,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module"></span><section id="cisco-meraki-networks-switch-stacks-info-module-information-module-for-networks-switch-stacks">
-<h1>cisco.meraki.networks_switch_stacks_info module – Information module for networks _switch _stacks<a class="headerlink" href="#cisco-meraki-networks-switch-stacks-info-module-information-module-for-networks-switch-stacks" title="Permalink to this heading"></a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.16.1).</p>
-<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.
-You need further requirements to be able to use this module,
-see <a class="reference internal" href="#ansible-collections-cisco-meraki-networks-switch-stacks-info-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
-<p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.meraki.networks_switch_stacks_info</span></code>.</p>
-</div>
-<p class="ansible-version-added">New in cisco.meraki 2.16.0</p>
-<nav class="contents local" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id59">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id60">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id61">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id62">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id63">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id64">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id65">Return Values</a></p></li>
-</ul>
-</nav>
-<section id="synopsis">
-<h2><a class="toc-backref" href="#id59" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>Get all networks _switch _stacks.</p></li>
-<li><p>Get networks _switch _stacks by id.</p></li>
-<li><p>List the switch stacks in a network.</p></li>
-<li><p>Show a switch stack.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This module has a corresponding <a class="reference external" href="https://docs.ansible.com/ansible/latest/plugins/action.html#action-plugins" title="(in Ansible v8)"><span class="xref std std-ref">action plugin</span></a>.</p>
-</div>
-</section>
-<section id="requirements">
-<span id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-requirements"></span><h2><a class="toc-backref" href="#id60" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
-<p>The below requirements are needed on the host that executes this module.</p>
-<ul class="simple">
-<li><p>meraki &gt;= 2.4.9</p></li>
-<li><p>python &gt;= 3.5</p></li>
-</ul>
-</section>
-<section id="parameters">
-<h2><a class="toc-backref" href="#id61" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
-<table class="ansible-option-table docutils align-default" style="width: 100%">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>Comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-headers"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-headers"><strong>headers</strong></p>
-<a class="ansibleOptionLink" href="#parameter-headers" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>Additional headers.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-action-batch-retry-wait-time"><strong>meraki_action_batch_retry_wait_time</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_action_batch_retry_wait_time (integer), action batch concurrency error retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id1"><span class="problematic" id="id2">:ansible-option-default:`60`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-api-key"><strong>meraki_api_key</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_api_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI_DASHBOARD_API_KEY</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-base-url"><strong>meraki_base_url</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_base_url (string), preceding all endpoint resources</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id3"><span class="problematic" id="id4">:ansible-option-default:`&quot;https://api.meraki.com/api/v1&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-be-geo-id"><strong>meraki_be_geo_id</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_be_geo_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE_GEO_ID</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id5"><span class="problematic" id="id6">:ansible-option-default:`&quot;&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-caller"><strong>meraki_caller</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI_PYTHON_SDK_CALLER</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id7"><span class="problematic" id="id8">:ansible-option-default:`&quot;&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-certificate-path"><strong>meraki_certificate_path</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_certificate_path (string), path for TLS/SSL certificate verification if behind local proxy</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id9"><span class="problematic" id="id10">:ansible-option-default:`&quot;&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-inherit-logging-config"><strong>meraki_inherit_logging_config</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_inherit_logging_config (boolean), Inherits your own logger instance</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id13"><span class="problematic" id="id14">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-log-file-prefix"><strong>meraki_log_file_prefix</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_log_file_prefix (string), log file name appended with date and timestamp</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id15"><span class="problematic" id="id16">:ansible-option-default:`&quot;meraki\_api\_&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-log-path"><strong>meraki_log_path</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>log_path (string), path to output log; by default, working directory of script if not specified</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id17"><span class="problematic" id="id18">:ansible-option-default:`&quot;&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-maximum-retries"><strong>meraki_maximum_retries</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_maximum_retries (integer), retry up to this many times when encountering 429s or other server-side errors</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id19"><span class="problematic" id="id20">:ansible-option-default:`2`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-nginx-429-retry-wait-time"><strong>meraki_nginx_429_retry_wait_time</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_nginx_429_retry_wait_time (integer), Nginx 429 retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id21"><span class="problematic" id="id22">:ansible-option-default:`60`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-output-log"><strong>meraki_output_log</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_output_log (boolean), create an output log file?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-print-console"><strong>meraki_print_console</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_print_console (boolean), print logging output to console?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-requests-proxy"><strong>meraki_requests_proxy</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_requests_proxy (string), proxy server and port, if needed, for HTTPS</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id31"><span class="problematic" id="id32">:ansible-option-default:`&quot;&quot;`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-retry-4xx-error"><strong>meraki_retry_4xx_error</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_retry_4xx_error (boolean), retry if encountering other 4XX error (besides 429)?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-retry-4xx-error-wait-time"><strong>meraki_retry_4xx_error_wait_time</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_retry_4xx_error_wait_time (integer), other 4XX error retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id37"><span class="problematic" id="id38">:ansible-option-default:`60`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-simulate"><strong>meraki_simulate</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id41"><span class="problematic" id="id42">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-single-request-timeout"><strong>meraki_single_request_timeout</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_single_request_timeout (integer), maximum number of seconds for each API call</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id43"><span class="problematic" id="id44">:ansible-option-default:`60`</span></a></p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-suppress-logging"><strong>meraki_suppress_logging</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_suppress_logging (boolean), disable all logging? you’re on your own then!</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id47"><span class="problematic" id="id48">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-use-iterator-for-get-pages"><strong>meraki_use_iterator_for_get_pages</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_use_iterator_for_get_pages (boolean), list* methods will return an iterator with each object instead of a complete list with all items</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-meraki-wait-on-rate-limit"><strong>meraki_wait_on_rate_limit</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_wait_on_rate_limit (boolean), retry if 429 rate limit error encountered?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-networkId"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-networkid"><strong>networkId</strong></p>
-<a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>NetworkId path parameter. Network ID.</p>
-</div></td>
-</tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-switchStackId"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-parameter-switchstackid"><strong>switchStackId</strong></p>
-<a class="ansibleOptionLink" href="#parameter-switchStackId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>SwitchStackId path parameter. Switch stack ID.</p>
-</div></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="notes">
-<h2><a class="toc-backref" href="#id62" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>SDK Method used are switch.Switch.get_network_switch_stack, switch.Switch.get_network_switch_stacks,</p></li>
-<li><p>Paths used are get /networks/{networkId}/switch/stacks, get /networks/{networkId}/switch/stacks/{switchStackId},</p></li>
-<li><p>Supports <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
-<li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK</p></li>
-<li><p>The parameters starting with meraki_ are used by the Cisco meraki Python SDK to establish the connection</p></li>
-</ul>
-</div>
-</section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id63" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference external" href="https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack">Cisco Meraki documentation for switch getNetworkSwitchStack</a></dt><dd><p>Complete reference of the getNetworkSwitchStack API.</p>
-</dd>
-<dt><a class="reference external" href="https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks">Cisco Meraki documentation for switch getNetworkSwitchStacks</a></dt><dd><p>Complete reference of the getNetworkSwitchStacks API.</p>
-</dd>
-</dl>
-</div>
-</section>
-<section id="examples">
-<h2><a class="toc-backref" href="#id64" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
-<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all networks _switch _stacks</span>
-<span class="w">  </span><span class="nt">cisco.meraki.networks_switch_stacks_info</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">meraki_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_api_key</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_base_url</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_single_request_timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_single_request_timeout</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_certificate_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_certificate_path</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_requests_proxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_requests_proxy</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_wait_on_rate_limit</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_wait_on_rate_limit</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_nginx_429_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_nginx_429_retry_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_action_batch_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_action_batch_retry_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_retry_4xx_error</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_retry_4xx_error_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_maximum_retries</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_maximum_retries</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_output_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_output_log</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_file_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_log_file_prefix</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_log_path</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_print_console</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_print_console</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_suppress_logging</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_suppress_logging</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_simulate</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_simulate</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_be_geo_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_be_geo_id</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_use_iterator_for_get_pages</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_use_iterator_for_get_pages</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_inherit_logging_config</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_inherit_logging_config</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">networkId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">result</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get networks _switch _stacks by id</span>
-<span class="w">  </span><span class="nt">cisco.meraki.networks_switch_stacks_info</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">meraki_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_api_key</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_base_url</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_single_request_timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_single_request_timeout</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_certificate_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_certificate_path</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_requests_proxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_requests_proxy</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_wait_on_rate_limit</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_wait_on_rate_limit</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_nginx_429_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_nginx_429_retry_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_action_batch_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_action_batch_retry_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_retry_4xx_error</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_retry_4xx_error_wait_time</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_maximum_retries</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_maximum_retries</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_output_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_output_log</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_file_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_log_file_prefix</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_log_path</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_print_console</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_print_console</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_suppress_logging</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_suppress_logging</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_simulate</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_simulate</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_be_geo_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_be_geo_id</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_use_iterator_for_get_pages</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_use_iterator_for_get_pages</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_inherit_logging_config</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">meraki_inherit_logging_config</span><span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">networkId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">switchStackId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">result</span>
+  <span class="target" id="ansible-collections-cisco-meraki-meraki-network-settings-module"></span><section id="cisco-meraki-meraki-network-settings-module">
+<h1>cisco.meraki.meraki_network_settings module<a class="headerlink" href="#cisco-meraki-meraki-network-settings-module" title="Permalink to this heading"></a></h1>
+<p>The documentation for the module plugin, cisco.meraki.meraki_network_settings,  was malformed.</p>
+<p>The errors were:</p>
+<ul>
+<li><div class="highlight-YAML+Jinja notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">3 validation errors for ModuleDocSchema</span>
+<span class="l l-Scalar l-Scalar-Plain">doc -&gt; options -&gt; local_status_page -&gt; suboptions -&gt; authentication -&gt; subdeprecated</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">extra fields not permitted (type=value_error.extra)</span>
+<span class="l l-Scalar l-Scalar-Plain">doc -&gt; options -&gt; local_status_page -&gt; subdeprecated</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">extra fields not permitted (type=value_error.extra)</span>
+<span class="l l-Scalar l-Scalar-Plain">doc -&gt; options -&gt; secure_port -&gt; subdeprecated</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">extra fields not permitted (type=value_error.extra)</span>
 </pre></div>
 </div>
-</section>
-<section id="return-values">
-<h2><a class="toc-backref" href="#id65" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
-<p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v8)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
-<table class="ansible-option-table docutils align-default" style="width: 100%">
-<thead>
-<tr class="row-odd"><th class="head"><p>Key</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="return-meraki_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-networks-switch-stacks-info-module-return-meraki-response"><strong>meraki_response</strong></p>
-<a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco Meraki Python SDK</p>
-<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id57"><span class="problematic" id="id58">:ansible-rv-sample-value:`{&quot;id&quot;: &quot;string&quot;, &quot;name&quot;: &quot;string&quot;, &quot;serials&quot;: [&quot;string&quot;]}`</span></a></p>
-</div></td>
-</tr>
-</tbody>
-</table>
-<section id="authors">
-<h3>Authors<a class="headerlink" href="#authors" title="Permalink to this heading"></a></h3>
-<ul class="simple">
-<li><p>Francisco Munoz (&#64;fmunoz)</p></li>
+</li>
 </ul>
-</section>
-<section id="collection-links">
-<h3>Collection links<a class="headerlink" href="#collection-links" title="Permalink to this heading"></a></h3>
-<p class="ansible-links">
-  <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-  <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-</p></section>
-</section>
+<p>File a bug with the <a class="reference external" href="https://github.com/meraki/dashboard-api-ansible/issues">cisco.meraki collection</a> in order to have it corrected.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="networks_switch_stacks_add_module.html" class="btn btn-neutral float-left" title="cisco.meraki.networks_switch_stacks_add module – Resource module for networks _switch _stacks _add" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="networks_switch_stacks_remove_module.html" class="btn btn-neutral float-right" title="cisco.meraki.networks_switch_stacks_remove module – Resource module for networks _switch _stacks _remove" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="meraki_network_module.html" class="btn btn-neutral float-left" title="cisco.meraki.meraki_network module – Manage networks in the Meraki cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="meraki_organization_module.html" class="btn btn-neutral float-right" title="cisco.meraki.meraki_organization module – Manage organizations in the Meraki cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -116,6 +116,7 @@ Modules
 * :ref:`meraki_mx_l2_interface module <ansible_collections.cisco.meraki.meraki_mx_l2_interface_module>` -- Configure MX layer 2 interfaces
 * :ref:`meraki_mx_network_vlan_settings module <ansible_collections.cisco.meraki.meraki_mx_network_vlan_settings_module>` -- Manage VLAN settings for Meraki Networks
 * :ref:`meraki_network module <ansible_collections.cisco.meraki.meraki_network_module>` -- Manage networks in the Meraki cloud
+* :ref:`meraki_network_settings module <ansible_collections.cisco.meraki.meraki_network_settings_module>` -- 
 * :ref:`meraki_organization module <ansible_collections.cisco.meraki.meraki_organization_module>` -- Manage organizations in the Meraki cloud
 * :ref:`meraki_webhook module <ansible_collections.cisco.meraki.meraki_webhook_module>` -- Manage webhooks configured in the Meraki cloud
 * :ref:`networks module <ansible_collections.cisco.meraki.networks_module>` -- Resource module for networks
@@ -562,6 +563,7 @@ Modules
     meraki_mx_l2_interface_module
     meraki_mx_network_vlan_settings_module
     meraki_network_module
+    meraki_network_settings_module
     meraki_organization_module
     meraki_webhook_module
     networks_module
