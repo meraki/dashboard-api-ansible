@@ -86,10 +86,7 @@ options:
         - Only relevant if C(access) is set to C(users).
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             username:
                 description: Username of user with access.
                 type: str

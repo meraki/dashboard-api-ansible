@@ -49,10 +49,7 @@ options:
         - List of switchports to include in link aggregation.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             serial:
                 description:
                 - Serial number of switch to own link aggregation.

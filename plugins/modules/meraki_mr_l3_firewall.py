@@ -58,10 +58,7 @@ options:
         - List of firewall rules.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             policy:
                 description:
                 - Specifies the action that should be taken when rule is hit.

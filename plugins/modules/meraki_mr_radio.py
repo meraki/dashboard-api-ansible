@@ -59,10 +59,7 @@ options:
     - Manual radio settings for 5 GHz.
     type: dict
     default: {}
-    subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    suboptions:
       target_power:
         description:
         - Set a manual target power for 5 GHz.
@@ -113,10 +110,7 @@ options:
     - Manual radio settings for 2.4 GHz.
     type: dict
     default: {}
-    subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    suboptions:
       target_power:
         description:
         - Set a manual target power for 2.4 GHz.

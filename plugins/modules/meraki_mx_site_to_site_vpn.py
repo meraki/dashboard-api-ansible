@@ -48,10 +48,7 @@ options:
         - List of hubs to assign to a spoke.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             hub_id:
                 description:
                 - Network ID of hub
@@ -66,10 +63,7 @@ options:
         - List of subnets to advertise over VPN.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             local_subnet:
                 description:
                 - CIDR formatted subnet.

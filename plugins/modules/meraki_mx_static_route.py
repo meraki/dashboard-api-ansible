@@ -64,10 +64,7 @@ options:
         - List of fixed MAC to IP bindings for DHCP.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             mac:
                 description:
                 - MAC address of endpoint.
@@ -85,10 +82,7 @@ options:
         - List of IP ranges reserved for static IP assignments.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             start:
                 description:
                 - First IP address of reserved range.

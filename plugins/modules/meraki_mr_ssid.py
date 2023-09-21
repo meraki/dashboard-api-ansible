@@ -95,10 +95,7 @@ options:
         - List of RADIUS servers.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             host:
                 description:
                 - IP address or hostname of RADIUS server.
@@ -140,10 +137,7 @@ options:
         - List of RADIUS servers for RADIUS accounting.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             host:
                 description:
                 - IP address or hostname of RADIUS server.
@@ -198,10 +192,7 @@ options:
         - Requires C(use_vlan_tagging) to be C(True).
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             tags:
                 description:
                 - List of AP tags.

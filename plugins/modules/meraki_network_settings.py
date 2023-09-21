@@ -55,17 +55,11 @@ options:
         description:
             - Configuration stanza of the local status page.
         type: dict
-        subdeprecated:
-          removed_in: '3.0.0'
-          why: Updated modules released with increased functionality
         suboptions:
             authentication:
                 description:
                     - Local status page authentication settings.
                 type: dict
-                subdeprecated:
-                    removed_in: '3.0.0'
-                    why: Updated modules released with increased functionality
                 suboptions:
                     enabled:
                         description:
@@ -79,9 +73,6 @@ options:
         description:
             - Configuration of SecureConnect options applied to the network.
         type: dict
-        subdeprecated:
-          removed_in: '3.0.0'
-          why: Updated modules released with increased functionality
         suboptions:
             enabled:
                 description:

@@ -55,10 +55,7 @@ options:
         - List of layer 7 firewall rules.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             policy:
                 description:
                 - Policy to apply if rule is hit.
@@ -78,10 +75,7 @@ options:
                 description:
                 - Application to filter.
                 type: dict
-                subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+                suboptions:
                     name:
                         description:
                         - Name of application to filter as defined by Meraki.

@@ -61,10 +61,7 @@ options:
         description:
         - MD5 authentication credentials.
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             id:
                 description:
                 - MD5 authentication key index.
@@ -79,10 +76,7 @@ options:
         - List of areas in OSPF network.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             area_id:
                 description:
                 - OSPF area ID

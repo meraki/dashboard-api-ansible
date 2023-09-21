@@ -80,10 +80,7 @@ options:
         description:
         - The OSPF routing settings of the interface.
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             cost:
                 description:
                 - The path cost for this interface.

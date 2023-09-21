@@ -71,10 +71,7 @@ options:
       - IP address ranges which should be reserve and not distributed via DHCP.
       type: list
       elements: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         start:
           description: First IP address of reserved IP address range, inclusive.
           type: str
@@ -93,10 +90,7 @@ options:
       - Static IP address assignments to be distributed via DHCP by MAC address.
       type: list
       elements: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         mac:
           description: MAC address for fixed IP assignment binding.
           type: str
@@ -143,18 +137,12 @@ options:
         description:
         - Filename to boot from for DHCP boot
         type: str
-    dhcp_deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    dhcp_options:
         description:
         - List of DHCP option values
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             code:
                 description:
                 - DHCP option number.

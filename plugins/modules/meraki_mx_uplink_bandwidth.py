@@ -54,18 +54,12 @@ options:
       description:
       - Configuration of WAN1 uplink
       type: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+          suboptions:
             limit_up:
               description:
               - Maximum upload speed for interface
@@ -78,18 +72,12 @@ options:
       description:
       - Configuration of WAN2 uplink
       type: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+          suboptions:
             limit_up:
               description:
               - Maximum upload speed for interface
@@ -102,18 +90,12 @@ options:
       description:
       - Configuration of cellular uplink
       type: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         bandwidth_limits:
           description:
           - Structure for configuring bandwidth limits
           type: dict
-          subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+          suboptions:
             limit_up:
               description:
               - Maximum upload speed for interface

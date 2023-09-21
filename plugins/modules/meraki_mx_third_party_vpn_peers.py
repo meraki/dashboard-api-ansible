@@ -35,10 +35,7 @@ options:
       - The list of VPN peers.
       type: list
       elements: dict
-      subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+      suboptions:
         name:
           description:
           - The name of the VPN peer.
@@ -84,10 +81,7 @@ options:
           description:
           - Custom IPSec policies for the VPN peer. If not included and a preset has not been chosen, the default preset for IPSec policies will be used.
           type: dict
-          subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+          suboptions:
             child_lifetime:
               description:
               - The lifetime of the Phase 2 SA in seconds.

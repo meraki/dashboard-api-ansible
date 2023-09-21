@@ -52,10 +52,7 @@ options:
         type: list
         elements: dict
         default: []
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             name:
                 description:
                 - The name of the header template.

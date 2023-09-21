@@ -59,10 +59,7 @@ options:
     - List of actions the job should execute.
     type: list
     elements: dict
-    subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    suboptions:
       operation:
         description:
         - Operation type of action

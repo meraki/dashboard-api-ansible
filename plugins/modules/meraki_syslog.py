@@ -52,10 +52,7 @@ options:
         - List of syslog server settings
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             host:
                 description:
                 - IP address or hostname of Syslog server.

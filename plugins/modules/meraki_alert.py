@@ -44,10 +44,7 @@ options:
         description:
         - Properties for destinations when alert specific destinations aren't specified.
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             all_admins:
                 description:
                 - If true, all network admins will receive emails.
@@ -71,10 +68,7 @@ options:
         - Alert-specific configuration for each type.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             alert_type:
                 description:
                 - The type of alert.
@@ -93,10 +87,7 @@ options:
                 description:
                 - A hash of destinations for this specific alert.
                 type: dict
-                subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+                suboptions:
                     all_admins:
                         description:
                         - If true, all network admins will receive emails.

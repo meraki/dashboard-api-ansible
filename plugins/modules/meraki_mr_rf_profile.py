@@ -66,10 +66,7 @@ options:
         description:
         - Settings that will be enabled if selectionType is set to 'ap'.
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             mode:
                 description:
                 - Sets which RF band the AP will support.
@@ -84,10 +81,7 @@ options:
         description:
         - Settings related to 5Ghz band.
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             max_power:
                 description:
                 - Sets max power (dBm) of 5Ghz band.
@@ -148,10 +142,7 @@ options:
         description:
         - Settings related to 2.4Ghz band
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             max_power:
                 description:
                 - Sets max power (dBm) of 2.4Ghz band.

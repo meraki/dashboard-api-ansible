@@ -55,10 +55,7 @@ options:
         - List of 1:1 NAT rules.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             name:
                 description:
                 - A descriptive name for the rule.
@@ -81,10 +78,7 @@ options:
                 - The ports this mapping will provide access on, and the remote IPs that will be allowed access to the resource.
                 type: list
                 elements: dict
-                subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+                suboptions:
                     protocol:
                         description:
                         - Protocol to apply NAT rule to.
@@ -106,10 +100,7 @@ options:
         - List of 1:many NAT rules.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             public_ip:
                 description:
                 - The IP address that will be used to access the internal resource from the WAN.
@@ -124,10 +115,7 @@ options:
                 - List of associated port rules.
                 type: list
                 elements: dict
-                subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+                suboptions:
                     name:
                         description:
                         - A description of the rule.
@@ -160,10 +148,7 @@ options:
         - List of port forwarding rules.
         type: list
         elements: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             name:
                 description:
                 - A descriptive name for the rule.

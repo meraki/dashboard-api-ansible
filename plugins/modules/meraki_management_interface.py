@@ -59,10 +59,7 @@ options:
         - Management interface details for management interface.
         aliases: [mgmt1]
         type: dict
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             wan_enabled:
                 description:
                 - States whether the management interface is enabled.
@@ -103,10 +100,7 @@ options:
         - Management interface details for management interface.
         type: dict
         aliases: [mgmt2]
-        subdeprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+        suboptions:
             wan_enabled:
                 description:
                 - States whether the management interface is enabled.
