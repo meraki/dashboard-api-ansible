@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.2
+=======
+
+Bugfixes
+-------------
+
+- Updating documentation, yml fixes - Documentation Broken.
+
 v2.16.1
 =======
 
