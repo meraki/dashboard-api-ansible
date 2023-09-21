@@ -120,6 +120,7 @@ plugins/modules/meraki_mx_third_party_vpn_peers.py ansible-doc!skip
 plugins/modules/meraki_mx_uplink_bandwidth.py ansible-doc!skip
 plugins/modules/meraki_mx_vlan.py ansible-doc!skip
 plugins/modules/meraki_network.py ansible-doc!skip
+plugins/modules/meraki_network_settings.py ansible-doc!skip
 plugins/modules/meraki_organization.py ansible-doc!skip
 plugins/modules/meraki_snmp.py ansible-doc!skip
 plugins/modules/meraki_syslog.py ansible-doc!skip
