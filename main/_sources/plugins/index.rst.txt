@@ -106,19 +106,48 @@ Modules
 * :ref:`devices_wireless_radio_settings_info module <ansible_collections.cisco.meraki.devices_wireless_radio_settings_info_module>` -- Information module for devices \_wireless \_radio \_settings
 * :ref:`devices_wireless_status_info module <ansible_collections.cisco.meraki.devices_wireless_status_info_module>` -- Information module for devices \_wireless \_status
 * :ref:`meraki_action_batch module <ansible_collections.cisco.meraki.meraki_action_batch_module>` -- Manage Action Batch jobs within the Meraki Dashboard.
+* :ref:`meraki_admin module <ansible_collections.cisco.meraki.meraki_admin_module>` -- Manage administrators in the Meraki cloud
+* :ref:`meraki_alert module <ansible_collections.cisco.meraki.meraki_alert_module>` -- Manage alerts in the Meraki cloud
 * :ref:`meraki_config_template module <ansible_collections.cisco.meraki.meraki_config_template_module>` -- Manage configuration templates in the Meraki cloud
 * :ref:`meraki_device module <ansible_collections.cisco.meraki.meraki_device_module>` -- Manage devices in the Meraki cloud
 * :ref:`meraki_firewalled_services module <ansible_collections.cisco.meraki.meraki_firewalled_services_module>` -- Edit firewall policies for administrative network services
+* :ref:`meraki_management_interface module <ansible_collections.cisco.meraki.meraki_management_interface_module>` -- Configure Meraki management interfaces
+* :ref:`meraki_mr_l3_firewall module <ansible_collections.cisco.meraki.meraki_mr_l3_firewall_module>` -- Manage MR access point layer 3 firewalls in the Meraki cloud
+* :ref:`meraki_mr_l7_firewall module <ansible_collections.cisco.meraki.meraki_mr_l7_firewall_module>` -- Manage MR access point layer 7 firewalls in the Meraki cloud
+* :ref:`meraki_mr_radio module <ansible_collections.cisco.meraki.meraki_mr_radio_module>` -- Manage device radio settings for Meraki wireless networks
+* :ref:`meraki_mr_rf_profile module <ansible_collections.cisco.meraki.meraki_mr_rf_profile_module>` -- Manage RF profiles for Meraki wireless networks
 * :ref:`meraki_mr_settings module <ansible_collections.cisco.meraki.meraki_mr_settings_module>` -- Manage general settings for Meraki wireless networks
+* :ref:`meraki_mr_ssid module <ansible_collections.cisco.meraki.meraki_mr_ssid_module>` -- Manage wireless SSIDs in the Meraki cloud
+* :ref:`meraki_ms_access_list module <ansible_collections.cisco.meraki.meraki_ms_access_list_module>` -- Manage access lists for Meraki switches in the Meraki cloud
+* :ref:`meraki_ms_access_policies module <ansible_collections.cisco.meraki.meraki_ms_access_policies_module>` -- Manage Switch Access Policies in the Meraki cloud
+* :ref:`meraki_ms_l3_interface module <ansible_collections.cisco.meraki.meraki_ms_l3_interface_module>` -- Manage routed interfaces on MS switches
+* :ref:`meraki_ms_link_aggregation module <ansible_collections.cisco.meraki.meraki_ms_link_aggregation_module>` -- Manage link aggregations on MS switches
+* :ref:`meraki_ms_ospf module <ansible_collections.cisco.meraki.meraki_ms_ospf_module>` -- Manage OSPF configuration on MS switches
 * :ref:`meraki_ms_stack module <ansible_collections.cisco.meraki.meraki_ms_stack_module>` -- Modify switch stacking configuration in Meraki.
+* :ref:`meraki_ms_stack_l3_interface module <ansible_collections.cisco.meraki.meraki_ms_stack_l3_interface_module>` -- Manage routed interfaces on MS switches
 * :ref:`meraki_ms_storm_control module <ansible_collections.cisco.meraki.meraki_ms_storm_control_module>` -- Manage storm control configuration on a switch in the Meraki cloud
+* :ref:`meraki_ms_switchport module <ansible_collections.cisco.meraki.meraki_ms_switchport_module>` -- Manage switchports on a switch in the Meraki cloud
 * :ref:`meraki_mx_content_filtering module <ansible_collections.cisco.meraki.meraki_mx_content_filtering_module>` -- Edit Meraki MX content filtering policies
+* :ref:`meraki_mx_intrusion_prevention module <ansible_collections.cisco.meraki.meraki_mx_intrusion_prevention_module>` -- Manage intrustion prevention in the Meraki cloud
 * :ref:`meraki_mx_l2_interface module <ansible_collections.cisco.meraki.meraki_mx_l2_interface_module>` -- Configure MX layer 2 interfaces
+* :ref:`meraki_mx_l3_firewall module <ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module>` -- Manage MX appliance layer 3 firewalls in the Meraki cloud
+* :ref:`meraki_mx_l7_firewall module <ansible_collections.cisco.meraki.meraki_mx_l7_firewall_module>` -- Manage MX appliance layer 7 firewalls in the Meraki cloud
+* :ref:`meraki_mx_malware module <ansible_collections.cisco.meraki.meraki_mx_malware_module>` -- Manage Malware Protection in the Meraki cloud
+* :ref:`meraki_mx_nat module <ansible_collections.cisco.meraki.meraki_mx_nat_module>` -- Manage NAT rules in Meraki cloud
 * :ref:`meraki_mx_network_vlan_settings module <ansible_collections.cisco.meraki.meraki_mx_network_vlan_settings_module>` -- Manage VLAN settings for Meraki Networks
+* :ref:`meraki_mx_site_to_site_firewall module <ansible_collections.cisco.meraki.meraki_mx_site_to_site_firewall_module>` -- Manage MX appliance firewall rules for site-to-site VPNs
+* :ref:`meraki_mx_site_to_site_vpn module <ansible_collections.cisco.meraki.meraki_mx_site_to_site_vpn_module>` -- Manage AutoVPN connections in Meraki
+* :ref:`meraki_mx_static_route module <ansible_collections.cisco.meraki.meraki_mx_static_route_module>` -- Manage static routes in the Meraki cloud
+* :ref:`meraki_mx_third_party_vpn_peers module <ansible_collections.cisco.meraki.meraki_mx_third_party_vpn_peers_module>` -- Manage third party (IPSec) VPN peers for MX devices
+* :ref:`meraki_mx_uplink_bandwidth module <ansible_collections.cisco.meraki.meraki_mx_uplink_bandwidth_module>` -- Manage uplinks on Meraki MX appliances
+* :ref:`meraki_mx_vlan module <ansible_collections.cisco.meraki.meraki_mx_vlan_module>` -- Manage VLANs in the Meraki cloud
 * :ref:`meraki_network module <ansible_collections.cisco.meraki.meraki_network_module>` -- Manage networks in the Meraki cloud
-* :ref:`meraki_network_settings module <ansible_collections.cisco.meraki.meraki_network_settings_module>` -- 
+* :ref:`meraki_network_settings module <ansible_collections.cisco.meraki.meraki_network_settings_module>` -- Manage the settings of networks in the Meraki cloud
 * :ref:`meraki_organization module <ansible_collections.cisco.meraki.meraki_organization_module>` -- Manage organizations in the Meraki cloud
+* :ref:`meraki_snmp module <ansible_collections.cisco.meraki.meraki_snmp_module>` -- Manage organizations in the Meraki cloud
+* :ref:`meraki_syslog module <ansible_collections.cisco.meraki.meraki_syslog_module>` -- Manage syslog server settings in the Meraki cloud.
 * :ref:`meraki_webhook module <ansible_collections.cisco.meraki.meraki_webhook_module>` -- Manage webhooks configured in the Meraki cloud
+* :ref:`meraki_webhook_payload_template module <ansible_collections.cisco.meraki.meraki_webhook_payload_template_module>` -- Manage webhook payload templates for a network in the Meraki cloud
 * :ref:`networks module <ansible_collections.cisco.meraki.networks_module>` -- Resource module for networks
 * :ref:`networks_alerts_history_info module <ansible_collections.cisco.meraki.networks_alerts_history_info_module>` -- Information module for networks \_alerts \_history
 * :ref:`networks_alerts_settings module <ansible_collections.cisco.meraki.networks_alerts_settings_module>` -- Resource module for networks \_alerts \_settings
@@ -553,19 +582,48 @@ Modules
     devices_wireless_radio_settings_info_module
     devices_wireless_status_info_module
     meraki_action_batch_module
+    meraki_admin_module
+    meraki_alert_module
     meraki_config_template_module
     meraki_device_module
     meraki_firewalled_services_module
+    meraki_management_interface_module
+    meraki_mr_l3_firewall_module
+    meraki_mr_l7_firewall_module
+    meraki_mr_radio_module
+    meraki_mr_rf_profile_module
     meraki_mr_settings_module
+    meraki_mr_ssid_module
+    meraki_ms_access_list_module
+    meraki_ms_access_policies_module
+    meraki_ms_l3_interface_module
+    meraki_ms_link_aggregation_module
+    meraki_ms_ospf_module
     meraki_ms_stack_module
+    meraki_ms_stack_l3_interface_module
     meraki_ms_storm_control_module
+    meraki_ms_switchport_module
     meraki_mx_content_filtering_module
+    meraki_mx_intrusion_prevention_module
     meraki_mx_l2_interface_module
+    meraki_mx_l3_firewall_module
+    meraki_mx_l7_firewall_module
+    meraki_mx_malware_module
+    meraki_mx_nat_module
     meraki_mx_network_vlan_settings_module
+    meraki_mx_site_to_site_firewall_module
+    meraki_mx_site_to_site_vpn_module
+    meraki_mx_static_route_module
+    meraki_mx_third_party_vpn_peers_module
+    meraki_mx_uplink_bandwidth_module
+    meraki_mx_vlan_module
     meraki_network_module
     meraki_network_settings_module
     meraki_organization_module
+    meraki_snmp_module
+    meraki_syslog_module
     meraki_webhook_module
+    meraki_webhook_payload_template_module
     networks_module
     networks_alerts_history_info_module
     networks_alerts_settings_module
