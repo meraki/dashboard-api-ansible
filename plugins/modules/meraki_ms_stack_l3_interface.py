@@ -24,6 +24,7 @@ notes:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.networks_switch_stacks_routing_interfaces
 options:
     state:
         description:

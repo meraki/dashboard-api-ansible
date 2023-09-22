@@ -23,6 +23,7 @@ description:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers
 options:
     state:
       description:
