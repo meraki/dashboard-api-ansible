@@ -1,6 +1,3 @@
-plugins/modules/meraki_mx_network_vlan_settings.py validate-modules!skip
-plugins/modules/meraki_mx_site_to_site_firewall.py validate-modules!skip
-plugins/modules/meraki_mx_site_to_site_vpn.py validate-modules!skip
 plugins/modules/meraki_mx_static_route.py validate-modules!skip
 plugins/modules/meraki_mx_third_party_vpn_peers.py validate-modules!skip
 plugins/modules/meraki_mx_uplink_bandwidth.py validate-modules!skip
