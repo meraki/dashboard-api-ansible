@@ -195,7 +195,7 @@ from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki
 
 param_map = {'allowed_rules': 'allowedrules',
              'rule_id': 'ruleId',
-             'rule_message': 'message',
+             'rule_message': 'ruleMessage',
              'mode': 'mode',
              'protected_networks': 'protectedNetworks',
              'use_default': 'useDefault',
@@ -209,9 +209,7 @@ def main():
     # the module
 
     allowedrules_arg_spec = dict(rule_id=dict(type='str'),
-                                 rule_message=dict(type='str',
-                                                   aliases=['message'],
-                                                   deprecated_aliases=[dict(name='message', version='3.0.0', collection_name='cisco.meraki')]),
+                                 rule_message=dict(type='str'),
                                  )
 
     protected_nets_arg_spec = dict(use_default=dict(type='bool'),
