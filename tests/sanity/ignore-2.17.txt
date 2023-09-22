@@ -1,4 +1,3 @@
-plugins/modules/meraki_mx_uplink_bandwidth.py validate-modules!skip
 plugins/modules/meraki_mx_vlan.py validate-modules!skip
 plugins/modules/meraki_network.py validate-modules!skip
 plugins/modules/meraki_network_settings.py validate-modules!skip
