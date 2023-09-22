@@ -66,7 +66,6 @@ options:
                 - This is overwritten by the API.
                 - Formerly C(message) which was deprecated but still maintained as an alias.
                 type: str
-                aliases: [ message ]
                 version_added: "2.3.0"
     protected_networks:
         description:
