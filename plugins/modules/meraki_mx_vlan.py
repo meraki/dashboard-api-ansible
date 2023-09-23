@@ -226,8 +226,7 @@ EXAMPLES = r'''
     dhcp_handling: server
     dhcp_lease_time: 1 hour
     dhcp_boot_options_enabled: false
-    dhcp_deprecated:
-    suboptions:
+    dhcp_options:
       - code: 5
         type: ip
         value: 192.0.1.1
@@ -345,8 +344,7 @@ response:
       returned: success
       type: str
       sample: boot.txt
-    dhcp_deprecated:
-    suboptions:
+    dhcp_options:
       description: DHCP options.
       returned: success
       type: complex
