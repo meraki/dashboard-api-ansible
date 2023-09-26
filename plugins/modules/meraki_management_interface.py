@@ -26,6 +26,7 @@ notes:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.devices_management_interface
 options:
     state:
         description:

@@ -25,6 +25,7 @@ notes:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.networks_switch_access_control_lists
 options:
     state:
       description:

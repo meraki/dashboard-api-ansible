@@ -23,6 +23,7 @@ description: Module for managing a Switch Access Policies in the Meraki cloud
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.networks_switch_access_policies
 options:
     state:
         description:

@@ -26,6 +26,7 @@ notes:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.networks_appliance_vlans
 options:
     state:
       description:
@@ -225,10 +226,7 @@ EXAMPLES = r'''
     dhcp_handling: server
     dhcp_lease_time: 1 hour
     dhcp_boot_options_enabled: false
-    dhcp_deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    dhcp_options:
       - code: 5
         type: ip
         value: 192.0.1.1
@@ -346,10 +344,7 @@ response:
       returned: success
       type: str
       sample: boot.txt
-    dhcp_deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-options:
+    dhcp_options:
       description: DHCP options.
       returned: success
       type: complex

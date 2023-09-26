@@ -23,6 +23,7 @@ description:
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
+  alternative: cisco.meraki.networks_appliance_vlans_settings
 options:
     state:
         description:
