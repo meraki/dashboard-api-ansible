@@ -42,7 +42,7 @@ cisco.meraki.meraki_mr_l3_firewall module -- Manage MR access point layer 3 fire
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -61,7 +61,7 @@ DEPRECATED
 ----------
 :Removed in: version 3.0.0
 :Why: Updated modules released with increased functionality
-:Alternative: 
+:Alternative: cisco.meraki.networks\_appliance\_firewall\_l3\_firewall\_rules
 
 Synopsis
 --------

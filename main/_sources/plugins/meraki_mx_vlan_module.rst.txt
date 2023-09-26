@@ -42,7 +42,7 @@ cisco.meraki.meraki_mx_vlan module -- Manage VLANs in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -61,7 +61,7 @@ DEPRECATED
 ----------
 :Removed in: version 3.0.0
 :Why: Updated modules released with increased functionality
-:Alternative: 
+:Alternative: cisco.meraki.networks\_appliance\_vlans
 
 Synopsis
 --------
@@ -1653,10 +1653,7 @@ Examples
         dhcp_handling: server
         dhcp_lease_time: 1 hour
         dhcp_boot_options_enabled: false
-        dhcp_deprecated:
-      removed_in: '3.0.0'
-      why: Updated modules released with increased functionality
-    options:
+        dhcp_options:
           - code: 5
             type: ip
             value: 192.0.1.1
@@ -1678,6 +1675,1084 @@ Examples
 
 
 .. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response:
+
+      .. rst-class:: ansible-option-title
+
+      **response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Information about the organization which was created or modified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/appliance_ip"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/appliance_ip:
+
+      .. rst-class:: ansible-option-title
+
+      **appliance_ip**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/appliance_ip" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP address of Meraki appliance in the VLAN
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.1"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_boot_filename"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_boot_filename:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_boot_filename**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_boot_filename" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Filename for boot file.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"boot.txt"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_boot_next_server"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_boot_next_server:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_boot_next_server**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_boot_next_server" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      DHCP boot option to direct boot clients to the server to load the boot file from.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.2"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_boot_options_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_boot_options_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_boot_options_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_boot_options_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether DHCP boot options are enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`false`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_handling"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_handling:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_handling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_handling" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Status of DHCP server on VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Run a DHCP server"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_lease_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_lease_time:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_lease_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_lease_time" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      DHCP lease time when server is active.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"1 day"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_options"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_options:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcp_options**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_options" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      DHCP options.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_options/code"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_options/code:
+
+      .. rst-class:: ansible-option-title
+
+      **code**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_options/code" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Code for DHCP option.
+
+      Integer between 2 and 254.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`43`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_options/type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_options/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_options/type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type for DHCP option.
+
+      Choices are \ :literal:`text`\ , \ :literal:`ip`\ , \ :literal:`hex`\ , \ :literal:`integer`\ .
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"text"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dhcp_options/value"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dhcp_options/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dhcp_options/value" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Value for the DHCP option.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.2"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/dnsnamservers"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/dnsnamservers:
+
+      .. rst-class:: ansible-option-title
+
+      **dnsnamservers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/dnsnamservers" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP address or Meraki defined DNS servers which VLAN should use by default
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"upstream\_dns"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/fixed_ip_assignments"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/fixed_ip_assignments:
+
+      .. rst-class:: ansible-option-title
+
+      **fixed_ip_assignments**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/fixed_ip_assignments" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of MAC addresses which have IP addresses assigned.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/fixed_ip_assignments/macaddress"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/fixed_ip_assignments/macaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **macaddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/fixed_ip_assignments/macaddress" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAC address which has IP address assigned to it. Key value is the actual MAC address.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/fixed_ip_assignments/macaddress/ip"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/fixed_ip_assignments/macaddress/ip:
+
+      .. rst-class:: ansible-option-title
+
+      **ip**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/fixed_ip_assignments/macaddress/ip" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP address which is assigned to the MAC address.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.4"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/fixed_ip_assignments/macaddress/name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/fixed_ip_assignments/macaddress/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/fixed_ip_assignments/macaddress/name" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Descriptive name for binding.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"fixed\_ip"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/id" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN ID number.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`2`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/name" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Descriptive name of VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"TestVLAN"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/networkId" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ID number of Meraki network which VLAN is associated to.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"N\_12345"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/reserved_ip_ranges"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/reserved_ip_ranges:
+
+      .. rst-class:: ansible-option-title
+
+      **reserved_ip_ranges**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/reserved_ip_ranges" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of IP address ranges which are reserved for static assignment.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/reserved_ip_ranges/comment"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/reserved_ip_ranges/comment:
+
+      .. rst-class:: ansible-option-title
+
+      **comment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/reserved_ip_ranges/comment" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Description for IP address reservation.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"reserved\_range"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/reserved_ip_ranges/end"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/reserved_ip_ranges/end:
+
+      .. rst-class:: ansible-option-title
+
+      **end**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/reserved_ip_ranges/end" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Last IP address in reservation range.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.10"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/reserved_ip_ranges/start"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/reserved_ip_ranges/start:
+
+      .. rst-class:: ansible-option-title
+
+      **start**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/reserved_ip_ranges/start" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      First IP address in reservation range.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.5"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-response/subnet"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_vlan_module__return-response/subnet:
+
+      .. rst-class:: ansible-option-title
+
+      **subnet**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-response/subnet" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      CIDR notation IP subnet of VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.0/24"`
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 
 ..  Status (Presently only deprecated)
@@ -1714,18 +2789,4 @@ Collection links
   </p>
 
 .. Parsing errors
-
-There were some errors parsing the documentation for this plugin.  Please file a bug with the `cisco.meraki collection <https://github.com/meraki/dashboard-api-ansible/issues>`_.
-
-The errors were:
-
-* ::
-
-        Unable to normalize meraki_mx_vlan: return due to: 3 validation errors for PluginReturnSchema
-        return -> response -> contains -> dhcp_deprecated
-          none is not an allowed value (type=type_error.none.not_allowed)
-        return -> response -> removed_in
-          extra fields not permitted (type=value_error.extra)
-        return -> response -> why
-          extra fields not permitted (type=value_error.extra)
 
