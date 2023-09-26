@@ -1,0 +1,2369 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_switch_access_policies_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.networks_switch_access_policies module -- Resource module for networks \_switch \_accesspolicies
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.3).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.networks_switch_access_policies_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.networks_switch_access_policies`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.16.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource networks \_switch \_accesspolicies.
+- Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+
+- Delete an access policy for a switch network.
+- Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.networks_switch_access_policies_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-accessPolicyNumber"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-accesspolicynumber:
+
+      .. rst-class:: ansible-option-title
+
+      **accessPolicyNumber**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-accessPolicyNumber" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AccessPolicyNumber path parameter. Access policy number.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-accessPolicyType"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-accesspolicytype:
+
+      .. rst-class:: ansible-option-title
+
+      **accessPolicyType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-accessPolicyType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Access Type of the policy. Automatically 'Hybrid authentication' when hostMode is 'Multi-Domain'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot1x"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-dot1x:
+
+      .. rst-class:: ansible-option-title
+
+      **dot1x**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot1x" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      802.1x Settings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot1x/controlDirection"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-dot1x/controldirection:
+
+      .. rst-class:: ansible-option-title
+
+      **controlDirection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot1x/controlDirection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Supports either 'both' or 'inbound'. Set to 'inbound' to allow unauthorized egress on the switchport. Set to 'both' to control both traffic directions with authorization. Defaults to 'both'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-guestPortBouncing"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-guestportbouncing:
+
+      .. rst-class:: ansible-option-title
+
+      **guestPortBouncing**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-guestPortBouncing" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-guestVlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-guestvlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **guestVlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-guestVlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID for the guest VLAN allow unauthorized devices access to limited network resources.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hostMode"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-hostmode:
+
+      .. rst-class:: ansible-option-title
+
+      **hostMode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hostMode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Choose the Host Mode for the access policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-increaseAccessSpeed"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-increaseaccessspeed:
+
+      .. rst-class:: ansible-option-title
+
+      **increaseAccessSpeed**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-increaseAccessSpeed" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enabling this option will make switches execute 802.1X and MAC-bypass authentication simultaneously so that clients authenticate faster. Only required when accessPolicyType is 'Hybrid Authentication.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of the access policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkId path parameter. Network ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius:
+
+      .. rst-class:: ansible-option-title
+
+      **radius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Object for RADIUS Settings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth:
+
+      .. rst-class:: ansible-option-title
+
+      **criticalAuth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Critical auth settings for when authentication is rejected by the RADIUS server.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataVlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datavlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **dataVlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataVlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/suspendPortBounce"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/suspendportbounce:
+
+      .. rst-class:: ansible-option-title
+
+      **suspendPortBounce**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/suspendPortBounce" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable to suspend port bounce when RADIUS servers are unreachable.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceVlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicevlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **voiceVlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceVlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthVlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthvlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **failedAuthVlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/failedAuthVlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/reAuthenticationInterval"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/reauthenticationinterval:
+
+      .. rst-class:: ansible-option-title
+
+      **reAuthenticationInterval**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/reAuthenticationInterval" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Re-authentication period in seconds. Will be null if hostMode is Multi-Auth.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingEnabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingenabled:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusAccountingEnabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingEnabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable to send start, interim-update and stop messages to a configured RADIUS accounting server for tracking connected clients.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusAccountingServers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of RADIUS accounting servers to require connecting devices to authenticate against before granting network access.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/host"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Public IP address of the RADIUS accounting server.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/port"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/port:
+
+      .. rst-class:: ansible-option-title
+
+      **port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UDP port that the RADIUS Accounting server listens on for access requests.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/secret"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/secret:
+
+      .. rst-class:: ansible-option-title
+
+      **secret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/secret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS client shared secret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusCoaSupportEnabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiuscoasupportenabled:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusCoaSupportEnabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusCoaSupportEnabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Change of authentication for RADIUS re-authentication and disconnection.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusGroupAttribute"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusgroupattribute:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusGroupAttribute**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusGroupAttribute" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Acceptable values are \`""\` for None, or \`"11"\` for Group Policies ACL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusServers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of RADIUS servers to require connecting devices to authenticate against before granting network access.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/host"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Public IP address of the RADIUS server.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/port"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/port:
+
+      .. rst-class:: ansible-option-title
+
+      **port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UDP port that the RADIUS server listens on for access requests.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/secret"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/secret:
+
+      .. rst-class:: ansible-option-title
+
+      **secret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/secret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS client shared secret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusTestingEnabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiustestingenabled:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusTestingEnabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusTestingEnabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-urlRedirectWalledGardenEnabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-urlredirectwalledgardenenabled:
+
+      .. rst-class:: ansible-option-title
+
+      **urlRedirectWalledGardenEnabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-urlRedirectWalledGardenEnabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-urlRedirectWalledGardenRanges"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-urlredirectwalledgardenranges:
+
+      .. rst-class:: ansible-option-title
+
+      **urlRedirectWalledGardenRanges**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-urlRedirectWalledGardenRanges" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      IP address ranges, in CIDR notation, to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-voiceVlanClients"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-voicevlanclients:
+
+      .. rst-class:: ansible-option-title
+
+      **voiceVlanClients**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-voiceVlanClients" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      CDP/LLDP capable voice clients will be able to use this VLAN. Automatically true when hostMode is 'Multi-Domain'.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are switch.Switch.create\_network\_switch\_access\_policy, switch.Switch.delete\_network\_switch\_access\_policy, switch.Switch.update\_network\_switch\_access\_policy,
+   - Paths used are post /networks/{networkId}/switch/accessPolicies, delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}, put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy <https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy>`_
+       Complete reference of the createNetworkSwitchAccessPolicy API.
+   `Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy <https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy>`_
+       Complete reference of the deleteNetworkSwitchAccessPolicy API.
+   `Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy <https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy>`_
+       Complete reference of the updateNetworkSwitchAccessPolicy API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.meraki.networks_switch_access_policies:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        accessPolicyType: Hybrid authentication
+        dot1x:
+          controlDirection: inbound
+        guestPortBouncing: false
+        guestVlanId: 100
+        hostMode: Single-Host
+        increaseAccessSpeed: false
+        name: 'Access policy #1'
+        networkId: string
+        radius:
+          criticalAuth:
+            dataVlanId: 100
+            suspendPortBounce: true
+            voiceVlanId: 100
+          failedAuthVlanId: 100
+          reAuthenticationInterval: 120
+        radiusAccountingEnabled: true
+        radiusAccountingServers:
+        - host: 1.2.3.4
+          port: 22
+          secret: secret
+        radiusCoaSupportEnabled: false
+        radiusGroupAttribute: '11'
+        radiusServers:
+        - host: 1.2.3.4
+          port: 22
+          secret: secret
+        radiusTestingEnabled: false
+        urlRedirectWalledGardenEnabled: true
+        urlRedirectWalledGardenRanges:
+        - 192.168.1.0/24
+        voiceVlanClients: true
+
+    - name: Update by id
+      cisco.meraki.networks_switch_access_policies:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        accessPolicyNumber: string
+        accessPolicyType: Hybrid authentication
+        dot1x:
+          controlDirection: inbound
+        guestPortBouncing: false
+        guestVlanId: 100
+        hostMode: Single-Host
+        increaseAccessSpeed: false
+        name: 'Access policy #1'
+        networkId: string
+        radius:
+          criticalAuth:
+            dataVlanId: 100
+            suspendPortBounce: true
+            voiceVlanId: 100
+          failedAuthVlanId: 100
+          reAuthenticationInterval: 120
+        radiusAccountingEnabled: true
+        radiusAccountingServers:
+        - host: 1.2.3.4
+          port: 22
+          secret: secret
+        radiusCoaSupportEnabled: false
+        radiusGroupAttribute: '11'
+        radiusServers:
+        - host: 1.2.3.4
+          port: 22
+          secret: secret
+        radiusTestingEnabled: false
+        urlRedirectWalledGardenEnabled: true
+        urlRedirectWalledGardenRanges:
+        - 192.168.1.0/24
+        voiceVlanClients: true
+
+    - name: Delete by id
+      cisco.meraki.networks_switch_access_policies:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: absent
+        accessPolicyNumber: string
+        networkId: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyType": "string", "dot1x": {"controlDirection": "string"}, "guestPortBouncing": true, "guestVlanId": 0, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"criticalAuth": {"dataVlanId": 0, "suspendPortBounce": true, "voiceVlanId": 0}, "failedAuthVlanId": 0, "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "port": 0}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "port": 0}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
