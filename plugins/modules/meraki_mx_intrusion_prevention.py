@@ -66,6 +66,7 @@ options:
                 - This is overwritten by the API.
                 - Formerly C(message) which was deprecated but still maintained as an alias.
                 type: str
+                aliases: [ message ]
                 version_added: "2.3.0"
     protected_networks:
         description:
@@ -195,7 +196,7 @@ from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki
 
 param_map = {'allowed_rules': 'allowedrules',
              'rule_id': 'ruleId',
-             'rule_message': 'ruleMessage',
+             'rule_message': 'message',
              'mode': 'mode',
              'protected_networks': 'protectedNetworks',
              'use_default': 'useDefault',
@@ -209,7 +210,9 @@ def main():
     # the module
 
     allowedrules_arg_spec = dict(rule_id=dict(type='str'),
-                                 rule_message=dict(type='str'),
+                                 rule_message=dict(type='str',
+                                                   aliases=['message'],
+                                                   deprecated_aliases=[dict(name='message', version='3.0.0', collection_name='cisco.meraki')]),
                                  )
 
     protected_nets_arg_spec = dict(use_default=dict(type='bool'),
