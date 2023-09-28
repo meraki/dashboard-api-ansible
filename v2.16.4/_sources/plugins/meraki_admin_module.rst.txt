@@ -1,0 +1,1824 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_admin_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.meraki_admin module -- Manage administrators in the Meraki cloud
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.4).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.meraki_admin`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: cisco.meraki.organizations\_admins
+
+Synopsis
+--------
+
+.. Description
+
+- Allows for creation, management, and visibility into administrators within Meraki.
+
+
+.. Aliases
+
+
+.. Requirements
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-auth_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-auth_key:
+
+      .. rst-class:: ansible-option-title
+
+      **auth_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-email"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-email:
+
+      .. rst-class:: ansible-option-title
+
+      **email**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-email" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Email address for the dashboard administrator.
+
+      Email cannot be updated.
+
+      Required when creating or editing an administrator.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-host"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname for Meraki dashboard.
+
+      Can be used to access regional Meraki environments, such as China.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"api.meraki.com"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-internal_error_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-internal_error_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **internal_error_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if server returns an internal server error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of the dashboard administrator.
+
+      Required when creating a new administrator.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networks"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-networks:
+
+      .. rst-class:: ansible-option-title
+
+      **networks**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networks" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of networks the administrator has privileges on.
+
+      When creating a new administrator, \ :literal:`org\_name`\ , \ :literal:`network`\ , or \ :literal:`tags`\  must be specified.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networks/access"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-networks/access:
+
+      .. rst-class:: ansible-option-title
+
+      **access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networks/access" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The privilege of the dashboard administrator on the network.
+
+      Valid options are \ :literal:`full`\ , \ :literal:`read-only`\ , or \ :literal:`none`\ .
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networks/id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-networks/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networks/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network ID for which administrator should have privileges assigned.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networks/network"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-networks/network:
+
+      .. rst-class:: ansible-option-title
+
+      **network**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networks/network" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network name for which administrator should have privileges assigned.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_access"></div>
+        <div class="ansibleOptionAnchor" id="parameter-orgAccess"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-org_access:
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-orgaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **org_access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_access" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: orgAccess`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Privileges assigned to the administrator in the organization.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"full"`
+      - :ansible-option-choices-entry:`"none"`
+      - :ansible-option-choices-entry:`"read-only"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-org_id:
+
+      .. rst-class:: ansible-option-title
+
+      **org_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-organization"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-org_name:
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-organization:
+
+      .. rst-class:: ansible-option-title
+
+      **org_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: organization`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of organization.
+
+      Used when \ :literal:`name`\  should refer to another object.
+
+      When creating a new administrator, \ :literal:`org\_name`\ , \ :literal:`network`\ , or \ :literal:`tags`\  must be specified.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_format"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-output_format:
+
+      .. rst-class:: ansible-option-title
+
+      **output_format**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"snakecase"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"camelcase"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_level"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-output_level:
+
+      .. rst-class:: ansible-option-title
+
+      **output_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set amount of debug output during module execution.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"debug"`
+      - :ansible-option-choices-entry-default:`"normal"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rate_limit_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-rate_limit_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **rate_limit_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if rate limiter is triggered.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`165`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Create or modify, or delete an organization
+
+      If \ :literal:`state`\  is \ :literal:`absent`\ , name takes priority over email if both are specified.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"absent"`
+      - :ansible-option-choices-entry:`"present"`
+      - :ansible-option-choices-entry:`"query"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tags"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-tags:
+
+      .. rst-class:: ansible-option-title
+
+      **tags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tags" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Tags the administrator has privileges on.
+
+      When creating a new administrator, \ :literal:`org\_name`\ , \ :literal:`network`\ , or \ :literal:`tags`\  must be specified.
+
+      If \ :literal:`none`\  is specified, \ :literal:`network`\  or \ :literal:`tags`\  must be specified.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tags/access"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-tags/access:
+
+      .. rst-class:: ansible-option-title
+
+      **access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tags/access" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The privilege of the dashboard administrator for the tag.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tags/tag"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-tags/tag:
+
+      .. rst-class:: ansible-option-title
+
+      **tag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tags/tag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Object tag which privileges should be assigned.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Time to timeout for HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_https"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-use_https:
+
+      .. rst-class:: ansible-option-title
+
+      **use_https**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+
+      Only useful for internal Meraki developers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-use_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **use_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to validate HTTP certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - Some of the options are likely only used for developers within Meraki.
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
+   - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Query information about all administrators associated to the organization
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: query
+      delegate_to: localhost
+
+    - name: Query information about a single administrator by name
+      meraki_admin:
+        auth_key: abc12345
+        org_id: 12345
+        state: query
+        name: Jane Doe
+
+    - name: Query information about a single administrator by email
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: query
+        email: jane@doe.com
+
+    - name: Create new administrator with organization access
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: present
+        name: Jane Doe
+        org_access: read-only
+        email: jane@doe.com
+
+    - name: Create new administrator with organization access
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: present
+        name: Jane Doe
+        org_access: read-only
+        email: jane@doe.com
+
+    - name: Create a new administrator with organization access
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: present
+        name: Jane Doe
+        org_access: read-only
+        email: jane@doe.com
+
+    - name: Revoke access to an organization for an administrator
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: absent
+        email: jane@doe.com
+
+    - name: Create a new administrator with full access to two tags
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: present
+        name: Jane Doe
+        orgAccess: read-only
+        email: jane@doe.com
+        tags:
+            - tag: tenant
+              access: full
+            - tag: corporate
+              access: read-only
+
+    - name: Create a new administrator with full access to a network
+      meraki_admin:
+        auth_key: abc12345
+        org_name: YourOrg
+        state: present
+        name: Jane Doe
+        orgAccess: read-only
+        email: jane@doe.com
+        networks:
+            - id: N_12345
+              access: full
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of administrators.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/account_status"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/account_status:
+
+      .. rst-class:: ansible-option-title
+
+      **account_status**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/account_status" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Status of account.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"ok"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/email"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/email:
+
+      .. rst-class:: ansible-option-title
+
+      **email**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/email" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Email address of administrator.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"your@email.com"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/has_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/has_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **has_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/has_api_key" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Defines whether administrator has an API assigned to their account.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`false`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/id" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique identification number of administrator.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"1234567890"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/last_active"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/last_active:
+
+      .. rst-class:: ansible-option-title
+
+      **last_active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/last_active" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Date and time of time the administrator was active within Dashboard.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"2019-01-28 14:58:56 -0800"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/name" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Given name of administrator.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"John Doe"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/networks"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/networks:
+
+      .. rst-class:: ansible-option-title
+
+      **networks**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/networks" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of networks administrator has access on.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/networks/access"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/networks/access:
+
+      .. rst-class:: ansible-option-title
+
+      **access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/networks/access" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Access level of administrator. Options are 'full', 'read-only', or 'none'.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` when network permissions are set
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"read-only"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/networks/id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/networks/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/networks/id" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The network ID.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` when network permissions are set
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"N\_0123456789"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/org_access"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/org_access:
+
+      .. rst-class:: ansible-option-title
+
+      **org_access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/org_access" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The privilege of the dashboard administrator on the organization. Options are 'full', 'read-only', or 'none'.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"full"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/tags"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/tags:
+
+      .. rst-class:: ansible-option-title
+
+      **tags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/tags" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Tags the administrator has access on.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/tags/access"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/tags/access:
+
+      .. rst-class:: ansible-option-title
+
+      **access**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/tags/access" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Access level of administrator. Options are 'full', 'read-only', or 'none'.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` when tag permissions are set
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"full"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/tags/tag"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/tags/tag:
+
+      .. rst-class:: ansible-option-title
+
+      **tag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/tags/tag" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Tag name.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` when tag permissions are set
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"production"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_factor_auth_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_admin_module__return-data/two_factor_auth_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **two_factor_auth_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_factor_auth_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enabled state of two-factor authentication for administrator.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`false`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Kevin Breit (@kbreit)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
