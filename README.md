@@ -1,10 +1,60 @@
-# Ansible Collection - cisco.meraki
+# Ansible Modules for Meraki
 
-## Ansible Modules for Meraki
+The Meraki-Ansible project provides an Ansible collection for managing and automating your Cisco Meraki environment. It consists of a set of modules and roles for performing tasks related to Meraki.
 
-The meraki-ansible project provides an Ansible collection for managing and automating your Cisco Meraki environment. It consists of a set of modules and roles for performing tasks related to Meraki.
+# Quick Start Guide
 
-This collection has been tested and supports Cisco Meraki v1.33.0
+## Installation
+1. Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
+```
+pip install ansible
+```
+
+2. Python Meraki SDK must be installed
+```
+pip install meraki
+```
+
+3. Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
+```
+ansible-galaxy collection install cisco.meraki -f
+```
+## Initial Configuration
+
+1. First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=6bec40cf957de430a6f1f2baa056b99a4fac9ea0`, or create a `credentials.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml) file.
+**Note:** Storing your API key in an unencrypted text file is not recommended for security reasons.
+2. Create a `hosts` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/hosts)) file that uses `[meraki_servers]` with your Cisco Meraki Settings:
+```
+[meraki_servers]
+meraki_server
+```
+3. Running your first "Hello, world" in Ansible
+Create a playbook `who_am_i.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)):
+```
+---
+- hosts: meraki_servers
+  gather_facts: false
+  tasks:
+    - name: Get my administered identities
+      cisco.meraki.administered_identities_me_info:
+      register: result
+
+    - name: Show result
+      ansible.builtin.debug:
+        msg: "{{ result }}"
+```
+This is a simple playbook that will (1) get the information about the Meraki admin user the API key belongs to and (2) print the information on the screen.
+
+Execute the playbook:
+```
+ansible-playbook -i hosts who_am_i.yml
+```
+4. Congratulations! You have just run your first Ansible playbook!
+
+- - -
+# Detailed Information
+
+This collection has been tested and supports Cisco Meraki Dashboard API v1.33.0
 
 *Note: This collection is not compatible with versions of Ansible before v2.14.*
 
@@ -18,100 +68,13 @@ Other versions of this collection have support for previous Cisco Meraki version
 
 *Notes*:
 
-
-1. The "Python 'meraki' SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
+1. The "Python `meraki` SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
 2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
-
-## Installing according to Compatibility Matrix
-
-For example, for Cisco Meraki 1.33.0, it is recommended to use Ansible "cisco.meraki" v1.0.0 and Python "meraki DashboardAPI" v1.33.0.
-
-To get the Python Meraki SDK v1.33.0 in a fresh development environment:
-```
-pip install meraki
-```
-
-To get the Ansible collection v1.0.0 in a fresh development environment:
-```
-ansible-galaxy collection install cisco.meraki -f
-```
 
 ## Requirements
 - Ansible >= 2.9
 - [Python Meraki SDK](https://github.com/meraki/dashboard-api-python) v1.33.0 or newer
 - Python >= 3.6, as the Meraki SDK doesn't support Python version 2.x
-
-## Install
-Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
-```
-pip install ansible
-```
-
-Python Meraki SDK must be installed
-```
-pip install meraki
-```
-
-Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
-```
-ansible-galaxy collection install cisco.meraki -f
-```
-## Use
-First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml) file.
-**Note:** Storing your API key in an unencrypted text file is not recommended for security reasons.
-```
----
-meraki_api_key: "ABC"
-meraki_base_url: "https://api.meraki.com/api/v1"
-meraki_single_request_timeout: ""
-meraki_certificate_path: ""
-meraki_requests_proxy: True
-meraki_wait_on_rate_limit: 60
-meraki_nginx_429_retry_wait_time: 60
-meraki_action_batch_retry_wait_time: 60
-meraki_retry_4xx_error: False
-meraki_retry_4xx_error_wait_time: 60
-meraki_maximum_retries: 2
-meraki_output_log: True
-meraki_log_file_prefix: "meraki_api_"
-meraki_log_path: ""
-meraki_print_console: True
-meraki_suppress_logging: False
-meraki_simulate: False
-meraki_be_geo_id: ""
-meraki_caller: ""
-meraki_use_iterator_for_get_pages: False
-meraki_inherit_logging_config: False
-```
-
-Create a `hosts` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/hosts)) file that uses `[meraki_servers]` with your Cisco Meraki Settings:
-```
-[meraki_servers]
-meraki_server
-```
-
-Then, create a playbook `myplaybook.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
-```
----
-- hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Get all administered _identities _me
-      cisco.meraki.administered_identities_me_info:
-        meraki_suppress_logging: true
-      register: result
-
-```
-
-Execute the playbook:
-```
-ansible-playbook -i hosts myplaybook.yml
-```
-In the `playbooks` [directory](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/) you can find more examples and use cases.
-
-### See Also:
-
-* [Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
 
 ## Attention macOS users
 
