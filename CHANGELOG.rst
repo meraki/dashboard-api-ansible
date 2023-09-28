@@ -4,6 +4,22 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.4
+=======
+
+Bugfixes
+-------------
+
+- cisco.meraki.networks_devices_claim - got an unexpected keyword argument 'network_id', bug with parameter naming.
+
+v2.16.3
+=======
+
+Bugfixes
+-------------
+
+- Removing ignores.
+
 v2.16.2
 =======
 
