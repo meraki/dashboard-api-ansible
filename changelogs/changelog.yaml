@@ -885,5 +885,5 @@ releases:
   2.16.4:
     changes:
       bugfixes:
-      -  cisco.meraki.networks_devices_claim - got an unexpected keyword argument 'network_id', bug with parameter naming.
+      - cisco.meraki.networks_devices_claim - got an unexpected keyword argument 'network_id', bug with parameter naming.
     release_date: '2023-09-28'
