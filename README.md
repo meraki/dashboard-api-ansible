@@ -91,6 +91,12 @@ If that's the case try setting this environment variable:
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
 
+## Additional Resources
+1. [Meraki's Ansible Collection Documentation](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
+2. [Meraki Dashboard API Documentation](https://meraki.io/api)
+3. [DevNet Learning Lab](https://developer.cisco.com/learning/labs/meraki-dashboard-ansible/introduction/)
+4. [DevNet Sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology)
+
 ## Contributing to this collection
 
 Ongoing development efforts and contributions to this collection are tracked as issues in this repository.
