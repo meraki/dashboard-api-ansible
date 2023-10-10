@@ -887,3 +887,8 @@ releases:
       bugfixes:
       - cisco.meraki.networks_devices_claim - got an unexpected keyword argument 'network_id', bug with parameter naming.
     release_date: '2023-09-28'
+  2.16.5:
+    changes:
+      bugfixes:
+      - cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
+    release_date: '2023-10-10'
