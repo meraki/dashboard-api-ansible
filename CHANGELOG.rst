@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.5
+=======
+
+Bugfixes
+-------------
+
+- cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
+
 v2.16.4
 =======
 

@@ -152,7 +152,7 @@ class OrganizationsLoginSecurity(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("organization_id")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
