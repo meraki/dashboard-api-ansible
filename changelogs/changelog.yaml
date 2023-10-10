@@ -890,5 +890,5 @@ releases:
   2.16.5:
     changes:
       bugfixes:
-      -  cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
+      - cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
     release_date: '2023-10-10'
