@@ -1,0 +1,1485 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules module -- Resource module for networks \_appliance \_firewall \_onetomanynatrules
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.6).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.16.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation update of the resource networks \_appliance \_firewall \_onetomanynatrules.
+- Set the 1 Many NAT mapping rules for an MX network.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkId path parameter. Network ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      An array of 1 Many nat rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules:
+
+      .. rst-class:: ansible-option-title
+
+      **portRules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of associated forwarding rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/allowedIps"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/allowedips:
+
+      .. rst-class:: ansible-option-title
+
+      **allowedIps**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/allowedIps" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Remote IP addresses or ranges that are permitted to access the internal resource via this port forwarding rule, or 'any'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/localIp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/localip:
+
+      .. rst-class:: ansible-option-title
+
+      **localIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/localIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Local IP address to which traffic will be forwarded.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/localPort"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/localport:
+
+      .. rst-class:: ansible-option-title
+
+      **localPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/localPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Destination port of the forwarded traffic that will be sent from the MX to the specified host on the LAN. If you simply wish to forward the traffic without translating the port, this should be the same as the Public port.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A description of the rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      'tcp' or 'udp'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/portRules/publicPort"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/portrules/publicport:
+
+      .. rst-class:: ansible-option-title
+
+      **publicPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/portRules/publicPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Destination port of the traffic that is arriving on the WAN.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/publicIp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/publicip:
+
+      .. rst-class:: ansible-option-title
+
+      **publicIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/publicIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The IP address that will be used to access the internal resource from the WAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/uplink"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__parameter-rules/uplink:
+
+      .. rst-class:: ansible-option-title
+
+      **uplink**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/uplink" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The physical WAN interface on which the traffic will arrive ('internet1' or, if available, 'internet2').
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are appliance.Appliance.update\_network\_appliance\_firewall\_one\_to\_many\_nat\_rules,
+   - Paths used are put /networks/{networkId}/appliance/firewall/oneToManyNatRules,
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToManyNatRules <https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-many-nat-rules>`_
+       Complete reference of the updateNetworkApplianceFirewallOneToManyNatRules API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update all
+      cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        networkId: string
+        rules:
+        - portRules:
+          - allowedIps:
+            - any
+            localIp: 192.168.128.1
+            localPort: '443'
+            name: Rule 1
+            protocol: tcp
+            publicPort: '9443'
+          - allowedIps:
+            - 10.82.110.0/24
+            - 10.82.111.0/24
+            localIp: 192.168.128.1
+            localPort: '80'
+            name: Rule 2
+            protocol: tcp
+            publicPort: '8080'
+          publicIp: 146.11.11.13
+          uplink: internet1
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
