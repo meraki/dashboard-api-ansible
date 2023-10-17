@@ -902,3 +902,8 @@ releases:
       bugfixes:
       - Sanity fixes.
     release_date: '2023-10-17'
+  2.16.8:
+    changes:
+      bugfixes:
+      - Returning requires_ansible to 2.9.10
+    release_date: '2023-10-17'
