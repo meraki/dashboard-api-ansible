@@ -897,3 +897,8 @@ releases:
       bugfixes:
       - runtime updated requires_ansible from 2.9.10 to '>=2.14.0'.
     release_date: '2023-10-17'
+  2.16.7:
+    changes:
+      bugfixes:
+      - Sanity fixes.
+    release_date: '2023-10-17'
