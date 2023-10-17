@@ -892,3 +892,8 @@ releases:
       bugfixes:
       - cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
     release_date: '2023-10-10'
+  2.16.6:
+    changes:
+      bugfixes:
+      - runtime updated requires_ansible from 2.9.10 to '>=2.14.0'.
+    release_date: '2023-10-17'
