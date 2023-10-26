@@ -4,6 +4,15 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.10
+=======
+
+Bugfixes
+-------------
+
+- Returning requires_ansible to >=2.14.0
+- Bad naming `networkId` parameter in `networks_devices_remove` and `networks_devices_claim_vmx`
+
 v2.16.5
 =======
 
