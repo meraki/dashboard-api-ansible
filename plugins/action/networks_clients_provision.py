@@ -74,7 +74,7 @@ class ActionModule(ActionBase):
             groupPolicyId=params.get("groupPolicyId"),
             policiesBySecurityAppliance=params.get("policiesBySecurityAppliance"),
             policiesBySsid=params.get("policiesBySsid"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 
