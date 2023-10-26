@@ -1,0 +1,1836 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers module -- Resource module for organizations \_appliance \_vpn \_thirdpartyvpnpeers
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.12).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.16.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation update of the resource organizations \_appliance \_vpn \_thirdpartyvpnpeers.
+- Update the third party VPN peers for an organization.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-organizationId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-organizationid:
+
+      .. rst-class:: ansible-option-title
+
+      **organizationId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-organizationId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OrganizationId path parameter. Organization ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers:
+
+      .. rst-class:: ansible-option-title
+
+      **peers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The list of VPN peers.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ikeVersion"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ikeversion:
+
+      .. rst-class:: ansible-option-title
+
+      **ikeVersion**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ikeVersion" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional The IKE version to be used for the IPsec VPN peer configuration. Defaults to '1' when omitted.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies:
+
+      .. rst-class:: ansible-option-title
+
+      **ipsecPolicies**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Custom IPSec policies for the VPN peer. If not included and a preset has not been chosen, the default preset for IPSec policies will be used.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childAuthAlgo"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/childauthalgo:
+
+      .. rst-class:: ansible-option-title
+
+      **childAuthAlgo**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childAuthAlgo" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the authentication algorithms to be used in Phase 2. The value should be an array with one of the following algorithms 'sha256', 'sha1', 'md5'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childCipherAlgo"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/childcipheralgo:
+
+      .. rst-class:: ansible-option-title
+
+      **childCipherAlgo**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childCipherAlgo" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the cipher algorithms to be used in Phase 2. The value should be an array with one or more of the following algorithms 'aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childLifetime"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/childlifetime:
+
+      .. rst-class:: ansible-option-title
+
+      **childLifetime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childLifetime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The lifetime of the Phase 2 SA in seconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childPfsGroup"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/childpfsgroup:
+
+      .. rst-class:: ansible-option-title
+
+      **childPfsGroup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childPfsGroup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values 'disabled','group14', 'group5', 'group2', 'group1'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeAuthAlgo"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/ikeauthalgo:
+
+      .. rst-class:: ansible-option-title
+
+      **ikeAuthAlgo**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeAuthAlgo" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the authentication algorithm to be used in Phase 1. The value should be an array with one of the following algorithms 'sha256', 'sha1', 'md5'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeCipherAlgo"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/ikecipheralgo:
+
+      .. rst-class:: ansible-option-title
+
+      **ikeCipherAlgo**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeCipherAlgo" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the cipher algorithm to be used in Phase 1. The value should be an array with one of the following algorithms 'aes256', 'aes192', 'aes128', 'tripledes', 'des'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeDiffieHellmanGroup"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/ikediffiehellmangroup:
+
+      .. rst-class:: ansible-option-title
+
+      **ikeDiffieHellmanGroup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeDiffieHellmanGroup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This is the Diffie-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms 'group14', 'group5', 'group2', 'group1'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeLifetime"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/ikelifetime:
+
+      .. rst-class:: ansible-option-title
+
+      **ikeLifetime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeLifetime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The lifetime of the Phase 1 SA in seconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikePrfAlgo"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpolicies/ikeprfalgo:
+
+      .. rst-class:: ansible-option-title
+
+      **ikePrfAlgo**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikePrfAlgo" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional This is the pseudo-random function to be used in IKE\_SA. The value should be an array with one of the following algorithms 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPoliciesPreset"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ipsecpoliciespreset:
+
+      .. rst-class:: ansible-option-title
+
+      **ipsecPoliciesPreset**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ipsecPoliciesPreset" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      One of the following available presets 'default', 'aws', 'azure'. If this is provided, the 'ipsecPolicies' parameter is ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/localId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/localid:
+
+      .. rst-class:: ansible-option-title
+
+      **localId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/localId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional The local ID is used to identify the MX to the peer. This will apply to all MXs this peer applies to.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/name"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The name of the VPN peer.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/networkTags"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/networktags:
+
+      .. rst-class:: ansible-option-title
+
+      **networkTags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/networkTags" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of network tags that will connect with this peer. Use 'all' for all networks. Use 'none' for no networks. If not included, the default is 'all'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/privateSubnets"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/privatesubnets:
+
+      .. rst-class:: ansible-option-title
+
+      **privateSubnets**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/privateSubnets" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The list of the private subnets of the VPN peer.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/publicIp"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/publicip:
+
+      .. rst-class:: ansible-option-title
+
+      **publicIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/publicIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional The public IP of the VPN peer.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/remoteId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/remoteid:
+
+      .. rst-class:: ansible-option-title
+
+      **remoteId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/remoteId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional The remote ID is used to identify the connecting VPN peer. This can either be a valid IPv4 Address, FQDN or User FQDN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/secret"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/secret:
+
+      .. rst-class:: ansible-option-title
+
+      **secret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/secret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The shared secret with the VPN peer.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are appliance.Appliance.update\_organization\_appliance\_vpn\_third\_party\_vpnpeers,
+   - Paths used are put /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for appliance updateOrganizationApplianceVpnThirdPartyVPNPeers <https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-third-party-vpn-peers>`_
+       Complete reference of the updateOrganizationApplianceVpnThirdPartyVPNPeers API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update all
+      cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        organizationId: string
+        peers:
+        - ikeVersion: '2'
+          ipsecPolicies:
+            childAuthAlgo:
+            - sha1
+            childCipherAlgo:
+            - aes128
+            childLifetime: 28800
+            childPfsGroup:
+            - disabled
+            ikeAuthAlgo:
+            - sha1
+            ikeCipherAlgo:
+            - tripledes
+            ikeDiffieHellmanGroup:
+            - group2
+            ikeLifetime: 28800
+            ikePrfAlgo:
+            - prfsha1
+          ipsecPoliciesPreset: default
+          localId: myMXId@meraki.com
+          name: Peer Name
+          networkTags:
+          - none
+          privateSubnets:
+          - 192.168.1.0/24
+          - 192.168.128.0/24
+          publicIp: 123.123.123.1
+          remoteId: miles@meraki.com
+          secret: Sample Password
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"remoteId\\": \\"string\\",\\n    \\"localId\\": \\"string\\",\\n    \\"secret\\": \\"string\\",\\n    \\"privateSubnets\\": [\\n      \\"string\\"\\n    ],\\n    \\"ipsecPolicies\\": {\\n      \\"ikeCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikePrfAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeDiffieHellmanGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeLifetime\\": 0,\\n      \\"childCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childPfsGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"childLifetime\\": 0\\n    },\\n    \\"ipsecPoliciesPreset\\": \\"string\\",\\n    \\"ikeVersion\\": \\"string\\",\\n    \\"networkTags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
