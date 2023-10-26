@@ -68,7 +68,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             configTemplateId=params.get("configTemplateId"),
             autoBind=params.get("autoBind"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

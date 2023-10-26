@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
             maxLatency=params.get("maxLatency"),
             maxJitter=params.get("maxJitter"),
             maxLossPercentage=params.get("maxLossPercentage"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

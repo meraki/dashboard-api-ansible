@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
             time=params.get("time"),
             reasons=params.get("reasons"),
             toVersion=params.get("toVersion"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 
