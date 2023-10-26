@@ -938,3 +938,9 @@ releases:
       - Bad naming `networkId` parameter in `networks_unbind`.
       - Bad naming `networkId` parameter in `networks_sm_devices_fields`.
     release_date: '2023-10-26'
+  2.16.12:
+    changes:
+      bugfixes:
+      - New condition added to Meraki Compare Equality.
+      - Devices module documentation fixed.
+    release_date: '2023-10-26'
