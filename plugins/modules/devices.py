@@ -44,7 +44,7 @@ options:
     type: str
   serial:
     description: Devices's serial.
-    type: null
+    type: str
   switchProfileId:
     description: The ID of a switch profile to bind to the device (for available switch
       profiles, see the 'Switch Profiles' endpoint). Use null to unbind the switch device

@@ -117,6 +117,8 @@ def meraki_compare_equality(current_value, requested_value):
     if requested_value is None:
         return True
     if current_value is None:
+        if requested_value is not None:
+            return False
         return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \

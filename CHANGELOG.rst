@@ -4,6 +4,43 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.12
+=======
+
+Bugfixes
+-------------
+
+- New condition added to Meraki Compare Equality.
+- Devices module documentation fixed.
+
+v2.16.11
+=======
+
+Bugfixes
+-------------
+
+- Bad naming `networkId` parameter in `networks_appliance_traffic_shaping_custom_performance_classes`.
+- Bad naming `networkId` parameter in `networks_appliance_warm_spare_swap`.
+- Bad naming `networkId` parameter in `networks_bind`.
+- Bad naming `networkId` parameter in `networks_clients_provision`.
+- Bad naming `networkId` parameter in `networks_firmware_upgrades_rollbacks`.
+- Bad naming `networkId` parameter in `networks_firmware_upgrades_staged_events_rollbacks`.
+- Bad naming `networkId` parameter in `networks_mqtt_brokers`.
+- Bad naming `networkId` parameter in `networks_pii_requests_delete`.
+- Bad naming `networkId` parameter in `networks_sm_devices_checkin`.
+- Bad naming `networkId` parameter in `networks_sm_devices_lock`.
+- Bad naming `networkId` parameter in `networks_sm_devices_modify_tags`.
+- Bad naming `networkId` parameter in `networks_sm_devices_move`.
+- Bad naming `networkId` parameter in `networks_sm_devices_refresh_details`.
+- Bad naming `networkId` parameter in `networks_sm_devices_unenroll`.
+- Bad naming `networkId` parameter in `networks_sm_devices_wipe`.
+- Bad naming `networkId` parameter in `networks_sm_user_access_devices_delete`.
+- Bad naming `networkId` parameter in `networks_split`.
+- Bad naming `networkId` parameter in `networks_switch_stacks_add`.
+- Bad naming `networkId` parameter in `networks_switch_stacks_remove`.
+- Bad naming `networkId` parameter in `networks_unbind`.
+- Bad naming `networkId` parameter in `networks_sm_devices_fields`.
+
 v2.16.10
 =======
 
