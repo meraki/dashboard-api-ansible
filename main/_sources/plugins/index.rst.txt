@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.16.11
+Collection version 2.16.12
 
 .. contents::
    :local:
@@ -51,7 +51,7 @@ Modules
 ~~~~~~~
 
 * :ref:`administered_identities_me_info module <ansible_collections.cisco.meraki.administered_identities_me_info_module>` -- Information module for administered \_identities \_me
-* :ref:`devices module <ansible_collections.cisco.meraki.devices_module>` -- 
+* :ref:`devices module <ansible_collections.cisco.meraki.devices_module>` -- Resource module for devices
 * :ref:`devices_appliance_performance_info module <ansible_collections.cisco.meraki.devices_appliance_performance_info_module>` -- Information module for devices \_appliance \_performance
 * :ref:`devices_appliance_uplinks_settings module <ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module>` -- Resource module for devices \_appliance \_uplinks \_settings
 * :ref:`devices_appliance_uplinks_settings_info module <ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_info_module>` -- Information module for devices \_appliance \_uplinks \_settings
