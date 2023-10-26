@@ -907,3 +907,9 @@ releases:
       bugfixes:
       - Returning requires_ansible to 2.9.10
     release_date: '2023-10-17'
+  2.16.10:
+    changes:
+      bugfixes:
+      - Returning requires_ansible to >=2.14.0
+      - Bad naming `networkId` parameter in `networks_devices_remove` and `networks_devices_claim_vmx`
+    release_date: '2023-10-26'
