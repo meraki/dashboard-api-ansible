@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.13
+=======
+
+Bugfixes
+-------------
+
+- Meraki Compare Equality 2 added.
+
 v2.16.12
 =======
 

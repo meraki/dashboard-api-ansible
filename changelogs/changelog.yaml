@@ -944,3 +944,8 @@ releases:
       - New condition added to Meraki Compare Equality.
       - Devices module documentation fixed.
     release_date: '2023-10-26'
+  2.16.13:
+    changes:
+      bugfixes:
+      - Meraki Compare Equality 2 added.
+    release_date: '2023-10-30'
