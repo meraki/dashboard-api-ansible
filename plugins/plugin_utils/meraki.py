@@ -129,6 +129,7 @@ def meraki_compare_equality(current_value, requested_value):
     else:
         return current_value == requested_value
 
+
 def meraki_compare_equality2(current_value, requested_value):
     # print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
@@ -143,6 +144,7 @@ def meraki_compare_equality2(current_value, requested_value):
         return compare_list(current_value, requested_value)
     else:
         return current_value == requested_value
+
 
 def simple_cmp(obj1, obj2):
     return obj1 == obj2
