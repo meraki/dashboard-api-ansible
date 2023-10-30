@@ -113,12 +113,28 @@ def fn_comp_key(k, dict1, dict2):
 
 
 def meraki_compare_equality(current_value, requested_value):
-    # print("meraki_compare_equality", current_value, requested_value)
+    print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
         return True
     if current_value is None:
         if requested_value is not None:
             return False
+        return True
+    if isinstance(current_value, dict) and isinstance(requested_value, dict):
+        all_dict_params = list(current_value.keys()) + \
+            list(requested_value.keys())
+        return not any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params))
+    elif isinstance(current_value, list) and isinstance(requested_value, list):
+        return compare_list(current_value, requested_value)
+    else:
+        return current_value == requested_value
+
+
+def meraki_compare_equality2(current_value, requested_value):
+    # print("meraki_compare_equality", current_value, requested_value)
+    if requested_value is None:
+        return True
+    if current_value is None:
         return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
