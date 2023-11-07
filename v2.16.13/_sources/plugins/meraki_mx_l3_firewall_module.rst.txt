@@ -1,0 +1,1643 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.meraki_mx_l3_firewall module -- Manage MX appliance layer 3 firewalls in the Meraki cloud
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.13).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.meraki_mx_l3_firewall`.
+
+.. version_added
+
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: cisco.meraki.networks\_appliance\_firewall\_l3\_firewall\_rules
+
+Synopsis
+--------
+
+.. Description
+
+- Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MX firewalls.
+
+
+.. Aliases
+
+
+.. Requirements
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-auth_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-auth_key:
+
+      .. rst-class:: ansible-option-title
+
+      **auth_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-host"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname for Meraki dashboard.
+
+      Can be used to access regional Meraki environments, such as China.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"api.meraki.com"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-internal_error_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-internal_error_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **internal_error_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if server returns an internal server error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-net_id:
+
+      .. rst-class:: ansible-option-title
+
+      **net_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of network which MX firewall is in.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-net_name:
+
+      .. rst-class:: ansible-option-title
+
+      **net_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of network which MX firewall is in.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-org_id:
+
+      .. rst-class:: ansible-option-title
+
+      **org_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-organization"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-org_name:
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-organization:
+
+      .. rst-class:: ansible-option-title
+
+      **org_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: organization`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_format"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-output_format:
+
+      .. rst-class:: ansible-option-title
+
+      **output_format**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"snakecase"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"camelcase"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_level"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-output_level:
+
+      .. rst-class:: ansible-option-title
+
+      **output_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set amount of debug output during module execution.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"debug"`
+      - :ansible-option-choices-entry-default:`"normal"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rate_limit_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rate_limit_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **rate_limit_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if rate limiter is triggered.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`165`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of firewall rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/comment"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/comment:
+
+      .. rst-class:: ansible-option-title
+
+      **comment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/comment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional comment to describe the firewall rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/dest_cidr"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/dest_cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **dest_cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/dest_cidr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of CIDR notation destination networks.
+
+      \ :literal:`Any`\  must be capitalized.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/dest_port"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/dest_port:
+
+      .. rst-class:: ansible-option-title
+
+      **dest_port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/dest_port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of destination port numbers to match against.
+
+      \ :literal:`Any`\  must be capitalized.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/policy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/policy:
+
+      .. rst-class:: ansible-option-title
+
+      **policy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/policy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Policy to apply if rule is hit.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"allow"`
+      - :ansible-option-choices-entry:`"deny"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Protocol to match against.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"any"`
+      - :ansible-option-choices-entry:`"icmp"`
+      - :ansible-option-choices-entry:`"tcp"`
+      - :ansible-option-choices-entry:`"udp"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/src_cidr"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/src_cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **src_cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/src_cidr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of CIDR notation source networks.
+
+      \ :literal:`Any`\  must be capitalized.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/src_port"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/src_port:
+
+      .. rst-class:: ansible-option-title
+
+      **src_port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/src_port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of source port numbers to match against.
+
+      \ :literal:`Any`\  must be capitalized.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/syslog_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-rules/syslog_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **syslog_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/syslog_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether to log hints against the firewall rule.
+
+      Only applicable if a syslog server is specified against the network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Create or modify an organization.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"present"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"query"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-syslog_default_rule"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-syslog_default_rule:
+
+      .. rst-class:: ansible-option-title
+
+      **syslog_default_rule**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-syslog_default_rule" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to log hits against the default firewall rule.
+
+      Only applicable if a syslog server is specified against the network.
+
+      This is not shown in response from Meraki. Instead, refer to the \ :literal:`syslog\_enabled`\  value in the default rule.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Time to timeout for HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_https"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-use_https:
+
+      .. rst-class:: ansible-option-title
+
+      **use_https**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+
+      Only useful for internal Meraki developers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-use_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **use_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to validate HTTP certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - Module assumes a complete list of firewall rules are passed as a parameter.
+   - If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
+   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - Some of the options are likely only used for developers within Meraki.
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
+   - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Query firewall rules
+      meraki_mx_l3_firewall:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: query
+      delegate_to: localhost
+
+    - name: Set two firewall rules
+      meraki_mx_l3_firewall:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: present
+        rules:
+          - comment: Block traffic to server
+            src_cidr: 192.0.1.0/24
+            src_port: any
+            dest_cidr: 192.0.2.2/32
+            dest_port: any
+            protocol: any
+            policy: deny
+          - comment: Allow traffic to group of servers
+            src_cidr: 192.0.1.0/24
+            src_port: any
+            dest_cidr: 192.0.2.0/24
+            dest_port: any
+            protocol: any
+            policy: allow
+      delegate_to: localhost
+
+    - name: Set one firewall rule and enable logging of the default rule
+      meraki_mx_l3_firewall:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: present
+        rules:
+          - comment: Block traffic to server
+            src_cidr: 192.0.1.0/24
+            src_port: any
+            dest_cidr: 192.0.2.2/32
+            dest_port: any
+            protocol: any
+            policy: deny
+        syslog_default_rule: yes
+      delegate_to: localhost
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Firewall rules associated to network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of firewall rules.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/comment"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/comment:
+
+      .. rst-class:: ansible-option-title
+
+      **comment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/comment" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comment to describe the firewall rule.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Block traffic to server"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/dest_cidr"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/dest_cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **dest_cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/dest_cidr" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of CIDR notation destination networks.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.1/32,192.0.1.2/32"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/dest_port"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/dest_port:
+
+      .. rst-class:: ansible-option-title
+
+      **dest_port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/dest_port" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of destination ports.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"80,443"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/policy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/policy:
+
+      .. rst-class:: ansible-option-title
+
+      **policy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/policy" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Action to take when rule is matched.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/protocol" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network protocol for which to match against.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"tcp"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/src_cidr"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/src_cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **src_cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/src_cidr" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of CIDR notation source networks.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"192.0.1.1/32,192.0.1.2/32"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/src_port"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/src_port:
+
+      .. rst-class:: ansible-option-title
+
+      **src_port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/src_port" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Comma separated list of source ports.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"80,443"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rules/syslog_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mx_l3_firewall_module__return-data/rules/syslog_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **syslog_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rules/syslog_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether to log to syslog when rule is matched.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+
+..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Kevin Breit (@kbreit)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+

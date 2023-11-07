@@ -1,0 +1,1962 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_alert_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.meraki_alert module -- Manage alerts in the Meraki cloud
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.16.13).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.meraki_alert`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.1.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: cisco.meraki.networks\_alerts\_settings
+
+Synopsis
+--------
+
+.. Description
+
+- Allows for creation, management, and visibility into alert settings within Meraki.
+
+
+.. Aliases
+
+
+.. Requirements
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts:
+
+      .. rst-class:: ansible-option-title
+
+      **alerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Alert-specific configuration for each type.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_destinations"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_destinations:
+
+      .. rst-class:: ansible-option-title
+
+      **alert_destinations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_destinations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A hash of destinations for this specific alert.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_destinations/all_admins"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_destinations/all_admins:
+
+      .. rst-class:: ansible-option-title
+
+      **all_admins**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_destinations/all_admins" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, all network admins will receive emails.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_destinations/emails"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_destinations/emails:
+
+      .. rst-class:: ansible-option-title
+
+      **emails**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_destinations/emails" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of emails that will recieve the alert(s).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_destinations/http_server_ids"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_destinations/http_server_ids:
+
+      .. rst-class:: ansible-option-title
+
+      **http_server_ids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_destinations/http_server_ids" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of HTTP server IDs to send a Webhook to.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_destinations/snmp"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_destinations/snmp:
+
+      .. rst-class:: ansible-option-title
+
+      **snmp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_destinations/snmp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/alert_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/alert_type:
+
+      .. rst-class:: ansible-option-title
+
+      **alert_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/alert_type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type of alert.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A boolean depicting if the alert is turned on or off.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-alerts/filters"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-alerts/filters:
+
+      .. rst-class:: ansible-option-title
+
+      **filters**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-alerts/filters" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`any`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A hash of specific configuration data for the alert. Only filters specific to the alert will be updated.
+
+      No validation checks occur against \ :literal:`filters`\ .
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`{}`
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-auth_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-auth_key:
+
+      .. rst-class:: ansible-option-title
+
+      **auth_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-default_destinations"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-default_destinations:
+
+      .. rst-class:: ansible-option-title
+
+      **default_destinations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-default_destinations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Properties for destinations when alert specific destinations aren't specified.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-default_destinations/all_admins"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-default_destinations/all_admins:
+
+      .. rst-class:: ansible-option-title
+
+      **all_admins**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-default_destinations/all_admins" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, all network admins will receive emails.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-default_destinations/emails"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-default_destinations/emails:
+
+      .. rst-class:: ansible-option-title
+
+      **emails**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-default_destinations/emails" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of emails that will recieve the alert(s).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-default_destinations/http_server_ids"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-default_destinations/http_server_ids:
+
+      .. rst-class:: ansible-option-title
+
+      **http_server_ids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-default_destinations/http_server_ids" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of HTTP server IDs to send a Webhook to.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-default_destinations/snmp"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-default_destinations/snmp:
+
+      .. rst-class:: ansible-option-title
+
+      **snmp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-default_destinations/snmp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-host"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname for Meraki dashboard.
+
+      Can be used to access regional Meraki environments, such as China.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"api.meraki.com"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-internal_error_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-internal_error_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **internal_error_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if server returns an internal server error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-net_id:
+
+      .. rst-class:: ansible-option-title
+
+      **net_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID number of a network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-network"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-name:
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-net_name:
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-network:
+
+      .. rst-class:: ansible-option-title
+
+      **net_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: name, network`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of a network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-org_id:
+
+      .. rst-class:: ansible-option-title
+
+      **org_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-organization"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-org_name:
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-organization:
+
+      .. rst-class:: ansible-option-title
+
+      **org_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: organization`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_format"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-output_format:
+
+      .. rst-class:: ansible-option-title
+
+      **output_format**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"snakecase"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"camelcase"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_level"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-output_level:
+
+      .. rst-class:: ansible-option-title
+
+      **output_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set amount of debug output during module execution.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"debug"`
+      - :ansible-option-choices-entry-default:`"normal"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rate_limit_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-rate_limit_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **rate_limit_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if rate limiter is triggered.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`165`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Create or modify an alert.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"present"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"query"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Time to timeout for HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_https"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-use_https:
+
+      .. rst-class:: ansible-option-title
+
+      **use_https**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+
+      Only useful for internal Meraki developers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-use_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **use_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to validate HTTP certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - Some of the options are likely only used for developers within Meraki.
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
+   - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update settings
+      meraki_alert:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: present
+        default_destinations:
+          emails:
+          - 'youremail@yourcorp'
+          - 'youremail2@yourcorp'
+          all_admins: yes
+          snmp: no
+        alerts:
+          - alert_type: "gatewayDown"
+            enabled: yes
+            filters:
+              timeout: 60
+            alert_destinations:
+              emails:
+              - 'youremail@yourcorp'
+              - 'youremail2@yourcorp'
+              all_admins: yes
+              snmp: no
+          - alert_type: "usageAlert"
+            enabled: yes
+            filters:
+              period: 1200
+              threshold: 104857600
+            alert_destinations:
+              emails:
+              - 'youremail@yourcorp'
+              - 'youremail2@yourcorp'
+              all_admins: yes
+              snmp: no
+
+    - name: Query all settings
+      meraki_alert:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: query
+      delegate_to: localhost
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Information about the created or manipulated object.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` info
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts:
+
+      .. rst-class:: ansible-option-title
+
+      **alerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alert-specific configuration for each type.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_destinations"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_destinations:
+
+      .. rst-class:: ansible-option-title
+
+      **alert_destinations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_destinations" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A hash of destinations for this specific alert.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_destinations/all_admins"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_destinations/all_admins:
+
+      .. rst-class:: ansible-option-title
+
+      **all_admins**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_destinations/all_admins" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, all network admins will receive emails.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_destinations/emails"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_destinations/emails:
+
+      .. rst-class:: ansible-option-title
+
+      **emails**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_destinations/emails" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of emails that will recieve the alert(s).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_destinations/http_server_ids"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_destinations/http_server_ids:
+
+      .. rst-class:: ansible-option-title
+
+      **http_server_ids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_destinations/http_server_ids" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of HTTP server IDs to send a Webhook to.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_destinations/snmp"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_destinations/snmp:
+
+      .. rst-class:: ansible-option-title
+
+      **snmp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_destinations/snmp" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/alert_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/alert_type:
+
+      .. rst-class:: ansible-option-title
+
+      **alert_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/alert_type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type of alert.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A boolean depicting if the alert is turned on or off.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/alerts/filters"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/alerts/filters:
+
+      .. rst-class:: ansible-option-title
+
+      **filters**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/alerts/filters" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A hash of specific configuration data for the alert. Only filters specific to the alert will be updated.
+
+      No validation checks occur against \ :literal:`filters`\ .
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/default_destinations"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/default_destinations:
+
+      .. rst-class:: ansible-option-title
+
+      **default_destinations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/default_destinations" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Properties for destinations when alert specific destinations aren't specified.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/default_destinations/all_admins"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/default_destinations/all_admins:
+
+      .. rst-class:: ansible-option-title
+
+      **all_admins**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/default_destinations/all_admins" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, all network admins will receive emails.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/default_destinations/emails"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/default_destinations/emails:
+
+      .. rst-class:: ansible-option-title
+
+      **emails**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/default_destinations/emails" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of emails that will recieve the alert(s).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/default_destinations/http_server_ids"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/default_destinations/http_server_ids:
+
+      .. rst-class:: ansible-option-title
+
+      **http_server_ids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/default_destinations/http_server_ids" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of HTTP server IDs to send a Webhook to.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/default_destinations/snmp"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_alert_module__return-data/default_destinations/snmp:
+
+      .. rst-class:: ansible-option-title
+
+      **snmp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/default_destinations/snmp" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+
+..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Kevin Breit (@kbreit)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
