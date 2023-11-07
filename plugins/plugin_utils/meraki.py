@@ -38,7 +38,7 @@ def has_diff_elem(ls1, ls2):
 
 def has_diff_elem2(ls1, ls2):
     for elem in ls2:
-        if type(elem) is dict:
+        if isinstance(elem, dict):
             find = False
             keys1 = elem.keys()
             for elem2 in ls1:
@@ -49,7 +49,7 @@ def has_diff_elem2(ls1, ls2):
                         common_keys.append(key)
                 has_diff = False
                 for k in common_keys:
-                    if type(elem2[k]) is str and have_to_change_to_lowercase(elem2[k].lower()):
+                    if isinstance(elem2[k], str) and have_to_change_to_lowercase(elem2[k].lower()):
                         if elem2[k].lower() != elem[k].lower():
                             has_diff = True
                     else:
@@ -102,7 +102,7 @@ def compare_list(list1, list2):
         return attempt_std_cmp
     else:
         # not changes 'has diff elem' to list1 != list2 ':lists are not equal'
-        if type(list1[0]) is dict:
+        if isinstance(list1[0], dict):
             return not (has_diff_elem2(list1, list2)) or not (has_diff_elem2(list2, list1))
         else:
             return not (has_diff_elem(list1, list2)) or not (has_diff_elem(list2, list1))
@@ -323,7 +323,7 @@ class MERAKI(object):
         return self.result
 
     def verify_array(self, verify_interface, **kwargs):
-        if type(verify_interface) is None:
+        if isinstance(verify_interface, None):
             return list()
 
         if isinstance(verify_interface, list):
