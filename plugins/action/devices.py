@@ -149,7 +149,8 @@ class Devices(object):
             new_object_params['notes'] = self.new_object.get('notes') or \
                 self.new_object.get('notes')
         if self.new_object.get('moveMapMarker') is not None or self.new_object.get('move_map_marker') is not None:
-            new_object_params['moveMapMarker'] = self.new_object.get('moveMapMarker')
+            new_object_params['moveMapMarker'] = self.new_object.get(
+                'moveMapMarker')
         if self.new_object.get('switchProfileId') is not None or self.new_object.get('switch_profile_id') is not None:
             new_object_params['switchProfileId'] = self.new_object.get('switchProfileId') or \
                 self.new_object.get('switch_profile_id')
@@ -209,10 +210,14 @@ class Devices(object):
         o_id = o_id or self.new_object.get(
             "serial") or self.new_object.get("serial")
         name = self.new_object.get("name")
+        orgID = self.new_object.get("organizationId") or self.new_object.get(
+            "organization_id")
+        print(name)
+        print(orgID)
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
+        if not id_exists and name and orgID:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:

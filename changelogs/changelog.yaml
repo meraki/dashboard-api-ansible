@@ -949,3 +949,8 @@ releases:
       bugfixes:
       - Meraki Compare Equality 2 added.
     release_date: '2023-10-30'
+  2.16.14:
+    changes:
+      bugfixes:
+      - Adding condition to avoid error on exists on devices.
+    release_date: '2023-11-07'

@@ -19,7 +19,7 @@
         state: present
         # copyFromNetworkId: N_24329156
         name: Site 1
-        notes: Additional description of the network 21
+        notes: Additional description of the network 212
         organizationId: "828099381482762270"
         productTypes:
         - camera
