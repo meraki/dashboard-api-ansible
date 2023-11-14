@@ -954,3 +954,9 @@ releases:
       bugfixes:
       - Adding condition to avoid error on exists on devices.
     release_date: '2023-11-07'
+  2.16.15:
+    changes:
+      bugfixes:
+      - Adding `network_clients_info` and `network_client_info`.
+      - Adding `platform_meraki.rst` to docs.
+    release_date: '2023-11-14'
