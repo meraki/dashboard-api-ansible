@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.16.14
+Collection version 2.16.15
 
 .. contents::
    :local:
@@ -226,6 +226,7 @@ Modules
 * :ref:`networks_cellular_gateway_subnet_pool_info module <ansible_collections.cisco.meraki.networks_cellular_gateway_subnet_pool_info_module>` -- Information module for networks \_cellulargateway \_subnetpool
 * :ref:`networks_cellular_gateway_uplink module <ansible_collections.cisco.meraki.networks_cellular_gateway_uplink_module>` -- Resource module for networks \_cellulargateway \_uplink
 * :ref:`networks_cellular_gateway_uplink_info module <ansible_collections.cisco.meraki.networks_cellular_gateway_uplink_info_module>` -- Information module for networks \_cellulargateway \_uplink
+* :ref:`networks_client_info module <ansible_collections.cisco.meraki.networks_client_info_module>` -- Information module for networks \_client
 * :ref:`networks_clients_info module <ansible_collections.cisco.meraki.networks_clients_info_module>` -- Information module for networks \_clients
 * :ref:`networks_clients_overview_info module <ansible_collections.cisco.meraki.networks_clients_overview_info_module>` -- Information module for networks \_clients \_overview
 * :ref:`networks_clients_policy module <ansible_collections.cisco.meraki.networks_clients_policy_module>` -- Resource module for networks \_clients \_policy
@@ -702,6 +703,7 @@ Modules
     networks_cellular_gateway_subnet_pool_info_module
     networks_cellular_gateway_uplink_module
     networks_cellular_gateway_uplink_info_module
+    networks_client_info_module
     networks_clients_info_module
     networks_clients_overview_info_module
     networks_clients_policy_module
