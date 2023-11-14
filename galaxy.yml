@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: meraki
-version: 2.16.14
+version: 2.16.15
 readme: README.md
 authors:
   - Francisco Muñoz <fmunoz@cloverhound.com> 

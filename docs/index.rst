@@ -11,6 +11,7 @@ Welcome to Meraki Ansible Actions' documentation!
    :caption: User documentation
 
    plugins/index
+   platform_meraki
 
 
 Indices and tables
