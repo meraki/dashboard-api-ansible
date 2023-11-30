@@ -960,3 +960,25 @@ releases:
       - Adding `network_clients_info` and `network_client_info`.
       - Adding `platform_meraki.rst` to docs.
     release_date: '2023-11-14'
+  2.16.16:
+    changes:
+      bugfixes:
+        - Idempotency bugs fixed in devices_switch_ports.
+        - Adding `product_types` for update request on networks.
+        - networks_syslog_servers is now just an Update action to API.
+        - Parameter`organization_id` change to `organizationId` organizations_claim.
+        - Parameter`organization_id` change to `organizationId` organizations_clone.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_claim.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_export_events.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_prepare.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_release.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_assign_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_move.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_move_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_renew_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licensing_coterm_licenses_move.
+        - Parameter`organization_id` change to `organizationId` organizations_networks_combine.
+        - Parameter`organization_id` change to `organizationId` organizations_switch_devices_clone.
+        - Parameter`organization_id` change to `organizationId` organizations_users.
+        - Removing logs in meraki.py.
+    release_date: '2023-11-30'
