@@ -113,7 +113,7 @@ def fn_comp_key(k, dict1, dict2):
 
 
 def meraki_compare_equality(current_value, requested_value):
-    print("meraki_compare_equality", current_value, requested_value)
+    # print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
         return True
     if current_value is None:

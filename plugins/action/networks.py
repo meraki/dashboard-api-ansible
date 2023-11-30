@@ -142,6 +142,9 @@ class Networks(object):
         if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
             new_object_params['timeZone'] = self.new_object.get('timeZone') or \
                 self.new_object.get('time_zone')
+        if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
+            new_object_params['productTypes'] = self.new_object.get('productTypes') or \
+                self.new_object.get('product_types')
         if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
