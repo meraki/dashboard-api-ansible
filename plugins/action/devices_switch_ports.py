@@ -142,9 +142,11 @@ class DevicesSwitchPorts(object):
             new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
                 self.new_object.get('allowed_vlans')
         if self.new_object.get('isolationEnabled') is not None or self.new_object.get('isolation_enabled') is not None:
-            new_object_params['isolationEnabled'] = self.new_object.get('isolationEnabled')
+            new_object_params['isolationEnabled'] = self.new_object.get(
+                'isolationEnabled')
         if self.new_object.get('rstpEnabled') is not None or self.new_object.get('rstp_enabled') is not None:
-            new_object_params['rstpEnabled'] = self.new_object.get('rstpEnabled')
+            new_object_params['rstpEnabled'] = self.new_object.get(
+                'rstpEnabled')
         if self.new_object.get('stpGuard') is not None or self.new_object.get('stp_guard') is not None:
             new_object_params['stpGuard'] = self.new_object.get('stpGuard') or \
                 self.new_object.get('stp_guard')
@@ -173,14 +175,17 @@ class DevicesSwitchPorts(object):
             new_object_params['stickyMacAllowListLimit'] = self.new_object.get('stickyMacAllowListLimit') or \
                 self.new_object.get('sticky_mac_allow_list_limit')
         if self.new_object.get('stormControlEnabled') is not None or self.new_object.get('storm_control_enabled') is not None:
-            new_object_params['stormControlEnabled'] = self.new_object.get('stormControlEnabled')
+            new_object_params['stormControlEnabled'] = self.new_object.get(
+                'stormControlEnabled')
         if self.new_object.get('adaptivePolicyGroupId') is not None or self.new_object.get('adaptive_policy_group_id') is not None:
             new_object_params['adaptivePolicyGroupId'] = self.new_object.get('adaptivePolicyGroupId') or \
                 self.new_object.get('adaptive_policy_group_id')
         if self.new_object.get('peerSgtCapable') is not None or self.new_object.get('peer_sgt_capable') is not None:
-            new_object_params['peerSgtCapable'] = self.new_object.get('peerSgtCapable')
+            new_object_params['peerSgtCapable'] = self.new_object.get(
+                'peerSgtCapable')
         if self.new_object.get('flexibleStackingEnabled') is not None or self.new_object.get('flexible_stacking_enabled') is not None:
-            new_object_params['flexibleStackingEnabled'] = self.new_object.get('flexibleStackingEnabled')
+            new_object_params['flexibleStackingEnabled'] = self.new_object.get(
+                'flexibleStackingEnabled')
         if self.new_object.get('daiTrusted') is not None or self.new_object.get('dai_trusted') is not None:
             new_object_params['daiTrusted'] = self.new_object.get('daiTrusted')
         if self.new_object.get('profile') is not None or self.new_object.get('profile') is not None:
@@ -295,7 +300,7 @@ class DevicesSwitchPorts(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
+                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def update(self):
