@@ -982,3 +982,9 @@ releases:
         - Parameter`organization_id` change to `organizationId` organizations_users.
         - Removing logs in meraki.py.
     release_date: '2023-11-30'
+
+  2.16.17:
+    changes:
+      bugfixes:
+      - Adding support to ansible.utils >=3.0
+    release_date: '2023-12-04'
