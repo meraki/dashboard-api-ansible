@@ -11,15 +11,15 @@
     #   cisco.meraki.networks_appliance_ports_info:
     #     networkId: L_828099381482771185
     #   register: result
-    - name: update port
-      cisco.meraki.devices_switch_ports:
-        meraki_suppress_logging: false
-        serial: QBSB-BNH2-KDXJ
-        portId: 3
-        vlan: 50
-        # type: access
-        state: present
-        poeEnabled: false 
+    # - name: update port
+    #   cisco.meraki.devices_switch_ports:
+    #     meraki_suppress_logging: false
+    #     serial: QBSB-BNH2-KDXJ
+    #     portId: 3
+    #     vlan: 50
+    #     # type: access
+    #     state: present
+    #     poeEnabled: false 
     # - name: Update appliance Vlans
     #   cisco.meraki.networks_appliance_vlans:
     #     state: present
@@ -126,3 +126,10 @@
     #     # organizationId: "{{org_id}}"
     #     state: present 
     #     meraki_suppress_logging: false
+
+    - name: onboard order
+      cisco.meraki.organizations_inventory_claim:
+        # meraki_api_key: "{{ meraki_api }}"
+        # meraki_simulate: "{{ testpolicy }}"
+        organizationId: "{{ org_id }}"
+        orders: "1"
