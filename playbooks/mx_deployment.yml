@@ -5,6 +5,10 @@
     network_id: "L_828099381482771185" # Branch-1234
   gather_facts: false
   tasks:
+    # - name: Get all networks _appliance _vlans
+    #   cisco.meraki.networks_appliance_vlans_info:
+    #     networkId: "{{network_id}}"
+    #   register: result
 
     - name: Enable Vlans on the MX
       cisco.meraki.networks_appliance_vlans_settings:
@@ -30,7 +34,7 @@
        enabled: true
        name: My SSID
        networkId: "{{network_id}}"
-       number: 1
+       number: 1234
        radiusServers:
        - host: 1.2.3.4
          port: 1000
@@ -91,7 +95,6 @@
           value: 
             name: Sports
             id: meraki:layer7/category/5
-
 
     - name: Get all networks _appliance _firewall l3firewallrules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules_info:
