@@ -994,3 +994,8 @@ releases:
       minor_changes:
         - Adding support to ansible.utils ">=2.0.0, <4.00".
     release_date: '2023-12-05'
+  2.17.1:
+    changes:
+      bugfixes:
+        - Adding build_ignore property to galaxy file.
+    release_date: '2023-12-07'
