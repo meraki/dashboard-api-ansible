@@ -1,0 +1,2791 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_ms_switchport_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.meraki_ms_switchport module -- Manage switchports on a switch in the Meraki cloud
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.17.2).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.meraki_ms_switchport`.
+
+.. version_added
+
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: cisco.meraki.devices\_switch\_ports
+
+Synopsis
+--------
+
+.. Description
+
+- Allows for management of switchports settings for Meraki MS switches.
+
+
+.. Aliases
+
+
+.. Requirements
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-access_policy_number"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-access_policy_number:
+
+      .. rst-class:: ansible-option-title
+
+      **access_policy_number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-access_policy_number" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of the access policy to apply.
+
+      Only applicable to access port types.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-access_policy_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-access_policy_type:
+
+      .. rst-class:: ansible-option-title
+
+      **access_policy_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-access_policy_type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Type of access policy to apply to port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"Open"`
+      - :ansible-option-choices-entry:`"Custom access policy"`
+      - :ansible-option-choices-entry:`"MAC allow list"`
+      - :ansible-option-choices-entry:`"Sticky MAC allow list"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowed_vlans"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-allowed_vlans:
+
+      .. rst-class:: ansible-option-title
+
+      **allowed_vlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowed_vlans" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of VLAN numbers to be allowed on switchport.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`["all"]`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-auth_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-auth_key:
+
+      .. rst-class:: ansible-option-title
+
+      **auth_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether a switchport should be enabled or disabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexible_stacking_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-flexible_stacking_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **flexible_stacking_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexible_stacking_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether flexible stacking capabilities are supported on the port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-host"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname for Meraki dashboard.
+
+      Can be used to access regional Meraki environments, such as China.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"api.meraki.com"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-internal_error_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-internal_error_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **internal_error_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if server returns an internal server error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-isolation_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-isolation_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **isolation_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-isolation_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Isolation status of switchport.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-link_negotiation"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-link_negotiation:
+
+      .. rst-class:: ansible-option-title
+
+      **link_negotiation**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-link_negotiation" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Link speed for the switchport.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"1 Gigabit full duplex (auto)"`
+      - :ansible-option-choices-entry:`"1 Gigabit full duplex (forced)"`
+      - :ansible-option-choices-entry:`"10 Gigabit full duplex (auto)"`
+      - :ansible-option-choices-entry:`"10 Gigabit full duplex (forced)"`
+      - :ansible-option-choices-entry:`"100 Megabit (auto)"`
+      - :ansible-option-choices-entry:`"100 Megabit full duplex (forced)"`
+      - :ansible-option-choices-entry:`"2.5 Gigabit full duplex (auto)"`
+      - :ansible-option-choices-entry:`"2.5 Gigabit full duplex (forced)"`
+      - :ansible-option-choices-entry:`"5 Gigabit full duplex (auto)"`
+      - :ansible-option-choices-entry:`"5 Gigabit full duplex (forced)"`
+      - :ansible-option-choices-entry-default:`"Auto negotiate"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mac_allow_list"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-mac_allow_list:
+
+      .. rst-class:: ansible-option-title
+
+      **mac_allow_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mac_allow_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      MAC addresses list that are allowed on a port.
+
+      Only applicable to access port type.
+
+      Only applicable to access\_policy\_type "MAC allow list".
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mac_allow_list/macs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-mac_allow_list/macs:
+
+      .. rst-class:: ansible-option-title
+
+      **macs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mac_allow_list/macs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of MAC addresses to update with based on state option.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mac_allow_list/state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-mac_allow_list/state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mac_allow_list/state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The state the configuration should be left in.
+
+      Merged, MAC addresses provided will be added to the current allow list.
+
+      Replaced, All MAC addresses are overwritten, only the MAC addresses provided with exist in the allow list.
+
+      Deleted, Remove the MAC addresses provided from the current allow list.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"merged"`
+      - :ansible-option-choices-entry-default:`"replaced"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"deleted"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-description:
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: description`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Switchport description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-number"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-number:
+
+      .. rst-class:: ansible-option-title
+
+      **number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-number" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Port number.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-org_id:
+
+      .. rst-class:: ansible-option-title
+
+      **org_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-organization"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-org_name:
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-organization:
+
+      .. rst-class:: ansible-option-title
+
+      **org_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: organization`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_format"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-output_format:
+
+      .. rst-class:: ansible-option-title
+
+      **output_format**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"snakecase"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"camelcase"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_level"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-output_level:
+
+      .. rst-class:: ansible-option-title
+
+      **output_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set amount of debug output during module execution.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"debug"`
+      - :ansible-option-choices-entry-default:`"normal"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-poe_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-poe_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **poe_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-poe_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable or disable Power Over Ethernet on a port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rate_limit_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-rate_limit_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **rate_limit_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if rate limiter is triggered.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`165`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rstp_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-rstp_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **rstp_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rstp_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable or disable Rapid Spanning Tree Protocol on a port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-serial"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-serial:
+
+      .. rst-class:: ansible-option-title
+
+      **serial**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-serial" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Serial nubmer of the switch.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Specifies whether a switchport should be queried or modified.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"query"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"present"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sticky_mac_allow_list"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-sticky_mac_allow_list:
+
+      .. rst-class:: ansible-option-title
+
+      **sticky_mac_allow_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sticky_mac_allow_list" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      MAC addresses list that are allowed on a port.
+
+      Only applicable to access port type.
+
+      Only applicable to access\_policy\_type "Sticky MAC allow list".
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sticky_mac_allow_list/macs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-sticky_mac_allow_list/macs:
+
+      .. rst-class:: ansible-option-title
+
+      **macs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sticky_mac_allow_list/macs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of MAC addresses to update with based on state option.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sticky_mac_allow_list/state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-sticky_mac_allow_list/state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sticky_mac_allow_list/state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The state the configuration should be left in.
+
+      Merged, MAC addresses provided will be added to the current allow list.
+
+      Replaced, All MAC addresses are overwritten, only the MAC addresses provided with exist in the allow list.
+
+      Deleted, Remove the MAC addresses provided from the current allow list.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"merged"`
+      - :ansible-option-choices-entry-default:`"replaced"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"deleted"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sticky_mac_allow_list_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-sticky_mac_allow_list_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **sticky_mac_allow_list_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sticky_mac_allow_list_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The number of MAC addresses allowed in the sticky port allow list.
+
+      Only applicable to access port type.
+
+      Only applicable to access\_policy\_type "Sticky MAC allow list".
+
+      The value must be equal to or greater then the list size of sticky\_mac\_allow\_list. Value will be checked for validity, during processing.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-stp_guard"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-stp_guard:
+
+      .. rst-class:: ansible-option-title
+
+      **stp_guard**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-stp_guard" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set state of STP guard.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"disabled"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"root guard"`
+      - :ansible-option-choices-entry:`"bpdu guard"`
+      - :ansible-option-choices-entry:`"loop guard"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tags"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-tags:
+
+      .. rst-class:: ansible-option-title
+
+      **tags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tags" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of tags to assign to a port.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Time to timeout for HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set port type.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"access"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"trunk"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_https"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-use_https:
+
+      .. rst-class:: ansible-option-title
+
+      **use_https**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+
+      Only useful for internal Meraki developers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-use_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **use_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to validate HTTP certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlan"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlan" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      VLAN number assigned to port.
+
+      If a port is of type trunk, the specified VLAN is the native VLAN.
+
+      Setting value to 0 on a trunk will clear the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-voice_vlan"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-voice_vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **voice_vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-voice_vlan" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      VLAN number assigned to a port for voice traffic.
+
+      Only applicable to access port type.
+
+      Only applicable if voice\_vlan\_state is set to present.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-voice_vlan_state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__parameter-voice_vlan_state:
+
+      .. rst-class:: ansible-option-title
+
+      **voice_vlan_state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-voice_vlan_state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Specifies whether voice vlan configuration should be present or absent.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"absent"`
+      - :ansible-option-choices-entry-default:`"present"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - Some of the options are likely only used for developers within Meraki.
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
+   - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Query information about all switchports on a switch
+      meraki_switchport:
+        auth_key: abc12345
+        state: query
+        serial: ABC-123
+      delegate_to: localhost
+
+    - name: Query information about all switchports on a switch
+      meraki_switchport:
+        auth_key: abc12345
+        state: query
+        serial: ABC-123
+        number: 2
+      delegate_to: localhost
+
+    - name: Name switchport
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 7
+        name: Test Port
+      delegate_to: localhost
+
+    - name: Configure access port with voice VLAN
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 7
+        enabled: true
+        name: Test Port
+        tags: desktop
+        type: access
+        vlan: 10
+        voice_vlan: 11
+      delegate_to: localhost
+
+    - name: Check access port for idempotency
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 7
+        enabled: true
+        name: Test Port
+        tags: desktop
+        type: access
+        vlan: 10
+        voice_vlan: 11
+      delegate_to: localhost
+
+    - name: Configure trunk port with specific VLANs
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 7
+        enabled: true
+        name: Server port
+        tags: server
+        type: trunk
+        allowed_vlans:
+          - 10
+          - 15
+          - 20
+      delegate_to: localhost
+
+    - name: Configure access port with sticky MAC allow list and limit.
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 5
+        sticky_mac_allow_limit: 3
+        sticky_mac_allow_list:
+            macs:
+              - aa:aa:bb:bb:cc:cc
+              - bb:bb:aa:aa:cc:cc
+              - 11:aa:bb:bb:cc:cc
+            state: replaced
+        delegate_to: localhost
+
+    - name: Delete an existing MAC address from the sticky MAC allow list.
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 5
+        sticky_mac_allow_list:
+            macs:
+              - aa:aa:bb:bb:cc:cc
+            state: deleted
+        delegate_to: localhost
+
+    - name: Add a MAC address to sticky MAC allow list.
+      meraki_switchport:
+        auth_key: abc12345
+        state: present
+        serial: ABC-123
+        number: 5
+        sticky_mac_allow_list:
+            macs:
+              - 22:22:bb:bb:cc:cc
+            state: merged
+        delegate_to: localhost
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Information queried or updated switchports.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/access_policy_number"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/access_policy_number:
+
+      .. rst-class:: ansible-option-title
+
+      **access_policy_number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/access_policy_number" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Number of assigned access policy. Only applicable to access ports.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`1234`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/access_policy_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/access_policy_type:
+
+      .. rst-class:: ansible-option-title
+
+      **access_policy_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/access_policy_type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type of access policy assigned to port
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success, when assigned
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"MAC allow list"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/allowed_vlans"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/allowed_vlans:
+
+      .. rst-class:: ansible-option-title
+
+      **allowed_vlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/allowed_vlans" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of VLANs allowed on an access port
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success, when port is set as access
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"all"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enabled state of port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/flexible_stacking_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/flexible_stacking_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **flexible_stacking_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/flexible_stacking_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether flexible stacking capabilities are enabled on the port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/isolation_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/isolation_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **isolation_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/isolation_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Port isolation status of port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/link_negotiation"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/link_negotiation:
+
+      .. rst-class:: ansible-option-title
+
+      **link_negotiation**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/link_negotiation" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Link speed for the port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Auto negotiate"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/mac_allow_list"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/mac_allow_list:
+
+      .. rst-class:: ansible-option-title
+
+      **mac_allow_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/mac_allow_list" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of MAC addresses currently allowed on a non-sticky port. Used with access\_policy\_type of MAC allow list.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["11:aa:bb:bb:cc:cc", "22:aa:bb:bb:cc:cc", "33:aa:bb:bb:cc:cc"]`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/name" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Human friendly description of port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Jim Phone Port"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/number"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/number:
+
+      .. rst-class:: ansible-option-title
+
+      **number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/number" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Number of port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`1`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/poe_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/poe_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **poe_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/poe_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Power Over Ethernet enabled state of port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/port_schedule_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/port_schedule_id:
+
+      .. rst-class:: ansible-option-title
+
+      **port_schedule_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/port_schedule_id" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique ID of assigned port schedule
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/rstp_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/rstp_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **rstp_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/rstp_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enabled or disabled state of Rapid Spanning Tree Protocol (RSTP)
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/sticky_mac_allow_list"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/sticky_mac_allow_list:
+
+      .. rst-class:: ansible-option-title
+
+      **sticky_mac_allow_list**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/sticky_mac_allow_list" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of MAC addresses currently allowed on a sticky port. Used with access\_policy\_type of Sticky MAC allow list.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["11:aa:bb:bb:cc:cc", "22:aa:bb:bb:cc:cc", "33:aa:bb:bb:cc:cc"]`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/sticky_mac_allow_list_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/sticky_mac_allow_list_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **sticky_mac_allow_list_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/sticky_mac_allow_list_limit" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Number of MAC addresses allowed on a sticky port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`6`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/stp_guard"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/stp_guard:
+
+      .. rst-class:: ansible-option-title
+
+      **stp_guard**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/stp_guard" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      State of STP guard
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Root Guard"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/tags"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/tags:
+
+      .. rst-class:: ansible-option-title
+
+      **tags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/tags" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of tags assigned to port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["phone", "marketing"]`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type of switchport.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"trunk"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/udld"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/udld:
+
+      .. rst-class:: ansible-option-title
+
+      **udld**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/udld" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alert state of UDLD
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Alert only"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/vlan"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/vlan" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN assigned to port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`10`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/voice_vlan"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_ms_switchport_module__return-data/voice_vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **voice_vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/voice_vlan" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN assigned to port with voice VLAN enabled devices.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`20`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Kevin Breit (@kbreit)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
