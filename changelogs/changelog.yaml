@@ -999,3 +999,8 @@ releases:
       bugfixes:
         - Adding build_ignore property to galaxy file.
     release_date: '2023-12-07'
+  2.17.2:
+    changes:
+      bugfixes:
+        - Adding `smartquotes = False` to `conf.py` and romoving `'` from rst files.
+    release_date: '2023-12-19'
