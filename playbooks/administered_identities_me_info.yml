@@ -20,7 +20,7 @@
         # organizationId: "575334852396583071"
         # api:
         #   enabled: false
-      meraki_suppress_logging: true
+        meraki_suppress_logging: true
       register: result
 
     - name: Show result

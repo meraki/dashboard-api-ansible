@@ -21,15 +21,12 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_argument_spec,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    product=dict(type="str"),
-    time=dict(type="str"),
-    reasons=dict(type="list"),
-    toVersion=dict(type="dict"),
     networkId=dict(type="str"),
+    clientId=dict(type="str"),
 ))
 
 required_if = []
@@ -45,7 +42,7 @@ class ActionModule(ActionBase):
                 "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = False
+        self._supports_check_mode = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -67,13 +64,13 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail(errors)
 
     def get_object(self, params):
-        new_object = dict(
-            product=params.get("product"),
-            time=params.get("time"),
-            reasons=params.get("reasons"),
-            toVersion=params.get("toVersion"),
-            networkId=params.get("networkId"),
-        )
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("clientId") is not None:
+            new_object["clientId"] = params.get(
+                "clientId")
         return new_object
 
     def run(self, tmp=None, task_vars=None):
@@ -82,14 +79,24 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
+        self._result.update(dict(meraki_response={}))
+
         meraki = MERAKI(params=self._task.args)
 
-        response = meraki.exec_meraki(
-            family="networks",
-            function='createNetworkFirmwareUpgradesRollback',
-            op_modifies=True,
-            params=self.get_object(self._task.args),
-        )
-        self._result.update(dict(meraki_response=response))
-        self._result.update(meraki.exit_json())
-        return self._result
+        id = self._task.args.get("clientId")
+        if id:
+            response = meraki.exec_meraki(
+                family="networks",
+                function='getNetworkClient',
+                params=self.get_object(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result
+        if not id:
+            # NOTE: Does not have a get all method or it is in another action
+            response = None
+            meraki.object_modify_result(changed=False, result="Module does not have get all, check arguments of module")
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result

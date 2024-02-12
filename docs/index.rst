@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Meraki Ansible Actions' documentation!
+Welcome to Meraki Ansible Actions documentation!
 =====================================================
 
 .. toctree::
@@ -11,6 +11,7 @@ Welcome to Meraki Ansible Actions' documentation!
    :caption: User documentation
 
    plugins/index
+   platform_meraki
 
 
 Indices and tables

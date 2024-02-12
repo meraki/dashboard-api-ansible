@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -142,6 +142,9 @@ class Networks(object):
         if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
             new_object_params['timeZone'] = self.new_object.get('timeZone') or \
                 self.new_object.get('time_zone')
+        if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
+            new_object_params['productTypes'] = self.new_object.get('productTypes') or \
+                self.new_object.get('product_types')
         if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
@@ -237,8 +240,8 @@ class Networks(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
+                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def create(self):

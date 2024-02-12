@@ -66,7 +66,7 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             retainConfigs=params.get("retainConfigs"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

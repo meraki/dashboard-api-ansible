@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
             scope=params.get("scope"),
             tags=params.get("tags"),
             updateAction=params.get("updateAction"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

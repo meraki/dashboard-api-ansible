@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             name=params.get("name"),
             networkIds=params.get("networkIds"),
             enrollmentString=params.get("enrollmentString"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
         return new_object
 

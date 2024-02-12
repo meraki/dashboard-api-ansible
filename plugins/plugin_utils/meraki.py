@@ -38,7 +38,7 @@ def has_diff_elem(ls1, ls2):
 
 def has_diff_elem2(ls1, ls2):
     for elem in ls2:
-        if type(elem) is dict:
+        if isinstance(elem, dict):
             find = False
             keys1 = elem.keys()
             for elem2 in ls1:
@@ -49,7 +49,7 @@ def has_diff_elem2(ls1, ls2):
                         common_keys.append(key)
                 has_diff = False
                 for k in common_keys:
-                    if type(elem2[k]) is str and have_to_change_to_lowercase(elem2[k].lower()):
+                    if isinstance(elem2[k], str) and have_to_change_to_lowercase(elem2[k].lower()):
                         if elem2[k].lower() != elem[k].lower():
                             has_diff = True
                     else:
@@ -102,7 +102,7 @@ def compare_list(list1, list2):
         return attempt_std_cmp
     else:
         # not changes 'has diff elem' to list1 != list2 ':lists are not equal'
-        if type(list1[0]) is dict:
+        if isinstance(list1[0], dict):
             return not (has_diff_elem2(list1, list2)) or not (has_diff_elem2(list2, list1))
         else:
             return not (has_diff_elem(list1, list2)) or not (has_diff_elem(list2, list1))
@@ -113,6 +113,24 @@ def fn_comp_key(k, dict1, dict2):
 
 
 def meraki_compare_equality(current_value, requested_value):
+    # print("meraki_compare_equality", current_value, requested_value)
+    if requested_value is None:
+        return True
+    if current_value is None:
+        if requested_value is not None:
+            return False
+        return True
+    if isinstance(current_value, dict) and isinstance(requested_value, dict):
+        all_dict_params = list(current_value.keys()) + \
+            list(requested_value.keys())
+        return not any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params))
+    elif isinstance(current_value, list) and isinstance(requested_value, list):
+        return compare_list(current_value, requested_value)
+    else:
+        return current_value == requested_value
+
+
+def meraki_compare_equality2(current_value, requested_value):
     # print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
         return True
@@ -305,7 +323,7 @@ class MERAKI(object):
         return self.result
 
     def verify_array(self, verify_interface, **kwargs):
-        if type(verify_interface) is None:
+        if verify_interface is None:
             return list()
 
         if isinstance(verify_interface, list):

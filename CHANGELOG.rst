@@ -4,6 +4,68 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.16.13
+=======
+
+Bugfixes
+-------------
+
+- Meraki Compare Equality 2 added.
+
+v2.16.12
+=======
+
+Bugfixes
+-------------
+
+- New condition added to Meraki Compare Equality.
+- Devices module documentation fixed.
+
+v2.16.11
+=======
+
+Bugfixes
+-------------
+
+- Bad naming `networkId` parameter in `networks_appliance_traffic_shaping_custom_performance_classes`.
+- Bad naming `networkId` parameter in `networks_appliance_warm_spare_swap`.
+- Bad naming `networkId` parameter in `networks_bind`.
+- Bad naming `networkId` parameter in `networks_clients_provision`.
+- Bad naming `networkId` parameter in `networks_firmware_upgrades_rollbacks`.
+- Bad naming `networkId` parameter in `networks_firmware_upgrades_staged_events_rollbacks`.
+- Bad naming `networkId` parameter in `networks_mqtt_brokers`.
+- Bad naming `networkId` parameter in `networks_pii_requests_delete`.
+- Bad naming `networkId` parameter in `networks_sm_devices_checkin`.
+- Bad naming `networkId` parameter in `networks_sm_devices_lock`.
+- Bad naming `networkId` parameter in `networks_sm_devices_modify_tags`.
+- Bad naming `networkId` parameter in `networks_sm_devices_move`.
+- Bad naming `networkId` parameter in `networks_sm_devices_refresh_details`.
+- Bad naming `networkId` parameter in `networks_sm_devices_unenroll`.
+- Bad naming `networkId` parameter in `networks_sm_devices_wipe`.
+- Bad naming `networkId` parameter in `networks_sm_user_access_devices_delete`.
+- Bad naming `networkId` parameter in `networks_split`.
+- Bad naming `networkId` parameter in `networks_switch_stacks_add`.
+- Bad naming `networkId` parameter in `networks_switch_stacks_remove`.
+- Bad naming `networkId` parameter in `networks_unbind`.
+- Bad naming `networkId` parameter in `networks_sm_devices_fields`.
+
+v2.16.10
+=======
+
+Bugfixes
+-------------
+
+- Returning requires_ansible to >=2.14.0
+- Bad naming `networkId` parameter in `networks_devices_remove` and `networks_devices_claim_vmx`
+
+v2.16.5
+=======
+
+Bugfixes
+-------------
+
+- cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
+
 v2.16.4
 =======
 

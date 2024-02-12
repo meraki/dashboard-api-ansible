@@ -887,3 +887,120 @@ releases:
       bugfixes:
       - cisco.meraki.networks_devices_claim - got an unexpected keyword argument 'network_id', bug with parameter naming.
     release_date: '2023-09-28'
+  2.16.5:
+    changes:
+      bugfixes:
+      - cisco.meraki.organizations_login_security module will not update org api authentication - fixing for look at organizations_login_security.
+    release_date: '2023-10-10'
+  2.16.6:
+    changes:
+      bugfixes:
+      - runtime updated requires_ansible from 2.9.10 to '>=2.14.0'.
+    release_date: '2023-10-17'
+  2.16.7:
+    changes:
+      bugfixes:
+      - Sanity fixes.
+    release_date: '2023-10-17'
+  2.16.8:
+    changes:
+      bugfixes:
+      - Returning requires_ansible to 2.9.10
+    release_date: '2023-10-17'
+  2.16.10:
+    changes:
+      bugfixes:
+      - Returning requires_ansible to >=2.14.0
+      - Bad naming `networkId` parameter in `networks_devices_remove` and `networks_devices_claim_vmx`
+    release_date: '2023-10-26'
+  2.16.11:
+    changes:
+      bugfixes:
+      - Bad naming `networkId` parameter in `networks_appliance_traffic_shaping_custom_performance_classes`.
+      - Bad naming `networkId` parameter in `networks_appliance_warm_spare_swap`.
+      - Bad naming `networkId` parameter in `networks_bind`.
+      - Bad naming `networkId` parameter in `networks_clients_provision`.
+      - Bad naming `networkId` parameter in `networks_firmware_upgrades_rollbacks`.
+      - Bad naming `networkId` parameter in `networks_firmware_upgrades_staged_events_rollbacks`.
+      - Bad naming `networkId` parameter in `networks_mqtt_brokers`.
+      - Bad naming `networkId` parameter in `networks_pii_requests_delete`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_checkin`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_lock`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_modify_tags`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_move`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_refresh_details`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_unenroll`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_wipe`.
+      - Bad naming `networkId` parameter in `networks_sm_user_access_devices_delete`.
+      - Bad naming `networkId` parameter in `networks_split`.
+      - Bad naming `networkId` parameter in `networks_switch_stacks_add`.
+      - Bad naming `networkId` parameter in `networks_switch_stacks_remove`.
+      - Bad naming `networkId` parameter in `networks_unbind`.
+      - Bad naming `networkId` parameter in `networks_sm_devices_fields`.
+    release_date: '2023-10-26'
+  2.16.12:
+    changes:
+      bugfixes:
+      - New condition added to Meraki Compare Equality.
+      - Devices module documentation fixed.
+    release_date: '2023-10-26'
+  2.16.13:
+    changes:
+      bugfixes:
+      - Meraki Compare Equality 2 added.
+    release_date: '2023-10-30'
+  2.16.14:
+    changes:
+      bugfixes:
+      - Adding condition to avoid error on exists on devices.
+    release_date: '2023-11-07'
+  2.16.15:
+    changes:
+      bugfixes:
+      - Adding `network_clients_info` and `network_client_info`.
+      - Adding `platform_meraki.rst` to docs.
+    release_date: '2023-11-14'
+  2.16.16:
+    changes:
+      bugfixes:
+        - Idempotency bugs fixed in devices_switch_ports.
+        - Adding `product_types` for update request on networks.
+        - networks_syslog_servers is now just an Update action to API.
+        - Parameter`organization_id` change to `organizationId` organizations_claim.
+        - Parameter`organization_id` change to `organizationId` organizations_clone.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_claim.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_export_events.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_prepare.
+        - Parameter`organization_id` change to `organizationId` organizations_inventory_release.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_assign_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_move.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_move_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licenses_renew_seats.
+        - Parameter`organization_id` change to `organizationId` organizations_licensing_coterm_licenses_move.
+        - Parameter`organization_id` change to `organizationId` organizations_networks_combine.
+        - Parameter`organization_id` change to `organizationId` organizations_switch_devices_clone.
+        - Parameter`organization_id` change to `organizationId` organizations_users.
+        - Removing logs in meraki.py.
+    release_date: '2023-11-30'
+
+  2.16.17:
+    changes:
+      bugfixes:
+        - Adding support to ansible.utils >=3.0
+    release_date: '2023-12-04'
+
+  2.17.0:
+    changes:
+      minor_changes:
+        - Adding support to ansible.utils ">=2.0.0, <4.00".
+    release_date: '2023-12-05'
+  2.17.1:
+    changes:
+      bugfixes:
+        - Adding build_ignore property to galaxy file.
+    release_date: '2023-12-07'
+  2.17.2:
+    changes:
+      bugfixes:
+        - Adding `smartquotes = False` to `conf.py` and romoving `'` from rst files.
+    release_date: '2023-12-19'
