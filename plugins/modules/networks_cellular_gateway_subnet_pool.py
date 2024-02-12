@@ -66,7 +66,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     cidr: 192.168.0.0/16
-    deploymentMode: routed
     mask: 24
     networkId: string
 
