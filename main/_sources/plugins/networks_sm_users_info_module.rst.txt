@@ -1262,7 +1262,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"fullName\\": \\"string\\",\\n    \\"username\\": \\"string\\",\\n    \\"hasPassword\\": true,\\n    \\"tags\\": \\"string\\",\\n    \\"adGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"azureAdGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"samlGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"asmGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"isExternal\\": true,\\n    \\"displayName\\": \\"string\\",\\n    \\"hasIdentityCertificate\\": true,\\n    \\"userThumbnail\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"adGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"asmGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"azureAdGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"displayName\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"fullName\\": \\"string\\",\\n    \\"hasIdentityCertificate\\": true,\\n    \\"hasPassword\\": true,\\n    \\"id\\": \\"string\\",\\n    \\"isExternal\\": true,\\n    \\"samlGroups\\": [\\n      \\"string\\"\\n    ],\\n    \\"tags\\": \\"string\\",\\n    \\"userThumbnail\\": \\"string\\",\\n    \\"username\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

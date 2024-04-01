@@ -1252,7 +1252,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_cellular\_gateway\_lan,
+   - SDK Method used are cellular\_gateway.CellularGateway.update\_device\_cellular\_gateway\_lan,
    - Paths used are put /devices/{serial}/cellularGateway/lan,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1265,7 +1265,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceCellularGatewayLan <https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-lan>`_
+   `Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayLan <https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-lan>`_
        Complete reference of the updateDeviceCellularGatewayLan API.
 
 .. Examples
@@ -1299,16 +1299,10 @@ Examples
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
         state: present
-        deviceLanIp: 192.168.0.33
-        deviceName: name of the MG
-        deviceSubnet: 192.168.0.32/27
         fixedIpAssignments:
         - ip: 192.168.0.10
           mac: 0b:00:00:00:00:ac
           name: server 1
-        - ip: 192.168.0.20
-          mac: 0b:00:00:00:00:ab
-          name: server 2
         reservedIpRanges:
         - comment: A reserved IP range
           end: 192.168.1.1
@@ -1375,7 +1369,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"deviceLanIp": "string", "deviceName": "string", "deviceSubnet": "string", "fixedIpAssignments": [{"ip": "string", "mac": "string", "name": "string"}], "reservedIpRanges": [{"comment": "string", "end": "string", "start": "string"}]}`
 
 
       .. raw:: html

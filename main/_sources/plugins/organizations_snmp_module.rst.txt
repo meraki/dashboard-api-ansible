@@ -1284,8 +1284,10 @@ Examples
         - 123.123.123.1
         v2cEnabled: false
         v3AuthMode: SHA
+        v3AuthPass: password
         v3Enabled: true
         v3PrivMode: AES128
+        v3PrivPass: password
 
 
 
@@ -1347,7 +1349,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"hostname": "string", "peerIps": ["string"], "port": 0, "v2CommunityString": "string", "v2cEnabled": true, "v3AuthMode": "string", "v3Enabled": true, "v3PrivMode": "string", "v3User": "string"}`
 
 
       .. raw:: html

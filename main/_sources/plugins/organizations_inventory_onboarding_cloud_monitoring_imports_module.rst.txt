@@ -1228,7 +1228,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"status\\": \\"string\\"", "\\n    \\"importId\\": \\"string\\"", "\\n    \\"message\\": \\"string\\"\\n  }\\n]\\n"]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"importId\\": \\"string\\"", "\\n    \\"message\\": \\"string\\"", "\\n    \\"status\\": \\"string\\"\\n  }\\n]\\n"]`
 
 
       .. raw:: html

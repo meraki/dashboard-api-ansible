@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"clientPrivacy": {"expireDataBefore": "string", "expireDataOlderThan": 0}, "fips": {"enabled": true}, "localStatusPage": {"authentication": {"enabled": true, "username": "string"}}, "localStatusPageEnabled": true, "namedVlans": {"enabled": true}, "remoteStatusPageEnabled": true, "securePort": {"enabled": true}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"fips": {"enabled": true}, "localStatusPage": {"authentication": {"enabled": true, "username": "string"}}, "localStatusPageEnabled": true, "namedVlans": {"enabled": true}, "remoteStatusPageEnabled": true, "securePort": {"enabled": true}}`
 
 
       .. raw:: html

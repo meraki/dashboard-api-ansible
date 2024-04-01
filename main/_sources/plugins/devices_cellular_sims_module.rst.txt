@@ -1044,6 +1044,40 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-simFailover/timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_cellular_sims_module__parameter-simfailover/timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-simFailover/timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Failover timeout in seconds (optional).
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 

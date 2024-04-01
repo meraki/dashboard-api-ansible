@@ -1148,7 +1148,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Flood unknown multicast traffic setting for switches, switch stacks or switch profiles.
+      Flood unknown multicast traffic setting for switches, switch stacks or switch templates.
 
 
       .. rst-class:: ansible-option-line
@@ -1190,7 +1190,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      IGMP snooping setting for switches, switch stacks or switch profiles.
+      IGMP snooping setting for switches, switch stacks or switch templates.
 
 
       .. rst-class:: ansible-option-line
@@ -1300,7 +1300,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      List of switch profiles ids for template network.
+      List of switch templates ids for template network.
 
 
       .. raw:: html
@@ -1372,16 +1372,17 @@ Examples
         overrides:
         - floodUnknownMulticastTrafficEnabled: true
           igmpSnoopingEnabled: true
-          switches:
-          - Q234-ABCD-0001
-          - Q234-ABCD-0002
-          - Q234-ABCD-0003
-        - floodUnknownMulticastTrafficEnabled: true
-          igmpSnoopingEnabled: true
           stacks:
           - '789102'
           - '123456'
           - '129102'
+          switchProfiles:
+          - '1234'
+          - '4567'
+          switches:
+          - Q234-ABCD-0001
+          - Q234-ABCD-0002
+          - Q234-ABCD-0003
 
 
 
@@ -1443,7 +1444,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultSettings": {"floodUnknownMulticastTrafficEnabled": true, "igmpSnoopingEnabled": true}, "overrides": [{"floodUnknownMulticastTrafficEnabled": true, "igmpSnoopingEnabled": true, "stacks": ["string"], "switchProfiles": ["string"], "switches": ["string"]}]}`
 
 
       .. raw:: html

@@ -1080,7 +1080,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_wireless\_bluetooth\_settings,
+   - SDK Method used are wireless.Wireless.update\_device\_wireless\_bluetooth\_settings,
    - Paths used are put /devices/{serial}/wireless/bluetooth/settings,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1093,7 +1093,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceWirelessBluetoothSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings>`_
+   `Cisco Meraki documentation for wireless updateDeviceWirelessBluetoothSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings>`_
        Complete reference of the updateDeviceWirelessBluetoothSettings API.
 
 .. Examples

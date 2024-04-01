@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all organizations \_devices \_powermodules \_statuses \_bydevice.
-- List the power status information for devices in an organization. The data returned by this endpoint is updated every 5 minutes.
+- List the most recent status information for power modules in rackmount MX and MS devices that support them. The data returned by this endpoint is updated every 5 minutes.
 
 
 .. note::
@@ -1483,7 +1483,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"mac\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"productType\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"slots\\": [\\n      {\\n        \\"number\\": 0,\\n        \\"serial\\": \\"string\\",\\n        \\"model\\": \\"string\\",\\n        \\"status\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"mac\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"productType\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"slots\\": [\\n      {\\n        \\"model\\": \\"string\\",\\n        \\"number\\": 0,\\n        \\"serial\\": \\"string\\",\\n        \\"status\\": \\"string\\"\\n      }\\n    ],\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

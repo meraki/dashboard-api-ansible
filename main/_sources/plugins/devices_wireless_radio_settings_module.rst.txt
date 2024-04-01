@@ -1252,7 +1252,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_wireless\_radio\_settings,
+   - SDK Method used are wireless.Wireless.update\_device\_wireless\_radio\_settings,
    - Paths used are put /devices/{serial}/wireless/radio/settings,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1265,7 +1265,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceWirelessRadioSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings>`_
+   `Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings>`_
        Complete reference of the updateDeviceWirelessRadioSettings API.
 
 .. Examples

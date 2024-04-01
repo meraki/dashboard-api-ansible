@@ -1302,7 +1302,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"occurredAt\\": \\"string\\",\\n    \\"alertTypeId\\": \\"string\\",\\n    \\"alertType\\": \\"string\\",\\n    \\"device\\": {\\n      \\"serial\\": \\"string\\"\\n    },\\n    \\"destinations\\": {\\n      \\"email\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"push\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"sms\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"webhook\\": {\\n        \\"sentAt\\": \\"string\\"\\n      }\\n    },\\n    \\"alertData\\": {}\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"alertData\\": {},\\n    \\"alertType\\": \\"string\\",\\n    \\"alertTypeId\\": \\"string\\",\\n    \\"destinations\\": {\\n      \\"email\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"push\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"sms\\": {\\n        \\"sentAt\\": \\"string\\"\\n      },\\n      \\"webhook\\": {\\n        \\"sentAt\\": \\"string\\"\\n      }\\n    },\\n    \\"device\\": {\\n      \\"serial\\": \\"string\\"\\n    },\\n    \\"occurredAt\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

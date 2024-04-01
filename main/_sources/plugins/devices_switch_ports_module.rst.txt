@@ -1986,7 +1986,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The VLAN of the switch port. A null value will clear the value set for trunk ports.
+      The VLAN of the switch port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk ports.
 
 
       .. raw:: html
@@ -2037,7 +2037,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_switch\_port,
+   - SDK Method used are switch.Switch.update\_device\_switch\_port,
    - Paths used are put /devices/{serial}/switch/ports/{portId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -2050,7 +2050,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceSwitchPort <https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port>`_
+   `Cisco Meraki documentation for switch updateDeviceSwitchPort <https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port>`_
        Complete reference of the updateDeviceSwitchPort API.
 
 .. Examples
@@ -2181,7 +2181,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

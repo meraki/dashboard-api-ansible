@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"pingId": "string", "request": {"count": 0, "serial": "string", "target": "string"}, "results": {"latencies": {"average": 0, "maximum": 0, "minimum": 0}, "loss": {"percentage": 0}, "received": 0, "replies": [{"latency": 0, "sequenceId": 0, "size": 0}], "sent": 0}, "status": "string", "url": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"callback": {"id": "string", "status": "string", "url": "string"}, "pingId": "string", "request": {"count": 0, "serial": "string", "target": "string"}, "results": {"latencies": {"average": 0, "maximum": 0, "minimum": 0}, "loss": {"percentage": 0}, "received": 0, "replies": [{"latency": 0, "sequenceId": 0, "size": 0}], "sent": 0}, "status": "string", "url": "string"}`
 
 
       .. raw:: html

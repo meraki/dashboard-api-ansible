@@ -1303,7 +1303,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"trustedServerId\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"vlan\\": 0,\\n    \\"ipv4\\": {\\n      \\"address\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ipv4\\": {\\n      \\"address\\": \\"string\\"\\n    },\\n    \\"mac\\": \\"string\\",\\n    \\"trustedServerId\\": \\"string\\",\\n    \\"vlan\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

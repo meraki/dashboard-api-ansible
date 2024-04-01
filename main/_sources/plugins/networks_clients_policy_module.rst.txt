@@ -1131,7 +1131,6 @@ Examples
         clientId: string
         devicePolicy: Group policy
         groupPolicyId: '101'
-        mac: 00:11:22:33:44:55
         networkId: string
 
 
@@ -1194,7 +1193,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"devicePolicy": "string", "groupPolicyId": "string", "mac": "string"}`
 
 
       .. raw:: html

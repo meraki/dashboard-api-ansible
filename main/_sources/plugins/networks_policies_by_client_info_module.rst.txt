@@ -1373,7 +1373,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"clientId\\": \\"string\\",\\n    \\"assigned\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"type\\": \\"string\\",\\n        \\"groupPolicyId\\": \\"string\\",\\n        \\"ssid\\": [\\n          {\\n            \\"ssidNumber\\": 0\\n          }\\n        ]\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"assigned\\": [\\n      {\\n        \\"groupPolicyId\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"ssid\\": [\\n          {\\n            \\"ssidNumber\\": 0\\n          }\\n        ],\\n        \\"type\\": \\"string\\"\\n      }\\n    ],\\n    \\"clientId\\": \\"string\\",\\n    \\"name\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

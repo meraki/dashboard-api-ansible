@@ -1105,6 +1105,152 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-namedvlans:
+
+      .. rst-class:: ansible-option-title
+
+      **namedVlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Named VLAN settings for wireless networks.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans/poolDhcpMonitoring"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-namedvlans/pooldhcpmonitoring:
+
+      .. rst-class:: ansible-option-title
+
+      **poolDhcpMonitoring**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans/poolDhcpMonitoring" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Named VLAN Pool DHCP Monitoring settings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans/poolDhcpMonitoring/duration"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-namedvlans/pooldhcpmonitoring/duration:
+
+      .. rst-class:: ansible-option-title
+
+      **duration**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans/poolDhcpMonitoring/duration" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans/poolDhcpMonitoring/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-namedvlans/pooldhcpmonitoring/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans/poolDhcpMonitoring/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from being assigned to VLANs where they would be unable to obtain an IP address via DHCP.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
 
       .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-networkid:
@@ -1231,6 +1377,10 @@ Examples
         ledLightsOn: false
         locationAnalyticsEnabled: false
         meshingEnabled: true
+        namedVlans:
+          poolDhcpMonitoring:
+            duration: 5
+            enabled: true
         networkId: string
         upgradeStrategy: minimizeUpgradeTime
 
@@ -1294,7 +1444,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "upgradeStrategy": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "regulatoryDomain": {"countryCode": "string", "name": "string", "permits6e": true}, "upgradeStrategy": "string"}`
 
 
       .. raw:: html

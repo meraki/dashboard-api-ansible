@@ -1147,7 +1147,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Resolution of the camera. Can be one of '1280x720', '1920x1080', '1080x1080', '2058x2058', '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not all resolutions are supported by every camera model.
+      Resolution of the camera. Can be one of '1280x720', '1920x1080', '1080x1080', '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not all resolutions are supported by every camera model.
 
 
       .. raw:: html
@@ -1240,7 +1240,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_camera\_quality\_and\_retention,
+   - SDK Method used are camera.Camera.update\_device\_camera\_quality\_and\_retention,
    - Paths used are put /devices/{serial}/camera/qualityAndRetention,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1253,7 +1253,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceCameraQualityAndRetention <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-quality-and-retention>`_
+   `Cisco Meraki documentation for camera updateDeviceCameraQualityAndRetention <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-quality-and-retention>`_
        Complete reference of the updateDeviceCameraQualityAndRetention API.
 
 .. Examples

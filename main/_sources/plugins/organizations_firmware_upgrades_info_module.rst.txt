@@ -111,6 +111,79 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-direction"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-direction:
+
+      .. rst-class:: ansible-option-title
+
+      **direction**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-direction" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      direction (string), direction to paginate, either "next" (default) or "prev" page
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-endingBefore"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-endingbefore:
+
+      .. rst-class:: ansible-option-title
+
+      **endingBefore**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-endingBefore" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-headers"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-headers:
@@ -1005,17 +1078,51 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-productType"></div>
+        <div class="ansibleOptionAnchor" id="parameter-perPage"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-producttype:
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-perpage:
 
       .. rst-class:: ansible-option-title
 
-      **productType**
+      **perPage**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-productType" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-perPage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-productTypes"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-producttypes:
+
+      .. rst-class:: ansible-option-title
+
+      **productTypes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-productTypes" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1029,7 +1136,42 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ProductType query parameter. The product type in a given upgrade ID.
+      ProductTypes query parameter. Optional parameter to filter the upgrade by product type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-startingAfter"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-startingafter:
+
+      .. rst-class:: ansible-option-title
+
+      **startingAfter**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-startingAfter" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+          
 
 
       .. raw:: html
@@ -1063,7 +1205,41 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Status query parameter. The status of an upgrade.
+      Status query parameter. Optional parameter to filter the upgrade by status.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-total_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_info_module__parameter-total_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **total_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-total_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      total\_pages(int), use with perPage to get total results up to total\_pages\*perPage; -1 for all pages
 
 
       .. raw:: html
@@ -1126,9 +1302,14 @@ Examples
         meraki_be_geo_id: "{{meraki_be_geo_id}}"
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        perPage: 0
+        startingAfter: string
+        endingBefore: string
         status: []
-        productType: []
+        productTypes: []
         organizationId: string
+        total_pages: -1
+        direction: next
       register: result
 
 
@@ -1191,7 +1372,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"upgradeId\\": \\"string\\",\\n    \\"upgradeBatchId\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"status\\": \\"string\\",\\n    \\"time\\": \\"string\\",\\n    \\"completedAt\\": \\"string\\",\\n    \\"productType\\": \\"string\\",\\n    \\"toVersion\\": {\\n      \\"id\\": \\"string\\",\\n      \\"shortName\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\"\\n    },\\n    \\"fromVersion\\": {\\n      \\"id\\": \\"string\\",\\n      \\"shortName\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"completedAt\\": \\"string\\",\\n    \\"fromVersion\\": {\\n      \\"firmware\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"shortName\\": \\"string\\"\\n    },\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"productTypes\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"time\\": \\"string\\",\\n    \\"toVersion\\": {\\n      \\"firmware\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"shortName\\": \\"string\\"\\n    },\\n    \\"upgradeBatchId\\": \\"string\\",\\n    \\"upgradeId\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

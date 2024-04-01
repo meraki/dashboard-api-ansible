@@ -1438,7 +1438,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"ipVersion\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"srcCidr\\": \\"string\\",\\n    \\"srcPort\\": \\"string\\",\\n    \\"dstCidr\\": \\"string\\",\\n    \\"dstPort\\": \\"string\\",\\n    \\"vlan\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"dstCidr\\": \\"string\\",\\n    \\"dstPort\\": \\"string\\",\\n    \\"ipVersion\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"srcCidr\\": \\"string\\",\\n    \\"srcPort\\": \\"string\\",\\n    \\"vlan\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

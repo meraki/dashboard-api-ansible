@@ -1338,7 +1338,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"action\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"details\\": \\"string\\",\\n    \\"dashboardUser\\": \\"string\\",\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"action\\": \\"string\\",\\n    \\"dashboardUser\\": \\"string\\",\\n    \\"details\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

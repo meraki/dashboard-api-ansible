@@ -1368,7 +1368,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"serial\\": \\"string\\",\\n    \\"connectionStats\\": {\\n      \\"assoc\\": 0,\\n      \\"auth\\": 0,\\n      \\"dhcp\\": 0,\\n      \\"dns\\": 0,\\n      \\"success\\": 0\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"connectionStats\\": {\\n      \\"assoc\\": 0,\\n      \\"auth\\": 0,\\n      \\"dhcp\\": 0,\\n      \\"dns\\": 0,\\n      \\"success\\": 0\\n    },\\n    \\"serial\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

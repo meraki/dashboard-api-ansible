@@ -1186,7 +1186,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyType": "string", "dot1x": {"controlDirection": "string"}, "guestPortBouncing": true, "guestVlanId": 0, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"criticalAuth": {"dataVlanId": 0, "suspendPortBounce": true, "voiceVlanId": 0}, "failedAuthVlanId": 0, "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "port": 0}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "port": 0}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": "string"}, "guestPortBouncing": true, "guestVlanId": 0, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"criticalAuth": {"dataVlanId": 0, "suspendPortBounce": true, "voiceVlanId": 0}, "failedAuthVlanId": 0, "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "port": 0}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "port": 0}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
 
 
       .. raw:: html

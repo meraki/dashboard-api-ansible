@@ -1202,15 +1202,6 @@ Examples
         - policy: deny
           type: host
           value: google.com
-        - policy: deny
-          type: port
-          value: '23'
-        - policy: deny
-          type: ipRange
-          value: 10.11.12.00/24
-        - policy: deny
-          type: ipRange
-          value: 10.11.12.00/24:5555
 
 
 
@@ -1272,7 +1263,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"policy\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"value\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

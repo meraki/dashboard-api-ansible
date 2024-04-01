@@ -995,7 +995,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The size of the vMX you claim. It can be one of small, medium, large, 100.
+      The size of the vMX you claim. It can be one of small, medium, large, xlarge, 100.
 
 
       .. raw:: html
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"address": "string", "details": [{"name": "string", "value": "string"}], "firmware": "string", "imei": "string", "lanIp": "string", "lat": 0, "lng": 0, "mac": "string", "model": "string", "name": "string", "networkId": "string", "notes": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
 
 
       .. raw:: html

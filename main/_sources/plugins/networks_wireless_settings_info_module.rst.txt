@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "upgradeStrategy": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "regulatoryDomain": {"countryCode": "string", "name": "string", "permits6e": true}, "upgradeStrategy": "string"}`
 
 
       .. raw:: html

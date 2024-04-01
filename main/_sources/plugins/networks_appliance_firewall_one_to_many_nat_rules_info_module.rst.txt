@@ -1101,7 +1101,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"portRules\\": [\\n      {\\n        \\"allowedIps\\": [\\n          \\"string\\"\\n        ],\\n        \\"localIp\\": \\"string\\",\\n        \\"localPort\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"protocol\\": \\"string\\",\\n        \\"publicPort\\": \\"string\\"\\n      }\\n    ],\\n    \\"publicIp\\": \\"string\\",\\n    \\"uplink\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

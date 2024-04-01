@@ -256,6 +256,125 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11w"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ssids_module__parameter-dot11w:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11w**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11w" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The current setting for Protected Management Frames (802.11w).
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11w/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ssids_module__parameter-dot11w/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11w/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11w is enabled or not.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11w/required"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ssids_module__parameter-dot11w/required:
+
+      .. rst-class:: ansible-option-title
+
+      **required**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11w/required" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      (Optional) Whether 802.11w is required or not.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-enabled"></div>
 
       .. _ansible_collections.cisco.meraki.networks_appliance_ssids_module__parameter-enabled:
@@ -1565,6 +1684,9 @@ Examples
         defaultVlanId: 1
         dhcpEnforcedDeauthentication:
           enabled: true
+        dot11w:
+          enabled: true
+          required: true
         enabled: true
         encryptionMode: wpa
         name: My SSID

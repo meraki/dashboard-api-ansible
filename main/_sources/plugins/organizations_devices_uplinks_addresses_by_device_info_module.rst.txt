@@ -1482,7 +1482,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"mac\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"productType\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"uplinks\\": [\\n      {\\n        \\"interface\\": \\"string\\",\\n        \\"addresses\\": [\\n          {\\n            \\"protocol\\": \\"string\\",\\n            \\"assignmentMode\\": \\"string\\",\\n            \\"address\\": \\"string\\",\\n            \\"gateway\\": \\"string\\",\\n            \\"public\\": {\\n              \\"address\\": \\"string\\"\\n            }\\n          }\\n        ]\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"mac\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"productType\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"uplinks\\": [\\n      {\\n        \\"addresses\\": [\\n          {\\n            \\"address\\": \\"string\\",\\n            \\"assignmentMode\\": \\"string\\",\\n            \\"gateway\\": \\"string\\",\\n            \\"protocol\\": \\"string\\",\\n            \\"public\\": {\\n              \\"address\\": \\"string\\"\\n            }\\n          }\\n        ],\\n        \\"interface\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

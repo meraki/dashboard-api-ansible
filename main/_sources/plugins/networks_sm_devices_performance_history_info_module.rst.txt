@@ -1337,7 +1337,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"cpuPercentUsed\\": 0,\\n    \\"memFree\\": 0,\\n    \\"memWired\\": 0,\\n    \\"memActive\\": 0,\\n    \\"memInactive\\": 0,\\n    \\"networkSent\\": 0,\\n    \\"networkReceived\\": 0,\\n    \\"swapUsed\\": 0,\\n    \\"diskUsage\\": {\\n      \\"c\\": {\\n        \\"used\\": 0,\\n        \\"space\\": 0\\n      }\\n    },\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"cpuPercentUsed\\": 0,\\n    \\"diskUsage\\": {\\n      \\"c\\": {\\n        \\"space\\": 0,\\n        \\"used\\": 0\\n      }\\n    },\\n    \\"memActive\\": 0,\\n    \\"memFree\\": 0,\\n    \\"memInactive\\": 0,\\n    \\"memWired\\": 0,\\n    \\"networkReceived\\": 0,\\n    \\"networkSent\\": 0,\\n    \\"swapUsed\\": 0,\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

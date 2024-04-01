@@ -1812,7 +1812,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1832,7 +1832,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"lat\\": 0,\\n    \\"lng\\": 0,\\n    \\"address\\": \\"string\\",\\n    \\"notes\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"firmware\\": \\"string\\",\\n    \\"productType\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"address": "string", "details": [{"name": "string", "value": "string"}], "firmware": "string", "imei": "string", "lanIp": "string", "lat": 0, "lng": 0, "mac": "string", "model": "string", "name": "string", "networkId": "string", "notes": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
 
 
       .. raw:: html

@@ -141,6 +141,75 @@ Parameters
       .. raw:: html
 
         </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authentication/password"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-authentication/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authentication/password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password for the MQTT broker.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authentication/username"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-authentication/username:
+
+      .. rst-class:: ansible-option-title
+
+      **username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authentication/username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Username for the MQTT broker.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -1175,17 +1244,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-security/security"></div>
+        <div class="ansibleOptionAnchor" id="parameter-security/tls"></div>
 
-      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/security:
+      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/tls:
 
       .. rst-class:: ansible-option-title
 
-      **security**
+      **tls**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-security/security" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-security/tls" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1209,9 +1278,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-security/security/caCertificate"></div>
+        <div class="ansibleOptionAnchor" id="parameter-security/tls/caCertificate"></div>
 
-      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/security/cacertificate:
+      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/tls/cacertificate:
 
       .. rst-class:: ansible-option-title
 
@@ -1219,7 +1288,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-security/security/caCertificate" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-security/tls/caCertificate" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1243,9 +1312,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-security/security/verifyHostnames"></div>
+        <div class="ansibleOptionAnchor" id="parameter-security/tls/verifyHostnames"></div>
 
-      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/security/verifyhostnames:
+      .. _ansible_collections.cisco.meraki.networks_mqtt_brokers_module__parameter-security/tls/verifyhostnames:
 
       .. rst-class:: ansible-option-title
 
@@ -1253,7 +1322,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-security/security/verifyHostnames" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-security/tls/verifyHostnames" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1341,15 +1410,16 @@ Examples
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
         authentication:
-          username: Username
-        host: 1.1.1.1
+          password: '*****'
+          username: milesmeraki
+        host: 1.2.3.4
         name: MQTT_Broker_1
         networkId: string
-        port: 1234
+        port: 443
         security:
           mode: tls
           tls:
-            hasCaCertificate: true
+            caCertificate: '*****'
             verifyHostnames: true
 
 
@@ -1412,7 +1482,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"authentication": {"username": "string"}, "host": "string", "id": "string", "name": "string", "port": 0, "security": {"mode": "string", "tls": {"hasCaCertificate": true, "verifyHostnames": true}}}`
 
 
       .. raw:: html

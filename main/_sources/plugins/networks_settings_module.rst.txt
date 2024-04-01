@@ -1125,6 +1125,83 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_settings_module__parameter-namedvlans:
+
+      .. rst-class:: ansible-option-title
+
+      **namedVlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A hash of Named VLANs options applied to the Network.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-namedVlans/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_settings_module__parameter-namedvlans/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-namedVlans/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enables / disables Named VLANs on the Network.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
 
       .. _ansible_collections.cisco.meraki.networks_settings_module__parameter-networkid:
@@ -1337,6 +1414,8 @@ Examples
             enabled: false
             password: miles123
         localStatusPageEnabled: true
+        namedVlans:
+          enabled: true
         networkId: string
         remoteStatusPageEnabled: true
         securePort:
@@ -1402,7 +1481,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"clientPrivacy": {"expireDataBefore": "string", "expireDataOlderThan": 0}, "fips": {"enabled": true}, "localStatusPage": {"authentication": {"enabled": true, "username": "string"}}, "localStatusPageEnabled": true, "namedVlans": {"enabled": true}, "remoteStatusPageEnabled": true, "securePort": {"enabled": true}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"fips": {"enabled": true}, "localStatusPage": {"authentication": {"enabled": true, "username": "string"}}, "localStatusPageEnabled": true, "namedVlans": {"enabled": true}, "remoteStatusPageEnabled": true, "securePort": {"enabled": true}}`
 
 
       .. raw:: html

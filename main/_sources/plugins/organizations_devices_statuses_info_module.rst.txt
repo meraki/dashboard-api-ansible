@@ -1531,7 +1531,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1551,7 +1551,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"components": {"powerSupplies": ["string"]}, "gateway": "string", "ipType": "string", "lanIp": "string", "lastReportedAt": "string", "mac": "string", "model": "string", "name": "string", "networkId": "string", "primaryDns": "string", "productType": "string", "publicIp": "string", "secondaryDns": "string", "serial": "string", "status": "string", "tags": ["string"]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"components\\": {\\n      \\"powerSupplies\\": [\\n        {\\n          \\"model\\": \\"string\\",\\n          \\"poe\\": {\\n            \\"maximum\\": 0,\\n            \\"unit\\": \\"string\\"\\n          },\\n          \\"serial\\": \\"string\\",\\n          \\"slot\\": 0,\\n          \\"status\\": \\"string\\"\\n        }\\n      ]\\n    },\\n    \\"gateway\\": \\"string\\",\\n    \\"ipType\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"lastReportedAt\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"primaryDns\\": \\"string\\",\\n    \\"productType\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"secondaryDns\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_cellular\_gateway\_port\_forwarding\_rules,
+   - SDK Method used are cellular\_gateway.CellularGateway.get\_device\_cellular\_gateway\_port\_forwarding\_rules,
    - Paths used are get /devices/{serial}/cellularGateway/portForwardingRules,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceCellularGatewayPortForwardingRules <https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules>`_
+   `Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayPortForwardingRules <https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules>`_
        Complete reference of the getDeviceCellularGatewayPortForwardingRules API.
 
 .. Examples
@@ -1101,7 +1101,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"access\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"localPort\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"publicPort\\": \\"string\\",\\n    \\"uplink\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

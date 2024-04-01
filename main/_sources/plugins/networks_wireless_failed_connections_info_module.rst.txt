@@ -1438,7 +1438,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ssidNumber\\": 0,\\n    \\"vlan\\": 0,\\n    \\"clientMac\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"failureStep\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"clientMac\\": \\"string\\",\\n    \\"failureStep\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"ssidNumber\\": 0,\\n    \\"ts\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"vlan\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

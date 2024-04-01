@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_wireless\_radio\_settings,
+   - SDK Method used are wireless.Wireless.get\_device\_wireless\_radio\_settings,
    - Paths used are get /devices/{serial}/wireless/radio/settings,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceWirelessRadioSettings <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-radio-settings>`_
+   `Cisco Meraki documentation for wireless getDeviceWirelessRadioSettings <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-radio-settings>`_
        Complete reference of the getDeviceWirelessRadioSettings API.
 
 .. Examples
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"fiveGhzSettings": {"channel": 0, "channelWidth": 0, "targetPower": 0}, "rfProfileId": "string", "serial": "string", "twoFourGhzSettings": {"channel": 0, "targetPower": 0}}`
 
 
       .. raw:: html

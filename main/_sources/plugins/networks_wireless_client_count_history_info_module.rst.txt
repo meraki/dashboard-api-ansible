@@ -1483,7 +1483,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"startTs\\": \\"string\\",\\n    \\"endTs\\": \\"string\\",\\n    \\"clientCount\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"clientCount\\": 0,\\n    \\"endTs\\": \\"string\\",\\n    \\"startTs\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

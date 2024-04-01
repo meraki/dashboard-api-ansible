@@ -1186,7 +1186,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"artifactId": "string", "name": "string", "organizationId": "string", "status": {"message": "string", "type": "string"}, "uploadId": "string", "uploadUrl": "string", "uploadUrlExpiry": "string"}`
 
 
       .. raw:: html

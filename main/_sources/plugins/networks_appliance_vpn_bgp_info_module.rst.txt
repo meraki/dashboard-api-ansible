@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"asNumber": 0, "enabled": true, "ibgpHoldTimer": 0, "neighbors": [{"allowTransit": true, "ebgpHoldTimer": 0, "ebgpMultihop": 0, "ip": "string", "receiveLimit": 0, "remoteAsNumber": 0}]}`
 
 
       .. raw:: html

@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"deviceId\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"isEncrypted\\": true,\\n    \\"isManaged\\": true,\\n    \\"profileData\\": \\"string\\",\\n    \\"profileIdentifier\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"version\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"deviceId\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"isEncrypted\\": true,\\n    \\"isManaged\\": true,\\n    \\"name\\": \\"string\\",\\n    \\"profileData\\": \\"string\\",\\n    \\"profileIdentifier\\": \\"string\\",\\n    \\"version\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

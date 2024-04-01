@@ -1278,7 +1278,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"collectorIp": "string", "collectorPort": 0, "etaDstPort": 0, "etaEnabled": true, "reportingEnabled": true}`
 
 
       .. raw:: html

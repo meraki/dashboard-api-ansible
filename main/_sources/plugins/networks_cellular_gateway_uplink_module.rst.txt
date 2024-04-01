@@ -1129,8 +1129,8 @@ Examples
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
         state: present
         bandwidthLimits:
-          limitDown: 0
-          limitUp: 0
+          limitDown: 1000000
+          limitUp: 1000000
         networkId: string
 
 
@@ -1193,7 +1193,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"limitDown": 0, "limitUp": 0}`
 
 
       .. raw:: html

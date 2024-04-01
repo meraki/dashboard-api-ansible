@@ -1220,7 +1220,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"actions": [{"operation": "string", "resource": "string"}], "confirmed": true, "id": "string", "organizationId": "string", "status": {"completed": true, "createdResources": [{"id": "string", "uri": "string"}], "errors": ["string"], "failed": true}, "synchronous": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"actions": [{"body": {}, "operation": "string", "resource": "string"}], "callback": {"id": "string", "status": "string", "url": "string"}, "confirmed": true, "id": "string", "organizationId": "string", "status": {"completed": true, "createdResources": [{"id": "string", "uri": "string"}], "errors": ["string"], "failed": true}, "synchronous": true}`
 
 
       .. raw:: html

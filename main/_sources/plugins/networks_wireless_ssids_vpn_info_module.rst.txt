@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"concentrator": {"name": "string", "networkId": "string", "vlanId": 0}, "failover": {"heartbeatInterval": 0, "idleTimeout": 0, "requestIp": "string"}, "splitTunnel": {"enabled": true, "rules": [{"comment": "string", "destCidr": "string", "destPort": "string", "policy": "string", "protocol": "string"}]}}`
 
 
       .. raw:: html

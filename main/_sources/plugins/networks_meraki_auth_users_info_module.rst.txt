@@ -70,7 +70,7 @@ Synopsis
 
 - Get all networks \_merakiauthusers.
 - Get networks \_merakiauthusers by id.
-- List the users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless network, or client VPN users for a wired network .
+- List the users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless network, or client VPN users for a MX network .
 
 - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
 

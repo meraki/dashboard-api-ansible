@@ -1337,7 +1337,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"measuredAt\\": \\"string\\",\\n    \\"user\\": \\"string\\",\\n    \\"networkDevice\\": \\"string\\",\\n    \\"networkDriver\\": \\"string\\",\\n    \\"wifiChannel\\": \\"string\\",\\n    \\"wifiAuth\\": \\"string\\",\\n    \\"wifiBssid\\": \\"string\\",\\n    \\"wifiSsid\\": \\"string\\",\\n    \\"wifiRssi\\": \\"string\\",\\n    \\"wifiNoise\\": \\"string\\",\\n    \\"dhcpServer\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"networkMTU\\": \\"string\\",\\n    \\"subnet\\": \\"string\\",\\n    \\"gateway\\": \\"string\\",\\n    \\"publicIP\\": \\"string\\",\\n    \\"dnsServer\\": \\"string\\",\\n    \\"ts\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"dhcpServer\\": \\"string\\",\\n    \\"dnsServer\\": \\"string\\",\\n    \\"gateway\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"measuredAt\\": \\"string\\",\\n    \\"networkDevice\\": \\"string\\",\\n    \\"networkDriver\\": \\"string\\",\\n    \\"networkMTU\\": \\"string\\",\\n    \\"publicIP\\": \\"string\\",\\n    \\"subnet\\": \\"string\\",\\n    \\"ts\\": \\"string\\",\\n    \\"user\\": \\"string\\",\\n    \\"wifiAuth\\": \\"string\\",\\n    \\"wifiBssid\\": \\"string\\",\\n    \\"wifiChannel\\": \\"string\\",\\n    \\"wifiNoise\\": \\"string\\",\\n    \\"wifiRssi\\": \\"string\\",\\n    \\"wifiSsid\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

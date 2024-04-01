@@ -1054,7 +1054,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.generate\_device\_camera\_snapshot,
+   - SDK Method used are camera.Camera.generate\_device\_camera\_snapshot,
    - Paths used are post /devices/{serial}/camera/generateSnapshot,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1067,7 +1067,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices generateDeviceCameraSnapshot <https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot>`_
+   `Cisco Meraki documentation for camera generateDeviceCameraSnapshot <https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot>`_
        Complete reference of the generateDeviceCameraSnapshot API.
 
 .. Examples

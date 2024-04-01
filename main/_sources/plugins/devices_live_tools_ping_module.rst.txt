@@ -111,6 +111,247 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback:
+
+      .. rst-class:: ansible-option-title
+
+      **callback**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/httpServer"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/httpserver:
+
+      .. rst-class:: ansible-option-title
+
+      **httpServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/httpServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The webhook receiver used for the callback webhook.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/httpServer/id"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/httpserver/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/httpServer/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields blank.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/payloadTemplate"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/payloadtemplate:
+
+      .. rst-class:: ansible-option-title
+
+      **payloadTemplate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/payloadTemplate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The payload template of the webhook used for the callback.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/payloadTemplate/id"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/payloadtemplate/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/payloadTemplate/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the payload template. Defaults to 'wpt\_00005' for the Callback (included) template.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/sharedSecret"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/sharedsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **sharedSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/sharedSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request was sent by Meraki. If using this field, please also specify an url.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/url"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-callback/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-count"></div>
 
       .. _ansible_collections.cisco.meraki.devices_live_tools_ping_module__parameter-count:
@@ -1093,6 +1334,13 @@ Examples
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
         state: present
+        callback:
+          httpServer:
+            id: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+          payloadTemplate:
+            id: wpt_2100
+          sharedSecret: secret
+          url: https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031
         count: 2
         serial: string
         target: 75.75.75.75
@@ -1157,7 +1405,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"pingId": "string", "request": {"count": 0, "serial": "string", "target": "string"}, "status": "string", "url": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"callback": {"id": "string", "status": "string", "url": "string"}, "pingId": "string", "request": {"count": 0, "serial": "string", "target": "string"}, "status": "string", "url": "string"}`
 
 
       .. raw:: html

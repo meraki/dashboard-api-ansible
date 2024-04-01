@@ -70,8 +70,8 @@ Synopsis
 
 - Get all organizations \_configtemplates \_switch \_profiles \_ports.
 - Get organizations \_configtemplates \_switch \_profiles \_ports by id.
-- Return a switch profile port.
-- Return all the ports of a switch profile.
+- Return a switch template port.
+- Return all the ports of a switch template.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1257,7 +1257,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

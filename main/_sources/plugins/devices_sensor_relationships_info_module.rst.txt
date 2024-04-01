@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_sensor\_relationships,
+   - SDK Method used are sensor.Sensor.get\_device\_sensor\_relationships,
    - Paths used are get /devices/{serial}/sensor/relationships,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceSensorRelationships <https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships>`_
+   `Cisco Meraki documentation for sensor getDeviceSensorRelationships <https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships>`_
        Complete reference of the getDeviceSensorRelationships API.
 
 .. Examples
@@ -1101,7 +1101,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"livestream\\": {\\n      \\"relatedDevices\\": [\\n        {\\n          \\"serial\\": \\"string\\",\\n          \\"productType\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"relatedDevices": [{"productType": "string", "serial": "string"}]}`
 
 
       .. raw:: html

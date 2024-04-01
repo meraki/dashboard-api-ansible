@@ -284,6 +284,247 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback:
+
+      .. rst-class:: ansible-option-title
+
+      **callback**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/httpServer"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/httpserver:
+
+      .. rst-class:: ansible-option-title
+
+      **httpServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/httpServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The webhook receiver used for the callback webhook.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/httpServer/id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/httpserver/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/httpServer/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields blank.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/payloadTemplate"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/payloadtemplate:
+
+      .. rst-class:: ansible-option-title
+
+      **payloadTemplate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/payloadTemplate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The payload template of the webhook used for the callback.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/payloadTemplate/id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/payloadtemplate/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/payloadTemplate/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the payload template. Defaults to 'wpt\_00005' for the Callback (included) template.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/sharedSecret"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/sharedsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **sharedSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/sharedSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request was sent by Meraki. If using this field, please also specify an url.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-callback/url"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-callback/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-callback/url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-confirmed"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_action_batches_module__parameter-confirmed:
@@ -1289,9 +1530,42 @@ Examples
         actions:
         - operation: create
           resource: /devices/QXXX-XXXX-XXXX/switch/ports/3
+        callback:
+          httpServer:
+            id: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+          payloadTemplate:
+            id: wpt_2100
+          sharedSecret: secret
+          url: https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031
         confirmed: true
         organizationId: string
         synchronous: true
+
+    - name: Delete by id
+      cisco.meraki.organizations_action_batches:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: absent
+        actionBatchId: string
+        organizationId: string
 
     - name: Update by id
       cisco.meraki.organizations_action_batches:
@@ -1320,32 +1594,6 @@ Examples
         confirmed: true
         organizationId: string
         synchronous: false
-
-    - name: Delete by id
-      cisco.meraki.organizations_action_batches:
-        meraki_api_key: "{{meraki_api_key}}"
-        meraki_base_url: "{{meraki_base_url}}"
-        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-        meraki_certificate_path: "{{meraki_certificate_path}}"
-        meraki_requests_proxy: "{{meraki_requests_proxy}}"
-        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-        meraki_maximum_retries: "{{meraki_maximum_retries}}"
-        meraki_output_log: "{{meraki_output_log}}"
-        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-        meraki_log_path: "{{meraki_log_path}}"
-        meraki_print_console: "{{meraki_print_console}}"
-        meraki_suppress_logging: "{{meraki_suppress_logging}}"
-        meraki_simulate: "{{meraki_simulate}}"
-        meraki_be_geo_id: "{{meraki_be_geo_id}}"
-        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-        state: absent
-        actionBatchId: string
-        organizationId: string
 
 
 
@@ -1407,7 +1655,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"actions": [{"operation": "string", "resource": "string"}], "confirmed": true, "id": "string", "organizationId": "string", "status": {"completed": true, "createdResources": [{"id": "string", "uri": "string"}], "errors": ["string"], "failed": true}, "synchronous": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"actions": [{"body": {}, "operation": "string", "resource": "string"}], "callback": {"id": "string", "status": "string", "url": "string"}, "confirmed": true, "id": "string", "organizationId": "string", "status": {"completed": true, "createdResources": [{"id": "string", "uri": "string"}], "errors": ["string"], "failed": true}, "synchronous": true}`
 
 
       .. raw:: html

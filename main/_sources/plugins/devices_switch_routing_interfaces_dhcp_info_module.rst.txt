@@ -1046,7 +1046,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_switch\_routing\_interface\_dhcp,
+   - SDK Method used are switch.Switch.get\_device\_switch\_routing\_interface\_dhcp,
    - Paths used are get /devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1059,7 +1059,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceSwitchRoutingInterfaceDhcp <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface-dhcp>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaceDhcp <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface-dhcp>`_
        Complete reference of the getDeviceSwitchRoutingInterfaceDhcp API.
 
 .. Examples
@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"bootFileName": "string", "bootNextServer": "string", "bootOptionsEnabled": true, "dhcpLeaseTime": "string", "dhcpMode": "string", "dhcpOptions": [{"code": "string", "type": "string", "value": "string"}], "dhcpRelayServerIps": ["string"], "dnsCustomNameservers": ["string"], "dnsNameserversOption": "string", "fixedIpAssignments": [{"ip": "string", "mac": "string", "name": "string"}], "reservedIpRanges": [{"comment": "string", "end": "string", "start": "string"}]}`
 
 
       .. raw:: html

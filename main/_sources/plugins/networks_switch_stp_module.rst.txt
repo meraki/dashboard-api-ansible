@@ -1037,7 +1037,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      STP bridge priority for switches/stacks or switch profiles. An empty array will clear the STP bridge priority settings.
+      STP bridge priority for switches/stacks or switch templates. An empty array will clear the STP bridge priority settings.
 
 
       .. raw:: html
@@ -1105,7 +1105,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      STP priority for switch, stacks, or switch profiles.
+      STP priority for switch, stacks, or switch templates.
 
 
       .. raw:: html
@@ -1173,7 +1173,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      List of switch profile IDs.
+      List of switch template IDs.
 
 
       .. raw:: html

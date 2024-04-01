@@ -1228,7 +1228,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ts\\": \\"string\\",\\n    \\"total\\": 0,\\n    \\"upstream\\": 0,\\n    \\"downstream\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"downstream\\": 0,\\n    \\"total\\": 0,\\n    \\"ts\\": \\"string\\",\\n    \\"upstream\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_wireless\_status,
+   - SDK Method used are wireless.Wireless.get\_device\_wireless\_status,
    - Paths used are get /devices/{serial}/wireless/status,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceWirelessStatus <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-status>`_
+   `Cisco Meraki documentation for wireless getDeviceWirelessStatus <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-status>`_
        Complete reference of the getDeviceWirelessStatus API.
 
 .. Examples
@@ -1101,7 +1101,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"band\\": \\"string\\",\\n    \\"broadcasting\\": true,\\n    \\"bssid\\": \\"string\\",\\n    \\"channel\\": 0,\\n    \\"channelWidth\\": \\"string\\",\\n    \\"enabled\\": true,\\n    \\"power\\": \\"string\\",\\n    \\"ssidName\\": \\"string\\",\\n    \\"ssidNumber\\": 0,\\n    \\"visible\\": true\\n  }\\n]\\n"`
 
 
       .. raw:: html

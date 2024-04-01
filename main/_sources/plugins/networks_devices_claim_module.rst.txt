@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation create of the resource networks \_devices \_claim.
-- Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requsts against that device to succeed .
+- Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute window.
 
 
 .. note::
@@ -1125,7 +1125,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"serials": ["string"]}`
 
 
       .. raw:: html

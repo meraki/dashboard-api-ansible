@@ -1679,7 +1679,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.create\_device\_switch\_routing\_interface, devices.Devices.delete\_device\_switch\_routing\_interface, devices.Devices.update\_device\_switch\_routing\_interface,
+   - SDK Method used are switch.Switch.create\_device\_switch\_routing\_interface, switch.Switch.delete\_device\_switch\_routing\_interface, switch.Switch.update\_device\_switch\_routing\_interface,
    - Paths used are post /devices/{serial}/switch/routing/interfaces, delete /devices/{serial}/switch/routing/interfaces/{interfaceId}, put /devices/{serial}/switch/routing/interfaces/{interfaceId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1692,11 +1692,11 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices createDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-interface>`_
+   `Cisco Meraki documentation for switch createDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-interface>`_
        Complete reference of the createDeviceSwitchRoutingInterface API.
-   `Cisco Meraki documentation for devices deleteDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-interface>`_
+   `Cisco Meraki documentation for switch deleteDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-interface>`_
        Complete reference of the deleteDeviceSwitchRoutingInterface API.
-   `Cisco Meraki documentation for devices updateDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface>`_
+   `Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface>`_
        Complete reference of the updateDeviceSwitchRoutingInterface API.
 
 .. Examples
@@ -1751,6 +1751,32 @@ Examples
         subnet: 192.168.1.0/24
         vlanId: 100
 
+    - name: Delete by id
+      cisco.meraki.devices_switch_routing_interfaces:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: absent
+        interfaceId: string
+        serial: string
+
     - name: Update by id
       cisco.meraki.devices_switch_routing_interfaces:
         meraki_api_key: "{{meraki_api_key}}"
@@ -1795,32 +1821,6 @@ Examples
         serial: string
         subnet: 192.168.1.0/24
         vlanId: 100
-
-    - name: Delete by id
-      cisco.meraki.devices_switch_routing_interfaces:
-        meraki_api_key: "{{meraki_api_key}}"
-        meraki_base_url: "{{meraki_base_url}}"
-        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-        meraki_certificate_path: "{{meraki_certificate_path}}"
-        meraki_requests_proxy: "{{meraki_requests_proxy}}"
-        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-        meraki_maximum_retries: "{{meraki_maximum_retries}}"
-        meraki_output_log: "{{meraki_output_log}}"
-        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-        meraki_log_path: "{{meraki_log_path}}"
-        meraki_print_console: "{{meraki_print_console}}"
-        meraki_suppress_logging: "{{meraki_suppress_logging}}"
-        meraki_simulate: "{{meraki_simulate}}"
-        meraki_be_geo_id: "{{meraki_be_geo_id}}"
-        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-        state: absent
-        interfaceId: string
-        serial: string
 
 
 

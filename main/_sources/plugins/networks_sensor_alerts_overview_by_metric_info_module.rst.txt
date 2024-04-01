@@ -1263,7 +1263,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"startTs\\": \\"string\\",\\n    \\"endTs\\": \\"string\\",\\n    \\"counts\\": {\\n      \\"door\\": 0,\\n      \\"humidity\\": 0,\\n      \\"indoorAirQuality\\": 0,\\n      \\"noise\\": {\\n        \\"ambient\\": 0\\n      },\\n      \\"pm25\\": 0,\\n      \\"temperature\\": 0,\\n      \\"tvoc\\": 0,\\n      \\"water\\": 0\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"counts\\": {\\n      \\"apparentPower\\": 0,\\n      \\"co2\\": 0,\\n      \\"current\\": 0,\\n      \\"door\\": 0,\\n      \\"frequency\\": 0,\\n      \\"humidity\\": 0,\\n      \\"indoorAirQuality\\": 0,\\n      \\"noise\\": {\\n        \\"ambient\\": 0\\n      },\\n      \\"pm25\\": 0,\\n      \\"powerFactor\\": 0,\\n      \\"realPower\\": 0,\\n      \\"temperature\\": 0,\\n      \\"tvoc\\": 0,\\n      \\"upstreamPower\\": 0,\\n      \\"voltage\\": 0,\\n      \\"water\\": 0\\n    },\\n    \\"endTs\\": \\"string\\",\\n    \\"startTs\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

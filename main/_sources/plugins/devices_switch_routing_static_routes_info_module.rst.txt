@@ -1048,7 +1048,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_switch\_routing\_static\_route, devices.Devices.get\_device\_switch\_routing\_static\_routes,
+   - SDK Method used are switch.Switch.get\_device\_switch\_routing\_static\_route, switch.Switch.get\_device\_switch\_routing\_static\_routes,
    - Paths used are get /devices/{serial}/switch/routing/staticRoutes, get /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1061,9 +1061,9 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceSwitchRoutingStaticRoute <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-route>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoute <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-route>`_
        Complete reference of the getDeviceSwitchRoutingStaticRoute API.
-   `Cisco Meraki documentation for devices getDeviceSwitchRoutingStaticRoutes <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoutes <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes>`_
        Complete reference of the getDeviceSwitchRoutingStaticRoutes API.
 
 .. Examples

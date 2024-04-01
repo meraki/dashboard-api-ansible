@@ -1165,7 +1165,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=list`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1185,7 +1185,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[["[\\n  [\\n    {}\\n  ]\\n]\\n"]]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"interfaceIp": "string", "interfaceName": "string", "multicastGroup": "string", "rendezvousPointId": "string", "serial": "string"}`
 
 
       .. raw:: html

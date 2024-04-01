@@ -1302,7 +1302,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"ssidName\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"scope\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"timeboundType\\": \\"string\\",\\n    \\"accessStartAt\\": \\"string\\",\\n    \\"accessEndAt\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"accessEndAt\\": \\"string\\",\\n    \\"accessStartAt\\": \\"string\\",\\n    \\"additionalEmailText\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"notifyTimeBeforeAccessEnds\\": 0,\\n    \\"scope\\": \\"string\\",\\n    \\"sendExpirationEmails\\": true,\\n    \\"ssidName\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"timeboundType\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

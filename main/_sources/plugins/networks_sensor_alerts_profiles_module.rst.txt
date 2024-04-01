@@ -171,7 +171,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      If 'above', an alert will be sent when a sensor reads above the threshold. If 'below', an alert will be sent when a sensor reads below the threshold. Only applicable for temperature and humidity thresholds.
+      If 'above', an alert will be sent when a sensor reads above the threshold. If 'below', an alert will be sent when a sensor reads below the threshold. Only applicable for temperature, humidity, realPower, apparentPower, powerFactor, voltage, current, and frequency thresholds.
 
 
       .. raw:: html
@@ -205,7 +205,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Length of time in seconds that the triggering state must persist before an alert is sent. Available options are 0 seconds, 1 minute, 2 minutes, 3 minutes, 4 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, and 1 hour. Default is 0.
+      Length of time in seconds that the triggering state must persist before an alert is sent. Available options are 0 seconds, 1 minute, 2 minutes, 3 minutes, 4 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, and 8 hours. Default is 0.
 
 
       .. raw:: html
@@ -239,7 +239,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The type of sensor metric that will be monitored for changes. Available metrics are door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
+      The type of sensor metric that will be monitored for changes. Available metrics are apparentPower, co2, current, door, frequency, humidity, indoorAirQuality, noise, pm25, powerFactor, realPower, temperature, tvoc, upstreamPower, voltage, and water.
 
 
       .. raw:: html
@@ -280,6 +280,144 @@ Parameters
 
         </div>
     
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/apparentPower"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/apparentpower:
+
+      .. rst-class:: ansible-option-title
+
+      **apparentPower**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/apparentPower" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Apparent power threshold. 'draw' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/apparentPower/draw"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/apparentpower/draw:
+
+      .. rst-class:: ansible-option-title
+
+      **draw**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/apparentPower/draw" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in volt-amps. Must be between 0 and 3750.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/current"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/current:
+
+      .. rst-class:: ansible-option-title
+
+      **current**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/current" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Electrical current threshold. 'level' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/current/draw"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/current/draw:
+
+      .. rst-class:: ansible-option-title
+
+      **draw**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/current/draw" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in amps. Must be between 0 and 15.
+
+
+      .. raw:: html
+
+        </div>
+
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -350,6 +488,75 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/frequency"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/frequency:
+
+      .. rst-class:: ansible-option-title
+
+      **frequency**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/frequency" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Electrical frequency threshold. 'level' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/frequency/level"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/frequency/level:
+
+      .. rst-class:: ansible-option-title
+
+      **level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/frequency/level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in hertz. Must be between 0 and 60.
 
 
       .. raw:: html
@@ -807,6 +1014,144 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/powerFactor"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/powerfactor:
+
+      .. rst-class:: ansible-option-title
+
+      **powerFactor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/powerFactor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Power factor threshold. 'percentage' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/powerFactor/percentage"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/powerfactor/percentage:
+
+      .. rst-class:: ansible-option-title
+
+      **percentage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/powerFactor/percentage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold as the ratio of active power to apparent power. Must be between 0 and 100.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/realPower"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/realpower:
+
+      .. rst-class:: ansible-option-title
+
+      **realPower**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/realPower" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Real power threshold. 'draw' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/realPower/draw"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/realpower/draw:
+
+      .. rst-class:: ansible-option-title
+
+      **draw**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/realPower/draw" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in watts. Must be between 0 and 3750.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/temperature"></div>
 
       .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/temperature:
@@ -1037,6 +1382,152 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Alerting threshold as a qualitative TVOC level.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/upstreamPower"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/upstreampower:
+
+      .. rst-class:: ansible-option-title
+
+      **upstreamPower**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/upstreamPower" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Upstream power threshold. 'outageDetected' must be provided and set to true.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/upstreamPower/outageDetected"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/upstreampower/outagedetected:
+
+      .. rst-class:: ansible-option-title
+
+      **outageDetected**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/upstreamPower/outageDetected" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold for an upstream power event. Must be set to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/voltage"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/voltage:
+
+      .. rst-class:: ansible-option-title
+
+      **voltage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/voltage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Voltage threshold. 'level' must be provided.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-conditions/threshold/voltage/level"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sensor_alerts_profiles_module__parameter-conditions/threshold/voltage/level:
+
+      .. rst-class:: ansible-option-title
+
+      **level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-conditions/threshold/voltage/level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Alerting threshold in volts. Must be between 0 and 250.
 
 
       .. raw:: html
@@ -2078,7 +2569,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      List of recipients that will recieve the alert.
+      List of recipients that will receive the alert.
 
 
       .. raw:: html
@@ -2357,8 +2848,14 @@ Examples
           duration: 60
           metric: temperature
           threshold:
+            apparentPower:
+              draw: 17.2
+            current:
+              draw: 0.14
             door:
               open: true
+            frequency:
+              level: 58.8
             humidity:
               quality: inadequate
               relativePercentage: 65
@@ -2372,84 +2869,23 @@ Examples
             pm25:
               concentration: 90
               quality: fair
+            powerFactor:
+              percentage: 81
+            realPower:
+              draw: 14.1
             temperature:
               celsius: 20.5
-              fahrenheit: 70
+              fahrenheit: 70.0
               quality: good
             tvoc:
               concentration: 400
               quality: poor
+            upstreamPower:
+              outageDetected: true
+            voltage:
+              level: 119.5
             water:
               present: true
-        name: My Sensor Alert Profile
-        networkId: string
-        recipients:
-          emails:
-          - miles@meraki.com
-          httpServerIds:
-          - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
-          smsNumbers:
-          - '+15555555555'
-        schedule:
-          id: '5'
-        serials:
-        - Q234-ABCD-0001
-        - Q234-ABCD-0002
-        - Q234-ABCD-0003
-
-    - name: Update by id
-      cisco.meraki.networks_sensor_alerts_profiles:
-        meraki_api_key: "{{meraki_api_key}}"
-        meraki_base_url: "{{meraki_base_url}}"
-        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-        meraki_certificate_path: "{{meraki_certificate_path}}"
-        meraki_requests_proxy: "{{meraki_requests_proxy}}"
-        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-        meraki_maximum_retries: "{{meraki_maximum_retries}}"
-        meraki_output_log: "{{meraki_output_log}}"
-        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-        meraki_log_path: "{{meraki_log_path}}"
-        meraki_print_console: "{{meraki_print_console}}"
-        meraki_suppress_logging: "{{meraki_suppress_logging}}"
-        meraki_simulate: "{{meraki_simulate}}"
-        meraki_be_geo_id: "{{meraki_be_geo_id}}"
-        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-        state: present
-        conditions:
-        - direction: above
-          duration: 60
-          metric: temperature
-          threshold:
-            door:
-              open: true
-            humidity:
-              quality: inadequate
-              relativePercentage: 65
-            indoorAirQuality:
-              quality: fair
-              score: 80
-            noise:
-              ambient:
-                level: 120
-                quality: poor
-            pm25:
-              concentration: 90
-              quality: fair
-            temperature:
-              celsius: 20.5
-              fahrenheit: 70
-              quality: good
-            tvoc:
-              concentration: 400
-              quality: poor
-            water:
-              present: true
-        id: string
         name: My Sensor Alert Profile
         networkId: string
         recipients:
@@ -2491,6 +2927,89 @@ Examples
         state: absent
         id: string
         networkId: string
+
+    - name: Update by id
+      cisco.meraki.networks_sensor_alerts_profiles:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: present
+        conditions:
+        - direction: above
+          duration: 60
+          metric: temperature
+          threshold:
+            apparentPower:
+              draw: 17.2
+            current:
+              draw: 0.14
+            door:
+              open: true
+            frequency:
+              level: 58.8
+            humidity:
+              quality: inadequate
+              relativePercentage: 65
+            indoorAirQuality:
+              quality: fair
+              score: 80
+            noise:
+              ambient:
+                level: 120
+                quality: poor
+            pm25:
+              concentration: 90
+              quality: fair
+            powerFactor:
+              percentage: 81
+            realPower:
+              draw: 14.1
+            temperature:
+              celsius: 20.5
+              fahrenheit: 70.0
+              quality: good
+            tvoc:
+              concentration: 400
+              quality: poor
+            upstreamPower:
+              outageDetected: true
+            voltage:
+              level: 119.5
+            water:
+              present: true
+        id: string
+        name: My Sensor Alert Profile
+        networkId: string
+        recipients:
+          emails:
+          - miles@meraki.com
+          httpServerIds:
+          - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+          smsNumbers:
+          - '+15555555555'
+        schedule:
+          id: '5'
+        serials:
+        - Q234-ABCD-0001
+        - Q234-ABCD-0002
+        - Q234-ABCD-0003
 
 
 
@@ -2552,7 +3071,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"conditions": [{"direction": "string", "duration": 0, "metric": "string", "threshold": {"door": {"open": true}, "humidity": {"quality": "string", "relativePercentage": 0}, "indoorAirQuality": {"quality": "string", "score": 0}, "noise": {"ambient": {"level": 0, "quality": "string"}}, "pm25": {"concentration": 0, "quality": "string"}, "temperature": {"celsius": 0, "fahrenheit": 0, "quality": "string"}, "tvoc": {"concentration": 0, "quality": "string"}, "water": {"present": true}}}], "name": "string", "profileId": "string", "recipients": {"emails": ["string"], "httpServerIds": ["string"], "smsNumbers": ["string"]}, "schedule": {"id": "string", "name": "string"}, "serials": ["string"]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"conditions": [{"direction": "string", "duration": 0, "metric": "string", "threshold": {"apparentPower": {"draw": 0}, "current": {"draw": 0}, "door": {"open": true}, "frequency": {"level": 0}, "humidity": {"quality": "string", "relativePercentage": 0}, "indoorAirQuality": {"quality": "string", "score": 0}, "noise": {"ambient": {"level": 0, "quality": "string"}}, "pm25": {"concentration": 0, "quality": "string"}, "powerFactor": {"percentage": 0}, "realPower": {"draw": 0}, "temperature": {"celsius": 0, "fahrenheit": 0, "quality": "string"}, "tvoc": {"concentration": 0, "quality": "string"}, "upstreamPower": {"outageDetected": true}, "voltage": {"level": 0}, "water": {"present": true}}}], "name": "string", "profileId": "string", "recipients": {"emails": ["string"], "httpServerIds": ["string"], "smsNumbers": ["string"]}, "schedule": {"id": "string", "name": "string"}, "serials": ["string"]}`
 
 
       .. raw:: html

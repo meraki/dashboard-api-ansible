@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_camera\_wireless\_profiles,
+   - SDK Method used are camera.Camera.get\_device\_camera\_wireless\_profiles,
    - Paths used are get /devices/{serial}/camera/wirelessProfiles,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceCameraWirelessProfiles <https://developer.cisco.com/meraki/api-v1/#!get-device-camera-wireless-profiles>`_
+   `Cisco Meraki documentation for camera getDeviceCameraWirelessProfiles <https://developer.cisco.com/meraki/api-v1/#!get-device-camera-wireless-profiles>`_
        Complete reference of the getDeviceCameraWirelessProfiles API.
 
 .. Examples
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"backup": "string", "primary": "string", "secondary": "string"}`
 
 
       .. raw:: html

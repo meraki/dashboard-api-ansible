@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all organizations \_configtemplates \_switch \_profiles.
-- List the switch profiles for your switch template configuration.
+- List the switch templates for your switch template configuration.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1136,7 +1136,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"model": "string", "name": "string", "switchProfileId": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"model\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"switchProfileId\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

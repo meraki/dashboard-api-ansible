@@ -1319,12 +1319,12 @@ Examples
         state: present
         alerts:
           email:
-            enabled: false
+            enabled: true
         allowedServers:
         - 00:50:56:00:00:01
         - 00:50:56:00:00:02
         arpInspection:
-          enabled: false
+          enabled: true
         blockedServers:
         - 00:50:56:00:00:03
         - 00:50:56:00:00:04
@@ -1391,7 +1391,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"alerts": {"email": {"enabled": true}}, "allowedServers": ["string"], "arpInspection": {"enabled": true, "unsupportedModels": ["string"]}, "blockedServers": ["string"], "defaultPolicy": "string"}`
 
 
       .. raw:: html

@@ -1372,7 +1372,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are organizationsnetworks.Organizationsnetworks.get\_network, organizationsnetworks.Organizationsnetworks.get\_organization\_networks,
+   - SDK Method used are networks.Networks.get\_network, networks.Networks.get\_organization\_networks,
    - Paths used are get /networks/{networkId}, get /organizations/{organizationId}/networks,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1385,9 +1385,9 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for organizations,networks getNetwork <https://developer.cisco.com/meraki/api-v1/#!get-network>`_
+   `Cisco Meraki documentation for networks getNetwork <https://developer.cisco.com/meraki/api-v1/#!get-network>`_
        Complete reference of the getNetwork API.
-   `Cisco Meraki documentation for organizations,networks getOrganizationNetworks <https://developer.cisco.com/meraki/api-v1/#!get-organization-networks>`_
+   `Cisco Meraki documentation for networks getOrganizationNetworks <https://developer.cisco.com/meraki/api-v1/#!get-organization-networks>`_
        Complete reference of the getOrganizationNetworks API.
 
 .. Examples

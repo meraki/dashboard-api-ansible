@@ -69,7 +69,8 @@ Synopsis
 .. Description
 
 - Get all networks \_topology \_linklayer.
-- List the LLDP and CDP information for all discovered devices and connections in a network.
+- List the LLDP and CDP information for all discovered devices and connections in a network. At least one MX or MS device must be in the network in order to build the topology.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1121,7 +1122,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"errors": ["string"], "links": [{"ends": [{"device": {"name": "string", "serial": "string"}, "discovered": {"cdp": {"nativeVlan": 0, "portId": "string"}, "lldp": {"portDescription": "string", "portId": "string"}}, "node": {"derivedId": "string", "type": "string"}}], "lastReportedAt": "string"}], "nodes": [{"derivedId": "string", "discovered": {"cdp": "string", "lldp": {"chassisId": "string", "managementAddress": "string", "systemCapabilities": ["string"], "systemDescription": "string", "systemName": "string"}}, "mac": "string", "root": true, "type": "string"}]}`
 
 
       .. raw:: html

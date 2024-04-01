@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_switch\_warm\_spare,
+   - SDK Method used are switch.Switch.get\_device\_switch\_warm\_spare,
    - Paths used are get /devices/{serial}/switch/warmSpare,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceSwitchWarmSpare <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-warm-spare>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchWarmSpare <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-warm-spare>`_
        Complete reference of the getDeviceSwitchWarmSpare API.
 
 .. Examples
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enabled": true, "primarySerial": "string", "spareSerial": "string"}`
 
 
       .. raw:: html

@@ -1116,7 +1116,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_camera\_wireless\_profiles,
+   - SDK Method used are camera.Camera.update\_device\_camera\_wireless\_profiles,
    - Paths used are put /devices/{serial}/camera/wirelessProfiles,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1129,7 +1129,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceCameraWirelessProfiles <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles>`_
+   `Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles>`_
        Complete reference of the updateDeviceCameraWirelessProfiles API.
 
 .. Examples

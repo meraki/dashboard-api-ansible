@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation update of the resource networks \_wireless \_ssids \_trafficshaping \_rules.
-- Update the traffic shaping settings for an SSID on an MR network.
+- Update the traffic shaping rules for an SSID on an MR network.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1528,16 +1528,6 @@ Examples
         - definitions:
           - type: host
             value: google.com
-          - type: port
-            value: '9090'
-          - type: ipRange
-            value: 192.1.0.0
-          - type: ipRange
-            value: 192.1.0.0/16
-          - type: ipRange
-            value: 10.1.0.0/16:80
-          - type: localNet
-            value: 192.168.0.0/16
           dscpTagValue: 0
           pcpTagValue: 0
           perClientBandwidthLimits:
@@ -1607,7 +1597,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultRulesEnabled": true, "rules": [{"definitions": [{"type": "string", "value": "string"}], "dscpTagValue": 0, "pcpTagValue": 0, "perClientBandwidthLimits": {"bandwidthLimits": {"limitDown": 0, "limitUp": 0}, "settings": "string"}}], "trafficShapingEnabled": true}`
 
 
       .. raw:: html

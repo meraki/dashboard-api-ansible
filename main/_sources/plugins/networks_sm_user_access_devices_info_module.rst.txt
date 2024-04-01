@@ -1302,7 +1302,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"systemType\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"username\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"trustedAccessConnections\\": [\\n      {\\n        \\"trustedAccessConfigId\\": \\"string\\",\\n        \\"downloadedAt\\": \\"string\\",\\n        \\"scepCompletedAt\\": \\"string\\",\\n        \\"lastConnectedAt\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"email\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"systemType\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"trustedAccessConnections\\": [\\n      {\\n        \\"downloadedAt\\": \\"string\\",\\n        \\"lastConnectedAt\\": \\"string\\",\\n        \\"scepCompletedAt\\": \\"string\\",\\n        \\"trustedAccessConfigId\\": \\"string\\"\\n      }\\n    ],\\n    \\"username\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

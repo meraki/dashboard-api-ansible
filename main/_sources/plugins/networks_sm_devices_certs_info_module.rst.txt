@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"notValidAfter\\": \\"string\\",\\n    \\"notValidBefore\\": \\"string\\",\\n    \\"certPem\\": \\"string\\",\\n    \\"deviceId\\": \\"string\\",\\n    \\"issuer\\": \\"string\\",\\n    \\"subject\\": \\"string\\",\\n    \\"id\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"certPem\\": \\"string\\",\\n    \\"deviceId\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"issuer\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"notValidAfter\\": \\"string\\",\\n    \\"notValidBefore\\": \\"string\\",\\n    \\"subject\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

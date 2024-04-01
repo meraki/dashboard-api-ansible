@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.cycle\_device\_switch\_ports,
+   - SDK Method used are switch.Switch.cycle\_device\_switch\_ports,
    - Paths used are post /devices/{serial}/switch/ports/cycle,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices cycleDeviceSwitchPorts <https://developer.cisco.com/meraki/api-v1/#!cycle-device-switch-ports>`_
+   `Cisco Meraki documentation for switch cycleDeviceSwitchPorts <https://developer.cisco.com/meraki/api-v1/#!cycle-device-switch-ports>`_
        Complete reference of the cycleDeviceSwitchPorts API.
 
 .. Examples

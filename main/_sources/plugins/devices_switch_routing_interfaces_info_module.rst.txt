@@ -1048,7 +1048,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_switch\_routing\_interface, devices.Devices.get\_device\_switch\_routing\_interfaces,
+   - SDK Method used are switch.Switch.get\_device\_switch\_routing\_interface, switch.Switch.get\_device\_switch\_routing\_interfaces,
    - Paths used are get /devices/{serial}/switch/routing/interfaces, get /devices/{serial}/switch/routing/interfaces/{interfaceId},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1061,9 +1061,9 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchRoutingInterface <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface>`_
        Complete reference of the getDeviceSwitchRoutingInterface API.
-   `Cisco Meraki documentation for devices getDeviceSwitchRoutingInterfaces <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces>`_
+   `Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaces <https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces>`_
        Complete reference of the getDeviceSwitchRoutingInterfaces API.
 
 .. Examples

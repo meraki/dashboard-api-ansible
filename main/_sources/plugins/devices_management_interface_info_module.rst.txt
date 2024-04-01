@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ddnsHostnames": {"activeDdnsHostname": "string", "ddnsHostnameWan1": "string", "ddnsHostnameWan2": "string"}, "wan1": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "wanEnabled": "string"}, "wan2": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "wanEnabled": "string"}}`
 
 
       .. raw:: html

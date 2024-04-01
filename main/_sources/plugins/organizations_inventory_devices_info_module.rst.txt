@@ -1138,7 +1138,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      NetworkIds query parameter. Search for devices in inventory based on network ids.
+      NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null' value to get available devices only.
+          
 
 
       .. raw:: html
@@ -1719,7 +1720,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimedAt": "string", "licenseExpirationDate": "string", "mac": "string", "model": "string", "name": "string", "networkId": "string", "orderNumber": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimedAt": "string", "countryCode": "string", "details": [{"name": "string", "value": "string"}], "licenseExpirationDate": "string", "mac": "string", "model": "string", "name": "string", "networkId": "string", "orderNumber": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
 
 
       .. raw:: html

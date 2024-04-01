@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation update of the resource organizations \_configtemplates \_switch \_profiles \_ports.
-- Update a switch profile port.
+- Update a switch template port.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -135,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The number of a custom access policy to configure on the switch profile port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
+      The number of a custom access policy to configure on the switch template port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
 
 
       .. raw:: html
@@ -169,7 +169,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The type of the access policy of the switch profile port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'.
+      The type of the access policy of the switch template port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or 'Sticky MAC allow list'.
 
 
       .. raw:: html
@@ -203,7 +203,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The VLANs allowed on the switch profile port. Only applicable to trunk ports.
+      The VLANs allowed on the switch template port. Only applicable to trunk ports.
 
 
       .. raw:: html
@@ -313,7 +313,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The status of the switch profile port.
+      The status of the switch template port.
 
 
       .. rst-class:: ansible-option-line
@@ -397,7 +397,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The isolation status of the switch profile port.
+      The isolation status of the switch template port.
 
 
       .. rst-class:: ansible-option-line
@@ -439,7 +439,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The link speed for the switch profile port.
+      The link speed for the switch template port.
 
 
       .. raw:: html
@@ -1333,7 +1333,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The name of the switch profile port.
+      The name of the switch template port.
 
 
       .. raw:: html
@@ -1401,7 +1401,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The PoE status of the switch profile port.
+      The PoE status of the switch template port.
 
 
       .. rst-class:: ansible-option-line
@@ -1800,7 +1800,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The storm control status of the switch profile port.
+      The storm control status of the switch template port.
 
 
       .. rst-class:: ansible-option-line
@@ -1876,7 +1876,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The list of tags of the switch profile port.
+      The list of tags of the switch template port.
 
 
       .. raw:: html
@@ -1910,7 +1910,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The type of the switch profile port ('trunk' or 'access').
+      The type of the switch template port ('trunk' or 'access').
 
 
       .. raw:: html
@@ -1978,7 +1978,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The VLAN of the switch profile port. A null value will clear the value set for trunk ports.
+      The VLAN of the switch template port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk ports.
 
 
       .. raw:: html
@@ -2012,7 +2012,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The voice VLAN of the switch profile port. Only applicable to access ports.
+      The voice VLAN of the switch template port. Only applicable to access ports.
 
 
       .. raw:: html
@@ -2173,7 +2173,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

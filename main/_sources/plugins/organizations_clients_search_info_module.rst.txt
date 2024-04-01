@@ -1337,7 +1337,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"clientId": "string", "mac": "string", "manufacturer": "string", "records": [{"cdp": "string", "clientVpnConnections": [{"connectedAt": 0, "disconnectedAt": 0, "remoteIp": "string"}], "description": "string", "firstSeen": 0, "ip": "string", "ip6": "string", "lastSeen": 0, "lldp": ["string"], "network": {"enrollmentString": "string", "id": "string", "isBoundToConfigTemplate": true, "name": "string", "notes": "string", "organizationId": "string", "productTypes": ["string"], "tags": ["string"], "timeZone": "string"}, "os": "string", "smInstalled": true, "ssid": "string", "status": "string", "switchport": "string", "user": "string", "vlan": "string", "wirelessCapabilities": "string"}]}`
 
 
       .. raw:: html

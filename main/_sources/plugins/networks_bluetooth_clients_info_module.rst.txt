@@ -1235,7 +1235,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"deviceName": "string", "id": "string", "inSightAlert": true, "lastSeen": 0, "mac": "string", "manufacturer": "string", "name": "string", "networkId": "string", "outOfSightAlert": true, "seenByDeviceMac": "string", "tags": ["string"]}`
 
 
       .. raw:: html

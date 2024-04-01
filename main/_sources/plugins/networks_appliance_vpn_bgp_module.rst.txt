@@ -211,7 +211,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240.
+      The iBGP holdtimer in seconds. The iBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated. If no value exists then it defaults to 240.
 
 
       .. raw:: html
@@ -1216,7 +1216,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The EBGP hold timer in seconds for each neighbor. The EBGP hold timer must be an integer between 12 and 240.
+      The eBGP hold timer in seconds for each neighbor. The eBGP hold timer must be an integer between 12 and 240.
 
 
       .. raw:: html
@@ -1250,7 +1250,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configure this if the neighbor is not adjacent. The EBGP multi-hop must be an integer between 1 and 255.
+      Configure this if the neighbor is not adjacent. The eBGP multi-hop must be an integer between 1 and 255.
 
 
       .. raw:: html
@@ -1489,7 +1489,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The output interface for peering with the remote BGP peer. Valid values are 'wired0', 'wired1' or 'vlan{VLAN ID}'(e.g. 'vlan123').
+      The output interface for peering with the remote BGP peer. Valid values are 'wan1', 'wan2' or 'vlan{VLAN ID}'(e.g. 'vlan123').
 
 
       .. raw:: html

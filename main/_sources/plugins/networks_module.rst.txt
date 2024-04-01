@@ -1252,7 +1252,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are organizationsnetworks.Organizationsnetworks.create\_organization\_network, organizationsnetworks.Organizationsnetworks.delete\_network, organizationsnetworks.Organizationsnetworks.update\_network,
+   - SDK Method used are networks.Networks.create\_organization\_network, networks.Networks.delete\_network, networks.Networks.update\_network,
    - Paths used are post /organizations/{organizationId}/networks, delete /networks/{networkId}, put /networks/{networkId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1265,11 +1265,11 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for organizations,networks createOrganizationNetwork <https://developer.cisco.com/meraki/api-v1/#!create-organization-network>`_
+   `Cisco Meraki documentation for networks createOrganizationNetwork <https://developer.cisco.com/meraki/api-v1/#!create-organization-network>`_
        Complete reference of the createOrganizationNetwork API.
-   `Cisco Meraki documentation for organizations,networks deleteNetwork <https://developer.cisco.com/meraki/api-v1/#!delete-network>`_
+   `Cisco Meraki documentation for networks deleteNetwork <https://developer.cisco.com/meraki/api-v1/#!delete-network>`_
        Complete reference of the deleteNetwork API.
-   `Cisco Meraki documentation for organizations,networks updateNetwork <https://developer.cisco.com/meraki/api-v1/#!update-network>`_
+   `Cisco Meraki documentation for networks updateNetwork <https://developer.cisco.com/meraki/api-v1/#!update-network>`_
        Complete reference of the updateNetwork API.
 
 .. Examples
@@ -1280,6 +1280,31 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    - name: Delete by id
+      cisco.meraki.networks:
+        meraki_api_key: "{{meraki_api_key}}"
+        meraki_base_url: "{{meraki_base_url}}"
+        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+        meraki_certificate_path: "{{meraki_certificate_path}}"
+        meraki_requests_proxy: "{{meraki_requests_proxy}}"
+        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+        meraki_maximum_retries: "{{meraki_maximum_retries}}"
+        meraki_output_log: "{{meraki_output_log}}"
+        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+        meraki_log_path: "{{meraki_log_path}}"
+        meraki_print_console: "{{meraki_print_console}}"
+        meraki_suppress_logging: "{{meraki_suppress_logging}}"
+        meraki_simulate: "{{meraki_simulate}}"
+        meraki_be_geo_id: "{{meraki_be_geo_id}}"
+        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        state: absent
+        networkId: string
+
     - name: Update by id
       cisco.meraki.networks:
         meraki_api_key: "{{meraki_api_key}}"
@@ -1311,31 +1336,6 @@ Examples
         - tag1
         - tag2
         timeZone: America/Los_Angeles
-
-    - name: Delete by id
-      cisco.meraki.networks:
-        meraki_api_key: "{{meraki_api_key}}"
-        meraki_base_url: "{{meraki_base_url}}"
-        meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-        meraki_certificate_path: "{{meraki_certificate_path}}"
-        meraki_requests_proxy: "{{meraki_requests_proxy}}"
-        meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-        meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-        meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-        meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-        meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-        meraki_maximum_retries: "{{meraki_maximum_retries}}"
-        meraki_output_log: "{{meraki_output_log}}"
-        meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-        meraki_log_path: "{{meraki_log_path}}"
-        meraki_print_console: "{{meraki_print_console}}"
-        meraki_suppress_logging: "{{meraki_suppress_logging}}"
-        meraki_simulate: "{{meraki_simulate}}"
-        meraki_be_geo_id: "{{meraki_be_geo_id}}"
-        meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-        meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-        state: absent
-        networkId: string
 
     - name: Create
       cisco.meraki.networks:

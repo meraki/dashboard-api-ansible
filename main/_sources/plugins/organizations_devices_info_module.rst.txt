@@ -1804,7 +1804,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"lat\\": 0,\\n    \\"lng\\": 0,\\n    \\"address\\": \\"string\\",\\n    \\"notes\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"firmware\\": \\"string\\",\\n    \\"productType\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"address\\": \\"string\\",\\n    \\"details\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"value\\": \\"string\\"\\n      }\\n    ],\\n    \\"firmware\\": \\"string\\",\\n    \\"imei\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"lat\\": 0,\\n    \\"lng\\": 0,\\n    \\"mac\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"notes\\": \\"string\\",\\n    \\"productType\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1185,7 +1185,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"id": "string", "vppServiceToken": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"allowedAdmins": "string", "assignableNetworkIds": ["string"], "assignableNetworks": "string", "contentToken": "string", "email": "string", "id": "string", "lastForceSyncedAt": "string", "lastSyncedAt": "string", "name": "string", "networkIdAdmins": "string", "parsedToken": {"expiresAt": "string", "hashedToken": "string", "orgName": "string"}, "vppAccountId": "string", "vppLocationId": "string", "vppLocationName": "string", "vppServiceToken": "string"}`
 
 
       .. raw:: html

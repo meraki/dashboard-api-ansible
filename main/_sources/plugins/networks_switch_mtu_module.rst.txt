@@ -1029,7 +1029,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Override MTU size for individual switches or switch profiles. An empty array will clear overrides.
+      Override MTU size for individual switches or switch templates. An empty array will clear overrides.
 
 
       .. raw:: html
@@ -1063,7 +1063,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      MTU size for the switches or switch profiles.
+      MTU size for the switches or switch templates.
 
 
       .. raw:: html
@@ -1131,7 +1131,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      List of switch profile IDs. Applicable only for template network.
+      List of switch template IDs. Applicable only for template network.
 
 
       .. raw:: html

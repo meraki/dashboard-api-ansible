@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"powerExceptions": [{"powerType": "string", "serial": "string"}], "useCombinedPower": true, "vlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"macBlocklist": {"enabled": true}, "powerExceptions": [{"powerType": "string", "serial": "string"}], "uplinkClientSampling": {"enabled": true}, "useCombinedPower": true, "vlan": 0}`
 
 
       .. raw:: html

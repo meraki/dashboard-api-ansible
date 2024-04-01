@@ -1002,6 +1002,40 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payloadTypes"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_sm_profiles_info_module__parameter-payloadtypes:
+
+      .. rst-class:: ansible-option-title
+
+      **payloadTypes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payloadTypes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      PayloadTypes query parameter. Filter by payload types.
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -1058,6 +1092,7 @@ Examples
         meraki_be_geo_id: "{{meraki_be_geo_id}}"
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+        payloadTypes: []
         networkId: string
       register: result
 
@@ -1121,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"scope\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"description\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"payloadTypes\\": [\\n      \\"string\\"\\n    ],\\n    \\"scope\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1388,7 +1388,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"key\\": \\"string\\",\\n    \\"organizationId\\": \\"string\\",\\n    \\"duration\\": 0,\\n    \\"mode\\": \\"string\\",\\n    \\"startedAt\\": \\"string\\",\\n    \\"claimedAt\\": \\"string\\",\\n    \\"invalidated\\": true,\\n    \\"invalidatedAt\\": \\"string\\",\\n    \\"expired\\": true,\\n    \\"editions\\": [\\n      {\\n        \\"edition\\": \\"string\\",\\n        \\"productType\\": \\"string\\"\\n      }\\n    ],\\n    \\"counts\\": [\\n      {\\n        \\"model\\": \\"string\\",\\n        \\"count\\": 0\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"claimedAt\\": \\"string\\",\\n    \\"counts\\": [\\n      {\\n        \\"count\\": 0,\\n        \\"model\\": \\"string\\"\\n      }\\n    ],\\n    \\"duration\\": 0,\\n    \\"editions\\": [\\n      {\\n        \\"edition\\": \\"string\\",\\n        \\"productType\\": \\"string\\"\\n      }\\n    ],\\n    \\"expired\\": true,\\n    \\"invalidated\\": true,\\n    \\"invalidatedAt\\": \\"string\\",\\n    \\"key\\": \\"string\\",\\n    \\"mode\\": \\"string\\",\\n    \\"organizationId\\": \\"string\\",\\n    \\"startedAt\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

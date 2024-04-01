@@ -1287,7 +1287,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_wireless\_latency\_stats,
+   - SDK Method used are wireless.Wireless.get\_device\_wireless\_latency\_stats,
    - Paths used are get /devices/{serial}/wireless/latencyStats,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1300,7 +1300,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceWirelessLatencyStats <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-latency-stats>`_
+   `Cisco Meraki documentation for wireless getDeviceWirelessLatencyStats <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-latency-stats>`_
        Complete reference of the getDeviceWirelessLatencyStats API.
 
 .. Examples
@@ -1404,7 +1404,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"latencyStats": {"backgroundTraffic": {"avg": 0, "rawDistribution": {"0": 0, "1": 0, "1024": 0, "128": 0, "16": 0, "2": 0, "2048": 0, "256": 0, "32": 0, "4": 0, "512": 0, "64": 0, "8": 0}}, "bestEffortTraffic": "string", "videoTraffic": "string", "voiceTraffic": "string"}, "serial": "string"}`
 
 
       .. raw:: html

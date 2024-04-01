@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all networks \_trafficshaping \_applicationcategories.
-- Returns the application categories for traffic shaping rules.
+- Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1101,7 +1101,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"applications\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\"\\n      }\\n    ],\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

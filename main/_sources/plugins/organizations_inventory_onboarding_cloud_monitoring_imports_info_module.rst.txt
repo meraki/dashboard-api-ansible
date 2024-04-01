@@ -1156,7 +1156,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"importId\\": \\"string\\",\\n    \\"device\\": {\\n      \\"url\\": \\"string\\",\\n      \\"created\\": true,\\n      \\"status\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"device\\": {\\n      \\"created\\": true,\\n      \\"status\\": \\"string\\",\\n      \\"url\\": \\"string\\"\\n    },\\n    \\"importId\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"shortName\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"descriptions\\": {\\n      \\"short\\": \\"string\\",\\n      \\"long\\": \\"string\\"\\n    },\\n    \\"topic\\": \\"string\\",\\n    \\"isOrgScopedOnly\\": true,\\n    \\"documentationLink\\": \\"string\\",\\n    \\"supportLink\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"descriptions\\": {\\n      \\"long\\": \\"string\\",\\n      \\"short\\": \\"string\\"\\n    },\\n    \\"documentationLink\\": \\"string\\",\\n    \\"isOrgScopedOnly\\": true,\\n    \\"name\\": \\"string\\",\\n    \\"shortName\\": \\"string\\",\\n    \\"supportLink\\": \\"string\\",\\n    \\"topic\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

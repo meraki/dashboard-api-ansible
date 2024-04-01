@@ -1098,7 +1098,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 8 hours and be less than or equal to 31 days. The default is 1 day.
           
 
 
@@ -1228,7 +1228,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"model\\": \\"string\\",\\n    \\"count\\": 0,\\n    \\"usage\\": {\\n      \\"total\\": 0,\\n      \\"average\\": 0\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"count\\": 0,\\n    \\"model\\": \\"string\\",\\n    \\"usage\\": {\\n      \\"average\\": 0,\\n      \\"total\\": 0\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

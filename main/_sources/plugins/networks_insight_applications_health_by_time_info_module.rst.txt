@@ -1298,7 +1298,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"startTs\\": \\"string\\",\\n    \\"endTs\\": \\"string\\",\\n    \\"wanGoodput\\": 0,\\n    \\"lanGoodput\\": 0,\\n    \\"wanLatencyMs\\": 0,\\n    \\"lanLatencyMs\\": 0,\\n    \\"wanLossPercent\\": 0,\\n    \\"lanLossPercent\\": 0,\\n    \\"responseDuration\\": 0,\\n    \\"sent\\": 0,\\n    \\"recv\\": 0,\\n    \\"numClients\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"endTs\\": \\"string\\",\\n    \\"lanGoodput\\": 0,\\n    \\"lanLatencyMs\\": 0,\\n    \\"lanLossPercent\\": 0,\\n    \\"numClients\\": 0,\\n    \\"recv\\": 0,\\n    \\"responseDuration\\": 0,\\n    \\"sent\\": 0,\\n    \\"startTs\\": \\"string\\",\\n    \\"wanGoodput\\": 0,\\n    \\"wanLatencyMs\\": 0,\\n    \\"wanLossPercent\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -1068,7 +1068,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
+      Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are apparentPower, battery, button, co2, current, door, downstreamPower, frequency, humidity, indoorAirQuality, noise, pm25, powerFactor, realPower, remoteLockoutSwitch, temperature, tvoc, voltage, and water.
           
 
 
@@ -1515,7 +1515,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"serial\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"ts\\": \\"string\\",\\n    \\"metric\\": \\"string\\",\\n    \\"battery\\": {\\n      \\"percentage\\": 0\\n    },\\n    \\"button\\": {\\n      \\"pressType\\": \\"string\\"\\n    },\\n    \\"door\\": {\\n      \\"open\\": true\\n    },\\n    \\"humidity\\": {\\n      \\"relativePercentage\\": 0\\n    },\\n    \\"indoorAirQuality\\": {\\n      \\"score\\": 0\\n    },\\n    \\"noise\\": {\\n      \\"ambient\\": {\\n        \\"level\\": 0\\n      }\\n    },\\n    \\"pm25\\": {\\n      \\"concentration\\": 0\\n    },\\n    \\"temperature\\": {\\n      \\"fahrenheit\\": 0,\\n      \\"celsius\\": 0\\n    },\\n    \\"tvoc\\": {\\n      \\"concentration\\": 0\\n    },\\n    \\"water\\": {\\n      \\"present\\": true\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"apparentPower\\": {\\n      \\"draw\\": 0\\n    },\\n    \\"battery\\": {\\n      \\"percentage\\": 0\\n    },\\n    \\"button\\": {\\n      \\"pressType\\": \\"string\\"\\n    },\\n    \\"co2\\": {\\n      \\"concentration\\": 0\\n    },\\n    \\"current\\": {\\n      \\"draw\\": 0\\n    },\\n    \\"door\\": {\\n      \\"open\\": true\\n    },\\n    \\"downstreamPower\\": {\\n      \\"enabled\\": true\\n    },\\n    \\"frequency\\": {\\n      \\"level\\": 0\\n    },\\n    \\"humidity\\": {\\n      \\"relativePercentage\\": 0\\n    },\\n    \\"indoorAirQuality\\": {\\n      \\"score\\": 0\\n    },\\n    \\"metric\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"noise\\": {\\n      \\"ambient\\": {\\n        \\"level\\": 0\\n      }\\n    },\\n    \\"pm25\\": {\\n      \\"concentration\\": 0\\n    },\\n    \\"powerFactor\\": {\\n      \\"percentage\\": 0\\n    },\\n    \\"realPower\\": {\\n      \\"draw\\": 0\\n    },\\n    \\"remoteLockoutSwitch\\": {\\n      \\"locked\\": true\\n    },\\n    \\"serial\\": \\"string\\",\\n    \\"temperature\\": {\\n      \\"celsius\\": 0,\\n      \\"fahrenheit\\": 0\\n    },\\n    \\"ts\\": \\"string\\",\\n    \\"tvoc\\": {\\n      \\"concentration\\": 0\\n    },\\n    \\"voltage\\": {\\n      \\"level\\": 0\\n    },\\n    \\"water\\": {\\n      \\"present\\": true\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

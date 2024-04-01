@@ -1482,7 +1482,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"startTs\\": \\"string\\",\\n    \\"endTs\\": \\"string\\",\\n    \\"averageKbps\\": 0,\\n    \\"downloadKbps\\": 0,\\n    \\"uploadKbps\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"averageKbps\\": 0,\\n    \\"downloadKbps\\": 0,\\n    \\"endTs\\": \\"string\\",\\n    \\"startTs\\": \\"string\\",\\n    \\"uploadKbps\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

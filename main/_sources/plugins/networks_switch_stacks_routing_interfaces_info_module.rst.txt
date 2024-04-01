@@ -1201,7 +1201,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1221,7 +1221,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {}\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultGateway": "string", "interfaceId": "string", "interfaceIp": "string", "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "prefix": "string"}, "multicastRouting": "string", "name": "string", "ospfSettings": {"area": "string", "cost": 0, "isPassiveEnabled": true}, "ospfV3": {"area": "string", "cost": 0, "isPassiveEnabled": true}, "subnet": "string", "vlanId": 0}`
 
 
       .. raw:: html

@@ -1012,7 +1012,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_wireless\_bluetooth\_settings,
+   - SDK Method used are wireless.Wireless.get\_device\_wireless\_bluetooth\_settings,
    - Paths used are get /devices/{serial}/wireless/bluetooth/settings,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
@@ -1025,7 +1025,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices getDeviceWirelessBluetoothSettings <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings>`_
+   `Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings <https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings>`_
        Complete reference of the getDeviceWirelessBluetoothSettings API.
 
 .. Examples

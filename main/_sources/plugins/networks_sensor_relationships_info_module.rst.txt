@@ -1121,7 +1121,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"device\\": {\\n      \\"name\\": \\"string\\",\\n      \\"serial\\": \\"string\\",\\n      \\"productType\\": \\"string\\"\\n    },\\n    \\"relationships\\": {\\n      \\"livestream\\": {\\n        \\"relatedDevices\\": [\\n          {\\n            \\"serial\\": \\"string\\",\\n            \\"productType\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"device\\": {\\n      \\"name\\": \\"string\\",\\n      \\"productType\\": \\"string\\",\\n      \\"serial\\": \\"string\\"\\n    },\\n    \\"relationships\\": {\\n      \\"livestream\\": {\\n        \\"relatedDevices\\": [\\n          {\\n            \\"productType\\": \\"string\\",\\n            \\"serial\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

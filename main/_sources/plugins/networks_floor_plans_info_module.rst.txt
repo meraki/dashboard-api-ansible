@@ -1165,7 +1165,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1185,7 +1185,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {}\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"bottomLeftCorner": {"lat": 0, "lng": 0}, "bottomRightCorner": {"lat": 0, "lng": 0}, "center": {"lat": 0, "lng": 0}, "devices": [{"address": "string", "details": [{"name": "string", "value": "string"}], "firmware": "string", "imei": "string", "lanIp": "string", "lat": 0, "lng": 0, "mac": "string", "model": "string", "name": "string", "networkId": "string", "notes": "string", "productType": "string", "serial": "string", "tags": ["string"]}], "floorPlanId": "string", "height": 0, "imageExtension": "string", "imageMd5": "string", "imageUrl": "string", "imageUrlExpiresAt": "string", "name": "string", "topLeftCorner": {"lat": 0, "lng": 0}, "topRightCorner": {"lat": 0, "lng": 0}, "width": 0}`
 
 
       .. raw:: html

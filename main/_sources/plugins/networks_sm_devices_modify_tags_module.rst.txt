@@ -1235,9 +1235,9 @@ Examples
         scope:
         - withAny, old_tag
         serials:
-        - Q234-ABCD-0001
-        - Q234-ABCD-0002
-        - Q234-ABCD-0003
+        - XY0XX0Y0X0
+        - A01B01CD00E
+        - X02YZ1ZYZX
         tags:
         - tag1
         - tag2
@@ -1305,7 +1305,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"id\\": \\"string\\"", "\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]", "\\n    \\"wifiMac\\": \\"string\\"", "\\n    \\"serial\\": \\"string\\"\\n  }\\n]\\n"]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"id\\": \\"string\\"", "\\n    \\"serial\\": \\"string\\"", "\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]", "\\n    \\"wifiMac\\": \\"string\\"\\n  }\\n]\\n"]`
 
 
       .. raw:: html

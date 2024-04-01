@@ -1020,7 +1020,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_camera\_video\_settings,
+   - SDK Method used are camera.Camera.update\_device\_camera\_video\_settings,
    - Paths used are put /devices/{serial}/camera/video/settings,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1033,7 +1033,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceCameraVideoSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-video-settings>`_
+   `Cisco Meraki documentation for camera updateDeviceCameraVideoSettings <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-video-settings>`_
        Complete reference of the updateDeviceCameraVideoSettings API.
 
 .. Examples
@@ -1130,7 +1130,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"externalRtspEnabled": true, "rtspUrl": "string"}`
 
 
       .. raw:: html

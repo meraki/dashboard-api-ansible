@@ -69,7 +69,8 @@ Synopsis
 .. Description
 
 - Get all organizations \_wireless \_devices \_ethernet \_statuses.
-- Endpoint to see power status for wireless devices.
+- List the most recent Ethernet link speed, duplex, aggregation and power mode and status information for wireless devices.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1338,7 +1339,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"serial\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"power\\": {\\n      \\"mode\\": \\"string\\",\\n      \\"ac\\": {\\n        \\"isConnected\\": true\\n      },\\n      \\"poe\\": {\\n        \\"isConnected\\": true\\n      }\\n    },\\n    \\"ports\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"poe\\": {\\n          \\"standard\\": \\"string\\"\\n        },\\n        \\"linkNegotiation\\": {\\n          \\"duplex\\": \\"string\\",\\n          \\"speed\\": 0\\n        }\\n      }\\n    ],\\n    \\"aggregation\\": {\\n      \\"enabled\\": true,\\n      \\"speed\\": 0\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"aggregation\\": {\\n      \\"enabled\\": true,\\n      \\"speed\\": 0\\n    },\\n    \\"name\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"ports\\": [\\n      {\\n        \\"linkNegotiation\\": {\\n          \\"duplex\\": \\"string\\",\\n          \\"speed\\": 0\\n        },\\n        \\"name\\": \\"string\\",\\n        \\"poe\\": {\\n          \\"standard\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"power\\": {\\n      \\"ac\\": {\\n        \\"isConnected\\": true\\n      },\\n      \\"mode\\": \\"string\\",\\n      \\"poe\\": {\\n        \\"isConnected\\": true\\n      }\\n    },\\n    \\"serial\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

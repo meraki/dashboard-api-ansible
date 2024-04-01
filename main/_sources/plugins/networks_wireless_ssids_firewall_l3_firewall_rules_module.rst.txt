@@ -1306,6 +1306,7 @@ Examples
         meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
         meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
         state: present
+        allowLanAccess: true
         networkId: string
         number: string
         rules:
@@ -1375,7 +1376,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"destCidr\\": \\"string\\",\\n    \\"destPort\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"protocol\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

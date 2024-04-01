@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get all organizations \_firmware \_upgrades \_bydevice.
-- Get firmware upgrade status for the filtered devices.
+- Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -209,40 +209,6 @@ Parameters
         <div class="ansible-option-cell">
 
       FirmwareUpgradeBatchIds query parameter. Optional parameter to filter by firmware upgrade batch ids.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-firmwareUpgradeIds"></div>
-
-      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_by_device_info_module__parameter-firmwareupgradeids:
-
-      .. rst-class:: ansible-option-title
-
-      **firmwareUpgradeIds**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-firmwareUpgradeIds" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      FirmwareUpgradeIds query parameter. Optional parameter to filter by firmware upgrade ids.
 
 
       .. raw:: html
@@ -1239,7 +1205,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
+      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
 
 
       .. raw:: html
@@ -1350,6 +1316,40 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-upgradeStatuses"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_firmware_upgrades_by_device_info_module__parameter-upgradestatuses:
+
+      .. rst-class:: ansible-option-title
+
+      **upgradeStatuses**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-upgradeStatuses" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      UpgradeStatuses query parameter. Optional parameter to filter by firmware upgrade statuses.
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -1412,8 +1412,8 @@ Examples
         networkIds: []
         serials: []
         macs: []
-        firmwareUpgradeIds: []
         firmwareUpgradeBatchIds: []
+        upgradeStatuses: []
         organizationId: string
         total_pages: -1
         direction: next
@@ -1479,7 +1479,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"serial\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"deviceStatus\\": \\"string\\",\\n    \\"upgrade\\": {\\n      \\"time\\": \\"string\\",\\n      \\"fromVersion\\": {\\n        \\"id\\": \\"string\\",\\n        \\"shortName\\": \\"string\\",\\n        \\"releaseType\\": \\"string\\",\\n        \\"releaseDate\\": \\"string\\"\\n      },\\n      \\"toVersion\\": {\\n        \\"id\\": \\"string\\",\\n        \\"shortName\\": \\"string\\",\\n        \\"releaseType\\": \\"string\\",\\n        \\"releaseDate\\": \\"string\\"\\n      },\\n      \\"status\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"upgradeBatchId\\": \\"string\\",\\n      \\"staged\\": {\\n        \\"group\\": {\\n          \\"id\\": \\"string\\"\\n        }\\n      }\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"deviceStatus\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"upgrade\\": {\\n      \\"fromVersion\\": {\\n        \\"id\\": \\"string\\",\\n        \\"releaseDate\\": \\"string\\",\\n        \\"releaseType\\": \\"string\\",\\n        \\"shortName\\": \\"string\\"\\n      },\\n      \\"id\\": \\"string\\",\\n      \\"staged\\": {\\n        \\"group\\": {\\n          \\"id\\": \\"string\\"\\n        }\\n      },\\n      \\"status\\": \\"string\\",\\n      \\"time\\": \\"string\\",\\n      \\"toVersion\\": {\\n        \\"id\\": \\"string\\",\\n        \\"releaseDate\\": \\"string\\",\\n        \\"releaseType\\": \\"string\\",\\n        \\"shortName\\": \\"string\\"\\n      },\\n      \\"upgradeBatchId\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

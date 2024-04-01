@@ -1165,7 +1165,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.update\_device\_camera\_sense,
+   - SDK Method used are camera.Camera.update\_device\_camera\_sense,
    - Paths used are put /devices/{serial}/camera/sense,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco DNAC SDK
@@ -1178,7 +1178,7 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for devices updateDeviceCameraSense <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-sense>`_
+   `Cisco Meraki documentation for camera updateDeviceCameraSense <https://developer.cisco.com/meraki/api-v1/#!update-device-camera-sense>`_
        Complete reference of the updateDeviceCameraSense API.
 
 .. Examples
