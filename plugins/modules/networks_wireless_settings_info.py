@@ -72,16 +72,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "meshingEnabled": true,
       "ipv6BridgeEnabled": true,
-      "locationAnalyticsEnabled": true,
-      "upgradeStrategy": "string",
       "ledLightsOn": true,
+      "locationAnalyticsEnabled": true,
+      "meshingEnabled": true,
       "namedVlans": {
         "poolDhcpMonitoring": {
-          "enabled": true,
-          "duration": 0
+          "duration": 0,
+          "enabled": true
         }
-      }
+      },
+      "regulatoryDomain": {
+        "countryCode": "string",
+        "name": "string",
+        "permits6e": true
+      },
+      "upgradeStrategy": "string"
     }
 """

@@ -60,12 +60,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceWirelessRadioSettings
+- name: Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings
   description: Complete reference of the updateDeviceWirelessRadioSettings API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings
 notes:
   - SDK Method used are
-    devices.Devices.update_device_wireless_radio_settings,
+    wireless.Wireless.update_device_wireless_radio_settings,
 
   - Paths used are
     put /devices/{serial}/wireless/radio/settings,

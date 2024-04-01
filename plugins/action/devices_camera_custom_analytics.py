@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    enabled=dict(type="bool"),
     artifactId=dict(type="str"),
+    enabled=dict(type="bool"),
     parameters=dict(type="list"),
     serial=dict(type="str"),
 ))
@@ -50,8 +50,8 @@ class DevicesCameraCustomAnalytics(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            enabled=params.get("enabled"),
             artifactId=params.get("artifactId"),
+            enabled=params.get("enabled"),
             parameters=params.get("parameters"),
             serial=params.get("serial"),
         )
@@ -64,11 +64,11 @@ class DevicesCameraCustomAnalytics(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('artifactId') is not None or self.new_object.get('artifact_id') is not None:
             new_object_params['artifactId'] = self.new_object.get('artifactId') or \
                 self.new_object.get('artifact_id')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('parameters') is not None or self.new_object.get('parameters') is not None:
             new_object_params['parameters'] = self.new_object.get('parameters') or \
                 self.new_object.get('parameters')
@@ -128,8 +128,8 @@ class DevicesCameraCustomAnalytics(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"),
             ("artifactId", "artifactId"),
+            ("enabled", "enabled"),
             ("parameters", "parameters"),
             ("serial", "serial"),
         ]

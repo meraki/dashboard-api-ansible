@@ -78,8 +78,8 @@ class DevicesSensorRelationships(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
+                if 'livestream' in items:
+                    items = items.get('livestream')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items

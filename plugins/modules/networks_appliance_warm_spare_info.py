@@ -70,6 +70,19 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "enabled": true,
+      "primarySerial": "string",
+      "spareSerial": "string",
+      "uplinkMode": "string",
+      "wan1": {
+        "ip": "string",
+        "subnet": "string"
+      },
+      "wan2": {
+        "ip": "string",
+        "subnet": "string"
+      }
+    }
 """

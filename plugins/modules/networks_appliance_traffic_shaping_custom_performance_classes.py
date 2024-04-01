@@ -82,5 +82,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "customPerformanceClassId": "string",
+      "maxJitter": 0,
+      "maxLatency": 0,
+      "maxLossPercentage": 0,
+      "name": "string"
+    }
 """

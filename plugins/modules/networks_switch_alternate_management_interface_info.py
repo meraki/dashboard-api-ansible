@@ -70,6 +70,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "enabled": true,
+      "protocols": [
+        "string"
+      ],
+      "switches": [
+        {
+          "alternateManagementIp": "string",
+          "gateway": "string",
+          "serial": "string",
+          "subnetMask": "string"
+        }
+      ],
+      "vlanId": 0
+    }
 """

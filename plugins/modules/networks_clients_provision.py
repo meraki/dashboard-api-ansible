@@ -288,12 +288,59 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     clients:
-    - clientId: k74272e
-      mac: 00:11:22:33:44:55
+    - mac: 00:11:22:33:44:55
       name: Miles's phone
     devicePolicy: Group policy
     groupPolicyId: '101'
     networkId: string
+    policiesBySecurityAppliance:
+      devicePolicy: Normal
+    policiesBySsid:
+      '0':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '1':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '10':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '11':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '12':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '13':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '14':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '2':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '3':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '4':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '5':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '6':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '7':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '8':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
+      '9':
+        devicePolicy: Group policy
+        groupPolicyId: '101'
 
 """
 RETURN = r"""
@@ -302,5 +349,16 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "clients": [
+        {
+          "clientId": "string",
+          "mac": "string",
+          "message": "string",
+          "name": "string"
+        }
+      ],
+      "devicePolicy": "string",
+      "groupPolicyId": "string"
+    }
 """

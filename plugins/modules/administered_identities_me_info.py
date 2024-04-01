@@ -67,22 +67,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "email": "string",
-      "lastUsedDashboardAt": "string",
       "authentication": {
-        "mode": "string",
         "api": {
           "key": {
             "created": true
           }
         },
-        "twoFactor": {
-          "enabled": true
-        },
+        "mode": "string",
         "saml": {
           "enabled": true
+        },
+        "twoFactor": {
+          "enabled": true
         }
-      }
+      },
+      "email": "string",
+      "lastUsedDashboardAt": "string",
+      "name": "string"
     }
 """

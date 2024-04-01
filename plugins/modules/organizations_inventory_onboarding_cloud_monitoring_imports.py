@@ -87,9 +87,9 @@ meraki_response:
   sample: >
     [
       {
-        "status": "string",
         "importId": "string",
-        "message": "string"
+        "message": "string",
+        "status": "string"
       }
     ]
 """

@@ -13,8 +13,8 @@ description:
 - >
    Claim a list of devices, licenses, and/or orders into an organization inventory. When claiming by order, all
    devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be
-   placed in the organization's inventory. Use /organizations/{organizationId}/inventory/release to release devices
-   from an organization.
+   placed in the organization's inventory. This operation can be used up to ten times within a single five minute
+   window.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -100,5 +100,18 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "licenses": [
+        {
+          "key": "string",
+          "mode": "string"
+        }
+      ],
+      "orders": [
+        "string"
+      ],
+      "serials": [
+        "string"
+      ]
+    }
 """

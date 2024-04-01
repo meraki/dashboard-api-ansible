@@ -109,7 +109,26 @@ meraki_response:
   type: dict
   sample: >
     {
+      "allowedAdmins": "string",
+      "assignableNetworkIds": [
+        "string"
+      ],
+      "assignableNetworks": "string",
+      "contentToken": "string",
+      "email": "string",
       "id": "string",
+      "lastForceSyncedAt": "string",
+      "lastSyncedAt": "string",
+      "name": "string",
+      "networkIdAdmins": "string",
+      "parsedToken": {
+        "expiresAt": "string",
+        "hashedToken": "string",
+        "orgName": "string"
+      },
+      "vppAccountId": "string",
+      "vppLocationId": "string",
+      "vppLocationName": "string",
       "vppServiceToken": "string"
     }
 """

@@ -25,10 +25,10 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
-    maxLatency=dict(type="int"),
     maxJitter=dict(type="int"),
+    maxLatency=dict(type="int"),
     maxLossPercentage=dict(type="int"),
+    name=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -68,10 +68,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            maxLatency=params.get("maxLatency"),
             maxJitter=params.get("maxJitter"),
+            maxLatency=params.get("maxLatency"),
             maxLossPercentage=params.get("maxLossPercentage"),
+            name=params.get("name"),
             networkId=params.get("networkId"),
         )
         return new_object

@@ -32,14 +32,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    subnet=dict(type="str"),
-    interfaceIp=dict(type="str"),
-    multicastRouting=dict(type="str"),
-    vlanId=dict(type="int"),
     defaultGateway=dict(type="str"),
-    ospfSettings=dict(type="dict"),
+    interfaceIp=dict(type="str"),
     ipv6=dict(type="dict"),
+    multicastRouting=dict(type="str"),
+    name=dict(type="str"),
+    ospfSettings=dict(type="dict"),
+    subnet=dict(type="str"),
+    vlanId=dict(type="int"),
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
     interfaceId=dict(type="str"),
@@ -58,14 +58,14 @@ class NetworksSwitchStacksRoutingInterfaces(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            subnet=params.get("subnet"),
-            interfaceIp=params.get("interfaceIp"),
-            multicastRouting=params.get("multicastRouting"),
-            vlanId=params.get("vlanId"),
             defaultGateway=params.get("defaultGateway"),
-            ospfSettings=params.get("ospfSettings"),
+            interfaceIp=params.get("interfaceIp"),
             ipv6=params.get("ipv6"),
+            multicastRouting=params.get("multicastRouting"),
+            name=params.get("name"),
+            ospfSettings=params.get("ospfSettings"),
+            subnet=params.get("subnet"),
+            vlanId=params.get("vlanId"),
             networkId=params.get("networkId"),
             switchStackId=params.get("switchStackId"),
             interfaceId=params.get("interfaceId"),
@@ -96,30 +96,30 @@ class NetworksSwitchStacksRoutingInterfaces(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
-            new_object_params['subnet'] = self.new_object.get('subnet') or \
-                self.new_object.get('subnet')
-        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
-            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
-                self.new_object.get('interface_ip')
-        if self.new_object.get('multicastRouting') is not None or self.new_object.get('multicast_routing') is not None:
-            new_object_params['multicastRouting'] = self.new_object.get('multicastRouting') or \
-                self.new_object.get('multicast_routing')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
         if self.new_object.get('defaultGateway') is not None or self.new_object.get('default_gateway') is not None:
             new_object_params['defaultGateway'] = self.new_object.get('defaultGateway') or \
                 self.new_object.get('default_gateway')
-        if self.new_object.get('ospfSettings') is not None or self.new_object.get('ospf_settings') is not None:
-            new_object_params['ospfSettings'] = self.new_object.get('ospfSettings') or \
-                self.new_object.get('ospf_settings')
+        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
+            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
+                self.new_object.get('interface_ip')
         if self.new_object.get('ipv6') is not None or self.new_object.get('ipv6') is not None:
             new_object_params['ipv6'] = self.new_object.get('ipv6') or \
                 self.new_object.get('ipv6')
+        if self.new_object.get('multicastRouting') is not None or self.new_object.get('multicast_routing') is not None:
+            new_object_params['multicastRouting'] = self.new_object.get('multicastRouting') or \
+                self.new_object.get('multicast_routing')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('ospfSettings') is not None or self.new_object.get('ospf_settings') is not None:
+            new_object_params['ospfSettings'] = self.new_object.get('ospfSettings') or \
+                self.new_object.get('ospf_settings')
+        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+            new_object_params['subnet'] = self.new_object.get('subnet') or \
+                self.new_object.get('subnet')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -143,30 +143,30 @@ class NetworksSwitchStacksRoutingInterfaces(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
-            new_object_params['subnet'] = self.new_object.get('subnet') or \
-                self.new_object.get('subnet')
-        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
-            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
-                self.new_object.get('interface_ip')
-        if self.new_object.get('multicastRouting') is not None or self.new_object.get('multicast_routing') is not None:
-            new_object_params['multicastRouting'] = self.new_object.get('multicastRouting') or \
-                self.new_object.get('multicast_routing')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
         if self.new_object.get('defaultGateway') is not None or self.new_object.get('default_gateway') is not None:
             new_object_params['defaultGateway'] = self.new_object.get('defaultGateway') or \
                 self.new_object.get('default_gateway')
-        if self.new_object.get('ospfSettings') is not None or self.new_object.get('ospf_settings') is not None:
-            new_object_params['ospfSettings'] = self.new_object.get('ospfSettings') or \
-                self.new_object.get('ospf_settings')
+        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
+            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
+                self.new_object.get('interface_ip')
         if self.new_object.get('ipv6') is not None or self.new_object.get('ipv6') is not None:
             new_object_params['ipv6'] = self.new_object.get('ipv6') or \
                 self.new_object.get('ipv6')
+        if self.new_object.get('multicastRouting') is not None or self.new_object.get('multicast_routing') is not None:
+            new_object_params['multicastRouting'] = self.new_object.get('multicastRouting') or \
+                self.new_object.get('multicast_routing')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('ospfSettings') is not None or self.new_object.get('ospf_settings') is not None:
+            new_object_params['ospfSettings'] = self.new_object.get('ospfSettings') or \
+                self.new_object.get('ospf_settings')
+        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+            new_object_params['subnet'] = self.new_object.get('subnet') or \
+                self.new_object.get('subnet')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -247,14 +247,14 @@ class NetworksSwitchStacksRoutingInterfaces(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("subnet", "subnet"),
-            ("interfaceIp", "interfaceIp"),
-            ("multicastRouting", "multicastRouting"),
-            ("vlanId", "vlanId"),
             ("defaultGateway", "defaultGateway"),
-            ("ospfSettings", "ospfSettings"),
+            ("interfaceIp", "interfaceIp"),
             ("ipv6", "ipv6"),
+            ("multicastRouting", "multicastRouting"),
+            ("name", "name"),
+            ("ospfSettings", "ospfSettings"),
+            ("subnet", "subnet"),
+            ("vlanId", "vlanId"),
             ("networkId", "networkId"),
             ("switchStackId", "switchStackId"),
             ("interfaceId", "interfaceId"),

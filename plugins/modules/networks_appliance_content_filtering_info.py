@@ -70,6 +70,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "allowedUrlPatterns": [
+        "string"
+      ],
+      "blockedUrlCategories": [
+        {
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "blockedUrlPatterns": [
+        "string"
+      ],
+      "urlCategoryListSize": "string"
+    }
 """

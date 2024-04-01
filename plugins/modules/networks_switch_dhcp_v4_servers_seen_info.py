@@ -111,98 +111,98 @@ meraki_response:
   sample: >
     [
       {
-        "mac": "string",
-        "vlan": 0,
         "clientId": "string",
-        "isAllowed": true,
-        "lastSeenAt": "string",
-        "seenBy": [
-          {
-            "serial": "string",
-            "name": "string",
-            "url": "string"
-          }
-        ],
-        "type": "string",
         "device": {
-          "serial": "string",
-          "name": "string",
-          "url": "string",
           "interface": {
             "name": "string",
             "url": "string"
-          }
+          },
+          "name": "string",
+          "serial": "string",
+          "url": "string"
         },
         "ipv4": {
           "address": "string",
-          "subnet": "string",
-          "gateway": "string"
+          "gateway": "string",
+          "subnet": "string"
         },
+        "isAllowed": true,
         "isConfigured": true,
         "lastAck": {
-          "ts": "string",
           "ipv4": {
             "address": "string"
-          }
+          },
+          "ts": "string"
         },
         "lastPacket": {
-          "source": {
-            "mac": "string",
-            "ipv4": {
-              "address": "string"
-            },
-            "port": 0
-          },
           "destination": {
-            "mac": "string",
             "ipv4": {
               "address": "string"
             },
+            "mac": "string",
             "port": 0
           },
-          "type": "string",
           "ethernet": {
             "type": "string"
           },
-          "ip": {
-            "id": "string",
-            "version": 0,
-            "length": 0,
-            "headerLength": 0,
-            "protocol": 0,
-            "ttl": 0,
-            "dscp": {
-              "tag": 0,
-              "ecn": 0
-            }
-          },
-          "udp": {
-            "length": 0,
-            "checksum": "string"
-          },
           "fields": {
-            "op": 0,
-            "htype": 0,
+            "chaddr": "string",
+            "ciaddr": "string",
+            "flags": "string",
+            "giaddr": "string",
             "hlen": 0,
             "hops": 0,
-            "xid": "string",
-            "secs": 0,
-            "flags": "string",
-            "ciaddr": "string",
-            "yiaddr": "string",
-            "siaddr": "string",
-            "giaddr": "string",
-            "chaddr": "string",
-            "sname": "string",
+            "htype": 0,
             "magicCookie": "string",
+            "op": 0,
             "options": [
               {
                 "name": "string",
                 "value": "string"
               }
-            ]
+            ],
+            "secs": 0,
+            "siaddr": "string",
+            "sname": "string",
+            "xid": "string",
+            "yiaddr": "string"
+          },
+          "ip": {
+            "dscp": {
+              "ecn": 0,
+              "tag": 0
+            },
+            "headerLength": 0,
+            "id": "string",
+            "length": 0,
+            "protocol": 0,
+            "ttl": 0,
+            "version": 0
+          },
+          "source": {
+            "ipv4": {
+              "address": "string"
+            },
+            "mac": "string",
+            "port": 0
+          },
+          "type": "string",
+          "udp": {
+            "checksum": "string",
+            "length": 0
           }
-        }
+        },
+        "lastSeenAt": "string",
+        "mac": "string",
+        "seenBy": [
+          {
+            "name": "string",
+            "serial": "string",
+            "url": "string"
+          }
+        ],
+        "type": "string",
+        "vlan": 0
       }
     ]
 """

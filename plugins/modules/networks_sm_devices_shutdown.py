@@ -6,47 +6,54 @@
 
 DOCUMENTATION = r"""
 ---
-module: networks_client_info
-short_description: Information module for networks _client
+module: networks_sm_devices_shutdown
+short_description: Resource module for networks _sm _devices _shutdown
 description:
-- Get networks _client by id.
-- >
-   Return the client associated with the given identifier. Clients can be identified by a client key or either the
-   MAC or IP depending on whether the network uses Track-by-IP.
-version_added: '1.0.0'
+- Manage operation create of the resource networks _sm _devices _shutdown.
+- Shutdown a set of endpoints.
+version_added: '2.18.0'
 extends_documentation_fragment:
-  - cisco.meraki.module_info
+  - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
-  headers:
-    description: Additional headers.
-    type: dict
+  ids:
+    description: The ids of the endpoints to be shutdown.
+    elements: str
+    type: list
   networkId:
-    description:
-    - NetworkId path parameter. Network ID.
+    description: NetworkId path parameter. Network ID.
     type: str
-  clientId:
-    description:
-    - ClientId path parameter. Client ID.
-    type: str
+  scope:
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the endpoints to be shutdown.
+    elements: str
+    type: list
+  serials:
+    description: The serials of the endpoints to be shutdown.
+    elements: str
+    type: list
+  wifiMacs:
+    description: The wifiMacs of the endpoints to be shutdown.
+    elements: str
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClient
-  description: Complete reference of the getNetworkClient API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client
+- name: Cisco Meraki documentation for sm shutdownNetworkSmDevices
+  description: Complete reference of the shutdownNetworkSmDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!shutdown-network-sm-devices
 notes:
   - SDK Method used are
-    networks.Networks.get_network_client,
+    sm.Sm.shutdown_network_sm_devices,
 
   - Paths used are
-    get /networks/{networkId}/clients/{clientId},
+    post /networks/{networkId}/sm/devices/shutdown,
 """
 
 EXAMPLES = r"""
-- name: Get networks _client by id
-  cisco.meraki.networks_client_info:
+- name: Create
+  cisco.meraki.networks_sm_devices_shutdown:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
     meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
@@ -65,12 +72,22 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    ids:
+    - '1284392014819'
+    - '2983092129865'
     networkId: string
-    clientId: string
-  register: result
+    scope:
+    - withAny
+    - tag1
+    - tag2
+    serials:
+    - XY0XX0Y0X0
+    - A01B01CD00E
+    - X02YZ1ZYZX
+    wifiMacs:
+    - 00:11:22:33:44:55
 
 """
 RETURN = r"""
@@ -80,39 +97,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "mac": "string",
-      "ip": "string",
-      "ip6": "string",
-      "description": "string",
-      "firstSeen": 0,
-      "lastSeen": 0,
-      "manufacturer": "string",
-      "os": "string",
-      "user": "string",
-      "vlan": "string",
-      "ssid": "string",
-      "switchport": "string",
-      "wirelessCapabilities": "string",
-      "smInstalled": true,
-      "recentDeviceMac": "string",
-      "clientVpnConnections": [
-        {
-          "remoteIp": "string",
-          "connectedAt": 0,
-          "disconnectedAt": 0
-        }
-      ],
-      "lldp": [
-        [
-          "string"
-        ]
-      ],
-      "cdp": [
-        [
-          "string"
-        ]
-      ],
-      "status": "string"
+      "ids": [
+        "string"
+      ]
     }
 """

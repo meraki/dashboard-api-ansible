@@ -109,38 +109,31 @@ meraki_response:
   type: dict
   sample: >
     {
-      "profileId": "string",
-      "name": "string",
-      "schedule": {
-        "id": "string",
-        "name": "string"
-      },
       "conditions": [
         {
+          "direction": "string",
+          "duration": 0,
           "metric": "string",
           "threshold": {
-            "temperature": {
-              "celsius": 0,
-              "fahrenheit": 0,
-              "quality": "string"
+            "apparentPower": {
+              "draw": 0
             },
-            "humidity": {
-              "relativePercentage": 0,
-              "quality": "string"
-            },
-            "water": {
-              "present": true
+            "current": {
+              "draw": 0
             },
             "door": {
               "open": true
             },
-            "tvoc": {
-              "concentration": 0,
-              "quality": "string"
+            "frequency": {
+              "level": 0
             },
-            "pm25": {
-              "concentration": 0,
-              "quality": "string"
+            "humidity": {
+              "quality": "string",
+              "relativePercentage": 0
+            },
+            "indoorAirQuality": {
+              "quality": "string",
+              "score": 0
             },
             "noise": {
               "ambient": {
@@ -148,25 +141,53 @@ meraki_response:
                 "quality": "string"
               }
             },
-            "indoorAirQuality": {
-              "score": 0,
+            "pm25": {
+              "concentration": 0,
               "quality": "string"
+            },
+            "powerFactor": {
+              "percentage": 0
+            },
+            "realPower": {
+              "draw": 0
+            },
+            "temperature": {
+              "celsius": 0,
+              "fahrenheit": 0,
+              "quality": "string"
+            },
+            "tvoc": {
+              "concentration": 0,
+              "quality": "string"
+            },
+            "upstreamPower": {
+              "outageDetected": true
+            },
+            "voltage": {
+              "level": 0
+            },
+            "water": {
+              "present": true
             }
-          },
-          "direction": "string",
-          "duration": 0
+          }
         }
       ],
+      "name": "string",
+      "profileId": "string",
       "recipients": {
         "emails": [
           "string"
         ],
-        "smsNumbers": [
-          "string"
-        ],
         "httpServerIds": [
           "string"
+        ],
+        "smsNumbers": [
+          "string"
         ]
+      },
+      "schedule": {
+        "id": "string",
+        "name": "string"
       },
       "serials": [
         "string"

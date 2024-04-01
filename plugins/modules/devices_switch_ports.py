@@ -122,8 +122,8 @@ options:
       Enforce). Default configuration is Alert only.
     type: str
   vlan:
-    description: The VLAN of the switch port. A null value will clear the value set
-      for trunk ports.
+    description: The VLAN of the switch port. For a trunk port, this is the native VLAN.
+      A null value will clear the value set for trunk ports.
     type: int
   voiceVlan:
     description: The voice VLAN of the switch port. Only applicable to access ports.
@@ -132,12 +132,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceSwitchPort
+- name: Cisco Meraki documentation for switch updateDeviceSwitchPort
   description: Complete reference of the updateDeviceSwitchPort API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port
 notes:
   - SDK Method used are
-    devices.Devices.update_device_switch_port,
+    switch.Switch.update_device_switch_port,
 
   - Paths used are
     put /devices/{serial}/switch/ports/{portId},
@@ -212,44 +212,50 @@ meraki_response:
   type: dict
   sample: >
     {
-      "portId": "string",
-      "name": "string",
-      "tags": [
-        "string"
-      ],
-      "enabled": true,
-      "poeEnabled": true,
-      "type": "string",
-      "vlan": 0,
-      "voiceVlan": 0,
+      "accessPolicyNumber": 0,
+      "accessPolicyType": "string",
+      "adaptivePolicyGroupId": "string",
       "allowedVlans": "string",
+      "daiTrusted": true,
+      "enabled": true,
+      "flexibleStackingEnabled": true,
       "isolationEnabled": true,
-      "rstpEnabled": true,
-      "stpGuard": "string",
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "portScheduleId": "string",
-      "udld": "string",
-      "accessPolicyType": "string",
-      "accessPolicyNumber": 0,
       "macAllowList": [
         "string"
       ],
+      "mirror": {
+        "mode": "string"
+      },
+      "module": {
+        "model": "string"
+      },
+      "name": "string",
+      "peerSgtCapable": true,
+      "poeEnabled": true,
+      "portId": "string",
+      "portScheduleId": "string",
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "rstpEnabled": true,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "adaptivePolicyGroupId": "string",
-      "peerSgtCapable": true,
-      "flexibleStackingEnabled": true,
-      "daiTrusted": true,
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      }
+      "stpGuard": "string",
+      "tags": [
+        "string"
+      ],
+      "type": "string",
+      "udld": "string",
+      "vlan": 0,
+      "voiceVlan": 0
     }
 """

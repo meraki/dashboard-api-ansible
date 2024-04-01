@@ -72,26 +72,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "localStatusPageEnabled": true,
-      "remoteStatusPageEnabled": true,
+      "fips": {
+        "enabled": true
+      },
       "localStatusPage": {
         "authentication": {
           "enabled": true,
           "username": "string"
         }
       },
-      "securePort": {
-        "enabled": true
-      },
-      "fips": {
-        "enabled": true
-      },
+      "localStatusPageEnabled": true,
       "namedVlans": {
         "enabled": true
       },
-      "clientPrivacy": {
-        "expireDataOlderThan": 0,
-        "expireDataBefore": "string"
+      "remoteStatusPageEnabled": true,
+      "securePort": {
+        "enabled": true
       }
     }
 """

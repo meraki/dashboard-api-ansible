@@ -26,12 +26,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCameraVideoSettings
+- name: Cisco Meraki documentation for camera updateDeviceCameraVideoSettings
   description: Complete reference of the updateDeviceCameraVideoSettings API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-video-settings
 notes:
   - SDK Method used are
-    devices.Devices.update_device_camera_video_settings,
+    camera.Camera.update_device_camera_video_settings,
 
   - Paths used are
     put /devices/{serial}/camera/video/settings,
@@ -71,5 +71,8 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "externalRtspEnabled": true,
+      "rtspUrl": "string"
+    }
 """

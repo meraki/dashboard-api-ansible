@@ -10,7 +10,7 @@ module: organizations_openapi_spec_info
 short_description: Information module for organizations _openapispec
 description:
 - Get all organizations _openapispec.
-- Return the OpenAPI 2.0 Specification of the organization's API documentation in JSON.
+- Return the OpenAPI Specification of the organization's API documentation in JSON.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,6 +23,10 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
+  version:
+    description:
+    - Version query parameter. OpenAPI Specification version to return. Default is 2.
+    type: int
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -61,6 +65,7 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    version: 0
     organizationId: string
   register: result
 
@@ -70,6 +75,34 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "info": {
+        "description": "string",
+        "title": "string",
+        "version": "string"
+      },
+      "openapi": "string",
+      "paths": {
+        "/organizations": {
+          "get": {
+            "description": "string",
+            "operationId": "string",
+            "responses": {
+              "200": {
+                "description": "string",
+                "examples": {
+                  "application/json": [
+                    {
+                      "id": "string",
+                      "name": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 """

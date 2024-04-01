@@ -33,8 +33,7 @@ options:
   policyObjects:
     description: The policy objects that belong to this group; traffic from addresses
       specified by these policy objects will be tagged with this group's SGT value if
-      no other tagging scheme is being used (each requires one unique attribute) (default
-      ).
+      no other tagging scheme is being used (each requires one unique attribute) ().
     elements: dict
     suboptions:
       id:
@@ -106,6 +105,32 @@ EXAMPLES = r"""
     requiredIpMappings: []
     sgt: 1000
 
+- name: Delete by id
+  cisco.meraki.organizations_adaptive_policy_groups:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    id: string
+    organizationId: string
+
 - name: Update by id
   cisco.meraki.organizations_adaptive_policy_groups:
     meraki_api_key: "{{meraki_api_key}}"
@@ -139,32 +164,6 @@ EXAMPLES = r"""
       name: Example Policy Object
     requiredIpMappings: []
     sgt: 1000
-
-- name: Delete by id
-  cisco.meraki.organizations_adaptive_policy_groups:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    id: string
-    organizationId: string
 
 """
 RETURN = r"""

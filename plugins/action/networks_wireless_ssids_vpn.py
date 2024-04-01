@@ -33,8 +33,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     concentrator=dict(type="dict"),
-    splitTunnel=dict(type="dict"),
     failover=dict(type="dict"),
+    splitTunnel=dict(type="dict"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -52,8 +52,8 @@ class NetworksWirelessSsidsVpn(object):
         self.meraki = meraki
         self.new_object = dict(
             concentrator=params.get("concentrator"),
-            splitTunnel=params.get("splitTunnel"),
             failover=params.get("failover"),
+            splitTunnel=params.get("splitTunnel"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
@@ -72,12 +72,12 @@ class NetworksWirelessSsidsVpn(object):
         if self.new_object.get('concentrator') is not None or self.new_object.get('concentrator') is not None:
             new_object_params['concentrator'] = self.new_object.get('concentrator') or \
                 self.new_object.get('concentrator')
-        if self.new_object.get('splitTunnel') is not None or self.new_object.get('split_tunnel') is not None:
-            new_object_params['splitTunnel'] = self.new_object.get('splitTunnel') or \
-                self.new_object.get('split_tunnel')
         if self.new_object.get('failover') is not None or self.new_object.get('failover') is not None:
             new_object_params['failover'] = self.new_object.get('failover') or \
                 self.new_object.get('failover')
+        if self.new_object.get('splitTunnel') is not None or self.new_object.get('split_tunnel') is not None:
+            new_object_params['splitTunnel'] = self.new_object.get('splitTunnel') or \
+                self.new_object.get('split_tunnel')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -138,8 +138,8 @@ class NetworksWirelessSsidsVpn(object):
 
         obj_params = [
             ("concentrator", "concentrator"),
-            ("splitTunnel", "splitTunnel"),
             ("failover", "failover"),
+            ("splitTunnel", "splitTunnel"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]

@@ -108,5 +108,16 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "artifactId": "string",
+      "name": "string",
+      "organizationId": "string",
+      "status": {
+        "message": "string",
+        "type": "string"
+      },
+      "uploadId": "string",
+      "uploadUrl": "string",
+      "uploadUrlExpiry": "string"
+    }
 """

@@ -32,14 +32,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    bandwidth=dict(type="dict"),
+    bonjourForwarding=dict(type="dict"),
+    contentFiltering=dict(type="dict"),
+    firewallAndTrafficShaping=dict(type="dict"),
     name=dict(type="str"),
     scheduling=dict(type="dict"),
-    bandwidth=dict(type="dict"),
-    firewallAndTrafficShaping=dict(type="dict"),
-    contentFiltering=dict(type="dict"),
     splashAuthSettings=dict(type="str"),
     vlanTagging=dict(type="dict"),
-    bonjourForwarding=dict(type="dict"),
     networkId=dict(type="str"),
     groupPolicyId=dict(type="str"),
 ))
@@ -57,14 +57,14 @@ class NetworksGroupPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            bandwidth=params.get("bandwidth"),
+            bonjourForwarding=params.get("bonjourForwarding"),
+            contentFiltering=params.get("contentFiltering"),
+            firewallAndTrafficShaping=params.get("firewallAndTrafficShaping"),
             name=params.get("name"),
             scheduling=params.get("scheduling"),
-            bandwidth=params.get("bandwidth"),
-            firewallAndTrafficShaping=params.get("firewallAndTrafficShaping"),
-            contentFiltering=params.get("contentFiltering"),
             splashAuthSettings=params.get("splashAuthSettings"),
             vlanTagging=params.get("vlanTagging"),
-            bonjourForwarding=params.get("bonjourForwarding"),
             networkId=params.get("networkId"),
             groupPolicyId=params.get("groupPolicyId"),
         )
@@ -88,30 +88,30 @@ class NetworksGroupPolicies(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('bandwidth') is not None or self.new_object.get('bandwidth') is not None:
+            new_object_params['bandwidth'] = self.new_object.get('bandwidth') or \
+                self.new_object.get('bandwidth')
+        if self.new_object.get('bonjourForwarding') is not None or self.new_object.get('bonjour_forwarding') is not None:
+            new_object_params['bonjourForwarding'] = self.new_object.get('bonjourForwarding') or \
+                self.new_object.get('bonjour_forwarding')
+        if self.new_object.get('contentFiltering') is not None or self.new_object.get('content_filtering') is not None:
+            new_object_params['contentFiltering'] = self.new_object.get('contentFiltering') or \
+                self.new_object.get('content_filtering')
+        if self.new_object.get('firewallAndTrafficShaping') is not None or self.new_object.get('firewall_and_traffic_shaping') is not None:
+            new_object_params['firewallAndTrafficShaping'] = self.new_object.get('firewallAndTrafficShaping') or \
+                self.new_object.get('firewall_and_traffic_shaping')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('scheduling') is not None or self.new_object.get('scheduling') is not None:
             new_object_params['scheduling'] = self.new_object.get('scheduling') or \
                 self.new_object.get('scheduling')
-        if self.new_object.get('bandwidth') is not None or self.new_object.get('bandwidth') is not None:
-            new_object_params['bandwidth'] = self.new_object.get('bandwidth') or \
-                self.new_object.get('bandwidth')
-        if self.new_object.get('firewallAndTrafficShaping') is not None or self.new_object.get('firewall_and_traffic_shaping') is not None:
-            new_object_params['firewallAndTrafficShaping'] = self.new_object.get('firewallAndTrafficShaping') or \
-                self.new_object.get('firewall_and_traffic_shaping')
-        if self.new_object.get('contentFiltering') is not None or self.new_object.get('content_filtering') is not None:
-            new_object_params['contentFiltering'] = self.new_object.get('contentFiltering') or \
-                self.new_object.get('content_filtering')
         if self.new_object.get('splashAuthSettings') is not None or self.new_object.get('splash_auth_settings') is not None:
             new_object_params['splashAuthSettings'] = self.new_object.get('splashAuthSettings') or \
                 self.new_object.get('splash_auth_settings')
         if self.new_object.get('vlanTagging') is not None or self.new_object.get('vlan_tagging') is not None:
             new_object_params['vlanTagging'] = self.new_object.get('vlanTagging') or \
                 self.new_object.get('vlan_tagging')
-        if self.new_object.get('bonjourForwarding') is not None or self.new_object.get('bonjour_forwarding') is not None:
-            new_object_params['bonjourForwarding'] = self.new_object.get('bonjourForwarding') or \
-                self.new_object.get('bonjour_forwarding')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -129,30 +129,30 @@ class NetworksGroupPolicies(object):
 
     def update_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('bandwidth') is not None or self.new_object.get('bandwidth') is not None:
+            new_object_params['bandwidth'] = self.new_object.get('bandwidth') or \
+                self.new_object.get('bandwidth')
+        if self.new_object.get('bonjourForwarding') is not None or self.new_object.get('bonjour_forwarding') is not None:
+            new_object_params['bonjourForwarding'] = self.new_object.get('bonjourForwarding') or \
+                self.new_object.get('bonjour_forwarding')
+        if self.new_object.get('contentFiltering') is not None or self.new_object.get('content_filtering') is not None:
+            new_object_params['contentFiltering'] = self.new_object.get('contentFiltering') or \
+                self.new_object.get('content_filtering')
+        if self.new_object.get('firewallAndTrafficShaping') is not None or self.new_object.get('firewall_and_traffic_shaping') is not None:
+            new_object_params['firewallAndTrafficShaping'] = self.new_object.get('firewallAndTrafficShaping') or \
+                self.new_object.get('firewall_and_traffic_shaping')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('scheduling') is not None or self.new_object.get('scheduling') is not None:
             new_object_params['scheduling'] = self.new_object.get('scheduling') or \
                 self.new_object.get('scheduling')
-        if self.new_object.get('bandwidth') is not None or self.new_object.get('bandwidth') is not None:
-            new_object_params['bandwidth'] = self.new_object.get('bandwidth') or \
-                self.new_object.get('bandwidth')
-        if self.new_object.get('firewallAndTrafficShaping') is not None or self.new_object.get('firewall_and_traffic_shaping') is not None:
-            new_object_params['firewallAndTrafficShaping'] = self.new_object.get('firewallAndTrafficShaping') or \
-                self.new_object.get('firewall_and_traffic_shaping')
-        if self.new_object.get('contentFiltering') is not None or self.new_object.get('content_filtering') is not None:
-            new_object_params['contentFiltering'] = self.new_object.get('contentFiltering') or \
-                self.new_object.get('content_filtering')
         if self.new_object.get('splashAuthSettings') is not None or self.new_object.get('splash_auth_settings') is not None:
             new_object_params['splashAuthSettings'] = self.new_object.get('splashAuthSettings') or \
                 self.new_object.get('splash_auth_settings')
         if self.new_object.get('vlanTagging') is not None or self.new_object.get('vlan_tagging') is not None:
             new_object_params['vlanTagging'] = self.new_object.get('vlanTagging') or \
                 self.new_object.get('vlan_tagging')
-        if self.new_object.get('bonjourForwarding') is not None or self.new_object.get('bonjour_forwarding') is not None:
-            new_object_params['bonjourForwarding'] = self.new_object.get('bonjourForwarding') or \
-                self.new_object.get('bonjour_forwarding')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -230,14 +230,14 @@ class NetworksGroupPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("bandwidth", "bandwidth"),
+            ("bonjourForwarding", "bonjourForwarding"),
+            ("contentFiltering", "contentFiltering"),
+            ("firewallAndTrafficShaping", "firewallAndTrafficShaping"),
             ("name", "name"),
             ("scheduling", "scheduling"),
-            ("bandwidth", "bandwidth"),
-            ("firewallAndTrafficShaping", "firewallAndTrafficShaping"),
-            ("contentFiltering", "contentFiltering"),
             ("splashAuthSettings", "splashAuthSettings"),
             ("vlanTagging", "vlanTagging"),
-            ("bonjourForwarding", "bonjourForwarding"),
             ("networkId", "networkId"),
             ("groupPolicyId", "groupPolicyId"),
         ]

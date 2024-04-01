@@ -107,9 +107,9 @@ meraki_response:
     [
       {
         "action": "string",
-        "name": "string",
-        "details": "string",
         "dashboardUser": "string",
+        "details": "string",
+        "name": "string",
         "ts": "string"
       }
     ]

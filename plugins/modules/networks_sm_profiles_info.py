@@ -23,6 +23,11 @@ options:
     description:
     - NetworkId path parameter. Network ID.
     type: str
+  payloadTypes:
+    description:
+    - PayloadTypes query parameter. Filter by payload types.
+    elements: str
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -61,6 +66,7 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    payloadTypes: []
     networkId: string
   register: result
 
@@ -74,9 +80,12 @@ meraki_response:
   sample: >
     [
       {
+        "description": "string",
         "id": "string",
         "name": "string",
-        "description": "string",
+        "payloadTypes": [
+          "string"
+        ],
         "scope": "string",
         "tags": [
           "string"

@@ -10,7 +10,7 @@ module: networks_wireless_ssids_traffic_shaping_rules
 short_description: Resource module for networks _wireless _ssids _trafficshaping _rules
 description:
 - Manage operation update of the resource networks _wireless _ssids _trafficshaping _rules.
-- Update the traffic shaping settings for an SSID on an MR network.
+- Update the traffic shaping rules for an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -132,16 +132,6 @@ EXAMPLES = r"""
     - definitions:
       - type: host
         value: google.com
-      - type: port
-        value: '9090'
-      - type: ipRange
-        value: 192.1.0.0
-      - type: ipRange
-        value: 192.1.0.0/16
-      - type: ipRange
-        value: 10.1.0.0/16:80
-      - type: localNet
-        value: 192.168.0.0/16
       dscpTagValue: 0
       pcpTagValue: 0
       perClientBandwidthLimits:
@@ -158,5 +148,27 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "defaultRulesEnabled": true,
+      "rules": [
+        {
+          "definitions": [
+            {
+              "type": "string",
+              "value": "string"
+            }
+          ],
+          "dscpTagValue": 0,
+          "pcpTagValue": 0,
+          "perClientBandwidthLimits": {
+            "bandwidthLimits": {
+              "limitDown": 0,
+              "limitUp": 0
+            },
+            "settings": "string"
+          }
+        }
+      ],
+      "trafficShapingEnabled": true
+    }
 """

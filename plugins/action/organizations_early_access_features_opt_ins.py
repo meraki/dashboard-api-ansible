@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    shortName=dict(type="str"),
     limitScopeToNetworks=dict(type="list"),
+    shortName=dict(type="str"),
     organizationId=dict(type="str"),
     optInId=dict(type="str"),
 ))
@@ -51,8 +51,8 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            shortName=params.get("shortName"),
             limitScopeToNetworks=params.get("limitScopeToNetworks"),
+            shortName=params.get("shortName"),
             organizationId=params.get("organizationId"),
             optInId=params.get("optInId"),
         )
@@ -76,12 +76,12 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('shortName') is not None or self.new_object.get('short_name') is not None:
-            new_object_params['shortName'] = self.new_object.get('shortName') or \
-                self.new_object.get('short_name')
         if self.new_object.get('limitScopeToNetworks') is not None or self.new_object.get('limit_scope_to_networks') is not None:
             new_object_params['limitScopeToNetworks'] = self.new_object.get('limitScopeToNetworks') or \
                 self.new_object.get('limit_scope_to_networks')
+        if self.new_object.get('shortName') is not None or self.new_object.get('short_name') is not None:
+            new_object_params['shortName'] = self.new_object.get('shortName') or \
+                self.new_object.get('short_name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -179,8 +179,8 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("shortName", "shortName"),
             ("limitScopeToNetworks", "limitScopeToNetworks"),
+            ("shortName", "shortName"),
             ("organizationId", "organizationId"),
             ("optInId", "optInId"),
         ]

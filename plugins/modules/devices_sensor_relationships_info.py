@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSensorRelationships
+- name: Cisco Meraki documentation for sensor getDeviceSensorRelationships
   description: Complete reference of the getDeviceSensorRelationships API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships
 notes:
   - SDK Method used are
-    devices.Devices.get_device_sensor_relationships,
+    sensor.Sensor.get_device_sensor_relationships,
 
   - Paths used are
     get /devices/{serial}/sensor/relationships,
@@ -69,19 +69,14 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "livestream": {
-          "relatedDevices": [
-            {
-              "serial": "string",
-              "productType": "string"
-            }
-          ]
+    {
+      "relatedDevices": [
+        {
+          "productType": "string",
+          "serial": "string"
         }
-      }
-    ]
+      ]
+    }
 """

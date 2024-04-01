@@ -10,7 +10,7 @@ module: organizations_config_templates_switch_profiles_info
 short_description: Information module for organizations _configtemplates _switch _profiles
 description:
 - Get all organizations _configtemplates _switch _profiles.
-- List the switch profiles for your switch template configuration.
+- List the switch templates for your switch template configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -74,11 +74,14 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "switchProfileId": "string",
-      "name": "string",
-      "model": "string"
-    }
+    [
+      {
+        "model": "string",
+        "name": "string",
+        "switchProfileId": "string"
+      }
+    ]
 """

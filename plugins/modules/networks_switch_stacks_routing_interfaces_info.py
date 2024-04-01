@@ -112,10 +112,31 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "defaultGateway": "string",
+      "interfaceId": "string",
+      "interfaceIp": "string",
+      "ipv6": {
+        "address": "string",
+        "assignmentMode": "string",
+        "gateway": "string",
+        "prefix": "string"
+      },
+      "multicastRouting": "string",
+      "name": "string",
+      "ospfSettings": {
+        "area": "string",
+        "cost": 0,
+        "isPassiveEnabled": true
+      },
+      "ospfV3": {
+        "area": "string",
+        "cost": 0,
+        "isPassiveEnabled": true
+      },
+      "subnet": "string",
+      "vlanId": 0
+    }
 """

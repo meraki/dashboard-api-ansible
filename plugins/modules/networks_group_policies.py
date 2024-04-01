@@ -467,30 +467,11 @@ EXAMPLES = r"""
       - policy: deny
         type: host
         value: google.com
-      - policy: deny
-        type: port
-        value: '23'
-      - policy: deny
-        type: ipRange
-        value: 10.11.12.00/24
-      - policy: deny
-        type: ipRange
-        value: 10.11.12.00/24:5555
       settings: custom
       trafficShapingRules:
       - definitions:
         - type: host
           value: google.com
-        - type: port
-          value: '9090'
-        - type: ipRange
-          value: 192.1.0.0
-        - type: ipRange
-          value: 192.1.0.0/16
-        - type: ipRange
-          value: 10.1.0.0/16:80
-        - type: localNet
-          value: 192.168.0.0/16
         dscpTagValue: 0
         pcpTagValue: 0
         perClientBandwidthLimits:
@@ -498,6 +479,7 @@ EXAMPLES = r"""
             limitDown: 1000000
             limitUp: 1000000
           settings: custom
+        priority: normal
     name: No video streaming
     networkId: string
     scheduling:
@@ -511,13 +493,13 @@ EXAMPLES = r"""
         from: '9:00'
         to: '17:00'
       saturday:
-        active: false
-        from: 0:00
-        to: '24:00'
+        active: true
+        from: '9:00'
+        to: '17:00'
       sunday:
-        active: false
-        from: 0:00
-        to: '24:00'
+        active: true
+        from: '9:00'
+        to: '17:00'
       thursday:
         active: true
         from: '9:00'
@@ -534,6 +516,32 @@ EXAMPLES = r"""
     vlanTagging:
       settings: custom
       vlanId: '1'
+
+- name: Delete by id
+  cisco.meraki.networks_group_policies:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    groupPolicyId: string
+    networkId: string
 
 - name: Update by id
   cisco.meraki.networks_group_policies:
@@ -595,30 +603,11 @@ EXAMPLES = r"""
       - policy: deny
         type: host
         value: google.com
-      - policy: deny
-        type: port
-        value: '23'
-      - policy: deny
-        type: ipRange
-        value: 10.11.12.00/24
-      - policy: deny
-        type: ipRange
-        value: 10.11.12.00/24:5555
       settings: custom
       trafficShapingRules:
       - definitions:
         - type: host
           value: google.com
-        - type: port
-          value: '9090'
-        - type: ipRange
-          value: 192.1.0.0
-        - type: ipRange
-          value: 192.1.0.0/16
-        - type: ipRange
-          value: 10.1.0.0/16:80
-        - type: localNet
-          value: 192.168.0.0/16
         dscpTagValue: 0
         pcpTagValue: 0
         perClientBandwidthLimits:
@@ -626,6 +615,7 @@ EXAMPLES = r"""
             limitDown: 1000000
             limitUp: 1000000
           settings: custom
+        priority: normal
     groupPolicyId: string
     name: No video streaming
     networkId: string
@@ -640,13 +630,13 @@ EXAMPLES = r"""
         from: '9:00'
         to: '17:00'
       saturday:
-        active: false
-        from: 0:00
-        to: '24:00'
+        active: true
+        from: '9:00'
+        to: '17:00'
       sunday:
-        active: false
-        from: 0:00
-        to: '24:00'
+        active: true
+        from: '9:00'
+        to: '17:00'
       thursday:
         active: true
         from: '9:00'
@@ -664,32 +654,6 @@ EXAMPLES = r"""
       settings: custom
       vlanId: '1'
 
-- name: Delete by id
-  cisco.meraki.networks_group_policies:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    groupPolicyId: string
-    networkId: string
-
 """
 RETURN = r"""
 meraki_response:
@@ -697,5 +661,128 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "bandwidth": {
+        "bandwidthLimits": {
+          "limitDown": 0,
+          "limitUp": 0
+        },
+        "settings": "string"
+      },
+      "bonjourForwarding": {
+        "rules": [
+          {
+            "description": "string",
+            "services": [
+              "string"
+            ],
+            "vlanId": "string"
+          }
+        ],
+        "settings": "string"
+      },
+      "contentFiltering": {
+        "allowedUrlPatterns": {
+          "patterns": [
+            "string"
+          ],
+          "settings": "string"
+        },
+        "blockedUrlCategories": {
+          "categories": [
+            "string"
+          ],
+          "settings": "string"
+        },
+        "blockedUrlPatterns": {
+          "patterns": [
+            "string"
+          ],
+          "settings": "string"
+        }
+      },
+      "firewallAndTrafficShaping": {
+        "l3FirewallRules": [
+          {
+            "comment": "string",
+            "destCidr": "string",
+            "destPort": "string",
+            "policy": "string",
+            "protocol": "string"
+          }
+        ],
+        "l7FirewallRules": [
+          {
+            "policy": "string",
+            "type": "string",
+            "value": "string"
+          }
+        ],
+        "settings": "string",
+        "trafficShapingRules": [
+          {
+            "definitions": [
+              {
+                "type": "string",
+                "value": "string"
+              }
+            ],
+            "dscpTagValue": 0,
+            "pcpTagValue": 0,
+            "perClientBandwidthLimits": {
+              "bandwidthLimits": {
+                "limitDown": 0,
+                "limitUp": 0
+              },
+              "settings": "string"
+            },
+            "priority": "string"
+          }
+        ]
+      },
+      "groupPolicyId": "string",
+      "scheduling": {
+        "enabled": true,
+        "friday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "monday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "saturday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "sunday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "thursday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "tuesday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "wednesday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        }
+      },
+      "splashAuthSettings": "string",
+      "vlanTagging": {
+        "settings": "string",
+        "vlanId": "string"
+      }
+    }
 """

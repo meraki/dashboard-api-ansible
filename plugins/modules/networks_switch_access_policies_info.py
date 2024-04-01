@@ -111,25 +111,29 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "radiusServers": [
-        {
-          "host": "string",
-          "port": 0
+      "accessPolicyType": "string",
+      "counts": {
+        "ports": {
+          "withThisPolicy": 0
         }
-      ],
+      },
+      "dot1x": {
+        "controlDirection": "string"
+      },
+      "guestPortBouncing": true,
+      "guestVlanId": 0,
+      "hostMode": "string",
+      "increaseAccessSpeed": true,
+      "name": "string",
       "radius": {
         "criticalAuth": {
           "dataVlanId": 0,
-          "voiceVlanId": 0,
-          "suspendPortBounce": true
+          "suspendPortBounce": true,
+          "voiceVlanId": 0
         },
         "failedAuthVlanId": 0,
         "reAuthenticationInterval": 0
       },
-      "guestPortBouncing": true,
-      "radiusTestingEnabled": true,
-      "radiusCoaSupportEnabled": true,
       "radiusAccountingEnabled": true,
       "radiusAccountingServers": [
         {
@@ -137,18 +141,19 @@ meraki_response:
           "port": 0
         }
       ],
+      "radiusCoaSupportEnabled": true,
       "radiusGroupAttribute": "string",
-      "hostMode": "string",
-      "accessPolicyType": "string",
-      "increaseAccessSpeed": true,
-      "guestVlanId": 0,
-      "dot1x": {
-        "controlDirection": "string"
-      },
-      "voiceVlanClients": true,
+      "radiusServers": [
+        {
+          "host": "string",
+          "port": 0
+        }
+      ],
+      "radiusTestingEnabled": true,
       "urlRedirectWalledGardenEnabled": true,
       "urlRedirectWalledGardenRanges": [
         "string"
-      ]
+      ],
+      "voiceVlanClients": true
     }
 """

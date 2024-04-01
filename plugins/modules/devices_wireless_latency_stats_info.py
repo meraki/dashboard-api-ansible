@@ -66,12 +66,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceWirelessLatencyStats
+- name: Cisco Meraki documentation for wireless getDeviceWirelessLatencyStats
   description: Complete reference of the getDeviceWirelessLatencyStats API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-latency-stats
 notes:
   - SDK Method used are
-    devices.Devices.get_device_wireless_latency_stats,
+    wireless.Wireless.get_device_wireless_latency_stats,
 
   - Paths used are
     get /devices/{serial}/wireless/latencyStats,
@@ -117,6 +117,31 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "latencyStats": {
+        "backgroundTraffic": {
+          "avg": 0,
+          "rawDistribution": {
+            "0": 0,
+            "1": 0,
+            "1024": 0,
+            "128": 0,
+            "16": 0,
+            "2": 0,
+            "2048": 0,
+            "256": 0,
+            "32": 0,
+            "4": 0,
+            "512": 0,
+            "64": 0,
+            "8": 0
+          }
+        },
+        "bestEffortTraffic": "string",
+        "videoTraffic": "string",
+        "voiceTraffic": "string"
+      },
+      "serial": "string"
+    }
 """

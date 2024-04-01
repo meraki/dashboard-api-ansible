@@ -77,8 +77,8 @@ meraki_response:
         "id": "string",
         "switchPorts": [
           {
-            "serial": "string",
-            "portId": "string"
+            "portId": "string",
+            "serial": "string"
           }
         ]
       }

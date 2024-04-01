@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    enabled=dict(type="bool"),
     asNumber=dict(type="int"),
+    enabled=dict(type="bool"),
     ibgpHoldTimer=dict(type="int"),
     neighbors=dict(type="list"),
     networkId=dict(type="str"),
@@ -51,8 +51,8 @@ class NetworksApplianceVpnBgp(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            enabled=params.get("enabled"),
             asNumber=params.get("asNumber"),
+            enabled=params.get("enabled"),
             ibgpHoldTimer=params.get("ibgpHoldTimer"),
             neighbors=params.get("neighbors"),
             network_id=params.get("networkId"),
@@ -67,11 +67,11 @@ class NetworksApplianceVpnBgp(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('asNumber') is not None or self.new_object.get('as_number') is not None:
             new_object_params['asNumber'] = self.new_object.get('asNumber') or \
                 self.new_object.get('as_number')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('ibgpHoldTimer') is not None or self.new_object.get('ibgp_hold_timer') is not None:
             new_object_params['ibgpHoldTimer'] = self.new_object.get('ibgpHoldTimer') or \
                 self.new_object.get('ibgp_hold_timer')
@@ -134,8 +134,8 @@ class NetworksApplianceVpnBgp(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"),
             ("asNumber", "asNumber"),
+            ("enabled", "enabled"),
             ("ibgpHoldTimer", "ibgpHoldTimer"),
             ("neighbors", "neighbors"),
             ("networkId", "networkId"),

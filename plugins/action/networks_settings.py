@@ -32,9 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    localStatusPageEnabled=dict(type="bool"),
-    remoteStatusPageEnabled=dict(type="bool"),
     localStatusPage=dict(type="dict"),
+    localStatusPageEnabled=dict(type="bool"),
+    namedVlans=dict(type="dict"),
+    remoteStatusPageEnabled=dict(type="bool"),
     securePort=dict(type="dict"),
     networkId=dict(type="str"),
 ))
@@ -51,9 +52,10 @@ class NetworksSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            localStatusPageEnabled=params.get("localStatusPageEnabled"),
-            remoteStatusPageEnabled=params.get("remoteStatusPageEnabled"),
             localStatusPage=params.get("localStatusPage"),
+            localStatusPageEnabled=params.get("localStatusPageEnabled"),
+            namedVlans=params.get("namedVlans"),
+            remoteStatusPageEnabled=params.get("remoteStatusPageEnabled"),
             securePort=params.get("securePort"),
             network_id=params.get("networkId"),
         )
@@ -67,13 +69,16 @@ class NetworksSettings(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get('local_status_page_enabled') is not None:
-            new_object_params['localStatusPageEnabled'] = self.new_object.get('localStatusPageEnabled')
-        if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get('remote_status_page_enabled') is not None:
-            new_object_params['remoteStatusPageEnabled'] = self.new_object.get('remoteStatusPageEnabled')
         if self.new_object.get('localStatusPage') is not None or self.new_object.get('local_status_page') is not None:
             new_object_params['localStatusPage'] = self.new_object.get('localStatusPage') or \
                 self.new_object.get('local_status_page')
+        if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get('local_status_page_enabled') is not None:
+            new_object_params['localStatusPageEnabled'] = self.new_object.get('localStatusPageEnabled')
+        if self.new_object.get('namedVlans') is not None or self.new_object.get('named_vlans') is not None:
+            new_object_params['namedVlans'] = self.new_object.get('namedVlans') or \
+                self.new_object.get('named_vlans')
+        if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get('remote_status_page_enabled') is not None:
+            new_object_params['remoteStatusPageEnabled'] = self.new_object.get('remoteStatusPageEnabled')
         if self.new_object.get('securePort') is not None or self.new_object.get('secure_port') is not None:
             new_object_params['securePort'] = self.new_object.get('securePort') or \
                 self.new_object.get('secure_port')
@@ -133,9 +138,10 @@ class NetworksSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("localStatusPageEnabled", "localStatusPageEnabled"),
-            ("remoteStatusPageEnabled", "remoteStatusPageEnabled"),
             ("localStatusPage", "localStatusPage"),
+            ("localStatusPageEnabled", "localStatusPageEnabled"),
+            ("namedVlans", "namedVlans"),
+            ("remoteStatusPageEnabled", "remoteStatusPageEnabled"),
             ("securePort", "securePort"),
             ("networkId", "networkId"),
         ]

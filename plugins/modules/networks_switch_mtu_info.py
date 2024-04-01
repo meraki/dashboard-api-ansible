@@ -75,13 +75,13 @@ meraki_response:
       "defaultMtuSize": 0,
       "overrides": [
         {
-          "switches": [
-            "string"
-          ],
+          "mtuSize": 0,
           "switchProfiles": [
             "string"
           ],
-          "mtuSize": 0
+          "switches": [
+            "string"
+          ]
         }
       ]
     }

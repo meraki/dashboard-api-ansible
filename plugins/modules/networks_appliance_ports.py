@@ -102,12 +102,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "number": 0,
-      "enabled": true,
-      "type": "string",
-      "dropUntaggedTraffic": true,
-      "vlan": 0,
+      "accessPolicy": "string",
       "allowedVlans": "string",
-      "accessPolicy": "string"
+      "dropUntaggedTraffic": true,
+      "enabled": true,
+      "number": 0,
+      "type": "string",
+      "vlan": 0
     }
 """

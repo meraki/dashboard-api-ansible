@@ -32,9 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    actions=dict(type="list"),
+    callback=dict(type="dict"),
     confirmed=dict(type="bool"),
     synchronous=dict(type="bool"),
-    actions=dict(type="list"),
     organizationId=dict(type="str"),
     actionBatchId=dict(type="str"),
 ))
@@ -52,9 +53,10 @@ class OrganizationsActionBatches(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            actions=params.get("actions"),
+            callback=params.get("callback"),
             confirmed=params.get("confirmed"),
             synchronous=params.get("synchronous"),
-            actions=params.get("actions"),
             organizationId=params.get("organizationId"),
             actionBatchId=params.get("actionBatchId"),
         )
@@ -80,13 +82,16 @@ class OrganizationsActionBatches(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('actions') is not None or self.new_object.get('actions') is not None:
+            new_object_params['actions'] = self.new_object.get('actions') or \
+                self.new_object.get('actions')
+        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
+            new_object_params['callback'] = self.new_object.get('callback') or \
+                self.new_object.get('callback')
         if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
             new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
             new_object_params['synchronous'] = self.new_object.get('synchronous')
-        if self.new_object.get('actions') is not None or self.new_object.get('actions') is not None:
-            new_object_params['actions'] = self.new_object.get('actions') or \
-                self.new_object.get('actions')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -185,9 +190,10 @@ class OrganizationsActionBatches(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("actions", "actions"),
+            ("callback", "callback"),
             ("confirmed", "confirmed"),
             ("synchronous", "synchronous"),
-            ("actions", "actions"),
             ("organizationId", "organizationId"),
             ("actionBatchId", "actionBatchId"),
         ]

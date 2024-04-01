@@ -10,7 +10,7 @@ module: networks_traffic_shaping_application_categories_info
 short_description: Information module for networks _trafficshaping _applicationcategories
 description:
 - Get all networks _trafficshaping _applicationcategories.
-- Returns the application categories for traffic shaping rules.
+- Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -69,7 +69,19 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
-  sample:
-  - {}
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "applications": [
+          {
+            "id": "string",
+            "name": "string"
+          }
+        ],
+        "id": "string",
+        "name": "string"
+      }
+    ]
 """

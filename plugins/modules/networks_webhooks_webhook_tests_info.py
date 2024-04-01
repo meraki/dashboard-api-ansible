@@ -78,7 +78,7 @@ meraki_response:
   sample: >
     {
       "id": "string",
-      "url": "string",
-      "status": "string"
+      "status": "string",
+      "url": "string"
     }
 """

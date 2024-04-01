@@ -70,6 +70,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "asNumber": 0,
+      "enabled": true,
+      "ibgpHoldTimer": 0,
+      "neighbors": [
+        {
+          "allowTransit": true,
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
+          "ip": "string",
+          "receiveLimit": 0,
+          "remoteAsNumber": 0
+        }
+      ]
+    }
 """

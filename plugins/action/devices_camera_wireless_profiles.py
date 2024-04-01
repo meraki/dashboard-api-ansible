@@ -78,8 +78,8 @@ class DevicesCameraWirelessProfiles(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
+                if 'ids' in items:
+                    items = items.get('ids')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items

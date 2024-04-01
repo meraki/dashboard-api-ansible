@@ -13,9 +13,7 @@ description:
 - >
    Authorize a user configured with Meraki Authentication for a network currently supports 802.1X, splash guest, and
    client VPN users, and currently, organizations have a 50,000 user cap .
-- >
-   Deauthorize a user. To reauthorize a user after deauthorizing them, POST to this endpoint. Currently, 802.1X
-   RADIUS, splash guest, and client VPN users can be deauthorized. .
+- Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest or client VPN user.
 - >
    Update a user configured with Meraki Authentication currently, 802.1X RADIUS, splash guest, and client VPN users
    can be updated .
@@ -26,7 +24,7 @@ author: Francisco Munoz (@fmunoz)
 options:
   accountType:
     description: Authorization type for user. Can be 'Guest' or '802.1X' for wireless
-      networks, or 'Client VPN' for wired networks. Defaults to '802.1X'.
+      networks, or 'Client VPN' for MX networks. Defaults to '802.1X'.
     type: str
   authorizations:
     description: Authorization zones and expiration dates for the user.
@@ -41,6 +39,12 @@ options:
           being authorized, which must be configured for the user's given accountType.
         type: int
     type: list
+  delete:
+    description: Delete query parameter. If the ID supplied is for a splash guest or
+      client VPN user, and that user is not authorized for any other networks in the
+      organization, then also delete the user. 802.1X RADIUS users are always deleted
+      regardless of this optional attribute.
+    type: bool
   email:
     description: Email address of the user.
     type: str
@@ -124,6 +128,33 @@ EXAMPLES = r"""
     networkId: string
     password: secret
 
+- name: Delete by id
+  cisco.meraki.networks_meraki_auth_users:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    delete: true
+    merakiAuthUserId: string
+    networkId: string
+
 - name: Update by id
   cisco.meraki.networks_meraki_auth_users:
     meraki_api_key: "{{meraki_api_key}}"
@@ -156,32 +187,6 @@ EXAMPLES = r"""
     networkId: string
     password: secret
 
-- name: Delete by id
-  cisco.meraki.networks_meraki_auth_users:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    merakiAuthUserId: string
-    networkId: string
-
 """
 RETURN = r"""
 meraki_response:
@@ -190,20 +195,20 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "email": "string",
-      "name": "string",
-      "createdAt": "string",
       "accountType": "string",
-      "isAdmin": true,
       "authorizations": [
         {
-          "ssidNumber": 0,
+          "authorizedByEmail": "string",
+          "authorizedByName": "string",
           "authorizedZone": "string",
           "expiresAt": "string",
-          "authorizedByName": "string",
-          "authorizedByEmail": "string"
+          "ssidNumber": 0
         }
-      ]
+      ],
+      "createdAt": "string",
+      "email": "string",
+      "id": "string",
+      "isAdmin": true,
+      "name": "string"
     }
 """

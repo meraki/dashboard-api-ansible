@@ -32,15 +32,16 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    email=dict(type="str"),
-    name=dict(type="str"),
-    password=dict(type="str"),
     accountType=dict(type="str"),
+    authorizations=dict(type="list"),
+    email=dict(type="str"),
     emailPasswordToUser=dict(type="bool"),
     isAdmin=dict(type="bool"),
-    authorizations=dict(type="list"),
+    name=dict(type="str"),
+    password=dict(type="str"),
     networkId=dict(type="str"),
     merakiAuthUserId=dict(type="str"),
+    delete=dict(type="bool"),
 ))
 
 required_if = [
@@ -56,15 +57,16 @@ class NetworksMerakiAuthUsers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            email=params.get("email"),
-            name=params.get("name"),
-            password=params.get("password"),
             accountType=params.get("accountType"),
+            authorizations=params.get("authorizations"),
+            email=params.get("email"),
             emailPasswordToUser=params.get("emailPasswordToUser"),
             isAdmin=params.get("isAdmin"),
-            authorizations=params.get("authorizations"),
+            name=params.get("name"),
+            password=params.get("password"),
             networkId=params.get("networkId"),
             merakiAuthUserId=params.get("merakiAuthUserId"),
+            delete=params.get("delete"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -86,25 +88,25 @@ class NetworksMerakiAuthUsers(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('accountType') is not None or self.new_object.get('account_type') is not None:
+            new_object_params['accountType'] = self.new_object.get('accountType') or \
+                self.new_object.get('account_type')
+        if self.new_object.get('authorizations') is not None or self.new_object.get('authorizations') is not None:
+            new_object_params['authorizations'] = self.new_object.get('authorizations') or \
+                self.new_object.get('authorizations')
         if self.new_object.get('email') is not None or self.new_object.get('email') is not None:
             new_object_params['email'] = self.new_object.get('email') or \
                 self.new_object.get('email')
+        if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
+            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
+        if self.new_object.get('isAdmin') is not None or self.new_object.get('is_admin') is not None:
+            new_object_params['isAdmin'] = self.new_object.get('isAdmin')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('password') is not None or self.new_object.get('password') is not None:
             new_object_params['password'] = self.new_object.get('password') or \
                 self.new_object.get('password')
-        if self.new_object.get('accountType') is not None or self.new_object.get('account_type') is not None:
-            new_object_params['accountType'] = self.new_object.get('accountType') or \
-                self.new_object.get('account_type')
-        if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
-            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
-        if self.new_object.get('isAdmin') is not None or self.new_object.get('is_admin') is not None:
-            new_object_params['isAdmin'] = self.new_object.get('isAdmin')
-        if self.new_object.get('authorizations') is not None or self.new_object.get('authorizations') is not None:
-            new_object_params['authorizations'] = self.new_object.get('authorizations') or \
-                self.new_object.get('authorizations')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -112,6 +114,8 @@ class NetworksMerakiAuthUsers(object):
 
     def delete_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('delete') is not None or self.new_object.get('delete') is not None:
+            new_object_params['delete'] = self.new_object.get('delete')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -122,17 +126,17 @@ class NetworksMerakiAuthUsers(object):
 
     def update_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('authorizations') is not None or self.new_object.get('authorizations') is not None:
+            new_object_params['authorizations'] = self.new_object.get('authorizations') or \
+                self.new_object.get('authorizations')
+        if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
+            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('password') is not None or self.new_object.get('password') is not None:
             new_object_params['password'] = self.new_object.get('password') or \
                 self.new_object.get('password')
-        if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
-            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
-        if self.new_object.get('authorizations') is not None or self.new_object.get('authorizations') is not None:
-            new_object_params['authorizations'] = self.new_object.get('authorizations') or \
-                self.new_object.get('authorizations')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -210,14 +214,15 @@ class NetworksMerakiAuthUsers(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("email", "email"),
-            ("name", "name"),
             ("accountType", "accountType"),
+            ("authorizations", "authorizations"),
+            ("email", "email"),
             ("emailPasswordToUser", "emailPasswordToUser"),
             ("isAdmin", "isAdmin"),
-            ("authorizations", "authorizations"),
+            ("name", "name"),
             ("networkId", "networkId"),
             ("merakiAuthUserId", "merakiAuthUserId"),
+            ("delete", "delete"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

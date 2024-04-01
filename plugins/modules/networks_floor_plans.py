@@ -141,52 +141,24 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
-    imageContents: Q2lzY28gTWVyYWtp
+    bottomLeftCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    bottomRightCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    center:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    imageContents: 2a9edd3f4ffd80130c647d13eacb59f3
     name: HQ Floor Plan
     networkId: string
-
-- name: Update by id
-  cisco.meraki.networks_floor_plans:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: present
-    bottomLeftCorner:
-      lat: 0
-      lng: 0
-    bottomRightCorner:
-      lat: 0
-      lng: 0
-    center:
-      lat: 0
-      lng: 0
-    floorPlanId: string
-    imageContents: string
-    name: string
-    networkId: string
     topLeftCorner:
-      lat: 0
-      lng: 0
+      lat: 37.770040510499996
+      lng: -122.38714009525
     topRightCorner:
-      lat: 0
-      lng: 0
+      lat: 37.770040510499996
+      lng: -122.38714009525
 
 - name: Delete by id
   cisco.meraki.networks_floor_plans:
@@ -214,6 +186,49 @@ EXAMPLES = r"""
     floorPlanId: string
     networkId: string
 
+- name: Update by id
+  cisco.meraki.networks_floor_plans:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    bottomLeftCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    bottomRightCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    center:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    floorPlanId: string
+    imageContents: 2a9edd3f4ffd80130c647d13eacb59f3
+    name: HQ Floor Plan
+    networkId: string
+    topLeftCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+    topRightCorner:
+      lat: 37.770040510499996
+      lng: -122.38714009525
+
 """
 RETURN = r"""
 meraki_response:
@@ -221,5 +236,60 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "bottomLeftCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "bottomRightCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "center": {
+        "lat": 0,
+        "lng": 0
+      },
+      "devices": [
+        {
+          "address": "string",
+          "details": [
+            {
+              "name": "string",
+              "value": "string"
+            }
+          ],
+          "firmware": "string",
+          "imei": "string",
+          "lanIp": "string",
+          "lat": 0,
+          "lng": 0,
+          "mac": "string",
+          "model": "string",
+          "name": "string",
+          "networkId": "string",
+          "notes": "string",
+          "productType": "string",
+          "serial": "string",
+          "tags": [
+            "string"
+          ]
+        }
+      ],
+      "floorPlanId": "string",
+      "height": 0,
+      "imageExtension": "string",
+      "imageMd5": "string",
+      "imageUrl": "string",
+      "imageUrlExpiresAt": "string",
+      "name": "string",
+      "topLeftCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "topRightCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "width": 0
+    }
 """

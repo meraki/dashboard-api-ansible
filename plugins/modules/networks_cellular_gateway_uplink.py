@@ -71,8 +71,8 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     bandwidthLimits:
-      limitDown: 0
-      limitUp: 0
+      limitDown: 1000000
+      limitUp: 1000000
     networkId: string
 
 """
@@ -82,5 +82,8 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "limitDown": 0,
+      "limitUp": 0
+    }
 """

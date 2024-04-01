@@ -99,21 +99,21 @@ meraki_response:
   sample: >
     {
       "product": "string",
-      "status": "string",
-      "upgradeBatchId": "string",
-      "time": "string",
-      "toVersion": {
-        "id": "string",
-        "firmware": "string",
-        "shortName": "string",
-        "releaseType": "string",
-        "releaseDate": "string"
-      },
       "reasons": [
         {
           "category": "string",
           "comment": "string"
         }
-      ]
+      ],
+      "status": "string",
+      "time": "string",
+      "toVersion": {
+        "firmware": "string",
+        "id": "string",
+        "releaseDate": "string",
+        "releaseType": "string",
+        "shortName": "string"
+      },
+      "upgradeBatchId": "string"
     }
 """

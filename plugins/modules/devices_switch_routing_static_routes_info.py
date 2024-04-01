@@ -33,16 +33,16 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSwitchRoutingStaticRoute
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoute
   description: Complete reference of the getDeviceSwitchRoutingStaticRoute API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-route
-- name: Cisco Meraki documentation for devices getDeviceSwitchRoutingStaticRoutes
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoutes
   description: Complete reference of the getDeviceSwitchRoutingStaticRoutes API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes
 notes:
   - SDK Method used are
-    devices.Devices.get_device_switch_routing_static_route,
-    devices.Devices.get_device_switch_routing_static_routes,
+    switch.Switch.get_device_switch_routing_static_route,
+    switch.Switch.get_device_switch_routing_static_routes,
 
   - Paths used are
     get /devices/{serial}/switch/routing/staticRoutes,
@@ -109,11 +109,11 @@ meraki_response:
   type: dict
   sample: >
     {
-      "staticRouteId": "string",
-      "name": "string",
-      "subnet": "string",
-      "nextHopIp": "string",
       "advertiseViaOspfEnabled": true,
-      "preferOverOspfRoutesEnabled": true
+      "name": "string",
+      "nextHopIp": "string",
+      "preferOverOspfRoutesEnabled": true,
+      "staticRouteId": "string",
+      "subnet": "string"
     }
 """

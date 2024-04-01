@@ -25,8 +25,8 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    stages=dict(type="list"),
     reasons=dict(type="list"),
+    stages=dict(type="list"),
     networkId=dict(type="str"),
 ))
 

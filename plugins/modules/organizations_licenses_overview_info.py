@@ -70,6 +70,63 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "expirationDate": "string",
+      "licenseCount": 0,
+      "licenseTypes": [
+        {
+          "counts": {
+            "unassigned": 0
+          },
+          "licenseType": "string"
+        }
+      ],
+      "licensedDeviceCounts": {},
+      "states": {
+        "active": {
+          "count": 0
+        },
+        "expired": {
+          "count": 0
+        },
+        "expiring": {
+          "count": 0,
+          "critical": {
+            "expiringCount": 0,
+            "thresholdInDays": 0
+          },
+          "warning": {
+            "expiringCount": 0,
+            "thresholdInDays": 0
+          }
+        },
+        "recentlyQueued": {
+          "count": 0
+        },
+        "unused": {
+          "count": 0,
+          "soonestActivation": {
+            "activationDate": "string",
+            "toActivateCount": 0
+          }
+        },
+        "unusedActive": {
+          "count": 0,
+          "oldestActivation": {
+            "activationDate": "string",
+            "activeCount": 0
+          }
+        }
+      },
+      "status": "string",
+      "systemsManager": {
+        "counts": {
+          "activeSeats": 0,
+          "orgwideEnrolledDevices": 0,
+          "totalSeats": 0,
+          "unassignedSeats": 0
+        }
+      }
+    }
 """

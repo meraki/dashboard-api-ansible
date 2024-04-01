@@ -10,7 +10,7 @@ module: organizations_firmware_upgrades_by_device_info
 short_description: Information module for organizations _firmware _upgrades _bydevice
 description:
 - Get all organizations _firmware _upgrades _bydevice.
-- Get firmware upgrade status for the filtered devices.
+- Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -26,7 +26,7 @@ options:
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
+    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
@@ -61,14 +61,14 @@ options:
       devices returned belong to MAC addresses that are an exact match.
     elements: str
     type: list
-  firmwareUpgradeIds:
-    description:
-    - FirmwareUpgradeIds query parameter. Optional parameter to filter by firmware upgrade ids.
-    elements: str
-    type: list
   firmwareUpgradeBatchIds:
     description:
     - FirmwareUpgradeBatchIds query parameter. Optional parameter to filter by firmware upgrade batch ids.
+    elements: str
+    type: list
+  upgradeStatuses:
+    description:
+    - UpgradeStatuses query parameter. Optional parameter to filter by firmware upgrade statuses.
     elements: str
     type: list
 requirements:
@@ -115,8 +115,8 @@ EXAMPLES = r"""
     networkIds: []
     serials: []
     macs: []
-    firmwareUpgradeIds: []
     firmwareUpgradeBatchIds: []
+    upgradeStatuses: []
     organizationId: string
     total_pages: -1
     direction: next
@@ -132,31 +132,31 @@ meraki_response:
   sample: >
     [
       {
-        "serial": "string",
-        "name": "string",
         "deviceStatus": "string",
+        "name": "string",
+        "serial": "string",
         "upgrade": {
-          "time": "string",
           "fromVersion": {
             "id": "string",
-            "shortName": "string",
+            "releaseDate": "string",
             "releaseType": "string",
-            "releaseDate": "string"
+            "shortName": "string"
           },
-          "toVersion": {
-            "id": "string",
-            "shortName": "string",
-            "releaseType": "string",
-            "releaseDate": "string"
-          },
-          "status": "string",
           "id": "string",
-          "upgradeBatchId": "string",
           "staged": {
             "group": {
               "id": "string"
             }
-          }
+          },
+          "status": "string",
+          "time": "string",
+          "toVersion": {
+            "id": "string",
+            "releaseDate": "string",
+            "releaseType": "string",
+            "shortName": "string"
+          },
+          "upgradeBatchId": "string"
         }
       }
     ]

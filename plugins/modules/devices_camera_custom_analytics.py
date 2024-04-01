@@ -40,12 +40,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCameraCustomAnalytics
+- name: Cisco Meraki documentation for camera updateDeviceCameraCustomAnalytics
   description: Complete reference of the updateDeviceCameraCustomAnalytics API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-custom-analytics
 notes:
   - SDK Method used are
-    devices.Devices.update_device_camera_custom_analytics,
+    camera.Camera.update_device_camera_custom_analytics,
 
   - Paths used are
     put /devices/{serial}/camera/customAnalytics,
@@ -89,5 +89,14 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "artifactId": "string",
+      "enabled": true,
+      "parameters": [
+        {
+          "name": "string",
+          "value": 0
+        }
+      ]
+    }
 """

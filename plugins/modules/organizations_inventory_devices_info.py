@@ -59,7 +59,9 @@ options:
     type: list
   networkIds:
     description:
-    - NetworkIds query parameter. Search for devices in inventory based on network ids.
+    - >
+      NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null' value
+      to get available devices only.
     elements: str
     type: list
   serials:
@@ -196,17 +198,24 @@ meraki_response:
   type: dict
   sample: >
     {
+      "claimedAt": "string",
+      "countryCode": "string",
+      "details": [
+        {
+          "name": "string",
+          "value": "string"
+        }
+      ],
+      "licenseExpirationDate": "string",
       "mac": "string",
-      "serial": "string",
-      "name": "string",
       "model": "string",
+      "name": "string",
       "networkId": "string",
       "orderNumber": "string",
-      "claimedAt": "string",
-      "licenseExpirationDate": "string",
+      "productType": "string",
+      "serial": "string",
       "tags": [
         "string"
-      ],
-      "productType": "string"
+      ]
     }
 """

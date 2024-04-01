@@ -32,6 +32,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    copyFromNetworkId=dict(type="str"),
     name=dict(type="str"),
     timeZone=dict(type="str"),
     organizationId=dict(type="str"),
@@ -51,6 +52,7 @@ class OrganizationsConfigTemplates(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            copyFromNetworkId=params.get("copyFromNetworkId"),
             name=params.get("name"),
             timeZone=params.get("timeZone"),
             organizationId=params.get("organizationId"),
@@ -76,6 +78,9 @@ class OrganizationsConfigTemplates(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('copyFromNetworkId') is not None or self.new_object.get('copy_from_network_id') is not None:
+            new_object_params['copyFromNetworkId'] = self.new_object.get('copyFromNetworkId') or \
+                self.new_object.get('copy_from_network_id')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -182,6 +187,7 @@ class OrganizationsConfigTemplates(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("copyFromNetworkId", "copyFromNetworkId"),
             ("name", "name"),
             ("timeZone", "timeZone"),
             ("organizationId", "organizationId"),

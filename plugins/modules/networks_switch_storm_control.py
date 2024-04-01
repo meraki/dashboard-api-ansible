@@ -83,5 +83,9 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "broadcastThreshold": 0,
+      "multicastThreshold": 0,
+      "unknownUnicastThreshold": 0
+    }
 """

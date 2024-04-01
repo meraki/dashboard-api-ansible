@@ -29,9 +29,6 @@ options:
   lng:
     description: The longitude of a device.
     type: float
-  mac:
-    description: Mac.
-    type: str
   moveMapMarker:
     description: Whether or not to set the latitude and longitude of a device based
       on the new address. Only applies when lat and lng are not specified.

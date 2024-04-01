@@ -170,32 +170,32 @@ meraki_response:
   type: dict
   sample: >
     {
-      "message": "string",
-      "pageStartAt": "string",
-      "pageEndAt": "string",
       "events": [
         {
-          "occurredAt": "string",
-          "networkId": "string",
-          "type": "string",
-          "description": "string",
           "category": "string",
-          "clientId": "string",
           "clientDescription": "string",
+          "clientId": "string",
           "clientMac": "string",
-          "deviceSerial": "string",
+          "description": "string",
           "deviceName": "string",
-          "ssidNumber": 0,
+          "deviceSerial": "string",
           "eventData": {
-            "radio": "string",
-            "vap": "string",
-            "client_mac": "string",
-            "client_ip": "string",
+            "aid": "string",
             "channel": "string",
+            "client_ip": "string",
+            "client_mac": "string",
+            "radio": "string",
             "rssi": "string",
-            "aid": "string"
-          }
+            "vap": "string"
+          },
+          "networkId": "string",
+          "occurredAt": "string",
+          "ssidNumber": 0,
+          "type": "string"
         }
-      ]
+      ],
+      "message": "string",
+      "pageEndAt": "string",
+      "pageStartAt": "string"
     }
 """

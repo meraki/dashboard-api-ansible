@@ -38,6 +38,21 @@ options:
                 type: dict
             type: dict
         type: dict
+      switchCatalyst:
+        description: Version information for the switch network being upgraded.
+        suboptions:
+          nextUpgrade:
+            description: The next upgrade version for the switch network.
+            suboptions:
+              toVersion:
+                description: The version to be updated to for switch Catalyst devices.
+                suboptions:
+                  id:
+                    description: The version ID.
+                    type: str
+                type: dict
+            type: dict
+        type: dict
     type: dict
   stages:
     description: All firmware upgrade stages in the network with their start time.
@@ -80,6 +95,45 @@ notes:
 """
 
 EXAMPLES = r"""
+- name: Create
+  cisco.meraki.networks_firmware_upgrades_staged_events:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    networkId: string
+    products:
+      switch:
+        nextUpgrade:
+          toVersion:
+            id: '1234'
+      switchCatalyst:
+        nextUpgrade:
+          toVersion:
+            id: '4321'
+    stages:
+    - group:
+        id: '1234'
+      milestones:
+        scheduledFor: '2018-02-11T00:00:00Z'
+
 - name: Update all
   cisco.meraki.networks_firmware_upgrades_staged_events:
     meraki_api_key: "{{meraki_api_key}}"
@@ -110,41 +164,6 @@ EXAMPLES = r"""
       milestones:
         scheduledFor: '2018-02-11T00:00:00Z'
 
-- name: Create
-  cisco.meraki.networks_firmware_upgrades_staged_events:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: present
-    networkId: string
-    products:
-      switch:
-        nextUpgrade:
-          toVersion:
-            id: '1234'
-    stages:
-    - group:
-        id: '1234'
-      milestones:
-        scheduledFor: '2018-02-11T00:00:00Z'
-
 """
 RETURN = r"""
 meraki_response:
@@ -163,26 +182,26 @@ meraki_response:
           }
         }
       },
-      "stages": [
-        {
-          "group": {
-            "id": "string",
-            "name": "string",
-            "description": "string"
-          },
-          "milestones": {
-            "scheduledFor": "string",
-            "startedAt": "string",
-            "completedAt": "string",
-            "canceledAt": "string"
-          },
-          "status": "string"
-        }
-      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
+        }
+      ],
+      "stages": [
+        {
+          "group": {
+            "description": "string",
+            "id": "string",
+            "name": "string"
+          },
+          "milestones": {
+            "canceledAt": "string",
+            "completedAt": "string",
+            "scheduledFor": "string",
+            "startedAt": "string"
+          },
+          "status": "string"
         }
       ]
     }

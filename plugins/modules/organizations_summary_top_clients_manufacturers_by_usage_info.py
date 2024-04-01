@@ -92,16 +92,16 @@ meraki_response:
   sample: >
     [
       {
-        "name": "string",
         "clients": {
           "counts": {
             "total": 0
           }
         },
+        "name": "string",
         "usage": {
+          "downstream": 0,
           "total": 0,
-          "upstream": 0,
-          "downstream": 0
+          "upstream": 0
         }
       }
     ]

@@ -72,5 +72,9 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "serials": [
+        "string"
+      ]
+    }
 """

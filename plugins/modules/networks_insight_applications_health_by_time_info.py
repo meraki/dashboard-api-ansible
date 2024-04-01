@@ -104,18 +104,18 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
         "endTs": "string",
-        "wanGoodput": 0,
         "lanGoodput": 0,
-        "wanLatencyMs": 0,
         "lanLatencyMs": 0,
-        "wanLossPercent": 0,
         "lanLossPercent": 0,
+        "numClients": 0,
+        "recv": 0,
         "responseDuration": 0,
         "sent": 0,
-        "recv": 0,
-        "numClients": 0
+        "startTs": "string",
+        "wanGoodput": 0,
+        "wanLatencyMs": 0,
+        "wanLossPercent": 0
       }
     ]
 """

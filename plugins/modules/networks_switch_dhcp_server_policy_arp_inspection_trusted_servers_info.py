@@ -100,12 +100,12 @@ meraki_response:
   sample: >
     [
       {
-        "trustedServerId": "string",
-        "mac": "string",
-        "vlan": 0,
         "ipv4": {
           "address": "string"
-        }
+        },
+        "mac": "string",
+        "trustedServerId": "string",
+        "vlan": 0
       }
     ]
 """

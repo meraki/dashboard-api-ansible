@@ -95,12 +95,12 @@ EXAMPLES = r"""
     state: present
     alerts:
       email:
-        enabled: false
+        enabled: true
     allowedServers:
     - 00:50:56:00:00:01
     - 00:50:56:00:00:02
     arpInspection:
-      enabled: false
+      enabled: true
     blockedServers:
     - 00:50:56:00:00:03
     - 00:50:56:00:00:04
@@ -114,5 +114,24 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "alerts": {
+        "email": {
+          "enabled": true
+        }
+      },
+      "allowedServers": [
+        "string"
+      ],
+      "arpInspection": {
+        "enabled": true,
+        "unsupportedModels": [
+          "string"
+        ]
+      },
+      "blockedServers": [
+        "string"
+      ],
+      "defaultPolicy": "string"
+    }
 """

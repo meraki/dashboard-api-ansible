@@ -120,31 +120,35 @@ meraki_response:
   sample: >
     [
       {
+        "highAvailability": {
+          "enabled": true,
+          "role": "string"
+        },
+        "lastReportedAt": "string",
+        "model": "string",
         "networkId": "string",
         "serial": "string",
-        "model": "string",
-        "lastReportedAt": "string",
         "uplinks": [
           {
-            "interface": "string",
-            "status": "string",
-            "ip": "string",
+            "apn": "string",
+            "connectionType": "string",
+            "dns1": "string",
+            "dns2": "string",
             "gateway": "string",
-            "publicIp": "string",
-            "primaryDns": "string",
-            "secondaryDns": "string",
+            "iccid": "string",
+            "interface": "string",
+            "ip": "string",
             "ipAssignedBy": "string",
+            "primaryDns": "string",
             "provider": "string",
+            "publicIp": "string",
+            "secondaryDns": "string",
             "signalStat": {
               "rsrp": "string",
               "rsrq": "string"
             },
-            "connectionType": "string",
-            "apn": "string",
-            "dns1": "string",
-            "dns2": "string",
             "signalType": "string",
-            "iccid": "string"
+            "status": "string"
           }
         ]
       }

@@ -31,8 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    target=dict(type="str"),
+    callback=dict(type="dict"),
     count=dict(type="int"),
+    target=dict(type="str"),
     serial=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -49,8 +50,9 @@ class DevicesLiveToolsPing(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            target=params.get("target"),
+            callback=params.get("callback"),
             count=params.get("count"),
+            target=params.get("target"),
             serial=params.get("serial"),
             id=params.get("id"),
         )
@@ -65,12 +67,15 @@ class DevicesLiveToolsPing(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('target') is not None or self.new_object.get('target') is not None:
-            new_object_params['target'] = self.new_object.get('target') or \
-                self.new_object.get('target')
+        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
+            new_object_params['callback'] = self.new_object.get('callback') or \
+                self.new_object.get('callback')
         if self.new_object.get('count') is not None or self.new_object.get('count') is not None:
             new_object_params['count'] = self.new_object.get('count') or \
                 self.new_object.get('count')
+        if self.new_object.get('target') is not None or self.new_object.get('target') is not None:
+            new_object_params['target'] = self.new_object.get('target') or \
+                self.new_object.get('target')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -126,8 +131,9 @@ class DevicesLiveToolsPing(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("target", "target"),
+            ("callback", "callback"),
             ("count", "count"),
+            ("target", "target"),
             ("serial", "serial"),
             ("id", "id"),
         ]

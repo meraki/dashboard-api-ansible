@@ -29,7 +29,7 @@ options:
       at other Hubs or a default value if there is no ASN configured.
     type: bool
   ibgpHoldTimer:
-    description: The IBGP holdtimer in seconds. The IBGP holdtimer must be an integer
+    description: The iBGP holdtimer in seconds. The iBGP holdtimer must be an integer
       between 12 and 240. When absent, this field is not updated. If no value exists
       then it defaults to 240.
     type: int
@@ -51,11 +51,11 @@ options:
             type: str
         type: dict
       ebgpHoldTimer:
-        description: The EBGP hold timer in seconds for each neighbor. The EBGP hold
+        description: The eBGP hold timer in seconds for each neighbor. The eBGP hold
           timer must be an integer between 12 and 240.
         type: int
       ebgpMultihop:
-        description: Configure this if the neighbor is not adjacent. The EBGP multi-hop
+        description: Configure this if the neighbor is not adjacent. The eBGP multi-hop
           must be an integer between 1 and 255.
         type: int
       ip:
@@ -84,7 +84,7 @@ options:
         type: int
       sourceInterface:
         description: The output interface for peering with the remote BGP peer. Valid
-          values are 'wired0', 'wired1' or 'vlan{VLAN ID}'(e.g. 'vlan123').
+          values are 'wan1', 'wan2' or 'vlan{VLAN ID}'(e.g. 'vlan123').
         type: str
       ttlSecurity:
         description: Settings for BGP TTL security to protect BGP peering sessions from

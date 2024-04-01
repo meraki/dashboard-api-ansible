@@ -80,12 +80,12 @@ meraki_response:
   sample: >
     [
       {
-        "importId": "string",
         "device": {
-          "url": "string",
           "created": true,
-          "status": "string"
-        }
+          "status": "string",
+          "url": "string"
+        },
+        "importId": "string"
       }
     ]
 """

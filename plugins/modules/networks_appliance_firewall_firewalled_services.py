@@ -85,5 +85,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "access": "string",
+      "allowedIps": [
+        "string"
+      ],
+      "service": "string"
+    }
 """

@@ -106,10 +106,28 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "acls": [
+        {
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "adaptivePolicyId": "string",
+      "createdAt": "string",
+      "destinationGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
+      "lastEntryRule": "string",
+      "sourceGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
+      "updatedAt": "string"
+    }
 """

@@ -19,6 +19,15 @@ options:
   enabled:
     description: If true, Bonjour forwarding is enabled on this SSID.
     type: bool
+  exception:
+    description: Bonjour forwarding exception.
+    suboptions:
+      enabled:
+        description: If true, Bonjour forwarding exception is enabled on this SSID.
+          Exception is required to enable L2 isolation and Bonjour forwarding to work
+          together.
+        type: bool
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -82,6 +91,8 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     enabled: true
+    exception:
+      enabled: true
     networkId: string
     number: string
     rules:
@@ -97,5 +108,19 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "exception": {
+        "enabled": true
+      },
+      "rules": [
+        {
+          "description": "string",
+          "services": [
+            "string"
+          ],
+          "vlanId": "string"
+        }
+      ]
+    }
 """

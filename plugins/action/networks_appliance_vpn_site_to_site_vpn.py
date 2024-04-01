@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    mode=dict(type="str"),
     hubs=dict(type="list"),
+    mode=dict(type="str"),
     subnets=dict(type="list"),
     networkId=dict(type="str"),
 ))
@@ -50,8 +50,8 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            mode=params.get("mode"),
             hubs=params.get("hubs"),
+            mode=params.get("mode"),
             subnets=params.get("subnets"),
             network_id=params.get("networkId"),
         )
@@ -65,12 +65,12 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
-            new_object_params['mode'] = self.new_object.get('mode') or \
-                self.new_object.get('mode')
         if self.new_object.get('hubs') is not None or self.new_object.get('hubs') is not None:
             new_object_params['hubs'] = self.new_object.get('hubs') or \
                 self.new_object.get('hubs')
+        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
+            new_object_params['mode'] = self.new_object.get('mode') or \
+                self.new_object.get('mode')
         if self.new_object.get('subnets') is not None or self.new_object.get('subnets') is not None:
             new_object_params['subnets'] = self.new_object.get('subnets') or \
                 self.new_object.get('subnets')
@@ -130,8 +130,8 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("mode", "mode"),
             ("hubs", "hubs"),
+            ("mode", "mode"),
             ("subnets", "subnets"),
             ("networkId", "networkId"),
         ]

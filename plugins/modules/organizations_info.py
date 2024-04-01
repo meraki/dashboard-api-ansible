@@ -16,11 +16,30 @@ description:
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
+  - cisco.meraki.module_info_pagination
 author: Francisco Munoz (@fmunoz)
 options:
   headers:
     description: Additional headers.
     type: dict
+  perPage:
+    description:
+    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 9000. Default is 9000.
+    type: int
+  startingAfter:
+    description:
+    - >
+      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
+      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
+      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+    type: str
+  endingBefore:
+    description:
+    - >
+      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
+      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
+      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+    type: str
   organizationId:
     description:
     - OrganizationId path parameter. Organization ID.
@@ -68,6 +87,11 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    perPage: 0
+    startingAfter: string
+    endingBefore: string
+    total_pages: -1
+    direction: next
   register: result
 
 - name: Get organizations by id
@@ -103,19 +127,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "name": "string",
-      "url": "string",
       "api": {
         "enabled": true
-      },
-      "licensing": {
-        "model": "string"
       },
       "cloud": {
         "region": {
           "name": "string"
         }
+      },
+      "id": "string",
+      "licensing": {
+        "model": "string"
       },
       "management": {
         "details": [
@@ -124,6 +146,8 @@ meraki_response:
             "value": "string"
           }
         ]
-      }
+      },
+      "name": "string",
+      "url": "string"
     }
 """

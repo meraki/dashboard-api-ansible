@@ -78,31 +78,31 @@ meraki_response:
   sample: >
     {
       "pingId": "string",
-      "url": "string",
       "request": {
+        "count": 0,
         "serial": "string",
-        "target": "string",
-        "count": 0
+        "target": "string"
       },
-      "status": "string",
       "results": {
-        "sent": 0,
-        "received": 0,
+        "latencies": {
+          "average": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
         "loss": {
           "percentage": 0
         },
-        "latencies": {
-          "minimum": 0,
-          "average": 0,
-          "maximum": 0
-        },
+        "received": 0,
         "replies": [
           {
+            "latency": 0,
             "sequenceId": 0,
-            "size": 0,
-            "latency": 0
+            "size": 0
           }
-        ]
-      }
+        ],
+        "sent": 0
+      },
+      "status": "string",
+      "url": "string"
     }
 """

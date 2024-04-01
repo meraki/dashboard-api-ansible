@@ -120,29 +120,29 @@ meraki_response:
   sample: >
     [
       {
+        "lastReportedAt": "string",
+        "model": "string",
         "networkId": "string",
         "serial": "string",
-        "model": "string",
-        "lastReportedAt": "string",
         "uplinks": [
           {
+            "apn": "string",
+            "connectionType": "string",
+            "dns1": "string",
+            "dns2": "string",
+            "gateway": "string",
+            "iccid": "string",
             "interface": "string",
-            "status": "string",
             "ip": "string",
+            "model": "string",
             "provider": "string",
             "publicIp": "string",
-            "model": "string",
             "signalStat": {
               "rsrp": "string",
               "rsrq": "string"
             },
-            "connectionType": "string",
-            "apn": "string",
-            "gateway": "string",
-            "dns1": "string",
-            "dns2": "string",
             "signalType": "string",
-            "iccid": "string"
+            "status": "string"
           }
         ]
       }

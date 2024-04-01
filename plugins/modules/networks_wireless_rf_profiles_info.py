@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _rfprofiles
 description:
 - Get all networks _wireless _rfprofiles.
 - Get networks _wireless _rfprofiles by id.
-- List the non-basic RF profiles for this network.
+- List RF profiles for this network.
 - Return a RF profile.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -114,10 +114,223 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "apBandSettings": {
+        "bandOperationMode": "string",
+        "bandSteeringEnabled": true,
+        "bands": {
+          "enabled": [
+            "string"
+          ]
+        }
+      },
+      "bandSelectionType": "string",
+      "clientBalancingEnabled": true,
+      "fiveGhzSettings": {
+        "channelWidth": "string",
+        "maxPower": 0,
+        "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
+        "validAutoChannels": [
+          0
+        ]
+      },
+      "id": "string",
+      "minBitrateType": "string",
+      "name": "string",
+      "networkId": "string",
+      "perSsidSettings": {
+        "0": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "1": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "10": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "11": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "12": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "13": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "14": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "2": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "3": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "4": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "5": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "6": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "7": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "8": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "9": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        }
+      },
+      "sixGhzSettings": {
+        "channelWidth": "string",
+        "maxPower": 0,
+        "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
+        "validAutoChannels": [
+          0
+        ]
+      },
+      "transmission": {
+        "enabled": true
+      },
+      "twoFourGhzSettings": {
+        "axEnabled": true,
+        "maxPower": 0,
+        "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
+        "validAutoChannels": [
+          0
+        ]
+      }
+    }
 """

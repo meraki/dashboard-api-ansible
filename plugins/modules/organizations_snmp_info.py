@@ -70,6 +70,18 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "hostname": "string",
+      "peerIps": [
+        "string"
+      ],
+      "port": 0,
+      "v2CommunityString": "string",
+      "v2cEnabled": true,
+      "v3AuthMode": "string",
+      "v3Enabled": true,
+      "v3PrivMode": "string",
+      "v3User": "string"
+    }
 """

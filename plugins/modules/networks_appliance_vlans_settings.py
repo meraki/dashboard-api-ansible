@@ -72,5 +72,5 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    true
 """

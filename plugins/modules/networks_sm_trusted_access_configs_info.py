@@ -98,16 +98,19 @@ meraki_response:
   sample: >
     [
       {
+        "accessEndAt": "string",
+        "accessStartAt": "string",
+        "additionalEmailText": "string",
         "id": "string",
-        "ssidName": "string",
         "name": "string",
+        "notifyTimeBeforeAccessEnds": 0,
         "scope": "string",
+        "sendExpirationEmails": true,
+        "ssidName": "string",
         "tags": [
           "string"
         ],
-        "timeboundType": "string",
-        "accessStartAt": "string",
-        "accessEndAt": "string"
+        "timeboundType": "string"
       }
     ]
 """

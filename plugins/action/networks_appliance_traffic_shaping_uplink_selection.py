@@ -34,10 +34,10 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     activeActiveAutoVpnEnabled=dict(type="bool"),
     defaultUplink=dict(type="str"),
-    loadBalancingEnabled=dict(type="bool"),
     failoverAndFailback=dict(type="dict"),
-    wanTrafficUplinkPreferences=dict(type="list"),
+    loadBalancingEnabled=dict(type="bool"),
     vpnTrafficUplinkPreferences=dict(type="list"),
+    wanTrafficUplinkPreferences=dict(type="list"),
     networkId=dict(type="str"),
 ))
 
@@ -55,10 +55,10 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
         self.new_object = dict(
             activeActiveAutoVpnEnabled=params.get("activeActiveAutoVpnEnabled"),
             defaultUplink=params.get("defaultUplink"),
-            loadBalancingEnabled=params.get("loadBalancingEnabled"),
             failoverAndFailback=params.get("failoverAndFailback"),
-            wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
+            loadBalancingEnabled=params.get("loadBalancingEnabled"),
             vpnTrafficUplinkPreferences=params.get("vpnTrafficUplinkPreferences"),
+            wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
             network_id=params.get("networkId"),
         )
 
@@ -76,17 +76,17 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
         if self.new_object.get('defaultUplink') is not None or self.new_object.get('default_uplink') is not None:
             new_object_params['defaultUplink'] = self.new_object.get('defaultUplink') or \
                 self.new_object.get('default_uplink')
-        if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get('load_balancing_enabled') is not None:
-            new_object_params['loadBalancingEnabled'] = self.new_object.get('loadBalancingEnabled')
         if self.new_object.get('failoverAndFailback') is not None or self.new_object.get('failover_and_failback') is not None:
             new_object_params['failoverAndFailback'] = self.new_object.get('failoverAndFailback') or \
                 self.new_object.get('failover_and_failback')
-        if self.new_object.get('wanTrafficUplinkPreferences') is not None or self.new_object.get('wan_traffic_uplink_preferences') is not None:
-            new_object_params['wanTrafficUplinkPreferences'] = self.new_object.get('wanTrafficUplinkPreferences') or \
-                self.new_object.get('wan_traffic_uplink_preferences')
+        if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get('load_balancing_enabled') is not None:
+            new_object_params['loadBalancingEnabled'] = self.new_object.get('loadBalancingEnabled')
         if self.new_object.get('vpnTrafficUplinkPreferences') is not None or self.new_object.get('vpn_traffic_uplink_preferences') is not None:
             new_object_params['vpnTrafficUplinkPreferences'] = self.new_object.get('vpnTrafficUplinkPreferences') or \
                 self.new_object.get('vpn_traffic_uplink_preferences')
+        if self.new_object.get('wanTrafficUplinkPreferences') is not None or self.new_object.get('wan_traffic_uplink_preferences') is not None:
+            new_object_params['wanTrafficUplinkPreferences'] = self.new_object.get('wanTrafficUplinkPreferences') or \
+                self.new_object.get('wan_traffic_uplink_preferences')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -145,10 +145,10 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
         obj_params = [
             ("activeActiveAutoVpnEnabled", "activeActiveAutoVpnEnabled"),
             ("defaultUplink", "defaultUplink"),
-            ("loadBalancingEnabled", "loadBalancingEnabled"),
             ("failoverAndFailback", "failoverAndFailback"),
-            ("wanTrafficUplinkPreferences", "wanTrafficUplinkPreferences"),
+            ("loadBalancingEnabled", "loadBalancingEnabled"),
             ("vpnTrafficUplinkPreferences", "vpnTrafficUplinkPreferences"),
+            ("wanTrafficUplinkPreferences", "wanTrafficUplinkPreferences"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

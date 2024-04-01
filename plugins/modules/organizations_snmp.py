@@ -87,8 +87,10 @@ EXAMPLES = r"""
     - 123.123.123.1
     v2cEnabled: false
     v3AuthMode: SHA
+    v3AuthPass: password
     v3Enabled: true
     v3PrivMode: AES128
+    v3PrivPass: password
 
 """
 RETURN = r"""
@@ -97,5 +99,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "hostname": "string",
+      "peerIps": [
+        "string"
+      ],
+      "port": 0,
+      "v2CommunityString": "string",
+      "v2cEnabled": true,
+      "v3AuthMode": "string",
+      "v3Enabled": true,
+      "v3PrivMode": "string",
+      "v3User": "string"
+    }
 """

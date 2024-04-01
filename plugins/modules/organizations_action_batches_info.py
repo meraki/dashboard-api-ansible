@@ -114,28 +114,34 @@ meraki_response:
   type: dict
   sample: >
     {
+      "actions": [
+        {
+          "body": {},
+          "operation": "string",
+          "resource": "string"
+        }
+      ],
+      "callback": {
+        "id": "string",
+        "status": "string",
+        "url": "string"
+      },
+      "confirmed": true,
       "id": "string",
       "organizationId": "string",
-      "confirmed": true,
-      "synchronous": true,
       "status": {
         "completed": true,
-        "failed": true,
-        "errors": [
-          "string"
-        ],
         "createdResources": [
           {
             "id": "string",
             "uri": "string"
           }
-        ]
+        ],
+        "errors": [
+          "string"
+        ],
+        "failed": true
       },
-      "actions": [
-        {
-          "resource": "string",
-          "operation": "string"
-        }
-      ]
+      "synchronous": true
     }
 """

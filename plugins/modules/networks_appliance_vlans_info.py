@@ -109,32 +109,13 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "interfaceId": "string",
-      "name": "string",
-      "subnet": "string",
       "applianceIp": "string",
-      "groupPolicyId": "string",
-      "templateVlanType": "string",
       "cidr": "string",
-      "mask": 0,
-      "dhcpRelayServerIps": [
-        "string"
-      ],
+      "dhcpBootFilename": "string",
+      "dhcpBootNextServer": "string",
+      "dhcpBootOptionsEnabled": true,
       "dhcpHandling": "string",
       "dhcpLeaseTime": "string",
-      "dhcpBootOptionsEnabled": true,
-      "dhcpBootNextServer": "string",
-      "dhcpBootFilename": "string",
-      "fixedIpAssignments": {},
-      "reservedIpRanges": [
-        {
-          "start": "string",
-          "end": "string",
-          "comment": "string"
-        }
-      ],
-      "dnsNameservers": "string",
       "dhcpOptions": [
         {
           "code": "string",
@@ -142,25 +123,44 @@ meraki_response:
           "value": "string"
         }
       ],
-      "vpnNatSubnet": "string",
-      "mandatoryDhcp": {
-        "enabled": true
-      },
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dnsNameservers": "string",
+      "fixedIpAssignments": {},
+      "groupPolicyId": "string",
+      "id": "string",
+      "interfaceId": "string",
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
           {
             "autonomous": true,
-            "staticPrefix": "string",
-            "staticApplianceIp6": "string",
             "origin": {
-              "type": "string",
               "interfaces": [
                 "string"
-              ]
-            }
+              ],
+              "type": "string"
+            },
+            "staticApplianceIp6": "string",
+            "staticPrefix": "string"
           }
         ]
-      }
+      },
+      "mandatoryDhcp": {
+        "enabled": true
+      },
+      "mask": 0,
+      "name": "string",
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ],
+      "subnet": "string",
+      "templateVlanType": "string",
+      "vpnNatSubnet": "string"
     }
 """

@@ -228,6 +228,32 @@ EXAMPLES = r"""
     - 192.168.1.0/24
     voiceVlanClients: true
 
+- name: Delete by id
+  cisco.meraki.networks_switch_access_policies:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    accessPolicyNumber: string
+    networkId: string
+
 - name: Update by id
   cisco.meraki.networks_switch_access_policies:
     meraki_api_key: "{{meraki_api_key}}"
@@ -285,32 +311,6 @@ EXAMPLES = r"""
     - 192.168.1.0/24
     voiceVlanClients: true
 
-- name: Delete by id
-  cisco.meraki.networks_switch_access_policies:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    accessPolicyNumber: string
-    networkId: string
-
 """
 RETURN = r"""
 meraki_response:
@@ -319,25 +319,29 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "radiusServers": [
-        {
-          "host": "string",
-          "port": 0
+      "accessPolicyType": "string",
+      "counts": {
+        "ports": {
+          "withThisPolicy": 0
         }
-      ],
+      },
+      "dot1x": {
+        "controlDirection": "string"
+      },
+      "guestPortBouncing": true,
+      "guestVlanId": 0,
+      "hostMode": "string",
+      "increaseAccessSpeed": true,
+      "name": "string",
       "radius": {
         "criticalAuth": {
           "dataVlanId": 0,
-          "voiceVlanId": 0,
-          "suspendPortBounce": true
+          "suspendPortBounce": true,
+          "voiceVlanId": 0
         },
         "failedAuthVlanId": 0,
         "reAuthenticationInterval": 0
       },
-      "guestPortBouncing": true,
-      "radiusTestingEnabled": true,
-      "radiusCoaSupportEnabled": true,
       "radiusAccountingEnabled": true,
       "radiusAccountingServers": [
         {
@@ -345,18 +349,19 @@ meraki_response:
           "port": 0
         }
       ],
+      "radiusCoaSupportEnabled": true,
       "radiusGroupAttribute": "string",
-      "hostMode": "string",
-      "accessPolicyType": "string",
-      "increaseAccessSpeed": true,
-      "guestVlanId": 0,
-      "dot1x": {
-        "controlDirection": "string"
-      },
-      "voiceVlanClients": true,
+      "radiusServers": [
+        {
+          "host": "string",
+          "port": 0
+        }
+      ],
+      "radiusTestingEnabled": true,
       "urlRedirectWalledGardenEnabled": true,
       "urlRedirectWalledGardenRanges": [
         "string"
-      ]
+      ],
+      "voiceVlanClients": true
     }
 """

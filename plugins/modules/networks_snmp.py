@@ -77,6 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     access: users
+    communityString: sample
     networkId: string
     users:
     - passphrase: hunter2
@@ -89,5 +90,14 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "access": "string",
+      "communityString": "string",
+      "users": [
+        {
+          "passphrase": "string",
+          "username": "string"
+        }
+      ]
+    }
 """

@@ -59,7 +59,7 @@ options:
         description: If true, then all network admins will receive emails.
         type: bool
       emails:
-        description: A list of emails that will recieve the alert(s).
+        description: A list of emails that will receive the alert(s).
         elements: str
         type: list
       httpServerIds:
@@ -70,6 +70,18 @@ options:
         description: If true, then an SNMP trap will be sent if there is an SNMP trap
           server configured for this network.
         type: bool
+    type: dict
+  muting:
+    description: Mute alerts under certain conditions.
+    suboptions:
+      byPortSchedules:
+        description: Mute wireless unreachable alerts based on switch port schedules.
+        suboptions:
+          enabled:
+            description: If true, then wireless unreachable alerts will be muted when
+              caused by a port schedule.
+            type: bool
+        type: dict
     type: dict
   networkId:
     description: NetworkId path parameter. Network ID.

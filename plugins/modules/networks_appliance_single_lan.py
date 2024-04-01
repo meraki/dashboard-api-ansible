@@ -129,26 +129,26 @@ meraki_response:
   type: dict
   sample: >
     {
-      "subnet": "string",
       "applianceIp": "string",
-      "mandatoryDhcp": {
-        "enabled": true
-      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
           {
             "autonomous": true,
-            "staticPrefix": "string",
-            "staticApplianceIp6": "string",
             "origin": {
-              "type": "string",
               "interfaces": [
                 "string"
-              ]
-            }
+              ],
+              "type": "string"
+            },
+            "staticApplianceIp6": "string",
+            "staticPrefix": "string"
           }
         ]
-      }
+      },
+      "mandatoryDhcp": {
+        "enabled": true
+      },
+      "subnet": "string"
     }
 """

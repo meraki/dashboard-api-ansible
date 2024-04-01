@@ -108,27 +108,27 @@ meraki_response:
   sample: >
     [
       {
-        "key": "string",
-        "organizationId": "string",
-        "duration": 0,
-        "mode": "string",
-        "startedAt": "string",
         "claimedAt": "string",
-        "invalidated": true,
-        "invalidatedAt": "string",
-        "expired": true,
+        "counts": [
+          {
+            "count": 0,
+            "model": "string"
+          }
+        ],
+        "duration": 0,
         "editions": [
           {
             "edition": "string",
             "productType": "string"
           }
         ],
-        "counts": [
-          {
-            "model": "string",
-            "count": 0
-          }
-        ]
+        "expired": true,
+        "invalidated": true,
+        "invalidatedAt": "string",
+        "key": "string",
+        "mode": "string",
+        "organizationId": "string",
+        "startedAt": "string"
       }
     ]
 """

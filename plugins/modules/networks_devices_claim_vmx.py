@@ -21,7 +21,7 @@ options:
     type: str
   size:
     description: The size of the vMX you claim. It can be one of small, medium, large,
-      100.
+      xlarge, 100.
     type: str
 requirements:
 - meraki >= 2.4.9
@@ -71,5 +71,28 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "address": "string",
+      "details": [
+        {
+          "name": "string",
+          "value": "string"
+        }
+      ],
+      "firmware": "string",
+      "imei": "string",
+      "lanIp": "string",
+      "lat": 0,
+      "lng": 0,
+      "mac": "string",
+      "model": "string",
+      "name": "string",
+      "networkId": "string",
+      "notes": "string",
+      "productType": "string",
+      "serial": "string",
+      "tags": [
+        "string"
+      ]
+    }
 """

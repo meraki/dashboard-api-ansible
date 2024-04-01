@@ -10,7 +10,9 @@ module: organizations_wireless_devices_ethernet_statuses_info
 short_description: Information module for organizations _wireless _devices _ethernet _statuses
 description:
 - Get all organizations _wireless _devices _ethernet _statuses.
-- Endpoint to see power status for wireless devices.
+- >
+   List the most recent Ethernet link speed, duplex, aggregation and power mode and status information for wireless
+   devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -106,36 +108,36 @@ meraki_response:
   sample: >
     [
       {
-        "serial": "string",
+        "aggregation": {
+          "enabled": true,
+          "speed": 0
+        },
         "name": "string",
         "network": {
           "id": "string"
         },
+        "ports": [
+          {
+            "linkNegotiation": {
+              "duplex": "string",
+              "speed": 0
+            },
+            "name": "string",
+            "poe": {
+              "standard": "string"
+            }
+          }
+        ],
         "power": {
-          "mode": "string",
           "ac": {
             "isConnected": true
           },
+          "mode": "string",
           "poe": {
             "isConnected": true
           }
         },
-        "ports": [
-          {
-            "name": "string",
-            "poe": {
-              "standard": "string"
-            },
-            "linkNegotiation": {
-              "duplex": "string",
-              "speed": 0
-            }
-          }
-        ],
-        "aggregation": {
-          "enabled": true,
-          "speed": 0
-        }
+        "serial": "string"
       }
     ]
 """

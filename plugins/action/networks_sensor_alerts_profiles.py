@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    schedule=dict(type="dict"),
     conditions=dict(type="list"),
+    name=dict(type="str"),
     recipients=dict(type="dict"),
+    schedule=dict(type="dict"),
     serials=dict(type="list"),
     networkId=dict(type="str"),
     id=dict(type="str"),
@@ -54,10 +54,10 @@ class NetworksSensorAlertsProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            schedule=params.get("schedule"),
             conditions=params.get("conditions"),
+            name=params.get("name"),
             recipients=params.get("recipients"),
+            schedule=params.get("schedule"),
             serials=params.get("serials"),
             networkId=params.get("networkId"),
             id=params.get("id"),
@@ -81,18 +81,18 @@ class NetworksSensorAlertsProfiles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
-            new_object_params['schedule'] = self.new_object.get('schedule') or \
-                self.new_object.get('schedule')
         if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
             new_object_params['recipients'] = self.new_object.get('recipients') or \
                 self.new_object.get('recipients')
+        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
+            new_object_params['schedule'] = self.new_object.get('schedule') or \
+                self.new_object.get('schedule')
         if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials') or \
                 self.new_object.get('serials')
@@ -113,18 +113,18 @@ class NetworksSensorAlertsProfiles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
-            new_object_params['schedule'] = self.new_object.get('schedule') or \
-                self.new_object.get('schedule')
         if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
             new_object_params['recipients'] = self.new_object.get('recipients') or \
                 self.new_object.get('recipients')
+        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
+            new_object_params['schedule'] = self.new_object.get('schedule') or \
+                self.new_object.get('schedule')
         if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials') or \
                 self.new_object.get('serials')
@@ -201,10 +201,10 @@ class NetworksSensorAlertsProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("schedule", "schedule"),
             ("conditions", "conditions"),
+            ("name", "name"),
             ("recipients", "recipients"),
+            ("schedule", "schedule"),
             ("serials", "serials"),
             ("networkId", "networkId"),
             ("id", "id"),

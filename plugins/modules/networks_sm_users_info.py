@@ -100,28 +100,28 @@ meraki_response:
   sample: >
     [
       {
-        "id": "string",
-        "email": "string",
-        "fullName": "string",
-        "username": "string",
-        "hasPassword": true,
-        "tags": "string",
         "adGroups": [
-          "string"
-        ],
-        "azureAdGroups": [
-          "string"
-        ],
-        "samlGroups": [
           "string"
         ],
         "asmGroups": [
           "string"
         ],
-        "isExternal": true,
+        "azureAdGroups": [
+          "string"
+        ],
         "displayName": "string",
+        "email": "string",
+        "fullName": "string",
         "hasIdentityCertificate": true,
-        "userThumbnail": "string"
+        "hasPassword": true,
+        "id": "string",
+        "isExternal": true,
+        "samlGroups": [
+          "string"
+        ],
+        "tags": "string",
+        "userThumbnail": "string",
+        "username": "string"
       }
     ]
 """

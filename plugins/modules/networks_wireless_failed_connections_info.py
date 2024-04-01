@@ -123,13 +123,13 @@ meraki_response:
   sample: >
     [
       {
-        "ssidNumber": 0,
-        "vlan": 0,
         "clientMac": "string",
-        "serial": "string",
         "failureStep": "string",
+        "serial": "string",
+        "ssidNumber": 0,
+        "ts": "string",
         "type": "string",
-        "ts": "string"
+        "vlan": 0
       }
     ]
 """

@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCameraSense
+- name: Cisco Meraki documentation for camera getDeviceCameraSense
   description: Complete reference of the getDeviceCameraSense API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-sense
 notes:
   - SDK Method used are
-    devices.Devices.get_device_camera_sense,
+    camera.Camera.get_device_camera_sense,
 
   - Paths used are
     get /devices/{serial}/camera/sense,
@@ -70,6 +70,15 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "audioDetection": {
+        "enabled": true
+      },
+      "mqttBrokerId": "string",
+      "mqttTopics": [
+        "string"
+      ],
+      "senseEnabled": true
+    }
 """

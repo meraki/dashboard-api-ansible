@@ -43,8 +43,8 @@ options:
   uplink:
     description:
     - >
-      Uplink query parameter. Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, cellular.
-      Default will return all uplinks.
+      Uplink query parameter. Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3,
+      cellular. Default will return all uplinks.
     type: str
   ip:
     description:
@@ -106,17 +106,17 @@ meraki_response:
   sample: >
     [
       {
+        "ip": "string",
         "networkId": "string",
         "serial": "string",
-        "uplink": "string",
-        "ip": "string",
         "timeSeries": [
           {
-            "ts": "string",
+            "latencyMs": 0,
             "lossPercent": 0,
-            "latencyMs": 0
+            "ts": "string"
           }
-        ]
+        ],
+        "uplink": "string"
       }
     ]
 """

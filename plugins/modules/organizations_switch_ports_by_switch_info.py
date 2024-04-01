@@ -154,37 +154,37 @@ meraki_response:
   sample: >
     [
       {
-        "name": "string",
-        "serial": "string",
         "mac": "string",
-        "network": {
-          "name": "string",
-          "id": "string"
-        },
         "model": "string",
+        "name": "string",
+        "network": {
+          "id": "string",
+          "name": "string"
+        },
         "ports": [
           {
-            "portId": "string",
-            "name": "string",
-            "tags": [
-              "string"
-            ],
-            "enabled": true,
-            "poeEnabled": true,
-            "type": "string",
-            "vlan": 0,
-            "voiceVlan": 0,
-            "allowedVlans": "string",
-            "rstpEnabled": true,
-            "stpGuard": "string",
-            "linkNegotiation": "string",
             "accessPolicyType": "string",
+            "allowedVlans": "string",
+            "enabled": true,
+            "linkNegotiation": "string",
+            "name": "string",
+            "poeEnabled": true,
+            "portId": "string",
+            "rstpEnabled": true,
             "stickyMacAllowList": [
               "string"
             ],
-            "stickyMacAllowListLimit": 0
+            "stickyMacAllowListLimit": 0,
+            "stpGuard": "string",
+            "tags": [
+              "string"
+            ],
+            "type": "string",
+            "vlan": 0,
+            "voiceVlan": 0
           }
-        ]
+        ],
+        "serial": "string"
       }
     ]
 """

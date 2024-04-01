@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    enabled=dict(type="bool"),
-    vlanId=dict(type="int"),
-    protocols=dict(type="list"),
     accessPoints=dict(type="list"),
+    enabled=dict(type="bool"),
+    protocols=dict(type="list"),
+    vlanId=dict(type="int"),
     networkId=dict(type="str"),
 ))
 
@@ -51,10 +51,10 @@ class NetworksWirelessAlternateManagementInterface(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            enabled=params.get("enabled"),
-            vlanId=params.get("vlanId"),
-            protocols=params.get("protocols"),
             accessPoints=params.get("accessPoints"),
+            enabled=params.get("enabled"),
+            protocols=params.get("protocols"),
+            vlanId=params.get("vlanId"),
             network_id=params.get("networkId"),
         )
 
@@ -67,17 +67,17 @@ class NetworksWirelessAlternateManagementInterface(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
-        if self.new_object.get('protocols') is not None or self.new_object.get('protocols') is not None:
-            new_object_params['protocols'] = self.new_object.get('protocols') or \
-                self.new_object.get('protocols')
         if self.new_object.get('accessPoints') is not None or self.new_object.get('access_points') is not None:
             new_object_params['accessPoints'] = self.new_object.get('accessPoints') or \
                 self.new_object.get('access_points')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('protocols') is not None or self.new_object.get('protocols') is not None:
+            new_object_params['protocols'] = self.new_object.get('protocols') or \
+                self.new_object.get('protocols')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -134,10 +134,10 @@ class NetworksWirelessAlternateManagementInterface(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"),
-            ("vlanId", "vlanId"),
-            ("protocols", "protocols"),
             ("accessPoints", "accessPoints"),
+            ("enabled", "enabled"),
+            ("protocols", "protocols"),
+            ("vlanId", "vlanId"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

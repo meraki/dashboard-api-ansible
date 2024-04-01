@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    role=dict(type="str"),
-    orgAccess=dict(type="str"),
-    tags=dict(type="list"),
     networks=dict(type="list"),
+    orgAccess=dict(type="str"),
+    role=dict(type="str"),
+    tags=dict(type="list"),
     organizationId=dict(type="str"),
     samlRoleId=dict(type="str"),
 ))
@@ -53,10 +53,10 @@ class OrganizationsSamlRoles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            role=params.get("role"),
-            orgAccess=params.get("orgAccess"),
-            tags=params.get("tags"),
             networks=params.get("networks"),
+            orgAccess=params.get("orgAccess"),
+            role=params.get("role"),
+            tags=params.get("tags"),
             organizationId=params.get("organizationId"),
             samlRoleId=params.get("samlRoleId"),
         )
@@ -80,18 +80,18 @@ class OrganizationsSamlRoles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
-            new_object_params['role'] = self.new_object.get('role') or \
-                self.new_object.get('role')
-        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
-            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
-                self.new_object.get('org_access')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
-            new_object_params['tags'] = self.new_object.get('tags') or \
-                self.new_object.get('tags')
         if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
             new_object_params['networks'] = self.new_object.get('networks') or \
                 self.new_object.get('networks')
+        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
+            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
+                self.new_object.get('org_access')
+        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
+            new_object_params['role'] = self.new_object.get('role') or \
+                self.new_object.get('role')
+        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+            new_object_params['tags'] = self.new_object.get('tags') or \
+                self.new_object.get('tags')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -109,18 +109,18 @@ class OrganizationsSamlRoles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
-            new_object_params['role'] = self.new_object.get('role') or \
-                self.new_object.get('role')
-        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
-            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
-                self.new_object.get('org_access')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
-            new_object_params['tags'] = self.new_object.get('tags') or \
-                self.new_object.get('tags')
         if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
             new_object_params['networks'] = self.new_object.get('networks') or \
                 self.new_object.get('networks')
+        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
+            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
+                self.new_object.get('org_access')
+        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
+            new_object_params['role'] = self.new_object.get('role') or \
+                self.new_object.get('role')
+        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+            new_object_params['tags'] = self.new_object.get('tags') or \
+                self.new_object.get('tags')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -198,10 +198,10 @@ class OrganizationsSamlRoles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("role", "role"),
-            ("orgAccess", "orgAccess"),
-            ("tags", "tags"),
             ("networks", "networks"),
+            ("orgAccess", "orgAccess"),
+            ("role", "role"),
+            ("tags", "tags"),
             ("organizationId", "organizationId"),
             ("samlRoleId", "samlRoleId"),
         ]

@@ -40,8 +40,8 @@ options:
     type: str
   resolution:
     description: Resolution of the camera. Can be one of '1280x720', '1920x1080', '1080x1080',
-      '2058x2058', '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not all resolutions
-      are supported by every camera model.
+      '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not all resolutions are supported
+      by every camera model.
     type: str
   restrictedBandwidthModeEnabled:
     description: Boolean indicating if restricted bandwidth is enabled(true) or disabled(false)
@@ -54,12 +54,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCameraQualityAndRetention
+- name: Cisco Meraki documentation for camera updateDeviceCameraQualityAndRetention
   description: Complete reference of the updateDeviceCameraQualityAndRetention API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-quality-and-retention
 notes:
   - SDK Method used are
-    devices.Devices.update_device_camera_quality_and_retention,
+    camera.Camera.update_device_camera_quality_and_retention,
 
   - Paths used are
     put /devices/{serial}/camera/qualityAndRetention,

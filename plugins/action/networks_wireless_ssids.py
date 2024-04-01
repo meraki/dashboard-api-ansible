@@ -32,64 +32,65 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    name=dict(type="str"),
-    enabled=dict(type="bool"),
-    authMode=dict(type="str"),
-    enterpriseAdminAccess=dict(type="str"),
-    encryptionMode=dict(type="str"),
-    psk=dict(type="str"),
-    wpaEncryptionMode=dict(type="str"),
-    dot11w=dict(type="dict"),
-    dot11r=dict(type="dict"),
-    splashPage=dict(type="str"),
-    splashGuestSponsorDomains=dict(type="list"),
-    oauth=dict(type="dict"),
-    localRadius=dict(type="dict"),
-    ldap=dict(type="dict"),
     activeDirectory=dict(type="dict"),
-    radiusServers=dict(type="list"),
-    radiusProxyEnabled=dict(type="bool"),
-    radiusTestingEnabled=dict(type="bool"),
-    radiusCalledStationId=dict(type="str"),
+    adultContentFilteringEnabled=dict(type="bool"),
+    apTagsAndVlanIds=dict(type="list"),
+    authMode=dict(type="str"),
+    availabilityTags=dict(type="list"),
+    availableOnAllAps=dict(type="bool"),
+    bandSelection=dict(type="str"),
+    concentratorNetworkId=dict(type="str"),
+    defaultVlanId=dict(type="int"),
+    disassociateClientsOnVpnFailover=dict(type="bool"),
+    dnsRewrite=dict(type="dict"),
+    dot11r=dict(type="dict"),
+    dot11w=dict(type="dict"),
+    enabled=dict(type="bool"),
+    encryptionMode=dict(type="str"),
+    enterpriseAdminAccess=dict(type="str"),
+    gre=dict(type="dict"),
+    ipAssignmentMode=dict(type="str"),
+    lanIsolationEnabled=dict(type="bool"),
+    ldap=dict(type="dict"),
+    localRadius=dict(type="dict"),
+    mandatoryDhcpEnabled=dict(type="bool"),
+    minBitrate=dict(type="float"),
+    name=dict(type="str"),
+    namedVlans=dict(type="dict"),
+    oauth=dict(type="dict"),
+    perClientBandwidthLimitDown=dict(type="int"),
+    perClientBandwidthLimitUp=dict(type="int"),
+    perSsidBandwidthLimitDown=dict(type="int"),
+    perSsidBandwidthLimitUp=dict(type="int"),
+    psk=dict(type="str"),
+    radiusAccountingEnabled=dict(type="bool"),
+    radiusAccountingInterimInterval=dict(type="int"),
+    radiusAccountingServers=dict(type="list"),
+    radiusAttributeForGroupPolicies=dict(type="str"),
     radiusAuthenticationNasId=dict(type="str"),
-    radiusServerTimeout=dict(type="int"),
-    radiusServerAttemptsLimit=dict(type="int"),
-    radiusFallbackEnabled=dict(type="bool"),
+    radiusCalledStationId=dict(type="str"),
     radiusCoaEnabled=dict(type="bool"),
     radiusFailoverPolicy=dict(type="str"),
-    radiusLoadBalancingPolicy=dict(type="str"),
-    radiusAccountingEnabled=dict(type="bool"),
-    radiusAccountingServers=dict(type="list"),
-    radiusAccountingInterimInterval=dict(type="int"),
-    radiusAttributeForGroupPolicies=dict(type="str"),
-    ipAssignmentMode=dict(type="str"),
-    useVlanTagging=dict(type="bool"),
-    concentratorNetworkId=dict(type="str"),
-    secondaryConcentratorNetworkId=dict(type="str"),
-    disassociateClientsOnVpnFailover=dict(type="bool"),
-    vlanId=dict(type="int"),
-    defaultVlanId=dict(type="int"),
-    apTagsAndVlanIds=dict(type="list"),
-    walledGardenEnabled=dict(type="bool"),
-    walledGardenRanges=dict(type="list"),
-    gre=dict(type="dict"),
-    radiusOverride=dict(type="bool"),
+    radiusFallbackEnabled=dict(type="bool"),
     radiusGuestVlanEnabled=dict(type="bool"),
     radiusGuestVlanId=dict(type="int"),
-    minBitrate=dict(type="float"),
-    bandSelection=dict(type="str"),
-    perClientBandwidthLimitUp=dict(type="int"),
-    perClientBandwidthLimitDown=dict(type="int"),
-    perSsidBandwidthLimitUp=dict(type="int"),
-    perSsidBandwidthLimitDown=dict(type="int"),
-    lanIsolationEnabled=dict(type="bool"),
-    visible=dict(type="bool"),
-    availableOnAllAps=dict(type="bool"),
-    availabilityTags=dict(type="list"),
-    mandatoryDhcpEnabled=dict(type="bool"),
-    adultContentFilteringEnabled=dict(type="bool"),
-    dnsRewrite=dict(type="dict"),
+    radiusLoadBalancingPolicy=dict(type="str"),
+    radiusOverride=dict(type="bool"),
+    radiusProxyEnabled=dict(type="bool"),
+    radiusServerAttemptsLimit=dict(type="int"),
+    radiusServerTimeout=dict(type="int"),
+    radiusServers=dict(type="list"),
+    radiusTestingEnabled=dict(type="bool"),
+    secondaryConcentratorNetworkId=dict(type="str"),
     speedBurst=dict(type="dict"),
+    splashGuestSponsorDomains=dict(type="list"),
+    splashPage=dict(type="str"),
+    useVlanTagging=dict(type="bool"),
+    visible=dict(type="bool"),
+    vlanId=dict(type="int"),
+    walledGardenEnabled=dict(type="bool"),
+    walledGardenRanges=dict(type="list"),
+    wpaEncryptionMode=dict(type="str"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -106,64 +107,65 @@ class NetworksWirelessSsids(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            enabled=params.get("enabled"),
-            authMode=params.get("authMode"),
-            enterpriseAdminAccess=params.get("enterpriseAdminAccess"),
-            encryptionMode=params.get("encryptionMode"),
-            psk=params.get("psk"),
-            wpaEncryptionMode=params.get("wpaEncryptionMode"),
-            dot11w=params.get("dot11w"),
-            dot11r=params.get("dot11r"),
-            splashPage=params.get("splashPage"),
-            splashGuestSponsorDomains=params.get("splashGuestSponsorDomains"),
-            oauth=params.get("oauth"),
-            localRadius=params.get("localRadius"),
-            ldap=params.get("ldap"),
             activeDirectory=params.get("activeDirectory"),
-            radiusServers=params.get("radiusServers"),
-            radiusProxyEnabled=params.get("radiusProxyEnabled"),
-            radiusTestingEnabled=params.get("radiusTestingEnabled"),
-            radiusCalledStationId=params.get("radiusCalledStationId"),
+            adultContentFilteringEnabled=params.get("adultContentFilteringEnabled"),
+            apTagsAndVlanIds=params.get("apTagsAndVlanIds"),
+            authMode=params.get("authMode"),
+            availabilityTags=params.get("availabilityTags"),
+            availableOnAllAps=params.get("availableOnAllAps"),
+            bandSelection=params.get("bandSelection"),
+            concentratorNetworkId=params.get("concentratorNetworkId"),
+            defaultVlanId=params.get("defaultVlanId"),
+            disassociateClientsOnVpnFailover=params.get("disassociateClientsOnVpnFailover"),
+            dnsRewrite=params.get("dnsRewrite"),
+            dot11r=params.get("dot11r"),
+            dot11w=params.get("dot11w"),
+            enabled=params.get("enabled"),
+            encryptionMode=params.get("encryptionMode"),
+            enterpriseAdminAccess=params.get("enterpriseAdminAccess"),
+            gre=params.get("gre"),
+            ipAssignmentMode=params.get("ipAssignmentMode"),
+            lanIsolationEnabled=params.get("lanIsolationEnabled"),
+            ldap=params.get("ldap"),
+            localRadius=params.get("localRadius"),
+            mandatoryDhcpEnabled=params.get("mandatoryDhcpEnabled"),
+            minBitrate=params.get("minBitrate"),
+            name=params.get("name"),
+            namedVlans=params.get("namedVlans"),
+            oauth=params.get("oauth"),
+            perClientBandwidthLimitDown=params.get("perClientBandwidthLimitDown"),
+            perClientBandwidthLimitUp=params.get("perClientBandwidthLimitUp"),
+            perSsidBandwidthLimitDown=params.get("perSsidBandwidthLimitDown"),
+            perSsidBandwidthLimitUp=params.get("perSsidBandwidthLimitUp"),
+            psk=params.get("psk"),
+            radiusAccountingEnabled=params.get("radiusAccountingEnabled"),
+            radiusAccountingInterimInterval=params.get("radiusAccountingInterimInterval"),
+            radiusAccountingServers=params.get("radiusAccountingServers"),
+            radiusAttributeForGroupPolicies=params.get("radiusAttributeForGroupPolicies"),
             radiusAuthenticationNasId=params.get("radiusAuthenticationNasId"),
-            radiusServerTimeout=params.get("radiusServerTimeout"),
-            radiusServerAttemptsLimit=params.get("radiusServerAttemptsLimit"),
-            radiusFallbackEnabled=params.get("radiusFallbackEnabled"),
+            radiusCalledStationId=params.get("radiusCalledStationId"),
             radiusCoaEnabled=params.get("radiusCoaEnabled"),
             radiusFailoverPolicy=params.get("radiusFailoverPolicy"),
-            radiusLoadBalancingPolicy=params.get("radiusLoadBalancingPolicy"),
-            radiusAccountingEnabled=params.get("radiusAccountingEnabled"),
-            radiusAccountingServers=params.get("radiusAccountingServers"),
-            radiusAccountingInterimInterval=params.get("radiusAccountingInterimInterval"),
-            radiusAttributeForGroupPolicies=params.get("radiusAttributeForGroupPolicies"),
-            ipAssignmentMode=params.get("ipAssignmentMode"),
-            useVlanTagging=params.get("useVlanTagging"),
-            concentratorNetworkId=params.get("concentratorNetworkId"),
-            secondaryConcentratorNetworkId=params.get("secondaryConcentratorNetworkId"),
-            disassociateClientsOnVpnFailover=params.get("disassociateClientsOnVpnFailover"),
-            vlanId=params.get("vlanId"),
-            defaultVlanId=params.get("defaultVlanId"),
-            apTagsAndVlanIds=params.get("apTagsAndVlanIds"),
-            walledGardenEnabled=params.get("walledGardenEnabled"),
-            walledGardenRanges=params.get("walledGardenRanges"),
-            gre=params.get("gre"),
-            radiusOverride=params.get("radiusOverride"),
+            radiusFallbackEnabled=params.get("radiusFallbackEnabled"),
             radiusGuestVlanEnabled=params.get("radiusGuestVlanEnabled"),
             radiusGuestVlanId=params.get("radiusGuestVlanId"),
-            minBitrate=params.get("minBitrate"),
-            bandSelection=params.get("bandSelection"),
-            perClientBandwidthLimitUp=params.get("perClientBandwidthLimitUp"),
-            perClientBandwidthLimitDown=params.get("perClientBandwidthLimitDown"),
-            perSsidBandwidthLimitUp=params.get("perSsidBandwidthLimitUp"),
-            perSsidBandwidthLimitDown=params.get("perSsidBandwidthLimitDown"),
-            lanIsolationEnabled=params.get("lanIsolationEnabled"),
-            visible=params.get("visible"),
-            availableOnAllAps=params.get("availableOnAllAps"),
-            availabilityTags=params.get("availabilityTags"),
-            mandatoryDhcpEnabled=params.get("mandatoryDhcpEnabled"),
-            adultContentFilteringEnabled=params.get("adultContentFilteringEnabled"),
-            dnsRewrite=params.get("dnsRewrite"),
+            radiusLoadBalancingPolicy=params.get("radiusLoadBalancingPolicy"),
+            radiusOverride=params.get("radiusOverride"),
+            radiusProxyEnabled=params.get("radiusProxyEnabled"),
+            radiusServerAttemptsLimit=params.get("radiusServerAttemptsLimit"),
+            radiusServerTimeout=params.get("radiusServerTimeout"),
+            radiusServers=params.get("radiusServers"),
+            radiusTestingEnabled=params.get("radiusTestingEnabled"),
+            secondaryConcentratorNetworkId=params.get("secondaryConcentratorNetworkId"),
             speedBurst=params.get("speedBurst"),
+            splashGuestSponsorDomains=params.get("splashGuestSponsorDomains"),
+            splashPage=params.get("splashPage"),
+            useVlanTagging=params.get("useVlanTagging"),
+            visible=params.get("visible"),
+            vlanId=params.get("vlanId"),
+            walledGardenEnabled=params.get("walledGardenEnabled"),
+            walledGardenRanges=params.get("walledGardenRanges"),
+            wpaEncryptionMode=params.get("wpaEncryptionMode"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
@@ -186,164 +188,167 @@ class NetworksWirelessSsids(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('authMode') is not None or self.new_object.get('auth_mode') is not None:
-            new_object_params['authMode'] = self.new_object.get('authMode') or \
-                self.new_object.get('auth_mode')
-        if self.new_object.get('enterpriseAdminAccess') is not None or self.new_object.get('enterprise_admin_access') is not None:
-            new_object_params['enterpriseAdminAccess'] = self.new_object.get('enterpriseAdminAccess') or \
-                self.new_object.get('enterprise_admin_access')
-        if self.new_object.get('encryptionMode') is not None or self.new_object.get('encryption_mode') is not None:
-            new_object_params['encryptionMode'] = self.new_object.get('encryptionMode') or \
-                self.new_object.get('encryption_mode')
-        if self.new_object.get('psk') is not None or self.new_object.get('psk') is not None:
-            new_object_params['psk'] = self.new_object.get('psk') or \
-                self.new_object.get('psk')
-        if self.new_object.get('wpaEncryptionMode') is not None or self.new_object.get('wpa_encryption_mode') is not None:
-            new_object_params['wpaEncryptionMode'] = self.new_object.get('wpaEncryptionMode') or \
-                self.new_object.get('wpa_encryption_mode')
-        if self.new_object.get('dot11w') is not None or self.new_object.get('dot11w') is not None:
-            new_object_params['dot11w'] = self.new_object.get('dot11w') or \
-                self.new_object.get('dot11w')
-        if self.new_object.get('dot11r') is not None or self.new_object.get('dot11r') is not None:
-            new_object_params['dot11r'] = self.new_object.get('dot11r') or \
-                self.new_object.get('dot11r')
-        if self.new_object.get('splashPage') is not None or self.new_object.get('splash_page') is not None:
-            new_object_params['splashPage'] = self.new_object.get('splashPage') or \
-                self.new_object.get('splash_page')
-        if self.new_object.get('splashGuestSponsorDomains') is not None or self.new_object.get('splash_guest_sponsor_domains') is not None:
-            new_object_params['splashGuestSponsorDomains'] = self.new_object.get('splashGuestSponsorDomains') or \
-                self.new_object.get('splash_guest_sponsor_domains')
-        if self.new_object.get('oauth') is not None or self.new_object.get('oauth') is not None:
-            new_object_params['oauth'] = self.new_object.get('oauth') or \
-                self.new_object.get('oauth')
-        if self.new_object.get('localRadius') is not None or self.new_object.get('local_radius') is not None:
-            new_object_params['localRadius'] = self.new_object.get('localRadius') or \
-                self.new_object.get('local_radius')
-        if self.new_object.get('ldap') is not None or self.new_object.get('ldap') is not None:
-            new_object_params['ldap'] = self.new_object.get('ldap') or \
-                self.new_object.get('ldap')
         if self.new_object.get('activeDirectory') is not None or self.new_object.get('active_directory') is not None:
             new_object_params['activeDirectory'] = self.new_object.get('activeDirectory') or \
                 self.new_object.get('active_directory')
-        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
-            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
-                self.new_object.get('radius_servers')
-        if self.new_object.get('radiusProxyEnabled') is not None or self.new_object.get('radius_proxy_enabled') is not None:
-            new_object_params['radiusProxyEnabled'] = self.new_object.get('radiusProxyEnabled')
-        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
-        if self.new_object.get('radiusCalledStationId') is not None or self.new_object.get('radius_called_station_id') is not None:
-            new_object_params['radiusCalledStationId'] = self.new_object.get('radiusCalledStationId') or \
-                self.new_object.get('radius_called_station_id')
+        if self.new_object.get('adultContentFilteringEnabled') is not None or self.new_object.get('adult_content_filtering_enabled') is not None:
+            new_object_params['adultContentFilteringEnabled'] = self.new_object.get('adultContentFilteringEnabled')
+        if self.new_object.get('apTagsAndVlanIds') is not None or self.new_object.get('ap_tags_and_vlan_ids') is not None:
+            new_object_params['apTagsAndVlanIds'] = self.new_object.get('apTagsAndVlanIds') or \
+                self.new_object.get('ap_tags_and_vlan_ids')
+        if self.new_object.get('authMode') is not None or self.new_object.get('auth_mode') is not None:
+            new_object_params['authMode'] = self.new_object.get('authMode') or \
+                self.new_object.get('auth_mode')
+        if self.new_object.get('availabilityTags') is not None or self.new_object.get('availability_tags') is not None:
+            new_object_params['availabilityTags'] = self.new_object.get('availabilityTags') or \
+                self.new_object.get('availability_tags')
+        if self.new_object.get('availableOnAllAps') is not None or self.new_object.get('available_on_all_aps') is not None:
+            new_object_params['availableOnAllAps'] = self.new_object.get('availableOnAllAps')
+        if self.new_object.get('bandSelection') is not None or self.new_object.get('band_selection') is not None:
+            new_object_params['bandSelection'] = self.new_object.get('bandSelection') or \
+                self.new_object.get('band_selection')
+        if self.new_object.get('concentratorNetworkId') is not None or self.new_object.get('concentrator_network_id') is not None:
+            new_object_params['concentratorNetworkId'] = self.new_object.get('concentratorNetworkId') or \
+                self.new_object.get('concentrator_network_id')
+        if self.new_object.get('defaultVlanId') is not None or self.new_object.get('default_vlan_id') is not None:
+            new_object_params['defaultVlanId'] = self.new_object.get('defaultVlanId') or \
+                self.new_object.get('default_vlan_id')
+        if self.new_object.get('disassociateClientsOnVpnFailover') is not None or self.new_object.get('disassociate_clients_on_vpn_failover') is not None:
+            new_object_params['disassociateClientsOnVpnFailover'] = self.new_object.get('disassociateClientsOnVpnFailover')
+        if self.new_object.get('dnsRewrite') is not None or self.new_object.get('dns_rewrite') is not None:
+            new_object_params['dnsRewrite'] = self.new_object.get('dnsRewrite') or \
+                self.new_object.get('dns_rewrite')
+        if self.new_object.get('dot11r') is not None or self.new_object.get('dot11r') is not None:
+            new_object_params['dot11r'] = self.new_object.get('dot11r') or \
+                self.new_object.get('dot11r')
+        if self.new_object.get('dot11w') is not None or self.new_object.get('dot11w') is not None:
+            new_object_params['dot11w'] = self.new_object.get('dot11w') or \
+                self.new_object.get('dot11w')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('encryptionMode') is not None or self.new_object.get('encryption_mode') is not None:
+            new_object_params['encryptionMode'] = self.new_object.get('encryptionMode') or \
+                self.new_object.get('encryption_mode')
+        if self.new_object.get('enterpriseAdminAccess') is not None or self.new_object.get('enterprise_admin_access') is not None:
+            new_object_params['enterpriseAdminAccess'] = self.new_object.get('enterpriseAdminAccess') or \
+                self.new_object.get('enterprise_admin_access')
+        if self.new_object.get('gre') is not None or self.new_object.get('gre') is not None:
+            new_object_params['gre'] = self.new_object.get('gre') or \
+                self.new_object.get('gre')
+        if self.new_object.get('ipAssignmentMode') is not None or self.new_object.get('ip_assignment_mode') is not None:
+            new_object_params['ipAssignmentMode'] = self.new_object.get('ipAssignmentMode') or \
+                self.new_object.get('ip_assignment_mode')
+        if self.new_object.get('lanIsolationEnabled') is not None or self.new_object.get('lan_isolation_enabled') is not None:
+            new_object_params['lanIsolationEnabled'] = self.new_object.get('lanIsolationEnabled')
+        if self.new_object.get('ldap') is not None or self.new_object.get('ldap') is not None:
+            new_object_params['ldap'] = self.new_object.get('ldap') or \
+                self.new_object.get('ldap')
+        if self.new_object.get('localRadius') is not None or self.new_object.get('local_radius') is not None:
+            new_object_params['localRadius'] = self.new_object.get('localRadius') or \
+                self.new_object.get('local_radius')
+        if self.new_object.get('mandatoryDhcpEnabled') is not None or self.new_object.get('mandatory_dhcp_enabled') is not None:
+            new_object_params['mandatoryDhcpEnabled'] = self.new_object.get('mandatoryDhcpEnabled')
+        if self.new_object.get('minBitrate') is not None or self.new_object.get('min_bitrate') is not None:
+            new_object_params['minBitrate'] = self.new_object.get('minBitrate') or \
+                self.new_object.get('min_bitrate')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('namedVlans') is not None or self.new_object.get('named_vlans') is not None:
+            new_object_params['namedVlans'] = self.new_object.get('namedVlans') or \
+                self.new_object.get('named_vlans')
+        if self.new_object.get('oauth') is not None or self.new_object.get('oauth') is not None:
+            new_object_params['oauth'] = self.new_object.get('oauth') or \
+                self.new_object.get('oauth')
+        if self.new_object.get('perClientBandwidthLimitDown') is not None or self.new_object.get('per_client_bandwidth_limit_down') is not None:
+            new_object_params['perClientBandwidthLimitDown'] = self.new_object.get('perClientBandwidthLimitDown') or \
+                self.new_object.get('per_client_bandwidth_limit_down')
+        if self.new_object.get('perClientBandwidthLimitUp') is not None or self.new_object.get('per_client_bandwidth_limit_up') is not None:
+            new_object_params['perClientBandwidthLimitUp'] = self.new_object.get('perClientBandwidthLimitUp') or \
+                self.new_object.get('per_client_bandwidth_limit_up')
+        if self.new_object.get('perSsidBandwidthLimitDown') is not None or self.new_object.get('per_ssid_bandwidth_limit_down') is not None:
+            new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get('perSsidBandwidthLimitDown') or \
+                self.new_object.get('per_ssid_bandwidth_limit_down')
+        if self.new_object.get('perSsidBandwidthLimitUp') is not None or self.new_object.get('per_ssid_bandwidth_limit_up') is not None:
+            new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get('perSsidBandwidthLimitUp') or \
+                self.new_object.get('per_ssid_bandwidth_limit_up')
+        if self.new_object.get('psk') is not None or self.new_object.get('psk') is not None:
+            new_object_params['psk'] = self.new_object.get('psk') or \
+                self.new_object.get('psk')
+        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
+        if self.new_object.get('radiusAccountingInterimInterval') is not None or self.new_object.get('radius_accounting_interim_interval') is not None:
+            new_object_params['radiusAccountingInterimInterval'] = self.new_object.get('radiusAccountingInterimInterval') or \
+                self.new_object.get('radius_accounting_interim_interval')
+        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
+            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
+                self.new_object.get('radius_accounting_servers')
+        if self.new_object.get('radiusAttributeForGroupPolicies') is not None or self.new_object.get('radius_attribute_for_group_policies') is not None:
+            new_object_params['radiusAttributeForGroupPolicies'] = self.new_object.get('radiusAttributeForGroupPolicies') or \
+                self.new_object.get('radius_attribute_for_group_policies')
         if self.new_object.get('radiusAuthenticationNasId') is not None or self.new_object.get('radius_authentication_nas_id') is not None:
             new_object_params['radiusAuthenticationNasId'] = self.new_object.get('radiusAuthenticationNasId') or \
                 self.new_object.get('radius_authentication_nas_id')
-        if self.new_object.get('radiusServerTimeout') is not None or self.new_object.get('radius_server_timeout') is not None:
-            new_object_params['radiusServerTimeout'] = self.new_object.get('radiusServerTimeout') or \
-                self.new_object.get('radius_server_timeout')
-        if self.new_object.get('radiusServerAttemptsLimit') is not None or self.new_object.get('radius_server_attempts_limit') is not None:
-            new_object_params['radiusServerAttemptsLimit'] = self.new_object.get('radiusServerAttemptsLimit') or \
-                self.new_object.get('radius_server_attempts_limit')
-        if self.new_object.get('radiusFallbackEnabled') is not None or self.new_object.get('radius_fallback_enabled') is not None:
-            new_object_params['radiusFallbackEnabled'] = self.new_object.get('radiusFallbackEnabled')
+        if self.new_object.get('radiusCalledStationId') is not None or self.new_object.get('radius_called_station_id') is not None:
+            new_object_params['radiusCalledStationId'] = self.new_object.get('radiusCalledStationId') or \
+                self.new_object.get('radius_called_station_id')
         if self.new_object.get('radiusCoaEnabled') is not None or self.new_object.get('radius_coa_enabled') is not None:
             new_object_params['radiusCoaEnabled'] = self.new_object.get('radiusCoaEnabled')
         if self.new_object.get('radiusFailoverPolicy') is not None or self.new_object.get('radius_failover_policy') is not None:
             new_object_params['radiusFailoverPolicy'] = self.new_object.get('radiusFailoverPolicy') or \
                 self.new_object.get('radius_failover_policy')
-        if self.new_object.get('radiusLoadBalancingPolicy') is not None or self.new_object.get('radius_load_balancing_policy') is not None:
-            new_object_params['radiusLoadBalancingPolicy'] = self.new_object.get('radiusLoadBalancingPolicy') or \
-                self.new_object.get('radius_load_balancing_policy')
-        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
-        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
-            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
-                self.new_object.get('radius_accounting_servers')
-        if self.new_object.get('radiusAccountingInterimInterval') is not None or self.new_object.get('radius_accounting_interim_interval') is not None:
-            new_object_params['radiusAccountingInterimInterval'] = self.new_object.get('radiusAccountingInterimInterval') or \
-                self.new_object.get('radius_accounting_interim_interval')
-        if self.new_object.get('radiusAttributeForGroupPolicies') is not None or self.new_object.get('radius_attribute_for_group_policies') is not None:
-            new_object_params['radiusAttributeForGroupPolicies'] = self.new_object.get('radiusAttributeForGroupPolicies') or \
-                self.new_object.get('radius_attribute_for_group_policies')
-        if self.new_object.get('ipAssignmentMode') is not None or self.new_object.get('ip_assignment_mode') is not None:
-            new_object_params['ipAssignmentMode'] = self.new_object.get('ipAssignmentMode') or \
-                self.new_object.get('ip_assignment_mode')
-        if self.new_object.get('useVlanTagging') is not None or self.new_object.get('use_vlan_tagging') is not None:
-            new_object_params['useVlanTagging'] = self.new_object.get('useVlanTagging')
-        if self.new_object.get('concentratorNetworkId') is not None or self.new_object.get('concentrator_network_id') is not None:
-            new_object_params['concentratorNetworkId'] = self.new_object.get('concentratorNetworkId') or \
-                self.new_object.get('concentrator_network_id')
-        if self.new_object.get('secondaryConcentratorNetworkId') is not None or self.new_object.get('secondary_concentrator_network_id') is not None:
-            new_object_params['secondaryConcentratorNetworkId'] = self.new_object.get('secondaryConcentratorNetworkId') or \
-                self.new_object.get('secondary_concentrator_network_id')
-        if self.new_object.get('disassociateClientsOnVpnFailover') is not None or self.new_object.get('disassociate_clients_on_vpn_failover') is not None:
-            new_object_params['disassociateClientsOnVpnFailover'] = self.new_object.get('disassociateClientsOnVpnFailover')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
-        if self.new_object.get('defaultVlanId') is not None or self.new_object.get('default_vlan_id') is not None:
-            new_object_params['defaultVlanId'] = self.new_object.get('defaultVlanId') or \
-                self.new_object.get('default_vlan_id')
-        if self.new_object.get('apTagsAndVlanIds') is not None or self.new_object.get('ap_tags_and_vlan_ids') is not None:
-            new_object_params['apTagsAndVlanIds'] = self.new_object.get('apTagsAndVlanIds') or \
-                self.new_object.get('ap_tags_and_vlan_ids')
-        if self.new_object.get('walledGardenEnabled') is not None or self.new_object.get('walled_garden_enabled') is not None:
-            new_object_params['walledGardenEnabled'] = self.new_object.get('walledGardenEnabled')
-        if self.new_object.get('walledGardenRanges') is not None or self.new_object.get('walled_garden_ranges') is not None:
-            new_object_params['walledGardenRanges'] = self.new_object.get('walledGardenRanges') or \
-                self.new_object.get('walled_garden_ranges')
-        if self.new_object.get('gre') is not None or self.new_object.get('gre') is not None:
-            new_object_params['gre'] = self.new_object.get('gre') or \
-                self.new_object.get('gre')
-        if self.new_object.get('radiusOverride') is not None or self.new_object.get('radius_override') is not None:
-            new_object_params['radiusOverride'] = self.new_object.get('radiusOverride')
+        if self.new_object.get('radiusFallbackEnabled') is not None or self.new_object.get('radius_fallback_enabled') is not None:
+            new_object_params['radiusFallbackEnabled'] = self.new_object.get('radiusFallbackEnabled')
         if self.new_object.get('radiusGuestVlanEnabled') is not None or self.new_object.get('radius_guest_vlan_enabled') is not None:
             new_object_params['radiusGuestVlanEnabled'] = self.new_object.get('radiusGuestVlanEnabled')
         if self.new_object.get('radiusGuestVlanId') is not None or self.new_object.get('radius_guest_vlan_id') is not None:
             new_object_params['radiusGuestVlanId'] = self.new_object.get('radiusGuestVlanId') or \
                 self.new_object.get('radius_guest_vlan_id')
-        if self.new_object.get('minBitrate') is not None or self.new_object.get('min_bitrate') is not None:
-            new_object_params['minBitrate'] = self.new_object.get('minBitrate') or \
-                self.new_object.get('min_bitrate')
-        if self.new_object.get('bandSelection') is not None or self.new_object.get('band_selection') is not None:
-            new_object_params['bandSelection'] = self.new_object.get('bandSelection') or \
-                self.new_object.get('band_selection')
-        if self.new_object.get('perClientBandwidthLimitUp') is not None or self.new_object.get('per_client_bandwidth_limit_up') is not None:
-            new_object_params['perClientBandwidthLimitUp'] = self.new_object.get('perClientBandwidthLimitUp') or \
-                self.new_object.get('per_client_bandwidth_limit_up')
-        if self.new_object.get('perClientBandwidthLimitDown') is not None or self.new_object.get('per_client_bandwidth_limit_down') is not None:
-            new_object_params['perClientBandwidthLimitDown'] = self.new_object.get('perClientBandwidthLimitDown') or \
-                self.new_object.get('per_client_bandwidth_limit_down')
-        if self.new_object.get('perSsidBandwidthLimitUp') is not None or self.new_object.get('per_ssid_bandwidth_limit_up') is not None:
-            new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get('perSsidBandwidthLimitUp') or \
-                self.new_object.get('per_ssid_bandwidth_limit_up')
-        if self.new_object.get('perSsidBandwidthLimitDown') is not None or self.new_object.get('per_ssid_bandwidth_limit_down') is not None:
-            new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get('perSsidBandwidthLimitDown') or \
-                self.new_object.get('per_ssid_bandwidth_limit_down')
-        if self.new_object.get('lanIsolationEnabled') is not None or self.new_object.get('lan_isolation_enabled') is not None:
-            new_object_params['lanIsolationEnabled'] = self.new_object.get('lanIsolationEnabled')
-        if self.new_object.get('visible') is not None or self.new_object.get('visible') is not None:
-            new_object_params['visible'] = self.new_object.get('visible')
-        if self.new_object.get('availableOnAllAps') is not None or self.new_object.get('available_on_all_aps') is not None:
-            new_object_params['availableOnAllAps'] = self.new_object.get('availableOnAllAps')
-        if self.new_object.get('availabilityTags') is not None or self.new_object.get('availability_tags') is not None:
-            new_object_params['availabilityTags'] = self.new_object.get('availabilityTags') or \
-                self.new_object.get('availability_tags')
-        if self.new_object.get('mandatoryDhcpEnabled') is not None or self.new_object.get('mandatory_dhcp_enabled') is not None:
-            new_object_params['mandatoryDhcpEnabled'] = self.new_object.get('mandatoryDhcpEnabled')
-        if self.new_object.get('adultContentFilteringEnabled') is not None or self.new_object.get('adult_content_filtering_enabled') is not None:
-            new_object_params['adultContentFilteringEnabled'] = self.new_object.get('adultContentFilteringEnabled')
-        if self.new_object.get('dnsRewrite') is not None or self.new_object.get('dns_rewrite') is not None:
-            new_object_params['dnsRewrite'] = self.new_object.get('dnsRewrite') or \
-                self.new_object.get('dns_rewrite')
+        if self.new_object.get('radiusLoadBalancingPolicy') is not None or self.new_object.get('radius_load_balancing_policy') is not None:
+            new_object_params['radiusLoadBalancingPolicy'] = self.new_object.get('radiusLoadBalancingPolicy') or \
+                self.new_object.get('radius_load_balancing_policy')
+        if self.new_object.get('radiusOverride') is not None or self.new_object.get('radius_override') is not None:
+            new_object_params['radiusOverride'] = self.new_object.get('radiusOverride')
+        if self.new_object.get('radiusProxyEnabled') is not None or self.new_object.get('radius_proxy_enabled') is not None:
+            new_object_params['radiusProxyEnabled'] = self.new_object.get('radiusProxyEnabled')
+        if self.new_object.get('radiusServerAttemptsLimit') is not None or self.new_object.get('radius_server_attempts_limit') is not None:
+            new_object_params['radiusServerAttemptsLimit'] = self.new_object.get('radiusServerAttemptsLimit') or \
+                self.new_object.get('radius_server_attempts_limit')
+        if self.new_object.get('radiusServerTimeout') is not None or self.new_object.get('radius_server_timeout') is not None:
+            new_object_params['radiusServerTimeout'] = self.new_object.get('radiusServerTimeout') or \
+                self.new_object.get('radius_server_timeout')
+        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
+            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
+                self.new_object.get('radius_servers')
+        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
+            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
+        if self.new_object.get('secondaryConcentratorNetworkId') is not None or self.new_object.get('secondary_concentrator_network_id') is not None:
+            new_object_params['secondaryConcentratorNetworkId'] = self.new_object.get('secondaryConcentratorNetworkId') or \
+                self.new_object.get('secondary_concentrator_network_id')
         if self.new_object.get('speedBurst') is not None or self.new_object.get('speed_burst') is not None:
             new_object_params['speedBurst'] = self.new_object.get('speedBurst') or \
                 self.new_object.get('speed_burst')
+        if self.new_object.get('splashGuestSponsorDomains') is not None or self.new_object.get('splash_guest_sponsor_domains') is not None:
+            new_object_params['splashGuestSponsorDomains'] = self.new_object.get('splashGuestSponsorDomains') or \
+                self.new_object.get('splash_guest_sponsor_domains')
+        if self.new_object.get('splashPage') is not None or self.new_object.get('splash_page') is not None:
+            new_object_params['splashPage'] = self.new_object.get('splashPage') or \
+                self.new_object.get('splash_page')
+        if self.new_object.get('useVlanTagging') is not None or self.new_object.get('use_vlan_tagging') is not None:
+            new_object_params['useVlanTagging'] = self.new_object.get('useVlanTagging')
+        if self.new_object.get('visible') is not None or self.new_object.get('visible') is not None:
+            new_object_params['visible'] = self.new_object.get('visible')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
+        if self.new_object.get('walledGardenEnabled') is not None or self.new_object.get('walled_garden_enabled') is not None:
+            new_object_params['walledGardenEnabled'] = self.new_object.get('walledGardenEnabled')
+        if self.new_object.get('walledGardenRanges') is not None or self.new_object.get('walled_garden_ranges') is not None:
+            new_object_params['walledGardenRanges'] = self.new_object.get('walledGardenRanges') or \
+                self.new_object.get('walled_garden_ranges')
+        if self.new_object.get('wpaEncryptionMode') is not None or self.new_object.get('wpa_encryption_mode') is not None:
+            new_object_params['wpaEncryptionMode'] = self.new_object.get('wpaEncryptionMode') or \
+                self.new_object.get('wpa_encryption_mode')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -421,64 +426,65 @@ class NetworksWirelessSsids(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("enabled", "enabled"),
-            ("authMode", "authMode"),
-            ("enterpriseAdminAccess", "enterpriseAdminAccess"),
-            ("encryptionMode", "encryptionMode"),
-            ("psk", "psk"),
-            ("wpaEncryptionMode", "wpaEncryptionMode"),
-            ("dot11w", "dot11w"),
-            ("dot11r", "dot11r"),
-            ("splashPage", "splashPage"),
-            ("splashGuestSponsorDomains", "splashGuestSponsorDomains"),
-            ("oauth", "oauth"),
-            ("localRadius", "localRadius"),
-            ("ldap", "ldap"),
             ("activeDirectory", "activeDirectory"),
-            ("radiusServers", "radiusServers"),
-            ("radiusProxyEnabled", "radiusProxyEnabled"),
-            ("radiusTestingEnabled", "radiusTestingEnabled"),
-            ("radiusCalledStationId", "radiusCalledStationId"),
+            ("adultContentFilteringEnabled", "adultContentFilteringEnabled"),
+            ("apTagsAndVlanIds", "apTagsAndVlanIds"),
+            ("authMode", "authMode"),
+            ("availabilityTags", "availabilityTags"),
+            ("availableOnAllAps", "availableOnAllAps"),
+            ("bandSelection", "bandSelection"),
+            ("concentratorNetworkId", "concentratorNetworkId"),
+            ("defaultVlanId", "defaultVlanId"),
+            ("disassociateClientsOnVpnFailover", "disassociateClientsOnVpnFailover"),
+            ("dnsRewrite", "dnsRewrite"),
+            ("dot11r", "dot11r"),
+            ("dot11w", "dot11w"),
+            ("enabled", "enabled"),
+            ("encryptionMode", "encryptionMode"),
+            ("enterpriseAdminAccess", "enterpriseAdminAccess"),
+            ("gre", "gre"),
+            ("ipAssignmentMode", "ipAssignmentMode"),
+            ("lanIsolationEnabled", "lanIsolationEnabled"),
+            ("ldap", "ldap"),
+            ("localRadius", "localRadius"),
+            ("mandatoryDhcpEnabled", "mandatoryDhcpEnabled"),
+            ("minBitrate", "minBitrate"),
+            ("name", "name"),
+            ("namedVlans", "namedVlans"),
+            ("oauth", "oauth"),
+            ("perClientBandwidthLimitDown", "perClientBandwidthLimitDown"),
+            ("perClientBandwidthLimitUp", "perClientBandwidthLimitUp"),
+            ("perSsidBandwidthLimitDown", "perSsidBandwidthLimitDown"),
+            ("perSsidBandwidthLimitUp", "perSsidBandwidthLimitUp"),
+            ("psk", "psk"),
+            ("radiusAccountingEnabled", "radiusAccountingEnabled"),
+            ("radiusAccountingInterimInterval", "radiusAccountingInterimInterval"),
+            ("radiusAccountingServers", "radiusAccountingServers"),
+            ("radiusAttributeForGroupPolicies", "radiusAttributeForGroupPolicies"),
             ("radiusAuthenticationNasId", "radiusAuthenticationNasId"),
-            ("radiusServerTimeout", "radiusServerTimeout"),
-            ("radiusServerAttemptsLimit", "radiusServerAttemptsLimit"),
-            ("radiusFallbackEnabled", "radiusFallbackEnabled"),
+            ("radiusCalledStationId", "radiusCalledStationId"),
             ("radiusCoaEnabled", "radiusCoaEnabled"),
             ("radiusFailoverPolicy", "radiusFailoverPolicy"),
-            ("radiusLoadBalancingPolicy", "radiusLoadBalancingPolicy"),
-            ("radiusAccountingEnabled", "radiusAccountingEnabled"),
-            ("radiusAccountingServers", "radiusAccountingServers"),
-            ("radiusAccountingInterimInterval", "radiusAccountingInterimInterval"),
-            ("radiusAttributeForGroupPolicies", "radiusAttributeForGroupPolicies"),
-            ("ipAssignmentMode", "ipAssignmentMode"),
-            ("useVlanTagging", "useVlanTagging"),
-            ("concentratorNetworkId", "concentratorNetworkId"),
-            ("secondaryConcentratorNetworkId", "secondaryConcentratorNetworkId"),
-            ("disassociateClientsOnVpnFailover", "disassociateClientsOnVpnFailover"),
-            ("vlanId", "vlanId"),
-            ("defaultVlanId", "defaultVlanId"),
-            ("apTagsAndVlanIds", "apTagsAndVlanIds"),
-            ("walledGardenEnabled", "walledGardenEnabled"),
-            ("walledGardenRanges", "walledGardenRanges"),
-            ("gre", "gre"),
-            ("radiusOverride", "radiusOverride"),
+            ("radiusFallbackEnabled", "radiusFallbackEnabled"),
             ("radiusGuestVlanEnabled", "radiusGuestVlanEnabled"),
             ("radiusGuestVlanId", "radiusGuestVlanId"),
-            ("minBitrate", "minBitrate"),
-            ("bandSelection", "bandSelection"),
-            ("perClientBandwidthLimitUp", "perClientBandwidthLimitUp"),
-            ("perClientBandwidthLimitDown", "perClientBandwidthLimitDown"),
-            ("perSsidBandwidthLimitUp", "perSsidBandwidthLimitUp"),
-            ("perSsidBandwidthLimitDown", "perSsidBandwidthLimitDown"),
-            ("lanIsolationEnabled", "lanIsolationEnabled"),
-            ("visible", "visible"),
-            ("availableOnAllAps", "availableOnAllAps"),
-            ("availabilityTags", "availabilityTags"),
-            ("mandatoryDhcpEnabled", "mandatoryDhcpEnabled"),
-            ("adultContentFilteringEnabled", "adultContentFilteringEnabled"),
-            ("dnsRewrite", "dnsRewrite"),
+            ("radiusLoadBalancingPolicy", "radiusLoadBalancingPolicy"),
+            ("radiusOverride", "radiusOverride"),
+            ("radiusProxyEnabled", "radiusProxyEnabled"),
+            ("radiusServerAttemptsLimit", "radiusServerAttemptsLimit"),
+            ("radiusServerTimeout", "radiusServerTimeout"),
+            ("radiusServers", "radiusServers"),
+            ("radiusTestingEnabled", "radiusTestingEnabled"),
+            ("secondaryConcentratorNetworkId", "secondaryConcentratorNetworkId"),
             ("speedBurst", "speedBurst"),
+            ("splashGuestSponsorDomains", "splashGuestSponsorDomains"),
+            ("splashPage", "splashPage"),
+            ("useVlanTagging", "useVlanTagging"),
+            ("visible", "visible"),
+            ("vlanId", "vlanId"),
+            ("walledGardenEnabled", "walledGardenEnabled"),
+            ("walledGardenRanges", "walledGardenRanges"),
+            ("wpaEncryptionMode", "wpaEncryptionMode"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]

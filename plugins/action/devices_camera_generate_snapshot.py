@@ -25,8 +25,8 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    timestamp=dict(type="str"),
     fullframe=dict(type="bool"),
+    timestamp=dict(type="str"),
     serial=dict(type="str"),
 ))
 
@@ -66,8 +66,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            timestamp=params.get("timestamp"),
             fullframe=params.get("fullframe"),
+            timestamp=params.get("timestamp"),
             serial=params.get("serial"),
         )
         return new_object

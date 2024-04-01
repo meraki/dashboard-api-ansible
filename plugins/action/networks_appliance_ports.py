@@ -32,12 +32,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    enabled=dict(type="bool"),
+    accessPolicy=dict(type="str"),
+    allowedVlans=dict(type="str"),
     dropUntaggedTraffic=dict(type="bool"),
+    enabled=dict(type="bool"),
     type=dict(type="str"),
     vlan=dict(type="int"),
-    allowedVlans=dict(type="str"),
-    accessPolicy=dict(type="str"),
     networkId=dict(type="str"),
     portId=dict(type="str"),
 ))
@@ -54,12 +54,12 @@ class NetworksAppliancePorts(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            enabled=params.get("enabled"),
+            accessPolicy=params.get("accessPolicy"),
+            allowedVlans=params.get("allowedVlans"),
             dropUntaggedTraffic=params.get("dropUntaggedTraffic"),
+            enabled=params.get("enabled"),
             type=params.get("type"),
             vlan=params.get("vlan"),
-            allowedVlans=params.get("allowedVlans"),
-            accessPolicy=params.get("accessPolicy"),
             network_id=params.get("networkId"),
             port_id=params.get("portId"),
         )
@@ -83,22 +83,22 @@ class NetworksAppliancePorts(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('accessPolicy') is not None or self.new_object.get('access_policy') is not None:
+            new_object_params['accessPolicy'] = self.new_object.get('accessPolicy') or \
+                self.new_object.get('access_policy')
+        if self.new_object.get('allowedVlans') is not None or self.new_object.get('allowed_vlans') is not None:
+            new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
+                self.new_object.get('allowed_vlans')
         if self.new_object.get('dropUntaggedTraffic') is not None or self.new_object.get('drop_untagged_traffic') is not None:
             new_object_params['dropUntaggedTraffic'] = self.new_object.get('dropUntaggedTraffic')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
                 self.new_object.get('type')
         if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('allowedVlans') is not None or self.new_object.get('allowed_vlans') is not None:
-            new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
-                self.new_object.get('allowed_vlans')
-        if self.new_object.get('accessPolicy') is not None or self.new_object.get('access_policy') is not None:
-            new_object_params['accessPolicy'] = self.new_object.get('accessPolicy') or \
-                self.new_object.get('access_policy')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -176,12 +176,12 @@ class NetworksAppliancePorts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"),
+            ("accessPolicy", "accessPolicy"),
+            ("allowedVlans", "allowedVlans"),
             ("dropUntaggedTraffic", "dropUntaggedTraffic"),
+            ("enabled", "enabled"),
             ("type", "type"),
             ("vlan", "vlan"),
-            ("allowedVlans", "allowedVlans"),
-            ("accessPolicy", "accessPolicy"),
             ("networkId", "networkId"),
             ("portId", "portId"),
         ]

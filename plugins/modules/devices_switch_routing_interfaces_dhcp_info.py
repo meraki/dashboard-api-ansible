@@ -31,12 +31,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSwitchRoutingInterfaceDhcp
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaceDhcp
   description: Complete reference of the getDeviceSwitchRoutingInterfaceDhcp API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface-dhcp
 notes:
   - SDK Method used are
-    devices.Devices.get_device_switch_routing_interface_dhcp,
+    switch.Switch.get_device_switch_routing_interface_dhcp,
 
   - Paths used are
     get /devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp,
@@ -75,6 +75,40 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "bootFileName": "string",
+      "bootNextServer": "string",
+      "bootOptionsEnabled": true,
+      "dhcpLeaseTime": "string",
+      "dhcpMode": "string",
+      "dhcpOptions": [
+        {
+          "code": "string",
+          "type": "string",
+          "value": "string"
+        }
+      ],
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "dnsNameserversOption": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

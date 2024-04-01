@@ -32,14 +32,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    enabled=dict(type="bool"),
-    operator=dict(type="dict"),
-    venue=dict(type="dict"),
-    networkAccessType=dict(type="str"),
     domains=dict(type="list"),
-    roamConsortOis=dict(type="list"),
+    enabled=dict(type="bool"),
     mccMncs=dict(type="list"),
     naiRealms=dict(type="list"),
+    networkAccessType=dict(type="str"),
+    operator=dict(type="dict"),
+    roamConsortOis=dict(type="list"),
+    venue=dict(type="dict"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -56,14 +56,14 @@ class NetworksWirelessSsidsHotspot20(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            enabled=params.get("enabled"),
-            operator=params.get("operator"),
-            venue=params.get("venue"),
-            networkAccessType=params.get("networkAccessType"),
             domains=params.get("domains"),
-            roamConsortOis=params.get("roamConsortOis"),
+            enabled=params.get("enabled"),
             mccMncs=params.get("mccMncs"),
             naiRealms=params.get("naiRealms"),
+            networkAccessType=params.get("networkAccessType"),
+            operator=params.get("operator"),
+            roamConsortOis=params.get("roamConsortOis"),
+            venue=params.get("venue"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
@@ -79,29 +79,29 @@ class NetworksWirelessSsidsHotspot20(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('operator') is not None or self.new_object.get('operator') is not None:
-            new_object_params['operator'] = self.new_object.get('operator') or \
-                self.new_object.get('operator')
-        if self.new_object.get('venue') is not None or self.new_object.get('venue') is not None:
-            new_object_params['venue'] = self.new_object.get('venue') or \
-                self.new_object.get('venue')
-        if self.new_object.get('networkAccessType') is not None or self.new_object.get('network_access_type') is not None:
-            new_object_params['networkAccessType'] = self.new_object.get('networkAccessType') or \
-                self.new_object.get('network_access_type')
         if self.new_object.get('domains') is not None or self.new_object.get('domains') is not None:
             new_object_params['domains'] = self.new_object.get('domains') or \
                 self.new_object.get('domains')
-        if self.new_object.get('roamConsortOis') is not None or self.new_object.get('roam_consort_ois') is not None:
-            new_object_params['roamConsortOis'] = self.new_object.get('roamConsortOis') or \
-                self.new_object.get('roam_consort_ois')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('mccMncs') is not None or self.new_object.get('mcc_mncs') is not None:
             new_object_params['mccMncs'] = self.new_object.get('mccMncs') or \
                 self.new_object.get('mcc_mncs')
         if self.new_object.get('naiRealms') is not None or self.new_object.get('nai_realms') is not None:
             new_object_params['naiRealms'] = self.new_object.get('naiRealms') or \
                 self.new_object.get('nai_realms')
+        if self.new_object.get('networkAccessType') is not None or self.new_object.get('network_access_type') is not None:
+            new_object_params['networkAccessType'] = self.new_object.get('networkAccessType') or \
+                self.new_object.get('network_access_type')
+        if self.new_object.get('operator') is not None or self.new_object.get('operator') is not None:
+            new_object_params['operator'] = self.new_object.get('operator') or \
+                self.new_object.get('operator')
+        if self.new_object.get('roamConsortOis') is not None or self.new_object.get('roam_consort_ois') is not None:
+            new_object_params['roamConsortOis'] = self.new_object.get('roamConsortOis') or \
+                self.new_object.get('roam_consort_ois')
+        if self.new_object.get('venue') is not None or self.new_object.get('venue') is not None:
+            new_object_params['venue'] = self.new_object.get('venue') or \
+                self.new_object.get('venue')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -161,14 +161,14 @@ class NetworksWirelessSsidsHotspot20(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"),
-            ("operator", "operator"),
-            ("venue", "venue"),
-            ("networkAccessType", "networkAccessType"),
             ("domains", "domains"),
-            ("roamConsortOis", "roamConsortOis"),
+            ("enabled", "enabled"),
             ("mccMncs", "mccMncs"),
             ("naiRealms", "naiRealms"),
+            ("networkAccessType", "networkAccessType"),
+            ("operator", "operator"),
+            ("roamConsortOis", "roamConsortOis"),
+            ("venue", "venue"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]

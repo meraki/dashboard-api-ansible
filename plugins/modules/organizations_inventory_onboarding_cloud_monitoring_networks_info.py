@@ -28,6 +28,10 @@ options:
     description:
     - DeviceType query parameter. Device Type switch or wireless controller.
     type: str
+  search:
+    description:
+    - Search query parameter. Optional parameter to search on network name.
+    type: str
   perPage:
     description:
     - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
@@ -85,6 +89,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     deviceType: string
+    search: string
     perPage: 0
     startingAfter: string
     endingBefore: string
@@ -103,20 +108,20 @@ meraki_response:
   sample: >
     [
       {
+        "enrollmentString": "string",
         "id": "string",
-        "organizationId": "string",
+        "isBoundToConfigTemplate": true,
         "name": "string",
+        "notes": "string",
+        "organizationId": "string",
         "productTypes": [
           "string"
         ],
-        "timeZone": "string",
         "tags": [
           "string"
         ],
-        "enrollmentString": "string",
-        "url": "string",
-        "notes": "string",
-        "isBoundToConfigTemplate": true
+        "timeZone": "string",
+        "url": "string"
       }
     ]
 """

@@ -107,6 +107,7 @@ EXAMPLES = r"""
       srcCidr: Any
       srcPort: Any
       syslogEnabled: false
+    syslogDefaultRule: true
 
 """
 RETURN = r"""
@@ -115,5 +116,19 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "rules": [
+        {
+          "comment": "string",
+          "destCidr": "string",
+          "destPort": "string",
+          "policy": "string",
+          "protocol": "string",
+          "srcCidr": "string",
+          "srcPort": "string",
+          "syslogEnabled": true
+        }
+      ],
+      "syslogDefaultRule": true
+    }
 """

@@ -106,10 +106,57 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "adminSplashUrl": "string",
+      "authMode": "string",
+      "availabilityTags": [
+        "string"
+      ],
+      "availableOnAllAps": true,
+      "bandSelection": "string",
+      "enabled": true,
+      "encryptionMode": "string",
+      "ipAssignmentMode": "string",
+      "localAuth": true,
+      "mandatoryDhcpEnabled": true,
+      "minBitrate": 0,
+      "name": "string",
+      "number": 0,
+      "perClientBandwidthLimitDown": 0,
+      "perClientBandwidthLimitUp": 0,
+      "perSsidBandwidthLimitDown": 0,
+      "perSsidBandwidthLimitUp": 0,
+      "radiusAccountingEnabled": true,
+      "radiusAccountingServers": [
+        {
+          "caCertificate": "string",
+          "host": "string",
+          "openRoamingCertificateId": 0,
+          "port": 0
+        }
+      ],
+      "radiusAttributeForGroupPolicies": "string",
+      "radiusEnabled": true,
+      "radiusFailoverPolicy": "string",
+      "radiusLoadBalancingPolicy": "string",
+      "radiusServers": [
+        {
+          "caCertificate": "string",
+          "host": "string",
+          "openRoamingCertificateId": 0,
+          "port": 0
+        }
+      ],
+      "splashPage": "string",
+      "splashTimeout": "string",
+      "ssidAdminAccessible": true,
+      "visible": true,
+      "walledGardenEnabled": true,
+      "walledGardenRanges": [
+        "string"
+      ],
+      "wpaEncryptionMode": "string"
+    }
 """

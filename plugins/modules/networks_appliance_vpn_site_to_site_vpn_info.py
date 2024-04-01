@@ -72,13 +72,13 @@ meraki_response:
   type: dict
   sample: >
     {
-      "mode": "string",
       "hubs": [
         {
           "hubId": "string",
           "useDefaultRoute": true
         }
       ],
+      "mode": "string",
       "subnets": [
         {
           "localSubnet": "string",

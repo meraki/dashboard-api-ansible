@@ -67,7 +67,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "token": "string",
-      "expiresAt": "string"
+      "expiresAt": "string",
+      "token": "string"
     }
 """

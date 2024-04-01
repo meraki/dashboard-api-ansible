@@ -73,6 +73,9 @@ meraki_response:
   elements: dict
   sample: >
     [
-      {}
+      {
+        "description": "string",
+        "dscpTagValue": 0
+      }
     ]
 """

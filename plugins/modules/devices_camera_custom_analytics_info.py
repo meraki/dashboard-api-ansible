@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCameraCustomAnalytics
+- name: Cisco Meraki documentation for camera getDeviceCameraCustomAnalytics
   description: Complete reference of the getDeviceCameraCustomAnalytics API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-custom-analytics
 notes:
   - SDK Method used are
-    devices.Devices.get_device_camera_custom_analytics,
+    camera.Camera.get_device_camera_custom_analytics,
 
   - Paths used are
     get /devices/{serial}/camera/customAnalytics,
@@ -70,6 +70,15 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "artifactId": "string",
+      "enabled": true,
+      "parameters": [
+        {
+          "name": "string",
+          "value": 0
+        }
+      ]
+    }
 """

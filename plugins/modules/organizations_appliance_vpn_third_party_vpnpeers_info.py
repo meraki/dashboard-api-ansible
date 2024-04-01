@@ -74,44 +74,44 @@ meraki_response:
   sample: >
     [
       {
-        "name": "string",
-        "publicIp": "string",
-        "remoteId": "string",
-        "localId": "string",
-        "secret": "string",
-        "privateSubnets": [
-          "string"
-        ],
+        "ikeVersion": "string",
         "ipsecPolicies": {
-          "ikeCipherAlgo": [
+          "childAuthAlgo": [
+            "string"
+          ],
+          "childCipherAlgo": [
+            "string"
+          ],
+          "childLifetime": 0,
+          "childPfsGroup": [
             "string"
           ],
           "ikeAuthAlgo": [
             "string"
           ],
-          "ikePrfAlgo": [
+          "ikeCipherAlgo": [
             "string"
           ],
           "ikeDiffieHellmanGroup": [
             "string"
           ],
           "ikeLifetime": 0,
-          "childCipherAlgo": [
+          "ikePrfAlgo": [
             "string"
-          ],
-          "childAuthAlgo": [
-            "string"
-          ],
-          "childPfsGroup": [
-            "string"
-          ],
-          "childLifetime": 0
+          ]
         },
         "ipsecPoliciesPreset": "string",
-        "ikeVersion": "string",
+        "localId": "string",
+        "name": "string",
         "networkTags": [
           "string"
-        ]
+        ],
+        "privateSubnets": [
+          "string"
+        ],
+        "publicIp": "string",
+        "remoteId": "string",
+        "secret": "string"
       }
     ]
 """

@@ -32,23 +32,23 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    radiusServers=dict(type="list"),
-    radius=dict(type="dict"),
+    accessPolicyType=dict(type="str"),
+    dot1x=dict(type="dict"),
     guestPortBouncing=dict(type="bool"),
-    radiusTestingEnabled=dict(type="bool"),
-    radiusCoaSupportEnabled=dict(type="bool"),
+    guestVlanId=dict(type="int"),
+    hostMode=dict(type="str"),
+    increaseAccessSpeed=dict(type="bool"),
+    name=dict(type="str"),
+    radius=dict(type="dict"),
     radiusAccountingEnabled=dict(type="bool"),
     radiusAccountingServers=dict(type="list"),
+    radiusCoaSupportEnabled=dict(type="bool"),
     radiusGroupAttribute=dict(type="str"),
-    hostMode=dict(type="str"),
-    accessPolicyType=dict(type="str"),
-    increaseAccessSpeed=dict(type="bool"),
-    guestVlanId=dict(type="int"),
-    dot1x=dict(type="dict"),
-    voiceVlanClients=dict(type="bool"),
+    radiusServers=dict(type="list"),
+    radiusTestingEnabled=dict(type="bool"),
     urlRedirectWalledGardenEnabled=dict(type="bool"),
     urlRedirectWalledGardenRanges=dict(type="list"),
+    voiceVlanClients=dict(type="bool"),
     networkId=dict(type="str"),
     accessPolicyNumber=dict(type="str"),
 ))
@@ -66,25 +66,23 @@ class NetworksSwitchAccessPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            radiusServers=params.get("radiusServers"),
-            radius=params.get("radius"),
+            accessPolicyType=params.get("accessPolicyType"),
+            dot1x=params.get("dot1x"),
             guestPortBouncing=params.get("guestPortBouncing"),
-            radiusTestingEnabled=params.get("radiusTestingEnabled"),
-            radiusCoaSupportEnabled=params.get("radiusCoaSupportEnabled"),
+            guestVlanId=params.get("guestVlanId"),
+            hostMode=params.get("hostMode"),
+            increaseAccessSpeed=params.get("increaseAccessSpeed"),
+            name=params.get("name"),
+            radius=params.get("radius"),
             radiusAccountingEnabled=params.get("radiusAccountingEnabled"),
             radiusAccountingServers=params.get("radiusAccountingServers"),
+            radiusCoaSupportEnabled=params.get("radiusCoaSupportEnabled"),
             radiusGroupAttribute=params.get("radiusGroupAttribute"),
-            hostMode=params.get("hostMode"),
-            accessPolicyType=params.get("accessPolicyType"),
-            increaseAccessSpeed=params.get("increaseAccessSpeed"),
-            guestVlanId=params.get("guestVlanId"),
-            dot1x=params.get("dot1x"),
+            radiusServers=params.get("radiusServers"),
+            radiusTestingEnabled=params.get("radiusTestingEnabled"),
+            urlRedirectWalledGardenEnabled=params.get("urlRedirectWalledGardenEnabled"),
+            urlRedirectWalledGardenRanges=params.get("urlRedirectWalledGardenRanges"),
             voiceVlanClients=params.get("voiceVlanClients"),
-            urlRedirectWalledGardenEnabled=params.get(
-                "urlRedirectWalledGardenEnabled"),
-            urlRedirectWalledGardenRanges=params.get(
-                "urlRedirectWalledGardenRanges"),
             networkId=params.get("networkId"),
             accessPolicyNumber=params.get("accessPolicyNumber"),
         )
@@ -108,57 +106,50 @@ class NetworksSwitchAccessPolicies(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
-            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
-                self.new_object.get('radius_servers')
-        if self.new_object.get('radius') is not None or self.new_object.get('radius') is not None:
-            new_object_params['radius'] = self.new_object.get('radius') or \
-                self.new_object.get('radius')
-        if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
-            new_object_params['guestPortBouncing'] = self.new_object.get(
-                'guestPortBouncing')
-        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get(
-                'radiusTestingEnabled')
-        if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
-            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get(
-                'radiusCoaSupportEnabled')
-        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get(
-                'radiusAccountingEnabled')
-        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
-            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
-                self.new_object.get('radius_accounting_servers')
-        if self.new_object.get('radiusGroupAttribute') is not None or self.new_object.get('radius_group_attribute') is not None:
-            new_object_params['radiusGroupAttribute'] = self.new_object.get('radiusGroupAttribute') or \
-                self.new_object.get('radius_group_attribute')
-        if self.new_object.get('hostMode') is not None or self.new_object.get('host_mode') is not None:
-            new_object_params['hostMode'] = self.new_object.get('hostMode') or \
-                self.new_object.get('host_mode')
         if self.new_object.get('accessPolicyType') is not None or self.new_object.get('access_policy_type') is not None:
             new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
                 self.new_object.get('access_policy_type')
-        if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
-            new_object_params['increaseAccessSpeed'] = self.new_object.get(
-                'increaseAccessSpeed')
-        if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
-            new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
-                self.new_object.get('guest_vlan_id')
         if self.new_object.get('dot1x') is not None or self.new_object.get('dot1x') is not None:
             new_object_params['dot1x'] = self.new_object.get('dot1x') or \
                 self.new_object.get('dot1x')
-        if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
-            new_object_params['voiceVlanClients'] = self.new_object.get(
-                'voiceVlanClients')
+        if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
+            new_object_params['guestPortBouncing'] = self.new_object.get('guestPortBouncing')
+        if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
+            new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
+                self.new_object.get('guest_vlan_id')
+        if self.new_object.get('hostMode') is not None or self.new_object.get('host_mode') is not None:
+            new_object_params['hostMode'] = self.new_object.get('hostMode') or \
+                self.new_object.get('host_mode')
+        if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
+            new_object_params['increaseAccessSpeed'] = self.new_object.get('increaseAccessSpeed')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('radius') is not None or self.new_object.get('radius') is not None:
+            new_object_params['radius'] = self.new_object.get('radius') or \
+                self.new_object.get('radius')
+        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
+        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
+            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
+                self.new_object.get('radius_accounting_servers')
+        if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
+            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get('radiusCoaSupportEnabled')
+        if self.new_object.get('radiusGroupAttribute') is not None or self.new_object.get('radius_group_attribute') is not None:
+            new_object_params['radiusGroupAttribute'] = self.new_object.get('radiusGroupAttribute') or \
+                self.new_object.get('radius_group_attribute')
+        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
+            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
+                self.new_object.get('radius_servers')
+        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
+            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
         if self.new_object.get('urlRedirectWalledGardenEnabled') is not None or self.new_object.get('url_redirect_walled_garden_enabled') is not None:
-            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get(
-                'urlRedirectWalledGardenEnabled')
+            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get('urlRedirectWalledGardenEnabled')
         if self.new_object.get('urlRedirectWalledGardenRanges') is not None or self.new_object.get('url_redirect_walled_garden_ranges') is not None:
             new_object_params['urlRedirectWalledGardenRanges'] = self.new_object.get('urlRedirectWalledGardenRanges') or \
                 self.new_object.get('url_redirect_walled_garden_ranges')
+        if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
+            new_object_params['voiceVlanClients'] = self.new_object.get('voiceVlanClients')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -176,57 +167,50 @@ class NetworksSwitchAccessPolicies(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
-            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
-                self.new_object.get('radius_servers')
-        if self.new_object.get('radius') is not None or self.new_object.get('radius') is not None:
-            new_object_params['radius'] = self.new_object.get('radius') or \
-                self.new_object.get('radius')
-        if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
-            new_object_params['guestPortBouncing'] = self.new_object.get(
-                'guestPortBouncing')
-        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
-            new_object_params['radiusTestingEnabled'] = self.new_object.get(
-                'radiusTestingEnabled')
-        if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
-            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get(
-                'radiusCoaSupportEnabled')
-        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
-            new_object_params['radiusAccountingEnabled'] = self.new_object.get(
-                'radiusAccountingEnabled')
-        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
-            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
-                self.new_object.get('radius_accounting_servers')
-        if self.new_object.get('radiusGroupAttribute') is not None or self.new_object.get('radius_group_attribute') is not None:
-            new_object_params['radiusGroupAttribute'] = self.new_object.get('radiusGroupAttribute') or \
-                self.new_object.get('radius_group_attribute')
-        if self.new_object.get('hostMode') is not None or self.new_object.get('host_mode') is not None:
-            new_object_params['hostMode'] = self.new_object.get('hostMode') or \
-                self.new_object.get('host_mode')
         if self.new_object.get('accessPolicyType') is not None or self.new_object.get('access_policy_type') is not None:
             new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
                 self.new_object.get('access_policy_type')
-        if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
-            new_object_params['increaseAccessSpeed'] = self.new_object.get(
-                'increaseAccessSpeed')
-        if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
-            new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
-                self.new_object.get('guest_vlan_id')
         if self.new_object.get('dot1x') is not None or self.new_object.get('dot1x') is not None:
             new_object_params['dot1x'] = self.new_object.get('dot1x') or \
                 self.new_object.get('dot1x')
-        if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
-            new_object_params['voiceVlanClients'] = self.new_object.get(
-                'voiceVlanClients')
+        if self.new_object.get('guestPortBouncing') is not None or self.new_object.get('guest_port_bouncing') is not None:
+            new_object_params['guestPortBouncing'] = self.new_object.get('guestPortBouncing')
+        if self.new_object.get('guestVlanId') is not None or self.new_object.get('guest_vlan_id') is not None:
+            new_object_params['guestVlanId'] = self.new_object.get('guestVlanId') or \
+                self.new_object.get('guest_vlan_id')
+        if self.new_object.get('hostMode') is not None or self.new_object.get('host_mode') is not None:
+            new_object_params['hostMode'] = self.new_object.get('hostMode') or \
+                self.new_object.get('host_mode')
+        if self.new_object.get('increaseAccessSpeed') is not None or self.new_object.get('increase_access_speed') is not None:
+            new_object_params['increaseAccessSpeed'] = self.new_object.get('increaseAccessSpeed')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('radius') is not None or self.new_object.get('radius') is not None:
+            new_object_params['radius'] = self.new_object.get('radius') or \
+                self.new_object.get('radius')
+        if self.new_object.get('radiusAccountingEnabled') is not None or self.new_object.get('radius_accounting_enabled') is not None:
+            new_object_params['radiusAccountingEnabled'] = self.new_object.get('radiusAccountingEnabled')
+        if self.new_object.get('radiusAccountingServers') is not None or self.new_object.get('radius_accounting_servers') is not None:
+            new_object_params['radiusAccountingServers'] = self.new_object.get('radiusAccountingServers') or \
+                self.new_object.get('radius_accounting_servers')
+        if self.new_object.get('radiusCoaSupportEnabled') is not None or self.new_object.get('radius_coa_support_enabled') is not None:
+            new_object_params['radiusCoaSupportEnabled'] = self.new_object.get('radiusCoaSupportEnabled')
+        if self.new_object.get('radiusGroupAttribute') is not None or self.new_object.get('radius_group_attribute') is not None:
+            new_object_params['radiusGroupAttribute'] = self.new_object.get('radiusGroupAttribute') or \
+                self.new_object.get('radius_group_attribute')
+        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
+            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
+                self.new_object.get('radius_servers')
+        if self.new_object.get('radiusTestingEnabled') is not None or self.new_object.get('radius_testing_enabled') is not None:
+            new_object_params['radiusTestingEnabled'] = self.new_object.get('radiusTestingEnabled')
         if self.new_object.get('urlRedirectWalledGardenEnabled') is not None or self.new_object.get('url_redirect_walled_garden_enabled') is not None:
-            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get(
-                'urlRedirectWalledGardenEnabled')
+            new_object_params['urlRedirectWalledGardenEnabled'] = self.new_object.get('urlRedirectWalledGardenEnabled')
         if self.new_object.get('urlRedirectWalledGardenRanges') is not None or self.new_object.get('url_redirect_walled_garden_ranges') is not None:
             new_object_params['urlRedirectWalledGardenRanges'] = self.new_object.get('urlRedirectWalledGardenRanges') or \
                 self.new_object.get('url_redirect_walled_garden_ranges')
+        if self.new_object.get('voiceVlanClients') is not None or self.new_object.get('voice_vlan_clients') is not None:
+            new_object_params['voiceVlanClients'] = self.new_object.get('voiceVlanClients')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -304,23 +288,23 @@ class NetworksSwitchAccessPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("radiusServers", "radiusServers"),
-            ("radius", "radius"),
+            ("accessPolicyType", "accessPolicyType"),
+            ("dot1x", "dot1x"),
             ("guestPortBouncing", "guestPortBouncing"),
-            ("radiusTestingEnabled", "radiusTestingEnabled"),
-            ("radiusCoaSupportEnabled", "radiusCoaSupportEnabled"),
+            ("guestVlanId", "guestVlanId"),
+            ("hostMode", "hostMode"),
+            ("increaseAccessSpeed", "increaseAccessSpeed"),
+            ("name", "name"),
+            ("radius", "radius"),
             ("radiusAccountingEnabled", "radiusAccountingEnabled"),
             ("radiusAccountingServers", "radiusAccountingServers"),
+            ("radiusCoaSupportEnabled", "radiusCoaSupportEnabled"),
             ("radiusGroupAttribute", "radiusGroupAttribute"),
-            ("hostMode", "hostMode"),
-            ("accessPolicyType", "accessPolicyType"),
-            ("increaseAccessSpeed", "increaseAccessSpeed"),
-            ("guestVlanId", "guestVlanId"),
-            ("dot1x", "dot1x"),
-            ("voiceVlanClients", "voiceVlanClients"),
+            ("radiusServers", "radiusServers"),
+            ("radiusTestingEnabled", "radiusTestingEnabled"),
             ("urlRedirectWalledGardenEnabled", "urlRedirectWalledGardenEnabled"),
             ("urlRedirectWalledGardenRanges", "urlRedirectWalledGardenRanges"),
+            ("voiceVlanClients", "voiceVlanClients"),
             ("networkId", "networkId"),
             ("accessPolicyNumber", "accessPolicyNumber"),
         ]

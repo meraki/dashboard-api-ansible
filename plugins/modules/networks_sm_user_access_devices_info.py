@@ -98,23 +98,23 @@ meraki_response:
   sample: >
     [
       {
+        "email": "string",
         "id": "string",
+        "mac": "string",
         "name": "string",
         "systemType": "string",
-        "mac": "string",
-        "username": "string",
-        "email": "string",
         "tags": [
           "string"
         ],
         "trustedAccessConnections": [
           {
-            "trustedAccessConfigId": "string",
             "downloadedAt": "string",
+            "lastConnectedAt": "string",
             "scepCompletedAt": "string",
-            "lastConnectedAt": "string"
+            "trustedAccessConfigId": "string"
           }
-        ]
+        ],
+        "username": "string"
       }
     ]
 """

@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    subnet=dict(type="str"),
     applianceIp=dict(type="str"),
     ipv6=dict(type="dict"),
     mandatoryDhcp=dict(type="dict"),
+    subnet=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -51,10 +51,10 @@ class NetworksApplianceSingleLan(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            subnet=params.get("subnet"),
             applianceIp=params.get("applianceIp"),
             ipv6=params.get("ipv6"),
             mandatoryDhcp=params.get("mandatoryDhcp"),
+            subnet=params.get("subnet"),
             network_id=params.get("networkId"),
         )
 
@@ -67,9 +67,6 @@ class NetworksApplianceSingleLan(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
-            new_object_params['subnet'] = self.new_object.get('subnet') or \
-                self.new_object.get('subnet')
         if self.new_object.get('applianceIp') is not None or self.new_object.get('appliance_ip') is not None:
             new_object_params['applianceIp'] = self.new_object.get('applianceIp') or \
                 self.new_object.get('appliance_ip')
@@ -79,6 +76,9 @@ class NetworksApplianceSingleLan(object):
         if self.new_object.get('mandatoryDhcp') is not None or self.new_object.get('mandatory_dhcp') is not None:
             new_object_params['mandatoryDhcp'] = self.new_object.get('mandatoryDhcp') or \
                 self.new_object.get('mandatory_dhcp')
+        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+            new_object_params['subnet'] = self.new_object.get('subnet') or \
+                self.new_object.get('subnet')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -135,10 +135,10 @@ class NetworksApplianceSingleLan(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("subnet", "subnet"),
             ("applianceIp", "applianceIp"),
             ("ipv6", "ipv6"),
             ("mandatoryDhcp", "mandatoryDhcp"),
+            ("subnet", "subnet"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

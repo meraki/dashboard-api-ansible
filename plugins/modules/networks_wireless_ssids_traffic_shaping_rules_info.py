@@ -75,6 +75,28 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "defaultRulesEnabled": true,
+      "rules": [
+        {
+          "definitions": [
+            {
+              "type": "string",
+              "value": "string"
+            }
+          ],
+          "dscpTagValue": 0,
+          "pcpTagValue": 0,
+          "perClientBandwidthLimits": {
+            "bandwidthLimits": {
+              "limitDown": 0,
+              "limitUp": 0
+            },
+            "settings": "string"
+          }
+        }
+      ],
+      "trafficShapingEnabled": true
+    }
 """

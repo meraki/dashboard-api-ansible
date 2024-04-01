@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    uuid=dict(type="str"),
     major=dict(type="int"),
     minor=dict(type="int"),
+    uuid=dict(type="str"),
     serial=dict(type="str"),
 ))
 
@@ -50,9 +50,9 @@ class DevicesWirelessBluetoothSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            uuid=params.get("uuid"),
             major=params.get("major"),
             minor=params.get("minor"),
+            uuid=params.get("uuid"),
             serial=params.get("serial"),
         )
 
@@ -64,15 +64,15 @@ class DevicesWirelessBluetoothSettings(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
-            new_object_params['uuid'] = self.new_object.get('uuid') or \
-                self.new_object.get('uuid')
         if self.new_object.get('major') is not None or self.new_object.get('major') is not None:
             new_object_params['major'] = self.new_object.get('major') or \
                 self.new_object.get('major')
         if self.new_object.get('minor') is not None or self.new_object.get('minor') is not None:
             new_object_params['minor'] = self.new_object.get('minor') or \
                 self.new_object.get('minor')
+        if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
+            new_object_params['uuid'] = self.new_object.get('uuid') or \
+                self.new_object.get('uuid')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -129,9 +129,9 @@ class DevicesWirelessBluetoothSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("uuid", "uuid"),
             ("major", "major"),
             ("minor", "minor"),
+            ("uuid", "uuid"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

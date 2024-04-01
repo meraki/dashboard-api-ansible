@@ -33,6 +33,16 @@ options:
         description: Enable DCHP Enforced Deauthentication on the SSID.
         type: bool
     type: dict
+  dot11w:
+    description: The current setting for Protected Management Frames (802.11w).
+    suboptions:
+      enabled:
+        description: Whether 802.11w is enabled or not.
+        type: bool
+      required:
+        description: (Optional) Whether 802.11w is required or not.
+        type: bool
+    type: dict
   enabled:
     description: Whether or not the SSID is enabled.
     type: bool
@@ -120,6 +130,9 @@ EXAMPLES = r"""
     defaultVlanId: 1
     dhcpEnforcedDeauthentication:
       enabled: true
+    dot11w:
+      enabled: true
+      required: true
     enabled: true
     encryptionMode: wpa
     name: My SSID
@@ -141,19 +154,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "number": 0,
-      "name": "string",
-      "enabled": true,
-      "defaultVlanId": 0,
       "authMode": "string",
+      "defaultVlanId": 0,
+      "enabled": true,
+      "encryptionMode": "string",
+      "name": "string",
+      "number": 0,
       "radiusServers": [
         {
           "host": "string",
           "port": 0
         }
       ],
-      "encryptionMode": "string",
-      "wpaEncryptionMode": "string",
-      "visible": true
+      "visible": true,
+      "wpaEncryptionMode": "string"
     }
 """

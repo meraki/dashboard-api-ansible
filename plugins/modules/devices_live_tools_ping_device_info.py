@@ -77,32 +77,37 @@ meraki_response:
   type: dict
   sample: >
     {
-      "pingId": "string",
-      "url": "string",
-      "request": {
-        "serial": "string",
-        "target": "string",
-        "count": 0
+      "callback": {
+        "id": "string",
+        "status": "string",
+        "url": "string"
       },
-      "status": "string",
+      "pingId": "string",
+      "request": {
+        "count": 0,
+        "serial": "string",
+        "target": "string"
+      },
       "results": {
-        "sent": 0,
-        "received": 0,
+        "latencies": {
+          "average": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
         "loss": {
           "percentage": 0
         },
-        "latencies": {
-          "minimum": 0,
-          "average": 0,
-          "maximum": 0
-        },
+        "received": 0,
         "replies": [
           {
+            "latency": 0,
             "sequenceId": 0,
-            "size": 0,
-            "latency": 0
+            "size": 0
           }
-        ]
-      }
+        ],
+        "sent": 0
+      },
+      "status": "string",
+      "url": "string"
     }
 """

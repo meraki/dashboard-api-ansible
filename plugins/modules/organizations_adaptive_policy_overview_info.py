@@ -73,19 +73,19 @@ meraki_response:
   sample: >
     {
       "counts": {
-        "groups": 0,
-        "customGroups": 0,
-        "customAcls": 0,
-        "policies": 0,
-        "denyPolicies": 0,
         "allowPolicies": 0,
+        "customAcls": 0,
+        "customGroups": 0,
+        "denyPolicies": 0,
+        "groups": 0,
+        "policies": 0,
         "policyObjects": 0
       },
       "limits": {
-        "customGroups": 0,
-        "rulesInAnAcl": 0,
         "aclsInAPolicy": 0,
-        "policyObjects": 0
+        "customGroups": 0,
+        "policyObjects": 0,
+        "rulesInAnAcl": 0
       }
     }
 """

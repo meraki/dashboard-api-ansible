@@ -37,12 +37,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceSensorRelationships
+- name: Cisco Meraki documentation for sensor updateDeviceSensorRelationships
   description: Complete reference of the updateDeviceSensorRelationships API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-sensor-relationships
 notes:
   - SDK Method used are
-    devices.Devices.update_device_sensor_relationships,
+    sensor.Sensor.update_device_sensor_relationships,
 
   - Paths used are
     put /devices/{serial}/sensor/relationships,
@@ -85,13 +85,11 @@ meraki_response:
   type: dict
   sample: >
     {
-      "livestream": {
-        "relatedDevices": [
-          {
-            "serial": "string",
-            "productType": "string"
-          }
-        ]
-      }
+      "relatedDevices": [
+        {
+          "productType": "string",
+          "serial": "string"
+        }
+      ]
     }
 """

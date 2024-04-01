@@ -105,12 +105,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceSwitchRoutingInterfaceDhcp
+- name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterfaceDhcp
   description: Complete reference of the updateDeviceSwitchRoutingInterfaceDhcp API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface-dhcp
 notes:
   - SDK Method used are
-    devices.Devices.update_device_switch_routing_interface_dhcp,
+    switch.Switch.update_device_switch_routing_interface_dhcp,
 
   - Paths used are
     put /devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp,
@@ -149,6 +149,8 @@ EXAMPLES = r"""
     - code: '5'
       type: text
       value: five
+    dhcpRelayServerIps:
+    - 1.2.3.4
     dnsCustomNameservers:
     - 8.8.8.8, 8.8.4.4
     dnsNameserversOption: custom
@@ -170,5 +172,39 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "bootFileName": "string",
+      "bootNextServer": "string",
+      "bootOptionsEnabled": true,
+      "dhcpLeaseTime": "string",
+      "dhcpMode": "string",
+      "dhcpOptions": [
+        {
+          "code": "string",
+          "type": "string",
+          "value": "string"
+        }
+      ],
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "dnsNameserversOption": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

@@ -106,10 +106,16 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "dscp": 0,
+      "dstPort": 0,
+      "dstPortRange": "string",
+      "id": "string",
+      "protocol": "string",
+      "srcPort": 0,
+      "srcPortRange": "string",
+      "vlan": 0
+    }
 """

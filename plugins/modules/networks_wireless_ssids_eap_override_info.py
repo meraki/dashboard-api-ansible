@@ -77,15 +77,15 @@ meraki_response:
   type: dict
   sample: >
     {
-      "timeout": 0,
-      "maxRetries": 0,
+      "eapolKey": {
+        "retries": 0,
+        "timeoutInMs": 0
+      },
       "identity": {
         "retries": 0,
         "timeout": 0
       },
-      "eapolKey": {
-        "retries": 0,
-        "timeoutInMs": 0
-      }
+      "maxRetries": 0,
+      "timeout": 0
     }
 """

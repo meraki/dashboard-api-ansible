@@ -45,20 +45,20 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices createDeviceSwitchRoutingStaticRoute
+- name: Cisco Meraki documentation for switch createDeviceSwitchRoutingStaticRoute
   description: Complete reference of the createDeviceSwitchRoutingStaticRoute API.
   link: https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-static-route
-- name: Cisco Meraki documentation for devices deleteDeviceSwitchRoutingStaticRoute
+- name: Cisco Meraki documentation for switch deleteDeviceSwitchRoutingStaticRoute
   description: Complete reference of the deleteDeviceSwitchRoutingStaticRoute API.
   link: https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-static-route
-- name: Cisco Meraki documentation for devices updateDeviceSwitchRoutingStaticRoute
+- name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingStaticRoute
   description: Complete reference of the updateDeviceSwitchRoutingStaticRoute API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-static-route
 notes:
   - SDK Method used are
-    devices.Devices.create_device_switch_routing_static_route,
-    devices.Devices.delete_device_switch_routing_static_route,
-    devices.Devices.update_device_switch_routing_static_route,
+    switch.Switch.create_device_switch_routing_static_route,
+    switch.Switch.delete_device_switch_routing_static_route,
+    switch.Switch.update_device_switch_routing_static_route,
 
   - Paths used are
     post /devices/{serial}/switch/routing/staticRoutes,
@@ -97,6 +97,32 @@ EXAMPLES = r"""
     serial: string
     subnet: 192.168.1.0/24
 
+- name: Delete by id
+  cisco.meraki.devices_switch_routing_static_routes:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    serial: string
+    staticRouteId: string
+
 - name: Update by id
   cisco.meraki.devices_switch_routing_static_routes:
     meraki_api_key: "{{meraki_api_key}}"
@@ -128,32 +154,6 @@ EXAMPLES = r"""
     staticRouteId: string
     subnet: 192.168.1.0/24
 
-- name: Delete by id
-  cisco.meraki.devices_switch_routing_static_routes:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    serial: string
-    staticRouteId: string
-
 """
 RETURN = r"""
 meraki_response:
@@ -161,5 +161,12 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "advertiseViaOspfEnabled": true,
+      "name": "string",
+      "nextHopIp": "string",
+      "preferOverOspfRoutesEnabled": true,
+      "staticRouteId": "string",
+      "subnet": "string"
+    }
 """

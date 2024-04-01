@@ -23,15 +23,15 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   overrides:
-    description: Override MTU size for individual switches or switch profiles. An empty
+    description: Override MTU size for individual switches or switch templates. An empty
       array will clear overrides.
     elements: dict
     suboptions:
       mtuSize:
-        description: MTU size for the switches or switch profiles.
+        description: MTU size for the switches or switch templates.
         type: int
       switchProfiles:
-        description: List of switch profile IDs. Applicable only for template network.
+        description: List of switch template IDs. Applicable only for template network.
         elements: str
         type: list
       switches:

@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    sims=dict(type="list"),
     simFailover=dict(type="dict"),
+    sims=dict(type="list"),
     serial=dict(type="str"),
 ))
 
@@ -49,8 +49,8 @@ class DevicesCellularSims(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            sims=params.get("sims"),
             simFailover=params.get("simFailover"),
+            sims=params.get("sims"),
             serial=params.get("serial"),
         )
 
@@ -62,12 +62,12 @@ class DevicesCellularSims(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('sims') is not None or self.new_object.get('sims') is not None:
-            new_object_params['sims'] = self.new_object.get('sims') or \
-                self.new_object.get('sims')
         if self.new_object.get('simFailover') is not None or self.new_object.get('sim_failover') is not None:
             new_object_params['simFailover'] = self.new_object.get('simFailover') or \
                 self.new_object.get('sim_failover')
+        if self.new_object.get('sims') is not None or self.new_object.get('sims') is not None:
+            new_object_params['sims'] = self.new_object.get('sims') or \
+                self.new_object.get('sims')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -83,8 +83,8 @@ class DevicesCellularSims(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
+                if 'sims' in items:
+                    items = items.get('sims')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
@@ -124,8 +124,8 @@ class DevicesCellularSims(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("sims", "sims"),
             ("simFailover", "simFailover"),
+            ("sims", "sims"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

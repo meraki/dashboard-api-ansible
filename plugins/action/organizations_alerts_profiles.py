@@ -31,11 +31,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    type=dict(type="str"),
     alertCondition=dict(type="dict"),
-    recipients=dict(type="dict"),
-    networkTags=dict(type="list"),
     description=dict(type="str"),
+    networkTags=dict(type="list"),
+    recipients=dict(type="dict"),
+    type=dict(type="str"),
     organizationId=dict(type="str"),
     enabled=dict(type="bool"),
     alertConfigId=dict(type="str"),
@@ -54,11 +54,11 @@ class OrganizationsAlertsProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            type=params.get("type"),
             alertCondition=params.get("alertCondition"),
-            recipients=params.get("recipients"),
-            networkTags=params.get("networkTags"),
             description=params.get("description"),
+            networkTags=params.get("networkTags"),
+            recipients=params.get("recipients"),
+            type=params.get("type"),
             organization_id=params.get("organizationId"),
             enabled=params.get("enabled"),
             alert_config_id=params.get("alertConfigId"),
@@ -66,21 +66,21 @@ class OrganizationsAlertsProfiles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
-            new_object_params['type'] = self.new_object.get('type') or \
-                self.new_object.get('type')
         if self.new_object.get('alertCondition') is not None or self.new_object.get('alert_condition') is not None:
             new_object_params['alertCondition'] = self.new_object.get('alertCondition') or \
                 self.new_object.get('alert_condition')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
-            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
-                self.new_object.get('network_tags')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
+            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
+                self.new_object.get('network_tags')
+        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get('recipients') or \
+                self.new_object.get('recipients')
+        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+            new_object_params['type'] = self.new_object.get('type') or \
+                self.new_object.get('type')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -98,23 +98,23 @@ class OrganizationsAlertsProfiles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
-            new_object_params['type'] = self.new_object.get('type') or \
-                self.new_object.get('type')
         if self.new_object.get('alertCondition') is not None or self.new_object.get('alert_condition') is not None:
             new_object_params['alertCondition'] = self.new_object.get('alertCondition') or \
                 self.new_object.get('alert_condition')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
-            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
-                self.new_object.get('network_tags')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
+            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
+                self.new_object.get('network_tags')
+        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get('recipients') or \
+                self.new_object.get('recipients')
+        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+            new_object_params['type'] = self.new_object.get('type') or \
+                self.new_object.get('type')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -163,11 +163,11 @@ class OrganizationsAlertsProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("type", "type"),
             ("alertCondition", "alertCondition"),
-            ("recipients", "recipients"),
-            ("networkTags", "networkTags"),
             ("description", "description"),
+            ("networkTags", "networkTags"),
+            ("recipients", "recipients"),
+            ("type", "type"),
             ("organizationId", "organizationId"),
             ("enabled", "enabled"),
             ("alertConfigId", "alertConfigId"),

@@ -90,16 +90,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "usage": {
-        "overall": {
-          "total": 0,
-          "downstream": 0,
-          "upstream": 0
-        },
-        "average": 0
-      },
       "counts": {
         "total": 0
+      },
+      "usage": {
+        "average": 0,
+        "overall": {
+          "downstream": 0,
+          "total": 0,
+          "upstream": 0
+        }
       }
     }
 """

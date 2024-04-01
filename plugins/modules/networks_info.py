@@ -78,16 +78,16 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations,networks getNetwork
+- name: Cisco Meraki documentation for networks getNetwork
   description: Complete reference of the getNetwork API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-network
-- name: Cisco Meraki documentation for organizations,networks getOrganizationNetworks
+- name: Cisco Meraki documentation for networks getOrganizationNetworks
   description: Complete reference of the getOrganizationNetworks API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-organization-networks
 notes:
   - SDK Method used are
-    organizationsnetworks.Organizationsnetworks.get_network,
-    organizationsnetworks.Organizationsnetworks.get_organization_networks,
+    networks.Networks.get_network,
+    networks.Networks.get_organization_networks,
 
   - Paths used are
     get /networks/{networkId},
@@ -162,19 +162,19 @@ meraki_response:
   type: dict
   sample: >
     {
+      "enrollmentString": "string",
       "id": "string",
-      "organizationId": "string",
+      "isBoundToConfigTemplate": true,
       "name": "string",
+      "notes": "string",
+      "organizationId": "string",
       "productTypes": [
         "string"
       ],
-      "timeZone": "string",
       "tags": [
         "string"
       ],
-      "enrollmentString": "string",
-      "url": "string",
-      "notes": "string",
-      "isBoundToConfigTemplate": true
+      "timeZone": "string",
+      "url": "string"
     }
 """

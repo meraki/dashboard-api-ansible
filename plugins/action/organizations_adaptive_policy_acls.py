@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     description=dict(type="str"),
-    rules=dict(type="list"),
     ipVersion=dict(type="str"),
+    name=dict(type="str"),
+    rules=dict(type="list"),
     organizationId=dict(type="str"),
     aclId=dict(type="str"),
 ))
@@ -53,10 +53,10 @@ class OrganizationsAdaptivePolicyAcls(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             description=params.get("description"),
-            rules=params.get("rules"),
             ipVersion=params.get("ipVersion"),
+            name=params.get("name"),
+            rules=params.get("rules"),
             organizationId=params.get("organizationId"),
             aclId=params.get("aclId"),
         )
@@ -80,18 +80,18 @@ class OrganizationsAdaptivePolicyAcls(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
-            new_object_params['rules'] = self.new_object.get('rules') or \
-                self.new_object.get('rules')
         if self.new_object.get('ipVersion') is not None or self.new_object.get('ip_version') is not None:
             new_object_params['ipVersion'] = self.new_object.get('ipVersion') or \
                 self.new_object.get('ip_version')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
+            new_object_params['rules'] = self.new_object.get('rules') or \
+                self.new_object.get('rules')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -109,18 +109,18 @@ class OrganizationsAdaptivePolicyAcls(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
-            new_object_params['rules'] = self.new_object.get('rules') or \
-                self.new_object.get('rules')
         if self.new_object.get('ipVersion') is not None or self.new_object.get('ip_version') is not None:
             new_object_params['ipVersion'] = self.new_object.get('ipVersion') or \
                 self.new_object.get('ip_version')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
+            new_object_params['rules'] = self.new_object.get('rules') or \
+                self.new_object.get('rules')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -198,10 +198,10 @@ class OrganizationsAdaptivePolicyAcls(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("description", "description"),
-            ("rules", "rules"),
             ("ipVersion", "ipVersion"),
+            ("name", "name"),
+            ("rules", "rules"),
             ("organizationId", "organizationId"),
             ("aclId", "aclId"),
         ]

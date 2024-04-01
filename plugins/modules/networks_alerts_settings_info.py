@@ -70,6 +70,36 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "alerts": [
+        {
+          "alertDestinations": {
+            "allAdmins": true,
+            "emails": [
+              "string"
+            ],
+            "httpServerIds": [
+              "string"
+            ],
+            "snmp": true
+          },
+          "enabled": true,
+          "filters": {
+            "timeout": 0
+          },
+          "type": "string"
+        }
+      ],
+      "defaultDestinations": {
+        "allAdmins": true,
+        "emails": [
+          "string"
+        ],
+        "httpServerIds": [
+          "string"
+        ],
+        "snmp": true
+      }
+    }
 """

@@ -6,40 +6,47 @@
 
 DOCUMENTATION = r"""
 ---
-module: organizations_users
-short_description: Resource module for organizations _users
+module: organizations_sm_admins_roles
+short_description: Resource module for organizations _sm _admins _roles
 description:
-- Manage operation delete of the resource organizations _users.
-- Delete a user and all of its authentication methods.
-version_added: '2.16.0'
+- Manage operations create, update and delete of the resource organizations _sm _admins _roles.
+- Create a Limited Access Role.
+version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  name:
+    description: The name of the Limited Access Role.
+    type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
-  userId:
-    description: UserId path parameter. User ID.
+  scope:
+    description: The scope of the Limited Access Role.
     type: str
+  tags:
+    description: The tags of the Limited Access Role.
+    elements: str
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations deleteOrganizationUser
-  description: Complete reference of the deleteOrganizationUser API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-user
+- name: Cisco Meraki documentation for sm createOrganizationSmAdminsRole
+  description: Complete reference of the createOrganizationSmAdminsRole API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-sm-admins-role
 notes:
   - SDK Method used are
-    organizations.Organizations.delete_organization_user,
+    sm.Sm.create_organization_sm_admins_role,
 
   - Paths used are
-    delete /organizations/{organizationId}/users/{userId},
+    post /organizations/{organizationId}/sm/admins/roles,
 """
 
 EXAMPLES = r"""
-- name: Delete by id
-  cisco.meraki.organizations_users:
+- name: Create
+  cisco.meraki.organizations_sm_admins_roles:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
     meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
@@ -60,8 +67,12 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    name: sample name
     organizationId: string
-    userId: string
+    scope: all_tags
+    tags:
+    - tag
 
 """
 RETURN = r"""
@@ -70,5 +81,12 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "name": "string",
+      "roleId": "string",
+      "scope": "string",
+      "tags": [
+        "string"
+      ]
+    }
 """

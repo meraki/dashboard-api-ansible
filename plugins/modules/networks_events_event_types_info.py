@@ -75,8 +75,8 @@ meraki_response:
     [
       {
         "category": "string",
-        "type": "string",
-        "description": "string"
+        "description": "string",
+        "type": "string"
       }
     ]
 """

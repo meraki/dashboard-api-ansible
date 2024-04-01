@@ -73,9 +73,9 @@ meraki_response:
   sample: >
     {
       "dhcpLeaseTime": "string",
-      "dnsNameservers": "string",
       "dnsCustomNameservers": [
         "string"
-      ]
+      ],
+      "dnsNameservers": "string"
     }
 """

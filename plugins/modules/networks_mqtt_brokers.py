@@ -18,6 +18,13 @@ author: Francisco Munoz (@fmunoz)
 options:
   authentication:
     description: Authentication settings of the MQTT broker.
+    suboptions:
+      password:
+        description: Password for the MQTT broker.
+        type: str
+      username:
+        description: Username for the MQTT broker.
+        type: str
     type: dict
   host:
     description: Host name/IP address where the MQTT broker runs.
@@ -37,7 +44,7 @@ options:
       mode:
         description: Security protocol of the MQTT broker.
         type: str
-      security:
+      tls:
         description: TLS settings of the MQTT broker.
         suboptions:
           caCertificate:
@@ -88,15 +95,16 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     authentication:
-      username: Username
-    host: 1.1.1.1
+      password: '*****'
+      username: milesmeraki
+    host: 1.2.3.4
     name: MQTT_Broker_1
     networkId: string
-    port: 1234
+    port: 443
     security:
       mode: tls
       tls:
-        hasCaCertificate: true
+        caCertificate: '*****'
         verifyHostnames: true
 
 """
@@ -106,5 +114,20 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "authentication": {
+        "username": "string"
+      },
+      "host": "string",
+      "id": "string",
+      "name": "string",
+      "port": 0,
+      "security": {
+        "mode": "string",
+        "tls": {
+          "hasCaCertificate": true,
+          "verifyHostnames": true
+        }
+      }
+    }
 """

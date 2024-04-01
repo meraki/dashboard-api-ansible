@@ -106,10 +106,36 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "audioRecordingEnabled": true,
+      "cloudArchiveEnabled": true,
+      "id": "string",
+      "maxRetentionDays": 0,
+      "motionBasedRetentionEnabled": true,
+      "motionDetectorVersion": 0,
+      "name": "string",
+      "networkId": "string",
+      "restrictedBandwidthModeEnabled": true,
+      "scheduleId": "string",
+      "videoSettings": {
+        "MV12/MV22/MV72": {
+          "quality": "string",
+          "resolution": "string"
+        },
+        "MV12WE": {
+          "quality": "string",
+          "resolution": "string"
+        },
+        "MV21/MV71": {
+          "quality": "string",
+          "resolution": "string"
+        },
+        "MV32": {
+          "quality": "string",
+          "resolution": "string"
+        }
+      }
+    }
 """

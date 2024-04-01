@@ -6,52 +6,80 @@
 
 DOCUMENTATION = r"""
 ---
-module: networks_appliance_static_routes_info
-short_description: Information module for networks _appliance _static _routes
+module: networks_wireless_ethernet_ports_profiles
+short_description: Resource module for networks _wireless _ethernet _ports _profiles
 description:
-- Get all networks _appliance _static _routes.
-- Get networks _appliance _static _routes by id.
-- List the static routes for an MX or teleworker network.
-- Return a static route for an MX or teleworker network.
-version_added: '2.16.0'
+- Manage operations update and delete of the resource networks _wireless _ethernet _ports _profiles.
+- Delete an AP port profile.
+- Update the AP port profile by ID for this network.
+version_added: '2.18.0'
 extends_documentation_fragment:
-  - cisco.meraki.module_info
+  - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
-  headers:
-    description: Additional headers.
-    type: dict
+  name:
+    description: AP port profile name.
+    type: str
   networkId:
-    description:
-    - NetworkId path parameter. Network ID.
+    description: NetworkId path parameter. Network ID.
     type: str
-  staticRouteId:
-    description:
-    - StaticRouteId path parameter. Static route ID.
+  ports:
+    description: AP ports configuration.
+    elements: dict
+    suboptions:
+      enabled:
+        description: AP port enabled.
+        type: bool
+      name:
+        description: AP port name.
+        type: str
+      pskGroupId:
+        description: AP port PSK Group number.
+        type: str
+      ssid:
+        description: AP port ssid number.
+        type: int
+    type: list
+  profileId:
+    description: ProfileId path parameter. Profile ID.
     type: str
+  usbPorts:
+    description: AP usb ports configuration.
+    elements: dict
+    suboptions:
+      enabled:
+        description: AP usb port enabled.
+        type: bool
+      name:
+        description: AP usb port name.
+        type: str
+      ssid:
+        description: AP usb port ssid number.
+        type: int
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceStaticRoute
-  description: Complete reference of the getNetworkApplianceStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-static-route
-- name: Cisco Meraki documentation for appliance getNetworkApplianceStaticRoutes
-  description: Complete reference of the getNetworkApplianceStaticRoutes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-static-routes
+- name: Cisco Meraki documentation for wireless deleteNetworkWirelessEthernetPortsProfile
+  description: Complete reference of the deleteNetworkWirelessEthernetPortsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ethernet-ports-profile
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessEthernetPortsProfile
+  description: Complete reference of the updateNetworkWirelessEthernetPortsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ethernet-ports-profile
 notes:
   - SDK Method used are
-    appliance.Appliance.get_network_appliance_static_route,
-    appliance.Appliance.get_network_appliance_static_routes,
+    wireless.Wireless.delete_network_wireless_ethernet_ports_profile,
+    wireless.Wireless.update_network_wireless_ethernet_ports_profile,
 
   - Paths used are
-    get /networks/{networkId}/appliance/staticRoutes,
-    get /networks/{networkId}/appliance/staticRoutes/{staticRouteId},
+    delete /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId},
+    put /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId},
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _static _routes
-  cisco.meraki.networks_appliance_static_routes_info:
+- name: Delete by id
+  cisco.meraki.networks_wireless_ethernet_ports_profiles:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
     meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
@@ -70,14 +98,14 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
     networkId: string
-  register: result
+    profileId: string
 
-- name: Get networks _appliance _static _routes by id
-  cisco.meraki.networks_appliance_static_routes_info:
+- name: Update by id
+  cisco.meraki.networks_wireless_ethernet_ports_profiles:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
     meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
@@ -96,28 +124,48 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    name: string
     networkId: string
-    staticRouteId: string
-  register: result
+    ports:
+    - enabled: true
+      name: string
+      pskGroupId: string
+      ssid: 0
+    profileId: string
+    usbPorts:
+    - enabled: true
+      name: string
+      ssid: 0
 
 """
 RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "name": "string",
-        "subnet": "string",
-        "gatewayIp": "string",
-        "gatewayVlanId": "string",
-        "enabled": true
-      }
-    ]
+    {
+      "isDefault": true,
+      "name": "string",
+      "ports": [
+        {
+          "enabled": true,
+          "name": "string",
+          "number": 0,
+          "pskGroupId": "string",
+          "ssid": 0
+        }
+      ],
+      "profileId": "string",
+      "usbPorts": [
+        {
+          "enabled": true,
+          "name": "string",
+          "ssid": 0
+        }
+      ]
+    }
 """

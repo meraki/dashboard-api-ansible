@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    ipv4=dict(type="dict"),
     mac=dict(type="str"),
     vlan=dict(type="int"),
-    ipv4=dict(type="dict"),
     networkId=dict(type="str"),
     trustedServerId=dict(type="str"),
 ))
@@ -52,9 +52,9 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            ipv4=params.get("ipv4"),
             mac=params.get("mac"),
             vlan=params.get("vlan"),
-            ipv4=params.get("ipv4"),
             networkId=params.get("networkId"),
             trustedServerId=params.get("trustedServerId"),
         )
@@ -78,15 +78,15 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
+            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
+                self.new_object.get('ipv4')
         if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
             new_object_params['mac'] = self.new_object.get('mac') or \
                 self.new_object.get('mac')
         if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
-            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
-                self.new_object.get('ipv4')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -104,15 +104,15 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
 
     def update_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
+            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
+                self.new_object.get('ipv4')
         if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
             new_object_params['mac'] = self.new_object.get('mac') or \
                 self.new_object.get('mac')
         if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
-            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
-                self.new_object.get('ipv4')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -189,9 +189,9 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("ipv4", "ipv4"),
             ("mac", "mac"),
             ("vlan", "vlan"),
-            ("ipv4", "ipv4"),
             ("networkId", "networkId"),
             ("trustedServerId", "trustedServerId"),
         ]

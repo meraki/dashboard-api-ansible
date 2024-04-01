@@ -98,12 +98,9 @@ meraki_response:
   sample: >
     [
       {
-        "occurredAt": "string",
-        "alertTypeId": "string",
+        "alertData": {},
         "alertType": "string",
-        "device": {
-          "serial": "string"
-        },
+        "alertTypeId": "string",
         "destinations": {
           "email": {
             "sentAt": "string"
@@ -118,7 +115,10 @@ meraki_response:
             "sentAt": "string"
           }
         },
-        "alertData": {}
+        "device": {
+          "serial": "string"
+        },
+        "occurredAt": "string"
       }
     ]
 """

@@ -26,8 +26,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     duration=dict(type="int"),
-    period=dict(type="int"),
     duty=dict(type="int"),
+    period=dict(type="int"),
     serial=dict(type="str"),
 ))
 
@@ -68,8 +68,8 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             duration=params.get("duration"),
-            period=params.get("period"),
             duty=params.get("duty"),
+            period=params.get("period"),
             serial=params.get("serial"),
         )
         return new_object

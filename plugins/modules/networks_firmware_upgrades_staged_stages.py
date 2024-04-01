@@ -85,9 +85,9 @@ meraki_response:
     [
       {
         "group": {
+          "description": "string",
           "id": "string",
-          "name": "string",
-          "description": "string"
+          "name": "string"
         }
       }
     ]

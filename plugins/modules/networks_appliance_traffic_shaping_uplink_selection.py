@@ -301,68 +301,68 @@ meraki_response:
     {
       "activeActiveAutoVpnEnabled": true,
       "defaultUplink": "string",
-      "loadBalancingEnabled": true,
       "failoverAndFailback": {
         "immediate": {
           "enabled": true
         }
       },
-      "wanTrafficUplinkPreferences": [
-        {
-          "trafficFilters": [
-            {
-              "type": "string",
-              "value": {
-                "protocol": "string",
-                "source": {
-                  "port": "string",
-                  "cidr": "string",
-                  "vlan": 0,
-                  "host": 0
-                },
-                "destination": {
-                  "port": "string",
-                  "cidr": "string"
-                }
-              }
-            }
-          ],
-          "preferredUplink": "string"
-        }
-      ],
+      "loadBalancingEnabled": true,
       "vpnTrafficUplinkPreferences": [
         {
+          "failOverCriterion": "string",
+          "performanceClass": {
+            "builtinPerformanceClassName": "string",
+            "customPerformanceClassId": "string",
+            "type": "string"
+          },
+          "preferredUplink": "string",
           "trafficFilters": [
             {
               "type": "string",
               "value": {
+                "destination": {
+                  "cidr": "string",
+                  "fqdn": "string",
+                  "host": 0,
+                  "network": "string",
+                  "port": "string",
+                  "vlan": 0
+                },
                 "id": "string",
                 "protocol": "string",
                 "source": {
-                  "port": "string",
                   "cidr": "string",
-                  "network": "string",
-                  "vlan": 0,
-                  "host": 0
-                },
-                "destination": {
-                  "port": "string",
-                  "cidr": "string",
-                  "network": "string",
-                  "vlan": 0,
                   "host": 0,
-                  "fqdn": "string"
+                  "network": "string",
+                  "port": "string",
+                  "vlan": 0
                 }
               }
             }
-          ],
+          ]
+        }
+      ],
+      "wanTrafficUplinkPreferences": [
+        {
           "preferredUplink": "string",
-          "failOverCriterion": "string",
-          "performanceClass": {
-            "type": "string",
-            "builtinPerformanceClassName": "string",
-            "customPerformanceClassId": "string"
-          }
+          "trafficFilters": [
+            {
+              "type": "string",
+              "value": {
+                "destination": {
+                  "cidr": "string",
+                  "port": "string"
+                },
+                "protocol": "string",
+                "source": {
+                  "cidr": "string",
+                  "host": 0,
+                  "port": "string",
+                  "vlan": 0
+                }
+              }
+            }
+          ]
         }
       ]
     }

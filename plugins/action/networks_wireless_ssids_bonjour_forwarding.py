@@ -33,6 +33,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     enabled=dict(type="bool"),
+    exception=dict(type="dict"),
     rules=dict(type="list"),
     networkId=dict(type="str"),
     number=dict(type="str"),
@@ -51,6 +52,7 @@ class NetworksWirelessSsidsBonjourForwarding(object):
         self.meraki = meraki
         self.new_object = dict(
             enabled=params.get("enabled"),
+            exception=params.get("exception"),
             rules=params.get("rules"),
             network_id=params.get("networkId"),
             number=params.get("number"),
@@ -69,6 +71,9 @@ class NetworksWirelessSsidsBonjourForwarding(object):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('exception') is not None or self.new_object.get('exception') is not None:
+            new_object_params['exception'] = self.new_object.get('exception') or \
+                self.new_object.get('exception')
         if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
@@ -132,6 +137,7 @@ class NetworksWirelessSsidsBonjourForwarding(object):
 
         obj_params = [
             ("enabled", "enabled"),
+            ("exception", "exception"),
             ("rules", "rules"),
             ("networkId", "networkId"),
             ("number", "number"),

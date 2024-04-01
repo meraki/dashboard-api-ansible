@@ -52,12 +52,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCellularGatewayLan
+- name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayLan
   description: Complete reference of the updateDeviceCellularGatewayLan API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-lan
 notes:
   - SDK Method used are
-    devices.Devices.update_device_cellular_gateway_lan,
+    cellular_gateway.CellularGateway.update_device_cellular_gateway_lan,
 
   - Paths used are
     put /devices/{serial}/cellularGateway/lan,
@@ -87,16 +87,10 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
-    deviceLanIp: 192.168.0.33
-    deviceName: name of the MG
-    deviceSubnet: 192.168.0.32/27
     fixedIpAssignments:
     - ip: 192.168.0.10
       mac: 0b:00:00:00:00:ac
       name: server 1
-    - ip: 192.168.0.20
-      mac: 0b:00:00:00:00:ab
-      name: server 2
     reservedIpRanges:
     - comment: A reserved IP range
       end: 192.168.1.1
@@ -110,5 +104,23 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "deviceLanIp": "string",
+      "deviceName": "string",
+      "deviceSubnet": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

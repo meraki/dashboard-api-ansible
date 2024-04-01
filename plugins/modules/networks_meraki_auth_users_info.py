@@ -13,7 +13,7 @@ description:
 - Get networks _merakiauthusers by id.
 - >
    List the users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless
-   network, or client VPN users for a wired network .
+   network, or client VPN users for a MX network .
 - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -111,20 +111,20 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "email": "string",
-      "name": "string",
-      "createdAt": "string",
       "accountType": "string",
-      "isAdmin": true,
       "authorizations": [
         {
-          "ssidNumber": 0,
+          "authorizedByEmail": "string",
+          "authorizedByName": "string",
           "authorizedZone": "string",
           "expiresAt": "string",
-          "authorizedByName": "string",
-          "authorizedByEmail": "string"
+          "ssidNumber": 0
         }
-      ]
+      ],
+      "createdAt": "string",
+      "email": "string",
+      "id": "string",
+      "isAdmin": true,
+      "name": "string"
     }
 """

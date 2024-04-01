@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCellularGatewayPortForwardingRules
+- name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayPortForwardingRules
   description: Complete reference of the getDeviceCellularGatewayPortForwardingRules API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules
 notes:
   - SDK Method used are
-    devices.Devices.get_device_cellular_gateway_port_forwarding_rules,
+    cellular_gateway.CellularGateway.get_device_cellular_gateway_port_forwarding_rules,
 
   - Paths used are
     get /devices/{serial}/cellularGateway/portForwardingRules,
@@ -69,7 +69,18 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
-  sample:
-  - {}
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "access": "string",
+        "lanIp": "string",
+        "localPort": "string",
+        "name": "string",
+        "protocol": "string",
+        "publicPort": "string",
+        "uplink": "string"
+      }
+    ]
 """

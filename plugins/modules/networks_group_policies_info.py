@@ -106,10 +106,130 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "bandwidth": {
+        "bandwidthLimits": {
+          "limitDown": 0,
+          "limitUp": 0
+        },
+        "settings": "string"
+      },
+      "bonjourForwarding": {
+        "rules": [
+          {
+            "description": "string",
+            "services": [
+              "string"
+            ],
+            "vlanId": "string"
+          }
+        ],
+        "settings": "string"
+      },
+      "contentFiltering": {
+        "allowedUrlPatterns": {
+          "patterns": [
+            "string"
+          ],
+          "settings": "string"
+        },
+        "blockedUrlCategories": {
+          "categories": [
+            "string"
+          ],
+          "settings": "string"
+        },
+        "blockedUrlPatterns": {
+          "patterns": [
+            "string"
+          ],
+          "settings": "string"
+        }
+      },
+      "firewallAndTrafficShaping": {
+        "l3FirewallRules": [
+          {
+            "comment": "string",
+            "destCidr": "string",
+            "destPort": "string",
+            "policy": "string",
+            "protocol": "string"
+          }
+        ],
+        "l7FirewallRules": [
+          {
+            "policy": "string",
+            "type": "string",
+            "value": "string"
+          }
+        ],
+        "settings": "string",
+        "trafficShapingRules": [
+          {
+            "definitions": [
+              {
+                "type": "string",
+                "value": "string"
+              }
+            ],
+            "dscpTagValue": 0,
+            "pcpTagValue": 0,
+            "perClientBandwidthLimits": {
+              "bandwidthLimits": {
+                "limitDown": 0,
+                "limitUp": 0
+              },
+              "settings": "string"
+            },
+            "priority": "string"
+          }
+        ]
+      },
+      "groupPolicyId": "string",
+      "scheduling": {
+        "enabled": true,
+        "friday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "monday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "saturday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "sunday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "thursday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "tuesday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "wednesday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        }
+      },
+      "splashAuthSettings": "string",
+      "vlanTagging": {
+        "settings": "string",
+        "vlanId": "string"
+      }
+    }
 """

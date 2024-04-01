@@ -32,11 +32,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    reportingEnabled=dict(type="bool"),
     collectorIp=dict(type="str"),
     collectorPort=dict(type="int"),
-    etaEnabled=dict(type="bool"),
     etaDstPort=dict(type="int"),
+    etaEnabled=dict(type="bool"),
+    reportingEnabled=dict(type="bool"),
     networkId=dict(type="str"),
 ))
 
@@ -52,11 +52,11 @@ class NetworksNetflow(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            reportingEnabled=params.get("reportingEnabled"),
             collectorIp=params.get("collectorIp"),
             collectorPort=params.get("collectorPort"),
-            etaEnabled=params.get("etaEnabled"),
             etaDstPort=params.get("etaDstPort"),
+            etaEnabled=params.get("etaEnabled"),
+            reportingEnabled=params.get("reportingEnabled"),
             network_id=params.get("networkId"),
         )
 
@@ -69,19 +69,19 @@ class NetworksNetflow(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('reportingEnabled') is not None or self.new_object.get('reporting_enabled') is not None:
-            new_object_params['reportingEnabled'] = self.new_object.get('reportingEnabled')
         if self.new_object.get('collectorIp') is not None or self.new_object.get('collector_ip') is not None:
             new_object_params['collectorIp'] = self.new_object.get('collectorIp') or \
                 self.new_object.get('collector_ip')
         if self.new_object.get('collectorPort') is not None or self.new_object.get('collector_port') is not None:
             new_object_params['collectorPort'] = self.new_object.get('collectorPort') or \
                 self.new_object.get('collector_port')
-        if self.new_object.get('etaEnabled') is not None or self.new_object.get('eta_enabled') is not None:
-            new_object_params['etaEnabled'] = self.new_object.get('etaEnabled')
         if self.new_object.get('etaDstPort') is not None or self.new_object.get('eta_dst_port') is not None:
             new_object_params['etaDstPort'] = self.new_object.get('etaDstPort') or \
                 self.new_object.get('eta_dst_port')
+        if self.new_object.get('etaEnabled') is not None or self.new_object.get('eta_enabled') is not None:
+            new_object_params['etaEnabled'] = self.new_object.get('etaEnabled')
+        if self.new_object.get('reportingEnabled') is not None or self.new_object.get('reporting_enabled') is not None:
+            new_object_params['reportingEnabled'] = self.new_object.get('reportingEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -138,11 +138,11 @@ class NetworksNetflow(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("reportingEnabled", "reportingEnabled"),
             ("collectorIp", "collectorIp"),
             ("collectorPort", "collectorPort"),
-            ("etaEnabled", "etaEnabled"),
             ("etaDstPort", "etaDstPort"),
+            ("etaEnabled", "etaEnabled"),
+            ("reportingEnabled", "reportingEnabled"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

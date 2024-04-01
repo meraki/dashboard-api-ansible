@@ -32,12 +32,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    scanningEnabled=dict(type="bool"),
     advertisingEnabled=dict(type="bool"),
-    uuid=dict(type="str"),
-    majorMinorAssignmentMode=dict(type="str"),
     major=dict(type="int"),
+    majorMinorAssignmentMode=dict(type="str"),
     minor=dict(type="int"),
+    scanningEnabled=dict(type="bool"),
+    uuid=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -53,12 +53,12 @@ class NetworksWirelessBluetoothSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            scanningEnabled=params.get("scanningEnabled"),
             advertisingEnabled=params.get("advertisingEnabled"),
-            uuid=params.get("uuid"),
-            majorMinorAssignmentMode=params.get("majorMinorAssignmentMode"),
             major=params.get("major"),
+            majorMinorAssignmentMode=params.get("majorMinorAssignmentMode"),
             minor=params.get("minor"),
+            scanningEnabled=params.get("scanningEnabled"),
+            uuid=params.get("uuid"),
             network_id=params.get("networkId"),
         )
 
@@ -71,22 +71,22 @@ class NetworksWirelessBluetoothSettings(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('scanningEnabled') is not None or self.new_object.get('scanning_enabled') is not None:
-            new_object_params['scanningEnabled'] = self.new_object.get('scanningEnabled')
         if self.new_object.get('advertisingEnabled') is not None or self.new_object.get('advertising_enabled') is not None:
             new_object_params['advertisingEnabled'] = self.new_object.get('advertisingEnabled')
-        if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
-            new_object_params['uuid'] = self.new_object.get('uuid') or \
-                self.new_object.get('uuid')
-        if self.new_object.get('majorMinorAssignmentMode') is not None or self.new_object.get('major_minor_assignment_mode') is not None:
-            new_object_params['majorMinorAssignmentMode'] = self.new_object.get('majorMinorAssignmentMode') or \
-                self.new_object.get('major_minor_assignment_mode')
         if self.new_object.get('major') is not None or self.new_object.get('major') is not None:
             new_object_params['major'] = self.new_object.get('major') or \
                 self.new_object.get('major')
+        if self.new_object.get('majorMinorAssignmentMode') is not None or self.new_object.get('major_minor_assignment_mode') is not None:
+            new_object_params['majorMinorAssignmentMode'] = self.new_object.get('majorMinorAssignmentMode') or \
+                self.new_object.get('major_minor_assignment_mode')
         if self.new_object.get('minor') is not None or self.new_object.get('minor') is not None:
             new_object_params['minor'] = self.new_object.get('minor') or \
                 self.new_object.get('minor')
+        if self.new_object.get('scanningEnabled') is not None or self.new_object.get('scanning_enabled') is not None:
+            new_object_params['scanningEnabled'] = self.new_object.get('scanningEnabled')
+        if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
+            new_object_params['uuid'] = self.new_object.get('uuid') or \
+                self.new_object.get('uuid')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -143,12 +143,12 @@ class NetworksWirelessBluetoothSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("scanningEnabled", "scanningEnabled"),
             ("advertisingEnabled", "advertisingEnabled"),
-            ("uuid", "uuid"),
-            ("majorMinorAssignmentMode", "majorMinorAssignmentMode"),
             ("major", "major"),
+            ("majorMinorAssignmentMode", "majorMinorAssignmentMode"),
             ("minor", "minor"),
+            ("scanningEnabled", "scanningEnabled"),
+            ("uuid", "uuid"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

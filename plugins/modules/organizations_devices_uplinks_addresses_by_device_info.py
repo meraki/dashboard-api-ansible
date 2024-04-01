@@ -151,18 +151,18 @@ meraki_response:
         ],
         "uplinks": [
           {
-            "interface": "string",
             "addresses": [
               {
-                "protocol": "string",
-                "assignmentMode": "string",
                 "address": "string",
+                "assignmentMode": "string",
                 "gateway": "string",
+                "protocol": "string",
                 "public": {
                   "address": "string"
                 }
               }
-            ]
+            ],
+            "interface": "string"
           }
         ]
       }

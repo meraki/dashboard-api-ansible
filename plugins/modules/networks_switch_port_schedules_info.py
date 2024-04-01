@@ -76,28 +76,14 @@ meraki_response:
       {
         "id": "string",
         "name": "string",
+        "networkId": "string",
         "portSchedule": {
-          "monday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "tuesday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "wednesday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "thursday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
           "friday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "monday": {
             "active": true,
             "from": "string",
             "to": "string"
@@ -108,6 +94,21 @@ meraki_response:
             "to": "string"
           },
           "sunday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "thursday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "tuesday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "wednesday": {
             "active": true,
             "from": "string",
             "to": "string"

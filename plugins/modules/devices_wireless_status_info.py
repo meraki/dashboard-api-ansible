@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceWirelessStatus
+- name: Cisco Meraki documentation for wireless getDeviceWirelessStatus
   description: Complete reference of the getDeviceWirelessStatus API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-status
 notes:
   - SDK Method used are
-    devices.Devices.get_device_wireless_status,
+    wireless.Wireless.get_device_wireless_status,
 
   - Paths used are
     get /devices/{serial}/wireless/status,
@@ -69,7 +69,21 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
-  sample:
-  - {}
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "band": "string",
+        "broadcasting": true,
+        "bssid": "string",
+        "channel": 0,
+        "channelWidth": "string",
+        "enabled": true,
+        "power": "string",
+        "ssidName": "string",
+        "ssidNumber": 0,
+        "visible": true
+      }
+    ]
 """

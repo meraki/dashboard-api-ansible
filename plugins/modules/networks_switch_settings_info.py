@@ -72,13 +72,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "vlan": 0,
-      "useCombinedPower": true,
+      "macBlocklist": {
+        "enabled": true
+      },
       "powerExceptions": [
         {
-          "serial": "string",
-          "powerType": "string"
+          "powerType": "string",
+          "serial": "string"
         }
-      ]
+      ],
+      "uplinkClientSampling": {
+        "enabled": true
+      },
+      "useCombinedPower": true,
+      "vlan": 0
     }
 """

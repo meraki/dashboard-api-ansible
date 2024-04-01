@@ -16,6 +16,13 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  macBlocklist:
+    description: MAC blocklist.
+    suboptions:
+      enabled:
+        description: Enable MAC blocklist.
+        type: bool
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -30,6 +37,13 @@ options:
         description: Serial number of the switch.
         type: str
     type: list
+  uplinkClientSampling:
+    description: Uplink client sampling.
+    suboptions:
+      enabled:
+        description: Enable uplink client sampling.
+        type: bool
+    type: dict
   useCombinedPower:
     description: The use Combined Power as the default behavior of secondary power supplies
       on supported devices.
@@ -76,10 +90,14 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    macBlocklist:
+      enabled: true
     networkId: string
     powerExceptions:
     - powerType: string
       serial: string
+    uplinkClientSampling:
+      enabled: true
     useCombinedPower: true
     vlan: 0
 
@@ -91,13 +109,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "vlan": 0,
-      "useCombinedPower": true,
+      "macBlocklist": {
+        "enabled": true
+      },
       "powerExceptions": [
         {
-          "serial": "string",
-          "powerType": "string"
+          "powerType": "string",
+          "serial": "string"
         }
-      ]
+      ],
+      "uplinkClientSampling": {
+        "enabled": true
+      },
+      "useCombinedPower": true,
+      "vlan": 0
     }
 """

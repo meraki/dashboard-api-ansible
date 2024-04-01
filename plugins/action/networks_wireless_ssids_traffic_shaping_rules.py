@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    trafficShapingEnabled=dict(type="bool"),
     defaultRulesEnabled=dict(type="bool"),
     rules=dict(type="list"),
+    trafficShapingEnabled=dict(type="bool"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -51,9 +51,9 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            trafficShapingEnabled=params.get("trafficShapingEnabled"),
             defaultRulesEnabled=params.get("defaultRulesEnabled"),
             rules=params.get("rules"),
+            trafficShapingEnabled=params.get("trafficShapingEnabled"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
@@ -69,13 +69,13 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('trafficShapingEnabled') is not None or self.new_object.get('traffic_shaping_enabled') is not None:
-            new_object_params['trafficShapingEnabled'] = self.new_object.get('trafficShapingEnabled')
         if self.new_object.get('defaultRulesEnabled') is not None or self.new_object.get('default_rules_enabled') is not None:
             new_object_params['defaultRulesEnabled'] = self.new_object.get('defaultRulesEnabled')
         if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
+        if self.new_object.get('trafficShapingEnabled') is not None or self.new_object.get('traffic_shaping_enabled') is not None:
+            new_object_params['trafficShapingEnabled'] = self.new_object.get('trafficShapingEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -135,9 +135,9 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("trafficShapingEnabled", "trafficShapingEnabled"),
             ("defaultRulesEnabled", "defaultRulesEnabled"),
             ("rules", "rules"),
+            ("trafficShapingEnabled", "trafficShapingEnabled"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]

@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    identity=dict(type="dict"),
     name=dict(type="str"),
     ssid=dict(type="dict"),
-    identity=dict(type="dict"),
     networkId=dict(type="str"),
     wirelessProfileId=dict(type="str"),
 ))
@@ -52,9 +52,9 @@ class NetworksCameraWirelessProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            identity=params.get("identity"),
             name=params.get("name"),
             ssid=params.get("ssid"),
-            identity=params.get("identity"),
             networkId=params.get("networkId"),
             wirelessProfileId=params.get("wirelessProfileId"),
         )
@@ -78,15 +78,15 @@ class NetworksCameraWirelessProfiles(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('identity') is not None or self.new_object.get('identity') is not None:
+            new_object_params['identity'] = self.new_object.get('identity') or \
+                self.new_object.get('identity')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('ssid') is not None or self.new_object.get('ssid') is not None:
             new_object_params['ssid'] = self.new_object.get('ssid') or \
                 self.new_object.get('ssid')
-        if self.new_object.get('identity') is not None or self.new_object.get('identity') is not None:
-            new_object_params['identity'] = self.new_object.get('identity') or \
-                self.new_object.get('identity')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -104,15 +104,15 @@ class NetworksCameraWirelessProfiles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('identity') is not None or self.new_object.get('identity') is not None:
+            new_object_params['identity'] = self.new_object.get('identity') or \
+                self.new_object.get('identity')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('ssid') is not None or self.new_object.get('ssid') is not None:
             new_object_params['ssid'] = self.new_object.get('ssid') or \
                 self.new_object.get('ssid')
-        if self.new_object.get('identity') is not None or self.new_object.get('identity') is not None:
-            new_object_params['identity'] = self.new_object.get('identity') or \
-                self.new_object.get('identity')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -190,9 +190,9 @@ class NetworksCameraWirelessProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("identity", "identity"),
             ("name", "name"),
             ("ssid", "ssid"),
-            ("identity", "identity"),
             ("networkId", "networkId"),
             ("wirelessProfileId", "wirelessProfileId"),
         ]

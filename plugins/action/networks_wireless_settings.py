@@ -32,11 +32,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    meshingEnabled=dict(type="bool"),
     ipv6BridgeEnabled=dict(type="bool"),
-    locationAnalyticsEnabled=dict(type="bool"),
-    upgradeStrategy=dict(type="str"),
     ledLightsOn=dict(type="bool"),
+    locationAnalyticsEnabled=dict(type="bool"),
+    meshingEnabled=dict(type="bool"),
+    namedVlans=dict(type="dict"),
+    upgradeStrategy=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -52,11 +53,12 @@ class NetworksWirelessSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            meshingEnabled=params.get("meshingEnabled"),
             ipv6BridgeEnabled=params.get("ipv6BridgeEnabled"),
-            locationAnalyticsEnabled=params.get("locationAnalyticsEnabled"),
-            upgradeStrategy=params.get("upgradeStrategy"),
             ledLightsOn=params.get("ledLightsOn"),
+            locationAnalyticsEnabled=params.get("locationAnalyticsEnabled"),
+            meshingEnabled=params.get("meshingEnabled"),
+            namedVlans=params.get("namedVlans"),
+            upgradeStrategy=params.get("upgradeStrategy"),
             network_id=params.get("networkId"),
         )
 
@@ -69,17 +71,20 @@ class NetworksWirelessSettings(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('meshingEnabled') is not None or self.new_object.get('meshing_enabled') is not None:
-            new_object_params['meshingEnabled'] = self.new_object.get('meshingEnabled')
         if self.new_object.get('ipv6BridgeEnabled') is not None or self.new_object.get('ipv6_bridge_enabled') is not None:
             new_object_params['ipv6BridgeEnabled'] = self.new_object.get('ipv6BridgeEnabled')
+        if self.new_object.get('ledLightsOn') is not None or self.new_object.get('led_lights_on') is not None:
+            new_object_params['ledLightsOn'] = self.new_object.get('ledLightsOn')
         if self.new_object.get('locationAnalyticsEnabled') is not None or self.new_object.get('location_analytics_enabled') is not None:
             new_object_params['locationAnalyticsEnabled'] = self.new_object.get('locationAnalyticsEnabled')
+        if self.new_object.get('meshingEnabled') is not None or self.new_object.get('meshing_enabled') is not None:
+            new_object_params['meshingEnabled'] = self.new_object.get('meshingEnabled')
+        if self.new_object.get('namedVlans') is not None or self.new_object.get('named_vlans') is not None:
+            new_object_params['namedVlans'] = self.new_object.get('namedVlans') or \
+                self.new_object.get('named_vlans')
         if self.new_object.get('upgradeStrategy') is not None or self.new_object.get('upgrade_strategy') is not None:
             new_object_params['upgradeStrategy'] = self.new_object.get('upgradeStrategy') or \
                 self.new_object.get('upgrade_strategy')
-        if self.new_object.get('ledLightsOn') is not None or self.new_object.get('led_lights_on') is not None:
-            new_object_params['ledLightsOn'] = self.new_object.get('ledLightsOn')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -136,11 +141,12 @@ class NetworksWirelessSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("meshingEnabled", "meshingEnabled"),
             ("ipv6BridgeEnabled", "ipv6BridgeEnabled"),
-            ("locationAnalyticsEnabled", "locationAnalyticsEnabled"),
-            ("upgradeStrategy", "upgradeStrategy"),
             ("ledLightsOn", "ledLightsOn"),
+            ("locationAnalyticsEnabled", "locationAnalyticsEnabled"),
+            ("meshingEnabled", "meshingEnabled"),
+            ("namedVlans", "namedVlans"),
+            ("upgradeStrategy", "upgradeStrategy"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
