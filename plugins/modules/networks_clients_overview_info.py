@@ -95,6 +95,15 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "counts": {
+        "total": 0,
+        "withHeavyUsage": 0
+      },
+      "usages": {
+        "average": 0,
+        "withHeavyUsageAverage": 0
+      }
+    }
 """

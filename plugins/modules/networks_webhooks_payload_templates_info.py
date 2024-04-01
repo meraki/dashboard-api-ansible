@@ -109,20 +109,20 @@ meraki_response:
   type: dict
   sample: >
     {
-      "payloadTemplateId": "string",
-      "type": "string",
-      "name": "string",
+      "body": "string",
       "headers": [
         {
           "name": "string",
           "template": "string"
         }
       ],
-      "body": "string",
+      "name": "string",
+      "payloadTemplateId": "string",
       "sharing": {
         "byNetwork": {
           "adminsCanModify": true
         }
-      }
+      },
+      "type": "string"
     }
 """

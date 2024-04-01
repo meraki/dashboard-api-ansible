@@ -104,54 +104,54 @@ meraki_response:
   type: dict
   sample: >
     {
-      "remainderLicenses": [
-        {
-          "key": "string",
-          "organizationId": "string",
-          "duration": 0,
-          "mode": "string",
-          "startedAt": "string",
-          "claimedAt": "string",
-          "invalidated": true,
-          "invalidatedAt": "string",
-          "expired": true,
-          "editions": [
-            {
-              "edition": "string",
-              "productType": "string"
-            }
-          ],
-          "counts": [
-            {
-              "model": "string",
-              "count": 0
-            }
-          ]
-        }
-      ],
       "movedLicenses": [
         {
-          "key": "string",
-          "organizationId": "string",
-          "duration": 0,
-          "mode": "string",
-          "startedAt": "string",
           "claimedAt": "string",
-          "invalidated": true,
-          "invalidatedAt": "string",
-          "expired": true,
+          "counts": [
+            {
+              "count": 0,
+              "model": "string"
+            }
+          ],
+          "duration": 0,
           "editions": [
             {
               "edition": "string",
               "productType": "string"
             }
           ],
+          "expired": true,
+          "invalidated": true,
+          "invalidatedAt": "string",
+          "key": "string",
+          "mode": "string",
+          "organizationId": "string",
+          "startedAt": "string"
+        }
+      ],
+      "remainderLicenses": [
+        {
+          "claimedAt": "string",
           "counts": [
             {
-              "model": "string",
-              "count": 0
+              "count": 0,
+              "model": "string"
             }
-          ]
+          ],
+          "duration": 0,
+          "editions": [
+            {
+              "edition": "string",
+              "productType": "string"
+            }
+          ],
+          "expired": true,
+          "invalidated": true,
+          "invalidatedAt": "string",
+          "key": "string",
+          "mode": "string",
+          "organizationId": "string",
+          "startedAt": "string"
         }
       ]
     }

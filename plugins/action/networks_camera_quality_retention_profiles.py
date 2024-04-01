@@ -32,14 +32,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    motionBasedRetentionEnabled=dict(type="bool"),
-    restrictedBandwidthModeEnabled=dict(type="bool"),
     audioRecordingEnabled=dict(type="bool"),
     cloudArchiveEnabled=dict(type="bool"),
-    motionDetectorVersion=dict(type="int"),
-    scheduleId=dict(type="str"),
     maxRetentionDays=dict(type="int"),
+    motionBasedRetentionEnabled=dict(type="bool"),
+    motionDetectorVersion=dict(type="int"),
+    name=dict(type="str"),
+    restrictedBandwidthModeEnabled=dict(type="bool"),
+    scheduleId=dict(type="str"),
     videoSettings=dict(type="dict"),
     networkId=dict(type="str"),
     qualityRetentionProfileId=dict(type="str"),
@@ -58,14 +58,14 @@ class NetworksCameraQualityRetentionProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
-            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
             audioRecordingEnabled=params.get("audioRecordingEnabled"),
             cloudArchiveEnabled=params.get("cloudArchiveEnabled"),
-            motionDetectorVersion=params.get("motionDetectorVersion"),
-            scheduleId=params.get("scheduleId"),
             maxRetentionDays=params.get("maxRetentionDays"),
+            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
+            motionDetectorVersion=params.get("motionDetectorVersion"),
+            name=params.get("name"),
+            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
+            scheduleId=params.get("scheduleId"),
             videoSettings=params.get("videoSettings"),
             networkId=params.get("networkId"),
             qualityRetentionProfileId=params.get("qualityRetentionProfileId"),
@@ -90,26 +90,26 @@ class NetworksCameraQualityRetentionProfiles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
-        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
             new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
             new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
-        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
-            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
-                self.new_object.get('motion_detector_version')
-        if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
-            new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
-                self.new_object.get('schedule_id')
         if self.new_object.get('maxRetentionDays') is not None or self.new_object.get('max_retention_days') is not None:
             new_object_params['maxRetentionDays'] = self.new_object.get('maxRetentionDays') or \
                 self.new_object.get('max_retention_days')
+        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
+        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
+            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
+                self.new_object.get('motion_detector_version')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+        if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
+            new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
+                self.new_object.get('schedule_id')
         if self.new_object.get('videoSettings') is not None or self.new_object.get('video_settings') is not None:
             new_object_params['videoSettings'] = self.new_object.get('videoSettings') or \
                 self.new_object.get('video_settings')
@@ -130,26 +130,26 @@ class NetworksCameraQualityRetentionProfiles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
-        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
             new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
             new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
-        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
-            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
-                self.new_object.get('motion_detector_version')
-        if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
-            new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
-                self.new_object.get('schedule_id')
         if self.new_object.get('maxRetentionDays') is not None or self.new_object.get('max_retention_days') is not None:
             new_object_params['maxRetentionDays'] = self.new_object.get('maxRetentionDays') or \
                 self.new_object.get('max_retention_days')
+        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
+        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
+            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
+                self.new_object.get('motion_detector_version')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+        if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
+            new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
+                self.new_object.get('schedule_id')
         if self.new_object.get('videoSettings') is not None or self.new_object.get('video_settings') is not None:
             new_object_params['videoSettings'] = self.new_object.get('videoSettings') or \
                 self.new_object.get('video_settings')
@@ -230,14 +230,14 @@ class NetworksCameraQualityRetentionProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("motionBasedRetentionEnabled", "motionBasedRetentionEnabled"),
-            ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
             ("audioRecordingEnabled", "audioRecordingEnabled"),
             ("cloudArchiveEnabled", "cloudArchiveEnabled"),
-            ("motionDetectorVersion", "motionDetectorVersion"),
-            ("scheduleId", "scheduleId"),
             ("maxRetentionDays", "maxRetentionDays"),
+            ("motionBasedRetentionEnabled", "motionBasedRetentionEnabled"),
+            ("motionDetectorVersion", "motionDetectorVersion"),
+            ("name", "name"),
+            ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
+            ("scheduleId", "scheduleId"),
             ("videoSettings", "videoSettings"),
             ("networkId", "networkId"),
             ("qualityRetentionProfileId", "qualityRetentionProfileId"),

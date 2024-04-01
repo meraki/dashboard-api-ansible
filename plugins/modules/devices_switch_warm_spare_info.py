@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSwitchWarmSpare
+- name: Cisco Meraki documentation for switch getDeviceSwitchWarmSpare
   description: Complete reference of the getDeviceSwitchWarmSpare API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-warm-spare
 notes:
   - SDK Method used are
-    devices.Devices.get_device_switch_warm_spare,
+    switch.Switch.get_device_switch_warm_spare,
 
   - Paths used are
     get /devices/{serial}/switch/warmSpare,
@@ -70,6 +70,10 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "enabled": true,
+      "primarySerial": "string",
+      "spareSerial": "string"
+    }
 """

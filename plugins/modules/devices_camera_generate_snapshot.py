@@ -32,12 +32,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices generateDeviceCameraSnapshot
+- name: Cisco Meraki documentation for camera generateDeviceCameraSnapshot
   description: Complete reference of the generateDeviceCameraSnapshot API.
   link: https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot
 notes:
   - SDK Method used are
-    devices.Devices.generate_device_camera_snapshot,
+    camera.Camera.generate_device_camera_snapshot,
 
   - Paths used are
     post /devices/{serial}/camera/generateSnapshot,

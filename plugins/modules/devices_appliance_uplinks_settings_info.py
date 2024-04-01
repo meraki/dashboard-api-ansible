@@ -74,14 +74,17 @@ meraki_response:
     {
       "wan1": {
         "enabled": true,
-        "vlanTagging": {
-          "enabled": true,
-          "vlanId": 0
+        "pppoe": {
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "enabled": true
         },
         "svis": {
           "ipv4": {
-            "assignmentMode": "string",
             "address": "string",
+            "assignmentMode": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -90,8 +93,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "assignmentMode": "string",
             "address": "string",
+            "assignmentMode": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -100,24 +103,24 @@ meraki_response:
             }
           }
         },
-        "pppoe": {
+        "vlanTagging": {
           "enabled": true,
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          }
+          "vlanId": 0
         }
       },
       "wan2": {
         "enabled": true,
-        "vlanTagging": {
-          "enabled": true,
-          "vlanId": 0
+        "pppoe": {
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "enabled": true
         },
         "svis": {
           "ipv4": {
-            "assignmentMode": "string",
             "address": "string",
+            "assignmentMode": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -126,8 +129,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "assignmentMode": "string",
             "address": "string",
+            "assignmentMode": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -136,12 +139,9 @@ meraki_response:
             }
           }
         },
-        "pppoe": {
+        "vlanTagging": {
           "enabled": true,
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          }
+          "vlanId": 0
         }
       }
     }

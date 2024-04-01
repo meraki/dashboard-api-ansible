@@ -11,8 +11,8 @@ short_description: Information module for organizations _configtemplates _switch
 description:
 - Get all organizations _configtemplates _switch _profiles _ports.
 - Get organizations _configtemplates _switch _profiles _ports by id.
-- Return a switch profile port.
-- Return all the ports of a switch profile.
+- Return a switch template port.
+- Return all the ports of a switch template.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -121,42 +121,48 @@ meraki_response:
   type: dict
   sample: >
     {
-      "portId": "string",
-      "name": "string",
-      "tags": [
-        "string"
-      ],
-      "enabled": true,
-      "poeEnabled": true,
-      "type": "string",
-      "vlan": 0,
-      "voiceVlan": 0,
+      "accessPolicyNumber": 0,
+      "accessPolicyType": "string",
       "allowedVlans": "string",
+      "daiTrusted": true,
+      "enabled": true,
+      "flexibleStackingEnabled": true,
       "isolationEnabled": true,
-      "rstpEnabled": true,
-      "stpGuard": "string",
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "portScheduleId": "string",
-      "udld": "string",
-      "accessPolicyType": "string",
-      "accessPolicyNumber": 0,
       "macAllowList": [
         "string"
       ],
+      "mirror": {
+        "mode": "string"
+      },
+      "module": {
+        "model": "string"
+      },
+      "name": "string",
+      "poeEnabled": true,
+      "portId": "string",
+      "portScheduleId": "string",
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "rstpEnabled": true,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "flexibleStackingEnabled": true,
-      "daiTrusted": true,
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      }
+      "stpGuard": "string",
+      "tags": [
+        "string"
+      ],
+      "type": "string",
+      "udld": "string",
+      "vlan": 0,
+      "voiceVlan": 0
     }
 """

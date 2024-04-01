@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    upgradeWindow=dict(type="dict"),
-    timezone=dict(type="str"),
     products=dict(type="dict"),
+    timezone=dict(type="str"),
+    upgradeWindow=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -50,9 +50,9 @@ class NetworksFirmwareUpgrades(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            upgradeWindow=params.get("upgradeWindow"),
-            timezone=params.get("timezone"),
             products=params.get("products"),
+            timezone=params.get("timezone"),
+            upgradeWindow=params.get("upgradeWindow"),
             network_id=params.get("networkId"),
         )
 
@@ -65,15 +65,15 @@ class NetworksFirmwareUpgrades(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('upgradeWindow') is not None or self.new_object.get('upgrade_window') is not None:
-            new_object_params['upgradeWindow'] = self.new_object.get('upgradeWindow') or \
-                self.new_object.get('upgrade_window')
-        if self.new_object.get('timezone') is not None or self.new_object.get('timezone') is not None:
-            new_object_params['timezone'] = self.new_object.get('timezone') or \
-                self.new_object.get('timezone')
         if self.new_object.get('products') is not None or self.new_object.get('products') is not None:
             new_object_params['products'] = self.new_object.get('products') or \
                 self.new_object.get('products')
+        if self.new_object.get('timezone') is not None or self.new_object.get('timezone') is not None:
+            new_object_params['timezone'] = self.new_object.get('timezone') or \
+                self.new_object.get('timezone')
+        if self.new_object.get('upgradeWindow') is not None or self.new_object.get('upgrade_window') is not None:
+            new_object_params['upgradeWindow'] = self.new_object.get('upgradeWindow') or \
+                self.new_object.get('upgrade_window')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -130,9 +130,9 @@ class NetworksFirmwareUpgrades(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("upgradeWindow", "upgradeWindow"),
-            ("timezone", "timezone"),
             ("products", "products"),
+            ("timezone", "timezone"),
+            ("upgradeWindow", "upgradeWindow"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

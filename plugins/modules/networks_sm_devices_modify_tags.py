@@ -89,9 +89,9 @@ EXAMPLES = r"""
     scope:
     - withAny, old_tag
     serials:
-    - Q234-ABCD-0001
-    - Q234-ABCD-0002
-    - Q234-ABCD-0003
+    - XY0XX0Y0X0
+    - A01B01CD00E
+    - X02YZ1ZYZX
     tags:
     - tag1
     - tag2
@@ -109,11 +109,11 @@ meraki_response:
     [
       {
         "id": "string",
+        "serial": "string",
         "tags": [
           "string"
         ],
-        "wifiMac": "string",
-        "serial": "string"
+        "wifiMac": "string"
       }
     ]
 """

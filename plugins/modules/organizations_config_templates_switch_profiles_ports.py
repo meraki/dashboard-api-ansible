@@ -10,23 +10,23 @@ module: organizations_config_templates_switch_profiles_ports
 short_description: Resource module for organizations _configtemplates _switch _profiles _ports
 description:
 - Manage operation update of the resource organizations _configtemplates _switch _profiles _ports.
-- Update a switch profile port.
+- Update a switch template port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   accessPolicyNumber:
-    description: The number of a custom access policy to configure on the switch profile
+    description: The number of a custom access policy to configure on the switch template
       port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
     type: int
   accessPolicyType:
-    description: The type of the access policy of the switch profile port. Only applicable
+    description: The type of the access policy of the switch template port. Only applicable
       to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list'
       or 'Sticky MAC allow list'.
     type: str
   allowedVlans:
-    description: The VLANs allowed on the switch profile port. Only applicable to trunk
+    description: The VLANs allowed on the switch template port. Only applicable to trunk
       ports.
     type: str
   configTemplateId:
@@ -37,17 +37,17 @@ options:
       Dynamic ARP Inspection will allow the traffic.
     type: bool
   enabled:
-    description: The status of the switch profile port.
+    description: The status of the switch template port.
     type: bool
   flexibleStackingEnabled:
     description: For supported switches (e.g. MS420/MS425), whether or not the port
       has flexible stacking enabled.
     type: bool
   isolationEnabled:
-    description: The isolation status of the switch profile port.
+    description: The isolation status of the switch template port.
     type: bool
   linkNegotiation:
-    description: The link speed for the switch profile port.
+    description: The link speed for the switch template port.
     type: str
   macAllowList:
     description: Only devices with MAC addresses specified in this list will have access
@@ -56,13 +56,13 @@ options:
     elements: str
     type: list
   name:
-    description: The name of the switch profile port.
+    description: The name of the switch template port.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   poeEnabled:
-    description: The PoE status of the switch profile port.
+    description: The PoE status of the switch template port.
     type: bool
   portId:
     description: PortId path parameter. Port ID.
@@ -100,29 +100,29 @@ options:
       applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     type: int
   stormControlEnabled:
-    description: The storm control status of the switch profile port.
+    description: The storm control status of the switch template port.
     type: bool
   stpGuard:
     description: The state of the STP guard ('disabled', 'root guard', 'bpdu guard'
       or 'loop guard').
     type: str
   tags:
-    description: The list of tags of the switch profile port.
+    description: The list of tags of the switch template port.
     elements: str
     type: list
   type:
-    description: The type of the switch profile port ('trunk' or 'access').
+    description: The type of the switch template port ('trunk' or 'access').
     type: str
   udld:
     description: The action to take when Unidirectional Link is detected (Alert only,
       Enforce). Default configuration is Alert only.
     type: str
   vlan:
-    description: The VLAN of the switch profile port. A null value will clear the value
-      set for trunk ports.
+    description: The VLAN of the switch template port. For a trunk port, this is the
+      native VLAN. A null value will clear the value set for trunk ports.
     type: int
   voiceVlan:
-    description: The voice VLAN of the switch profile port. Only applicable to access
+    description: The voice VLAN of the switch template port. Only applicable to access
       ports.
     type: int
 requirements:
@@ -209,42 +209,48 @@ meraki_response:
   type: dict
   sample: >
     {
-      "portId": "string",
-      "name": "string",
-      "tags": [
-        "string"
-      ],
-      "enabled": true,
-      "poeEnabled": true,
-      "type": "string",
-      "vlan": 0,
-      "voiceVlan": 0,
+      "accessPolicyNumber": 0,
+      "accessPolicyType": "string",
       "allowedVlans": "string",
+      "daiTrusted": true,
+      "enabled": true,
+      "flexibleStackingEnabled": true,
       "isolationEnabled": true,
-      "rstpEnabled": true,
-      "stpGuard": "string",
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "portScheduleId": "string",
-      "udld": "string",
-      "accessPolicyType": "string",
-      "accessPolicyNumber": 0,
       "macAllowList": [
         "string"
       ],
+      "mirror": {
+        "mode": "string"
+      },
+      "module": {
+        "model": "string"
+      },
+      "name": "string",
+      "poeEnabled": true,
+      "portId": "string",
+      "portScheduleId": "string",
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "rstpEnabled": true,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "flexibleStackingEnabled": true,
-      "daiTrusted": true,
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      }
+      "stpGuard": "string",
+      "tags": [
+        "string"
+      ],
+      "type": "string",
+      "udld": "string",
+      "vlan": 0,
+      "voiceVlan": 0
     }
 """

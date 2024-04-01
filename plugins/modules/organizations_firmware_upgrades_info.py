@@ -14,6 +14,7 @@ description:
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
+  - cisco.meraki.module_info_pagination
 author: Francisco Munoz (@fmunoz)
 options:
   headers:
@@ -23,14 +24,32 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
+  perPage:
+    description:
+    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+    type: int
+  startingAfter:
+    description:
+    - >
+      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
+      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
+      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+    type: str
+  endingBefore:
+    description:
+    - >
+      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
+      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
+      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+    type: str
   status:
     description:
-    - Status query parameter. The status of an upgrade.
+    - Status query parameter. Optional parameter to filter the upgrade by status.
     elements: str
     type: list
-  productType:
+  productTypes:
     description:
-    - ProductType query parameter. The product type in a given upgrade ID.
+    - ProductTypes query parameter. Optional parameter to filter the upgrade by product type.
     elements: str
     type: list
 requirements:
@@ -71,9 +90,14 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    perPage: 0
+    startingAfter: string
+    endingBefore: string
     status: []
-    productType: []
+    productTypes: []
     organizationId: string
+    total_pages: -1
+    direction: next
   register: result
 
 """
@@ -86,28 +110,30 @@ meraki_response:
   sample: >
     [
       {
-        "upgradeId": "string",
-        "upgradeBatchId": "string",
+        "completedAt": "string",
+        "fromVersion": {
+          "firmware": "string",
+          "id": "string",
+          "releaseDate": "string",
+          "releaseType": "string",
+          "shortName": "string"
+        },
         "network": {
           "id": "string",
           "name": "string"
         },
+        "productTypes": "string",
         "status": "string",
         "time": "string",
-        "completedAt": "string",
-        "productType": "string",
         "toVersion": {
+          "firmware": "string",
           "id": "string",
-          "shortName": "string",
+          "releaseDate": "string",
           "releaseType": "string",
-          "releaseDate": "string"
+          "shortName": "string"
         },
-        "fromVersion": {
-          "id": "string",
-          "shortName": "string",
-          "releaseType": "string",
-          "releaseDate": "string"
-        }
+        "upgradeBatchId": "string",
+        "upgradeId": "string"
       }
     ]
 """

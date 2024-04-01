@@ -116,18 +116,16 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {
-      "rules": [
-        {
-          "comment": "string",
-          "policy": "string",
-          "protocol": "string",
-          "srcPort": "string",
-          "srcCidr": "string",
-          "destPort": "string",
-          "destCidr": "string",
-          "syslogEnabled": true
-        }
-      ]
-    }
+    [
+      {
+        "comment": "string",
+        "destCidr": "string",
+        "destPort": "string",
+        "policy": "string",
+        "protocol": "string",
+        "srcCidr": "string",
+        "srcPort": "string",
+        "syslogEnabled": true
+      }
+    ]
 """

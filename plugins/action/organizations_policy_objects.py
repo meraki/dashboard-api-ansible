@@ -32,14 +32,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     category=dict(type="str"),
-    type=dict(type="str"),
     cidr=dict(type="str"),
     fqdn=dict(type="str"),
-    mask=dict(type="str"),
-    ip=dict(type="str"),
     groupIds=dict(type="list"),
+    ip=dict(type="str"),
+    mask=dict(type="str"),
+    name=dict(type="str"),
+    type=dict(type="str"),
     organizationId=dict(type="str"),
     policyObjectId=dict(type="str"),
 ))
@@ -57,14 +57,14 @@ class OrganizationsPolicyObjects(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             category=params.get("category"),
-            type=params.get("type"),
             cidr=params.get("cidr"),
             fqdn=params.get("fqdn"),
-            mask=params.get("mask"),
-            ip=params.get("ip"),
             groupIds=params.get("groupIds"),
+            ip=params.get("ip"),
+            mask=params.get("mask"),
+            name=params.get("name"),
+            type=params.get("type"),
             organizationId=params.get("organizationId"),
             policyObjectId=params.get("policyObjectId"),
         )
@@ -98,30 +98,30 @@ class OrganizationsPolicyObjects(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('category') is not None or self.new_object.get('category') is not None:
             new_object_params['category'] = self.new_object.get('category') or \
                 self.new_object.get('category')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
-            new_object_params['type'] = self.new_object.get('type') or \
-                self.new_object.get('type')
         if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
             new_object_params['cidr'] = self.new_object.get('cidr') or \
                 self.new_object.get('cidr')
         if self.new_object.get('fqdn') is not None or self.new_object.get('fqdn') is not None:
             new_object_params['fqdn'] = self.new_object.get('fqdn') or \
                 self.new_object.get('fqdn')
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
-            new_object_params['mask'] = self.new_object.get('mask') or \
-                self.new_object.get('mask')
-        if self.new_object.get('ip') is not None or self.new_object.get('ip') is not None:
-            new_object_params['ip'] = self.new_object.get('ip') or \
-                self.new_object.get('ip')
         if self.new_object.get('groupIds') is not None or self.new_object.get('group_ids') is not None:
             new_object_params['groupIds'] = self.new_object.get('groupIds') or \
                 self.new_object.get('group_ids')
+        if self.new_object.get('ip') is not None or self.new_object.get('ip') is not None:
+            new_object_params['ip'] = self.new_object.get('ip') or \
+                self.new_object.get('ip')
+        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
+            new_object_params['mask'] = self.new_object.get('mask') or \
+                self.new_object.get('mask')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+            new_object_params['type'] = self.new_object.get('type') or \
+                self.new_object.get('type')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -139,24 +139,24 @@ class OrganizationsPolicyObjects(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
             new_object_params['cidr'] = self.new_object.get('cidr') or \
                 self.new_object.get('cidr')
         if self.new_object.get('fqdn') is not None or self.new_object.get('fqdn') is not None:
             new_object_params['fqdn'] = self.new_object.get('fqdn') or \
                 self.new_object.get('fqdn')
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
-            new_object_params['mask'] = self.new_object.get('mask') or \
-                self.new_object.get('mask')
-        if self.new_object.get('ip') is not None or self.new_object.get('ip') is not None:
-            new_object_params['ip'] = self.new_object.get('ip') or \
-                self.new_object.get('ip')
         if self.new_object.get('groupIds') is not None or self.new_object.get('group_ids') is not None:
             new_object_params['groupIds'] = self.new_object.get('groupIds') or \
                 self.new_object.get('group_ids')
+        if self.new_object.get('ip') is not None or self.new_object.get('ip') is not None:
+            new_object_params['ip'] = self.new_object.get('ip') or \
+                self.new_object.get('ip')
+        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
+            new_object_params['mask'] = self.new_object.get('mask') or \
+                self.new_object.get('mask')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -234,14 +234,14 @@ class OrganizationsPolicyObjects(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("category", "category"),
-            ("type", "type"),
             ("cidr", "cidr"),
             ("fqdn", "fqdn"),
-            ("mask", "mask"),
-            ("ip", "ip"),
             ("groupIds", "groupIds"),
+            ("ip", "ip"),
+            ("mask", "mask"),
+            ("name", "name"),
+            ("type", "type"),
             ("organizationId", "organizationId"),
             ("policyObjectId", "policyObjectId"),
         ]

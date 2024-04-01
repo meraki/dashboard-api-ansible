@@ -195,30 +195,30 @@ meraki_response:
   sample: >
     [
       {
-        "message": "string",
-        "udi": "string",
-        "deviceId": "string",
-        "status": "string",
         "configParams": {
+          "cloudStaticIp": "string",
           "tunnel": {
-            "mode": "string",
-            "port": "string",
             "host": "string",
+            "mode": "string",
             "name": "string",
+            "port": "string",
             "rootCertificate": {
               "content": "string",
               "name": "string"
             }
           },
-          "cloudStaticIp": "string",
           "user": {
             "publicKey": "string",
-            "username": "string",
             "secret": {
               "hash": "string"
-            }
+            },
+            "username": "string"
           }
-        }
+        },
+        "deviceId": "string",
+        "message": "string",
+        "status": "string",
+        "udi": "string"
       }
     ]
 """

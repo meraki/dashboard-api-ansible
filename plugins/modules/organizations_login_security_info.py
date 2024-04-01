@@ -72,20 +72,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "enforcePasswordExpiration": true,
-      "passwordExpirationDays": 0,
-      "enforceDifferentPasswords": true,
-      "numDifferentPasswords": 0,
-      "enforceStrongPasswords": true,
-      "enforceAccountLockout": true,
       "accountLockoutAttempts": 0,
-      "enforceIdleTimeout": true,
-      "idleTimeoutMinutes": 0,
-      "enforceTwoFactorAuth": true,
-      "enforceLoginIpRanges": true,
-      "loginIpRanges": [
-        "string"
-      ],
       "apiAuthentication": {
         "ipRestrictionsForKeys": {
           "enabled": true,
@@ -93,6 +80,19 @@ meraki_response:
             "string"
           ]
         }
-      }
+      },
+      "enforceAccountLockout": true,
+      "enforceDifferentPasswords": true,
+      "enforceIdleTimeout": true,
+      "enforceLoginIpRanges": true,
+      "enforcePasswordExpiration": true,
+      "enforceStrongPasswords": true,
+      "enforceTwoFactorAuth": true,
+      "idleTimeoutMinutes": 0,
+      "loginIpRanges": [
+        "string"
+      ],
+      "numDifferentPasswords": 0,
+      "passwordExpirationDays": 0
     }
 """

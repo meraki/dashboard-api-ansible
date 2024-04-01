@@ -70,6 +70,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "rules": [
+        {
+          "comment": "string",
+          "destCidr": "string",
+          "destPort": "string",
+          "policy": "string",
+          "protocol": "string",
+          "srcCidr": "string",
+          "srcPort": "string",
+          "syslogEnabled": true
+        }
+      ],
+      "syslogDefaultRule": true
+    }
 """

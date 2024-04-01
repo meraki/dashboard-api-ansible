@@ -35,8 +35,8 @@ options:
     description:
     - >
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 1 day.
+      not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 25 minutes
+      and be less than or equal to 31 days. The default is 1 day.
     type: float
 requirements:
 - meraki >= 2.4.9
@@ -92,14 +92,14 @@ meraki_response:
   sample: >
     [
       {
-        "network": {
-          "name": "string",
-          "id": "string"
-        },
-        "name": "string",
         "mac": "string",
-        "serial": "string",
         "model": "string",
+        "name": "string",
+        "network": {
+          "id": "string",
+          "name": "string"
+        },
+        "serial": "string",
         "utilization": {
           "average": {
             "percentage": 0

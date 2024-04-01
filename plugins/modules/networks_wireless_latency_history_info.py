@@ -136,9 +136,9 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
+        "avgLatencyMs": 0,
         "endTs": "string",
-        "avgLatencyMs": 0
+        "startTs": "string"
       }
     ]
 """

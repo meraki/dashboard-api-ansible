@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    mask=dict(type="int"),
     cidr=dict(type="str"),
+    mask=dict(type="int"),
     networkId=dict(type="str"),
 ))
 
@@ -49,8 +49,8 @@ class NetworksCellularGatewaySubnetPool(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            mask=params.get("mask"),
             cidr=params.get("cidr"),
+            mask=params.get("mask"),
             network_id=params.get("networkId"),
         )
 
@@ -63,12 +63,12 @@ class NetworksCellularGatewaySubnetPool(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
-            new_object_params['mask'] = self.new_object.get('mask') or \
-                self.new_object.get('mask')
         if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
             new_object_params['cidr'] = self.new_object.get('cidr') or \
                 self.new_object.get('cidr')
+        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
+            new_object_params['mask'] = self.new_object.get('mask') or \
+                self.new_object.get('mask')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -125,8 +125,8 @@ class NetworksCellularGatewaySubnetPool(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("mask", "mask"),
             ("cidr", "cidr"),
+            ("mask", "mask"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

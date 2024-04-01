@@ -25,6 +25,11 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
     organizationId=dict(type="str"),
 ))
 
@@ -71,6 +76,19 @@ class ActionModule(ActionBase):
 
     def get_all(self, params):
         new_object = {}
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
 
         return new_object
 

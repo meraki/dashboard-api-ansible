@@ -133,11 +133,11 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
         "endTs": "string",
-        "totalKbps": 0,
+        "receivedKbps": 0,
         "sentKbps": 0,
-        "receivedKbps": 0
+        "startTs": "string",
+        "totalKbps": 0
       }
     ]
 """

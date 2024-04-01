@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    mode=dict(type="str"),
     customPieChartItems=dict(type="list"),
+    mode=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -49,8 +49,8 @@ class NetworksTrafficAnalysis(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            mode=params.get("mode"),
             customPieChartItems=params.get("customPieChartItems"),
+            mode=params.get("mode"),
             network_id=params.get("networkId"),
         )
 
@@ -63,12 +63,12 @@ class NetworksTrafficAnalysis(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
-            new_object_params['mode'] = self.new_object.get('mode') or \
-                self.new_object.get('mode')
         if self.new_object.get('customPieChartItems') is not None or self.new_object.get('custom_pie_chart_items') is not None:
             new_object_params['customPieChartItems'] = self.new_object.get('customPieChartItems') or \
                 self.new_object.get('custom_pie_chart_items')
+        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
+            new_object_params['mode'] = self.new_object.get('mode') or \
+                self.new_object.get('mode')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -125,8 +125,8 @@ class NetworksTrafficAnalysis(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("mode", "mode"),
             ("customPieChartItems", "customPieChartItems"),
+            ("mode", "mode"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

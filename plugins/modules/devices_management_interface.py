@@ -132,6 +132,12 @@ EXAMPLES = r"""
       vlan: 7
       wanEnabled: not configured
     wan2:
+      staticDns:
+      - 1.2.3.2
+      - 1.2.3.3
+      staticGatewayIp: 1.2.3.1
+      staticIp: 1.2.3.4
+      staticSubnetMask: 255.255.255.0
       usingStaticIp: false
       vlan: 2
       wanEnabled: enabled
@@ -168,5 +174,33 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "ddnsHostnames": {
+        "activeDdnsHostname": "string",
+        "ddnsHostnameWan1": "string",
+        "ddnsHostnameWan2": "string"
+      },
+      "wan1": {
+        "staticDns": [
+          "string"
+        ],
+        "staticGatewayIp": "string",
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "usingStaticIp": true,
+        "vlan": 0,
+        "wanEnabled": "string"
+      },
+      "wan2": {
+        "staticDns": [
+          "string"
+        ],
+        "staticGatewayIp": "string",
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "usingStaticIp": true,
+        "vlan": 0,
+        "wanEnabled": "string"
+      }
+    }
 """

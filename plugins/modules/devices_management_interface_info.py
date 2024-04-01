@@ -70,6 +70,34 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "ddnsHostnames": {
+        "activeDdnsHostname": "string",
+        "ddnsHostnameWan1": "string",
+        "ddnsHostnameWan2": "string"
+      },
+      "wan1": {
+        "staticDns": [
+          "string"
+        ],
+        "staticGatewayIp": "string",
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "usingStaticIp": true,
+        "vlan": 0,
+        "wanEnabled": "string"
+      },
+      "wan2": {
+        "staticDns": [
+          "string"
+        ],
+        "staticGatewayIp": "string",
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "usingStaticIp": true,
+        "vlan": 0,
+        "wanEnabled": "string"
+      }
+    }
 """

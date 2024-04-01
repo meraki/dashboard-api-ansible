@@ -99,20 +99,28 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
-        "endTs": "string",
         "counts": {
+          "apparentPower": 0,
+          "co2": 0,
+          "current": 0,
           "door": 0,
+          "frequency": 0,
           "humidity": 0,
           "indoorAirQuality": 0,
           "noise": {
             "ambient": 0
           },
           "pm25": 0,
+          "powerFactor": 0,
+          "realPower": 0,
           "temperature": 0,
           "tvoc": 0,
+          "upstreamPower": 0,
+          "voltage": 0,
           "water": 0
-        }
+        },
+        "endTs": "string",
+        "startTs": "string"
       }
     ]
 """

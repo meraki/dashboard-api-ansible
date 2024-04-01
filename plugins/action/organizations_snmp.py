@@ -32,13 +32,13 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
+    peerIps=dict(type="list"),
     v2cEnabled=dict(type="bool"),
-    v3Enabled=dict(type="bool"),
     v3AuthMode=dict(type="str"),
     v3AuthPass=dict(type="str"),
+    v3Enabled=dict(type="bool"),
     v3PrivMode=dict(type="str"),
     v3PrivPass=dict(type="str"),
-    peerIps=dict(type="list"),
     organizationId=dict(type="str"),
 ))
 
@@ -54,13 +54,13 @@ class OrganizationsSnmp(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            peerIps=params.get("peerIps"),
             v2cEnabled=params.get("v2cEnabled"),
-            v3Enabled=params.get("v3Enabled"),
             v3AuthMode=params.get("v3AuthMode"),
             v3AuthPass=params.get("v3AuthPass"),
+            v3Enabled=params.get("v3Enabled"),
             v3PrivMode=params.get("v3PrivMode"),
             v3PrivPass=params.get("v3PrivPass"),
-            peerIps=params.get("peerIps"),
             organization_id=params.get("organizationId"),
         )
 
@@ -73,25 +73,25 @@ class OrganizationsSnmp(object):
 
     def update_all_params(self):
         new_object_params = {}
+        if self.new_object.get('peerIps') is not None or self.new_object.get('peer_ips') is not None:
+            new_object_params['peerIps'] = self.new_object.get('peerIps') or \
+                self.new_object.get('peer_ips')
         if self.new_object.get('v2cEnabled') is not None or self.new_object.get('v2c_enabled') is not None:
             new_object_params['v2cEnabled'] = self.new_object.get('v2cEnabled')
-        if self.new_object.get('v3Enabled') is not None or self.new_object.get('v3_enabled') is not None:
-            new_object_params['v3Enabled'] = self.new_object.get('v3Enabled')
         if self.new_object.get('v3AuthMode') is not None or self.new_object.get('v3_auth_mode') is not None:
             new_object_params['v3AuthMode'] = self.new_object.get('v3AuthMode') or \
                 self.new_object.get('v3_auth_mode')
         if self.new_object.get('v3AuthPass') is not None or self.new_object.get('v3_auth_pass') is not None:
             new_object_params['v3AuthPass'] = self.new_object.get('v3AuthPass') or \
                 self.new_object.get('v3_auth_pass')
+        if self.new_object.get('v3Enabled') is not None or self.new_object.get('v3_enabled') is not None:
+            new_object_params['v3Enabled'] = self.new_object.get('v3Enabled')
         if self.new_object.get('v3PrivMode') is not None or self.new_object.get('v3_priv_mode') is not None:
             new_object_params['v3PrivMode'] = self.new_object.get('v3PrivMode') or \
                 self.new_object.get('v3_priv_mode')
         if self.new_object.get('v3PrivPass') is not None or self.new_object.get('v3_priv_pass') is not None:
             new_object_params['v3PrivPass'] = self.new_object.get('v3PrivPass') or \
                 self.new_object.get('v3_priv_pass')
-        if self.new_object.get('peerIps') is not None or self.new_object.get('peer_ips') is not None:
-            new_object_params['peerIps'] = self.new_object.get('peerIps') or \
-                self.new_object.get('peer_ips')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -148,13 +148,13 @@ class OrganizationsSnmp(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("peerIps", "peerIps"),
             ("v2cEnabled", "v2cEnabled"),
-            ("v3Enabled", "v3Enabled"),
             ("v3AuthMode", "v3AuthMode"),
             ("v3AuthPass", "v3AuthPass"),
+            ("v3Enabled", "v3Enabled"),
             ("v3PrivMode", "v3PrivMode"),
             ("v3PrivPass", "v3PrivPass"),
-            ("peerIps", "peerIps"),
             ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

@@ -32,11 +32,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     body=dict(type="str"),
-    headers=dict(type="list"),
     bodyFile=dict(type="str"),
+    headers=dict(type="list"),
     headersFile=dict(type="str"),
+    name=dict(type="str"),
     networkId=dict(type="str"),
     payloadTemplateId=dict(type="str"),
 ))
@@ -54,11 +54,11 @@ class NetworksWebhooksPayloadTemplates(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             body=params.get("body"),
-            headers=params.get("headers"),
             bodyFile=params.get("bodyFile"),
+            headers=params.get("headers"),
             headersFile=params.get("headersFile"),
+            name=params.get("name"),
             networkId=params.get("networkId"),
             payloadTemplateId=params.get("payloadTemplateId"),
         )
@@ -82,21 +82,21 @@ class NetworksWebhooksPayloadTemplates(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('body') is not None or self.new_object.get('body') is not None:
             new_object_params['body'] = self.new_object.get('body') or \
                 self.new_object.get('body')
-        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
-            new_object_params['headers'] = self.new_object.get('headers') or \
-                self.new_object.get('headers')
         if self.new_object.get('bodyFile') is not None or self.new_object.get('body_file') is not None:
             new_object_params['bodyFile'] = self.new_object.get('bodyFile') or \
                 self.new_object.get('body_file')
+        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
+            new_object_params['headers'] = self.new_object.get('headers') or \
+                self.new_object.get('headers')
         if self.new_object.get('headersFile') is not None or self.new_object.get('headers_file') is not None:
             new_object_params['headersFile'] = self.new_object.get('headersFile') or \
                 self.new_object.get('headers_file')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -114,21 +114,21 @@ class NetworksWebhooksPayloadTemplates(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('body') is not None or self.new_object.get('body') is not None:
             new_object_params['body'] = self.new_object.get('body') or \
                 self.new_object.get('body')
-        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
-            new_object_params['headers'] = self.new_object.get('headers') or \
-                self.new_object.get('headers')
         if self.new_object.get('bodyFile') is not None or self.new_object.get('body_file') is not None:
             new_object_params['bodyFile'] = self.new_object.get('bodyFile') or \
                 self.new_object.get('body_file')
+        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
+            new_object_params['headers'] = self.new_object.get('headers') or \
+                self.new_object.get('headers')
         if self.new_object.get('headersFile') is not None or self.new_object.get('headers_file') is not None:
             new_object_params['headersFile'] = self.new_object.get('headersFile') or \
                 self.new_object.get('headers_file')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -206,11 +206,11 @@ class NetworksWebhooksPayloadTemplates(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("body", "body"),
-            ("headers", "headers"),
             ("bodyFile", "bodyFile"),
+            ("headers", "headers"),
             ("headersFile", "headersFile"),
+            ("name", "name"),
             ("networkId", "networkId"),
             ("payloadTemplateId", "payloadTemplateId"),
         ]

@@ -75,6 +75,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "data": {
+        "2090938209": {
+          "errors": [
+            "string"
+          ],
+          "success": true
+        },
+        "38290139892": {
+          "success": true
+        }
+      },
+      "id": "string",
+      "status": "string"
+    }
 """

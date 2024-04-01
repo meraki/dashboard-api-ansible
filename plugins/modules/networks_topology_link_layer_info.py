@@ -10,7 +10,9 @@ module: networks_topology_link_layer_info
 short_description: Information module for networks _topology _linklayer
 description:
 - Get all networks _topology _linklayer.
-- List the LLDP and CDP information for all discovered devices and connections in a network.
+- >
+   List the LLDP and CDP information for all discovered devices and connections in a network. At least one MX or MS
+   device must be in the network in order to build the topology.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -70,6 +72,57 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "errors": [
+        "string"
+      ],
+      "links": [
+        {
+          "ends": [
+            {
+              "device": {
+                "name": "string",
+                "serial": "string"
+              },
+              "discovered": {
+                "cdp": {
+                  "nativeVlan": 0,
+                  "portId": "string"
+                },
+                "lldp": {
+                  "portDescription": "string",
+                  "portId": "string"
+                }
+              },
+              "node": {
+                "derivedId": "string",
+                "type": "string"
+              }
+            }
+          ],
+          "lastReportedAt": "string"
+        }
+      ],
+      "nodes": [
+        {
+          "derivedId": "string",
+          "discovered": {
+            "cdp": "string",
+            "lldp": {
+              "chassisId": "string",
+              "managementAddress": "string",
+              "systemCapabilities": [
+                "string"
+              ],
+              "systemDescription": "string",
+              "systemName": "string"
+            }
+          },
+          "mac": "string",
+          "root": true,
+          "type": "string"
+        }
+      ]
+    }
 """

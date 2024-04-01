@@ -30,6 +30,23 @@ options:
   meshingEnabled:
     description: Toggle for enabling or disabling meshing in a network.
     type: bool
+  namedVlans:
+    description: Named VLAN settings for wireless networks.
+    suboptions:
+      poolDhcpMonitoring:
+        description: Named VLAN Pool DHCP Monitoring settings.
+        suboptions:
+          duration:
+            description: The duration in minutes that devices will refrain from using
+              dirty VLANs before adding them back to the pool.
+            type: int
+          enabled:
+            description: Whether or not devices using named VLAN pools should remove
+              dirty VLANs from the pool, thereby preventing clients from being assigned
+              to VLANs where they would be unable to obtain an IP address via DHCP.
+            type: bool
+        type: dict
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -80,6 +97,10 @@ EXAMPLES = r"""
     ledLightsOn: false
     locationAnalyticsEnabled: false
     meshingEnabled: true
+    namedVlans:
+      poolDhcpMonitoring:
+        duration: 5
+        enabled: true
     networkId: string
     upgradeStrategy: minimizeUpgradeTime
 
@@ -91,16 +112,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "meshingEnabled": true,
       "ipv6BridgeEnabled": true,
-      "locationAnalyticsEnabled": true,
-      "upgradeStrategy": "string",
       "ledLightsOn": true,
+      "locationAnalyticsEnabled": true,
+      "meshingEnabled": true,
       "namedVlans": {
         "poolDhcpMonitoring": {
-          "enabled": true,
-          "duration": 0
+          "duration": 0,
+          "enabled": true
         }
-      }
+      },
+      "regulatoryDomain": {
+        "countryCode": "string",
+        "name": "string",
+        "permits6e": true
+      },
+      "upgradeStrategy": "string"
     }
 """

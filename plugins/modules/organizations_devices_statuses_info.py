@@ -143,30 +143,42 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "name": "string",
-      "serial": "string",
-      "mac": "string",
-      "publicIp": "string",
-      "networkId": "string",
-      "status": "string",
-      "lastReportedAt": "string",
-      "lanIp": "string",
-      "gateway": "string",
-      "ipType": "string",
-      "primaryDns": "string",
-      "secondaryDns": "string",
-      "productType": "string",
-      "components": {
-        "powerSupplies": [
+    [
+      {
+        "components": {
+          "powerSupplies": [
+            {
+              "model": "string",
+              "poe": {
+                "maximum": 0,
+                "unit": "string"
+              },
+              "serial": "string",
+              "slot": 0,
+              "status": "string"
+            }
+          ]
+        },
+        "gateway": "string",
+        "ipType": "string",
+        "lanIp": "string",
+        "lastReportedAt": "string",
+        "mac": "string",
+        "model": "string",
+        "name": "string",
+        "networkId": "string",
+        "primaryDns": "string",
+        "productType": "string",
+        "publicIp": "string",
+        "secondaryDns": "string",
+        "serial": "string",
+        "status": "string",
+        "tags": [
           "string"
         ]
-      },
-      "model": "string",
-      "tags": [
-        "string"
-      ]
-    }
+      }
+    ]
 """

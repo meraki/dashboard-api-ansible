@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    sgt=dict(type="int"),
     description=dict(type="str"),
+    name=dict(type="str"),
     policyObjects=dict(type="list"),
+    sgt=dict(type="int"),
     organizationId=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -53,10 +53,10 @@ class OrganizationsAdaptivePolicyGroups(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            sgt=params.get("sgt"),
             description=params.get("description"),
+            name=params.get("name"),
             policyObjects=params.get("policyObjects"),
+            sgt=params.get("sgt"),
             organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
@@ -79,18 +79,18 @@ class OrganizationsAdaptivePolicyGroups(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
-            new_object_params['sgt'] = self.new_object.get('sgt') or \
-                self.new_object.get('sgt')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('policyObjects') is not None or self.new_object.get('policy_objects') is not None:
             new_object_params['policyObjects'] = self.new_object.get('policyObjects') or \
                 self.new_object.get('policy_objects')
+        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
+            new_object_params['sgt'] = self.new_object.get('sgt') or \
+                self.new_object.get('sgt')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -108,18 +108,18 @@ class OrganizationsAdaptivePolicyGroups(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
-            new_object_params['sgt'] = self.new_object.get('sgt') or \
-                self.new_object.get('sgt')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('policyObjects') is not None or self.new_object.get('policy_objects') is not None:
             new_object_params['policyObjects'] = self.new_object.get('policyObjects') or \
                 self.new_object.get('policy_objects')
+        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
+            new_object_params['sgt'] = self.new_object.get('sgt') or \
+                self.new_object.get('sgt')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -193,10 +193,10 @@ class OrganizationsAdaptivePolicyGroups(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("sgt", "sgt"),
             ("description", "description"),
+            ("name", "name"),
             ("policyObjects", "policyObjects"),
+            ("sgt", "sgt"),
             ("organizationId", "organizationId"),
             ("id", "id"),
         ]

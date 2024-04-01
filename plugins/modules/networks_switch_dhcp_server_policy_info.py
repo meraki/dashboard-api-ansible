@@ -72,6 +72,25 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "alerts": {
+        "email": {
+          "enabled": true
+        }
+      },
+      "allowedServers": [
+        "string"
+      ],
+      "arpInspection": {
+        "enabled": true,
+        "unsupportedModels": [
+          "string"
+        ]
+      },
+      "blockedServers": [
+        "string"
+      ],
+      "defaultPolicy": "string"
+    }
 """

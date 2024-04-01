@@ -148,55 +148,6 @@ EXAMPLES = r"""
       area: '0'
       cost: 1
       isPassiveEnabled: true
-    ospfV3:
-      area: '1'
-      cost: 2
-      isPassiveEnabled: true
-    subnet: 192.168.1.0/24
-    switchStackId: string
-    vlanId: 100
-
-- name: Update by id
-  cisco.meraki.networks_switch_stacks_routing_interfaces:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: present
-    interfaceId: string
-    interfaceIp: 192.168.1.2
-    ipv6:
-      address: 1:2:3:4::1
-      assignmentMode: static
-      gateway: 1:2:3:4::2
-      prefix: 1:2:3:4::/48
-    multicastRouting: disabled
-    name: L3 interface
-    networkId: string
-    ospfSettings:
-      area: '0'
-      cost: 1
-      isPassiveEnabled: true
-    ospfV3:
-      area: '1'
-      cost: 2
-      isPassiveEnabled: true
     subnet: 192.168.1.0/24
     switchStackId: string
     vlanId: 100
@@ -228,6 +179,48 @@ EXAMPLES = r"""
     networkId: string
     switchStackId: string
 
+- name: Update by id
+  cisco.meraki.networks_switch_stacks_routing_interfaces:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    defaultGateway: 192.168.1.1
+    interfaceId: string
+    interfaceIp: 192.168.1.2
+    ipv6:
+      address: 1:2:3:4::1
+      assignmentMode: static
+      gateway: 1:2:3:4::2
+      prefix: 1:2:3:4::/48
+    multicastRouting: disabled
+    name: L3 interface
+    networkId: string
+    ospfSettings:
+      area: '0'
+      cost: 1
+      isPassiveEnabled: true
+    subnet: 192.168.1.0/24
+    switchStackId: string
+    vlanId: 100
+
 """
 RETURN = r"""
 meraki_response:
@@ -235,5 +228,29 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "defaultGateway": "string",
+      "interfaceId": "string",
+      "interfaceIp": "string",
+      "ipv6": {
+        "address": "string",
+        "assignmentMode": "string",
+        "gateway": "string",
+        "prefix": "string"
+      },
+      "multicastRouting": "string",
+      "name": "string",
+      "ospfSettings": {
+        "area": "string",
+        "cost": 0,
+        "isPassiveEnabled": true
+      },
+      "ospfV3": {
+        "area": "string",
+        "cost": 0,
+        "isPassiveEnabled": true
+      },
+      "subnet": "string",
+      "vlanId": 0
+    }
 """

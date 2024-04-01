@@ -110,18 +110,18 @@ meraki_response:
   sample: >
     {
       "aclId": "string",
-      "name": "string",
+      "createdAt": "string",
       "description": "string",
       "ipVersion": "string",
+      "name": "string",
       "rules": [
         {
+          "dstPort": "string",
           "policy": "string",
           "protocol": "string",
-          "srcPort": "string",
-          "dstPort": "string"
+          "srcPort": "string"
         }
       ],
-      "createdAt": "string",
       "updatedAt": "string"
     }
 """

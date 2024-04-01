@@ -109,39 +109,39 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "enabled": true,
       "adminSettings": {
         "appliesTo": "string",
         "values": [
           "string"
         ]
       },
-      "helpSettings": {
-        "helpTab": "string",
-        "getHelpSubtab": "string",
-        "communitySubtab": "string",
-        "casesSubtab": "string",
-        "dataProtectionRequestsSubtab": "string",
-        "getHelpSubtabKnowledgeBaseSearch": "string",
-        "universalSearchKnowledgeBaseSearch": "string",
-        "ciscoMerakiProductDocumentation": "string",
-        "supportContactInfo": "string",
-        "newFeaturesSubtab": "string",
-        "firewallInfoSubtab": "string",
-        "apiDocsSubtab": "string",
-        "hardwareReplacementsSubtab": "string",
-        "smForums": "string",
-        "helpWidget": "string"
-      },
       "customLogo": {
         "enabled": true,
         "image": {
           "preview": {
-            "url": "string",
-            "expiresAt": "string"
+            "expiresAt": "string",
+            "url": "string"
           }
         }
-      }
+      },
+      "enabled": true,
+      "helpSettings": {
+        "apiDocsSubtab": "string",
+        "casesSubtab": "string",
+        "ciscoMerakiProductDocumentation": "string",
+        "communitySubtab": "string",
+        "dataProtectionRequestsSubtab": "string",
+        "firewallInfoSubtab": "string",
+        "getHelpSubtab": "string",
+        "getHelpSubtabKnowledgeBaseSearch": "string",
+        "hardwareReplacementsSubtab": "string",
+        "helpTab": "string",
+        "helpWidget": "string",
+        "newFeaturesSubtab": "string",
+        "smForums": "string",
+        "supportContactInfo": "string",
+        "universalSearchKnowledgeBaseSearch": "string"
+      },
+      "name": "string"
     }
 """

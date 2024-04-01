@@ -89,6 +89,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    allowLanAccess: true
     networkId: string
     number: string
     rules:
@@ -105,5 +106,13 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "comment": "string",
+        "destCidr": "string",
+        "destPort": "string",
+        "policy": "string",
+        "protocol": "string"
+      }
+    ]
 """

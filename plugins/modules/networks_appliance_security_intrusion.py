@@ -108,5 +108,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "idsRulesets": "string",
+      "mode": "string",
+      "protectedNetworks": {
+        "excludedCidr": [
+          "string"
+        ],
+        "includedCidr": [
+          "string"
+        ],
+        "useDefault": true
+      }
+    }
 """

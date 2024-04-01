@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    mode=dict(type="str"),
     idsRulesets=dict(type="str"),
+    mode=dict(type="str"),
     protectedNetworks=dict(type="dict"),
     networkId=dict(type="str"),
 ))
@@ -50,8 +50,8 @@ class NetworksApplianceSecurityIntrusion(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            mode=params.get("mode"),
             idsRulesets=params.get("idsRulesets"),
+            mode=params.get("mode"),
             protectedNetworks=params.get("protectedNetworks"),
             network_id=params.get("networkId"),
         )
@@ -65,12 +65,12 @@ class NetworksApplianceSecurityIntrusion(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
-            new_object_params['mode'] = self.new_object.get('mode') or \
-                self.new_object.get('mode')
         if self.new_object.get('idsRulesets') is not None or self.new_object.get('ids_rulesets') is not None:
             new_object_params['idsRulesets'] = self.new_object.get('idsRulesets') or \
                 self.new_object.get('ids_rulesets')
+        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
+            new_object_params['mode'] = self.new_object.get('mode') or \
+                self.new_object.get('mode')
         if self.new_object.get('protectedNetworks') is not None or self.new_object.get('protected_networks') is not None:
             new_object_params['protectedNetworks'] = self.new_object.get('protectedNetworks') or \
                 self.new_object.get('protected_networks')
@@ -130,8 +130,8 @@ class NetworksApplianceSecurityIntrusion(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("mode", "mode"),
             ("idsRulesets", "idsRulesets"),
+            ("mode", "mode"),
             ("protectedNetworks", "protectedNetworks"),
             ("networkId", "networkId"),
         ]

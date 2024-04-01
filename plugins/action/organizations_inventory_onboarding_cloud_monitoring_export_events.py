@@ -26,9 +26,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     logEvent=dict(type="str"),
-    timestamp=dict(type="int"),
-    targetOS=dict(type="str"),
     request=dict(type="str"),
+    targetOS=dict(type="str"),
+    timestamp=dict(type="int"),
     organizationId=dict(type="str"),
 ))
 
@@ -69,9 +69,9 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             logEvent=params.get("logEvent"),
-            timestamp=params.get("timestamp"),
-            targetOS=params.get("targetOS"),
             request=params.get("request"),
+            targetOS=params.get("targetOS"),
+            timestamp=params.get("timestamp"),
             organizationId=params.get("organizationId"),
         )
         return new_object

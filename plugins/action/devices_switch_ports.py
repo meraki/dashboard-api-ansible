@@ -32,31 +32,31 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    name=dict(type="str"),
-    tags=dict(type="list"),
-    enabled=dict(type="bool"),
-    poeEnabled=dict(type="bool"),
-    type=dict(type="str"),
-    vlan=dict(type="int"),
-    voiceVlan=dict(type="int"),
-    allowedVlans=dict(type="str"),
-    isolationEnabled=dict(type="bool"),
-    rstpEnabled=dict(type="bool"),
-    stpGuard=dict(type="str"),
-    linkNegotiation=dict(type="str"),
-    portScheduleId=dict(type="str"),
-    udld=dict(type="str"),
-    accessPolicyType=dict(type="str"),
     accessPolicyNumber=dict(type="int"),
+    accessPolicyType=dict(type="str"),
+    adaptivePolicyGroupId=dict(type="str"),
+    allowedVlans=dict(type="str"),
+    daiTrusted=dict(type="bool"),
+    enabled=dict(type="bool"),
+    flexibleStackingEnabled=dict(type="bool"),
+    isolationEnabled=dict(type="bool"),
+    linkNegotiation=dict(type="str"),
     macAllowList=dict(type="list"),
+    name=dict(type="str"),
+    peerSgtCapable=dict(type="bool"),
+    poeEnabled=dict(type="bool"),
+    portScheduleId=dict(type="str"),
+    profile=dict(type="dict"),
+    rstpEnabled=dict(type="bool"),
     stickyMacAllowList=dict(type="list"),
     stickyMacAllowListLimit=dict(type="int"),
     stormControlEnabled=dict(type="bool"),
-    adaptivePolicyGroupId=dict(type="str"),
-    peerSgtCapable=dict(type="bool"),
-    flexibleStackingEnabled=dict(type="bool"),
-    daiTrusted=dict(type="bool"),
-    profile=dict(type="dict"),
+    stpGuard=dict(type="str"),
+    tags=dict(type="list"),
+    type=dict(type="str"),
+    udld=dict(type="str"),
+    vlan=dict(type="int"),
+    voiceVlan=dict(type="int"),
     serial=dict(type="str"),
     portId=dict(type="str"),
 ))
@@ -73,31 +73,31 @@ class DevicesSwitchPorts(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            tags=params.get("tags"),
-            enabled=params.get("enabled"),
-            poeEnabled=params.get("poeEnabled"),
-            type=params.get("type"),
-            vlan=params.get("vlan"),
-            voiceVlan=params.get("voiceVlan"),
-            allowedVlans=params.get("allowedVlans"),
-            isolationEnabled=params.get("isolationEnabled"),
-            rstpEnabled=params.get("rstpEnabled"),
-            stpGuard=params.get("stpGuard"),
-            linkNegotiation=params.get("linkNegotiation"),
-            portScheduleId=params.get("portScheduleId"),
-            udld=params.get("udld"),
-            accessPolicyType=params.get("accessPolicyType"),
             accessPolicyNumber=params.get("accessPolicyNumber"),
+            accessPolicyType=params.get("accessPolicyType"),
+            adaptivePolicyGroupId=params.get("adaptivePolicyGroupId"),
+            allowedVlans=params.get("allowedVlans"),
+            daiTrusted=params.get("daiTrusted"),
+            enabled=params.get("enabled"),
+            flexibleStackingEnabled=params.get("flexibleStackingEnabled"),
+            isolationEnabled=params.get("isolationEnabled"),
+            linkNegotiation=params.get("linkNegotiation"),
             macAllowList=params.get("macAllowList"),
+            name=params.get("name"),
+            peerSgtCapable=params.get("peerSgtCapable"),
+            poeEnabled=params.get("poeEnabled"),
+            portScheduleId=params.get("portScheduleId"),
+            profile=params.get("profile"),
+            rstpEnabled=params.get("rstpEnabled"),
             stickyMacAllowList=params.get("stickyMacAllowList"),
             stickyMacAllowListLimit=params.get("stickyMacAllowListLimit"),
             stormControlEnabled=params.get("stormControlEnabled"),
-            adaptivePolicyGroupId=params.get("adaptivePolicyGroupId"),
-            peerSgtCapable=params.get("peerSgtCapable"),
-            flexibleStackingEnabled=params.get("flexibleStackingEnabled"),
-            daiTrusted=params.get("daiTrusted"),
-            profile=params.get("profile"),
+            stpGuard=params.get("stpGuard"),
+            tags=params.get("tags"),
+            type=params.get("type"),
+            udld=params.get("udld"),
+            vlan=params.get("vlan"),
+            voiceVlan=params.get("voiceVlan"),
             serial=params.get("serial"),
             port_id=params.get("portId"),
         )
@@ -119,55 +119,47 @@ class DevicesSwitchPorts(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
-            new_object_params['tags'] = self.new_object.get('tags') or \
-                self.new_object.get('tags')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('poeEnabled') is not None or self.new_object.get('poe_enabled') is not None:
-            new_object_params['poeEnabled'] = self.new_object.get('poeEnabled')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
-            new_object_params['type'] = self.new_object.get('type') or \
-                self.new_object.get('type')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
-            new_object_params['vlan'] = self.new_object.get('vlan') or \
-                self.new_object.get('vlan')
-        if self.new_object.get('voiceVlan') is not None or self.new_object.get('voice_vlan') is not None:
-            new_object_params['voiceVlan'] = self.new_object.get('voiceVlan') or \
-                self.new_object.get('voice_vlan')
-        if self.new_object.get('allowedVlans') is not None or self.new_object.get('allowed_vlans') is not None:
-            new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
-                self.new_object.get('allowed_vlans')
-        if self.new_object.get('isolationEnabled') is not None or self.new_object.get('isolation_enabled') is not None:
-            new_object_params['isolationEnabled'] = self.new_object.get(
-                'isolationEnabled')
-        if self.new_object.get('rstpEnabled') is not None or self.new_object.get('rstp_enabled') is not None:
-            new_object_params['rstpEnabled'] = self.new_object.get(
-                'rstpEnabled')
-        if self.new_object.get('stpGuard') is not None or self.new_object.get('stp_guard') is not None:
-            new_object_params['stpGuard'] = self.new_object.get('stpGuard') or \
-                self.new_object.get('stp_guard')
-        if self.new_object.get('linkNegotiation') is not None or self.new_object.get('link_negotiation') is not None:
-            new_object_params['linkNegotiation'] = self.new_object.get('linkNegotiation') or \
-                self.new_object.get('link_negotiation')
-        if self.new_object.get('portScheduleId') is not None or self.new_object.get('port_schedule_id') is not None:
-            new_object_params['portScheduleId'] = self.new_object.get('portScheduleId') or \
-                self.new_object.get('port_schedule_id')
-        if self.new_object.get('udld') is not None or self.new_object.get('udld') is not None:
-            new_object_params['udld'] = self.new_object.get('udld') or \
-                self.new_object.get('udld')
-        if self.new_object.get('accessPolicyType') is not None or self.new_object.get('access_policy_type') is not None:
-            new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
-                self.new_object.get('access_policy_type')
         if self.new_object.get('accessPolicyNumber') is not None or self.new_object.get('access_policy_number') is not None:
             new_object_params['accessPolicyNumber'] = self.new_object.get('accessPolicyNumber') or \
                 self.new_object.get('access_policy_number')
+        if self.new_object.get('accessPolicyType') is not None or self.new_object.get('access_policy_type') is not None:
+            new_object_params['accessPolicyType'] = self.new_object.get('accessPolicyType') or \
+                self.new_object.get('access_policy_type')
+        if self.new_object.get('adaptivePolicyGroupId') is not None or self.new_object.get('adaptive_policy_group_id') is not None:
+            new_object_params['adaptivePolicyGroupId'] = self.new_object.get('adaptivePolicyGroupId') or \
+                self.new_object.get('adaptive_policy_group_id')
+        if self.new_object.get('allowedVlans') is not None or self.new_object.get('allowed_vlans') is not None:
+            new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
+                self.new_object.get('allowed_vlans')
+        if self.new_object.get('daiTrusted') is not None or self.new_object.get('dai_trusted') is not None:
+            new_object_params['daiTrusted'] = self.new_object.get('daiTrusted')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('flexibleStackingEnabled') is not None or self.new_object.get('flexible_stacking_enabled') is not None:
+            new_object_params['flexibleStackingEnabled'] = self.new_object.get('flexibleStackingEnabled')
+        if self.new_object.get('isolationEnabled') is not None or self.new_object.get('isolation_enabled') is not None:
+            new_object_params['isolationEnabled'] = self.new_object.get('isolationEnabled')
+        if self.new_object.get('linkNegotiation') is not None or self.new_object.get('link_negotiation') is not None:
+            new_object_params['linkNegotiation'] = self.new_object.get('linkNegotiation') or \
+                self.new_object.get('link_negotiation')
         if self.new_object.get('macAllowList') is not None or self.new_object.get('mac_allow_list') is not None:
             new_object_params['macAllowList'] = self.new_object.get('macAllowList') or \
                 self.new_object.get('mac_allow_list')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('peerSgtCapable') is not None or self.new_object.get('peer_sgt_capable') is not None:
+            new_object_params['peerSgtCapable'] = self.new_object.get('peerSgtCapable')
+        if self.new_object.get('poeEnabled') is not None or self.new_object.get('poe_enabled') is not None:
+            new_object_params['poeEnabled'] = self.new_object.get('poeEnabled')
+        if self.new_object.get('portScheduleId') is not None or self.new_object.get('port_schedule_id') is not None:
+            new_object_params['portScheduleId'] = self.new_object.get('portScheduleId') or \
+                self.new_object.get('port_schedule_id')
+        if self.new_object.get('profile') is not None or self.new_object.get('profile') is not None:
+            new_object_params['profile'] = self.new_object.get('profile') or \
+                self.new_object.get('profile')
+        if self.new_object.get('rstpEnabled') is not None or self.new_object.get('rstp_enabled') is not None:
+            new_object_params['rstpEnabled'] = self.new_object.get('rstpEnabled')
         if self.new_object.get('stickyMacAllowList') is not None or self.new_object.get('sticky_mac_allow_list') is not None:
             new_object_params['stickyMacAllowList'] = self.new_object.get('stickyMacAllowList') or \
                 self.new_object.get('sticky_mac_allow_list')
@@ -175,22 +167,25 @@ class DevicesSwitchPorts(object):
             new_object_params['stickyMacAllowListLimit'] = self.new_object.get('stickyMacAllowListLimit') or \
                 self.new_object.get('sticky_mac_allow_list_limit')
         if self.new_object.get('stormControlEnabled') is not None or self.new_object.get('storm_control_enabled') is not None:
-            new_object_params['stormControlEnabled'] = self.new_object.get(
-                'stormControlEnabled')
-        if self.new_object.get('adaptivePolicyGroupId') is not None or self.new_object.get('adaptive_policy_group_id') is not None:
-            new_object_params['adaptivePolicyGroupId'] = self.new_object.get('adaptivePolicyGroupId') or \
-                self.new_object.get('adaptive_policy_group_id')
-        if self.new_object.get('peerSgtCapable') is not None or self.new_object.get('peer_sgt_capable') is not None:
-            new_object_params['peerSgtCapable'] = self.new_object.get(
-                'peerSgtCapable')
-        if self.new_object.get('flexibleStackingEnabled') is not None or self.new_object.get('flexible_stacking_enabled') is not None:
-            new_object_params['flexibleStackingEnabled'] = self.new_object.get(
-                'flexibleStackingEnabled')
-        if self.new_object.get('daiTrusted') is not None or self.new_object.get('dai_trusted') is not None:
-            new_object_params['daiTrusted'] = self.new_object.get('daiTrusted')
-        if self.new_object.get('profile') is not None or self.new_object.get('profile') is not None:
-            new_object_params['profile'] = self.new_object.get('profile') or \
-                self.new_object.get('profile')
+            new_object_params['stormControlEnabled'] = self.new_object.get('stormControlEnabled')
+        if self.new_object.get('stpGuard') is not None or self.new_object.get('stp_guard') is not None:
+            new_object_params['stpGuard'] = self.new_object.get('stpGuard') or \
+                self.new_object.get('stp_guard')
+        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+            new_object_params['tags'] = self.new_object.get('tags') or \
+                self.new_object.get('tags')
+        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+            new_object_params['type'] = self.new_object.get('type') or \
+                self.new_object.get('type')
+        if self.new_object.get('udld') is not None or self.new_object.get('udld') is not None:
+            new_object_params['udld'] = self.new_object.get('udld') or \
+                self.new_object.get('udld')
+        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+            new_object_params['vlan'] = self.new_object.get('vlan') or \
+                self.new_object.get('vlan')
+        if self.new_object.get('voiceVlan') is not None or self.new_object.get('voice_vlan') is not None:
+            new_object_params['voiceVlan'] = self.new_object.get('voiceVlan') or \
+                self.new_object.get('voice_vlan')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -269,31 +264,31 @@ class DevicesSwitchPorts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("tags", "tags"),
-            ("enabled", "enabled"),
-            ("poeEnabled", "poeEnabled"),
-            ("type", "type"),
-            ("vlan", "vlan"),
-            ("voiceVlan", "voiceVlan"),
-            ("allowedVlans", "allowedVlans"),
-            ("isolationEnabled", "isolationEnabled"),
-            ("rstpEnabled", "rstpEnabled"),
-            ("stpGuard", "stpGuard"),
-            ("linkNegotiation", "linkNegotiation"),
-            ("portScheduleId", "portScheduleId"),
-            ("udld", "udld"),
-            ("accessPolicyType", "accessPolicyType"),
             ("accessPolicyNumber", "accessPolicyNumber"),
+            ("accessPolicyType", "accessPolicyType"),
+            ("adaptivePolicyGroupId", "adaptivePolicyGroupId"),
+            ("allowedVlans", "allowedVlans"),
+            ("daiTrusted", "daiTrusted"),
+            ("enabled", "enabled"),
+            ("flexibleStackingEnabled", "flexibleStackingEnabled"),
+            ("isolationEnabled", "isolationEnabled"),
+            ("linkNegotiation", "linkNegotiation"),
             ("macAllowList", "macAllowList"),
+            ("name", "name"),
+            ("peerSgtCapable", "peerSgtCapable"),
+            ("poeEnabled", "poeEnabled"),
+            ("portScheduleId", "portScheduleId"),
+            ("profile", "profile"),
+            ("rstpEnabled", "rstpEnabled"),
             ("stickyMacAllowList", "stickyMacAllowList"),
             ("stickyMacAllowListLimit", "stickyMacAllowListLimit"),
             ("stormControlEnabled", "stormControlEnabled"),
-            ("adaptivePolicyGroupId", "adaptivePolicyGroupId"),
-            ("peerSgtCapable", "peerSgtCapable"),
-            ("flexibleStackingEnabled", "flexibleStackingEnabled"),
-            ("daiTrusted", "daiTrusted"),
-            ("profile", "profile"),
+            ("stpGuard", "stpGuard"),
+            ("tags", "tags"),
+            ("type", "type"),
+            ("udld", "udld"),
+            ("vlan", "vlan"),
+            ("voiceVlan", "voiceVlan"),
             ("serial", "serial"),
             ("portId", "portId"),
         ]

@@ -99,6 +99,53 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "clientId": "string",
+      "mac": "string",
+      "manufacturer": "string",
+      "records": [
+        {
+          "cdp": "string",
+          "clientVpnConnections": [
+            {
+              "connectedAt": 0,
+              "disconnectedAt": 0,
+              "remoteIp": "string"
+            }
+          ],
+          "description": "string",
+          "firstSeen": 0,
+          "ip": "string",
+          "ip6": "string",
+          "lastSeen": 0,
+          "lldp": [
+            "string"
+          ],
+          "network": {
+            "enrollmentString": "string",
+            "id": "string",
+            "isBoundToConfigTemplate": true,
+            "name": "string",
+            "notes": "string",
+            "organizationId": "string",
+            "productTypes": [
+              "string"
+            ],
+            "tags": [
+              "string"
+            ],
+            "timeZone": "string"
+          },
+          "os": "string",
+          "smInstalled": true,
+          "ssid": "string",
+          "status": "string",
+          "switchport": "string",
+          "user": "string",
+          "vlan": "string",
+          "wirelessCapabilities": "string"
+        }
+      ]
+    }
 """

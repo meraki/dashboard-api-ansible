@@ -93,10 +93,10 @@ EXAMPLES = r"""
     networkId: string
     plans:
     - bandwidthLimits:
-        limitDown: 1000
-        limitUp: 1000
+        limitDown: 1000000
+        limitUp: 1000000
       id: '1'
-      price: 5
+      price: 5.0
       timeLimit: 1 hour
 
 """
@@ -106,5 +106,18 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "currency": "string",
+      "plans": [
+        {
+          "bandwidthLimits": {
+            "limitDown": 0,
+            "limitUp": 0
+          },
+          "id": "string",
+          "price": 0,
+          "timeLimit": "string"
+        }
+      ]
+    }
 """

@@ -94,10 +94,10 @@ meraki_response:
   sample: >
     [
       {
-        "ts": "string",
+        "downstream": 0,
         "total": 0,
-        "upstream": 0,
-        "downstream": 0
+        "ts": "string",
+        "upstream": 0
       }
     ]
 """

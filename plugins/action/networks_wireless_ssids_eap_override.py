@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    timeout=dict(type="int"),
+    eapolKey=dict(type="dict"),
     identity=dict(type="dict"),
     maxRetries=dict(type="int"),
-    eapolKey=dict(type="dict"),
+    timeout=dict(type="int"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -52,10 +52,10 @@ class NetworksWirelessSsidsEapOverride(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            timeout=params.get("timeout"),
+            eapolKey=params.get("eapolKey"),
             identity=params.get("identity"),
             maxRetries=params.get("maxRetries"),
-            eapolKey=params.get("eapolKey"),
+            timeout=params.get("timeout"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
@@ -71,18 +71,18 @@ class NetworksWirelessSsidsEapOverride(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('timeout') is not None or self.new_object.get('timeout') is not None:
-            new_object_params['timeout'] = self.new_object.get('timeout') or \
-                self.new_object.get('timeout')
+        if self.new_object.get('eapolKey') is not None or self.new_object.get('eapol_key') is not None:
+            new_object_params['eapolKey'] = self.new_object.get('eapolKey') or \
+                self.new_object.get('eapol_key')
         if self.new_object.get('identity') is not None or self.new_object.get('identity') is not None:
             new_object_params['identity'] = self.new_object.get('identity') or \
                 self.new_object.get('identity')
         if self.new_object.get('maxRetries') is not None or self.new_object.get('max_retries') is not None:
             new_object_params['maxRetries'] = self.new_object.get('maxRetries') or \
                 self.new_object.get('max_retries')
-        if self.new_object.get('eapolKey') is not None or self.new_object.get('eapol_key') is not None:
-            new_object_params['eapolKey'] = self.new_object.get('eapolKey') or \
-                self.new_object.get('eapol_key')
+        if self.new_object.get('timeout') is not None or self.new_object.get('timeout') is not None:
+            new_object_params['timeout'] = self.new_object.get('timeout') or \
+                self.new_object.get('timeout')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -142,10 +142,10 @@ class NetworksWirelessSsidsEapOverride(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("timeout", "timeout"),
+            ("eapolKey", "eapolKey"),
             ("identity", "identity"),
             ("maxRetries", "maxRetries"),
-            ("eapolKey", "eapolKey"),
+            ("timeout", "timeout"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]

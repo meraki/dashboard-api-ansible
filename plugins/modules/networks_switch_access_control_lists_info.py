@@ -75,13 +75,13 @@ meraki_response:
     [
       {
         "comment": "string",
-        "policy": "string",
+        "dstCidr": "string",
+        "dstPort": "string",
         "ipVersion": "string",
+        "policy": "string",
         "protocol": "string",
         "srcCidr": "string",
         "srcPort": "string",
-        "dstCidr": "string",
-        "dstPort": "string",
         "vlan": "string"
       }
     ]

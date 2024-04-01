@@ -109,9 +109,9 @@ meraki_response:
   type: dict
   sample: >
     {
-      "idpId": "string",
       "consumerUrl": "string",
-      "x509certSha1Fingerprint": "string",
-      "sloLogoutUrl": "string"
+      "idpId": "string",
+      "sloLogoutUrl": "string",
+      "x509certSha1Fingerprint": "string"
     }
 """

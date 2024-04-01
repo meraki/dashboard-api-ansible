@@ -33,16 +33,16 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSwitchRoutingInterface
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterface
   description: Complete reference of the getDeviceSwitchRoutingInterface API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface
-- name: Cisco Meraki documentation for devices getDeviceSwitchRoutingInterfaces
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaces
   description: Complete reference of the getDeviceSwitchRoutingInterfaces API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces
 notes:
   - SDK Method used are
-    devices.Devices.get_device_switch_routing_interface,
-    devices.Devices.get_device_switch_routing_interfaces,
+    switch.Switch.get_device_switch_routing_interface,
+    switch.Switch.get_device_switch_routing_interfaces,
 
   - Paths used are
     get /devices/{serial}/switch/routing/interfaces,
@@ -109,13 +109,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "interfaceId": "string",
-      "name": "string",
-      "subnet": "string",
-      "interfaceIp": "string",
-      "multicastRouting": "string",
-      "vlanId": 0,
       "defaultGateway": "string",
+      "interfaceId": "string",
+      "interfaceIp": "string",
+      "ipv6": {
+        "address": "string",
+        "assignmentMode": "string",
+        "gateway": "string",
+        "prefix": "string"
+      },
+      "multicastRouting": "string",
+      "name": "string",
       "ospfSettings": {
         "area": "string",
         "cost": 0,
@@ -126,11 +130,7 @@ meraki_response:
         "cost": 0,
         "isPassiveEnabled": true
       },
-      "ipv6": {
-        "assignmentMode": "string",
-        "address": "string",
-        "prefix": "string",
-        "gateway": "string"
-      }
+      "subnet": "string",
+      "vlanId": 0
     }
 """

@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceWirelessBluetoothSettings
+- name: Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings
   description: Complete reference of the getDeviceWirelessBluetoothSettings API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings
 notes:
   - SDK Method used are
-    devices.Devices.get_device_wireless_bluetooth_settings,
+    wireless.Wireless.get_device_wireless_bluetooth_settings,
 
   - Paths used are
     get /devices/{serial}/wireless/bluetooth/settings,
@@ -72,8 +72,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "uuid": "string",
       "major": 0,
-      "minor": 0
+      "minor": 0,
+      "uuid": "string"
     }
 """

@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceWirelessRadioSettings
+- name: Cisco Meraki documentation for wireless getDeviceWirelessRadioSettings
   description: Complete reference of the getDeviceWirelessRadioSettings API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-radio-settings
 notes:
   - SDK Method used are
-    devices.Devices.get_device_wireless_radio_settings,
+    wireless.Wireless.get_device_wireless_radio_settings,
 
   - Paths used are
     get /devices/{serial}/wireless/radio/settings,
@@ -70,6 +70,18 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "fiveGhzSettings": {
+        "channel": 0,
+        "channelWidth": 0,
+        "targetPower": 0
+      },
+      "rfProfileId": "string",
+      "serial": "string",
+      "twoFourGhzSettings": {
+        "channel": 0,
+        "targetPower": 0
+      }
+    }
 """

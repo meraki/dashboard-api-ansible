@@ -32,16 +32,15 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    name=dict(type="str"),
-    tags=dict(type="list"),
+    address=dict(type="str"),
+    floorPlanId=dict(type="str"),
     lat=dict(type="float"),
     lng=dict(type="float"),
-    address=dict(type="str"),
-    notes=dict(type="str"),
     moveMapMarker=dict(type="bool"),
+    name=dict(type="str"),
+    notes=dict(type="str"),
     switchProfileId=dict(type="str"),
-    floorPlanId=dict(type="str"),
-    mac=dict(type="str"),
+    tags=dict(type="list"),
     serial=dict(type="str"),
     organizationId=dict(type="str"),
 ))
@@ -58,16 +57,15 @@ class Devices(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            tags=params.get("tags"),
+            address=params.get("address"),
+            floorPlanId=params.get("floorPlanId"),
             lat=params.get("lat"),
             lng=params.get("lng"),
-            address=params.get("address"),
-            notes=params.get("notes"),
             moveMapMarker=params.get("moveMapMarker"),
+            name=params.get("name"),
+            notes=params.get("notes"),
             switchProfileId=params.get("switchProfileId"),
-            floorPlanId=params.get("floorPlanId"),
-            mac=params.get("mac"),
+            tags=params.get("tags"),
             serial=params.get("serial"),
             organization_id=params.get("organizationId"),
         )
@@ -130,36 +128,32 @@ class Devices(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
-            new_object_params['tags'] = self.new_object.get('tags') or \
-                self.new_object.get('tags')
+        if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
+            new_object_params['address'] = self.new_object.get('address') or \
+                self.new_object.get('address')
+        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
+            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
+                self.new_object.get('floor_plan_id')
         if self.new_object.get('lat') is not None or self.new_object.get('lat') is not None:
             new_object_params['lat'] = self.new_object.get('lat') or \
                 self.new_object.get('lat')
         if self.new_object.get('lng') is not None or self.new_object.get('lng') is not None:
             new_object_params['lng'] = self.new_object.get('lng') or \
                 self.new_object.get('lng')
-        if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
-            new_object_params['address'] = self.new_object.get('address') or \
-                self.new_object.get('address')
+        if self.new_object.get('moveMapMarker') is not None or self.new_object.get('move_map_marker') is not None:
+            new_object_params['moveMapMarker'] = self.new_object.get('moveMapMarker')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('notes') is not None or self.new_object.get('notes') is not None:
             new_object_params['notes'] = self.new_object.get('notes') or \
                 self.new_object.get('notes')
-        if self.new_object.get('moveMapMarker') is not None or self.new_object.get('move_map_marker') is not None:
-            new_object_params['moveMapMarker'] = self.new_object.get(
-                'moveMapMarker')
         if self.new_object.get('switchProfileId') is not None or self.new_object.get('switch_profile_id') is not None:
             new_object_params['switchProfileId'] = self.new_object.get('switchProfileId') or \
                 self.new_object.get('switch_profile_id')
-        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
-            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
-                self.new_object.get('floor_plan_id')
-        if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
-            new_object_params['mac'] = self.new_object.get('mac') or \
-                self.new_object.get('mac')
+        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+            new_object_params['tags'] = self.new_object.get('tags') or \
+                self.new_object.get('tags')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -238,16 +232,15 @@ class Devices(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("tags", "tags"),
+            ("address", "address"),
+            ("floorPlanId", "floorPlanId"),
             ("lat", "lat"),
             ("lng", "lng"),
-            ("address", "address"),
-            ("notes", "notes"),
             ("moveMapMarker", "moveMapMarker"),
+            ("name", "name"),
+            ("notes", "notes"),
             ("switchProfileId", "switchProfileId"),
-            ("floorPlanId", "floorPlanId"),
-            ("mac", "mac"),
+            ("tags", "tags"),
             ("serial", "serial"),
             ("organizationId", "organizationId"),
         ]

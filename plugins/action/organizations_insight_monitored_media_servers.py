@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     address=dict(type="str"),
     bestEffortMonitoringEnabled=dict(type="bool"),
+    name=dict(type="str"),
     organizationId=dict(type="str"),
     monitoredMediaServerId=dict(type="str"),
 ))
@@ -52,9 +52,9 @@ class OrganizationsInsightMonitoredMediaServers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             address=params.get("address"),
             bestEffortMonitoringEnabled=params.get("bestEffortMonitoringEnabled"),
+            name=params.get("name"),
             organizationId=params.get("organizationId"),
             monitoredMediaServerId=params.get("monitoredMediaServerId"),
         )
@@ -78,14 +78,14 @@ class OrganizationsInsightMonitoredMediaServers(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
             new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -103,14 +103,14 @@ class OrganizationsInsightMonitoredMediaServers(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
             new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -188,9 +188,9 @@ class OrganizationsInsightMonitoredMediaServers(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("address", "address"),
             ("bestEffortMonitoringEnabled", "bestEffortMonitoringEnabled"),
+            ("name", "name"),
             ("organizationId", "organizationId"),
             ("monitoredMediaServerId", "monitoredMediaServerId"),
         ]

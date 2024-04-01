@@ -70,6 +70,34 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "areas": [
+        {
+          "areaId": "string",
+          "areaName": "string",
+          "areaType": "string"
+        }
+      ],
+      "deadTimerInSeconds": 0,
+      "enabled": true,
+      "helloTimerInSeconds": 0,
+      "md5AuthenticationEnabled": true,
+      "md5AuthenticationKey": {
+        "id": 0,
+        "passphrase": "string"
+      },
+      "v3": {
+        "areas": [
+          {
+            "areaId": "string",
+            "areaName": "string",
+            "areaType": "string"
+          }
+        ],
+        "deadTimerInSeconds": 0,
+        "enabled": true,
+        "helloTimerInSeconds": 0
+      }
+    }
 """

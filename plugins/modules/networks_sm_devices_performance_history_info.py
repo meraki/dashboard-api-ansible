@@ -104,19 +104,19 @@ meraki_response:
     [
       {
         "cpuPercentUsed": 0,
-        "memFree": 0,
-        "memWired": 0,
-        "memActive": 0,
-        "memInactive": 0,
-        "networkSent": 0,
-        "networkReceived": 0,
-        "swapUsed": 0,
         "diskUsage": {
           "c": {
-            "used": 0,
-            "space": 0
+            "space": 0,
+            "used": 0
           }
         },
+        "memActive": 0,
+        "memFree": 0,
+        "memInactive": 0,
+        "memWired": 0,
+        "networkReceived": 0,
+        "networkSent": 0,
+        "swapUsed": 0,
         "ts": "string"
       }
     ]

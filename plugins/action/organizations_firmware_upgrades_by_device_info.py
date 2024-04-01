@@ -34,8 +34,8 @@ argument_spec.update(dict(
     networkIds=dict(type="list"),
     serials=dict(type="list"),
     macs=dict(type="list"),
-    firmwareUpgradeIds=dict(type="list"),
     firmwareUpgradeBatchIds=dict(type="list"),
+    upgradeStatuses=dict(type="list"),
 ))
 
 required_if = []
@@ -99,12 +99,12 @@ class ActionModule(ActionBase):
         if params.get("macs") is not None:
             new_object["macs"] = params.get(
                 "macs")
-        if params.get("firmwareUpgradeIds") is not None:
-            new_object["firmwareUpgradeIds"] = params.get(
-                "firmwareUpgradeIds")
         if params.get("firmwareUpgradeBatchIds") is not None:
             new_object["firmwareUpgradeBatchIds"] = params.get(
                 "firmwareUpgradeBatchIds")
+        if params.get("upgradeStatuses") is not None:
+            new_object["upgradeStatuses"] = params.get(
+                "upgradeStatuses")
 
         return new_object
 

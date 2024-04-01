@@ -42,12 +42,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCameraSense
+- name: Cisco Meraki documentation for camera updateDeviceCameraSense
   description: Complete reference of the updateDeviceCameraSense API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-sense
 notes:
   - SDK Method used are
-    devices.Devices.update_device_camera_sense,
+    camera.Camera.update_device_camera_sense,
 
   - Paths used are
     put /devices/{serial}/camera/sense,

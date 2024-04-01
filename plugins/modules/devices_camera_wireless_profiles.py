@@ -38,12 +38,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCameraWirelessProfiles
+- name: Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles
   description: Complete reference of the updateDeviceCameraWirelessProfiles API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles
 notes:
   - SDK Method used are
-    devices.Devices.update_device_camera_wireless_profiles,
+    camera.Camera.update_device_camera_wireless_profiles,
 
   - Paths used are
     put /devices/{serial}/camera/wirelessProfiles,

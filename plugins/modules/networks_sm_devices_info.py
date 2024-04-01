@@ -35,7 +35,7 @@ options:
       cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge, quarantined, avName, avRunning, asName,
       fwName, isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled, autoTags, hasMdm,
       hasDesktopAgent, diskEncryptionEnabled, hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore,
-      androidSecurityPatchVersion, and url.
+      androidSecurityPatchVersion, cellular, and url.
     elements: str
     type: list
   wifiMacs:
@@ -51,6 +51,16 @@ options:
   ids:
     description:
     - Ids query parameter. Filter devices by id(s).
+    elements: str
+    type: list
+  uuids:
+    description:
+    - Uuids query parameter. Filter devices by uuid(s).
+    elements: str
+    type: list
+  systemTypes:
+    description:
+    - SystemTypes query parameter. Filter devices by system type(s).
     elements: str
     type: list
   scope:
@@ -120,6 +130,8 @@ EXAMPLES = r"""
     wifiMacs: []
     serials: []
     ids: []
+    uuids: []
+    systemTypes: []
     scope: []
     perPage: 0
     startingAfter: string
@@ -140,19 +152,19 @@ meraki_response:
     [
       {
         "id": "string",
+        "ip": "string",
         "name": "string",
+        "notes": "string",
+        "osName": "string",
+        "serial": "string",
+        "serialNumber": "string",
+        "ssid": "string",
+        "systemModel": "string",
         "tags": [
           "string"
         ],
-        "ssid": "string",
-        "wifiMac": "string",
-        "osName": "string",
-        "systemModel": "string",
         "uuid": "string",
-        "serialNumber": "string",
-        "serial": "string",
-        "ip": "string",
-        "notes": "string"
+        "wifiMac": "string"
       }
     ]
 """

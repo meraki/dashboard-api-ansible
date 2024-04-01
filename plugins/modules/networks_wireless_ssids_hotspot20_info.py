@@ -75,6 +75,53 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "domains": [
+        "string"
+      ],
+      "enabled": true,
+      "mccMncs": [
+        {
+          "mcc": "string",
+          "mnc": "string"
+        }
+      ],
+      "naiRealms": [
+        {
+          "format": "string",
+          "methods": [
+            {
+              "authenticationTypes": {
+                "credentials": [
+                  "string"
+                ],
+                "eapInnerAuthentication": [
+                  "string"
+                ],
+                "nonEapInnerAuthentication": [
+                  "string"
+                ],
+                "tunneledEapMethodCredentials": [
+                  "string"
+                ]
+              },
+              "id": "string"
+            }
+          ],
+          "name": "string"
+        }
+      ],
+      "networkAccessType": "string",
+      "operator": {
+        "name": "string"
+      },
+      "roamConsortOis": [
+        "string"
+      ],
+      "venue": {
+        "name": "string",
+        "type": "string"
+      }
+    }
 """

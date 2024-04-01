@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCameraWirelessProfiles
+- name: Cisco Meraki documentation for camera getDeviceCameraWirelessProfiles
   description: Complete reference of the getDeviceCameraWirelessProfiles API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-wireless-profiles
 notes:
   - SDK Method used are
-    devices.Devices.get_device_camera_wireless_profiles,
+    camera.Camera.get_device_camera_wireless_profiles,
 
   - Paths used are
     get /devices/{serial}/camera/wirelessProfiles,
@@ -70,6 +70,10 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "backup": "string",
+      "primary": "string",
+      "secondary": "string"
+    }
 """

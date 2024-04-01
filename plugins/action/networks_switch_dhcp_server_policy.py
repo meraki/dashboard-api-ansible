@@ -33,10 +33,10 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     alerts=dict(type="dict"),
-    defaultPolicy=dict(type="str"),
     allowedServers=dict(type="list"),
-    blockedServers=dict(type="list"),
     arpInspection=dict(type="dict"),
+    blockedServers=dict(type="list"),
+    defaultPolicy=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -53,10 +53,10 @@ class NetworksSwitchDhcpServerPolicy(object):
         self.meraki = meraki
         self.new_object = dict(
             alerts=params.get("alerts"),
-            defaultPolicy=params.get("defaultPolicy"),
             allowedServers=params.get("allowedServers"),
-            blockedServers=params.get("blockedServers"),
             arpInspection=params.get("arpInspection"),
+            blockedServers=params.get("blockedServers"),
+            defaultPolicy=params.get("defaultPolicy"),
             network_id=params.get("networkId"),
         )
 
@@ -72,18 +72,18 @@ class NetworksSwitchDhcpServerPolicy(object):
         if self.new_object.get('alerts') is not None or self.new_object.get('alerts') is not None:
             new_object_params['alerts'] = self.new_object.get('alerts') or \
                 self.new_object.get('alerts')
-        if self.new_object.get('defaultPolicy') is not None or self.new_object.get('default_policy') is not None:
-            new_object_params['defaultPolicy'] = self.new_object.get('defaultPolicy') or \
-                self.new_object.get('default_policy')
         if self.new_object.get('allowedServers') is not None or self.new_object.get('allowed_servers') is not None:
             new_object_params['allowedServers'] = self.new_object.get('allowedServers') or \
                 self.new_object.get('allowed_servers')
-        if self.new_object.get('blockedServers') is not None or self.new_object.get('blocked_servers') is not None:
-            new_object_params['blockedServers'] = self.new_object.get('blockedServers') or \
-                self.new_object.get('blocked_servers')
         if self.new_object.get('arpInspection') is not None or self.new_object.get('arp_inspection') is not None:
             new_object_params['arpInspection'] = self.new_object.get('arpInspection') or \
                 self.new_object.get('arp_inspection')
+        if self.new_object.get('blockedServers') is not None or self.new_object.get('blocked_servers') is not None:
+            new_object_params['blockedServers'] = self.new_object.get('blockedServers') or \
+                self.new_object.get('blocked_servers')
+        if self.new_object.get('defaultPolicy') is not None or self.new_object.get('default_policy') is not None:
+            new_object_params['defaultPolicy'] = self.new_object.get('defaultPolicy') or \
+                self.new_object.get('default_policy')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -141,10 +141,10 @@ class NetworksSwitchDhcpServerPolicy(object):
 
         obj_params = [
             ("alerts", "alerts"),
-            ("defaultPolicy", "defaultPolicy"),
             ("allowedServers", "allowedServers"),
-            ("blockedServers", "blockedServers"),
             ("arpInspection", "arpInspection"),
+            ("blockedServers", "blockedServers"),
+            ("defaultPolicy", "defaultPolicy"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

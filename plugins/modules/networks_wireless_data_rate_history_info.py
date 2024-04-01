@@ -131,10 +131,10 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
-        "endTs": "string",
         "averageKbps": 0,
         "downloadKbps": 0,
+        "endTs": "string",
+        "startTs": "string",
         "uploadKbps": 0
       }
     ]

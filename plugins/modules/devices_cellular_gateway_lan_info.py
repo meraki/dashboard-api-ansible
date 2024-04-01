@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCellularGatewayLan
+- name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayLan
   description: Complete reference of the getDeviceCellularGatewayLan API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-lan
 notes:
   - SDK Method used are
-    devices.Devices.get_device_cellular_gateway_lan,
+    cellular_gateway.CellularGateway.get_device_cellular_gateway_lan,
 
   - Paths used are
     get /devices/{serial}/cellularGateway/lan,
@@ -70,6 +70,24 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "deviceLanIp": "string",
+      "deviceName": "string",
+      "deviceSubnet": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

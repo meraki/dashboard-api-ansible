@@ -58,7 +58,7 @@ options:
     elements: str
     type: list
   dnsCustomNameservers:
-    description: The DHCP name server IPs when DHCP name server option is 'custom'.
+    description: The DHCP name server IPs when DHCP name server option is ' custom'.
     elements: str
     type: list
   dnsNameserversOption:
@@ -153,6 +153,8 @@ EXAMPLES = r"""
     - code: '5'
       type: text
       value: five
+    dhcpRelayServerIps:
+    - 1.2.3.4
     dnsCustomNameservers:
     - 8.8.8.8, 8.8.4.4
     dnsNameserversOption: custom
@@ -175,5 +177,39 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "bootFileName": "string",
+      "bootNextServer": "string",
+      "bootOptionsEnabled": true,
+      "dhcpLeaseTime": "string",
+      "dhcpMode": "string",
+      "dhcpOptions": [
+        {
+          "code": "string",
+          "type": "string",
+          "value": "string"
+        }
+      ],
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "dnsNameserversOption": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

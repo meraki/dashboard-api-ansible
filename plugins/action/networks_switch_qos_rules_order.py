@@ -32,13 +32,13 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    vlan=dict(type="int"),
+    dscp=dict(type="int"),
+    dstPort=dict(type="int"),
+    dstPortRange=dict(type="str"),
     protocol=dict(type="str"),
     srcPort=dict(type="int"),
     srcPortRange=dict(type="str"),
-    dstPort=dict(type="int"),
-    dstPortRange=dict(type="str"),
-    dscp=dict(type="int"),
+    vlan=dict(type="int"),
     networkId=dict(type="str"),
     qosRuleId=dict(type="str"),
 ))
@@ -56,13 +56,13 @@ class NetworksSwitchQosRulesOrder(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            vlan=params.get("vlan"),
+            dscp=params.get("dscp"),
+            dstPort=params.get("dstPort"),
+            dstPortRange=params.get("dstPortRange"),
             protocol=params.get("protocol"),
             srcPort=params.get("srcPort"),
             srcPortRange=params.get("srcPortRange"),
-            dstPort=params.get("dstPort"),
-            dstPortRange=params.get("dstPortRange"),
-            dscp=params.get("dscp"),
+            vlan=params.get("vlan"),
             networkId=params.get("networkId"),
             qosRuleId=params.get("qosRuleId"),
         )
@@ -86,9 +86,15 @@ class NetworksSwitchQosRulesOrder(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
-            new_object_params['vlan'] = self.new_object.get('vlan') or \
-                self.new_object.get('vlan')
+        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
+            new_object_params['dscp'] = self.new_object.get('dscp') or \
+                self.new_object.get('dscp')
+        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
+            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
+                self.new_object.get('dst_port')
+        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
+            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
+                self.new_object.get('dst_port_range')
         if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
             new_object_params['protocol'] = self.new_object.get('protocol') or \
                 self.new_object.get('protocol')
@@ -98,15 +104,9 @@ class NetworksSwitchQosRulesOrder(object):
         if self.new_object.get('srcPortRange') is not None or self.new_object.get('src_port_range') is not None:
             new_object_params['srcPortRange'] = self.new_object.get('srcPortRange') or \
                 self.new_object.get('src_port_range')
-        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
-            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
-                self.new_object.get('dst_port')
-        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
-            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
-                self.new_object.get('dst_port_range')
-        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
-            new_object_params['dscp'] = self.new_object.get('dscp') or \
-                self.new_object.get('dscp')
+        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+            new_object_params['vlan'] = self.new_object.get('vlan') or \
+                self.new_object.get('vlan')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -124,9 +124,15 @@ class NetworksSwitchQosRulesOrder(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
-            new_object_params['vlan'] = self.new_object.get('vlan') or \
-                self.new_object.get('vlan')
+        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
+            new_object_params['dscp'] = self.new_object.get('dscp') or \
+                self.new_object.get('dscp')
+        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
+            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
+                self.new_object.get('dst_port')
+        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
+            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
+                self.new_object.get('dst_port_range')
         if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
             new_object_params['protocol'] = self.new_object.get('protocol') or \
                 self.new_object.get('protocol')
@@ -136,15 +142,9 @@ class NetworksSwitchQosRulesOrder(object):
         if self.new_object.get('srcPortRange') is not None or self.new_object.get('src_port_range') is not None:
             new_object_params['srcPortRange'] = self.new_object.get('srcPortRange') or \
                 self.new_object.get('src_port_range')
-        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
-            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
-                self.new_object.get('dst_port')
-        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
-            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
-                self.new_object.get('dst_port_range')
-        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
-            new_object_params['dscp'] = self.new_object.get('dscp') or \
-                self.new_object.get('dscp')
+        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+            new_object_params['vlan'] = self.new_object.get('vlan') or \
+                self.new_object.get('vlan')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -222,13 +222,13 @@ class NetworksSwitchQosRulesOrder(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("vlan", "vlan"),
+            ("dscp", "dscp"),
+            ("dstPort", "dstPort"),
+            ("dstPortRange", "dstPortRange"),
             ("protocol", "protocol"),
             ("srcPort", "srcPort"),
             ("srcPortRange", "srcPortRange"),
-            ("dstPort", "dstPort"),
-            ("dstPortRange", "dstPortRange"),
-            ("dscp", "dscp"),
+            ("vlan", "vlan"),
             ("networkId", "networkId"),
             ("qosRuleId", "qosRuleId"),
         ]

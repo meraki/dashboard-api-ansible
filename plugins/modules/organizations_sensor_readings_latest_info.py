@@ -26,7 +26,7 @@ options:
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100. Default is 100.
+    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
@@ -56,8 +56,9 @@ options:
     description:
     - >
       Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available
-      types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality,
-      noise, pm25, temperature, tvoc, and water.
+      types of readings will be retrieved. Allowed values are apparentPower, battery, button, co2, current, door,
+      downstreamPower, frequency, humidity, indoorAirQuality, noise, pm25, powerFactor, realPower,
+      remoteLockoutSwitch, temperature, tvoc, voltage, and water.
     elements: str
     type: list
 requirements:
@@ -119,23 +120,35 @@ meraki_response:
   sample: >
     [
       {
-        "serial": "string",
         "network": {
           "id": "string",
           "name": "string"
         },
         "readings": [
           {
-            "ts": "string",
-            "metric": "string",
+            "apparentPower": {
+              "draw": 0
+            },
             "battery": {
               "percentage": 0
             },
             "button": {
               "pressType": "string"
             },
+            "co2": {
+              "concentration": 0
+            },
+            "current": {
+              "draw": 0
+            },
             "door": {
               "open": true
+            },
+            "downstreamPower": {
+              "enabled": true
+            },
+            "frequency": {
+              "level": 0
             },
             "humidity": {
               "relativePercentage": 0
@@ -143,6 +156,7 @@ meraki_response:
             "indoorAirQuality": {
               "score": 0
             },
+            "metric": "string",
             "noise": {
               "ambient": {
                 "level": 0
@@ -151,18 +165,32 @@ meraki_response:
             "pm25": {
               "concentration": 0
             },
-            "temperature": {
-              "fahrenheit": 0,
-              "celsius": 0
+            "powerFactor": {
+              "percentage": 0
             },
+            "realPower": {
+              "draw": 0
+            },
+            "remoteLockoutSwitch": {
+              "locked": true
+            },
+            "temperature": {
+              "celsius": 0,
+              "fahrenheit": 0
+            },
+            "ts": "string",
             "tvoc": {
               "concentration": 0
+            },
+            "voltage": {
+              "level": 0
             },
             "water": {
               "present": true
             }
           }
-        ]
+        ],
+        "serial": "string"
       }
     ]
 """

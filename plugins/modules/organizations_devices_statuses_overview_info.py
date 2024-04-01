@@ -87,10 +87,10 @@ meraki_response:
   sample: >
     {
       "byStatus": {
-        "online": 0,
         "alerting": 0,
+        "dormant": 0,
         "offline": 0,
-        "dormant": 0
+        "online": 0
       }
     }
 """

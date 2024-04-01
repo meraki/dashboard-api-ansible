@@ -113,7 +113,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "mqttBrokerId": "string",
-      "enabled": true
+      "enabled": true,
+      "mqttBrokerId": "string"
     }
 """

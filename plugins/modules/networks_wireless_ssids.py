@@ -38,7 +38,7 @@ options:
         elements: dict
         suboptions:
           host:
-            description: IP address of your Active Directory server.
+            description: IP address (or FQDN) of your Active Directory server.
             type: str
           port:
             description: (Optional) UDP port the Active Directory server listens on.
@@ -65,7 +65,8 @@ options:
   authMode:
     description: The association control method for the SSID ('open', 'open-enhanced',
       'psk', 'open-with-radius', 'open-with-nac', '8021x-meraki', '8021x-nac', '8021x-radius',
-      '8021x-google', '8021x-localradius', 'ipsk-with-radius' or 'ipsk-without-radius').
+      '8021x-google', '8021x-localradius', 'ipsk-with-radius', 'ipsk-without-radius'
+      or 'ipsk-with-nac').
     type: str
   availabilityTags:
     description: Accepts a list of tags for this SSID. If availableOnAllAps is false,
@@ -194,7 +195,7 @@ options:
         elements: dict
         suboptions:
           host:
-            description: IP address of your LDAP server.
+            description: IP address (or FQDN) of your LDAP server.
             type: str
           port:
             description: UDP port the LDAP server listens on.
@@ -255,6 +256,54 @@ options:
   name:
     description: The name of the SSID.
     type: str
+  namedVlans:
+    description: Named VLAN settings.
+    suboptions:
+      radius:
+        description: RADIUS settings. This param is only valid when authMode is 'open-with-radius'
+          and ipAssignmentMode is not 'NAT mode'.
+        suboptions:
+          guestVlan:
+            description: Guest VLAN settings. Used to direct traffic to a guest VLAN
+              when none of the RADIUS servers are reachable or a client receives access-reject
+              from the RADIUS server.
+            suboptions:
+              enabled:
+                description: Whether or not RADIUS guest named VLAN is enabled.
+                type: bool
+              name:
+                description: RADIUS guest VLAN name.
+                type: str
+            type: dict
+        type: dict
+      tagging:
+        description: VLAN tagging settings. This param is only valid when ipAssignmentMode
+          is 'Bridge mode' or 'Layer 3 roaming'.
+        suboptions:
+          byApTags:
+            description: The list of AP tags and VLAN names used for named VLAN tagging.
+              If an AP has a tag matching one in the list, then traffic on this SSID
+              will be directed to use the VLAN name associated to the tag.
+            elements: dict
+            suboptions:
+              tags:
+                description: List of AP tags.
+                elements: str
+                type: list
+              vlanName:
+                description: VLAN name that will be used to tag traffic.
+                type: str
+            type: list
+          defaultVlanName:
+            description: The default VLAN name used to tag traffic in the absence of
+              a matching AP tag.
+            type: str
+          enabled:
+            description: Whether or not traffic should be directed to use specific VLAN
+              names.
+            type: bool
+        type: dict
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -304,7 +353,8 @@ options:
         description: Certificate used for authorization for the RADSEC Server.
         type: str
       host:
-        description: IP address to which the APs will send RADIUS accounting messages.
+        description: IP address (or FQDN) to which the APs will send RADIUS accounting
+          messages.
         type: str
       port:
         description: Port on the RADIUS server that is listening for accounting messages.
@@ -384,7 +434,7 @@ options:
         description: Certificate used for authorization for the RADSEC Server.
         type: str
       host:
-        description: IP address of your RADIUS server.
+        description: IP address (or FQDN) of your RADIUS server.
         type: str
       openRoamingCertificateId:
         description: The ID of the Openroaming Certificate attached to radius server.
@@ -497,10 +547,234 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    activeDirectory:
+      credentials:
+        logonName: user
+        password: password
+      servers:
+      - host: 127.0.0.1
+        port: 3268
+    adultContentFilteringEnabled: false
+    apTagsAndVlanIds:
+    - tags:
+      - tag1
+      - tag2
+      vlanId: 100
+    authMode: 8021x-radius
+    availabilityTags:
+    - tag1
+    - tag2
+    availableOnAllAps: false
+    bandSelection: 5 GHz band only
+    concentratorNetworkId: N_24329156
+    defaultVlanId: 1
+    disassociateClientsOnVpnFailover: false
+    dnsRewrite:
+      dnsCustomNameservers:
+      - 8.8.8.8
+      - 8.8.4.4
+      enabled: true
+    dot11r:
+      adaptive: true
+      enabled: true
+    dot11w:
+      enabled: true
+      required: false
     enabled: true
+    encryptionMode: wpa
+    enterpriseAdminAccess: access enabled
+    gre:
+      concentrator:
+        host: 192.168.1.1
+      key: 5
+    ipAssignmentMode: NAT mode
+    lanIsolationEnabled: true
+    ldap:
+      baseDistinguishedName: dc=example,dc=com
+      credentials:
+        distinguishedName: cn=user,dc=example,dc=com
+        password: password
+      serverCaCertificate:
+        contents: '-----BEGIN CERTIFICATE-----
+          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
+          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
+          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
+          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
+          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
+          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
+          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
+          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
+          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
+          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
+          wTw70BVktzJnb0VLeDg=
+          -----END CERTIFICATE-----'
+      servers:
+      - host: 127.0.0.1
+        port: 389
+    localRadius:
+      cacheTimeout: 60
+      certificateAuthentication:
+        clientRootCaCertificate:
+          contents: '-----BEGIN CERTIFICATE-----
+          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
+          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
+          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
+          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
+          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
+          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
+          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
+          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
+          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
+          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
+          wTw70BVktzJnb0VLeDg=
+          -----END CERTIFICATE-----'
+        enabled: true
+        ocspResponderUrl: http://ocsp-server.example.com
+        useLdap: false
+        useOcsp: true
+      passwordAuthentication:
+        enabled: false
+    mandatoryDhcpEnabled: false
+    minBitrate: 5.5
     name: My SSID
+    namedVlans:
+      radius:
+        guestVlan:
+          enabled: true
+          name: Guest VLAN
+      tagging:
+        byApTags:
+        - tags:
+          - tag1
+          - tag2
+          vlanName: My VLAN
+        defaultVlanName: My VLAN
+        enabled: true
     networkId: string
     number: string
+    oauth:
+      allowedDomains:
+      - example.com
+    perClientBandwidthLimitDown: 0
+    perClientBandwidthLimitUp: 0
+    perSsidBandwidthLimitDown: 0
+    perSsidBandwidthLimitUp: 0
+    psk: deadbeef
+    radiusAccountingEnabled: true
+    radiusAccountingInterimInterval: 5
+    radiusAccountingServers:
+    - caCertificate: '-----BEGIN CERTIFICATE-----
+          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
+          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
+          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
+          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
+          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
+          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
+          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
+          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
+          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
+          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
+          wTw70BVktzJnb0VLeDg=
+          -----END CERTIFICATE-----'
+      host: 0.0.0.0
+      port: 3000
+      radsecEnabled: true
+      secret: secret-string
+    radiusAttributeForGroupPolicies: Filter-Id
+    radiusAuthenticationNasId: 00-11-22-33-44-55:AP1
+    radiusCalledStationId: 00-11-22-33-44-55:AP1
+    radiusCoaEnabled: true
+    radiusFailoverPolicy: Deny access
+    radiusFallbackEnabled: true
+    radiusGuestVlanEnabled: true
+    radiusGuestVlanId: 1
+    radiusLoadBalancingPolicy: Round robin
+    radiusOverride: false
+    radiusProxyEnabled: false
+    radiusServerAttemptsLimit: 5
+    radiusServerTimeout: 5
+    radiusServers:
+    - caCertificate: '-----BEGIN CERTIFICATE-----
+          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
+          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
+          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
+          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
+          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
+          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
+          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
+          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
+          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
+          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
+          wTw70BVktzJnb0VLeDg=
+          -----END CERTIFICATE-----'
+      host: 0.0.0.0
+      openRoamingCertificateId: 2
+      port: 3000
+      radsecEnabled: true
+      secret: secret-string
+    radiusTestingEnabled: true
+    secondaryConcentratorNetworkId: disabled
+    speedBurst:
+      enabled: true
+    splashGuestSponsorDomains:
+    - example.com
+    splashPage: Click-through splash page
+    useVlanTagging: false
+    visible: true
+    vlanId: 10
+    walledGardenEnabled: true
+    walledGardenRanges:
+    - example.com
+    - 1.1.1.1/32
+    wpaEncryptionMode: WPA2 only
 
 """
 RETURN = r"""
@@ -509,5 +783,55 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "adminSplashUrl": "string",
+      "authMode": "string",
+      "availabilityTags": [
+        "string"
+      ],
+      "availableOnAllAps": true,
+      "bandSelection": "string",
+      "enabled": true,
+      "encryptionMode": "string",
+      "ipAssignmentMode": "string",
+      "localAuth": true,
+      "mandatoryDhcpEnabled": true,
+      "minBitrate": 0,
+      "name": "string",
+      "number": 0,
+      "perClientBandwidthLimitDown": 0,
+      "perClientBandwidthLimitUp": 0,
+      "perSsidBandwidthLimitDown": 0,
+      "perSsidBandwidthLimitUp": 0,
+      "radiusAccountingEnabled": true,
+      "radiusAccountingServers": [
+        {
+          "caCertificate": "string",
+          "host": "string",
+          "openRoamingCertificateId": 0,
+          "port": 0
+        }
+      ],
+      "radiusAttributeForGroupPolicies": "string",
+      "radiusEnabled": true,
+      "radiusFailoverPolicy": "string",
+      "radiusLoadBalancingPolicy": "string",
+      "radiusServers": [
+        {
+          "caCertificate": "string",
+          "host": "string",
+          "openRoamingCertificateId": 0,
+          "port": 0
+        }
+      ],
+      "splashPage": "string",
+      "splashTimeout": "string",
+      "ssidAdminAccessible": true,
+      "visible": true,
+      "walledGardenEnabled": true,
+      "walledGardenRanges": [
+        "string"
+      ],
+      "wpaEncryptionMode": "string"
+    }
 """

@@ -25,9 +25,9 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    licenses=dict(type="list"),
     orders=dict(type="list"),
     serials=dict(type="list"),
-    licenses=dict(type="list"),
     organizationId=dict(type="str"),
 ))
 
@@ -67,9 +67,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            licenses=params.get("licenses"),
             orders=params.get("orders"),
             serials=params.get("serials"),
-            licenses=params.get("licenses"),
             organizationId=params.get("organizationId"),
         )
         return new_object

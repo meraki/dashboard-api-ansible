@@ -83,9 +83,9 @@ meraki_response:
         "id": "string",
         "isEncrypted": true,
         "isManaged": true,
+        "name": "string",
         "profileData": "string",
         "profileIdentifier": "string",
-        "name": "string",
         "version": "string"
       }
     ]

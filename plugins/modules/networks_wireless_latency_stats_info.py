@@ -117,6 +117,28 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "backgroundTraffic": {
+        "avg": 0,
+        "rawDistribution": {
+          "0": 0,
+          "1": 0,
+          "1024": 0,
+          "128": 0,
+          "16": 0,
+          "2": 0,
+          "2048": 0,
+          "256": 0,
+          "32": 0,
+          "4": 0,
+          "512": 0,
+          "64": 0,
+          "8": 0
+        }
+      },
+      "bestEffortTraffic": "string",
+      "videoTraffic": "string",
+      "voiceTraffic": "string"
+    }
 """

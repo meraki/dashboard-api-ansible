@@ -37,17 +37,17 @@ options:
     suboptions:
       floodUnknownMulticastTrafficEnabled:
         description: Flood unknown multicast traffic setting for switches, switch stacks
-          or switch profiles.
+          or switch templates.
         type: bool
       igmpSnoopingEnabled:
-        description: IGMP snooping setting for switches, switch stacks or switch profiles.
+        description: IGMP snooping setting for switches, switch stacks or switch templates.
         type: bool
       stacks:
         description: List of switch stack ids for non-template network.
         elements: str
         type: list
       switchProfiles:
-        description: List of switch profiles ids for template network.
+        description: List of switch templates ids for template network.
         elements: str
         type: list
       switches:
@@ -101,16 +101,17 @@ EXAMPLES = r"""
     overrides:
     - floodUnknownMulticastTrafficEnabled: true
       igmpSnoopingEnabled: true
-      switches:
-      - Q234-ABCD-0001
-      - Q234-ABCD-0002
-      - Q234-ABCD-0003
-    - floodUnknownMulticastTrafficEnabled: true
-      igmpSnoopingEnabled: true
       stacks:
       - '789102'
       - '123456'
       - '129102'
+      switchProfiles:
+      - '1234'
+      - '4567'
+      switches:
+      - Q234-ABCD-0001
+      - Q234-ABCD-0002
+      - Q234-ABCD-0003
 
 """
 RETURN = r"""
@@ -119,5 +120,25 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "defaultSettings": {
+        "floodUnknownMulticastTrafficEnabled": true,
+        "igmpSnoopingEnabled": true
+      },
+      "overrides": [
+        {
+          "floodUnknownMulticastTrafficEnabled": true,
+          "igmpSnoopingEnabled": true,
+          "stacks": [
+            "string"
+          ],
+          "switchProfiles": [
+            "string"
+          ],
+          "switches": [
+            "string"
+          ]
+        }
+      ]
+    }
 """

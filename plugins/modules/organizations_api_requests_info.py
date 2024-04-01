@@ -160,16 +160,16 @@ meraki_response:
     [
       {
         "adminId": "string",
-        "method": "string",
         "host": "string",
+        "method": "string",
+        "operationId": "string",
         "path": "string",
         "queryString": "string",
-        "userAgent": "string",
-        "ts": "string",
         "responseCode": 0,
         "sourceIp": "string",
-        "version": 0,
-        "operationId": "string"
+        "ts": "string",
+        "userAgent": "string",
+        "version": 0
       }
     ]
 """

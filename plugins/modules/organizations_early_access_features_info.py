@@ -74,16 +74,16 @@ meraki_response:
   sample: >
     [
       {
-        "shortName": "string",
-        "name": "string",
         "descriptions": {
-          "short": "string",
-          "long": "string"
+          "long": "string",
+          "short": "string"
         },
-        "topic": "string",
-        "isOrgScopedOnly": true,
         "documentationLink": "string",
-        "supportLink": "string"
+        "isOrgScopedOnly": true,
+        "name": "string",
+        "shortName": "string",
+        "supportLink": "string",
+        "topic": "string"
       }
     ]
 """

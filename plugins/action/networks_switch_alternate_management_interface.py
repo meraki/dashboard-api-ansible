@@ -33,9 +33,9 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     enabled=dict(type="bool"),
-    vlanId=dict(type="int"),
     protocols=dict(type="list"),
     switches=dict(type="list"),
+    vlanId=dict(type="int"),
     networkId=dict(type="str"),
 ))
 
@@ -52,9 +52,9 @@ class NetworksSwitchAlternateManagementInterface(object):
         self.meraki = meraki
         self.new_object = dict(
             enabled=params.get("enabled"),
-            vlanId=params.get("vlanId"),
             protocols=params.get("protocols"),
             switches=params.get("switches"),
+            vlanId=params.get("vlanId"),
             network_id=params.get("networkId"),
         )
 
@@ -69,15 +69,15 @@ class NetworksSwitchAlternateManagementInterface(object):
         new_object_params = {}
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
         if self.new_object.get('protocols') is not None or self.new_object.get('protocols') is not None:
             new_object_params['protocols'] = self.new_object.get('protocols') or \
                 self.new_object.get('protocols')
         if self.new_object.get('switches') is not None or self.new_object.get('switches') is not None:
             new_object_params['switches'] = self.new_object.get('switches') or \
                 self.new_object.get('switches')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -135,9 +135,9 @@ class NetworksSwitchAlternateManagementInterface(object):
 
         obj_params = [
             ("enabled", "enabled"),
-            ("vlanId", "vlanId"),
             ("protocols", "protocols"),
             ("switches", "switches"),
+            ("vlanId", "vlanId"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

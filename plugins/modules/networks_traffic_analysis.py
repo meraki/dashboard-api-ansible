@@ -84,19 +84,7 @@ EXAMPLES = r"""
     - name: Item from hostname
       type: host
       value: example.com
-    - name: Item from port
-      type: port
-      value: '440'
-    - name: Item from IP
-      type: ipRange
-      value: 192.1.0.0
-    - name: Item from IP range (CIDR)
-      type: ipRange
-      value: 192.2.0.0/16
-    - name: Item from IP range with port
-      type: ipRange
-      value: 192.3.0.0/16:80
-    mode: detailed
+    mode: disabled
     networkId: string
 
 """
@@ -106,5 +94,14 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "customPieChartItems": [
+        {
+          "name": "string",
+          "type": "string",
+          "value": "string"
+        }
+      ],
+      "mode": "string"
+    }
 """

@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices cycleDeviceSwitchPorts
+- name: Cisco Meraki documentation for switch cycleDeviceSwitchPorts
   description: Complete reference of the cycleDeviceSwitchPorts API.
   link: https://developer.cisco.com/meraki/api-v1/#!cycle-device-switch-ports
 notes:
   - SDK Method used are
-    devices.Devices.cycle_device_switch_ports,
+    switch.Switch.cycle_device_switch_ports,
 
   - Paths used are
     post /devices/{serial}/switch/ports/cycle,

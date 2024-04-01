@@ -32,8 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    defaultDestinations=dict(type="dict"),
     alerts=dict(type="list"),
+    defaultDestinations=dict(type="dict"),
+    muting=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -49,8 +50,9 @@ class NetworksAlertsSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            defaultDestinations=params.get("defaultDestinations"),
             alerts=params.get("alerts"),
+            defaultDestinations=params.get("defaultDestinations"),
+            muting=params.get("muting"),
             network_id=params.get("networkId"),
         )
 
@@ -63,12 +65,15 @@ class NetworksAlertsSettings(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('defaultDestinations') is not None or self.new_object.get('default_destinations') is not None:
-            new_object_params['defaultDestinations'] = self.new_object.get('defaultDestinations') or \
-                self.new_object.get('default_destinations')
         if self.new_object.get('alerts') is not None or self.new_object.get('alerts') is not None:
             new_object_params['alerts'] = self.new_object.get('alerts') or \
                 self.new_object.get('alerts')
+        if self.new_object.get('defaultDestinations') is not None or self.new_object.get('default_destinations') is not None:
+            new_object_params['defaultDestinations'] = self.new_object.get('defaultDestinations') or \
+                self.new_object.get('default_destinations')
+        if self.new_object.get('muting') is not None or self.new_object.get('muting') is not None:
+            new_object_params['muting'] = self.new_object.get('muting') or \
+                self.new_object.get('muting')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -125,8 +130,9 @@ class NetworksAlertsSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("defaultDestinations", "defaultDestinations"),
             ("alerts", "alerts"),
+            ("defaultDestinations", "defaultDestinations"),
+            ("muting", "muting"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

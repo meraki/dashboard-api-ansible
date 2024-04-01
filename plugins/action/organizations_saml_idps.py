@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    x509certSha1Fingerprint=dict(type="str"),
     sloLogoutUrl=dict(type="str"),
+    x509certSha1Fingerprint=dict(type="str"),
     organizationId=dict(type="str"),
     idpId=dict(type="str"),
 ))
@@ -51,8 +51,8 @@ class OrganizationsSamlIdps(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            x509certSha1Fingerprint=params.get("x509certSha1Fingerprint"),
             sloLogoutUrl=params.get("sloLogoutUrl"),
+            x509certSha1Fingerprint=params.get("x509certSha1Fingerprint"),
             organizationId=params.get("organizationId"),
             idpId=params.get("idpId"),
         )
@@ -76,12 +76,12 @@ class OrganizationsSamlIdps(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('x509certSha1Fingerprint') is not None or self.new_object.get('x509cert_sha1_fingerprint') is not None:
-            new_object_params['x509certSha1Fingerprint'] = self.new_object.get('x509certSha1Fingerprint') or \
-                self.new_object.get('x509cert_sha1_fingerprint')
         if self.new_object.get('sloLogoutUrl') is not None or self.new_object.get('slo_logout_url') is not None:
             new_object_params['sloLogoutUrl'] = self.new_object.get('sloLogoutUrl') or \
                 self.new_object.get('slo_logout_url')
+        if self.new_object.get('x509certSha1Fingerprint') is not None or self.new_object.get('x509cert_sha1_fingerprint') is not None:
+            new_object_params['x509certSha1Fingerprint'] = self.new_object.get('x509certSha1Fingerprint') or \
+                self.new_object.get('x509cert_sha1_fingerprint')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -99,12 +99,12 @@ class OrganizationsSamlIdps(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('x509certSha1Fingerprint') is not None or self.new_object.get('x509cert_sha1_fingerprint') is not None:
-            new_object_params['x509certSha1Fingerprint'] = self.new_object.get('x509certSha1Fingerprint') or \
-                self.new_object.get('x509cert_sha1_fingerprint')
         if self.new_object.get('sloLogoutUrl') is not None or self.new_object.get('slo_logout_url') is not None:
             new_object_params['sloLogoutUrl'] = self.new_object.get('sloLogoutUrl') or \
                 self.new_object.get('slo_logout_url')
+        if self.new_object.get('x509certSha1Fingerprint') is not None or self.new_object.get('x509cert_sha1_fingerprint') is not None:
+            new_object_params['x509certSha1Fingerprint'] = self.new_object.get('x509certSha1Fingerprint') or \
+                self.new_object.get('x509cert_sha1_fingerprint')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -182,8 +182,8 @@ class OrganizationsSamlIdps(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("x509certSha1Fingerprint", "x509certSha1Fingerprint"),
             ("sloLogoutUrl", "sloLogoutUrl"),
+            ("x509certSha1Fingerprint", "x509certSha1Fingerprint"),
             ("organizationId", "organizationId"),
             ("idpId", "idpId"),
         ]

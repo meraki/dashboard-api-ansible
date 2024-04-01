@@ -33,8 +33,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     dhcpLeaseTime=dict(type="str"),
-    dnsNameservers=dict(type="str"),
     dnsCustomNameservers=dict(type="list"),
+    dnsNameservers=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -51,8 +51,8 @@ class NetworksCellularGatewayDhcp(object):
         self.meraki = meraki
         self.new_object = dict(
             dhcpLeaseTime=params.get("dhcpLeaseTime"),
-            dnsNameservers=params.get("dnsNameservers"),
             dnsCustomNameservers=params.get("dnsCustomNameservers"),
+            dnsNameservers=params.get("dnsNameservers"),
             network_id=params.get("networkId"),
         )
 
@@ -68,12 +68,12 @@ class NetworksCellularGatewayDhcp(object):
         if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
             new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
                 self.new_object.get('dhcp_lease_time')
-        if self.new_object.get('dnsNameservers') is not None or self.new_object.get('dns_nameservers') is not None:
-            new_object_params['dnsNameservers'] = self.new_object.get('dnsNameservers') or \
-                self.new_object.get('dns_nameservers')
         if self.new_object.get('dnsCustomNameservers') is not None or self.new_object.get('dns_custom_nameservers') is not None:
             new_object_params['dnsCustomNameservers'] = self.new_object.get('dnsCustomNameservers') or \
                 self.new_object.get('dns_custom_nameservers')
+        if self.new_object.get('dnsNameservers') is not None or self.new_object.get('dns_nameservers') is not None:
+            new_object_params['dnsNameservers'] = self.new_object.get('dnsNameservers') or \
+                self.new_object.get('dns_nameservers')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -131,8 +131,8 @@ class NetworksCellularGatewayDhcp(object):
 
         obj_params = [
             ("dhcpLeaseTime", "dhcpLeaseTime"),
-            ("dnsNameservers", "dnsNameservers"),
             ("dnsCustomNameservers", "dnsCustomNameservers"),
+            ("dnsNameservers", "dnsNameservers"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

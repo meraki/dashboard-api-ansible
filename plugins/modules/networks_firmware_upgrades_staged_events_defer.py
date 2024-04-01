@@ -77,26 +77,26 @@ meraki_response:
           }
         }
       },
-      "stages": [
-        {
-          "group": {
-            "id": "string",
-            "name": "string",
-            "description": "string"
-          },
-          "milestones": {
-            "scheduledFor": "string",
-            "startedAt": "string",
-            "completedAt": "string",
-            "canceledAt": "string"
-          },
-          "status": "string"
-        }
-      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
+        }
+      ],
+      "stages": [
+        {
+          "group": {
+            "description": "string",
+            "id": "string",
+            "name": "string"
+          },
+          "milestones": {
+            "canceledAt": "string",
+            "completedAt": "string",
+            "scheduledFor": "string",
+            "startedAt": "string"
+          },
+          "status": "string"
         }
       ]
     }

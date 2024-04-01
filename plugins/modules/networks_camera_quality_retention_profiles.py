@@ -92,7 +92,8 @@ options:
               or 'High'.
             type: str
           resolution:
-            description: Resolution of the camera. Can be one of '1080x1080' or '2688x1512'.
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
             type: str
         type: dict
       MV21/MV71:
@@ -126,7 +127,7 @@ options:
               or 'High'.
             type: str
           resolution:
-            description: Resolution of the camera. Can be one of '1080x1080' or '2058x2058'.
+            description: Resolution of the camera. Can be one of '1080x1080' or '2112x2112'.
             type: str
         type: dict
       MV33:
@@ -137,7 +138,8 @@ options:
               or 'High'.
             type: str
           resolution:
-            description: Resolution of the camera. Can be one of '1080x1080' or '2112x2112'.
+            description: Resolution of the camera. Can be one of '1080x1080', '2112x2112'
+              or '2880x2880'.
             type: str
         type: dict
       MV52:
@@ -251,6 +253,32 @@ EXAMPLES = r"""
     name: Sample quality retention profile
     networkId: string
 
+- name: Delete by id
+  cisco.meraki.networks_camera_quality_retention_profiles:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: absent
+    networkId: string
+    qualityRetentionProfileId: string
+
 - name: Update by id
   cisco.meraki.networks_camera_quality_retention_profiles:
     meraki_api_key: "{{meraki_api_key}}"
@@ -321,32 +349,6 @@ EXAMPLES = r"""
       MV93X:
         quality: string
         resolution: string
-
-- name: Delete by id
-  cisco.meraki.networks_camera_quality_retention_profiles:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: absent
-    networkId: string
-    qualityRetentionProfileId: string
 
 """
 RETURN = r"""

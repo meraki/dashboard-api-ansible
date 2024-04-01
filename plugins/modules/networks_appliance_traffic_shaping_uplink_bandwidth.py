@@ -101,8 +101,8 @@ EXAMPLES = r"""
     state: present
     bandwidthLimits:
       cellular:
-        limitDown: 51200
-        limitUp: 51200
+        limitDown: 1000000
+        limitUp: 1000000
       wan1:
         limitDown: 1000000
         limitUp: 1000000

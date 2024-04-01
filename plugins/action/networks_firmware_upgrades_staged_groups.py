@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
+    assignedDevices=dict(type="dict"),
     description=dict(type="str"),
     isDefault=dict(type="bool"),
-    assignedDevices=dict(type="dict"),
+    name=dict(type="str"),
     networkId=dict(type="str"),
     groupId=dict(type="str"),
 ))
@@ -53,10 +53,10 @@ class NetworksFirmwareUpgradesStagedGroups(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
+            assignedDevices=params.get("assignedDevices"),
             description=params.get("description"),
             isDefault=params.get("isDefault"),
-            assignedDevices=params.get("assignedDevices"),
+            name=params.get("name"),
             networkId=params.get("networkId"),
             groupId=params.get("groupId"),
         )
@@ -80,17 +80,17 @@ class NetworksFirmwareUpgradesStagedGroups(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
+        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
+            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
+                self.new_object.get('assigned_devices')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
         if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
             new_object_params['isDefault'] = self.new_object.get('isDefault')
-        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
-            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
-                self.new_object.get('assigned_devices')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -108,17 +108,17 @@ class NetworksFirmwareUpgradesStagedGroups(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
+        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
+            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
+                self.new_object.get('assigned_devices')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
         if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
             new_object_params['isDefault'] = self.new_object.get('isDefault')
-        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
-            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
-                self.new_object.get('assigned_devices')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -196,10 +196,10 @@ class NetworksFirmwareUpgradesStagedGroups(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
+            ("assignedDevices", "assignedDevices"),
             ("description", "description"),
             ("isDefault", "isDefault"),
-            ("assignedDevices", "assignedDevices"),
+            ("name", "name"),
             ("networkId", "networkId"),
             ("groupId", "groupId"),
         ]

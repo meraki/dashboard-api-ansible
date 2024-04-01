@@ -32,11 +32,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    enabled=dict(type="bool"),
     adminSettings=dict(type="dict"),
-    helpSettings=dict(type="dict"),
     customLogo=dict(type="dict"),
+    enabled=dict(type="bool"),
+    helpSettings=dict(type="dict"),
+    name=dict(type="str"),
     organizationId=dict(type="str"),
     brandingPolicyId=dict(type="str"),
 ))
@@ -54,11 +54,11 @@ class OrganizationsBrandingPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            enabled=params.get("enabled"),
             adminSettings=params.get("adminSettings"),
-            helpSettings=params.get("helpSettings"),
             customLogo=params.get("customLogo"),
+            enabled=params.get("enabled"),
+            helpSettings=params.get("helpSettings"),
+            name=params.get("name"),
             organizationId=params.get("organizationId"),
             brandingPolicyId=params.get("brandingPolicyId"),
         )
@@ -82,20 +82,20 @@ class OrganizationsBrandingPolicies(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
                 self.new_object.get('admin_settings')
-        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
-            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
-                self.new_object.get('help_settings')
         if self.new_object.get('customLogo') is not None or self.new_object.get('custom_logo') is not None:
             new_object_params['customLogo'] = self.new_object.get('customLogo') or \
                 self.new_object.get('custom_logo')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
+            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
+                self.new_object.get('help_settings')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -113,20 +113,20 @@ class OrganizationsBrandingPolicies(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
                 self.new_object.get('admin_settings')
-        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
-            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
-                self.new_object.get('help_settings')
         if self.new_object.get('customLogo') is not None or self.new_object.get('custom_logo') is not None:
             new_object_params['customLogo'] = self.new_object.get('customLogo') or \
                 self.new_object.get('custom_logo')
+        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
+            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
+                self.new_object.get('help_settings')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -204,11 +204,11 @@ class OrganizationsBrandingPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("enabled", "enabled"),
             ("adminSettings", "adminSettings"),
-            ("helpSettings", "helpSettings"),
             ("customLogo", "customLogo"),
+            ("enabled", "enabled"),
+            ("helpSettings", "helpSettings"),
+            ("name", "name"),
             ("organizationId", "organizationId"),
             ("brandingPolicyId", "brandingPolicyId"),
         ]

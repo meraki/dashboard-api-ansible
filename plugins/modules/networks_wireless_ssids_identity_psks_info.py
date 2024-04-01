@@ -115,12 +115,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "id": "string",
-      "groupPolicyId": "string",
-      "passphrase": "string",
-      "wifiPersonalNetworkId": "string",
       "email": "string",
-      "expiresAt": "string"
+      "expiresAt": "string",
+      "groupPolicyId": "string",
+      "id": "string",
+      "name": "string",
+      "passphrase": "string",
+      "wifiPersonalNetworkId": "string"
     }
 """

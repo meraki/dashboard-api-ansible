@@ -33,8 +33,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     allowedUrlPatterns=dict(type="list"),
-    blockedUrlPatterns=dict(type="list"),
     blockedUrlCategories=dict(type="list"),
+    blockedUrlPatterns=dict(type="list"),
     urlCategoryListSize=dict(type="str"),
     networkId=dict(type="str"),
 ))
@@ -52,8 +52,8 @@ class NetworksApplianceContentFiltering(object):
         self.meraki = meraki
         self.new_object = dict(
             allowedUrlPatterns=params.get("allowedUrlPatterns"),
-            blockedUrlPatterns=params.get("blockedUrlPatterns"),
             blockedUrlCategories=params.get("blockedUrlCategories"),
+            blockedUrlPatterns=params.get("blockedUrlPatterns"),
             urlCategoryListSize=params.get("urlCategoryListSize"),
             network_id=params.get("networkId"),
         )
@@ -70,12 +70,12 @@ class NetworksApplianceContentFiltering(object):
         if self.new_object.get('allowedUrlPatterns') is not None or self.new_object.get('allowed_url_patterns') is not None:
             new_object_params['allowedUrlPatterns'] = self.new_object.get('allowedUrlPatterns') or \
                 self.new_object.get('allowed_url_patterns')
-        if self.new_object.get('blockedUrlPatterns') is not None or self.new_object.get('blocked_url_patterns') is not None:
-            new_object_params['blockedUrlPatterns'] = self.new_object.get('blockedUrlPatterns') or \
-                self.new_object.get('blocked_url_patterns')
         if self.new_object.get('blockedUrlCategories') is not None or self.new_object.get('blocked_url_categories') is not None:
             new_object_params['blockedUrlCategories'] = self.new_object.get('blockedUrlCategories') or \
                 self.new_object.get('blocked_url_categories')
+        if self.new_object.get('blockedUrlPatterns') is not None or self.new_object.get('blocked_url_patterns') is not None:
+            new_object_params['blockedUrlPatterns'] = self.new_object.get('blockedUrlPatterns') or \
+                self.new_object.get('blocked_url_patterns')
         if self.new_object.get('urlCategoryListSize') is not None or self.new_object.get('url_category_list_size') is not None:
             new_object_params['urlCategoryListSize'] = self.new_object.get('urlCategoryListSize') or \
                 self.new_object.get('url_category_list_size')
@@ -136,8 +136,8 @@ class NetworksApplianceContentFiltering(object):
 
         obj_params = [
             ("allowedUrlPatterns", "allowedUrlPatterns"),
-            ("blockedUrlPatterns", "blockedUrlPatterns"),
             ("blockedUrlCategories", "blockedUrlCategories"),
+            ("blockedUrlPatterns", "blockedUrlPatterns"),
             ("urlCategoryListSize", "urlCategoryListSize"),
             ("networkId", "networkId"),
         ]

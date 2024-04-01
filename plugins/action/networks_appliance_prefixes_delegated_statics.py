@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    prefix=dict(type="str"),
-    origin=dict(type="dict"),
     description=dict(type="str"),
+    origin=dict(type="dict"),
+    prefix=dict(type="str"),
     networkId=dict(type="str"),
     staticDelegatedPrefixId=dict(type="str"),
 ))
@@ -52,9 +52,9 @@ class NetworksAppliancePrefixesDelegatedStatics(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            prefix=params.get("prefix"),
-            origin=params.get("origin"),
             description=params.get("description"),
+            origin=params.get("origin"),
+            prefix=params.get("prefix"),
             networkId=params.get("networkId"),
             staticDelegatedPrefixId=params.get("staticDelegatedPrefixId"),
         )
@@ -78,15 +78,15 @@ class NetworksAppliancePrefixesDelegatedStatics(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('prefix') is not None or self.new_object.get('prefix') is not None:
-            new_object_params['prefix'] = self.new_object.get('prefix') or \
-                self.new_object.get('prefix')
-        if self.new_object.get('origin') is not None or self.new_object.get('origin') is not None:
-            new_object_params['origin'] = self.new_object.get('origin') or \
-                self.new_object.get('origin')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('origin') is not None or self.new_object.get('origin') is not None:
+            new_object_params['origin'] = self.new_object.get('origin') or \
+                self.new_object.get('origin')
+        if self.new_object.get('prefix') is not None or self.new_object.get('prefix') is not None:
+            new_object_params['prefix'] = self.new_object.get('prefix') or \
+                self.new_object.get('prefix')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -104,15 +104,15 @@ class NetworksAppliancePrefixesDelegatedStatics(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('prefix') is not None or self.new_object.get('prefix') is not None:
-            new_object_params['prefix'] = self.new_object.get('prefix') or \
-                self.new_object.get('prefix')
-        if self.new_object.get('origin') is not None or self.new_object.get('origin') is not None:
-            new_object_params['origin'] = self.new_object.get('origin') or \
-                self.new_object.get('origin')
         if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
             new_object_params['description'] = self.new_object.get('description') or \
                 self.new_object.get('description')
+        if self.new_object.get('origin') is not None or self.new_object.get('origin') is not None:
+            new_object_params['origin'] = self.new_object.get('origin') or \
+                self.new_object.get('origin')
+        if self.new_object.get('prefix') is not None or self.new_object.get('prefix') is not None:
+            new_object_params['prefix'] = self.new_object.get('prefix') or \
+                self.new_object.get('prefix')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -190,9 +190,9 @@ class NetworksAppliancePrefixesDelegatedStatics(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("prefix", "prefix"),
-            ("origin", "origin"),
             ("description", "description"),
+            ("origin", "origin"),
+            ("prefix", "prefix"),
             ("networkId", "networkId"),
             ("staticDelegatedPrefixId", "staticDelegatedPrefixId"),
         ]

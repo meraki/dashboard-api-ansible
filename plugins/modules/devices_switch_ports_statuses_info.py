@@ -38,12 +38,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceSwitchPortsStatuses
+- name: Cisco Meraki documentation for switch getDeviceSwitchPortsStatuses
   description: Complete reference of the getDeviceSwitchPortsStatuses API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports-statuses
 notes:
   - SDK Method used are
-    devices.Devices.get_device_switch_ports_statuses,
+    switch.Switch.get_device_switch_ports_statuses,
 
   - Paths used are
     get /devices/{serial}/switch/ports/statuses,
@@ -87,64 +87,69 @@ meraki_response:
   sample: >
     [
       {
-        "portId": "string",
+        "cdp": {
+          "address": "string",
+          "capabilities": "string",
+          "deviceId": "string",
+          "managementAddress": "string",
+          "nativeVlan": 0,
+          "platform": "string",
+          "portId": "string",
+          "systemName": "string",
+          "version": "string",
+          "vtpManagementDomain": "string"
+        },
+        "clientCount": 0,
+        "duplex": "string",
         "enabled": true,
-        "status": "string",
-        "isUplink": true,
         "errors": [
           "string"
         ],
-        "warnings": [
-          "string"
-        ],
-        "speed": "string",
-        "duplex": "string",
-        "usageInKb": {
-          "total": 0,
-          "sent": 0,
-          "recv": 0
-        },
-        "cdp": {
-          "systemName": "string",
-          "platform": "string",
-          "deviceId": "string",
-          "portId": "string",
-          "nativeVlan": 0,
-          "address": "string",
-          "managementAddress": "string",
-          "version": "string",
-          "vtpManagementDomain": "string",
-          "capabilities": "string"
-        },
+        "isUplink": true,
         "lldp": {
-          "systemName": "string",
-          "systemDescription": "string",
           "chassisId": "string",
-          "portId": "string",
-          "managementVlan": 0,
-          "portVlan": 0,
           "managementAddress": "string",
+          "managementVlan": 0,
           "portDescription": "string",
-          "systemCapabilities": "string"
+          "portId": "string",
+          "portVlan": 0,
+          "systemCapabilities": "string",
+          "systemDescription": "string",
+          "systemName": "string"
         },
-        "clientCount": 0,
+        "portId": "string",
         "powerUsageInWh": 0,
-        "trafficInKbps": {
-          "total": 0,
-          "sent": 0,
-          "recv": 0
-        },
         "securePort": {
-          "enabled": true,
           "active": true,
           "authenticationStatus": "string",
           "configOverrides": {
+            "allowedVlans": "string",
             "type": "string",
             "vlan": 0,
-            "voiceVlan": 0,
-            "allowedVlans": "string"
-          }
-        }
+            "voiceVlan": 0
+          },
+          "enabled": true
+        },
+        "spanningTree": {
+          "statuses": [
+            "string"
+          ]
+        },
+        "speed": "string",
+        "status": "string",
+        "trafficInKbps": {
+          "recv": 0,
+          "sent": 0,
+          "total": 0
+        },
+        "usageInKb": {
+          "recv": 0,
+          "sent": 0,
+          "total": 0
+        },
+        "warnings": [
+          "string"
+        ]
       }
     ]
 """

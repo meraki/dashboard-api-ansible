@@ -74,27 +74,27 @@ meraki_response:
   sample: >
     [
       {
-        "id": "string",
-        "name": "string",
-        "email": "string",
-        "orgAccess": "string",
         "accountStatus": "string",
-        "twoFactorAuthEnabled": true,
+        "authenticationMethod": "string",
+        "email": "string",
         "hasApiKey": true,
+        "id": "string",
         "lastActive": "string",
-        "tags": [
-          {
-            "tag": "string",
-            "access": "string"
-          }
-        ],
+        "name": "string",
         "networks": [
           {
-            "id": "string",
-            "access": "string"
+            "access": "string",
+            "id": "string"
           }
         ],
-        "authenticationMethod": "string"
+        "orgAccess": "string",
+        "tags": [
+          {
+            "access": "string",
+            "tag": "string"
+          }
+        ],
+        "twoFactorAuthEnabled": true
       }
     ]
 """

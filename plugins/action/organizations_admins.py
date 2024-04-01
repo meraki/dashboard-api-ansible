@@ -32,12 +32,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    authenticationMethod=dict(type="str"),
     email=dict(type="str"),
     name=dict(type="str"),
+    networks=dict(type="list"),
     orgAccess=dict(type="str"),
     tags=dict(type="list"),
-    networks=dict(type="list"),
-    authenticationMethod=dict(type="str"),
     organizationId=dict(type="str"),
     adminId=dict(type="str"),
 ))
@@ -55,12 +55,12 @@ class OrganizationsAdmins(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            authenticationMethod=params.get("authenticationMethod"),
             email=params.get("email"),
             name=params.get("name"),
+            networks=params.get("networks"),
             orgAccess=params.get("orgAccess"),
             tags=params.get("tags"),
-            networks=params.get("networks"),
-            authenticationMethod=params.get("authenticationMethod"),
             organizationId=params.get("organizationId"),
             adminId=params.get("adminId"),
         )
@@ -74,24 +74,24 @@ class OrganizationsAdmins(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('authenticationMethod') is not None or self.new_object.get('authentication_method') is not None:
+            new_object_params['authenticationMethod'] = self.new_object.get('authenticationMethod') or \
+                self.new_object.get('authentication_method')
         if self.new_object.get('email') is not None or self.new_object.get('email') is not None:
             new_object_params['email'] = self.new_object.get('email') or \
                 self.new_object.get('email')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
+        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
+            new_object_params['networks'] = self.new_object.get('networks') or \
+                self.new_object.get('networks')
         if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
             new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
                 self.new_object.get('org_access')
         if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
-        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
-            new_object_params['networks'] = self.new_object.get('networks') or \
-                self.new_object.get('networks')
-        if self.new_object.get('authenticationMethod') is not None or self.new_object.get('authentication_method') is not None:
-            new_object_params['authenticationMethod'] = self.new_object.get('authenticationMethod') or \
-                self.new_object.get('authentication_method')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -112,15 +112,15 @@ class OrganizationsAdmins(object):
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
+        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
+            new_object_params['networks'] = self.new_object.get('networks') or \
+                self.new_object.get('networks')
         if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
             new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
                 self.new_object.get('org_access')
         if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
-        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
-            new_object_params['networks'] = self.new_object.get('networks') or \
-                self.new_object.get('networks')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -195,12 +195,12 @@ class OrganizationsAdmins(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("authenticationMethod", "authenticationMethod"),
             ("email", "email"),
             ("name", "name"),
+            ("networks", "networks"),
             ("orgAccess", "orgAccess"),
             ("tags", "tags"),
-            ("networks", "networks"),
-            ("authenticationMethod", "authenticationMethod"),
             ("organizationId", "organizationId"),
             ("adminId", "adminId"),
         ]

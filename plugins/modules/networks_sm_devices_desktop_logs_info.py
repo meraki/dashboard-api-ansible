@@ -103,24 +103,24 @@ meraki_response:
   sample: >
     [
       {
+        "dhcpServer": "string",
+        "dnsServer": "string",
+        "gateway": "string",
+        "ip": "string",
         "measuredAt": "string",
-        "user": "string",
         "networkDevice": "string",
         "networkDriver": "string",
-        "wifiChannel": "string",
+        "networkMTU": "string",
+        "publicIP": "string",
+        "subnet": "string",
+        "ts": "string",
+        "user": "string",
         "wifiAuth": "string",
         "wifiBssid": "string",
-        "wifiSsid": "string",
-        "wifiRssi": "string",
+        "wifiChannel": "string",
         "wifiNoise": "string",
-        "dhcpServer": "string",
-        "ip": "string",
-        "networkMTU": "string",
-        "subnet": "string",
-        "gateway": "string",
-        "publicIP": "string",
-        "dnsServer": "string",
-        "ts": "string"
+        "wifiRssi": "string",
+        "wifiSsid": "string"
       }
     ]
 """

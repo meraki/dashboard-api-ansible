@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     category=dict(type="str"),
+    name=dict(type="str"),
     objectIds=dict(type="list"),
     organizationId=dict(type="str"),
     policyObjectGroupId=dict(type="str"),
@@ -52,8 +52,8 @@ class OrganizationsPolicyObjectsGroups(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             category=params.get("category"),
+            name=params.get("name"),
             objectIds=params.get("objectIds"),
             organizationId=params.get("organizationId"),
             policyObjectGroupId=params.get("policyObjectGroupId"),
@@ -88,12 +88,12 @@ class OrganizationsPolicyObjectsGroups(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('category') is not None or self.new_object.get('category') is not None:
             new_object_params['category'] = self.new_object.get('category') or \
                 self.new_object.get('category')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('objectIds') is not None or self.new_object.get('object_ids') is not None:
             new_object_params['objectIds'] = self.new_object.get('objectIds') or \
                 self.new_object.get('object_ids')
@@ -197,8 +197,8 @@ class OrganizationsPolicyObjectsGroups(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("category", "category"),
+            ("name", "name"),
             ("objectIds", "objectIds"),
             ("organizationId", "organizationId"),
             ("policyObjectGroupId", "policyObjectGroupId"),

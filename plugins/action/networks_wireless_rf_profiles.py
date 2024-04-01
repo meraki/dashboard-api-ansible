@@ -32,16 +32,17 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    clientBalancingEnabled=dict(type="bool"),
-    minBitrateType=dict(type="str"),
-    bandSelectionType=dict(type="str"),
     apBandSettings=dict(type="dict"),
-    twoFourGhzSettings=dict(type="dict"),
+    bandSelectionType=dict(type="str"),
+    clientBalancingEnabled=dict(type="bool"),
     fiveGhzSettings=dict(type="dict"),
+    flexRadios=dict(type="dict"),
+    minBitrateType=dict(type="str"),
+    name=dict(type="str"),
+    perSsidSettings=dict(type="dict"),
     sixGhzSettings=dict(type="dict"),
     transmission=dict(type="dict"),
-    perSsidSettings=dict(type="dict"),
+    twoFourGhzSettings=dict(type="dict"),
     networkId=dict(type="str"),
     rfProfileId=dict(type="str"),
 ))
@@ -59,16 +60,17 @@ class NetworksWirelessRfProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
-            clientBalancingEnabled=params.get("clientBalancingEnabled"),
-            minBitrateType=params.get("minBitrateType"),
-            bandSelectionType=params.get("bandSelectionType"),
             apBandSettings=params.get("apBandSettings"),
-            twoFourGhzSettings=params.get("twoFourGhzSettings"),
+            bandSelectionType=params.get("bandSelectionType"),
+            clientBalancingEnabled=params.get("clientBalancingEnabled"),
             fiveGhzSettings=params.get("fiveGhzSettings"),
+            flexRadios=params.get("flexRadios"),
+            minBitrateType=params.get("minBitrateType"),
+            name=params.get("name"),
+            perSsidSettings=params.get("perSsidSettings"),
             sixGhzSettings=params.get("sixGhzSettings"),
             transmission=params.get("transmission"),
-            perSsidSettings=params.get("perSsidSettings"),
+            twoFourGhzSettings=params.get("twoFourGhzSettings"),
             networkId=params.get("networkId"),
             rfProfileId=params.get("rfProfileId"),
         )
@@ -95,35 +97,38 @@ class NetworksWirelessRfProfiles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
-        if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
-            new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
-                self.new_object.get('min_bitrate_type')
-        if self.new_object.get('bandSelectionType') is not None or self.new_object.get('band_selection_type') is not None:
-            new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
-                self.new_object.get('band_selection_type')
         if self.new_object.get('apBandSettings') is not None or self.new_object.get('ap_band_settings') is not None:
             new_object_params['apBandSettings'] = self.new_object.get('apBandSettings') or \
                 self.new_object.get('ap_band_settings')
-        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
-            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
-                self.new_object.get('two_four_ghz_settings')
+        if self.new_object.get('bandSelectionType') is not None or self.new_object.get('band_selection_type') is not None:
+            new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
+                self.new_object.get('band_selection_type')
+        if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
+            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
         if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
             new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
                 self.new_object.get('five_ghz_settings')
+        if self.new_object.get('flexRadios') is not None or self.new_object.get('flex_radios') is not None:
+            new_object_params['flexRadios'] = self.new_object.get('flexRadios') or \
+                self.new_object.get('flex_radios')
+        if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
+            new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
+                self.new_object.get('min_bitrate_type')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('perSsidSettings') is not None or self.new_object.get('per_ssid_settings') is not None:
+            new_object_params['perSsidSettings'] = self.new_object.get('perSsidSettings') or \
+                self.new_object.get('per_ssid_settings')
         if self.new_object.get('sixGhzSettings') is not None or self.new_object.get('six_ghz_settings') is not None:
             new_object_params['sixGhzSettings'] = self.new_object.get('sixGhzSettings') or \
                 self.new_object.get('six_ghz_settings')
         if self.new_object.get('transmission') is not None or self.new_object.get('transmission') is not None:
             new_object_params['transmission'] = self.new_object.get('transmission') or \
                 self.new_object.get('transmission')
-        if self.new_object.get('perSsidSettings') is not None or self.new_object.get('per_ssid_settings') is not None:
-            new_object_params['perSsidSettings'] = self.new_object.get('perSsidSettings') or \
-                self.new_object.get('per_ssid_settings')
+        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
+            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
+                self.new_object.get('two_four_ghz_settings')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -141,35 +146,38 @@ class NetworksWirelessRfProfiles(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
-        if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
-            new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
-                self.new_object.get('min_bitrate_type')
-        if self.new_object.get('bandSelectionType') is not None or self.new_object.get('band_selection_type') is not None:
-            new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
-                self.new_object.get('band_selection_type')
         if self.new_object.get('apBandSettings') is not None or self.new_object.get('ap_band_settings') is not None:
             new_object_params['apBandSettings'] = self.new_object.get('apBandSettings') or \
                 self.new_object.get('ap_band_settings')
-        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
-            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
-                self.new_object.get('two_four_ghz_settings')
+        if self.new_object.get('bandSelectionType') is not None or self.new_object.get('band_selection_type') is not None:
+            new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
+                self.new_object.get('band_selection_type')
+        if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
+            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
         if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
             new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
                 self.new_object.get('five_ghz_settings')
+        if self.new_object.get('flexRadios') is not None or self.new_object.get('flex_radios') is not None:
+            new_object_params['flexRadios'] = self.new_object.get('flexRadios') or \
+                self.new_object.get('flex_radios')
+        if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
+            new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
+                self.new_object.get('min_bitrate_type')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('perSsidSettings') is not None or self.new_object.get('per_ssid_settings') is not None:
+            new_object_params['perSsidSettings'] = self.new_object.get('perSsidSettings') or \
+                self.new_object.get('per_ssid_settings')
         if self.new_object.get('sixGhzSettings') is not None or self.new_object.get('six_ghz_settings') is not None:
             new_object_params['sixGhzSettings'] = self.new_object.get('sixGhzSettings') or \
                 self.new_object.get('six_ghz_settings')
         if self.new_object.get('transmission') is not None or self.new_object.get('transmission') is not None:
             new_object_params['transmission'] = self.new_object.get('transmission') or \
                 self.new_object.get('transmission')
-        if self.new_object.get('perSsidSettings') is not None or self.new_object.get('per_ssid_settings') is not None:
-            new_object_params['perSsidSettings'] = self.new_object.get('perSsidSettings') or \
-                self.new_object.get('per_ssid_settings')
+        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
+            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
+                self.new_object.get('two_four_ghz_settings')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -247,16 +255,17 @@ class NetworksWirelessRfProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("clientBalancingEnabled", "clientBalancingEnabled"),
-            ("minBitrateType", "minBitrateType"),
-            ("bandSelectionType", "bandSelectionType"),
             ("apBandSettings", "apBandSettings"),
-            ("twoFourGhzSettings", "twoFourGhzSettings"),
+            ("bandSelectionType", "bandSelectionType"),
+            ("clientBalancingEnabled", "clientBalancingEnabled"),
             ("fiveGhzSettings", "fiveGhzSettings"),
+            ("flexRadios", "flexRadios"),
+            ("minBitrateType", "minBitrateType"),
+            ("name", "name"),
+            ("perSsidSettings", "perSsidSettings"),
             ("sixGhzSettings", "sixGhzSettings"),
             ("transmission", "transmission"),
-            ("perSsidSettings", "perSsidSettings"),
+            ("twoFourGhzSettings", "twoFourGhzSettings"),
             ("networkId", "networkId"),
             ("rfProfileId", "rfProfileId"),
         ]

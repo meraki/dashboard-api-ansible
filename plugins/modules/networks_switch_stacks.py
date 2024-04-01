@@ -10,7 +10,7 @@ module: networks_switch_stacks
 short_description: Resource module for networks _switch _stacks
 description:
 - Manage operations create and delete of the resource networks _switch _stacks.
-- Create a stack.
+- Create a switch stack.
 - Delete a stack.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -113,5 +113,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "name": "string",
+      "serials": [
+        "string"
+      ]
+    }
 """

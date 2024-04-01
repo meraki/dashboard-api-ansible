@@ -30,6 +30,8 @@ argument_spec.update(dict(
     wifiMacs=dict(type="list"),
     serials=dict(type="list"),
     ids=dict(type="list"),
+    uuids=dict(type="list"),
+    systemTypes=dict(type="list"),
     scope=dict(type="list"),
     perPage=dict(type="int"),
     total_pages=dict(type="int"),
@@ -89,6 +91,12 @@ class ActionModule(ActionBase):
         if params.get("ids") is not None:
             new_object["ids"] = params.get(
                 "ids")
+        if params.get("uuids") is not None:
+            new_object["uuids"] = params.get(
+                "uuids")
+        if params.get("systemTypes") is not None:
+            new_object["systemTypes"] = params.get(
+                "systemTypes")
         if params.get("scope") is not None:
             new_object["scope"] = params.get(
                 "scope")

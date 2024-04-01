@@ -113,14 +113,14 @@ meraki_response:
   sample: >
     [
       {
-        "serial": "string",
         "connectionStats": {
           "assoc": 0,
           "auth": 0,
           "dhcp": 0,
           "dns": 0,
           "success": 0
-        }
+        },
+        "serial": "string"
       }
     ]
 """

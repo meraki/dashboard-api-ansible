@@ -23,7 +23,7 @@ options:
     description: The spanning tree protocol status in network.
     type: bool
   stpBridgePriority:
-    description: STP bridge priority for switches/stacks or switch profiles. An empty
+    description: STP bridge priority for switches/stacks or switch templates. An empty
       array will clear the STP bridge priority settings.
     elements: dict
     suboptions:
@@ -32,10 +32,10 @@ options:
         elements: str
         type: list
       stpPriority:
-        description: STP priority for switch, stacks, or switch profiles.
+        description: STP priority for switch, stacks, or switch templates.
         type: int
       switchProfiles:
-        description: List of switch profile IDs.
+        description: List of switch template IDs.
         elements: str
         type: list
       switches:

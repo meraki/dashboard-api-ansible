@@ -109,16 +109,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "staticDelegatedPrefixId": "string",
-      "prefix": "string",
+      "createdAt": "string",
+      "description": "string",
       "origin": {
-        "type": "string",
         "interfaces": [
           "string"
-        ]
+        ],
+        "type": "string"
       },
-      "description": "string",
-      "createdAt": "string",
+      "prefix": "string",
+      "staticDelegatedPrefixId": "string",
       "updatedAt": "string"
     }
 """

@@ -32,12 +32,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    copyFromNetworkId=dict(type="str"),
     name=dict(type="str"),
+    notes=dict(type="str"),
     productTypes=dict(type="list"),
     tags=dict(type="list"),
     timeZone=dict(type="str"),
-    copyFromNetworkId=dict(type="str"),
-    notes=dict(type="str"),
     organizationId=dict(type="str"),
     networkId=dict(type="str"),
     enrollmentString=dict(type="str"),
@@ -56,12 +56,12 @@ class Networks(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            copyFromNetworkId=params.get("copyFromNetworkId"),
             name=params.get("name"),
+            notes=params.get("notes"),
             productTypes=params.get("productTypes"),
             tags=params.get("tags"),
             timeZone=params.get("timeZone"),
-            copyFromNetworkId=params.get("copyFromNetworkId"),
-            notes=params.get("notes"),
             organizationId=params.get("organizationId"),
             networkId=params.get("networkId"),
             enrollmentString=params.get("enrollmentString"),
@@ -104,9 +104,15 @@ class Networks(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('copyFromNetworkId') is not None or self.new_object.get('copy_from_network_id') is not None:
+            new_object_params['copyFromNetworkId'] = self.new_object.get('copyFromNetworkId') or \
+                self.new_object.get('copy_from_network_id')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
+        if self.new_object.get('notes') is not None or self.new_object.get('notes') is not None:
+            new_object_params['notes'] = self.new_object.get('notes') or \
+                self.new_object.get('notes')
         if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
             new_object_params['productTypes'] = self.new_object.get('productTypes') or \
                 self.new_object.get('product_types')
@@ -116,12 +122,6 @@ class Networks(object):
         if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
             new_object_params['timeZone'] = self.new_object.get('timeZone') or \
                 self.new_object.get('time_zone')
-        if self.new_object.get('copyFromNetworkId') is not None or self.new_object.get('copy_from_network_id') is not None:
-            new_object_params['copyFromNetworkId'] = self.new_object.get('copyFromNetworkId') or \
-                self.new_object.get('copy_from_network_id')
-        if self.new_object.get('notes') is not None or self.new_object.get('notes') is not None:
-            new_object_params['notes'] = self.new_object.get('notes') or \
-                self.new_object.get('notes')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -136,24 +136,21 @@ class Networks(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
-            new_object_params['timeZone'] = self.new_object.get('timeZone') or \
-                self.new_object.get('time_zone')
-        if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
-            new_object_params['productTypes'] = self.new_object.get('productTypes') or \
-                self.new_object.get('product_types')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
-            new_object_params['tags'] = self.new_object.get('tags') or \
-                self.new_object.get('tags')
         if self.new_object.get('enrollmentString') is not None or self.new_object.get('enrollment_string') is not None:
             new_object_params['enrollmentString'] = self.new_object.get('enrollmentString') or \
                 self.new_object.get('enrollment_string')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('notes') is not None or self.new_object.get('notes') is not None:
             new_object_params['notes'] = self.new_object.get('notes') or \
                 self.new_object.get('notes')
+        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+            new_object_params['tags'] = self.new_object.get('tags') or \
+                self.new_object.get('tags')
+        if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
+            new_object_params['timeZone'] = self.new_object.get('timeZone') or \
+                self.new_object.get('time_zone')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -228,12 +225,12 @@ class Networks(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("copyFromNetworkId", "copyFromNetworkId"),
             ("name", "name"),
+            ("notes", "notes"),
             ("productTypes", "productTypes"),
             ("tags", "tags"),
             ("timeZone", "timeZone"),
-            ("copyFromNetworkId", "copyFromNetworkId"),
-            ("notes", "notes"),
             ("organizationId", "organizationId"),
             ("networkId", "networkId"),
             ("enrollmentString", "enrollmentString"),

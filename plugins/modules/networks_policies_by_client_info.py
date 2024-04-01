@@ -111,20 +111,20 @@ meraki_response:
   sample: >
     [
       {
-        "name": "string",
-        "clientId": "string",
         "assigned": [
           {
-            "name": "string",
-            "type": "string",
             "groupPolicyId": "string",
+            "name": "string",
             "ssid": [
               {
                 "ssidNumber": 0
               }
-            ]
+            ],
+            "type": "string"
           }
-        ]
+        ],
+        "clientId": "string",
+        "name": "string"
       }
     ]
 """

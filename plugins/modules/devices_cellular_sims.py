@@ -25,6 +25,9 @@ options:
       enabled:
         description: Failover to secondary SIM (optional).
         type: bool
+      timeout:
+        description: Failover timeout in seconds (optional).
+        type: int
     type: dict
   sims:
     description: List of SIMs. If a SIM was previously configured and not specified

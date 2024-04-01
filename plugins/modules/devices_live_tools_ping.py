@@ -16,6 +16,36 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  callback:
+    description: Details for the callback. Please include either an httpServerId OR
+      url and sharedSecret.
+    suboptions:
+      httpServer:
+        description: The webhook receiver used for the callback webhook.
+        suboptions:
+          id:
+            description: The webhook receiver ID that will receive information. If specifying
+              this, please leave the url and sharedSecret fields blank.
+            type: str
+        type: dict
+      payloadTemplate:
+        description: The payload template of the webhook used for the callback.
+        suboptions:
+          id:
+            description: The ID of the payload template. Defaults to 'wpt_00005' for
+              the Callback (included) template.
+            type: str
+        type: dict
+      sharedSecret:
+        description: A shared secret that will be included in the requests sent to the
+          callback URL. It can be used to verify that the request was sent by Meraki.
+          If using this field, please also specify an url.
+        type: str
+      url:
+        description: The callback URL for the webhook target. If using this field, please
+          also specify a sharedSecret.
+        type: str
+    type: dict
   count:
     description: Count parameter to pass to ping. 1..5, default 5.
     type: int
@@ -64,6 +94,13 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    callback:
+      httpServer:
+        id: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+      payloadTemplate:
+        id: wpt_2100
+      sharedSecret: secret
+      url: https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031
     count: 2
     serial: string
     target: 75.75.75.75
@@ -76,13 +113,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "pingId": "string",
-      "url": "string",
-      "request": {
-        "serial": "string",
-        "target": "string",
-        "count": 0
+      "callback": {
+        "id": "string",
+        "status": "string",
+        "url": "string"
       },
-      "status": "string"
+      "pingId": "string",
+      "request": {
+        "count": 0,
+        "serial": "string",
+        "target": "string"
+      },
+      "status": "string",
+      "url": "string"
     }
 """

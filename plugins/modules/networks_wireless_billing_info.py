@@ -70,6 +70,19 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "currency": "string",
+      "plans": [
+        {
+          "bandwidthLimits": {
+            "limitDown": 0,
+            "limitUp": 0
+          },
+          "id": "string",
+          "price": 0,
+          "timeLimit": "string"
+        }
+      ]
+    }
 """

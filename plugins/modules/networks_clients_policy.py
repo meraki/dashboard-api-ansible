@@ -74,7 +74,6 @@ EXAMPLES = r"""
     clientId: string
     devicePolicy: Group policy
     groupPolicyId: '101'
-    mac: 00:11:22:33:44:55
     networkId: string
 
 """
@@ -84,5 +83,9 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "devicePolicy": "string",
+      "groupPolicyId": "string",
+      "mac": "string"
+    }
 """

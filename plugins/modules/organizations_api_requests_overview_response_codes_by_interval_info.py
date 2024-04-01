@@ -129,14 +129,14 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
-        "endTs": "string",
         "counts": [
           {
             "code": 0,
             "count": 0
           }
-        ]
+        ],
+        "endTs": "string",
+        "startTs": "string"
       }
     ]
 """

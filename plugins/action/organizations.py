@@ -32,8 +32,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
     management=dict(type="dict"),
+    name=dict(type="str"),
     organizationId=dict(type="str"),
     api=dict(type="dict"),
 ))
@@ -51,14 +51,24 @@ class Organizations(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            name=params.get("name"),
             management=params.get("management"),
+            name=params.get("name"),
             organizationId=params.get("organizationId"),
             api=params.get("api"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+            new_object_params['perPage'] = self.new_object.get('perPage') or \
+                self.new_object.get('per_page')
+        new_object_params['total_pages'] = -1
+        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
+                self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
+                self.new_object.get('ending_before')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
@@ -70,12 +80,12 @@ class Organizations(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
         if self.new_object.get('management') is not None or self.new_object.get('management') is not None:
             new_object_params['management'] = self.new_object.get('management') or \
                 self.new_object.get('management')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         return new_object_params
 
     def delete_by_id_params(self):
@@ -87,15 +97,15 @@ class Organizations(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
-            new_object_params['name'] = self.new_object.get('name') or \
-                self.new_object.get('name')
-        if self.new_object.get('management') is not None or self.new_object.get('management') is not None:
-            new_object_params['management'] = self.new_object.get('management') or \
-                self.new_object.get('management')
         if self.new_object.get('api') is not None or self.new_object.get('api') is not None:
             new_object_params['api'] = self.new_object.get('api') or \
                 self.new_object.get('api')
+        if self.new_object.get('management') is not None or self.new_object.get('management') is not None:
+            new_object_params['management'] = self.new_object.get('management') or \
+                self.new_object.get('management')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -170,8 +180,8 @@ class Organizations(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
             ("management", "management"),
+            ("name", "name"),
             ("organizationId", "organizationId"),
             ("api", "api"),
         ]

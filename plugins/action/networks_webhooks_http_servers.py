@@ -33,9 +33,9 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
-    url=dict(type="str"),
-    sharedSecret=dict(type="str"),
     payloadTemplate=dict(type="dict"),
+    sharedSecret=dict(type="str"),
+    url=dict(type="str"),
     networkId=dict(type="str"),
     httpServerId=dict(type="str"),
 ))
@@ -54,9 +54,9 @@ class NetworksWebhooksHttpServers(object):
         self.meraki = meraki
         self.new_object = dict(
             name=params.get("name"),
-            url=params.get("url"),
-            sharedSecret=params.get("sharedSecret"),
             payloadTemplate=params.get("payloadTemplate"),
+            sharedSecret=params.get("sharedSecret"),
+            url=params.get("url"),
             networkId=params.get("networkId"),
             httpServerId=params.get("httpServerId"),
         )
@@ -83,15 +83,15 @@ class NetworksWebhooksHttpServers(object):
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('url') is not None or self.new_object.get('url') is not None:
-            new_object_params['url'] = self.new_object.get('url') or \
-                self.new_object.get('url')
-        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
-            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
-                self.new_object.get('shared_secret')
         if self.new_object.get('payloadTemplate') is not None or self.new_object.get('payload_template') is not None:
             new_object_params['payloadTemplate'] = self.new_object.get('payloadTemplate') or \
                 self.new_object.get('payload_template')
+        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
+            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
+                self.new_object.get('shared_secret')
+        if self.new_object.get('url') is not None or self.new_object.get('url') is not None:
+            new_object_params['url'] = self.new_object.get('url') or \
+                self.new_object.get('url')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -112,12 +112,12 @@ class NetworksWebhooksHttpServers(object):
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
-            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
-                self.new_object.get('shared_secret')
         if self.new_object.get('payloadTemplate') is not None or self.new_object.get('payload_template') is not None:
             new_object_params['payloadTemplate'] = self.new_object.get('payloadTemplate') or \
                 self.new_object.get('payload_template')
+        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
+            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
+                self.new_object.get('shared_secret')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -196,9 +196,9 @@ class NetworksWebhooksHttpServers(object):
 
         obj_params = [
             ("name", "name"),
-            ("url", "url"),
-            ("sharedSecret", "sharedSecret"),
             ("payloadTemplate", "payloadTemplate"),
+            ("sharedSecret", "sharedSecret"),
+            ("url", "url"),
             ("networkId", "networkId"),
             ("httpServerId", "httpServerId"),
         ]

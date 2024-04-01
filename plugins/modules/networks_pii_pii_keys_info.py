@@ -103,6 +103,25 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "bluetoothMacs": [
+        "string"
+      ],
+      "emails": [
+        "string"
+      ],
+      "imeis": [
+        "string"
+      ],
+      "macs": [
+        "string"
+      ],
+      "serials": [
+        "string"
+      ],
+      "usernames": [
+        "string"
+      ]
+    }
 """

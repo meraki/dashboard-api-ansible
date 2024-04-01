@@ -22,12 +22,21 @@ options:
     description: Settings that will be enabled if selectionType is set to 'ap'.
     suboptions:
       bandOperationMode:
-        description: Choice between 'dual', '2.4ghz' or '5ghz'. Defaults to dual.
+        description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'. Defaults
+          to dual.
         type: str
       bandSteeringEnabled:
         description: Steers client to most open band. Can be either true or false. Defaults
           to true.
         type: bool
+      bands:
+        description: Settings related to all bands.
+        suboptions:
+          enabled:
+            description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+            elements: str
+            type: list
+        type: dict
     type: dict
   bandSelectionType:
     description: Band selection can be set to either 'ssid' or 'ap'. This param is required
@@ -71,6 +80,23 @@ options:
         elements: int
         type: list
     type: dict
+  flexRadios:
+    description: Flex radio settings.
+    suboptions:
+      byModel:
+        description: Flex radios by model.
+        elements: dict
+        suboptions:
+          bands:
+            description: Band to use for each flex radio. For example, '6' will set
+              the AP's first flex radio to 6 GHz.
+            elements: str
+            type: list
+          model:
+            description: Model of the AP.
+            type: str
+        type: list
+    type: dict
   minBitrateType:
     description: Minimum bitrate can be set to either 'band' or 'ssid'. Defaults to
       band.
@@ -89,12 +115,20 @@ options:
         description: Settings for SSID 0.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -104,12 +138,20 @@ options:
         description: Settings for SSID 1.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -119,12 +161,20 @@ options:
         description: Settings for SSID 10.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -134,12 +184,20 @@ options:
         description: Settings for SSID 11.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -149,12 +207,20 @@ options:
         description: Settings for SSID 12.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -164,12 +230,20 @@ options:
         description: Settings for SSID 13.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -179,12 +253,20 @@ options:
         description: Settings for SSID 14.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -194,12 +276,20 @@ options:
         description: Settings for SSID 2.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -209,12 +299,20 @@ options:
         description: Settings for SSID 3.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -224,12 +322,20 @@ options:
         description: Settings for SSID 4.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -239,12 +345,20 @@ options:
         description: Settings for SSID 5.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -254,12 +368,20 @@ options:
         description: Settings for SSID 6.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -269,12 +391,20 @@ options:
         description: Settings for SSID 7.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -284,12 +414,20 @@ options:
         description: Settings for SSID 8.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -299,12 +437,20 @@ options:
         description: Settings for SSID 9.
         suboptions:
           bandOperationMode:
-            description: Choice between 'dual', '2.4ghz' or '5ghz'.
+            description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
             description: Steers client to most open band between 2.4 GHz and 5 GHz.
               Can be either true or false.
             type: bool
+          bands:
+            description: Settings related to all bands.
+            suboptions:
+              enabled:
+                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                elements: str
+                type: list
+            type: dict
           minBitrate:
             description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
               '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
@@ -315,7 +461,8 @@ options:
     description: RfProfileId path parameter. Rf profile ID.
     type: str
   sixGhzSettings:
-    description: Settings related to 6Ghz band.
+    description: Settings related to 6Ghz band. Only applicable to networks with 6Ghz
+      capable APs.
     suboptions:
       channelWidth:
         description: Sets channel width (MHz) for 6Ghz band. Can be one of '0', '20',
@@ -445,6 +592,10 @@ EXAMPLES = r"""
     apBandSettings:
       bandOperationMode: dual
       bandSteeringEnabled: true
+      bands:
+        enabled:
+        - '2.4'
+        - '5'
     bandSelectionType: ap
     clientBalancingEnabled: true
     fiveGhzSettings:
@@ -479,6 +630,11 @@ EXAMPLES = r"""
       - 157
       - 161
       - 165
+    flexRadios:
+      byModel:
+      - bands:
+        - '5'
+        model: MR34
     minBitrateType: band
     name: Main Office
     networkId: string
@@ -486,63 +642,123 @@ EXAMPLES = r"""
       '0':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '1':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '10':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '11':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '12':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '13':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '14':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '2':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '3':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '4':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '5':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '6':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '7':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '8':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
       '9':
         bandOperationMode: dual
         bandSteeringEnabled: true
-        minBitrate: 11
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
     sixGhzSettings:
       channelWidth: auto
       maxPower: 30
@@ -614,211 +830,7 @@ EXAMPLES = r"""
     twoFourGhzSettings:
       axEnabled: true
       maxPower: 30
-      minBitrate: 11
-      minPower: 5
-      rxsop: -95
-      validAutoChannels:
-      - 1
-      - 6
-      - 11
-
-- name: Update by id
-  cisco.meraki.networks_wireless_rf_profiles:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    state: present
-    apBandSettings:
-      bandOperationMode: dual
-      bandSteeringEnabled: true
-    bandSelectionType: ap
-    clientBalancingEnabled: true
-    fiveGhzSettings:
-      channelWidth: auto
-      maxPower: 30
-      minBitrate: 12
-      minPower: 8
-      rxsop: -95
-      validAutoChannels:
-      - 36
-      - 40
-      - 44
-      - 48
-      - 52
-      - 56
-      - 60
-      - 64
-      - 100
-      - 104
-      - 108
-      - 112
-      - 116
-      - 120
-      - 124
-      - 128
-      - 132
-      - 136
-      - 140
-      - 144
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
-    minBitrateType: band
-    name: '1234'
-    networkId: string
-    perSsidSettings:
-      '0':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '1':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '10':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '11':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '12':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '13':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '14':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '2':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '3':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '4':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '5':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '6':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '7':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '8':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-      '9':
-        bandOperationMode: dual
-        bandSteeringEnabled: true
-        minBitrate: 11
-    rfProfileId: string
-    sixGhzSettings:
-      channelWidth: auto
-      maxPower: 30
-      minBitrate: 12
-      minPower: 8
-      rxsop: -95
-      validAutoChannels:
-      - 1
-      - 5
-      - 9
-      - 13
-      - 17
-      - 21
-      - 25
-      - 29
-      - 33
-      - 37
-      - 41
-      - 45
-      - 49
-      - 53
-      - 57
-      - 61
-      - 65
-      - 69
-      - 73
-      - 77
-      - 81
-      - 85
-      - 89
-      - 93
-      - 97
-      - 101
-      - 105
-      - 109
-      - 113
-      - 117
-      - 121
-      - 125
-      - 129
-      - 133
-      - 137
-      - 141
-      - 145
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
-      - 169
-      - 173
-      - 177
-      - 181
-      - 185
-      - 189
-      - 193
-      - 197
-      - 201
-      - 205
-      - 209
-      - 213
-      - 217
-      - 221
-      - 225
-      - 229
-      - 233
-    transmission:
-      enabled: true
-    twoFourGhzSettings:
-      axEnabled: true
-      maxPower: 30
-      minBitrate: 11
+      minBitrate: 11.0
       minPower: 5
       rxsop: -95
       validAutoChannels:
@@ -852,6 +864,279 @@ EXAMPLES = r"""
     networkId: string
     rfProfileId: string
 
+- name: Update by id
+  cisco.meraki.networks_wireless_rf_profiles:
+    meraki_api_key: "{{meraki_api_key}}"
+    meraki_base_url: "{{meraki_base_url}}"
+    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
+    meraki_certificate_path: "{{meraki_certificate_path}}"
+    meraki_requests_proxy: "{{meraki_requests_proxy}}"
+    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
+    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
+    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
+    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
+    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
+    meraki_maximum_retries: "{{meraki_maximum_retries}}"
+    meraki_output_log: "{{meraki_output_log}}"
+    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
+    meraki_log_path: "{{meraki_log_path}}"
+    meraki_print_console: "{{meraki_print_console}}"
+    meraki_suppress_logging: "{{meraki_suppress_logging}}"
+    meraki_simulate: "{{meraki_simulate}}"
+    meraki_be_geo_id: "{{meraki_be_geo_id}}"
+    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
+    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
+    apBandSettings:
+      bandOperationMode: dual
+      bandSteeringEnabled: true
+      bands:
+        enabled:
+        - '2.4'
+        - '5'
+    bandSelectionType: ap
+    clientBalancingEnabled: true
+    fiveGhzSettings:
+      channelWidth: auto
+      maxPower: 30
+      minBitrate: 12
+      minPower: 8
+      rxsop: -95
+      validAutoChannels:
+      - 36
+      - 40
+      - 44
+      - 48
+      - 52
+      - 56
+      - 60
+      - 64
+      - 100
+      - 104
+      - 108
+      - 112
+      - 116
+      - 120
+      - 124
+      - 128
+      - 132
+      - 136
+      - 140
+      - 144
+      - 149
+      - 153
+      - 157
+      - 161
+      - 165
+    flexRadios:
+      byModel:
+      - bands:
+        - '5'
+        model: MR34
+    minBitrateType: band
+    name: '1234'
+    networkId: string
+    perSsidSettings:
+      '0':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '1':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '10':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '11':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '12':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '13':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '14':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '2':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '3':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '4':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '5':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '6':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '7':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '8':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+      '9':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+        bands:
+          enabled:
+          - '2.4'
+          - '5'
+        minBitrate: 11.0
+    rfProfileId: string
+    sixGhzSettings:
+      channelWidth: auto
+      maxPower: 30
+      minBitrate: 12
+      minPower: 8
+      rxsop: -95
+      validAutoChannels:
+      - 1
+      - 5
+      - 9
+      - 13
+      - 17
+      - 21
+      - 25
+      - 29
+      - 33
+      - 37
+      - 41
+      - 45
+      - 49
+      - 53
+      - 57
+      - 61
+      - 65
+      - 69
+      - 73
+      - 77
+      - 81
+      - 85
+      - 89
+      - 93
+      - 97
+      - 101
+      - 105
+      - 109
+      - 113
+      - 117
+      - 121
+      - 125
+      - 129
+      - 133
+      - 137
+      - 141
+      - 145
+      - 149
+      - 153
+      - 157
+      - 161
+      - 165
+      - 169
+      - 173
+      - 177
+      - 181
+      - 185
+      - 189
+      - 193
+      - 197
+      - 201
+      - 205
+      - 209
+      - 213
+      - 217
+      - 221
+      - 225
+      - 229
+      - 233
+    transmission:
+      enabled: true
+    twoFourGhzSettings:
+      axEnabled: true
+      maxPower: 30
+      minBitrate: 11.0
+      minPower: 5
+      rxsop: -95
+      validAutoChannels:
+      - 1
+      - 6
+      - 11
+
 """
 RETURN = r"""
 meraki_response:
@@ -860,130 +1145,220 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "networkId": "string",
-      "name": "string",
-      "clientBalancingEnabled": true,
-      "minBitrateType": "string",
-      "bandSelectionType": "string",
       "apBandSettings": {
         "bandOperationMode": "string",
-        "bandSteeringEnabled": true
+        "bandSteeringEnabled": true,
+        "bands": {
+          "enabled": [
+            "string"
+          ]
+        }
       },
-      "twoFourGhzSettings": {
-        "maxPower": 0,
-        "minPower": 0,
-        "minBitrate": 0,
-        "validAutoChannels": [
-          0
-        ],
-        "axEnabled": true,
-        "rxsop": 0
-      },
+      "bandSelectionType": "string",
+      "clientBalancingEnabled": true,
       "fiveGhzSettings": {
+        "channelWidth": "string",
         "maxPower": 0,
-        "minPower": 0,
         "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
         "validAutoChannels": [
           0
-        ],
+        ]
+      },
+      "id": "string",
+      "minBitrateType": "string",
+      "name": "string",
+      "networkId": "string",
+      "perSsidSettings": {
+        "0": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "1": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "10": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "11": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "12": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "13": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "14": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "2": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "3": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "4": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "5": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "6": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "7": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "8": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        },
+        "9": {
+          "bandOperationMode": "string",
+          "bandSteeringEnabled": true,
+          "bands": {
+            "enabled": [
+              "string"
+            ]
+          },
+          "minBitrate": 0,
+          "name": "string"
+        }
+      },
+      "sixGhzSettings": {
         "channelWidth": "string",
-        "rxsop": 0
+        "maxPower": 0,
+        "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
+        "validAutoChannels": [
+          0
+        ]
       },
       "transmission": {
         "enabled": true
       },
-      "perSsidSettings": {
-        "0": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "1": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "2": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "3": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "4": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "5": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "6": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "7": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "8": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "9": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "10": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "11": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "12": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "13": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        },
-        "14": {
-          "name": "string",
-          "minBitrate": 0,
-          "bandOperationMode": "string",
-          "bandSteeringEnabled": true
-        }
+      "twoFourGhzSettings": {
+        "axEnabled": true,
+        "maxPower": 0,
+        "minBitrate": 0,
+        "minPower": 0,
+        "rxsop": 0,
+        "validAutoChannels": [
+          0
+        ]
       }
     }
 """

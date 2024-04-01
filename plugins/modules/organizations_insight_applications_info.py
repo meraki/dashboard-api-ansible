@@ -77,14 +77,14 @@ meraki_response:
         "applicationId": "string",
         "name": "string",
         "thresholds": {
-          "type": "string",
           "byNetwork": [
             {
-              "networkId": "string",
               "goodput": 0,
+              "networkId": "string",
               "responseDuration": 0
             }
-          ]
+          ],
+          "type": "string"
         }
       }
     ]

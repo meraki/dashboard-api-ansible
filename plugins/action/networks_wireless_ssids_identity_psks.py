@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    expiresAt=dict(type="str"),
+    groupPolicyId=dict(type="str"),
     name=dict(type="str"),
     passphrase=dict(type="str"),
-    groupPolicyId=dict(type="str"),
-    expiresAt=dict(type="str"),
     networkId=dict(type="str"),
     number=dict(type="str"),
     identityPskId=dict(type="str"),
@@ -54,10 +54,10 @@ class NetworksWirelessSsidsIdentityPsks(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            expiresAt=params.get("expiresAt"),
+            groupPolicyId=params.get("groupPolicyId"),
             name=params.get("name"),
             passphrase=params.get("passphrase"),
-            groupPolicyId=params.get("groupPolicyId"),
-            expiresAt=params.get("expiresAt"),
             networkId=params.get("networkId"),
             number=params.get("number"),
             identityPskId=params.get("identityPskId"),
@@ -86,18 +86,18 @@ class NetworksWirelessSsidsIdentityPsks(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('expiresAt') is not None or self.new_object.get('expires_at') is not None:
+            new_object_params['expiresAt'] = self.new_object.get('expiresAt') or \
+                self.new_object.get('expires_at')
+        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
+            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
+                self.new_object.get('group_policy_id')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('passphrase') is not None or self.new_object.get('passphrase') is not None:
             new_object_params['passphrase'] = self.new_object.get('passphrase') or \
                 self.new_object.get('passphrase')
-        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
-            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
-                self.new_object.get('group_policy_id')
-        if self.new_object.get('expiresAt') is not None or self.new_object.get('expires_at') is not None:
-            new_object_params['expiresAt'] = self.new_object.get('expiresAt') or \
-                self.new_object.get('expires_at')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -121,18 +121,18 @@ class NetworksWirelessSsidsIdentityPsks(object):
 
     def update_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('expiresAt') is not None or self.new_object.get('expires_at') is not None:
+            new_object_params['expiresAt'] = self.new_object.get('expiresAt') or \
+                self.new_object.get('expires_at')
+        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
+            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
+                self.new_object.get('group_policy_id')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('passphrase') is not None or self.new_object.get('passphrase') is not None:
             new_object_params['passphrase'] = self.new_object.get('passphrase') or \
                 self.new_object.get('passphrase')
-        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
-            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
-                self.new_object.get('group_policy_id')
-        if self.new_object.get('expiresAt') is not None or self.new_object.get('expires_at') is not None:
-            new_object_params['expiresAt'] = self.new_object.get('expiresAt') or \
-                self.new_object.get('expires_at')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -213,10 +213,10 @@ class NetworksWirelessSsidsIdentityPsks(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("expiresAt", "expiresAt"),
+            ("groupPolicyId", "groupPolicyId"),
             ("name", "name"),
             ("passphrase", "passphrase"),
-            ("groupPolicyId", "groupPolicyId"),
-            ("expiresAt", "expiresAt"),
             ("networkId", "networkId"),
             ("number", "number"),
             ("identityPskId", "identityPskId"),

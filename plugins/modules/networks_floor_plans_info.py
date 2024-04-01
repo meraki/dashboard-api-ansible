@@ -106,10 +106,62 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {}
-    ]
+    {
+      "bottomLeftCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "bottomRightCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "center": {
+        "lat": 0,
+        "lng": 0
+      },
+      "devices": [
+        {
+          "address": "string",
+          "details": [
+            {
+              "name": "string",
+              "value": "string"
+            }
+          ],
+          "firmware": "string",
+          "imei": "string",
+          "lanIp": "string",
+          "lat": 0,
+          "lng": 0,
+          "mac": "string",
+          "model": "string",
+          "name": "string",
+          "networkId": "string",
+          "notes": "string",
+          "productType": "string",
+          "serial": "string",
+          "tags": [
+            "string"
+          ]
+        }
+      ],
+      "floorPlanId": "string",
+      "height": 0,
+      "imageExtension": "string",
+      "imageMd5": "string",
+      "imageUrl": "string",
+      "imageUrlExpiresAt": "string",
+      "name": "string",
+      "topLeftCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "topRightCorner": {
+        "lat": 0,
+        "lng": 0
+      },
+      "width": 0
+    }
 """

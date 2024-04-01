@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    sourceGroup=dict(type="dict"),
-    destinationGroup=dict(type="dict"),
     acls=dict(type="list"),
+    destinationGroup=dict(type="dict"),
     lastEntryRule=dict(type="str"),
+    sourceGroup=dict(type="dict"),
     organizationId=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -53,10 +53,10 @@ class OrganizationsAdaptivePolicyPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            sourceGroup=params.get("sourceGroup"),
-            destinationGroup=params.get("destinationGroup"),
             acls=params.get("acls"),
+            destinationGroup=params.get("destinationGroup"),
             lastEntryRule=params.get("lastEntryRule"),
+            sourceGroup=params.get("sourceGroup"),
             organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
@@ -79,18 +79,18 @@ class OrganizationsAdaptivePolicyPolicies(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
-            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
-                self.new_object.get('source_group')
-        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
-            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
-                self.new_object.get('destination_group')
         if self.new_object.get('acls') is not None or self.new_object.get('acls') is not None:
             new_object_params['acls'] = self.new_object.get('acls') or \
                 self.new_object.get('acls')
+        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
+            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
+                self.new_object.get('destination_group')
         if self.new_object.get('lastEntryRule') is not None or self.new_object.get('last_entry_rule') is not None:
             new_object_params['lastEntryRule'] = self.new_object.get('lastEntryRule') or \
                 self.new_object.get('last_entry_rule')
+        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
+            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
+                self.new_object.get('source_group')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -108,18 +108,18 @@ class OrganizationsAdaptivePolicyPolicies(object):
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
-            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
-                self.new_object.get('source_group')
-        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
-            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
-                self.new_object.get('destination_group')
         if self.new_object.get('acls') is not None or self.new_object.get('acls') is not None:
             new_object_params['acls'] = self.new_object.get('acls') or \
                 self.new_object.get('acls')
+        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
+            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
+                self.new_object.get('destination_group')
         if self.new_object.get('lastEntryRule') is not None or self.new_object.get('last_entry_rule') is not None:
             new_object_params['lastEntryRule'] = self.new_object.get('lastEntryRule') or \
                 self.new_object.get('last_entry_rule')
+        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
+            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
+                self.new_object.get('source_group')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -193,10 +193,10 @@ class OrganizationsAdaptivePolicyPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("sourceGroup", "sourceGroup"),
-            ("destinationGroup", "destinationGroup"),
             ("acls", "acls"),
+            ("destinationGroup", "destinationGroup"),
             ("lastEntryRule", "lastEntryRule"),
+            ("sourceGroup", "sourceGroup"),
             ("organizationId", "organizationId"),
             ("id", "id"),
         ]

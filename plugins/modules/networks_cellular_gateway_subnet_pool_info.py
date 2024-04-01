@@ -70,6 +70,18 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "cidr": "string",
+      "deploymentMode": "string",
+      "mask": 0,
+      "subnets": [
+        {
+          "applianceIp": "string",
+          "name": "string",
+          "serial": "string",
+          "subnet": "string"
+        }
+      ]
+    }
 """

@@ -78,5 +78,21 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "configTemplateId": "string",
+      "enrollmentString": "string",
+      "id": "string",
+      "isBoundToConfigTemplate": true,
+      "name": "string",
+      "notes": "string",
+      "organizationId": "string",
+      "productTypes": [
+        "string"
+      ],
+      "tags": [
+        "string"
+      ],
+      "timeZone": "string",
+      "url": "string"
+    }
 """

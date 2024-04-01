@@ -77,28 +77,28 @@ meraki_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "licenseType": "string",
-      "licenseKey": "string",
-      "orderNumber": "string",
+      "activationDate": "string",
+      "claimDate": "string",
       "deviceSerial": "string",
-      "networkId": "string",
-      "state": "string",
-      "seatCount": 0,
-      "totalDurationInDays": 0,
       "durationInDays": 0,
+      "expirationDate": "string",
+      "headLicenseId": "string",
+      "id": "string",
+      "licenseKey": "string",
+      "licenseType": "string",
+      "networkId": "string",
+      "orderNumber": "string",
       "permanentlyQueuedLicenses": [
         {
+          "durationInDays": 0,
           "id": "string",
-          "licenseType": "string",
           "licenseKey": "string",
-          "orderNumber": "string",
-          "durationInDays": 0
+          "licenseType": "string",
+          "orderNumber": "string"
         }
       ],
-      "claimDate": "string",
-      "activationDate": "string",
-      "expirationDate": "string",
-      "headLicenseId": "string"
+      "seatCount": 0,
+      "state": "string",
+      "totalDurationInDays": 0
     }
 """

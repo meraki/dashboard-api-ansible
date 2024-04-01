@@ -109,15 +109,11 @@ meraki_response:
   type: dict
   sample: >
     {
-      "groupId": "string",
-      "name": "string",
-      "description": "string",
-      "isDefault": true,
       "assignedDevices": {
         "devices": [
           {
-            "serial": "string",
-            "name": "string"
+            "name": "string",
+            "serial": "string"
           }
         ],
         "switchStacks": [
@@ -126,6 +122,10 @@ meraki_response:
             "name": "string"
           }
         ]
-      }
+      },
+      "description": "string",
+      "groupId": "string",
+      "isDefault": true,
+      "name": "string"
     }
 """

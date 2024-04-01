@@ -11,8 +11,8 @@ short_description: Information module for organizations _devices _powermodules _
 description:
 - Get all organizations _devices _powermodules _statuses _bydevice.
 - >
-   List the power status information for devices in an organization. The data returned by this endpoint is updated
-   every 5 minutes.
+   List the most recent status information for power modules in rackmount MX and MS devices that support them. The
+   data returned by this endpoint is updated every 5 minutes.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -148,16 +148,16 @@ meraki_response:
         },
         "productType": "string",
         "serial": "string",
-        "tags": [
-          "string"
-        ],
         "slots": [
           {
+            "model": "string",
             "number": 0,
             "serial": "string",
-            "model": "string",
             "status": "string"
           }
+        ],
+        "tags": [
+          "string"
         ]
       }
     ]

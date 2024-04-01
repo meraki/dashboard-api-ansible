@@ -87,6 +87,20 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "deviceName": "string",
+      "id": "string",
+      "inSightAlert": true,
+      "lastSeen": 0,
+      "mac": "string",
+      "manufacturer": "string",
+      "name": "string",
+      "networkId": "string",
+      "outOfSightAlert": true,
+      "seenByDeviceMac": "string",
+      "tags": [
+        "string"
+      ]
+    }
 """

@@ -40,6 +40,13 @@ options:
       </a><a target='_blank' href='http //wired.meraki.com/'>wired.meraki.com</a>).
       Optional (defaults to false).
     type: bool
+  namedVlans:
+    description: A hash of Named VLANs options applied to the Network.
+    suboptions:
+      enabled:
+        description: Enables / disables Named VLANs on the Network.
+        type: bool
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -99,6 +106,8 @@ EXAMPLES = r"""
         enabled: false
         password: miles123
     localStatusPageEnabled: true
+    namedVlans:
+      enabled: true
     networkId: string
     remoteStatusPageEnabled: true
     securePort:
@@ -112,26 +121,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "localStatusPageEnabled": true,
-      "remoteStatusPageEnabled": true,
+      "fips": {
+        "enabled": true
+      },
       "localStatusPage": {
         "authentication": {
           "enabled": true,
           "username": "string"
         }
       },
-      "securePort": {
-        "enabled": true
-      },
-      "fips": {
-        "enabled": true
-      },
+      "localStatusPageEnabled": true,
       "namedVlans": {
         "enabled": true
       },
-      "clientPrivacy": {
-        "expireDataOlderThan": 0,
-        "expireDataBefore": "string"
+      "remoteStatusPageEnabled": true,
+      "securePort": {
+        "enabled": true
       }
     }
 """

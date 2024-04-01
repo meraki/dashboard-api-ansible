@@ -81,7 +81,7 @@ EXAMPLES = r"""
       notes: Here's some info about my device
     id: '1284392014819'
     networkId: string
-    serial: Q234-ABCD-5678
+    serial: XY0XX0Y0X0
     wifiMac: 00:11:22:33:44:55
 
 """
@@ -95,9 +95,9 @@ meraki_response:
       {
         "id": "string",
         "name": "string",
-        "wifiMac": "string",
+        "notes": "string",
         "serial": "string",
-        "notes": "string"
+        "wifiMac": "string"
       }
     ]
 """

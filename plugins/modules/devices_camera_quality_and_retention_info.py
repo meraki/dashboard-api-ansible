@@ -27,12 +27,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCameraQualityAndRetention
+- name: Cisco Meraki documentation for camera getDeviceCameraQualityAndRetention
   description: Complete reference of the getDeviceCameraQualityAndRetention API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-quality-and-retention
 notes:
   - SDK Method used are
-    devices.Devices.get_device_camera_quality_and_retention,
+    camera.Camera.get_device_camera_quality_and_retention,
 
   - Paths used are
     get /devices/{serial}/camera/qualityAndRetention,
@@ -70,6 +70,14 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "audioRecordingEnabled": true,
+      "motionBasedRetentionEnabled": true,
+      "motionDetectorVersion": 0,
+      "profileId": "string",
+      "quality": "string",
+      "resolution": "string",
+      "restrictedBandwidthModeEnabled": true
+    }
 """

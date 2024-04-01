@@ -131,10 +131,10 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
         "endTs": "string",
+        "rssi": 0,
         "snr": 0,
-        "rssi": 0
+        "startTs": "string"
       }
     ]
 """

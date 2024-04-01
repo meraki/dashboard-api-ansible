@@ -31,12 +31,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceSwitchWarmSpare
+- name: Cisco Meraki documentation for switch updateDeviceSwitchWarmSpare
   description: Complete reference of the updateDeviceSwitchWarmSpare API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-warm-spare
 notes:
   - SDK Method used are
-    devices.Devices.update_device_switch_warm_spare,
+    switch.Switch.update_device_switch_warm_spare,
 
   - Paths used are
     put /devices/{serial}/switch/warmSpare,
@@ -77,5 +77,9 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "primarySerial": "string",
+      "spareSerial": "string"
+    }
 """

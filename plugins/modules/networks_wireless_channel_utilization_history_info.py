@@ -132,11 +132,11 @@ meraki_response:
   sample: >
     [
       {
-        "startTs": "string",
         "endTs": "string",
-        "utilizationTotal": 0,
+        "startTs": "string",
         "utilization80211": 0,
-        "utilizationNon80211": 0
+        "utilizationNon80211": 0,
+        "utilizationTotal": 0
       }
     ]
 """

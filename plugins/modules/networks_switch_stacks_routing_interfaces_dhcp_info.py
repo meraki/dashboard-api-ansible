@@ -80,6 +80,40 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "bootFileName": "string",
+      "bootNextServer": "string",
+      "bootOptionsEnabled": true,
+      "dhcpLeaseTime": "string",
+      "dhcpMode": "string",
+      "dhcpOptions": [
+        {
+          "code": "string",
+          "type": "string",
+          "value": "string"
+        }
+      ],
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "dnsNameserversOption": "string",
+      "fixedIpAssignments": [
+        {
+          "ip": "string",
+          "mac": "string",
+          "name": "string"
+        }
+      ],
+      "reservedIpRanges": [
+        {
+          "comment": "string",
+          "end": "string",
+          "start": "string"
+        }
+      ]
+    }
 """

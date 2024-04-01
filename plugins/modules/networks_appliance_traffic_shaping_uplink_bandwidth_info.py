@@ -75,17 +75,17 @@ meraki_response:
   type: dict
   sample: >
     {
+      "cellular": {
+        "limitDown": 0,
+        "limitUp": 0
+      },
       "wan1": {
-        "limitUp": 0,
-        "limitDown": 0
+        "limitDown": 0,
+        "limitUp": 0
       },
       "wan2": {
-        "limitUp": 0,
-        "limitDown": 0
-      },
-      "cellular": {
-        "limitUp": 0,
-        "limitDown": 0
+        "limitDown": 0,
+        "limitUp": 0
       }
     }
 """

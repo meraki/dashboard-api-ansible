@@ -31,6 +31,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
+    callback=dict(type="dict"),
     count=dict(type="int"),
     serial=dict(type="str"),
     id=dict(type="str"),
@@ -48,6 +49,7 @@ class DevicesLiveToolsPingDevice(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            callback=params.get("callback"),
             count=params.get("count"),
             serial=params.get("serial"),
             id=params.get("id"),
@@ -63,6 +65,9 @@ class DevicesLiveToolsPingDevice(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
+            new_object_params['callback'] = self.new_object.get('callback') or \
+                self.new_object.get('callback')
         if self.new_object.get('count') is not None or self.new_object.get('count') is not None:
             new_object_params['count'] = self.new_object.get('count') or \
                 self.new_object.get('count')
@@ -121,6 +126,7 @@ class DevicesLiveToolsPingDevice(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("callback", "callback"),
             ("count", "count"),
             ("serial", "serial"),
             ("id", "id"),

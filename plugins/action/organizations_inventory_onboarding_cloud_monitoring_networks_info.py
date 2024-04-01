@@ -27,6 +27,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     organizationId=dict(type="str"),
     deviceType=dict(type="str"),
+    search=dict(type="str"),
     perPage=dict(type="int"),
     total_pages=dict(type="int"),
     direction=dict(type="str"),
@@ -76,6 +77,9 @@ class ActionModule(ActionBase):
         if params.get("deviceType") is not None:
             new_object["deviceType"] = params.get(
                 "deviceType")
+        if params.get("search") is not None:
+            new_object["search"] = params.get(
+                "search")
         if params.get("perPage") is not None:
             new_object["perPage"] = params.get(
                 "perPage")

@@ -69,7 +69,26 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
-  sample:
-  - {}
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "allowedInbound": [
+          {
+            "allowedIps": [
+              "string"
+            ],
+            "destinationPorts": [
+              "string"
+            ],
+            "protocol": "string"
+          }
+        ],
+        "lanIp": "string",
+        "name": "string",
+        "publicIp": "string",
+        "uplink": "string"
+      }
+    ]
 """

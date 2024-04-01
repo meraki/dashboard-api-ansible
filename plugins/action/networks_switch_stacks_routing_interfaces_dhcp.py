@@ -32,17 +32,17 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    dhcpMode=dict(type="str"),
-    dhcpRelayServerIps=dict(type="list"),
-    dhcpLeaseTime=dict(type="str"),
-    dnsNameserversOption=dict(type="str"),
-    dnsCustomNameservers=dict(type="list"),
-    bootOptionsEnabled=dict(type="bool"),
-    bootNextServer=dict(type="str"),
     bootFileName=dict(type="str"),
+    bootNextServer=dict(type="str"),
+    bootOptionsEnabled=dict(type="bool"),
+    dhcpLeaseTime=dict(type="str"),
+    dhcpMode=dict(type="str"),
     dhcpOptions=dict(type="list"),
-    reservedIpRanges=dict(type="list"),
+    dhcpRelayServerIps=dict(type="list"),
+    dnsCustomNameservers=dict(type="list"),
+    dnsNameserversOption=dict(type="str"),
     fixedIpAssignments=dict(type="list"),
+    reservedIpRanges=dict(type="list"),
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
     interfaceId=dict(type="str"),
@@ -60,17 +60,17 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            dhcpMode=params.get("dhcpMode"),
-            dhcpRelayServerIps=params.get("dhcpRelayServerIps"),
-            dhcpLeaseTime=params.get("dhcpLeaseTime"),
-            dnsNameserversOption=params.get("dnsNameserversOption"),
-            dnsCustomNameservers=params.get("dnsCustomNameservers"),
-            bootOptionsEnabled=params.get("bootOptionsEnabled"),
-            bootNextServer=params.get("bootNextServer"),
             bootFileName=params.get("bootFileName"),
+            bootNextServer=params.get("bootNextServer"),
+            bootOptionsEnabled=params.get("bootOptionsEnabled"),
+            dhcpLeaseTime=params.get("dhcpLeaseTime"),
+            dhcpMode=params.get("dhcpMode"),
             dhcpOptions=params.get("dhcpOptions"),
-            reservedIpRanges=params.get("reservedIpRanges"),
+            dhcpRelayServerIps=params.get("dhcpRelayServerIps"),
+            dnsCustomNameservers=params.get("dnsCustomNameservers"),
+            dnsNameserversOption=params.get("dnsNameserversOption"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
+            reservedIpRanges=params.get("reservedIpRanges"),
             network_id=params.get("networkId"),
             switch_stack_id=params.get("switchStackId"),
             interface_id=params.get("interfaceId"),
@@ -91,38 +91,38 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('dhcpMode') is not None or self.new_object.get('dhcp_mode') is not None:
-            new_object_params['dhcpMode'] = self.new_object.get('dhcpMode') or \
-                self.new_object.get('dhcp_mode')
-        if self.new_object.get('dhcpRelayServerIps') is not None or self.new_object.get('dhcp_relay_server_ips') is not None:
-            new_object_params['dhcpRelayServerIps'] = self.new_object.get('dhcpRelayServerIps') or \
-                self.new_object.get('dhcp_relay_server_ips')
-        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
-            new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
-                self.new_object.get('dhcp_lease_time')
-        if self.new_object.get('dnsNameserversOption') is not None or self.new_object.get('dns_nameservers_option') is not None:
-            new_object_params['dnsNameserversOption'] = self.new_object.get('dnsNameserversOption') or \
-                self.new_object.get('dns_nameservers_option')
-        if self.new_object.get('dnsCustomNameservers') is not None or self.new_object.get('dns_custom_nameservers') is not None:
-            new_object_params['dnsCustomNameservers'] = self.new_object.get('dnsCustomNameservers') or \
-                self.new_object.get('dns_custom_nameservers')
-        if self.new_object.get('bootOptionsEnabled') is not None or self.new_object.get('boot_options_enabled') is not None:
-            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled')
-        if self.new_object.get('bootNextServer') is not None or self.new_object.get('boot_next_server') is not None:
-            new_object_params['bootNextServer'] = self.new_object.get('bootNextServer') or \
-                self.new_object.get('boot_next_server')
         if self.new_object.get('bootFileName') is not None or self.new_object.get('boot_file_name') is not None:
             new_object_params['bootFileName'] = self.new_object.get('bootFileName') or \
                 self.new_object.get('boot_file_name')
+        if self.new_object.get('bootNextServer') is not None or self.new_object.get('boot_next_server') is not None:
+            new_object_params['bootNextServer'] = self.new_object.get('bootNextServer') or \
+                self.new_object.get('boot_next_server')
+        if self.new_object.get('bootOptionsEnabled') is not None or self.new_object.get('boot_options_enabled') is not None:
+            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled')
+        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
+            new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
+                self.new_object.get('dhcp_lease_time')
+        if self.new_object.get('dhcpMode') is not None or self.new_object.get('dhcp_mode') is not None:
+            new_object_params['dhcpMode'] = self.new_object.get('dhcpMode') or \
+                self.new_object.get('dhcp_mode')
         if self.new_object.get('dhcpOptions') is not None or self.new_object.get('dhcp_options') is not None:
             new_object_params['dhcpOptions'] = self.new_object.get('dhcpOptions') or \
                 self.new_object.get('dhcp_options')
-        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get('reserved_ip_ranges') is not None:
-            new_object_params['reservedIpRanges'] = self.new_object.get('reservedIpRanges') or \
-                self.new_object.get('reserved_ip_ranges')
+        if self.new_object.get('dhcpRelayServerIps') is not None or self.new_object.get('dhcp_relay_server_ips') is not None:
+            new_object_params['dhcpRelayServerIps'] = self.new_object.get('dhcpRelayServerIps') or \
+                self.new_object.get('dhcp_relay_server_ips')
+        if self.new_object.get('dnsCustomNameservers') is not None or self.new_object.get('dns_custom_nameservers') is not None:
+            new_object_params['dnsCustomNameservers'] = self.new_object.get('dnsCustomNameservers') or \
+                self.new_object.get('dns_custom_nameservers')
+        if self.new_object.get('dnsNameserversOption') is not None or self.new_object.get('dns_nameservers_option') is not None:
+            new_object_params['dnsNameserversOption'] = self.new_object.get('dnsNameserversOption') or \
+                self.new_object.get('dns_nameservers_option')
         if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get('fixed_ip_assignments') is not None:
             new_object_params['fixedIpAssignments'] = self.new_object.get('fixedIpAssignments') or \
                 self.new_object.get('fixed_ip_assignments')
+        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get('reserved_ip_ranges') is not None:
+            new_object_params['reservedIpRanges'] = self.new_object.get('reservedIpRanges') or \
+                self.new_object.get('reserved_ip_ranges')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -185,17 +185,17 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("dhcpMode", "dhcpMode"),
-            ("dhcpRelayServerIps", "dhcpRelayServerIps"),
-            ("dhcpLeaseTime", "dhcpLeaseTime"),
-            ("dnsNameserversOption", "dnsNameserversOption"),
-            ("dnsCustomNameservers", "dnsCustomNameservers"),
-            ("bootOptionsEnabled", "bootOptionsEnabled"),
-            ("bootNextServer", "bootNextServer"),
             ("bootFileName", "bootFileName"),
+            ("bootNextServer", "bootNextServer"),
+            ("bootOptionsEnabled", "bootOptionsEnabled"),
+            ("dhcpLeaseTime", "dhcpLeaseTime"),
+            ("dhcpMode", "dhcpMode"),
             ("dhcpOptions", "dhcpOptions"),
-            ("reservedIpRanges", "reservedIpRanges"),
+            ("dhcpRelayServerIps", "dhcpRelayServerIps"),
+            ("dnsCustomNameservers", "dnsCustomNameservers"),
+            ("dnsNameserversOption", "dnsNameserversOption"),
             ("fixedIpAssignments", "fixedIpAssignments"),
+            ("reservedIpRanges", "reservedIpRanges"),
             ("networkId", "networkId"),
             ("switchStackId", "switchStackId"),
             ("interfaceId", "interfaceId"),

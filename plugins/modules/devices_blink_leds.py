@@ -80,5 +80,9 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "duration": 0,
+      "duty": 0,
+      "period": 0
+    }
 """

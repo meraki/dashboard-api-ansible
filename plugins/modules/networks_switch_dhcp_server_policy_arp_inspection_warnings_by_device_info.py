@@ -98,11 +98,11 @@ meraki_response:
   sample: >
     [
       {
-        "serial": "string",
+        "hasTrustedPort": true,
         "name": "string",
-        "url": "string",
+        "serial": "string",
         "supportsInspection": true,
-        "hasTrustedPort": true
+        "url": "string"
       }
     ]
 """
