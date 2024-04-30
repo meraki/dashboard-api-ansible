@@ -65,7 +65,7 @@ Other versions of this collection have support for previous Cisco Meraki version
 | Cisco Meraki version | Ansible "cisco.meraki" version | Python "DashboardAPI" version |
 |--------------------------|------------------------------|-------------------------------|
 | 1.33.0                    | 2.17.0                      |1.33.0                         |
-| 1.44.1                    | 2.18.0                      |1.44.1                         |
+| 1.44.1                    | 2.18.1                      |1.44.1                         |
 
 *Notes*:
 
