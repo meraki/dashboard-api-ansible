@@ -35,7 +35,7 @@ argument_spec.update(dict(
     applianceIp=dict(type="str"),
     cidr=dict(type="str"),
     groupPolicyId=dict(type="str"),
-    id=dict(type="str"),
+    id=dict(type="int"),
     ipv6=dict(type="dict"),
     mandatoryDhcp=dict(type="dict"),
     mask=dict(type="int"),
@@ -43,7 +43,7 @@ argument_spec.update(dict(
     subnet=dict(type="str"),
     templateVlanType=dict(type="str"),
     networkId=dict(type="str"),
-    vlanId=dict(type="str"),
+    # vlanId=dict(type="str"),
     dhcpBootFilename=dict(type="str"),
     dhcpBootNextServer=dict(type="str"),
     dhcpBootOptionsEnabled=dict(type="bool"),
@@ -58,8 +58,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name", "networkId", "vlanId"], True),
-    ("state", "absent", ["name", "networkId", "vlanId"], True),
+    ("state", "present", ["name", "networkId", "id"], True),
+    ("state", "absent", ["name", "networkId", "id"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -107,9 +107,10 @@ class NetworksApplianceVlans(object):
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
+                self.new_object.get('id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('id') or \
+                self.new_object.get('id')
         return new_object_params
 
     def create_params(self):
@@ -154,9 +155,10 @@ class NetworksApplianceVlans(object):
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
+                self.new_object.get('id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('id') or \
+                self.new_object.get('id')
         return new_object_params
 
     def update_by_id_params(self):
@@ -174,7 +176,8 @@ class NetworksApplianceVlans(object):
             new_object_params['dhcpBootNextServer'] = self.new_object.get('dhcpBootNextServer') or \
                 self.new_object.get('dhcp_boot_next_server')
         if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
+                'dhcpBootOptionsEnabled')
         if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
             new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
                 self.new_object.get('dhcp_handling')
@@ -223,9 +226,10 @@ class NetworksApplianceVlans(object):
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
-                self.new_object.get('vlan_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
+                self.new_object.get('id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('id') or \
+                self.new_object.get('id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -272,7 +276,7 @@ class NetworksApplianceVlans(object):
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "vlan_id") or self.new_object.get("vlanId")
-        name = self.new_object.get("name")
+        name = None
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -298,7 +302,6 @@ class NetworksApplianceVlans(object):
 
         obj_params = [
             ("applianceIp", "applianceIp"),
-            ("cidr", "cidr"),
             ("groupPolicyId", "groupPolicyId"),
             ("id", "id"),
             ("ipv6", "ipv6"),
@@ -308,7 +311,6 @@ class NetworksApplianceVlans(object):
             ("subnet", "subnet"),
             ("templateVlanType", "templateVlanType"),
             ("networkId", "networkId"),
-            ("vlanId", "vlanId"),
             ("dhcpBootFilename", "dhcpBootFilename"),
             ("dhcpBootNextServer", "dhcpBootNextServer"),
             ("dhcpBootOptionsEnabled", "dhcpBootOptionsEnabled"),

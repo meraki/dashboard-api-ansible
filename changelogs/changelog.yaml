@@ -1064,3 +1064,10 @@ releases:
         - organizations_wireless_devices_packet_loss_by_client_info - new plugin.
         - organizations_wireless_devices_packet_loss_by_device_info - new plugin.
         - organizations_wireless_devices_packet_loss_by_network_info - new plugin.
+  2.18.1:
+    changes:
+      minor_changes:
+        - The `id` parameter is now required for `networks_appliance_vlans` module.
+        - The `id` parameter is change type to an `integer` in `networks_appliance_vlans` module.
+        - Fixing problem of naming in `organizations_appliance_vpn_third_party_vpnpeers_info`.
+        - Removing `state` from allowed parameters for `networks_syslog_servers` module.
