@@ -51,7 +51,7 @@ options:
     net_name:
         description:
         - Name of a network.
-        aliases: [name, network]
+        aliases: [network]
         type: str
     auth_method:
         description:
