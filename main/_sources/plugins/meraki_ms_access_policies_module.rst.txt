@@ -477,10 +477,8 @@ Parameters
 
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
-        <div class="ansibleOptionAnchor" id="parameter-name"></div>
         <div class="ansibleOptionAnchor" id="parameter-network"></div>
 
-      .. _ansible_collections.cisco.meraki.meraki_ms_access_policies_module__parameter-name:
       .. _ansible_collections.cisco.meraki.meraki_ms_access_policies_module__parameter-net_name:
       .. _ansible_collections.cisco.meraki.meraki_ms_access_policies_module__parameter-network:
 
@@ -494,7 +492,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-aliases:`aliases: name, network`
+      :ansible-option-aliases:`aliases: network`
 
       .. rst-class:: ansible-option-type-line
 

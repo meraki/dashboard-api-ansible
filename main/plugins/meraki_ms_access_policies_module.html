@@ -624,17 +624,17 @@
 </div>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#deprecated" id="id110">DEPRECATED</a></p></li>
-<li><p><a class="reference internal" href="#synopsis" id="id111">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id112">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id113">Notes</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id114">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id115">Return Values</a></p></li>
-<li><p><a class="reference internal" href="#status" id="id116">Status</a></p></li>
+<li><p><a class="reference internal" href="#deprecated" id="id109">DEPRECATED</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id110">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id111">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id112">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id113">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id114">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#status" id="id115">Status</a></p></li>
 </ul>
 </nav>
 <section id="deprecated">
-<h2><a class="toc-backref" href="#id110" role="doc-backlink">DEPRECATED</a><a class="headerlink" href="#deprecated" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id109" role="doc-backlink">DEPRECATED</a><a class="headerlink" href="#deprecated" title="Permalink to this heading"></a></h2>
 <dl class="field-list simple">
 <dt class="field-odd">Removed in<span class="colon">:</span></dt>
 <dd class="field-odd"><p>version 3.0.0</p>
@@ -648,13 +648,13 @@
 </dl>
 </section>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id111" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id110" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Module for managing a Switch Access Policies in the Meraki cloud</p></li>
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id112" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id111" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -755,9 +755,8 @@
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
-<div class="ansibleOptionAnchor" id="parameter-name"></div>
-<div class="ansibleOptionAnchor" id="parameter-network"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-ms-access-policies-module-parameter-network"><span id="ansible-collections-cisco-meraki-meraki-ms-access-policies-module-parameter-net-name"></span><span id="id23"></span><strong>net_name</strong></p>
-<a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: name, network</span></p>
+<div class="ansibleOptionAnchor" id="parameter-network"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-ms-access-policies-module-parameter-network"><span id="ansible-collections-cisco-meraki-meraki-ms-access-policies-module-parameter-net-name"></span><strong>net_name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-aliases">aliases: network</span></p>
 <p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Name of a network.</p>
@@ -795,8 +794,8 @@
 <td><div class="ansible-option-cell"><p>Instructs module whether response keys should be snake case (ex. <code class="docutils literal notranslate"><span class="pre">net_id</span></code>) or camel case (ex. <code class="docutils literal notranslate"><span class="pre">netId</span></code>).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id24"><span class="problematic" id="id25">:ansible-option-choices-entry-default:`&quot;snakecase&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id26"><span class="problematic" id="id27">:ansible-option-choices-entry:`&quot;camelcase&quot;`</span></a></p></li>
+<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry-default:`&quot;snakecase&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry:`&quot;camelcase&quot;`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -807,8 +806,8 @@
 <td><div class="ansible-option-cell"><p>Set amount of debug output during module execution.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id28"><span class="problematic" id="id29">:ansible-option-choices-entry:`&quot;debug&quot;`</span></a></p></li>
-<li><p><a href="#id30"><span class="problematic" id="id31">:ansible-option-choices-entry-default:`&quot;normal&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`&quot;debug&quot;`</span></a></p></li>
+<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry-default:`&quot;normal&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -819,8 +818,8 @@
 <td><div class="ansible-option-cell"><p>Enable or disable RADIUS accounting.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id32"><span class="problematic" id="id33">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id34"><span class="problematic" id="id35">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -859,8 +858,8 @@
 <td><div class="ansible-option-cell"><p>Enable that attribute for a RADIUS</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id36"><span class="problematic" id="id37">:ansible-option-choices-entry:`&quot;Filter-Id&quot;`</span></a></p></li>
-<li><p><a href="#id38"><span class="problematic" id="id39">:ansible-option-choices-entry-default:`&quot;&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`&quot;Filter-Id&quot;`</span></a></p></li>
+<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry-default:`&quot;&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -871,8 +870,8 @@
 <td><div class="ansible-option-cell"><p>Enable or disable RADIUS CoA (Change of Authorization).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id40"><span class="problematic" id="id41">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id42"><span class="problematic" id="id43">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id41"><span class="problematic" id="id42">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -912,8 +911,8 @@
 <td><div class="ansible-option-cell"><p>Set status of testing a radius.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id44"><span class="problematic" id="id45">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id46"><span class="problematic" id="id47">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -922,7 +921,7 @@
 <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Number of seconds to retry if rate limiter is triggered.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id48"><span class="problematic" id="id49">:ansible-option-default:`165`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id47"><span class="problematic" id="id48">:ansible-option-default:`165`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -932,9 +931,9 @@
 <td><div class="ansible-option-cell"><p>Specifies whether SNMP information should be queried or modified.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id50"><span class="problematic" id="id51">:ansible-option-choices-entry:`&quot;absent&quot;`</span></a></p></li>
-<li><p><a href="#id52"><span class="problematic" id="id53">:ansible-option-choices-entry:`&quot;query&quot;`</span></a></p></li>
-<li><p><a href="#id54"><span class="problematic" id="id55">:ansible-option-choices-entry-default:`&quot;present&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry:`&quot;absent&quot;`</span></a></p></li>
+<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`&quot;query&quot;`</span></a></p></li>
+<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry-default:`&quot;present&quot;`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -945,8 +944,8 @@
 <td><div class="ansible-option-cell"><p>Enable or disable the Suspend Port Bounce when RADIUS servers are unreachable.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id56"><span class="problematic" id="id57">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id58"><span class="problematic" id="id59">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -957,8 +956,8 @@
 <td><div class="ansible-option-cell"><p>Set if the Systems Management Enrollemnt is enabled or disabled</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id60"><span class="problematic" id="id61">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id62"><span class="problematic" id="id63">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -967,7 +966,7 @@
 <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Time to timeout for HTTP requests.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id64"><span class="problematic" id="id65">:ansible-option-default:`30`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id63"><span class="problematic" id="id64">:ansible-option-default:`30`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -978,8 +977,8 @@
 <p>Only useful for internal Meraki developers.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id66"><span class="problematic" id="id67">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id68"><span class="problematic" id="id69">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -990,8 +989,8 @@
 <td><div class="ansible-option-cell"><p>If <code class="docutils literal notranslate"><span class="pre">no</span></code>, it will not use a proxy, even if one is defined in an environment variable on the target hosts.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id70"><span class="problematic" id="id71">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id72"><span class="problematic" id="id73">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id71"><span class="problematic" id="id72">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1002,8 +1001,8 @@
 <td><div class="ansible-option-cell"><p>Whether to validate HTTP certificates.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id74"><span class="problematic" id="id75">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id76"><span class="problematic" id="id77">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id73"><span class="problematic" id="id74">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id75"><span class="problematic" id="id76">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1014,8 +1013,8 @@
 <td><div class="ansible-option-cell"><p>If is enabled that means Voice VLAN client require authentication</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id78"><span class="problematic" id="id79">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id80"><span class="problematic" id="id81">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id77"><span class="problematic" id="id78">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id79"><span class="problematic" id="id80">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1030,7 +1029,7 @@
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id113" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id112" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -1043,7 +1042,7 @@
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id114" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id113" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create access policy with auth_method is &quot;Meraki authentication&quot;</span>
 <span class="w">  </span><span class="nt">cisco.meraki.meraki_ms_access_policies</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>
@@ -1076,8 +1075,8 @@
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id115" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
-<p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v9)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
+<h2><a class="toc-backref" href="#id114" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v10)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Key</p></th>
@@ -1099,7 +1098,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Type of the access policy</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id82"><span class="problematic" id="id83">:ansible-rv-sample-value:`&quot;802.1x&quot;`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id81"><span class="problematic" id="id82">:ansible-rv-sample-value:`&quot;802.1x&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1108,7 +1107,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>ID of the Guest Vlan</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id84"><span class="problematic" id="id85">:ansible-rv-sample-value:`10`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id83"><span class="problematic" id="id84">:ansible-rv-sample-value:`10`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1117,7 +1116,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Choosen teh Host Mode for the access policy</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id86"><span class="problematic" id="id87">:ansible-rv-sample-value:`&quot;Single-Host&quot;`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id85"><span class="problematic" id="id86">:ansible-rv-sample-value:`&quot;Single-Host&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1126,7 +1125,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Name of the Access Policy</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id88"><span class="problematic" id="id89">:ansible-rv-sample-value:`&quot;Policy with 802.1x&quot;`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id87"><span class="problematic" id="id88">:ansible-rv-sample-value:`&quot;Policy with 802.1x&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1135,7 +1134,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Number of the Access Policy</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id90"><span class="problematic" id="id91">:ansible-rv-sample-value:`1`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id89"><span class="problematic" id="id90">:ansible-rv-sample-value:`1`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1160,7 +1159,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>VLAN ID for data</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id92"><span class="problematic" id="id93">:ansible-rv-sample-value:`10`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id91"><span class="problematic" id="id92">:ansible-rv-sample-value:`10`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1169,7 +1168,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Enable or disable suspend port bounce</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id94"><span class="problematic" id="id95">:ansible-rv-sample-value:`false`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id93"><span class="problematic" id="id94">:ansible-rv-sample-value:`false`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1178,7 +1177,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>VLAN ID for voice</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id96"><span class="problematic" id="id97">:ansible-rv-sample-value:`10`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id95"><span class="problematic" id="id96">:ansible-rv-sample-value:`10`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1187,7 +1186,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>VLAN ID when failed auth</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id98"><span class="problematic" id="id99">:ansible-rv-sample-value:`11`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id97"><span class="problematic" id="id98">:ansible-rv-sample-value:`11`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1222,10 +1221,10 @@
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Can only return:</span></p>
 <ul class="simple">
-<li><p><a href="#id100"><span class="problematic" id="id101">:ansible-option-choices-entry:`&quot;11&quot;`</span></a></p></li>
-<li><p><a href="#id102"><span class="problematic" id="id103">:ansible-option-choices-entry:`&quot;&quot;`</span></a></p></li>
+<li><p><a href="#id99"><span class="problematic" id="id100">:ansible-option-choices-entry:`&quot;11&quot;`</span></a></p></li>
+<li><p><a href="#id101"><span class="problematic" id="id102">:ansible-option-choices-entry:`&quot;&quot;`</span></a></p></li>
 </ul>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id104"><span class="problematic" id="id105">:ansible-rv-sample-value:`&quot;11&quot;`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id103"><span class="problematic" id="id104">:ansible-rv-sample-value:`&quot;11&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1250,7 +1249,7 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Enable or disable Radius Testing</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id106"><span class="problematic" id="id107">:ansible-rv-sample-value:`true`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id105"><span class="problematic" id="id106">:ansible-rv-sample-value:`true`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1259,14 +1258,14 @@
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Enable or disable Voice Vlan Clients</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id108"><span class="problematic" id="id109">:ansible-rv-sample-value:`false`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id107"><span class="problematic" id="id108">:ansible-rv-sample-value:`false`</span></a></p>
 </div></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="status">
-<h2><a class="toc-backref" href="#id116" role="doc-backlink">Status</a><a class="headerlink" href="#status" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id115" role="doc-backlink">Status</a><a class="headerlink" href="#status" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>This module will be removed in version 3.0.0.
 <em>[deprecated]</em></p></li>
