@@ -174,7 +174,7 @@ def main():
 
     # define the available arguments/parameters that a user can pass to
     # the module
-
+    path = ""
     argument_spec = meraki_argument_spec()
     argument_spec.update(
         net_id=dict(type='str'),
