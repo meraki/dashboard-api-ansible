@@ -1,3 +1,4 @@
 ---
-collections:
-  - name: cisco.meraki
+version: 1
+dependencies:
+  python: requirements.txt
