@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.18.1
+Collection version 2.18.2
 
 .. contents::
    :local:
@@ -213,6 +213,7 @@ Modules
 * :ref:`networks_appliance_static_routes_info module <ansible_collections.cisco.meraki.networks_appliance_static_routes_info_module>` -- Information module for networks \_appliance \_static \_routes
 * :ref:`networks_appliance_traffic_shaping module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_module>` -- Resource module for networks \_appliance \_trafficshaping
 * :ref:`networks_appliance_traffic_shaping_custom_performance_classes module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_module>` -- Resource module for networks \_appliance \_trafficshaping \_customperformanceclasses
+* :ref:`networks_appliance_traffic_shaping_custom_performance_classes_info module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info_module>` -- Information module for networks \_appliance \_trafficshaping \_customperformanceclasses
 * :ref:`networks_appliance_traffic_shaping_info module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_info_module>` -- Information module for networks \_appliance \_trafficshaping
 * :ref:`networks_appliance_traffic_shaping_rules module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_rules_module>` -- Resource module for networks \_appliance \_trafficshaping \_rules
 * :ref:`networks_appliance_traffic_shaping_rules_info module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_rules_info_module>` -- Information module for networks \_appliance \_trafficshaping \_rules
@@ -746,6 +747,7 @@ Modules
     networks_appliance_static_routes_info_module
     networks_appliance_traffic_shaping_module
     networks_appliance_traffic_shaping_custom_performance_classes_module
+    networks_appliance_traffic_shaping_custom_performance_classes_info_module
     networks_appliance_traffic_shaping_info_module
     networks_appliance_traffic_shaping_rules_module
     networks_appliance_traffic_shaping_rules_info_module
