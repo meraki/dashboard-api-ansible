@@ -1,0 +1,2793 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.meraki_mr_rf_profile module -- Manage RF profiles for Meraki wireless networks
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.18.2).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.meraki_mr_rf_profile`.
+
+.. version_added
+
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Updated modules released with increased functionality
+:Alternative: cisco.meraki.networks\_wireless\_rf\_profiles
+
+Synopsis
+--------
+
+.. Description
+
+- Allows for configuration of radio frequency (RF)  profiles in Meraki MR wireless networks.
+
+
+.. Aliases
+
+
+.. Requirements
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ap_band_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-ap_band_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **ap_band_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ap_band_settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Settings that will be enabled if selectionType is set to 'ap'.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ap_band_settings/band_steering_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-ap_band_settings/band_steering_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **band_steering_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ap_band_settings/band_steering_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Steers client to most open band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ap_band_settings/mode"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ap_band_settings/band_operation_mode"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-ap_band_settings/band_operation_mode:
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-ap_band_settings/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ap_band_settings/mode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: band_operation_mode`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets which RF band the AP will support.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"2.4ghz"`
+      - :ansible-option-choices-entry:`"5ghz"`
+      - :ansible-option-choices-entry:`"dual"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-auth_key"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-auth_key:
+
+      .. rst-class:: ansible-option-title
+
+      **auth_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-band_selection_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-band_selection_type:
+
+      .. rst-class:: ansible-option-title
+
+      **band_selection_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-band_selection_type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Sets whether band selection is assigned per access point or SSID.
+
+      This param is required on creation.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"ssid"`
+      - :ansible-option-choices-entry:`"ap"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-client_balancing_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-client_balancing_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **client_balancing_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-client_balancing_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Steers client to best available access point.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **five_ghz_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Settings related to 5Ghz band.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/channel_width"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/channel_width:
+
+      .. rst-class:: ansible-option-title
+
+      **channel_width**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/channel_width" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets channel width (MHz) for 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"auto"`
+      - :ansible-option-choices-entry:`"20"`
+      - :ansible-option-choices-entry:`"40"`
+      - :ansible-option-choices-entry:`"80"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/max_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/max_power:
+
+      .. rst-class:: ansible-option-title
+
+      **max_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/max_power" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets max power (dBm) of 5Ghz band.
+
+      Can be integer between 8 and 30.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/min_bitrate"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/min_bitrate:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/min_bitrate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minimum bitrate (Mbps) of 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`6`
+      - :ansible-option-choices-entry:`9`
+      - :ansible-option-choices-entry:`12`
+      - :ansible-option-choices-entry:`18`
+      - :ansible-option-choices-entry:`24`
+      - :ansible-option-choices-entry:`36`
+      - :ansible-option-choices-entry:`48`
+      - :ansible-option-choices-entry:`54`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/min_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/min_power:
+
+      .. rst-class:: ansible-option-title
+
+      **min_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/min_power" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minmimum power (dBm) of 5Ghz band.
+
+      Can be integer between 8 and 30.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/rxsop"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/rxsop:
+
+      .. rst-class:: ansible-option-title
+
+      **rxsop**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/rxsop" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The RX-SOP level controls the sensitivity of the radio.
+
+      It is strongly recommended to use RX-SOP only after consulting a wireless expert.
+
+      RX-SOP can be configured in the range of -65 to -95 (dBm).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-five_ghz_settings/valid_auto_channels"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-five_ghz_settings/valid_auto_channels:
+
+      .. rst-class:: ansible-option-title
+
+      **valid_auto_channels**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-five_ghz_settings/valid_auto_channels" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets valid auto channels for 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`36`
+      - :ansible-option-choices-entry:`40`
+      - :ansible-option-choices-entry:`44`
+      - :ansible-option-choices-entry:`48`
+      - :ansible-option-choices-entry:`52`
+      - :ansible-option-choices-entry:`56`
+      - :ansible-option-choices-entry:`60`
+      - :ansible-option-choices-entry:`64`
+      - :ansible-option-choices-entry:`100`
+      - :ansible-option-choices-entry:`104`
+      - :ansible-option-choices-entry:`108`
+      - :ansible-option-choices-entry:`112`
+      - :ansible-option-choices-entry:`116`
+      - :ansible-option-choices-entry:`120`
+      - :ansible-option-choices-entry:`124`
+      - :ansible-option-choices-entry:`128`
+      - :ansible-option-choices-entry:`132`
+      - :ansible-option-choices-entry:`136`
+      - :ansible-option-choices-entry:`140`
+      - :ansible-option-choices-entry:`144`
+      - :ansible-option-choices-entry:`149`
+      - :ansible-option-choices-entry:`153`
+      - :ansible-option-choices-entry:`157`
+      - :ansible-option-choices-entry:`161`
+      - :ansible-option-choices-entry:`165`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-host"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-host:
+
+      .. rst-class:: ansible-option-title
+
+      **host**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname for Meraki dashboard.
+
+      Can be used to access regional Meraki environments, such as China.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"api.meraki.com"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-internal_error_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-internal_error_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **internal_error_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if server returns an internal server error.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-min_bitrate_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-min_bitrate_type:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-min_bitrate_type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Type of minimum bitrate.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"band"`
+      - :ansible-option-choices-entry:`"ssid"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The unique name of the new profile.
+
+      This param is required on creation.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-net_id:
+
+      .. rst-class:: ansible-option-title
+
+      **net_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-net_name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-net_name:
+
+      .. rst-class:: ansible-option-title
+
+      **net_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-org_id:
+
+      .. rst-class:: ansible-option-title
+
+      **org_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ID of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-org_name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-organization"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-org_name:
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-organization:
+
+      .. rst-class:: ansible-option-title
+
+      **org_name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: organization`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of organization.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_format"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-output_format:
+
+      .. rst-class:: ansible-option-title
+
+      **output_format**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"snakecase"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"camelcase"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-output_level"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-output_level:
+
+      .. rst-class:: ansible-option-title
+
+      **output_level**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set amount of debug output during module execution.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`"debug"`
+      - :ansible-option-choices-entry-default:`"normal"` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-profile_id"></div>
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-id:
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-profile_id:
+
+      .. rst-class:: ansible-option-title
+
+      **profile_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-profile_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-aliases:`aliases: id`
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Unique identifier of existing RF profile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rate_limit_retry_time"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-rate_limit_retry_time:
+
+      .. rst-class:: ansible-option-title
+
+      **rate_limit_retry_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Number of seconds to retry if rate limiter is triggered.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`165`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-state"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-state:
+
+      .. rst-class:: ansible-option-title
+
+      **state**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Query, edit, or delete wireless RF profile settings.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`"present"` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`"query"`
+      - :ansible-option-choices-entry:`"absent"`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Time to timeout for HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`30`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **two_four_ghz_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Settings related to 2.4Ghz band
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/ax_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/ax_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **ax_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/ax_enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Determines whether ax radio on 2.4Ghz band is on or off.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/max_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/max_power:
+
+      .. rst-class:: ansible-option-title
+
+      **max_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/max_power" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets max power (dBm) of 2.4Ghz band.
+
+      Can be integer between 5 and 30.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/min_bitrate"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/min_bitrate:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/min_bitrate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minimum bitrate (Mbps) of 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`1.0`
+      - :ansible-option-choices-entry:`2.0`
+      - :ansible-option-choices-entry:`5.5`
+      - :ansible-option-choices-entry:`6.0`
+      - :ansible-option-choices-entry:`9.0`
+      - :ansible-option-choices-entry:`11.0`
+      - :ansible-option-choices-entry:`12.0`
+      - :ansible-option-choices-entry:`18.0`
+      - :ansible-option-choices-entry:`24.0`
+      - :ansible-option-choices-entry:`36.0`
+      - :ansible-option-choices-entry:`48.0`
+      - :ansible-option-choices-entry:`54.0`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/min_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/min_power:
+
+      .. rst-class:: ansible-option-title
+
+      **min_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/min_power" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minmimum power (dBm) of 2.4Ghz band.
+
+      Can be integer between 5 and 30.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/rxsop"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/rxsop:
+
+      .. rst-class:: ansible-option-title
+
+      **rxsop**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/rxsop" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The RX-SOP level controls the sensitivity of the radio.
+
+      It is strongly recommended to use RX-SOP only after consulting a wireless expert.
+
+      RX-SOP can be configured in the range of -65 to -95 (dBm).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-two_four_ghz_settings/valid_auto_channels"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-two_four_ghz_settings/valid_auto_channels:
+
+      .. rst-class:: ansible-option-title
+
+      **valid_auto_channels**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-two_four_ghz_settings/valid_auto_channels" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets valid auto channels for 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`1`
+      - :ansible-option-choices-entry:`6`
+      - :ansible-option-choices-entry:`11`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_https"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-use_https:
+
+      .. rst-class:: ansible-option-title
+
+      **use_https**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+
+      Only useful for internal Meraki developers.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-use_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **use_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validate_certs"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__parameter-validate_certs:
+
+      .. rst-class:: ansible-option-title
+
+      **validate_certs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether to validate HTTP certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - Some of the options are likely only used for developers within Meraki.
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
+   - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create RF profile in check mode
+      meraki_mr_rf_profile:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: present
+        name: Test Profile
+        band_selection_type: ap
+        client_balancing_enabled: True
+        ap_band_settings:
+            mode: dual
+            band_steering_enabled: true
+        five_ghz_settings:
+          max_power: 10
+          min_bitrate: 12
+          min_power: 8
+          rxsop: -65
+          channel_width: 20
+          valid_auto_channels:
+            - 36
+            - 40
+            - 44
+        two_four_ghz_settings:
+          max_power: 10
+          min_bitrate: 12
+          min_power: 8
+          rxsop: -65
+          ax_enabled: false
+          valid_auto_channels:
+            - 1
+      delegate_to: localhost
+
+    - name: Query all RF profiles
+      meraki_mr_rf_profile:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: query
+      delegate_to: localhost
+
+    - name: Query one RF profile by ID
+      meraki_mr_rf_profile:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: query
+        profile_id: '{{ profile_id }}'
+      delegate_to: localhost
+
+    - name: Update profile
+      meraki_mr_rf_profile:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: present
+        profile_id: 12345
+        band_selection_type: ap
+        client_balancing_enabled: True
+        ap_band_settings:
+            mode: dual
+            band_steering_enabled: true
+        five_ghz_settings:
+          max_power: 10
+          min_bitrate: 12
+          min_power: 8
+          rxsop: -65
+          channel_width: 20
+          valid_auto_channels:
+            - 36
+            - 44
+        two_four_ghz_settings:
+          max_power: 10
+          min_bitrate: 12
+          min_power: 8
+          rxsop: -75
+          ax_enabled: false
+          valid_auto_channels:
+            - 1
+      delegate_to: localhost
+
+    - name: Delete RF profile
+      meraki_mr_rf_profile:
+        auth_key: abc123
+        org_name: YourOrg
+        net_name: YourNet
+        state: absent
+        profile_id: 12345
+      delegate_to: localhost
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of wireless RF profile settings.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/ap_band_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/ap_band_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **ap_band_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/ap_band_settings" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings that will be enabled if selectionType is set to 'ap'.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/ap_band_settings/band_steering_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/ap_band_settings/band_steering_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **band_steering_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/ap_band_settings/band_steering_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Steers client to most open band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/ap_band_settings/mode"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/ap_band_settings/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/ap_band_settings/mode" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets which RF band the AP will support.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"dual"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/band_selection_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/band_selection_type:
+
+      .. rst-class:: ansible-option-title
+
+      **band_selection_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/band_selection_type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets whether band selection is assigned per access point or SSID.
+
+      This param is required on creation.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"ap"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/client_balancing_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/client_balancing_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **client_balancing_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/client_balancing_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Steers client to best available access point.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **five_ghz_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings related to 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/channel_width"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/channel_width:
+
+      .. rst-class:: ansible-option-title
+
+      **channel_width**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/channel_width" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets channel width (MHz) for 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"auto"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/max_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/max_power:
+
+      .. rst-class:: ansible-option-title
+
+      **max_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/max_power" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets max power (dBm) of 5Ghz band.
+
+      Can be integer between 8 and 30.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`12`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/min_bitrate"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/min_bitrate:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/min_bitrate" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minimum bitrate (Mbps) of 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`6`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/min_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/min_power:
+
+      .. rst-class:: ansible-option-title
+
+      **min_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/min_power" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minmimum power (dBm) of 5Ghz band.
+
+      Can be integer between 8 and 30.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`12`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/rxsop"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/rxsop:
+
+      .. rst-class:: ansible-option-title
+
+      **rxsop**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/rxsop" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The RX-SOP level controls the sensitivity of the radio.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`-70`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/five_ghz_settings/valid_auto_channels"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/five_ghz_settings/valid_auto_channels:
+
+      .. rst-class:: ansible-option-title
+
+      **valid_auto_channels**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/five_ghz_settings/valid_auto_channels" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets valid auto channels for 5Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/id"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/id" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique identifier of existing RF profile.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"12345"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/min_bitrate_type"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/min_bitrate_type:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate_type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/min_bitrate_type" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type of minimum bitrate.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"ssid"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/name"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/name" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The unique name of the new profile.
+
+      This param is required on creation.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"Guest RF profile"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings:
+
+      .. rst-class:: ansible-option-title
+
+      **two_four_ghz_settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`complex`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings related to 2.4Ghz band
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+
+      .. raw:: html
+
+        </div>
+
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/ax_enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/ax_enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **ax_enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/ax_enabled" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Determines whether ax radio on 2.4Ghz band is on or off.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/max_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/max_power:
+
+      .. rst-class:: ansible-option-title
+
+      **max_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/max_power" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets max power (dBm) of 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`12`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/min_bitrate"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/min_bitrate:
+
+      .. rst-class:: ansible-option-title
+
+      **min_bitrate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/min_bitrate" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minimum bitrate (Mbps) of 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`5.5`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/min_power"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/min_power:
+
+      .. rst-class:: ansible-option-title
+
+      **min_power**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/min_power" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets minmimum power (dBm) of 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`12`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/rxsop"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/rxsop:
+
+      .. rst-class:: ansible-option-title
+
+      **rxsop**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/rxsop" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The RX-SOP level controls the sensitivity of the radio.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`-70`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-data/two_four_ghz_settings/valid_auto_channels"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_mr_rf_profile_module__return-data/two_four_ghz_settings/valid_auto_channels:
+
+      .. rst-class:: ansible-option-title
+
+      **valid_auto_channels**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-data/two_four_ghz_settings/valid_auto_channels" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets valid auto channels for 2.4Ghz band.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` success
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["6"]`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+
+..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Kevin Breit (@kbreit)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
