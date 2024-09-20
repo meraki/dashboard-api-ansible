@@ -221,3 +221,13 @@
   # - name: Show result
   #   ansible.builtin.debug:
   #     msg: "{{ result }}" 
+
+
+  # - name: Get all networks _appliance _trafficshaping _customperformanceclasses
+  #   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
+  #     networkId: L_828099381482771185
+  #   register: result
+
+  # - name: Show result
+  #   ansible.builtin.debug:
+  #     msg: "{{ result }}" 

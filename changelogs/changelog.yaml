@@ -1071,3 +1071,7 @@ releases:
         - The `id` parameter is change type to an `integer` in `networks_appliance_vlans` module.
         - Fixing problem of naming in `organizations_appliance_vpn_third_party_vpnpeers_info`.
         - Removing `state` from allowed parameters for `networks_syslog_servers` module.
+  2.18.2:
+    changes:
+      minor_changes:
+        - Include networks_appliance_traffic_shaping_custom_performance_classes_info plugin.
