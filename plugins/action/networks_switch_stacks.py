@@ -150,7 +150,7 @@ class NetworksSwitchStacks(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
-            _id = _id or prev_obj.get("switchStackId")
+            _id = _id or prev_obj.get("switchStackId") or prev_obj.get("switch_stack_id")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
@@ -188,7 +188,7 @@ class NetworksSwitchStacks(object):
 
     def delete(self):
         id = self.new_object.get("id")
-        id = id or self.new_object.get("switchStackId")
+        id = id or self.new_object.get("switchStackId") or self.new_object.get("switch_stack_id")
         name = self.new_object.get("name")
         result = None
         if not id:
@@ -196,7 +196,7 @@ class NetworksSwitchStacks(object):
             id_ = None
             if prev_obj_name:
                 id_ = prev_obj_name.get("id")
-                id_ = id_ or prev_obj_name.get("switchStackId")
+                id_ = id_ or prev_obj_name.get("switchStackId") or prev_obj_name.get("switch_stack_id")
             if id_:
                 self.new_object.update(dict(switchstackid=id_))
         result = self.meraki.exec_meraki(

@@ -1075,3 +1075,9 @@ releases:
     changes:
       minor_changes:
         - Include networks_appliance_traffic_shaping_custom_performance_classes_info plugin.
+  2.18.3:
+    changes:
+      bugfixes:
+        - Ansible utils requirements updated.
+        - cisco.meraki.networks_switch_stacks delete stack not working, fixing path parameters.
+        - cisco.meraki.networks_clients_info - incorrect API endpoint, fixing info module.
