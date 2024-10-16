@@ -26,6 +26,23 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     networkId=dict(type="str"),
+    t0=dict(type="str"),
+    timespan=dict(type="float"),
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
+    statuses=dict(type="list"),
+    ip=dict(type="str"),
+    ip6=dict(type="str"),
+    ip6Local=dict(type="str"),
+    mac=dict(type="str"),
+    os=dict(type="str"),
+    pskGroup=dict(type="str"),
+    description=dict(type="str"),
+    vlan=dict(type="str"),
+    recentDeviceConnections=dict(type="list"),
     clientId=dict(type="str"),
 ))
 
@@ -73,6 +90,63 @@ class ActionModule(ActionBase):
                 "clientId")
         return new_object
 
+    def get_all(self, params):
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("t0") is not None:
+            new_object["t0"] = params.get(
+                "t0")
+        if params.get("timespan") is not None:
+            new_object["timespan"] = params.get(
+                "timespan")
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
+        if params.get("statuses") is not None:
+            new_object["statuses"] = params.get(
+                "statuses")
+        if params.get("ip") is not None:
+            new_object["ip"] = params.get(
+                "ip")
+        if params.get("ip6") is not None:
+            new_object["ip6"] = params.get(
+                "ip6")
+        if params.get("ip6Local") is not None:
+            new_object["ip6Local"] = params.get(
+                "ip6Local")
+        if params.get("mac") is not None:
+            new_object["mac"] = params.get(
+                "mac")
+        if params.get("os") is not None:
+            new_object["os"] = params.get(
+                "os")
+        if params.get("pskGroup") is not None:
+            new_object["pskGroup"] = params.get(
+                "pskGroup")
+        if params.get("description") is not None:
+            new_object["description"] = params.get(
+                "description")
+        if params.get("vlan") is not None:
+            new_object["vlan"] = params.get(
+                "vlan")
+        if params.get("recentDeviceConnections") is not None:
+            new_object["recentDeviceConnections"] = params.get(
+                "recentDeviceConnections")
+
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -94,9 +168,11 @@ class ActionModule(ActionBase):
             self._result.update(meraki.exit_json())
             return self._result
         if not id:
-            # NOTE: Does not have a get all method or it is in another action
-            response = None
-            meraki.object_modify_result(changed=False, result="Module does not have get all, check arguments of module")
+            response = meraki.exec_meraki(
+                family="networks",
+                function='getNetworkClients',
+                params=self.get_all(self._task.args),
+            )
             self._result.update(dict(meraki_response=response))
             self._result.update(meraki.exit_json())
             return self._result

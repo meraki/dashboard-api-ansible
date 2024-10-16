@@ -231,3 +231,35 @@
   # - name: Show result
   #   ansible.builtin.debug:
   #     msg: "{{ result }}" 
+
+  # - name: Create
+  #   cisco.meraki.networks_switch_stacks:
+  #     state: present
+  #     meraki_suppress_logging: false
+  #     name: A cool stack
+  #     networkId: "{{network_id}}"
+  #     serials:
+  #     - QBSB-BNH2-KDXJ
+
+  - name: Get all networks _clients
+    cisco.meraki.networks_clients_info:
+      # t0: string
+      meraki_suppress_logging: false
+      timespan: 1
+      perPage: 3
+      # startingAfter: string
+      # endingBefore: string
+      # statuses: []
+      # ip: string
+      # ip6: string
+      # ip6Local: string
+      # mac: string
+      # os: string
+      # pskGroup: string
+      # description: string
+      # vlan: string
+      # recentDeviceConnections: []
+      networkId: L_828099381482771185
+      total_pages: -1
+      direction: next
+    register: result
