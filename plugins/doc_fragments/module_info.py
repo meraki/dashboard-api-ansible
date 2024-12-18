@@ -104,11 +104,6 @@ options:
           - meraki_be_geo_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE_GEO_ID
         type: str
         default: ''
-    
-        description:
-          - 
-        type: str
-        default: ''
     meraki_use_iterator_for_get_pages:
         description:
           - meraki_use_iterator_for_get_pages (boolean), list* methods will return an iterator with each object instead of a complete list with all items
