@@ -21,9 +21,7 @@ The errors were:
 
 * ::
 
-        2 validation errors for ModuleDocSchema
-        doc -> options -> meraki_be_geo_id -> description -> 0
-          none is not an allowed value (type=type_error.none.not_allowed)
+        1 validation error for ModuleDocSchema
         doc -> options -> mqttBrokerId -> type
           none is not an allowed value (type=type_error.none.not_allowed)
 
