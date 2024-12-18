@@ -1,0 +1,29 @@
+
+.. Document meta section
+
+:orphan:
+
+.. Document body
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_wireless_settings_info_module:
+
+.. Title
+
+cisco.meraki.networks_wireless_settings_info module
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+The documentation for the module plugin, cisco.meraki.networks_wireless_settings_info,  was malformed.
+
+The errors were:
+
+* ::
+
+        1 validation error for ModuleDocSchema
+        doc -> options -> meraki_be_geo_id -> description -> 0
+          none is not an allowed value (type=type_error.none.not_allowed)
+
+
+File a bug with the `cisco.meraki collection <https://github.com/meraki/dashboard-api-ansible/issues>`_ in order to have it corrected.
