@@ -22,9 +22,13 @@ jobs:
         with:
           python-version: "3.10"
       - name: Install dependencies
-        run: make doc-setup
+        run: |
+          python -m pip install --upgrade pip
+          pip install antsibull-docs  # Instala antsibull-docs
+          pip install ansible  # Asegúrate de que Ansible también esté instalado
+          make doc-setup  # Ejecuta tu comando de setup de docs
       - name: Build docs
-        run: make doc
+        run: make doc  # Construye la documentación
       - name: commit docs
         run: |
           git checkout gh-pages
