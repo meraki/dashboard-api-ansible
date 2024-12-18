@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -150,7 +150,7 @@ class NetworksSwitchStacks(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
-            _id = _id or prev_obj.get("switchStackId") or prev_obj.get("switch_stack_id")
+            _id = _id or prev_obj.get("switchStackId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
@@ -173,7 +173,7 @@ class NetworksSwitchStacks(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
@@ -188,7 +188,7 @@ class NetworksSwitchStacks(object):
 
     def delete(self):
         id = self.new_object.get("id")
-        id = id or self.new_object.get("switchStackId") or self.new_object.get("switch_stack_id")
+        id = id or self.new_object.get("switchStackId")
         name = self.new_object.get("name")
         result = None
         if not id:
@@ -196,7 +196,7 @@ class NetworksSwitchStacks(object):
             id_ = None
             if prev_obj_name:
                 id_ = prev_obj_name.get("id")
-                id_ = id_ or prev_obj_name.get("switchStackId") or prev_obj_name.get("switch_stack_id")
+                id_ = id_ or prev_obj_name.get("switchStackId")
             if id_:
                 self.new_object.update(dict(switchstackid=id_))
         result = self.meraki.exec_meraki(

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_pii_sm_owners_for_key_info
-short_description: Information module for networks _pii _smownersforkey
+short_description: Information module for networks _pii _sm _owners _for _key
 description:
-- Get all networks _pii _smownersforkey.
+- Get all networks _pii _sm _owners _for _key.
 - >
    Given a piece of Personally Identifiable Information PII , return the Systems Manager owner IDs associated with
    that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details.
@@ -66,7 +66,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _pii _smownersforkey
+- name: Get all networks _pii _sm _owners _for _key
   cisco.meraki.networks_pii_sm_owners_for_key_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

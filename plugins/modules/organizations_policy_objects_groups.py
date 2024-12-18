@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_policy_objects_groups
-short_description: Resource module for organizations _policyobjects _groups
+short_description: Resource module for organizations _policy _objects _groups
 description:
-- Manage operations create, update and delete of the resource organizations _policyobjects _groups.
+- Manage operations create, update and delete of the resource organizations _policy _objects _groups.
 - Creates a new Policy Object Group.
 - Deletes a Policy Object Group.
 - Updates a Policy Object Group.

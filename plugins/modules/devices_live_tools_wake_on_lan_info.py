@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_wake_on_lan_info
-short_description: Information module for devices _livetools _wakeonlan
-description: Information module for devices _livetools _wakeonlan
-version_added: '2.18.0'
+short_description: Information module for devices _live _tools _wake _on _lan
+description:
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

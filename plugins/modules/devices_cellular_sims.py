@@ -29,6 +29,13 @@ options:
         description: Failover timeout in seconds (optional).
         type: int
     type: dict
+  simOrdering:
+    description: Specifies the ordering of all SIMs for an MG primary, secondary, and
+      not-in-use (when applicable). It's required for devices with 3 or more SIMs and
+      can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM, use
+      'sim3'. Sim failover will occur only between primary and secondary sim slots.
+    elements: str
+    type: list
   sims:
     description: List of SIMs. If a SIM was previously configured and not specified
       in this request, it will remain unchanged.
@@ -61,11 +68,17 @@ options:
             type: str
         type: list
       isPrimary:
-        description: If true, this SIM is used for boot. Must be true on single-sim
-          devices.
+        description: If true, this SIM is activated on platform bootup. It must be true
+          on single-SIM devices and is a required field for dual-SIM MGs unless it is
+          being configured using 'simOrdering'.
         type: bool
+      simOrder:
+        description: Priority of SIM slot being configured. Use a value between 1 and
+          total number of SIMs available. The value must be unique for each SIM.
+        type: int
       slot:
         description: SIM slot being configured. Must be 'sim1' on single-sim devices.
+          Use 'sim3' for eSIM.
         type: str
     type: list
 requirements:
@@ -107,18 +120,27 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
-    apns:
-    - allowedIpTypes:
-      - ipv4
-      - ipv6
-      authentication:
-        password: secret
-        type: pap
-        username: milesmeraki
-      name: internet
-    isPrimary: true
     serial: string
-    slot: sim1
+    simFailover:
+      enabled: true
+      timeout: 300
+    simOrdering:
+    - sim1
+    - sim2
+    - sim3
+    sims:
+    - apns:
+      - allowedIpTypes:
+        - ipv4
+        - ipv6
+        authentication:
+          password: secret
+          type: pap
+          username: milesmeraki
+        name: internet
+      isPrimary: false
+      simOrder: 3
+      slot: sim1
 
 """
 RETURN = r"""
@@ -127,5 +149,32 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "simFailover": {
+        "enabled": true,
+        "timeout": 0
+      },
+      "simOrdering": [
+        "string"
+      ],
+      "sims": [
+        {
+          "apns": [
+            {
+              "allowedIpTypes": [
+                "string"
+              ],
+              "authentication": {
+                "password": "string",
+                "type": "string",
+                "username": "string"
+              },
+              "name": "string"
+            }
+          ],
+          "isPrimary": true,
+          "slot": "string"
+        }
+      ]
+    }
 """

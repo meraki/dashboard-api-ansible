@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_traffic_shaping_uplink_bandwidth_info
-short_description: Information module for networks _appliance _trafficshaping _uplinkbandwidth
+short_description: Information module for networks _appliance _traffic _shaping _uplink _bandwidth
 description:
-- Get all networks _appliance _trafficshaping _uplinkbandwidth.
+- Get all networks _appliance _traffic _shaping _uplink _bandwidth.
 - >
    Returns the uplink bandwidth limits for your MX network. This may not reflect the affected device's hardware
    capabilities. For more information on your device's hardware capabilities, please consult our MX Family Datasheet
@@ -42,7 +42,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _trafficshaping _uplinkbandwidth
+- name: Get all networks _appliance _traffic _shaping _uplink _bandwidth
   cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

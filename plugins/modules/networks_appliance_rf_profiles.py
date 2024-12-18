@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_rf_profiles
-short_description: Resource module for networks _appliance _rfprofiles
+short_description: Resource module for networks _appliance _rf _profiles
 description:
-- Manage operations create, update and delete of the resource networks _appliance _rfprofiles.
+- Manage operations create, update and delete of the resource networks _appliance _rf _profiles.
 - Creates new RF profile for this network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

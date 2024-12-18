@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: devices_switch_routing_static_routes_info
-short_description: Information module for devices _switch _routing _staticroutes
+short_description: Information module for devices _switch _routing _static _routes
 description:
-- Get all devices _switch _routing _staticroutes.
-- Get devices _switch _routing _staticroutes by id.
+- Get all devices _switch _routing _static _routes.
+- Get devices _switch _routing _static _routes by id.
 - List layer 3 static routes for a switch.
 - Return a layer 3 static route for a switch.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _switch _routing _staticroutes
+- name: Get all devices _switch _routing _static _routes
   cisco.meraki.devices_switch_routing_static_routes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     serial: string
   register: result
 
-- name: Get devices _switch _routing _staticroutes by id
+- name: Get devices _switch _routing _static _routes by id
   cisco.meraki.devices_switch_routing_static_routes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -110,6 +110,7 @@ meraki_response:
   sample: >
     {
       "advertiseViaOspfEnabled": true,
+      "managementNextHop": "string",
       "name": "string",
       "nextHopIp": "string",
       "preferOverOspfRoutesEnabled": true,

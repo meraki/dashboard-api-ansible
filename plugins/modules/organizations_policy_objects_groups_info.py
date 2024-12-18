@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_policy_objects_groups_info
-short_description: Information module for organizations _policyobjects _groups
+short_description: Information module for organizations _policy _objects _groups
 description:
-- Get all organizations _policyobjects _groups.
-- Get organizations _policyobjects _groups by id.
+- Get all organizations _policy _objects _groups.
+- Get organizations _policy _objects _groups by id.
 - Lists Policy Object Groups belonging to the organization.
 - Shows details of a Policy Object Group.
 version_added: '2.16.0'
@@ -69,7 +69,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _policyobjects _groups
+- name: Get all organizations _policy _objects _groups
   cisco.meraki.organizations_policy_objects_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -99,7 +99,7 @@ EXAMPLES = r"""
     direction: next
   register: result
 
-- name: Get organizations _policyobjects _groups by id
+- name: Get organizations _policy _objects _groups by id
   cisco.meraki.organizations_policy_objects_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -58,6 +58,10 @@ options:
     - ProductTypes query parameter. List of product types that returned subscriptions need to have entitlements for.
     elements: str
     type: list
+  name:
+    description:
+    - Name query parameter. Search for subscription name.
+    type: str
   startDate:
     description:
     - >
@@ -115,8 +119,9 @@ EXAMPLES = r"""
     organizationIds: []
     statuses: []
     productTypes: []
-    startDate: string
-    endDate: string
+    name: string
+    startDate: str
+    endDate: str
     total_pages: -1
     direction: next
   register: result
@@ -133,6 +138,7 @@ meraki_response:
       {
         "counts": {
           "networks": 0,
+          "organizations": 0,
           "seats": {
             "assigned": 0,
             "available": 0,
@@ -141,6 +147,11 @@ meraki_response:
         },
         "description": "string",
         "endDate": "string",
+        "enterpriseAgreement": {
+          "suites": [
+            "string"
+          ]
+        },
         "entitlements": [
           {
             "seats": {
@@ -148,16 +159,28 @@ meraki_response:
               "available": 0,
               "limit": 0
             },
-            "sku": "string"
+            "sku": "string",
+            "webOrderLineId": "string"
           }
         ],
+        "lastUpdatedAt": "string",
         "name": "string",
         "productTypes": [
           "string"
         ],
+        "renewalRequested": true,
+        "smartAccount": {
+          "account": {
+            "domain": "string",
+            "id": "string",
+            "name": "string"
+          },
+          "status": "string"
+        },
         "startDate": "string",
         "status": "string",
         "subscriptionId": "string",
+        "type": "string",
         "webOrderId": "string"
       }
     ]

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_link_aggregations
-short_description: Resource module for networks _switch _linkaggregations
+short_description: Resource module for networks _switch _link _aggregations
 description:
-- Manage operations create, update and delete of the resource networks _switch _linkaggregations.
+- Manage operations create, update and delete of the resource networks _switch _link _aggregations.
 - Create a link aggregation group.
 - Split a link aggregation group into separate ports.
 - Update a link aggregation group.
@@ -105,20 +105,9 @@ EXAMPLES = r"""
     switchPorts:
     - portId: '1'
       serial: Q234-ABCD-0001
+    switchProfilePorts:
     - portId: '2'
-      serial: Q234-ABCD-0002
-    - portId: '3'
-      serial: Q234-ABCD-0003
-    - portId: '4'
-      serial: Q234-ABCD-0004
-    - portId: '5'
-      serial: Q234-ABCD-0005
-    - portId: '6'
-      serial: Q234-ABCD-0006
-    - portId: '7'
-      serial: Q234-ABCD-0007
-    - portId: '8'
-      serial: Q234-ABCD-0008
+      profile: '1234'
 
 - name: Delete by id
   cisco.meraki.networks_switch_link_aggregations:
@@ -169,26 +158,14 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
-    id: NDU2N18yXzM=
     linkAggregationId: string
     networkId: string
     switchPorts:
     - portId: '1'
       serial: Q234-ABCD-0001
+    switchProfilePorts:
     - portId: '2'
-      serial: Q234-ABCD-0002
-    - portId: '3'
-      serial: Q234-ABCD-0003
-    - portId: '4'
-      serial: Q234-ABCD-0004
-    - portId: '5'
-      serial: Q234-ABCD-0005
-    - portId: '6'
-      serial: Q234-ABCD-0006
-    - portId: '7'
-      serial: Q234-ABCD-0007
-    - portId: '8'
-      serial: Q234-ABCD-0008
+      profile: '1234'
 
 """
 RETURN = r"""
@@ -197,5 +174,13 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "switchPorts": [
+        {
+          "portId": "string",
+          "serial": "string"
+        }
+      ]
+    }
 """

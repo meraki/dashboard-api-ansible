@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dhcp_server_policy_info
-short_description: Information module for networks _switch _dhcpserverpolicy
+short_description: Information module for networks _switch _dhcp _server _policy
 description:
-- Get all networks _switch _dhcpserverpolicy.
+- Get all networks _switch _dhcp _server _policy.
 - >
    Return the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block,
    respectively.
@@ -41,7 +41,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dhcpserverpolicy
+- name: Get all networks _switch _dhcp _server _policy
   cisco.meraki.networks_switch_dhcp_server_policy_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

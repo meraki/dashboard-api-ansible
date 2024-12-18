@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_vpn_vpn_firewall_rules_info
-short_description: Information module for organizations _appliance _vpn _vpnfirewallrules
+short_description: Information module for organizations _appliance _vpn _vpn _firewall _rules
 description:
-- Get all organizations _appliance _vpn _vpnfirewallrules.
+- Get all organizations _appliance _vpn _vpn _firewall _rules.
 - Return the firewall rules for an organization's site-to-site VPN.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _vpn _vpnfirewallrules
+- name: Get all organizations _appliance _vpn _vpn _firewall _rules
   cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_rf_profiles_info
-short_description: Information module for networks _appliance _rfprofiles
+short_description: Information module for networks _appliance _rf _profiles
 description:
-- Get all networks _appliance _rfprofiles.
+- Get all networks _appliance _rf _profiles.
 - List the RF profiles for this network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _rfprofiles
+- name: Get all networks _appliance _rf _profiles
   cisco.meraki.networks_appliance_rf_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

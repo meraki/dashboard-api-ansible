@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_channel_utilization_history_info
-short_description: Information module for networks _wireless _channelutilizationhistory
+short_description: Information module for networks _wireless _channel _utilization _history
 description:
-- Get all networks _wireless _channelutilizationhistory.
+- Get all networks _wireless _channel _utilization _history.
 - Return AP channel utilization over time for a device or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -88,7 +88,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _channelutilizationhistory
+- name: Get all networks _wireless _channel _utilization _history
   cisco.meraki.networks_wireless_channel_utilization_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

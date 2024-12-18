@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers
-short_description: Resource module for networks _switch _dhcpserverpolicy _arpinspection _trustedservers
+short_description: Resource module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
 description:
-- Manage operations create, update and delete of the resource networks _switch _dhcpserverpolicy _arpinspection _trustedservers.
+- Manage operations create, update and delete of the resource networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
 - Add a server to be trusted by Dynamic ARP Inspection on this network.
 - Remove a server from being trusted by Dynamic ARP Inspection on this network.
 - Update a server that is trusted by Dynamic ARP Inspection on this network.

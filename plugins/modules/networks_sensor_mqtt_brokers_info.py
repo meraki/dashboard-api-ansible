@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sensor_mqtt_brokers_info
-short_description: Information module for networks _sensor _mqttbrokers
+short_description: Information module for networks _sensor _mqtt _brokers
 description:
-- Get all networks _sensor _mqttbrokers.
-- Get networks _sensor _mqttbrokers by id.
+- Get all networks _sensor _mqtt _brokers.
+- Get networks _sensor _mqtt _brokers by id.
 - >
    List the sensor settings of all MQTT brokers for this network. To get the brokers themselves, use
    /networks/{networkId}/mqttBrokers.
@@ -54,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sensor _mqttbrokers
+- name: Get all networks _sensor _mqtt _brokers
   cisco.meraki.networks_sensor_mqtt_brokers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -79,7 +79,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _sensor _mqttbrokers by id
+- name: Get networks _sensor _mqtt _brokers by id
   cisco.meraki.networks_sensor_mqtt_brokers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

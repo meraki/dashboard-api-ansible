@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_wireless_devices_channel_utilization_history_by_network_by_interval_info
-short_description: Information module for organizations _wireless _devices _channelutilization _history _bynetwork _byinterval
+short_description: Information module for organizations _wireless _devices _channel _utilization _history _by _network _by _interval
 description:
-- Get all organizations _wireless _devices _channelutilization _history _bynetwork _byinterval.
+- Get all organizations _wireless _devices _channel _utilization _history _by _network _by _interval.
 - Get a time-series of average channel utilization for all bands.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -89,7 +89,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _wireless _devices _channelutilization _history _bynetwork _byinterval
+- name: Get all organizations _wireless _devices _channel _utilization _history _by _network _by _interval
   cisco.meraki.organizations_wireless_devices_channel_utilization_history_by_network_by_interval_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

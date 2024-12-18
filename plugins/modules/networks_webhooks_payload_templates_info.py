@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_webhooks_payload_templates_info
-short_description: Information module for networks _webhooks _payloadtemplates
+short_description: Information module for networks _webhooks _payload _templates
 description:
-- Get all networks _webhooks _payloadtemplates.
-- Get networks _webhooks _payloadtemplates by id.
+- Get all networks _webhooks _payload _templates.
+- Get networks _webhooks _payload _templates by id.
 - Get the webhook payload template for a network.
 - List the webhook payload templates for a network.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _webhooks _payloadtemplates
+- name: Get all networks _webhooks _payload _templates
   cisco.meraki.networks_webhooks_payload_templates_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _webhooks _payloadtemplates by id
+- name: Get networks _webhooks _payload _templates by id
   cisco.meraki.networks_webhooks_payload_templates_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

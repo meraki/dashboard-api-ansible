@@ -7,13 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: networks_meraki_auth_users_info
-short_description: Information module for networks _merakiauthusers
+short_description: Information module for networks _meraki _auth _users
 description:
-- Get all networks _merakiauthusers.
-- Get networks _merakiauthusers by id.
+- Get all networks _meraki _auth _users.
+- Get networks _meraki _auth _users by id.
 - >
-   List the users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless
-   network, or client VPN users for a MX network .
+   List the authorized users configured under Meraki Authentication for a network splash guest or RADIUS users for a
+   wireless network, or client VPN users for a MX network .
 - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -52,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _merakiauthusers
+- name: Get all networks _meraki _auth _users
   cisco.meraki.networks_meraki_auth_users_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -77,7 +77,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _merakiauthusers by id
+- name: Get networks _meraki _auth _users by id
   cisco.meraki.networks_meraki_auth_users_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

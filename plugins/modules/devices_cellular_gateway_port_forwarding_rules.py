@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_cellular_gateway_port_forwarding_rules
-short_description: Resource module for devices _cellulargateway _portforwardingrules
+short_description: Resource module for devices _cellular _gateway _port _forwarding _rules
 description:
-- Manage operation update of the resource devices _cellulargateway _portforwardingrules.
+- Manage operation update of the resource devices _cellular _gateway _port _forwarding _rules.
 - Updates the port forwarding rules for a single MG.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -56,12 +56,12 @@ requirements:
 - meraki >= 2.4.9
 - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCellularGatewayPortForwardingRules
+- name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayPortForwardingRules
   description: Complete reference of the updateDeviceCellularGatewayPortForwardingRules API.
   link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-port-forwarding-rules
 notes:
   - SDK Method used are
-    devices.Devices.update_device_cellular_gateway_port_forwarding_rules,
+    cellular_gateway.CellularGateway.update_device_cellular_gateway_port_forwarding_rules,
 
   - Paths used are
     put /devices/{serial}/cellularGateway/portForwardingRules,
@@ -93,22 +93,14 @@ EXAMPLES = r"""
     state: present
     rules:
     - access: any
+      allowedIps:
+      - 10.10.10.10
+      - 10.10.10.11
       lanIp: 172.31.128.5
       localPort: '4'
       name: test
       protocol: tcp
       publicPort: 11-12
-      uplink: both
-    - access: restricted
-      allowedIps:
-      - 10.10.10.10
-      - 10.10.10.11
-      lanIp: 172.31.128.5
-      localPort: '5'
-      name: test 2
-      protocol: tcp
-      publicPort: '99'
-      uplink: both
     serial: string
 
 """
@@ -118,5 +110,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "access": "string",
+        "allowedIps": [
+          "string"
+        ],
+        "lanIp": "string",
+        "localPort": "string",
+        "name": "string",
+        "protocol": "string",
+        "publicPort": "string"
+      }
+    ]
 """

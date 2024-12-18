@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: administered_licensing_subscription_subscriptions_claim_key_validate
-short_description: Resource module for administered _licensing _subscription _subscriptions _claimkey _validate
+short_description: Resource module for administered _licensing _subscription _subscriptions _claim _key _validate
 description:
-- Manage operation create of the resource administered _licensing _subscription _subscriptions _claimkey _validate.
+- Manage operation create of the resource administered _licensing _subscription _subscriptions _claim _key _validate.
 - Find a subscription by claim key. Returns 400 if the key has already been claimed.
 version_added: '2.18.0'
 extends_documentation_fragment:
@@ -69,6 +69,7 @@ meraki_response:
     {
       "counts": {
         "networks": 0,
+        "organizations": 0,
         "seats": {
           "assigned": 0,
           "available": 0,
@@ -77,6 +78,11 @@ meraki_response:
       },
       "description": "string",
       "endDate": "string",
+      "enterpriseAgreement": {
+        "suites": [
+          "string"
+        ]
+      },
       "entitlements": [
         {
           "seats": {
@@ -84,16 +90,28 @@ meraki_response:
             "available": 0,
             "limit": 0
           },
-          "sku": "string"
+          "sku": "string",
+          "webOrderLineId": "string"
         }
       ],
+      "lastUpdatedAt": "string",
       "name": "string",
       "productTypes": [
         "string"
       ],
+      "renewalRequested": true,
+      "smartAccount": {
+        "account": {
+          "domain": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "status": "string"
+      },
       "startDate": "string",
       "status": "string",
       "subscriptionId": "string",
+      "type": "string",
       "webOrderId": "string"
     }
 """

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_routing_multicast_rendezvous_points
-short_description: Resource module for networks _switch _routing _multicast _rendezvouspoints
+short_description: Resource module for networks _switch _routing _multicast _rendezvous _points
 description:
-- Manage operations create, update and delete of the resource networks _switch _routing _multicast _rendezvouspoints.
+- Manage operations create, update and delete of the resource networks _switch _routing _multicast _rendezvous _points.
 - Create a multicast rendezvous point.
 - Delete a multicast rendezvous point.
 - Update a multicast rendezvous point.

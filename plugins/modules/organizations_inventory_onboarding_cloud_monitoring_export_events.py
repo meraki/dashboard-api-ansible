@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_inventory_onboarding_cloud_monitoring_export_events
-short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring _exportevents
+short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _export _events
 description:
-- Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring _exportevents.
+- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _export _events.
 - Imports event logs related to the onboarding app into elastisearch.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_connectivity_monitoring_destinations_info
-short_description: Information module for networks _cellulargateway _connectivitymonitoringdestinations
+short_description: Information module for networks _cellular _gateway _connectivity _monitoring _destinations
 description:
-- Get all networks _cellulargateway _connectivitymonitoringdestinations.
+- Get all networks _cellular _gateway _connectivity _monitoring _destinations.
 - Return the connectivity testing destinations for an MG network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellulargateway _connectivitymonitoringdestinations
+- name: Get all networks _cellular _gateway _connectivity _monitoring _destinations
   cisco.meraki.networks_cellular_gateway_connectivity_monitoring_destinations_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

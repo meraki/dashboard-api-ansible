@@ -51,8 +51,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   upgradeStrategy:
-    description: The upgrade strategy to apply to the network. Must be one of 'minimizeUpgradeTime'
-      or 'minimizeClientDowntime'. Requires firmware version MR 26.8 or higher'.
+    description: The default strategy that network devices will use to perform an upgrade.
+      Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
 - meraki >= 2.4.9

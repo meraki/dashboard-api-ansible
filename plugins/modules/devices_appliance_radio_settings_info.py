@@ -11,7 +11,7 @@ short_description: Information module for devices _appliance _radio _settings
 description:
 - Get all devices _appliance _radio _settings.
 - Return the radio settings of an appliance.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

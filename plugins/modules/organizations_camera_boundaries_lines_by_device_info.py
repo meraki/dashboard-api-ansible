@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_camera_boundaries_lines_by_device_info
-short_description: Information module for organizations _camera _boundaries _lines _bydevice
+short_description: Information module for organizations _camera _boundaries _lines _by _device
 description:
-- Get all organizations _camera _boundaries _lines _bydevice.
+- Get all organizations _camera _boundaries _lines _by _device.
 - Returns all configured crossingline boundaries of cameras.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)
@@ -46,7 +46,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _boundaries _lines _bydevice
+- name: Get all organizations _camera _boundaries _lines _by _device
   cisco.meraki.organizations_camera_boundaries_lines_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

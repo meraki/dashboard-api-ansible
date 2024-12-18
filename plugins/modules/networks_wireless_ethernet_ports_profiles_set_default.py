@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ethernet_ports_profiles_set_default
-short_description: Resource module for networks _wireless _ethernet _ports _profiles _setdefault
+short_description: Resource module for networks _wireless _ethernet _ports _profiles _set _default
 description:
-- Manage operation create of the resource networks _wireless _ethernet _ports _profiles _setdefault.
+- Manage operation create of the resource networks _wireless _ethernet _ports _profiles _set _default.
 - Set the AP port profile to be default for this network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

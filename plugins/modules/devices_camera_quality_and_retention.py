@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_quality_and_retention
-short_description: Resource module for devices _camera _qualityandretention
+short_description: Resource module for devices _camera _quality _and _retention
 description:
-- Manage operation update of the resource devices _camera _qualityandretention.
+- Manage operation update of the resource devices _camera _quality _and _retention.
 - Update quality and retention settings for the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:

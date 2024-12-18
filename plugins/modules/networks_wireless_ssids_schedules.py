@@ -106,10 +106,9 @@ EXAMPLES = r"""
       endTime: 05:00
       startDay: Tuesday
       startTime: 01:00
-    - endDay: monday
-      endTime: 05:00
-      startDay: Fri
-      startTime: '19:00'
+    rangesInSeconds:
+    - end: 0
+      start: 604800
 
 """
 RETURN = r"""
@@ -118,5 +117,21 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "ranges": [
+        {
+          "endDay": "string",
+          "endTime": "string",
+          "startDay": "string",
+          "startTime": "string"
+        }
+      ],
+      "rangesInSeconds": [
+        {
+          "end": 0,
+          "start": 0
+        }
+      ]
+    }
 """

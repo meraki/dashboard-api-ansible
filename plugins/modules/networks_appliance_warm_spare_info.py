@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_warm_spare_info
-short_description: Information module for networks _appliance _warmspare
+short_description: Information module for networks _appliance _warm _spare
 description:
-- Get all networks _appliance _warmspare.
+- Get all networks _appliance _warm _spare.
 - Return MX warm spare settings.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _warmspare
+- name: Get all networks _appliance _warm _spare
   cisco.meraki.networks_appliance_warm_spare_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

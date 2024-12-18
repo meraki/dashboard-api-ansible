@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_traffic_shaping_uplink_selection
-short_description: Resource module for networks _appliance _trafficshaping _uplinkselection
+short_description: Resource module for networks _appliance _traffic _shaping _uplink _selection
 description:
-- Manage operation update of the resource networks _appliance _trafficshaping _uplinkselection.
+- Manage operation update of the resource networks _appliance _traffic _shaping _uplink _selection.
 - Update uplink selection settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -350,6 +350,13 @@ meraki_response:
               "type": "string",
               "value": {
                 "destination": {
+                  "applications": [
+                    {
+                      "id": "string",
+                      "name": "string",
+                      "type": "string"
+                    }
+                  ],
                   "cidr": "string",
                   "port": "string"
                 },

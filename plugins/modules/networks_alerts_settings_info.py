@@ -82,10 +82,36 @@ meraki_response:
             "httpServerIds": [
               "string"
             ],
+            "smsNumbers": [
+              "string"
+            ],
             "snmp": true
           },
           "enabled": true,
           "filters": {
+            "conditions": [
+              {
+                "direction": "string",
+                "duration": 0,
+                "threshold": 0,
+                "type": "string",
+                "unit": "string"
+              }
+            ],
+            "failureType": "string",
+            "lookbackWindow": 0,
+            "minDuration": 0,
+            "name": "string",
+            "period": 0,
+            "priority": "string",
+            "regex": "string",
+            "selector": "string",
+            "serials": [
+              "string"
+            ],
+            "ssidNum": 0,
+            "tag": "string",
+            "threshold": 0,
             "timeout": 0
           },
           "type": "string"
@@ -100,6 +126,11 @@ meraki_response:
           "string"
         ],
         "snmp": true
+      },
+      "muting": {
+        "byPortSchedules": {
+          "enabled": true
+        }
       }
     }
 """

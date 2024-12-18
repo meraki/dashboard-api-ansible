@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_config_templates_switch_profiles_ports
-short_description: Resource module for organizations _configtemplates _switch _profiles _ports
+short_description: Resource module for organizations _config _templates _switch _profiles _ports
 description:
-- Manage operation update of the resource organizations _configtemplates _switch _profiles _ports.
+- Manage operation update of the resource organizations _config _templates _switch _profiles _ports.
 - Update a switch template port.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -36,6 +36,13 @@ options:
     description: If true, ARP packets for this port will be considered trusted, and
       Dynamic ARP Inspection will allow the traffic.
     type: bool
+  dot3az:
+    description: Dot3az settings for the port.
+    suboptions:
+      enabled:
+        description: The Energy Efficient Ethernet status of the switch template port.
+        type: bool
+    type: dict
   enabled:
     description: The status of the switch template port.
     type: bool
@@ -111,7 +118,7 @@ options:
     elements: str
     type: list
   type:
-    description: The type of the switch template port ('trunk' or 'access').
+    description: The type of the switch template port ('trunk', 'access' or 'stack').
     type: str
   udld:
     description: The action to take when Unidirectional Link is detected (Alert only,
@@ -169,13 +176,15 @@ EXAMPLES = r"""
     allowedVlans: 1,3,5-10
     configTemplateId: string
     daiTrusted: false
+    dot3az:
+      enabled: false
     enabled: true
     flexibleStackingEnabled: true
     isolationEnabled: false
     linkNegotiation: Auto negotiate
     macAllowList:
-    - 34:56:fe:ce:8e:b0
-    - 34:56:fe:ce:8e:b1
+    - 34:56:fe:ce:8e:a0
+    - 34:56:fe:ce:8e:a1
     name: My switch port
     organizationId: string
     poeEnabled: true
@@ -213,6 +222,9 @@ meraki_response:
       "accessPolicyType": "string",
       "allowedVlans": "string",
       "daiTrusted": true,
+      "dot3az": {
+        "enabled": true
+      },
       "enabled": true,
       "flexibleStackingEnabled": true,
       "isolationEnabled": true,
@@ -239,6 +251,14 @@ meraki_response:
         "iname": "string"
       },
       "rstpEnabled": true,
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
+      "stackwiseVirtual": {
+        "isDualActiveDetector": true,
+        "isStackWiseVirtualLink": true
+      },
       "stickyMacAllowList": [
         "string"
       ],

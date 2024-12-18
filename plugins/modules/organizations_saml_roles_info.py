@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_saml_roles_info
-short_description: Information module for organizations _samlroles
+short_description: Information module for organizations _saml _roles
 description:
-- Get all organizations _samlroles.
-- Get organizations _samlroles by id.
+- Get all organizations _saml _roles.
+- Get organizations _saml _roles by id.
 - List the SAML roles for this organization.
 - Return a SAML role.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _samlroles
+- name: Get all organizations _saml _roles
   cisco.meraki.organizations_saml_roles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _samlroles by id
+- name: Get organizations _saml _roles by id
   cisco.meraki.organizations_saml_roles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

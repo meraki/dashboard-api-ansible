@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_api_requests_info
-short_description: Information module for organizations _apirequests
+short_description: Information module for organizations _api _requests
 description:
-- Get all organizations _apirequests.
+- Get all organizations _api _requests.
 - List the API requests made by an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -108,7 +108,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _apirequests
+- name: Get all organizations _api _requests
   cisco.meraki.organizations_api_requests_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

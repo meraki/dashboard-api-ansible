@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_traffic_shaping_rules
-short_description: Resource module for networks _wireless _ssids _trafficshaping _rules
+short_description: Resource module for networks _wireless _ssids _traffic _shaping _rules
 description:
-- Manage operation update of the resource networks _wireless _ssids _trafficshaping _rules.
+- Manage operation update of the resource networks _wireless _ssids _traffic _shaping _rules.
 - Update the traffic shaping rules for an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:

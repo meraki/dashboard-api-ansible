@@ -11,7 +11,7 @@ short_description: Information module for organizations _sm _admins _roles
 description:
 - Get all organizations _sm _admins _roles.
 - List the Limited Access Roles for an organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

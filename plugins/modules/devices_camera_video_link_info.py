@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_video_link_info
-short_description: Information module for devices _camera _videolink
+short_description: Information module for devices _camera _video _link
 description:
-- Get all devices _camera _videolink.
+- Get all devices _camera _video _link.
 - Returns video link to the specified camera. If a timestamp is supplied, it links to that timestamp.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -45,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _videolink
+- name: Get all devices _camera _video _link
   cisco.meraki.devices_camera_video_link_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

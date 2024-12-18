@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_traffic_shaping_rules
-short_description: Resource module for networks _appliance _trafficshaping _rules
+short_description: Resource module for networks _appliance _traffic _shaping _rules
 description:
-- Manage operation update of the resource networks _appliance _trafficshaping _rules.
+- Manage operation update of the resource networks _appliance _traffic _shaping _rules.
 - Update the traffic shaping settings rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:

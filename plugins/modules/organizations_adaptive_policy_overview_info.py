@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_overview_info
-short_description: Information module for organizations _adaptivepolicy _overview
+short_description: Information module for organizations _adaptive _policy _overview
 description:
-- Get all organizations _adaptivepolicy _overview.
+- Get all organizations _adaptive _policy _overview.
 - Returns adaptive policy aggregate statistics for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptivepolicy _overview
+- name: Get all organizations _adaptive _policy _overview
   cisco.meraki.organizations_adaptive_policy_overview_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

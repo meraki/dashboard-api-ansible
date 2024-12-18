@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_storm_control
-short_description: Resource module for networks _switch _stormcontrol
+short_description: Resource module for networks _switch _storm _control
 description:
-- Manage operation update of the resource networks _switch _stormcontrol.
+- Manage operation update of the resource networks _switch _storm _control.
 - Update the storm control configuration for a switch network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -27,6 +27,10 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  treatTheseTrafficTypesAsOneThreshold:
+    description: Grouped traffic types.
+    elements: str
+    type: list
   unknownUnicastThreshold:
     description: Percentage (1 to 99) of total available port bandwidth for unknown
       unicast (dlf-destination lookup failure) traffic type. Default value 100 percent
@@ -74,6 +78,9 @@ EXAMPLES = r"""
     broadcastThreshold: 30
     multicastThreshold: 30
     networkId: string
+    treatTheseTrafficTypesAsOneThreshold:
+    - broadcast
+    - multicast
     unknownUnicastThreshold: 30
 
 """
@@ -86,6 +93,9 @@ meraki_response:
     {
       "broadcastThreshold": 0,
       "multicastThreshold": 0,
+      "treatTheseTrafficTypesAsOneThreshold": [
+        "string"
+      ],
       "unknownUnicastThreshold": 0
     }
 """

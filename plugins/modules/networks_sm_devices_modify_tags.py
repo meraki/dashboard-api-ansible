@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_devices_modify_tags
-short_description: Resource module for networks _sm _devices _modifytags
+short_description: Resource module for networks _sm _devices _modify _tags
 description:
-- Manage operation create of the resource networks _sm _devices _modifytags.
+- Manage operation create of the resource networks _sm _devices _modify _tags.
 - Add, delete, or update the tags of a set of devices.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_topology_link_layer_info
-short_description: Information module for networks _topology _linklayer
+short_description: Information module for networks _topology _link _layer
 description:
-- Get all networks _topology _linklayer.
+- Get all networks _topology _link _layer.
 - >
    List the LLDP and CDP information for all discovered devices and connections in a network. At least one MX or MS
    device must be in the network in order to build the topology.
@@ -41,7 +41,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _topology _linklayer
+- name: Get all networks _topology _link _layer
   cisco.meraki.networks_topology_link_layer_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

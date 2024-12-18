@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_devices_power_modules_statuses_by_device_info
-short_description: Information module for organizations _devices _powermodules _statuses _bydevice
+short_description: Information module for organizations _devices _power _modules _statuses _by _device
 description:
-- Get all organizations _devices _powermodules _statuses _bydevice.
+- Get all organizations _devices _power _modules _statuses _by _device.
 - >
    List the most recent status information for power modules in rackmount MX and MS devices that support them. The
    data returned by this endpoint is updated every 5 minutes.
@@ -96,7 +96,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _powermodules _statuses _bydevice
+- name: Get all organizations _devices _power _modules _statuses _by _device
   cisco.meraki.organizations_devices_power_modules_statuses_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

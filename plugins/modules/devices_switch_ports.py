@@ -38,6 +38,13 @@ options:
     description: If true, ARP packets for this port will be considered trusted, and
       Dynamic ARP Inspection will allow the traffic.
     type: bool
+  dot3az:
+    description: Dot3az settings for the port.
+    suboptions:
+      enabled:
+        description: The Energy Efficient Ethernet status of the switch port.
+        type: bool
+    type: dict
   enabled:
     description: The status of the switch port.
     type: bool
@@ -115,7 +122,7 @@ options:
     elements: str
     type: list
   type:
-    description: The type of the switch port ('trunk' or 'access').
+    description: The type of the switch port ('trunk', 'access' or 'stack').
     type: str
   udld:
     description: The action to take when Unidirectional Link is detected (Alert only,
@@ -172,13 +179,15 @@ EXAMPLES = r"""
     adaptivePolicyGroupId: '123'
     allowedVlans: 1,3,5-10
     daiTrusted: false
+    dot3az:
+      enabled: false
     enabled: true
     flexibleStackingEnabled: true
     isolationEnabled: false
     linkNegotiation: Auto negotiate
     macAllowList:
-    - 34:56:fe:ce:8e:b0
-    - 34:56:fe:ce:8e:b1
+    - 34:56:fe:ce:8e:a0
+    - 34:56:fe:ce:8e:a1
     name: My switch port
     peerSgtCapable: false
     poeEnabled: true
@@ -214,9 +223,16 @@ meraki_response:
     {
       "accessPolicyNumber": 0,
       "accessPolicyType": "string",
+      "adaptivePolicyGroup": {
+        "id": "string",
+        "name": "string"
+      },
       "adaptivePolicyGroupId": "string",
       "allowedVlans": "string",
       "daiTrusted": true,
+      "dot3az": {
+        "enabled": true
+      },
       "enabled": true,
       "flexibleStackingEnabled": true,
       "isolationEnabled": true,
@@ -244,6 +260,14 @@ meraki_response:
         "iname": "string"
       },
       "rstpEnabled": true,
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
+      "stackwiseVirtual": {
+        "isDualActiveDetector": true,
+        "isStackWiseVirtualLink": true
+      },
       "stickyMacAllowList": [
         "string"
       ],

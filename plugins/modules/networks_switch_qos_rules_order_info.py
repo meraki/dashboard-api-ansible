@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_qos_rules_order_info
-short_description: Information module for networks _switch _qosrules _order
+short_description: Information module for networks _switch _qos _rules _order
 description:
-- Get all networks _switch _qosrules _order.
-- Get networks _switch _qosrules _order by id.
+- Get all networks _switch _qos _rules _order.
+- Get networks _switch _qos _rules _order by id.
 - List quality of service rules.
 - Return a quality of service rule.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _qosrules _order
+- name: Get all networks _switch _qos _rules _order
   cisco.meraki.networks_switch_qos_rules_order_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _switch _qosrules _order by id
+- name: Get networks _switch _qos _rules _order by id
   cisco.meraki.networks_switch_qos_rules_order_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

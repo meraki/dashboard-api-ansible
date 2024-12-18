@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: devices_management_interface
-short_description: Resource module for devices _managementinterface
+short_description: Resource module for devices _management _interface
 description:
-- Manage operations create and update of the resource devices _managementinterface.
-- Reboot a device.
+- Manage operations create and update of the resource devices _management _interface.
+- Reboot a device. This endpoint has a sustained rate limit of one request every 60 seconds.
 - Update the management interface settings for a device.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info
-short_description: Information module for networks _switch _dhcpserverpolicy _arpinspection _warnings _bydevice
+short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device
 description:
-- Get all networks _switch _dhcpserverpolicy _arpinspection _warnings _bydevice.
+- Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device.
 - Return the devices that have a Dynamic ARP Inspection warning and their warnings.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -58,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dhcpserverpolicy _arpinspection _warnings _bydevice
+- name: Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device
   cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

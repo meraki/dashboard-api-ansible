@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_vpn_site_to_site_vpn_info
-short_description: Information module for networks _appliance _vpn _sitetositevpn
+short_description: Information module for networks _appliance _vpn _site _to _site _vpn
 description:
-- Get all networks _appliance _vpn _sitetositevpn.
+- Get all networks _appliance _vpn _site _to _site _vpn.
 - Return the site-to-site VPN settings of a network. Only valid for MX networks.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _vpn _sitetositevpn
+- name: Get all networks _appliance _vpn _site _to _site _vpn
   cisco.meraki.networks_appliance_vpn_site_to_site_vpn_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

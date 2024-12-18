@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_vpn_third_party_vpnpeers
-short_description: Resource module for organizations _appliance _vpn _thirdpartyvpnpeers
+short_description: Resource module for organizations _appliance _vpn _third _party _vpnpeers
 description:
-- Manage operation update of the resource organizations _appliance _vpn _thirdpartyvpnpeers.
+- Manage operation update of the resource organizations _appliance _vpn _third _party _vpnpeers.
 - Update the third party VPN peers for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -82,8 +82,9 @@ options:
             type: list
         type: dict
       ipsecPoliciesPreset:
-        description: One of the following available presets 'default', 'aws', 'azure'.
-          If this is provided, the 'ipsecPolicies' parameter is ignored.
+        description: One of the following available presets 'default', 'aws', 'azure',
+          'umbrella', 'zscaler'. If this is provided, the 'ipsecPolicies' parameter
+          is ignored.
         type: str
       localId:
         description: Optional The local ID is used to identify the MX to the peer. This
@@ -102,6 +103,9 @@ options:
         description: The list of the private subnets of the VPN peer.
         elements: str
         type: list
+      publicHostname:
+        description: Optional The public hostname of the VPN peer.
+        type: str
       publicIp:
         description: Optional The public IP of the VPN peer.
         type: str
@@ -180,6 +184,7 @@ EXAMPLES = r"""
       privateSubnets:
       - 192.168.1.0/24
       - 192.168.128.0/24
+      publicHostname: example.com
       publicIp: 123.123.123.1
       remoteId: miles@meraki.com
       secret: Sample Password

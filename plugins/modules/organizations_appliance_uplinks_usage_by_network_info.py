@@ -7,13 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_uplinks_usage_by_network_info
-short_description: Information module for organizations _appliance _uplinks _usage _bynetwork
+short_description: Information module for organizations _appliance _uplinks _usage _by _network
 description:
-- Get all organizations _appliance _uplinks _usage _bynetwork.
+- Get all organizations _appliance _uplinks _usage _by _network.
 - >
    Get the sent and received bytes for each uplink of all MX and Z networks within an organization. If more than one
    device was active during the specified timespan, then the sent and received bytes will be aggregated by interface.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)
@@ -56,7 +56,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _uplinks _usage _bynetwork
+- name: Get all organizations _appliance _uplinks _usage _by _network
   cisco.meraki.organizations_appliance_uplinks_usage_by_network_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

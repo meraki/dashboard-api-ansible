@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_branding_policies_priorities
-short_description: Resource module for organizations _brandingpolicies _priorities
+short_description: Resource module for organizations _branding _policies _priorities
 description:
-- Manage operation update of the resource organizations _brandingpolicies _priorities.
+- Manage operation update of the resource organizations _branding _policies _priorities.
 - Update the priority ordering of an organization's branding policies.
 version_added: '2.16.0'
 extends_documentation_fragment:

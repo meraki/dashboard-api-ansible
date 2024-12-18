@@ -11,7 +11,7 @@ short_description: Resource module for networks _wireless _ethernet _ports _prof
 description:
 - Manage operation create of the resource networks _wireless _ethernet _ports _profiles _assign.
 - Assign AP port profile to list of APs.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

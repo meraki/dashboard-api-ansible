@@ -96,7 +96,7 @@ options:
     description:
     - >
       ProductTypes query parameter. Filter devices by product type. Accepted values are appliance, camera,
-      cellularGateway, sensor, switch, systemsManager, and wireless.
+      cellularGateway, secureConnect, sensor, switch, systemsManager, wireless, and wirelessController.
     elements: str
     type: list
   serial:

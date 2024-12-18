@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_groups_info
-short_description: Information module for networks _firmwareupgrades _staged _groups
+short_description: Information module for networks _firmware _upgrades _staged _groups
 description:
-- Get all networks _firmwareupgrades _staged _groups.
-- Get networks _firmwareupgrades _staged _groups by id.
+- Get all networks _firmware _upgrades _staged _groups.
+- Get networks _firmware _upgrades _staged _groups by id.
 - Get a Staged Upgrade Group from a network.
 - List of Staged Upgrade Groups in a network.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmwareupgrades _staged _groups
+- name: Get all networks _firmware _upgrades _staged _groups
   cisco.meraki.networks_firmware_upgrades_staged_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _firmwareupgrades _staged _groups by id
+- name: Get networks _firmware _upgrades _staged _groups by id
   cisco.meraki.networks_firmware_upgrades_staged_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

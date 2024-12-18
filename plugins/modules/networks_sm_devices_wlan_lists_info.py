@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_devices_wlan_lists_info
-short_description: Information module for networks _sm _devices _wlanlists
+short_description: Information module for networks _sm _devices _wlan _lists
 description:
-- Get all networks _sm _devices _wlanlists.
+- Get all networks _sm _devices _wlan _lists.
 - List the saved SSID names on a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _wlanlists
+- name: Get all networks _sm _devices _wlan _lists
   cisco.meraki.networks_sm_devices_wlan_lists_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

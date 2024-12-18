@@ -5,16 +5,16 @@
     network_id: "L_828099381482771185" # Branch-1234
   gather_facts: false
   tasks:
-    # - name: Get all networks _appliance _vlans
-    #   cisco.meraki.networks_appliance_vlans_info:
-    #     networkId: "{{network_id}}"
-    #   register: result
-
-    - name: Enable Vlans on the MX
-      cisco.meraki.networks_appliance_vlans_settings:
-        state: present
+    - name: Get all networks _appliance _vlans
+      cisco.meraki.networks_appliance_vlans_info:
         networkId: "{{network_id}}"
-        vlansEnabled: true
+      register: result
+
+    # - name: Enable Vlans on the MX
+    #   cisco.meraki.networks_appliance_vlans_settings:
+    #     state: present
+    #     networkId: "{{network_id}}"
+    #     vlansEnabled: true
 
     - name: Update appliance Vlans
       cisco.meraki.networks_appliance_vlans:
@@ -28,6 +28,7 @@
 
     - name: Update appliance SSID
       cisco.meraki.networks_appliance_ssids:
+       meraki_suppress_logging: false
        state: present
        authMode: 8021x-radius
        defaultVlanId: 10

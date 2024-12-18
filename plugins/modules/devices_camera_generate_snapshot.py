@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_generate_snapshot
-short_description: Resource module for devices _camera _generatesnapshot
+short_description: Resource module for devices _camera _generate _snapshot
 description:
-- Manage operation create of the resource devices _camera _generatesnapshot.
+- Manage operation create of the resource devices _camera _generate _snapshot.
 - Generate a snapshot of what the camera sees at the specified time and return a link to that image.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -77,5 +77,8 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "expiry": "string",
+      "url": "string"
+    }
 """

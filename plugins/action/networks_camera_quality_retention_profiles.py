@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -40,6 +40,7 @@ argument_spec.update(dict(
     name=dict(type="str"),
     restrictedBandwidthModeEnabled=dict(type="bool"),
     scheduleId=dict(type="str"),
+    smartRetention=dict(type="dict"),
     videoSettings=dict(type="dict"),
     networkId=dict(type="str"),
     qualityRetentionProfileId=dict(type="str"),
@@ -66,6 +67,7 @@ class NetworksCameraQualityRetentionProfiles(object):
             name=params.get("name"),
             restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
             scheduleId=params.get("scheduleId"),
+            smartRetention=params.get("smartRetention"),
             videoSettings=params.get("videoSettings"),
             networkId=params.get("networkId"),
             qualityRetentionProfileId=params.get("qualityRetentionProfileId"),
@@ -110,6 +112,9 @@ class NetworksCameraQualityRetentionProfiles(object):
         if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
             new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
                 self.new_object.get('schedule_id')
+        if self.new_object.get('smartRetention') is not None or self.new_object.get('smart_retention') is not None:
+            new_object_params['smartRetention'] = self.new_object.get('smartRetention') or \
+                self.new_object.get('smart_retention')
         if self.new_object.get('videoSettings') is not None or self.new_object.get('video_settings') is not None:
             new_object_params['videoSettings'] = self.new_object.get('videoSettings') or \
                 self.new_object.get('video_settings')
@@ -150,6 +155,9 @@ class NetworksCameraQualityRetentionProfiles(object):
         if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
             new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
                 self.new_object.get('schedule_id')
+        if self.new_object.get('smartRetention') is not None or self.new_object.get('smart_retention') is not None:
+            new_object_params['smartRetention'] = self.new_object.get('smartRetention') or \
+                self.new_object.get('smart_retention')
         if self.new_object.get('videoSettings') is not None or self.new_object.get('video_settings') is not None:
             new_object_params['videoSettings'] = self.new_object.get('videoSettings') or \
                 self.new_object.get('video_settings')
@@ -238,13 +246,14 @@ class NetworksCameraQualityRetentionProfiles(object):
             ("name", "name"),
             ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
             ("scheduleId", "scheduleId"),
+            ("smartRetention", "smartRetention"),
             ("videoSettings", "videoSettings"),
             ("networkId", "networkId"),
             ("qualityRetentionProfileId", "qualityRetentionProfileId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_cellular_gateway_lan
-short_description: Resource module for devices _cellulargateway _lan
+short_description: Resource module for devices _cellular _gateway _lan
 description:
-- Manage operation update of the resource devices _cellulargateway _lan.
+- Manage operation update of the resource devices _cellular _gateway _lan.
 - Update the LAN Settings for a single MG.
 version_added: '2.16.0'
 extends_documentation_fragment:

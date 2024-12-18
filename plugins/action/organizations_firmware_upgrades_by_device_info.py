@@ -36,6 +36,7 @@ argument_spec.update(dict(
     macs=dict(type="list"),
     firmwareUpgradeBatchIds=dict(type="list"),
     upgradeStatuses=dict(type="list"),
+    currentUpgradesOnly=dict(type="bool"),
 ))
 
 required_if = []
@@ -105,6 +106,9 @@ class ActionModule(ActionBase):
         if params.get("upgradeStatuses") is not None:
             new_object["upgradeStatuses"] = params.get(
                 "upgradeStatuses")
+        if params.get("currentUpgradesOnly") is not None:
+            new_object["currentUpgradesOnly"] = params.get(
+                "currentUpgradesOnly")
 
         return new_object
 

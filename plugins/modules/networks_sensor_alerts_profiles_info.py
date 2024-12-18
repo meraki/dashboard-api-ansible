@@ -118,6 +118,10 @@ meraki_response:
             "apparentPower": {
               "draw": 0
             },
+            "co2": {
+              "concentration": 0,
+              "quality": "string"
+            },
             "current": {
               "draw": 0
             },

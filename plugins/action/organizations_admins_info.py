@@ -26,6 +26,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     organizationId=dict(type="str"),
+    networkIds=dict(type="list"),
 ))
 
 required_if = []
@@ -67,6 +68,9 @@ class ActionModule(ActionBase):
         if params.get("organizationId") is not None:
             new_object["organizationId"] = params.get(
                 "organizationId")
+        if params.get("networkIds") is not None:
+            new_object["networkIds"] = params.get(
+                "networkIds")
 
         return new_object
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_groups
-short_description: Resource module for organizations _adaptivepolicy _groups
+short_description: Resource module for organizations _adaptive _policy _groups
 description:
-- Manage operations create, update and delete of the resource organizations _adaptivepolicy _groups.
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _groups.
 - Creates a new adaptive policy group.
 - Deletes the specified adaptive policy group and any associated policies and references.
 - Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".
@@ -33,7 +33,8 @@ options:
   policyObjects:
     description: The policy objects that belong to this group; traffic from addresses
       specified by these policy objects will be tagged with this group's SGT value if
-      no other tagging scheme is being used (each requires one unique attribute) ().
+      no other tagging scheme is being used (each requires one unique attribute) (default
+      ).
     elements: dict
     suboptions:
       id:
@@ -96,13 +97,11 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     description: Group of XYZ Corp Employees
-    isDefaultGroup: false
     name: Employee Group
     organizationId: string
     policyObjects:
     - id: '2345'
       name: Example Policy Object
-    requiredIpMappings: []
     sgt: 1000
 
 - name: Delete by id
@@ -156,13 +155,11 @@ EXAMPLES = r"""
     state: present
     description: Group of XYZ Corp Employees
     id: string
-    isDefaultGroup: false
     name: Employee Group
     organizationId: string
     policyObjects:
     - id: '2345'
       name: Example Policy Object
-    requiredIpMappings: []
     sgt: 1000
 
 """
@@ -172,5 +169,22 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "createdAt": "string",
+      "description": "string",
+      "groupId": "string",
+      "isDefaultGroup": true,
+      "name": "string",
+      "policyObjects": [
+        {
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "requiredIpMappings": [
+        "string"
+      ],
+      "sgt": 0,
+      "updatedAt": "string"
+    }
 """

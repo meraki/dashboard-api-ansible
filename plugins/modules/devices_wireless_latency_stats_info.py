@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_wireless_latency_stats_info
-short_description: Information module for devices _wireless _latencystats
+short_description: Information module for devices _wireless _latency _stats
 description:
-- Get all devices _wireless _latencystats.
+- Get all devices _wireless _latency _stats.
 - Aggregated latency info for a given AP on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -78,7 +78,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _wireless _latencystats
+- name: Get all devices _wireless _latency _stats
   cisco.meraki.devices_wireless_latency_stats_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

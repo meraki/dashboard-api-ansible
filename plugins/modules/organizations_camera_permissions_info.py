@@ -11,7 +11,7 @@ short_description: Information module for organizations _camera _permissions
 description:
 - Get organizations _camera _permissions by id.
 - Retrieve a single permission scope.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

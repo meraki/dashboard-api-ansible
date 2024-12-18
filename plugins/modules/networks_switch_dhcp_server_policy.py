@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dhcp_server_policy
-short_description: Resource module for networks _switch _dhcpserverpolicy
+short_description: Resource module for networks _switch _dhcp _server _policy
 description:
-- Manage operation update of the resource networks _switch _dhcpserverpolicy.
+- Manage operation update of the resource networks _switch _dhcp _server _policy.
 - >
    Update the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block,
    respectively.

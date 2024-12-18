@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_firewall_l7_firewall_rules
-short_description: Resource module for networks _wireless _ssids _firewall l7firewallrules
+short_description: Resource module for networks _wireless _ssids _firewall l7 _firewall _rules
 description:
-- Manage operation update of the resource networks _wireless _ssids _firewall l7firewallrules.
+- Manage operation update of the resource networks _wireless _ssids _firewall l7 _firewall _rules.
 - Update the L7 firewall rules of an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:

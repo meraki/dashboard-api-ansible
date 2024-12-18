@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_firewall_l3_firewall_rules_info
-short_description: Information module for networks _wireless _ssids _firewall l3firewallrules
+short_description: Information module for networks _wireless _ssids _firewall l3 _firewall _rules
 description:
-- Get all networks _wireless _ssids _firewall l3firewallrules.
+- Get all networks _wireless _ssids _firewall l3 _firewall _rules.
 - Return the L3 firewall rules for an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _firewall l3firewallrules
+- name: Get all networks _wireless _ssids _firewall l3 _firewall _rules
   cisco.meraki.networks_wireless_ssids_firewall_l3_firewall_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -74,16 +74,18 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "comment": "string",
-        "destCidr": "string",
-        "destPort": "string",
-        "policy": "string",
-        "protocol": "string"
-      }
-    ]
+    {
+      "allowLanAccess": true,
+      "rules": [
+        {
+          "comment": "string",
+          "destCidr": "string",
+          "destPort": "string",
+          "policy": "string",
+          "protocol": "string"
+        }
+      ]
+    }
 """

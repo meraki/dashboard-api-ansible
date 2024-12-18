@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dscp_to_cos_mappings_info
-short_description: Information module for networks _switch _dscptocosmappings
+short_description: Information module for networks _switch _dscp _to _cos _mappings
 description:
-- Get all networks _switch _dscptocosmappings.
+- Get all networks _switch _dscp _to _cos _mappings.
 - Return the DSCP to CoS mappings.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dscptocosmappings
+- name: Get all networks _switch _dscp _to _cos _mappings
   cisco.meraki.networks_switch_dscp_to_cos_mappings_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

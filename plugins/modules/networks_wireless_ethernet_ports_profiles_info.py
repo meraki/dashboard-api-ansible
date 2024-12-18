@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _ethernet _ports _p
 description:
 - Get networks _wireless _ethernet _ports _profiles by id.
 - Show the AP port profile by ID for this network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

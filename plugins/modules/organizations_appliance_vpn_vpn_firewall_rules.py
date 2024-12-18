@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_vpn_vpn_firewall_rules
-short_description: Resource module for organizations _appliance _vpn _vpnfirewallrules
+short_description: Resource module for organizations _appliance _vpn _vpn _firewall _rules
 description:
-- Manage operation update of the resource organizations _appliance _vpn _vpnfirewallrules.
+- Manage operation update of the resource organizations _appliance _vpn _vpn _firewall _rules.
 - Update the firewall rules of an organization's site-to-site VPN.
 version_added: '2.16.0'
 extends_documentation_fragment:

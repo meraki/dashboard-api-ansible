@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_data_rate_history_info
-short_description: Information module for networks _wireless _dataratehistory
+short_description: Information module for networks _wireless _data _rate _history
 description:
-- Get all networks _wireless _dataratehistory.
+- Get all networks _wireless _data _rate _history.
 - Return PHY data rates over time for a network, device, or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -86,7 +86,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _dataratehistory
+- name: Get all networks _wireless _data _rate _history
   cisco.meraki.networks_wireless_data_rate_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

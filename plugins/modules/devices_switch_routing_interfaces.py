@@ -72,22 +72,6 @@ options:
           will still be advertised.
         type: bool
     type: dict
-  ospfV3:
-    description: The OSPFv3 routing settings of the interface.
-    suboptions:
-      area:
-        description: The OSPFv3 area to which this interface should belong. Can be either
-          'disabled' or the identifier of an existing OSPFv3 area. Defaults to 'disabled'.
-        type: str
-      cost:
-        description: The path cost for this interface. Defaults to 1, but can be increased
-          up to 65535 to give lower priority.
-        type: int
-      isPassiveEnabled:
-        description: When enabled, OSPFv3 will not run on the interface, but the subnet
-          will still be advertised.
-        type: bool
-    type: dict
   serial:
     description: Serial path parameter.
     type: str
@@ -160,10 +144,6 @@ EXAMPLES = r"""
       area: '0'
       cost: 1
       isPassiveEnabled: true
-    ospfV3:
-      area: '1'
-      cost: 2
-      isPassiveEnabled: true
     serial: string
     subnet: 192.168.1.0/24
     vlanId: 100
@@ -231,10 +211,6 @@ EXAMPLES = r"""
       area: '0'
       cost: 1
       isPassiveEnabled: true
-    ospfV3:
-      area: '1'
-      cost: 2
-      isPassiveEnabled: true
     serial: string
     subnet: 192.168.1.0/24
     vlanId: 100
@@ -269,6 +245,8 @@ meraki_response:
         "isPassiveEnabled": true
       },
       "subnet": "string",
+      "uplinkV4": true,
+      "uplinkV6": true,
       "vlanId": 0
     }
 """

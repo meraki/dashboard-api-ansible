@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_stacks_routing_static_routes
-short_description: Resource module for networks _switch _stacks _routing _staticroutes
+short_description: Resource module for networks _switch _stacks _routing _static _routes
 description:
-- Manage operations create, update and delete of the resource networks _switch _stacks _routing _staticroutes.
+- Manage operations create, update and delete of the resource networks _switch _stacks _routing _static _routes.
 - Create a layer 3 static route for a switch stack.
 - Delete a layer 3 static route for a switch stack.
 - Update a layer 3 static route for a switch stack.
@@ -21,6 +21,9 @@ options:
   advertiseViaOspfEnabled:
     description: Option to advertise static route via OSPF.
     type: bool
+  managementNextHop:
+    description: Optional fallback IP address for management traffic.
+    type: str
   name:
     description: Name or description for layer 3 static route.
     type: str
@@ -152,6 +155,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     advertiseViaOspfEnabled: false
+    managementNextHop: 1.2.3.5
     name: My route
     networkId: string
     nextHopIp: 1.2.3.4
@@ -169,6 +173,7 @@ meraki_response:
   sample: >
     {
       "advertiseViaOspfEnabled": true,
+      "managementNextHop": "string",
       "name": "string",
       "nextHopIp": "string",
       "preferOverOspfRoutesEnabled": true,

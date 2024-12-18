@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_bypass_activation_lock_attempts
-short_description: Resource module for networks _sm _bypassactivationlockattempts
+short_description: Resource module for networks _sm _bypass _activation _lock _attempts
 description:
-- Manage operation create of the resource networks _sm _bypassactivationlockattempts.
+- Manage operation create of the resource networks _sm _bypass _activation _lock _attempts.
 - Bypass activation lock attempt.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_groups
-short_description: Resource module for networks _firmwareupgrades _staged _groups
+short_description: Resource module for networks _firmware _upgrades _staged _groups
 description:
-- Manage operations create, update and delete of the resource networks _firmwareupgrades _staged _groups.
+- Manage operations create, update and delete of the resource networks _firmware _upgrades _staged _groups.
 - Create a Staged Upgrade Group for a network.
 - Delete a Staged Upgrade Group.
 - Update a Staged Upgrade Group for a network.

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_vpn_site_to_site_vpn
-short_description: Resource module for networks _appliance _vpn _sitetositevpn
+short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
 description:
-- Manage operation update of the resource networks _appliance _vpn _sitetositevpn.
+- Manage operation update of the resource networks _appliance _vpn _site _to _site _vpn.
 - Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
 version_added: '2.16.0'
 extends_documentation_fragment:

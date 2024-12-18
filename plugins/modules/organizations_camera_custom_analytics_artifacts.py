@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_camera_custom_analytics_artifacts
-short_description: Resource module for organizations _camera _customanalytics _artifacts
+short_description: Resource module for organizations _camera _custom _analytics _artifacts
 description:
-- Manage operations create and delete of the resource organizations _camera _customanalytics _artifacts.
+- Manage operations create and delete of the resource organizations _camera _custom _analytics _artifacts.
 - >
    Create custom analytics artifact. Returns an artifact upload URL with expiry time. Upload the artifact file with a
    put request to the returned upload URL before its expiry.

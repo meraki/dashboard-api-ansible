@@ -7,13 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_traffic_shaping_custom_performance_classes_info
-short_description: Information module for networks _appliance _trafficshaping _customperformanceclasses
+short_description: Information module for networks _appliance _traffic _shaping _custom _performance _classes
 description:
-- Get all networks _appliance _trafficshaping _customperformanceclasses.
-- Get networks _appliance _trafficshaping _customperformanceclasses by id.
+- Get all networks _appliance _traffic _shaping _custom _performance _classes.
+- Get networks _appliance _traffic _shaping _custom _performance _classes by id.
 - List all custom performance classes for an MX network.
 - Return a custom performance class for an MX network.
-version_added: '1.0.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _trafficshaping _customperformanceclasses
+- name: Get all networks _appliance _traffic _shaping _custom _performance _classes
   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -70,13 +70,12 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     networkId: string
   register: result
 
-- name: Get networks _appliance _trafficshaping _customperformanceclasses by id
+- name: Get networks _appliance _traffic _shaping _custom _performance _classes by id
   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -96,7 +95,6 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     networkId: string

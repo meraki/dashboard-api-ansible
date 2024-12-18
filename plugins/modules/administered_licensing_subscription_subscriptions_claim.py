@@ -82,6 +82,7 @@ meraki_response:
     {
       "counts": {
         "networks": 0,
+        "organizations": 0,
         "seats": {
           "assigned": 0,
           "available": 0,
@@ -90,6 +91,11 @@ meraki_response:
       },
       "description": "string",
       "endDate": "string",
+      "enterpriseAgreement": {
+        "suites": [
+          "string"
+        ]
+      },
       "entitlements": [
         {
           "seats": {
@@ -97,16 +103,28 @@ meraki_response:
             "available": 0,
             "limit": 0
           },
-          "sku": "string"
+          "sku": "string",
+          "webOrderLineId": "string"
         }
       ],
+      "lastUpdatedAt": "string",
       "name": "string",
       "productTypes": [
         "string"
       ],
+      "renewalRequested": true,
+      "smartAccount": {
+        "account": {
+          "domain": "string",
+          "id": "string",
+          "name": "string"
+        },
+        "status": "string"
+      },
       "startDate": "string",
       "status": "string",
       "subscriptionId": "string",
+      "type": "string",
       "webOrderId": "string"
     }
 """

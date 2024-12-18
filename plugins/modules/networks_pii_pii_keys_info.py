@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_pii_pii_keys_info
-short_description: Information module for networks _pii _piikeys
+short_description: Information module for networks _pii _pii _keys
 description:
-- Get all networks _pii _piikeys.
+- Get all networks _pii _pii _keys.
 - >
    List the keys required to access Personally Identifiable Information PII for a given identifier. Exactly one
    identifier will be accepted. If the organization contains org-wide Systems Manager users matching the key provided
@@ -66,7 +66,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _pii _piikeys
+- name: Get all networks _pii _pii _keys
   cisco.meraki.networks_pii_pii_keys_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

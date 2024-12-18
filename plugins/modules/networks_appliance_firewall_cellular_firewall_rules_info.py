@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_cellular_firewall_rules_info
-short_description: Information module for networks _appliance _firewall _cellularfirewallrules
+short_description: Information module for networks _appliance _firewall _cellular _firewall _rules
 description:
-- Get all networks _appliance _firewall _cellularfirewallrules.
+- Get all networks _appliance _firewall _cellular _firewall _rules.
 - Return the cellular firewall rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _firewall _cellularfirewallrules
+- name: Get all networks _appliance _firewall _cellular _firewall _rules
   cisco.meraki.networks_appliance_firewall_cellular_firewall_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

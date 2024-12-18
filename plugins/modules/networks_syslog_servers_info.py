@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_syslog_servers_info
-short_description: Information module for networks _syslogservers
+short_description: Information module for networks _syslog _servers
 description:
-- Get all networks _syslogservers.
+- Get all networks _syslog _servers.
 - List the syslog servers for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _syslogservers
+- name: Get all networks _syslog _servers
   cisco.meraki.networks_syslog_servers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

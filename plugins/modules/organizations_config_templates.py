@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_config_templates
-short_description: Resource module for organizations _configtemplates
+short_description: Resource module for organizations _config _templates
 description:
-- Manage operations create, update and delete of the resource organizations _configtemplates.
+- Manage operations create, update and delete of the resource organizations _config _templates.
 - Create a new configuration template.
 - Remove a configuration template.
 - Update a configuration template.

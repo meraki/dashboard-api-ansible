@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_traffic_analysis_info
-short_description: Information module for networks _trafficanalysis
+short_description: Information module for networks _traffic _analysis
 description:
-- Get all networks _trafficanalysis.
+- Get all networks _traffic _analysis.
 - Return the traffic analysis settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _trafficanalysis
+- name: Get all networks _traffic _analysis
   cisco.meraki.networks_traffic_analysis_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

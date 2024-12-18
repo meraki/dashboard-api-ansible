@@ -11,7 +11,7 @@ short_description: Resource module for devices _appliance _radio _settings
 description:
 - Manage operation update of the resource devices _appliance _radio _settings.
 - Update the radio settings of an appliance.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
@@ -30,8 +30,8 @@ options:
           '80' or '160' or null for using auto channel width.
         type: int
       targetPower:
-        description: Set a manual target power for 5 GHz. Can be between '8' or '30'
-          or null for using auto power range.
+        description: Set a manual target power for 5 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
   rfProfileId:
@@ -52,8 +52,8 @@ options:
           channel.
         type: int
       targetPower:
-        description: Set a manual target power for 2.4 GHz. Can be between '5' or '30'
-          or null for using auto power range.
+        description: Set a manual target power for 2.4 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
 requirements:

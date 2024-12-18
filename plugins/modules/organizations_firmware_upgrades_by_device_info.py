@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_firmware_upgrades_by_device_info
-short_description: Information module for organizations _firmware _upgrades _bydevice
+short_description: Information module for organizations _firmware _upgrades _by _device
 description:
-- Get all organizations _firmware _upgrades _bydevice.
+- Get all organizations _firmware _upgrades _by _device.
 - Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -71,6 +71,10 @@ options:
     - UpgradeStatuses query parameter. Optional parameter to filter by firmware upgrade statuses.
     elements: str
     type: list
+  currentUpgradesOnly:
+    description:
+    - CurrentUpgradesOnly query parameter. Optional parameter to filter to only current or pending upgrade statuses.
+    type: bool
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -87,7 +91,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _firmware _upgrades _bydevice
+- name: Get all organizations _firmware _upgrades _by _device
   cisco.meraki.organizations_firmware_upgrades_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -117,6 +121,7 @@ EXAMPLES = r"""
     macs: []
     firmwareUpgradeBatchIds: []
     upgradeStatuses: []
+    currentUpgradesOnly: True
     organizationId: string
     total_pages: -1
     direction: next

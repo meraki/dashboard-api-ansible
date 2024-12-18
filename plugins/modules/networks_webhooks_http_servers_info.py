@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_webhooks_http_servers_info
-short_description: Information module for networks _webhooks _httpservers
+short_description: Information module for networks _webhooks _http _servers
 description:
-- Get all networks _webhooks _httpservers.
-- Get networks _webhooks _httpservers by id.
+- Get all networks _webhooks _http _servers.
+- Get networks _webhooks _http _servers by id.
 - List the HTTP servers for a network.
 - Return an HTTP server for a network.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _webhooks _httpservers
+- name: Get all networks _webhooks _http _servers
   cisco.meraki.networks_webhooks_http_servers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _webhooks _httpservers by id
+- name: Get networks _webhooks _http _servers by id
   cisco.meraki.networks_webhooks_http_servers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

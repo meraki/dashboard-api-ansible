@@ -35,10 +35,7 @@ options:
           2 hours, 4 hours, and 8 hours. Default is 0.
         type: int
       metric:
-        description: The type of sensor metric that will be monitored for changes. Available
-          metrics are apparentPower, co2, current, door, frequency, humidity, indoorAirQuality,
-          noise, pm25, powerFactor, realPower, temperature, tvoc, upstreamPower, voltage,
-          and water.
+        description: The type of sensor metric that will be monitored for changes.
         type: str
       threshold:
         description: Threshold for sensor readings that will cause an alert to be sent.
@@ -52,6 +49,17 @@ options:
                 description: Alerting threshold in volt-amps. Must be between 0 and
                   3750.
                 type: float
+            type: dict
+          co2:
+            description: CO2 concentration threshold. One of 'concentration' or 'quality'
+              must be provided.
+            suboptions:
+              concentration:
+                description: Alerting threshold as CO2 parts per million.
+                type: int
+              quality:
+                description: Alerting threshold as a qualitative CO2 level.
+                type: str
             type: dict
           current:
             description: Electrical current threshold. 'level' must be provided.
@@ -285,6 +293,9 @@ EXAMPLES = r"""
       threshold:
         apparentPower:
           draw: 17.2
+        co2:
+          concentration: 400
+          quality: poor
         current:
           draw: 0.14
         door:
@@ -393,6 +404,9 @@ EXAMPLES = r"""
       threshold:
         apparentPower:
           draw: 17.2
+        co2:
+          concentration: 400
+          quality: poor
         current:
           draw: 0.14
         door:
@@ -462,6 +476,10 @@ meraki_response:
           "threshold": {
             "apparentPower": {
               "draw": 0
+            },
+            "co2": {
+              "concentration": 0,
+              "quality": "string"
             },
             "current": {
               "draw": 0

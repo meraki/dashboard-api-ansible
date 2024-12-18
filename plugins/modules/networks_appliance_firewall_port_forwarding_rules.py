@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_port_forwarding_rules
-short_description: Resource module for networks _appliance _firewall _portforwardingrules
+short_description: Resource module for networks _appliance _firewall _port _forwarding _rules
 description:
-- Manage operation update of the resource networks _appliance _firewall _portforwardingrules.
+- Manage operation update of the resource networks _appliance _firewall _port _forwarding _rules.
 - Update the port forwarding rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -108,5 +108,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "allowedIps": [
+          "string"
+        ],
+        "lanIp": "string",
+        "localPort": "string",
+        "name": "string",
+        "protocol": "string",
+        "publicPort": "string",
+        "uplink": "string"
+      }
+    ]
 """

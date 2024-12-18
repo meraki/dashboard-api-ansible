@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_clients_bandwidth_usage_history_info
-short_description: Information module for organizations _clients _bandwidthusagehistory
+short_description: Information module for organizations _clients _bandwidth _usage _history
 description:
-- Get all organizations _clients _bandwidthusagehistory.
+- Get all organizations _clients _bandwidth _usage _history.
 - >
    Return data usage in megabits per second over time for all clients in the given organization within a given time
    range.
@@ -25,19 +25,35 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
+  networkTag:
+    description:
+    - NetworkTag query parameter. Match result to an exact network tag.
+    type: str
+  deviceTag:
+    description:
+    - DeviceTag query parameter. Match result to an exact device tag.
+    type: str
+  ssidName:
+    description:
+    - SsidName query parameter. Filter results by ssid name.
+    type: str
+  usageUplink:
+    description:
+    - UsageUplink query parameter. Filter results by usage uplink.
+    type: str
   t0:
     description:
     - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
     type: str
   timespan:
     description:
     - >
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
+      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 186 days. The
       default is 1 day.
     type: float
 requirements:
@@ -56,7 +72,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _clients _bandwidthusagehistory
+- name: Get all organizations _clients _bandwidth _usage _history
   cisco.meraki.organizations_clients_bandwidth_usage_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -78,6 +94,10 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    networkTag: string
+    deviceTag: string
+    ssidName: string
+    usageUplink: string
     t0: string
     t1: string
     timespan: 0

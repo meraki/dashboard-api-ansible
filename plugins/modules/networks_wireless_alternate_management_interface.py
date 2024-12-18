@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_alternate_management_interface
-short_description: Resource module for networks _wireless _alternatemanagementinterface
+short_description: Resource module for networks _wireless _alternate _management _interface
 description:
-- Manage operation update of the resource networks _wireless _alternatemanagementinterface.
+- Manage operation update of the resource networks _wireless _alternate _management _interface.
 - Update alternate management interface and device static IP.
 version_added: '2.16.0'
 extends_documentation_fragment:

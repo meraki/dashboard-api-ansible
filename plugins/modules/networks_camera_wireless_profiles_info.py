@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_camera_wireless_profiles_info
-short_description: Information module for networks _camera _wirelessprofiles
+short_description: Information module for networks _camera _wireless _profiles
 description:
-- Get all networks _camera _wirelessprofiles.
-- Get networks _camera _wirelessprofiles by id.
+- Get all networks _camera _wireless _profiles.
+- Get networks _camera _wireless _profiles by id.
 - List the camera wireless profiles for this network.
 - Retrieve a single camera wireless profile.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _wirelessprofiles
+- name: Get all networks _camera _wireless _profiles
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _camera _wirelessprofiles by id
+- name: Get networks _camera _wireless _profiles by id
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -119,7 +119,8 @@ meraki_response:
       "ssid": {
         "authMode": "string",
         "encryptionMode": "string",
-        "name": "string"
+        "name": "string",
+        "psk": "string"
       }
     }
 """

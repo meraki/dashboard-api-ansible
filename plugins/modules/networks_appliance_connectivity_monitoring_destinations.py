@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_connectivity_monitoring_destinations
-short_description: Resource module for networks _appliance _connectivitymonitoringdestinations
+short_description: Resource module for networks _appliance _connectivity _monitoring _destinations
 description:
-- Manage operation update of the resource networks _appliance _connectivitymonitoringdestinations.
+- Manage operation update of the resource networks _appliance _connectivity _monitoring _destinations.
 - Update the connectivity testing destinations for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -76,11 +76,7 @@ EXAMPLES = r"""
     destinations:
     - default: false
       description: Google
-      ip: 8.8.8.8
-    - default: true
-      description: test description
-      ip: 1.23.45.67
-    - ip: 9.8.7.6
+      ip: 1.2.3.4
     networkId: string
 
 """
@@ -90,5 +86,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "default": true,
+        "description": "string",
+        "ip": "string"
+      }
+    ]
 """

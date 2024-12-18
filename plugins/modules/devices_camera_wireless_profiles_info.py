@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_wireless_profiles_info
-short_description: Information module for devices _camera _wirelessprofiles
+short_description: Information module for devices _camera _wireless _profiles
 description:
-- Get all devices _camera _wirelessprofiles.
+- Get all devices _camera _wireless _profiles.
 - Returns wireless profile assigned to the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _wirelessprofiles
+- name: Get all devices _camera _wireless _profiles
   cisco.meraki.devices_camera_wireless_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

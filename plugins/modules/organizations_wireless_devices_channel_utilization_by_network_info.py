@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_wireless_devices_channel_utilization_by_network_info
-short_description: Information module for organizations _wireless _devices _channelutilization _bynetwork
+short_description: Information module for organizations _wireless _devices _channel _utilization _by _network
 description:
-- Get all organizations _wireless _devices _channelutilization _bynetwork.
+- Get all organizations _wireless _devices _channel _utilization _by _network.
 - Get average channel utilization across all bands for all networks in the organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -89,7 +89,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _wireless _devices _channelutilization _bynetwork
+- name: Get all organizations _wireless _devices _channel _utilization _by _network
   cisco.meraki.organizations_wireless_devices_channel_utilization_by_network_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

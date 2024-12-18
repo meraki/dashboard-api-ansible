@@ -171,6 +171,9 @@ meraki_response:
       },
       "cloud": {
         "region": {
+          "host": {
+            "name": "string"
+          },
           "name": "string"
         }
       },

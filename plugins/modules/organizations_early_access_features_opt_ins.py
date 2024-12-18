@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_early_access_features_opt_ins
-short_description: Resource module for organizations _earlyaccess _features _optins
+short_description: Resource module for organizations _early _access _features _opt _ins
 description:
-- Manage operations create, update and delete of the resource organizations _earlyaccess _features _optins.
+- Manage operations create, update and delete of the resource organizations _early _access _features _opt _ins.
 - Create a new early access feature opt-in for an organization.
 - Delete an early access feature opt-in.
 - Update an early access feature opt-in for an organization.
@@ -83,7 +83,7 @@ EXAMPLES = r"""
     limitScopeToNetworks:
     - N_12345
     organizationId: string
-    shortName: has_magnetic_beta
+    shortName: has_beta_api
 
 - name: Delete by id
   cisco.meraki.organizations_early_access_features_opt_ins:
@@ -155,6 +155,14 @@ meraki_response:
           "name": "string"
         }
       ],
+      "optOutEligibility": {
+        "eligible": true,
+        "help": {
+          "label": "string",
+          "url": "string"
+        },
+        "reason": "string"
+      },
       "shortName": "string"
     }
 """

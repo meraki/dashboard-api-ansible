@@ -36,6 +36,11 @@ options:
             description: A list of HTTP server IDs to send a Webhook to for this alert.
             elements: str
             type: list
+          smsNumbers:
+            description: A list of phone numbers that will receive text messages about
+              the alert. Only available for sensors status alerts.
+            elements: str
+            type: list
           snmp:
             description: If true, then an SNMP trap will be sent for this alert if there
               is an SNMP trap server configured for this network.
@@ -47,6 +52,67 @@ options:
       filters:
         description: A hash of specific configuration data for the alert. Only filters
           specific to the alert will be updated.
+        suboptions:
+          conditions:
+            description: Conditions.
+            elements: dict
+            suboptions:
+              direction:
+                description: Direction.
+                type: str
+              duration:
+                description: Duration.
+                type: int
+              threshold:
+                description: Threshold.
+                type: float
+              type:
+                description: Type of condition.
+                type: str
+              unit:
+                description: Unit.
+                type: str
+            type: list
+          failureType:
+            description: Failure Type.
+            type: str
+          lookbackWindow:
+            description: Loopback Window (in sec).
+            type: int
+          minDuration:
+            description: Min Duration.
+            type: int
+          name:
+            description: Name.
+            type: str
+          period:
+            description: Period.
+            type: int
+          priority:
+            description: Priority.
+            type: str
+          regex:
+            description: Regex.
+            type: str
+          selector:
+            description: Selector.
+            type: str
+          serials:
+            description: Serials.
+            elements: str
+            type: list
+          ssidNum:
+            description: SSID Number.
+            type: int
+          tag:
+            description: Tag.
+            type: str
+          threshold:
+            description: Threshold.
+            type: int
+          timeout:
+            description: Timeout.
+            type: int
         type: dict
       type:
         description: The type of alert.
@@ -132,9 +198,32 @@ EXAMPLES = r"""
         - miles@meraki.com
         httpServerIds:
         - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+        smsNumbers:
+        - '+15555555555'
         snmp: false
       enabled: true
       filters:
+        conditions:
+        - direction: +
+          duration: 0
+          threshold: 72.5
+          type: temperature
+          unit: celsius
+        failureType: 802.1X auth fail
+        lookbackWindow: 360
+        minDuration: 60
+        name: Filter
+        period: 1800
+        priority: ''
+        regex: '[a-z]'
+        selector: '{"smartSensitivity":"medium","smartEnabled":false,"eventReminderPeriodSecs":10800}'
+        serials:
+        - Q234-ABCD-0001
+        - Q234-ABCD-0002
+        - Q234-ABCD-0003
+        ssidNum: 1
+        tag: tag1
+        threshold: 30
         timeout: 60
       type: gatewayDown
     defaultDestinations:
@@ -144,6 +233,9 @@ EXAMPLES = r"""
       httpServerIds:
       - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
       snmp: true
+    muting:
+      byPortSchedules:
+        enabled: true
     networkId: string
 
 """
@@ -153,5 +245,66 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "alerts": [
+        {
+          "alertDestinations": {
+            "allAdmins": true,
+            "emails": [
+              "string"
+            ],
+            "httpServerIds": [
+              "string"
+            ],
+            "smsNumbers": [
+              "string"
+            ],
+            "snmp": true
+          },
+          "enabled": true,
+          "filters": {
+            "conditions": [
+              {
+                "direction": "string",
+                "duration": 0,
+                "threshold": 0,
+                "type": "string",
+                "unit": "string"
+              }
+            ],
+            "failureType": "string",
+            "lookbackWindow": 0,
+            "minDuration": 0,
+            "name": "string",
+            "period": 0,
+            "priority": "string",
+            "regex": "string",
+            "selector": "string",
+            "serials": [
+              "string"
+            ],
+            "ssidNum": 0,
+            "tag": "string",
+            "threshold": 0,
+            "timeout": 0
+          },
+          "type": "string"
+        }
+      ],
+      "defaultDestinations": {
+        "allAdmins": true,
+        "emails": [
+          "string"
+        ],
+        "httpServerIds": [
+          "string"
+        ],
+        "snmp": true
+      },
+      "muting": {
+        "byPortSchedules": {
+          "enabled": true
+        }
+      }
+    }
 """

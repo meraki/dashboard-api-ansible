@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_arp_table_info
-short_description: Information module for devices _livetools _arptable
-description: Information module for devices _livetools _arptable
-version_added: '2.18.0'
+short_description: Information module for devices _live _tools _arp _table
+description:
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

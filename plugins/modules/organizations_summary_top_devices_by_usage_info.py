@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_summary_top_devices_by_usage_info
-short_description: Information module for organizations _summary _top _devices _byusage
+short_description: Information module for organizations _summary _top _devices _by _usage
 description:
-- Get all organizations _summary _top _devices _byusage.
+- Get all organizations _summary _top _devices _by _usage.
 - >
    Return metrics for organization's top 10 devices sorted by data usage over given time range. Default unit is
    megabytes.
@@ -25,20 +25,40 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
+  networkTag:
+    description:
+    - NetworkTag query parameter. Match result to an exact network tag.
+    type: str
+  deviceTag:
+    description:
+    - DeviceTag query parameter. Match result to an exact device tag.
+    type: str
+  quantity:
+    description:
+    - Quantity query parameter. Set number of desired results to return. Default is 10.
+    type: int
+  ssidName:
+    description:
+    - SsidName query parameter. Filter results by ssid name.
+    type: str
+  usageUplink:
+    description:
+    - UsageUplink query parameter. Filter results by usage uplink.
+    type: str
   t0:
     description:
     - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
     type: str
   timespan:
     description:
     - >
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
       not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 8 hours and
-      be less than or equal to 31 days. The default is 1 day.
+      be less than or equal to 186 days. The default is 1 day.
     type: float
 requirements:
 - meraki >= 2.4.9
@@ -56,7 +76,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _summary _top _devices _byusage
+- name: Get all organizations _summary _top _devices _by _usage
   cisco.meraki.organizations_summary_top_devices_by_usage_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -78,6 +98,11 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    networkTag: string
+    deviceTag: string
+    quantity: 0
+    ssidName: string
+    usageUplink: string
     t0: string
     t1: string
     timespan: 0

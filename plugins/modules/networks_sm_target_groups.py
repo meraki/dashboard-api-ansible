@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_target_groups
-short_description: Resource module for networks _sm _targetgroups
+short_description: Resource module for networks _sm _target _groups
 description:
-- Manage operations create, update and delete of the resource networks _sm _targetgroups.
+- Manage operations create, update and delete of the resource networks _sm _target _groups.
 - Add a target group.
 - Delete a target group from a network.
 - Update a target group.

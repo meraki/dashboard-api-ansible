@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_login_security_info
-short_description: Information module for organizations _loginsecurity
+short_description: Information module for organizations _login _security
 description:
-- Get all organizations _loginsecurity.
+- Get all organizations _login _security.
 - Returns the login security settings for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _loginsecurity
+- name: Get all organizations _login _security
   cisco.meraki.organizations_login_security_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

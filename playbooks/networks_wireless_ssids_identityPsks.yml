@@ -6,10 +6,10 @@
       cisco.meraki.networks_wireless_ssids_identity_psks:
         meraki_suppress_logging: true
         state: present
-        expiresAt: '2018-02-11T00:00:00.090210Z'
+        expiresAt: '2018-02-11T00:00:00.090209Z'
         groupPolicyId: '101'
-        id: '1284392014819'
+        # identityPskId: '1284392014819'
         name: Sample Identity PSK
-        networkId: string
-        number: string
-        passphrase: secret
+        networkId: L_828099381482771185
+        number: 1
+        # passphrase: secrethguygyu

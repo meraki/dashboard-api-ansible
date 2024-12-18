@@ -7,12 +7,14 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_rf_profiles
-short_description: Resource module for networks _wireless _rfprofiles
+short_description: Resource module for networks _wireless _rf _profiles
 description:
-- Manage operations create, update and delete of the resource networks _wireless _rfprofiles.
+- Manage operations create, update and delete of the resource networks _wireless _rf _profiles.
 - Creates new RF profile for this network.
 - Delete a RF Profile.
-- Updates specified RF profile for this network.
+- >
+   Updates specified RF profile for this network. Note built-in RF profiles can only be assigned as a default, and
+   its attributes are immutable.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -97,6 +99,16 @@ options:
             type: str
         type: list
     type: dict
+  isIndoorDefault:
+    description: Set this profile as the default indoor rf profile. If the profile ID
+      is one of 'indoor' or 'outdoor', then a new profile will be created from the respective
+      ID and set as the default.
+    type: bool
+  isOutdoorDefault:
+    description: Set this profile as the default outdoor rf profile. If the profile
+      ID is one of 'indoor' or 'outdoor', then a new profile will be created from the
+      respective ID and set as the default.
+    type: bool
   minBitrateType:
     description: Minimum bitrate can be set to either 'band' or 'ssid'. Defaults to
       band.
@@ -240,7 +252,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -263,7 +275,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -286,7 +298,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -309,7 +321,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -332,7 +344,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -355,7 +367,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -378,7 +390,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -401,7 +413,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -424,7 +436,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -447,7 +459,7 @@ options:
             description: Settings related to all bands.
             suboptions:
               enabled:
-                description: List of enabled bands. Can include "2.4","5", "6", "disabled".
+                description: List of enabled bands. Can include "2.4", "5", "6", "disabled".
                 elements: str
                 type: list
             type: dict
@@ -933,6 +945,8 @@ EXAMPLES = r"""
       - bands:
         - '5'
         model: MR34
+    isIndoorDefault: true
+    isOutdoorDefault: true
     minBitrateType: band
     name: '1234'
     networkId: string
@@ -1167,6 +1181,8 @@ meraki_response:
         ]
       },
       "id": "string",
+      "isIndoorDefault": true,
+      "isOutdoorDefault": true,
       "minBitrateType": "string",
       "name": "string",
       "networkId": "string",

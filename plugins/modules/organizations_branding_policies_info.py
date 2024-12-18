@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_branding_policies_info
-short_description: Information module for organizations _brandingpolicies
+short_description: Information module for organizations _branding _policies
 description:
-- Get all organizations _brandingpolicies.
-- Get organizations _brandingpolicies by id.
+- Get all organizations _branding _policies.
+- Get organizations _branding _policies by id.
 - List the branding policies of an organization.
 - Return a branding policy.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _brandingpolicies
+- name: Get all organizations _branding _policies
   cisco.meraki.organizations_branding_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _brandingpolicies by id
+- name: Get organizations _branding _policies by id
   cisco.meraki.organizations_branding_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_camera_quality_retention_profiles
-short_description: Resource module for networks _camera _qualityretentionprofiles
+short_description: Resource module for networks _camera _quality _retention _profiles
 description:
-- Manage operations create, update and delete of the resource networks _camera _qualityretentionprofiles.
+- Manage operations create, update and delete of the resource networks _camera _quality _retention _profiles.
 - Creates new quality retention profile for this network.
 - Delete an existing quality retention profile for this network.
 - Update an existing quality retention profile for this network.
@@ -28,8 +28,8 @@ options:
     type: bool
   maxRetentionDays:
     description: The maximum number of days for which the data will be stored, or 'null'
-      to keep data until storage space runs out. If the former, it can be one of 1,
-      2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 30, 60, 90 days.
+      to keep data until storage space runs out. If the former, it can be in the range
+      of one to ninety days.
     type: int
   motionBasedRetentionEnabled:
     description: Deletes footage older than 3 days in which no motion was detected.
@@ -59,6 +59,14 @@ options:
     description: Schedule for which this camera will record video, or 'null' to always
       record.
     type: str
+  smartRetention:
+    description: Smart Retention records footage in two qualities and intelligently
+      retains higher quality when motion, people or vehicles are detected.
+    suboptions:
+      enabled:
+        description: Boolean indicating if Smart Retention is enabled(true) or disabled(false).
+        type: bool
+    type: dict
   videoSettings:
     description: Video quality and resolution settings for all the camera models.
     suboptions:
@@ -96,6 +104,18 @@ options:
               or '3840x2160'.
             type: str
         type: dict
+      MV13M:
+        description: Quality and resolution for MV13M camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
       MV21/MV71:
         description: Quality and resolution for MV21/MV71 camera models.
         suboptions:
@@ -119,6 +139,42 @@ options:
               or '2688x1512'.
             type: str
         type: dict
+      MV23:
+        description: Quality and resolution for MV23 camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV23M:
+        description: Quality and resolution for MV23M camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV23X:
+        description: Quality and resolution for MV23X camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
       MV32:
         description: Quality and resolution for MV32 camera models.
         suboptions:
@@ -132,6 +188,18 @@ options:
         type: dict
       MV33:
         description: Quality and resolution for MV33 camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1080x1080', '2112x2112'
+              or '2880x2880'.
+            type: str
+        type: dict
+      MV33M:
+        description: Quality and resolution for MV33M camera models.
         suboptions:
           quality:
             description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
@@ -162,11 +230,60 @@ options:
               or 'High'.
             type: str
           resolution:
-            description: Resolution of the camera. Can be one of '1920x1080' or '2688x1512'.
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV63M:
+        description: Quality and resolution for MV63M camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
             type: str
         type: dict
       MV63X:
         description: Quality and resolution for MV63X camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV73:
+        description: Quality and resolution for MV73 camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV73M:
+        description: Quality and resolution for MV73M camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
+              or '3840x2160'.
+            type: str
+        type: dict
+      MV73X:
+        description: Quality and resolution for MV73X camera models.
         suboptions:
           quality:
             description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
@@ -185,7 +302,20 @@ options:
               or 'High'.
             type: str
           resolution:
-            description: Resolution of the camera. Can be one of '1080x1080' or '2112x2112'.
+            description: Resolution of the camera. Can be one of '1080x1080', '2112x2112'
+              or '2880x2880'.
+            type: str
+        type: dict
+      MV93M:
+        description: Quality and resolution for MV93M camera models.
+        suboptions:
+          quality:
+            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
+              or 'High'.
+            type: str
+          resolution:
+            description: Resolution of the camera. Can be one of '1080x1080', '2112x2112'
+              or '2880x2880'.
             type: str
         type: dict
       MV93X:
@@ -312,6 +442,8 @@ EXAMPLES = r"""
     qualityRetentionProfileId: string
     restrictedBandwidthModeEnabled: true
     scheduleId: string
+    smartRetention:
+      enabled: true
     videoSettings:
       MV12/MV22/MV72:
         quality: string
@@ -322,10 +454,22 @@ EXAMPLES = r"""
       MV13:
         quality: string
         resolution: string
+      MV13M:
+        quality: string
+        resolution: string
       MV21/MV71:
         quality: string
         resolution: string
       MV22X/MV72X:
+        quality: string
+        resolution: string
+      MV23:
+        quality: string
+        resolution: string
+      MV23M:
+        quality: string
+        resolution: string
+      MV23X:
         quality: string
         resolution: string
       MV32:
@@ -334,16 +478,34 @@ EXAMPLES = r"""
       MV33:
         quality: string
         resolution: string
+      MV33M:
+        quality: string
+        resolution: string
       MV52:
         quality: string
         resolution: string
       MV63:
         quality: string
         resolution: string
+      MV63M:
+        quality: string
+        resolution: string
       MV63X:
         quality: string
         resolution: string
+      MV73:
+        quality: string
+        resolution: string
+      MV73M:
+        quality: string
+        resolution: string
+      MV73X:
+        quality: string
+        resolution: string
       MV93:
+        quality: string
+        resolution: string
+      MV93M:
         quality: string
         resolution: string
       MV93X:

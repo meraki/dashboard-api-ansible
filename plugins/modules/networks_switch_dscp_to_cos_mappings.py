@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dscp_to_cos_mappings
-short_description: Resource module for networks _switch _dscptocosmappings
+short_description: Resource module for networks _switch _dscp _to _cos _mappings
 description:
-- Manage operation update of the resource networks _switch _dscptocosmappings.
+- Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
 - Update the DSCP to CoS mappings.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -89,5 +89,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "cos": 0,
+        "dscp": 0,
+        "title": "string"
+      }
+    ]
 """

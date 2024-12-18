@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_devices_performance_history_info
-short_description: Information module for networks _sm _devices _performancehistory
+short_description: Information module for networks _sm _devices _performance _history
 description:
-- Get all networks _sm _devices _performancehistory.
+- Get all networks _sm _devices _performance _history.
 - Return historical records of various Systems Manager client metrics for desktop devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -62,7 +62,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _performancehistory
+- name: Get all networks _sm _devices _performance _history
   cisco.meraki.networks_sm_devices_performance_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

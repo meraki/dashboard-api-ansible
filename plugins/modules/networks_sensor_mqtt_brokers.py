@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sensor_mqtt_brokers
-short_description: Resource module for networks _sensor _mqttbrokers
+short_description: Resource module for networks _sensor _mqtt _brokers
 description:
-- Manage operation update of the resource networks _sensor _mqttbrokers.
+- Manage operation update of the resource networks _sensor _mqtt _brokers.
 - >
    Update the sensor settings of an MQTT broker. To update the broker itself, use
    /networks/{networkId}/mqttBrokers/{mqttBrokerId}.

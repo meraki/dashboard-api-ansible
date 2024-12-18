@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_devices_uplinks_addresses_by_device_info
-short_description: Information module for organizations _devices _uplinks _addresses _bydevice
+short_description: Information module for organizations _devices _uplinks _addresses _by _device
 description:
-- Get all organizations _devices _uplinks _addresses _bydevice.
+- Get all organizations _devices _uplinks _addresses _by _device.
 - List the current uplink addresses for devices in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -94,7 +94,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _uplinks _addresses _bydevice
+- name: Get all organizations _devices _uplinks _addresses _by _device
   cisco.meraki.organizations_devices_uplinks_addresses_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -156,9 +156,17 @@ meraki_response:
                 "address": "string",
                 "assignmentMode": "string",
                 "gateway": "string",
+                "nameservers": {
+                  "addresses": [
+                    "string"
+                  ]
+                },
                 "protocol": "string",
                 "public": {
                   "address": "string"
+                },
+                "vlan": {
+                  "id": "string"
                 }
               }
             ],

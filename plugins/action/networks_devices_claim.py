@@ -27,6 +27,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     serials=dict(type="list"),
     networkId=dict(type="str"),
+    addAtomically=dict(type="bool"),
 ))
 
 required_if = []
@@ -67,6 +68,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             serials=params.get("serials"),
             networkId=params.get("networkId"),
+            add_atomically=params.get("addAtomically"),
         )
         return new_object
 

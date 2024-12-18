@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_stacks_routing_static_routes_info
-short_description: Information module for networks _switch _stacks _routing _staticroutes
+short_description: Information module for networks _switch _stacks _routing _static _routes
 description:
-- Get all networks _switch _stacks _routing _staticroutes.
-- Get networks _switch _stacks _routing _staticroutes by id.
+- Get all networks _switch _stacks _routing _static _routes.
+- Get networks _switch _stacks _routing _static _routes by id.
 - List layer 3 static routes for a switch stack.
 - Return a layer 3 static route for a switch stack.
 version_added: '2.16.0'
@@ -54,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _stacks _routing _staticroutes
+- name: Get all networks _switch _stacks _routing _static _routes
   cisco.meraki.networks_switch_stacks_routing_static_routes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -80,7 +80,7 @@ EXAMPLES = r"""
     switchStackId: string
   register: result
 
-- name: Get networks _switch _stacks _routing _staticroutes by id
+- name: Get networks _switch _stacks _routing _static _routes by id
   cisco.meraki.networks_switch_stacks_routing_static_routes_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -116,6 +116,7 @@ meraki_response:
   sample: >
     {
       "advertiseViaOspfEnabled": true,
+      "managementNextHop": "string",
       "name": "string",
       "nextHopIp": "string",
       "preferOverOspfRoutesEnabled": true,

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_traffic_shaping_dscp_tagging_options_info
-short_description: Information module for networks _trafficshaping _dscptaggingoptions
+short_description: Information module for networks _traffic _shaping _dscp _tagging _options
 description:
-- Get all networks _trafficshaping _dscptaggingoptions.
+- Get all networks _traffic _shaping _dscp _tagging _options.
 - Returns the available DSCP tagging options for your traffic shaping rules.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _trafficshaping _dscptaggingoptions
+- name: Get all networks _traffic _shaping _dscp _tagging _options
   cisco.meraki.networks_traffic_shaping_dscp_tagging_options_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

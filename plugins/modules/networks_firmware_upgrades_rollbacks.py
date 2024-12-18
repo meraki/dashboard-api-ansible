@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_rollbacks
-short_description: Resource module for networks _firmwareupgrades _rollbacks
+short_description: Resource module for networks _firmware _upgrades _rollbacks
 description:
-- Manage operation create of the resource networks _firmwareupgrades _rollbacks.
+- Manage operation create of the resource networks _firmware _upgrades _rollbacks.
 - Rollback a Firmware Upgrade For A Network.
 version_added: '2.16.0'
 extends_documentation_fragment:

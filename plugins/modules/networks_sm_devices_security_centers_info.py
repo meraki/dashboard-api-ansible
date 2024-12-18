@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_devices_security_centers_info
-short_description: Information module for networks _sm _devices _securitycenters
+short_description: Information module for networks _sm _devices _security _centers
 description:
-- Get all networks _sm _devices _securitycenters.
+- Get all networks _sm _devices _security _centers.
 - Get a list of softwares associated with a device.
 - List the security centers on a device.
 version_added: '2.16.0'
@@ -48,7 +48,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _securitycenters
+- name: Get all networks _sm _devices _security _centers
   cisco.meraki.networks_sm_devices_security_centers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

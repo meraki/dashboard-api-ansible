@@ -37,6 +37,9 @@ argument_spec.update(dict(
     clientName=dict(type="str"),
     smDeviceMac=dict(type="str"),
     smDeviceName=dict(type="str"),
+    eventDetails=dict(type="str"),
+    eventSeverity=dict(type="str"),
+    isCatalyst=dict(type="bool"),
     perPage=dict(type="int"),
     total_pages=dict(type="int"),
     direction=dict(type="str"),
@@ -116,6 +119,15 @@ class ActionModule(ActionBase):
         if params.get("smDeviceName") is not None:
             new_object["smDeviceName"] = params.get(
                 "smDeviceName")
+        if params.get("eventDetails") is not None:
+            new_object["eventDetails"] = params.get(
+                "eventDetails")
+        if params.get("eventSeverity") is not None:
+            new_object["eventSeverity"] = params.get(
+                "eventSeverity")
+        if params.get("isCatalyst") is not None:
+            new_object["isCatalyst"] = params.get(
+                "isCatalyst")
         if params.get("perPage") is not None:
             new_object["perPage"] = params.get(
                 "perPage")

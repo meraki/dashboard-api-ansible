@@ -75,7 +75,13 @@ meraki_response:
       "rstpEnabled": true,
       "stpBridgePriority": [
         {
+          "stacks": [
+            "string"
+          ],
           "stpPriority": 0,
+          "switchProfiles": [
+            "string"
+          ],
           "switches": [
             "string"
           ]

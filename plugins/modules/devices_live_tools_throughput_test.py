@@ -7,11 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_throughput_test
-short_description: Resource module for devices _livetools _throughputtest
+short_description: Resource module for devices _live _tools _throughput _test
 description:
-- Manage operation create of the resource devices _livetools _throughputtest.
-- Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput.
-version_added: '2.18.0'
+- Manage operation create of the resource devices _live _tools _throughput _test.
+- >
+   Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a
+   rate limit of one request every five seconds per device.
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

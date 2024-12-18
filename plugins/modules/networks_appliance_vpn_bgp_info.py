@@ -78,11 +78,22 @@ meraki_response:
       "neighbors": [
         {
           "allowTransit": true,
+          "authentication": {
+            "password": "string"
+          },
           "ebgpHoldTimer": 0,
           "ebgpMultihop": 0,
           "ip": "string",
+          "ipv6": {
+            "address": "string"
+          },
+          "nextHopIp": "string",
           "receiveLimit": 0,
-          "remoteAsNumber": 0
+          "remoteAsNumber": 0,
+          "sourceInterface": "string",
+          "ttlSecurity": {
+            "enabled": true
+          }
         }
       ]
     }

@@ -34,6 +34,7 @@ argument_spec.update(dict(
     organizationIds=dict(type="list"),
     statuses=dict(type="list"),
     productTypes=dict(type="list"),
+    name=dict(type="str"),
     startDate=dict(type="str"),
     endDate=dict(type="str"),
 ))
@@ -99,6 +100,9 @@ class ActionModule(ActionBase):
         if params.get("productTypes") is not None:
             new_object["productTypes"] = params.get(
                 "productTypes")
+        if params.get("name") is not None:
+            new_object["name"] = params.get(
+                "name")
         if params.get("startDate") is not None:
             new_object["startDate"] = params.get(
                 "startDate")

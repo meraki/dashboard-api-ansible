@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_action_batches_info
-short_description: Information module for organizations _actionbatches
+short_description: Information module for organizations _action _batches
 description:
-- Get all organizations _actionbatches.
-- Get organizations _actionbatches by id.
+- Get all organizations _action _batches.
+- Get organizations _action _batches by id.
 - Return an action batch.
 - Return the list of action batches in the organization.
 version_added: '2.16.0'
@@ -54,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _actionbatches
+- name: Get all organizations _action _batches
   cisco.meraki.organizations_action_batches_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -80,7 +80,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _actionbatches by id
+- name: Get organizations _action _batches by id
   cisco.meraki.organizations_action_batches_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

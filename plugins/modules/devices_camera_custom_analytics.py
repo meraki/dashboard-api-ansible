@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_custom_analytics
-short_description: Resource module for devices _camera _customanalytics
+short_description: Resource module for devices _camera _custom _analytics
 description:
-- Manage operation update of the resource devices _camera _customanalytics.
+- Manage operation update of the resource devices _camera _custom _analytics.
 - Update custom analytics settings for a camera.
 version_added: '2.16.0'
 extends_documentation_fragment:

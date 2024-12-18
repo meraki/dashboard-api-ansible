@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_camera_wireless_profiles
-short_description: Resource module for networks _camera _wirelessprofiles
+short_description: Resource module for networks _camera _wireless _profiles
 description:
-- Manage operations create, update and delete of the resource networks _camera _wirelessprofiles.
+- Manage operations create, update and delete of the resource networks _camera _wireless _profiles.
 - Creates a new camera wireless profile for this network.
 - Delete an existing camera wireless profile for this network.
 - Update an existing camera wireless profile in this network.
@@ -105,12 +105,16 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    identity:
+      password: password123
+      username: identityname
     name: wireless profile A
     networkId: string
     ssid:
       authMode: 8021x-radius
       encryptionMode: wpa-eap
       name: ssid test
+      psk: sampleKey
 
 - name: Delete by id
   cisco.meraki.networks_camera_wireless_profiles:
@@ -162,15 +166,15 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
     identity:
-      password: string
-      username: string
-    name: string
+      password: password123
+      username: identityname
+    name: wireless profile A
     networkId: string
     ssid:
-      authMode: string
-      encryptionMode: string
-      name: string
-      psk: string
+      authMode: 8021x-radius
+      encryptionMode: wpa-eap
+      name: ssid test
+      psk: sampleKey
     wirelessProfileId: string
 
 """
@@ -180,5 +184,19 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "appliedDeviceCount": 0,
+      "id": "string",
+      "identity": {
+        "password": "string",
+        "username": "string"
+      },
+      "name": "string",
+      "ssid": {
+        "authMode": "string",
+        "encryptionMode": "string",
+        "name": "string",
+        "psk": "string"
+      }
+    }
 """

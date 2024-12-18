@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_lldp_cdp_info
-short_description: Information module for devices _lldpcdp
+short_description: Information module for devices _lldp _cdp
 description:
-- Get all devices _lldpcdp.
+- Get all devices _lldp _cdp.
 - List LLDP and CDP information for a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _lldpcdp
+- name: Get all devices _lldp _cdp
   cisco.meraki.devices_lldp_cdp_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

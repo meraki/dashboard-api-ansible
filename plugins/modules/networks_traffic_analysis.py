@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_traffic_analysis
-short_description: Resource module for networks _trafficanalysis
+short_description: Resource module for networks _traffic _analysis
 description:
-- Manage operation update of the resource networks _trafficanalysis.
+- Manage operation update of the resource networks _traffic _analysis.
 - Update the traffic analysis settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:

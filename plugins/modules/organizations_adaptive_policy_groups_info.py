@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_groups_info
-short_description: Information module for organizations _adaptivepolicy _groups
+short_description: Information module for organizations _adaptive _policy _groups
 description:
-- Get all organizations _adaptivepolicy _groups.
-- Get organizations _adaptivepolicy _groups by id.
+- Get all organizations _adaptive _policy _groups.
+- Get organizations _adaptive _policy _groups by id.
 - List adaptive policy groups in a organization.
 - Returns an adaptive policy group.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptivepolicy _groups
+- name: Get all organizations _adaptive _policy _groups
   cisco.meraki.organizations_adaptive_policy_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _adaptivepolicy _groups by id
+- name: Get organizations _adaptive _policy _groups by id
   cisco.meraki.organizations_adaptive_policy_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

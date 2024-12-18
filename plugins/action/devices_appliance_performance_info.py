@@ -26,6 +26,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     serial=dict(type="str"),
+    t0=dict(type="str"),
+    t1=dict(type="str"),
+    timespan=dict(type="float"),
 ))
 
 required_if = []
@@ -67,6 +70,15 @@ class ActionModule(ActionBase):
         if params.get("serial") is not None:
             new_object["serial"] = params.get(
                 "serial")
+        if params.get("t0") is not None:
+            new_object["t0"] = params.get(
+                "t0")
+        if params.get("t1") is not None:
+            new_object["t1"] = params.get(
+                "t1")
+        if params.get("timespan") is not None:
+            new_object["timespan"] = params.get(
+                "timespan")
 
         return new_object
 

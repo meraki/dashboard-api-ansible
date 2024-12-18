@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_traffic_shaping_application_categories_info
-short_description: Information module for networks _trafficshaping _applicationcategories
+short_description: Information module for networks _traffic _shaping _application _categories
 description:
-- Get all networks _trafficshaping _applicationcategories.
+- Get all networks _traffic _shaping _application _categories.
 - Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _trafficshaping _applicationcategories
+- name: Get all networks _traffic _shaping _application _categories
   cisco.meraki.networks_traffic_shaping_application_categories_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

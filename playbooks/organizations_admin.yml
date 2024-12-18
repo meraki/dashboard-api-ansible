@@ -5,15 +5,16 @@
     - name: Create
       cisco.meraki.organizations_admins:
         meraki_suppress_logging: true
-        meraki_caller: "test 123"
-        state: absent
-        name: DevNet Admin 3455
+        # 
+        state: present
+        name: DevNet Admin 345
         email: devnetmerakiadmin23@yopmail.com
         authenticationMethod: Email
         orgAccess: full
         networks: []
         tags: []
         organizationId: "828099381482762270"
+        
   #       - name: Create
   # cisco.meraki.organizations_admins:
   #   meraki_host: "{{meraki_host}}"

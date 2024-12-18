@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_dhcp
-short_description: Resource module for networks _cellulargateway _dhcp
+short_description: Resource module for networks _cellular _gateway _dhcp
 description:
-- Manage operation update of the resource networks _cellulargateway _dhcp.
+- Manage operation update of the resource networks _cellular _gateway _dhcp.
 - Update common DHCP settings of MGs.
 version_added: '2.16.0'
 extends_documentation_fragment:

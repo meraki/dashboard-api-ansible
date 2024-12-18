@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -42,6 +42,7 @@ argument_spec.update(dict(
     vlanTagging=dict(type="dict"),
     networkId=dict(type="str"),
     groupPolicyId=dict(type="str"),
+    force=dict(type="bool"),
 ))
 
 required_if = [
@@ -67,6 +68,7 @@ class NetworksGroupPolicies(object):
             vlanTagging=params.get("vlanTagging"),
             networkId=params.get("networkId"),
             groupPolicyId=params.get("groupPolicyId"),
+            force=params.get("force"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -119,6 +121,8 @@ class NetworksGroupPolicies(object):
 
     def delete_by_id_params(self):
         new_object_params = {}
+        if self.new_object.get('force') is not None or self.new_object.get('force') is not None:
+            new_object_params['force'] = self.new_object.get('force')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -240,10 +244,11 @@ class NetworksGroupPolicies(object):
             ("vlanTagging", "vlanTagging"),
             ("networkId", "networkId"),
             ("groupPolicyId", "groupPolicyId"),
+            ("force", "force"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_cellular_firewall_rules
-short_description: Resource module for networks _appliance _firewall _cellularfirewallrules
+short_description: Resource module for networks _appliance _firewall _cellular _firewall _rules
 description:
-- Manage operation update of the resource networks _appliance _firewall _cellularfirewallrules.
+- Manage operation update of the resource networks _appliance _firewall _cellular _firewall _rules.
 - Update the cellular firewall rules of an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:

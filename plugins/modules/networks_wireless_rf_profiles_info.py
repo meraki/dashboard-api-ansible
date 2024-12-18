@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_rf_profiles_info
-short_description: Information module for networks _wireless _rfprofiles
+short_description: Information module for networks _wireless _rf _profiles
 description:
-- Get all networks _wireless _rfprofiles.
-- Get networks _wireless _rfprofiles by id.
+- Get all networks _wireless _rf _profiles.
+- Get networks _wireless _rf _profiles by id.
 - List RF profiles for this network.
 - Return a RF profile.
 version_added: '2.16.0'
@@ -57,7 +57,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _rfprofiles
+- name: Get all networks _wireless _rf _profiles
   cisco.meraki.networks_wireless_rf_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -83,7 +83,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _wireless _rfprofiles by id
+- name: Get networks _wireless _rf _profiles by id
   cisco.meraki.networks_wireless_rf_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -139,6 +139,8 @@ meraki_response:
         ]
       },
       "id": "string",
+      "isIndoorDefault": true,
+      "isOutdoorDefault": true,
       "minBitrateType": "string",
       "name": "string",
       "networkId": "string",

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_one_to_one_nat_rules
-short_description: Resource module for networks _appliance _firewall _onetoonenatrules
+short_description: Resource module for networks _appliance _firewall _one _to _one _nat _rules
 description:
-- Manage operation update of the resource networks _appliance _firewall _onetoonenatrules.
+- Manage operation update of the resource networks _appliance _firewall _one _to _one _nat _rules.
 - Set the 1 1 NAT mapping rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:

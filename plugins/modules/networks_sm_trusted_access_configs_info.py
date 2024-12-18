@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_trusted_access_configs_info
-short_description: Information module for networks _sm _trustedaccessconfigs
+short_description: Information module for networks _sm _trusted _access _configs
 description:
-- Get all networks _sm _trustedaccessconfigs.
+- Get all networks _sm _trusted _access _configs.
 - List Trusted Access Configs.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -58,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _trustedaccessconfigs
+- name: Get all networks _sm _trusted _access _configs
   cisco.meraki.networks_sm_trusted_access_configs_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

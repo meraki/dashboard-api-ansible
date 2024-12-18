@@ -17,7 +17,7 @@ DOCUMENTATION = r'''
 ---
 module: meraki_admin
 short_description: Manage administrators in the Meraki cloud
-version_added: '1.0.0'
+version_added: '2.16.0'
 description:
 - Allows for creation, management, and visibility into administrators within Meraki.
 deprecated:

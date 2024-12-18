@@ -159,5 +159,33 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "areas": [
+        {
+          "areaId": "string",
+          "areaName": "string",
+          "areaType": "string"
+        }
+      ],
+      "deadTimerInSeconds": 0,
+      "enabled": true,
+      "helloTimerInSeconds": 0,
+      "md5AuthenticationEnabled": true,
+      "md5AuthenticationKey": {
+        "id": 0,
+        "passphrase": "string"
+      },
+      "v3": {
+        "areas": [
+          {
+            "areaId": "string",
+            "areaName": "string",
+            "areaType": "string"
+          }
+        ],
+        "deadTimerInSeconds": 0,
+        "enabled": true,
+        "helloTimerInSeconds": 0
+      }
+    }
 """

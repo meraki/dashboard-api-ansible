@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_config_templates_switch_profiles_info
-short_description: Information module for organizations _configtemplates _switch _profiles
+short_description: Information module for organizations _config _templates _switch _profiles
 description:
-- Get all organizations _configtemplates _switch _profiles.
+- Get all organizations _config _templates _switch _profiles.
 - List the switch templates for your switch template configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _configtemplates _switch _profiles
+- name: Get all organizations _config _templates _switch _profiles
   cisco.meraki.organizations_config_templates_switch_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

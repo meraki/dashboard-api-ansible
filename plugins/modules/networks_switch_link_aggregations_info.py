@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_link_aggregations_info
-short_description: Information module for networks _switch _linkaggregations
+short_description: Information module for networks _switch _link _aggregations
 description:
-- Get all networks _switch _linkaggregations.
+- Get all networks _switch _link _aggregations.
 - List link aggregation groups.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _linkaggregations
+- name: Get all networks _switch _link _aggregations
   cisco.meraki.networks_switch_link_aggregations_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

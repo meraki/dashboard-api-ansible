@@ -11,7 +11,7 @@ short_description: Resource module for organizations _camera _roles
 description:
 - Manage operations create, update and delete of the resource organizations _camera _roles.
 - Creates new role for this organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
