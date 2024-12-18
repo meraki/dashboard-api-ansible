@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _o
 description:
 - Get all organizations _wireless _controller _overview _by _device.
 - List the overview information of wireless LAN controllers in an organization and it is updated every minute.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

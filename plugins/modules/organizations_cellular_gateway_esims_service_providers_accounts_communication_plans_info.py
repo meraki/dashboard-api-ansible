@@ -11,7 +11,7 @@ short_description: Information module for organizations _cellular _gateway _esim
 description:
 - Get all organizations _cellular _gateway _esims _service _providers _accounts _communication _plans.
 - The communication plans available for a given provider.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

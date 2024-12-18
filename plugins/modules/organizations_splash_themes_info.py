@@ -11,7 +11,7 @@ short_description: Information module for organizations _splash _themes
 description:
 - Get all organizations _splash _themes.
 - List Splash Themes.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

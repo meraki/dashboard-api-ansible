@@ -11,7 +11,7 @@ short_description: Information module for organizations _assurance _alerts _over
 description:
 - Get all organizations _assurance _alerts _overview _by _network.
 - Return a Summary of Alerts grouped by network and severity.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

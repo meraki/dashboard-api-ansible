@@ -11,7 +11,7 @@ short_description: Information module for organizations _switch _ports _topology
 description:
 - Get all organizations _switch _ports _topology _discovery _by _device.
 - List most recently seen LLDP/CDP discovery and topology information per switch port in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

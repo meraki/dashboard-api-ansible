@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _c
 description:
 - Get all organizations _wireless _controller _clients _overview _history _by _device _by _interval.
 - List wireless client counts of wireless LAN controllers over time in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

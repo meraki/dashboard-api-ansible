@@ -11,7 +11,7 @@ short_description: Information module for organizations _summary _top _applicati
 description:
 - Get all organizations _summary _top _applications _by _usage.
 - Return the top applications sorted by data usage over given time range. Default unit is megabytes.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

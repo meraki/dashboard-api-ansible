@@ -11,7 +11,7 @@ short_description: Resource module for organizations _assurance _alerts _restore
 description:
 - Manage operation create of the resource organizations _assurance _alerts _restore.
 - Restore health alerts from dismissed.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

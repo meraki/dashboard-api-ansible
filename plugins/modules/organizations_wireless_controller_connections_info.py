@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _c
 description:
 - Get all organizations _wireless _controller _connections.
 - List all access points associated with wireless LAN controllers in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

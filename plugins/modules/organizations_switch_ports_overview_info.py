@@ -17,7 +17,7 @@ description:
    speed observed. The number of inactive ports, and the total number of ports are also provided. Only ports on
    switches online during the timeframe will be represented and a port is only guaranteed to be present if its switch
    was online for at least 6 hours of the timeframe.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

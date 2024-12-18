@@ -11,7 +11,7 @@ short_description: Resource module for networks _floor _plans _devices _batch _u
 description:
 - Manage operation create of the resource networks _floor _plans _devices _batch _update.
 - Update floorplan assignments for a batch of devices.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

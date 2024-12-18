@@ -11,7 +11,7 @@ short_description: Resource module for networks _publish
 description:
 - Manage operation create of the resource networks _publish.
 - Update the status of a finished auto locate job to be published, and update device locations.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

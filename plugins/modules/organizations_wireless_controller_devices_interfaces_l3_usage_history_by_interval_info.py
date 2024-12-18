@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _d
 description:
 - Get all organizations _wireless _controller _devices _interfaces l3 _usage _history _by _interval.
 - List wireless LAN controller layer 3 interfaces history usage in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

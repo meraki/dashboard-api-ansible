@@ -14,7 +14,7 @@ description:
    Revokes an identity's API key, using the last four characters of the key. For users who have access to more than
    one organization, the change will take up to five minutes to propagate. If one of the organizations is currently
    under maintenance, the change may not propagate fully until after the maintenance has been completed.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

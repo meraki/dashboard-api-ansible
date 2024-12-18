@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _rf _profiles 
 description:
 - Get all organizations _wireless _rf _profiles _assignments _by _device.
 - List the RF profiles of an organization by device.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

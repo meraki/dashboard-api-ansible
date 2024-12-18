@@ -11,7 +11,7 @@ short_description: Information module for networks _wireless _electronic _shelf 
 description:
 - Get all networks _wireless _electronic _shelf _label _configured _devices.
 - Get a list of all ESL eligible devices of a network.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

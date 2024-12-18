@@ -11,7 +11,7 @@ short_description: Resource module for organizations _assets
 description:
 - Manage operation create of the resource organizations _assets.
 - Create a Splash Theme Asset.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

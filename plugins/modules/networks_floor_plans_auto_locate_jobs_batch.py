@@ -11,7 +11,7 @@ short_description: Resource module for networks _floor _plans _auto _locate _job
 description:
 - Manage operation create of the resource networks _floor _plans _auto _locate _jobs _batch.
 - Schedule auto locate jobs for one or more floor plans in a network.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

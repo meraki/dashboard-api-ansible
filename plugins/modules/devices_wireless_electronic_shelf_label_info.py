@@ -11,7 +11,7 @@ short_description: Information module for devices _wireless _electronic _shelf _
 description:
 - Get all devices _wireless _electronic _shelf _label.
 - Return the ESL settings of a device.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

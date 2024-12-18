@@ -11,7 +11,7 @@ short_description: Resource module for networks _appliance _sdwan _internet _pol
 description:
 - Manage operation update of the resource networks _appliance _sdwan _internet _policies.
 - Update SDWAN internet traffic preferences for an MX network.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

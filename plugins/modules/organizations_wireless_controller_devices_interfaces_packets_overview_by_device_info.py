@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _d
 description:
 - Get all organizations _wireless _controller _devices _interfaces _packets _overview _by _device.
 - Retrieve the packet counters for the interfaces of a Wireless LAN controller.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

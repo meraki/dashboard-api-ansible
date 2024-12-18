@@ -13,7 +13,7 @@ description:
 - >
    Recalculates automatically assigned channels for every AP within specified the specified networks. Note This could
    cause a brief loss in connectivity for wireless clients.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

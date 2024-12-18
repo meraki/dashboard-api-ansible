@@ -11,7 +11,7 @@ short_description: Resource module for networks _recalculate
 description:
 - Manage operation create of the resource networks _recalculate.
 - Trigger auto locate recalculation for a job, and optionally set anchors.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

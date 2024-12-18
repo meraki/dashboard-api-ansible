@@ -11,7 +11,7 @@ short_description: Information module for administered _identities _me _api _key
 description:
 - Get all administered _identities _me _api _keys.
 - List the non-sensitive metadata associated with the API keys that belong to the user.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

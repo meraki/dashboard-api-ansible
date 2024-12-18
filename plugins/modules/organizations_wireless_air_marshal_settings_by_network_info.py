@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _air _marshal 
 description:
 - Get all organizations _wireless _air _marshal _settings _by _network.
 - Returns the current Air Marshal settings for this network.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

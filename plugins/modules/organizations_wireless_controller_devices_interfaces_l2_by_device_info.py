@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _controller _d
 description:
 - Get all organizations _wireless _controller _devices _interfaces l2 _by _device.
 - List wireless LAN controller layer 2 interfaces in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

@@ -11,7 +11,7 @@ short_description: Resource module for networks _wireless _air _marshal _rules _
 description:
 - Manage operation update of the resource networks _wireless _air _marshal _rules _update.
 - Update a rule.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

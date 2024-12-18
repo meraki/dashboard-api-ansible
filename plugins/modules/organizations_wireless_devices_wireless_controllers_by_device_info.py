@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _devices _wire
 description:
 - Get all organizations _wireless _devices _wireless _controllers _by _device.
 - List of Catalyst access points information.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

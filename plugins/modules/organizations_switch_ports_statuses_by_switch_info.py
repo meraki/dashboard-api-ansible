@@ -11,7 +11,7 @@ short_description: Information module for organizations _switch _ports _statuses
 description:
 - Get all organizations _switch _ports _statuses _by _switch.
 - List the switchports in an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

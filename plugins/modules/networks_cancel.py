@@ -11,7 +11,7 @@ short_description: Resource module for networks _cancel
 description:
 - Manage operation create of the resource networks _cancel.
 - Cancel a scheduled or running auto locate job.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

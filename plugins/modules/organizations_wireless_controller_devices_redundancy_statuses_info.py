@@ -13,7 +13,7 @@ description:
 - >
    List redundancy details of wireless LAN controllers in an organization. The failover count refers to the total
    failovers system happens from the moment of this device onboarding to Dashboard.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

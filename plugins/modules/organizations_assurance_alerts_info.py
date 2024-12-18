@@ -11,7 +11,7 @@ short_description: Information module for organizations _assurance _alerts
 description:
 - Get all organizations _assurance _alerts.
 - Return all health alerts for an organization.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination

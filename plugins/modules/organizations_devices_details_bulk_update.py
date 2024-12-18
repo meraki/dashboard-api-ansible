@@ -11,7 +11,7 @@ short_description: Resource module for organizations _devices _details _bulk _up
 description:
 - Manage operation create of the resource organizations _devices _details _bulk _update.
 - Updating device details currently only used for Catalyst devices .
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

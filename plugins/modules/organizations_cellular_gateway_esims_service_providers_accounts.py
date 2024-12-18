@@ -11,7 +11,7 @@ short_description: Resource module for organizations _cellular _gateway _esims _
 description:
 - Manage operation create of the resource organizations _cellular _gateway _esims _service _providers _accounts.
 - Add a service provider account.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

@@ -11,7 +11,7 @@ short_description: Resource module for devices _live _tools _leds _blink
 description:
 - Manage operation create of the resource devices _live _tools _leds _blink.
 - Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one request every 10 seconds.
-version_added: '2.19.0'
+version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
