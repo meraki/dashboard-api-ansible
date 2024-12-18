@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_device_type_group_policies
-short_description: Resource module for networks _wireless _ssids _devicetypegrouppolicies
+short_description: Resource module for networks _wireless _ssids _device _type _group _policies
 description:
-- Manage operation update of the resource networks _wireless _ssids _devicetypegrouppolicies.
+- Manage operation update of the resource networks _wireless _ssids _device _type _group _policies.
 - Update the device type group policies for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:

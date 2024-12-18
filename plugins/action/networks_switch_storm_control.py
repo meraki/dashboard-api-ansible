@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -34,6 +34,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     broadcastThreshold=dict(type="int"),
     multicastThreshold=dict(type="int"),
+    treatTheseTrafficTypesAsOneThreshold=dict(type="list"),
     unknownUnicastThreshold=dict(type="int"),
     networkId=dict(type="str"),
 ))
@@ -52,6 +53,7 @@ class NetworksSwitchStormControl(object):
         self.new_object = dict(
             broadcastThreshold=params.get("broadcastThreshold"),
             multicastThreshold=params.get("multicastThreshold"),
+            treatTheseTrafficTypesAsOneThreshold=params.get("treatTheseTrafficTypesAsOneThreshold"),
             unknownUnicastThreshold=params.get("unknownUnicastThreshold"),
             network_id=params.get("networkId"),
         )
@@ -71,6 +73,9 @@ class NetworksSwitchStormControl(object):
         if self.new_object.get('multicastThreshold') is not None or self.new_object.get('multicast_threshold') is not None:
             new_object_params['multicastThreshold'] = self.new_object.get('multicastThreshold') or \
                 self.new_object.get('multicast_threshold')
+        if self.new_object.get('treatTheseTrafficTypesAsOneThreshold') is not None or self.new_object.get('treat_these_traffic_types_as_one_threshold') is not None:
+            new_object_params['treatTheseTrafficTypesAsOneThreshold'] = self.new_object.get('treatTheseTrafficTypesAsOneThreshold') or \
+                self.new_object.get('treat_these_traffic_types_as_one_threshold')
         if self.new_object.get('unknownUnicastThreshold') is not None or self.new_object.get('unknown_unicast_threshold') is not None:
             new_object_params['unknownUnicastThreshold'] = self.new_object.get('unknownUnicastThreshold') or \
                 self.new_object.get('unknown_unicast_threshold')
@@ -132,12 +137,13 @@ class NetworksSwitchStormControl(object):
         obj_params = [
             ("broadcastThreshold", "broadcastThreshold"),
             ("multicastThreshold", "multicastThreshold"),
+            ("treatTheseTrafficTypesAsOneThreshold", "treatTheseTrafficTypesAsOneThreshold"),
             ("unknownUnicastThreshold", "unknownUnicastThreshold"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

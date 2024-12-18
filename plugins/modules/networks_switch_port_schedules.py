@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_port_schedules
-short_description: Resource module for networks _switch _portschedules
+short_description: Resource module for networks _switch _port _schedules
 description:
-- Manage operations create, update and delete of the resource networks _switch _portschedules.
+- Manage operations create, update and delete of the resource networks _switch _port _schedules.
 - Add a switch port schedule.
 - Delete a switch port schedule.
 - Update a switch port schedule.

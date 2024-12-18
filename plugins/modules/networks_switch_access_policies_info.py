@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_access_policies_info
-short_description: Information module for networks _switch _accesspolicies
+short_description: Information module for networks _switch _access _policies
 description:
-- Get all networks _switch _accesspolicies.
-- Get networks _switch _accesspolicies by id.
+- Get all networks _switch _access _policies.
+- Get networks _switch _access _policies by id.
 - >
    List the access policies for a switch network. Only returns access policies with 'my RADIUS server' as
    authentication method.
@@ -52,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _accesspolicies
+- name: Get all networks _switch _access _policies
   cisco.meraki.networks_switch_access_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -77,7 +77,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _switch _accesspolicies by id
+- name: Get networks _switch _access _policies by id
   cisco.meraki.networks_switch_access_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -126,6 +126,10 @@ meraki_response:
       "increaseAccessSpeed": true,
       "name": "string",
       "radius": {
+        "cache": {
+          "enabled": true,
+          "timeout": 0
+        },
         "criticalAuth": {
           "dataVlanId": 0,
           "suspendPortBounce": true,
@@ -138,7 +142,9 @@ meraki_response:
       "radiusAccountingServers": [
         {
           "host": "string",
-          "port": 0
+          "organizationRadiusServerId": "string",
+          "port": 0,
+          "serverId": "string"
         }
       ],
       "radiusCoaSupportEnabled": true,
@@ -146,7 +152,9 @@ meraki_response:
       "radiusServers": [
         {
           "host": "string",
-          "port": 0
+          "organizationRadiusServerId": "string",
+          "port": 0,
+          "serverId": "string"
         }
       ],
       "radiusTestingEnabled": true,

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_settings_info
-short_description: Information module for organizations _adaptivepolicy _settings
+short_description: Information module for organizations _adaptive _policy _settings
 description:
-- Get all organizations _adaptivepolicy _settings.
+- Get all organizations _adaptive _policy _settings.
 - Returns global adaptive policy settings in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptivepolicy _settings
+- name: Get all organizations _adaptive _policy _settings
   cisco.meraki.organizations_adaptive_policy_settings_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

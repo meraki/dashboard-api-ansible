@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_user_access_devices_info
-short_description: Information module for networks _sm _useraccessdevices
+short_description: Information module for networks _sm _user _access _devices
 description:
-- Get all networks _sm _useraccessdevices.
+- Get all networks _sm _user _access _devices.
 - List User Access Devices and its Trusted Access Connections.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -58,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _useraccessdevices
+- name: Get all networks _sm _user _access _devices
   cisco.meraki.networks_sm_user_access_devices_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

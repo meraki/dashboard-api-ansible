@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_wireless_profiles
-short_description: Resource module for devices _camera _wirelessprofiles
+short_description: Resource module for devices _camera _wireless _profiles
 description:
-- Manage operation update of the resource devices _camera _wirelessprofiles.
+- Manage operation update of the resource devices _camera _wireless _profiles.
 - >
    Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need
    to be supplied at once.

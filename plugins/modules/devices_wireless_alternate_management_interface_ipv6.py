@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: devices_wireless_alternate_management_interface_ipv6
-short_description: Resource module for devices _wireless _alternatemanagementinterface _ipv6
+short_description: Resource module for devices _wireless _alternate _management _interface _ipv6
 description:
-- Manage operation update of the resource devices _wireless _alternatemanagementinterface _ipv6.
+- Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
 - Update alternate management interface IPv6 address.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

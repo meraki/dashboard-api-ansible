@@ -31,6 +31,7 @@ argument_spec.update(dict(
     isBoundToConfigTemplate=dict(type="bool"),
     tags=dict(type="list"),
     tagsFilterType=dict(type="str"),
+    productTypes=dict(type="list"),
     perPage=dict(type="int"),
     total_pages=dict(type="int"),
     direction=dict(type="str"),
@@ -96,6 +97,9 @@ class ActionModule(ActionBase):
         if params.get("tagsFilterType") is not None:
             new_object["tagsFilterType"] = params.get(
                 "tagsFilterType")
+        if params.get("productTypes") is not None:
+            new_object["productTypes"] = params.get(
+                "productTypes")
         if params.get("perPage") is not None:
             new_object["perPage"] = params.get(
                 "perPage")

@@ -11,7 +11,7 @@ short_description: Information module for organizations _camera _roles
 description:
 - Get all organizations _camera _roles.
 - List all the roles in this organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

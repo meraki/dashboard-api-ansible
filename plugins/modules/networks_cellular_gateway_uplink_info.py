@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_uplink_info
-short_description: Information module for networks _cellulargateway _uplink
+short_description: Information module for networks _cellular _gateway _uplink
 description:
-- Get all networks _cellulargateway _uplink.
+- Get all networks _cellular _gateway _uplink.
 - Returns the uplink settings for your MG network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellulargateway _uplink
+- name: Get all networks _cellular _gateway _uplink
   cisco.meraki.networks_cellular_gateway_uplink_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

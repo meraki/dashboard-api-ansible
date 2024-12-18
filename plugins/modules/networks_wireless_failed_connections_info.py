@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_failed_connections_info
-short_description: Information module for networks _wireless _failedconnections
+short_description: Information module for networks _wireless _failed _connections
 description:
-- Get all networks _wireless _failedconnections.
+- Get all networks _wireless _failed _connections.
 - List of all failed client connection events on this network in a given time range.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _failedconnections
+- name: Get all networks _wireless _failed _connections
   cisco.meraki.networks_wireless_failed_connections_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

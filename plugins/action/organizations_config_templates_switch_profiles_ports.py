@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -36,6 +36,7 @@ argument_spec.update(dict(
     accessPolicyType=dict(type="str"),
     allowedVlans=dict(type="str"),
     daiTrusted=dict(type="bool"),
+    dot3az=dict(type="dict"),
     enabled=dict(type="bool"),
     flexibleStackingEnabled=dict(type="bool"),
     isolationEnabled=dict(type="bool"),
@@ -77,6 +78,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             accessPolicyType=params.get("accessPolicyType"),
             allowedVlans=params.get("allowedVlans"),
             daiTrusted=params.get("daiTrusted"),
+            dot3az=params.get("dot3az"),
             enabled=params.get("enabled"),
             flexibleStackingEnabled=params.get("flexibleStackingEnabled"),
             isolationEnabled=params.get("isolationEnabled"),
@@ -144,6 +146,9 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
                 self.new_object.get('allowed_vlans')
         if self.new_object.get('daiTrusted') is not None or self.new_object.get('dai_trusted') is not None:
             new_object_params['daiTrusted'] = self.new_object.get('daiTrusted')
+        if self.new_object.get('dot3az') is not None or self.new_object.get('dot3az') is not None:
+            new_object_params['dot3az'] = self.new_object.get('dot3az') or \
+                self.new_object.get('dot3az')
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('flexibleStackingEnabled') is not None or self.new_object.get('flexible_stacking_enabled') is not None:
@@ -282,6 +287,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             ("accessPolicyType", "accessPolicyType"),
             ("allowedVlans", "allowedVlans"),
             ("daiTrusted", "daiTrusted"),
+            ("dot3az", "dot3az"),
             ("enabled", "enabled"),
             ("flexibleStackingEnabled", "flexibleStackingEnabled"),
             ("isolationEnabled", "isolationEnabled"),
@@ -308,7 +314,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

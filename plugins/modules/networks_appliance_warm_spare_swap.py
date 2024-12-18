@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_warm_spare_swap
-short_description: Resource module for networks _appliance _warmspare _swap
+short_description: Resource module for networks _appliance _warm _spare _swap
 description:
-- Manage operation create of the resource networks _appliance _warmspare _swap.
+- Manage operation create of the resource networks _appliance _warm _spare _swap.
 - Swap MX primary and warm spare appliances.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -66,5 +66,18 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "primarySerial": "string",
+      "spareSerial": "string",
+      "uplinkMode": "string",
+      "wan1": {
+        "ip": "string",
+        "subnet": "string"
+      },
+      "wan2": {
+        "ip": "string",
+        "subnet": "string"
+      }
+    }
 """

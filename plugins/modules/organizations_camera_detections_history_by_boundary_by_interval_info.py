@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_camera_detections_history_by_boundary_by_interval_info
-short_description: Information module for organizations _camera _detections _history _byboundary _byinterval
+short_description: Information module for organizations _camera _detections _history _by _boundary _by _interval
 description:
-- Get all organizations _camera _detections _history _byboundary _byinterval.
+- Get all organizations _camera _detections _history _by _boundary _by _interval.
 - Returns analytics data for timespans.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -67,7 +67,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _detections _history _byboundary _byinterval
+- name: Get all organizations _camera _detections _history _by _boundary _by _interval
   cisco.meraki.organizations_camera_detections_history_by_boundary_by_interval_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

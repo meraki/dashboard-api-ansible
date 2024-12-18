@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_alternate_management_interface
-short_description: Resource module for networks _switch _alternatemanagementinterface
+short_description: Resource module for networks _switch _alternate _management _interface
 description:
-- Manage operation update of the resource networks _switch _alternatemanagementinterface.
+- Manage operation update of the resource networks _switch _alternate _management _interface.
 - Update the switch alternate management interface for the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -112,5 +112,19 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "protocols": [
+        "string"
+      ],
+      "switches": [
+        {
+          "alternateManagementIp": "string",
+          "gateway": "string",
+          "serial": "string",
+          "subnetMask": "string"
+        }
+      ],
+      "vlanId": 0
+    }
 """

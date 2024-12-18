@@ -30,8 +30,8 @@ options:
           '160' or null for using auto channel width.
         type: int
       targetPower:
-        description: Set a manual target power for 5 GHz. Can be between '8' or '30'
-          or null for using auto power range.
+        description: Set a manual target power for 5 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
   rfProfileId:
@@ -52,8 +52,8 @@ options:
           channel.
         type: int
       targetPower:
-        description: Set a manual target power for 2.4 GHz. Can be between '5' or '30'
-          or null for using auto power range.
+        description: Set a manual target power for 2.4 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
 requirements:

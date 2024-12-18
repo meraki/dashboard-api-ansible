@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_subnet_pool_info
-short_description: Information module for networks _cellulargateway _subnetpool
+short_description: Information module for networks _cellular _gateway _subnet _pool
 description:
-- Get all networks _cellulargateway _subnetpool.
+- Get all networks _cellular _gateway _subnet _pool.
 - Return the subnet pool and mask configured for MGs in the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellulargateway _subnetpool
+- name: Get all networks _cellular _gateway _subnet _pool
   cisco.meraki.networks_cellular_gateway_subnet_pool_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_policies
-short_description: Resource module for organizations _adaptivepolicy _policies
+short_description: Resource module for organizations _adaptive _policy _policies
 description:
-- Manage operations create, update and delete of the resource organizations _adaptivepolicy _policies.
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _policies.
 - Add an Adaptive Policy.
 - Delete an Adaptive Policy.
 - Update an Adaptive Policy.
@@ -20,7 +20,7 @@ author: Francisco Munoz (@fmunoz)
 options:
   acls:
     description: An ordered array of adaptive policy ACLs (each requires one unique
-      attribute) that apply to this policy ().
+      attribute) that apply to this policy (default ).
     elements: dict
     suboptions:
       id:
@@ -199,5 +199,26 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "acls": [
+        {
+          "id": "string",
+          "name": "string"
+        }
+      ],
+      "adaptivePolicyId": "string",
+      "createdAt": "string",
+      "destinationGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
+      "lastEntryRule": "string",
+      "sourceGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
+      "updatedAt": "string"
+    }
 """

@@ -210,6 +210,13 @@ EXAMPLES = r"""
     state: present
     applianceIp: 192.168.1.2
     cidr: 192.168.1.0/24
+    dhcpBootOptionsEnabled: true
+    dhcpHandling: Run a DHCP server
+    dhcpLeaseTime: 30 minutes
+    dhcpOptions:
+    - code: '3'
+      type: text
+      value: five
     groupPolicyId: '101'
     id: '1234'
     ipv6:

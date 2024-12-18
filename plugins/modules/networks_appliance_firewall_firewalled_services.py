@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_firewalled_services
-short_description: Resource module for networks _appliance _firewall _firewalledservices
+short_description: Resource module for networks _appliance _firewall _firewalled _services
 description:
-- Manage operation update of the resource networks _appliance _firewall _firewalledservices.
+- Manage operation update of the resource networks _appliance _firewall _firewalled _services.
 - Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP' .
 version_added: '2.16.0'
 extends_documentation_fragment:

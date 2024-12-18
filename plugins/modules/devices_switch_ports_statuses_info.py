@@ -117,6 +117,9 @@ meraki_response:
           "systemDescription": "string",
           "systemName": "string"
         },
+        "poe": {
+          "isAllocated": true
+        },
         "portId": "string",
         "powerUsageInWh": 0,
         "securePort": {

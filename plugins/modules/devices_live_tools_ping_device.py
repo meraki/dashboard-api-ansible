@@ -7,10 +7,12 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_ping_device
-short_description: Resource module for devices _livetools _pingdevice
+short_description: Resource module for devices _live _tools _ping _device
 description:
-- Manage operation create of the resource devices _livetools _pingdevice.
-- Enqueue a job to check connectivity status to the device.
+- Manage operation create of the resource devices _live _tools _ping _device.
+- >
+   Enqueue a job to check connectivity status to the device. This endpoint has a sustained rate limit of one request
+   every five seconds per device, with an allowed burst of five requests.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -117,8 +119,7 @@ meraki_response:
       "pingId": "string",
       "request": {
         "count": 0,
-        "serial": "string",
-        "target": "string"
+        "serial": "string"
       },
       "status": "string",
       "url": "string"

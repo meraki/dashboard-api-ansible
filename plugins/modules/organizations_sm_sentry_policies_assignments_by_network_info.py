@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_sm_sentry_policies_assignments_by_network_info
-short_description: Information module for organizations _sm _sentry _policies _assignments _bynetwork
+short_description: Information module for organizations _sm _sentry _policies _assignments _by _network
 description:
-- Get all organizations _sm _sentry _policies _assignments _bynetwork.
+- Get all organizations _sm _sentry _policies _assignments _by _network.
 - List the Sentry Policies for an organization ordered in ascending order of priority.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -63,7 +63,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _sentry _policies _assignments _bynetwork
+- name: Get all organizations _sm _sentry _policies _assignments _by _network
   cisco.meraki.organizations_sm_sentry_policies_assignments_by_network_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

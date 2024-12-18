@@ -76,9 +76,9 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
-    collectorIp: 1.2.3.4
-    collectorPort: 443
-    etaDstPort: 443
+    collectorIp: string
+    collectorPort: 0
+    etaDstPort: 0
     etaEnabled: true
     networkId: string
     reportingEnabled: true

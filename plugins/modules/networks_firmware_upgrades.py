@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades
-short_description: Resource module for networks _firmwareupgrades
+short_description: Resource module for networks _firmware _upgrades
 description:
-- Manage operation update of the resource networks _firmwareupgrades.
+- Manage operation update of the resource networks _firmware _upgrades.
 - Update firmware upgrade information for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -65,6 +65,27 @@ options:
             type: bool
         type: dict
       cellularGateway:
+        description: The network device to be updated.
+        suboptions:
+          nextUpgrade:
+            description: The pending firmware upgrade if it exists.
+            suboptions:
+              time:
+                description: The time of the last successful upgrade.
+                type: str
+              toVersion:
+                description: The version to be updated to.
+                suboptions:
+                  id:
+                    description: The version ID.
+                    type: str
+                type: dict
+            type: dict
+          participateInNextBetaRelease:
+            description: Whether or not the network wants beta firmware.
+            type: bool
+        type: dict
+      secureConnect:
         description: The network device to be updated.
         suboptions:
           nextUpgrade:
@@ -149,6 +170,27 @@ options:
             type: bool
         type: dict
       wireless:
+        description: The network device to be updated.
+        suboptions:
+          nextUpgrade:
+            description: The pending firmware upgrade if it exists.
+            suboptions:
+              time:
+                description: The time of the last successful upgrade.
+                type: str
+              toVersion:
+                description: The version to be updated to.
+                suboptions:
+                  id:
+                    description: The version ID.
+                    type: str
+                type: dict
+            type: dict
+          participateInNextBetaRelease:
+            description: Whether or not the network wants beta firmware.
+            type: bool
+        type: dict
+      wirelessController:
         description: The network device to be updated.
         suboptions:
           nextUpgrade:
@@ -242,6 +284,12 @@ EXAMPLES = r"""
           toVersion:
             id: '1004'
         participateInNextBetaRelease: false
+      secureConnect:
+        nextUpgrade:
+          time: '2019-03-17T17:22:52Z'
+          toVersion:
+            id: '1007'
+        participateInNextBetaRelease: false
       sensor:
         nextUpgrade:
           time: '2019-03-17T17:22:52Z'
@@ -265,6 +313,12 @@ EXAMPLES = r"""
           time: '2019-03-17T17:22:52Z'
           toVersion:
             id: '1000'
+        participateInNextBetaRelease: false
+      wirelessController:
+        nextUpgrade:
+          time: '2019-03-17T17:22:52Z'
+          toVersion:
+            id: '1006'
         participateInNextBetaRelease: false
     timezone: America/Los_Angeles
     upgradeWindow:
@@ -418,6 +472,52 @@ meraki_response:
           },
           "participateInNextBetaRelease": true
         },
+        "secureConnect": {
+          "availableVersions": [
+            {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          ],
+          "currentVersion": {
+            "firmware": "string",
+            "id": "string",
+            "releaseDate": "string",
+            "releaseType": "string",
+            "shortName": "string"
+          },
+          "lastUpgrade": {
+            "fromVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            },
+            "time": "string",
+            "toVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          },
+          "participateInNextBetaRelease": true
+        },
         "sensor": {
           "availableVersions": [
             {
@@ -511,6 +611,52 @@ meraki_response:
           "participateInNextBetaRelease": true
         },
         "wireless": {
+          "availableVersions": [
+            {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          ],
+          "currentVersion": {
+            "firmware": "string",
+            "id": "string",
+            "releaseDate": "string",
+            "releaseType": "string",
+            "shortName": "string"
+          },
+          "lastUpgrade": {
+            "fromVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            },
+            "time": "string",
+            "toVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "firmware": "string",
+              "id": "string",
+              "releaseDate": "string",
+              "releaseType": "string",
+              "shortName": "string"
+            }
+          },
+          "participateInNextBetaRelease": true
+        },
+        "wirelessController": {
           "availableVersions": [
             {
               "firmware": "string",

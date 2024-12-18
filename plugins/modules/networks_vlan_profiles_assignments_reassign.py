@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_vlan_profiles_assignments_reassign
-short_description: Resource module for networks _vlanprofiles _assignments _reassign
+short_description: Resource module for networks _vlan _profiles _assignments _reassign
 description:
-- Manage operation create of the resource networks _vlanprofiles _assignments _reassign.
+- Manage operation create of the resource networks _vlan _profiles _assignments _reassign.
 - Update the assigned VLAN Profile for devices in a network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

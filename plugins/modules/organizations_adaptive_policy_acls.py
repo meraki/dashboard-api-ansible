@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_acls
-short_description: Resource module for organizations _adaptivepolicy _acls
+short_description: Resource module for organizations _adaptive _policy _acls
 description:
-- Manage operations create, update and delete of the resource organizations _adaptivepolicy _acls.
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _acls.
 - Creates new adaptive policy ACL.
 - Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.
 - Updates an adaptive policy ACL.

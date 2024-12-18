@@ -11,7 +11,7 @@ short_description: Information module for networks _clients
 description:
 - Get all networks _clients.
 - Get networks _clients by id.
-- List the clients that have used this network in the timespan.
+- List the clients that have used this network in the timespan. The data is updated at most once every five minutes.
 - >
    Return the client associated with the given identifier. Clients can be identified by a client key or either the
    MAC or IP depending on whether the network uses Track-by-IP.
@@ -41,7 +41,7 @@ options:
     type: float
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5000. Default is 10.
     type: int
   startingAfter:
     description:
@@ -93,6 +93,10 @@ options:
   vlan:
     description:
     - Vlan query parameter. Filters clients based on the full match for the VLAN field.
+    type: str
+  namedVlan:
+    description:
+    - NamedVlan query parameter. Filters clients based on the partial or full match for the named VLAN field.
     type: str
   recentDeviceConnections:
     description:
@@ -146,7 +150,6 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     t0: string
@@ -163,6 +166,7 @@ EXAMPLES = r"""
     pskGroup: string
     description: string
     vlan: string
+    namedVlan: string
     recentDeviceConnections: []
     networkId: string
     total_pages: -1
@@ -189,7 +193,6 @@ EXAMPLES = r"""
     meraki_suppress_logging: "{{meraki_suppress_logging}}"
     meraki_simulate: "{{meraki_simulate}}"
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_caller: "{{meraki_caller}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     networkId: string
@@ -229,7 +232,9 @@ meraki_response:
       ],
       "mac": "string",
       "manufacturer": "string",
+      "notes": "string",
       "os": "string",
+      "recentDeviceConnection": "string",
       "recentDeviceMac": "string",
       "smInstalled": true,
       "ssid": "string",

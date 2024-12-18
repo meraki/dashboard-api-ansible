@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_ping_info
-short_description: Information module for devices _livetools _ping
+short_description: Information module for devices _live _tools _ping
 description:
-- Get devices _livetools _ping by id.
+- Get devices _live _tools _ping by id.
 - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get devices _livetools _ping by id
+- name: Get devices _live _tools _ping by id
   cisco.meraki.devices_live_tools_ping_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

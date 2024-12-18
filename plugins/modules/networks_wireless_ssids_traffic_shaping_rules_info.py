@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_traffic_shaping_rules_info
-short_description: Information module for networks _wireless _ssids _trafficshaping _rules
+short_description: Information module for networks _wireless _ssids _traffic _shaping _rules
 description:
-- Get all networks _wireless _ssids _trafficshaping _rules.
+- Get all networks _wireless _ssids _traffic _shaping _rules.
 - Display the traffic shaping settings for a SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _trafficshaping _rules
+- name: Get all networks _wireless _ssids _traffic _shaping _rules
   cisco.meraki.networks_wireless_ssids_traffic_shaping_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

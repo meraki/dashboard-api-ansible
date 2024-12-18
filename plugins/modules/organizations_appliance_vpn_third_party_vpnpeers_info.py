@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_vpn_third_party_vpnpeers_info
-short_description: Information module for organizations _appliance _vpn _thirdpartyvpnpeers
+short_description: Information module for organizations _appliance _vpn _third _party _vpnpeers
 description:
-- Get all organizations _appliance _vpn _thirdpartyvpnpeers.
+- Get all organizations _appliance _vpn _third _party _vpnpeers.
 - Return the third party VPN peers for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _vpn _thirdpartyvpnpeers
+- name: Get all organizations _appliance _vpn _third _party _vpnpeers
   cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

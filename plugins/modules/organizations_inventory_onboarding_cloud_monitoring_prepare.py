@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_inventory_onboarding_cloud_monitoring_prepare
-short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring _prepare
+short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _prepare
 description:
-- Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring _prepare.
+- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _prepare.
 - >
    Initiates or updates an import session. An import ID will be generated and used when you are ready to commit the
    import.
@@ -102,6 +102,13 @@ options:
             type: int
         type: dict
     type: list
+  options:
+    description: Additional options for the import.
+    suboptions:
+      skipCommit:
+        description: Flag to skip adding the device to RDM.
+        type: bool
+    type: dict
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
@@ -184,6 +191,8 @@ EXAMPLES = r"""
         endLineNumber: 17
         rotaryNumber: 50
         startLineNumber: 16
+    options:
+      skipCommit: false
     organizationId: string
 
 """

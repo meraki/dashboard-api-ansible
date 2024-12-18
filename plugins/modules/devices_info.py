@@ -11,8 +11,10 @@ short_description: Information module for devices
 description:
 - Get all devices.
 - Get devices by id.
-- List the devices in an organization.
+- List the devices in an organization that have been assigned to a network.
 - Return a single device.
+- Returns a historical log of all commands.
+- Returns information about the command's execution, including the status.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -25,6 +27,10 @@ options:
   serial:
     description:
     - Serial path parameter.
+    type: str
+  commandId:
+    description:
+    - CommandId path parameter. Command ID.
     type: str
   organizationId:
     description:
@@ -63,7 +69,8 @@ options:
     description:
     - >
       ProductTypes query parameter. Optional parameter to filter devices by product type. Valid types are
-      wireless, appliance, switch, systemsManager, camera, cellularGateway, and sensor.
+      wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and
+      secureConnect.
     elements: str
     type: list
   tags:
@@ -138,16 +145,24 @@ seealso:
 - name: Cisco Meraki documentation for devices getDevice
   description: Complete reference of the getDevice API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-device
+- name: Cisco Meraki documentation for devices getDeviceSensorCommand
+  description: Complete reference of the getDeviceSensorCommand API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-command
+- name: Cisco Meraki documentation for devices getDeviceSensorCommands
+  description: Complete reference of the getDeviceSensorCommands API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-commands
 - name: Cisco Meraki documentation for devices getOrganizationDevices
   description: Complete reference of the getOrganizationDevices API.
   link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices
 notes:
   - SDK Method used are
-    devices.Devices.get_device,
+    devices.Devices.get_device_sensor_command,
     devices.Devices.get_organization_devices,
 
   - Paths used are
     get /devices/{serial},
+    get /devices/{serial}/sensor/commands,
+    get /devices/{serial}/sensor/commands/{commandId},
     get /organizations/{organizationId}/devices,
 """
 
@@ -219,6 +234,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     serial: string
+    commandId: string
   register: result
 
 """
@@ -229,27 +245,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "address": "string",
-      "details": [
-        {
-          "name": "string",
-          "value": "string"
-        }
-      ],
-      "firmware": "string",
-      "imei": "string",
-      "lanIp": "string",
-      "lat": 0,
-      "lng": 0,
-      "mac": "string",
-      "model": "string",
-      "name": "string",
-      "networkId": "string",
-      "notes": "string",
-      "productType": "string",
-      "serial": "string",
-      "tags": [
+      "commandId": "string",
+      "completedAt": "string",
+      "createdAt": "string",
+      "createdBy": {
+        "adminId": "string",
+        "email": "string",
+        "name": "string"
+      },
+      "errors": [
         "string"
-      ]
+      ],
+      "operation": "string",
+      "status": "string"
     }
 """

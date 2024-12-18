@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_group_policies
-short_description: Resource module for networks _grouppolicies
+short_description: Resource module for networks _group _policies
 description:
-- Manage operations create, update and delete of the resource networks _grouppolicies.
+- Manage operations create, update and delete of the resource networks _group _policies.
 - Create a group policy.
 - Delete a group policy.
 - Update a group policy.
@@ -54,8 +54,9 @@ options:
             type: str
           services:
             description: A list of Bonjour services. At least one service must be specified.
-              Available services are 'All Services', 'AirPlay', 'AFP', 'BitTorrent',
-              'FTP', 'iChat', 'iTunes', 'Printers', 'Samba', 'Scanners' and 'SSH'.
+              Available services are 'All Services', 'AFP', 'AirPlay', 'Apple screen
+              share', 'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers',
+              'Samba', 'Scanners', 'Spotify' and 'SSH'.
             elements: str
             type: list
           vlanId:
@@ -218,6 +219,11 @@ options:
             type: str
         type: list
     type: dict
+  force:
+    description: Force query parameter. If true, the system deletes the GP even if there
+      are active clients using the GP. After deletion, active clients that were assigned
+      to that Group Policy will be left without any policy applied. Default is false.
+    type: bool
   groupPolicyId:
     description: GroupPolicyId path parameter. Group policy ID.
     type: str
@@ -540,6 +546,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: absent
+    force: true
     groupPolicyId: string
     networkId: string
 

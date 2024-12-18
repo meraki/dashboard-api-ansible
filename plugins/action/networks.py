@@ -80,6 +80,9 @@ class Networks(object):
         if self.new_object.get('tagsFilterType') is not None or self.new_object.get('tags_filter_type') is not None:
             new_object_params['tagsFilterType'] = self.new_object.get('tagsFilterType') or \
                 self.new_object.get('tags_filter_type')
+        if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
+            new_object_params['productTypes'] = self.new_object.get('productTypes') or \
+                self.new_object.get('product_types')
         if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')

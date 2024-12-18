@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_config_templates_switch_profiles_ports_info
-short_description: Information module for organizations _configtemplates _switch _profiles _ports
+short_description: Information module for organizations _config _templates _switch _profiles _ports
 description:
-- Get all organizations _configtemplates _switch _profiles _ports.
-- Get organizations _configtemplates _switch _profiles _ports by id.
+- Get all organizations _config _templates _switch _profiles _ports.
+- Get organizations _config _templates _switch _profiles _ports by id.
 - Return a switch template port.
 - Return all the ports of a switch template.
 version_added: '2.16.0'
@@ -58,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _configtemplates _switch _profiles _ports
+- name: Get all organizations _config _templates _switch _profiles _ports
   cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -85,7 +85,7 @@ EXAMPLES = r"""
     profileId: string
   register: result
 
-- name: Get organizations _configtemplates _switch _profiles _ports by id
+- name: Get organizations _config _templates _switch _profiles _ports by id
   cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -125,6 +125,9 @@ meraki_response:
       "accessPolicyType": "string",
       "allowedVlans": "string",
       "daiTrusted": true,
+      "dot3az": {
+        "enabled": true
+      },
       "enabled": true,
       "flexibleStackingEnabled": true,
       "isolationEnabled": true,
@@ -151,6 +154,14 @@ meraki_response:
         "iname": "string"
       },
       "rstpEnabled": true,
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
+      "stackwiseVirtual": {
+        "isDualActiveDetector": true,
+        "isStackWiseVirtualLink": true
+      },
       "stickyMacAllowList": [
         "string"
       ],

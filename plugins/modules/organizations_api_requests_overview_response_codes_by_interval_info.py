@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_api_requests_overview_response_codes_by_interval_info
-short_description: Information module for organizations _apirequests _overview _responsecodes _byinterval
+short_description: Information module for organizations _api _requests _overview _response _codes _by _interval
 description:
-- Get all organizations _apirequests _overview _responsecodes _byinterval.
+- Get all organizations _api _requests _overview _response _codes _by _interval.
 - Tracks organizations' API requests by response code across a given time period.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -85,7 +85,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _apirequests _overview _responsecodes _byinterval
+- name: Get all organizations _api _requests _overview _response _codes _by _interval
   cisco.meraki.organizations_api_requests_overview_response_codes_by_interval_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -10,7 +10,7 @@ module: organizations_devices_info
 short_description: Information module for organizations _devices
 description:
 - Get all organizations _devices.
-- List the devices in an organization.
+- List the devices in an organization that have been assigned to a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -57,7 +57,8 @@ options:
     description:
     - >
       ProductTypes query parameter. Optional parameter to filter devices by product type. Valid types are
-      wireless, appliance, switch, systemsManager, camera, cellularGateway, and sensor.
+      wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and
+      secureConnect.
     elements: str
     type: list
   tags:

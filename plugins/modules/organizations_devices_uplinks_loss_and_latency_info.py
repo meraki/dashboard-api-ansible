@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_devices_uplinks_loss_and_latency_info
-short_description: Information module for organizations _devices _uplinkslossandlatency
+short_description: Information module for organizations _devices _uplinks _loss _and _latency
 description:
-- Get all organizations _devices _uplinkslossandlatency.
+- Get all organizations _devices _uplinks _loss _and _latency.
 - Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -66,7 +66,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _uplinkslossandlatency
+- name: Get all organizations _devices _uplinks _loss _and _latency
   cisco.meraki.organizations_devices_uplinks_loss_and_latency_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

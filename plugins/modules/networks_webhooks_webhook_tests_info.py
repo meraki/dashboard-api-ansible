@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_webhooks_webhook_tests_info
-short_description: Information module for networks _webhooks _webhooktests
+short_description: Information module for networks _webhooks _webhook _tests
 description:
-- Get networks _webhooks _webhooktests by id.
+- Get networks _webhooks _webhook _tests by id.
 - Return the status of a webhook test for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get networks _webhooks _webhooktests by id
+- name: Get networks _webhooks _webhook _tests by id
   cisco.meraki.networks_webhooks_webhook_tests_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

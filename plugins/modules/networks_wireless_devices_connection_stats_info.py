@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_devices_connection_stats_info
-short_description: Information module for networks _wireless _devices _connectionstats
+short_description: Information module for networks _wireless _devices _connection _stats
 description:
-- Get all networks _wireless _devices _connectionstats.
+- Get all networks _wireless _devices _connection _stats.
 - Aggregated connectivity info for this network, grouped by node.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -71,7 +71,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _devices _connectionstats
+- name: Get all networks _wireless _devices _connection _stats
   cisco.meraki.networks_wireless_devices_connection_stats_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

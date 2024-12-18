@@ -11,7 +11,7 @@ short_description: Information module for organizations _appliance _uplinks _sta
 description:
 - Get all organizations _appliance _uplinks _statuses _overview.
 - Returns an overview of uplink statuses.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

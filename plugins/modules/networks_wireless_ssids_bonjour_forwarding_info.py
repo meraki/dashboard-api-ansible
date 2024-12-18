@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_bonjour_forwarding_info
-short_description: Information module for networks _wireless _ssids _bonjourforwarding
+short_description: Information module for networks _wireless _ssids _bonjour _forwarding
 description:
-- Get all networks _wireless _ssids _bonjourforwarding.
+- Get all networks _wireless _ssids _bonjour _forwarding.
 - List the Bonjour forwarding setting and rules for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _bonjourforwarding
+- name: Get all networks _wireless _ssids _bonjour _forwarding
   cisco.meraki.networks_wireless_ssids_bonjour_forwarding_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

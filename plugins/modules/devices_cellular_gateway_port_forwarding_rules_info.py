@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_cellular_gateway_port_forwarding_rules_info
-short_description: Information module for devices _cellulargateway _portforwardingrules
+short_description: Information module for devices _cellular _gateway _port _forwarding _rules
 description:
-- Get all devices _cellulargateway _portforwardingrules.
+- Get all devices _cellular _gateway _port _forwarding _rules.
 - Returns the port forwarding rules for a single MG.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _cellulargateway _portforwardingrules
+- name: Get all devices _cellular _gateway _port _forwarding _rules
   cisco.meraki.devices_cellular_gateway_port_forwarding_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,12 +75,14 @@ meraki_response:
     [
       {
         "access": "string",
+        "allowedIps": [
+          "string"
+        ],
         "lanIp": "string",
         "localPort": "string",
         "name": "string",
         "protocol": "string",
-        "publicPort": "string",
-        "uplink": "string"
+        "publicPort": "string"
       }
     ]
 """

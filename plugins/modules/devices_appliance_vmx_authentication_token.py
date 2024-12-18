@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_appliance_vmx_authentication_token
-short_description: Resource module for devices _appliance _vmx _authenticationtoken
+short_description: Resource module for devices _appliance _vmx _authentication _token
 description:
-- Manage operation create of the resource devices _appliance _vmx _authenticationtoken.
+- Manage operation create of the resource devices _appliance _vmx _authentication _token.
 - Generate a new vMX authentication token.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -42,6 +42,7 @@ argument_spec.update(dict(
     pskGroup=dict(type="str"),
     description=dict(type="str"),
     vlan=dict(type="str"),
+    namedVlan=dict(type="str"),
     recentDeviceConnections=dict(type="list"),
     clientId=dict(type="str"),
 ))
@@ -141,6 +142,9 @@ class ActionModule(ActionBase):
         if params.get("vlan") is not None:
             new_object["vlan"] = params.get(
                 "vlan")
+        if params.get("namedVlan") is not None:
+            new_object["namedVlan"] = params.get(
+                "namedVlan")
         if params.get("recentDeviceConnections") is not None:
             new_object["recentDeviceConnections"] = params.get(
                 "recentDeviceConnections")

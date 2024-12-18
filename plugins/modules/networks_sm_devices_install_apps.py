@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_devices_install_apps
-short_description: Resource module for networks _sm _devices _installapps
+short_description: Resource module for networks _sm _devices _install _apps
 description:
-- Manage operation create of the resource networks _sm _devices _installapps.
+- Manage operation create of the resource networks _sm _devices _install _apps.
 - Install applications on a device.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

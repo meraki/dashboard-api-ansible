@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_access_control_lists_info
-short_description: Information module for networks _switch _accesscontrollists
+short_description: Information module for networks _switch _access _control _lists
 description:
-- Get all networks _switch _accesscontrollists.
+- Get all networks _switch _access _control _lists.
 - Return the access control lists for a MS network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _accesscontrollists
+- name: Get all networks _switch _access _control _lists
   cisco.meraki.networks_switch_access_control_lists_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

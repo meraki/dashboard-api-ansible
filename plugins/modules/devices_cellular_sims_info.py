@@ -69,25 +69,34 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "apns": [
-          {
-            "allowedIpTypes": [
-              "string"
-            ],
-            "authentication": {
-              "type": "string",
-              "username": "string"
-            },
-            "name": "string"
-          }
-        ],
-        "isPrimary": true,
-        "slot": "string"
-      }
-    ]
+    {
+      "simFailover": {
+        "enabled": true,
+        "timeout": 0
+      },
+      "simOrdering": [
+        "string"
+      ],
+      "sims": [
+        {
+          "apns": [
+            {
+              "allowedIpTypes": [
+                "string"
+              ],
+              "authentication": {
+                "password": "string",
+                "type": "string",
+                "username": "string"
+              },
+              "name": "string"
+            }
+          ],
+          "isPrimary": true,
+          "slot": "string"
+        }
+      ]
+    }
 """

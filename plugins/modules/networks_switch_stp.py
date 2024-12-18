@@ -85,16 +85,19 @@ EXAMPLES = r"""
     networkId: string
     rstpEnabled: true
     stpBridgePriority:
-    - stpPriority: 4096
-      switches:
-      - Q234-ABCD-0001
-      - Q234-ABCD-0002
-      - Q234-ABCD-0003
     - stacks:
       - '789102'
       - '123456'
       - '129102'
-      stpPriority: 28672
+      stpPriority: 4096
+      switchProfiles:
+      - '1098'
+      - '1099'
+      - '1100'
+      switches:
+      - Q234-ABCD-0001
+      - Q234-ABCD-0002
+      - Q234-ABCD-0003
 
 """
 RETURN = r"""
@@ -103,5 +106,21 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "rstpEnabled": true,
+      "stpBridgePriority": [
+        {
+          "stacks": [
+            "string"
+          ],
+          "stpPriority": 0,
+          "switchProfiles": [
+            "string"
+          ],
+          "switches": [
+            "string"
+          ]
+        }
+      ]
+    }
 """

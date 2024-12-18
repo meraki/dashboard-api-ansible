@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_early_access_features_info
-short_description: Information module for organizations _earlyaccess _features
+short_description: Information module for organizations _early _access _features
 description:
-- Get all organizations _earlyaccess _features.
+- Get all organizations _early _access _features.
 - List the available early access features for organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _earlyaccess _features
+- name: Get all organizations _early _access _features
   cisco.meraki.organizations_early_access_features_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

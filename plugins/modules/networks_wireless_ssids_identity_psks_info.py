@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_identity_psks_info
-short_description: Information module for networks _wireless _ssids _identitypsks
+short_description: Information module for networks _wireless _ssids _identity _psks
 description:
-- Get all networks _wireless _ssids _identitypsks.
-- Get networks _wireless _ssids _identitypsks by id.
+- Get all networks _wireless _ssids _identity _psks.
+- Get networks _wireless _ssids _identity _psks by id.
 - List all Identity PSKs in a wireless network.
 - Return an Identity PSK.
 version_added: '2.16.0'
@@ -54,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _identitypsks
+- name: Get all networks _wireless _ssids _identity _psks
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -80,7 +80,7 @@ EXAMPLES = r"""
     number: string
   register: result
 
-- name: Get networks _wireless _ssids _identitypsks by id
+- name: Get networks _wireless _ssids _identity _psks by id
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

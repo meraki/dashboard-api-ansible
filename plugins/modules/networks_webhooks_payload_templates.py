@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_webhooks_payload_templates
-short_description: Resource module for networks _webhooks _payloadtemplates
+short_description: Resource module for networks _webhooks _payload _templates
 description:
-- Manage operations create, update and delete of the resource networks _webhooks _payloadtemplates.
+- Manage operations create, update and delete of the resource networks _webhooks _payload _templates.
 - Create a webhook payload template for a network.
 - >
    Destroy a webhook payload template for a network. Does not work for included templates 'wpt_00001', 'wpt_00002',
@@ -25,8 +25,8 @@ options:
       `body` or `bodyFile` must be specified.
     type: str
   bodyFile:
-    description: A file containing liquid template used for the body of the webhook
-      message. Either `body` or `bodyFile` must be specified.
+    description: A Base64 encoded file containing liquid template used for the body
+      of the webhook message. Either `body` or `bodyFile` must be specified.
     type: str
   headers:
     description: The liquid template used with the webhook headers.
@@ -40,7 +40,8 @@ options:
         type: str
     type: list
   headersFile:
-    description: A file containing the liquid template used with the webhook headers.
+    description: A Base64 encoded file containing the liquid template used with the
+      webhook headers.
     type: str
   name:
     description: The name of the new template.

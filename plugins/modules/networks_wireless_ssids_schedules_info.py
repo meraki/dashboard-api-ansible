@@ -85,6 +85,12 @@ meraki_response:
           "startDay": "string",
           "startTime": "string"
         }
+      ],
+      "rangesInSeconds": [
+        {
+          "end": 0,
+          "start": 0
+        }
       ]
     }
 """

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_events_defer
-short_description: Resource module for networks _firmwareupgrades _staged _events _defer
+short_description: Resource module for networks _firmware _upgrades _staged _events _defer
 description:
-- Manage operation create of the resource networks _firmwareupgrades _staged _events _defer.
+- Manage operation create of the resource networks _firmware _upgrades _staged _events _defer.
 - Postpone by 1 week all pending staged upgrade stages for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:

@@ -104,9 +104,9 @@ options:
           - meraki_be_geo_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE_GEO_ID
         type: str
         default: ''
-    meraki_caller:
+    
         description:
-          - meraki_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI_PYTHON_SDK_CALLER
+          - 
         type: str
         default: ''
     meraki_use_iterator_for_get_pages:

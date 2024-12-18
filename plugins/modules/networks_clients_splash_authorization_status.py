@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_clients_splash_authorization_status
-short_description: Resource module for networks _clients _splashauthorizationstatus
+short_description: Resource module for networks _clients _splash _authorization _status
 description:
-- Manage operation update of the resource networks _clients _splashauthorizationstatus.
+- Manage operation update of the resource networks _clients _splash _authorization _status.
 - >
    Update a client's splash authorization. Clients can be identified by a client key or either the MAC or IP
    depending on whether the network uses Track-by-IP.

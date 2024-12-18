@@ -7,13 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_summary_top_networks_by_status_info
-short_description: Information module for organizations _summary _top _networks _bystatus
+short_description: Information module for organizations _summary _top _networks _by _status
 description:
-- Get all organizations _summary _top _networks _bystatus.
+- Get all organizations _summary _top _networks _by _status.
 - >
    List the client and status overview information for the networks in an organization. Usage is measured in
    kilobytes and from the last seven days.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -25,6 +25,26 @@ options:
   organizationId:
     description:
     - OrganizationId path parameter. Organization ID.
+    type: str
+  networkTag:
+    description:
+    - NetworkTag query parameter. Match result to an exact network tag.
+    type: str
+  deviceTag:
+    description:
+    - DeviceTag query parameter. Match result to an exact device tag.
+    type: str
+  quantity:
+    description:
+    - Quantity query parameter. Set number of desired results to return. Default is 10.
+    type: int
+  ssidName:
+    description:
+    - SsidName query parameter. Filter results by ssid name.
+    type: str
+  usageUplink:
+    description:
+    - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   perPage:
     description:
@@ -60,7 +80,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _summary _top _networks _bystatus
+- name: Get all organizations _summary _top _networks _by _status
   cisco.meraki.organizations_summary_top_networks_by_status_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -82,6 +102,11 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    networkTag: string
+    deviceTag: string
+    quantity: 0
+    ssidName: string
+    usageUplink: string
     perPage: 0
     startingAfter: string
     endingBefore: string

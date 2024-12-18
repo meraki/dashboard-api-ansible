@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info
-short_description: Information module for organizations _appliance _trafficshaping _vpnexclusions _bynetwork
+short_description: Information module for organizations _appliance _traffic _shaping _vpn _exclusions _by _network
 description:
-- Get all organizations _appliance _trafficshaping _vpnexclusions _bynetwork.
+- Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network.
 - Display VPN exclusion rules for MX networks.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -63,7 +63,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _trafficshaping _vpnexclusions _bynetwork
+- name: Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network
   cisco.meraki.organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_eap_override
-short_description: Resource module for networks _wireless _ssids _eapoverride
+short_description: Resource module for networks _wireless _ssids _eap _override
 description:
-- Manage operation update of the resource networks _wireless _ssids _eapoverride.
+- Manage operation update of the resource networks _wireless _ssids _eap _override.
 - Update the EAP overridden parameters for an SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:

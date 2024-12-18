@@ -31,14 +31,14 @@ argument_spec.update(dict(
     direction=dict(type="str"),
     startingAfter=dict(type="str"),
     endingBefore=dict(type="str"),
-    networkIds=dict(type="list"),
-    portProfileIds=dict(type="list"),
-    name=dict(type="str"),
+    configurationUpdatedAfter=dict(type="str"),
     mac=dict(type="str"),
     macs=dict(type="list"),
+    name=dict(type="str"),
+    networkIds=dict(type="list"),
+    portProfileIds=dict(type="list"),
     serial=dict(type="str"),
     serials=dict(type="list"),
-    configurationUpdatedAfter=dict(type="str"),
 ))
 
 required_if = []
@@ -93,30 +93,30 @@ class ActionModule(ActionBase):
         if params.get("endingBefore") is not None:
             new_object["endingBefore"] = params.get(
                 "endingBefore")
-        if params.get("networkIds") is not None:
-            new_object["networkIds"] = params.get(
-                "networkIds")
-        if params.get("portProfileIds") is not None:
-            new_object["portProfileIds"] = params.get(
-                "portProfileIds")
-        if params.get("name") is not None:
-            new_object["name"] = params.get(
-                "name")
+        if params.get("configurationUpdatedAfter") is not None:
+            new_object["configurationUpdatedAfter"] = params.get(
+                "configurationUpdatedAfter")
         if params.get("mac") is not None:
             new_object["mac"] = params.get(
                 "mac")
         if params.get("macs") is not None:
             new_object["macs"] = params.get(
                 "macs")
+        if params.get("name") is not None:
+            new_object["name"] = params.get(
+                "name")
+        if params.get("networkIds") is not None:
+            new_object["networkIds"] = params.get(
+                "networkIds")
+        if params.get("portProfileIds") is not None:
+            new_object["portProfileIds"] = params.get(
+                "portProfileIds")
         if params.get("serial") is not None:
             new_object["serial"] = params.get(
                 "serial")
         if params.get("serials") is not None:
             new_object["serials"] = params.get(
                 "serials")
-        if params.get("configurationUpdatedAfter") is not None:
-            new_object["configurationUpdatedAfter"] = params.get(
-                "configurationUpdatedAfter")
 
         return new_object
 

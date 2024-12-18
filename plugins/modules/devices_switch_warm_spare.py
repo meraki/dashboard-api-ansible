@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_switch_warm_spare
-short_description: Resource module for devices _switch _warmspare
+short_description: Resource module for devices _switch _warm _spare
 description:
-- Manage operation update of the resource devices _switch _warmspare.
+- Manage operation update of the resource devices _switch _warm _spare.
 - >
    Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note
    that this will irreversibly destroy any existing L3 configuration on the spare.

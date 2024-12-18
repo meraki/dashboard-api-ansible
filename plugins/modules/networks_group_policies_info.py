@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_group_policies_info
-short_description: Information module for networks _grouppolicies
+short_description: Information module for networks _group _policies
 description:
-- Get all networks _grouppolicies.
-- Get networks _grouppolicies by id.
+- Get all networks _group _policies.
+- Get networks _group _policies by id.
 - Display a group policy.
 - List the group policies in a network.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _grouppolicies
+- name: Get all networks _group _policies
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _grouppolicies by id
+- name: Get networks _group _policies by id
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

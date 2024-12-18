@@ -27,7 +27,8 @@ options:
     description:
     - >
       ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types
-      are wireless, appliance, switch, systemsManager, camera, cellularGateway, and sensor.
+      are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and
+      secureConnect.
     elements: str
     type: list
   networkIds:

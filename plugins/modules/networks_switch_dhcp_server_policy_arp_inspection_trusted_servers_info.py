@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info
-short_description: Information module for networks _switch _dhcpserverpolicy _arpinspection _trustedservers
+short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
 description:
-- Get all networks _switch _dhcpserverpolicy _arpinspection _trustedservers.
+- Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
 - >
    Return the list of servers trusted by Dynamic ARP Inspection on this network. These are also known as allow listed
    snoop entries.
@@ -60,7 +60,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dhcpserverpolicy _arpinspection _trustedservers
+- name: Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
   cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

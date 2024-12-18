@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_clients_latency_stats_info
-short_description: Information module for networks _wireless _clients _latencystats
+short_description: Information module for networks _wireless _clients _latency _stats
 description:
-- Get all networks _wireless _clients _latencystats.
+- Get all networks _wireless _clients _latency _stats.
 - Aggregated latency info for a given client on this network. Clients are identified by their MAC.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -82,7 +82,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _clients _latencystats
+- name: Get all networks _wireless _clients _latency _stats
   cisco.meraki.networks_wireless_clients_latency_stats_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

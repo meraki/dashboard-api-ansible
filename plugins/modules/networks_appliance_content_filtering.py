@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_content_filtering
-short_description: Resource module for networks _appliance _contentfiltering
+short_description: Resource module for networks _appliance _content _filtering
 description:
-- Manage operation update of the resource networks _appliance _contentfiltering.
+- Manage operation update of the resource networks _appliance _content _filtering.
 - Update the content filtering settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:

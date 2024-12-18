@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: networks_vlan_profiles_assignments_by_device_info
-short_description: Information module for networks _vlanprofiles _assignments _bydevice
+short_description: Information module for networks _vlan _profiles _assignments _by _device
 description:
-- Get all networks _vlanprofiles _assignments _bydevice.
+- Get all networks _vlan _profiles _assignments _by _device.
 - Get the assigned VLAN Profiles for devices in a network.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -75,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _vlanprofiles _assignments _bydevice
+- name: Get all networks _vlan _profiles _assignments _by _device
   cisco.meraki.networks_vlan_profiles_assignments_by_device_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

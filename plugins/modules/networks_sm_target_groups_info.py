@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sm_target_groups_info
-short_description: Information module for networks _sm _targetgroups
+short_description: Information module for networks _sm _target _groups
 description:
-- Get all networks _sm _targetgroups.
-- Get networks _sm _targetgroups by id.
+- Get all networks _sm _target _groups.
+- Get networks _sm _target _groups by id.
 - List the target groups in this network.
 - Return a target group.
 version_added: '2.16.0'
@@ -56,7 +56,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _targetgroups
+- name: Get all networks _sm _target _groups
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -82,7 +82,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _sm _targetgroups by id
+- name: Get networks _sm _target _groups by id
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,11 +7,13 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_cable_test
-short_description: Resource module for devices _livetools _cabletest
+short_description: Resource module for devices _live _tools _cable _test
 description:
-- Manage operation create of the resource devices _livetools _cabletest.
-- Enqueue a job to perform a cable test for the device on the specified ports.
-version_added: '2.18.0'
+- Manage operation create of the resource devices _live _tools _cable _test.
+- >
+   Enqueue a job to perform a cable test for the device on the specified ports. This endpoint has a sustained rate
+   limit of one request every five seconds per device, with an allowed burst of five requests.
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
@@ -47,7 +49,9 @@ options:
         type: str
     type: dict
   ports:
-    description: A list of ports for which to perform the cable test.
+    description: A list of ports for which to perform the cable test. For Catalyst switches,
+      IOS interface names are also supported, such as "GigabitEthernet1/0/8", "Gi1/0/8",
+      or even "1/0/8".
     elements: str
     type: list
   serial:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_connectivity_monitoring_destinations_info
-short_description: Information module for networks _appliance _connectivitymonitoringdestinations
+short_description: Information module for networks _appliance _connectivity _monitoring _destinations
 description:
-- Get all networks _appliance _connectivitymonitoringdestinations.
+- Get all networks _appliance _connectivity _monitoring _destinations.
 - Return the connectivity testing destinations for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _connectivitymonitoringdestinations
+- name: Get all networks _appliance _connectivity _monitoring _destinations
   cisco.meraki.networks_appliance_connectivity_monitoring_destinations_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -24,10 +24,6 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
-  mac:
-    description:
-    - Mac query parameter. The MAC address of the client. Required.
-    type: str
   perPage:
     description:
     - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
@@ -45,6 +41,10 @@ options:
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
       timestamp or an ID but it is not limited to those. This parameter should not be defined by client
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+    type: str
+  mac:
+    description:
+    - Mac query parameter. The MAC address of the client. Required.
     type: str
 requirements:
 - meraki >= 2.4.9
@@ -84,10 +84,10 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
-    mac: string
     perPage: 0
     startingAfter: string
     endingBefore: string
+    mac: string
     organizationId: string
     total_pages: -1
     direction: next
@@ -106,7 +106,11 @@ meraki_response:
       "manufacturer": "string",
       "records": [
         {
-          "cdp": "string",
+          "cdp": [
+            [
+              "string"
+            ]
+          ],
           "clientVpnConnections": [
             {
               "connectedAt": 0,
@@ -120,7 +124,9 @@ meraki_response:
           "ip6": "string",
           "lastSeen": 0,
           "lldp": [
-            "string"
+            [
+              "string"
+            ]
           ],
           "network": {
             "enrollmentString": "string",
@@ -135,9 +141,11 @@ meraki_response:
             "tags": [
               "string"
             ],
-            "timeZone": "string"
+            "timeZone": "string",
+            "url": "string"
           },
           "os": "string",
+          "recentDeviceMac": "string",
           "smInstalled": true,
           "ssid": "string",
           "status": "string",

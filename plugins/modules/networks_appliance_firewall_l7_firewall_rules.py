@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_l7_firewall_rules
-short_description: Resource module for networks _appliance _firewall l7firewallrules
+short_description: Resource module for networks _appliance _firewall l7 _firewall _rules
 description:
-- Manage operation update of the resource networks _appliance _firewall l7firewallrules.
+- Manage operation update of the resource networks _appliance _firewall l7 _firewall _rules.
 - Update the MX L7 firewall rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:

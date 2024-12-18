@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_sensor_alerts_current_overview_by_metric_info
-short_description: Information module for networks _sensor _alerts _current _overview _bymetric
+short_description: Information module for networks _sensor _alerts _current _overview _by _metric
 description:
-- Get all networks _sensor _alerts _current _overview _bymetric.
+- Get all networks _sensor _alerts _current _overview _by _metric.
 - Return an overview of currently alerting sensors by metric.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sensor _alerts _current _overview _bymetric
+- name: Get all networks _sensor _alerts _current _overview _by _metric
   cisco.meraki.networks_sensor_alerts_current_overview_by_metric_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

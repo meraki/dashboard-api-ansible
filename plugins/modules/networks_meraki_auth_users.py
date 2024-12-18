@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_meraki_auth_users
-short_description: Resource module for networks _merakiauthusers
+short_description: Resource module for networks _meraki _auth _users
 description:
-- Manage operations create, update and delete of the resource networks _merakiauthusers.
+- Manage operations create, update and delete of the resource networks _meraki _auth _users.
 - >
    Authorize a user configured with Meraki Authentication for a network currently supports 802.1X, splash guest, and
    client VPN users, and currently, organizations have a 50,000 user cap .

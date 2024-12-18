@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_client_count_history_info
-short_description: Information module for networks _wireless _clientcounthistory
+short_description: Information module for networks _wireless _client _count _history
 description:
-- Get all networks _wireless _clientcounthistory.
+- Get all networks _wireless _client _count _history.
 - Return wireless client counts over time for a network, device, or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -88,7 +88,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _clientcounthistory
+- name: Get all networks _wireless _client _count _history
   cisco.meraki.networks_wireless_client_count_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

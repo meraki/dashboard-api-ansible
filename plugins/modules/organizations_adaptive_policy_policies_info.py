@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_policies_info
-short_description: Information module for organizations _adaptivepolicy _policies
+short_description: Information module for organizations _adaptive _policy _policies
 description:
-- Get all organizations _adaptivepolicy _policies.
-- Get organizations _adaptivepolicy _policies by id.
+- Get all organizations _adaptive _policy _policies.
+- Get organizations _adaptive _policy _policies by id.
 - List adaptive policies in an organization.
 - Return an adaptive policy.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptivepolicy _policies
+- name: Get all organizations _adaptive _policy _policies
   cisco.meraki.organizations_adaptive_policy_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _adaptivepolicy _policies by id
+- name: Get organizations _adaptive _policy _policies by id
   cisco.meraki.organizations_adaptive_policy_policies_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

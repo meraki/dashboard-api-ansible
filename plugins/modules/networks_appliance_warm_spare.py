@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_warm_spare
-short_description: Resource module for networks _appliance _warmspare
+short_description: Resource module for networks _appliance _warm _spare
 description:
-- Manage operation update of the resource networks _appliance _warmspare.
+- Manage operation update of the resource networks _appliance _warm _spare.
 - Update MX warm spare settings.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -87,5 +87,18 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "primarySerial": "string",
+      "spareSerial": "string",
+      "uplinkMode": "string",
+      "wan1": {
+        "ip": "string",
+        "subnet": "string"
+      },
+      "wan2": {
+        "ip": "string",
+        "subnet": "string"
+      }
+    }
 """

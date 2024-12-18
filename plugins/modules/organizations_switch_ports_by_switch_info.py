@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_switch_ports_by_switch_info
-short_description: Information module for organizations _switch _ports _byswitch
+short_description: Information module for organizations _switch _ports _by _switch
 description:
-- Get all organizations _switch _ports _byswitch.
+- Get all organizations _switch _ports _by _switch.
 - List the switchports in an organization by switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -42,54 +42,52 @@ options:
       timestamp or an ID but it is not limited to those. This parameter should not be defined by client
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
-  networkIds:
+  configurationUpdatedAfter:
     description:
-    - NetworkIds query parameter. Optional parameter to filter switchports by network.
-    elements: str
-    type: list
-  portProfileIds:
+    - >
+      ConfigurationUpdatedAfter query parameter. Optional parameter to filter items to switches where the
+      configuration has been updated after the given timestamp.
+    type: str
+  mac:
     description:
-    - PortProfileIds query parameter. Optional parameter to filter switchports belonging to the specified port profiles.
+    - >
+      Mac query parameter. Optional parameter to filter items to switches with MAC addresses that contain the
+      search term or are an exact match.
+    type: str
+  macs:
+    description:
+    - Macs query parameter. Optional parameter to filter items to switches that have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
     - >
-      Name query parameter. Optional parameter to filter switchports belonging to switches by name. All returned
-      switches will have a name that contains the search term or is an exact match.
+      Name query parameter. Optional parameter to filter items to switches with names that contain the search term
+      or are an exact match.
     type: str
-  mac:
+  networkIds:
+    description:
+    - NetworkIds query parameter. Optional parameter to filter items to switches in one of the provided networks.
+    elements: str
+    type: list
+  portProfileIds:
     description:
     - >
-      Mac query parameter. Optional parameter to filter switchports belonging to switches by MAC address. All
-      returned switches will have a MAC address that contains the search term or is an exact match.
-    type: str
-  macs:
-    description:
-    - >
-      Macs query parameter. Optional parameter to filter switchports by one or more MAC addresses belonging to
-      devices. All switchports returned belong to MAC addresses of switches that are an exact match.
+      PortProfileIds query parameter. Optional parameter to filter items to switches that contain switchports
+      belonging to one of the specified port profiles.
     elements: str
     type: list
   serial:
     description:
     - >
-      Serial query parameter. Optional parameter to filter switchports belonging to switches by serial number. All
-      returned switches will have a serial number that contains the search term or is an exact match.
+      Serial query parameter. Optional parameter to filter items to switches with serial number that contains the
+      search term or are an exact match.
     type: str
   serials:
     description:
-    - >
-      Serials query parameter. Optional parameter to filter switchports belonging to switches with one or more
-      serial numbers. All switchports returned belong to serial numbers of switches that are an exact match.
+    - Serials query parameter. Optional parameter to filter items to switches that have one of the provided serials.
     elements: str
     type: list
-  configurationUpdatedAfter:
-    description:
-    - >
-      ConfigurationUpdatedAfter query parameter. Optional parameter to filter results by switches where the
-      configuration has been updated after the given timestamp.
-    type: str
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -106,7 +104,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _switch _ports _byswitch
+- name: Get all organizations _switch _ports _by _switch
   cisco.meraki.organizations_switch_ports_by_switch_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -131,14 +129,14 @@ EXAMPLES = r"""
     perPage: 0
     startingAfter: string
     endingBefore: string
-    networkIds: []
-    portProfileIds: []
-    name: string
+    configurationUpdatedAfter: string
     mac: string
     macs: []
+    name: string
+    networkIds: []
+    portProfileIds: []
     serial: string
     serials: []
-    configurationUpdatedAfter: string
     organizationId: string
     total_pages: -1
     direction: next
@@ -149,42 +147,39 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "mac": "string",
-        "model": "string",
-        "name": "string",
-        "network": {
-          "id": "string",
-          "name": "string"
-        },
-        "ports": [
-          {
-            "accessPolicyType": "string",
-            "allowedVlans": "string",
-            "enabled": true,
-            "linkNegotiation": "string",
-            "name": "string",
-            "poeEnabled": true,
-            "portId": "string",
-            "rstpEnabled": true,
-            "stickyMacAllowList": [
-              "string"
-            ],
-            "stickyMacAllowListLimit": 0,
-            "stpGuard": "string",
-            "tags": [
-              "string"
-            ],
-            "type": "string",
-            "vlan": 0,
-            "voiceVlan": 0
-          }
-        ],
-        "serial": "string"
-      }
-    ]
+    {
+      "mac": "string",
+      "model": "string",
+      "name": "string",
+      "network": {
+        "id": "string",
+        "name": "string"
+      },
+      "ports": [
+        {
+          "accessPolicyType": "string",
+          "allowedVlans": "string",
+          "enabled": true,
+          "linkNegotiation": "string",
+          "name": "string",
+          "poeEnabled": true,
+          "portId": "string",
+          "rstpEnabled": true,
+          "stickyMacAllowList": [
+            "string"
+          ],
+          "stickyMacAllowListLimit": 0,
+          "stpGuard": "string",
+          "tags": [
+            "string"
+          ],
+          "type": "string",
+          "vlan": 0,
+          "voiceVlan": 0
+        }
+      ],
+      "serial": "string"
+    }
 """

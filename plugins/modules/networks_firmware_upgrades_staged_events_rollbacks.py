@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_events_rollbacks
-short_description: Resource module for networks _firmwareupgrades _staged _events _rollbacks
+short_description: Resource module for networks _firmware _upgrades _staged _events _rollbacks
 description:
-- Manage operation create of the resource networks _firmwareupgrades _staged _events _rollbacks.
+- Manage operation create of the resource networks _firmware _upgrades _staged _events _rollbacks.
 - Rollback a Staged Upgrade Event for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:

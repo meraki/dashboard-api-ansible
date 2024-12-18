@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_login_security
-short_description: Resource module for organizations _loginsecurity
+short_description: Resource module for organizations _login _security
 description:
-- Manage operation update of the resource organizations _loginsecurity.
+- Manage operation update of the resource organizations _login _security.
 - Update the login security settings for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:

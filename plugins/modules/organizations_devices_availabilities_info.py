@@ -55,7 +55,8 @@ options:
     description:
     - >
       ProductTypes query parameter. Optional parameter to filter device availabilities by device product types.
-      This filter uses multiple exact matches.
+      This filter uses multiple exact matches. Valid types are wireless, appliance, switch, camera,
+      cellularGateway, sensor, wirelessController, and campusGateway.
     elements: str
     type: list
   serials:
@@ -80,6 +81,13 @@ options:
       whether to return devices which contain ANY or ALL of the included tags. If no type is included,
       'withAnyTags' will be selected.
     type: str
+  statuses:
+    description:
+    - >
+      Statuses query parameter. Optional parameter to filter device availabilities by device status. This filter
+      uses multiple exact matches.
+    elements: str
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -126,6 +134,7 @@ EXAMPLES = r"""
     serials: []
     tags: []
     tagsFilterType: string
+    statuses: []
     organizationId: string
     total_pages: -1
     direction: next

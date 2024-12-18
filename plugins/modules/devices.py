@@ -40,13 +40,13 @@ options:
     description: The notes for the device. String. Limited to 255 characters.
     type: str
   serial:
-    description: Devices's serial.
+    description: Serial path parameter.
     type: str
   switchProfileId:
-    description: The ID of a switch profile to bind to the device (for available switch
-      profiles, see the 'Switch Profiles' endpoint). Use null to unbind the switch device
-      from the current profile. For a device to be bindable to a switch profile, it
-      must (1) be a switch, and (2) belong to a network that is bound to a configuration
+    description: The ID of a switch template to bind to the device (for available switch
+      templates, see the 'Switch Templates' endpoint). Use null to unbind the switch
+      device from the current profile. For a device to be bindable to a switch template,
+      it must (1) be a switch, and (2) belong to a network that is bound to a configuration
       template.
     type: str
   tags:
@@ -92,13 +92,17 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
     state: present
+    address: 1600 Pennsylvania Ave
+    floorPlanId: g_2176982374
     lat: 37.4180951010362
     lng: -122.098531723022
-    mac: 00:11:22:33:44:55
+    moveMapMarker: true
     name: My AP
-    serial: Q234-ABCD-5678
+    notes: My AP's note
+    serial: string
+    switchProfileId: '1234'
     tags:
-    - recently-added
+    - ' recently-added '
 
 """
 RETURN = r"""
@@ -107,5 +111,32 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "address": "string",
+      "beaconIdParams": {
+        "major": 0,
+        "minor": 0,
+        "uuid": "string"
+      },
+      "details": [
+        {
+          "name": "string",
+          "value": "string"
+        }
+      ],
+      "firmware": "string",
+      "floorPlanId": "string",
+      "lanIp": "string",
+      "lat": 0,
+      "lng": 0,
+      "mac": "string",
+      "model": "string",
+      "name": "string",
+      "networkId": "string",
+      "notes": "string",
+      "serial": "string",
+      "tags": [
+        "string"
+      ]
+    }
 """

@@ -63,6 +63,7 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    addAtomically: true
     networkId: string
     serials:
     - Q234-ABCD-0001
@@ -77,6 +78,14 @@ meraki_response:
   type: dict
   sample: >
     {
+      "errors": [
+        {
+          "errors": [
+            "string"
+          ],
+          "serial": "string"
+        }
+      ],
       "serials": [
         "string"
       ]

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_mesh_statuses_info
-short_description: Information module for networks _wireless _meshstatuses
+short_description: Information module for networks _wireless _mesh _statuses
 description:
-- Get all networks _wireless _meshstatuses.
+- Get all networks _wireless _mesh _statuses.
 - List wireless mesh statuses for repeaters.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -58,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _meshstatuses
+- name: Get all networks _wireless _mesh _statuses
   cisco.meraki.networks_wireless_mesh_statuses_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

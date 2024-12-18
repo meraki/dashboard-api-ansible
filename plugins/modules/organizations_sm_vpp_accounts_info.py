@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_sm_vpp_accounts_info
-short_description: Information module for organizations _sm _vppaccounts
+short_description: Information module for organizations _sm _vpp _accounts
 description:
-- Get all organizations _sm _vppaccounts.
-- Get organizations _sm _vppaccounts by id.
+- Get all organizations _sm _vpp _accounts.
+- Get organizations _sm _vpp _accounts by id.
 - Get a hash containing the unparsed token of the VPP account with the given ID.
 - List the VPP accounts in the organization.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _vppaccounts
+- name: Get all organizations _sm _vpp _accounts
   cisco.meraki.organizations_sm_vpp_accounts_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _sm _vppaccounts by id
+- name: Get organizations _sm _vpp _accounts by id
   cisco.meraki.organizations_sm_vpp_accounts_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

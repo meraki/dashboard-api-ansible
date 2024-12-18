@@ -14,7 +14,7 @@ description:
    Update an Organizations Sentry Policies using the provided list. Sentry Policies are ordered in descending order
    of priority i.e. Highest priority at the bottom, this is opposite the Dashboard UI. Policies not present in the
    request will be deleted.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

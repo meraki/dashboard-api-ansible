@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_custom_analytics_info
-short_description: Information module for devices _camera _customanalytics
+short_description: Information module for devices _camera _custom _analytics
 description:
-- Get all devices _camera _customanalytics.
+- Get all devices _camera _custom _analytics.
 - Return custom analytics settings for a camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _customanalytics
+- name: Get all devices _camera _custom _analytics
   cisco.meraki.devices_camera_custom_analytics_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

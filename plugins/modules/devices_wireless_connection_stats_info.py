@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_wireless_connection_stats_info
-short_description: Information module for devices _wireless _connectionstats
+short_description: Information module for devices _wireless _connection _stats
 description:
-- Get all devices _wireless _connectionstats.
+- Get all devices _wireless _connection _stats.
 - Aggregated connectivity info for a given AP on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -71,7 +71,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _wireless _connectionstats
+- name: Get all devices _wireless _connection _stats
   cisco.meraki.devices_wireless_connection_stats_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

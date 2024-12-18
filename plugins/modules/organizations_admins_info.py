@@ -23,6 +23,11 @@ options:
     description:
     - OrganizationId path parameter. Organization ID.
     type: str
+  networkIds:
+    description:
+    - NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
+    elements: str
+    type: list
 requirements:
 - meraki >= 2.4.9
 - python >= 3.5
@@ -61,6 +66,7 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    networkIds: []
     organizationId: string
   register: result
 

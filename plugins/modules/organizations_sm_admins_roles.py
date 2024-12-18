@@ -11,7 +11,7 @@ short_description: Resource module for organizations _sm _admins _roles
 description:
 - Manage operations create, update and delete of the resource organizations _sm _admins _roles.
 - Create a Limited Access Role.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

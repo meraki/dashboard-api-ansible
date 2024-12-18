@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -45,6 +45,8 @@ argument_spec.update(dict(
     twoFourGhzSettings=dict(type="dict"),
     networkId=dict(type="str"),
     rfProfileId=dict(type="str"),
+    isIndoorDefault=dict(type="bool"),
+    isOutdoorDefault=dict(type="bool"),
 ))
 
 required_if = [
@@ -73,6 +75,8 @@ class NetworksWirelessRfProfiles(object):
             twoFourGhzSettings=params.get("twoFourGhzSettings"),
             networkId=params.get("networkId"),
             rfProfileId=params.get("rfProfileId"),
+            isIndoorDefault=params.get("isIndoorDefault"),
+            isOutdoorDefault=params.get("isOutdoorDefault"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -160,6 +164,10 @@ class NetworksWirelessRfProfiles(object):
         if self.new_object.get('flexRadios') is not None or self.new_object.get('flex_radios') is not None:
             new_object_params['flexRadios'] = self.new_object.get('flexRadios') or \
                 self.new_object.get('flex_radios')
+        if self.new_object.get('isIndoorDefault') is not None or self.new_object.get('is_indoor_default') is not None:
+            new_object_params['isIndoorDefault'] = self.new_object.get('isIndoorDefault')
+        if self.new_object.get('isOutdoorDefault') is not None or self.new_object.get('is_outdoor_default') is not None:
+            new_object_params['isOutdoorDefault'] = self.new_object.get('isOutdoorDefault')
         if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
             new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
                 self.new_object.get('min_bitrate_type')
@@ -268,10 +276,12 @@ class NetworksWirelessRfProfiles(object):
             ("twoFourGhzSettings", "twoFourGhzSettings"),
             ("networkId", "networkId"),
             ("rfProfileId", "rfProfileId"),
+            ("isIndoorDefault", "isIndoorDefault"),
+            ("isOutdoorDefault", "isOutdoorDefault"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -32,11 +32,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    iname=dict(type="str"),
     name=dict(type="str"),
     vlanGroups=dict(type="list"),
     vlanNames=dict(type="list"),
     networkId=dict(type="str"),
-    iname=dict(type="str"),
 ))
 
 required_if = [
@@ -52,12 +52,38 @@ class NetworksVlanProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            iname=params.get("iname"),
             name=params.get("name"),
             vlanGroups=params.get("vlanGroups"),
             vlanNames=params.get("vlanNames"),
-            network_id=params.get("networkId"),
-            iname=params.get("iname"),
+            networkId=params.get("networkId"),
         )
+
+    def get_all_params(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get('networkId') or \
+                self.new_object.get('network_id')
+        return new_object_params
+
+    def create_params(self):
+        new_object_params = {}
+        if self.new_object.get('iname') is not None or self.new_object.get('iname') is not None:
+            new_object_params['iname'] = self.new_object.get('iname') or \
+                self.new_object.get('iname')
+        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('vlanGroups') is not None or self.new_object.get('vlan_groups') is not None:
+            new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
+                self.new_object.get('vlan_groups')
+        if self.new_object.get('vlanNames') is not None or self.new_object.get('vlan_names') is not None:
+            new_object_params['vlanNames'] = self.new_object.get('vlanNames') or \
+                self.new_object.get('vlan_names')
+        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get('networkId') or \
+                self.new_object.get('network_id')
+        return new_object_params
 
     def delete_by_name_params(self):
         new_object_params = {}
@@ -107,17 +133,30 @@ class NetworksVlanProfiles(object):
     def get_object_by_id(self, id):
         result = None
         # NOTE: Does not have a get by id method or it is in another action
+        try:
+            items = self.meraki.exec_meraki(
+                family="networks",
+                function="getNetworkVlanProfiles",
+                params=self.get_all_params(id=id),
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'id', id)
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        prev_obj = None
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         name = name or self.new_object.get("iname")
         if o_id:
-            prev_obj = self.get_object_by_name(o_id)
+            prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
@@ -126,6 +165,7 @@ class NetworksVlanProfiles(object):
             _name = prev_obj.get("name")
             _name = _name or prev_obj.get("iname")
             if _name:
+                        _payload_first.update(dict(iname=_name))
                 self.new_object.update(dict(iname=_name))
         if name_exists:
             _id = prev_obj.get("id")
@@ -141,17 +181,26 @@ class NetworksVlanProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("iname", "iname"),
             ("name", "name"),
             ("vlanGroups", "vlanGroups"),
             ("vlanNames", "vlanNames"),
             ("networkId", "networkId"),
-            ("iname", "iname"),
         ]
-        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
+
+    def create(self):
+        result = self.meraki.exec_meraki(
+            family="networks",
+            function="createNetworkVlanProfile",
+            params=self.create_params(),
+            op_modifies=True,
+        )
+        return result
 
     def update(self):
         id = self.new_object.get("id")
@@ -167,7 +216,7 @@ class NetworksVlanProfiles(object):
             if name_:
                 self.new_object.update(dict(iname=name_))
         result = self.meraki.exec_meraki(
-            family="networks",
+                family="networks",
             function="updateNetworkVlanProfile",
             params=self.update_by_name_params(),
             op_modifies=True,
@@ -235,6 +284,7 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
+
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
@@ -245,8 +295,9 @@ class ActionModule(ActionBase):
                     response = prev_obj
                     meraki.object_already_present()
             else:
-                meraki.fail_json(
-                    "Object does not exists, plugin only has update")
+                response = obj.create()
+                meraki.object_created()
+
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_mqtt_brokers
-short_description: Resource module for networks _mqttbrokers
+short_description: Resource module for networks _mqtt _brokers
 description:
-- Manage operation create of the resource networks _mqttbrokers.
+- Manage operation create of the resource networks _mqtt _brokers.
 - Add an MQTT broker.
 version_added: '2.16.0'
 extends_documentation_fragment:

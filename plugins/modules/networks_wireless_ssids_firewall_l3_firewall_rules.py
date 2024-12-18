@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_firewall_l3_firewall_rules
-short_description: Resource module for networks _wireless _ssids _firewall l3firewallrules
+short_description: Resource module for networks _wireless _ssids _firewall l3 _firewall _rules
 description:
-- Manage operation update of the resource networks _wireless _ssids _firewall l3firewallrules.
+- Manage operation update of the resource networks _wireless _ssids _firewall l3 _firewall _rules.
 - Update the L3 firewall rules of an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -106,13 +106,16 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    [
-      {
-        "comment": "string",
-        "destCidr": "string",
-        "destPort": "string",
-        "policy": "string",
-        "protocol": "string"
-      }
-    ]
+    {
+      "allowLanAccess": true,
+      "rules": [
+        {
+          "comment": "string",
+          "destCidr": "string",
+          "destPort": "string",
+          "policy": "string",
+          "protocol": "string"
+        }
+      ]
+    }
 """

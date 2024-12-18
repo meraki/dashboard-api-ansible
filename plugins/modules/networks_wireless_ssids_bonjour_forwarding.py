@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_ssids_bonjour_forwarding
-short_description: Resource module for networks _wireless _ssids _bonjourforwarding
+short_description: Resource module for networks _wireless _ssids _bonjour _forwarding
 description:
-- Manage operation update of the resource networks _wireless _ssids _bonjourforwarding.
+- Manage operation update of the resource networks _wireless _ssids _bonjour _forwarding.
 - Update the bonjour forwarding setting and rules for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,8 +43,9 @@ options:
         type: str
       services:
         description: A list of Bonjour services. At least one service must be specified.
-          Available services are 'All Services', 'AirPlay', 'AFP', 'BitTorrent', 'FTP',
-          'iChat', 'iTunes', 'Printers', 'Samba', 'Scanners' and 'SSH'.
+          Available services are 'All Services', 'AFP', 'AirPlay', 'Apple screen share',
+          'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers', 'Samba',
+          'Scanners', 'Spotify' and 'SSH'.
         elements: str
         type: list
       vlanId:

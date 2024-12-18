@@ -26,6 +26,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     organizationId=dict(type="str"),
+    networkTag=dict(type="str"),
+    deviceTag=dict(type="str"),
+    ssidName=dict(type="str"),
+    usageUplink=dict(type="str"),
     t0=dict(type="str"),
     t1=dict(type="str"),
     timespan=dict(type="float"),
@@ -70,6 +74,18 @@ class ActionModule(ActionBase):
         if params.get("organizationId") is not None:
             new_object["organizationId"] = params.get(
                 "organizationId")
+        if params.get("networkTag") is not None:
+            new_object["networkTag"] = params.get(
+                "networkTag")
+        if params.get("deviceTag") is not None:
+            new_object["deviceTag"] = params.get(
+                "deviceTag")
+        if params.get("ssidName") is not None:
+            new_object["ssidName"] = params.get(
+                "ssidName")
+        if params.get("usageUplink") is not None:
+            new_object["usageUplink"] = params.get(
+                "usageUplink")
         if params.get("t0") is not None:
             new_object["t0"] = params.get(
                 "t0")

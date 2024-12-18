@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_camera_quality_and_retention_info
-short_description: Information module for devices _camera _qualityandretention
+short_description: Information module for devices _camera _quality _and _retention
 description:
-- Get all devices _camera _qualityandretention.
+- Get all devices _camera _quality _and _retention.
 - Returns quality and retention settings for the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _qualityandretention
+- name: Get all devices _camera _quality _and _retention
   cisco.meraki.devices_camera_quality_and_retention_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

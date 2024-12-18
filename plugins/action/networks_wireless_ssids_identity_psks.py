@@ -216,7 +216,6 @@ class NetworksWirelessSsidsIdentityPsks(object):
             ("expiresAt", "expiresAt"),
             ("groupPolicyId", "groupPolicyId"),
             ("name", "name"),
-            ("passphrase", "passphrase"),
             ("networkId", "networkId"),
             ("number", "number"),
             ("identityPskId", "identityPskId"),

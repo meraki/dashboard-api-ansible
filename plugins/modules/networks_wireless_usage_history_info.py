@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_usage_history_info
-short_description: Information module for networks _wireless _usagehistory
+short_description: Information module for networks _wireless _usage _history
 description:
-- Get all networks _wireless _usagehistory.
+- Get all networks _wireless _usage _history.
 - Return AP usage over time for a device or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -88,7 +88,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _usagehistory
+- name: Get all networks _wireless _usage _history
   cisco.meraki.networks_wireless_usage_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_access_control_lists
-short_description: Resource module for networks _switch _accesscontrollists
+short_description: Resource module for networks _switch _access _control _lists
 description:
-- Manage operation update of the resource networks _switch _accesscontrollists.
+- Manage operation update of the resource networks _switch _access _control _lists.
 - Update the access control lists for a MS network.
 version_added: '2.16.0'
 extends_documentation_fragment:

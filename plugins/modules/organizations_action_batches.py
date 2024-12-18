@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_action_batches
-short_description: Resource module for organizations _actionbatches
+short_description: Resource module for organizations _action _batches
 description:
-- Manage operations create, update and delete of the resource organizations _actionbatches.
+- Manage operations create, update and delete of the resource organizations _action _batches.
 - Create an action batch.
 - Delete an action batch.
 - Update an action batch.

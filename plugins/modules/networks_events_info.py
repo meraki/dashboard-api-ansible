@@ -28,8 +28,8 @@ options:
     description:
     - >
       ProductType query parameter. The product type to fetch events for. This parameter is required for networks
-      with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, and
-      cellularGateway.
+      with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera,
+      cellularGateway, wirelessController, and secureConnect.
     type: str
   includedEventTypes:
     description:
@@ -87,6 +87,24 @@ options:
       SmDeviceName query parameter. The name of the Systems Manager device which the list of events will be
       filtered with.
     type: str
+  eventDetails:
+    description:
+    - >
+      EventDetails query parameter. The details of the event(Catalyst device only) which the list of events will
+      be filtered with.
+    type: str
+  eventSeverity:
+    description:
+    - >
+      EventSeverity query parameter. The severity of the event(Catalyst device only) which the list of events will
+      be filtered with.
+    type: str
+  isCatalyst:
+    description:
+    - >
+      IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst device. For Catalyst device,
+      eventDetails and eventSeverity can be used to filter events.
+    type: bool
   perPage:
     description:
     - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
@@ -154,6 +172,9 @@ EXAMPLES = r"""
     clientName: string
     smDeviceMac: string
     smDeviceName: string
+    eventDetails: string
+    eventSeverity: string
+    isCatalyst: True
     perPage: 0
     startingAfter: string
     endingBefore: string

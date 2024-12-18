@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_floor_plans_info
-short_description: Information module for networks _floorplans
+short_description: Information module for networks _floor _plans
 description:
-- Get all networks _floorplans.
-- Get networks _floorplans by id.
+- Get all networks _floor _plans.
+- Get networks _floor _plans by id.
 - Find a floor plan by ID.
 - List the floor plans that belong to your network.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _floorplans
+- name: Get all networks _floor _plans
   cisco.meraki.networks_floor_plans_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _floorplans by id
+- name: Get networks _floor _plans by id
   cisco.meraki.networks_floor_plans_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

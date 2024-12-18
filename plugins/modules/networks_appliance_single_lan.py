@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_single_lan
-short_description: Resource module for networks _appliance _singlelan
+short_description: Resource module for networks _appliance _single _lan
 description:
-- Manage operation update of the resource networks _appliance _singlelan.
+- Manage operation update of the resource networks _appliance _single _lan.
 - Update single LAN configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:

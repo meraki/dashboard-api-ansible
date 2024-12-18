@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_adaptive_policy_acls_info
-short_description: Information module for organizations _adaptivepolicy _acls
+short_description: Information module for organizations _adaptive _policy _acls
 description:
-- Get all organizations _adaptivepolicy _acls.
-- Get organizations _adaptivepolicy _acls by id.
+- Get all organizations _adaptive _policy _acls.
+- Get organizations _adaptive _policy _acls by id.
 - List adaptive policy ACLs in a organization.
 - Returns the adaptive policy ACL information.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptivepolicy _acls
+- name: Get all organizations _adaptive _policy _acls
   cisco.meraki.organizations_adaptive_policy_acls_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     organizationId: string
   register: result
 
-- name: Get organizations _adaptivepolicy _acls by id
+- name: Get organizations _adaptive _policy _acls by id
   cisco.meraki.organizations_adaptive_policy_acls_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

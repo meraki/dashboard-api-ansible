@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_openapi_spec_info
-short_description: Information module for organizations _openapispec
+short_description: Information module for organizations _openapi _spec
 description:
-- Get all organizations _openapispec.
+- Get all organizations _openapi _spec.
 - Return the OpenAPI Specification of the organization's API documentation in JSON.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -43,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _openapispec
+- name: Get all organizations _openapi _spec
   cisco.meraki.organizations_openapi_spec_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

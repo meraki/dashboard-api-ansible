@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_bluetooth_clients_info
-short_description: Information module for networks _bluetoothclients
+short_description: Information module for networks _bluetooth _clients
 description:
-- Get networks _bluetoothclients by id.
+- Get networks _bluetooth _clients by id.
 - Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get networks _bluetoothclients by id
+- name: Get networks _bluetooth _clients by id
   cisco.meraki.networks_bluetooth_clients_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_stages
-short_description: Resource module for networks _firmwareupgrades _staged _stages
+short_description: Resource module for networks _firmware _upgrades _staged _stages
 description:
-- Manage operation update of the resource networks _firmwareupgrades _staged _stages.
+- Manage operation update of the resource networks _firmware _upgrades _staged _stages.
 - Assign Staged Upgrade Group order in the sequence.
 version_added: '2.16.0'
 extends_documentation_fragment:

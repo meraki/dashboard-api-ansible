@@ -111,9 +111,16 @@ meraki_response:
     {
       "accessPolicyNumber": 0,
       "accessPolicyType": "string",
+      "adaptivePolicyGroup": {
+        "id": "string",
+        "name": "string"
+      },
       "adaptivePolicyGroupId": "string",
       "allowedVlans": "string",
       "daiTrusted": true,
+      "dot3az": {
+        "enabled": true
+      },
       "enabled": true,
       "flexibleStackingEnabled": true,
       "isolationEnabled": true,
@@ -141,6 +148,14 @@ meraki_response:
         "iname": "string"
       },
       "rstpEnabled": true,
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
+      "stackwiseVirtual": {
+        "isDualActiveDetector": true,
+        "isStackWiseVirtualLink": true
+      },
       "stickyMacAllowList": [
         "string"
       ],

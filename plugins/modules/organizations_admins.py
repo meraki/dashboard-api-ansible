@@ -22,9 +22,8 @@ options:
     description: AdminId path parameter. Admin ID.
     type: str
   authenticationMethod:
-    description: The method of authentication the user will use to sign in to the Meraki
-      dashboard. Can be one of 'Email' or 'Cisco SecureX Sign-On'. The default is Email
-      authentication.
+    description: No longer used as of Cisco SecureX end-of-life. Can be one of 'Email'.
+      The default is Email authentication.
     type: str
   email:
     description: The email of the dashboard administrator. This attribute can not be

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_uplink
-short_description: Resource module for networks _cellulargateway _uplink
+short_description: Resource module for networks _cellular _gateway _uplink
 description:
-- Manage operation update of the resource networks _cellulargateway _uplink.
+- Manage operation update of the resource networks _cellular _gateway _uplink.
 - Updates the uplink settings for your MG network.
 version_added: '2.16.0'
 extends_documentation_fragment:

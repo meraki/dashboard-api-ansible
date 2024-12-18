@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: networks_camera_quality_retention_profiles_info
-short_description: Information module for networks _camera _qualityretentionprofiles
+short_description: Information module for networks _camera _quality _retention _profiles
 description:
-- Get all networks _camera _qualityretentionprofiles.
-- Get networks _camera _qualityretentionprofiles by id.
+- Get all networks _camera _quality _retention _profiles.
+- Get networks _camera _quality _retention _profiles by id.
 - List the quality retention profiles for this network.
 - Retrieve a single quality retention profile.
 version_added: '2.16.0'
@@ -50,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _qualityretentionprofiles
+- name: Get all networks _camera _quality _retention _profiles
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -75,7 +75,7 @@ EXAMPLES = r"""
     networkId: string
   register: result
 
-- name: Get networks _camera _qualityretentionprofiles by id
+- name: Get networks _camera _quality _retention _profiles by id
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -119,6 +119,9 @@ meraki_response:
       "networkId": "string",
       "restrictedBandwidthModeEnabled": true,
       "scheduleId": "string",
+      "smartRetention": {
+        "enabled": true
+      },
       "videoSettings": {
         "MV12/MV22/MV72": {
           "quality": "string",

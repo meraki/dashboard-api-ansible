@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_cellular_gateway_subnet_pool
-short_description: Resource module for networks _cellulargateway _subnetpool
+short_description: Resource module for networks _cellular _gateway _subnet _pool
 description:
-- Manage operation update of the resource networks _cellulargateway _subnetpool.
+- Manage operation update of the resource networks _cellular _gateway _subnet _pool.
 - Update the subnet pool and mask configuration for MGs in the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -76,5 +76,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "cidr": "string",
+      "deploymentMode": "string",
+      "mask": 0,
+      "subnets": [
+        {
+          "applianceIp": "string",
+          "name": "string",
+          "serial": "string",
+          "subnet": "string"
+        }
+      ]
+    }
 """

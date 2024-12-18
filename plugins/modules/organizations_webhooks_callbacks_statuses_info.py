@@ -11,7 +11,7 @@ short_description: Information module for organizations _webhooks _callbacks _st
 description:
 - Get organizations _webhooks _callbacks _statuses by id.
 - Return the status of an API callback.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_access_policies
-short_description: Resource module for networks _switch _accesspolicies
+short_description: Resource module for networks _switch _access _policies
 description:
-- Manage operations create, update and delete of the resource networks _switch _accesspolicies.
+- Manage operations create, update and delete of the resource networks _switch _access _policies.
 - >
    Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers
    to empty array.
@@ -63,6 +63,19 @@ options:
   radius:
     description: Object for RADIUS Settings.
     suboptions:
+      cache:
+        description: Object for RADIUS Cache Settings.
+        suboptions:
+          enabled:
+            description: Enable to cache authorization and authentication responses
+              on the RADIUS server.
+            type: bool
+          timeout:
+            description: If RADIUS caching is enabled, this value dictates how long
+              the cache will remain in the RADIUS server, in hours, to allow network
+              access without authentication.
+            type: int
+        type: dict
       criticalAuth:
         description: Critical auth settings for when authentication is rejected by the
           RADIUS server.
@@ -100,6 +113,10 @@ options:
       host:
         description: Public IP address of the RADIUS accounting server.
         type: str
+      organizationRadiusServerId:
+        description: Organization wide RADIUS server ID. If this field is provided,
+          the host, port and secret field will be ignored.
+        type: str
       port:
         description: UDP port that the RADIUS Accounting server listens on for access
           requests.
@@ -121,6 +138,10 @@ options:
     suboptions:
       host:
         description: Public IP address of the RADIUS server.
+        type: str
+      organizationRadiusServerId:
+        description: Organization wide RADIUS server ID. If this field is provided,
+          the host, port and secret field will be ignored.
         type: str
       port:
         description: UDP port that the RADIUS server listens on for access requests.
@@ -205,6 +226,9 @@ EXAMPLES = r"""
     name: 'Access policy #1'
     networkId: string
     radius:
+      cache:
+        enabled: false
+        timeout: 24
       criticalAuth:
         dataVlanId: 100
         suspendPortBounce: true
@@ -214,12 +238,14 @@ EXAMPLES = r"""
     radiusAccountingEnabled: true
     radiusAccountingServers:
     - host: 1.2.3.4
+      organizationRadiusServerId: '42'
       port: 22
       secret: secret
     radiusCoaSupportEnabled: false
     radiusGroupAttribute: '11'
     radiusServers:
     - host: 1.2.3.4
+      organizationRadiusServerId: '42'
       port: 22
       secret: secret
     radiusTestingEnabled: false
@@ -288,6 +314,9 @@ EXAMPLES = r"""
     name: 'Access policy #1'
     networkId: string
     radius:
+      cache:
+        enabled: false
+        timeout: 24
       criticalAuth:
         dataVlanId: 100
         suspendPortBounce: true
@@ -297,14 +326,18 @@ EXAMPLES = r"""
     radiusAccountingEnabled: true
     radiusAccountingServers:
     - host: 1.2.3.4
+      organizationRadiusServerId: '42'
       port: 22
       secret: secret
+      serverId: '2'
     radiusCoaSupportEnabled: false
     radiusGroupAttribute: '11'
     radiusServers:
     - host: 1.2.3.4
+      organizationRadiusServerId: '42'
       port: 22
       secret: secret
+      serverId: '1'
     radiusTestingEnabled: false
     urlRedirectWalledGardenEnabled: true
     urlRedirectWalledGardenRanges:
@@ -334,6 +367,10 @@ meraki_response:
       "increaseAccessSpeed": true,
       "name": "string",
       "radius": {
+        "cache": {
+          "enabled": true,
+          "timeout": 0
+        },
         "criticalAuth": {
           "dataVlanId": 0,
           "suspendPortBounce": true,
@@ -346,7 +383,9 @@ meraki_response:
       "radiusAccountingServers": [
         {
           "host": "string",
-          "port": 0
+          "organizationRadiusServerId": "string",
+          "port": 0,
+          "serverId": "string"
         }
       ],
       "radiusCoaSupportEnabled": true,
@@ -354,7 +393,9 @@ meraki_response:
       "radiusServers": [
         {
           "host": "string",
-          "port": 0
+          "organizationRadiusServerId": "string",
+          "port": 0,
+          "serverId": "string"
         }
       ],
       "radiusTestingEnabled": true,

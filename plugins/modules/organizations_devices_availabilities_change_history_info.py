@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_devices_availabilities_change_history_info
-short_description: Information module for organizations _devices _availabilities _changehistory
+short_description: Information module for organizations _devices _availabilities _change _history
 description:
-- Get all organizations _devices _availabilities _changehistory.
+- Get all organizations _devices _availabilities _change _history.
 - List the availability history information for devices in an organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -93,7 +93,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _availabilities _changehistory
+- name: Get all organizations _devices _availabilities _change _history
   cisco.meraki.organizations_devices_availabilities_change_history_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

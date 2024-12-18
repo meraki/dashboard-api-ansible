@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: devices_switch_warm_spare_info
-short_description: Information module for devices _switch _warmspare
+short_description: Information module for devices _switch _warm _spare
 description:
-- Get all devices _switch _warmspare.
+- Get all devices _switch _warm _spare.
 - Return warm spare configuration for a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _switch _warmspare
+- name: Get all devices _switch _warm _spare
   cisco.meraki.devices_switch_warm_spare_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

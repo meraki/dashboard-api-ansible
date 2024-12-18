@@ -56,6 +56,13 @@ options:
       whether to return networks which contain ANY or ALL of the included tags. If no type is included,
       'withAnyTags' will be selected.
     type: str
+  productTypes:
+    description:
+    - >
+      ProductTypes query parameter. An optional parameter to filter networks by product type. Results will have at
+      least one of the included product types.
+    elements: str
+    type: list
   perPage:
     description:
     - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
@@ -121,6 +128,7 @@ EXAMPLES = r"""
     isBoundToConfigTemplate: True
     tags: []
     tagsFilterType: string
+    productTypes: []
     perPage: 0
     startingAfter: string
     endingBefore: string

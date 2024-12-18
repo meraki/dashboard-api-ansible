@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -34,8 +34,12 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     applianceIp=dict(type="str"),
     cidr=dict(type="str"),
+    dhcpBootOptionsEnabled=dict(type="bool"),
+    dhcpHandling=dict(type="str"),
+    dhcpLeaseTime=dict(type="str"),
+    dhcpOptions=dict(type="list"),
     groupPolicyId=dict(type="str"),
-    id=dict(type="int"),
+    id=dict(type="str"),
     ipv6=dict(type="dict"),
     mandatoryDhcp=dict(type="dict"),
     mask=dict(type="int"),
@@ -43,13 +47,9 @@ argument_spec.update(dict(
     subnet=dict(type="str"),
     templateVlanType=dict(type="str"),
     networkId=dict(type="str"),
-    # vlanId=dict(type="str"),
+    vlanId=dict(type="str"),
     dhcpBootFilename=dict(type="str"),
     dhcpBootNextServer=dict(type="str"),
-    dhcpBootOptionsEnabled=dict(type="bool"),
-    dhcpHandling=dict(type="str"),
-    dhcpLeaseTime=dict(type="str"),
-    dhcpOptions=dict(type="list"),
     dhcpRelayServerIps=dict(type="list"),
     dnsNameservers=dict(type="str"),
     fixedIpAssignments=dict(type="dict"),
@@ -58,8 +58,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name", "networkId", "id"], True),
-    ("state", "absent", ["name", "networkId", "id"], True),
+    ("state", "present", ["name", "networkId", "vlanId"], True),
+    ("state", "absent", ["name", "networkId", "vlanId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -72,6 +72,10 @@ class NetworksApplianceVlans(object):
         self.new_object = dict(
             applianceIp=params.get("applianceIp"),
             cidr=params.get("cidr"),
+            dhcpBootOptionsEnabled=params.get("dhcpBootOptionsEnabled"),
+            dhcpHandling=params.get("dhcpHandling"),
+            dhcpLeaseTime=params.get("dhcpLeaseTime"),
+            dhcpOptions=params.get("dhcpOptions"),
             groupPolicyId=params.get("groupPolicyId"),
             id=params.get("id"),
             ipv6=params.get("ipv6"),
@@ -84,10 +88,6 @@ class NetworksApplianceVlans(object):
             vlanId=params.get("vlanId"),
             dhcpBootFilename=params.get("dhcpBootFilename"),
             dhcpBootNextServer=params.get("dhcpBootNextServer"),
-            dhcpBootOptionsEnabled=params.get("dhcpBootOptionsEnabled"),
-            dhcpHandling=params.get("dhcpHandling"),
-            dhcpLeaseTime=params.get("dhcpLeaseTime"),
-            dhcpOptions=params.get("dhcpOptions"),
             dhcpRelayServerIps=params.get("dhcpRelayServerIps"),
             dnsNameservers=params.get("dnsNameservers"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
@@ -121,6 +121,17 @@ class NetworksApplianceVlans(object):
         if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
             new_object_params['cidr'] = self.new_object.get('cidr') or \
                 self.new_object.get('cidr')
+        if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
+        if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
+            new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
+                self.new_object.get('dhcp_handling')
+        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
+            new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
+                self.new_object.get('dhcp_lease_time')
+        if self.new_object.get('dhcpOptions') is not None or self.new_object.get('dhcp_options') is not None:
+            new_object_params['dhcpOptions'] = self.new_object.get('dhcpOptions') or \
+                self.new_object.get('dhcp_options')
         if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
             new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
                 self.new_object.get('group_policy_id')
@@ -176,8 +187,7 @@ class NetworksApplianceVlans(object):
             new_object_params['dhcpBootNextServer'] = self.new_object.get('dhcpBootNextServer') or \
                 self.new_object.get('dhcp_boot_next_server')
         if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
-                'dhcpBootOptionsEnabled')
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
         if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
             new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
                 self.new_object.get('dhcp_handling')
@@ -302,6 +312,11 @@ class NetworksApplianceVlans(object):
 
         obj_params = [
             ("applianceIp", "applianceIp"),
+            ("cidr", "cidr"),
+            ("dhcpBootOptionsEnabled", "dhcpBootOptionsEnabled"),
+            ("dhcpHandling", "dhcpHandling"),
+            ("dhcpLeaseTime", "dhcpLeaseTime"),
+            ("dhcpOptions", "dhcpOptions"),
             ("groupPolicyId", "groupPolicyId"),
             ("id", "id"),
             ("ipv6", "ipv6"),
@@ -311,12 +326,9 @@ class NetworksApplianceVlans(object):
             ("subnet", "subnet"),
             ("templateVlanType", "templateVlanType"),
             ("networkId", "networkId"),
+            ("vlanId", "vlanId"),
             ("dhcpBootFilename", "dhcpBootFilename"),
             ("dhcpBootNextServer", "dhcpBootNextServer"),
-            ("dhcpBootOptionsEnabled", "dhcpBootOptionsEnabled"),
-            ("dhcpHandling", "dhcpHandling"),
-            ("dhcpLeaseTime", "dhcpLeaseTime"),
-            ("dhcpOptions", "dhcpOptions"),
             ("dhcpRelayServerIps", "dhcpRelayServerIps"),
             ("dnsNameservers", "dnsNameservers"),
             ("fixedIpAssignments", "fixedIpAssignments"),
@@ -325,7 +337,7 @@ class NetworksApplianceVlans(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 

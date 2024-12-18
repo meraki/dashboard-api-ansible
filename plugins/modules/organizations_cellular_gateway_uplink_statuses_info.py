@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_cellular_gateway_uplink_statuses_info
-short_description: Information module for organizations _cellulargateway _uplink _statuses
+short_description: Information module for organizations _cellular _gateway _uplink _statuses
 description:
-- Get all organizations _cellulargateway _uplink _statuses.
+- Get all organizations _cellular _gateway _uplink _statuses.
 - List the uplink status of every Meraki MG cellular gateway in the organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -77,7 +77,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _cellulargateway _uplink _statuses
+- name: Get all organizations _cellular _gateway _uplink _statuses
   cisco.meraki.organizations_cellular_gateway_uplink_statuses_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

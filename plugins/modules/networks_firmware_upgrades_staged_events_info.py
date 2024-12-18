@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_firmware_upgrades_staged_events_info
-short_description: Information module for networks _firmwareupgrades _staged _events
+short_description: Information module for networks _firmware _upgrades _staged _events
 description:
-- Get all networks _firmwareupgrades _staged _events.
+- Get all networks _firmware _upgrades _staged _events.
 - Get the Staged Upgrade Event from a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmwareupgrades _staged _events
+- name: Get all networks _firmware _upgrades _staged _events
   cisco.meraki.networks_firmware_upgrades_staged_events_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

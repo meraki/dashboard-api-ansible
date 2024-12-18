@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: devices_blink_leds
-short_description: Resource module for devices _blinkleds
+short_description: Resource module for devices _blink _leds
 description:
-- Manage operation create of the resource devices _blinkleds.
-- Blink the LEDs on a device.
+- Manage operation create of the resource devices _blink _leds.
+- Blink the LEDs on a device. This endpoint is deprecrated in favor of "/devices/{serial}/liveTools/leds/blink".
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module

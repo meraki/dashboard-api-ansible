@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_api_requests_overview_info
-short_description: Information module for organizations _apirequests _overview
+short_description: Information module for organizations _api _requests _overview
 description:
-- Get all organizations _apirequests _overview.
+- Get all organizations _api _requests _overview.
 - Return an aggregated overview of API requests data.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -54,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _apirequests _overview
+- name: Get all organizations _api _requests _overview
   cisco.meraki.organizations_api_requests_overview_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -137,17 +137,6 @@ meraki_response:
       "429": 0,
       "431": 0,
       "451": 0,
-      "500": 0,
-      "501": 0,
-      "502": 0,
-      "503": 0,
-      "504": 0,
-      "505": 0,
-      "506": 0,
-      "507": 0,
-      "508": 0,
-      "509": 0,
-      "510": 0,
-      "511": 0
+      "500": 0
     }
 """

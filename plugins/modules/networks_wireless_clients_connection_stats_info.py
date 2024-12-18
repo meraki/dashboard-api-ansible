@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_wireless_clients_connection_stats_info
-short_description: Information module for networks _wireless _clients _connectionstats
+short_description: Information module for networks _wireless _clients _connection _stats
 description:
-- Get all networks _wireless _clients _connectionstats.
+- Get all networks _wireless _clients _connection _stats.
 - Aggregated connectivity info for a given client on this network. Clients are identified by their MAC.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -75,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _clients _connectionstats
+- name: Get all networks _wireless _clients _connection _stats
   cisco.meraki.networks_wireless_clients_connection_stats_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -120,7 +120,6 @@ meraki_response:
         "assoc": 0,
         "auth": 0,
         "dhcp": 0,
-        "dns": 0,
         "success": 0
       },
       "mac": "string"

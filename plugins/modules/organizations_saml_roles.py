@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_saml_roles
-short_description: Resource module for organizations _samlroles
+short_description: Resource module for organizations _saml _roles
 description:
-- Manage operations create, update and delete of the resource organizations _samlroles.
+- Manage operations create, update and delete of the resource organizations _saml _roles.
 - Create a SAML role.
 - Remove a SAML role.
 - Update a SAML role.
@@ -24,7 +24,8 @@ options:
     suboptions:
       access:
         description: The privilege of the SAML administrator on the network. Can be
-          one of 'full', 'read-only', 'guest-ambassador', 'monitor-only' or 'ssid-admin'.
+          one of 'full', 'read-only', 'guest-ambassador', 'monitor-only', 'ssid-admin'
+          or 'port-tags'.
         type: str
       id:
         description: The network ID.

@@ -251,6 +251,8 @@ meraki_response:
         "isPassiveEnabled": true
       },
       "subnet": "string",
+      "uplinkV4": true,
+      "uplinkV6": true,
       "vlanId": 0
     }
 """

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_one_to_one_nat_rules_info
-short_description: Information module for networks _appliance _firewall _onetoonenatrules
+short_description: Information module for networks _appliance _firewall _one _to _one _nat _rules
 description:
-- Get all networks _appliance _firewall _onetoonenatrules.
+- Get all networks _appliance _firewall _one _to _one _nat _rules.
 - Return the 1 1 NAT mapping rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _firewall _onetoonenatrules
+- name: Get all networks _appliance _firewall _one _to _one _nat _rules
   cisco.meraki.networks_appliance_firewall_one_to_one_nat_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

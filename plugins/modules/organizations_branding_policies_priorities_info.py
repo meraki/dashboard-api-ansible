@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_branding_policies_priorities_info
-short_description: Information module for organizations _brandingpolicies _priorities
+short_description: Information module for organizations _branding _policies _priorities
 description:
-- Get all organizations _brandingpolicies _priorities.
+- Get all organizations _branding _policies _priorities.
 - >
    Return the branding policy IDs of an organization in priority order. IDs are ordered in ascending order of
    priority IDs later in the array have higher priority .
@@ -41,7 +41,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _brandingpolicies _priorities
+- name: Get all organizations _branding _policies _priorities
   cisco.meraki.organizations_branding_policies_priorities_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_switch_qos_rules_order
-short_description: Resource module for networks _switch _qosrules _order
+short_description: Resource module for networks _switch _qos _rules _order
 description:
-- Manage operations create, update and delete of the resource networks _switch _qosrules _order.
+- Manage operations create, update and delete of the resource networks _switch _qos _rules _order.
 - Add a quality of service rule.
 - Delete a quality of service rule.
 - Update a quality of service rule.
@@ -19,7 +19,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   dscp:
-    description: DSCP tag. Set this to -1 to trust incoming DSCP. Default value is 0.
+    description: DSCP tag for the incoming packet. Set this to -1 to trust incoming
+      DSCP. Default value is 0.
     type: int
   dstPort:
     description: The destination port of the incoming packet. Applicable only if protocol
@@ -27,14 +28,13 @@ options:
     type: int
   dstPortRange:
     description: The destination port range of the incoming packet. Applicable only
-      if protocol is set to TCP or UDP. Example 70-80.
+      if protocol is set to TCP or UDP.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   protocol:
-    description: The protocol of the incoming packet. Can be one of "ANY", "TCP" or
-      "UDP". Default value is "ANY".
+    description: The protocol of the incoming packet. Default value is "ANY".
     type: str
   qosRuleId:
     description: QosRuleId path parameter. Qos rule ID.
@@ -45,7 +45,7 @@ options:
     type: int
   srcPortRange:
     description: The source port range of the incoming packet. Applicable only if protocol
-      is set to TCP or UDP. Example 70-80.
+      is set to TCP or UDP.
     type: str
   vlan:
     description: The VLAN of the incoming packet. A null value will match any VLAN.

@@ -75,7 +75,7 @@ options:
         type: str
       receiveLimit:
         description: The receive limit is the maximum number of routes that can be received
-          from any BGP peer. The receive limit must be an integer between 0 and 4294967295.
+          from any BGP peer. The receive limit must be an integer between 0 and 2147483647.
           When absent, it defaults to 0.
         type: int
       remoteAsNumber:
@@ -142,11 +142,19 @@ EXAMPLES = r"""
     ibgpHoldTimer: 120
     neighbors:
     - allowTransit: true
+      authentication:
+        password: abc123
       ebgpHoldTimer: 180
       ebgpMultihop: 2
       ip: 10.10.10.22
+      ipv6:
+        address: 2002::1234:abcd:ffff:c0a8:101
+      nextHopIp: 1.2.3.4
       receiveLimit: 120
       remoteAsNumber: 64343
+      sourceInterface: wan1
+      ttlSecurity:
+        enabled: false
     networkId: string
 
 """
@@ -156,5 +164,30 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "asNumber": 0,
+      "enabled": true,
+      "ibgpHoldTimer": 0,
+      "neighbors": [
+        {
+          "allowTransit": true,
+          "authentication": {
+            "password": "string"
+          },
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
+          "ip": "string",
+          "ipv6": {
+            "address": "string"
+          },
+          "nextHopIp": "string",
+          "receiveLimit": 0,
+          "remoteAsNumber": 0,
+          "sourceInterface": "string",
+          "ttlSecurity": {
+            "enabled": true
+          }
+        }
+      ]
+    }
 """

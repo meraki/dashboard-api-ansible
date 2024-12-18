@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_clients_splash_authorization_status_info
-short_description: Information module for networks _clients _splashauthorizationstatus
+short_description: Information module for networks _clients _splash _authorization _status
 description:
-- Get all networks _clients _splashauthorizationstatus.
+- Get all networks _clients _splash _authorization _status.
 - >
    Return the splash authorization for a client, for each SSID they've associated with through splash. Only enabled
    SSIDs with Click-through splash enabled will be included. Clients can be identified by a client key or either the
@@ -46,7 +46,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _clients _splashauthorizationstatus
+- name: Get all networks _clients _splash _authorization _status
   cisco.meraki.networks_clients_splash_authorization_status_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
@@ -83,9 +83,6 @@ meraki_response:
       "0": {
         "authorizedAt": "string",
         "expiresAt": "string",
-        "isAuthorized": true
-      },
-      "2": {
         "isAuthorized": true
       }
     }

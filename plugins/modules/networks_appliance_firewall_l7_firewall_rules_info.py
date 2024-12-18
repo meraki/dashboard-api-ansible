@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_firewall_l7_firewall_rules_info
-short_description: Information module for networks _appliance _firewall l7firewallrules
+short_description: Information module for networks _appliance _firewall l7 _firewall _rules
 description:
-- Get all networks _appliance _firewall l7firewallrules.
+- Get all networks _appliance _firewall l7 _firewall _rules.
 - List the MX L7 firewall rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -39,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _firewall l7firewallrules
+- name: Get all networks _appliance _firewall l7 _firewall _rules
   cisco.meraki.networks_appliance_firewall_l7_firewall_rules_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"

@@ -10,7 +10,7 @@ module: devices_camera_analytics_live_info
 short_description: Information module for devices _camera _analytics _live
 description:
 - Get all devices _camera _analytics _live.
-- Returns live state from camera of analytics zones.
+- Returns live state from camera analytics zones.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -74,7 +74,7 @@ meraki_response:
     {
       "ts": "string",
       "zones": {
-        "0": {
+        "zoneId": {
           "person": 0
         }
       }

@@ -1,0 +1,7 @@
+2024-11-06 11:08:51       meraki:     INFO > Meraki dashboard API session initialized with these parameters: {'version': '1.51.0', 'api_key': '************************************08cf', 'base_url': 'https://api.meraki.com/api/v1', 'single_request_timeout': 60, 'certificate_path': '', 'requests_proxy': '', 'wait_on_rate_limit': True, 'nginx_429_retry_wait_time': 60, 'action_batch_retry_wait_time': 60, 'network_delete_retry_wait_time': 240, 'retry_4xx_error': False, 'retry_4xx_error_wait_time': 60, 'maximum_retries': 2, 'simulate': False, 'be_geo_id': None, 'caller': 'MerakiAnsibleCollection/1.0.0 Cisco', 'use_iterator_for_get_pages': False}
+2024-11-06 11:08:51       meraki:    DEBUG > {'tags': ['organizations', 'configure', 'networks'], 'operation': 'getOrganizationNetworks', 'page': 1}
+2024-11-06 11:08:51       meraki:     INFO > GET https://api.meraki.com/api/v1/organizations/828099381482762270/networks
+2024-11-06 11:08:51       meraki:     INFO > organizations, getOrganizationNetworks; page 1 - 200 OK
+2024-11-06 11:08:51       meraki:    DEBUG > {'tags': ['networks', 'configure'], 'operation': 'getNetwork', 'method': 'GET', 'url': '/networks/L_828099381482776622', 'params': None}
+2024-11-06 11:08:51       meraki:     INFO > GET https://api.meraki.com/api/v1/networks/L_828099381482776622
+2024-11-06 11:08:51       meraki:     INFO > networks, getNetwork - 200 OK

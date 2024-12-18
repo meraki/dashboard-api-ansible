@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: networks_appliance_traffic_shaping_custom_performance_classes
-short_description: Resource module for networks _appliance _trafficshaping _customperformanceclasses
+short_description: Resource module for networks _appliance _traffic _shaping _custom _performance _classes
 description:
-- Manage operation create of the resource networks _appliance _trafficshaping _customperformanceclasses.
+- Manage operation create of the resource networks _appliance _traffic _shaping _custom _performance _classes.
 - Add a custom performance class for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
@@ -69,6 +69,7 @@ EXAMPLES = r"""
     meraki_be_geo_id: "{{meraki_be_geo_id}}"
     meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
     meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    state: present
     maxJitter: 100
     maxLatency: 100
     maxLossPercentage: 5

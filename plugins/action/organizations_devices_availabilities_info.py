@@ -36,6 +36,7 @@ argument_spec.update(dict(
     serials=dict(type="list"),
     tags=dict(type="list"),
     tagsFilterType=dict(type="str"),
+    statuses=dict(type="list"),
 ))
 
 required_if = []
@@ -105,6 +106,9 @@ class ActionModule(ActionBase):
         if params.get("tagsFilterType") is not None:
             new_object["tagsFilterType"] = params.get(
                 "tagsFilterType")
+        if params.get("statuses") is not None:
+            new_object["statuses"] = params.get(
+                "statuses")
 
         return new_object
 

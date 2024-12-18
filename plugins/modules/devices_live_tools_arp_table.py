@@ -7,11 +7,14 @@
 DOCUMENTATION = r"""
 ---
 module: devices_live_tools_arp_table
-short_description: Resource module for devices _livetools _arptable
+short_description: Resource module for devices _live _tools _arp _table
 description:
-- Manage operation create of the resource devices _livetools _arptable.
-- Enqueue a job to perform a ARP table request for the device. This endpoint currently supports switches.
-version_added: '2.18.0'
+- Manage operation create of the resource devices _live _tools _arp _table.
+- >
+   Enqueue a job to perform a ARP table request for the device. This endpoint currently supports switches. This
+   endpoint has a sustained rate limit of one request every five seconds per device, with an allowed burst of five
+   requests.
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)

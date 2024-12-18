@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: organizations_wireless_devices_packet_loss_by_client_info
-short_description: Information module for organizations _wireless _devices _packetloss _byclient
+short_description: Information module for organizations _wireless _devices _packet _loss _by _client
 description:
-- Get all organizations _wireless _devices _packetloss _byclient.
+- Get all organizations _wireless _devices _packet _loss _by _client.
 - Get average packet loss for the given timespan for all clients in the organization.
-version_added: '2.18.0'
+version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
@@ -93,7 +93,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _wireless _devices _packetloss _byclient
+- name: Get all organizations _wireless _devices _packet _loss _by _client
   cisco.meraki.organizations_wireless_devices_packet_loss_by_client_info:
     meraki_api_key: "{{meraki_api_key}}"
     meraki_base_url: "{{meraki_base_url}}"
