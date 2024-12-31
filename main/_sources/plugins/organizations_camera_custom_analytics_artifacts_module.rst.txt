@@ -1013,7 +1013,8 @@ Notes
    - SDK Method used are camera.Camera.create\_organization\_camera\_custom\_analytics\_artifact, camera.Camera.delete\_organization\_camera\_custom\_analytics\_artifact,
    - Paths used are post /organizations/{organizationId}/camera/customAnalytics/artifacts, delete /organizations/{organizationId}/camera/customAnalytics/artifacts/{artifactId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

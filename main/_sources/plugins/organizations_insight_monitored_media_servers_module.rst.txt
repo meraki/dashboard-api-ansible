@@ -1089,7 +1089,8 @@ Notes
    - SDK Method used are insight.Insight.create\_organization\_insight\_monitored\_media\_server, insight.Insight.delete\_organization\_insight\_monitored\_media\_server, insight.Insight.update\_organization\_insight\_monitored\_media\_server,
    - Paths used are post /organizations/{organizationId}/insight/monitoredMediaServers, delete /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}, put /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

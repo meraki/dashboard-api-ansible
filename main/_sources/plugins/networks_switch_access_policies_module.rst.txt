@@ -2249,7 +2249,8 @@ Notes
    - SDK Method used are switch.Switch.create\_network\_switch\_access\_policy, switch.Switch.delete\_network\_switch\_access\_policy, switch.Switch.update\_network\_switch\_access\_policy,
    - Paths used are post /networks/{networkId}/switch/accessPolicies, delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}, put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

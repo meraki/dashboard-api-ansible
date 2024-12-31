@@ -1191,7 +1191,8 @@ Notes
    - SDK Method used are networks.Networks.publish\_network\_floor\_plans\_auto\_locate\_job,
    - Paths used are post /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId}/publish,
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

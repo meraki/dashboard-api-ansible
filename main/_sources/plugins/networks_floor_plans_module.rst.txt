@@ -1562,7 +1562,8 @@ Notes
    - SDK Method used are networks.Networks.create\_network\_floor\_plan, networks.Networks.delete\_network\_floor\_plan, networks.Networks.update\_network\_floor\_plan,
    - Paths used are post /networks/{networkId}/floorPlans, delete /networks/{networkId}/floorPlans/{floorPlanId}, put /networks/{networkId}/floorPlans/{floorPlanId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

@@ -1150,7 +1150,8 @@ Notes
    - SDK Method used are appliance.Appliance.create\_network\_appliance\_prefixes\_delegated\_static, appliance.Appliance.delete\_network\_appliance\_prefixes\_delegated\_static, appliance.Appliance.update\_network\_appliance\_prefixes\_delegated\_static,
    - Paths used are post /networks/{networkId}/appliance/prefixes/delegated/statics, delete /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId}, put /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

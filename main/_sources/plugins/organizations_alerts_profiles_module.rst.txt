@@ -1533,7 +1533,8 @@ Notes
    - SDK Method used are organizations.Organizations.create\_organization\_alerts\_profile, organizations.Organizations.delete\_organization\_alerts\_profile, organizations.Organizations.update\_organization\_alerts\_profile,
    - Paths used are post /organizations/{organizationId}/alerts/profiles, delete /organizations/{organizationId}/alerts/profiles/{alertConfigId}, put /organizations/{organizationId}/alerts/profiles/{alertConfigId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

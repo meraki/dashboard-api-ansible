@@ -5573,7 +5573,8 @@ Notes
    - SDK Method used are wireless.Wireless.create\_network\_wireless\_rf\_profile, wireless.Wireless.delete\_network\_wireless\_rf\_profile, wireless.Wireless.update\_network\_wireless\_rf\_profile,
    - Paths used are post /networks/{networkId}/wireless/rfProfiles, delete /networks/{networkId}/wireless/rfProfiles/{rfProfileId}, put /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

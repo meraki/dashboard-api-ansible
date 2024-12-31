@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for devices \_live \_tools \_throughput \_test
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

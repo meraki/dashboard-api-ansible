@@ -1219,7 +1219,8 @@ Notes
    - SDK Method used are networks.Networks.create\_network\_webhooks\_payload\_template, networks.Networks.delete\_network\_webhooks\_payload\_template, networks.Networks.update\_network\_webhooks\_payload\_template,
    - Paths used are post /networks/{networkId}/webhooks/payloadTemplates, delete /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId}, put /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

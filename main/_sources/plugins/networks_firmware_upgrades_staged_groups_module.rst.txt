@@ -1330,7 +1330,8 @@ Notes
    - SDK Method used are networks.Networks.create\_network\_firmware\_upgrades\_staged\_group, networks.Networks.delete\_network\_firmware\_upgrades\_staged\_group, networks.Networks.update\_network\_firmware\_upgrades\_staged\_group,
    - Paths used are post /networks/{networkId}/firmwareUpgrades/staged/groups, delete /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}, put /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

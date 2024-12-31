@@ -1217,7 +1217,8 @@ Notes
    - SDK Method used are switch.Switch.create\_network\_switch\_qos\_rule, switch.Switch.delete\_network\_switch\_qos\_rule, switch.Switch.update\_network\_switch\_qos\_rule,
    - Paths used are post /networks/{networkId}/switch/qosRules, delete /networks/{networkId}/switch/qosRules/{qosRuleId}, put /networks/{networkId}/switch/qosRules/{qosRuleId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

@@ -1156,7 +1156,8 @@ Notes
    - SDK Method used are wireless.Wireless.update\_network\_wireless\_ssid\_device\_type\_group\_policies,
    - Paths used are put /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies,
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

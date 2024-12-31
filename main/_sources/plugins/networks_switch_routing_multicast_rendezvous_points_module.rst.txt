@@ -1047,7 +1047,8 @@ Notes
    - SDK Method used are switch.Switch.create\_network\_switch\_routing\_multicast\_rendezvous\_point, switch.Switch.delete\_network\_switch\_routing\_multicast\_rendezvous\_point, switch.Switch.update\_network\_switch\_routing\_multicast\_rendezvous\_point,
    - Paths used are post /networks/{networkId}/switch/routing/multicast/rendezvousPoints, delete /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId}, put /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

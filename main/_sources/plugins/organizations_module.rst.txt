@@ -1194,7 +1194,8 @@ Notes
    - SDK Method used are organizations.Organizations.create\_organization, organizations.Organizations.delete\_organization, organizations.Organizations.update\_organization,
    - Paths used are post /organizations, delete /organizations/{organizationId}, put /organizations/{organizationId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso

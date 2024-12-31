@@ -3661,7 +3661,8 @@ Notes
    - SDK Method used are camera.Camera.create\_network\_camera\_quality\_retention\_profile, camera.Camera.delete\_network\_camera\_quality\_retention\_profile, camera.Camera.update\_network\_camera\_quality\_retention\_profile,
    - Paths used are post /networks/{networkId}/camera/qualityRetentionProfiles, delete /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId}, put /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
    - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
    - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
 
 .. Seealso
