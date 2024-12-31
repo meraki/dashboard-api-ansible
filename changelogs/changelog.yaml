@@ -1147,3 +1147,7 @@ releases:
         - organizations_wireless_radio_auto_rf_channels_recalculate - new plugin.
         - organizations_wireless_rf_profiles_assignments_by_device_info - new plugin.
         - organizations_wireless_ssids_statuses_by_device_info - new plugin.
+  2.20.1:
+    changes:
+      minor_changes:
+        - Sanity and CI fixes.
