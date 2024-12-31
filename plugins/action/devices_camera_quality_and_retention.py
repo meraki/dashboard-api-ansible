@@ -55,12 +55,14 @@ class DevicesCameraQualityAndRetention(object):
         self.meraki = meraki
         self.new_object = dict(
             audioRecordingEnabled=params.get("audioRecordingEnabled"),
-            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
+            motionBasedRetentionEnabled=params.get(
+                "motionBasedRetentionEnabled"),
             motionDetectorVersion=params.get("motionDetectorVersion"),
             profileId=params.get("profileId"),
             quality=params.get("quality"),
             resolution=params.get("resolution"),
-            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
+            restrictedBandwidthModeEnabled=params.get(
+                "restrictedBandwidthModeEnabled"),
             serial=params.get("serial"),
         )
 
@@ -73,9 +75,11 @@ class DevicesCameraQualityAndRetention(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get(
+                'audioRecordingEnabled')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get(
+                'motionBasedRetentionEnabled')
         if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
             new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
                 self.new_object.get('motion_detector_version')
@@ -89,7 +93,8 @@ class DevicesCameraQualityAndRetention(object):
             new_object_params['resolution'] = self.new_object.get('resolution') or \
                 self.new_object.get('resolution')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get(
+                'restrictedBandwidthModeEnabled')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -158,7 +163,7 @@ class DevicesCameraQualityAndRetention(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
+                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def update(self):

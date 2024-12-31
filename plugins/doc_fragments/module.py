@@ -116,6 +116,7 @@ options:
         default: false
 notes:
     - "Does not support C(check_mode)"
-    - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco Dashboard API Python(SDK)"
+    - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager"
+    - "from Cisco Dashboard API Python(SDK)"
     - "The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection"
 '''

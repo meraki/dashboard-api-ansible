@@ -165,7 +165,6 @@ class NetworksVlanProfiles(object):
             _name = prev_obj.get("name")
             _name = _name or prev_obj.get("iname")
             if _name:
-                        _payload_first.update(dict(iname=_name))
                 self.new_object.update(dict(iname=_name))
         if name_exists:
             _id = prev_obj.get("id")
@@ -190,7 +189,7 @@ class NetworksVlanProfiles(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
+                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def create(self):
@@ -216,7 +215,7 @@ class NetworksVlanProfiles(object):
             if name_:
                 self.new_object.update(dict(iname=name_))
         result = self.meraki.exec_meraki(
-                family="networks",
+            family="networks",
             function="updateNetworkVlanProfile",
             params=self.update_by_name_params(),
             op_modifies=True,
