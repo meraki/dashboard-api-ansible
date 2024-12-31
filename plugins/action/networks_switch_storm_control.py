@@ -75,7 +75,7 @@ class NetworksSwitchStormControl(object):
             new_object_params['multicastThreshold'] = self.new_object.get('multicastThreshold') or \
                 self.new_object.get('multicast_threshold')
         if self.new_object.get('treatTheseTrafficTypesAsOneThreshold') is not None or self.new_object.get(
-            'treat_these_traffic_types_as_one_threshold') is not None:
+        'treat_these_traffic_types_as_one_threshold') is not None:
             new_object_params['treatTheseTrafficTypesAsOneThreshold'] = self.new_object.get('treatTheseTrafficTypesAsOneThreshold') or \
                 self.new_object.get(
                     'treat_these_traffic_types_as_one_threshold')
