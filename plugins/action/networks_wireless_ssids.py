@@ -492,7 +492,7 @@ class NetworksWirelessSsids(object):
         # If any does not have eq params, it requires update
         current_obj["number"] = str(current_obj.get("number"))
         return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
+                                                requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def update(self):
