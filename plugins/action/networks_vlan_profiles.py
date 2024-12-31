@@ -215,7 +215,7 @@ class NetworksVlanProfiles(object):
             if name_:
                 self.new_object.update(dict(iname=name_))
         result = self.meraki.exec_meraki(
-                family="networks",
+            family="networks",
             function="updateNetworkVlanProfile",
             params=self.update_by_name_params(),
             op_modifies=True,

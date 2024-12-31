@@ -42,8 +42,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["identityPskId", "name", "networkId", "number"], True),
-    ("state", "absent", ["identityPskId", "name", "networkId", "number"], True),
+    ("state", "present", ["identityPskId",
+     "name", "networkId", "number"], True),
+    ("state", "absent", ["identityPskId",
+     "name", "networkId", "number"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -223,7 +225,7 @@ class NetworksWirelessSsidsIdentityPsks(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(not meraki_compare_equality(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
+                                               requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def create(self):
