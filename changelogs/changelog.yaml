@@ -1151,3 +1151,8 @@ releases:
     changes:
       minor_changes:
         - Sanity and CI fixes.
+  2.20.2:
+    changes:
+      bugfixes:
+      - runtime updated requires_ansible from 2.14.0 to '>=2.15.0'.
+    release_date: '2025-01-06'
