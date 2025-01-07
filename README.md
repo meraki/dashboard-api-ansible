@@ -122,7 +122,7 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
 
 ### Example
 - Old module:
-  ```yml
+```
   - name: Create webhook
     cisco.meraki.meraki_webhook:
       auth_key: abc123
@@ -134,9 +134,9 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
       shared_secret: shhhdonttellanyone
       payload_template_name: 'Slack (included)'
     delegate_to: localhost
-  ```
+```
 - New module:
-  ```yml
+```
   - name: Create webhook
     cisco.meraki.networks_webhooks_http_servers:
       meraki_api_key: "{{meraki_api_key}}"
@@ -148,4 +148,4 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
         payloadTemplateId: wpt_00001
       sharedSecret: shhhdonttellanyone
       url: https://webhook.url/
-  ```
+```
