@@ -149,3 +149,7 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
       sharedSecret: shhhdonttellanyone
       url: https://webhook.url/
 ```
+
+## License
+
+This project is licensed under the [GNU General Public License](https://github.com/meraki/dashboard-api-ansible/blob/main/LICENSE).
