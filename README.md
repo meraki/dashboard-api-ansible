@@ -7,7 +7,7 @@ The Meraki-Ansible project provides an Ansible collection for managing and autom
 ## Installation
 1. Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
 ```
-pip install ansible
+pip install ansible-core
 ```
 
 2. Python Meraki SDK must be installed
