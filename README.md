@@ -7,7 +7,7 @@ The Meraki-Ansible project provides an Ansible collection for managing and autom
 ## Installation
 1. Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
 ```
-pip install ansible
+pip install ansible-core
 ```
 
 2. Python Meraki SDK must be installed
@@ -122,7 +122,7 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
 
 ### Example
 - Old module:
-  ```yml
+```
   - name: Create webhook
     cisco.meraki.meraki_webhook:
       auth_key: abc123
@@ -134,9 +134,9 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
       shared_secret: shhhdonttellanyone
       payload_template_name: 'Slack (included)'
     delegate_to: localhost
-  ```
+```
 - New module:
-  ```yml
+```
   - name: Create webhook
     cisco.meraki.networks_webhooks_http_servers:
       meraki_api_key: "{{meraki_api_key}}"
@@ -148,4 +148,8 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
         payloadTemplateId: wpt_00001
       sharedSecret: shhhdonttellanyone
       url: https://webhook.url/
-  ```
+```
+
+## License
+
+This project is licensed under the [GNU General Public License](https://github.com/meraki/dashboard-api-ansible/blob/main/LICENSE).
