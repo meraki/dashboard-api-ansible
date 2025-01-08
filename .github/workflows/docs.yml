@@ -1,10 +1,12 @@
 name: docs
+
 on:
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
     branches:
       - main
+
 jobs:
   docs:
     runs-on: ubuntu-latest
@@ -37,6 +39,5 @@ jobs:
           git show origin/main:docs/_gh_include/footer.inc >> index.html
           git add $(basename ${GITHUB_REF}) index.html
           git commit -m "update docs for $(basename ${GITHUB_REF})" || true
-
       - name: push docs
         run: git push origin gh-pages
