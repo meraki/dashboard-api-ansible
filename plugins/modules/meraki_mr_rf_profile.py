@@ -189,7 +189,7 @@ EXAMPLES = r'''
     state: present
     name: Test Profile
     band_selection_type: ap
-    client_balancing_enabled: True
+    client_balancing_enabled: true
     ap_band_settings:
       mode: dual
       band_steering_enabled: true
@@ -238,7 +238,7 @@ EXAMPLES = r'''
     state: present
     profile_id: 12345
     band_selection_type: ap
-    client_balancing_enabled: True
+    client_balancing_enabled: true
     ap_band_settings:
       mode: dual
       band_steering_enabled: true
