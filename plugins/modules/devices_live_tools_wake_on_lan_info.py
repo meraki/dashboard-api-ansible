@@ -23,8 +23,12 @@ short_description: Information module for devices _live _tools _wake _on _lan
 version_added: 2.16.0
 """
 
-EXAMPLES = r""""""
-RETURN = r"""
+EXAMPLES = r"""
+
+
+"""
+RETURN = r
+"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always

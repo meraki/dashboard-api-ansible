@@ -221,7 +221,6 @@ EXAMPLES = r"""
     state: query
     serial: ABC-123
   delegate_to: localhost
-
 - name: Query information about all switchports on a switch
   meraki_switchport:
     auth_key: abc12345
@@ -229,7 +228,6 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 2
   delegate_to: localhost
-
 - name: Name switchport
   meraki_switchport:
     auth_key: abc12345
@@ -238,7 +236,6 @@ EXAMPLES = r"""
     number: 7
     name: Test Port
   delegate_to: localhost
-
 - name: Configure access port with voice VLAN
   meraki_switchport:
     auth_key: abc12345
@@ -252,7 +249,6 @@ EXAMPLES = r"""
     vlan: 10
     voice_vlan: 11
   delegate_to: localhost
-
 - name: Check access port for idempotency
   meraki_switchport:
     auth_key: abc12345
@@ -266,7 +262,6 @@ EXAMPLES = r"""
     vlan: 10
     voice_vlan: 11
   delegate_to: localhost
-
 - name: Configure trunk port with specific VLANs
   meraki_switchport:
     auth_key: abc12345
@@ -282,7 +277,6 @@ EXAMPLES = r"""
       - 15
       - 20
   delegate_to: localhost
-
 - name: Configure access port with sticky MAC allow list and limit.
   meraki_switchport:
     auth_key: abc12345
@@ -291,13 +285,12 @@ EXAMPLES = r"""
     number: 5
     sticky_mac_allow_limit: 3
     sticky_mac_allow_list:
-        macs:
-          - aa:aa:bb:bb:cc:cc
-          - bb:bb:aa:aa:cc:cc
-          - 11:aa:bb:bb:cc:cc
-        state: replaced
+      macs:
+        - aa:aa:bb:bb:cc:cc
+        - bb:bb:aa:aa:cc:cc
+        - 11:aa:bb:bb:cc:cc
+      state: replaced
     delegate_to: localhost
-
 - name: Delete an existing MAC address from the sticky MAC allow list.
   meraki_switchport:
     auth_key: abc12345
@@ -305,11 +298,10 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 5
     sticky_mac_allow_list:
-        macs:
-          - aa:aa:bb:bb:cc:cc
-        state: deleted
+      macs:
+        - aa:aa:bb:bb:cc:cc
+      state: deleted
     delegate_to: localhost
-
 - name: Add a MAC address to sticky MAC allow list.
   meraki_switchport:
     auth_key: abc12345
@@ -317,9 +309,9 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 5
     sticky_mac_allow_list:
-        macs:
-          - 22:22:bb:bb:cc:cc
-        state: merged
+      macs:
+        - 22:22:bb:bb:cc:cc
+      state: merged
     delegate_to: localhost
 """
 

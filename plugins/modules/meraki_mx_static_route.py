@@ -117,7 +117,6 @@ EXAMPLES = r"""
     subnet: 192.0.1.0/24
     gateway_ip: 192.168.128.1
   delegate_to: localhost
-
 - name: Update static route with fixed IP assignment
   meraki_static_route:
     auth_key: abc123
@@ -130,7 +129,6 @@ EXAMPLES = r"""
         ip: 192.0.1.11
         comment: Server
   delegate_to: localhost
-
 - name: Query static routes
   meraki_static_route:
     auth_key: abc123
@@ -138,7 +136,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     net_name: YourNet
   delegate_to: localhost
-
 - name: Delete static routes
   meraki_static_route:
     auth_key: abc123

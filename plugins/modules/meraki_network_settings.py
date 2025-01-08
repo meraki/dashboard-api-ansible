@@ -89,35 +89,33 @@ short_description: Manage the settings of networks in the Meraki cloud
 """
 
 EXAMPLES = r"""
-  - name: Get network settings
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: query
-      org_name: '{{ test_org_name }}'
-      net_name: NetworkSettingsTestNet
-    delegate_to: localhost
-
-  - name: Update network settings
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: present
-      org_name: '{{ test_org_name }}'
-      net_name: NetworkSettingsTestNet
-      local_status_page_enabled: false
-    delegate_to: localhost
-
-  - name: Enable password on local page
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: present
-      org_name: '{{ test_org_name }}'
-      net_name: NetworkSettingsTestNet
-      local_status_page_enabled: true
-      local_status_page:
-        authentication:
-          enabled: true
-          password: abc123
-    delegate_to: localhost
+- name: Get network settings
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: query
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+  delegate_to: localhost
+- name: Update network settings
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: present
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+    local_status_page_enabled: false
+  delegate_to: localhost
+- name: Enable password on local page
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: present
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+    local_status_page_enabled: true
+    local_status_page:
+      authentication:
+        enabled: true
+        password: abc123
+  delegate_to: localhost
 """
 
 RETURN = r"""

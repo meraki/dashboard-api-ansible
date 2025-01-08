@@ -63,39 +63,39 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_appliance_security_intrusion:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     idsRulesets: balanced
     mode: prevention
     networkId: string
     protectedNetworks:
       excludedCidr:
-      - 10.0.0.0/8
-      - 127.0.0.0/8
+        - 10.0.0.0/8
+        - 127.0.0.0/8
       includedCidr:
-      - 10.0.0.0/8
-      - 127.0.0.0/8
-      - 169.254.0.0/16
-      - 172.16.0.0/12
+        - 10.0.0.0/8
+        - 127.0.0.0/8
+        - 169.254.0.0/16
+        - 172.16.0.0/12
       useDefault: false
 """
 RETURN = r"""

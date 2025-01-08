@@ -112,45 +112,45 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_appliance_vpn_bgp:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     asNumber: 64515
     enabled: true
     ibgpHoldTimer: 120
     neighbors:
-    - allowTransit: true
-      authentication:
-        password: abc123
-      ebgpHoldTimer: 180
-      ebgpMultihop: 2
-      ip: 10.10.10.22
-      ipv6:
-        address: 2002::1234:abcd:ffff:c0a8:101
-      nextHopIp: 1.2.3.4
-      receiveLimit: 120
-      remoteAsNumber: 64343
-      sourceInterface: wan1
-      ttlSecurity:
-        enabled: false
+      - allowTransit: true
+        authentication:
+          password: abc123
+        ebgpHoldTimer: 180
+        ebgpMultihop: 2
+        ip: 10.10.10.22
+        ipv6:
+          address: 2002::1234:abcd:ffff:c0a8:101
+        nextHopIp: 1.2.3.4
+        receiveLimit: 120
+        remoteAsNumber: 64343
+        sourceInterface: wan1
+        ttlSecurity:
+          enabled: false
     networkId: string
 """
 RETURN = r"""

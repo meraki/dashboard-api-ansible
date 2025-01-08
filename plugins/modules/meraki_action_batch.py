@@ -98,70 +98,65 @@ short_description: Manage Action Batch jobs within the Meraki Dashboard.
 
 
 EXAMPLES = r"""
-  - name: Query all Action Batches
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: query
-    delegate_to: localhost
-
-  - name: Query one Action Batch job
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: query
-      action_batch_id: 12345
-    delegate_to: localhost
-
-  - name: Create an Action Batch job
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: present
-      actions:
-      - resource: '/organizations/org_123/networks'
-        operation: 'create'
+- name: Query all Action Batches
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: query
+  delegate_to: localhost
+- name: Query one Action Batch job
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: query
+    action_batch_id: 12345
+  delegate_to: localhost
+- name: Create an Action Batch job
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: present
+    actions:
+      - resource: /organizations/org_123/networks
+        operation: create
         body:
-          name: 'AnsibleActionBatch1'
+          name: AnsibleActionBatch1
           productTypes:
-            - 'switch'
-    delegate_to: localhost
-
-  - name: Update Action Batch job
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: present
-      action_batch_id: 12345
-      synchronous: false
-
-  - name: Create an Action Batch job with multiple actions
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: present
-      actions:
-      - resource: '/organizations/org_123/networks'
-        operation: 'create'
+            - switch
+  delegate_to: localhost
+- name: Update Action Batch job
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: present
+    action_batch_id: 12345
+    synchronous: false
+- name: Create an Action Batch job with multiple actions
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: present
+    actions:
+      - resource: /organizations/org_123/networks
+        operation: create
         body:
-          name: 'AnsibleActionBatch2'
+          name: AnsibleActionBatch2
           productTypes:
-            - 'switch'
-      - resource: '/organizations/org_123/networks'
-        operation: 'create'
+            - switch
+      - resource: /organizations/org_123/networks
+        operation: create
         body:
-          name: 'AnsibleActionBatch3'
+          name: AnsibleActionBatch3
           productTypes:
-            - 'switch'
-    delegate_to: localhost
-
-  - name: Delete an Action Batch job
-    meraki_action_batch:
-      auth_key: abc123
-      org_name: YourOrg
-      state: absent
-      action_batch_id: 12345
-    delegate_to: localhost
+            - switch
+  delegate_to: localhost
+- name: Delete an Action Batch job
+  meraki_action_batch:
+    auth_key: abc123
+    org_name: YourOrg
+    state: absent
+    action_batch_id: 12345
+  delegate_to: localhost
 """
 
 RETURN = r"""

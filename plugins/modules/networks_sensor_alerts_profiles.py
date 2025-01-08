@@ -262,200 +262,198 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_sensor_alerts_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     conditions:
-    - direction: above
-      duration: 60
-      metric: temperature
-      threshold:
-        apparentPower:
-          draw: 17.2
-        co2:
-          concentration: 400
-          quality: poor
-        current:
-          draw: 0.14
-        door:
-          open: true
-        frequency:
-          level: 58.8
-        humidity:
-          quality: inadequate
-          relativePercentage: 65
-        indoorAirQuality:
-          quality: fair
-          score: 80
-        noise:
-          ambient:
-            level: 120
+      - direction: above
+        duration: 60
+        metric: temperature
+        threshold:
+          apparentPower:
+            draw: 17.2
+          co2:
+            concentration: 400
             quality: poor
-        pm25:
-          concentration: 90
-          quality: fair
-        powerFactor:
-          percentage: 81
-        realPower:
-          draw: 14.1
-        temperature:
-          celsius: 20.5
-          fahrenheit: 70.0
-          quality: good
-        tvoc:
-          concentration: 400
-          quality: poor
-        upstreamPower:
-          outageDetected: true
-        voltage:
-          level: 119.5
-        water:
-          present: true
+          current:
+            draw: 0.14
+          door:
+            open: true
+          frequency:
+            level: 58.8
+          humidity:
+            quality: inadequate
+            relativePercentage: 65
+          indoorAirQuality:
+            quality: fair
+            score: 80
+          noise:
+            ambient:
+              level: 120
+              quality: poor
+          pm25:
+            concentration: 90
+            quality: fair
+          powerFactor:
+            percentage: 81
+          realPower:
+            draw: 14.1
+          temperature:
+            celsius: 20.5
+            fahrenheit: 70.0
+            quality: good
+          tvoc:
+            concentration: 400
+            quality: poor
+          upstreamPower:
+            outageDetected: true
+          voltage:
+            level: 119.5
+          water:
+            present: true
     name: My Sensor Alert Profile
     networkId: string
     recipients:
       emails:
-      - miles@meraki.com
+        - miles@meraki.com
       httpServerIds:
-      - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+        - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
       smsNumbers:
-      - '+15555555555'
+        - '+15555555555'
     schedule:
       id: '5'
     serials:
-    - Q234-ABCD-0001
-    - Q234-ABCD-0002
-    - Q234-ABCD-0003
-
+      - Q234-ABCD-0001
+      - Q234-ABCD-0002
+      - Q234-ABCD-0003
 - name: Delete by id
   cisco.meraki.networks_sensor_alerts_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     id: string
     networkId: string
-
 - name: Update by id
   cisco.meraki.networks_sensor_alerts_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     conditions:
-    - direction: above
-      duration: 60
-      metric: temperature
-      threshold:
-        apparentPower:
-          draw: 17.2
-        co2:
-          concentration: 400
-          quality: poor
-        current:
-          draw: 0.14
-        door:
-          open: true
-        frequency:
-          level: 58.8
-        humidity:
-          quality: inadequate
-          relativePercentage: 65
-        indoorAirQuality:
-          quality: fair
-          score: 80
-        noise:
-          ambient:
-            level: 120
+      - direction: above
+        duration: 60
+        metric: temperature
+        threshold:
+          apparentPower:
+            draw: 17.2
+          co2:
+            concentration: 400
             quality: poor
-        pm25:
-          concentration: 90
-          quality: fair
-        powerFactor:
-          percentage: 81
-        realPower:
-          draw: 14.1
-        temperature:
-          celsius: 20.5
-          fahrenheit: 70.0
-          quality: good
-        tvoc:
-          concentration: 400
-          quality: poor
-        upstreamPower:
-          outageDetected: true
-        voltage:
-          level: 119.5
-        water:
-          present: true
+          current:
+            draw: 0.14
+          door:
+            open: true
+          frequency:
+            level: 58.8
+          humidity:
+            quality: inadequate
+            relativePercentage: 65
+          indoorAirQuality:
+            quality: fair
+            score: 80
+          noise:
+            ambient:
+              level: 120
+              quality: poor
+          pm25:
+            concentration: 90
+            quality: fair
+          powerFactor:
+            percentage: 81
+          realPower:
+            draw: 14.1
+          temperature:
+            celsius: 20.5
+            fahrenheit: 70.0
+            quality: good
+          tvoc:
+            concentration: 400
+            quality: poor
+          upstreamPower:
+            outageDetected: true
+          voltage:
+            level: 119.5
+          water:
+            present: true
     id: string
     name: My Sensor Alert Profile
     networkId: string
     recipients:
       emails:
-      - miles@meraki.com
+        - miles@meraki.com
       httpServerIds:
-      - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
+        - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
       smsNumbers:
-      - '+15555555555'
+        - '+15555555555'
     schedule:
       id: '5'
     serials:
-    - Q234-ABCD-0001
-    - Q234-ABCD-0002
-    - Q234-ABCD-0003
+      - Q234-ABCD-0001
+      - Q234-ABCD-0002
+      - Q234-ABCD-0003
 """
 RETURN = r"""
 meraki_response:

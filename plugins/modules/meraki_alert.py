@@ -127,33 +127,32 @@ EXAMPLES = r"""
     state: present
     default_destinations:
       emails:
-      - 'youremail@yourcorp'
-      - 'youremail2@yourcorp'
+        - youremail@yourcorp
+        - youremail2@yourcorp
       all_admins: true
       snmp: false
     alerts:
-      - alert_type: "gatewayDown"
+      - alert_type: gatewayDown
         enabled: true
         filters:
           timeout: 60
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
+            - youremail@yourcorp
+            - youremail2@yourcorp
           all_admins: true
           snmp: false
-      - alert_type: "usageAlert"
+      - alert_type: usageAlert
         enabled: true
         filters:
           period: 1200
           threshold: 104857600
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
+            - youremail@yourcorp
+            - youremail2@yourcorp
           all_admins: true
           snmp: false
-
 - name: Query all settings
   meraki_alert:
     auth_key: abc123

@@ -77,7 +77,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     state: query
   delegate_to: localhost
-
 - name: Query specific configuration templates
   meraki_webhook_payload_template:
     auth_key: abc12345
@@ -85,7 +84,6 @@ EXAMPLES = r"""
     state: query
     name: Twitter
   delegate_to: localhost
-
 - name: Create payload template
   meraki_webhook_payload_template:
     auth_key: abc12345
@@ -94,10 +92,9 @@ EXAMPLES = r"""
     name: TestTemplate
     body: Testbody
     headers:
-        - name: testheader
-          template: testheadertemplate
+      - name: testheader
+        template: testheadertemplate
   delegate_to: localhost
-
 - name: Delete a configuration template
   meraki_config_template:
     auth_key: abc123

@@ -410,26 +410,26 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_group_policies:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     bandwidth:
       bandwidthLimits:
@@ -438,10 +438,10 @@ EXAMPLES = r"""
       settings: custom
     bonjourForwarding:
       rules:
-      - description: A simple bonjour rule
-        services:
-        - All Services
-        vlanId: '1'
+        - description: A simple bonjour rule
+          services:
+            - All Services
+          vlanId: '1'
       settings: custom
     contentFiltering:
       allowedUrlPatterns:
@@ -449,38 +449,38 @@ EXAMPLES = r"""
         settings: network default
       blockedUrlCategories:
         categories:
-        - meraki:contentFiltering/category/1
-        - meraki:contentFiltering/category/7
+          - meraki:contentFiltering/category/1
+          - meraki:contentFiltering/category/7
         settings: override
       blockedUrlPatterns:
         patterns:
-        - http://www.example.com
-        - http://www.betting.com
+          - http://www.example.com
+          - http://www.betting.com
         settings: append
     firewallAndTrafficShaping:
       l3FirewallRules:
-      - comment: Allow TCP traffic to subnet with HTTP servers.
-        destCidr: 192.168.1.0/24
-        destPort: '443'
-        policy: allow
-        protocol: tcp
+        - comment: Allow TCP traffic to subnet with HTTP servers.
+          destCidr: 192.168.1.0/24
+          destPort: '443'
+          policy: allow
+          protocol: tcp
       l7FirewallRules:
-      - policy: deny
-        type: host
-        value: google.com
+        - policy: deny
+          type: host
+          value: google.com
       settings: custom
       trafficShapingRules:
-      - definitions:
-        - type: host
-          value: google.com
-        dscpTagValue: 0
-        pcpTagValue: 0
-        perClientBandwidthLimits:
-          bandwidthLimits:
-            limitDown: 1000000
-            limitUp: 1000000
-          settings: custom
-        priority: normal
+        - definitions:
+            - type: host
+              value: google.com
+          dscpTagValue: 0
+          pcpTagValue: 0
+          perClientBandwidthLimits:
+            bandwidthLimits:
+              limitDown: 1000000
+              limitUp: 1000000
+            settings: custom
+          priority: normal
     name: false video streaming
     networkId: string
     scheduling:
@@ -517,56 +517,54 @@ EXAMPLES = r"""
     vlanTagging:
       settings: custom
       vlanId: '1'
-
 - name: Delete by id
   cisco.meraki.networks_group_policies:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     force: true
     groupPolicyId: string
     networkId: string
-
 - name: Update by id
   cisco.meraki.networks_group_policies:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     bandwidth:
       bandwidthLimits:
@@ -575,10 +573,10 @@ EXAMPLES = r"""
       settings: custom
     bonjourForwarding:
       rules:
-      - description: A simple bonjour rule
-        services:
-        - All Services
-        vlanId: '1'
+        - description: A simple bonjour rule
+          services:
+            - All Services
+          vlanId: '1'
       settings: custom
     contentFiltering:
       allowedUrlPatterns:
@@ -586,38 +584,38 @@ EXAMPLES = r"""
         settings: network default
       blockedUrlCategories:
         categories:
-        - meraki:contentFiltering/category/1
-        - meraki:contentFiltering/category/7
+          - meraki:contentFiltering/category/1
+          - meraki:contentFiltering/category/7
         settings: override
       blockedUrlPatterns:
         patterns:
-        - http://www.example.com
-        - http://www.betting.com
+          - http://www.example.com
+          - http://www.betting.com
         settings: append
     firewallAndTrafficShaping:
       l3FirewallRules:
-      - comment: Allow TCP traffic to subnet with HTTP servers.
-        destCidr: 192.168.1.0/24
-        destPort: '443'
-        policy: allow
-        protocol: tcp
+        - comment: Allow TCP traffic to subnet with HTTP servers.
+          destCidr: 192.168.1.0/24
+          destPort: '443'
+          policy: allow
+          protocol: tcp
       l7FirewallRules:
-      - policy: deny
-        type: host
-        value: google.com
+        - policy: deny
+          type: host
+          value: google.com
       settings: custom
       trafficShapingRules:
-      - definitions:
-        - type: host
-          value: google.com
-        dscpTagValue: 0
-        pcpTagValue: 0
-        perClientBandwidthLimits:
-          bandwidthLimits:
-            limitDown: 1000000
-            limitUp: 1000000
-          settings: custom
-        priority: normal
+        - definitions:
+            - type: host
+              value: google.com
+          dscpTagValue: 0
+          pcpTagValue: 0
+          perClientBandwidthLimits:
+            bandwidthLimits:
+              limitDown: 1000000
+              limitUp: 1000000
+            settings: custom
+          priority: normal
     groupPolicyId: string
     name: false video streaming
     networkId: string

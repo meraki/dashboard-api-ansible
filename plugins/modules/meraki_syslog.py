@@ -88,7 +88,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     net_name: MyNet
   delegate_to: localhost
-
 - name: Add single syslog server with Appliance event log role
   meraki_syslog:
     auth_key: abc12345
@@ -101,7 +100,6 @@ EXAMPLES = r"""
         roles:
           - Appliance event log
   delegate_to: localhost
-
 - name: Add multiple syslog servers
   meraki_syslog:
     auth_key: abc12345

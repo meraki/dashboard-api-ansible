@@ -312,7 +312,6 @@ EXAMPLES = r"""
     enabled: true
     visible: true
   delegate_to: localhost
-
 - name: Set PSK with invalid encryption mode
   meraki_ssid:
     auth_key: abc123
@@ -325,7 +324,6 @@ EXAMPLES = r"""
     encryption_mode: eap
   ignore_errors: true
   delegate_to: localhost
-
 - name: Configure RADIUS servers
   meraki_ssid:
     auth_key: abc123
@@ -339,7 +337,6 @@ EXAMPLES = r"""
         port: 1234
         secret: abc98765
   delegate_to: localhost
-
 - name: Enable click-through splash page
   meraki_ssid:
     auth_key: abc123

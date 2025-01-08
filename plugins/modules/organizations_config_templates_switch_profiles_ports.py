@@ -151,26 +151,26 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Update by id
   cisco.meraki.organizations_config_templates_switch_profiles_ports:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     accessPolicyNumber: 2
     accessPolicyType: Sticky MAC allow list
@@ -184,8 +184,8 @@ EXAMPLES = r"""
     isolationEnabled: false
     linkNegotiation: Auto negotiate
     macAllowList:
-    - 34:56:fe:ce:8e:a0
-    - 34:56:fe:ce:8e:a1
+      - 34:56:fe:ce:8e:a0
+      - 34:56:fe:ce:8e:a1
     name: My switch port
     organizationId: string
     poeEnabled: true
@@ -198,14 +198,14 @@ EXAMPLES = r"""
     profileId: string
     rstpEnabled: true
     stickyMacAllowList:
-    - 34:56:fe:ce:8e:b0
-    - 34:56:fe:ce:8e:b1
+      - 34:56:fe:ce:8e:b0
+      - 34:56:fe:ce:8e:b1
     stickyMacAllowListLimit: 5
     stormControlEnabled: true
     stpGuard: disabled
     tags:
-    - tag1
-    - tag2
+      - tag1
+      - tag2
     type: access
     udld: Alert only
     vlan: 10

@@ -128,56 +128,56 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_wireless_ssids_hotspot20:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     domains:
-    - meraki.local
-    - domain2.com
+      - meraki.local
+      - domain2.com
     enabled: true
     mccMncs:
-    - mcc: '123'
-      mnc: '456'
-    - mcc: '563'
-      mnc: '232'
+      - mcc: '123'
+        mnc: '456'
+      - mcc: '563'
+        mnc: '232'
     naiRealms:
-    - format: '1'
-      methods:
-      - authenticationTypes:
-          credentials: []
-          eapInnerAuthentication:
-          - EAP-TTLS with MSCHAPv2
-          nonEapInnerAuthentication:
-          - MSCHAP
-          tunneledEapMethodCredentials: []
-        id: '1'
-      name: Realm 1
+      - format: '1'
+        methods:
+          - authenticationTypes:
+              credentials: []
+              eapInnerAuthentication:
+                - EAP-TTLS with MSCHAPv2
+              nonEapInnerAuthentication:
+                - MSCHAP
+              tunneledEapMethodCredentials: []
+            id: '1'
+        name: Realm 1
     networkAccessType: Private network
     networkId: string
     number: string
     operator:
       name: Meraki Product Management
     roamConsortOis:
-    - ABC123
-    - 456EFG
+      - ABC123
+      - 456EFG
     venue:
       name: SF Branch
       type: Unspecified Assembly

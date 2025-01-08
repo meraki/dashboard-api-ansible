@@ -577,34 +577,34 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_wireless_rf_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     apBandSettings:
       bandOperationMode: dual
       bandSteeringEnabled: true
       bands:
         enabled:
-        - '2.4'
-        - '5'
+          - '2.4'
+          - '5'
     bandSelectionType: ap
     clientBalancingEnabled: true
     fiveGhzSettings:
@@ -614,36 +614,36 @@ EXAMPLES = r"""
       minPower: 8
       rxsop: -95
       validAutoChannels:
-      - 36
-      - 40
-      - 44
-      - 48
-      - 52
-      - 56
-      - 60
-      - 64
-      - 100
-      - 104
-      - 108
-      - 112
-      - 116
-      - 120
-      - 124
-      - 128
-      - 132
-      - 136
-      - 140
-      - 144
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
+        - 36
+        - 40
+        - 44
+        - 48
+        - 52
+        - 56
+        - 60
+        - 64
+        - 100
+        - 104
+        - 108
+        - 112
+        - 116
+        - 120
+        - 124
+        - 128
+        - 132
+        - 136
+        - 140
+        - 144
+        - 149
+        - 153
+        - 157
+        - 161
+        - 165
     flexRadios:
       byModel:
-      - bands:
-        - '5'
-        model: MR34
+        - bands:
+            - '5'
+          model: MR34
     minBitrateType: band
     name: Main Office
     networkId: string
@@ -653,120 +653,120 @@ EXAMPLES = r"""
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '1':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '10':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '11':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '12':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '13':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '14':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '2':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '3':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '4':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '5':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '6':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '7':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '8':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '9':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
     sixGhzSettings:
       channelWidth: auto
@@ -775,65 +775,65 @@ EXAMPLES = r"""
       minPower: 8
       rxsop: -95
       validAutoChannels:
-      - 1
-      - 5
-      - 9
-      - 13
-      - 17
-      - 21
-      - 25
-      - 29
-      - 33
-      - 37
-      - 41
-      - 45
-      - 49
-      - 53
-      - 57
-      - 61
-      - 65
-      - 69
-      - 73
-      - 77
-      - 81
-      - 85
-      - 89
-      - 93
-      - 97
-      - 101
-      - 105
-      - 109
-      - 113
-      - 117
-      - 121
-      - 125
-      - 129
-      - 133
-      - 137
-      - 141
-      - 145
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
-      - 169
-      - 173
-      - 177
-      - 181
-      - 185
-      - 189
-      - 193
-      - 197
-      - 201
-      - 205
-      - 209
-      - 213
-      - 217
-      - 221
-      - 225
-      - 229
-      - 233
+        - 1
+        - 5
+        - 9
+        - 13
+        - 17
+        - 21
+        - 25
+        - 29
+        - 33
+        - 37
+        - 41
+        - 45
+        - 49
+        - 53
+        - 57
+        - 61
+        - 65
+        - 69
+        - 73
+        - 77
+        - 81
+        - 85
+        - 89
+        - 93
+        - 97
+        - 101
+        - 105
+        - 109
+        - 113
+        - 117
+        - 121
+        - 125
+        - 129
+        - 133
+        - 137
+        - 141
+        - 145
+        - 149
+        - 153
+        - 157
+        - 161
+        - 165
+        - 169
+        - 173
+        - 177
+        - 181
+        - 185
+        - 189
+        - 193
+        - 197
+        - 201
+        - 205
+        - 209
+        - 213
+        - 217
+        - 221
+        - 225
+        - 229
+        - 233
     transmission:
       enabled: true
     twoFourGhzSettings:
@@ -843,66 +843,64 @@ EXAMPLES = r"""
       minPower: 5
       rxsop: -95
       validAutoChannels:
-      - 1
-      - 6
-      - 11
-
+        - 1
+        - 6
+        - 11
 - name: Delete by id
   cisco.meraki.networks_wireless_rf_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     networkId: string
     rfProfileId: string
-
 - name: Update by id
   cisco.meraki.networks_wireless_rf_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     apBandSettings:
       bandOperationMode: dual
       bandSteeringEnabled: true
       bands:
         enabled:
-        - '2.4'
-        - '5'
+          - '2.4'
+          - '5'
     bandSelectionType: ap
     clientBalancingEnabled: true
     fiveGhzSettings:
@@ -912,36 +910,36 @@ EXAMPLES = r"""
       minPower: 8
       rxsop: -95
       validAutoChannels:
-      - 36
-      - 40
-      - 44
-      - 48
-      - 52
-      - 56
-      - 60
-      - 64
-      - 100
-      - 104
-      - 108
-      - 112
-      - 116
-      - 120
-      - 124
-      - 128
-      - 132
-      - 136
-      - 140
-      - 144
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
+        - 36
+        - 40
+        - 44
+        - 48
+        - 52
+        - 56
+        - 60
+        - 64
+        - 100
+        - 104
+        - 108
+        - 112
+        - 116
+        - 120
+        - 124
+        - 128
+        - 132
+        - 136
+        - 140
+        - 144
+        - 149
+        - 153
+        - 157
+        - 161
+        - 165
     flexRadios:
       byModel:
-      - bands:
-        - '5'
-        model: MR34
+        - bands:
+            - '5'
+          model: MR34
     isIndoorDefault: true
     isOutdoorDefault: true
     minBitrateType: band
@@ -953,120 +951,120 @@ EXAMPLES = r"""
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '1':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '10':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '11':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '12':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '13':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '14':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '2':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '3':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '4':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '5':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '6':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '7':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '8':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '9':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
     rfProfileId: string
     sixGhzSettings:
@@ -1076,65 +1074,65 @@ EXAMPLES = r"""
       minPower: 8
       rxsop: -95
       validAutoChannels:
-      - 1
-      - 5
-      - 9
-      - 13
-      - 17
-      - 21
-      - 25
-      - 29
-      - 33
-      - 37
-      - 41
-      - 45
-      - 49
-      - 53
-      - 57
-      - 61
-      - 65
-      - 69
-      - 73
-      - 77
-      - 81
-      - 85
-      - 89
-      - 93
-      - 97
-      - 101
-      - 105
-      - 109
-      - 113
-      - 117
-      - 121
-      - 125
-      - 129
-      - 133
-      - 137
-      - 141
-      - 145
-      - 149
-      - 153
-      - 157
-      - 161
-      - 165
-      - 169
-      - 173
-      - 177
-      - 181
-      - 185
-      - 189
-      - 193
-      - 197
-      - 201
-      - 205
-      - 209
-      - 213
-      - 217
-      - 221
-      - 225
-      - 229
-      - 233
+        - 1
+        - 5
+        - 9
+        - 13
+        - 17
+        - 21
+        - 25
+        - 29
+        - 33
+        - 37
+        - 41
+        - 45
+        - 49
+        - 53
+        - 57
+        - 61
+        - 65
+        - 69
+        - 73
+        - 77
+        - 81
+        - 85
+        - 89
+        - 93
+        - 97
+        - 101
+        - 105
+        - 109
+        - 113
+        - 117
+        - 121
+        - 125
+        - 129
+        - 133
+        - 137
+        - 141
+        - 145
+        - 149
+        - 153
+        - 157
+        - 161
+        - 165
+        - 169
+        - 173
+        - 177
+        - 181
+        - 185
+        - 189
+        - 193
+        - 197
+        - 201
+        - 205
+        - 209
+        - 213
+        - 217
+        - 221
+        - 225
+        - 229
+        - 233
     transmission:
       enabled: true
     twoFourGhzSettings:
@@ -1144,9 +1142,9 @@ EXAMPLES = r"""
       minPower: 5
       rxsop: -95
       validAutoChannels:
-      - 1
-      - 6
-      - 11
+        - 1
+        - 6
+        - 11
 """
 RETURN = r"""
 meraki_response:

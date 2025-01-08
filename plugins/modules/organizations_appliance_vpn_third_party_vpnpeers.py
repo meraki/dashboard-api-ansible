@@ -135,59 +135,59 @@ version_added: 2.16.0
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     organizationId: string
     peers:
-    - ikeVersion: '2'
-      ipsecPolicies:
-        childAuthAlgo:
-        - sha1
-        childCipherAlgo:
-        - aes128
-        childLifetime: 28800
-        childPfsGroup:
-        - disabled
-        ikeAuthAlgo:
-        - sha1
-        ikeCipherAlgo:
-        - tripledes
-        ikeDiffieHellmanGroup:
-        - group2
-        ikeLifetime: 28800
-        ikePrfAlgo:
-        - prfsha1
-      ipsecPoliciesPreset: default
-      localId: myMXId@meraki.com
-      name: Peer Name
-      networkTags:
-      - none
-      privateSubnets:
-      - 192.168.1.0/24
-      - 192.168.128.0/24
-      publicHostname: example.com
-      publicIp: 123.123.123.1
-      remoteId: miles@meraki.com
-      secret: Sample Password
+      - ikeVersion: '2'
+        ipsecPolicies:
+          childAuthAlgo:
+            - sha1
+          childCipherAlgo:
+            - aes128
+          childLifetime: 28800
+          childPfsGroup:
+            - disabled
+          ikeAuthAlgo:
+            - sha1
+          ikeCipherAlgo:
+            - tripledes
+          ikeDiffieHellmanGroup:
+            - group2
+          ikeLifetime: 28800
+          ikePrfAlgo:
+            - prfsha1
+        ipsecPoliciesPreset: default
+        localId: myMXId@meraki.com
+        name: Peer Name
+        networkTags:
+          - none
+        privateSubnets:
+          - 192.168.1.0/24
+          - 192.168.128.0/24
+        publicHostname: example.com
+        publicIp: 123.123.123.1
+        remoteId: miles@meraki.com
+        secret: Sample Password
 """
 RETURN = r"""
 meraki_response:

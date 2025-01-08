@@ -95,9 +95,8 @@ EXAMPLES = r"""
     name: Test_Hook
     url: https://webhook.url/
     shared_secret: shhhdonttellanyone
-    payload_template_name: 'Slack (included)'
+    payload_template_name: Slack (included)
   delegate_to: localhost
-
 - name: Query one webhook
   meraki_webhook:
     auth_key: abc123
@@ -106,7 +105,6 @@ EXAMPLES = r"""
     net_name: YourNet
     name: Test_Hook
   delegate_to: localhost
-
 - name: Query all webhooks
   meraki_webhook:
     auth_key: abc123
@@ -114,7 +112,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     net_name: YourNet
   delegate_to: localhost
-
 - name: Delete webhook
   meraki_webhook:
     auth_key: abc123
@@ -123,7 +120,6 @@ EXAMPLES = r"""
     net_name: YourNet
     name: Test_Hook
   delegate_to: localhost
-
 - name: Test webhook
   meraki_webhook:
     auth_key: abc123
@@ -133,7 +129,6 @@ EXAMPLES = r"""
     test: test
     url: https://webhook.url/abc123
   delegate_to: localhost
-
 - name: Get webhook status
   meraki_webhook:
     auth_key: abc123

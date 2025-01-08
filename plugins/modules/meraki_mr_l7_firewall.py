@@ -124,7 +124,6 @@ EXAMPLES = r"""
     state: query
     number: 1
   delegate_to: localhost
-
 - name: Query applications and application categories
   meraki_mr_l7_firewall:
     auth_key: abc123
@@ -134,7 +133,6 @@ EXAMPLES = r"""
     categories: true
     state: query
   delegate_to: localhost
-
 - name: Set firewall rules
   meraki_mr_l7_firewall:
     auth_key: abc123
