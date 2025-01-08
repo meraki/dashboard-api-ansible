@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_live_tools_ping_device
 short_description: Resource module for devices _live _tools _ping _device
 description:
-- Manage operation create of the resource devices _live _tools _ping _device.
-- >
+  - Manage operation create of the resource devices _live _tools _ping _device.
+  - >
    Enqueue a job to check connectivity status to the device. This endpoint has a sustained rate limit of one request
    every five seconds per device, with an allowed burst of five requests.
 version_added: '2.16.0'
@@ -55,12 +55,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices createDeviceLiveToolsPingDevice
-  description: Complete reference of the createDeviceLiveToolsPingDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-ping-device
+  - name: Cisco Meraki documentation for devices createDeviceLiveToolsPingDevice
+    description: Complete reference of the createDeviceLiveToolsPingDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-ping-device
 notes:
   - SDK Method used are
     devices.Devices.create_device_live_tools_ping_device,

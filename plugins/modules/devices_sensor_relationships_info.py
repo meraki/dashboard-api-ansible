@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_sensor_relationships_info
 short_description: Information module for devices _sensor _relationships
 description:
-- Get all devices _sensor _relationships.
-- List the sensor roles for a given sensor or camera device.
+  - Get all devices _sensor _relationships.
+  - List the sensor roles for a given sensor or camera device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getDeviceSensorRelationships
-  description: Complete reference of the getDeviceSensorRelationships API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships
+  - name: Cisco Meraki documentation for sensor getDeviceSensorRelationships
+    description: Complete reference of the getDeviceSensorRelationships API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships
 notes:
   - SDK Method used are
     sensor.Sensor.get_device_sensor_relationships,

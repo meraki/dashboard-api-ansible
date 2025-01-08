@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_claim_key_validate
 short_description: Resource module for administered _licensing _subscription _subscriptions _claim _key _validate
 description:
-- Manage operation create of the resource administered _licensing _subscription _subscriptions _claim _key _validate.
-- Find a subscription by claim key. Returns 400 if the key has already been claimed.
+  - Manage operation create of the resource administered _licensing _subscription _subscriptions _claim _key _validate.
+  - Find a subscription by claim key. Returns 400 if the key has already been claimed.
 version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -20,12 +20,12 @@ options:
     description: The subscription's claim key.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for licensing validateAdministeredLicensingSubscriptionSubscriptionsClaimKey
-  description: Complete reference of the validateAdministeredLicensingSubscriptionSubscriptionsClaimKey API.
-  link: https://developer.cisco.com/meraki/api-v1/#!validate-administered-licensing-subscription-subscriptions-claim-key
+  - name: Cisco Meraki documentation for licensing validateAdministeredLicensingSubscriptionSubscriptionsClaimKey
+    description: Complete reference of the validateAdministeredLicensingSubscriptionSubscriptionsClaimKey API.
+    link: https://developer.cisco.com/meraki/api-v1/#!validate-administered-licensing-subscription-subscriptions-claim-key
 notes:
   - SDK Method used are
     licensing.Licensing.validate_administered_licensing_subscription_subscriptions_claim_key,

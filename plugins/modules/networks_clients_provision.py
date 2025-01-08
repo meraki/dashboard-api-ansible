@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_provision
 short_description: Resource module for networks _clients _provision
 description:
-- Manage operation create of the resource networks _clients _provision.
-- Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.
+  - Manage operation create of the resource networks _clients _provision.
+  - Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -250,12 +250,12 @@ options:
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks provisionNetworkClients
-  description: Complete reference of the provisionNetworkClients API.
-  link: https://developer.cisco.com/meraki/api-v1/#!provision-network-clients
+  - name: Cisco Meraki documentation for networks provisionNetworkClients
+    description: Complete reference of the provisionNetworkClients API.
+    link: https://developer.cisco.com/meraki/api-v1/#!provision-network-clients
 notes:
   - SDK Method used are
     networks.Networks.provision_network_clients,

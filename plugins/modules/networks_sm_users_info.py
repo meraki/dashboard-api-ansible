@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_users_info
 short_description: Information module for networks _sm _users
 description:
-- Get all networks _sm _users.
-- List the owners in an SM network with various specified fields and filters.
+  - Get all networks _sm _users.
+  - List the owners in an SM network with various specified fields and filters.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -46,12 +46,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUsers
-  description: Complete reference of the getNetworkSmUsers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-users
+  - name: Cisco Meraki documentation for sm getNetworkSmUsers
+    description: Complete reference of the getNetworkSmUsers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-users
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_users,

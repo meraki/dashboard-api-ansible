@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_warm_spare_info
 short_description: Information module for networks _appliance _warm _spare
 description:
-- Get all networks _appliance _warm _spare.
-- Return MX warm spare settings.
+  - Get all networks _appliance _warm _spare.
+  - Return MX warm spare settings.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceWarmSpare
-  description: Complete reference of the getNetworkApplianceWarmSpare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-warm-spare
+  - name: Cisco Meraki documentation for appliance getNetworkApplianceWarmSpare
+    description: Complete reference of the getNetworkApplianceWarmSpare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-warm-spare
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_warm_spare,

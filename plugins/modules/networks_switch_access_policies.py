@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_access_policies
 short_description: Resource module for networks _switch _access _policies
 description:
-- Manage operations create, update and delete of the resource networks _switch _access _policies.
-- >
+  - Manage operations create, update and delete of the resource networks _switch _access _policies.
+  - >
    Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers
    to empty array.
 - Delete an access policy for a switch network.
@@ -168,18 +168,18 @@ options:
       true when hostMode is 'Multi-Domain'.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
-  description: Complete reference of the createNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy
+  - name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
+    description: Complete reference of the createNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy
-  description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy
+    description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy
 - name: Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy
-  description: Complete reference of the updateNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy
+    description: Complete reference of the updateNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_access_policy,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_prepare
 short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _prepare
 description:
-- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _prepare.
-- >
+  - Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _prepare.
+  - >
    Initiates or updates an import session. An import ID will be generated and used when you are ready to commit the
    import.
 version_added: '2.16.0'
@@ -113,12 +113,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringPrepare
-  description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-prepare
+  - name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringPrepare
+    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-prepare
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_prepare,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_settings
 short_description: Resource module for networks _wireless _settings
 description:
-- Manage operation update of the resource networks _wireless _settings.
-- Update the wireless settings for a network.
+  - Manage operation update of the resource networks _wireless _settings.
+  - Update the wireless settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -55,12 +55,12 @@ options:
       Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSettings
-  description: Complete reference of the updateNetworkWirelessSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-settings
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSettings
+    description: Complete reference of the updateNetworkWirelessSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_settings,

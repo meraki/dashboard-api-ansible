@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_group_policies
 short_description: Resource module for networks _group _policies
 description:
-- Manage operations create, update and delete of the resource networks _group _policies.
-- Create a group policy.
-- Delete a group policy.
-- Update a group policy.
+  - Manage operations create, update and delete of the resource networks _group _policies.
+  - Create a group policy.
+  - Delete a group policy.
+  - Update a group policy.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -388,18 +388,18 @@ options:
         type: str
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkGroupPolicy
-  description: Complete reference of the createNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy
+  - name: Cisco Meraki documentation for networks createNetworkGroupPolicy
+    description: Complete reference of the createNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy
 - name: Cisco Meraki documentation for networks deleteNetworkGroupPolicy
-  description: Complete reference of the deleteNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-group-policy
+    description: Complete reference of the deleteNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-group-policy
 - name: Cisco Meraki documentation for networks updateNetworkGroupPolicy
-  description: Complete reference of the updateNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-group-policy
+    description: Complete reference of the updateNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-group-policy
 notes:
   - SDK Method used are
     networks.Networks.create_network_group_policy,

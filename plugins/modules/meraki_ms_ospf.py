@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_ms_ospf
 short_description: Manage OSPF configuration on MS switches
 description:
-- Configure OSPF for compatible Meraki MS switches.
+  - Configure OSPF for compatible Meraki MS switches.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -95,7 +95,7 @@ options:
                 type: str
                 aliases: [ type ]
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

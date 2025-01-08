@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_vpn_bgp_info
 short_description: Information module for networks _appliance _vpn _bgp
 description:
-- Get all networks _appliance _vpn _bgp.
-- Return a Hub BGP Configuration.
+  - Get all networks _appliance _vpn _bgp.
+  - Return a Hub BGP Configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceVpnBgp
-  description: Complete reference of the getNetworkApplianceVpnBgp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vpn-bgp
+  - name: Cisco Meraki documentation for appliance getNetworkApplianceVpnBgp
+    description: Complete reference of the getNetworkApplianceVpnBgp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vpn-bgp
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_vpn_bgp,

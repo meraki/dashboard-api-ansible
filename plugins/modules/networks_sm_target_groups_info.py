@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_sm_target_groups_info
 short_description: Information module for networks _sm _target _groups
 description:
-- Get all networks _sm _target _groups.
-- Get networks _sm _target _groups by id.
-- List the target groups in this network.
-- Return a target group.
+  - Get all networks _sm _target _groups.
+  - Get networks _sm _target _groups by id.
+  - List the target groups in this network.
+  - Return a target group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -36,15 +36,15 @@ options:
     - TargetGroupId path parameter. Target group ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmTargetGroup
-  description: Complete reference of the getNetworkSmTargetGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-target-group
+  - name: Cisco Meraki documentation for sm getNetworkSmTargetGroup
+    description: Complete reference of the getNetworkSmTargetGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-target-group
 - name: Cisco Meraki documentation for sm getNetworkSmTargetGroups
-  description: Complete reference of the getNetworkSmTargetGroups API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-target-groups
+    description: Complete reference of the getNetworkSmTargetGroups API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-target-groups
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_target_group,

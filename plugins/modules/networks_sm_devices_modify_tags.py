@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_modify_tags
 short_description: Resource module for networks _sm _devices _modify _tags
 description:
-- Manage operation create of the resource networks _sm _devices _modify _tags.
-- Add, delete, or update the tags of a set of devices.
+  - Manage operation create of the resource networks _sm _devices _modify _tags.
+  - Add, delete, or update the tags of a set of devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -45,12 +45,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm modifyNetworkSmDevicesTags
-  description: Complete reference of the modifyNetworkSmDevicesTags API.
-  link: https://developer.cisco.com/meraki/api-v1/#!modify-network-sm-devices-tags
+  - name: Cisco Meraki documentation for sm modifyNetworkSmDevicesTags
+    description: Complete reference of the modifyNetworkSmDevicesTags API.
+    link: https://developer.cisco.com/meraki/api-v1/#!modify-network-sm-devices-tags
 notes:
   - SDK Method used are
     sm.Sm.modify_network_sm_devices_tags,

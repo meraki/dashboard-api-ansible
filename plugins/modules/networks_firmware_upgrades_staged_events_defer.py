@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_defer
 short_description: Resource module for networks _firmware _upgrades _staged _events _defer
 description:
-- Manage operation create of the resource networks _firmware _upgrades _staged _events _defer.
-- Postpone by 1 week all pending staged upgrade stages for a network.
+  - Manage operation create of the resource networks _firmware _upgrades _staged _events _defer.
+  - Postpone by 1 week all pending staged upgrade stages for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -20,12 +20,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks deferNetworkFirmwareUpgradesStagedEvents
-  description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!defer-network-firmware-upgrades-staged-events
+  - name: Cisco Meraki documentation for networks deferNetworkFirmwareUpgradesStagedEvents
+    description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents API.
+    link: https://developer.cisco.com/meraki/api-v1/#!defer-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
     networks.Networks.defer_network_firmware_upgrades_staged_events,

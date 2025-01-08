@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_inventory_devices_info
 short_description: Information module for organizations _inventory _devices
 description:
-- Get all organizations _inventory _devices.
-- Get organizations _inventory _devices by id.
-- Return a single device from the inventory of an organization.
-- Return the device inventory for an organization.
+  - Get all organizations _inventory _devices.
+  - Get organizations _inventory _devices by id.
+  - Return a single device from the inventory of an organization.
+  - Return the device inventory for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -104,15 +104,15 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationInventoryDevice
-  description: Complete reference of the getOrganizationInventoryDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-device
+  - name: Cisco Meraki documentation for organizations getOrganizationInventoryDevice
+    description: Complete reference of the getOrganizationInventoryDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-device
 - name: Cisco Meraki documentation for organizations getOrganizationInventoryDevices
-  description: Complete reference of the getOrganizationInventoryDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-devices
+    description: Complete reference of the getOrganizationInventoryDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-devices
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_inventory_device,

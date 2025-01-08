@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_events_event_types_info
 short_description: Information module for networks _events _event _types
 description:
-- Get all networks _events _event _types.
-- List the event type to human-readable description.
+  - Get all networks _events _event _types.
+  - List the event type to human-readable description.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkEventsEventTypes
-  description: Complete reference of the getNetworkEventsEventTypes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-events-event-types
+  - name: Cisco Meraki documentation for networks getNetworkEventsEventTypes
+    description: Complete reference of the getNetworkEventsEventTypes API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-events-event-types
 notes:
   - SDK Method used are
     networks.Networks.get_network_events_event_types,

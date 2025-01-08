@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_live_tools_wake_on_lan
 short_description: Resource module for devices _live _tools _wake _on _lan
 description:
-- Manage operation create of the resource devices _live _tools _wake _on _lan.
-- >
+  - Manage operation create of the resource devices _live _tools _wake _on _lan.
+  - >
    Enqueue a job to send a Wake-on-LAN packet from the device. This endpoint has a sustained rate limit of one
    request every five seconds per device, with an allowed burst of five requests.
 version_added: '2.16.0'
@@ -58,12 +58,12 @@ options:
     description: The target's VLAN (1 to 4094).
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices createDeviceLiveToolsWakeOnLan
-  description: Complete reference of the createDeviceLiveToolsWakeOnLan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-wake-on-lan
+  - name: Cisco Meraki documentation for devices createDeviceLiveToolsWakeOnLan
+    description: Complete reference of the createDeviceLiveToolsWakeOnLan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-wake-on-lan
 notes:
   - SDK Method used are
     devices.Devices.create_device_live_tools_wake_on_lan,

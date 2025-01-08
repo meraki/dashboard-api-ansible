@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_cellular_gateway_dhcp
 short_description: Resource module for networks _cellular _gateway _dhcp
 description:
-- Manage operation update of the resource networks _cellular _gateway _dhcp.
-- Update common DHCP settings of MGs.
+  - Manage operation update of the resource networks _cellular _gateway _dhcp.
+  - Update common DHCP settings of MGs.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -33,12 +33,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayDhcp
-  description: Complete reference of the updateNetworkCellularGatewayDhcp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-dhcp
+  - name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayDhcp
+    description: Complete reference of the updateNetworkCellularGatewayDhcp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-dhcp
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.update_network_cellular_gateway_dhcp,

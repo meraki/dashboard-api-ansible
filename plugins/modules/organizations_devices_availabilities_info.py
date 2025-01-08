@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_availabilities_info
 short_description: Information module for organizations _devices _availabilities
 description:
-- Get all organizations _devices _availabilities.
-- >
+  - Get all organizations _devices _availabilities.
+  - >
    List the availability information for devices in an organization. The data returned by this endpoint is updated
    every 5 minutes.
 version_added: '2.16.0'
@@ -89,12 +89,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesAvailabilities
-  description: Complete reference of the getOrganizationDevicesAvailabilities API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-availabilities
+  - name: Cisco Meraki documentation for organizations getOrganizationDevicesAvailabilities
+    description: Complete reference of the getOrganizationDevicesAvailabilities API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-availabilities
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_availabilities,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_static_routes
 short_description: Resource module for networks _switch _stacks _routing _static _routes
 description:
-- Manage operations create, update and delete of the resource networks _switch _stacks _routing _static _routes.
-- Create a layer 3 static route for a switch stack.
-- Delete a layer 3 static route for a switch stack.
-- Update a layer 3 static route for a switch stack.
+  - Manage operations create, update and delete of the resource networks _switch _stacks _routing _static _routes.
+  - Create a layer 3 static route for a switch stack.
+  - Delete a layer 3 static route for a switch stack.
+  - Update a layer 3 static route for a switch stack.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -48,18 +48,18 @@ options:
     description: SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingStaticRoute
-  description: Complete reference of the createNetworkSwitchStackRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-static-route
+  - name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingStaticRoute
+    description: Complete reference of the createNetworkSwitchStackRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-static-route
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchStackRoutingStaticRoute
-  description: Complete reference of the deleteNetworkSwitchStackRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-static-route
+    description: Complete reference of the deleteNetworkSwitchStackRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-static-route
 - name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingStaticRoute
-  description: Complete reference of the updateNetworkSwitchStackRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-static-route
+    description: Complete reference of the updateNetworkSwitchStackRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-static-route
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_stack_routing_static_route,

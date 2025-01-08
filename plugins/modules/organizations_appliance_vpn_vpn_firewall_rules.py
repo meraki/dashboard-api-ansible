@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_vpn_vpn_firewall_rules
 short_description: Resource module for organizations _appliance _vpn _vpn _firewall _rules
 description:
-- Manage operation update of the resource organizations _appliance _vpn _vpn _firewall _rules.
-- Update the firewall rules of an organization's site-to-site VPN.
+  - Manage operation update of the resource organizations _appliance _vpn _vpn _firewall _rules.
+  - Update the firewall rules of an organization's site-to-site VPN.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -59,12 +59,12 @@ options:
       configured a syslog server) (optional).
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnVpnFirewallRules
-  description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-vpn-firewall-rules
+  - name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnVpnFirewallRules
+    description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-vpn-firewall-rules
 notes:
   - SDK Method used are
     appliance.Appliance.update_organization_appliance_vpn_vpn_firewall_rules,

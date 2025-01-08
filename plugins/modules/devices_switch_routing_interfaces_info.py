@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces_info
 short_description: Information module for devices _switch _routing _interfaces
 description:
-- Get all devices _switch _routing _interfaces.
-- Get devices _switch _routing _interfaces by id.
-- List layer 3 interfaces for a switch. Those for a stack may be found under switch stack routing.
-- Return a layer 3 interface for a switch.
+  - Get all devices _switch _routing _interfaces.
+  - Get devices _switch _routing _interfaces by id.
+  - List layer 3 interfaces for a switch. Those for a stack may be found under switch stack routing.
+  - Return a layer 3 interface for a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - InterfaceId path parameter. Interface ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterface
-  description: Complete reference of the getDeviceSwitchRoutingInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface
+  - name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterface
+    description: Complete reference of the getDeviceSwitchRoutingInterface API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface
 - name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaces
-  description: Complete reference of the getDeviceSwitchRoutingInterfaces API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces
+    description: Complete reference of the getDeviceSwitchRoutingInterfaces API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces
 notes:
   - SDK Method used are
     switch.Switch.get_device_switch_routing_interface,

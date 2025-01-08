@@ -19,3 +19,4 @@ docs/_build/
 changelogs/.plugin-cache.yaml
 playbooks/credentials.yml
 .DS_Store
+/plugins/modules/linting.py

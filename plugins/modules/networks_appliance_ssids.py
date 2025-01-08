@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_ssids
 short_description: Resource module for networks _appliance _ssids
 description:
-- Manage operation update of the resource networks _appliance _ssids.
-- Update the attributes of an MX SSID.
+  - Manage operation update of the resource networks _appliance _ssids.
+  - Update the attributes of an MX SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -88,12 +88,12 @@ options:
       is '8021x-radius'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceSsid
-  description: Complete reference of the updateNetworkApplianceSsid API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-ssid
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceSsid
+    description: Complete reference of the updateNetworkApplianceSsid API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-ssid
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_ssid,

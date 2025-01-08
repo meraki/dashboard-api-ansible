@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_hotspot20_info
 short_description: Information module for networks _wireless _ssids _hotspot20
 description:
-- Get all networks _wireless _ssids _hotspot20.
-- Return the Hotspot 2.0 settings for an SSID.
+  - Get all networks _wireless _ssids _hotspot20.
+  - Return the Hotspot 2.0 settings for an SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidHotspot20
-  description: Complete reference of the getNetworkWirelessSsidHotspot20 API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-hotspot20
+  - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidHotspot20
+    description: Complete reference of the getNetworkWirelessSsidHotspot20 API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-hotspot20
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_ssid_hotspot20,

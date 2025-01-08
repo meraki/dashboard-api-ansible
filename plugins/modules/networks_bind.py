@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_bind
 short_description: Resource module for networks _bind
 description:
-- Manage operation create of the resource networks _bind.
-- Bind a network to a template.
+  - Manage operation create of the resource networks _bind.
+  - Bind a network to a template.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -30,12 +30,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks bindNetwork
-  description: Complete reference of the bindNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!bind-network
+  - name: Cisco Meraki documentation for networks bindNetwork
+    description: Complete reference of the bindNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!bind-network
 notes:
   - SDK Method used are
     networks.Networks.bind_network,

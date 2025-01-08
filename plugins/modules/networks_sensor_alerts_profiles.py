@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_profiles
 short_description: Resource module for networks _sensor _alerts _profiles
 description:
-- Manage operations create, update and delete of the resource networks _sensor _alerts _profiles.
-- Creates a sensor alert profile for a network.
-- Deletes a sensor alert profile from a network.
-- Updates a sensor alert profile for a network.
+  - Manage operations create, update and delete of the resource networks _sensor _alerts _profiles.
+  - Creates a sensor alert profile for a network.
+  - Deletes a sensor alert profile from a network.
+  - Updates a sensor alert profile for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -238,18 +238,18 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor createNetworkSensorAlertsProfile
-  description: Complete reference of the createNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-sensor-alerts-profile
+  - name: Cisco Meraki documentation for sensor createNetworkSensorAlertsProfile
+    description: Complete reference of the createNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-sensor-alerts-profile
 - name: Cisco Meraki documentation for sensor deleteNetworkSensorAlertsProfile
-  description: Complete reference of the deleteNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sensor-alerts-profile
+    description: Complete reference of the deleteNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sensor-alerts-profile
 - name: Cisco Meraki documentation for sensor updateNetworkSensorAlertsProfile
-  description: Complete reference of the updateNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-alerts-profile
+    description: Complete reference of the updateNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-alerts-profile
 notes:
   - SDK Method used are
     sensor.Sensor.create_network_sensor_alerts_profile,

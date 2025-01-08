@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_summary_top_devices_models_by_usage_info
 short_description: Information module for organizations _summary _top _devices _models _by _usage
 description:
-- Get all organizations _summary _top _devices _models _by _usage.
-- >
+  - Get all organizations _summary _top _devices _models _by _usage.
+  - >
    Return metrics for organization's top 10 device models sorted by data usage over given time range. Default unit is
    megabytes.
 version_added: '2.16.0'
@@ -61,12 +61,12 @@ options:
       be less than or equal to 186 days. The default is 1 day.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopDevicesModelsByUsage
-  description: Complete reference of the getOrganizationSummaryTopDevicesModelsByUsage API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-devices-models-by-usage
+  - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopDevicesModelsByUsage
+    description: Complete reference of the getOrganizationSummaryTopDevicesModelsByUsage API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-devices-models-by-usage
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_summary_top_devices_models_by_usage,

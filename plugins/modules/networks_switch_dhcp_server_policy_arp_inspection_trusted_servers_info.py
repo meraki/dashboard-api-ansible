@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info
 short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
 description:
-- Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
-- >
+  - Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
+  - >
    Return the list of servers trusted by Dynamic ARP Inspection on this network. These are also known as allow listed
    snoop entries.
 version_added: '2.16.0'
@@ -45,12 +45,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
-  description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-trusted-servers
+  - name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
+    description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-trusted-servers
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_trusted_servers,

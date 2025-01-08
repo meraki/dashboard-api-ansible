@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_bluetooth_settings_info
 short_description: Information module for devices _wireless _bluetooth _settings
 description:
-- Get all devices _wireless _bluetooth _settings.
-- Return the bluetooth settings for a wireless device.
+  - Get all devices _wireless _bluetooth _settings.
+  - Return the bluetooth settings for a wireless device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings
-  description: Complete reference of the getDeviceWirelessBluetoothSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings
+  - name: Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings
+    description: Complete reference of the getDeviceWirelessBluetoothSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings
 notes:
   - SDK Method used are
     wireless.Wireless.get_device_wireless_bluetooth_settings,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_summary_top_applications_categories_by_usage_info
 short_description: Information module for organizations _summary _top _applications _categories _by _usage
 description:
-- Get all organizations _summary _top _applications _categories _by _usage.
-- Return the top application categories sorted by data usage over given time range. Default unit is megabytes.
+  - Get all organizations _summary _top _applications _categories _by _usage.
+  - Return the top application categories sorted by data usage over given time range. Default unit is megabytes.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -63,12 +63,12 @@ options:
       and be less than or equal to 186 days. The default is 1 day.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopApplicationsCategoriesByUsage
-  description: Complete reference of the getOrganizationSummaryTopApplicationsCategoriesByUsage API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-applications-categories-by-usage
+  - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopApplicationsCategoriesByUsage
+    description: Complete reference of the getOrganizationSummaryTopApplicationsCategoriesByUsage API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-applications-categories-by-usage
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_summary_top_applications_categories_by_usage,

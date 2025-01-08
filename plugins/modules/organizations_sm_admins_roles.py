@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_sm_admins_roles
 short_description: Resource module for organizations _sm _admins _roles
 description:
-- Manage operations create, update and delete of the resource organizations _sm _admins _roles.
-- Create a Limited Access Role.
+  - Manage operations create, update and delete of the resource organizations _sm _admins _roles.
+  - Create a Limited Access Role.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -30,12 +30,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm createOrganizationSmAdminsRole
-  description: Complete reference of the createOrganizationSmAdminsRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-sm-admins-role
+  - name: Cisco Meraki documentation for sm createOrganizationSmAdminsRole
+    description: Complete reference of the createOrganizationSmAdminsRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-sm-admins-role
 notes:
   - SDK Method used are
     sm.Sm.create_organization_sm_admins_role,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_air_marshal_settings
 short_description: Resource module for networks _wireless _air _marshal _settings
 description:
-- Manage operation update of the resource networks _wireless _air _marshal _settings.
-- Updates Air Marshal settings.
+  - Manage operation update of the resource networks _wireless _air _marshal _settings.
+  - Updates Air Marshal settings.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -23,12 +23,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalSettings
-  description: Complete reference of the updateNetworkWirelessAirMarshalSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-settings
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalSettings
+    description: Complete reference of the updateNetworkWirelessAirMarshalSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_air_marshal_settings,

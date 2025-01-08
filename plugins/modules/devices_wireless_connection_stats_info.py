@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_connection_stats_info
 short_description: Information module for devices _wireless _connection _stats
 description:
-- Get all devices _wireless _connection _stats.
-- Aggregated connectivity info for a given AP on this network.
+  - Get all devices _wireless _connection _stats.
+  - Aggregated connectivity info for a given AP on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -56,12 +56,12 @@ options:
     - ApTag query parameter. Filter results by AP Tag.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getDeviceWirelessConnectionStats
-  description: Complete reference of the getDeviceWirelessConnectionStats API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-connection-stats
+  - name: Cisco Meraki documentation for wireless getDeviceWirelessConnectionStats
+    description: Complete reference of the getDeviceWirelessConnectionStats API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-connection-stats
 notes:
   - SDK Method used are
     wireless.Wireless.get_device_wireless_connection_stats,

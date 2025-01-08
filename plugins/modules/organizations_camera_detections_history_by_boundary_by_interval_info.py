@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_camera_detections_history_by_boundary_by_interval_info
 short_description: Information module for organizations _camera _detections _history _by _boundary _by _interval
 description:
-- Get all organizations _camera _detections _history _by _boundary _by _interval.
-- Returns analytics data for timespans.
+  - Get all organizations _camera _detections _history _by _boundary _by _interval.
+  - Returns analytics data for timespans.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -52,12 +52,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraDetectionsHistoryByBoundaryByInterval
-  description: Complete reference of the getOrganizationCameraDetectionsHistoryByBoundaryByInterval API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-detections-history-by-boundary-by-interval
+  - name: Cisco Meraki documentation for camera getOrganizationCameraDetectionsHistoryByBoundaryByInterval
+    description: Complete reference of the getOrganizationCameraDetectionsHistoryByBoundaryByInterval API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-detections-history-by-boundary-by-interval
 notes:
   - SDK Method used are
     camera.Camera.get_organization_camera_detections_history_by_boundary_by_interval,

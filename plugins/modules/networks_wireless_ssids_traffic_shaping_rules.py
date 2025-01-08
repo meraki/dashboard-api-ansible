@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_traffic_shaping_rules
 short_description: Resource module for networks _wireless _ssids _traffic _shaping _rules
 description:
-- Manage operation update of the resource networks _wireless _ssids _traffic _shaping _rules.
-- Update the traffic shaping rules for an SSID on an MR network.
+  - Manage operation update of the resource networks _wireless _ssids _traffic _shaping _rules.
+  - Update the traffic shaping rules for an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -87,12 +87,12 @@ options:
     description: Whether traffic shaping rules are applied to clients on your SSID.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidTrafficShapingRules
-  description: Complete reference of the updateNetworkWirelessSsidTrafficShapingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-traffic-shaping-rules
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidTrafficShapingRules
+    description: Complete reference of the updateNetworkWirelessSsidTrafficShapingRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-traffic-shaping-rules
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_traffic_shaping_rules,

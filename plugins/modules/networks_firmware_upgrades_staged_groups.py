@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_groups
 short_description: Resource module for networks _firmware _upgrades _staged _groups
 description:
-- Manage operations create, update and delete of the resource networks _firmware _upgrades _staged _groups.
-- Create a Staged Upgrade Group for a network.
-- Delete a Staged Upgrade Group.
-- Update a Staged Upgrade Group for a network.
+  - Manage operations create, update and delete of the resource networks _firmware _upgrades _staged _groups.
+  - Create a Staged Upgrade Group for a network.
+  - Delete a Staged Upgrade Group.
+  - Update a Staged Upgrade Group for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -61,18 +61,18 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-group
+  - name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedGroup
+    description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-group
 - name: Cisco Meraki documentation for networks deleteNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-firmware-upgrades-staged-group
+    description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-firmware-upgrades-staged-group
 - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-group
+    description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-group
 notes:
   - SDK Method used are
     networks.Networks.create_network_firmware_upgrades_staged_group,

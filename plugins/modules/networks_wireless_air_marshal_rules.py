@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_air_marshal_rules
 short_description: Resource module for networks _wireless _air _marshal _rules
 description:
-- Manage operation create of the resource networks _wireless _air _marshal _rules.
-- Creates a new rule.
+  - Manage operation create of the resource networks _wireless _air _marshal _rules.
+  - Creates a new rule.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -33,12 +33,12 @@ options:
     description: Indicates if this rule will allow, block, or alert.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless createNetworkWirelessAirMarshalRule
-  description: Complete reference of the createNetworkWirelessAirMarshalRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-air-marshal-rule
+  - name: Cisco Meraki documentation for wireless createNetworkWirelessAirMarshalRule
+    description: Complete reference of the createNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-air-marshal-rule
 notes:
   - SDK Method used are
     wireless.Wireless.create_network_wireless_air_marshal_rule,

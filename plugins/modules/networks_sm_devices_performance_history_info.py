@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_performance_history_info
 short_description: Information module for networks _sm _devices _performance _history
 description:
-- Get all networks _sm _devices _performance _history.
-- Return historical records of various Systems Manager client metrics for desktop devices.
+  - Get all networks _sm _devices _performance _history.
+  - Return historical records of various Systems Manager client metrics for desktop devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -47,12 +47,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDevicePerformanceHistory
-  description: Complete reference of the getNetworkSmDevicePerformanceHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-performance-history
+  - name: Cisco Meraki documentation for sm getNetworkSmDevicePerformanceHistory
+    description: Complete reference of the getNetworkSmDevicePerformanceHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-performance-history
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_performance_history,

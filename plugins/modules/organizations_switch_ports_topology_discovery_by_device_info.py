@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_switch_ports_topology_discovery_by_device_info
 short_description: Information module for organizations _switch _ports _topology _discovery _by _device
 description:
-- Get all organizations _switch _ports _topology _discovery _by _device.
-- List most recently seen LLDP/CDP discovery and topology information per switch port in an organization.
+  - Get all organizations _switch _ports _topology _discovery _by _device.
+  - List most recently seen LLDP/CDP discovery and topology information per switch port in an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -100,12 +100,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getOrganizationSwitchPortsTopologyDiscoveryByDevice
-  description: Complete reference of the getOrganizationSwitchPortsTopologyDiscoveryByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-topology-discovery-by-device
+  - name: Cisco Meraki documentation for switch getOrganizationSwitchPortsTopologyDiscoveryByDevice
+    description: Complete reference of the getOrganizationSwitchPortsTopologyDiscoveryByDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-topology-discovery-by-device
 notes:
   - SDK Method used are
     switch.Switch.get_organization_switch_ports_topology_discovery_by_device,

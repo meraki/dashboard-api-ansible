@@ -9,12 +9,12 @@ DOCUMENTATION = r"""
 module: devices_info
 short_description: Information module for devices
 description:
-- Get all devices.
-- Get devices by id.
-- List the devices in an organization that have been assigned to a network.
-- Return a single device.
-- Returns a historical log of all commands.
-- Returns information about the command's execution, including the status.
+  - Get all devices.
+  - Get devices by id.
+  - List the devices in an organization that have been assigned to a network.
+  - Return a single device.
+  - Returns a historical log of all commands.
+  - Returns information about the command's execution, including the status.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -139,21 +139,21 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDevice
-  description: Complete reference of the getDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device
+  - name: Cisco Meraki documentation for devices getDevice
+    description: Complete reference of the getDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device
 - name: Cisco Meraki documentation for devices getDeviceSensorCommand
-  description: Complete reference of the getDeviceSensorCommand API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-command
+    description: Complete reference of the getDeviceSensorCommand API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-command
 - name: Cisco Meraki documentation for devices getDeviceSensorCommands
-  description: Complete reference of the getDeviceSensorCommands API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-commands
+    description: Complete reference of the getDeviceSensorCommands API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-commands
 - name: Cisco Meraki documentation for devices getOrganizationDevices
-  description: Complete reference of the getOrganizationDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices
+    description: Complete reference of the getOrganizationDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices
 notes:
   - SDK Method used are
     devices.Devices.get_device_sensor_command,

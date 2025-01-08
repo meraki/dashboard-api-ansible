@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_cellular_gateway_port_forwarding_rules_info
 short_description: Information module for devices _cellular _gateway _port _forwarding _rules
 description:
-- Get all devices _cellular _gateway _port _forwarding _rules.
-- Returns the port forwarding rules for a single MG.
+  - Get all devices _cellular _gateway _port _forwarding _rules.
+  - Returns the port forwarding rules for a single MG.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayPortForwardingRules
-  description: Complete reference of the getDeviceCellularGatewayPortForwardingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules
+  - name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayPortForwardingRules
+    description: Complete reference of the getDeviceCellularGatewayPortForwardingRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.get_device_cellular_gateway_port_forwarding_rules,

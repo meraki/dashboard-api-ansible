@@ -19,7 +19,7 @@ module: meraki_mx_site_to_site_vpn
 short_description: Manage AutoVPN connections in Meraki
 version_added: "1.1.0"
 description:
-- Allows for creation, management, and visibility into AutoVPNs implemented on Meraki MX firewalls.
+  - Allows for creation, management, and visibility into AutoVPNs implemented on Meraki MX firewalls.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -74,7 +74,7 @@ options:
                 - Whether to advertise over VPN.
                 type: bool
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

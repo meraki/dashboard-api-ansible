@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_networks_info
 short_description: Information module for organizations _inventory _onboarding _cloud _monitoring _networks
 description:
-- Get all organizations _inventory _onboarding _cloud _monitoring _networks.
-- Returns list of networks eligible for adding cloud monitored device.
+  - Get all organizations _inventory _onboarding _cloud _monitoring _networks.
+  - Returns list of networks eligible for adding cloud monitored device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -51,12 +51,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringNetworks
-  description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-networks
+  - name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringNetworks
+    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-networks
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_inventory_onboarding_cloud_monitoring_networks,

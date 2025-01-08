@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_pii_requests_delete
 short_description: Resource module for networks _pii _requests _delete
 description:
-- Manage operation delete of the resource networks _pii _requests _delete.
-- Delete a restrict processing PII request.
+  - Manage operation delete of the resource networks _pii _requests _delete.
+  - Delete a restrict processing PII request.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -23,12 +23,12 @@ options:
     description: RequestId path parameter. Request ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks deleteNetworkPiiRequest
-  description: Complete reference of the deleteNetworkPiiRequest API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-pii-request
+  - name: Cisco Meraki documentation for networks deleteNetworkPiiRequest
+    description: Complete reference of the deleteNetworkPiiRequest API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-pii-request
 notes:
   - SDK Method used are
     networks.Networks.delete_network_pii_request,

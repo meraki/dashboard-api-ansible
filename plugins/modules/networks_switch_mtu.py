@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_mtu
 short_description: Resource module for networks _switch _mtu
 description:
-- Manage operation update of the resource networks _switch _mtu.
-- Update the MTU configuration.
+  - Manage operation update of the resource networks _switch _mtu.
+  - Update the MTU configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -40,12 +40,12 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchMtu
-  description: Complete reference of the updateNetworkSwitchMtu API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-mtu
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchMtu
+    description: Complete reference of the updateNetworkSwitchMtu API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-mtu
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_mtu,

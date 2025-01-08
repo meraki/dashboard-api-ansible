@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_devices_ethernet_statuses_info
 short_description: Information module for organizations _wireless _devices _ethernet _statuses
 description:
-- Get all organizations _wireless _devices _ethernet _statuses.
-- >
+  - Get all organizations _wireless _devices _ethernet _statuses.
+  - >
    List the most recent Ethernet link speed, duplex, aggregation and power mode and status information for wireless
    devices.
 version_added: '2.16.0'
@@ -52,12 +52,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesEthernetStatuses
-  description: Complete reference of the getOrganizationWirelessDevicesEthernetStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-ethernet-statuses
+  - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesEthernetStatuses
+    description: Complete reference of the getOrganizationWirelessDevicesEthernetStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-ethernet-statuses
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_devices_ethernet_statuses,

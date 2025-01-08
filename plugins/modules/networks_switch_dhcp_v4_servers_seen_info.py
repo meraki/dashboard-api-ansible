@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_dhcp_v4_servers_seen_info
 short_description: Information module for networks _switch _dhcp v4 _servers _seen
 description:
-- Get all networks _switch _dhcp v4 _servers _seen.
-- Return the network's DHCPv4 servers seen within the selected timeframe default 1 day .
+  - Get all networks _switch _dhcp v4 _servers _seen.
+  - Return the network's DHCPv4 servers seen within the selected timeframe default 1 day .
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -54,12 +54,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpV4ServersSeen
-  description: Complete reference of the getNetworkSwitchDhcpV4ServersSeen API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-v4-servers-seen
+  - name: Cisco Meraki documentation for switch getNetworkSwitchDhcpV4ServersSeen
+    description: Complete reference of the getNetworkSwitchDhcpV4ServersSeen API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-v4-servers-seen
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_dhcp_v4_servers_seen,

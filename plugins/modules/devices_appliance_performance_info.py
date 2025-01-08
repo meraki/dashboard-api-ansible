@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_appliance_performance_info
 short_description: Information module for devices _appliance _performance
 description:
-- Get all devices _appliance _performance.
-- >
+  - Get all devices _appliance _performance.
+  - >
    Return the performance score for a single MX. Only primary MX devices supported. If no data is available, a 204
    error code is returned.
 version_added: '2.16.0'
@@ -41,12 +41,12 @@ options:
       and be less than or equal to 14 days. The default is 30 minutes.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getDeviceAppliancePerformance
-  description: Complete reference of the getDeviceAppliancePerformance API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-performance
+  - name: Cisco Meraki documentation for appliance getDeviceAppliancePerformance
+    description: Complete reference of the getDeviceAppliancePerformance API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-performance
 notes:
   - SDK Method used are
     appliance.Appliance.get_device_appliance_performance,

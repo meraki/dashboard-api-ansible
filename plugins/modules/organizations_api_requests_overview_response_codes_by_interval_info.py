@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_api_requests_overview_response_codes_by_interval_info
 short_description: Information module for organizations _api _requests _overview _response _codes _by _interval
 description:
-- Get all organizations _api _requests _overview _response _codes _by _interval.
-- Tracks organizations' API requests by response code across a given time period.
+  - Get all organizations _api _requests _overview _response _codes _by _interval.
+  - Tracks organizations' API requests by response code across a given time period.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -70,12 +70,12 @@ options:
       partial match.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverviewResponseCodesByInterval
-  description: Complete reference of the getOrganizationApiRequestsOverviewResponseCodesByInterval API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview-response-codes-by-interval
+  - name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverviewResponseCodesByInterval
+    description: Complete reference of the getOrganizationApiRequestsOverviewResponseCodesByInterval API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview-response-codes-by-interval
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_api_requests_overview_response_codes_by_interval,

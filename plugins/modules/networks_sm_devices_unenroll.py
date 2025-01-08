@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_unenroll
 short_description: Resource module for networks _sm _devices _unenroll
 description:
-- Manage operation create of the resource networks _sm _devices _unenroll.
-- Unenroll a device.
+  - Manage operation create of the resource networks _sm _devices _unenroll.
+  - Unenroll a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -23,12 +23,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm unenrollNetworkSmDevice
-  description: Complete reference of the unenrollNetworkSmDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!unenroll-network-sm-device
+  - name: Cisco Meraki documentation for sm unenrollNetworkSmDevice
+    description: Complete reference of the unenrollNetworkSmDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!unenroll-network-sm-device
 notes:
   - SDK Method used are
     sm.Sm.unenroll_network_sm_device,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_security_intrusion_info
 short_description: Information module for networks _appliance _security _intrusion
 description:
-- Get all networks _appliance _security _intrusion.
-- Returns all supported intrusion settings for an MX network.
+  - Get all networks _appliance _security _intrusion.
+  - Returns all supported intrusion settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceSecurityIntrusion
-  description: Complete reference of the getNetworkApplianceSecurityIntrusion API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-security-intrusion
+  - name: Cisco Meraki documentation for appliance getNetworkApplianceSecurityIntrusion
+    description: Complete reference of the getNetworkApplianceSecurityIntrusion API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-security-intrusion
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_security_intrusion,

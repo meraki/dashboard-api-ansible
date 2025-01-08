@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_usage_history_info
 short_description: Information module for networks _wireless _usage _history
 description:
-- Get all networks _wireless _usage _history.
-- Return AP usage over time for a device or network client.
+  - Get all networks _wireless _usage _history.
+  - Return AP usage over time for a device or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -73,12 +73,12 @@ options:
     - Ssid query parameter. Filter results by SSID number.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessUsageHistory
-  description: Complete reference of the getNetworkWirelessUsageHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-usage-history
+  - name: Cisco Meraki documentation for wireless getNetworkWirelessUsageHistory
+    description: Complete reference of the getNetworkWirelessUsageHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-usage-history
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_usage_history,

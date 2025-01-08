@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_meraki_auth_users
 short_description: Resource module for networks _meraki _auth _users
 description:
-- Manage operations create, update and delete of the resource networks _meraki _auth _users.
-- >
+  - Manage operations create, update and delete of the resource networks _meraki _auth _users.
+  - >
    Authorize a user configured with Meraki Authentication for a network currently supports 802.1X, splash guest, and
    client VPN users, and currently, organizations have a 50,000 user cap .
 - Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest or client VPN user.
@@ -69,18 +69,18 @@ options:
       a Dashboard administrator.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkMerakiAuthUser
-  description: Complete reference of the createNetworkMerakiAuthUser API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-meraki-auth-user
+  - name: Cisco Meraki documentation for networks createNetworkMerakiAuthUser
+    description: Complete reference of the createNetworkMerakiAuthUser API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-meraki-auth-user
 - name: Cisco Meraki documentation for networks deleteNetworkMerakiAuthUser
-  description: Complete reference of the deleteNetworkMerakiAuthUser API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-meraki-auth-user
+    description: Complete reference of the deleteNetworkMerakiAuthUser API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-meraki-auth-user
 - name: Cisco Meraki documentation for networks updateNetworkMerakiAuthUser
-  description: Complete reference of the updateNetworkMerakiAuthUser API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-meraki-auth-user
+    description: Complete reference of the updateNetworkMerakiAuthUser API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-meraki-auth-user
 notes:
   - SDK Method used are
     networks.Networks.create_network_meraki_auth_user,

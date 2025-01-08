@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_floor_plans_auto_locate_jobs_batch
 short_description: Resource module for networks _floor _plans _auto _locate _jobs _batch
 description:
-- Manage operation create of the resource networks _floor _plans _auto _locate _jobs _batch.
-- Schedule auto locate jobs for one or more floor plans in a network.
+  - Manage operation create of the resource networks _floor _plans _auto _locate _jobs _batch.
+  - Schedule auto locate jobs for one or more floor plans in a network.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -39,12 +39,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks batchNetworkFloorPlansAutoLocateJobs
-  description: Complete reference of the batchNetworkFloorPlansAutoLocateJobs API.
-  link: https://developer.cisco.com/meraki/api-v1/#!batch-network-floor-plans-auto-locate-jobs
+  - name: Cisco Meraki documentation for networks batchNetworkFloorPlansAutoLocateJobs
+    description: Complete reference of the batchNetworkFloorPlansAutoLocateJobs API.
+    link: https://developer.cisco.com/meraki/api-v1/#!batch-network-floor-plans-auto-locate-jobs
 notes:
   - SDK Method used are
     networks.Networks.batch_network_floor_plans_auto_locate_jobs,

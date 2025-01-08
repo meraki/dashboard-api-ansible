@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: devices_switch_ports_info
 short_description: Information module for devices _switch _ports
 description:
-- Get all devices _switch _ports.
-- Get devices _switch _ports by id.
-- List the switch ports for a switch.
-- Return a switch port.
+  - Get all devices _switch _ports.
+  - Get devices _switch _ports by id.
+  - List the switch ports for a switch.
+  - Return a switch port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - PortId path parameter. Port ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getDeviceSwitchPort
-  description: Complete reference of the getDeviceSwitchPort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-port
+  - name: Cisco Meraki documentation for switch getDeviceSwitchPort
+    description: Complete reference of the getDeviceSwitchPort API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-port
 - name: Cisco Meraki documentation for switch getDeviceSwitchPorts
-  description: Complete reference of the getDeviceSwitchPorts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports
+    description: Complete reference of the getDeviceSwitchPorts API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports
 notes:
   - SDK Method used are
     switch.Switch.get_device_switch_port,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_restore
 short_description: Resource module for organizations _assurance _alerts _restore
 description:
-- Manage operation create of the resource organizations _assurance _alerts _restore.
-- Restore health alerts from dismissed.
+  - Manage operation create of the resource organizations _assurance _alerts _restore.
+  - Restore health alerts from dismissed.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,12 +24,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations restoreOrganizationAssuranceAlerts
-  description: Complete reference of the restoreOrganizationAssuranceAlerts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!restore-organization-assurance-alerts
+  - name: Cisco Meraki documentation for organizations restoreOrganizationAssuranceAlerts
+    description: Complete reference of the restoreOrganizationAssuranceAlerts API.
+    link: https://developer.cisco.com/meraki/api-v1/#!restore-organization-assurance-alerts
 notes:
   - SDK Method used are
     organizations.Organizations.restore_organization_assurance_alerts,

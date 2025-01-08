@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_rf_profiles
 short_description: Resource module for networks _appliance _rf _profiles
 description:
-- Manage operations create, update and delete of the resource networks _appliance _rf _profiles.
-- Creates new RF profile for this network.
+  - Manage operations create, update and delete of the resource networks _appliance _rf _profiles.
+  - Creates new RF profile for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -98,12 +98,12 @@ options:
         type: float
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createNetworkApplianceRfProfile
-  description: Complete reference of the createNetworkApplianceRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-rf-profile
+  - name: Cisco Meraki documentation for appliance createNetworkApplianceRfProfile
+    description: Complete reference of the createNetworkApplianceRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-rf-profile
 notes:
   - SDK Method used are
     appliance.Appliance.create_network_appliance_rf_profile,

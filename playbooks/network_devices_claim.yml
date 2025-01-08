@@ -8,4 +8,4 @@
         meraki_output_log: true
         networkId: "{{ network_id }}"
         serials:
-        - QBSD-WABS-BH7V
+          - QBSD-WABS-BH7V

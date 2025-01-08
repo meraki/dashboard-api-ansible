@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_devices_claim
 short_description: Resource module for networks _devices _claim
 description:
-- Manage operation create of the resource networks _devices _claim.
-- >
+  - Manage operation create of the resource networks _devices _claim.
+  - >
    Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests
    against that device to succeed. This operation can be used up to ten times within a single five minute window.
 version_added: '2.16.0'
@@ -26,12 +26,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks claimNetworkDevices
-  description: Complete reference of the claimNetworkDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!claim-network-devices
+  - name: Cisco Meraki documentation for networks claimNetworkDevices
+    description: Complete reference of the claimNetworkDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!claim-network-devices
 notes:
   - SDK Method used are
     networks.Networks.claim_network_devices,

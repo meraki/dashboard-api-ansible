@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_wireless_profiles_info
 short_description: Information module for devices _camera _wireless _profiles
 description:
-- Get all devices _camera _wireless _profiles.
-- Returns wireless profile assigned to the given camera.
+  - Get all devices _camera _wireless _profiles.
+  - Returns wireless profile assigned to the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraWirelessProfiles
-  description: Complete reference of the getDeviceCameraWirelessProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-wireless-profiles
+  - name: Cisco Meraki documentation for camera getDeviceCameraWirelessProfiles
+    description: Complete reference of the getDeviceCameraWirelessProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-wireless-profiles
 notes:
   - SDK Method used are
     camera.Camera.get_device_camera_wireless_profiles,

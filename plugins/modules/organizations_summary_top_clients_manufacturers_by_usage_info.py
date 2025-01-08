@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_summary_top_clients_manufacturers_by_usage_info
 short_description: Information module for organizations _summary _top _clients _manufacturers _by _usage
 description:
-- Get all organizations _summary _top _clients _manufacturers _by _usage.
-- Return metrics for organization's top clients by data usage in mb over given time range, grouped by manufacturer.
+  - Get all organizations _summary _top _clients _manufacturers _by _usage.
+  - Return metrics for organization's top clients by data usage in mb over given time range, grouped by manufacturer.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -59,12 +59,12 @@ options:
       default is 1 day.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopClientsManufacturersByUsage
-  description: Complete reference of the getOrganizationSummaryTopClientsManufacturersByUsage API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-clients-manufacturers-by-usage
+  - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopClientsManufacturersByUsage
+    description: Complete reference of the getOrganizationSummaryTopClientsManufacturersByUsage API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-clients-manufacturers-by-usage
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_summary_top_clients_manufacturers_by_usage,

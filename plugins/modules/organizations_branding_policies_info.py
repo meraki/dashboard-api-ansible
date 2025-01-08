@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_branding_policies_info
 short_description: Information module for organizations _branding _policies
 description:
-- Get all organizations _branding _policies.
-- Get organizations _branding _policies by id.
-- List the branding policies of an organization.
-- Return a branding policy.
+  - Get all organizations _branding _policies.
+  - Get organizations _branding _policies by id.
+  - List the branding policies of an organization.
+  - Return a branding policy.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - BrandingPolicyId path parameter. Branding policy ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicies
-  description: Complete reference of the getOrganizationBrandingPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies
+  - name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicies
+    description: Complete reference of the getOrganizationBrandingPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies
 - name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicy
-  description: Complete reference of the getOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policy
+    description: Complete reference of the getOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policy
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_branding_policies,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping
 short_description: Resource module for networks _appliance _traffic _shaping
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping.
-- Update the traffic shaping settings for an MX network.
+  - Manage operation update of the resource networks _appliance _traffic _shaping.
+  - Update the traffic shaping settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -30,12 +30,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShaping
-  description: Complete reference of the updateNetworkApplianceTrafficShaping API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShaping
+    description: Complete reference of the updateNetworkApplianceTrafficShaping API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_traffic_shaping,

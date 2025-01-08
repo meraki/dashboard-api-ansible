@@ -19,9 +19,9 @@ module: meraki_ms_stack
 short_description: Modify switch stacking configuration in Meraki.
 version_added: "1.3.0"
 description:
-- Allows for modification of Meraki MS switch stacks.
+  - Allows for modification of Meraki MS switch stacks.
 notes:
-- Not all actions are idempotent. Specifically, creating a new stack will error if any switch is already in a stack.
+  - Not all actions are idempotent. Specifically, creating a new stack will error if any switch is already in a stack.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -56,7 +56,7 @@ options:
         type: str
 
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

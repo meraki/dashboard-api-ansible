@@ -9,9 +9,9 @@ DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles
 short_description: Resource module for networks _wireless _ethernet _ports _profiles
 description:
-- Manage operations update and delete of the resource networks _wireless _ethernet _ports _profiles.
-- Delete an AP port profile.
-- Update the AP port profile by ID for this network.
+  - Manage operations update and delete of the resource networks _wireless _ethernet _ports _profiles.
+  - Delete an AP port profile.
+  - Update the AP port profile by ID for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -58,15 +58,15 @@ options:
         type: int
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless deleteNetworkWirelessEthernetPortsProfile
-  description: Complete reference of the deleteNetworkWirelessEthernetPortsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ethernet-ports-profile
+  - name: Cisco Meraki documentation for wireless deleteNetworkWirelessEthernetPortsProfile
+    description: Complete reference of the deleteNetworkWirelessEthernetPortsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ethernet-ports-profile
 - name: Cisco Meraki documentation for wireless updateNetworkWirelessEthernetPortsProfile
-  description: Complete reference of the updateNetworkWirelessEthernetPortsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ethernet-ports-profile
+    description: Complete reference of the updateNetworkWirelessEthernetPortsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ethernet-ports-profile
 notes:
   - SDK Method used are
     wireless.Wireless.delete_network_wireless_ethernet_ports_profile,

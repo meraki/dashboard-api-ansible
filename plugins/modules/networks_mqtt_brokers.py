@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_mqtt_brokers
 short_description: Resource module for networks _mqtt _brokers
 description:
-- Manage operation create of the resource networks _mqtt _brokers.
-- Add an MQTT broker.
+  - Manage operation create of the resource networks _mqtt _brokers.
+  - Add an MQTT broker.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -57,12 +57,12 @@ options:
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkMqttBroker
-  description: Complete reference of the createNetworkMqttBroker API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-mqtt-broker
+  - name: Cisco Meraki documentation for networks createNetworkMqttBroker
+    description: Complete reference of the createNetworkMqttBroker API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-mqtt-broker
 notes:
   - SDK Method used are
     networks.Networks.create_network_mqtt_broker,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_assets
 short_description: Resource module for organizations _assets
 description:
-- Manage operation create of the resource organizations _assets.
-- Create a Splash Theme Asset.
+  - Manage operation create of the resource organizations _assets.
+  - Create a Splash Theme Asset.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -29,12 +29,12 @@ options:
     description: ThemeIdentifier path parameter. Theme identifier.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationSplashThemeAsset
-  description: Complete reference of the createOrganizationSplashThemeAsset API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-splash-theme-asset
+  - name: Cisco Meraki documentation for organizations createOrganizationSplashThemeAsset
+    description: Complete reference of the createOrganizationSplashThemeAsset API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-splash-theme-asset
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_splash_theme_asset,

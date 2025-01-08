@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_vpn_exclusions
 short_description: Resource module for networks _appliance _traffic _shaping _vpn _exclusions
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _vpn _exclusions.
-- Update VPN exclusion rules for an MX network.
+  - Manage operation update of the resource networks _appliance _traffic _shaping _vpn _exclusions.
+  - Update VPN exclusion rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -46,12 +46,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingVpnExclusions
-  description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-vpn-exclusions
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingVpnExclusions
+    description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-vpn-exclusions
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_traffic_shaping_vpn_exclusions,

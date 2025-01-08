@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_clone
 short_description: Resource module for organizations _clone
 description:
-- Manage operation create of the resource organizations _clone.
-- Create a new organization by cloning the addressed organization.
+  - Manage operation create of the resource organizations _clone.
+  - Create a new organization by cloning the addressed organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -23,12 +23,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations cloneOrganization
-  description: Complete reference of the cloneOrganization API.
-  link: https://developer.cisco.com/meraki/api-v1/#!clone-organization
+  - name: Cisco Meraki documentation for organizations cloneOrganization
+    description: Complete reference of the cloneOrganization API.
+    link: https://developer.cisco.com/meraki/api-v1/#!clone-organization
 notes:
   - SDK Method used are
     organizations.Organizations.clone_organization,

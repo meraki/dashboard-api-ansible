@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_policy_info
 short_description: Information module for networks _clients _policy
 description:
-- Get all networks _clients _policy.
-- >
+  - Get all networks _clients _policy.
+  - >
    Return the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC
    or IP depending on whether the network uses Track-by-IP.
 version_added: '2.16.0'
@@ -30,12 +30,12 @@ options:
     - ClientId path parameter. Client ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClientPolicy
-  description: Complete reference of the getNetworkClientPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-policy
+  - name: Cisco Meraki documentation for networks getNetworkClientPolicy
+    description: Complete reference of the getNetworkClientPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-policy
 notes:
   - SDK Method used are
     networks.Networks.get_network_client_policy,

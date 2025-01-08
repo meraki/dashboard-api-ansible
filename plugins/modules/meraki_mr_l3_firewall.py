@@ -18,8 +18,8 @@ DOCUMENTATION = r'''
 module: meraki_mr_l3_firewall
 short_description: Manage MR access point layer 3 firewalls in the Meraki cloud
 description:
-- Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MR access points.
-- Module is not idempotent as of current release.
+  - Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MR access points.
+  - Module is not idempotent as of current release.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -83,7 +83,7 @@ options:
                 - Optional comment describing the firewall rule.
                 type: str
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

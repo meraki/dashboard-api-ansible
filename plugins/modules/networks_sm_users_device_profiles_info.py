@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_users_device_profiles_info
 short_description: Information module for networks _sm _users _device _profiles
 description:
-- Get all networks _sm _users _device _profiles.
-- Get the profiles associated with a user.
+  - Get all networks _sm _users _device _profiles.
+  - Get the profiles associated with a user.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - UserId path parameter. User ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUserDeviceProfiles
-  description: Complete reference of the getNetworkSmUserDeviceProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-device-profiles
+  - name: Cisco Meraki documentation for sm getNetworkSmUserDeviceProfiles
+    description: Complete reference of the getNetworkSmUserDeviceProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-device-profiles
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_user_device_profiles,

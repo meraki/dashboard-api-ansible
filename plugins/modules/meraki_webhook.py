@@ -19,9 +19,9 @@ DOCUMENTATION = r"""
 module: meraki_webhook
 short_description: Manage webhooks configured in the Meraki cloud
 description:
-- Configure and query information about webhooks within the Meraki cloud.
+  - Configure and query information about webhooks within the Meraki cloud.
 notes:
-- Some of the options are likely only used for developers within Meraki.
+  - Some of the options are likely only used for developers within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -76,7 +76,7 @@ options:
       - ID of webhook test query.
       type: str
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

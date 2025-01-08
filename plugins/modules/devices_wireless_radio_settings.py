@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_radio_settings
 short_description: Resource module for devices _wireless _radio _settings
 description:
-- Manage operation update of the resource devices _wireless _radio _settings.
-- Update the radio settings of a device.
+  - Manage operation update of the resource devices _wireless _radio _settings.
+  - Update the radio settings of a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -57,12 +57,12 @@ options:
         type: int
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings
-  description: Complete reference of the updateDeviceWirelessRadioSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings
+  - name: Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings
+    description: Complete reference of the updateDeviceWirelessRadioSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_device_wireless_radio_settings,

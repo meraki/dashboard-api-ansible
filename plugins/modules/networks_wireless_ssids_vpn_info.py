@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_vpn_info
 short_description: Information module for networks _wireless _ssids _vpn
 description:
-- Get all networks _wireless _ssids _vpn.
-- List the VPN settings for the SSID.
+  - Get all networks _wireless _ssids _vpn.
+  - List the VPN settings for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidVpn
-  description: Complete reference of the getNetworkWirelessSsidVpn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-vpn
+  - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidVpn
+    description: Complete reference of the getNetworkWirelessSsidVpn API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-vpn
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_ssid_vpn,

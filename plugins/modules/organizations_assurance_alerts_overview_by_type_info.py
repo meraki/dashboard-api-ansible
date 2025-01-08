@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_by_type_info
 short_description: Information module for organizations _assurance _alerts _overview _by _type
 description:
-- Get all organizations _assurance _alerts _overview _by _type.
-- Return a Summary of Alerts grouped by type and severity.
+  - Get all organizations _assurance _alerts _overview _by _type.
+  - Return a Summary of Alerts grouped by type and severity.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -113,12 +113,12 @@ options:
       will be returned. Defaults to false.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewByType
-  description: Complete reference of the getOrganizationAssuranceAlertsOverviewByType API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-by-type
+  - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewByType
+    description: Complete reference of the getOrganizationAssuranceAlertsOverviewByType API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-by-type
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_assurance_alerts_overview_by_type,

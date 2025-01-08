@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_networks_combine
 short_description: Resource module for organizations _networks _combine
 description:
-- Manage operation create of the resource organizations _networks _combine.
-- Combine multiple networks into a single network.
+  - Manage operation create of the resource organizations _networks _combine.
+  - Combine multiple networks into a single network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -36,12 +36,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations combineOrganizationNetworks
-  description: Complete reference of the combineOrganizationNetworks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!combine-organization-networks
+  - name: Cisco Meraki documentation for organizations combineOrganizationNetworks
+    description: Complete reference of the combineOrganizationNetworks API.
+    link: https://developer.cisco.com/meraki/api-v1/#!combine-organization-networks
 notes:
   - SDK Method used are
     organizations.Organizations.combine_organization_networks,

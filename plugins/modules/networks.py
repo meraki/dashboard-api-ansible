@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks
 short_description: Resource module for networks
 description:
-- Manage operations create, update and delete of the resource networks.
-- Create a network.
-- Delete a network.
-- Update a network.
+  - Manage operations create, update and delete of the resource networks.
+  - Create a network.
+  - Delete a network.
+  - Update a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -55,18 +55,18 @@ options:
       article.</a>.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createOrganizationNetwork
-  description: Complete reference of the createOrganizationNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-network
+  - name: Cisco Meraki documentation for networks createOrganizationNetwork
+    description: Complete reference of the createOrganizationNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-network
 - name: Cisco Meraki documentation for networks deleteNetwork
-  description: Complete reference of the deleteNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network
+    description: Complete reference of the deleteNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network
 - name: Cisco Meraki documentation for networks updateNetwork
-  description: Complete reference of the updateNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network
+    description: Complete reference of the updateNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network
 notes:
   - SDK Method used are
     networks.Networks.create_organization_network,

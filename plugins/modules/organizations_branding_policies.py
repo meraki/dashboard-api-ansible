@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_branding_policies
 short_description: Resource module for organizations _branding _policies
 description:
-- Manage operations create, update and delete of the resource organizations _branding _policies.
-- Add a new branding policy to an organization.
-- Delete a branding policy.
-- Update a branding policy.
+  - Manage operations create, update and delete of the resource organizations _branding _policies.
+  - Add a new branding policy to an organization.
+  - Delete a branding policy.
+  - Update a branding policy.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -153,18 +153,18 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationBrandingPolicy
-  description: Complete reference of the createOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-branding-policy
+  - name: Cisco Meraki documentation for organizations createOrganizationBrandingPolicy
+    description: Complete reference of the createOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-branding-policy
 - name: Cisco Meraki documentation for organizations deleteOrganizationBrandingPolicy
-  description: Complete reference of the deleteOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-branding-policy
+    description: Complete reference of the deleteOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-branding-policy
 - name: Cisco Meraki documentation for organizations updateOrganizationBrandingPolicy
-  description: Complete reference of the updateOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policy
+    description: Complete reference of the updateOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policy
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_branding_policy,

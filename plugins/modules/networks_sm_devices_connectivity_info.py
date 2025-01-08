@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_connectivity_info
 short_description: Information module for networks _sm _devices _connectivity
 description:
-- Get all networks _sm _devices _connectivity.
-- Returns historical connectivity data whether a device is regularly checking in to Dashboard .
+  - Get all networks _sm _devices _connectivity.
+  - Returns historical connectivity data whether a device is regularly checking in to Dashboard .
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -47,12 +47,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceConnectivity
-  description: Complete reference of the getNetworkSmDeviceConnectivity API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-connectivity
+  - name: Cisco Meraki documentation for sm getNetworkSmDeviceConnectivity
+    description: Complete reference of the getNetworkSmDeviceConnectivity API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-connectivity
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_connectivity,

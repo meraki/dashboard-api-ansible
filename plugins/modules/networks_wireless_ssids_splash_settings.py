@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_splash_settings
 short_description: Resource module for networks _wireless _ssids _splash _settings
 description:
-- Manage operation update of the resource networks _wireless _ssids _splash _settings.
-- Modify the splash page settings for the given SSID.
+  - Manage operation update of the resource networks _wireless _ssids _splash _settings.
+  - Modify the splash page settings for the given SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -182,12 +182,12 @@ options:
     description: The welcome message for the users on the splash page.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSplashSettings
-  description: Complete reference of the updateNetworkWirelessSsidSplashSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-splash-settings
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSplashSettings
+    description: Complete reference of the updateNetworkWirelessSsidSplashSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-splash-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_splash_settings,

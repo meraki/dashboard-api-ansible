@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_bluetooth_settings
 short_description: Resource module for networks _wireless _bluetooth _settings
 description:
-- Manage operation update of the resource networks _wireless _bluetooth _settings.
-- Update the Bluetooth settings for a network. See the docs page for Bluetooth.
+  - Manage operation update of the resource networks _wireless _bluetooth _settings.
+  - Update the Bluetooth settings for a network. See the docs page for Bluetooth.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -41,12 +41,12 @@ options:
     description: The UUID to be used in the beacon identifier.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessBluetoothSettings
-  description: Complete reference of the updateNetworkWirelessBluetoothSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-bluetooth-settings
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessBluetoothSettings
+    description: Complete reference of the updateNetworkWirelessBluetoothSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-bluetooth-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_bluetooth_settings,

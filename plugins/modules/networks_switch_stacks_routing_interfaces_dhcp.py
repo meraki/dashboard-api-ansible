@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces_dhcp
 short_description: Resource module for networks _switch _stacks _routing _interfaces _dhcp
 description:
-- Manage operation update of the resource networks _switch _stacks _routing _interfaces _dhcp.
-- Update a layer 3 interface DHCP configuration for a switch stack.
+  - Manage operation update of the resource networks _switch _stacks _routing _interfaces _dhcp.
+  - Update a layer 3 interface DHCP configuration for a switch stack.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -106,12 +106,12 @@ options:
     description: SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterfaceDhcp
-  description: Complete reference of the updateNetworkSwitchStackRoutingInterfaceDhcp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface-dhcp
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterfaceDhcp
+    description: Complete reference of the updateNetworkSwitchStackRoutingInterfaceDhcp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface-dhcp
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_stack_routing_interface_dhcp,

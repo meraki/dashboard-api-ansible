@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sensor_mqtt_brokers
 short_description: Resource module for networks _sensor _mqtt _brokers
 description:
-- Manage operation update of the resource networks _sensor _mqtt _brokers.
-- >
+  - Manage operation update of the resource networks _sensor _mqtt _brokers.
+  - >
    Update the sensor settings of an MQTT broker. To update the broker itself, use
    /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
 version_added: '2.16.0'
@@ -28,12 +28,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor updateNetworkSensorMqttBroker
-  description: Complete reference of the updateNetworkSensorMqttBroker API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-mqtt-broker
+  - name: Cisco Meraki documentation for sensor updateNetworkSensorMqttBroker
+    description: Complete reference of the updateNetworkSensorMqttBroker API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-mqtt-broker
 notes:
   - SDK Method used are
     sensor.Sensor.update_network_sensor_mqtt_broker,

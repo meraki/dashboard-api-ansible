@@ -8,18 +8,18 @@
         state: present
         applianceIp: 192.168.1.2
         cidr: 192.168.1.0/24
-        groupPolicyId: '101'
-        id: '1234'
+        groupPolicyId: "101"
+        id: "1234"
         ipv6:
           enabled: true
           prefixAssignments:
-          - autonomous: false
-            origin:
-              interfaces:
-              - wan0
-              type: internet
-            staticApplianceIp6: 2001:db8:3c4d:15::1
-            staticPrefix: 2001:db8:3c4d:15::/64
+            - autonomous: false
+              origin:
+                interfaces:
+                  - wan0
+                type: internet
+              staticApplianceIp6: 2001:db8:3c4d:15::1
+              staticPrefix: 2001:db8:3c4d:15::/64
         mandatoryDhcp:
           enabled: true
         mask: 28

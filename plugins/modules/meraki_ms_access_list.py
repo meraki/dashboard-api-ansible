@@ -19,9 +19,9 @@ module: meraki_ms_access_list
 short_description: Manage access lists for Meraki switches in the Meraki cloud
 version_added: "0.1.0"
 description:
-- Configure and query information about access lists on Meraki switches within the Meraki cloud.
+  - Configure and query information about access lists on Meraki switches within the Meraki cloud.
 notes:
-- Some of the options are likely only used for developers within Meraki.
+  - Some of the options are likely only used for developers within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality

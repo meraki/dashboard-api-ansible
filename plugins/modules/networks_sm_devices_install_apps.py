@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_install_apps
 short_description: Resource module for networks _sm _devices _install _apps
 description:
-- Manage operation create of the resource networks _sm _devices _install _apps.
-- Install applications on a device.
+  - Manage operation create of the resource networks _sm _devices _install _apps.
+  - Install applications on a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -32,12 +32,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm installNetworkSmDeviceApps
-  description: Complete reference of the installNetworkSmDeviceApps API.
-  link: https://developer.cisco.com/meraki/api-v1/#!install-network-sm-device-apps
+  - name: Cisco Meraki documentation for sm installNetworkSmDeviceApps
+    description: Complete reference of the installNetworkSmDeviceApps API.
+    link: https://developer.cisco.com/meraki/api-v1/#!install-network-sm-device-apps
 notes:
   - SDK Method used are
     sm.Sm.install_network_sm_device_apps,

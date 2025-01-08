@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_mx_content_filtering
 short_description: Edit Meraki MX content filtering policies
 description:
-- Allows for setting policy on content filtering.
+  - Allows for setting policy on content filtering.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality

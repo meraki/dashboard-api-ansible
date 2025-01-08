@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_switch_ports_by_switch_info
 short_description: Information module for organizations _switch _ports _by _switch
 description:
-- Get all organizations _switch _ports _by _switch.
-- List the switchports in an organization by switch.
+  - Get all organizations _switch _ports _by _switch.
+  - List the switchports in an organization by switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -89,12 +89,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getOrganizationSwitchPortsBySwitch
-  description: Complete reference of the getOrganizationSwitchPortsBySwitch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-by-switch
+  - name: Cisco Meraki documentation for switch getOrganizationSwitchPortsBySwitch
+    description: Complete reference of the getOrganizationSwitchPortsBySwitch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-by-switch
 notes:
   - SDK Method used are
     switch.Switch.get_organization_switch_ports_by_switch,

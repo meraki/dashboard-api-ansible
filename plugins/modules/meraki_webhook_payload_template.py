@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_webhook_payload_template
 short_description: Manage webhook payload templates for a network in the Meraki cloud
 description:
-- Allows for querying, deleting, creating, and updating of webhook payload templates.
+  - Allows for querying, deleting, creating, and updating of webhook payload templates.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -63,7 +63,7 @@ options:
                 - The liquid template for the headers
                 type: str
 author:
-- Joshua Coronado (@joshuajcoronado)
+  - Joshua Coronado (@joshuajcoronado)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

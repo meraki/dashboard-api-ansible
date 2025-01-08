@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_webhooks_logs_info
 short_description: Information module for organizations _webhooks _logs
 description:
-- Get all organizations _webhooks _logs.
-- Return the log of webhook POSTs sent.
+  - Get all organizations _webhooks _logs.
+  - Return the log of webhook POSTs sent.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -62,12 +62,12 @@ options:
     - Url query parameter. The URL the webhook was sent to.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationWebhooksLogs
-  description: Complete reference of the getOrganizationWebhooksLogs API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-logs
+  - name: Cisco Meraki documentation for organizations getOrganizationWebhooksLogs
+    description: Complete reference of the getOrganizationWebhooksLogs API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-logs
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_webhooks_logs,

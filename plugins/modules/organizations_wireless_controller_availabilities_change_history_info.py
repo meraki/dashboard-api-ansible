@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_availabilities_change_history_info
 short_description: Information module for organizations _wireless _controller _availabilities _change _history
 description:
-- Get all organizations _wireless _controller _availabilities _change _history.
-- >
+  - Get all organizations _wireless _controller _availabilities _change _history.
+  - >
    List connectivity data of wireless LAN controllers in an organization. If it is HA setup, then only returns active
    WLC data start from switchover.
 version_added: '2.16.0'
@@ -67,12 +67,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerAvailabilitiesChangeHistory
-  description: Complete reference of the getOrganizationWirelessControllerAvailabilitiesChangeHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-availabilities-change-history
+  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerAvailabilitiesChangeHistory
+    description: Complete reference of the getOrganizationWirelessControllerAvailabilitiesChangeHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-availabilities-change-history
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_availabilities_change_history,

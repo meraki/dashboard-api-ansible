@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_wireless_profiles
 short_description: Resource module for devices _camera _wireless _profiles
 description:
-- Manage operation update of the resource devices _camera _wireless _profiles.
-- >
+  - Manage operation update of the resource devices _camera _wireless _profiles.
+  - >
    Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need
    to be supplied at once.
 version_added: '2.16.0'
@@ -35,12 +35,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles
-  description: Complete reference of the updateDeviceCameraWirelessProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles
+  - name: Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles
+    description: Complete reference of the updateDeviceCameraWirelessProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles
 notes:
   - SDK Method used are
     camera.Camera.update_device_camera_wireless_profiles,

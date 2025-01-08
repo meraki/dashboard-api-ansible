@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_cellular_gateway_uplink_statuses_info
 short_description: Information module for organizations _cellular _gateway _uplink _statuses
 description:
-- Get all organizations _cellular _gateway _uplink _statuses.
-- List the uplink status of every Meraki MG cellular gateway in the organization.
+  - Get all organizations _cellular _gateway _uplink _statuses.
+  - List the uplink status of every Meraki MG cellular gateway in the organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -62,12 +62,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayUplinkStatuses
-  description: Complete reference of the getOrganizationCellularGatewayUplinkStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-uplink-statuses
+  - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayUplinkStatuses
+    description: Complete reference of the getOrganizationCellularGatewayUplinkStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-uplink-statuses
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.get_organization_cellular_gateway_uplink_statuses,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_clients_info
 short_description: Information module for networks _clients
 description:
-- Get all networks _clients.
-- Get networks _clients by id.
-- List the clients that have used this network in the timespan. The data is updated at most once every five minutes.
-- >
+  - Get all networks _clients.
+  - Get networks _clients by id.
+  - List the clients that have used this network in the timespan. The data is updated at most once every five minutes.
+  - >
    Return the client associated with the given identifier. Clients can be identified by a client key or either the
    MAC or IP depending on whether the network uses Track-by-IP.
 version_added: '2.16.0'
@@ -110,15 +110,15 @@ options:
     - ClientId path parameter. Client ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClient
-  description: Complete reference of the getNetworkClient API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client
+  - name: Cisco Meraki documentation for networks getNetworkClient
+    description: Complete reference of the getNetworkClient API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-client
 - name: Cisco Meraki documentation for networks getNetworkClients
-  description: Complete reference of the getNetworkClients API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients
+    description: Complete reference of the getNetworkClients API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients
 notes:
   - SDK Method used are
     networks.Networks.get_network_client,

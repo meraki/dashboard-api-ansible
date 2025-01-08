@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_action_batches
 short_description: Resource module for organizations _action _batches
 description:
-- Manage operations create, update and delete of the resource organizations _action _batches.
-- Create an action batch.
-- Delete an action batch.
-- Update an action batch.
+  - Manage operations create, update and delete of the resource organizations _action _batches.
+  - Create an action batch.
+  - Delete an action batch.
+  - Update an action batch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -79,18 +79,18 @@ options:
       most 20 actions in synchronous batch. Defaults to false.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationActionBatch
-  description: Complete reference of the createOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-action-batch
+  - name: Cisco Meraki documentation for organizations createOrganizationActionBatch
+    description: Complete reference of the createOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-action-batch
 - name: Cisco Meraki documentation for organizations deleteOrganizationActionBatch
-  description: Complete reference of the deleteOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-action-batch
+    description: Complete reference of the deleteOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-action-batch
 - name: Cisco Meraki documentation for organizations updateOrganizationActionBatch
-  description: Complete reference of the updateOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-action-batch
+    description: Complete reference of the updateOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-action-batch
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_action_batch,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_quality_and_retention
 short_description: Resource module for devices _camera _quality _and _retention
 description:
-- Manage operation update of the resource devices _camera _quality _and _retention.
-- Update quality and retention settings for the given camera.
+  - Manage operation update of the resource devices _camera _quality _and _retention.
+  - Update quality and retention settings for the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -51,12 +51,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera updateDeviceCameraQualityAndRetention
-  description: Complete reference of the updateDeviceCameraQualityAndRetention API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-quality-and-retention
+  - name: Cisco Meraki documentation for camera updateDeviceCameraQualityAndRetention
+    description: Complete reference of the updateDeviceCameraQualityAndRetention API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-quality-and-retention
 notes:
   - SDK Method used are
     camera.Camera.update_device_camera_quality_and_retention,

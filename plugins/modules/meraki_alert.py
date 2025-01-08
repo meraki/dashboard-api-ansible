@@ -20,7 +20,7 @@ module: meraki_alert
 version_added: "2.1.0"
 short_description: Manage alerts in the Meraki cloud
 description:
-- Allows for creation, management, and visibility into alert settings within Meraki.
+  - Allows for creation, management, and visibility into alert settings within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -133,8 +133,8 @@ EXAMPLES = r"""
           timeout: 60
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
+            - 'youremail@yourcorp'
+            - 'youremail2@yourcorp'
           all_admins: true
           snmp: false
       - alert_type: "usageAlert"
@@ -144,8 +144,8 @@ EXAMPLES = r"""
           threshold: 104857600
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
+            - 'youremail@yourcorp'
+            - 'youremail2@yourcorp'
           all_admins: true
           snmp: false
 

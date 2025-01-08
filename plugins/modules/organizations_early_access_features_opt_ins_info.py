@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_early_access_features_opt_ins_info
 short_description: Information module for organizations _early _access _features _opt _ins
 description:
-- Get all organizations _early _access _features _opt _ins.
-- Get organizations _early _access _features _opt _ins by id.
-- List the early access feature opt-ins for an organization.
-- Show an early access feature opt-in for an organization.
+  - Get all organizations _early _access _features _opt _ins.
+  - Get organizations _early _access _features _opt _ins by id.
+  - List the early access feature opt-ins for an organization.
+  - Show an early access feature opt-in for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - OptInId path parameter. Opt in ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationEarlyAccessFeaturesOptIn
-  description: Complete reference of the getOrganizationEarlyAccessFeaturesOptIn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-early-access-features-opt-in
+  - name: Cisco Meraki documentation for organizations getOrganizationEarlyAccessFeaturesOptIn
+    description: Complete reference of the getOrganizationEarlyAccessFeaturesOptIn API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-early-access-features-opt-in
 - name: Cisco Meraki documentation for organizations getOrganizationEarlyAccessFeaturesOptIns
-  description: Complete reference of the getOrganizationEarlyAccessFeaturesOptIns API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-early-access-features-opt-ins
+    description: Complete reference of the getOrganizationEarlyAccessFeaturesOptIns API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-early-access-features-opt-ins
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_early_access_features_opt_in,

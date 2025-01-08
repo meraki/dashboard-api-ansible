@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_adaptive_policy_acls_info
 short_description: Information module for organizations _adaptive _policy _acls
 description:
-- Get all organizations _adaptive _policy _acls.
-- Get organizations _adaptive _policy _acls by id.
-- List adaptive policy ACLs in a organization.
-- Returns the adaptive policy ACL information.
+  - Get all organizations _adaptive _policy _acls.
+  - Get organizations _adaptive _policy _acls by id.
+  - List adaptive policy ACLs in a organization.
+  - Returns the adaptive policy ACL information.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - AclId path parameter. Acl ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyAcl
-  description: Complete reference of the getOrganizationAdaptivePolicyAcl API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-acl
+  - name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyAcl
+    description: Complete reference of the getOrganizationAdaptivePolicyAcl API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-acl
 - name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyAcls
-  description: Complete reference of the getOrganizationAdaptivePolicyAcls API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-acls
+    description: Complete reference of the getOrganizationAdaptivePolicyAcls API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-acls
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_adaptive_policy_acl,

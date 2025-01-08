@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_access_control_lists
 short_description: Resource module for networks _switch _access _control _lists
 description:
-- Manage operation update of the resource networks _switch _access _control _lists.
-- Update the access control lists for a MS network.
+  - Manage operation update of the resource networks _switch _access _control _lists.
+  - Update the access control lists for a MS network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -57,12 +57,12 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchAccessControlLists
-  description: Complete reference of the updateNetworkSwitchAccessControlLists API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-control-lists
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchAccessControlLists
+    description: Complete reference of the updateNetworkSwitchAccessControlLists API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-control-lists
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_access_control_lists,

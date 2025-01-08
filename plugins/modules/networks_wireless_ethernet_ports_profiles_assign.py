@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles_assign
 short_description: Resource module for networks _wireless _ethernet _ports _profiles _assign
 description:
-- Manage operation create of the resource networks _wireless _ethernet _ports _profiles _assign.
-- Assign AP port profile to list of APs.
+  - Manage operation create of the resource networks _wireless _ethernet _ports _profiles _assign.
+  - Assign AP port profile to list of APs.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,12 +27,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless assignNetworkWirelessEthernetPortsProfiles
-  description: Complete reference of the assignNetworkWirelessEthernetPortsProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!assign-network-wireless-ethernet-ports-profiles
+  - name: Cisco Meraki documentation for wireless assignNetworkWirelessEthernetPortsProfiles
+    description: Complete reference of the assignNetworkWirelessEthernetPortsProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!assign-network-wireless-ethernet-ports-profiles
 notes:
   - SDK Method used are
     wireless.Wireless.assign_network_wireless_ethernet_ports_profiles,

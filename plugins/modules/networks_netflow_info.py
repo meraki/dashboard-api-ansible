@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_netflow_info
 short_description: Information module for networks _netflow
 description:
-- Get all networks _netflow.
-- Return the NetFlow traffic reporting settings for a network.
+  - Get all networks _netflow.
+  - Return the NetFlow traffic reporting settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkNetflow
-  description: Complete reference of the getNetworkNetflow API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-netflow
+  - name: Cisco Meraki documentation for networks getNetworkNetflow
+    description: Complete reference of the getNetworkNetflow API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-netflow
 notes:
   - SDK Method used are
     networks.Networks.get_network_netflow,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_wireless_rf_profiles
 short_description: Resource module for networks _wireless _rf _profiles
 description:
-- Manage operations create, update and delete of the resource networks _wireless _rf _profiles.
-- Creates new RF profile for this network.
-- Delete a RF Profile.
-- >
+  - Manage operations create, update and delete of the resource networks _wireless _rf _profiles.
+  - Creates new RF profile for this network.
+  - Delete a RF Profile.
+  - >
    Updates specified RF profile for this network. Note built-in RF profiles can only be assigned as a default, and
    its attributes are immutable.
 version_added: '2.16.0'
@@ -553,18 +553,18 @@ options:
         type: list
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless createNetworkWirelessRfProfile
-  description: Complete reference of the createNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-rf-profile
+  - name: Cisco Meraki documentation for wireless createNetworkWirelessRfProfile
+    description: Complete reference of the createNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-rf-profile
 - name: Cisco Meraki documentation for wireless deleteNetworkWirelessRfProfile
-  description: Complete reference of the deleteNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-rf-profile
+    description: Complete reference of the deleteNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-rf-profile
 - name: Cisco Meraki documentation for wireless updateNetworkWirelessRfProfile
-  description: Complete reference of the updateNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-rf-profile
+    description: Complete reference of the updateNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-rf-profile
 notes:
   - SDK Method used are
     wireless.Wireless.create_network_wireless_rf_profile,
@@ -656,120 +656,120 @@ EXAMPLES = r"""
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '1':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '10':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '11':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '12':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '13':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '14':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '2':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '3':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '4':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '5':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '6':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '7':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '8':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '9':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
     sixGhzSettings:
       channelWidth: auto
@@ -956,120 +956,120 @@ EXAMPLES = r"""
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '1':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '10':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '11':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '12':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '13':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '14':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '2':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '3':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '4':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '5':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '6':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '7':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '8':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
       '9':
         bandOperationMode: dual
         bandSteeringEnabled: true
         bands:
           enabled:
-          - '2.4'
-          - '5'
+            - '2.4'
+            - '5'
         minBitrate: 11.0
     rfProfileId: string
     sixGhzSettings:

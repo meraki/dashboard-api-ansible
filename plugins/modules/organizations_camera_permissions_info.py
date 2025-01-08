@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_camera_permissions_info
 short_description: Information module for organizations _camera _permissions
 description:
-- Get organizations _camera _permissions by id.
-- Retrieve a single permission scope.
+  - Get organizations _camera _permissions by id.
+  - Retrieve a single permission scope.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - PermissionScopeId path parameter. Permission scope ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraPermission
-  description: Complete reference of the getOrganizationCameraPermission API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-permission
+  - name: Cisco Meraki documentation for camera getOrganizationCameraPermission
+    description: Complete reference of the getOrganizationCameraPermission API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-permission
 notes:
   - SDK Method used are
     camera.Camera.get_organization_camera_permission,

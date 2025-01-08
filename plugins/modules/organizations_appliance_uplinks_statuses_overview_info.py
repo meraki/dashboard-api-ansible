@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_uplinks_statuses_overview_info
 short_description: Information module for organizations _appliance _uplinks _statuses _overview
 description:
-- Get all organizations _appliance _uplinks _statuses _overview.
-- Returns an overview of uplink statuses.
+  - Get all organizations _appliance _uplinks _statuses _overview.
+  - Returns an overview of uplink statuses.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksStatusesOverview
-  description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-statuses-overview
+  - name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksStatusesOverview
+    description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-statuses-overview
 notes:
   - SDK Method used are
     appliance.Appliance.get_organization_appliance_uplinks_statuses_overview,

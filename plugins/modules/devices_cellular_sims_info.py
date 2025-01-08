@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_cellular_sims_info
 short_description: Information module for devices _cellular _sims
 description:
-- Get all devices _cellular _sims.
-- Return the SIM and APN configurations for a cellular device.
+  - Get all devices _cellular _sims.
+  - Return the SIM and APN configurations for a cellular device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceCellularSims
-  description: Complete reference of the getDeviceCellularSims API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-sims
+  - name: Cisco Meraki documentation for devices getDeviceCellularSims
+    description: Complete reference of the getDeviceCellularSims API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-sims
 notes:
   - SDK Method used are
     devices.Devices.get_device_cellular_sims,

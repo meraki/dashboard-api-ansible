@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_sensor_readings_latest_info
 short_description: Information module for organizations _sensor _readings _latest
 description:
-- Get all organizations _sensor _readings _latest.
-- Return the latest available reading for each metric from each sensor, sorted by sensor serial.
+  - Get all organizations _sensor _readings _latest.
+  - Return the latest available reading for each metric from each sensor, sorted by sensor serial.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -62,12 +62,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getOrganizationSensorReadingsLatest
-  description: Complete reference of the getOrganizationSensorReadingsLatest API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sensor-readings-latest
+  - name: Cisco Meraki documentation for sensor getOrganizationSensorReadingsLatest
+    description: Complete reference of the getOrganizationSensorReadingsLatest API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sensor-readings-latest
 notes:
   - SDK Method used are
     sensor.Sensor.get_organization_sensor_readings_latest,

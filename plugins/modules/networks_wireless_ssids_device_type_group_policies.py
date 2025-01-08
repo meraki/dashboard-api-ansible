@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_device_type_group_policies
 short_description: Resource module for networks _wireless _ssids _device _type _group _policies
 description:
-- Manage operation update of the resource networks _wireless _ssids _device _type _group _policies.
-- Update the device type group policies for the SSID.
+  - Manage operation update of the resource networks _wireless _ssids _device _type _group _policies.
+  - Update the device type group policies for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -43,12 +43,12 @@ options:
     description: Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidDeviceTypeGroupPolicies
-  description: Complete reference of the updateNetworkWirelessSsidDeviceTypeGroupPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-device-type-group-policies
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidDeviceTypeGroupPolicies
+    description: Complete reference of the updateNetworkWirelessSsidDeviceTypeGroupPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-device-type-group-policies
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_device_type_group_policies,

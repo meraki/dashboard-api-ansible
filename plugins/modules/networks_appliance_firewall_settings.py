@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_settings
 short_description: Resource module for networks _appliance _firewall _settings
 description:
-- Manage operation update of the resource networks _appliance _firewall _settings.
-- Update the firewall settings for this network.
+  - Manage operation update of the resource networks _appliance _firewall _settings.
+  - Update the firewall settings for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -31,12 +31,12 @@ options:
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallSettings
-  description: Complete reference of the updateNetworkApplianceFirewallSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-settings
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallSettings
+    description: Complete reference of the updateNetworkApplianceFirewallSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-settings
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_firewall_settings,

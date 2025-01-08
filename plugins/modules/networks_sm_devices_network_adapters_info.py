@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_network_adapters_info
 short_description: Information module for networks _sm _devices _network _adapters
 description:
-- Get all networks _sm _devices _network _adapters.
-- List the network adapters of a device.
+  - Get all networks _sm _devices _network _adapters.
+  - List the network adapters of a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - DeviceId path parameter. Device ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceNetworkAdapters
-  description: Complete reference of the getNetworkSmDeviceNetworkAdapters API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-network-adapters
+  - name: Cisco Meraki documentation for sm getNetworkSmDeviceNetworkAdapters
+    description: Complete reference of the getNetworkSmDeviceNetworkAdapters API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-network-adapters
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_network_adapters,

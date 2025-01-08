@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_insight_applications_info
 short_description: Information module for organizations _insight _applications
 description:
-- Get all organizations _insight _applications.
-- List all Insight tracked applications.
+  - Get all organizations _insight _applications.
+  - List all Insight tracked applications.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for insight getOrganizationInsightApplications
-  description: Complete reference of the getOrganizationInsightApplications API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-applications
+  - name: Cisco Meraki documentation for insight getOrganizationInsightApplications
+    description: Complete reference of the getOrganizationInsightApplications API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-applications
 notes:
   - SDK Method used are
     insight.Insight.get_organization_insight_applications,

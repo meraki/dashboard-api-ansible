@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_routing_ospf
 short_description: Resource module for networks _switch _routing _ospf
 description:
-- Manage operation update of the resource networks _switch _routing _ospf.
-- Update layer 3 OSPF routing configuration.
+  - Manage operation update of the resource networks _switch _routing _ospf.
+  - Update layer 3 OSPF routing configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -93,12 +93,12 @@ options:
         type: int
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingOspf
-  description: Complete reference of the updateNetworkSwitchRoutingOspf API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-ospf
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingOspf
+    description: Complete reference of the updateNetworkSwitchRoutingOspf API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-ospf
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_routing_ospf,

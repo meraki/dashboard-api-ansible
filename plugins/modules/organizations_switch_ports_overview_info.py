@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_switch_ports_overview_info
 short_description: Information module for organizations _switch _ports _overview
 description:
-- Get all organizations _switch _ports _overview.
-- >
+  - Get all organizations _switch _ports _overview.
+  - >
    Returns the counts of all active ports for the requested timespan, grouped by speed. An active port is a port that
    at any point during the timeframe is observed to be connected to a responsive device and isn't configured to be
    disabled. For a port that is observed at multiple speeds during the timeframe, it will be counted at the highest
@@ -45,12 +45,12 @@ options:
       be less than or equal to 186 days. The default is 1 day.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getOrganizationSwitchPortsOverview
-  description: Complete reference of the getOrganizationSwitchPortsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-overview
+  - name: Cisco Meraki documentation for switch getOrganizationSwitchPortsOverview
+    description: Complete reference of the getOrganizationSwitchPortsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-overview
 notes:
   - SDK Method used are
     switch.Switch.get_organization_switch_ports_overview,

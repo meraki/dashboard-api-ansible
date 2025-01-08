@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_video_settings_info
 short_description: Information module for devices _camera _video _settings
 description:
-- Get all devices _camera _video _settings.
-- Returns video settings for the given camera.
+  - Get all devices _camera _video _settings.
+  - Returns video settings for the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraVideoSettings
-  description: Complete reference of the getDeviceCameraVideoSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-settings
+  - name: Cisco Meraki documentation for camera getDeviceCameraVideoSettings
+    description: Complete reference of the getDeviceCameraVideoSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-settings
 notes:
   - SDK Method used are
     camera.Camera.get_device_camera_video_settings,

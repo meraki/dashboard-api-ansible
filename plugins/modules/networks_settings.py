@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_settings
 short_description: Resource module for networks _settings
 description:
-- Manage operation update of the resource networks _settings.
-- Update the settings for a network.
+  - Manage operation update of the resource networks _settings.
+  - Update the settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -63,12 +63,12 @@ options:
         type: bool
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkSettings
-  description: Complete reference of the updateNetworkSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-settings
+  - name: Cisco Meraki documentation for networks updateNetworkSettings
+    description: Complete reference of the updateNetworkSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-settings
 notes:
   - SDK Method used are
     networks.Networks.update_network_settings,

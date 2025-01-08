@@ -19,9 +19,9 @@ DOCUMENTATION = r"""
 module: meraki_syslog
 short_description: Manage syslog server settings in the Meraki cloud.
 description:
-- Allows for creation and management of Syslog servers within Meraki.
+  - Allows for creation and management of Syslog servers within Meraki.
 notes:
-- Changes to existing syslog servers replaces existing configuration. If you need to add to an
+  - Changes to existing syslog servers replaces existing configuration. If you need to add to an
   existing configuration set state to query to gather the existing configuration and then modify or add.
 deprecated:
   removed_in: '3.0.0'

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_uplinks_loss_and_latency_info
 short_description: Information module for organizations _devices _uplinks _loss _and _latency
 description:
-- Get all organizations _devices _uplinks _loss _and _latency.
-- Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago.
+  - Get all organizations _devices _uplinks _loss _and _latency.
+  - Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -51,12 +51,12 @@ options:
     - Ip query parameter. Optional filter for a specific destination IP. Default will return all destination IPs.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksLossAndLatency
-  description: Complete reference of the getOrganizationDevicesUplinksLossAndLatency API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-loss-and-latency
+  - name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksLossAndLatency
+    description: Complete reference of the getOrganizationDevicesUplinksLossAndLatency API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-loss-and-latency
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_uplinks_loss_and_latency,

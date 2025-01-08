@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_l3_firewall_rules
 short_description: Resource module for networks _appliance _firewall l3 _firewall _rules
 description:
-- Manage operation update of the resource networks _appliance _firewall l3 _firewall _rules.
-- Update the L3 firewall rules of an MX network.
+  - Manage operation update of the resource networks _appliance _firewall l3 _firewall _rules.
+  - Update the L3 firewall rules of an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -59,12 +59,12 @@ options:
       configured a syslog server) (optional).
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL3FirewallRules
-  description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l3-firewall-rules
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL3FirewallRules
+    description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l3-firewall-rules
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_firewall_l3_firewall_rules,

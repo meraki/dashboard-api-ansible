@@ -9,9 +9,9 @@ DOCUMENTATION = r"""
 module: organizations_splash_themes
 short_description: Resource module for organizations _splash _themes
 description:
-- Manage operations create and delete of the resource organizations _splash _themes.
-- Create a Splash Theme.
-- Delete a Splash Theme.
+  - Manage operations create and delete of the resource organizations _splash _themes.
+  - Create a Splash Theme.
+  - Delete a Splash Theme.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -30,15 +30,15 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationSplashTheme
-  description: Complete reference of the createOrganizationSplashTheme API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-splash-theme
+  - name: Cisco Meraki documentation for organizations createOrganizationSplashTheme
+    description: Complete reference of the createOrganizationSplashTheme API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-splash-theme
 - name: Cisco Meraki documentation for organizations deleteOrganizationSplashTheme
-  description: Complete reference of the deleteOrganizationSplashTheme API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-splash-theme
+    description: Complete reference of the deleteOrganizationSplashTheme API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-splash-theme
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_splash_theme,

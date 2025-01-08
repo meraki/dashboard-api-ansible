@@ -9,9 +9,9 @@ DOCUMENTATION = r"""
 module: networks_sensor_mqtt_brokers_info
 short_description: Information module for networks _sensor _mqtt _brokers
 description:
-- Get all networks _sensor _mqtt _brokers.
-- Get networks _sensor _mqtt _brokers by id.
-- >
+  - Get all networks _sensor _mqtt _brokers.
+  - Get networks _sensor _mqtt _brokers by id.
+  - >
    List the sensor settings of all MQTT brokers for this network. To get the brokers themselves, use
    /networks/{networkId}/mqttBrokers.
 - >
@@ -34,15 +34,15 @@ options:
     - MqttBrokerId path parameter. Mqtt broker ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorMqttBroker
-  description: Complete reference of the getNetworkSensorMqttBroker API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-broker
+  - name: Cisco Meraki documentation for sensor getNetworkSensorMqttBroker
+    description: Complete reference of the getNetworkSensorMqttBroker API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-broker
 - name: Cisco Meraki documentation for sensor getNetworkSensorMqttBrokers
-  description: Complete reference of the getNetworkSensorMqttBrokers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-brokers
+    description: Complete reference of the getNetworkSensorMqttBrokers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-brokers
 notes:
   - SDK Method used are
     sensor.Sensor.get_network_sensor_mqtt_broker,

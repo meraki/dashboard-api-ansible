@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_alerts_settings_info
 short_description: Information module for networks _alerts _settings
 description:
-- Get all networks _alerts _settings.
-- Return the alert configuration for this network.
+  - Get all networks _alerts _settings.
+  - Return the alert configuration for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkAlertsSettings
-  description: Complete reference of the getNetworkAlertsSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-alerts-settings
+  - name: Cisco Meraki documentation for networks getNetworkAlertsSettings
+    description: Complete reference of the getNetworkAlertsSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-alerts-settings
 notes:
   - SDK Method used are
     networks.Networks.get_network_alerts_settings,

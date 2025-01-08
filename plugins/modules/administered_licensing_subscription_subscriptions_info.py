@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_info
 short_description: Information module for administered _licensing _subscription _subscriptions
 description:
-- Get all administered _licensing _subscription _subscriptions.
-- List available subscriptions.
+  - Get all administered _licensing _subscription _subscriptions.
+  - List available subscriptions.
 version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -75,12 +75,12 @@ options:
       use 'endDate<option>=?' in the request. Accepted options include lt, gt, lte, gte.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptions
-  description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions
+  - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptions
+    description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptions API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions
 notes:
   - SDK Method used are
     licensing.Licensing.get_administered_licensing_subscription_subscriptions,

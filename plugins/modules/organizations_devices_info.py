@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_info
 short_description: Information module for organizations _devices
 description:
-- Get all organizations _devices.
-- List the devices in an organization that have been assigned to a network.
+  - Get all organizations _devices.
+  - List the devices in an organization that have been assigned to a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -133,12 +133,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevices
-  description: Complete reference of the getOrganizationDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices
+  - name: Cisco Meraki documentation for organizations getOrganizationDevices
+    description: Complete reference of the getOrganizationDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices,

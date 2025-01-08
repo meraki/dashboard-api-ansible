@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_devices_interfaces_packets_overview_by_device_info
 short_description: Information module for organizations _wireless _controller _devices _interfaces _packets _overview _by _device
 description:
-- Get all organizations _wireless _controller _devices _interfaces _packets _overview _by _device.
-- Retrieve the packet counters for the interfaces of a Wireless LAN controller.
+  - Get all organizations _wireless _controller _devices _interfaces _packets _overview _by _device.
+  - Retrieve the packet counters for the interfaces of a Wireless LAN controller.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -72,12 +72,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesInterfacesPacketsOverviewByDevice
-  description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesPacketsOverviewByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-interfaces-packets-overview-by-device
+  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesInterfacesPacketsOverviewByDevice
+    description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesPacketsOverviewByDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-interfaces-packets-overview-by-device
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_devices_interfaces_packets_overview_by_device,

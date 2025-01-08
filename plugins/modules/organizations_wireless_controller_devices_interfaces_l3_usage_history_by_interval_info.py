@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_devices_interfaces_l3_usage_history_by_interval_info
 short_description: Information module for organizations _wireless _controller _devices _interfaces l3 _usage _history _by _interval
 description:
-- Get all organizations _wireless _controller _devices _interfaces l3 _usage _history _by _interval.
-- List wireless LAN controller layer 3 interfaces history usage in an organization.
+  - Get all organizations _wireless _controller _devices _interfaces l3 _usage _history _by _interval.
+  - List wireless LAN controller layer 3 interfaces history usage in an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -65,12 +65,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesInterfacesL3UsageHistoryByInterval
-  description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesL3UsageHistoryByInterval API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-interfaces-l3-usage-history-by-interval
+  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesInterfacesL3UsageHistoryByInterval
+    description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesL3UsageHistoryByInterval API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-interfaces-l3-usage-history-by-interval
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_devices_interfaces_l3_usage_history_by_interval,

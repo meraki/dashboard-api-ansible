@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_api_requests_overview_info
 short_description: Information module for organizations _api _requests _overview
 description:
-- Get all organizations _api _requests _overview.
-- Return an aggregated overview of API requests data.
+  - Get all organizations _api _requests _overview.
+  - Return an aggregated overview of API requests data.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -39,12 +39,12 @@ options:
       default is 31 days.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverview
-  description: Complete reference of the getOrganizationApiRequestsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview
+  - name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverview
+    description: Complete reference of the getOrganizationApiRequestsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_api_requests_overview,

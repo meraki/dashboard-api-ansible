@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_vpn_vpn_firewall_rules_info
 short_description: Information module for organizations _appliance _vpn _vpn _firewall _rules
 description:
-- Get all organizations _appliance _vpn _vpn _firewall _rules.
-- Return the firewall rules for an organization's site-to-site VPN.
+  - Get all organizations _appliance _vpn _vpn _firewall _rules.
+  - Return the firewall rules for an organization's site-to-site VPN.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnVpnFirewallRules
-  description: Complete reference of the getOrganizationApplianceVpnVpnFirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-vpn-firewall-rules
+  - name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnVpnFirewallRules
+    description: Complete reference of the getOrganizationApplianceVpnVpnFirewallRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-vpn-firewall-rules
 notes:
   - SDK Method used are
     appliance.Appliance.get_organization_appliance_vpn_vpn_firewall_rules,

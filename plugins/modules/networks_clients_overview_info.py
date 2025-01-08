@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_overview_info
 short_description: Information module for networks _clients _overview
 description:
-- Get all networks _clients _overview.
-- Return overview statistics for network clients.
+  - Get all networks _clients _overview.
+  - Return overview statistics for network clients.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -45,12 +45,12 @@ options:
       7200, 86400, 604800, 2592000. The default is 604800.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClientsOverview
-  description: Complete reference of the getNetworkClientsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients-overview
+  - name: Cisco Meraki documentation for networks getNetworkClientsOverview
+    description: Complete reference of the getNetworkClientsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients-overview
 notes:
   - SDK Method used are
     networks.Networks.get_network_clients_overview,

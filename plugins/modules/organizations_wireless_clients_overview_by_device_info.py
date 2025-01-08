@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_clients_overview_by_device_info
 short_description: Information module for organizations _wireless _clients _overview _by _device
 description:
-- Get all organizations _wireless _clients _overview _by _device.
-- List access point client count at the moment in an organization.
+  - Get all organizations _wireless _clients _overview _by _device.
+  - List access point client count at the moment in an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -64,12 +64,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getOrganizationWirelessClientsOverviewByDevice
-  description: Complete reference of the getOrganizationWirelessClientsOverviewByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-clients-overview-by-device
+  - name: Cisco Meraki documentation for wireless getOrganizationWirelessClientsOverviewByDevice
+    description: Complete reference of the getOrganizationWirelessClientsOverviewByDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-clients-overview-by-device
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_clients_overview_by_device,

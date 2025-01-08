@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers
 short_description: Resource module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
 description:
-- Manage operations create, update and delete of the resource networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
-- Add a server to be trusted by Dynamic ARP Inspection on this network.
-- Remove a server from being trusted by Dynamic ARP Inspection on this network.
-- Update a server that is trusted by Dynamic ARP Inspection on this network.
+  - Manage operations create, update and delete of the resource networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
+  - Add a server to be trusted by Dynamic ARP Inspection on this network.
+  - Remove a server from being trusted by Dynamic ARP Inspection on this network.
+  - Update a server that is trusted by Dynamic ARP Inspection on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -39,18 +39,18 @@ options:
       4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+  - name: Cisco Meraki documentation for switch createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+    description: Complete reference of the createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-dhcp-server-policy-arp-inspection-trusted-server
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+    description: Complete reference of the deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-dhcp-server-policy-arp-inspection-trusted-server
 - name: Cisco Meraki documentation for switch updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+    description: Complete reference of the updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dhcp-server-policy-arp-inspection-trusted-server
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_dhcp_server_policy_arp_inspection_trusted_server,

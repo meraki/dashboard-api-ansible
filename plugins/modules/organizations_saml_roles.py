@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_saml_roles
 short_description: Resource module for organizations _saml _roles
 description:
-- Manage operations create, update and delete of the resource organizations _saml _roles.
-- Create a SAML role.
-- Remove a SAML role.
-- Update a SAML role.
+  - Manage operations create, update and delete of the resource organizations _saml _roles.
+  - Create a SAML role.
+  - Remove a SAML role.
+  - Update a SAML role.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -57,18 +57,18 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationSamlRole
-  description: Complete reference of the createOrganizationSamlRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-role
+  - name: Cisco Meraki documentation for organizations createOrganizationSamlRole
+    description: Complete reference of the createOrganizationSamlRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-role
 - name: Cisco Meraki documentation for organizations deleteOrganizationSamlRole
-  description: Complete reference of the deleteOrganizationSamlRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-saml-role
+    description: Complete reference of the deleteOrganizationSamlRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-saml-role
 - name: Cisco Meraki documentation for organizations updateOrganizationSamlRole
-  description: Complete reference of the updateOrganizationSamlRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml-role
+    description: Complete reference of the updateOrganizationSamlRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml-role
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_saml_role,

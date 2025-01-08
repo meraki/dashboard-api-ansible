@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_uplinks_statuses_info
 short_description: Information module for organizations _uplinks _statuses
 description:
-- Get all organizations _uplinks _statuses.
-- List the uplink status of every Meraki MX, MG and Z series devices in the organization.
+  - Get all organizations _uplinks _statuses.
+  - List the uplink status of every Meraki MX, MG and Z series devices in the organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -62,12 +62,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationUplinksStatuses
-  description: Complete reference of the getOrganizationUplinksStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-uplinks-statuses
+  - name: Cisco Meraki documentation for organizations getOrganizationUplinksStatuses
+    description: Complete reference of the getOrganizationUplinksStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-uplinks-statuses
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_uplinks_statuses,

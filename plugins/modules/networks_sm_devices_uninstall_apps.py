@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_uninstall_apps
 short_description: Resource module for networks _sm _devices _uninstall _apps
 description:
-- Manage operation create of the resource networks _sm _devices _uninstall _apps.
-- Uninstall applications on a device.
+  - Manage operation create of the resource networks _sm _devices _uninstall _apps.
+  - Uninstall applications on a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,12 +27,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm uninstallNetworkSmDeviceApps
-  description: Complete reference of the uninstallNetworkSmDeviceApps API.
-  link: https://developer.cisco.com/meraki/api-v1/#!uninstall-network-sm-device-apps
+  - name: Cisco Meraki documentation for sm uninstallNetworkSmDeviceApps
+    description: Complete reference of the uninstallNetworkSmDeviceApps API.
+    link: https://developer.cisco.com/meraki/api-v1/#!uninstall-network-sm-device-apps
 notes:
   - SDK Method used are
     sm.Sm.uninstall_network_sm_device_apps,

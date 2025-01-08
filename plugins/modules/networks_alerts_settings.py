@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_alerts_settings
 short_description: Resource module for networks _alerts _settings
 description:
-- Manage operation update of the resource networks _alerts _settings.
-- Update the alert configuration for this network.
+  - Manage operation update of the resource networks _alerts _settings.
+  - Update the alert configuration for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -153,12 +153,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkAlertsSettings
-  description: Complete reference of the updateNetworkAlertsSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-alerts-settings
+  - name: Cisco Meraki documentation for networks updateNetworkAlertsSettings
+    description: Complete reference of the updateNetworkAlertsSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-alerts-settings
 notes:
   - SDK Method used are
     networks.Networks.update_network_alerts_settings,

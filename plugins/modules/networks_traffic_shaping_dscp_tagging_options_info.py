@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_traffic_shaping_dscp_tagging_options_info
 short_description: Information module for networks _traffic _shaping _dscp _tagging _options
 description:
-- Get all networks _traffic _shaping _dscp _tagging _options.
-- Returns the available DSCP tagging options for your traffic shaping rules.
+  - Get all networks _traffic _shaping _dscp _tagging _options.
+  - Returns the available DSCP tagging options for your traffic shaping rules.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkTrafficShapingDscpTaggingOptions
-  description: Complete reference of the getNetworkTrafficShapingDscpTaggingOptions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-dscp-tagging-options
+  - name: Cisco Meraki documentation for networks getNetworkTrafficShapingDscpTaggingOptions
+    description: Complete reference of the getNetworkTrafficShapingDscpTaggingOptions API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-dscp-tagging-options
 notes:
   - SDK Method used are
     networks.Networks.get_network_traffic_shaping_dscp_tagging_options,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_clients_overview_info
 short_description: Information module for organizations _clients _overview
 description:
-- Get all organizations _clients _overview.
-- Return summary information around client data usage in kb across the given organization.
+  - Get all organizations _clients _overview.
+  - Return summary information around client data usage in kb across the given organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -39,12 +39,12 @@ options:
       default is 1 day.
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationClientsOverview
-  description: Complete reference of the getOrganizationClientsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-overview
+  - name: Cisco Meraki documentation for organizations getOrganizationClientsOverview
+    description: Complete reference of the getOrganizationClientsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-overview
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_clients_overview,

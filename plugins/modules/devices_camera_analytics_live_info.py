@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_analytics_live_info
 short_description: Information module for devices _camera _analytics _live
 description:
-- Get all devices _camera _analytics _live.
-- Returns live state from camera analytics zones.
+  - Get all devices _camera _analytics _live.
+  - Returns live state from camera analytics zones.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraAnalyticsLive
-  description: Complete reference of the getDeviceCameraAnalyticsLive API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-analytics-live
+  - name: Cisco Meraki documentation for camera getDeviceCameraAnalyticsLive
+    description: Complete reference of the getDeviceCameraAnalyticsLive API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-analytics-live
 notes:
   - SDK Method used are
     camera.Camera.get_device_camera_analytics_live,

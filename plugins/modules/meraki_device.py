@@ -18,11 +18,11 @@ DOCUMENTATION = r'''
 module: meraki_device
 short_description: Manage devices in the Meraki cloud
 description:
-- Visibility into devices associated to a Meraki environment.
+  - Visibility into devices associated to a Meraki environment.
 notes:
-- This module does not support claiming of devices or licenses into a Meraki organization.
-- More information about the Meraki API can be found at U(https://dashboard.meraki.com/api_docs).
-- Some of the options are likely only used for developers within Meraki.
+  - This module does not support claiming of devices or licenses into a Meraki organization.
+  - More information about the Meraki API can be found at U(https://dashboard.meraki.com/api_docs).
+  - Some of the options are likely only used for developers within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -100,7 +100,7 @@ options:
 
 
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

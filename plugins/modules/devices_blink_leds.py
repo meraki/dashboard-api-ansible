@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_blink_leds
 short_description: Resource module for devices _blink _leds
 description:
-- Manage operation create of the resource devices _blink _leds.
-- Blink the LEDs on a device. This endpoint is deprecrated in favor of /devices/{serial}/liveTools/leds/blink.
+  - Manage operation create of the resource devices _blink _leds.
+  - Blink the LEDs on a device. This endpoint is deprecrated in favor of /devices/{serial}/liveTools/leds/blink.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -31,12 +31,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices blinkDeviceLeds
-  description: Complete reference of the blinkDeviceLeds API.
-  link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
+  - name: Cisco Meraki documentation for devices blinkDeviceLeds
+    description: Complete reference of the blinkDeviceLeds API.
+    link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
 notes:
   - SDK Method used are
     devices.Devices.blink_device_leds,

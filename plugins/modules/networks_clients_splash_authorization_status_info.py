@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_splash_authorization_status_info
 short_description: Information module for networks _clients _splash _authorization _status
 description:
-- Get all networks _clients _splash _authorization _status.
-- >
+  - Get all networks _clients _splash _authorization _status.
+  - >
    Return the splash authorization for a client, for each SSID they've associated with through splash. Only enabled
    SSIDs with Click-through splash enabled will be included. Clients can be identified by a client key or either the
    MAC or IP depending on whether the network uses Track-by-IP.
@@ -31,12 +31,12 @@ options:
     - ClientId path parameter. Client ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClientSplashAuthorizationStatus
-  description: Complete reference of the getNetworkClientSplashAuthorizationStatus API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-splash-authorization-status
+  - name: Cisco Meraki documentation for networks getNetworkClientSplashAuthorizationStatus
+    description: Complete reference of the getNetworkClientSplashAuthorizationStatus API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-splash-authorization-status
 notes:
   - SDK Method used are
     networks.Networks.get_network_client_splash_authorization_status,

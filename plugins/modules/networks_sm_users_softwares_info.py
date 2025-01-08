@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_users_softwares_info
 short_description: Information module for networks _sm _users _softwares
 description:
-- Get all networks _sm _users _softwares.
-- Get a list of softwares associated with a user.
+  - Get all networks _sm _users _softwares.
+  - Get a list of softwares associated with a user.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - UserId path parameter. User ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUserSoftwares
-  description: Complete reference of the getNetworkSmUserSoftwares API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-softwares
+  - name: Cisco Meraki documentation for sm getNetworkSmUserSoftwares
+    description: Complete reference of the getNetworkSmUserSoftwares API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-softwares
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_user_softwares,

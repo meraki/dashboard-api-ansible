@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_current_overview_by_metric_info
 short_description: Information module for networks _sensor _alerts _current _overview _by _metric
 description:
-- Get all networks _sensor _alerts _current _overview _by _metric.
-- Return an overview of currently alerting sensors by metric.
+  - Get all networks _sensor _alerts _current _overview _by _metric.
+  - Return an overview of currently alerting sensors by metric.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorAlertsCurrentOverviewByMetric
-  description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-current-overview-by-metric
+  - name: Cisco Meraki documentation for sensor getNetworkSensorAlertsCurrentOverviewByMetric
+    description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-current-overview-by-metric
 notes:
   - SDK Method used are
     sensor.Sensor.get_network_sensor_alerts_current_overview_by_metric,

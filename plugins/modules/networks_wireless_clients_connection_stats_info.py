@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_clients_connection_stats_info
 short_description: Information module for networks _wireless _clients _connection _stats
 description:
-- Get all networks _wireless _clients _connection _stats.
-- Aggregated connectivity info for a given client on this network. Clients are identified by their MAC.
+  - Get all networks _wireless _clients _connection _stats.
+  - Aggregated connectivity info for a given client on this network. Clients are identified by their MAC.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -60,12 +60,12 @@ options:
     - ApTag query parameter. Filter results by AP Tag.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessClientConnectionStats
-  description: Complete reference of the getNetworkWirelessClientConnectionStats API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-client-connection-stats
+  - name: Cisco Meraki documentation for wireless getNetworkWirelessClientConnectionStats
+    description: Complete reference of the getNetworkWirelessClientConnectionStats API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-client-connection-stats
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_client_connection_stats,

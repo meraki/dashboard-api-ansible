@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_vpn
 short_description: Resource module for networks _wireless _ssids _vpn
 description:
-- Manage operation update of the resource networks _wireless _ssids _vpn.
-- Update the VPN settings for the SSID.
+  - Manage operation update of the resource networks _wireless _ssids _vpn.
+  - Update the VPN settings for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -77,12 +77,12 @@ options:
         type: list
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidVpn
-  description: Complete reference of the updateNetworkWirelessSsidVpn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-vpn
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidVpn
+    description: Complete reference of the updateNetworkWirelessSsidVpn API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-vpn
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_vpn,

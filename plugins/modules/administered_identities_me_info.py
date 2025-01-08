@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_identities_me_info
 short_description: Information module for administered _identities _me
 description:
-- Get all administered _identities _me.
-- Returns the identity of the current user.
+  - Get all administered _identities _me.
+  - Returns the identity of the current user.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,12 +20,12 @@ options:
     description: Additional headers.
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for administered getAdministeredIdentitiesMe
-  description: Complete reference of the getAdministeredIdentitiesMe API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me
+  - name: Cisco Meraki documentation for administered getAdministeredIdentitiesMe
+    description: Complete reference of the getAdministeredIdentitiesMe API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me
 notes:
   - SDK Method used are
     administered.Administered.get_administered_identities_me,

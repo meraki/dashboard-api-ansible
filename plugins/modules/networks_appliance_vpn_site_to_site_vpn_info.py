@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_vpn_site_to_site_vpn_info
 short_description: Information module for networks _appliance _vpn _site _to _site _vpn
 description:
-- Get all networks _appliance _vpn _site _to _site _vpn.
-- Return the site-to-site VPN settings of a network. Only valid for MX networks.
+  - Get all networks _appliance _vpn _site _to _site _vpn.
+  - Return the site-to-site VPN settings of a network. Only valid for MX networks.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceVpnSiteToSiteVpn
-  description: Complete reference of the getNetworkApplianceVpnSiteToSiteVpn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vpn-site-to-site-vpn
+  - name: Cisco Meraki documentation for appliance getNetworkApplianceVpnSiteToSiteVpn
+    description: Complete reference of the getNetworkApplianceVpnSiteToSiteVpn API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vpn-site-to-site-vpn
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_vpn_site_to_site_vpn,

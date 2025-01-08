@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_latency_history_info
 short_description: Information module for networks _wireless _latency _history
 description:
-- Get all networks _wireless _latency _history.
-- Return average wireless latency over time for a network, device, or network client.
+  - Get all networks _wireless _latency _history.
+  - Return average wireless latency over time for a network, device, or network client.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -75,12 +75,12 @@ options:
     - AccessCategory query parameter. Filter by access category.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessLatencyHistory
-  description: Complete reference of the getNetworkWirelessLatencyHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-latency-history
+  - name: Cisco Meraki documentation for wireless getNetworkWirelessLatencyHistory
+    description: Complete reference of the getNetworkWirelessLatencyHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-latency-history
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_latency_history,

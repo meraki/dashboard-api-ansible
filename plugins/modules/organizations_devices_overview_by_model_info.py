@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_overview_by_model_info
 short_description: Information module for organizations _devices _overview _by _model
 description:
-- Get all organizations _devices _overview _by _model.
-- Lists the count for each device model.
+  - Get all organizations _devices _overview _by _model.
+  - Lists the count for each device model.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -43,12 +43,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesOverviewByModel
-  description: Complete reference of the getOrganizationDevicesOverviewByModel API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-overview-by-model
+  - name: Cisco Meraki documentation for organizations getOrganizationDevicesOverviewByModel
+    description: Complete reference of the getOrganizationDevicesOverviewByModel API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-overview-by-model
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_overview_by_model,

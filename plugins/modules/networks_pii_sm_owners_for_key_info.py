@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_pii_sm_owners_for_key_info
 short_description: Information module for networks _pii _sm _owners _for _key
 description:
-- Get all networks _pii _sm _owners _for _key.
-- >
+  - Get all networks _pii _sm _owners _for _key.
+  - >
    Given a piece of Personally Identifiable Information PII , return the Systems Manager owner IDs associated with
    that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details.
    Exactly one identifier will be accepted.
@@ -51,12 +51,12 @@ options:
     - BluetoothMac query parameter. The MAC of a Bluetooth client.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkPiiSmOwnersForKey
-  description: Complete reference of the getNetworkPiiSmOwnersForKey API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-sm-owners-for-key
+  - name: Cisco Meraki documentation for networks getNetworkPiiSmOwnersForKey
+    description: Complete reference of the getNetworkPiiSmOwnersForKey API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-sm-owners-for-key
 notes:
   - SDK Method used are
     networks.Networks.get_network_pii_sm_owners_for_key,

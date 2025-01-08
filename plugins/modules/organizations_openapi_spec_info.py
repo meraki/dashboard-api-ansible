@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_openapi_spec_info
 short_description: Information module for organizations _openapi _spec
 description:
-- Get all organizations _openapi _spec.
-- Return the OpenAPI Specification of the organization's API documentation in JSON.
+  - Get all organizations _openapi _spec.
+  - Return the OpenAPI Specification of the organization's API documentation in JSON.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Version query parameter. OpenAPI Specification version to return. Default is 2.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationOpenapiSpec
-  description: Complete reference of the getOrganizationOpenapiSpec API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-openapi-spec
+  - name: Cisco Meraki documentation for organizations getOrganizationOpenapiSpec
+    description: Complete reference of the getOrganizationOpenapiSpec API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-openapi-spec
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_openapi_spec,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_compliance_statuses_info
 short_description: Information module for administered _licensing _subscription _subscriptions _compliance _statuses
 description:
-- Get all administered _licensing _subscription _subscriptions _compliance _statuses.
-- Get compliance status for requested subscriptions.
+  - Get all administered _licensing _subscription _subscriptions _compliance _statuses.
+  - Get compliance status for requested subscriptions.
 version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,12 +30,12 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
-  description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions-compliance-statuses
+  - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
+    description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions-compliance-statuses
 notes:
   - SDK Method used are
     licensing.Licensing.get_administered_licensing_subscription_subscriptions_compliance_statuses,

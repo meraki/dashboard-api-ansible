@@ -9,9 +9,9 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_security_centers_info
 short_description: Information module for networks _sm _devices _security _centers
 description:
-- Get all networks _sm _devices _security _centers.
-- Get a list of softwares associated with a device.
-- List the security centers on a device.
+  - Get all networks _sm _devices _security _centers.
+  - Get a list of softwares associated with a device.
+  - List the security centers on a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -29,15 +29,15 @@ options:
     - DeviceId path parameter. Device ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceSecurityCenters
-  description: Complete reference of the getNetworkSmDeviceSecurityCenters API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-security-centers
+  - name: Cisco Meraki documentation for sm getNetworkSmDeviceSecurityCenters
+    description: Complete reference of the getNetworkSmDeviceSecurityCenters API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-security-centers
 - name: Cisco Meraki documentation for sm getNetworkSmDeviceSoftwares
-  description: Complete reference of the getNetworkSmDeviceSoftwares API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-softwares
+    description: Complete reference of the getNetworkSmDeviceSoftwares API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-softwares
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_softwares,

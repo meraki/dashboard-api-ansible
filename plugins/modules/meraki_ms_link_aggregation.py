@@ -19,9 +19,9 @@ module: meraki_ms_link_aggregation
 short_description: Manage link aggregations on MS switches
 version_added: "1.2.0"
 description:
-- Allows for management of MS switch link aggregations in a Meraki environment.
+  - Allows for management of MS switch link aggregations in a Meraki environment.
 notes:
-- Switch profile ports are not supported in this module.
+  - Switch profile ports are not supported in this module.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -60,7 +60,7 @@ options:
                 - Port number which should be included in link aggregation.
                 type: str
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

@@ -19,7 +19,7 @@ module: meraki_mx_l2_interface
 short_description: Configure MX layer 2 interfaces
 version_added: "2.1.0"
 description:
-- Allows for management and visibility of Merkai MX layer 2 ports.
+  - Allows for management and visibility of Merkai MX layer 2 ports.
 
 deprecated:
   removed_in: '3.0.0'

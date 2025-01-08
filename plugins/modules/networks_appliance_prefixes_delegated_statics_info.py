@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_appliance_prefixes_delegated_statics_info
 short_description: Information module for networks _appliance _prefixes _delegated _statics
 description:
-- Get all networks _appliance _prefixes _delegated _statics.
-- Get networks _appliance _prefixes _delegated _statics by id.
-- List static delegated prefixes for a network.
-- Return a static delegated prefix from a network.
+  - Get all networks _appliance _prefixes _delegated _statics.
+  - Get networks _appliance _prefixes _delegated _statics by id.
+  - List static delegated prefixes for a network.
+  - Return a static delegated prefix from a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatic
-  description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-static
+  - name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatic
+    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-static
 - name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatics
-  description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-statics
+    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-statics
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_prefixes_delegated_static,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_group_policies_info
 short_description: Information module for networks _group _policies
 description:
-- Get all networks _group _policies.
-- Get networks _group _policies by id.
-- Display a group policy.
-- List the group policies in a network.
+  - Get all networks _group _policies.
+  - Get networks _group _policies by id.
+  - Display a group policy.
+  - List the group policies in a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - GroupPolicyId path parameter. Group policy ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkGroupPolicies
-  description: Complete reference of the getNetworkGroupPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policies
+  - name: Cisco Meraki documentation for networks getNetworkGroupPolicies
+    description: Complete reference of the getNetworkGroupPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policies
 - name: Cisco Meraki documentation for networks getNetworkGroupPolicy
-  description: Complete reference of the getNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policy
+    description: Complete reference of the getNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policy
 notes:
   - SDK Method used are
     networks.Networks.get_network_group_policies,

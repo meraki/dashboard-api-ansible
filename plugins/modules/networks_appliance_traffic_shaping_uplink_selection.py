@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_selection
 short_description: Resource module for networks _appliance _traffic _shaping _uplink _selection
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _uplink _selection.
-- Update uplink selection settings for an MX network.
+  - Manage operation update of the resource networks _appliance _traffic _shaping _uplink _selection.
+  - Update uplink selection settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -206,12 +206,12 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkSelection
-  description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-selection
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkSelection
+    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-selection
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_traffic_shaping_uplink_selection,

@@ -19,10 +19,10 @@ module: meraki_mx_uplink_bandwidth
 short_description: Manage uplinks on Meraki MX appliances
 version_added: "1.1.0"
 description:
-- Configure and query information about uplinks on Meraki MX appliances.
+  - Configure and query information about uplinks on Meraki MX appliances.
 notes:
-- Some of the options are likely only used for developers within Meraki.
-- Module was formerly named M(cisco.meraki.meraki_mx_uplink).
+  - Some of the options are likely only used for developers within Meraki.
+  - Module was formerly named M(cisco.meraki.meraki_mx_uplink).
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -106,7 +106,7 @@ options:
               - Maximum download speed for interface
               type: int
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

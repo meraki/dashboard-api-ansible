@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_cellular_gateway_uplink
 short_description: Resource module for networks _cellular _gateway _uplink
 description:
-- Manage operation update of the resource networks _cellular _gateway _uplink.
-- Updates the uplink settings for your MG network.
+  - Manage operation update of the resource networks _cellular _gateway _uplink.
+  - Updates the uplink settings for your MG network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -32,12 +32,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayUplink
-  description: Complete reference of the updateNetworkCellularGatewayUplink API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-uplink
+  - name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayUplink
+    description: Complete reference of the updateNetworkCellularGatewayUplink API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-uplink
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.update_network_cellular_gateway_uplink,

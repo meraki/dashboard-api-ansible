@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_overview_by_metric_info
 short_description: Information module for networks _sensor _alerts _overview _by _metric
 description:
-- Get all networks _sensor _alerts _overview _by _metric.
-- Return an overview of alert occurrences over a timespan, by metric.
+  - Get all networks _sensor _alerts _overview _by _metric.
+  - Return an overview of alert occurrences over a timespan, by metric.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -45,12 +45,12 @@ options:
       86400, 604800, 2592000. The default is 604800. Interval is calculated if time params are provided.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorAlertsOverviewByMetric
-  description: Complete reference of the getNetworkSensorAlertsOverviewByMetric API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-overview-by-metric
+  - name: Cisco Meraki documentation for sensor getNetworkSensorAlertsOverviewByMetric
+    description: Complete reference of the getNetworkSensorAlertsOverviewByMetric API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-overview-by-metric
 notes:
   - SDK Method used are
     sensor.Sensor.get_network_sensor_alerts_overview_by_metric,

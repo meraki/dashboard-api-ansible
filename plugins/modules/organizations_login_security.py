@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_login_security
 short_description: Resource module for organizations _login _security
 description:
-- Manage operation update of the resource organizations _login _security.
-- Update the login security settings for an organization.
+  - Manage operation update of the resource organizations _login _security.
+  - Update the login security settings for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -89,12 +89,12 @@ options:
     description: Number of days after which users will be forced to change their password.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationLoginSecurity
-  description: Complete reference of the updateOrganizationLoginSecurity API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-login-security
+  - name: Cisco Meraki documentation for organizations updateOrganizationLoginSecurity
+    description: Complete reference of the updateOrganizationLoginSecurity API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-login-security
 notes:
   - SDK Method used are
     organizations.Organizations.update_organization_login_security,

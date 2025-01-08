@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_swap
 short_description: Resource module for organizations _cellular _gateway _esims _swap
 description:
-- Manage operation create of the resource organizations _cellular _gateway _esims _swap.
-- Swap which profile an eSIM uses.
+  - Manage operation create of the resource organizations _cellular _gateway _esims _swap.
+  - Swap which profile an eSIM uses.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -42,12 +42,12 @@ options:
         type: dict
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsSwap
-  description: Complete reference of the createOrganizationCellularGatewayEsimsSwap API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-swap
+  - name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsSwap
+    description: Complete reference of the createOrganizationCellularGatewayEsimsSwap API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-swap
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_swap,

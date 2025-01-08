@@ -19,10 +19,10 @@ module: meraki_management_interface
 short_description: Configure Meraki management interfaces
 version_added: "1.1.0"
 description:
-- Allows for configuration of management interfaces on Meraki MX, MS, and MR devices.
+  - Allows for configuration of management interfaces on Meraki MX, MS, and MR devices.
 notes:
-- C(WAN2) parameter is only valid for MX appliances.
-- C(wan_enabled) should not be provided for non-MX devies.
+  - C(WAN2) parameter is only valid for MX appliances.
+  - C(wan_enabled) should not be provided for non-MX devies.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -139,7 +139,7 @@ options:
                 type: int
 
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

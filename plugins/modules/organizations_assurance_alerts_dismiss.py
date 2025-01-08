@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_dismiss
 short_description: Resource module for organizations _assurance _alerts _dismiss
 description:
-- Manage operation create of the resource organizations _assurance _alerts _dismiss.
-- Dismiss health alerts.
+  - Manage operation create of the resource organizations _assurance _alerts _dismiss.
+  - Dismiss health alerts.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,12 +24,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations dismissOrganizationAssuranceAlerts
-  description: Complete reference of the dismissOrganizationAssuranceAlerts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!dismiss-organization-assurance-alerts
+  - name: Cisco Meraki documentation for organizations dismissOrganizationAssuranceAlerts
+    description: Complete reference of the dismissOrganizationAssuranceAlerts API.
+    link: https://developer.cisco.com/meraki/api-v1/#!dismiss-organization-assurance-alerts
 notes:
   - SDK Method used are
     organizations.Organizations.dismiss_organization_assurance_alerts,

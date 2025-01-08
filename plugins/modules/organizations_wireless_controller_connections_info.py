@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_connections_info
 short_description: Information module for organizations _wireless _controller _connections
 description:
-- Get all organizations _wireless _controller _connections.
-- List all access points associated with wireless LAN controllers in an organization.
+  - Get all organizations _wireless _controller _connections.
+  - List all access points associated with wireless LAN controllers in an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -57,12 +57,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerConnections
-  description: Complete reference of the getOrganizationWirelessControllerConnections API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-connections
+  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerConnections
+    description: Complete reference of the getOrganizationWirelessControllerConnections API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-connections
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_connections,

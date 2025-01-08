@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_routing_multicast
 short_description: Resource module for networks _switch _routing _multicast
 description:
-- Manage operation update of the resource networks _switch _routing _multicast.
-- Update multicast settings for a network.
+  - Manage operation update of the resource networks _switch _routing _multicast.
+  - Update multicast settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -56,12 +56,12 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingMulticast
-  description: Complete reference of the updateNetworkSwitchRoutingMulticast API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-multicast
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingMulticast
+    description: Complete reference of the updateNetworkSwitchRoutingMulticast API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-multicast
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_routing_multicast,

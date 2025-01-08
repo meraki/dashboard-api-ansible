@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_wipe
 short_description: Resource module for networks _sm _devices _wipe
 description:
-- Manage operation create of the resource networks _sm _devices _wipe.
-- Wipe a device.
+  - Manage operation create of the resource networks _sm _devices _wipe.
+  - Wipe a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -33,12 +33,12 @@ options:
     description: The wifiMac of the device to be wiped.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm wipeNetworkSmDevices
-  description: Complete reference of the wipeNetworkSmDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!wipe-network-sm-devices
+  - name: Cisco Meraki documentation for sm wipeNetworkSmDevices
+    description: Complete reference of the wipeNetworkSmDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!wipe-network-sm-devices
 notes:
   - SDK Method used are
     sm.Sm.wipe_network_sm_devices,

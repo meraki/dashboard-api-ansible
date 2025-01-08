@@ -19,7 +19,7 @@ module: meraki_ms_storm_control
 short_description: Manage storm control configuration on a switch in the Meraki cloud
 version_added: "0.0.1"
 description:
-- Allows for management of storm control settings for Meraki MS switches.
+  - Allows for management of storm control settings for Meraki MS switches.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -56,7 +56,7 @@ options:
         type: int
 
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

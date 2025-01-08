@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_dscp_to_cos_mappings
 short_description: Resource module for networks _switch _dscp _to _cos _mappings
 description:
-- Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
-- Update the DSCP to CoS mappings.
+  - Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
+  - Update the DSCP to CoS mappings.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -38,12 +38,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchDscpToCosMappings
-  description: Complete reference of the updateNetworkSwitchDscpToCosMappings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dscp-to-cos-mappings
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchDscpToCosMappings
+    description: Complete reference of the updateNetworkSwitchDscpToCosMappings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dscp-to-cos-mappings
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_dscp_to_cos_mappings,

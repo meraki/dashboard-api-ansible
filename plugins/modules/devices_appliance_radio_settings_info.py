@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_appliance_radio_settings_info
 short_description: Information module for devices _appliance _radio _settings
 description:
-- Get all devices _appliance _radio _settings.
-- Return the radio settings of an appliance.
+  - Get all devices _appliance _radio _settings.
+  - Return the radio settings of an appliance.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getDeviceApplianceRadioSettings
-  description: Complete reference of the getDeviceApplianceRadioSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-radio-settings
+  - name: Cisco Meraki documentation for appliance getDeviceApplianceRadioSettings
+    description: Complete reference of the getDeviceApplianceRadioSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-radio-settings
 notes:
   - SDK Method used are
     appliance.Appliance.get_device_appliance_radio_settings,

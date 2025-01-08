@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_schedules
 short_description: Resource module for networks _wireless _ssids _schedules
 description:
-- Manage operation update of the resource networks _wireless _ssids _schedules.
-- Update the outage schedule for the SSID.
+  - Manage operation update of the resource networks _wireless _ssids _schedules.
+  - Update the outage schedule for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -60,12 +60,12 @@ options:
         type: int
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSchedules
-  description: Complete reference of the updateNetworkWirelessSsidSchedules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-schedules
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSchedules
+    description: Complete reference of the updateNetworkWirelessSsidSchedules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-schedules
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_schedules,
