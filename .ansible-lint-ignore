@@ -1,1 +1,2 @@
-workflows/docs.yml package-latest
+workflows/docs.yml profile:basic tags:formatting,yaml
+.github/workflows/docs.yml profile:basic tags:formatting,yaml
