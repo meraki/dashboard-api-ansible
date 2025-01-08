@@ -42,7 +42,7 @@ cisco.meraki.meraki_device module -- Manage devices in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1201,7 +1201,7 @@ Examples
         org_name: YourOrg
         net_name: YourNet
         state: present
-        serial: '{{serial}}'
+        serial: '{{ serial }}'
         name: mr26
         address: 1060 W. Addison St., Chicago, IL
         lat: 41.948038

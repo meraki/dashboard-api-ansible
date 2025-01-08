@@ -42,7 +42,7 @@ cisco.meraki.meraki_ms_link_aggregation module -- Manage link aggregations on MS
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -851,32 +851,32 @@ Examples
     
     - name: Create LAG
       meraki_ms_link_aggregation:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: present
-        org_name: '{{test_org_name}}'
-        net_name: '{{test_switch_net_name}}'
+        org_name: '{{ test_org_name }}'
+        net_name: '{{ test_switch_net_name }}'
         switch_ports:
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "1"
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "2"
       delegate_to: localhost
 
     - name: Update LAG
       meraki_ms_link_aggregation:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: present
-        org_name: '{{test_org_name}}'
-        net_name: '{{test_switch_net_name}}'
-        lag_id: '{{lag_id}}'
+        org_name: '{{ test_org_name }}'
+        net_name: '{{ test_switch_net_name }}'
+        lag_id: '{{ lag_id }}'
         switch_ports:
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "1"
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "2"
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "3"
-          - serial: '{{serial_switch}}'
+          - serial: '{{ serial_switch }}'
             port_id: "4"
       delegate_to: localhost
 

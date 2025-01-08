@@ -679,7 +679,7 @@
 <h1>cisco.meraki.meraki_network_settings module -- Manage the settings of networks in the Meraki cloud<a class="headerlink" href="#cisco-meraki-meraki-network-settings-module-manage-the-settings-of-networks-in-the-meraki-cloud" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.3).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.4).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.meraki.meraki_network_settings</span></code>.</p>
 </div>
@@ -971,24 +971,22 @@
 <span class="w">  </span><span class="nt">cisco.meraki.meraki_network_settings</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">auth_key</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">query</span>
-<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span><span class="nv">test_org_name</span><span class="cp">}}</span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">test_org_name</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkSettingsTestNet</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update network settings</span>
 <span class="w">  </span><span class="nt">cisco.meraki.meraki_network_settings</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">auth_key</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
-<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span><span class="nv">test_org_name</span><span class="cp">}}</span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">test_org_name</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkSettingsTestNet</span>
 <span class="w">    </span><span class="nt">local_status_page_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enable password on local page</span>
 <span class="w">  </span><span class="nt">cisco.meraki.meraki_network_settings</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">auth_key</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
-<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span><span class="nv">test_org_name</span><span class="cp">}}</span><span class="s">&#39;</span>
+<span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;</span><span class="cp">{{</span> <span class="nv">test_org_name</span> <span class="cp">}}</span><span class="s">&#39;</span>
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkSettingsTestNet</span>
 <span class="w">    </span><span class="nt">local_status_page_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">local_status_page</span><span class="p">:</span>

@@ -679,7 +679,7 @@
 <h1>cisco.meraki.meraki_webhook module -- Manage webhooks configured in the Meraki cloud<a class="headerlink" href="#cisco-meraki-meraki-webhook-module-manage-webhooks-configured-in-the-meraki-cloud" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.3).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.4).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.meraki.meraki_webhook</span></code>.</p>
 </div>
@@ -957,9 +957,8 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test_Hook</span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://webhook.url/</span>
 <span class="w">    </span><span class="nt">shared_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shhhdonttellanyone</span>
-<span class="w">    </span><span class="nt">payload_template_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Slack</span><span class="nv"> </span><span class="s">(included)&#39;</span>
+<span class="w">    </span><span class="nt">payload_template_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Slack (included)</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Query one webhook</span>
 <span class="w">  </span><span class="nt">meraki_webhook</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>
@@ -968,7 +967,6 @@
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test_Hook</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Query all webhooks</span>
 <span class="w">  </span><span class="nt">meraki_webhook</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>
@@ -976,7 +974,6 @@
 <span class="w">    </span><span class="nt">org_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourOrg</span>
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete webhook</span>
 <span class="w">  </span><span class="nt">meraki_webhook</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>
@@ -985,7 +982,6 @@
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test_Hook</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test webhook</span>
 <span class="w">  </span><span class="nt">meraki_webhook</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>
@@ -995,7 +991,6 @@
 <span class="w">    </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://webhook.url/abc123</span>
 <span class="w">  </span><span class="nt">delegate_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get webhook status</span>
 <span class="w">  </span><span class="nt">meraki_webhook</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">auth_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc123</span>

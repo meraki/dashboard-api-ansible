@@ -42,7 +42,7 @@ cisco.meraki.meraki_network module -- Manage networks in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1071,14 +1071,14 @@ Examples
             state: query
             org_name: YourOrg
             net_name: MyNet
-            enable_vlans: yes
+            enable_vlans: true
         - name: Modify local status page enabled state
           meraki_network:
             auth_key: abc12345
             state: query
             org_name: YourOrg
             net_name: MyNet
-            local_status_page_enabled: yes
+            local_status_page_enabled: true
 
 
 

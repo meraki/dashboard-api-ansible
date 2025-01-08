@@ -42,7 +42,7 @@ cisco.meraki.meraki_mx_static_route module -- Manage static routes in the Meraki
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1204,7 +1204,6 @@ Examples
         subnet: 192.0.1.0/24
         gateway_ip: 192.168.128.1
       delegate_to: localhost
-
     - name: Update static route with fixed IP assignment
       meraki_static_route:
         auth_key: abc123
@@ -1217,7 +1216,6 @@ Examples
             ip: 192.0.1.11
             comment: Server
       delegate_to: localhost
-
     - name: Query static routes
       meraki_static_route:
         auth_key: abc123
@@ -1225,14 +1223,13 @@ Examples
         org_name: YourOrg
         net_name: YourNet
       delegate_to: localhost
-
     - name: Delete static routes
       meraki_static_route:
         auth_key: abc123
         state: absent
         org_name: YourOrg
         net_name: YourNet
-        route_id: '{{item}}'
+        route_id: '{{ item }}'
       delegate_to: localhost
 
 

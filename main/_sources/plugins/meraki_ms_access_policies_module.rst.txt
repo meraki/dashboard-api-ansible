@@ -42,7 +42,7 @@ cisco.meraki.meraki_ms_access_policies module -- Manage Switch Access Policies i
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1593,30 +1593,29 @@ Examples
       cisco.meraki.meraki_ms_access_policies:
         auth_key: abc123
         state: present
-        name: "Meraki authentication policy"
-        auth_method: "Meraki authentication"
+        name: Meraki authentication policy
+        auth_method: Meraki authentication
         net_name: YourNet
         org_name: YourOrg
       delegate_to: localhost
-
     - name: Create access policy with auth_method is "my Radius Server"
       cisco.meraki.meraki_ms_access_policies:
         auth_key: abc123
-        access_policy_type: "802.1x"
-        host_mode: "Single-Host"
+        access_policy_type: 802.1x
+        host_mode: Single-Host
         state: present
-        name: "Meraki authentication policy"
-        auth_method: "my RADIUS server"
+        name: Meraki authentication policy
+        auth_method: my RADIUS server
         radius_servers:
           - host: 192.0.1.18
             port: 7890
             secret: secret123
         net_name: YourNet
         org_name: YourOrg
-        radius_coa_enabled: False
-        radius_accounting_enabled: False
+        radius_coa_enabled: false
+        radius_accounting_enabled: false
         guest_vlan: 10
-        voice_vlan_clients: False
+        voice_vlan_clients: false
 
 
 

@@ -42,7 +42,7 @@ cisco.meraki.meraki_syslog module -- Manage syslog server settings in the Meraki
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -868,7 +868,6 @@ Examples
         org_name: YourOrg
         net_name: MyNet
       delegate_to: localhost
-
     - name: Add single syslog server with Appliance event log role
       meraki_syslog:
         auth_key: abc12345
@@ -881,7 +880,6 @@ Examples
             roles:
               - Appliance event log
       delegate_to: localhost
-
     - name: Add multiple syslog servers
       meraki_syslog:
         auth_key: abc12345

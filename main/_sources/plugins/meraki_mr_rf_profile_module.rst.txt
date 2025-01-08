@@ -42,7 +42,7 @@ cisco.meraki.meraki_mr_rf_profile module -- Manage RF profiles for Meraki wirele
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1630,10 +1630,10 @@ Examples
         state: present
         name: Test Profile
         band_selection_type: ap
-        client_balancing_enabled: True
+        client_balancing_enabled: true
         ap_band_settings:
-            mode: dual
-            band_steering_enabled: true
+          mode: dual
+          band_steering_enabled: true
         five_ghz_settings:
           max_power: 10
           min_bitrate: 12
@@ -1679,10 +1679,10 @@ Examples
         state: present
         profile_id: 12345
         band_selection_type: ap
-        client_balancing_enabled: True
+        client_balancing_enabled: true
         ap_band_settings:
-            mode: dual
-            band_steering_enabled: true
+          mode: dual
+          band_steering_enabled: true
         five_ghz_settings:
           max_power: 10
           min_bitrate: 12

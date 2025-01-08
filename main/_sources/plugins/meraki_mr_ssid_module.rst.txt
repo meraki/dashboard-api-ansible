@@ -42,7 +42,7 @@ cisco.meraki.meraki_mr_ssid module -- Manage wireless SSIDs in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -2327,7 +2327,6 @@ Examples
         enabled: true
         visible: true
       delegate_to: localhost
-
     - name: Set PSK with invalid encryption mode
       meraki_ssid:
         auth_key: abc123
@@ -2338,9 +2337,8 @@ Examples
         auth_mode: psk
         psk: abc1234
         encryption_mode: eap
-      ignore_errors: yes
+      ignore_errors: true
       delegate_to: localhost
-
     - name: Configure RADIUS servers
       meraki_ssid:
         auth_key: abc123
@@ -2354,7 +2352,6 @@ Examples
             port: 1234
             secret: abc98765
       delegate_to: localhost
-
     - name: Enable click-through splash page
       meraki_ssid:
         auth_key: abc123

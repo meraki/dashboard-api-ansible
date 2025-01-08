@@ -42,7 +42,7 @@ cisco.meraki.meraki_ms_stack module -- Modify switch stacking configuration in M
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -822,8 +822,8 @@ Examples
         net_name: YourNet
         name: Test stack
         serials:
-        - "ABCD-1231-4579"
-        - "ASDF-4321-0987"
+          - "ABCD-1231-4579"
+          - "ASDF-4321-0987"
 
     - name: Add switch to stack
       meraki_switch_stack:
@@ -833,7 +833,7 @@ Examples
         net_name: YourNet
         stack_id: ABC12340987
         serials:
-        - "ABCD-1231-4579"
+          - "ABCD-1231-4579"
 
     - name: Remove switch from stack
       meraki_switch_stack:
@@ -843,7 +843,7 @@ Examples
         net_name: YourNet
         stack_id: ABC12340987
         serials:
-        - "ABCD-1231-4579"
+          - "ABCD-1231-4579"
 
     - name: Query one stack
       meraki_switch_stack:

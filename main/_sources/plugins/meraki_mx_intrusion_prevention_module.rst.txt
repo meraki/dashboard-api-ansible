@@ -42,7 +42,7 @@ cisco.meraki.meraki_mx_intrusion_prevention module -- Manage intrustion preventi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -168,9 +168,9 @@ Parameters
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowed_rules/rule_message"></div>
-        <div class="ansibleOptionAnchor" id="parameter-allowed_rules/message"></div>
+        <div class="ansibleOptionAnchor" id="parameter-allowed_rules/message_rule"></div>
 
-      .. _ansible_collections.cisco.meraki.meraki_mx_intrusion_prevention_module__parameter-allowed_rules/message:
+      .. _ansible_collections.cisco.meraki.meraki_mx_intrusion_prevention_module__parameter-allowed_rules/message_rule:
       .. _ansible_collections.cisco.meraki.meraki_mx_intrusion_prevention_module__parameter-allowed_rules/rule_message:
 
       .. rst-class:: ansible-option-title
@@ -183,7 +183,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-aliases:`aliases: message`
+      :ansible-option-aliases:`aliases: message_rule`
 
       .. rst-class:: ansible-option-type-line
 
@@ -204,7 +204,7 @@ Parameters
 
       This is overwritten by the API.
 
-      Formerly \ :literal:`message`\  which was deprecated but still maintained as an alias.
+      Formerly \ :literal:`message\_rule`\  which was deprecated but still maintained as an alias.
 
 
       .. raw:: html
@@ -1065,9 +1065,9 @@ Examples
     
     - name: Set whitelist for organization
       meraki_intrusion_prevention:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: present
-        org_id: '{{test_org_id}}'
+        org_id: '{{ test_org_id }}'
         allowed_rules:
           - rule_id: "meraki:intrusion/snort/GID/01/SID/5805"
             rule_message: Test rule
@@ -1075,18 +1075,18 @@ Examples
 
     - name: Query IPS info for organization
       meraki_intrusion_prevention:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: query
-        org_name: '{{test_org_name}}'
+        org_name: '{{ test_org_name }}'
       delegate_to: localhost
       register: query_org
 
     - name: Set full ruleset with check mode
       meraki_intrusion_prevention:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: present
-        org_name: '{{test_org_name}}'
-        net_name: '{{test_net_name}} - IPS'
+        org_name: '{{ test_org_name }}'
+        net_name: '{{ test_net_name }} - IPS'
         mode: prevention
         ids_rulesets: security
         protected_networks:
@@ -1099,9 +1099,9 @@ Examples
 
     - name: Clear rules from organization
       meraki_intrusion_prevention:
-        auth_key: '{{auth_key}}'
+        auth_key: '{{ auth_key }}'
         state: absent
-        org_name: '{{test_org_name}}'
+        org_name: '{{ test_org_name }}'
         allowed_rules: []
       delegate_to: localhost
 

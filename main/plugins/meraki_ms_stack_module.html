@@ -679,7 +679,7 @@
 <h1>cisco.meraki.meraki_ms_stack module -- Modify switch stacking configuration in Meraki.<a class="headerlink" href="#cisco-meraki-meraki-ms-stack-module-modify-switch-stacking-configuration-in-meraki" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.3).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.20.4).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.meraki.meraki_ms_stack</span></code>.</p>
 </div>
@@ -916,8 +916,8 @@
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test stack</span>
 <span class="w">    </span><span class="nt">serials</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ASDF-4321-0987&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ASDF-4321-0987&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add switch to stack</span>
 <span class="w">  </span><span class="nt">meraki_switch_stack</span><span class="p">:</span>
@@ -927,7 +927,7 @@
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">    </span><span class="nt">stack_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC12340987</span>
 <span class="w">    </span><span class="nt">serials</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove switch from stack</span>
 <span class="w">  </span><span class="nt">meraki_switch_stack</span><span class="p">:</span>
@@ -937,7 +937,7 @@
 <span class="w">    </span><span class="nt">net_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YourNet</span>
 <span class="w">    </span><span class="nt">stack_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ABC12340987</span>
 <span class="w">    </span><span class="nt">serials</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;ABCD-1231-4579&quot;</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Query one stack</span>
 <span class="w">  </span><span class="nt">meraki_switch_stack</span><span class="p">:</span>

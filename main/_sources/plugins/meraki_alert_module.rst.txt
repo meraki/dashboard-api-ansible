@@ -42,7 +42,7 @@ cisco.meraki.meraki_alert module -- Manage alerts in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.3).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -1251,33 +1251,32 @@ Examples
         state: present
         default_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
-          all_admins: yes
-          snmp: no
+            - youremail@yourcorp
+            - youremail2@yourcorp
+          all_admins: true
+          snmp: false
         alerts:
-          - alert_type: "gatewayDown"
-            enabled: yes
+          - alert_type: gatewayDown
+            enabled: true
             filters:
               timeout: 60
             alert_destinations:
               emails:
-              - 'youremail@yourcorp'
-              - 'youremail2@yourcorp'
-              all_admins: yes
-              snmp: no
-          - alert_type: "usageAlert"
-            enabled: yes
+                - youremail@yourcorp
+                - youremail2@yourcorp
+              all_admins: true
+              snmp: false
+          - alert_type: usageAlert
+            enabled: true
             filters:
               period: 1200
               threshold: 104857600
             alert_destinations:
               emails:
-              - 'youremail@yourcorp'
-              - 'youremail2@yourcorp'
-              all_admins: yes
-              snmp: no
-
+                - youremail@yourcorp
+                - youremail2@yourcorp
+              all_admins: true
+              snmp: false
     - name: Query all settings
       meraki_alert:
         auth_key: abc123
