@@ -64,9 +64,9 @@ options:
                 description:
                 - Description of rule.
                 - This is overwritten by the API.
-                - Formerly C(message) which was deprecated but still maintained as an alias.
+                - Formerly C(message_rule) which was deprecated but still maintained as an alias.
                 type: str
-                aliases: [ message ]
+                aliases: [ message_rule ]
                 version_added: "2.3.0"
     protected_networks:
         description:
@@ -196,7 +196,7 @@ from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki
 
 param_map = {'allowed_rules': 'allowedrules',
              'rule_id': 'ruleId',
-             'rule_message': 'message',
+             'rule_message': 'message_rule',
              'mode': 'mode',
              'protected_networks': 'protectedNetworks',
              'use_default': 'useDefault',
@@ -211,8 +211,8 @@ def main():
 
     allowedrules_arg_spec = dict(rule_id=dict(type='str'),
                                  rule_message=dict(type='str',
-                                                   aliases=['message'],
-                                                   deprecated_aliases=[dict(name='message', version='3.0.0', collection_name='cisco.meraki')]),
+                                                   aliases=['message_rule'],
+                                                   deprecated_aliases=[dict(name='message_rule', version='3.0.0', collection_name='cisco.meraki')]),
                                  )
 
     protected_nets_arg_spec = dict(use_default=dict(type='bool'),
@@ -282,7 +282,7 @@ def main():
             rules = []
             for rule in meraki.params['allowed_rules']:
                 rules.append({'ruleId': rule['rule_id'],
-                              'message': rule['rule_message'],
+                              'message_rule': rule['rule_message'],
                               })
             payload = {'allowedRules': rules}
         else:  # Create payload for network
@@ -316,7 +316,7 @@ def main():
         path = meraki.construct_path('query_org', org_id=org_id)
         original = meraki.request(path, method='GET')
         if net_id is None:  # Set configuration for organization
-            if meraki.is_update_required(original, payload, optional_ignore=['message']):
+            if meraki.is_update_required(original, payload, optional_ignore=['message_rule']):
                 if meraki.module.check_mode is True:
                     original.update(payload)
                     meraki.result['data'] = original
