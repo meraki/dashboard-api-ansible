@@ -1,11 +1,11 @@
----
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   gather_facts: false
   tasks:
-    - name: update ports
+    - name: Update ports
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
         state: present
-        serial: "QBSB-D8ED-9NXT"
+        serial: QBSB-D8ED-9NXT
         vlan: 10
         portId: 1

@@ -15,105 +15,107 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_network_settings
-short_description: Manage the settings of networks in the Meraki cloud
-description:
-- Allows for management of settings of networks within Meraki.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_settings
-options:
-    state:
-        description:
-        - Create or modify an organization.
-        choices: [present, query]
-        type: str
-        default: query
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [ name, network ]
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    local_status_page_enabled:
-        description: >
-            - Enables the local device status pages (U[my.meraki.com](my.meraki.com), U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com),
-            U[wired.meraki.com](wired.meraki.com)).
-            - Only can be specified on its own or with C(remote_status_page_enabled).
-        type: bool
-    remote_status_page_enabled:
-        description:
-            - Enables access to the device status page (U(http://device LAN IP)).
-            - Can only be set if C(local_status_page_enabled:) is set to C(yes).
-            - Only can be specified on its own or with C(local_status_page_enabled).
-        type: bool
-    local_status_page:
-        description:
-            - Configuration stanza of the local status page.
-        type: dict
-        suboptions:
-            authentication:
-                description:
-                    - Local status page authentication settings.
-                type: dict
-                suboptions:
-                    enabled:
-                        description:
-                            - Set whether local status page authentication is enabled.
-                        type: bool
-                    password:
-                        description:
-                            - Set password on local status page.
-                        type: str
-    secure_port:
-        description:
-            - Configuration of SecureConnect options applied to the network.
-        type: dict
-        suboptions:
-            enabled:
-                description:
-                    - Set whether SecureConnect is enabled on the network.
-                type: bool
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_settings
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for management of settings of networks within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_network_settings
+options:
+  local_status_page:
+    description:
+      - Configuration stanza of the local status page.
+    suboptions:
+      authentication:
+        description:
+          - Local status page authentication settings.
+        suboptions:
+          enabled:
+            description:
+              - Set whether local status page authentication is enabled.
+            type: bool
+          password:
+            description:
+              - Set password on local status page.
+            type: str
+        type: dict
+    type: dict
+  local_status_page_enabled:
+    description: '- Enables the local device status pages (U[my.meraki.com](my.meraki.com),
+      U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com), U[wired.meraki.com](wired.meraki.com)).
+      - Only can be specified on its own or with C(remote_status_page_enabled).
+
+      '
+    type: bool
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    aliases:
+      - name
+      - network
+    description:
+      - Name of a network.
+    type: str
+  remote_status_page_enabled:
+    description:
+      - Enables access to the device status page (U(http://device LAN IP)).
+      - Can only be set if C(local_status_page_enabled:) is set to C(yes).
+      - Only can be specified on its own or with C(local_status_page_enabled).
+    type: bool
+  secure_port:
+    description:
+      - Configuration of SecureConnect options applied to the network.
+    suboptions:
+      enabled:
+        description:
+          - Set whether SecureConnect is enabled on the network.
+        type: bool
+    type: dict
+  state:
+    choices:
+      - present
+      - query
+    default: query
+    description:
+      - Create or modify an organization.
+    type: str
+short_description: Manage the settings of networks in the Meraki cloud
 """
 
 EXAMPLES = r"""
-  - name: Get network settings
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: query
-      org_name: '{{test_org_name}}'
-      net_name: NetworkSettingsTestNet
-    delegate_to: localhost
-
-  - name: Update network settings
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: present
-      org_name: '{{test_org_name}}'
-      net_name: NetworkSettingsTestNet
-      local_status_page_enabled: false
-    delegate_to: localhost
-
-  - name: Enable password on local page
-    cisco.meraki.meraki_network_settings:
-      auth_key: '{{ auth_key }}'
-      state: present
-      org_name: '{{test_org_name}}'
-      net_name: NetworkSettingsTestNet
-      local_status_page_enabled: true
-      local_status_page:
-        authentication:
-          enabled: true
-          password: abc123
-    delegate_to: localhost
+- name: Get network settings
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: query
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+  delegate_to: localhost
+- name: Update network settings
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: present
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+    local_status_page_enabled: false
+  delegate_to: localhost
+- name: Enable password on local page
+  cisco.meraki.meraki_network_settings:
+    auth_key: '{{ auth_key }}'
+    state: present
+    org_name: '{{ test_org_name }}'
+    net_name: NetworkSettingsTestNet
+    local_status_page_enabled: true
+    local_status_page:
+      authentication:
+        enabled: true
+        password: abc123
+  delegate_to: localhost
 """
 
 RETURN = r"""

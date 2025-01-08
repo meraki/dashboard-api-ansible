@@ -22,7 +22,7 @@ options:
         description:
         - Authentication key provided by the dashboard. Required if environmental variable C(MERAKI_KEY) is not set.
         type: str
-        required: yes
+        required: true
     host:
         description:
         - Hostname for Meraki dashboard.
@@ -33,13 +33,13 @@ options:
         description:
         - If C(no), it will not use a proxy, even if one is defined in an environment variable on the target hosts.
         type: bool
-        default: False
+        default: false
     use_https:
         description:
         - If C(no), it will use HTTP. Otherwise it will use HTTPS.
         - Only useful for internal Meraki developers.
         type: bool
-        default: yes
+        default: true
     output_format:
         description:
         - Instructs module whether response keys should be snake case (ex. C(net_id)) or camel case (ex. C(netId)).
@@ -61,7 +61,7 @@ options:
         description:
         - Whether to validate HTTP certificates.
         type: bool
-        default: yes
+        default: true
     org_name:
         description:
         - Name of organization.

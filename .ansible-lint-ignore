@@ -1,0 +1,7 @@
+workflows/docs.yml yaml[truthy]
+workflows/docs.yml yaml[new-line-at-end-of-file]
+workflows/docs.yml yaml[line-length]
+workflows/docs.yml yaml[new-line-at-end-of-file]
+workflows/sanity_tests.yml yaml[truthy]
+workflows/ansible-lint.yml yaml[new-line-at-end-of-file]
+.github/workflows/ansible-lint.yml yaml[new-line-at-end-of-file]

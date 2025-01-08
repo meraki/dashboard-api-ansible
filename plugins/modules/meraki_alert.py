@@ -15,102 +15,107 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_alert
-version_added: "2.1.0"
-short_description: Manage alerts in the Meraki cloud
-description:
-- Allows for creation, management, and visibility into alert settings within Meraki.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_alerts_settings
-options:
-    state:
-        description:
-        - Create or modify an alert.
-        choices: [ present, query ]
-        default: present
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [ name, network ]
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    default_destinations:
-        description:
-        - Properties for destinations when alert specific destinations aren't specified.
-        type: dict
-        suboptions:
-            all_admins:
-                description:
-                - If true, all network admins will receive emails.
-                type: bool
-            snmp:
-                description:
-                - If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
-                type: bool
-            emails:
-                description:
-                - A list of emails that will recieve the alert(s).
-                type: list
-                elements: str
-            http_server_ids:
-                description:
-                - A list of HTTP server IDs to send a Webhook to.
-                type: list
-                elements: str
-    alerts:
-        description:
-        - Alert-specific configuration for each type.
-        type: list
-        elements: dict
-        suboptions:
-            alert_type:
-                description:
-                - The type of alert.
-                type: str
-            enabled:
-                description:
-                - A boolean depicting if the alert is turned on or off.
-                type: bool
-            filters:
-                description:
-                - A hash of specific configuration data for the alert. Only filters specific to the alert will be updated.
-                - No validation checks occur against C(filters).
-                type: raw
-                default: {}
-            alert_destinations:
-                description:
-                - A hash of destinations for this specific alert.
-                type: dict
-                suboptions:
-                    all_admins:
-                        description:
-                        - If true, all network admins will receive emails.
-                        type: bool
-                    snmp:
-                        description:
-                        - If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
-                        type: bool
-                    emails:
-                        description:
-                        - A list of emails that will recieve the alert(s).
-                        type: list
-                        elements: str
-                    http_server_ids:
-                        description:
-                        - A list of HTTP server IDs to send a Webhook to.
-                        type: list
-                        elements: str
-
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_alerts_settings
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for creation, management, and visibility into alert settings within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_alert
+options:
+  alerts:
+    description:
+      - Alert-specific configuration for each type.
+    elements: dict
+    suboptions:
+      alert_destinations:
+        description:
+          - A hash of destinations for this specific alert.
+        suboptions:
+          all_admins:
+            description:
+              - If true, all network admins will receive emails.
+            type: bool
+          emails:
+            description:
+              - A list of emails that will recieve the alert(s).
+            elements: str
+            type: list
+          http_server_ids:
+            description:
+              - A list of HTTP server IDs to send a Webhook to.
+            elements: str
+            type: list
+          snmp:
+            description:
+              - If true, then an SNMP trap will be sent if there is an SNMP trap server
+                configured for this network.
+            type: bool
+        type: dict
+      alert_type:
+        description:
+          - The type of alert.
+        type: str
+      enabled:
+        description:
+          - A boolean depicting if the alert is turned on or off.
+        type: bool
+      filters:
+        default: {}
+        description:
+          - A hash of specific configuration data for the alert. Only filters specific
+            to the alert will be updated.
+          - No validation checks occur against C(filters).
+        type: raw
+    type: list
+  default_destinations:
+    description:
+      - Properties for destinations when alert specific destinations aren't specified.
+    suboptions:
+      all_admins:
+        description:
+          - If true, all network admins will receive emails.
+        type: bool
+      emails:
+        description:
+          - A list of emails that will recieve the alert(s).
+        elements: str
+        type: list
+      http_server_ids:
+        description:
+          - A list of HTTP server IDs to send a Webhook to.
+        elements: str
+        type: list
+      snmp:
+        description:
+          - If true, then an SNMP trap will be sent if there is an SNMP trap server
+            configured for this network.
+        type: bool
+    type: dict
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    aliases:
+      - name
+      - network
+    description:
+      - Name of a network.
+    type: str
+  state:
+    choices:
+      - present
+      - query
+    default: present
+    description:
+      - Create or modify an alert.
+    type: str
+short_description: Manage alerts in the Meraki cloud
+version_added: 2.1.0
 """
 
 EXAMPLES = r"""
@@ -122,33 +127,32 @@ EXAMPLES = r"""
     state: present
     default_destinations:
       emails:
-      - 'youremail@yourcorp'
-      - 'youremail2@yourcorp'
-      all_admins: yes
-      snmp: no
+        - youremail@yourcorp
+        - youremail2@yourcorp
+      all_admins: true
+      snmp: false
     alerts:
-      - alert_type: "gatewayDown"
-        enabled: yes
+      - alert_type: gatewayDown
+        enabled: true
         filters:
           timeout: 60
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
-          all_admins: yes
-          snmp: no
-      - alert_type: "usageAlert"
-        enabled: yes
+            - youremail@yourcorp
+            - youremail2@yourcorp
+          all_admins: true
+          snmp: false
+      - alert_type: usageAlert
+        enabled: true
         filters:
           period: 1200
           threshold: 104857600
         alert_destinations:
           emails:
-          - 'youremail@yourcorp'
-          - 'youremail2@yourcorp'
-          all_admins: yes
-          snmp: no
-
+            - youremail@yourcorp
+            - youremail2@yourcorp
+          all_admins: true
+          snmp: false
 - name: Query all settings
   meraki_alert:
     auth_key: abc123

@@ -5,26 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids
-short_description: Resource module for networks _wireless _ssids
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids.
-- Update the attributes of an MR SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids.
+  - Update the attributes of an MR SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number},
 options:
   activeDirectory:
     description: The current setting for Active Directory. Only valid if splashPage
       is 'Password-protected with Active Directory'.
     suboptions:
       credentials:
-        description: (Optional) The credentials of the user account to be used by the
-          AP to bind to your Active Directory server. The Active Directory account should
-          have permissions on all your Active Directory servers. Only valid if the splashPage
-          is 'Password-protected with Active Directory'.
+        description: (Optional) The credentials of the user account to be used by
+          the AP to bind to your Active Directory server. The Active Directory account
+          should have permissions on all your Active Directory servers. Only valid
+          if the splashPage is 'Password-protected with Active Directory'.
         suboptions:
           logonName:
             description: The logon name of the Active Directory account.
@@ -80,8 +80,8 @@ options:
       if the SSID has availability tags.
     type: bool
   bandSelection:
-    description: The client-serving radio frequencies of this SSID in the default indoor
-      RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation
+    description: The client-serving radio frequencies of this SSID in the default
+      indoor RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation
       with Band Steering').
     type: str
   concentratorNetworkId:
@@ -89,8 +89,8 @@ options:
       with a concentrator' or 'VPN'.
     type: str
   defaultVlanId:
-    description: The default VLAN ID used for 'all other APs'. This param is only valid
-      when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
+    description: The default VLAN ID used for 'all other APs'. This param is only
+      valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
     type: int
   disassociateClientsOnVpnFailover:
     description: Disassociate clients when 'VPN' concentrator failover occurs in order
@@ -133,8 +133,8 @@ options:
     description: Whether or not the SSID is enabled.
     type: bool
   encryptionMode:
-    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param is
-      only valid if the authMode is 'psk'.
+    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param
+      is only valid if the authMode is 'psk'.
     type: str
   enterpriseAdminAccess:
     description: Whether or not an SSID is accessible by 'enterprise' administrators
@@ -152,13 +152,14 @@ options:
             type: str
         type: dict
       key:
-        description: Optional numerical identifier that will add the GRE key field to
-          the GRE header. Used to identify an individual traffic flow within a tunnel.
+        description: Optional numerical identifier that will add the GRE key field
+          to the GRE header. Used to identify an individual traffic flow within a
+          tunnel.
         type: int
     type: dict
   ipAssignmentMode:
-    description: The client IP assignment mode ('NAT mode', 'Bridge mode', 'Layer 3
-      roaming', 'Ethernet over GRE', 'Layer 3 roaming with a concentrator' or 'VPN').
+    description: The client IP assignment mode ('NAT mode', 'Bridge mode', 'Layer
+      3 roaming', 'Ethernet over GRE', 'Layer 3 roaming with a concentrator' or 'VPN').
     type: str
   lanIsolationEnabled:
     description: Boolean indicating whether Layer 2 LAN isolation should be enabled
@@ -172,12 +173,13 @@ options:
         description: The base distinguished name of users on the LDAP server.
         type: str
       credentials:
-        description: (Optional) The credentials of the user account to be used by the
-          AP to bind to your LDAP server. The LDAP account should have permissions on
-          all your LDAP servers.
+        description: (Optional) The credentials of the user account to be used by
+          the AP to bind to your LDAP server. The LDAP account should have permissions
+          on all your LDAP servers.
         suboptions:
           distinguishedName:
-            description: The distinguished name of the LDAP user account (example cn=user,dc=meraki,dc=com).
+            description: The distinguished name of the LDAP user account (example
+              cn=user,dc=meraki,dc=com).
             type: str
           password:
             description: The password of the LDAP user account.
@@ -187,7 +189,8 @@ options:
         description: The CA certificate used to sign the LDAP server's key.
         suboptions:
           contents:
-            description: The contents of the CA certificate. Must be in PEM or DER format.
+            description: The contents of the CA certificate. Must be in PEM or DER
+              format.
             type: str
         type: dict
       servers:
@@ -207,7 +210,8 @@ options:
       on the access point. Only valid if authMode is '8021x-localradius'.
     suboptions:
       cacheTimeout:
-        description: The duration (in seconds) for which LDAP and OCSP lookups are cached.
+        description: The duration (in seconds) for which LDAP and OCSP lookups are
+          cached.
         type: int
       certificateAuthentication:
         description: The current setting for certificate verification.
@@ -216,8 +220,8 @@ options:
             description: The Client CA Certificate used to sign the client certificate.
             suboptions:
               contents:
-                description: The contents of the Client CA Certificate. Must be in PEM
-                  or DER format.
+                description: The contents of the Client CA Certificate. Must be in
+                  PEM or DER format.
                 type: str
             type: dict
           enabled:
@@ -225,8 +229,8 @@ options:
               to validate wireless clients.
             type: bool
           ocspResponderUrl:
-            description: (Optional) The URL of the OCSP responder to verify client certificate
-              status.
+            description: (Optional) The URL of the OCSP responder to verify client
+              certificate status.
             type: str
           useLdap:
             description: Whether or not to verify the certificate with LDAP.
@@ -246,12 +250,12 @@ options:
     type: dict
   mandatoryDhcpEnabled:
     description: If true, Mandatory DHCP will enforce that clients connecting to this
-      SSID must use the IP address assigned by the DHCP server. Clients who use a static
-      IP address won't be able to associate.
+      SSID must use the IP address assigned by the DHCP server. Clients who use a
+      static IP address won't be able to associate.
     type: bool
   minBitrate:
-    description: The minimum bitrate in Mbps of this SSID in the default indoor RF profile.
-      ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54').
+    description: The minimum bitrate in Mbps of this SSID in the default indoor RF
+      profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54').
     type: float
   name:
     description: The name of the SSID.
@@ -295,12 +299,12 @@ options:
                 type: str
             type: list
           defaultVlanName:
-            description: The default VLAN name used to tag traffic in the absence of
-              a matching AP tag.
+            description: The default VLAN name used to tag traffic in the absence
+              of a matching AP tag.
             type: str
           enabled:
-            description: Whether or not traffic should be directed to use specific VLAN
-              names.
+            description: Whether or not traffic should be directed to use specific
+              VLAN names.
             type: bool
         type: dict
     type: dict
@@ -364,8 +368,8 @@ options:
           server. Requires radiusProxyEnabled.
         type: bool
       secret:
-        description: Shared key used to authenticate messages between the APs and RADIUS
-          server.
+        description: Shared key used to authenticate messages between the APs and
+          RADIUS server.
         type: str
     type: list
   radiusAttributeForGroupPolicies:
@@ -401,8 +405,9 @@ options:
       or 'nat' mode.
     type: bool
   radiusGuestVlanId:
-    description: VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode
-      is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
+    description: VLAN ID of the RADIUS Guest VLAN. This param is only valid if the
+      authMode is 'open-with-radius' and addressing mode is not set to 'isolated'
+      or 'nat' mode.
     type: int
   radiusLoadBalancingPolicy:
     description: This policy determines which RADIUS server will be contacted first
@@ -457,8 +462,9 @@ options:
     type: bool
   secondaryConcentratorNetworkId:
     description: The secondary concentrator to use when the ipAssignmentMode is 'VPN'.
-      If configured, the APs will switch to using this concentrator if the primary concentrator
-      is unreachable. This param is optional. ('disabled' represents no secondary concentrator.).
+      If configured, the APs will switch to using this concentrator if the primary
+      concentrator is unreachable. This param is optional. ('disabled' represents
+      no secondary concentrator.).
     type: str
   speedBurst:
     description: The SpeedBurst setting for this SSID'.
@@ -482,20 +488,21 @@ options:
       Apps domain'). This attribute is not supported for template children.
     type: str
   useVlanTagging:
-    description: Whether or not traffic should be directed to use specific VLANs. This
-      param is only valid if the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
+    description: Whether or not traffic should be directed to use specific VLANs.
+      This param is only valid if the ipAssignmentMode is 'Bridge mode' or 'Layer
+      3 roaming'.
     type: bool
   visible:
     description: Boolean indicating whether APs should advertise or hide this SSID.
       APs will only broadcast this SSID if set to true.
     type: bool
   vlanId:
-    description: The VLAN ID used for VLAN tagging. This param is only valid when the
-      ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'.
+    description: The VLAN ID used for VLAN tagging. This param is only valid when
+      the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'.
     type: int
   walledGardenEnabled:
-    description: Allow access to a configurable list of IP ranges, which users may access
-      prior to sign-on.
+    description: Allow access to a configurable list of IP ranges, which users may
+      access prior to sign-on.
     type: bool
   walledGardenRanges:
     description: Specify your walled garden by entering an array of addresses, ranges
@@ -505,65 +512,61 @@ options:
     elements: str
     type: list
   wpaEncryptionMode:
-    description: The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2 only',
-      'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
+    description: The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2
+      only', 'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
-  description: Complete reference of the updateNetworkWirelessSsid API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number},
+  - description: Complete reference of the updateNetworkWirelessSsid API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
+short_description: Resource module for networks _wireless _ssids
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Update by id
   cisco.meraki.networks_wireless_ssids:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     activeDirectory:
       credentials:
         logonName: user
         password: password
       servers:
-      - host: 127.0.0.1
-        port: 3268
+        - host: 127.0.0.1
+          port: 3268
     adultContentFilteringEnabled: false
     apTagsAndVlanIds:
-    - tags:
-      - tag1
-      - tag2
-      vlanId: 100
+      - tags:
+          - tag1
+          - tag2
+        vlanId: 100
     authMode: 8021x-radius
     availabilityTags:
-    - tag1
-    - tag2
+      - tag1
+      - tag2
     availableOnAllAps: false
     bandSelection: 5 GHz band only
     concentratorNetworkId: N_24329156
@@ -571,8 +574,8 @@ EXAMPLES = r"""
     disassociateClientsOnVpnFailover: false
     dnsRewrite:
       dnsCustomNameservers:
-      - 8.8.8.8
-      - 8.8.4.4
+        - 8.8.8.8
+        - 8.8.4.4
       enabled: true
     dot11r:
       adaptive: true
@@ -595,63 +598,39 @@ EXAMPLES = r"""
         distinguishedName: cn=user,dc=example,dc=com
         password: password
       serverCaCertificate:
-        contents: '-----BEGIN CERTIFICATE-----
-          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
-          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
-          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
-          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
-          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
-          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
-          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
-          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
-          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
-          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
-          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
-          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
-          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
-          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
-          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
-          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
-          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
-          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
-          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
-          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
-          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
-          wTw70BVktzJnb0VLeDg=
+        contents: '-----BEGIN CERTIFICATE----- MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/ uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ wTw70BVktzJnb0VLeDg=
           -----END CERTIFICATE-----'
       servers:
-      - host: 127.0.0.1
-        port: 389
+        - host: 127.0.0.1
+          port: 389
     localRadius:
       cacheTimeout: 60
       certificateAuthentication:
         clientRootCaCertificate:
-          contents: '-----BEGIN CERTIFICATE-----
-          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
-          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
-          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
-          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
-          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
-          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
-          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
-          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
-          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
-          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
-          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
-          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
-          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
-          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
-          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
-          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
-          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
-          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
-          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
-          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
-          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
-          wTw70BVktzJnb0VLeDg=
-          -----END CERTIFICATE-----'
+          contents: '-----BEGIN CERTIFICATE----- MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+            gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+            RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+            YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+            MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+            uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+            pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+            aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+            USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+            1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+            a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/ uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+            UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ wTw70BVktzJnb0VLeDg=
+            -----END CERTIFICATE-----'
         enabled: true
         ocspResponderUrl: http://ocsp-server.example.com
         useLdap: false
@@ -668,17 +647,17 @@ EXAMPLES = r"""
           name: Guest VLAN
       tagging:
         byApTags:
-        - tags:
-          - tag1
-          - tag2
-          vlanName: My VLAN
+          - tags:
+              - tag1
+              - tag2
+            vlanName: My VLAN
         defaultVlanName: My VLAN
         enabled: true
     networkId: string
     number: string
     oauth:
       allowedDomains:
-      - example.com
+        - example.com
     perClientBandwidthLimitDown: 0
     perClientBandwidthLimitUp: 0
     perSsidBandwidthLimitDown: 0
@@ -687,35 +666,23 @@ EXAMPLES = r"""
     radiusAccountingEnabled: true
     radiusAccountingInterimInterval: 5
     radiusAccountingServers:
-    - caCertificate: '-----BEGIN CERTIFICATE-----
-          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
-          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
-          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
-          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
-          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
-          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
-          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
-          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
-          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
-          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
-          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
-          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
-          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
-          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
-          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
-          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
-          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
-          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
-          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
-          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
-          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
-          wTw70BVktzJnb0VLeDg=
+      - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/ uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ wTw70BVktzJnb0VLeDg=
           -----END CERTIFICATE-----'
-      host: 0.0.0.0
-      port: 3000
-      radsecEnabled: true
-      secret: secret-string
+        host: 0.0.0.0
+        port: 3000
+        radsecEnabled: true
+        secret: secret-string
     radiusAttributeForGroupPolicies: Filter-Id
     radiusAuthenticationNasId: 00-11-22-33-44-55:AP1
     radiusCalledStationId: 00-11-22-33-44-55:AP1
@@ -730,52 +697,39 @@ EXAMPLES = r"""
     radiusServerAttemptsLimit: 5
     radiusServerTimeout: 5
     radiusServers:
-    - caCertificate: '-----BEGIN CERTIFICATE-----
-          MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
-          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT
-          YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
-          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx
-          MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
-          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD
-          aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
-          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
-          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA
-          ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
-          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS
-          KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
-          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU
-          CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
-          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E
-          BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
-          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa
-          jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
-          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/
-          uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
-          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ
-          wTw70BVktzJnb0VLeDg=
+      - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
+          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
+          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
+          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
+          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
+          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM
+          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
+          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
+          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
+          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/ uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
+          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ wTw70BVktzJnb0VLeDg=
           -----END CERTIFICATE-----'
-      host: 0.0.0.0
-      openRoamingCertificateId: 2
-      port: 3000
-      radsecEnabled: true
-      secret: secret-string
+        host: 0.0.0.0
+        openRoamingCertificateId: 2
+        port: 3000
+        radsecEnabled: true
+        secret: secret-string
     radiusTestingEnabled: true
     secondaryConcentratorNetworkId: disabled
     speedBurst:
       enabled: true
     splashGuestSponsorDomains:
-    - example.com
+      - example.com
     splashPage: Click-through splash page
     useVlanTagging: false
     visible: true
     vlanId: 10
     walledGardenEnabled: true
     walledGardenRanges:
-    - example.com
-    - 1.1.1.1/32
+      - example.com
+      - 1.1.1.1/32
     wpaEncryptionMode: WPA2 only
-
 """
 RETURN = r"""
 meraki_response:

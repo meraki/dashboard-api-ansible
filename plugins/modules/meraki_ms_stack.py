@@ -69,8 +69,8 @@ EXAMPLES = r'''
     net_name: YourNet
     name: Test stack
     serials:
-    - "ABCD-1231-4579"
-    - "ASDF-4321-0987"
+      - "ABCD-1231-4579"
+      - "ASDF-4321-0987"
 
 - name: Add switch to stack
   meraki_switch_stack:
@@ -80,7 +80,7 @@ EXAMPLES = r'''
     net_name: YourNet
     stack_id: ABC12340987
     serials:
-    - "ABCD-1231-4579"
+      - "ABCD-1231-4579"
 
 - name: Remove switch from stack
   meraki_switch_stack:
@@ -90,7 +90,7 @@ EXAMPLES = r'''
     net_name: YourNet
     stack_id: ABC12340987
     serials:
-    - "ABCD-1231-4579"
+      - "ABCD-1231-4579"
 
 - name: Query one stack
   meraki_switch_stack:
@@ -108,22 +108,22 @@ data:
     type: complex
     contains:
         id:
-            description: ID of switch stack.
-            returned: always
-            type: str
-            sample: 7636
+          description: ID of switch stack.
+          returned: always
+          type: str
+          sample: 7636
         name:
-            description: Descriptive name of switch stack.
-            returned: always
-            type: str
-            sample: MyStack
+          description: Descriptive name of switch stack.
+          returned: always
+          type: str
+          sample: MyStack
         serials:
             description: List of serial numbers in switch stack.
             returned: always
             type: list
             sample:
-            - "QBZY-XWVU-TSRQ"
-            - "QBAB-CDEF-GHIJ"
+              - "QBZY-XWVU-TSRQ"
+              - "QBAB-CDEF-GHIJ"
 '''
 
 from ansible.module_utils.basic import AnsibleModule, json

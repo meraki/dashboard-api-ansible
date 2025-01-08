@@ -32,7 +32,8 @@ meraki_server
 Create a playbook `who_am_i.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)):
 ```
 ---
-- hosts: meraki_servers
+- name: Play Name
+  hosts: meraki_servers
   gather_facts: false
   tasks:
     - name: Get my administered identities
@@ -139,10 +140,10 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
 ```
   - name: Create webhook
     cisco.meraki.networks_webhooks_http_servers:
-      meraki_api_key: "{{meraki_api_key}}"
+      meraki_api_key: "{{ meraki_api_key }}"
       state: present
       name: Test_Hook
-      networkId: "{{network_id}}"
+      networkId: "{{ network_id }}"
       payloadTemplate:
         name: Slack (included)
         payloadTemplateId: wpt_00001

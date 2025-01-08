@@ -79,7 +79,7 @@ EXAMPLES = r'''
   meraki_firewalled_services:
     auth_key: '{{ auth_key }}'
     state: present
-    org_name: '{{test_org_name}}'
+    org_name: '{{ test_org_name }}'
     net_name: IntTestNetworkAppliance
     service: ICMP
     access: blocked

@@ -15,38 +15,40 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mx_network_vlan_settings
-short_description: Manage VLAN settings for Meraki Networks
-description:
-- Edits VLAN enabled status on a network within Meraki.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_appliance_vlans_settings
-options:
-    state:
-        description:
-        - Create or modify an alert.
-        choices: [ present, query ]
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [ name, network ]
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    vlans_enabled:
-        description:
-        - Whether VLANs are enabled on the network.
-        type: bool
-
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_appliance_vlans_settings
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Edits VLAN enabled status on a network within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mx_network_vlan_settings
+options:
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    aliases:
+      - name
+      - network
+    description:
+      - Name of a network.
+    type: str
+  state:
+    choices:
+      - present
+      - query
+    description:
+      - Create or modify an alert.
+    type: str
+  vlans_enabled:
+    description:
+      - Whether VLANs are enabled on the network.
+    type: bool
+short_description: Manage VLAN settings for Meraki Networks
 """
 
 EXAMPLES = r"""

@@ -15,69 +15,74 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_webhook
-short_description: Manage webhooks configured in the Meraki cloud
-description:
-- Configure and query information about webhooks within the Meraki cloud.
-notes:
-- Some of the options are likely only used for developers within Meraki.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_webhooks_http_servers
-options:
-    state:
-      description:
-      - Specifies whether object should be queried, created/modified, or removed.
-      choices: [absent, present, query]
-      default: query
-      type: str
-    net_name:
-      description:
-      - Name of network which configuration is applied to.
-      aliases: [network]
-      type: str
-    net_id:
-      description:
-      - ID of network which configuration is applied to.
-      type: str
-    name:
-      description:
-      - Name of webhook.
-      type: str
-    shared_secret:
-      description:
-      - Secret password to use when accessing webhook.
-      type: str
-    url:
-      description:
-      - URL to access when calling webhook.
-      type: str
-    webhook_id:
-      description:
-      - Unique ID of webhook.
-      type: str
-    payload_template_name:
-      description:
-      - The name of the payload template
-      type: str
-    payload_template_id:
-      description:
-      - The ID of the payload template. Overrides payload_template_name if passed too.
-      type: str
-    test:
-      description:
-      - Indicates whether to test or query status.
-      type: str
-      choices: [test]
-    test_id:
-      description:
-      - ID of webhook test query.
-      type: str
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_webhooks_http_servers
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Configure and query information about webhooks within the Meraki cloud.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_webhook
+notes:
+  - Some of the options are likely only used for developers within Meraki.
+options:
+  name:
+    description:
+      - Name of webhook.
+    type: str
+  net_id:
+    description:
+      - ID of network which configuration is applied to.
+    type: str
+  net_name:
+    aliases:
+      - network
+    description:
+      - Name of network which configuration is applied to.
+    type: str
+  payload_template_id:
+    description:
+      - The ID of the payload template. Overrides payload_template_name if passed
+        too.
+    type: str
+  payload_template_name:
+    description:
+      - The name of the payload template
+    type: str
+  shared_secret:
+    description:
+      - Secret password to use when accessing webhook.
+    type: str
+  state:
+    choices:
+      - absent
+      - present
+      - query
+    default: query
+    description:
+      - Specifies whether object should be queried, created/modified, or removed.
+    type: str
+  test:
+    choices:
+      - test
+    description:
+      - Indicates whether to test or query status.
+    type: str
+  test_id:
+    description:
+      - ID of webhook test query.
+    type: str
+  url:
+    description:
+      - URL to access when calling webhook.
+    type: str
+  webhook_id:
+    description:
+      - Unique ID of webhook.
+    type: str
+short_description: Manage webhooks configured in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -90,9 +95,8 @@ EXAMPLES = r"""
     name: Test_Hook
     url: https://webhook.url/
     shared_secret: shhhdonttellanyone
-    payload_template_name: 'Slack (included)'
+    payload_template_name: Slack (included)
   delegate_to: localhost
-
 - name: Query one webhook
   meraki_webhook:
     auth_key: abc123
@@ -101,7 +105,6 @@ EXAMPLES = r"""
     net_name: YourNet
     name: Test_Hook
   delegate_to: localhost
-
 - name: Query all webhooks
   meraki_webhook:
     auth_key: abc123
@@ -109,7 +112,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     net_name: YourNet
   delegate_to: localhost
-
 - name: Delete webhook
   meraki_webhook:
     auth_key: abc123
@@ -118,7 +120,6 @@ EXAMPLES = r"""
     net_name: YourNet
     name: Test_Hook
   delegate_to: localhost
-
 - name: Test webhook
   meraki_webhook:
     auth_key: abc123
@@ -128,7 +129,6 @@ EXAMPLES = r"""
     test: test
     url: https://webhook.url/abc123
   delegate_to: localhost
-
 - name: Get webhook status
   meraki_webhook:
     auth_key: abc123

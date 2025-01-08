@@ -1,13 +1,13 @@
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   gather_facts: false
   vars:
-    org_id: "XXXXXXX"
+    org_id: XXXXXXX
   tasks:
     - name: Include vars of devices.yaml into the 'devices' variable
-      include_vars:
+      ansible.builtin.include_vars:
         file: devices.yaml
         name: devices
-
     - name: Create
       cisco.meraki.administered_identities_me_api_keys_generate:
         meraki_suppress_logging: "false"

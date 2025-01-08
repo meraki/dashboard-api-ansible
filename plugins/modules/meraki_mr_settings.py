@@ -106,24 +106,24 @@ data:
             - If enabled, SSIDs must also be configured to use bridge mode.
             type: bool
             returned: success
-            sample: True
+            sample: true
         led_lights_on:
             description:
             - Toggle for enabling or disabling LED lights on all APs in the network.
             type: bool
             returned: success
-            sample: True
+            sample: true
         location_analytics_enabled:
             description:
             - Toggle for enabling or disabling location analytics for your network.
             type: bool
             returned: success
-            sample: True
+            sample: true
         meshing_enabled:
             description: Toggle for enabling or disabling meshing in a network.
             type: bool
             returned: success
-            sample: True
+            sample: true
 '''
 
 from ansible.module_utils.basic import AnsibleModule, json

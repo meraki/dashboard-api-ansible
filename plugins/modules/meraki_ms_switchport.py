@@ -15,179 +15,203 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_ms_switchport
-short_description: Manage switchports on a switch in the Meraki cloud
-description:
-- Allows for management of switchports settings for Meraki MS switches.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.devices_switch_ports
-options:
-    state:
-        description:
-        - Specifies whether a switchport should be queried or modified.
-        choices: [query, present]
-        default: query
-        type: str
-    access_policy_type:
-        description:
-        - Type of access policy to apply to port.
-        type: str
-        choices: [Open, Custom access policy, MAC allow list, Sticky MAC allow list]
-    access_policy_number:
-        description:
-        - Number of the access policy to apply.
-        - Only applicable to access port types.
-        type: int
-    allowed_vlans:
-        description:
-        - List of VLAN numbers to be allowed on switchport.
-        default: all
-        type: list
-        elements: str
-    enabled:
-        description:
-        - Whether a switchport should be enabled or disabled.
-        type: bool
-        default: yes
-    isolation_enabled:
-        description:
-        - Isolation status of switchport.
-        default: no
-        type: bool
-    link_negotiation:
-        description:
-        - Link speed for the switchport.
-        default: Auto negotiate
-        choices: [1 Gigabit full duplex (auto),
-                1 Gigabit full duplex (forced),
-                10 Gigabit full duplex (auto),
-                10 Gigabit full duplex (forced),
-                100 Megabit (auto),
-                100 Megabit full duplex (forced),
-                2.5 Gigabit full duplex (auto),
-                2.5 Gigabit full duplex (forced),
-                5 Gigabit full duplex (auto),
-                5 Gigabit full duplex (forced),
-                Auto negotiate]
-        type: str
-    name:
-        description:
-        - Switchport description.
-        aliases: [description]
-        type: str
-    number:
-        description:
-        - Port number.
-        type: str
-    poe_enabled:
-        description:
-        - Enable or disable Power Over Ethernet on a port.
-        type: bool
-        default: true
-    rstp_enabled:
-        description:
-        - Enable or disable Rapid Spanning Tree Protocol on a port.
-        type: bool
-        default: true
-    serial:
-        description:
-        - Serial nubmer of the switch.
-        type: str
-        required: true
-    stp_guard:
-        description:
-        - Set state of STP guard.
-        choices: [disabled, root guard, bpdu guard, loop guard]
-        default: disabled
-        type: str
-    tags:
-        description:
-        - List of tags to assign to a port.
-        type: list
-        elements: str
-    type:
-        description:
-        - Set port type.
-        choices: [access, trunk]
-        default: access
-        type: str
-    vlan:
-        description:
-        - VLAN number assigned to port.
-        - If a port is of type trunk, the specified VLAN is the native VLAN.
-        - Setting value to 0 on a trunk will clear the VLAN.
-        type: int
-    voice_vlan:
-        description:
-        - VLAN number assigned to a port for voice traffic.
-        - Only applicable to access port type.
-        - Only applicable if voice_vlan_state is set to present.
-        type: int
-    voice_vlan_state:
-        description:
-        - Specifies whether voice vlan configuration should be present or absent.
-        choices: [absent, present]
-        default: present
-        type: str
-    mac_allow_list:
-        description:
-        - MAC addresses list that are allowed on a port.
-        - Only applicable to access port type.
-        - Only applicable to access_policy_type "MAC allow list".
-        type: dict
-        suboptions:
-            state:
-                description:
-                - The state the configuration should be left in.
-                - Merged, MAC addresses provided will be added to the current allow list.
-                - Replaced, All MAC addresses are overwritten, only the MAC addresses provided with exist in the allow list.
-                - Deleted, Remove the MAC addresses provided from the current allow list.
-                type: str
-                choices: [merged, replaced, deleted]
-                default: replaced
-            macs:
-                description:
-                - List of MAC addresses to update with based on state option.
-                type: list
-                elements: str
-    sticky_mac_allow_list:
-        description:
-        - MAC addresses list that are allowed on a port.
-        - Only applicable to access port type.
-        - Only applicable to access_policy_type "Sticky MAC allow list".
-        type: dict
-        suboptions:
-            state:
-                description:
-                - The state the configuration should be left in.
-                - Merged, MAC addresses provided will be added to the current allow list.
-                - Replaced, All MAC addresses are overwritten, only the MAC addresses provided with exist in the allow list.
-                - Deleted, Remove the MAC addresses provided from the current allow list.
-                type: str
-                choices: ["merged", "replaced", "deleted"]
-                default: replaced
-            macs:
-                description:
-                - List of MAC addresses to update with based on state option.
-                type: list
-                elements: str
-    sticky_mac_allow_list_limit:
-        description:
-        - The number of MAC addresses allowed in the sticky port allow list.
-        - Only applicable to access port type.
-        - Only applicable to access_policy_type "Sticky MAC allow list".
-        - The value must be equal to or greater then the list size of sticky_mac_allow_list. Value will be checked for validity, during processing.
-        type: int
-    flexible_stacking_enabled:
-        description:
-        - Whether flexible stacking capabilities are supported on the port.
-        type: bool
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.devices_switch_ports
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for management of switchports settings for Meraki MS switches.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_ms_switchport
+options:
+  access_policy_number:
+    description:
+      - Number of the access policy to apply.
+      - Only applicable to access port types.
+    type: int
+  access_policy_type:
+    choices:
+      - Open
+      - Custom access policy
+      - MAC allow list
+      - Sticky MAC allow list
+    description:
+      - Type of access policy to apply to port.
+    type: str
+  allowed_vlans:
+    default: all
+    description:
+      - List of VLAN numbers to be allowed on switchport.
+    elements: str
+    type: list
+  enabled:
+    default: true
+    description:
+      - Whether a switchport should be enabled or disabled.
+    type: bool
+  flexible_stacking_enabled:
+    description:
+      - Whether flexible stacking capabilities are supported on the port.
+    type: bool
+  isolation_enabled:
+    default: false
+    description:
+      - Isolation status of switchport.
+    type: bool
+  link_negotiation:
+    choices:
+      - 1 Gigabit full duplex (auto)
+      - 1 Gigabit full duplex (forced)
+      - 10 Gigabit full duplex (auto)
+      - 10 Gigabit full duplex (forced)
+      - 100 Megabit (auto)
+      - 100 Megabit full duplex (forced)
+      - 2.5 Gigabit full duplex (auto)
+      - 2.5 Gigabit full duplex (forced)
+      - 5 Gigabit full duplex (auto)
+      - 5 Gigabit full duplex (forced)
+      - Auto negotiate
+    default: Auto negotiate
+    description:
+      - Link speed for the switchport.
+    type: str
+  mac_allow_list:
+    description:
+      - MAC addresses list that are allowed on a port.
+      - Only applicable to access port type.
+      - Only applicable to access_policy_type "MAC allow list".
+    suboptions:
+      macs:
+        description:
+          - List of MAC addresses to update with based on state option.
+        elements: str
+        type: list
+      state:
+        choices:
+          - merged
+          - replaced
+          - deleted
+        default: replaced
+        description:
+          - The state the configuration should be left in.
+          - Merged, MAC addresses provided will be added to the current allow list.
+          - Replaced, All MAC addresses are overwritten, only the MAC addresses provided
+            with exist in the allow list.
+          - Deleted, Remove the MAC addresses provided from the current allow list.
+        type: str
+    type: dict
+  name:
+    aliases:
+      - description
+    description:
+      - Switchport description.
+    type: str
+  number:
+    description:
+      - Port number.
+    type: str
+  poe_enabled:
+    default: true
+    description:
+      - Enable or disable Power Over Ethernet on a port.
+    type: bool
+  rstp_enabled:
+    default: true
+    description:
+      - Enable or disable Rapid Spanning Tree Protocol on a port.
+    type: bool
+  serial:
+    description:
+      - Serial nubmer of the switch.
+    required: true
+    type: str
+  state:
+    choices:
+      - query
+      - present
+    default: query
+    description:
+      - Specifies whether a switchport should be queried or modified.
+    type: str
+  sticky_mac_allow_list:
+    description:
+      - MAC addresses list that are allowed on a port.
+      - Only applicable to access port type.
+      - Only applicable to access_policy_type "Sticky MAC allow list".
+    suboptions:
+      macs:
+        description:
+          - List of MAC addresses to update with based on state option.
+        elements: str
+        type: list
+      state:
+        choices:
+          - merged
+          - replaced
+          - deleted
+        default: replaced
+        description:
+          - The state the configuration should be left in.
+          - Merged, MAC addresses provided will be added to the current allow list.
+          - Replaced, All MAC addresses are overwritten, only the MAC addresses provided
+            with exist in the allow list.
+          - Deleted, Remove the MAC addresses provided from the current allow list.
+        type: str
+    type: dict
+  sticky_mac_allow_list_limit:
+    description:
+      - The number of MAC addresses allowed in the sticky port allow list.
+      - Only applicable to access port type.
+      - Only applicable to access_policy_type "Sticky MAC allow list".
+      - The value must be equal to or greater then the list size of sticky_mac_allow_list.
+        Value will be checked for validity, during processing.
+    type: int
+  stp_guard:
+    choices:
+      - disabled
+      - root guard
+      - bpdu guard
+      - loop guard
+    default: disabled
+    description:
+      - Set state of STP guard.
+    type: str
+  tags:
+    description:
+      - List of tags to assign to a port.
+    elements: str
+    type: list
+  type:
+    choices:
+      - access
+      - trunk
+    default: access
+    description:
+      - Set port type.
+    type: str
+  vlan:
+    description:
+      - VLAN number assigned to port.
+      - If a port is of type trunk, the specified VLAN is the native VLAN.
+      - Setting value to 0 on a trunk will clear the VLAN.
+    type: int
+  voice_vlan:
+    description:
+      - VLAN number assigned to a port for voice traffic.
+      - Only applicable to access port type.
+      - Only applicable if voice_vlan_state is set to present.
+    type: int
+  voice_vlan_state:
+    choices:
+      - absent
+      - present
+    default: present
+    description:
+      - Specifies whether voice vlan configuration should be present or absent.
+    type: str
+short_description: Manage switchports on a switch in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -197,7 +221,6 @@ EXAMPLES = r"""
     state: query
     serial: ABC-123
   delegate_to: localhost
-
 - name: Query information about all switchports on a switch
   meraki_switchport:
     auth_key: abc12345
@@ -205,7 +228,6 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 2
   delegate_to: localhost
-
 - name: Name switchport
   meraki_switchport:
     auth_key: abc12345
@@ -214,7 +236,6 @@ EXAMPLES = r"""
     number: 7
     name: Test Port
   delegate_to: localhost
-
 - name: Configure access port with voice VLAN
   meraki_switchport:
     auth_key: abc12345
@@ -228,7 +249,6 @@ EXAMPLES = r"""
     vlan: 10
     voice_vlan: 11
   delegate_to: localhost
-
 - name: Check access port for idempotency
   meraki_switchport:
     auth_key: abc12345
@@ -242,7 +262,6 @@ EXAMPLES = r"""
     vlan: 10
     voice_vlan: 11
   delegate_to: localhost
-
 - name: Configure trunk port with specific VLANs
   meraki_switchport:
     auth_key: abc12345
@@ -258,7 +277,6 @@ EXAMPLES = r"""
       - 15
       - 20
   delegate_to: localhost
-
 - name: Configure access port with sticky MAC allow list and limit.
   meraki_switchport:
     auth_key: abc12345
@@ -267,13 +285,12 @@ EXAMPLES = r"""
     number: 5
     sticky_mac_allow_limit: 3
     sticky_mac_allow_list:
-        macs:
-          - aa:aa:bb:bb:cc:cc
-          - bb:bb:aa:aa:cc:cc
-          - 11:aa:bb:bb:cc:cc
-        state: replaced
+      macs:
+        - aa:aa:bb:bb:cc:cc
+        - bb:bb:aa:aa:cc:cc
+        - 11:aa:bb:bb:cc:cc
+      state: replaced
     delegate_to: localhost
-
 - name: Delete an existing MAC address from the sticky MAC allow list.
   meraki_switchport:
     auth_key: abc12345
@@ -281,11 +298,10 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 5
     sticky_mac_allow_list:
-        macs:
-          - aa:aa:bb:bb:cc:cc
-        state: deleted
+      macs:
+        - aa:aa:bb:bb:cc:cc
+      state: deleted
     delegate_to: localhost
-
 - name: Add a MAC address to sticky MAC allow list.
   meraki_switchport:
     auth_key: abc12345
@@ -293,9 +309,9 @@ EXAMPLES = r"""
     serial: ABC-123
     number: 5
     sticky_mac_allow_list:
-        macs:
-          - 22:22:bb:bb:cc:cc
-        state: merged
+      macs:
+        - 22:22:bb:bb:cc:cc
+      state: merged
     delegate_to: localhost
 """
 

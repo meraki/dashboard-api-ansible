@@ -153,7 +153,7 @@ EXAMPLES = r'''
     serial: AAAA-BBBB-CCCC
     wan2:
       wan_enabled: enabled
-      using_static_ip: yes
+      using_static_ip: true
       static_ip: 192.168.16.195
       static_gateway_ip: 192.168.16.1
       static_subnet_mask: 255.255.255.0
@@ -192,7 +192,7 @@ data:
                 description: Boolean value of whether static IP assignment is used on interface
                 returned: success
                 type: bool
-                sample: True
+                sample: true
             static_ip:
                 description: Assigned static IP
                 returned: only if static IP assignment is used
@@ -232,7 +232,7 @@ data:
                 description: Boolean value of whether static IP assignment is used on interface
                 returned: success
                 type: bool
-                sample: True
+                sample: true
             static_ip:
                 description: Assigned static IP
                 returned: only if static IP assignment is used

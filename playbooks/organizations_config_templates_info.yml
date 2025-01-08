@@ -1,5 +1,5 @@
----
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   gather_facts: false
   tasks:
     - name: Get all organizations _configtemplates

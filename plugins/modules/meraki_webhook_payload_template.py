@@ -15,56 +15,59 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_webhook_payload_template
-short_description: Manage webhook payload templates for a network in the Meraki cloud
-description:
-- Allows for querying, deleting, creating, and updating of webhook payload templates.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_webhooks_payload_templates
-options:
-    state:
-        description:
-        - Specifies whether payload template should be queried, created, modified, or deleted.
-        choices: ['absent', 'query', 'present']
-        default: query
-        type: str
-    name:
-        description:
-        - Name of the template.
-        type: str
-    net_name:
-        description:
-        - Name of network containing access points.
-        type: str
-    net_id:
-        description:
-        - ID of network containing access points.
-        type: str
-    body:
-        description:
-        - The liquid template used for the body of the webhook message.
-        type: str
-    headers:
-        description:
-        - List of the liquid templates used with the webhook headers.
-        type: list
-        elements: dict
-        default: []
-        suboptions:
-            name:
-                description:
-                - The name of the header template.
-                type: str
-            template:
-                description:
-                - The liquid template for the headers
-                type: str
 author:
-- Joshua Coronado (@joshuajcoronado)
+  - Joshua Coronado (@joshuajcoronado)
+deprecated:
+  alternative: cisco.meraki.networks_webhooks_payload_templates
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for querying, deleting, creating, and updating of webhook payload templates.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_webhook_payload_template
+options:
+  body:
+    description:
+      - The liquid template used for the body of the webhook message.
+    type: str
+  headers:
+    default: []
+    description:
+      - List of the liquid templates used with the webhook headers.
+    elements: dict
+    suboptions:
+      name:
+        description:
+          - The name of the header template.
+        type: str
+      template:
+        description:
+          - The liquid template for the headers
+        type: str
+    type: list
+  name:
+    description:
+      - Name of the template.
+    type: str
+  net_id:
+    description:
+      - ID of network containing access points.
+    type: str
+  net_name:
+    description:
+      - Name of network containing access points.
+    type: str
+  state:
+    choices:
+      - absent
+      - query
+      - present
+    default: query
+    description:
+      - Specifies whether payload template should be queried, created, modified, or
+        deleted.
+    type: str
+short_description: Manage webhook payload templates for a network in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -74,7 +77,6 @@ EXAMPLES = r"""
     org_name: YourOrg
     state: query
   delegate_to: localhost
-
 - name: Query specific configuration templates
   meraki_webhook_payload_template:
     auth_key: abc12345
@@ -82,7 +84,6 @@ EXAMPLES = r"""
     state: query
     name: Twitter
   delegate_to: localhost
-
 - name: Create payload template
   meraki_webhook_payload_template:
     auth_key: abc12345
@@ -91,10 +92,9 @@ EXAMPLES = r"""
     name: TestTemplate
     body: Testbody
     headers:
-        - name: testheader
-          template: testheadertemplate
+      - name: testheader
+        template: testheadertemplate
   delegate_to: localhost
-
 - name: Delete a configuration template
   meraki_config_template:
     auth_key: abc123
@@ -121,7 +121,7 @@ data:
                 - The liquid template used for the body of the webhook message.
             returned: success
             type: str
-            sample: {"event_type":"{{alertTypeId}}","client_payload":{"text":"{{alertData}}"}}
+            sample: {"event_type":"{{ alertTypeId }}","client_payload":{"text":"{{ alertData }}"}}
         headers:
             description: List of the liquid templates used with the webhook headers.
             returned: success
@@ -138,7 +138,7 @@ data:
                         - The liquid template for the header
                     returned: success
                     type: str
-                    sample: "Bearer {{sharedSecret}}"
+                    sample: "Bearer {{ sharedSecret }}"
 """
 
 from ansible.module_utils.basic import AnsibleModule, json

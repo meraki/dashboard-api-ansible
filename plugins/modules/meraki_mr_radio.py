@@ -15,131 +15,136 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mr_radio
-short_description: Manage device radio settings for Meraki wireless networks
-description:
-- Allows for configuration of radio settings in Meraki MR wireless networks.
+author:
+  - Tyler Christiansen (@supertylerc)
 deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
   alternative: cisco.meraki.devices_wireless_radio_settings
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for configuration of radio settings in Meraki MR wireless networks.
+extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mr_radio
 options:
-  state:
+  five_ghz_settings:
+    default: {}
     description:
-    - Query or edit radio settings on a device.
+      - Manual radio settings for 5 GHz.
+    suboptions:
+      channel:
+        choices:
+          - 36
+          - 40
+          - 44
+          - 48
+          - 52
+          - 56
+          - 60
+          - 64
+          - 100
+          - 104
+          - 108
+          - 112
+          - 116
+          - 120
+          - 124
+          - 128
+          - 132
+          - 136
+          - 140
+          - 144
+          - 149
+          - 153
+          - 157
+          - 161
+          - 165
+        description:
+          - Sets a manual channel for 5 GHz.
+        type: int
+      channel_width:
+        choices:
+          - auto
+          - '20'
+          - '40'
+          - '80'
+        description:
+          - Sets a manual channel for 5 GHz.
+          - Can be '0', '20', '40', or '80' or null for using auto channel width.
+        type: str
+      target_power:
+        description:
+          - Set a manual target power for 5 GHz.
+          - Can be between '8' or '30' or null for using auto power range.
+        type: int
+    type: dict
+  net_id:
+    description:
+      - ID of a network.
     type: str
-    choices: [present, query]
-    default: present
-  serial:
+  net_name:
+    aliases:
+      - network
     description:
-    - Serial number of a device to query.
+      - Name of a network.
     type: str
   rf_profile_id:
     description:
-    - The ID of an RF profile to assign to the device.
-    - If the value of this parameter is null, the appropriate basic RF profile (indoor or outdoor) will be assigned to the device.
-    - Assigning an RF profile will clear ALL manually configured overrides on the device (channel width, channel, power).
+      - The ID of an RF profile to assign to the device.
+      - If the value of this parameter is null, the appropriate basic RF profile (indoor
+        or outdoor) will be assigned to the device.
+      - Assigning an RF profile will clear ALL manually configured overrides on the
+        device (channel width, channel, power).
     type: str
   rf_profile_name:
     description:
-    - The name of an RF profile to assign to the device.
-    - Similar to ``rf_profile_id``, but requires ``net_id`` (preferred) or ``net_name``.
+      - The name of an RF profile to assign to the device.
+      - Similar to ``rf_profile_id``, but requires ``net_id`` (preferred) or ``net_name``.
     type: str
-  net_name:
+  serial:
     description:
-    - Name of a network.
-    aliases: [network]
+      - Serial number of a device to query.
     type: str
-  net_id:
+  state:
+    choices:
+      - present
+      - query
+    default: present
     description:
-    - ID of a network.
+      - Query or edit radio settings on a device.
     type: str
-  five_ghz_settings:
-    description:
-    - Manual radio settings for 5 GHz.
-    type: dict
-    default: {}
-    suboptions:
-      target_power:
-        description:
-        - Set a manual target power for 5 GHz.
-        - Can be between '8' or '30' or null for using auto power range.
-        type: int
-      channel_width:
-        description:
-        - Sets a manual channel for 5 GHz.
-        - Can be '0', '20', '40', or '80' or null for using auto channel width.
-        choices:
-        - auto
-        - '20'
-        - '40'
-        - '80'
-        type: str
-      channel:
-        description:
-        - Sets a manual channel for 5 GHz.
-        type: int
-        choices:
-        - 36
-        - 40
-        - 44
-        - 48
-        - 52
-        - 56
-        - 60
-        - 64
-        - 100
-        - 104
-        - 108
-        - 112
-        - 116
-        - 120
-        - 124
-        - 128
-        - 132
-        - 136
-        - 140
-        - 144
-        - 149
-        - 153
-        - 157
-        - 161
-        - 165
   two_four_ghz_settings:
-    description:
-    - Manual radio settings for 2.4 GHz.
-    type: dict
     default: {}
+    description:
+      - Manual radio settings for 2.4 GHz.
     suboptions:
+      channel:
+        choices:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+        description:
+          - Sets a manual channel for 2.4 GHz.
+          - Can be '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+            '13' or '14' or null for using auto channel.
+        type: int
       target_power:
         description:
-        - Set a manual target power for 2.4 GHz.
-        - Can be between '5' or '30' or null for using auto power range.
+          - Set a manual target power for 2.4 GHz.
+          - Can be between '5' or '30' or null for using auto power range.
         type: int
-      channel:
-        description:
-        - Sets a manual channel for 2.4 GHz.
-        - Can be '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using auto channel.
-        choices:
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-        - 8
-        - 9
-        - 10
-        - 11
-        - 12
-        - 13
-        - 14
-        type: int
-author:
-- Tyler Christiansen (@supertylerc)
-extends_documentation_fragment: cisco.meraki.meraki
+    type: dict
+short_description: Manage device radio settings for Meraki wireless networks
 """
 
 EXAMPLES = r"""

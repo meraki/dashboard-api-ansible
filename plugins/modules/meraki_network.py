@@ -15,82 +15,96 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_network
-short_description: Manage networks in the Meraki cloud
-description:
-- Allows for creation, management, and visibility into networks within Meraki.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks
-options:
-    state:
-        description:
-        - Create or modify an organization.
-        choices: [ absent, present, query ]
-        default: present
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [ name, network ]
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    type:
-        description:
-        - Type of network device network manages.
-        - Required when creating a network.
-        - As of Ansible 2.8, C(combined) type is no longer accepted.
-        - As of Ansible 2.8, changes to this parameter are no longer idempotent.
-        choices: [ appliance, switch, wireless, sensor, systemsManager, camera, cellularGateway ]
-        aliases: [ net_type ]
-        type: list
-        elements: str
-    tags:
-        type: list
-        elements: str
-        description:
-        - List of tags to assign to network.
-        - C(tags) name conflicts with the tags parameter in Ansible. Indentation problems may cause unexpected behaviors.
-        - Ansible 2.8 converts this to a list from a comma separated list.
-    timezone:
-        description:
-        - Timezone associated to network.
-        - See U(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for a list of valid timezones.
-        type: str
-    enable_vlans:
-        description:
-        - Boolean value specifying whether VLANs should be supported on a network.
-        - Requires C(net_name) or C(net_id) to be specified.
-        type: bool
-    local_status_page_enabled:
-        description: >
-            - This no longer works and will likely be moved to a separate module.
-            - Enables the local device status pages (U[my.meraki.com](my.meraki.com), U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com),
-            U[wired.meraki.com](wired.meraki.com)).
-            - Only can be specified on its own or with C(remote_status_page_enabled).
-        type: bool
-    remote_status_page_enabled:
-        description:
-            - This no longer works and will likely be moved to a separate module.
-            - Enables access to the device status page (U(http://device LAN IP)).
-            - Can only be set if C(local_status_page_enabled:) is set to C(yes).
-            - Only can be specified on its own or with C(local_status_page_enabled).
-        type: bool
-    copy_from_network_id:
-        description:
-            - New network inherits properties from this network ID.
-            - Other provided parameters will override the copied configuration.
-            - Type which must match this network's type exactly.
-        type: str
-
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for creation, management, and visibility into networks within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_network
+options:
+  copy_from_network_id:
+    description:
+      - New network inherits properties from this network ID.
+      - Other provided parameters will override the copied configuration.
+      - Type which must match this network's type exactly.
+    type: str
+  enable_vlans:
+    description:
+      - Boolean value specifying whether VLANs should be supported on a network.
+      - Requires C(net_name) or C(net_id) to be specified.
+    type: bool
+  local_status_page_enabled:
+    description: '- This no longer works and will likely be moved to a separate module.
+      - Enables the local device status pages (U[my.meraki.com](my.meraki.com), U[ap.meraki.com](ap.meraki.com),
+      U[switch.meraki.com](switch.meraki.com), U[wired.meraki.com](wired.meraki.com)).
+      - Only can be specified on its own or with C(remote_status_page_enabled).
+
+      '
+    type: bool
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    aliases:
+      - name
+      - network
+    description:
+      - Name of a network.
+    type: str
+  remote_status_page_enabled:
+    description:
+      - This no longer works and will likely be moved to a separate module.
+      - Enables access to the device status page (U(http://device LAN IP)).
+      - Can only be set if C(local_status_page_enabled:) is set to C(yes).
+      - Only can be specified on its own or with C(local_status_page_enabled).
+    type: bool
+  state:
+    choices:
+      - absent
+      - present
+      - query
+    default: present
+    description:
+      - Create or modify an organization.
+    type: str
+  tags:
+    description:
+      - List of tags to assign to network.
+      - C(tags) name conflicts with the tags parameter in Ansible. Indentation problems
+        may cause unexpected behaviors.
+      - Ansible 2.8 converts this to a list from a comma separated list.
+    elements: str
+    type: list
+  timezone:
+    description:
+      - Timezone associated to network.
+      - See U(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for a
+        list of valid timezones.
+    type: str
+  type:
+    aliases:
+      - net_type
+    choices:
+      - appliance
+      - switch
+      - wireless
+      - sensor
+      - systemsManager
+      - camera
+      - cellularGateway
+    description:
+      - Type of network device network manages.
+      - Required when creating a network.
+      - As of Ansible 2.8, C(combined) type is no longer accepted.
+      - As of Ansible 2.8, changes to this parameter are no longer idempotent.
+    elements: str
+    type: list
+short_description: Manage networks in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -143,14 +157,14 @@ EXAMPLES = r"""
         state: query
         org_name: YourOrg
         net_name: MyNet
-        enable_vlans: yes
+        enable_vlans: true
     - name: Modify local status page enabled state
       meraki_network:
         auth_key: abc12345
         state: query
         org_name: YourOrg
         net_name: MyNet
-        local_status_page_enabled: yes
+        local_status_page_enabled: true
 """
 
 RETURN = r"""

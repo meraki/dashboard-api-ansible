@@ -113,10 +113,10 @@ extends_documentation_fragment: cisco.meraki.meraki
 EXAMPLES = r'''
 - name: Set MX uplink settings
   meraki_mx_uplink_bandwidth:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: present
-    org_name: '{{test_org_name}}'
-    net_name: '{{test_net_name}} - Uplink'
+    org_name: '{{ test_org_name }}'
+    net_name: '{{ test_net_name }} - Uplink'
     wan1:
       bandwidth_limits:
         limit_down: 1000000
@@ -129,12 +129,11 @@ EXAMPLES = r'''
 
 - name: Query MX uplink settings
   meraki_mx_uplink_bandwidth:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: query
-    org_name: '{{test_org_name}}'
-    net_name: '{{test_net_name}} - Uplink'
+    org_name: '{{ test_org_name }}'
+    net_name: '{{ test_net_name }} - Uplink'
   delegate_to: localhost
-
 '''
 
 RETURN = r'''

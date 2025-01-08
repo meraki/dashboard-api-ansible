@@ -5,25 +5,28 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_alerts_profiles
-short_description: Resource module for organizations _alerts _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _alerts _profiles.
-- Create an organization-wide alert configuration.
-- Removes an organization-wide alert config.
-- Update an organization-wide alert config.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _alerts
+    _profiles.
+  - Create an organization-wide alert configuration.
+  - Removes an organization-wide alert config.
+  - Update an organization-wide alert config.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_alerts_profiles
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_alerts_profile,
+    organizations.Organizations.delete_organization_alerts_profile, organizations.Organizations.update_organization_alerts_profile,
+  - Paths used are post /organizations/{organizationId}/alerts/profiles, delete /organizations/{organizationId}/alerts/profiles/{alertConfigId},
+    put /organizations/{organizationId}/alerts/profiles/{alertConfigId},
 options:
   alertCondition:
     description: The conditions that determine if the alert triggers.
     suboptions:
       bit_rate_bps:
-        description: The threshold the metric must cross to be valid for alerting. Used
-          only for WAN Utilization alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for WAN Utilization alerts.
         type: int
       duration:
         description: The total duration in seconds that the threshold should be crossed
@@ -34,16 +37,16 @@ options:
           following wan1, wan2, wan3, cellular.
         type: str
       jitter_ms:
-        description: The threshold the metric must cross to be valid for alerting. Used
-          only for VoIP Jitter alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for VoIP Jitter alerts.
         type: int
       latency_ms:
-        description: The threshold the metric must cross to be valid for alerting. Used
-          only for WAN Latency alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for WAN Latency alerts.
         type: int
       loss_ratio:
-        description: The threshold the metric must cross to be valid for alerting. Used
-          only for Packet Loss alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for Packet Loss alerts.
         type: float
       mos:
         description: The threshold the metric must drop below to be valid for alerting.
@@ -86,53 +89,45 @@ options:
     description: The alert type.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationAlertsProfile
-  description: Complete reference of the createOrganizationAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-alerts-profile
-- name: Cisco Meraki documentation for organizations deleteOrganizationAlertsProfile
-  description: Complete reference of the deleteOrganizationAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-alerts-profile
-- name: Cisco Meraki documentation for organizations updateOrganizationAlertsProfile
-  description: Complete reference of the updateOrganizationAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-alerts-profile
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_alerts_profile,
-    organizations.Organizations.delete_organization_alerts_profile,
-    organizations.Organizations.update_organization_alerts_profile,
-
-  - Paths used are
-    post /organizations/{organizationId}/alerts/profiles,
-    delete /organizations/{organizationId}/alerts/profiles/{alertConfigId},
-    put /organizations/{organizationId}/alerts/profiles/{alertConfigId},
+  - description: Complete reference of the createOrganizationAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-alerts-profile
+    name: Cisco Meraki documentation for organizations createOrganizationAlertsProfile
+  - description: Complete reference of the deleteOrganizationAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-alerts-profile
+    name: Cisco Meraki documentation for organizations deleteOrganizationAlertsProfile
+  - description: Complete reference of the updateOrganizationAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-alerts-profile
+    name: Cisco Meraki documentation for organizations updateOrganizationAlertsProfile
+short_description: Resource module for organizations _alerts _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.organizations_alerts_profiles:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     alertCondition:
       bit_rate_bps: 10000
@@ -145,64 +140,62 @@ EXAMPLES = r"""
       window: 600
     description: WAN 1 high utilization
     networkTags:
-    - tag1
-    - tag2
+      - tag1
+      - tag2
     organizationId: string
     recipients:
       emails:
-      - admin@example.org
+        - admin@example.org
       httpServerIds:
-      - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
+        - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
     type: wanUtilization
-
 - name: Delete by id
   cisco.meraki.organizations_alerts_profiles:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     alertConfigId: string
     organizationId: string
-
 - name: Update by id
   cisco.meraki.organizations_alerts_profiles:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     alertCondition:
       bit_rate_bps: 10000
@@ -217,16 +210,15 @@ EXAMPLES = r"""
     description: WAN 1 high utilization
     enabled: true
     networkTags:
-    - tag1
-    - tag2
+      - tag1
+      - tag2
     organizationId: string
     recipients:
       emails:
-      - admin@example.org
+        - admin@example.org
       httpServerIds:
-      - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
+        - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
     type: wanUtilization
-
 """
 RETURN = r"""
 meraki_response:

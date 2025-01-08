@@ -15,96 +15,104 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mr_l7_firewall
-short_description: Manage MR access point layer 7 firewalls in the Meraki cloud
-description:
-- Allows for creation, management, and visibility into layer 7 firewalls implemented on Meraki MR access points.
-- Module assumes a complete list of firewall rules are passed as a parameter.
-- If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_appliance_firewall_l7_firewall_rules
-options:
-    state:
-        description:
-        - Query or modify a firewall rule.
-        choices: ['present', 'query']
-        default: present
-        type: str
-    net_name:
-        description:
-        - Name of network containing access points.
-        type: str
-    net_id:
-        description:
-        - ID of network containing access points.
-        type: str
-    number:
-        description:
-        - Number of SSID to apply firewall rule to.
-        type: str
-        aliases: [ ssid_number ]
-    ssid_name:
-        description:
-        - Name of SSID to apply firewall rule to.
-        type: str
-        aliases: [ ssid ]
-    rules:
-        description:
-        - List of layer 7 firewall rules.
-        type: list
-        elements: dict
-        suboptions:
-            policy:
-                description:
-                - Policy to apply if rule is hit.
-                choices: [deny]
-                default: deny
-                type: str
-            type:
-                description:
-                - Type of policy to apply.
-                choices: [application,
-                          application_category,
-                          host,
-                          ip_range,
-                          port]
-                type: str
-            application:
-                description:
-                - Application to filter.
-                type: dict
-                suboptions:
-                    name:
-                        description:
-                        - Name of application to filter as defined by Meraki.
-                        type: str
-                    id:
-                        description:
-                        - URI of application as defined by Meraki.
-                        type: str
-            host:
-                description:
-                - FQDN of host to filter.
-                type: str
-            ip_range:
-                description:
-                - CIDR notation range of IP addresses to apply rule to.
-                - Port can be appended to range with a C(":").
-                type: str
-            port:
-                description:
-                - TCP or UDP based port to filter.
-                type: str
-    categories:
-        description:
-        - When C(True), specifies that applications and application categories should be queried instead of firewall rules.
-        type: bool
 author:
-- Joshua Coronado (@joshuajcoronado)
+  - Joshua Coronado (@joshuajcoronado)
+deprecated:
+  alternative: cisco.meraki.networks_appliance_firewall_l7_firewall_rules
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for creation, management, and visibility into layer 7 firewalls implemented
+    on Meraki MR access points.
+  - Module assumes a complete list of firewall rules are passed as a parameter.
+  - If there is interest in this module allowing manipulation of a single firewall
+    rule, please submit an issue against this module.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mr_l7_firewall
+options:
+  categories:
+    description:
+      - When C(True), specifies that applications and application categories should
+        be queried instead of firewall rules.
+    type: bool
+  net_id:
+    description:
+      - ID of network containing access points.
+    type: str
+  net_name:
+    description:
+      - Name of network containing access points.
+    type: str
+  number:
+    aliases:
+      - ssid_number
+    description:
+      - Number of SSID to apply firewall rule to.
+    type: str
+  rules:
+    description:
+      - List of layer 7 firewall rules.
+    elements: dict
+    suboptions:
+      application:
+        description:
+          - Application to filter.
+        suboptions:
+          id:
+            description:
+              - URI of application as defined by Meraki.
+            type: str
+          name:
+            description:
+              - Name of application to filter as defined by Meraki.
+            type: str
+        type: dict
+      host:
+        description:
+          - FQDN of host to filter.
+        type: str
+      ip_range:
+        description:
+          - CIDR notation range of IP addresses to apply rule to.
+          - Port can be appended to range with a C(":").
+        type: str
+      policy:
+        choices:
+          - deny
+        default: deny
+        description:
+          - Policy to apply if rule is hit.
+        type: str
+      port:
+        description:
+          - TCP or UDP based port to filter.
+        type: str
+      type:
+        choices:
+          - application
+          - application_category
+          - host
+          - ip_range
+          - port
+        description:
+          - Type of policy to apply.
+        type: str
+    type: list
+  ssid_name:
+    aliases:
+      - ssid
+    description:
+      - Name of SSID to apply firewall rule to.
+    type: str
+  state:
+    choices:
+      - present
+      - query
+    default: present
+    description:
+      - Query or modify a firewall rule.
+    type: str
+short_description: Manage MR access point layer 7 firewalls in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -116,17 +124,15 @@ EXAMPLES = r"""
     state: query
     number: 1
   delegate_to: localhost
-
 - name: Query applications and application categories
   meraki_mr_l7_firewall:
     auth_key: abc123
     org_name: YourOrg
     net_name: YourNet
     number: 1
-    categories: yes
+    categories: true
     state: query
   delegate_to: localhost
-
 - name: Set firewall rules
   meraki_mr_l7_firewall:
     auth_key: abc123

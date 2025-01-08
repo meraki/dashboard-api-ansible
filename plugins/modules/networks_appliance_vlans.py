@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_vlans
-short_description: Resource module for networks _appliance _vlans
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _appliance _vlans.
-- Add a VLAN.
-- Delete a VLAN from a network.
-- Update a VLAN.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _appliance
+    _vlans.
+  - Add a VLAN.
+  - Delete a VLAN from a network.
+  - Update a VLAN.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_vlans
+notes:
+  - SDK Method used are appliance.Appliance.create_network_appliance_vlan, appliance.Appliance.delete_network_appliance_vlan,
+    appliance.Appliance.update_network_appliance_vlan,
+  - Paths used are post /networks/{networkId}/appliance/vlans, delete /networks/{networkId}/appliance/vlans/{vlanId},
+    put /networks/{networkId}/appliance/vlans/{vlanId},
 options:
   applianceIp:
     description: The local IP of the appliance on the VLAN.
@@ -30,8 +33,8 @@ options:
     description: DHCP boot option for boot filename.
     type: str
   dhcpBootNextServer:
-    description: DHCP boot option to direct boot clients to the server to load the boot
-      file from.
+    description: DHCP boot option to direct boot clients to the server to load the
+      boot file from.
     type: str
   dhcpBootOptionsEnabled:
     description: Use DHCP boot options specified in other properties.
@@ -41,13 +44,13 @@ options:
       a DHCP server', 'Relay DHCP to another server' or 'Do not respond to DHCP requests'.
     type: str
   dhcpLeaseTime:
-    description: The term of DHCP leases if the appliance is running a DHCP server on
-      this VLAN. One of '30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1
-      week'.
+    description: The term of DHCP leases if the appliance is running a DHCP server
+      on this VLAN. One of '30 minutes', '1 hour', '4 hours', '12 hours', '1 day'
+      or '1 week'.
     type: str
   dhcpOptions:
-    description: The list of DHCP options that will be included in DHCP responses. Each
-      object in the list should have "code", "type", and "value" properties.
+    description: The list of DHCP options that will be included in DHCP responses.
+      Each object in the list should have "code", "type", and "value" properties.
     elements: dict
     suboptions:
       code:
@@ -62,7 +65,8 @@ options:
         type: str
     type: list
   dhcpRelayServerIps:
-    description: The IPs of the DHCP servers that DHCP requests should be relayed to.
+    description: The IPs of the DHCP servers that DHCP requests should be relayed
+      to.
     elements: str
     type: list
   dnsNameservers:
@@ -114,9 +118,10 @@ options:
         type: list
     type: dict
   mandatoryDhcp:
-    description: Mandatory DHCP will enforce that clients connecting to this VLAN must
-      use the IP address assigned by the DHCP server. Clients who use a static IP address
-      won't be able to associate. Only available on firmware versions 17.0 and above.
+    description: Mandatory DHCP will enforce that clients connecting to this VLAN
+      must use the IP address assigned by the DHCP server. Clients who use a static
+      IP address won't be able to associate. Only available on firmware versions 17.0
+      and above.
     suboptions:
       enabled:
         description: Enable Mandatory DHCP on VLAN.
@@ -160,53 +165,45 @@ options:
       on the VLAN.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
-  description: Complete reference of the createNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
-- name: Cisco Meraki documentation for appliance deleteNetworkApplianceVlan
-  description: Complete reference of the deleteNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceVlan
-  description: Complete reference of the updateNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
-notes:
-  - SDK Method used are
-    appliance.Appliance.create_network_appliance_vlan,
-    appliance.Appliance.delete_network_appliance_vlan,
-    appliance.Appliance.update_network_appliance_vlan,
-
-  - Paths used are
-    post /networks/{networkId}/appliance/vlans,
-    delete /networks/{networkId}/appliance/vlans/{vlanId},
-    put /networks/{networkId}/appliance/vlans/{vlanId},
+  - description: Complete reference of the createNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
+  - description: Complete reference of the deleteNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance deleteNetworkApplianceVlan
+  - description: Complete reference of the updateNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceVlan
+short_description: Resource module for networks _appliance _vlans
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_appliance_vlans:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     applianceIp: 192.168.1.2
     cidr: 192.168.1.0/24
@@ -214,21 +211,21 @@ EXAMPLES = r"""
     dhcpHandling: Run a DHCP server
     dhcpLeaseTime: 30 minutes
     dhcpOptions:
-    - code: '3'
-      type: text
-      value: five
+      - code: '3'
+        type: text
+        value: five
     groupPolicyId: '101'
     id: '1234'
     ipv6:
       enabled: true
       prefixAssignments:
-      - autonomous: false
-        origin:
-          interfaces:
-          - wan0
-          type: internet
-        staticApplianceIp6: 2001:db8:3c4d:15::1
-        staticPrefix: 2001:db8:3c4d:15::/64
+        - autonomous: false
+          origin:
+            interfaces:
+              - wan0
+            type: internet
+          staticApplianceIp6: 2001:db8:3c4d:15::1
+          staticPrefix: 2001:db8:3c4d:15::/64
     mandatoryDhcp:
       enabled: true
     mask: 28
@@ -236,55 +233,53 @@ EXAMPLES = r"""
     networkId: string
     subnet: 192.168.1.0/24
     templateVlanType: same
-
 - name: Delete by id
   cisco.meraki.networks_appliance_vlans:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     networkId: string
     vlanId: string
-
 - name: Update by id
   cisco.meraki.networks_appliance_vlans:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     adaptivePolicyGroupId: '1234'
     applianceIp: 192.168.1.2
@@ -295,12 +290,12 @@ EXAMPLES = r"""
     dhcpHandling: Run a DHCP server
     dhcpLeaseTime: 1 day
     dhcpOptions:
-    - code: '5'
-      type: text
-      value: five
+      - code: '5'
+        type: text
+        value: five
     dhcpRelayServerIps:
-    - 192.168.1.0/24
-    - 192.168.128.0/24
+      - 192.168.1.0/24
+      - 192.168.128.0/24
     dnsNameservers: google_dns
     fixedIpAssignments:
       22:33:44:55:66:77:
@@ -310,27 +305,26 @@ EXAMPLES = r"""
     ipv6:
       enabled: true
       prefixAssignments:
-      - autonomous: false
-        origin:
-          interfaces:
-          - wan0
-          type: internet
-        staticApplianceIp6: 2001:db8:3c4d:15::1
-        staticPrefix: 2001:db8:3c4d:15::/64
+        - autonomous: false
+          origin:
+            interfaces:
+              - wan0
+            type: internet
+          staticApplianceIp6: 2001:db8:3c4d:15::1
+          staticPrefix: 2001:db8:3c4d:15::/64
     mandatoryDhcp:
       enabled: true
     mask: 28
     name: My VLAN
     networkId: string
     reservedIpRanges:
-    - comment: A reserved IP range
-      end: 192.168.1.1
-      start: 192.168.1.0
+      - comment: A reserved IP range
+        end: 192.168.1.1
+        start: 192.168.1.0
     subnet: 192.168.1.0/24
     templateVlanType: same
     vlanId: string
     vpnNatSubnet: 192.168.1.0/24
-
 """
 RETURN = r"""
 meraki_response:

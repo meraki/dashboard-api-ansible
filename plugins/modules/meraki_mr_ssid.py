@@ -15,249 +15,290 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mr_ssid
-short_description: Manage wireless SSIDs in the Meraki cloud
-description:
-- Allows for management of SSIDs in a Meraki wireless environment.
-notes:
-- Deleting an SSID does not delete RADIUS servers.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_wireless_ssids
-options:
-    state:
-        description:
-        - Specifies whether SNMP information should be queried or modified.
-        type: str
-        choices: [ absent, query, present ]
-        default: present
-    number:
-        description:
-        - SSID number within network.
-        type: int
-        aliases: [ssid_number]
-    name:
-        description:
-        - Name of SSID.
-        type: str
-    net_name:
-        description:
-        - Name of network.
-        type: str
-    net_id:
-        description:
-        - ID of network.
-        type: str
-    enabled:
-        description:
-        - Enable or disable SSID network.
-        type: bool
-    auth_mode:
-        description:
-        - Set authentication mode of network.
-        type: str
-        choices: [open, psk, open-with-radius, 8021x-meraki, 8021x-radius]
-    encryption_mode:
-        description:
-        - Set encryption mode of network.
-        type: str
-        choices: [wpa, eap, wpa-eap]
-    psk:
-        description:
-        - Password for wireless network.
-        - Requires auth_mode to be set to psk.
-        type: str
-    wpa_encryption_mode:
-        description:
-        - Encryption mode within WPA specification.
-        type: str
-        choices: [WPA1 and WPA2, WPA2 only, WPA3 Transition Mode, WPA3 only]
-    splash_page:
-        description:
-        - Set to enable splash page and specify type of splash.
-        type: str
-        choices: ['None',
-                  'Click-through splash page',
-                  'Billing',
-                  'Password-protected with Meraki RADIUS',
-                  'Password-protected with custom RADIUS',
-                  'Password-protected with Active Directory',
-                  'Password-protected with LDAP',
-                  'SMS authentication',
-                  'Systems Manager Sentry',
-                  'Facebook Wi-Fi',
-                  'Google OAuth',
-                  'Sponsored guest',
-                  'Cisco ISE']
-    radius_servers:
-        description:
-        - List of RADIUS servers.
-        type: list
-        elements: dict
-        suboptions:
-            host:
-                description:
-                - IP address or hostname of RADIUS server.
-                type: str
-                required: true
-            port:
-                description:
-                - Port number RADIUS server is listening to.
-                type: int
-            secret:
-                description:
-                - RADIUS password.
-                - Setting password is not idempotent.
-                type: str
-    radius_proxy_enabled:
-        description:
-        - Enable or disable RADIUS Proxy on SSID.
-        type: bool
-    radius_coa_enabled:
-        description:
-        - Enable or disable RADIUS CoA (Change of Authorization) on SSID.
-        type: bool
-    radius_failover_policy:
-        description:
-        - Set client access policy in case RADIUS servers aren't available.
-        type: str
-        choices: [Deny access, Allow access]
-    radius_load_balancing_policy:
-        description:
-        - Set load balancing policy when multiple RADIUS servers are specified.
-        type: str
-        choices: [Strict priority order, Round robin]
-    radius_accounting_enabled:
-        description:
-        - Enable or disable RADIUS accounting.
-        type: bool
-    radius_accounting_servers:
-        description:
-        - List of RADIUS servers for RADIUS accounting.
-        type: list
-        elements: dict
-        suboptions:
-            host:
-                description:
-                - IP address or hostname of RADIUS server.
-                type: str
-                required: true
-            port:
-                description:
-                - Port number RADIUS server is listening to.
-                type: int
-            secret:
-                description:
-                - RADIUS password.
-                - Setting password is not idempotent.
-                type: str
-    ip_assignment_mode:
-        description:
-        - Method of which SSID uses to assign IP addresses.
-        type: str
-        choices: ['NAT mode',
-                  'Bridge mode',
-                  'Layer 3 roaming',
-                  'Layer 3 roaming with a concentrator',
-                  'VPN']
-    lan_isolation_enabled:
-        description:
-        - Enable or disable Layer 2 Lan isolation.
-        - Requires C(ip_assignment_mode) to be C(Bridge mode).
-        type: bool
-    use_vlan_tagging:
-        description:
-        - Set whether to use VLAN tagging.
-        - Requires C(default_vlan_id) to be set.
-        type: bool
-    visible:
-        description:
-        - Enable or disable whether APs should broadcast this SSID.
-        type: bool
-    default_vlan_id:
-        description:
-        - Default VLAN ID.
-        - Requires C(ip_assignment_mode) to be C(Bridge mode) or C(Layer 3 roaming).
-        type: int
-    vlan_id:
-        description:
-        - ID number of VLAN on SSID.
-        - Requires C(ip_assignment_mode) to be C(ayer 3 roaming with a concentrator) or C(VPN).
-        type: int
-    ap_tags_vlan_ids:
-        description:
-        - List of VLAN tags.
-        - Requires C(ip_assignment_mode) to be C(Bridge mode) or C(Layer 3 roaming).
-        - Requires C(use_vlan_tagging) to be C(True).
-        type: list
-        elements: dict
-        suboptions:
-            tags:
-                description:
-                - List of AP tags.
-                type: list
-                elements: str
-            vlan_id:
-                description:
-                - Numerical identifier that is assigned to the VLAN.
-                type: int
-    walled_garden_enabled:
-        description:
-        - Enable or disable walled garden functionality.
-        type: bool
-    walled_garden_ranges:
-        description:
-        - List of walled garden ranges.
-        type: list
-        elements: str
-    available_on_all_aps:
-        description:
-        - Set whether all APs should broadcast the SSID or if it should be restricted to APs matching any availability tags.
-        - Requires C(ap_availability_tags) to be defined when set to C(False).
-        type: bool
-    ap_availability_tags:
-        description:
-        - Set whether SSID will be broadcast by APs with tags matching any of the tags in this list.
-        - Requires C(available_on_all_aps) to be C(false).
-        type: list
-        elements: str
-    min_bitrate:
-        description:
-        - Minimum bitrate (Mbps) allowed on SSID.
-        type: float
-        choices: [1, 2, 5.5, 6, 9, 11, 12, 18, 24, 36, 48, 54]
-    band_selection:
-        description:
-        - Set band selection mode.
-        type: str
-        choices: ['Dual band operation', '5 GHz band only', 'Dual band operation with Band Steering']
-    per_client_bandwidth_limit_up:
-        description:
-        - Maximum bandwidth in Mbps devices on SSID can upload.
-        type: int
-    per_client_bandwidth_limit_down:
-        description:
-        - Maximum bandwidth in Mbps devices on SSID can download.
-        type: int
-    concentrator_network_id:
-        description:
-        - The concentrator to use for 'Layer 3 roaming with a concentrator' or 'VPN'.
-        type: str
-    enterprise_admin_access:
-        description:
-        - Whether SSID is accessible by enterprise administrators.
-        type: str
-        choices: ['access disabled', 'access enabled']
-    splash_guest_sponsor_domains:
-        description:
-        - List of valid sponsor email domains for sponsored guest portal.
-        type: list
-        elements: str
 author:
-- Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_wireless_ssids
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for management of SSIDs in a Meraki wireless environment.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mr_ssid
+notes:
+  - Deleting an SSID does not delete RADIUS servers.
+options:
+  ap_availability_tags:
+    description:
+      - Set whether SSID will be broadcast by APs with tags matching any of the tags
+        in this list.
+      - Requires C(available_on_all_aps) to be C(false).
+    elements: str
+    type: list
+  ap_tags_vlan_ids:
+    description:
+      - List of VLAN tags.
+      - Requires C(ip_assignment_mode) to be C(Bridge mode) or C(Layer 3 roaming).
+      - Requires C(use_vlan_tagging) to be C(True).
+    elements: dict
+    suboptions:
+      tags:
+        description:
+          - List of AP tags.
+        elements: str
+        type: list
+      vlan_id:
+        description:
+          - Numerical identifier that is assigned to the VLAN.
+        type: int
+    type: list
+  auth_mode:
+    choices:
+      - open
+      - psk
+      - open-with-radius
+      - 8021x-meraki
+      - 8021x-radius
+    description:
+      - Set authentication mode of network.
+    type: str
+  available_on_all_aps:
+    description:
+      - Set whether all APs should broadcast the SSID or if it should be restricted
+        to APs matching any availability tags.
+      - Requires C(ap_availability_tags) to be defined when set to C(False).
+    type: bool
+  band_selection:
+    choices:
+      - Dual band operation
+      - 5 GHz band only
+      - Dual band operation with Band Steering
+    description:
+      - Set band selection mode.
+    type: str
+  concentrator_network_id:
+    description:
+      - The concentrator to use for 'Layer 3 roaming with a concentrator' or 'VPN'.
+    type: str
+  default_vlan_id:
+    description:
+      - Default VLAN ID.
+      - Requires C(ip_assignment_mode) to be C(Bridge mode) or C(Layer 3 roaming).
+    type: int
+  enabled:
+    description:
+      - Enable or disable SSID network.
+    type: bool
+  encryption_mode:
+    choices:
+      - wpa
+      - eap
+      - wpa-eap
+    description:
+      - Set encryption mode of network.
+    type: str
+  enterprise_admin_access:
+    choices:
+      - access disabled
+      - access enabled
+    description:
+      - Whether SSID is accessible by enterprise administrators.
+    type: str
+  ip_assignment_mode:
+    choices:
+      - NAT mode
+      - Bridge mode
+      - Layer 3 roaming
+      - Layer 3 roaming with a concentrator
+      - VPN
+    description:
+      - Method of which SSID uses to assign IP addresses.
+    type: str
+  lan_isolation_enabled:
+    description:
+      - Enable or disable Layer 2 Lan isolation.
+      - Requires C(ip_assignment_mode) to be C(Bridge mode).
+    type: bool
+  min_bitrate:
+    choices:
+      - 1
+      - 2
+      - 5.5
+      - 6
+      - 9
+      - 11
+      - 12
+      - 18
+      - 24
+      - 36
+      - 48
+      - 54
+    description:
+      - Minimum bitrate (Mbps) allowed on SSID.
+    type: float
+  name:
+    description:
+      - Name of SSID.
+    type: str
+  net_id:
+    description:
+      - ID of network.
+    type: str
+  net_name:
+    description:
+      - Name of network.
+    type: str
+  number:
+    aliases:
+      - ssid_number
+    description:
+      - SSID number within network.
+    type: int
+  per_client_bandwidth_limit_down:
+    description:
+      - Maximum bandwidth in Mbps devices on SSID can download.
+    type: int
+  per_client_bandwidth_limit_up:
+    description:
+      - Maximum bandwidth in Mbps devices on SSID can upload.
+    type: int
+  psk:
+    description:
+      - Password for wireless network.
+      - Requires auth_mode to be set to psk.
+    type: str
+  radius_accounting_enabled:
+    description:
+      - Enable or disable RADIUS accounting.
+    type: bool
+  radius_accounting_servers:
+    description:
+      - List of RADIUS servers for RADIUS accounting.
+    elements: dict
+    suboptions:
+      host:
+        description:
+          - IP address or hostname of RADIUS server.
+        required: true
+        type: str
+      port:
+        description:
+          - Port number RADIUS server is listening to.
+        type: int
+      secret:
+        description:
+          - RADIUS password.
+          - Setting password is not idempotent.
+        type: str
+    type: list
+  radius_coa_enabled:
+    description:
+      - Enable or disable RADIUS CoA (Change of Authorization) on SSID.
+    type: bool
+  radius_failover_policy:
+    choices:
+      - Deny access
+      - Allow access
+    description:
+      - Set client access policy in case RADIUS servers aren't available.
+    type: str
+  radius_load_balancing_policy:
+    choices:
+      - Strict priority order
+      - Round robin
+    description:
+      - Set load balancing policy when multiple RADIUS servers are specified.
+    type: str
+  radius_proxy_enabled:
+    description:
+      - Enable or disable RADIUS Proxy on SSID.
+    type: bool
+  radius_servers:
+    description:
+      - List of RADIUS servers.
+    elements: dict
+    suboptions:
+      host:
+        description:
+          - IP address or hostname of RADIUS server.
+        required: true
+        type: str
+      port:
+        description:
+          - Port number RADIUS server is listening to.
+        type: int
+      secret:
+        description:
+          - RADIUS password.
+          - Setting password is not idempotent.
+        type: str
+    type: list
+  splash_guest_sponsor_domains:
+    description:
+      - List of valid sponsor email domains for sponsored guest portal.
+    elements: str
+    type: list
+  splash_page:
+    choices:
+      - None
+      - Click-through splash page
+      - Billing
+      - Password-protected with Meraki RADIUS
+      - Password-protected with custom RADIUS
+      - Password-protected with Active Directory
+      - Password-protected with LDAP
+      - SMS authentication
+      - Systems Manager Sentry
+      - Facebook Wi-Fi
+      - Google OAuth
+      - Sponsored guest
+      - Cisco ISE
+    description:
+      - Set to enable splash page and specify type of splash.
+    type: str
+  state:
+    choices:
+      - absent
+      - query
+      - present
+    default: present
+    description:
+      - Specifies whether SNMP information should be queried or modified.
+    type: str
+  use_vlan_tagging:
+    description:
+      - Set whether to use VLAN tagging.
+      - Requires C(default_vlan_id) to be set.
+    type: bool
+  visible:
+    description:
+      - Enable or disable whether APs should broadcast this SSID.
+    type: bool
+  vlan_id:
+    description:
+      - ID number of VLAN on SSID.
+      - Requires C(ip_assignment_mode) to be C(ayer 3 roaming with a concentrator)
+        or C(VPN).
+    type: int
+  walled_garden_enabled:
+    description:
+      - Enable or disable walled garden functionality.
+    type: bool
+  walled_garden_ranges:
+    description:
+      - List of walled garden ranges.
+    elements: str
+    type: list
+  wpa_encryption_mode:
+    choices:
+      - WPA1 and WPA2
+      - WPA2 only
+      - WPA3 Transition Mode
+      - WPA3 only
+    description:
+      - Encryption mode within WPA specification.
+    type: str
+short_description: Manage wireless SSIDs in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -271,7 +312,6 @@ EXAMPLES = r"""
     enabled: true
     visible: true
   delegate_to: localhost
-
 - name: Set PSK with invalid encryption mode
   meraki_ssid:
     auth_key: abc123
@@ -282,9 +322,8 @@ EXAMPLES = r"""
     auth_mode: psk
     psk: abc1234
     encryption_mode: eap
-  ignore_errors: yes
+  ignore_errors: true
   delegate_to: localhost
-
 - name: Configure RADIUS servers
   meraki_ssid:
     auth_key: abc123
@@ -298,7 +337,6 @@ EXAMPLES = r"""
         port: 1234
         secret: abc98765
   delegate_to: localhost
-
 - name: Enable click-through splash page
   meraki_ssid:
     auth_key: abc123

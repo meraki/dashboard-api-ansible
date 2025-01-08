@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_one_to_one_nat_rules
-short_description: Resource module for networks _appliance _firewall _one _to _one _nat _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _one _to _one _nat _rules.
-- Set the 1 1 NAT mapping rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _one _to
+    _one _nat _rules.
+  - Set the 1 1 NAT mapping rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_one_to_one_nat_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_one_to_one_nat_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/oneToOneNatRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -24,8 +25,8 @@ options:
     elements: dict
     suboptions:
       allowedInbound:
-        description: The ports this mapping will provide access on, and the remote IPs
-          that will be allowed access to the resource.
+        description: The ports this mapping will provide access on, and the remote
+          IPs that will be allowed access to the resource.
         elements: dict
         suboptions:
           allowedIps:
@@ -59,64 +60,61 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToOneNatRules
-  description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-one-nat-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_one_to_one_nat_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/oneToOneNatRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-one-nat-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToOneNatRules
+short_description: Resource module for networks _appliance _firewall _one _to _one
+  _nat _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_appliance_firewall_one_to_one_nat_rules:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     networkId: string
     rules:
-    - allowedInbound:
-      - allowedIps:
-        - 10.82.112.0/24
-        - 10.82.0.0/16
-        destinationPorts:
-        - '80'
-        protocol: tcp
-      - allowedIps:
-        - 10.81.110.5
-        - 10.81.0.0/16
-        destinationPorts:
-        - '8080'
-        protocol: udp
-      lanIp: 192.168.128.22
-      name: Service behind NAT
-      publicIp: 146.12.3.33
-      uplink: internet1
-
+      - allowedInbound:
+          - allowedIps:
+              - 10.82.112.0/24
+              - 10.82.0.0/16
+            destinationPorts:
+              - '80'
+            protocol: tcp
+          - allowedIps:
+              - 10.81.110.5
+              - 10.81.0.0/16
+            destinationPorts:
+              - '8080'
+            protocol: udp
+        lanIp: 192.168.128.22
+        name: Service behind NAT
+        publicIp: 146.12.3.33
+        uplink: internet1
 """
 RETURN = r"""
 meraki_response:

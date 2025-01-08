@@ -75,33 +75,33 @@ extends_documentation_fragment: cisco.meraki.meraki
 '''
 
 EXAMPLES = r'''
-  - name: Set single allowed URL pattern
-    meraki_content_filtering:
-      auth_key: abc123
-      org_name: YourOrg
-      net_name: YourMXNet
-      allowed_urls:
-        - "http://www.ansible.com/*"
+- name: Set single allowed URL pattern
+  meraki_content_filtering:
+    auth_key: abc123
+    org_name: YourOrg
+    net_name: YourMXNet
+    allowed_urls:
+      - "http://www.ansible.com/*"
 
-  - name: Set blocked URL category
-    meraki_content_filtering:
-      auth_key: abc123
-      org_name: YourOrg
-      net_name: YourMXNet
-      state: present
-      category_list_size: full list
-      blocked_categories:
-        - "Adult and Pornography"
+- name: Set blocked URL category
+  meraki_content_filtering:
+    auth_key: abc123
+    org_name: YourOrg
+    net_name: YourMXNet
+    state: present
+    category_list_size: full list
+    blocked_categories:
+      - "Adult and Pornography"
 
-  - name: Remove match patterns and categories
-    meraki_content_filtering:
-      auth_key: abc123
-      org_name: YourOrg
-      net_name: YourMXNet
-      state: present
-      category_list_size: full list
-      allowed_urls: []
-      blocked_urls: []
+- name: Remove match patterns and categories
+  meraki_content_filtering:
+    auth_key: abc123
+    org_name: YourOrg
+    net_name: YourMXNet
+    state: present
+    category_list_size: full list
+    allowed_urls: []
+    blocked_urls: []
 '''
 
 RETURN = r'''

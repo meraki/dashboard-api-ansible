@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_checkin
-short_description: Resource module for networks _sm _devices _checkin
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _sm _devices _checkin.
-- Force check-in a set of devices.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _sm _devices _checkin.
+  - Force check-in a set of devices.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_checkin
+notes:
+  - SDK Method used are sm.Sm.checkin_network_sm_devices,
+  - Paths used are post /networks/{networkId}/sm/devices/checkin,
 options:
   ids:
     description: The ids of the devices to be checked-in.
@@ -37,58 +37,53 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm checkinNetworkSmDevices
-  description: Complete reference of the checkinNetworkSmDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!checkin-network-sm-devices
-notes:
-  - SDK Method used are
-    sm.Sm.checkin_network_sm_devices,
-
-  - Paths used are
-    post /networks/{networkId}/sm/devices/checkin,
+  - description: Complete reference of the checkinNetworkSmDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!checkin-network-sm-devices
+    name: Cisco Meraki documentation for sm checkinNetworkSmDevices
+short_description: Resource module for networks _sm _devices _checkin
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_sm_devices_checkin:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     ids:
-    - '1284392014819'
-    - '2983092129865'
+      - '1284392014819'
+      - '2983092129865'
     networkId: string
     scope:
-    - withAny
-    - tag1
-    - tag2
+      - withAny
+      - tag1
+      - tag2
     serials:
-    - XY0XX0Y0X0
-    - A01B01CD00E
-    - X02YZ1ZYZX
+      - XY0XX0Y0X0
+      - A01B01CD00E
+      - X02YZ1ZYZX
     wifiMacs:
-    - 00:11:22:33:44:55
-
+      - 00:11:22:33:44:55
 """
 RETURN = r"""
 meraki_response:

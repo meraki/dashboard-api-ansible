@@ -16,146 +16,161 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_ms_access_policies
-short_description: Manage Switch Access Policies in the Meraki cloud
-description: Module for managing a Switch Access Policies in the Meraki cloud
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_switch_access_policies
-options:
-    state:
-        description:
-        - Specifies whether SNMP information should be queried or modified.
-        type: str
-        choices: [ absent, query, present ]
-        default: present
-    number:
-        description:
-        - Number of the access_policy.
-        type: int
-        aliases: [access_policy_number]
-    name:
-        description:
-        - Name of Access Policy.
-        type: str
-    net_id:
-        description:
-        - ID of network.
-        type: str
-    org_id:
-        description:
-        - ID of organization associated to a network.
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [network]
-        type: str
-    auth_method:
-        description:
-        - Set authentication method in the policy.
-        type: str
-        choices: ["Meraki authentication", "my RADIUS server"]
-    guest_vlan:
-        description:
-        - Guest Vlan
-        type: int
-    access_policy_type:
-        description:
-        - Set type of the access policy
-        type: str
-        choices: ["802.1x", "MAC authentication bypass", "Hybrid authentication"]
-    systems_management_enrollment:
-        description:
-        - Set if the Systems Management Enrollemnt is enabled or disabled
-        type: bool
-        default: False
-    radius_servers:
-        description:
-        - List of RADIUS servers.
-        type: list
-        elements: dict
-        suboptions:
-            host:
-                description:
-                - IP address or hostname of RADIUS server.
-                type: str
-                required: true
-            port:
-                description:
-                - Port number RADIUS server is listening to.
-                type: int
-            secret:
-                description:
-                - RADIUS password.
-                - Setting password is not idempotent.
-                type: str
-    radius_testing:
-        description:
-        - Set status of testing a radius.
-        type: bool
-        default: True
-    voice_vlan_clients:
-        description:
-        - If is enabled that means Voice VLAN client require authentication
-        type: bool
-        default: True
-    radius_coa_enabled:
-        description:
-        - Enable or disable RADIUS CoA (Change of Authorization).
-        type: bool
-    radius_accounting_enabled:
-        description:
-        - Enable or disable RADIUS accounting.
-        type: bool
-    radius_accounting_servers:
-        description:
-        - List of RADIUS servers for RADIUS accounting.
-        type: list
-        elements: dict
-        suboptions:
-            host:
-                description:
-                - IP address or hostname of RADIUS server.
-                type: str
-                required: true
-            port:
-                description:
-                - Port number RADIUS server is listening to.
-                type: int
-            secret:
-                description:
-                - RADIUS password.
-                type: str
-    host_mode:
-        description:
-        - Choose the Host Mode for the access policy.
-        type: str
-        choices: ["Single-Host", "Multi-Domain", "Multi-Host", "Multi-Auth"]
-    data_vlan_id:
-        description:
-        - Set a Data VLAN ID for Critical Auth VLAN
-        type: int
-    voice_vlan_id:
-        description:
-        - Set a Voice VLAN ID for Critical Auth VLAN
-        type: int
-    suspend_port_bounce:
-        description:
-        - Enable or disable the Suspend Port Bounce when RADIUS servers are unreachable.
-        type: bool
-        default: False
-    radius_attribute_group_policy_name:
-        description:
-        - Enable that attribute for a RADIUS
-        type: str
-        choices: ["Filter-Id", ""]
-        default: ""
 author:
-- Marcin Woźniak (@y0rune)
+  - "Marcin Wo\u017Aniak (@y0rune)"
+deprecated:
+  alternative: cisco.meraki.networks_switch_access_policies
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description: Module for managing a Switch Access Policies in the Meraki cloud
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_ms_access_policies
+options:
+  access_policy_type:
+    choices:
+      - 802.1x
+      - MAC authentication bypass
+      - Hybrid authentication
+    description:
+      - Set type of the access policy
+    type: str
+  auth_method:
+    choices:
+      - Meraki authentication
+      - my RADIUS server
+    description:
+      - Set authentication method in the policy.
+    type: str
+  data_vlan_id:
+    description:
+      - Set a Data VLAN ID for Critical Auth VLAN
+    type: int
+  guest_vlan:
+    description:
+      - Guest Vlan
+    type: int
+  host_mode:
+    choices:
+      - Single-Host
+      - Multi-Domain
+      - Multi-Host
+      - Multi-Auth
+    description:
+      - Choose the Host Mode for the access policy.
+    type: str
+  name:
+    description:
+      - Name of Access Policy.
+    type: str
+  net_id:
+    description:
+      - ID of network.
+    type: str
+  net_name:
+    aliases:
+      - network
+    description:
+      - Name of a network.
+    type: str
+  number:
+    aliases:
+      - access_policy_number
+    description:
+      - Number of the access_policy.
+    type: int
+  org_id:
+    description:
+      - ID of organization associated to a network.
+    type: str
+  radius_accounting_enabled:
+    description:
+      - Enable or disable RADIUS accounting.
+    type: bool
+  radius_accounting_servers:
+    description:
+      - List of RADIUS servers for RADIUS accounting.
+    elements: dict
+    suboptions:
+      host:
+        description:
+          - IP address or hostname of RADIUS server.
+        required: true
+        type: str
+      port:
+        description:
+          - Port number RADIUS server is listening to.
+        type: int
+      secret:
+        description:
+          - RADIUS password.
+        type: str
+    type: list
+  radius_attribute_group_policy_name:
+    choices:
+      - Filter-Id
+      - ''
+    default: ''
+    description:
+      - Enable that attribute for a RADIUS
+    type: str
+  radius_coa_enabled:
+    description:
+      - Enable or disable RADIUS CoA (Change of Authorization).
+    type: bool
+  radius_servers:
+    description:
+      - List of RADIUS servers.
+    elements: dict
+    suboptions:
+      host:
+        description:
+          - IP address or hostname of RADIUS server.
+        required: true
+        type: str
+      port:
+        description:
+          - Port number RADIUS server is listening to.
+        type: int
+      secret:
+        description:
+          - RADIUS password.
+          - Setting password is not idempotent.
+        type: str
+    type: list
+  radius_testing:
+    default: true
+    description:
+      - Set status of testing a radius.
+    type: bool
+  state:
+    choices:
+      - absent
+      - query
+      - present
+    default: present
+    description:
+      - Specifies whether SNMP information should be queried or modified.
+    type: str
+  suspend_port_bounce:
+    default: false
+    description:
+      - Enable or disable the Suspend Port Bounce when RADIUS servers are unreachable.
+    type: bool
+  systems_management_enrollment:
+    default: false
+    description:
+      - Set if the Systems Management Enrollemnt is enabled or disabled
+    type: bool
+  voice_vlan_clients:
+    default: true
+    description:
+      - If is enabled that means Voice VLAN client require authentication
+    type: bool
+  voice_vlan_id:
+    description:
+      - Set a Voice VLAN ID for Critical Auth VLAN
+    type: int
+short_description: Manage Switch Access Policies in the Meraki cloud
 """
 
 EXAMPLES = r"""
@@ -163,30 +178,29 @@ EXAMPLES = r"""
   cisco.meraki.meraki_ms_access_policies:
     auth_key: abc123
     state: present
-    name: "Meraki authentication policy"
-    auth_method: "Meraki authentication"
+    name: Meraki authentication policy
+    auth_method: Meraki authentication
     net_name: YourNet
     org_name: YourOrg
   delegate_to: localhost
-
 - name: Create access policy with auth_method is "my Radius Server"
   cisco.meraki.meraki_ms_access_policies:
     auth_key: abc123
-    access_policy_type: "802.1x"
-    host_mode: "Single-Host"
+    access_policy_type: 802.1x
+    host_mode: Single-Host
     state: present
-    name: "Meraki authentication policy"
-    auth_method: "my RADIUS server"
+    name: Meraki authentication policy
+    auth_method: my RADIUS server
     radius_servers:
       - host: 192.0.1.18
         port: 7890
         secret: secret123
     net_name: YourNet
     org_name: YourOrg
-    radius_coa_enabled: False
-    radius_accounting_enabled: False
+    radius_coa_enabled: false
+    radius_accounting_enabled: false
     guest_vlan: 10
-    voice_vlan_clients: False
+    voice_vlan_clients: false
 """
 
 RETURN = r"""
@@ -239,7 +253,7 @@ data:
                             description: Enable or disable suspend port bounce
                             returned: success
                             type: bool
-                            sample: False
+                            sample: false
                         voice_vlan_id:
                             description: VLAN ID for voice
                             returned: success
@@ -283,12 +297,12 @@ data:
             description: Enable or disable Radius Testing
             returned: success
             type: bool
-            sample: True
+            sample: true
         voice_vlan_clients:
             description: Enable or disable Voice Vlan Clients
             returned: success
             type: bool
-            sample: False
+            sample: false
 """
 
 from ansible.module_utils.basic import AnsibleModule, json

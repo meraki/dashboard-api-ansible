@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_alternate_management_interface
-short_description: Resource module for networks _wireless _alternate _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _alternate _management _interface.
-- Update alternate management interface and device static IP.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _alternate _management
+    _interface.
+  - Update alternate management interface and device static IP.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_alternate_management_interface
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_alternate_management_interface,
+  - Paths used are put /networks/{networkId}/wireless/alternateManagementInterface,
 options:
   accessPoints:
     description: Array of access point serial number and IP assignment. Note accessPoints
@@ -24,8 +25,8 @@ options:
     elements: dict
     suboptions:
       alternateManagementIp:
-        description: Wireless alternate management interface device IP. Provide an empty
-          string to remove alternate management IP assignment.
+        description: Wireless alternate management interface device IP. Provide an
+          empty string to remove alternate management IP assignment.
         type: str
       dns1:
         description: Primary DNS must be in IP format.
@@ -37,8 +38,8 @@ options:
         description: Gateway must be in IP format.
         type: str
       serial:
-        description: Serial number of access point to be configured with alternate management
-          IP.
+        description: Serial number of access point to be configured with alternate
+          management IP.
         type: str
       subnetMask:
         description: Subnet mask must be in IP format.
@@ -59,60 +60,56 @@ options:
     description: Alternate management interface VLAN, must be between 1 and 4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
-  description: Complete reference of the updateNetworkWirelessAlternateManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_alternate_management_interface,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/alternateManagementInterface,
+  - description: Complete reference of the updateNetworkWirelessAlternateManagementInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
+short_description: Resource module for networks _wireless _alternate _management _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_wireless_alternate_management_interface:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     accessPoints:
-    - alternateManagementIp: 1.2.3.4
-      dns1: 8.8.8.8
-      dns2: 8.8.4.4
-      gateway: 1.2.3.5
-      serial: Q234-ABCD-5678
-      subnetMask: 255.255.255.0
+      - alternateManagementIp: 1.2.3.4
+        dns1: 8.8.8.8
+        dns2: 8.8.4.4
+        gateway: 1.2.3.5
+        serial: Q234-ABCD-5678
+        subnetMask: 255.255.255.0
     enabled: true
     networkId: string
     protocols:
-    - radius
-    - snmp
-    - syslog
-    - ldap
+      - radius
+      - snmp
+      - syslog
+      - ldap
     vlanId: 100
-
 """
 RETURN = r"""
 meraki_response:

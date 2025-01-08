@@ -1,18 +1,13 @@
----
-# Notes:
-# The playbook can't make changes if the device is using DHCP for IP assignment, it will just run and report success
-# Works by imports the serial numbers of devices to use from a devices.yaml file
-
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   gather_facts: false
   vars:
-    org_id: "XXXXXXX"
+    org_id: XXXXXXX
   tasks:
     - name: Include vars of devices.yaml into the 'devices' variable
-      include_vars:
+      ansible.builtin.include_vars:
         file: devices.yaml
         name: devices
-
     - name: Change DNS management information
       cisco.meraki.devices_management_interface:
         state: present

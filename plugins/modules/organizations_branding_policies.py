@@ -5,21 +5,25 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_branding_policies
-short_description: Resource module for organizations _branding _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _branding _policies.
-- Add a new branding policy to an organization.
-- Delete a branding policy.
-- Update a branding policy.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _branding
+    _policies.
+  - Add a new branding policy to an organization.
+  - Delete a branding policy.
+  - Update a branding policy.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_branding_policies
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_branding_policy,
+    organizations.Organizations.delete_organization_branding_policy, organizations.Organizations.update_organization_branding_policy,
+  - Paths used are post /organizations/{organizationId}/brandingPolicies, delete /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
+    put /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
 options:
   adminSettings:
-    description: Settings for describing which kinds of admins this policy applies to.
+    description: Settings for describing which kinds of admins this policy applies
+      to.
     suboptions:
       appliesTo:
         description: Which kinds of admins this policy applies to. Can be one of 'All
@@ -31,8 +35,8 @@ options:
         description: If 'appliesTo' is set to one of 'Specific admins...', 'All admins
           of networks...' or 'All admins of networks tagged...', then you must specify
           this 'values' property to provide the set of entities to apply the branding
-          policy to. For 'Specific admins...', specify an array of admin IDs. For 'All
-          admins of networks...', specify an array of network IDs and/or configuration
+          policy to. For 'Specific admins...', specify an array of admin IDs. For
+          'All admins of networks...', specify an array of network IDs and/or configuration
           template IDs. For 'All admins of networks tagged...', specify an array of
           tag names.
         elements: str
@@ -51,11 +55,12 @@ options:
         description: Properties for setting the image.
         suboptions:
           contents:
-            description: The file contents (a base 64 encoded string) of your new logo.
+            description: The file contents (a base 64 encoded string) of your new
+              logo.
             type: str
           format:
-            description: The format of the encoded contents. Supported formats are 'png',
-              'gif', and jpg'.
+            description: The format of the encoded contents. Supported formats are
+              'png', 'gif', and jpg'.
             type: str
         type: dict
     type: dict
@@ -72,8 +77,9 @@ options:
       when not provided.
     suboptions:
       apiDocsSubtab:
-        description: The 'Help -> API docs' subtab where a detailed description of the
-          Dashboard API is listed. Can be one of 'default or inherit', 'hide' or 'show'.
+        description: The 'Help -> API docs' subtab where a detailed description of
+          the Dashboard API is listed. Can be one of 'default or inherit', 'hide'
+          or 'show'.
         type: str
       casesSubtab:
         description: The 'Help -> Cases' Dashboard subtab on which Cisco Meraki support
@@ -96,19 +102,19 @@ options:
         type: str
       firewallInfoSubtab:
         description: The 'Help -> Firewall info' subtab where necessary upstream firewall
-          rules for communication to the Cisco Meraki cloud are listed. Can be one of
-          'default or inherit', 'hide' or 'show'.
+          rules for communication to the Cisco Meraki cloud are listed. Can be one
+          of 'default or inherit', 'hide' or 'show'.
         type: str
       getHelpSubtab:
         description: The 'Help -> Get Help' subtab on which Cisco Meraki KB, Product
           Manuals, and Support/Case Information are displayed. Note that if this subtab
           is hidden, branding customizations for the KB on 'Get help', Cisco Meraki
-          product documentation, and support contact info will not be visible. Can be
-          one of 'default or inherit', 'hide' or 'show'.
+          product documentation, and support contact info will not be visible. Can
+          be one of 'default or inherit', 'hide' or 'show'.
         type: str
       getHelpSubtabKnowledgeBaseSearch:
-        description: The KB search box which appears on the Help page. Can be one of
-          'default or inherit', 'hide', 'show', or a replacement custom HTML string.
+        description: The KB search box which appears on the Help page. Can be one
+          of 'default or inherit', 'hide', 'show', or a replacement custom HTML string.
         type: str
       hardwareReplacementsSubtab:
         description: The 'Help -> Replacement info' subtab where important information
@@ -116,9 +122,9 @@ options:
           'hide' or 'show'.
         type: str
       helpTab:
-        description: The Help tab, under which all support information resides. If this
-          tab is hidden, no other 'Help' branding customizations will be visible. Can
-          be one of 'default or inherit', 'hide' or 'show'.
+        description: The Help tab, under which all support information resides. If
+          this tab is hidden, no other 'Help' branding customizations will be visible.
+          Can be one of 'default or inherit', 'hide' or 'show'.
         type: str
       helpWidget:
         description: The 'Help Widget' is a support widget which provides access to
@@ -130,9 +136,10 @@ options:
           are detailed. Can be one of 'default or inherit', 'hide' or 'show'.
         type: str
       smForums:
-        description: The 'SM Forums' subtab which links to community-based support for
-          Cisco Meraki Systems Manager. Only configurable for organizations that contain
-          Systems Manager networks. Can be one of 'default or inherit', 'hide' or 'show'.
+        description: The 'SM Forums' subtab which links to community-based support
+          for Cisco Meraki Systems Manager. Only configurable for organizations that
+          contain Systems Manager networks. Can be one of 'default or inherit', 'hide'
+          or 'show'.
         type: str
       supportContactInfo:
         description: The 'Contact Meraki Support' section of the 'Help -> Get Help'
@@ -140,10 +147,10 @@ options:
           custom HTML string.
         type: str
       universalSearchKnowledgeBaseSearch:
-        description: The universal search box always visible on Dashboard will, by default,
-          present results from the Meraki KB. This configures whether these Meraki KB
-          results should be returned. Can be one of 'default or inherit', 'hide' or
-          'show'.
+        description: The universal search box always visible on Dashboard will, by
+          default, present results from the Meraki KB. This configures whether these
+          Meraki KB results should be returned. Can be one of 'default or inherit',
+          'hide' or 'show'.
         type: str
     type: dict
   name:
@@ -153,59 +160,51 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationBrandingPolicy
-  description: Complete reference of the createOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-branding-policy
-- name: Cisco Meraki documentation for organizations deleteOrganizationBrandingPolicy
-  description: Complete reference of the deleteOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-branding-policy
-- name: Cisco Meraki documentation for organizations updateOrganizationBrandingPolicy
-  description: Complete reference of the updateOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policy
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_branding_policy,
-    organizations.Organizations.delete_organization_branding_policy,
-    organizations.Organizations.update_organization_branding_policy,
-
-  - Paths used are
-    post /organizations/{organizationId}/brandingPolicies,
-    delete /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
-    put /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
+  - description: Complete reference of the createOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-branding-policy
+    name: Cisco Meraki documentation for organizations createOrganizationBrandingPolicy
+  - description: Complete reference of the deleteOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-branding-policy
+    name: Cisco Meraki documentation for organizations deleteOrganizationBrandingPolicy
+  - description: Complete reference of the updateOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policy
+    name: Cisco Meraki documentation for organizations updateOrganizationBrandingPolicy
+short_description: Resource module for organizations _branding _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.organizations_branding_policies:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     adminSettings:
       appliesTo: All admins of networks...
       values:
-      - N_1234
-      - L_5678
+        - N_1234
+        - L_5678
     customLogo:
       enabled: true
       image:
@@ -230,61 +229,59 @@ EXAMPLES = r"""
       universalSearchKnowledgeBaseSearch: hide
     name: My Branding Policy
     organizationId: string
-
 - name: Delete by id
   cisco.meraki.organizations_branding_policies:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: absent
     brandingPolicyId: string
     organizationId: string
-
 - name: Update by id
   cisco.meraki.organizations_branding_policies:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     adminSettings:
       appliesTo: All admins of networks...
       values:
-      - N_1234
-      - L_5678
+        - N_1234
+        - L_5678
     brandingPolicyId: string
     customLogo:
       enabled: true
@@ -310,7 +307,6 @@ EXAMPLES = r"""
       universalSearchKnowledgeBaseSearch: hide
     name: My Branding Policy
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

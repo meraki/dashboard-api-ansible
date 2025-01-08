@@ -1,7 +1,7 @@
----
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   vars:
-    org_id: "XXXXXXXX"
+    org_id: XXXXXXXX
   gather_facts: false
   tasks:
     - name: Get all organizations _devices
@@ -10,7 +10,6 @@
         organizationId: "{{ org_id }}"
         total_pages: -1
       register: org_devices
-    
     - name: Show All Devices
       ansible.builtin.debug:
         msg: "{{ org_devices }}"

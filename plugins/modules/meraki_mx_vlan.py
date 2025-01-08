@@ -333,7 +333,7 @@ response:
       description: Whether DHCP boot options are enabled.
       returned: success
       type: bool
-      sample: no
+      sample: false
     dhcp_boot_next_server:
       description: DHCP boot option to direct boot clients to the server to load the boot file from.
       returned: success

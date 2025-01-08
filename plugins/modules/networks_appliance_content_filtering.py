@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_content_filtering
-short_description: Resource module for networks _appliance _content _filtering
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _content _filtering.
-- Update the content filtering settings for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _content _filtering.
+  - Update the content filtering settings for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_content_filtering
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_content_filtering,
+  - Paths used are put /networks/{networkId}/appliance/contentFiltering,
 options:
   allowedUrlPatterns:
     description: A list of URL patterns that are allowed.
@@ -35,56 +35,52 @@ options:
     description: URL category list size which is either 'topSites' or 'fullList'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
-  description: Complete reference of the updateNetworkApplianceContentFiltering API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_content_filtering,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/contentFiltering,
+  - description: Complete reference of the updateNetworkApplianceContentFiltering
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
+short_description: Resource module for networks _appliance _content _filtering
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_appliance_content_filtering:
-    meraki_api_key: "{{meraki_api_key}}"
-    meraki_base_url: "{{meraki_base_url}}"
-    meraki_single_request_timeout: "{{meraki_single_request_timeout}}"
-    meraki_certificate_path: "{{meraki_certificate_path}}"
-    meraki_requests_proxy: "{{meraki_requests_proxy}}"
-    meraki_wait_on_rate_limit: "{{meraki_wait_on_rate_limit}}"
-    meraki_nginx_429_retry_wait_time: "{{meraki_nginx_429_retry_wait_time}}"
-    meraki_action_batch_retry_wait_time: "{{meraki_action_batch_retry_wait_time}}"
-    meraki_retry_4xx_error: "{{meraki_retry_4xx_error}}"
-    meraki_retry_4xx_error_wait_time: "{{meraki_retry_4xx_error_wait_time}}"
-    meraki_maximum_retries: "{{meraki_maximum_retries}}"
-    meraki_output_log: "{{meraki_output_log}}"
-    meraki_log_file_prefix: "{{meraki_log_file_prefix}}"
-    meraki_log_path: "{{meraki_log_path}}"
-    meraki_print_console: "{{meraki_print_console}}"
-    meraki_suppress_logging: "{{meraki_suppress_logging}}"
-    meraki_simulate: "{{meraki_simulate}}"
-    meraki_be_geo_id: "{{meraki_be_geo_id}}"
-    meraki_use_iterator_for_get_pages: "{{meraki_use_iterator_for_get_pages}}"
-    meraki_inherit_logging_config: "{{meraki_inherit_logging_config}}"
+    meraki_api_key: '{{ meraki_api_key }}'
+    meraki_base_url: '{{ meraki_base_url }}'
+    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+    meraki_certificate_path: '{{ meraki_certificate_path }}'
+    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+    meraki_output_log: '{{ meraki_output_log }}'
+    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+    meraki_log_path: '{{ meraki_log_path }}'
+    meraki_print_console: '{{ meraki_print_console }}'
+    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+    meraki_simulate: '{{ meraki_simulate }}'
+    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
     state: present
     allowedUrlPatterns:
-    - http://www.example.org
-    - http://help.com.au
+      - http://www.example.org
+      - http://help.com.au
     blockedUrlCategories:
-    - meraki:contentFiltering/category/1
-    - meraki:contentFiltering/category/7
+      - meraki:contentFiltering/category/1
+      - meraki:contentFiltering/category/7
     blockedUrlPatterns:
-    - http://www.example.com
-    - http://www.betting.com
+      - http://www.example.com
+      - http://www.betting.com
     networkId: string
     urlCategoryListSize: topSites
-
 """
 RETURN = r"""
 meraki_response:

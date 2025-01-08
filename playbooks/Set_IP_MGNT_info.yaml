@@ -1,5 +1,5 @@
----
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   gather_facts: false
   tasks:
     - name: Change management information
@@ -8,8 +8,8 @@
         serial: XXXX-XXXX-XXXX
         wan1:
           staticDns:
-          - 192.168.20.2
-          - 8.8.8.8
+            - 192.168.20.2
+            - 8.8.8.8
           staticGatewayIp: 192.168.20.1
           staticIp: 192.168.20.181
           staticSubnetMask: 255.255.255.0

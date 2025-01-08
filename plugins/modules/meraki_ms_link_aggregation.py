@@ -67,32 +67,32 @@ extends_documentation_fragment: cisco.meraki.meraki
 EXAMPLES = r'''
 - name: Create LAG
   meraki_ms_link_aggregation:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: present
-    org_name: '{{test_org_name}}'
-    net_name: '{{test_switch_net_name}}'
+    org_name: '{{ test_org_name }}'
+    net_name: '{{ test_switch_net_name }}'
     switch_ports:
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "1"
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "2"
   delegate_to: localhost
 
 - name: Update LAG
   meraki_ms_link_aggregation:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: present
-    org_name: '{{test_org_name}}'
-    net_name: '{{test_switch_net_name}}'
-    lag_id: '{{lag_id}}'
+    org_name: '{{ test_org_name }}'
+    net_name: '{{ test_switch_net_name }}'
+    lag_id: '{{ lag_id }}'
     switch_ports:
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "1"
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "2"
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "3"
-      - serial: '{{serial_switch}}'
+      - serial: '{{ serial_switch }}'
         port_id: "4"
   delegate_to: localhost
 '''

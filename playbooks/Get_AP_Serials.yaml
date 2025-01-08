@@ -1,7 +1,7 @@
----
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   vars:
-    org_id: "XXXXXXXX"
+    org_id: XXXXXXXX
   gather_facts: false
   tasks:
     - name: Get all organizations _devices
@@ -10,12 +10,12 @@
         organizationId: "{{ org_id }}"
         total_pages: -1
       register: result
-
     - name: Filter APs with "wireless" productTypes and get Serial Number
-      set_fact:
-        filtered_aps: "{{ result.meraki_response | selectattr('productType', 'contains', 'wireless') | map(attribute='serial') | list }}"
+      ansible.builtin.set_fact:
+        filtered_aps:
+          "{{ result.meraki_response | selectattr('productType', 'contains',
+          'wireless') | map(attribute='serial') | list }}"
       register: aps
-
     - name: Show All Devices
       ansible.builtin.debug:
         msg: "{{ aps }}"

@@ -78,7 +78,7 @@ options:
                 - Whether to log hints against the firewall rule.
                 - Only applicable if a syslog server is specified against the network.
                 type: bool
-                default: False
+                default: false
     syslog_default_rule:
         description:
         - Whether to log hits against the default firewall rule.
@@ -133,7 +133,7 @@ EXAMPLES = r'''
         dest_port: any
         protocol: any
         policy: deny
-    syslog_default_rule: yes
+    syslog_default_rule: true
   delegate_to: localhost
 '''
 
