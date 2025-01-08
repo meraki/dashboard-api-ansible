@@ -252,7 +252,7 @@
     - name: Assert included_missing
       ansible.builtin.assert:
         that:
-          - 'included_missing.msg == "included_cidr is required when use_default is False."'
+          - 'included_missing.msg == "included_cidr is required when use_default is false."'
 
     - name: Test use_default error with included_cidr
       cisco.meraki.meraki_mx_intrusion_prevention:
@@ -273,7 +273,7 @@
     - name: Assert excluded_missing
       ansible.builtin.assert:
         that:
-          - 'excluded_missing.msg == "excluded_cidr is required when use_default is False."'
+          - 'excluded_missing.msg == "excluded_cidr is required when use_default is false."'
 
   # #############################################################################
   # # Tear down starts here

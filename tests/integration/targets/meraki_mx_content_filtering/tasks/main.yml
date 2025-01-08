@@ -142,7 +142,7 @@
   - name: Assert single_allowed_idempotent
     ansible.builtin.assert:
       that:
-        - single_allowed_idempotent.changed == False
+        - single_allowed_idempotent.changed == false
         - single_allowed_idempotent.data is defined
 
   - name: Set single blocked URL pattern
@@ -182,7 +182,7 @@
   - name: Debug two_allowed
     ansible.builtin.assert:
       that:
-        - two_allowed.changed == True
+        - two_allowed.changed == true
         - two_allowed.data.allowed_url_patterns | length == 2
 
   - name: Set blocked URL category
@@ -203,7 +203,7 @@
   - name: Assert blocked_category
     ansible.builtin.assert:
       that:
-        - blocked_category.changed == True
+        - blocked_category.changed == true
         - blocked_category.data.blocked_url_categories | length == 1
         # - blocked_category.data.url_category_list_size == "fullList"
 
@@ -225,7 +225,7 @@
   # - name: Assert blocked_category
   #   ansible.builtin.assert:
   #     that:
-  #       - blocked_category.changed == True
+  #       - blocked_category.changed == true
   #       - blocked_category.data.blocked_url_categories | length == 1
   #       # - blocked_category.data.url_category_list_size == "topSites"
 

@@ -115,7 +115,7 @@
   - name: Assert if query_serial has been not changed
     ansible.builtin.assert:
       that:
-        - query_serial.changed == False
+        - query_serial.changed == false
 
   - name: Query uplink information for a device
     cisco.meraki.meraki_device:
@@ -241,7 +241,7 @@
   - name: Assert update_device_idempotent
     ansible.builtin.assert:
       that:
-        - update_device_idempotent.changed == False
+        - update_device_idempotent.changed == false
         - update_device_idempotent.data is defined
 
   always:

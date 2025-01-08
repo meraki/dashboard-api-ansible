@@ -68,7 +68,7 @@
   - name: Assert bind
     ansible.builtin.assert:
       that:
-        bind.changed == True
+        bind.changed == true
 
   - name: Assert if bind_check has been changed
     ansible.builtin.assert:
@@ -89,7 +89,7 @@
   - name: Assert if bind_invalid has been not changed
     ansible.builtin.assert:
       that:
-        - bind_invalid.changed == False
+        - bind_invalid.changed == false
 
   - name: Unbind a template from a network
     cisco.meraki.meraki_config_template:
@@ -103,7 +103,7 @@
   - name: Assert if unbind has been changed
     ansible.builtin.assert:
       that:
-        unbind.changed == True
+        unbind.changed == true
 
   - name: Unbind a template from a network when it's not bound
     cisco.meraki.meraki_config_template:
@@ -117,7 +117,7 @@
   - name: Assert if unbind_invalid has been not changed
     ansible.builtin.assert:
       that:
-        unbind_invalid.changed == False
+        unbind_invalid.changed == false
 
   - name: Bind a template to a network via id
     cisco.meraki.meraki_config_template:
@@ -131,7 +131,7 @@
   - name: Assert if bind_id has been changed
     ansible.builtin.assert:
       that:
-        bind_id.changed == True
+        bind_id.changed == true
 
   - name: Bind a template to a network via id for idempotency
     cisco.meraki.meraki_config_template:
@@ -145,7 +145,7 @@
   - name: Assert bind_id_idempotent
     ansible.builtin.assert:
       that:
-        - bind_id_idempotent.changed == False
+        - bind_id_idempotent.changed == false
         - bind_id_idempotent.data is defined
 
   - name: Unbind a template from a network via id with check mode
@@ -175,7 +175,7 @@
   - name: Assert if unbind_id_check has been changed
     ansible.builtin.assert:
       that:
-        unbind_id.changed == True
+        unbind_id.changed == true
 
   # This is disabled by default since they can't be created via API
   # - name: Delete sacrificial template with check mode

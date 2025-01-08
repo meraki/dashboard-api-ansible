@@ -188,7 +188,7 @@
       that:
         - query.data.rules.1.comment == 'Wireless clients accessing LAN'
         - query.data.rules.2.comment == 'Default rule'
-        - query.changed == False
+        - query.changed == false
 
 ############################################################################
 # Tear down starts here

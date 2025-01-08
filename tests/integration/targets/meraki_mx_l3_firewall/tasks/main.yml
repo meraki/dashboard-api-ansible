@@ -112,7 +112,7 @@
           - create_one.data.rules.0.dest_cidr == '192.0.1.1/32'
           - create_one.data.rules.0.protocol == 'tcp'
           - create_one.data.rules.0.policy == 'deny'
-          - create_one.changed == True
+          - create_one.changed == true
           - create_one.data is defined
 
     - name: Check for idempotency
@@ -139,7 +139,7 @@
     - name: Assert create_one_idempotent
       ansible.builtin.assert:
         that:
-          - create_one_idempotent.changed == False
+          - create_one_idempotent.changed == false
           - create_one_idempotent.data is defined
 
     - name: Update one existing rule
@@ -166,7 +166,7 @@
     - name: Assert update_one
       ansible.builtin.assert:
         that:
-          - update_one.changed == True
+          - update_one.changed == true
           - update_one.data is defined
 
     - name: Create syslog in network
@@ -210,7 +210,7 @@
       ansible.builtin.assert:
         that:
           - default_syslog_check.data is defined
-          - default_syslog_check.data.1.syslog_enabled == True
+          - default_syslog_check.data.1.syslog_enabled == true
 
     - name: Enable syslog for default rule
       cisco.meraki.meraki_mx_l3_firewall:
@@ -289,8 +289,8 @@
     - name: Assert query.data and default_syslog.changed
       ansible.builtin.assert:
         that:
-          - query.data.rules.1.syslog_enabled == True
-          - default_syslog.changed == True
+          - query.data.rules.1.syslog_enabled == true
+          - default_syslog.changed == true
 
     - name: Disable syslog for default rule
       cisco.meraki.meraki_mx_l3_firewall:
@@ -350,7 +350,7 @@
     - name: Assert enable_syslog_only_check
       ansible.builtin.assert:
         that:
-          - enable_syslog_only_check.data.rules.1.syslog_enabled == True
+          - enable_syslog_only_check.data.rules.1.syslog_enabled == true
           - enable_syslog_only_check is changed
 
     - name: Query firewall rules
@@ -369,8 +369,8 @@
     - name: Assert query.data and disable_syslog
       ansible.builtin.assert:
         that:
-          - query.data.rules.1.syslog_enabled == False
-          - disable_syslog.changed == True
+          - query.data.rules.1.syslog_enabled == false
+          - disable_syslog.changed == true
 
   always:
     - name: Delete all firewall rules

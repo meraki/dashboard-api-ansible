@@ -222,9 +222,9 @@
   - name: Assert status pages - local disabled remote disabled
     ansible.builtin.assert:
       that:
-        - status_pages_1.changed == True
-        - status_pages_1['data']['local_status_page_enabled'] == False
-        - status_pages_1['data']['remote_status_page_enabled'] == False
+        - status_pages_1.changed == true
+        - status_pages_1['data']['local_status_page_enabled'] == false
+        - status_pages_1['data']['remote_status_page_enabled'] == false
 
   - name: Test status pages - local enabled remote disabled
     cisco.meraki.meraki_network_settings:
@@ -240,9 +240,9 @@
   - name: Assert status pages - local enabled remote disabled
     ansible.builtin.assert:
       that:
-        - status_pages_2.changed == True
-        - status_pages_2['data']['local_status_page_enabled'] == True
-        - status_pages_2['data']['remote_status_page_enabled'] == False
+        - status_pages_2.changed == true
+        - status_pages_2['data']['local_status_page_enabled'] == true
+        - status_pages_2['data']['remote_status_page_enabled'] == false
 
   - name: Test status pages - local enabled remote enabled
     cisco.meraki.meraki_network_settings:
@@ -258,9 +258,9 @@
   - name: Assert status pages - local enabled remote enabled
     ansible.builtin.assert:
       that:
-        - status_pages_3.changed == True
-        - status_pages_3['data']['local_status_page_enabled'] == True
-        - status_pages_3['data']['remote_status_page_enabled'] == True
+        - status_pages_3.changed == true
+        - status_pages_3['data']['local_status_page_enabled'] == true
+        - status_pages_3['data']['remote_status_page_enabled'] == true
 
   
   - name: Test status pages - local disabled remote enabled - expected to fail
@@ -278,7 +278,7 @@
   - name: Assert status pages - local disabled remote enabled
     ansible.builtin.assert:
       that:
-        - status_pages_4.changed == False
+        - status_pages_4.changed == false
         - '"must be true when setting" in status_pages_4.msg'
 
 #############################################################################

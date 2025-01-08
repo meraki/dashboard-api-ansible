@@ -60,7 +60,7 @@
       ansible.builtin.assert:
         that:
           - snmp_v2_disable.data.v2_community_string is not defined
-          - snmp_v2_disable.data.v2c_enabled == False
+          - snmp_v2_disable.data.v2c_enabled == false
 
     - name: Enable SNMPv2c with org_id
       cisco.meraki.meraki_snmp:
@@ -90,7 +90,7 @@
       ansible.builtin.assert:
         that:
           - snmp_v2_disable_id.data.v2_community_string is not defined
-          - snmp_v2_disable_id.data.v2c_enabled == False
+          - snmp_v2_disable_id.data.v2c_enabled == false
 
     - name: Enable SNMPv3 with check mode
       cisco.meraki.meraki_snmp:
@@ -109,8 +109,8 @@
     - name: Assert check mode
       ansible.builtin.assert:
         that:
-          - snmp_v3_enable_check.data.v3_enabled == True
-          - snmp_v3_enable_check.changed == True
+          - snmp_v3_enable_check.data.v3_enabled == true
+          - snmp_v3_enable_check.changed == true
 
     - name: Enable SNMPv3
       cisco.meraki.meraki_snmp:
@@ -128,8 +128,8 @@
     - name: Assert v3 enabled
       ansible.builtin.assert:
         that:
-          - snmp_v3_enable.data.v3_enabled == True
-          - snmp_v3_enable.changed == True
+          - snmp_v3_enable.data.v3_enabled == true
+          - snmp_v3_enable.changed == true
 
     - name: Check for idempotency
       cisco.meraki.meraki_snmp:
@@ -147,7 +147,7 @@
     - name: Assert idempotency
       ansible.builtin.assert:
         that:
-          - snmp_idempotent.changed == False
+          - snmp_idempotent.changed == false
           - snmp_idempotent.data is defined
 
     - name: Add peer IPs

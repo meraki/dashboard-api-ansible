@@ -103,7 +103,7 @@
   - name: Assert enable_name_ssid_idempotent
     ansible.builtin.assert:
       that:
-        - enable_name_ssid_idempotent.changed == False
+        - enable_name_ssid_idempotent.changed == false
         - enable_name_ssid_idempotent.data is defined
 
   - name: Set splash portal with sponsor domain
@@ -185,7 +185,7 @@
   - name: Assert disable_ssid
     ansible.builtin.assert:
       that:
-        - disable_ssid.data.enabled == False
+        - disable_ssid.data.enabled == false
 
   - name: Enable SSID with number
     cisco.meraki.meraki_mr_ssid:
@@ -655,7 +655,7 @@
   - name: Assert set_vlan_arg_err.msg
     ansible.builtin.assert:
       that:
-        - 'set_vlan_arg_err.msg == "default_vlan_id is required when use_vlan_tagging is True"'
+        - 'set_vlan_arg_err.msg == "default_vlan_id is required when use_vlan_tagging is true"'
 
   - name: Create SSID to Test SSID Delete Idempotency
     cisco.meraki.meraki_mr_ssid:

@@ -91,7 +91,7 @@
 
   - assert:
       that:
-        - create_route.changed == True
+        - create_route.changed == true
         - create_route.data.id is defined
 
   - name: Update static route
@@ -145,7 +145,7 @@
 
   - assert:
       that:
-        - update_idempotent.changed == False
+        - update_idempotent.changed == false
         - update_idempotent.data is defined
 
   - name: Update static route with fixed IP assignment and reservation

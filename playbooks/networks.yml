@@ -5,7 +5,7 @@
 #     - name: Get all networks
 #       cisco.meraki.networks_info:
 #         # configTemplateId: string
-#         # isBoundToConfigTemplate: True
+#         # isBoundToConfigTemplate: true
 #         # tags: []
 #         # tagsFilterType: string
 #         # perPage: 0
@@ -16,7 +16,7 @@
 #     - name: Get all networks2
 #       cisco.meraki.networks_clients_info:
 #         # configTemplateId: string
-#         # isBoundToConfigTemplate: True
+#         # isBoundToConfigTemplate: true
 #         # tags: []
 #         # tagsFilterType: string
 #         # perPage: 0

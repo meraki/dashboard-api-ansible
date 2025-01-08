@@ -369,7 +369,7 @@
     ansible.builtin.assert:
       that:
         - query_all.data | length == 4
-        - query_all.changed == False
+        - query_all.changed == false
 
   - name: Query admin by name
     cisco.meraki.meraki_admin:
