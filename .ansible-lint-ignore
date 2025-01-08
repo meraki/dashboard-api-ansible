@@ -1,2 +1,2 @@
-workflows/docs.yml profile:basic
-.github/workflows/docs.yml profile:basic
+workflows/docs.yml yaml[truthy]
+.github/workflows/docs.yml yaml[truthy]
