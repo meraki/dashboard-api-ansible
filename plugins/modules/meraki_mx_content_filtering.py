@@ -76,7 +76,7 @@ extends_documentation_fragment: cisco.meraki.meraki
 
 EXAMPLES = r'''
 - name: Set single allowed URL pattern
-meraki_content_filtering:
+  meraki_content_filtering:
     auth_key: abc123
     org_name: YourOrg
     net_name: YourMXNet
@@ -84,7 +84,7 @@ meraki_content_filtering:
       - "http://www.ansible.com/*"
 
 - name: Set blocked URL category
-meraki_content_filtering:
+  meraki_content_filtering:
     auth_key: abc123
     org_name: YourOrg
     net_name: YourMXNet
@@ -94,7 +94,7 @@ meraki_content_filtering:
       - "Adult and Pornography"
 
 - name: Remove match patterns and categories
-meraki_content_filtering:
+  meraki_content_filtering:
     auth_key: abc123
     org_name: YourOrg
     net_name: YourMXNet
