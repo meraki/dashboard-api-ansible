@@ -9,7 +9,7 @@
 
     - name: Show current Meraki administrator
       ansible.builtin.debug:
-        msg: "{{ whoamiresult.meraki_response.name }} - {{whoamiresult.meraki_response.email}}"
+        msg: "{{ whoamiresult.meraki_response.name }} - {{ whoamiresult.meraki_response.email }}"
 
     - name: Get all Organizations
       cisco.meraki.organizations_info:

@@ -364,7 +364,7 @@
 
     - name: Debug query.data.rules.1
       ansible.builtin.debug:
-        msg: "{{query.data.rules.1}}"
+        msg: "{{ query.data.rules.1 }}"
 
     - name: Assert query.data and disable_syslog
       ansible.builtin.assert:

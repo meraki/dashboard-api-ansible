@@ -45,7 +45,7 @@
       that:
         - create_net_switch_check is changed
         - create_net_switch_check.data is defined
-        - create_net_switch_check.data.organization_id == "{{test_org_id |string}}"
+        - create_net_switch_check.data.organization_id == "{{ test_org_id |string }}"
 
   - name: Create network with type switch
     meraki_network:
@@ -362,7 +362,7 @@
     register: create_net_tags
 
   - set_fact:
-      tag_net_id: '{{create_net_tags.data.id}}'
+      tag_net_id: '{{ create_net_tags.data.id }}'
 
   - name: Modify network by net_id
     meraki_network:

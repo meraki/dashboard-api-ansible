@@ -23,8 +23,8 @@
 #         # startingAfter: string
 #         # endingBefore: string
 #         # organizationId: "828099381482762270"
-#         networkId: "{{item.id}}"
-#       loop: "{{result.meraki_response}}"
+#         networkId: "{{ item.id }}"
+#       loop: "{{ result.meraki_response }}"
 #       register: result2
 
 #     - name: Show result

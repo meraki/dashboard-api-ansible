@@ -26,8 +26,8 @@
     register: net_spoke
 
   - set_fact:
-      net_spoke_id: '{{net_spoke.data.id}}'
-      net_hub_id: '{{net_hub.data.id}}'
+      net_spoke_id: '{{ net_spoke.data.id }}'
+      net_hub_id: '{{ net_hub.data.id }}'
 
 
   - name: Set hub mode in check mode

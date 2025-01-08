@@ -33,7 +33,7 @@
     register: query_all
 
   - set_fact:
-      interface_id_1: '{{query_all.data.1.interface_id}}'
+      interface_id_1: '{{ query_all.data.1.interface_id }}'
     ignore_errors: true
 
   - assert:
@@ -97,7 +97,7 @@
     register: create
 
   - set_fact:
-      interface_id_1: '{{create.data.interface_id}}'
+      interface_id_1: '{{ create.data.interface_id }}'
 
   - assert:
       that:

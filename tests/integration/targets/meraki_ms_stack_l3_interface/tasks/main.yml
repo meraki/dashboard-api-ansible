@@ -16,7 +16,7 @@
     register: create_net_switch
 
   - set_fact:
-      net_id: '{{create_net_switch.data.id}}'
+      net_id: '{{ create_net_switch.data.id }}'
 
   - name: Create new stack
     meraki_switch_stack:
@@ -32,7 +32,7 @@
     register: stack
 
   - set_fact:
-      stack_id: '{{stack.data.id}}'
+      stack_id: '{{ stack.data.id }}'
 
   - name: Create l3 interface with check mode
     meraki_ms_stack_l3_interface:
@@ -88,7 +88,7 @@
     register: query_l3
 
   - set_fact:
-      interface_id_1: '{{create.data.interface_id}}'
+      interface_id_1: '{{ create.data.interface_id }}'
 
   - name: Query one l3 interface
     meraki_ms_stack_l3_interface:
@@ -201,7 +201,7 @@
       var: query_l3
 
   - set_fact:
-      interface_id_1: '{{query_l3.data[0].interface_id}}'
+      interface_id_1: '{{ query_l3.data[0].interface_id }}'
     ignore_errors: true
 
   - assert:

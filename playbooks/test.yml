@@ -115,7 +115,7 @@
     # - name: Create
     #   cisco.meraki.networks_bind:
     #     autoBind: false
-    #     configTemplateId: "{{result.meraki_response.id}}"
+    #     configTemplateId: "{{ result.meraki_response.id }}"
     #     networkId: "{{ network_id }}"
 
 
