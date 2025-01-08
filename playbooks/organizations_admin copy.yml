@@ -1,4 +1,3 @@
----
 - hosts: localhost
   vars_files:
     - credentials.yml
@@ -15,14 +14,8 @@
           lng: 8
         center:
           lat: 7
-          lng: 1 
+          lng: 1
         floorPlanId: string
         imageContents: Q2lzY28gTWVyYWtp.png
         name: Test
         networkId: L_828099381482770942
-        # topLeftCorner:
-        #   lat: 0
-        #   lng: 0
-        # topRightCorner:
-        #   lat: 0
-        #   lng: 0

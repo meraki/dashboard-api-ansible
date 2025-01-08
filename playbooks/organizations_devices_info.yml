@@ -1,4 +1,3 @@
----
 - hosts: localhost
   gather_facts: false
   tasks:
@@ -7,21 +6,7 @@
         meraki_suppress_logging: true
         perPage: 3
         total_pages: -1
-        # startingAfter: string
-        # endingBefore: string
-        # configurationUpdatedAfter: string
-        # networkIds: []
-        # productTypes: []
-        # tags: []
-        # tagsFilterType: string
-        # name: string
-        # mac: string
-        # serial: string
-        # model: string
-        # macs: []
-        # serials: []
-        # sensorMetrics: []
-        # sensorAlertProfileIds: []
-        models: ["MV12N"]
-        organizationId: "828099381482762270"
+        models:
+          - MV12N
+        organizationId: '828099381482762270'
       register: result

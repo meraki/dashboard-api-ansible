@@ -1,4 +1,3 @@
----
 - hosts: localhost
   gather_facts: false
   tasks:
@@ -8,8 +7,6 @@
         state: present
         expiresAt: '2018-02-11T00:00:00.090209Z'
         groupPolicyId: '101'
-        # identityPskId: '1284392014819'
         name: Sample Identity PSK
         networkId: L_828099381482771185
         number: 1
-        # passphrase: secrethguygyu
