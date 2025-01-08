@@ -1,4 +1,5 @@
-- hosts: meraki_servers
+- name: Play Name
+  hosts: meraki_servers
   gather_facts: false
   tasks:
     - name: Get all Organizations

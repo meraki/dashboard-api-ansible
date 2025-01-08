@@ -32,7 +32,8 @@ meraki_server
 Create a playbook `who_am_i.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)):
 ```
 ---
-- hosts: meraki_servers
+- name: Play Name
+  hosts: meraki_servers
   gather_facts: false
   tasks:
     - name: Get my administered identities

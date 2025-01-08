@@ -19,7 +19,7 @@
     delegate_to: localhost
     register: new_net
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       test_net_id: '{{ new_net.data.id }}'
 
   - name: Enable VLANs on network

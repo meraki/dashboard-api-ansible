@@ -58,7 +58,7 @@
     delegate_to: localhost
     register: create_net_switch
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       switch_net_id: '{{ create_net_switch.data.id }}'
 
   - name: Copy network
@@ -361,7 +361,7 @@
     delegate_to: localhost
     register: create_net_tags
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       tag_net_id: '{{ create_net_tags.data.id }}'
 
   - name: Modify network by net_id

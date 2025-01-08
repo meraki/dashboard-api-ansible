@@ -15,7 +15,7 @@
     delegate_to: localhost
     register: create_net_switch
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       net_id: '{{ create_net_switch.data.id }}'
 
   - name: Create new stack
@@ -31,7 +31,7 @@
       - "QBSB-D75G-PXCG"
     register: stack
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       stack_id: '{{ stack.data.id }}'
 
   - name: Create l3 interface with check mode
@@ -87,7 +87,7 @@
     delegate_to: localhost
     register: query_l3
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       interface_id_1: '{{ create.data.interface_id }}'
 
   - name: Query one l3 interface
@@ -200,7 +200,7 @@
   - debug:
       var: query_l3
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       interface_id_1: '{{ query_l3.data[0].interface_id }}'
     ignore_errors: true
 

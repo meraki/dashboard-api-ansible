@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: update ports
+    - name: Update ports
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
         state: present

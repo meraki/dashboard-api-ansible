@@ -32,7 +32,7 @@
     delegate_to: localhost
     register: query_all
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       interface_id_1: '{{ query_all.data.1.interface_id }}'
     ignore_errors: true
 
@@ -96,7 +96,7 @@
     delegate_to: localhost
     register: create
 
-  - set_fact:
+  - ansible.builtin.set_fact:
       interface_id_1: '{{ create.data.interface_id }}'
 
   - assert:

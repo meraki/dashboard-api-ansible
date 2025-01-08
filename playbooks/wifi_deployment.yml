@@ -12,7 +12,7 @@
         organizationId: '{{ org_id }}'
       register: result
     - name: Filter networks with "wireless" productTypes
-      set_fact:
+      ansible.builtin.set_fact:
         filtered_networks: '{{ result.meraki_response | selectattr(''productTypes'',
           ''contains'', ''wireless'') | list }}'
     - name: Create corporate SSID

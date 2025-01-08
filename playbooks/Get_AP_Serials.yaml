@@ -11,7 +11,7 @@
         total_pages: -1
       register: result
     - name: Filter APs with "wireless" productTypes and get Serial Number
-      set_fact:
+      ansible.builtin.set_fact:
         filtered_aps: '{{ result.meraki_response | selectattr(''productType'', ''contains'',
           ''wireless'') | map(attribute=''serial'') | list }}'
       register: aps
