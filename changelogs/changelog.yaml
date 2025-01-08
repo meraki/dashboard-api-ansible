@@ -1161,3 +1161,10 @@ releases:
       bugfixes:
         - README fixes.
     release_date: "2025-01-07"
+  2.20.4:
+    changes:
+      bugfixes:
+        - Issue fixes for workflow-ansible-lint.
+        - Change alias 'message' to 'message_rule' due is a reserved ansible word in meraki_mx_intrusion_prevention module.
+        - Old playbook tests removed.
+    release_date: "2025-01-08"
