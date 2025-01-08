@@ -119,12 +119,12 @@ EXAMPLES = r'''
     dead_timer: 60
     areas:
       -area_id: 0
-        area_name: Backbone
-        area_type: normal
+      area_name: Backbone
+      area_type: normal
       -area_id: 1
-        area_name: Office
-        area_type: nssa
-        md5_authentication_enabled: false
+      area_name: Office
+      area_type: nssa
+      md5_authentication_enabled: false
 '''
 
 RETURN = r'''
