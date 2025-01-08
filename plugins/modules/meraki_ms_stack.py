@@ -114,9 +114,9 @@ data:
           sample: 7636
         name:
           description: Descriptive name of switch stack.
-            returned: always
-            type: str
-            sample: MyStack
+          returned: always
+          type: str
+          sample: MyStack
         serials:
             description: List of serial numbers in switch stack.
             returned: always

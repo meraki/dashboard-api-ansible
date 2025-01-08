@@ -5,8 +5,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -280,116 +278,144 @@ data:
     type: complex
     contains:
         id:
-            description: Unique identifier of existing RF profile.
-            type: str
-            returned: success
-            sample: 12345
+          description:
+            - Unique identifier of existing RF profile.
+          type: str
+          returned: success
+          sample: 12345
         band_selection_type:
-            description: Sets whether band selection is assigned per access point or SSID.
-            type: str
-            returned: success
-            sample: ap
+          description:
+            - Sets whether band selection is assigned per access point or SSID.
+            - This param is required on creation.
+          type: str
+          returned: success
+          sample: ap
         min_bitrate_type:
-            description: Type of minimum bitrate.
-            type: str
-            returned: success
-            sample: ssid
+          description:
+            - Type of minimum bitrate.
+          type: str
+          returned: success
+          sample: ssid
         name:
-            description: The unique name of the new profile.
-            type: str
-            returned: success
-            sample: Guest RF profile
+          description:
+          - The unique name of the new profile.
+          - This param is required on creation.
+          type: str
+          returned: success
+          sample: Guest RF profile
         client_balancing_enabled:
-            description: Steers client to best available access point.
-            type: bool
-            returned: success
-            sample: true
+          description:
+            - Steers client to best available access point.
+          type: bool
+          returned: success
+          sample: true
         ap_band_settings:
-            description: Settings that will be enabled if selectionType is set to 'ap'.
-            type: complex
-            returned: success
-            contains:
-                mode:
-                    description: Sets which RF band the AP will support.
-                    type: str
-                    returned: success
-                    sample: dual
+          description:
+            - Settings that will be enabled if selectionType is set to 'ap'.
+          type: complex
+          returned: success
+          contains:
+            mode:
+              description:
+                - Sets which RF band the AP will support.
+            type: str
+                 returned: success
+                 sample: dual
                 band_steering_enabled:
-                    description: Steers client to most open band.
+                    description:
+                    - Steers client to most open band.
                     type: bool
                     returned: success
                     sample: true
         five_ghz_settings:
-            description: Settings related to 5Ghz band.
+            description:
+              - Settings related to 5Ghz band.
             type: complex
             returned: success
             contains:
                 max_power:
-                    description: Sets max power (dBm) of 5Ghz band.
+                    description:
+                    - Sets max power (dBm) of 5Ghz band.
+                    - Can be integer between 8 and 30.
                     type: int
                     returned: success
                     sample: 12
                 min_power:
-                    description: Sets minmimum power (dBm) of 5Ghz band.
+                    description:
+                    - Sets minmimum power (dBm) of 5Ghz band.
+                    - Can be integer between 8 and 30.
                     type: int
                     returned: success
                     sample: 12
                 min_bitrate:
-                    description: Sets minimum bitrate (Mbps) of 5Ghz band.
+                    description:
+                    - Sets minimum bitrate (Mbps) of 5Ghz band.
                     type: int
                     returned: success
                     sample: 6
                 rxsop:
-                    description: The RX-SOP level controls the sensitivity of the radio.
+                    description:
+                    - The RX-SOP level controls the sensitivity of the radio.
                     type: int
                     returned: success
                     sample: -70
                 channel_width:
-                    description: Sets channel width (MHz) for 5Ghz band.
+                    description:
+                    - Sets channel width (MHz) for 5Ghz band.
                     type: str
                     returned: success
                     sample: auto
                 valid_auto_channels:
-                    description: Sets valid auto channels for 5Ghz band.
+                    description:
+                    - Sets valid auto channels for 5Ghz band.
                     type: list
                     returned: success
         two_four_ghz_settings:
-            description: Settings related to 2.4Ghz band.
+            description:
+            - Settings related to 2.4Ghz band
             type: complex
             returned: success
             contains:
                 max_power:
-                    description: Sets max power (dBm) of 2.4Ghz band.
+                    description:
+                    - Sets max power (dBm) of 2.4Ghz band.
                     type: int
                     returned: success
                     sample: 12
                 min_power:
-                    description: Sets minmimum power (dBm) of 2.4Ghz band.
+                    description:
+                    - Sets minmimum power (dBm) of 2.4Ghz band.
                     type: int
                     returned: success
                     sample: 12
                 min_bitrate:
-                    description: Sets minimum bitrate (Mbps) of 2.4Ghz band.
+                    description:
+                    - Sets minimum bitrate (Mbps) of 2.4Ghz band.
                     type: float
                     returned: success
                     sample: 5.5
                 rxsop:
-                    description: The RX-SOP level controls the sensitivity of the radio.
+                    description:
+                    - The RX-SOP level controls the sensitivity of the radio.
                     type: int
                     returned: success
                     sample: -70
                 ax_enabled:
-                    description: Determines whether ax radio on 2.4Ghz band is on or off.
+                    description:
+                    - Determines whether ax radio on 2.4Ghz band is on or off.
                     type: bool
                     returned: success
                     sample: true
                 valid_auto_channels:
-                    description: Sets valid auto channels for 2.4Ghz band.
+                    description:
+                    - Sets valid auto channels for 2.4Ghz band.
                     type: list
                     returned: success
                     sample: 6
 '''
 
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 
 def get_profile(meraki, profiles, name):
     for profile in profiles:
