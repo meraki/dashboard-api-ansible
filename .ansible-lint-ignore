@@ -1,2 +1,2 @@
-workflows/docs.yml profile:basic tags:formatting,yaml
-.github/workflows/docs.yml profile:basic tags:formatting,yaml
+workflows/docs.yml profile:basic
+.github/workflows/docs.yml profile:basic
