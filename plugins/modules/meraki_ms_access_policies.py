@@ -253,7 +253,7 @@ data:
                             description: Enable or disable suspend port bounce
                             returned: success
                             type: bool
-                            sample: False
+                            sample: false
                         voice_vlan_id:
                             description: VLAN ID for voice
                             returned: success
@@ -297,12 +297,12 @@ data:
             description: Enable or disable Radius Testing
             returned: success
             type: bool
-            sample: True
+            sample: true
         voice_vlan_clients:
             description: Enable or disable Voice Vlan Clients
             returned: success
             type: bool
-            sample: False
+            sample: false
 """
 
 from ansible.module_utils.basic import AnsibleModule, json

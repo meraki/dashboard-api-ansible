@@ -44,7 +44,7 @@ options:
         elements: str
         type: list
       useDefault:
-        description: True/false whether to use special IPv4 addresses https //tools.ietf.org/html/rfc5735
+        description: true/false whether to use special IPv4 addresses https //tools.ietf.org/html/rfc5735
           (required). Default value is true if none currently saved.
         type: bool
     type: dict

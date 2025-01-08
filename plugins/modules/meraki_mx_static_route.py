@@ -181,7 +181,7 @@ data:
       description: Enabled state of static route.
       returned: query or update
       type: bool
-      sample: True
+      sample: true
     reservedIpRanges:
       description: List of IP address ranges which are reserved for static assignment.
       returned: query or update

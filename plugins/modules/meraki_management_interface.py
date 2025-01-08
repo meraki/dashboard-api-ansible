@@ -192,7 +192,7 @@ data:
                 description: Boolean value of whether static IP assignment is used on interface
                 returned: success
                 type: bool
-                sample: True
+                sample: true
             static_ip:
                 description: Assigned static IP
                 returned: only if static IP assignment is used
@@ -232,7 +232,7 @@ data:
                 description: Boolean value of whether static IP assignment is used on interface
                 returned: success
                 type: bool
-                sample: True
+                sample: true
             static_ip:
                 description: Assigned static IP
                 returned: only if static IP assignment is used

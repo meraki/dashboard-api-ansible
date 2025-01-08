@@ -24,8 +24,6 @@ version_added: 2.16.0
 """
 
 EXAMPLES = r"""
-
-
 """
 RETURN = r"""
 meraki_response:

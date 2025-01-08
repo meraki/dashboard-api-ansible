@@ -134,7 +134,6 @@ EXAMPLES = r'''
     org_name: '{{ test_org_name }}'
     net_name: '{{ test_net_name }} - Uplink'
   delegate_to: localhost
-
 '''
 
 RETURN = r'''
