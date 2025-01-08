@@ -191,8 +191,8 @@ EXAMPLES = r'''
     band_selection_type: ap
     client_balancing_enabled: True
     ap_band_settings:
-        mode: dual
-        band_steering_enabled: true
+      mode: dual
+      band_steering_enabled: true
     five_ghz_settings:
       max_power: 10
       min_bitrate: 12
@@ -240,8 +240,8 @@ EXAMPLES = r'''
     band_selection_type: ap
     client_balancing_enabled: True
     ap_band_settings:
-        mode: dual
-        band_steering_enabled: true
+      mode: dual
+      band_steering_enabled: true
     five_ghz_settings:
       max_power: 10
       min_bitrate: 12
