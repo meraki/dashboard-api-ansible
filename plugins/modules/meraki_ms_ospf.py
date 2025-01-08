@@ -106,7 +106,7 @@ EXAMPLES = r'''
     org_name: YourOrg
     net_name: YourNet
     state: query
-   delegate_to: localhost
+  delegate_to: localhost
 
 - name: Enable OSPF with check mode
   meraki_ms_ospf:
