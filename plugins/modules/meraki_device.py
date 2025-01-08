@@ -171,7 +171,7 @@ EXAMPLES = r'''
     org_name: YourOrg
     net_name: YourNet
     state: present
-    serial: '{{serial}}'
+    serial: '{{ serial }}'
     name: mr26
     address: 1060 W. Addison St., Chicago, IL
     lat: 41.948038

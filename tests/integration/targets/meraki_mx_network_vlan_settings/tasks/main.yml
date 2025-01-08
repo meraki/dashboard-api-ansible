@@ -8,7 +8,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
       type: appliance
       timezone: America/Chicago
@@ -18,7 +18,7 @@
     meraki_mx_network_vlan_settings:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
     delegate_to: localhost
     register: query_all
@@ -30,7 +30,7 @@
     meraki_mx_network_vlan_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
       vlans_enabled: yes
     delegate_to: localhost
@@ -49,7 +49,7 @@
     meraki_mx_network_vlan_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
       vlans_enabled: yes
     delegate_to: localhost
@@ -67,7 +67,7 @@
     meraki_mx_network_vlan_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
       vlans_enabled: yes
     delegate_to: localhost
@@ -90,6 +90,6 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: absent
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
     delegate_to: localhost

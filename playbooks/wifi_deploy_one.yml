@@ -13,6 +13,6 @@
         meraki_suppress_logging: true
         state: present
         enabled: true
-        name: "{{corp_name}}"
+        name: "{{ corp_name }}"
         networkId: "{{ network_id }}"
         number: "1"

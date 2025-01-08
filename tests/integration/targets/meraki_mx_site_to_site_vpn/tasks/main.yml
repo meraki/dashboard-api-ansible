@@ -9,8 +9,8 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       type: appliance
     delegate_to: localhost
     register: net_hub
@@ -19,8 +19,8 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_spoke'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_spoke'
       type: appliance
     delegate_to: localhost
     register: net_spoke
@@ -32,10 +32,10 @@
 
   - name: Set hub mode in check mode
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       mode: hub
       subnets:
         - local_subnet: '192.168.129.0/24'
@@ -51,10 +51,10 @@
 
   - name: Set hub mode in check mode
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
     delegate_to: localhost
     register: query_result
   
@@ -68,10 +68,10 @@
 
   - name: Create static_route
     meraki_static_route:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       name: Test Route
       subnet: 192.0.1.0/24
       gateway_ip: 192.168.128.1
@@ -79,10 +79,10 @@
 
   - name: Set hub mode
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       mode: hub
       subnets:
         - local_subnet: '192.0.1.0/24'
@@ -97,10 +97,10 @@
 
   - name: Set hub mode with idempotency
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       mode: hub
     delegate_to: localhost
     register: set_hub_idempotent
@@ -112,10 +112,10 @@
 
   - name: Enable subnet on hub network
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
       mode: hub
       subnets:
         - local_subnet: '192.168.128.0/24'
@@ -130,13 +130,13 @@
 
   - name: Set spoke mode
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_spoke'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_spoke'
       mode: spoke
       hubs:
-        - hub_id: '{{net_hub_id}}'
+        - hub_id: '{{ net_hub_id }}'
           use_default_route: false
     delegate_to: localhost
     register: set_spoke
@@ -146,13 +146,13 @@
 
   - name: Set spoke configuration
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_spoke'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_spoke'
       mode: spoke
       hubs:
-        - hub_id: '{{net_hub_id}}'
+        - hub_id: '{{ net_hub_id }}'
           use_default_route: false
       subnets:
         - local_subnet: '192.168.169.0/24'
@@ -165,10 +165,10 @@
 
   - name: Query rules for hub
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_hub'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_hub'
     delegate_to: localhost
     register: query_all_hub
 
@@ -177,10 +177,10 @@
 
   - name: Query rules for spoke
     meraki_site_to_site_vpn:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}}_spoke'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }}_spoke'
     delegate_to: localhost
     register: query_all_spoke
 

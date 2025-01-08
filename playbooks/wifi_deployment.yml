@@ -26,7 +26,7 @@
       cisco.meraki.networks_wireless_ssids:
         state: present
         enabled: true
-        name: "{{corp_name}}"
+        name: "{{ corp_name }}"
         networkId: "{{ item.id }}"
         number: 1
         ipAssignmentMode: Bridge mode
@@ -47,7 +47,7 @@
       cisco.meraki.networks_wireless_ssids:
         state: present
         enabled: true
-        name: "{{corp_name}}-legacy"
+        name: "{{ corp_name }}-legacy"
         networkId: "{{ item.id }}"
         number: 2
         ipAssignmentMode: Bridge mode
@@ -65,7 +65,7 @@
       cisco.meraki.networks_wireless_ssids:
         state: present
         enabled: true
-        name: "{{corp_name}}-Guests"
+        name: "{{ corp_name }}-Guests"
         networkId: "{{ item.id }}"
         number: 3
         ipAssignmentMode: Bridge mode

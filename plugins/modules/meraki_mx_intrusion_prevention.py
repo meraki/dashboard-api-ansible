@@ -96,9 +96,9 @@ extends_documentation_fragment: cisco.meraki.meraki
 EXAMPLES = r'''
 - name: Set whitelist for organization
   meraki_intrusion_prevention:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: present
-    org_id: '{{test_org_id}}'
+    org_id: '{{ test_org_id }}'
     allowed_rules:
       - rule_id: "meraki:intrusion/snort/GID/01/SID/5805"
         rule_message: Test rule
@@ -106,18 +106,18 @@ EXAMPLES = r'''
 
 - name: Query IPS info for organization
   meraki_intrusion_prevention:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: query
-    org_name: '{{test_org_name}}'
+    org_name: '{{ test_org_name }}'
   delegate_to: localhost
   register: query_org
 
 - name: Set full ruleset with check mode
   meraki_intrusion_prevention:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: present
-    org_name: '{{test_org_name}}'
-    net_name: '{{test_net_name}} - IPS'
+    org_name: '{{ test_org_name }}'
+    net_name: '{{ test_net_name }} - IPS'
     mode: prevention
     ids_rulesets: security
     protected_networks:
@@ -130,9 +130,9 @@ EXAMPLES = r'''
 
 - name: Clear rules from organization
   meraki_intrusion_prevention:
-    auth_key: '{{auth_key}}'
+    auth_key: '{{ auth_key }}'
     state: absent
-    org_name: '{{test_org_name}}'
+    org_name: '{{ test_org_name }}'
     allowed_rules: []
   delegate_to: localhost
 '''

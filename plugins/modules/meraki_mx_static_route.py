@@ -146,7 +146,7 @@ EXAMPLES = r"""
     state: absent
     org_name: YourOrg
     net_name: YourNet
-    route_id: '{{item}}'
+    route_id: '{{ item }}'
   delegate_to: localhost
 """
 

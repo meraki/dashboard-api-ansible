@@ -8,7 +8,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       type: switch
       timezone: America/Chicago
@@ -19,7 +19,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
     delegate_to: localhost
     register: query_net
@@ -28,7 +28,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: false
     delegate_to: localhost
@@ -47,7 +47,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: false
     delegate_to: localhost
@@ -64,7 +64,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: false
     delegate_to: localhost
@@ -81,7 +81,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: true
       local_status_page:
@@ -104,7 +104,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: true
       local_status_page:
@@ -129,7 +129,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: true
       local_status_page:
@@ -151,7 +151,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       secure_port:
         enabled: true
@@ -170,7 +170,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       secure_port:
         enabled: true
@@ -191,7 +191,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       secure_port:
         enabled: true
@@ -212,7 +212,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: no
       remote_status_page_enabled: no
@@ -230,7 +230,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: yes
       remote_status_page_enabled: no
@@ -248,7 +248,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: yes
       remote_status_page_enabled: yes
@@ -267,7 +267,7 @@
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: no
       remote_status_page_enabled: yes
@@ -289,6 +289,6 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: absent
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
     delegate_to: localhost

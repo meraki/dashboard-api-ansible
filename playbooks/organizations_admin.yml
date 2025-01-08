@@ -17,7 +17,7 @@
         
   #       - name: Create
   # cisco.meraki.organizations_admins:
-  #   meraki_host: "{{meraki_host}}"
+  #   meraki_host: "{{ meraki_host }}"
   #   state: present
   #   authenticationMethod: Email
   #   email: miles@meraki.com

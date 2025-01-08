@@ -11,19 +11,19 @@
 
   - name: Create test network
     meraki_network:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
       type: appliance
     delegate_to: localhost
 
   - name: Set MX uplink settings with check mode
     meraki_mx_uplink:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
       wan1:
         bandwidth_limits:
           limit_down: 1000000
@@ -47,10 +47,10 @@
 
   - name: Set MX uplink settings
     meraki_mx_uplink_bandwidth:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
       wan1:
         bandwidth_limits:
           limit_down: 1000000
@@ -72,10 +72,10 @@
 
   - name: Set MX uplink settings with idempotency
     meraki_mx_uplink_bandwidth:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
       wan1:
         bandwidth_limits:
           limit_down: 1000000
@@ -97,10 +97,10 @@
 
   - name: Query MX uplink settings
     meraki_mx_uplink:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
     delegate_to: localhost
     register: query_all
 
@@ -118,8 +118,8 @@
 
   - name: Delete test network
     meraki_network:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: absent
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_net_name}} - Uplink'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_net_name }} - Uplink'
     delegate_to: localhost

@@ -27,12 +27,12 @@
     #     cidr: 192.168.1.0/24
     #     id: '1234'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 192.168.1.0/24
 
     # - name: Get all networks _appliance _ssids
     #   cisco.meraki.networks_appliance_ssids_info:
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #   register: result
 
     # - name: Show result
@@ -46,7 +46,7 @@
     #     defaultVlanId: 10
     #     enabled: true
     #     name: My SSID
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     number: 1
     #     radiusServers:
     #     - host: 1.2.3.4
@@ -64,12 +64,12 @@
     #     globalBandwidthLimits:
     #       limitDown: 5120
     #       limitUp: 2048
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
 
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
     #     state: present
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     vlansEnabled: true
 
     # - name: Update appliance ports
@@ -77,14 +77,14 @@
     #     accessPolicy: "open"
     #     allowedVlans: "all"
     #     enabled: true
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     portId: "2"
     #     type: "trunk"
     #     vlan: 10
     #     state: present
     # - name: Get all networks
     #   cisco.meraki.networks_info:
-    #     organizationId: "{{org_id}}"
+    #     organizationId: "{{ org_id }}"
     #     total_pages: -1
     #     direction: next
     #   register: result
@@ -106,7 +106,7 @@
   
     # - name: Create
     #   cisco.meraki.organizations_config_templates:
-    #     # meraki_api_key: "{{meraki_api_key}}"
+    #     # meraki_api_key: "{{ meraki_api_key }}"
     #     state: present
     #     name: My config template
     #     organizationId: "{{ org_id }}"
@@ -116,14 +116,14 @@
     #   cisco.meraki.networks_bind:
     #     autoBind: false
     #     configTemplateId: "{{result.meraki_response.id}}"
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
 
 
     # - name: change name of device
     #   cisco.meraki.devices:
     #     name: new name 4
     #     serial: QBSB-D5ZD-9CXT
-    #     # organizationId: "{{org_id}}"
+    #     # organizationId: "{{ org_id }}"
     #     state: present 
     #     meraki_suppress_logging: false
 
@@ -138,7 +138,7 @@
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
     #     state: present
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     vlansEnabled: true
 
     # - name: Create appliance Vlan 100
@@ -148,7 +148,7 @@
     #     cidr: 192.168.1.0/24
     #     id: '100'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 192.168.1.0/24
 
     # - name: Create appliance Vlan 200
@@ -158,7 +158,7 @@
     #     cidr: 192.168.2.0/24
     #     id: '200'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 192.168.2.0/24
 
     # - name: Create appliance Vlan 300
@@ -168,14 +168,14 @@
     #     cidr: 192.168.3.0/24
     #     id: '300'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 192.168.3.0/24 
 
 
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
     #     state: present
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     vlansEnabled: true
 
     # - name: Create appliance Vlan 100
@@ -186,7 +186,7 @@
     #     cidr: 10.1.0.0/17
     #     id: '100'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 10.1.0.0/17
 
     # - name: Create appliance Vlan 200
@@ -197,7 +197,7 @@
     #     cidr: 172.200.0.0/20
     #     id: '200'
     #     name: My VLAN
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 172.200.0.0/20
 
     # - name: Create appliance Vlan 300
@@ -208,7 +208,7 @@
     #     cidr: 172.16.0.0/24
     #     id: 300
     #     name: My VLAN 2
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     subnet: 172.16.0.0/24
 
   
@@ -237,7 +237,7 @@
   #     state: present
   #     meraki_suppress_logging: false
   #     name: A cool stack
-  #     networkId: "{{network_id}}"
+  #     networkId: "{{ network_id }}"
   #     serials:
   #     - QBSB-BNH2-KDXJ
 

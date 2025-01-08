@@ -89,7 +89,7 @@ EXAMPLES = r"""
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
     delegate_to: localhost
 
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: false
     delegate_to: localhost
@@ -106,7 +106,7 @@ EXAMPLES = r"""
     cisco.meraki.meraki_network_settings:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
       local_status_page_enabled: true
       local_status_page:

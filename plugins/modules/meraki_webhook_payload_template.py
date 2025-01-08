@@ -121,7 +121,7 @@ data:
                 - The liquid template used for the body of the webhook message.
             returned: success
             type: str
-            sample: {"event_type":"{{alertTypeId}}","client_payload":{"text":"{{alertData}}"}}
+            sample: {"event_type":"{{ alertTypeId }}","client_payload":{"text":"{{ alertData }}"}}
         headers:
             description: List of the liquid templates used with the webhook headers.
             returned: success
@@ -138,7 +138,7 @@ data:
                         - The liquid template for the header
                     returned: success
                     type: str
-                    sample: "Bearer {{sharedSecret}}"
+                    sample: "Bearer {{ sharedSecret }}"
 """
 
 from ansible.module_utils.basic import AnsibleModule, json

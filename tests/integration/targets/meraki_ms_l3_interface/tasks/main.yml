@@ -8,7 +8,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitch
       type: switch
       timezone: America/Chicago
@@ -17,8 +17,8 @@
 
   - name: Claim a device into a network
     meraki_device:
-      auth_key: '{{auth_key}}'
-      org_name: '{{test_org_name}}'
+      auth_key: '{{ auth_key }}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitch
       serial: '{{ serial_switch_l3 }}'
       state: present
@@ -208,7 +208,7 @@
     check_mode: true
     register: delete_check
     loop:
-      - '{{interface_id_1}}'
+      - '{{ interface_id_1 }}'
 
   - assert:
       that:
@@ -231,6 +231,6 @@
   #   meraki_network:
   #     auth_key: '{{ auth_key }}'
   #     state: absent
-  #     org_name: '{{test_org_name}}'
+  #     org_name: '{{ test_org_name }}'
   #     net_name: IntTestNetworkSwitch
   #   delegate_to: localhost

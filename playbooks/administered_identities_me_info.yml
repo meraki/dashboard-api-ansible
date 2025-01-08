@@ -4,13 +4,13 @@
   tasks:
     - name: Get all administered _identities _me
       cisco.meraki.administered_identities_me_info:
-        # meraki_api_key: "{{meraki_api_key}}"
-        # meraki_username: "{{meraki_username}}"
-        # meraki_password: "{{meraki_password}}"
-        # meraki_verify: "{{meraki_verify}}"
-        # meraki_port: "{{meraki_port}}"
-        # meraki_version: "{{meraki_version}}"
-        # meraki_debug: "{{meraki_debug}}"
+        # meraki_api_key: "{{ meraki_api_key }}"
+        # meraki_username: "{{ meraki_username }}"
+        # meraki_password: "{{ meraki_password }}"
+        # meraki_verify: "{{ meraki_verify }}"
+        # meraki_port: "{{ meraki_port }}"
+        # meraki_version: "{{ meraki_version }}"
+        # meraki_debug: "{{ meraki_debug }}"
         # state: present
         # management:
         #   details:

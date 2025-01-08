@@ -7,13 +7,13 @@
   tasks:
     - name: Get all networks _appliance _vlans
       cisco.meraki.networks_appliance_vlans_info:
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
       register: result
 
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
     #     state: present
-    #     networkId: "{{network_id}}"
+    #     networkId: "{{ network_id }}"
     #     vlansEnabled: true
 
     - name: Update appliance Vlans
@@ -23,7 +23,7 @@
         cidr: 192.168.1.0/24
         id: '1234'
         name: My VLAN
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
         subnet: 192.168.1.0/24
 
     - name: Update appliance SSID
@@ -34,7 +34,7 @@
        defaultVlanId: 10
        enabled: true
        name: My SSID
-       networkId: "{{network_id}}"
+       networkId: "{{ network_id }}"
        number: 1234
        radiusServers:
        - host: 1.2.3.4
@@ -49,13 +49,13 @@
         globalBandwidthLimits:
           limitDown: 5120
           limitUp: 2048
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
 
     - name: Update appliance ports
       cisco.meraki.networks_appliance_ports:
         allowedVlans: "all"
         enabled: true
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
         portId: "4"
         type: "trunk"
         vlan: 10
@@ -63,7 +63,7 @@
 
     - name: Create FW outbound L3 rules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules:
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
         state: present
         rules:
           - comment: Block internetbadguys.com
@@ -76,7 +76,7 @@
 
     - name: Create FW inbound L3 rules
       cisco.meraki.networks_appliance_firewall_inbound_firewall_rules:
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
         rules:
         - comment: Allow HTTP traffic to VLAN 1234 with HTTP servers.
           destCidr: VLAN(1234).*
@@ -89,7 +89,7 @@
 
     - name: Create FW L7 rules
       cisco.meraki.networks_appliance_firewall_l7_firewall_rules:
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
         rules:
         - policy: deny
           type: applicationCategory
@@ -99,7 +99,7 @@
 
     - name: Get all networks _appliance _firewall l3firewallrules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules_info:
-        networkId: "{{network_id}}"
+        networkId: "{{ network_id }}"
       register: result
 
     - name: Show result

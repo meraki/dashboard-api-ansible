@@ -193,7 +193,7 @@
 #   register: adaptive_policy
 
 # - ansible.builtin.debug:
-#     msg: '{{adaptive_policy}}'
+#     msg: '{{ adaptive_policy }}'
 
 # - ansible.builtin.assert:
 #     that:

@@ -8,7 +8,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetwork
       timezone: America/Chicago
     delegate_to: localhost
@@ -33,7 +33,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitch
       type: switch
       timezone: America/Chicago
@@ -51,7 +51,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitch
       type: switch
       timezone: America/Chicago
@@ -65,7 +65,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitchCopied
       type: switch
       copy_from_network_id: '{{ switch_net_id }}'
@@ -82,7 +82,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_id: '{{test_org_id}}'
+      org_id: '{{ test_org_id }}'
       net_name: IntTestNetworkSwitchOrgID
       type: switch
       timezone: America/Chicago
@@ -93,7 +93,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
       type: appliance
     delegate_to: localhost
@@ -222,7 +222,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkWireless
       type: wireless
       timezone: America/Chicago
@@ -237,7 +237,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkWireless
       type: wireless
       timezone: America/Chicago
@@ -270,7 +270,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
       local_status_page_enabled: no
       remote_status_page_enabled: no
@@ -287,7 +287,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
       local_status_page_enabled: yes
       remote_status_page_enabled: no
@@ -304,7 +304,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
       local_status_page_enabled: yes
       remote_status_page_enabled: yes
@@ -322,7 +322,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
       local_status_page_enabled: no
       remote_status_page_enabled: yes
@@ -339,7 +339,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkTag
       type: switch
       timezone: America/Chicago
@@ -351,7 +351,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkTags
       type: switch
       timezone: America/Chicago
@@ -368,8 +368,8 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
-      net_id: '{{tag_net_id}}'
+      org_name: '{{ test_org_name }}'
+      net_id: '{{ tag_net_id }}'
       type: switch
       timezone: America/Chicago
       tags: 
@@ -383,7 +383,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: present
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkTags
       type: switch
       timezone: America/Chicago
@@ -415,10 +415,10 @@
 
   - name: Query templated network settings
     meraki_network:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_template_name}}'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_template_name }}'
       local_status_page_enabled: yes
     delegate_to: localhost
     register: query_settings
@@ -431,16 +431,16 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
     delegate_to: localhost
     register: net_query_all
       
   - name: Query a configuration template
     meraki_network:
-      auth_key: '{{auth_key}}'
+      auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
-      net_name: '{{test_template_name}}'
+      org_name: '{{ test_org_name }}'
+      net_name: '{{ test_template_name }}'
     delegate_to: localhost
     register: query_config_template
 
@@ -448,7 +448,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkSwitch
     delegate_to: localhost
     register: net_query_one
@@ -467,7 +467,7 @@
     cisco.meraki.meraki_network:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_id: "{{ net_id}}"
     delegate_to: localhost
     register: net_query_one_id
@@ -499,7 +499,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: absent
-      org_id: '{{test_org_id}}'
+      org_id: '{{ test_org_id }}'
       net_name: IntTestNetworkSwitchOrgID
     delegate_to: localhost
     check_mode: yes
@@ -514,7 +514,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: absent
-      org_id: '{{test_org_id}}'
+      org_id: '{{ test_org_id }}'
       net_name: IntTestNetworkSwitchOrgID
     delegate_to: localhost
     register: delete_net_org_id
@@ -523,7 +523,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: query
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
     delegate_to: localhost
     register: query_deleted_org_id
 
@@ -531,7 +531,7 @@
     meraki_network:
       auth_key: '{{ auth_key }}'
       state: absent
-      org_name: '{{test_org_name}}'
+      org_name: '{{ test_org_name }}'
       net_name: '{{ item }}'
     delegate_to: localhost
     register: delete_all
