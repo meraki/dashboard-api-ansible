@@ -90,7 +90,6 @@ EXAMPLES = r"""
     organizationId: string
     serials:
     - Q234-ABCD-5678
-
 """
 RETURN = r"""
 meraki_response:

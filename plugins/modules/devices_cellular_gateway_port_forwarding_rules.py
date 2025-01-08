@@ -101,7 +101,6 @@ EXAMPLES = r"""
       protocol: tcp
       publicPort: 11-12
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

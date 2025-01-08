@@ -107,7 +107,6 @@ EXAMPLES = r"""
       srcCidr: Any
       srcPort: Any
       syslogEnabled: false
-
 """
 RETURN = r"""
 meraki_response:

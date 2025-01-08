@@ -66,7 +66,6 @@ EXAMPLES = r"""
     autoBind: false
     configTemplateId: N_23952905
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

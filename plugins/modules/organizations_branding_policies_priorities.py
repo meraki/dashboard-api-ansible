@@ -65,7 +65,6 @@ EXAMPLES = r"""
     - '456'
     - '789'
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -166,7 +166,6 @@ EXAMPLES = r"""
     - tag1
     - tag2
     timeZone: America/Los_Angeles
-
 """
 RETURN = r"""
 meraki_response:

@@ -66,7 +66,6 @@ EXAMPLES = r"""
     name: string
     organizationId: string
     themeIdentifier: string
-
 """
 RETURN = r"""
 meraki_response:

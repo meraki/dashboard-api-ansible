@@ -87,7 +87,6 @@ EXAMPLES = r"""
     v3Enabled: true
     v3PrivMode: AES128
     v3PrivPass: password
-
 """
 RETURN = r"""
 meraki_response:

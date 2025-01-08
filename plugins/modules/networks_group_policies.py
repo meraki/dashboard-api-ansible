@@ -655,7 +655,6 @@ EXAMPLES = r"""
     vlanTagging:
       settings: custom
       vlanId: '1'
-
 """
 RETURN = r"""
 meraki_response:

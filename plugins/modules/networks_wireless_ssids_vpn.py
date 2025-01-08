@@ -133,7 +133,6 @@ EXAMPLES = r"""
         destCidr: foo.com
         destPort: any
         policy: deny
-
 """
 RETURN = r"""
 meraki_response:

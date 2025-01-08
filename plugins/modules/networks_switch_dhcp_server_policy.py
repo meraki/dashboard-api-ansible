@@ -103,7 +103,6 @@ EXAMPLES = r"""
     - 00:50:56:00:00:04
     defaultPolicy: block
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

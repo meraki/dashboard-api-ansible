@@ -95,7 +95,6 @@ EXAMPLES = r"""
     organizationId: string
     brandingPolicyId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

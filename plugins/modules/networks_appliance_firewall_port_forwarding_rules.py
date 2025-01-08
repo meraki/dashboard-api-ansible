@@ -99,7 +99,6 @@ EXAMPLES = r"""
       protocol: tcp
       publicPort: 8100-8101
       uplink: both
-
 """
 RETURN = r"""
 meraki_response:

@@ -117,7 +117,6 @@ EXAMPLES = r"""
       enabled: true
     networkId: string
     subnet: string
-
 """
 RETURN = r"""
 meraki_response:

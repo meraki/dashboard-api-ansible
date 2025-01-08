@@ -103,7 +103,6 @@ EXAMPLES = r"""
       serial: Q234-ABCD-5678
       subnetMask: 255.255.255.0
     vlanId: 100
-
 """
 RETURN = r"""
 meraki_response:

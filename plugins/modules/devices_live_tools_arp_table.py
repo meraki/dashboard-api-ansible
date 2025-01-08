@@ -96,7 +96,6 @@ EXAMPLES = r"""
       sharedSecret: secret
       url: https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

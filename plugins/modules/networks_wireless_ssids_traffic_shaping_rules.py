@@ -140,7 +140,6 @@ EXAMPLES = r"""
           limitUp: 1000000
         settings: custom
     trafficShapingEnabled: true
-
 """
 RETURN = r"""
 meraki_response:

@@ -64,7 +64,6 @@ EXAMPLES = r"""
     networkId: string
     webhookTestId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

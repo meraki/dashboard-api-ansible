@@ -74,7 +74,6 @@ EXAMPLES = r"""
     maxLossPercentage: 5
     name: myCustomPerformanceClass
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

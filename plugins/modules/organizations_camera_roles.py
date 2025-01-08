@@ -114,7 +114,6 @@ EXAMPLES = r"""
       tag: building-a
     name: Security_Guard
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

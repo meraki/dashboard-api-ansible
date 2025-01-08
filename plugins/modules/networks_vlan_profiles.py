@@ -171,7 +171,6 @@ EXAMPLES = r"""
         id: '791'
       name: named-1
       vlanId: '1'
-
 """
 RETURN = r"""
 meraki_response:

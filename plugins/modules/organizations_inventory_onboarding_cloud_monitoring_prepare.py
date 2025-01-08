@@ -203,7 +203,6 @@ EXAMPLES = r"""
     options:
       skipCommit: false
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

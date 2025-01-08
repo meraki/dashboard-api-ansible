@@ -83,7 +83,6 @@ EXAMPLES = r"""
       name: ATT
     title: My AT&T account
     username: MerakiUser
-
 """
 RETURN = r"""
 meraki_response:

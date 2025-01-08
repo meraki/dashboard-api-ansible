@@ -148,7 +148,6 @@ EXAMPLES = r"""
       deadTimerInSeconds: 40
       enabled: true
       helloTimerInSeconds: 10
-
 """
 RETURN = r"""
 meraki_response:

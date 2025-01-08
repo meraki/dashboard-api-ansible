@@ -70,7 +70,6 @@ EXAMPLES = r"""
     spoofingProtection:
       ipSourceGuard:
         mode: block
-
 """
 RETURN = r"""
 meraki_response:

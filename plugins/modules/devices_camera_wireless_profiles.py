@@ -75,7 +75,6 @@ EXAMPLES = r"""
       primary: '3'
       secondary: '2'
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

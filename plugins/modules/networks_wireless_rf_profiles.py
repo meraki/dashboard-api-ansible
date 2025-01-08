@@ -1147,7 +1147,6 @@ EXAMPLES = r"""
       - 1
       - 6
       - 11
-
 """
 RETURN = r"""
 meraki_response:

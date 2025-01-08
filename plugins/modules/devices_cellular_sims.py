@@ -138,7 +138,6 @@ EXAMPLES = r"""
       isPrimary: false
       simOrder: 3
       slot: sim1
-
 """
 RETURN = r"""
 meraki_response:

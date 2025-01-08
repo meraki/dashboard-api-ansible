@@ -78,7 +78,6 @@ EXAMPLES = r"""
       dscp: 1
       title: Video
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

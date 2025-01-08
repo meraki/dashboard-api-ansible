@@ -778,7 +778,6 @@ EXAMPLES = r"""
     - example.com
     - 1.1.1.1/32
     wpaEncryptionMode: WPA2 only
-
 """
 RETURN = r"""
 meraki_response:

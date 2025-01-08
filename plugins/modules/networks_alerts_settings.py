@@ -234,7 +234,6 @@ EXAMPLES = r"""
       byPortSchedules:
         enabled: true
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

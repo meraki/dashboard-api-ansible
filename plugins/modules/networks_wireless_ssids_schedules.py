@@ -105,7 +105,6 @@ EXAMPLES = r"""
     rangesInSeconds:
     - end: 0
       start: 604800
-
 """
 RETURN = r"""
 meraki_response:

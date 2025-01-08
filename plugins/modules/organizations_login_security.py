@@ -144,7 +144,6 @@ EXAMPLES = r"""
     numDifferentPasswords: 3
     organizationId: string
     passwordExpirationDays: 90
-
 """
 RETURN = r"""
 meraki_response:

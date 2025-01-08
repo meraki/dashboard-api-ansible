@@ -200,7 +200,6 @@ EXAMPLES = r"""
     organizationId: string
     serial: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

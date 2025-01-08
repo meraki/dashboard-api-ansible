@@ -59,7 +59,6 @@ EXAMPLES = r"""
     state: present
     externalRtspEnabled: true
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

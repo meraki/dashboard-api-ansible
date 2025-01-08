@@ -99,7 +99,6 @@ EXAMPLES = r"""
     networkId: string
     customPerformanceClassId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

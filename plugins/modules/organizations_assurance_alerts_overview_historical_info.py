@@ -114,7 +114,6 @@ EXAMPLES = r"""
     deviceTypes: []
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

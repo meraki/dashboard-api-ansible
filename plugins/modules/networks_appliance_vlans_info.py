@@ -94,7 +94,6 @@ EXAMPLES = r"""
     networkId: string
     vlanId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

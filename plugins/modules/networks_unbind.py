@@ -58,7 +58,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
     retainConfigs: true
-
 """
 RETURN = r"""
 meraki_response:

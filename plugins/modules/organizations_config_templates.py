@@ -138,7 +138,6 @@ EXAMPLES = r"""
     name: My config template
     organizationId: string
     timeZone: America/Los_Angeles
-
 """
 RETURN = r"""
 meraki_response:

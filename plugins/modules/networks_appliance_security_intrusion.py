@@ -97,7 +97,6 @@ EXAMPLES = r"""
       - 169.254.0.0/16
       - 172.16.0.0/12
       useDefault: false
-
 """
 RETURN = r"""
 meraki_response:

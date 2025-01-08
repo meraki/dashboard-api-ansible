@@ -112,7 +112,6 @@ EXAMPLES = r"""
     fields: string
     serial: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

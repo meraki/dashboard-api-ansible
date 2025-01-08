@@ -139,7 +139,6 @@ EXAMPLES = r"""
     - N_12345
     optInId: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

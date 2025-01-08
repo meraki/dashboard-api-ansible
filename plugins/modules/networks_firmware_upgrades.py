@@ -320,7 +320,6 @@ EXAMPLES = r"""
     upgradeWindow:
       dayOfWeek: sun
       hourOfDay: '4:00'
-
 """
 RETURN = r"""
 meraki_response:

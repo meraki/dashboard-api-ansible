@@ -60,7 +60,6 @@ EXAMPLES = r"""
     state: present
     networkId: string
     vlansEnabled: true
-
 """
 RETURN = r"""
 meraki_response:

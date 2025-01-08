@@ -165,7 +165,6 @@ EXAMPLES = r"""
     name: Custom Template
     networkId: string
     payloadTemplateId: string
-
 """
 RETURN = r"""
 meraki_response:

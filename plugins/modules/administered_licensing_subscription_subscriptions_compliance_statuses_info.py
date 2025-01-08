@@ -69,7 +69,6 @@ EXAMPLES = r"""
     organizationIds: []
     subscriptionIds: []
   register: result
-
 """
 RETURN = r"""
 meraki_response:

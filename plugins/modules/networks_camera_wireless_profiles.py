@@ -171,7 +171,6 @@ EXAMPLES = r"""
       name: ssid test
       psk: sampleKey
     wirelessProfileId: string
-
 """
 RETURN = r"""
 meraki_response:

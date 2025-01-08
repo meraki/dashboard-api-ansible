@@ -102,7 +102,6 @@ EXAMPLES = r"""
       srcCidr: 10.1.10.0/24
       srcPort: any
       vlan: '10'
-
 """
 RETURN = r"""
 meraki_response:

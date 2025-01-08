@@ -95,7 +95,6 @@ EXAMPLES = r"""
     serial: string
     interfaceId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

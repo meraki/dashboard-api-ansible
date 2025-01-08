@@ -78,7 +78,6 @@ EXAMPLES = r"""
       description: Google
       ip: 1.2.3.4
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

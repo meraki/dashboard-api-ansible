@@ -105,7 +105,6 @@ EXAMPLES = r"""
     switchStackId: string
     staticRouteId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

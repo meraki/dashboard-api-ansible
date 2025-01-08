@@ -97,7 +97,6 @@ EXAMPLES = r"""
     networkId: string
     accessPolicyNumber: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -108,7 +108,6 @@ EXAMPLES = r"""
       - Q234-ABCD-0001
       - Q234-ABCD-0002
       - Q234-ABCD-0003
-
 """
 RETURN = r"""
 meraki_response:

@@ -102,7 +102,6 @@ EXAMPLES = r"""
       tls:
         caCertificate: '*****'
         verifyHostnames: true
-
 """
 RETURN = r"""
 meraki_response:

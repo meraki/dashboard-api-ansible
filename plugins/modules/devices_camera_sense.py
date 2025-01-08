@@ -78,7 +78,6 @@ EXAMPLES = r"""
     mqttBrokerId: '1234'
     senseEnabled: true
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -81,7 +81,6 @@ EXAMPLES = r"""
     - http://www.betting.com
     networkId: string
     urlCategoryListSize: topSites
-
 """
 RETURN = r"""
 meraki_response:

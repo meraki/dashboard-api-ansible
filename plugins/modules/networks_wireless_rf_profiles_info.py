@@ -104,7 +104,6 @@ EXAMPLES = r"""
     networkId: string
     rfProfileId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

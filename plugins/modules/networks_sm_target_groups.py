@@ -133,7 +133,6 @@ EXAMPLES = r"""
     networkId: string
     scope: withAny, tag1, tag2
     targetGroupId: string
-
 """
 RETURN = r"""
 meraki_response:

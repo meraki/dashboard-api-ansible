@@ -65,7 +65,6 @@ EXAMPLES = r"""
     - N_5678
     subscriptionId: string
     validate: true
-
 """
 RETURN = r"""
 meraki_response:

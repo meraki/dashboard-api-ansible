@@ -71,7 +71,6 @@ EXAMPLES = r"""
     deviceId: string
     force: false
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

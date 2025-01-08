@@ -94,7 +94,6 @@ EXAMPLES = r"""
     networkId: string
     floorPlanId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

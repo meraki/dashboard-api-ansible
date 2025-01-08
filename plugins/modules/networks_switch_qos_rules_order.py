@@ -161,7 +161,6 @@ EXAMPLES = r"""
     srcPort: 2000
     srcPortRange: 70-80
     vlan: 100
-
 """
 RETURN = r"""
 meraki_response:

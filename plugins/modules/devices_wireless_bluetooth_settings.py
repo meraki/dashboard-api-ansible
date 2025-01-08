@@ -70,7 +70,6 @@ EXAMPLES = r"""
     minor: 125
     serial: string
     uuid: 00000000-0000-0000-000-000000000000
-
 """
 RETURN = r"""
 meraki_response:

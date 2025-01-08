@@ -210,7 +210,6 @@ EXAMPLES = r"""
     udld: Alert only
     vlan: 10
     voiceVlan: 20
-
 """
 RETURN = r"""
 meraki_response:

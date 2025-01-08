@@ -221,7 +221,6 @@ EXAMPLES = r"""
       httpServerIds:
       - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
     type: wanUtilization
-
 """
 RETURN = r"""
 meraki_response:

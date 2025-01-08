@@ -179,7 +179,6 @@ EXAMPLES = r"""
     tags:
     - access: read-only
       tag: west
-
 """
 RETURN = r"""
 meraki_response:

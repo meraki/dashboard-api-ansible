@@ -93,7 +93,6 @@ EXAMPLES = r"""
     networkId: string
     number: string
     timeout: 5
-
 """
 RETURN = r"""
 meraki_response:

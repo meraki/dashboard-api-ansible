@@ -98,7 +98,6 @@ EXAMPLES = r"""
       services:
       - All Services
       vlanId: '1'
-
 """
 RETURN = r"""
 meraki_response:

@@ -78,7 +78,6 @@ EXAMPLES = r"""
       roles:
       - Wireless event log
       - URLs
-
 """
 RETURN = r"""
 meraki_response:

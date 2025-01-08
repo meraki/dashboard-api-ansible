@@ -222,7 +222,6 @@ EXAMPLES = r"""
     subnet: 192.168.1.0/24
     switchStackId: string
     vlanId: 100
-
 """
 RETURN = r"""
 meraki_response:

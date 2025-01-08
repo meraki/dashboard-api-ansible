@@ -63,7 +63,6 @@ EXAMPLES = r"""
     - 1_MA-MOD-8X10G_1
     - 1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

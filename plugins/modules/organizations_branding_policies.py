@@ -309,7 +309,6 @@ EXAMPLES = r"""
       universalSearchKnowledgeBaseSearch: hide
     name: My Branding Policy
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

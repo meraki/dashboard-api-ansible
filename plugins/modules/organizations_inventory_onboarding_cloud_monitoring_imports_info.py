@@ -67,7 +67,6 @@ EXAMPLES = r"""
     importIds: []
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

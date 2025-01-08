@@ -65,7 +65,6 @@ EXAMPLES = r"""
     cidr: 192.168.0.0/16
     mask: 24
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

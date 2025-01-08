@@ -212,7 +212,6 @@ EXAMPLES = r"""
     serial: string
     subnet: 192.168.1.0/24
     vlanId: 100
-
 """
 RETURN = r"""
 meraki_response:

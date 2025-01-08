@@ -65,7 +65,6 @@ EXAMPLES = r"""
     channel: '1'
     enabled: true
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

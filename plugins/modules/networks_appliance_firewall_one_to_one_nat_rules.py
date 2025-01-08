@@ -115,7 +115,6 @@ EXAMPLES = r"""
       name: Service behind NAT
       publicIp: 146.12.3.33
       uplink: internet1
-
 """
 RETURN = r"""
 meraki_response:

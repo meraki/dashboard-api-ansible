@@ -97,7 +97,6 @@ EXAMPLES = r"""
     state: absent
     id: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

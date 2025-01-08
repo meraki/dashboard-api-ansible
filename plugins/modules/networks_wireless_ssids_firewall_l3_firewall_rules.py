@@ -97,7 +97,6 @@ EXAMPLES = r"""
       destPort: '443'
       policy: allow
       protocol: tcp
-
 """
 RETURN = r"""
 meraki_response:

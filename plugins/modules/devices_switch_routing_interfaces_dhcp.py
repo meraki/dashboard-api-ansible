@@ -162,7 +162,6 @@ EXAMPLES = r"""
       end: 192.168.1.10
       start: 192.168.1.1
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

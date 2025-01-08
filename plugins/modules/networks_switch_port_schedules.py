@@ -317,7 +317,6 @@ EXAMPLES = r"""
         from: '9:00'
         to: '17:00'
     portScheduleId: string
-
 """
 RETURN = r"""
 meraki_response:

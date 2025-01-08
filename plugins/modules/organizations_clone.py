@@ -58,7 +58,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     name: My organization
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -62,7 +62,6 @@ EXAMPLES = r"""
     networkId: string
     serial: QBZY-XWVU-TSRQ
     switchStackId: string
-
 """
 RETURN = r"""
 meraki_response:

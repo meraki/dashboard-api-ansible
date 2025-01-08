@@ -67,7 +67,6 @@ EXAMPLES = r"""
     enabled: true
     serial: string
     spareSerial: Q234-ABCD-0002
-
 """
 RETURN = r"""
 meraki_response:

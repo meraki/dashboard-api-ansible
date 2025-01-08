@@ -155,7 +155,6 @@ EXAMPLES = r"""
     twoFourGhzSettings:
       axEnabled: true
       minBitrate: 12.0
-
 """
 RETURN = r"""
 meraki_response:

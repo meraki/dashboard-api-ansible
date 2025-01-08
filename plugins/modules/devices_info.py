@@ -252,7 +252,6 @@ EXAMPLES = r"""
     serial: string
     commandId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

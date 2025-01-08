@@ -72,7 +72,6 @@ EXAMPLES = r"""
       relatedDevices:
       - serial: string
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

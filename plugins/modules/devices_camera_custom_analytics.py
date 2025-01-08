@@ -77,7 +77,6 @@ EXAMPLES = r"""
     - name: detection_threshold
       value: '0.5'
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

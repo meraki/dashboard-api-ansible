@@ -215,7 +215,6 @@ EXAMPLES = r"""
     networkId: string
     clientId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

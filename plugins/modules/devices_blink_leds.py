@@ -69,7 +69,6 @@ EXAMPLES = r"""
     duty: 50
     period: 160
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

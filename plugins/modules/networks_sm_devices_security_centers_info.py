@@ -69,7 +69,6 @@ EXAMPLES = r"""
     networkId: string
     deviceId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

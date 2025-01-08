@@ -265,7 +265,6 @@ EXAMPLES = r"""
     useRedirectUrl: true
     useSplashUrl: true
     welcomeMessage: Welcome!
-
 """
 RETURN = r"""
 meraki_response:

@@ -66,7 +66,6 @@ EXAMPLES = r"""
     fullframe: false
     serial: string
     timestamp: '2021-04-30T15:18:08Z'
-
 """
 RETURN = r"""
 meraki_response:

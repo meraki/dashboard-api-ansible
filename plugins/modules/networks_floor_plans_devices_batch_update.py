@@ -76,7 +76,6 @@ EXAMPLES = r"""
         id: g_2176982374
       serial: Q234-ABCD-5678
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

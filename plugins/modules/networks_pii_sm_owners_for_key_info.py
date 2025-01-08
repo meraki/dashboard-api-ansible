@@ -96,7 +96,6 @@ EXAMPLES = r"""
     bluetoothMac: string
     networkId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

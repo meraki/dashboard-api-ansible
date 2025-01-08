@@ -189,7 +189,6 @@ EXAMPLES = r"""
       id: '222'
       name: IoT Devices
       sgt: 50
-
 """
 RETURN = r"""
 meraki_response:

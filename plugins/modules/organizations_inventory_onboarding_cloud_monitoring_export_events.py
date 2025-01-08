@@ -75,7 +75,6 @@ EXAMPLES = r"""
     request: r=cb
     targetOS: mac
     timestamp: 1526087474
-
 """
 RETURN = r"""
 meraki_response:

@@ -78,7 +78,6 @@ EXAMPLES = r"""
     - broadcast
     - multicast
     unknownUnicastThreshold: 30
-
 """
 RETURN = r"""
 meraki_response:

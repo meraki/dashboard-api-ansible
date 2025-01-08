@@ -65,7 +65,6 @@ EXAMPLES = r"""
     organizationId: string
     callbackId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

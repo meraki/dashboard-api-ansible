@@ -59,7 +59,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
     size: small
-
 """
 RETURN = r"""
 meraki_response:

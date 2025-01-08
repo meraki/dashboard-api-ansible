@@ -86,7 +86,6 @@ EXAMPLES = r"""
     scope: []
     networkId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

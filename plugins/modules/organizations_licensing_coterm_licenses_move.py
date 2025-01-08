@@ -94,7 +94,6 @@ EXAMPLES = r"""
         model: MR Enterprise
       key: Z2AA-BBBB-CCCC
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

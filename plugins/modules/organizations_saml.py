@@ -59,7 +59,6 @@ EXAMPLES = r"""
     state: present
     enabled: true
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

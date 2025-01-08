@@ -82,7 +82,6 @@ EXAMPLES = r"""
       value: example.com
     mode: disabled
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -510,7 +510,6 @@ EXAMPLES = r"""
       MV93X:
         quality: string
         resolution: string
-
 """
 RETURN = r"""
 meraki_response:

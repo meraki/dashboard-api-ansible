@@ -99,7 +99,6 @@ EXAMPLES = r"""
     networkId: string
     staticDelegatedPrefixId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

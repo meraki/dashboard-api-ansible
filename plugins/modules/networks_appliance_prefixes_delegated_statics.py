@@ -154,7 +154,6 @@ EXAMPLES = r"""
       type: internet
     prefix: 2001:db8:3c4d:15::/64
     staticDelegatedPrefixId: string
-
 """
 RETURN = r"""
 meraki_response:

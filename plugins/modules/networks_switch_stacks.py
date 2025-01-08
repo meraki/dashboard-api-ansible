@@ -99,7 +99,6 @@ EXAMPLES = r"""
     state: absent
     networkId: string
     switchStackId: string
-
 """
 RETURN = r"""
 meraki_response:

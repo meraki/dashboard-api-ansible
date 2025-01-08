@@ -59,7 +59,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serial: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -71,7 +71,6 @@ EXAMPLES = r"""
     - group:
         id: '1234'
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

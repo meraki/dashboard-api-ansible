@@ -108,7 +108,6 @@ EXAMPLES = r"""
     remoteStatusPageEnabled: true
     securePort:
       enabled: false
-
 """
 RETURN = r"""
 meraki_response:

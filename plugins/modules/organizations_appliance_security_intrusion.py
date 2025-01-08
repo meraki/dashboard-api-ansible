@@ -75,7 +75,6 @@ EXAMPLES = r"""
     - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines
       ruleId: meraki:intrusion/snort/GID/01/SID/5805
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

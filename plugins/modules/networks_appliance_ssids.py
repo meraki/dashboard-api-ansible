@@ -141,7 +141,6 @@ EXAMPLES = r"""
       secret: secret
     visible: true
     wpaEncryptionMode: WPA2 only
-
 """
 RETURN = r"""
 meraki_response:

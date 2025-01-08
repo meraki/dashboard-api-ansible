@@ -99,7 +99,6 @@ EXAMPLES = r"""
     organizationId: string
     artifactId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

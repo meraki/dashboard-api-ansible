@@ -70,7 +70,6 @@ EXAMPLES = r"""
     serials: []
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

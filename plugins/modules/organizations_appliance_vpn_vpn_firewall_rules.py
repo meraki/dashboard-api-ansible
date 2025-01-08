@@ -108,7 +108,6 @@ EXAMPLES = r"""
       srcPort: Any
       syslogEnabled: false
     syslogDefaultRule: false
-
 """
 RETURN = r"""
 meraki_response:

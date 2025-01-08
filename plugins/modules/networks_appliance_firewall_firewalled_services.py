@@ -76,7 +76,6 @@ EXAMPLES = r"""
     - 123.123.123.1
     networkId: string
     service: string
-
 """
 RETURN = r"""
 meraki_response:

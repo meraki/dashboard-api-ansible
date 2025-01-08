@@ -96,7 +96,6 @@ EXAMPLES = r"""
       enabled: true
     useCombinedPower: true
     vlan: 0
-
 """
 RETURN = r"""
 meraki_response:

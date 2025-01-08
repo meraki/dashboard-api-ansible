@@ -93,7 +93,6 @@ EXAMPLES = r"""
     resolution: 1280x720
     restrictedBandwidthModeEnabled: false
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

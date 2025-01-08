@@ -77,7 +77,6 @@ EXAMPLES = r"""
     - '1234'
     vlanProfile:
       iname: Profile1
-
 """
 RETURN = r"""
 meraki_response:

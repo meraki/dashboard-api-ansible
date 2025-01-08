@@ -84,7 +84,6 @@ EXAMPLES = r"""
     - policy: deny
       type: host
       value: google.com
-
 """
 RETURN = r"""
 meraki_response:

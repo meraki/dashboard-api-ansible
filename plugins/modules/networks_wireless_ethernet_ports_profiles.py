@@ -138,7 +138,6 @@ EXAMPLES = r"""
     - enabled: true
       name: string
       ssid: 0
-
 """
 RETURN = r"""
 meraki_response:

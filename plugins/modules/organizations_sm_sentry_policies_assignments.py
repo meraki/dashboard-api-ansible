@@ -99,7 +99,6 @@ EXAMPLES = r"""
         - tag1
         - tag2
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

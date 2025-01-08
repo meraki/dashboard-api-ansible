@@ -338,7 +338,6 @@ EXAMPLES = r"""
       '9':
         devicePolicy: Group policy
         groupPolicyId: '101'
-
 """
 RETURN = r"""
 meraki_response:

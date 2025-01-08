@@ -97,7 +97,6 @@ EXAMPLES = r"""
         id: '1234'
       milestones:
         scheduledFor: '2018-02-11T00:00:00Z'
-
 """
 RETURN = r"""
 meraki_response:

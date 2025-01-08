@@ -88,7 +88,6 @@ EXAMPLES = r"""
     - X02YZ1ZYZX
     wifiMacs:
     - 00:11:22:33:44:55
-
 """
 RETURN = r"""
 meraki_response:

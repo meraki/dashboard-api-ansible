@@ -67,7 +67,6 @@ EXAMPLES = r"""
     licenseId: '1234'
     organizationId: string
     seatCount: 20
-
 """
 RETURN = r"""
 meraki_response:

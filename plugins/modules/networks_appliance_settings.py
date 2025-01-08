@@ -76,7 +76,6 @@ EXAMPLES = r"""
       enabled: true
       prefix: test
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -94,7 +94,6 @@ EXAMPLES = r"""
     organizationId: string
     idpId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -102,7 +102,6 @@ EXAMPLES = r"""
     number: string
     identityPskId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

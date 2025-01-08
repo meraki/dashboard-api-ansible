@@ -56,7 +56,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -84,7 +84,6 @@ EXAMPLES = r"""
     timespan: 0
     serial: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

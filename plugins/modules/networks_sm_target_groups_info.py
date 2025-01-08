@@ -103,7 +103,6 @@ EXAMPLES = r"""
     networkId: string
     targetGroupId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

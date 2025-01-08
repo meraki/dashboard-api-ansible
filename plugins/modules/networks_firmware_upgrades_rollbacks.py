@@ -85,7 +85,6 @@ EXAMPLES = r"""
     time: '2020-10-21T02:00:00Z'
     toVersion:
       id: '7857'
-
 """
 RETURN = r"""
 meraki_response:

@@ -101,7 +101,6 @@ EXAMPLES = r"""
     ip: string
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

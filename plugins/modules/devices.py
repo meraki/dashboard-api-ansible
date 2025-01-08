@@ -99,7 +99,6 @@ EXAMPLES = r"""
     switchProfileId: '1234'
     tags:
     - ' recently-added '
-
 """
 RETURN = r"""
 meraki_response:

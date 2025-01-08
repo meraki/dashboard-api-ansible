@@ -150,7 +150,6 @@ EXAMPLES = r"""
     networkId: string
     number: string
     passphrase: secret
-
 """
 RETURN = r"""
 meraki_response:

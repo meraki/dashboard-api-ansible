@@ -68,7 +68,6 @@ EXAMPLES = r"""
     networkId: N_24329156
     organizationId: string
     seatCount: 20
-
 """
 RETURN = r"""
 meraki_response:

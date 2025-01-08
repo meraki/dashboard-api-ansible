@@ -75,7 +75,6 @@ EXAMPLES = r"""
     uplinkMode: virtual
     virtualIp1: 1.2.3.4
     virtualIp2: 1.2.3.4
-
 """
 RETURN = r"""
 meraki_response:

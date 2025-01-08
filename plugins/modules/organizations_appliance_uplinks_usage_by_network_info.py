@@ -87,7 +87,6 @@ EXAMPLES = r"""
     timespan: 0
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

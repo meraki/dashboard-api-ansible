@@ -65,7 +65,6 @@ EXAMPLES = r"""
     enabled: true
     hostname: N_24329156
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

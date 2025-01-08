@@ -97,7 +97,6 @@ EXAMPLES = r"""
       prefix: 2001:db8:3c4d:15::/64
       protocol: ipv6
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -94,7 +94,6 @@ EXAMPLES = r"""
       id: '1'
       price: 5.0
       timeLimit: 1 hour
-
 """
 RETURN = r"""
 meraki_response:

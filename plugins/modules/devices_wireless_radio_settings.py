@@ -100,7 +100,6 @@ EXAMPLES = r"""
     twoFourGhzSettings:
       channel: 11
       targetPower: 21
-
 """
 RETURN = r"""
 meraki_response:

@@ -78,7 +78,6 @@ EXAMPLES = r"""
     users:
     - passphrase: hunter2
       username: AzureDiamond
-
 """
 RETURN = r"""
 meraki_response:

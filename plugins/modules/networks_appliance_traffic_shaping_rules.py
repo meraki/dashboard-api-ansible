@@ -141,7 +141,6 @@ EXAMPLES = r"""
           limitUp: 1000000
         settings: custom
       priority: normal
-
 """
 RETURN = r"""
 meraki_response:

@@ -81,7 +81,6 @@ EXAMPLES = r"""
       - ranging
       scheduledAt: '2018-02-11T00:00:00Z'
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

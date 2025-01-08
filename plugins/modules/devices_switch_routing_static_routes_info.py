@@ -94,7 +94,6 @@ EXAMPLES = r"""
     serial: string
     staticRouteId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

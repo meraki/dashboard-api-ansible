@@ -104,7 +104,6 @@ EXAMPLES = r"""
     mac: 00:11:22:33:44:55
     serial: string
     vlanId: 12
-
 """
 RETURN = r"""
 meraki_response:

@@ -101,7 +101,6 @@ EXAMPLES = r"""
     state: absent
     artifactId: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -66,7 +66,6 @@ EXAMPLES = r"""
     enabled: true
     mqttBrokerId: '1234'
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

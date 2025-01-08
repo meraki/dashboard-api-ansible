@@ -110,7 +110,6 @@ EXAMPLES = r"""
     - syslog
     - ldap
     vlanId: 100
-
 """
 RETURN = r"""
 meraki_response:

@@ -101,7 +101,6 @@ EXAMPLES = r"""
     organizationId: string
     actionBatchId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

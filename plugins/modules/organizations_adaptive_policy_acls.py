@@ -168,7 +168,6 @@ EXAMPLES = r"""
       policy: deny
       protocol: tcp
       srcPort: 1,33
-
 """
 RETURN = r"""
 meraki_response:

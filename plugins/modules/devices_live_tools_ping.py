@@ -104,7 +104,6 @@ EXAMPLES = r"""
     count: 2
     serial: string
     target: 75.75.75.75
-
 """
 RETURN = r"""
 meraki_response:

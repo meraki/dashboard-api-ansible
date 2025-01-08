@@ -185,7 +185,6 @@ EXAMPLES = r"""
     total_pages: -1
     direction: next
   register: result
-
 """
 RETURN = r"""
 meraki_response:

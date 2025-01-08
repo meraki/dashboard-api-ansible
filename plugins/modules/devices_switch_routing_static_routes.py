@@ -152,7 +152,6 @@ EXAMPLES = r"""
     serial: string
     staticRouteId: string
     subnet: 192.168.1.0/24
-
 """
 RETURN = r"""
 meraki_response:

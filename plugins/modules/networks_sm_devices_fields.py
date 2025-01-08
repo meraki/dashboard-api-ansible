@@ -79,7 +79,6 @@ EXAMPLES = r"""
     networkId: string
     serial: XY0XX0Y0X0
     wifiMac: 00:11:22:33:44:55
-
 """
 RETURN = r"""
 meraki_response:

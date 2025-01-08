@@ -157,7 +157,6 @@ EXAMPLES = r"""
     - id: '2345'
       name: Example Policy Object
     sgt: 1000
-
 """
 RETURN = r"""
 meraki_response:

@@ -181,7 +181,6 @@ EXAMPLES = r"""
         isAuthorized: true
       '2':
         isAuthorized: false
-
 """
 RETURN = r"""
 meraki_response:

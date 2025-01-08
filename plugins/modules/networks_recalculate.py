@@ -87,7 +87,6 @@ EXAMPLES = r"""
       serial: Q234-ABCD-5678
     jobId: string
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

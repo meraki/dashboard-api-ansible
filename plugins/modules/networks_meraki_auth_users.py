@@ -185,7 +185,6 @@ EXAMPLES = r"""
     name: Miles Meraki
     networkId: string
     password: secret
-
 """
 RETURN = r"""
 meraki_response:

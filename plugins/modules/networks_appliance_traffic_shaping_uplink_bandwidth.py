@@ -109,7 +109,6 @@ EXAMPLES = r"""
         limitDown: 1000000
         limitUp: 1000000
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

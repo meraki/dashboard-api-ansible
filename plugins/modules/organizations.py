@@ -151,7 +151,6 @@ EXAMPLES = r"""
         value: '123456'
     name: My organization
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

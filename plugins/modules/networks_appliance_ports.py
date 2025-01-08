@@ -89,7 +89,6 @@ EXAMPLES = r"""
     portId: string
     type: access
     vlan: 3
-
 """
 RETURN = r"""
 meraki_response:

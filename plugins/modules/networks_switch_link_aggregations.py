@@ -161,7 +161,6 @@ EXAMPLES = r"""
     switchProfilePorts:
     - portId: '2'
       profile: '1234'
-
 """
 RETURN = r"""
 meraki_response:

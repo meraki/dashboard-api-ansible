@@ -64,7 +64,6 @@ EXAMPLES = r"""
     organizationId: string
     permissionScopeId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

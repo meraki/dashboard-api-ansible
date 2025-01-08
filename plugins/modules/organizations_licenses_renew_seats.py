@@ -67,7 +67,6 @@ EXAMPLES = r"""
     licenseIdToRenew: '123'
     organizationId: string
     unusedLicenseId: '1234'
-
 """
 RETURN = r"""
 meraki_response:

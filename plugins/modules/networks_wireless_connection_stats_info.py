@@ -103,7 +103,6 @@ EXAMPLES = r"""
     apTag: string
     networkId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

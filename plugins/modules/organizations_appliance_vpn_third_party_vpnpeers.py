@@ -188,7 +188,6 @@ EXAMPLES = r"""
       publicIp: 123.123.123.1
       remoteId: miles@meraki.com
       secret: Sample Password
-
 """
 RETURN = r"""
 meraki_response:

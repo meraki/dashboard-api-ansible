@@ -79,7 +79,6 @@ EXAMPLES = r"""
     networkId: string
     bluetoothClientId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -61,7 +61,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     skus: []
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -64,7 +64,6 @@ EXAMPLES = r"""
     serial: string
     id: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -174,7 +174,6 @@ EXAMPLES = r"""
             host: 254
             port: 1-1024
             vlan: 10
-
 """
 RETURN = r"""
 meraki_response:

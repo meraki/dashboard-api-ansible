@@ -155,7 +155,6 @@ EXAMPLES = r"""
     payloadTemplate:
       payloadTemplateId: wpt_00001
     sharedSecret: shhh
-
 """
 RETURN = r"""
 meraki_response:

@@ -189,7 +189,6 @@ EXAMPLES = r"""
     confirmed: true
     organizationId: string
     synchronous: false
-
 """
 RETURN = r"""
 meraki_response:

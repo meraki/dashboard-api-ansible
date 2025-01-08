@@ -136,7 +136,6 @@ EXAMPLES = r"""
     multicastGroup: Any
     networkId: string
     rendezvousPointId: string
-
 """
 RETURN = r"""
 meraki_response:

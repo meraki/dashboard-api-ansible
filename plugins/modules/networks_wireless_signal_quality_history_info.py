@@ -126,7 +126,6 @@ EXAMPLES = r"""
     ssid: 0
     networkId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

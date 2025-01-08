@@ -181,7 +181,6 @@ EXAMPLES = r"""
     venue:
       name: SF Branch
       type: Unspecified Assembly
-
 """
 RETURN = r"""
 meraki_response:

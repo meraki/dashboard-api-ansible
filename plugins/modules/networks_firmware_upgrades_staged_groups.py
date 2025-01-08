@@ -181,7 +181,6 @@ EXAMPLES = r"""
     isDefault: false
     name: My Staged Upgrade Group
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

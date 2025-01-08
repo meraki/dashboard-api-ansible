@@ -77,7 +77,6 @@ EXAMPLES = r"""
       networkId: '1338481'
       udi: PID:C9200L-24P-4G SN:JAE25220R2K
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

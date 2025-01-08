@@ -64,7 +64,6 @@ EXAMPLES = r"""
     - '1284392014819'
     - '2983092129865'
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

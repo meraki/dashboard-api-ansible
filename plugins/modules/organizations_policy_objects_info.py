@@ -126,7 +126,6 @@ EXAMPLES = r"""
     organizationId: string
     policyObjectId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

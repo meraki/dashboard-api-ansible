@@ -223,7 +223,6 @@ EXAMPLES = r"""
     topRightCorner:
       lat: 37.770040510499996
       lng: -122.38714009525
-
 """
 RETURN = r"""
 meraki_response:

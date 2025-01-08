@@ -91,7 +91,6 @@ EXAMPLES = r"""
     - id: meraki:vpnExclusion/application/2
       name: Office 365 Sharepoint
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

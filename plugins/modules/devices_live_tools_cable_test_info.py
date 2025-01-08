@@ -23,8 +23,7 @@ short_description: Information module for devices _live _tools _cable _test
 version_added: 2.16.0
 """
 
-EXAMPLES = r"""
-"""
+EXAMPLES = r""""""
 RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK

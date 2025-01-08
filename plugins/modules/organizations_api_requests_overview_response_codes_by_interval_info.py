@@ -124,7 +124,6 @@ EXAMPLES = r"""
     userAgent: string
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

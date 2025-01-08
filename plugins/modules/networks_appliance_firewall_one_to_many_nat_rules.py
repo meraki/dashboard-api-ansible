@@ -118,7 +118,6 @@ EXAMPLES = r"""
         publicPort: '8080'
       publicIp: 146.11.11.13
       uplink: internet1
-
 """
 RETURN = r"""
 meraki_response:

@@ -78,7 +78,6 @@ EXAMPLES = r"""
     etaEnabled: true
     networkId: string
     reportingEnabled: true
-
 """
 RETURN = r"""
 meraki_response:

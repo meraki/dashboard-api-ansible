@@ -144,7 +144,6 @@ EXAMPLES = r"""
     monitoredMediaServerId: string
     name: Sample VoIP Provider
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

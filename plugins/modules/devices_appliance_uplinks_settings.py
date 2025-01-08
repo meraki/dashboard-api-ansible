@@ -294,7 +294,6 @@ EXAMPLES = r"""
           enabled: true
           vlanId: 1
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

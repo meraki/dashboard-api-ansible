@@ -143,7 +143,6 @@ EXAMPLES = r"""
     - 100
     organizationId: string
     policyObjectGroupId: string
-
 """
 RETURN = r"""
 meraki_response:

@@ -164,7 +164,6 @@ EXAMPLES = r"""
     name: Web Servers - Datacenter 10
     organizationId: string
     policyObjectId: string
-
 """
 RETURN = r"""
 meraki_response:

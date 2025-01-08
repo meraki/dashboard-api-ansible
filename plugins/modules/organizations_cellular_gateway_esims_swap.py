@@ -84,7 +84,6 @@ EXAMPLES = r"""
         accountId: '456'
         communicationPlan: A comm plan
         ratePlan: A rate plan
-
 """
 RETURN = r"""
 meraki_response:

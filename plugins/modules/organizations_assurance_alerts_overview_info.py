@@ -140,7 +140,6 @@ EXAMPLES = r"""
     suppressAlertsForOfflineNodes: True
     organizationId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

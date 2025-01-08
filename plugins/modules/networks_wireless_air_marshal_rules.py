@@ -71,7 +71,6 @@ EXAMPLES = r"""
       type: bssid
     networkId: string
     type: allow
-
 """
 RETURN = r"""
 meraki_response:

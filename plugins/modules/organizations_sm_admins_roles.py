@@ -70,7 +70,6 @@ EXAMPLES = r"""
     scope: all_tags
     tags:
     - tag
-
 """
 RETURN = r"""
 meraki_response:

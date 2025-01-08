@@ -70,7 +70,6 @@ EXAMPLES = r"""
     name: Corporate subscription
     organizationId: '12345678910'
     validate: true
-
 """
 RETURN = r"""
 meraki_response:

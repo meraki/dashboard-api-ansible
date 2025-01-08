@@ -65,7 +65,6 @@ EXAMPLES = r"""
     deviceSerial: Q234-ABCD-5678
     licenseId: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

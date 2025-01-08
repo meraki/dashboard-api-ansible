@@ -161,7 +161,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     serial: string
-
 """
 RETURN = r"""
 meraki_response:

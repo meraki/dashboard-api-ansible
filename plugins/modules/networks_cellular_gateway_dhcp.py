@@ -73,7 +73,6 @@ EXAMPLES = r"""
     - 172.16.2.30
     dnsNameservers: custom
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

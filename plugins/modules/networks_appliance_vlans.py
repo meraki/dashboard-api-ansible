@@ -327,7 +327,6 @@ EXAMPLES = r"""
     templateVlanType: same
     vlanId: string
     vpnNatSubnet: 192.168.1.0/24
-
 """
 RETURN = r"""
 meraki_response:

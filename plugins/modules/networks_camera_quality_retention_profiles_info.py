@@ -98,7 +98,6 @@ EXAMPLES = r"""
     networkId: string
     qualityRetentionProfileId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

@@ -64,7 +64,6 @@ EXAMPLES = r"""
     organizationId: string
     licenseId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:

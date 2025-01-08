@@ -76,7 +76,6 @@ EXAMPLES = r"""
     networkId: string
     ruleId: string
     type: allow
-
 """
 RETURN = r"""
 meraki_response:
