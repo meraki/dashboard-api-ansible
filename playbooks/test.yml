@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   vars:
     network_id: L_828099381482771185
     org_id: '828099381482762270'

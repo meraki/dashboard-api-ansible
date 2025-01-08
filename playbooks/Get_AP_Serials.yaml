@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Play Name
+  hosts: localhost
   vars:
     org_id: XXXXXXXX
   gather_facts: false
