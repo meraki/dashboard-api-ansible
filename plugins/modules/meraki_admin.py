@@ -163,9 +163,9 @@ EXAMPLES = r'''
     email: jane@doe.com
     tags:
       - tag: tenant
-          access: full
+        access: full
       - tag: corporate
-          access: read-only
+        access: read-only
 
 - name: Create a new administrator with full access to a network
   meraki_admin:

@@ -6,7 +6,7 @@ on:
     - cron: '0 6 * * *'
 env:
   NAMESPACE: cisco
-  COLLECTION_NAME: meraki 
+  COLLECTION_NAME: meraki
 jobs:
   sanity:
     name: Sanity (Ⓐ${{ matrix.ansible }})
