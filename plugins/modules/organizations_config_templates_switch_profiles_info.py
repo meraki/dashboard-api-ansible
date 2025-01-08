@@ -5,41 +5,39 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_config_templates_switch_profiles_info
-short_description: Information module for organizations _config _templates _switch _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _config _templates _switch _profiles.
-- List the switch templates for your switch template configuration.
-version_added: '2.16.0'
+  - Get all organizations _config _templates _switch _profiles.
+  - List the switch templates for your switch template configuration.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_config_templates_switch_profiles_info
+notes:
+  - SDK Method used are switch.Switch.get_organization_config_template_switch_profiles,
+  - Paths used are get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles,
 options:
+  configTemplateId:
+    description:
+      - ConfigTemplateId path parameter. Config template ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  configTemplateId:
-    description:
-    - ConfigTemplateId path parameter. Config template ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfiles
-  description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profiles
-notes:
-  - SDK Method used are
-    switch.Switch.get_organization_config_template_switch_profiles,
-
-  - Paths used are
-    get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles,
+  - description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profiles
+    name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfiles
+short_description: Information module for organizations _config _templates _switch
+  _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

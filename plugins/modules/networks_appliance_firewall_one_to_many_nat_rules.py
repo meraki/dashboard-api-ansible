@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_one_to_many_nat_rules
-short_description: Resource module for networks _appliance _firewall _one _to _many _nat _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _one _to _many _nat _rules.
-- Set the 1 Many NAT mapping rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _one _to
+    _many _nat _rules.
+  - Set the 1 Many NAT mapping rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_one_to_many_nat_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_one_to_many_nat_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/oneToManyNatRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -37,9 +38,9 @@ options:
             type: str
           localPort:
             description: Destination port of the forwarded traffic that will be sent
-              from the MX to the specified host on the LAN. If you simply wish to forward
-              the traffic without translating the port, this should be the same as the
-              Public port.
+              from the MX to the specified host on the LAN. If you simply wish to
+              forward the traffic without translating the port, this should be the
+              same as the Public port.
             type: str
           name:
             description: A description of the rule.
@@ -61,18 +62,16 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToManyNatRules
-  description: Complete reference of the updateNetworkApplianceFirewallOneToManyNatRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-many-nat-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_one_to_many_nat_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/oneToManyNatRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallOneToManyNatRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-many-nat-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToManyNatRules
+short_description: Resource module for networks _appliance _firewall _one _to _many
+  _nat _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

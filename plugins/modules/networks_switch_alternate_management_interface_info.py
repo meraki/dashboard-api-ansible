@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_alternate_management_interface_info
-short_description: Information module for networks _switch _alternate _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _alternate _management _interface.
-- Return the switch alternate management interface for the network.
-version_added: '2.16.0'
+  - Get all networks _switch _alternate _management _interface.
+  - Return the switch alternate management interface for the network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_alternate_management_interface_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_alternate_management_interface,
+  - Paths used are get /networks/{networkId}/switch/alternateManagementInterface,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchAlternateManagementInterface
-  description: Complete reference of the getNetworkSwitchAlternateManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-alternate-management-interface
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_alternate_management_interface,
-
-  - Paths used are
-    get /networks/{networkId}/switch/alternateManagementInterface,
+  - description: Complete reference of the getNetworkSwitchAlternateManagementInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-alternate-management-interface
+    name: Cisco Meraki documentation for switch getNetworkSwitchAlternateManagementInterface
+short_description: Information module for networks _switch _alternate _management
+  _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cellular_gateway_connectivity_monitoring_destinations_info
-short_description: Information module for networks _cellular _gateway _connectivity _monitoring _destinations
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _cellular _gateway _connectivity _monitoring _destinations.
-- Return the connectivity testing destinations for an MG network.
-version_added: '2.16.0'
+  - Get all networks _cellular _gateway _connectivity _monitoring _destinations.
+  - Return the connectivity testing destinations for an MG network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_cellular_gateway_connectivity_monitoring_destinations_info
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.get_network_cellular_gateway_connectivity_monitoring_destinations,
+  - Paths used are get /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewayConnectivityMonitoringDestinations
-  description: Complete reference of the getNetworkCellularGatewayConnectivityMonitoringDestinations API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-connectivity-monitoring-destinations
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.get_network_cellular_gateway_connectivity_monitoring_destinations,
-
-  - Paths used are
-    get /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations,
+  - description: Complete reference of the getNetworkCellularGatewayConnectivityMonitoringDestinations
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-connectivity-monitoring-destinations
+    name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewayConnectivityMonitoringDestinations
+short_description: Information module for networks _cellular _gateway _connectivity
+  _monitoring _destinations
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

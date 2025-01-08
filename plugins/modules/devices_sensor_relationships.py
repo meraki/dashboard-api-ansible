@@ -5,21 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_sensor_relationships
-short_description: Resource module for devices _sensor _relationships
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _sensor _relationships.
-- Assign one or more sensor roles to a given sensor or camera device.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _sensor _relationships.
+  - Assign one or more sensor roles to a given sensor or camera device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_sensor_relationships
+notes:
+  - SDK Method used are sensor.Sensor.update_device_sensor_relationships,
+  - Paths used are put /devices/{serial}/sensor/relationships,
 options:
   livestream:
     description: A role defined between an MT sensor and an MV camera that adds the
-      camera's livestream to the sensor's details page. Snapshots from the camera will
-      also appear in alert notifications that the sensor triggers.
+      camera's livestream to the sensor's details page. Snapshots from the camera
+      will also appear in alert notifications that the sensor triggers.
     suboptions:
       relatedDevices:
         description: An array of the related devices for the role.
@@ -34,18 +34,14 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor updateDeviceSensorRelationships
-  description: Complete reference of the updateDeviceSensorRelationships API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-sensor-relationships
-notes:
-  - SDK Method used are
-    sensor.Sensor.update_device_sensor_relationships,
-
-  - Paths used are
-    put /devices/{serial}/sensor/relationships,
+  - description: Complete reference of the updateDeviceSensorRelationships API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-sensor-relationships
+    name: Cisco Meraki documentation for sensor updateDeviceSensorRelationships
+short_description: Resource module for devices _sensor _relationships
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

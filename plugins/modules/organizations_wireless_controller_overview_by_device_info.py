@@ -5,70 +5,78 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_wireless_controller_overview_by_device_info
-short_description: Information module for organizations _wireless _controller _overview _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _wireless _controller _overview _by _device.
-- List the overview information of wireless LAN controllers in an organization and it is updated every minute.
-version_added: '2.20.0'
+  - Get all organizations _wireless _controller _overview _by _device.
+  - List the overview information of wireless LAN controllers in an organization and
+    it is updated every minute.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_wireless_controller_overview_by_device_info
+notes:
+  - SDK Method used are wireless_controller.WirelessController.get_organization_wireless_controller_overview_by_device,
+  - Paths used are get /organizations/{organizationId}/wirelessController/overview/byDevice,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   networkIds:
     description:
-    - >
-      NetworkIds query parameter. Optional parameter to filter wireless LAN controllers by network ID. This filter
-      uses multiple exact matches.
+      - 'NetworkIds query parameter. Optional parameter to filter wireless LAN controllers
+        by network ID. This filter uses multiple exact matches.
+
+        '
     elements: str
     type: list
-  serials:
+  organizationId:
     description:
-    - >
-      Serials query parameter. Optional parameter to filter wireless LAN controller by its cloud ID. This filter
-      uses multiple exact matches.
-    elements: str
-    type: list
+      - OrganizationId path parameter. Organization ID.
+    type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
+  serials:
+    description:
+      - 'Serials query parameter. Optional parameter to filter wireless LAN controller
+        by its cloud ID. This filter uses multiple exact matches.
+
+        '
+    elements: str
+    type: list
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerOverviewByDevice
-  description: Complete reference of the getOrganizationWirelessControllerOverviewByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-overview-by-device
-notes:
-  - SDK Method used are
-    wireless_controller.WirelessController.get_organization_wireless_controller_overview_by_device,
-
-  - Paths used are
-    get /organizations/{organizationId}/wirelessController/overview/byDevice,
+  - description: Complete reference of the getOrganizationWirelessControllerOverviewByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-overview-by-device
+    name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerOverviewByDevice
+short_description: Information module for organizations _wireless _controller _overview
+  _by _device
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

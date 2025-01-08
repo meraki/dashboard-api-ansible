@@ -5,29 +5,34 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_access_policies
-short_description: Resource module for networks _switch _access _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _switch _access _policies.
-- >
-   Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers
-   to empty array.
-- Delete an access policy for a switch network.
-- >
-   Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers
-   to empty array.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _switch _access
+    _policies.
+  - 'Create an access policy for a switch network. If you would like to enable Meraki
+    Authentication, set radiusServers to empty array.
+
+    '
+  - Delete an access policy for a switch network.
+  - 'Update an access policy for a switch network. If you would like to enable Meraki
+    Authentication, set radiusServers to empty array.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_access_policies
+notes:
+  - SDK Method used are switch.Switch.create_network_switch_access_policy, switch.Switch.delete_network_switch_access_policy,
+    switch.Switch.update_network_switch_access_policy,
+  - Paths used are post /networks/{networkId}/switch/accessPolicies, delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+    put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
 options:
   accessPolicyNumber:
     description: AccessPolicyNumber path parameter. Access policy number.
     type: str
   accessPolicyType:
-    description: Access Type of the policy. Automatically 'Hybrid authentication' when
-      hostMode is 'Multi-Domain'.
+    description: Access Type of the policy. Automatically 'Hybrid authentication'
+      when hostMode is 'Multi-Domain'.
     type: str
   dot1x:
     description: 802.1x Settings.
@@ -39,8 +44,8 @@ options:
         type: str
     type: dict
   guestPortBouncing:
-    description: If enabled, Meraki devices will periodically send access-request messages
-      to these RADIUS servers.
+    description: If enabled, Meraki devices will periodically send access-request
+      messages to these RADIUS servers.
     type: bool
   guestVlanId:
     description: ID for the guest VLAN allow unauthorized devices access to limited
@@ -77,8 +82,8 @@ options:
             type: int
         type: dict
       criticalAuth:
-        description: Critical auth settings for when authentication is rejected by the
-          RADIUS server.
+        description: Critical auth settings for when authentication is rejected by
+          the RADIUS server.
         suboptions:
           dataVlanId:
             description: VLAN that clients who use data will be placed on when RADIUS
@@ -97,8 +102,8 @@ options:
           fails. Will be null if hostMode is Multi-Auth.
         type: int
       reAuthenticationInterval:
-        description: Re-authentication period in seconds. Will be null if hostMode is
-          Multi-Auth.
+        description: Re-authentication period in seconds. Will be null if hostMode
+          is Multi-Auth.
         type: int
     type: dict
   radiusAccountingEnabled:
@@ -129,7 +134,8 @@ options:
     description: Change of authentication for RADIUS re-authentication and disconnection.
     type: bool
   radiusGroupAttribute:
-    description: Acceptable values are `""` for None, or `"11"` for Group Policies ACL.
+    description: Acceptable values are `""` for None, or `"11"` for Group Policies
+      ACL.
     type: str
   radiusServers:
     description: List of RADIUS servers to require connecting devices to authenticate
@@ -151,8 +157,8 @@ options:
         type: str
     type: list
   radiusTestingEnabled:
-    description: If enabled, Meraki devices will periodically send access-request messages
-      to these RADIUS servers.
+    description: If enabled, Meraki devices will periodically send access-request
+      messages to these RADIUS servers.
     type: bool
   urlRedirectWalledGardenEnabled:
     description: Enable to restrict access for clients to a specific set of IP addresses
@@ -168,28 +174,20 @@ options:
       true when hostMode is 'Multi-Domain'.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
-  description: Complete reference of the createNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy
-- name: Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy
-  description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy
-- name: Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy
-  description: Complete reference of the updateNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy
-notes:
-  - SDK Method used are
-    switch.Switch.create_network_switch_access_policy,
-    switch.Switch.delete_network_switch_access_policy,
-    switch.Switch.update_network_switch_access_policy,
-
-  - Paths used are
-    post /networks/{networkId}/switch/accessPolicies,
-    delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
-    put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+  - description: Complete reference of the createNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy
+    name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
+  - description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy
+    name: Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy
+  - description: Complete reference of the updateNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy
+    name: Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy
+short_description: Resource module for networks _switch _access _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

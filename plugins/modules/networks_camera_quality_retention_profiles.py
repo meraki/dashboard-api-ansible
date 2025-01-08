@@ -5,36 +5,40 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_camera_quality_retention_profiles
-short_description: Resource module for networks _camera _quality _retention _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _camera _quality _retention _profiles.
-- Creates new quality retention profile for this network.
-- Delete an existing quality retention profile for this network.
-- Update an existing quality retention profile for this network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _camera _quality
+    _retention _profiles.
+  - Creates new quality retention profile for this network.
+  - Delete an existing quality retention profile for this network.
+  - Update an existing quality retention profile for this network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_camera_quality_retention_profiles
+notes:
+  - SDK Method used are camera.Camera.create_network_camera_quality_retention_profile,
+    camera.Camera.delete_network_camera_quality_retention_profile, camera.Camera.update_network_camera_quality_retention_profile,
+  - Paths used are post /networks/{networkId}/camera/qualityRetentionProfiles, delete
+    /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
+    put /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
 options:
   audioRecordingEnabled:
     description: Whether or not to record audio. Can be either true or false. Defaults
       to false.
     type: bool
   cloudArchiveEnabled:
-    description: Create redundant video backup using Cloud Archive. Can be either true
-      or false. Defaults to false.
+    description: Create redundant video backup using Cloud Archive. Can be either
+      true or false. Defaults to false.
     type: bool
   maxRetentionDays:
-    description: The maximum number of days for which the data will be stored, or 'null'
-      to keep data until storage space runs out. If the former, it can be in the range
-      of one to ninety days.
+    description: The maximum number of days for which the data will be stored, or
+      'null' to keep data until storage space runs out. If the former, it can be in
+      the range of one to ninety days.
     type: int
   motionBasedRetentionEnabled:
     description: Deletes footage older than 3 days in which no motion was detected.
-      Can be either true or false. Defaults to false. This setting does not apply to
-      MV2 cameras.
+      Can be either true or false. Defaults to false. This setting does not apply
+      to MV2 cameras.
     type: bool
   motionDetectorVersion:
     description: The version of the motion detector that will be used by the camera.
@@ -51,9 +55,9 @@ options:
       ID.
     type: str
   restrictedBandwidthModeEnabled:
-    description: Disable features that require additional bandwidth such as Motion Recap.
-      Can be either true or false. Defaults to false. This setting does not apply to
-      MV2 cameras.
+    description: Disable features that require additional bandwidth such as Motion
+      Recap. Can be either true or false. Defaults to false. This setting does not
+      apply to MV2 cameras.
     type: bool
   scheduleId:
     description: Schedule for which this camera will record video, or 'null' to always
@@ -332,28 +336,23 @@ options:
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera createNetworkCameraQualityRetentionProfile
-  description: Complete reference of the createNetworkCameraQualityRetentionProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-quality-retention-profile
-- name: Cisco Meraki documentation for camera deleteNetworkCameraQualityRetentionProfile
-  description: Complete reference of the deleteNetworkCameraQualityRetentionProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-quality-retention-profile
-- name: Cisco Meraki documentation for camera updateNetworkCameraQualityRetentionProfile
-  description: Complete reference of the updateNetworkCameraQualityRetentionProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-quality-retention-profile
-notes:
-  - SDK Method used are
-    camera.Camera.create_network_camera_quality_retention_profile,
-    camera.Camera.delete_network_camera_quality_retention_profile,
-    camera.Camera.update_network_camera_quality_retention_profile,
-
-  - Paths used are
-    post /networks/{networkId}/camera/qualityRetentionProfiles,
-    delete /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
-    put /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
+  - description: Complete reference of the createNetworkCameraQualityRetentionProfile
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-quality-retention-profile
+    name: Cisco Meraki documentation for camera createNetworkCameraQualityRetentionProfile
+  - description: Complete reference of the deleteNetworkCameraQualityRetentionProfile
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-quality-retention-profile
+    name: Cisco Meraki documentation for camera deleteNetworkCameraQualityRetentionProfile
+  - description: Complete reference of the updateNetworkCameraQualityRetentionProfile
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-quality-retention-profile
+    name: Cisco Meraki documentation for camera updateNetworkCameraQualityRetentionProfile
+short_description: Resource module for networks _camera _quality _retention _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,56 +5,62 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info
-short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device.
-- Return the devices that have a Dynamic ARP Inspection warning and their warnings.
-version_added: '2.16.0'
+  - Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by
+    _device.
+  - Return the devices that have a Dynamic ARP Inspection warning and their warnings.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_warnings_by_device,
+  - Paths used are get /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/warnings/byDevice,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
-  description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-warnings-by-device
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_warnings_by_device,
-
-  - Paths used are
-    get /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/warnings/byDevice,
+  - description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-warnings-by-device
+    name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
+short_description: Information module for networks _switch _dhcp _server _policy _arp
+  _inspection _warnings _by _device
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

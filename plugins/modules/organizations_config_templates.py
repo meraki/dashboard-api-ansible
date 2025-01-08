@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_config_templates
-short_description: Resource module for organizations _config _templates
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _config _templates.
-- Create a new configuration template.
-- Remove a configuration template.
-- Update a configuration template.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _config
+    _templates.
+  - Create a new configuration template.
+  - Remove a configuration template.
+  - Update a configuration template.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_config_templates
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_config_template,
+    organizations.Organizations.delete_organization_config_template, organizations.Organizations.update_organization_config_template,
+  - Paths used are post /organizations/{organizationId}/configTemplates, delete /organizations/{organizationId}/configTemplates/{configTemplateId},
+    put /organizations/{organizationId}/configTemplates/{configTemplateId},
 options:
   configTemplateId:
     description: ConfigTemplateId path parameter. Config template ID.
@@ -31,33 +34,26 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   timeZone:
-    description: The timezone of the configuration template. For a list of allowed timezones,
-      please see the 'TZ' column in the table in <a target='_blank' href='https //en.wikipedia.org/wiki/List_of_tz_...
-      article</a>. Not applicable if copying from existing network or template.
+    description: The timezone of the configuration template. For a list of allowed
+      timezones, please see the 'TZ' column in the table in <a target='_blank' href='https
+      //en.wikipedia.org/wiki/List_of_tz_... article</a>. Not applicable if copying
+      from existing network or template.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationConfigTemplate
-  description: Complete reference of the createOrganizationConfigTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-config-template
-- name: Cisco Meraki documentation for organizations deleteOrganizationConfigTemplate
-  description: Complete reference of the deleteOrganizationConfigTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-config-template
-- name: Cisco Meraki documentation for organizations updateOrganizationConfigTemplate
-  description: Complete reference of the updateOrganizationConfigTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_config_template,
-    organizations.Organizations.delete_organization_config_template,
-    organizations.Organizations.update_organization_config_template,
-
-  - Paths used are
-    post /organizations/{organizationId}/configTemplates,
-    delete /organizations/{organizationId}/configTemplates/{configTemplateId},
-    put /organizations/{organizationId}/configTemplates/{configTemplateId},
+  - description: Complete reference of the createOrganizationConfigTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-config-template
+    name: Cisco Meraki documentation for organizations createOrganizationConfigTemplate
+  - description: Complete reference of the deleteOrganizationConfigTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-config-template
+    name: Cisco Meraki documentation for organizations deleteOrganizationConfigTemplate
+  - description: Complete reference of the updateOrganizationConfigTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template
+    name: Cisco Meraki documentation for organizations updateOrganizationConfigTemplate
+short_description: Resource module for organizations _config _templates
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_inventory_onboarding_cloud_monitoring_prepare
-short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _prepare
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _prepare.
-- >
-   Initiates or updates an import session. An import ID will be generated and used when you are ready to commit the
-   import.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _inventory _onboarding _cloud
+    _monitoring _prepare.
+  - 'Initiates or updates an import session. An import ID will be generated and used
+    when you are ready to commit the import.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_inventory_onboarding_cloud_monitoring_prepare
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_prepare,
+  - Paths used are post /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/prepare,
 options:
   devices:
     description: A set of devices to import (or update).
@@ -32,10 +34,12 @@ options:
             description: Name of the configured TLS certificate.
             type: str
           localInterface:
-            description: Number of the vlan expected to be used to connect to the cloud.
+            description: Number of the vlan expected to be used to connect to the
+              cloud.
             type: int
           loopbackNumber:
-            description: Number of the configured Loopback Interface used for TLS overlay.
+            description: Number of the configured Loopback Interface used for TLS
+              overlay.
             type: int
           name:
             description: Name of the configured TLS tunnel.
@@ -113,18 +117,16 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringPrepare
-  description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-prepare
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_prepare,
-
-  - Paths used are
-    post /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/prepare,
+  - description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-prepare
+    name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringPrepare
+short_description: Resource module for organizations _inventory _onboarding _cloud
+  _monitoring _prepare
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

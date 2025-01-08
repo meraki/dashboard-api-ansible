@@ -5,41 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_webhooks_callbacks_statuses_info
-short_description: Information module for organizations _webhooks _callbacks _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get organizations _webhooks _callbacks _statuses by id.
-- Return the status of an API callback.
-version_added: '2.16.0'
+  - Get organizations _webhooks _callbacks _statuses by id.
+  - Return the status of an API callback.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_webhooks_callbacks_statuses_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_webhooks_callbacks_status,
+  - Paths used are get /organizations/{organizationId}/webhooks/callbacks/statuses/{callbackId},
 options:
+  callbackId:
+    description:
+      - CallbackId path parameter. Callback ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  callbackId:
-    description:
-    - CallbackId path parameter. Callback ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationWebhooksCallbacksStatus
-  description: Complete reference of the getOrganizationWebhooksCallbacksStatus API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-callbacks-status
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_webhooks_callbacks_status,
-
-  - Paths used are
-    get /organizations/{organizationId}/webhooks/callbacks/statuses/{callbackId},
+  - description: Complete reference of the getOrganizationWebhooksCallbacksStatus
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-callbacks-status
+    name: Cisco Meraki documentation for organizations getOrganizationWebhooksCallbacksStatus
+short_description: Information module for organizations _webhooks _callbacks _statuses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

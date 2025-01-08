@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_billing_info
-short_description: Information module for networks _wireless _billing
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _billing.
-- Return the billing settings of this network.
-version_added: '2.16.0'
+  - Get all networks _wireless _billing.
+  - Return the billing settings of this network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_billing_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_billing,
+  - Paths used are get /networks/{networkId}/wireless/billing,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessBilling
-  description: Complete reference of the getNetworkWirelessBilling API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-billing
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_billing,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/billing,
+  - description: Complete reference of the getNetworkWirelessBilling API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-billing
+    name: Cisco Meraki documentation for wireless getNetworkWirelessBilling
+short_description: Information module for networks _wireless _billing
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

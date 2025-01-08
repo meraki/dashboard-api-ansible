@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_settings_info
-short_description: Information module for networks _appliance _firewall _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _firewall _settings.
-- Return the firewall settings for this network.
-version_added: '2.16.0'
+  - Get all networks _appliance _firewall _settings.
+  - Return the firewall settings for this network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_settings_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_firewall_settings,
+  - Paths used are get /networks/{networkId}/appliance/firewall/settings,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallSettings
-  description: Complete reference of the getNetworkApplianceFirewallSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-settings
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_firewall_settings,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/firewall/settings,
+  - description: Complete reference of the getNetworkApplianceFirewallSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-settings
+    name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallSettings
+short_description: Information module for networks _appliance _firewall _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

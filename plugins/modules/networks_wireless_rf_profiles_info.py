@@ -5,55 +5,51 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_rf_profiles_info
-short_description: Information module for networks _wireless _rf _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _rf _profiles.
-- Get networks _wireless _rf _profiles by id.
-- List RF profiles for this network.
-- Return a RF profile.
-version_added: '2.16.0'
+  - Get all networks _wireless _rf _profiles.
+  - Get networks _wireless _rf _profiles by id.
+  - List RF profiles for this network.
+  - Return a RF profile.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_rf_profiles_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_rf_profile, wireless.Wireless.get_network_wireless_rf_profiles,
+  - Paths used are get /networks/{networkId}/wireless/rfProfiles, get /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
 options:
   headers:
     description: Additional headers.
     type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
   includeTemplateProfiles:
     description:
-    - >
-      IncludeTemplateProfiles query parameter. If the network is bound to a template, this parameter controls
-      whether or not the non-basic RF profiles defined on the template should be included in the response
-      alongside the non-basic profiles defined on the bound network. Defaults to false.
+      - 'IncludeTemplateProfiles query parameter. If the network is bound to a template,
+        this parameter controls whether or not the non-basic RF profiles defined on
+        the template should be included in the response alongside the non-basic profiles
+        defined on the bound network. Defaults to false.
+
+        '
     type: bool
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
+    type: str
   rfProfileId:
     description:
-    - RfProfileId path parameter. Rf profile ID.
+      - RfProfileId path parameter. Rf profile ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfile
-  description: Complete reference of the getNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profile
-- name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfiles
-  description: Complete reference of the getNetworkWirelessRfProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profiles
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_rf_profile,
-    wireless.Wireless.get_network_wireless_rf_profiles,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/rfProfiles,
-    get /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
+  - description: Complete reference of the getNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profile
+    name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfile
+  - description: Complete reference of the getNetworkWirelessRfProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profiles
+    name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfiles
+short_description: Information module for networks _wireless _rf _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

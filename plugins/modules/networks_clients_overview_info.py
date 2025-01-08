@@ -5,58 +5,59 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_clients_overview_info
-short_description: Information module for networks _clients _overview
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _clients _overview.
-- Return overview statistics for network clients.
-version_added: '2.16.0'
+  - Get all networks _clients _overview.
+  - Return overview statistics for network clients.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_clients_overview_info
+notes:
+  - SDK Method used are networks.Networks.get_network_clients_overview,
+  - Paths used are get /networks/{networkId}/clients/overview,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
+  resolution:
+    description:
+      - 'Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 7200, 86400, 604800, 2592000. The default is 604800.
+
+        '
+    type: int
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 1 day.
-    type: float
-  resolution:
-    description:
-    - >
-      Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are
-      7200, 86400, 604800, 2592000. The default is 604800.
-    type: int
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for networks getNetworkClientsOverview
-  description: Complete reference of the getNetworkClientsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients-overview
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_clients_overview,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 31 days. The default
+        is 1 day.
 
-  - Paths used are
-    get /networks/{networkId}/clients/overview,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkClientsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients-overview
+    name: Cisco Meraki documentation for networks getNetworkClientsOverview
+short_description: Information module for networks _clients _overview
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,65 +5,67 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_detections_history_by_boundary_by_interval_info
-short_description: Information module for organizations _camera _detections _history _by _boundary _by _interval
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _camera _detections _history _by _boundary _by _interval.
-- Returns analytics data for timespans.
-version_added: '2.16.0'
+  - Get all organizations _camera _detections _history _by _boundary _by _interval.
+  - Returns analytics data for timespans.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_detections_history_by_boundary_by_interval_info
+notes:
+  - SDK Method used are camera.Camera.get_organization_camera_detections_history_by_boundary_by_interval,
+  - Paths used are get /organizations/{organizationId}/camera/detections/history/byBoundary/byInterval,
 options:
+  boundaryIds:
+    description:
+      - 'BoundaryIds query parameter. A list of boundary ids. The returned cameras
+        will be filtered to only include these ids.
+
+        '
+    elements: str
+    type: list
+  boundaryTypes:
+    description:
+      - BoundaryTypes query parameter. The detection types. Defaults to 'person'.
+    elements: str
+    type: list
+  duration:
+    description:
+      - 'Duration query parameter. The minimum time, in seconds, that the person or
+        car remains in the area to be counted. Defaults to boundary configuration
+        or 60.
+
+        '
+    type: int
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
-  boundaryIds:
-    description:
-    - >
-      BoundaryIds query parameter. A list of boundary ids. The returned cameras will be filtered to only include
-      these ids.
-    elements: str
-    type: list
-  ranges:
-    description:
-    - Ranges query parameter. A list of time ranges with intervals.
-    elements: dict
-    type: list
-  duration:
-    description:
-    - >
-      Duration query parameter. The minimum time, in seconds, that the person or car remains in the area to be
-      counted. Defaults to boundary configuration or 60.
-    type: int
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 1 - 1000. Defaults to 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 1 - 1000. Defaults to 1000.
     type: int
-  boundaryTypes:
+  ranges:
     description:
-    - BoundaryTypes query parameter. The detection types. Defaults to 'person'.
-    elements: str
+      - Ranges query parameter. A list of time ranges with intervals.
+    elements: dict
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraDetectionsHistoryByBoundaryByInterval
-  description: Complete reference of the getOrganizationCameraDetectionsHistoryByBoundaryByInterval API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-detections-history-by-boundary-by-interval
-notes:
-  - SDK Method used are
-    camera.Camera.get_organization_camera_detections_history_by_boundary_by_interval,
-
-  - Paths used are
-    get /organizations/{organizationId}/camera/detections/history/byBoundary/byInterval,
+  - description: Complete reference of the getOrganizationCameraDetectionsHistoryByBoundaryByInterval
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-detections-history-by-boundary-by-interval
+    name: Cisco Meraki documentation for camera getOrganizationCameraDetectionsHistoryByBoundaryByInterval
+short_description: Information module for organizations _camera _detections _history
+  _by _boundary _by _interval
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

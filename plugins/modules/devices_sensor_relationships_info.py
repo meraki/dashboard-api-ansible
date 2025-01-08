@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_sensor_relationships_info
-short_description: Information module for devices _sensor _relationships
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _sensor _relationships.
-- List the sensor roles for a given sensor or camera device.
-version_added: '2.16.0'
+  - Get all devices _sensor _relationships.
+  - List the sensor roles for a given sensor or camera device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_sensor_relationships_info
+notes:
+  - SDK Method used are sensor.Sensor.get_device_sensor_relationships,
+  - Paths used are get /devices/{serial}/sensor/relationships,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getDeviceSensorRelationships
-  description: Complete reference of the getDeviceSensorRelationships API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_device_sensor_relationships,
-
-  - Paths used are
-    get /devices/{serial}/sensor/relationships,
+  - description: Complete reference of the getDeviceSensorRelationships API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-relationships
+    name: Cisco Meraki documentation for sensor getDeviceSensorRelationships
+short_description: Information module for devices _sensor _relationships
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

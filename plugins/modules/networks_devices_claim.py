@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_devices_claim
-short_description: Resource module for networks _devices _claim
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _devices _claim.
-- >
-   Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests
-   against that device to succeed. This operation can be used up to ten times within a single five minute window.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _devices _claim.
+  - 'Claim devices into a network. Note for recently claimed devices, it may take
+    a few minutes for API requests against that device to succeed. This operation
+    can be used up to ten times within a single five minute window.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_devices_claim
+notes:
+  - SDK Method used are networks.Networks.claim_network_devices,
+  - Paths used are post /networks/{networkId}/devices/claim,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -26,18 +28,14 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks claimNetworkDevices
-  description: Complete reference of the claimNetworkDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!claim-network-devices
-notes:
-  - SDK Method used are
-    networks.Networks.claim_network_devices,
-
-  - Paths used are
-    post /networks/{networkId}/devices/claim,
+  - description: Complete reference of the claimNetworkDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!claim-network-devices
+    name: Cisco Meraki documentation for networks claimNetworkDevices
+short_description: Resource module for networks _devices _claim
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

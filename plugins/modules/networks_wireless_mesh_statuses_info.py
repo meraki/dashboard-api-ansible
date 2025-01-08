@@ -5,56 +5,59 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_mesh_statuses_info
-short_description: Information module for networks _wireless _mesh _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _mesh _statuses.
-- List wireless mesh statuses for repeaters.
-version_added: '2.16.0'
+  - Get all networks _wireless _mesh _statuses.
+  - List wireless mesh statuses for repeaters.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_mesh_statuses_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_mesh_statuses,
+  - Paths used are get /networks/{networkId}/wireless/meshStatuses,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 500. Default is 50.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessMeshStatuses
-  description: Complete reference of the getNetworkWirelessMeshStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-mesh-statuses
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_mesh_statuses,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/meshStatuses,
+  - description: Complete reference of the getNetworkWirelessMeshStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-mesh-statuses
+    name: Cisco Meraki documentation for wireless getNetworkWirelessMeshStatuses
+short_description: Information module for networks _wireless _mesh _statuses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,106 +5,120 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_api_requests_info
-short_description: Information module for organizations _api _requests
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _api _requests.
-- List the API requests made by an organization.
-version_added: '2.16.0'
+  - Get all organizations _api _requests.
+  - List the API requests made by an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_api_requests_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_api_requests,
+  - Paths used are get /organizations/{organizationId}/apiRequests,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  organizationId:
+  adminId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  t0:
-    description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-    type: str
-  t1:
-    description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
-    type: str
-  timespan:
-    description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 31 days.
-    type: float
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - AdminId query parameter. Filter the results by the ID of the admin who made
+        the API requests.
     type: str
   endingBefore:
     description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
-  adminId:
+  headers:
+    description: Additional headers.
+    type: dict
+  method:
     description:
-    - AdminId query parameter. Filter the results by the ID of the admin who made the API requests.
+      - 'Method query parameter. Filter the results by the method of the API requests
+        (must be ''GET'', ''PUT'', ''POST'' or ''DELETE'').
+
+        '
+    type: str
+  operationIds:
+    description:
+      - OperationIds query parameter. Filter the results by one or more operation
+        IDs for the API request.
+    elements: str
+    type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
     type: str
   path:
     description:
-    - Path query parameter. Filter the results by the path of the API requests.
+      - Path query parameter. Filter the results by the path of the API requests.
     type: str
-  method:
+  perPage:
     description:
-    - >
-      Method query parameter. Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST'
-      or 'DELETE').
-    type: str
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
+    type: int
   responseCode:
     description:
-    - ResponseCode query parameter. Filter the results by the response code of the API requests.
+      - ResponseCode query parameter. Filter the results by the response code of the
+        API requests.
     type: int
   sourceIp:
     description:
-    - SourceIp query parameter. Filter the results by the IP address of the originating API request.
+      - SourceIp query parameter. Filter the results by the IP address of the originating
+        API request.
     type: str
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  t0:
+    description:
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
+    type: str
+  t1:
+    description:
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
+    type: str
+  timespan:
+    description:
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 31 days. The default
+        is 31 days.
+
+        '
+    type: float
   userAgent:
     description:
-    - UserAgent query parameter. Filter the results by the user agent string of the API request.
+      - UserAgent query parameter. Filter the results by the user agent string of
+        the API request.
     type: str
   version:
     description:
-    - Version query parameter. Filter the results by the API version of the API request.
+      - Version query parameter. Filter the results by the API version of the API
+        request.
     type: int
-  operationIds:
-    description:
-    - OperationIds query parameter. Filter the results by one or more operation IDs for the API request.
-    elements: str
-    type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationApiRequests
-  description: Complete reference of the getOrganizationApiRequests API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_api_requests,
-
-  - Paths used are
-    get /organizations/{organizationId}/apiRequests,
+  - description: Complete reference of the getOrganizationApiRequests API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests
+    name: Cisco Meraki documentation for organizations getOrganizationApiRequests
+short_description: Information module for organizations _api _requests
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

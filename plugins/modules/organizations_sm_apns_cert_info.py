@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_sm_apns_cert_info
-short_description: Information module for organizations _sm _apns _cert
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _sm _apns _cert.
-- Get the organization's APNS certificate.
-version_added: '2.16.0'
+  - Get all organizations _sm _apns _cert.
+  - Get the organization's APNS certificate.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_sm_apns_cert_info
+notes:
+  - SDK Method used are sm.Sm.get_organization_sm_apns_cert,
+  - Paths used are get /organizations/{organizationId}/sm/apnsCert,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getOrganizationSmApnsCert
-  description: Complete reference of the getOrganizationSmApnsCert API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-apns-cert
-notes:
-  - SDK Method used are
-    sm.Sm.get_organization_sm_apns_cert,
-
-  - Paths used are
-    get /organizations/{organizationId}/sm/apnsCert,
+  - description: Complete reference of the getOrganizationSmApnsCert API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-apns-cert
+    name: Cisco Meraki documentation for sm getOrganizationSmApnsCert
+short_description: Information module for organizations _sm _apns _cert
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,62 +5,65 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_insight_applications_health_by_time_info
-short_description: Information module for networks _insight _applications _health _by _time
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _insight _applications _health _by _time.
-- Get application health by time.
-version_added: '2.16.0'
+  - Get all networks _insight _applications _health _by _time.
+  - Get application health by time.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_insight_applications_health_by_time_info
+notes:
+  - SDK Method used are insight.Insight.get_network_insight_application_health_by_time,
+  - Paths used are get /networks/{networkId}/insight/applications/{applicationId}/healthByTime,
 options:
+  applicationId:
+    description:
+      - ApplicationId path parameter. Application ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
-  applicationId:
+  resolution:
     description:
-    - ApplicationId path parameter. Application ID.
-    type: str
+      - 'Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 60, 300, 3600, 86400. The default is 300.
+
+        '
+    type: int
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 7 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The
-      default is 2 hours.
-    type: float
-  resolution:
-    description:
-    - >
-      Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 60,
-      300, 3600, 86400. The default is 300.
-    type: int
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for insight getNetworkInsightApplicationHealthByTime
-  description: Complete reference of the getNetworkInsightApplicationHealthByTime API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-insight-application-health-by-time
-notes:
-  - SDK Method used are
-    insight.Insight.get_network_insight_application_health_by_time,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 7 days. The default
+        is 2 hours.
 
-  - Paths used are
-    get /networks/{networkId}/insight/applications/{applicationId}/healthByTime,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkInsightApplicationHealthByTime
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-insight-application-health-by-time
+    name: Cisco Meraki documentation for insight getNetworkInsightApplicationHealthByTime
+short_description: Information module for networks _insight _applications _health
+  _by _time
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

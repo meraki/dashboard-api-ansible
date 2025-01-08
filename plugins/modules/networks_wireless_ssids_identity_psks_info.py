@@ -5,52 +5,48 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_identity_psks_info
-short_description: Information module for networks _wireless _ssids _identity _psks
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _identity _psks.
-- Get networks _wireless _ssids _identity _psks by id.
-- List all Identity PSKs in a wireless network.
-- Return an Identity PSK.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _identity _psks.
+  - Get networks _wireless _ssids _identity _psks by id.
+  - List all Identity PSKs in a wireless network.
+  - Return an Identity PSK.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_identity_psks_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_identity_psk,
+    wireless.Wireless.get_network_wireless_ssid_identity_psks,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/identityPsks,
+    get /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
 options:
   headers:
     description: Additional headers.
     type: dict
+  identityPskId:
+    description:
+      - IdentityPskId path parameter. Identity psk ID.
+    type: str
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
-    type: str
-  identityPskId:
-    description:
-    - IdentityPskId path parameter. Identity psk ID.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidIdentityPsk
-  description: Complete reference of the getNetworkWirelessSsidIdentityPsk API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-identity-psk
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidIdentityPsks
-  description: Complete reference of the getNetworkWirelessSsidIdentityPsks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-identity-psks
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_identity_psk,
-    wireless.Wireless.get_network_wireless_ssid_identity_psks,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/identityPsks,
-    get /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
+  - description: Complete reference of the getNetworkWirelessSsidIdentityPsk API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-identity-psk
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidIdentityPsk
+  - description: Complete reference of the getNetworkWirelessSsidIdentityPsks API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-identity-psks
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidIdentityPsks
+short_description: Information module for networks _wireless _ssids _identity _psks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

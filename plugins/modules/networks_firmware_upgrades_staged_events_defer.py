@@ -5,33 +5,32 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_events_defer
-short_description: Resource module for networks _firmware _upgrades _staged _events _defer
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _firmware _upgrades _staged _events _defer.
-- Postpone by 1 week all pending staged upgrade stages for a network.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _firmware _upgrades _staged _events
+    _defer.
+  - Postpone by 1 week all pending staged upgrade stages for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_events_defer
+notes:
+  - SDK Method used are networks.Networks.defer_network_firmware_upgrades_staged_events,
+  - Paths used are post /networks/{networkId}/firmwareUpgrades/staged/events/defer,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks deferNetworkFirmwareUpgradesStagedEvents
-  description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!defer-network-firmware-upgrades-staged-events
-notes:
-  - SDK Method used are
-    networks.Networks.defer_network_firmware_upgrades_staged_events,
-
-  - Paths used are
-    post /networks/{networkId}/firmwareUpgrades/staged/events/defer,
+  - description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!defer-network-firmware-upgrades-staged-events
+    name: Cisco Meraki documentation for networks deferNetworkFirmwareUpgradesStagedEvents
+short_description: Resource module for networks _firmware _upgrades _staged _events
+  _defer
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

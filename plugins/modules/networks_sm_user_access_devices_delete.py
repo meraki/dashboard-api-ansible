@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_user_access_devices_delete
-short_description: Resource module for networks _sm _user _access _devices _delete
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation delete of the resource networks _sm _user _access _devices _delete.
-- Delete a User Access Device.
-version_added: '2.16.0'
+  - Manage operation delete of the resource networks _sm _user _access _devices _delete.
+  - Delete a User Access Device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_user_access_devices_delete
+notes:
+  - SDK Method used are sm.Sm.delete_network_sm_user_access_device,
+  - Paths used are delete /networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId},
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -23,18 +23,14 @@ options:
     description: UserAccessDeviceId path parameter. User access device ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm deleteNetworkSmUserAccessDevice
-  description: Complete reference of the deleteNetworkSmUserAccessDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sm-user-access-device
-notes:
-  - SDK Method used are
-    sm.Sm.delete_network_sm_user_access_device,
-
-  - Paths used are
-    delete /networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId},
+  - description: Complete reference of the deleteNetworkSmUserAccessDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sm-user-access-device
+    name: Cisco Meraki documentation for sm deleteNetworkSmUserAccessDevice
+short_description: Resource module for networks _sm _user _access _devices _delete
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

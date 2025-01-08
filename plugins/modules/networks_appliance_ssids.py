@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_ssids
-short_description: Resource module for networks _appliance _ssids
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _ssids.
-- Update the attributes of an MX SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _ssids.
+  - Update the attributes of an MX SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_ssids
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_ssid,
+  - Paths used are put /networks/{networkId}/appliance/ssids/{number},
 options:
   authMode:
     description: The association control method for the SSID ('open', 'psk', '8021x-meraki'
@@ -26,8 +26,8 @@ options:
     type: int
   dhcpEnforcedDeauthentication:
     description: DHCP Enforced Deauthentication enables the disassociation of wireless
-      clients in addition to Mandatory DHCP. This param is only valid on firmware versions
-      >= MX 17.0 where the associated LAN has Mandatory DHCP Enabled.
+      clients in addition to Mandatory DHCP. This param is only valid on firmware
+      versions >= MX 17.0 where the associated LAN has Mandatory DHCP Enabled.
     suboptions:
       enabled:
         description: Enable DCHP Enforced Deauthentication on the SSID.
@@ -47,8 +47,8 @@ options:
     description: Whether or not the SSID is enabled.
     type: bool
   encryptionMode:
-    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param is
-      only valid if the authMode is 'psk'.
+    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param
+      is only valid if the authMode is 'psk'.
     type: str
   name:
     description: The name of the SSID.
@@ -82,24 +82,20 @@ options:
     description: Boolean indicating whether the MX should advertise or hide this SSID.
     type: bool
   wpaEncryptionMode:
-    description: The types of WPA encryption. ('WPA1 and WPA2', 'WPA2 only', 'WPA3 Transition
-      Mode' or 'WPA3 only'). This param is only valid if (1) the authMode is 'psk' &
-      the encryptionMode is 'wpa' OR (2) the authMode is '8021x-meraki' OR (3) the authMode
-      is '8021x-radius'.
+    description: The types of WPA encryption. ('WPA1 and WPA2', 'WPA2 only', 'WPA3
+      Transition Mode' or 'WPA3 only'). This param is only valid if (1) the authMode
+      is 'psk' & the encryptionMode is 'wpa' OR (2) the authMode is '8021x-meraki'
+      OR (3) the authMode is '8021x-radius'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceSsid
-  description: Complete reference of the updateNetworkApplianceSsid API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-ssid
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_ssid,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/ssids/{number},
+  - description: Complete reference of the updateNetworkApplianceSsid API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-ssid
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceSsid
+short_description: Resource module for networks _appliance _ssids
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

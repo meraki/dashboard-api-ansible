@@ -13,27 +13,28 @@
   collections:
     - cisco.meraki
   tasks:
-    - name: Configure switchports
-      meraki_ms_switchport:
-        auth_key: "{{ auth_key }}"
-        org_name: "{{ org_name }}"
-        serial: "{{ sn }}"
-        number: "{{ ansible_loop.index }}"
-        name: "{{ item.name }}"
-        type: "{{ item.type }}"
-        enabled: "{{ item.enabled | default(omit) }}"
-        vlan: "{{ item.vlan | default(omit) }}"
-        allowed_vlans: "{{ omit if item.allowedVlans is undefined else item.allowedVlans.split(',')}}"
-        voice_vlan: "{{ item.voiceVlan | default(omit) }}"
-        access_policy_type: "{{ item.accessPolicyType | default(omit) }}"
-        access_policy_number: "{{ item.accessPolicyNumber | default(omit) }}"
-        state: present
-      loop: "{{ switchports }}"
-      loop_control:
-        extended: true
-        label: "{{ item.name }}"
-        pause: 0.3
-      register: async_results
-      # async: 120
-      # poll: 0
-      tags: [always]
+
+  - name: Configure switchports
+    meraki_ms_switchport:
+      auth_key: "{{ auth_key }}"
+      org_name: "{{ org_name }}"
+      serial: "{{ sn }}"
+      number: "{{ ansible_loop.index }}"
+      name: "{{ item.name }}"
+      type: "{{ item.type }}"
+      enabled: "{{ item.enabled | default(omit) }}"
+      vlan: "{{ item.vlan | default(omit) }}"
+      allowed_vlans: "{{ omit if item.allowedVlans is undefined else item.allowedVlans.split(',')}}"
+      voice_vlan: "{{ item.voiceVlan | default(omit) }}"
+      access_policy_type: "{{ item.accessPolicyType | default(omit) }}"
+      access_policy_number: "{{ item.accessPolicyNumber | default(omit) }}"
+      state: present
+    loop: "{{ switchports }}"
+    loop_control:
+      extended: true
+      label: "{{ item.name }}"
+      pause: 0.3
+    register: async_results
+    # async: 120
+    # poll: 0
+    tags: [always]

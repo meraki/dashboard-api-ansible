@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_custom_analytics_info
-short_description: Information module for devices _camera _custom _analytics
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _camera _custom _analytics.
-- Return custom analytics settings for a camera.
-version_added: '2.16.0'
+  - Get all devices _camera _custom _analytics.
+  - Return custom analytics settings for a camera.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_custom_analytics_info
+notes:
+  - SDK Method used are camera.Camera.get_device_camera_custom_analytics,
+  - Paths used are get /devices/{serial}/camera/customAnalytics,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraCustomAnalytics
-  description: Complete reference of the getDeviceCameraCustomAnalytics API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-custom-analytics
-notes:
-  - SDK Method used are
-    camera.Camera.get_device_camera_custom_analytics,
-
-  - Paths used are
-    get /devices/{serial}/camera/customAnalytics,
+  - description: Complete reference of the getDeviceCameraCustomAnalytics API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-custom-analytics
+    name: Cisco Meraki documentation for camera getDeviceCameraCustomAnalytics
+short_description: Information module for devices _camera _custom _analytics
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

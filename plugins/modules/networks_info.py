@@ -5,100 +5,109 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_info
-short_description: Information module for networks
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks.
-- Get networks by id.
-- List the networks that the user has privileges on in an organization.
-- Return a network.
-version_added: '2.16.0'
+  - Get all networks.
+  - Get networks by id.
+  - List the networks that the user has privileges on in an organization.
+  - Return a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_info
+notes:
+  - SDK Method used are networks.Networks.get_network, networks.Networks.get_organization_networks,
+  - Paths used are get /networks/{networkId}, get /organizations/{organizationId}/networks,
 options:
+  configTemplateId:
+    description:
+      - 'ConfigTemplateId query parameter. An optional parameter that is the ID of
+        a config template. Will return all networks bound to that template.
+
+        '
+    type: str
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  isBoundToConfigTemplate:
+    description:
+      - 'IsBoundToConfigTemplate query parameter. An optional parameter to filter
+        config template bound networks. If configTemplateId is set, this cannot be
+        false.
+
+        '
+    type: bool
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
-  configTemplateId:
+  perPage:
     description:
-    - >
-      ConfigTemplateId query parameter. An optional parameter that is the ID of a config template. Will return all
-      networks bound to that template.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100000. Default is 1000.
+    type: int
+  productTypes:
+    description:
+      - 'ProductTypes query parameter. An optional parameter to filter networks by
+        product type. Results will have at least one of the included product types.
+
+        '
+    elements: str
+    type: list
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
-  isBoundToConfigTemplate:
-    description:
-    - >
-      IsBoundToConfigTemplate query parameter. An optional parameter to filter config template bound networks. If
-      configTemplateId is set, this cannot be false.
-    type: bool
   tags:
     description:
-    - >
-      Tags query parameter. An optional parameter to filter networks by tags. The filtering is case-sensitive. If
-      tags are included, 'tagsFilterType' should also be included (see below).
+      - 'Tags query parameter. An optional parameter to filter networks by tags. The
+        filtering is case-sensitive. If tags are included, ''tagsFilterType'' should
+        also be included (see below).
+
+        '
     elements: str
     type: list
   tagsFilterType:
     description:
-    - >
-      TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate
-      whether to return networks which contain ANY or ALL of the included tags. If no type is included,
-      'withAnyTags' will be selected.
-    type: str
-  productTypes:
-    description:
-    - >
-      ProductTypes query parameter. An optional parameter to filter networks by product type. Results will have at
-      least one of the included product types.
-    elements: str
-    type: list
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'TagsFilterType query parameter. An optional parameter of value ''withAnyTags''
+        or ''withAllTags'' to indicate whether to return networks which contain ANY
+        or ALL of the included tags. If no type is included, ''withAnyTags'' will
+        be selected.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetwork
-  description: Complete reference of the getNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network
-- name: Cisco Meraki documentation for networks getOrganizationNetworks
-  description: Complete reference of the getOrganizationNetworks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-networks
-notes:
-  - SDK Method used are
-    networks.Networks.get_network,
-    networks.Networks.get_organization_networks,
-
-  - Paths used are
-    get /networks/{networkId},
-    get /organizations/{organizationId}/networks,
+  - description: Complete reference of the getNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network
+    name: Cisco Meraki documentation for networks getNetwork
+  - description: Complete reference of the getOrganizationNetworks API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-networks
+    name: Cisco Meraki documentation for networks getOrganizationNetworks
+short_description: Information module for networks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

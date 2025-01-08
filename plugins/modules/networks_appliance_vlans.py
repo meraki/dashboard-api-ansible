@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_vlans
-short_description: Resource module for networks _appliance _vlans
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _appliance _vlans.
-- Add a VLAN.
-- Delete a VLAN from a network.
-- Update a VLAN.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _appliance
+    _vlans.
+  - Add a VLAN.
+  - Delete a VLAN from a network.
+  - Update a VLAN.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_vlans
+notes:
+  - SDK Method used are appliance.Appliance.create_network_appliance_vlan, appliance.Appliance.delete_network_appliance_vlan,
+    appliance.Appliance.update_network_appliance_vlan,
+  - Paths used are post /networks/{networkId}/appliance/vlans, delete /networks/{networkId}/appliance/vlans/{vlanId},
+    put /networks/{networkId}/appliance/vlans/{vlanId},
 options:
   applianceIp:
     description: The local IP of the appliance on the VLAN.
@@ -30,8 +33,8 @@ options:
     description: DHCP boot option for boot filename.
     type: str
   dhcpBootNextServer:
-    description: DHCP boot option to direct boot clients to the server to load the boot
-      file from.
+    description: DHCP boot option to direct boot clients to the server to load the
+      boot file from.
     type: str
   dhcpBootOptionsEnabled:
     description: Use DHCP boot options specified in other properties.
@@ -41,13 +44,13 @@ options:
       a DHCP server', 'Relay DHCP to another server' or 'Do not respond to DHCP requests'.
     type: str
   dhcpLeaseTime:
-    description: The term of DHCP leases if the appliance is running a DHCP server on
-      this VLAN. One of '30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1
-      week'.
+    description: The term of DHCP leases if the appliance is running a DHCP server
+      on this VLAN. One of '30 minutes', '1 hour', '4 hours', '12 hours', '1 day'
+      or '1 week'.
     type: str
   dhcpOptions:
-    description: The list of DHCP options that will be included in DHCP responses. Each
-      object in the list should have "code", "type", and "value" properties.
+    description: The list of DHCP options that will be included in DHCP responses.
+      Each object in the list should have "code", "type", and "value" properties.
     elements: dict
     suboptions:
       code:
@@ -62,7 +65,8 @@ options:
         type: str
     type: list
   dhcpRelayServerIps:
-    description: The IPs of the DHCP servers that DHCP requests should be relayed to.
+    description: The IPs of the DHCP servers that DHCP requests should be relayed
+      to.
     elements: str
     type: list
   dnsNameservers:
@@ -114,9 +118,10 @@ options:
         type: list
     type: dict
   mandatoryDhcp:
-    description: Mandatory DHCP will enforce that clients connecting to this VLAN must
-      use the IP address assigned by the DHCP server. Clients who use a static IP address
-      won't be able to associate. Only available on firmware versions 17.0 and above.
+    description: Mandatory DHCP will enforce that clients connecting to this VLAN
+      must use the IP address assigned by the DHCP server. Clients who use a static
+      IP address won't be able to associate. Only available on firmware versions 17.0
+      and above.
     suboptions:
       enabled:
         description: Enable Mandatory DHCP on VLAN.
@@ -160,28 +165,20 @@ options:
       on the VLAN.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
-  description: Complete reference of the createNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
-- name: Cisco Meraki documentation for appliance deleteNetworkApplianceVlan
-  description: Complete reference of the deleteNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceVlan
-  description: Complete reference of the updateNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
-notes:
-  - SDK Method used are
-    appliance.Appliance.create_network_appliance_vlan,
-    appliance.Appliance.delete_network_appliance_vlan,
-    appliance.Appliance.update_network_appliance_vlan,
-
-  - Paths used are
-    post /networks/{networkId}/appliance/vlans,
-    delete /networks/{networkId}/appliance/vlans/{vlanId},
-    put /networks/{networkId}/appliance/vlans/{vlanId},
+  - description: Complete reference of the createNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
+  - description: Complete reference of the deleteNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance deleteNetworkApplianceVlan
+  - description: Complete reference of the updateNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceVlan
+short_description: Resource module for networks _appliance _vlans
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

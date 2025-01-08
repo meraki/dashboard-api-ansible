@@ -5,20 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_alternate_management_interface
-short_description: Resource module for networks _switch _alternate _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _alternate _management _interface.
-- Update the switch alternate management interface for the network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _alternate _management
+    _interface.
+  - Update the switch alternate management interface for the network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_alternate_management_interface
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_alternate_management_interface,
+  - Paths used are put /networks/{networkId}/switch/alternateManagementInterface,
 options:
   enabled:
-    description: Boolean value to enable or disable AMI configuration. If enabled, VLAN
-      and protocols must be set.
+    description: Boolean value to enable or disable AMI configuration. If enabled,
+      VLAN and protocols must be set.
     type: bool
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -28,10 +29,11 @@ options:
     elements: str
     type: list
   switches:
-    description: Array of switch serial number and IP assignment. If parameter is present,
-      it cannot have empty body. Note switches parameter is not applicable for template
-      networks, in other words, do not put 'switches' in the body when updating template
-      networks. Also, an empty 'switches' array will remove all previous assignments.
+    description: Array of switch serial number and IP assignment. If parameter is
+      present, it cannot have empty body. Note switches parameter is not applicable
+      for template networks, in other words, do not put 'switches' in the body when
+      updating template networks. Also, an empty 'switches' array will remove all
+      previous assignments.
     elements: dict
     suboptions:
       alternateManagementIp:
@@ -54,18 +56,15 @@ options:
     description: Alternate management VLAN, must be between 1 and 4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchAlternateManagementInterface
-  description: Complete reference of the updateNetworkSwitchAlternateManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-alternate-management-interface
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_alternate_management_interface,
-
-  - Paths used are
-    put /networks/{networkId}/switch/alternateManagementInterface,
+  - description: Complete reference of the updateNetworkSwitchAlternateManagementInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-alternate-management-interface
+    name: Cisco Meraki documentation for switch updateNetworkSwitchAlternateManagementInterface
+short_description: Resource module for networks _switch _alternate _management _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

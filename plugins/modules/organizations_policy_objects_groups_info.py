@@ -5,67 +5,69 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_policy_objects_groups_info
-short_description: Information module for organizations _policy _objects _groups
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _policy _objects _groups.
-- Get organizations _policy _objects _groups by id.
-- Lists Policy Object Groups belonging to the organization.
-- Shows details of a Policy Object Group.
-version_added: '2.16.0'
+  - Get all organizations _policy _objects _groups.
+  - Get organizations _policy _objects _groups by id.
+  - Lists Policy Object Groups belonging to the organization.
+  - Shows details of a Policy Object Group.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_policy_objects_groups_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_policy_objects_group,
+    organizations.Organizations.get_organization_policy_objects_groups,
+  - Paths used are get /organizations/{organizationId}/policyObjects/groups, get /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId},
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 10 - 1000. Default is 1000.
     type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
   policyObjectGroupId:
     description:
-    - PolicyObjectGroupId path parameter. Policy object group ID.
+      - PolicyObjectGroupId path parameter. Policy object group ID.
+    type: str
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroup
-  description: Complete reference of the getOrganizationPolicyObjectsGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-group
-- name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroups
-  description: Complete reference of the getOrganizationPolicyObjectsGroups API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-groups
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_policy_objects_group,
-    organizations.Organizations.get_organization_policy_objects_groups,
-
-  - Paths used are
-    get /organizations/{organizationId}/policyObjects/groups,
-    get /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId},
+  - description: Complete reference of the getOrganizationPolicyObjectsGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-group
+    name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroup
+  - description: Complete reference of the getOrganizationPolicyObjectsGroups API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-groups
+    name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroups
+short_description: Information module for organizations _policy _objects _groups
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

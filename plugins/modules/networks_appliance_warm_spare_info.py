@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_warm_spare_info
-short_description: Information module for networks _appliance _warm _spare
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _warm _spare.
-- Return MX warm spare settings.
-version_added: '2.16.0'
+  - Get all networks _appliance _warm _spare.
+  - Return MX warm spare settings.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_warm_spare_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_warm_spare,
+  - Paths used are get /networks/{networkId}/appliance/warmSpare,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceWarmSpare
-  description: Complete reference of the getNetworkApplianceWarmSpare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-warm-spare
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_warm_spare,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/warmSpare,
+  - description: Complete reference of the getNetworkApplianceWarmSpare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-warm-spare
+    name: Cisco Meraki documentation for appliance getNetworkApplianceWarmSpare
+short_description: Information module for networks _appliance _warm _spare
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

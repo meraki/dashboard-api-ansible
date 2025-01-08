@@ -5,76 +5,79 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_assurance_alerts_overview_historical_info
-short_description: Information module for organizations _assurance _alerts _overview _historical
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _assurance _alerts _overview _historical.
-- Returns historical health alert overviews.
-version_added: '2.20.0'
+  - Get all organizations _assurance _alerts _overview _historical.
+  - Returns historical health alert overviews.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_assurance_alerts_overview_historical_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_assurance_alerts_overview_historical,
+  - Paths used are get /organizations/{organizationId}/assurance/alerts/overview/historical,
 options:
+  category:
+    description:
+      - Category query parameter. Optional parameter to filter by category.
+    type: str
+  deviceTypes:
+    description:
+      - DeviceTypes query parameter. Optional parameter to filter by device types.
+    elements: str
+    type: list
   headers:
     description: Additional headers.
     type: dict
+  networkId:
+    description:
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network ids.
+    type: str
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   segmentDuration:
     description:
-    - SegmentDuration query parameter. Amount of time in seconds for each segment in the returned dataset.
+      - SegmentDuration query parameter. Amount of time in seconds for each segment
+        in the returned dataset.
     type: int
-  networkId:
+  serials:
     description:
-    - NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
-    type: str
-  severity:
-    description:
-    - Severity query parameter. Optional parameter to filter alerts overview by severity type.
-    type: str
-  types:
-    description:
-    - Types query parameter. Optional parameter to filter by alert type.
+      - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
-  tsStart:
+  severity:
     description:
-    - TsStart query parameter. Parameter to define starting timestamp of historical totals.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   tsEnd:
     description:
-    - TsEnd query parameter. Optional parameter to filter by end timestamp defaults to the current time.
+      - TsEnd query parameter. Optional parameter to filter by end timestamp defaults
+        to the current time.
     type: str
-  category:
+  tsStart:
     description:
-    - Category query parameter. Optional parameter to filter by category.
+      - TsStart query parameter. Parameter to define starting timestamp of historical
+        totals.
     type: str
-  serials:
+  types:
     description:
-    - Serials query parameter. Optional parameter to filter by primary device serial.
-    elements: str
-    type: list
-  deviceTypes:
-    description:
-    - DeviceTypes query parameter. Optional parameter to filter by device types.
+      - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewHistorical
-  description: Complete reference of the getOrganizationAssuranceAlertsOverviewHistorical API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-historical
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_assurance_alerts_overview_historical,
-
-  - Paths used are
-    get /organizations/{organizationId}/assurance/alerts/overview/historical,
+  - description: Complete reference of the getOrganizationAssuranceAlertsOverviewHistorical
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-historical
+    name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewHistorical
+short_description: Information module for organizations _assurance _alerts _overview
+  _historical
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sensor_relationships_info
-short_description: Information module for networks _sensor _relationships
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sensor _relationships.
-- List the sensor roles for devices in a given network.
-version_added: '2.16.0'
+  - Get all networks _sensor _relationships.
+  - List the sensor roles for devices in a given network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sensor_relationships_info
+notes:
+  - SDK Method used are sensor.Sensor.get_network_sensor_relationships,
+  - Paths used are get /networks/{networkId}/sensor/relationships,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorRelationships
-  description: Complete reference of the getNetworkSensorRelationships API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-relationships
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_network_sensor_relationships,
-
-  - Paths used are
-    get /networks/{networkId}/sensor/relationships,
+  - description: Complete reference of the getNetworkSensorRelationships API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-relationships
+    name: Cisco Meraki documentation for sensor getNetworkSensorRelationships
+short_description: Information module for networks _sensor _relationships
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stp
-short_description: Resource module for networks _switch _stp
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _stp.
-- Updates STP settings.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _stp.
+  - Updates STP settings.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stp
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_stp,
+  - Paths used are put /networks/{networkId}/switch/stp,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -44,18 +44,14 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchStp
-  description: Complete reference of the updateNetworkSwitchStp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stp
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_stp,
-
-  - Paths used are
-    put /networks/{networkId}/switch/stp,
+  - description: Complete reference of the updateNetworkSwitchStp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stp
+    name: Cisco Meraki documentation for switch updateNetworkSwitchStp
+short_description: Resource module for networks _switch _stp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

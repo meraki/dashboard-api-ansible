@@ -5,78 +5,85 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_summary_top_networks_by_status_info
-short_description: Information module for organizations _summary _top _networks _by _status
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _summary _top _networks _by _status.
-- >
-   List the client and status overview information for the networks in an organization. Usage is measured in
-   kilobytes and from the last seven days.
-version_added: '2.16.0'
+  - Get all organizations _summary _top _networks _by _status.
+  - 'List the client and status overview information for the networks in an organization.
+    Usage is measured in kilobytes and from the last seven days.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_summary_top_networks_by_status_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_summary_top_networks_by_status,
+  - Paths used are get /organizations/{organizationId}/summary/top/networks/byStatus,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  networkTag:
-    description:
-    - NetworkTag query parameter. Match result to an exact network tag.
-    type: str
   deviceTag:
     description:
-    - DeviceTag query parameter. Match result to an exact device tag.
-    type: str
-  quantity:
-    description:
-    - Quantity query parameter. Set number of desired results to return. Default is 10.
-    type: int
-  ssidName:
-    description:
-    - SsidName query parameter. Filter results by ssid name.
-    type: str
-  usageUplink:
-    description:
-    - UsageUplink query parameter. Filter results by usage uplink.
-    type: str
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5000.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   endingBefore:
     description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  headers:
+    description: Additional headers.
+    type: dict
+  networkTag:
+    description:
+      - NetworkTag query parameter. Match result to an exact network tag.
+    type: str
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 5000.
+    type: int
+  quantity:
+    description:
+      - Quantity query parameter. Set number of desired results to return. Default
+        is 10.
+    type: int
+  ssidName:
+    description:
+      - SsidName query parameter. Filter results by ssid name.
+    type: str
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  usageUplink:
+    description:
+      - UsageUplink query parameter. Filter results by usage uplink.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopNetworksByStatus
-  description: Complete reference of the getOrganizationSummaryTopNetworksByStatus API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-networks-by-status
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_summary_top_networks_by_status,
-
-  - Paths used are
-    get /organizations/{organizationId}/summary/top/networks/byStatus,
+  - description: Complete reference of the getOrganizationSummaryTopNetworksByStatus
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-networks-by-status
+    name: Cisco Meraki documentation for organizations getOrganizationSummaryTopNetworksByStatus
+short_description: Information module for organizations _summary _top _networks _by
+  _status
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stacks_info
-short_description: Information module for networks _switch _stacks
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _stacks.
-- Get networks _switch _stacks by id.
-- List the switch stacks in a network.
-- Show a switch stack.
-version_added: '2.16.0'
+  - Get all networks _switch _stacks.
+  - Get networks _switch _stacks by id.
+  - List the switch stacks in a network.
+  - Show a switch stack.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stacks_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_stack, switch.Switch.get_network_switch_stacks,
+  - Paths used are get /networks/{networkId}/switch/stacks, get /networks/{networkId}/switch/stacks/{switchStackId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
-    - SwitchStackId path parameter. Switch stack ID.
+      - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchStack
-  description: Complete reference of the getNetworkSwitchStack API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack
-- name: Cisco Meraki documentation for switch getNetworkSwitchStacks
-  description: Complete reference of the getNetworkSwitchStacks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_stack,
-    switch.Switch.get_network_switch_stacks,
-
-  - Paths used are
-    get /networks/{networkId}/switch/stacks,
-    get /networks/{networkId}/switch/stacks/{switchStackId},
+  - description: Complete reference of the getNetworkSwitchStack API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack
+    name: Cisco Meraki documentation for switch getNetworkSwitchStack
+  - description: Complete reference of the getNetworkSwitchStacks API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks
+    name: Cisco Meraki documentation for switch getNetworkSwitchStacks
+short_description: Information module for networks _switch _stacks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_one_to_one_nat_rules_info
-short_description: Information module for networks _appliance _firewall _one _to _one _nat _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _firewall _one _to _one _nat _rules.
-- Return the 1 1 NAT mapping rules for an MX network.
-version_added: '2.16.0'
+  - Get all networks _appliance _firewall _one _to _one _nat _rules.
+  - Return the 1 1 NAT mapping rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_one_to_one_nat_rules_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_firewall_one_to_one_nat_rules,
+  - Paths used are get /networks/{networkId}/appliance/firewall/oneToOneNatRules,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallOneToOneNatRules
-  description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-one-to-one-nat-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_firewall_one_to_one_nat_rules,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/firewall/oneToOneNatRules,
+  - description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-one-to-one-nat-rules
+    name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallOneToOneNatRules
+short_description: Information module for networks _appliance _firewall _one _to _one
+  _nat _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

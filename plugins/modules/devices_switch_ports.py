@@ -5,25 +5,25 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_ports
-short_description: Resource module for devices _switch _ports
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _switch _ports.
-- Update a switch port.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _switch _ports.
+  - Update a switch port.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_ports
+notes:
+  - SDK Method used are switch.Switch.update_device_switch_port,
+  - Paths used are put /devices/{serial}/switch/ports/{portId},
 options:
   accessPolicyNumber:
     description: The number of a custom access policy to configure on the switch port.
       Only applicable when 'accessPolicyType' is 'Custom access policy'.
     type: int
   accessPolicyType:
-    description: The type of the access policy of the switch port. Only applicable to
-      access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list' or
-      'Sticky MAC allow list'.
+    description: The type of the access policy of the switch port. Only applicable
+      to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list'
+      or 'Sticky MAC allow list'.
     type: str
   adaptivePolicyGroupId:
     description: The adaptive policy group ID that will be used to tag traffic through
@@ -59,9 +59,9 @@ options:
     description: The link speed for the switch port.
     type: str
   macAllowList:
-    description: Only devices with MAC addresses specified in this list will have access
-      to this port. Up to 20 MAC addresses can be defined. Only applicable when 'accessPolicyType'
-      is 'MAC allow list'.
+    description: Only devices with MAC addresses specified in this list will have
+      access to this port. Up to 20 MAC addresses can be defined. Only applicable
+      when 'accessPolicyType' is 'MAC allow list'.
     elements: str
     type: list
   name:
@@ -69,8 +69,8 @@ options:
     type: str
   peerSgtCapable:
     description: If true, Peer SGT is enabled for traffic through this switch port.
-      Applicable to trunk port only, not access port. Cannot be applied to a port on
-      a switch bound to profile.
+      Applicable to trunk port only, not access port. Cannot be applied to a port
+      on a switch bound to profile.
     type: bool
   poeEnabled:
     description: The PoE status of the switch port.
@@ -79,17 +79,19 @@ options:
     description: PortId path parameter. Port ID.
     type: str
   portScheduleId:
-    description: The ID of the port schedule. A value of null will clear the port schedule.
+    description: The ID of the port schedule. A value of null will clear the port
+      schedule.
     type: str
   profile:
     description: Profile attributes.
     suboptions:
       enabled:
-        description: When enabled, override this port's configuration with a port profile.
+        description: When enabled, override this port's configuration with a port
+          profile.
         type: bool
       id:
-        description: When enabled, the ID of the port profile used to override the port's
-          configuration.
+        description: When enabled, the ID of the port profile used to override the
+          port's configuration.
         type: str
       iname:
         description: When enabled, the IName of the profile.
@@ -102,8 +104,8 @@ options:
     description: Serial path parameter.
     type: str
   stickyMacAllowList:
-    description: The initial list of MAC addresses for sticky Mac allow list. Only applicable
-      when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The initial list of MAC addresses for sticky Mac allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     elements: str
     type: list
   stickyMacAllowListLimit:
@@ -129,25 +131,21 @@ options:
       Enforce). Default configuration is Alert only.
     type: str
   vlan:
-    description: The VLAN of the switch port. For a trunk port, this is the native VLAN.
-      A null value will clear the value set for trunk ports.
+    description: The VLAN of the switch port. For a trunk port, this is the native
+      VLAN. A null value will clear the value set for trunk ports.
     type: int
   voiceVlan:
     description: The voice VLAN of the switch port. Only applicable to access ports.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateDeviceSwitchPort
-  description: Complete reference of the updateDeviceSwitchPort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port
-notes:
-  - SDK Method used are
-    switch.Switch.update_device_switch_port,
-
-  - Paths used are
-    put /devices/{serial}/switch/ports/{portId},
+  - description: Complete reference of the updateDeviceSwitchPort API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port
+    name: Cisco Meraki documentation for switch updateDeviceSwitchPort
+short_description: Resource module for devices _switch _ports
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

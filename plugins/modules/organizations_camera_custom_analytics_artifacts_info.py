@@ -5,48 +5,47 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_custom_analytics_artifacts_info
-short_description: Information module for organizations _camera _custom _analytics _artifacts
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _camera _custom _analytics _artifacts.
-- Get organizations _camera _custom _analytics _artifacts by id.
-- Get Custom Analytics Artifact.
-- List Custom Analytics Artifacts.
-version_added: '2.16.0'
+  - Get all organizations _camera _custom _analytics _artifacts.
+  - Get organizations _camera _custom _analytics _artifacts by id.
+  - Get Custom Analytics Artifact.
+  - List Custom Analytics Artifacts.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_custom_analytics_artifacts_info
+notes:
+  - SDK Method used are camera.Camera.get_organization_camera_custom_analytics_artifact,
+    camera.Camera.get_organization_camera_custom_analytics_artifacts,
+  - Paths used are get /organizations/{organizationId}/camera/customAnalytics/artifacts,
+    get /organizations/{organizationId}/camera/customAnalytics/artifacts/{artifactId},
 options:
+  artifactId:
+    description:
+      - ArtifactId path parameter. Artifact ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  artifactId:
-    description:
-    - ArtifactId path parameter. Artifact ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraCustomAnalyticsArtifact
-  description: Complete reference of the getOrganizationCameraCustomAnalyticsArtifact API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-custom-analytics-artifact
-- name: Cisco Meraki documentation for camera getOrganizationCameraCustomAnalyticsArtifacts
-  description: Complete reference of the getOrganizationCameraCustomAnalyticsArtifacts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-custom-analytics-artifacts
-notes:
-  - SDK Method used are
-    camera.Camera.get_organization_camera_custom_analytics_artifact,
-    camera.Camera.get_organization_camera_custom_analytics_artifacts,
-
-  - Paths used are
-    get /organizations/{organizationId}/camera/customAnalytics/artifacts,
-    get /organizations/{organizationId}/camera/customAnalytics/artifacts/{artifactId},
+  - description: Complete reference of the getOrganizationCameraCustomAnalyticsArtifact
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-custom-analytics-artifact
+    name: Cisco Meraki documentation for camera getOrganizationCameraCustomAnalyticsArtifact
+  - description: Complete reference of the getOrganizationCameraCustomAnalyticsArtifacts
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-custom-analytics-artifacts
+    name: Cisco Meraki documentation for camera getOrganizationCameraCustomAnalyticsArtifacts
+short_description: Information module for organizations _camera _custom _analytics
+  _artifacts
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,23 +5,23 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_bind
-short_description: Resource module for networks _bind
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _bind.
-- Bind a network to a template.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _bind.
+  - Bind a network to a template.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_bind
+notes:
+  - SDK Method used are networks.Networks.bind_network,
+  - Paths used are post /networks/{networkId}/bind,
 options:
   autoBind:
-    description: Optional boolean indicating whether the network's switches should automatically
-      bind to profiles of the same model. Defaults to false if left unspecified. This
-      option only affects switch networks and switch templates. Auto-bind is not valid
-      unless the switch template has at least one profile and has at most one profile
-      per switch model.
+    description: Optional boolean indicating whether the network's switches should
+      automatically bind to profiles of the same model. Defaults to false if left
+      unspecified. This option only affects switch networks and switch templates.
+      Auto-bind is not valid unless the switch template has at least one profile and
+      has at most one profile per switch model.
     type: bool
   configTemplateId:
     description: The ID of the template to which the network should be bound.
@@ -30,18 +30,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks bindNetwork
-  description: Complete reference of the bindNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!bind-network
-notes:
-  - SDK Method used are
-    networks.Networks.bind_network,
-
-  - Paths used are
-    post /networks/{networkId}/bind,
+  - description: Complete reference of the bindNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!bind-network
+    name: Cisco Meraki documentation for networks bindNetwork
+short_description: Resource module for networks _bind
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

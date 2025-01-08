@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_publish
-short_description: Resource module for networks _publish
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _publish.
-- Update the status of a finished auto locate job to be published, and update device locations.
-version_added: '2.20.0'
+  - Manage operation create of the resource networks _publish.
+  - Update the status of a finished auto locate job to be published, and update device
+    locations.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_publish
+notes:
+  - SDK Method used are networks.Networks.publish_network_floor_plans_auto_locate_job,
+  - Paths used are post /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId}/publish,
 options:
   devices:
     description: The list of devices to publish positions for.
@@ -24,8 +25,8 @@ options:
         description: The auto locate position for this device.
         suboptions:
           isAnchor:
-            description: Whether or not this device's location should be saved as a
-              user-defined anchor.
+            description: Whether or not this device's location should be saved as
+              a user-defined anchor.
             type: bool
         type: dict
       lat:
@@ -45,18 +46,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks publishNetworkFloorPlansAutoLocateJob
-  description: Complete reference of the publishNetworkFloorPlansAutoLocateJob API.
-  link: https://developer.cisco.com/meraki/api-v1/#!publish-network-floor-plans-auto-locate-job
-notes:
-  - SDK Method used are
-    networks.Networks.publish_network_floor_plans_auto_locate_job,
-
-  - Paths used are
-    post /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId}/publish,
+  - description: Complete reference of the publishNetworkFloorPlansAutoLocateJob API.
+    link: https://developer.cisco.com/meraki/api-v1/#!publish-network-floor-plans-auto-locate-job
+    name: Cisco Meraki documentation for networks publishNetworkFloorPlansAutoLocateJob
+short_description: Resource module for networks _publish
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,34 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_electronic_shelf_label_info
-short_description: Information module for networks _wireless _electronic _shelf _label
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _electronic _shelf _label.
-- Return the ESL settings of a wireless network.
-version_added: '2.16.0'
+  - Get all networks _wireless _electronic _shelf _label.
+  - Return the ESL settings of a wireless network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_electronic_shelf_label_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_electronic_shelf_label,
+  - Paths used are get /networks/{networkId}/wireless/electronicShelfLabel,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabel
-  description: Complete reference of the getNetworkWirelessElectronicShelfLabel API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_electronic_shelf_label,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/electronicShelfLabel,
+  - description: Complete reference of the getNetworkWirelessElectronicShelfLabel
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label
+    name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabel
+short_description: Information module for networks _wireless _electronic _shelf _label
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

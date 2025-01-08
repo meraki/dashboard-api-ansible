@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_routing_static_routes_info
-short_description: Information module for devices _switch _routing _static _routes
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _switch _routing _static _routes.
-- Get devices _switch _routing _static _routes by id.
-- List layer 3 static routes for a switch.
-- Return a layer 3 static route for a switch.
-version_added: '2.16.0'
+  - Get all devices _switch _routing _static _routes.
+  - Get devices _switch _routing _static _routes by id.
+  - List layer 3 static routes for a switch.
+  - Return a layer 3 static route for a switch.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_routing_static_routes_info
+notes:
+  - SDK Method used are switch.Switch.get_device_switch_routing_static_route, switch.Switch.get_device_switch_routing_static_routes,
+  - Paths used are get /devices/{serial}/switch/routing/staticRoutes, get /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
   staticRouteId:
     description:
-    - StaticRouteId path parameter. Static route ID.
+      - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoute
-  description: Complete reference of the getDeviceSwitchRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-route
-- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoutes
-  description: Complete reference of the getDeviceSwitchRoutingStaticRoutes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes
-notes:
-  - SDK Method used are
-    switch.Switch.get_device_switch_routing_static_route,
-    switch.Switch.get_device_switch_routing_static_routes,
-
-  - Paths used are
-    get /devices/{serial}/switch/routing/staticRoutes,
-    get /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
+  - description: Complete reference of the getDeviceSwitchRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-route
+    name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoute
+  - description: Complete reference of the getDeviceSwitchRoutingStaticRoutes API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes
+    name: Cisco Meraki documentation for switch getDeviceSwitchRoutingStaticRoutes
+short_description: Information module for devices _switch _routing _static _routes
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

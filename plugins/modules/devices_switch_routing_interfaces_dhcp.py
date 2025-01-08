@@ -5,39 +5,40 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_routing_interfaces_dhcp
-short_description: Resource module for devices _switch _routing _interfaces _dhcp
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _switch _routing _interfaces _dhcp.
-- Update a layer 3 interface DHCP configuration for a switch.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _switch _routing _interfaces _dhcp.
+  - Update a layer 3 interface DHCP configuration for a switch.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_routing_interfaces_dhcp
+notes:
+  - SDK Method used are switch.Switch.update_device_switch_routing_interface_dhcp,
+  - Paths used are put /devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp,
 options:
   bootFileName:
     description: The PXE boot server filename for the DHCP server running on the switch
       interface.
     type: str
   bootNextServer:
-    description: The PXE boot server IP for the DHCP server running on the switch interface.
+    description: The PXE boot server IP for the DHCP server running on the switch
+      interface.
     type: str
   bootOptionsEnabled:
-    description: Enable DHCP boot options to provide PXE boot options configs for the
-      dhcp server running on the switch interface.
+    description: Enable DHCP boot options to provide PXE boot options configs for
+      the dhcp server running on the switch interface.
     type: bool
   dhcpLeaseTime:
-    description: The DHCP lease time config for the dhcp server running on switch interface
-      ('30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week').
+    description: The DHCP lease time config for the dhcp server running on switch
+      interface ('30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week').
     type: str
   dhcpMode:
     description: The DHCP mode options for the switch interface ('dhcpDisabled', 'dhcpRelay'
       or 'dhcpServer').
     type: str
   dhcpOptions:
-    description: Array of DHCP options consisting of code, type and value for the DHCP
-      server running on the switch interface.
+    description: Array of DHCP options consisting of code, type and value for the
+      DHCP server running on the switch interface.
     elements: dict
     suboptions:
       code:
@@ -52,8 +53,8 @@ options:
         type: str
     type: list
   dhcpRelayServerIps:
-    description: The DHCP relay server IPs to which DHCP packets would get relayed for
-      the switch interface.
+    description: The DHCP relay server IPs to which DHCP packets would get relayed
+      for the switch interface.
     elements: str
     type: list
   dnsCustomNameservers:
@@ -65,8 +66,8 @@ options:
       interface ('googlePublicDns', 'openDns' or 'custom').
     type: str
   fixedIpAssignments:
-    description: Array of DHCP fixed IP assignments for the DHCP server running on the
-      switch interface.
+    description: Array of DHCP fixed IP assignments for the DHCP server running on
+      the switch interface.
     elements: dict
     suboptions:
       ip:
@@ -84,8 +85,8 @@ options:
     description: InterfaceId path parameter. Interface ID.
     type: str
   reservedIpRanges:
-    description: Array of DHCP reserved IP assignments for the DHCP server running on
-      the switch interface.
+    description: Array of DHCP reserved IP assignments for the DHCP server running
+      on the switch interface.
     elements: dict
     suboptions:
       comment:
@@ -102,18 +103,15 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterfaceDhcp
-  description: Complete reference of the updateDeviceSwitchRoutingInterfaceDhcp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface-dhcp
-notes:
-  - SDK Method used are
-    switch.Switch.update_device_switch_routing_interface_dhcp,
-
-  - Paths used are
-    put /devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp,
+  - description: Complete reference of the updateDeviceSwitchRoutingInterfaceDhcp
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface-dhcp
+    name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterfaceDhcp
+short_description: Resource module for devices _switch _routing _interfaces _dhcp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

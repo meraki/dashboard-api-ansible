@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_events_event_types_info
-short_description: Information module for networks _events _event _types
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _events _event _types.
-- List the event type to human-readable description.
-version_added: '2.16.0'
+  - Get all networks _events _event _types.
+  - List the event type to human-readable description.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_events_event_types_info
+notes:
+  - SDK Method used are networks.Networks.get_network_events_event_types,
+  - Paths used are get /networks/{networkId}/events/eventTypes,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkEventsEventTypes
-  description: Complete reference of the getNetworkEventsEventTypes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-events-event-types
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_events_event_types,
-
-  - Paths used are
-    get /networks/{networkId}/events/eventTypes,
+  - description: Complete reference of the getNetworkEventsEventTypes API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-events-event-types
+    name: Cisco Meraki documentation for networks getNetworkEventsEventTypes
+short_description: Information module for networks _events _event _types
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

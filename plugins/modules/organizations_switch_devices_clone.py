@@ -5,19 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_switch_devices_clone
-short_description: Resource module for organizations _switch _devices _clone
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _switch _devices _clone.
-- >
-   Clone port-level and some switch-level configuration settings from a source switch to one or more target switches.
-   Cloned settings include Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge
-   priority, Port Mirroring.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _switch _devices _clone.
+  - 'Clone port-level and some switch-level configuration settings from a source switch
+    to one or more target switches. Cloned settings include Aggregation Groups, Power
+    Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_switch_devices_clone
+notes:
+  - SDK Method used are switch.Switch.clone_organization_switch_devices,
+  - Paths used are post /organizations/{organizationId}/switch/devices/clone,
 options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
@@ -32,18 +33,14 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch cloneOrganizationSwitchDevices
-  description: Complete reference of the cloneOrganizationSwitchDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!clone-organization-switch-devices
-notes:
-  - SDK Method used are
-    switch.Switch.clone_organization_switch_devices,
-
-  - Paths used are
-    post /organizations/{organizationId}/switch/devices/clone,
+  - description: Complete reference of the cloneOrganizationSwitchDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!clone-organization-switch-devices
+    name: Cisco Meraki documentation for switch cloneOrganizationSwitchDevices
+short_description: Resource module for organizations _switch _devices _clone
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

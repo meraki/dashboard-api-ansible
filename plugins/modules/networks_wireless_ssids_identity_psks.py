@@ -5,18 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_identity_psks
-short_description: Resource module for networks _wireless _ssids _identity _psks
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _wireless _ssids _identity _psks.
-- Create an Identity PSK.
-- Delete an Identity PSK.
-- Update an Identity PSK.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _wireless
+    _ssids _identity _psks.
+  - Create an Identity PSK.
+  - Delete an Identity PSK.
+  - Update an Identity PSK.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_identity_psks
+notes:
+  - SDK Method used are wireless.Wireless.create_network_wireless_ssid_identity_psk,
+    wireless.Wireless.delete_network_wireless_ssid_identity_psk, wireless.Wireless.update_network_wireless_ssid_identity_psk,
+  - Paths used are post /networks/{networkId}/wireless/ssids/{number}/identityPsks,
+    delete /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
+    put /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
 options:
   expiresAt:
     description: Timestamp for when the Identity PSK expires. Will not expire if left
@@ -38,32 +42,24 @@ options:
     description: Number path parameter.
     type: str
   passphrase:
-    description: The passphrase for client authentication. If left blank, one will be
-      auto-generated.
+    description: The passphrase for client authentication. If left blank, one will
+      be auto-generated.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless createNetworkWirelessSsidIdentityPsk
-  description: Complete reference of the createNetworkWirelessSsidIdentityPsk API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-ssid-identity-psk
-- name: Cisco Meraki documentation for wireless deleteNetworkWirelessSsidIdentityPsk
-  description: Complete reference of the deleteNetworkWirelessSsidIdentityPsk API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ssid-identity-psk
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidIdentityPsk
-  description: Complete reference of the updateNetworkWirelessSsidIdentityPsk API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-identity-psk
-notes:
-  - SDK Method used are
-    wireless.Wireless.create_network_wireless_ssid_identity_psk,
-    wireless.Wireless.delete_network_wireless_ssid_identity_psk,
-    wireless.Wireless.update_network_wireless_ssid_identity_psk,
-
-  - Paths used are
-    post /networks/{networkId}/wireless/ssids/{number}/identityPsks,
-    delete /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
-    put /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId},
+  - description: Complete reference of the createNetworkWirelessSsidIdentityPsk API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-ssid-identity-psk
+    name: Cisco Meraki documentation for wireless createNetworkWirelessSsidIdentityPsk
+  - description: Complete reference of the deleteNetworkWirelessSsidIdentityPsk API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ssid-identity-psk
+    name: Cisco Meraki documentation for wireless deleteNetworkWirelessSsidIdentityPsk
+  - description: Complete reference of the updateNetworkWirelessSsidIdentityPsk API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-identity-psk
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidIdentityPsk
+short_description: Resource module for networks _wireless _ssids _identity _psks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

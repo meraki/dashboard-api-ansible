@@ -5,22 +5,24 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_firewalled_services
-short_description: Resource module for networks _appliance _firewall _firewalled _services
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _firewalled _services.
-- Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP' .
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _firewalled
+    _services.
+  - Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP'
+    .
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_firewalled_services
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_firewalled_service,
+  - Paths used are put /networks/{networkId}/appliance/firewall/firewalledServices/{service},
 options:
   access:
-    description: A string indicating the rule for which IPs are allowed to use the specified
-      service. Acceptable values are "blocked" (no remote IPs can access the service),
-      "restricted" (only allowed IPs can access the service), and "unrestriced" (any
-      remote IP can access the service). This field is required.
+    description: A string indicating the rule for which IPs are allowed to use the
+      specified service. Acceptable values are "blocked" (no remote IPs can access
+      the service), "restricted" (only allowed IPs can access the service), and "unrestriced"
+      (any remote IP can access the service). This field is required.
     type: str
   allowedIps:
     description: An array of allowed IPs that can access the service. This field is
@@ -34,18 +36,15 @@ options:
     description: Service path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallFirewalledService
-  description: Complete reference of the updateNetworkApplianceFirewallFirewalledService API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-firewalled-service
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_firewalled_service,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/firewalledServices/{service},
+  - description: Complete reference of the updateNetworkApplianceFirewallFirewalledService
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-firewalled-service
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallFirewalledService
+short_description: Resource module for networks _appliance _firewall _firewalled _services
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_mqtt_brokers
-short_description: Resource module for networks _mqtt _brokers
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _mqtt _brokers.
-- Add an MQTT broker.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _mqtt _brokers.
+  - Add an MQTT broker.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_mqtt_brokers
+notes:
+  - SDK Method used are networks.Networks.create_network_mqtt_broker,
+  - Paths used are post /networks/{networkId}/mqttBrokers,
 options:
   authentication:
     description: Authentication settings of the MQTT broker.
@@ -51,24 +51,20 @@ options:
             description: CA Certificate of the MQTT broker.
             type: str
           verifyHostnames:
-            description: Whether the TLS hostname verification is enabled for the MQTT
-              broker.
+            description: Whether the TLS hostname verification is enabled for the
+              MQTT broker.
             type: bool
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkMqttBroker
-  description: Complete reference of the createNetworkMqttBroker API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-mqtt-broker
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_mqtt_broker,
-
-  - Paths used are
-    post /networks/{networkId}/mqttBrokers,
+  - description: Complete reference of the createNetworkMqttBroker API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-mqtt-broker
+    name: Cisco Meraki documentation for networks createNetworkMqttBroker
+short_description: Resource module for networks _mqtt _brokers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

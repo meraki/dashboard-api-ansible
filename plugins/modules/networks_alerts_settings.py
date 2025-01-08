@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_alerts_settings
-short_description: Resource module for networks _alerts _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _alerts _settings.
-- Update the alert configuration for this network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _alerts _settings.
+  - Update the alert configuration for this network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_alerts_settings
+notes:
+  - SDK Method used are networks.Networks.update_network_alerts_settings,
+  - Paths used are put /networks/{networkId}/alerts/settings,
 options:
   alerts:
     description: Alert-specific configuration for each type. Only alerts that pertain
@@ -25,11 +25,12 @@ options:
         description: A hash of destinations for this specific alert.
         suboptions:
           allAdmins:
-            description: If true, then all network admins will receive emails for this
-              alert.
+            description: If true, then all network admins will receive emails for
+              this alert.
             type: bool
           emails:
-            description: A list of emails that will receive information about the alert.
+            description: A list of emails that will receive information about the
+              alert.
             elements: str
             type: list
           httpServerIds:
@@ -42,8 +43,8 @@ options:
             elements: str
             type: list
           snmp:
-            description: If true, then an SNMP trap will be sent for this alert if there
-              is an SNMP trap server configured for this network.
+            description: If true, then an SNMP trap will be sent for this alert if
+              there is an SNMP trap server configured for this network.
             type: bool
         type: dict
       enabled:
@@ -153,18 +154,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkAlertsSettings
-  description: Complete reference of the updateNetworkAlertsSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-alerts-settings
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_alerts_settings,
-
-  - Paths used are
-    put /networks/{networkId}/alerts/settings,
+  - description: Complete reference of the updateNetworkAlertsSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-alerts-settings
+    name: Cisco Meraki documentation for networks updateNetworkAlertsSettings
+short_description: Resource module for networks _alerts _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

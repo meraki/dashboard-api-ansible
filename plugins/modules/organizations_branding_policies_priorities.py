@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_branding_policies_priorities
-short_description: Resource module for organizations _branding _policies _priorities
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _branding _policies _priorities.
-- Update the priority ordering of an organization's branding policies.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _branding _policies _priorities.
+  - Update the priority ordering of an organization's branding policies.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_branding_policies_priorities
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_branding_policies_priorities,
+  - Paths used are put /organizations/{organizationId}/brandingPolicies/priorities,
 options:
   brandingPolicyIds:
     description: An ordered list of branding policy IDs that determines the priority
@@ -25,18 +25,15 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationBrandingPoliciesPriorities
-  description: Complete reference of the updateOrganizationBrandingPoliciesPriorities API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policies-priorities
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_branding_policies_priorities,
-
-  - Paths used are
-    put /organizations/{organizationId}/brandingPolicies/priorities,
+  - description: Complete reference of the updateOrganizationBrandingPoliciesPriorities
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policies-priorities
+    name: Cisco Meraki documentation for organizations updateOrganizationBrandingPoliciesPriorities
+short_description: Resource module for organizations _branding _policies _priorities
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

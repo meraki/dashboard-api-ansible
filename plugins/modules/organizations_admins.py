@@ -5,29 +5,31 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_admins
-short_description: Resource module for organizations _admins
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _admins.
-- Create a new dashboard administrator.
-- Revoke all access for a dashboard administrator within this organization.
-- Update an administrator.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _admins.
+  - Create a new dashboard administrator.
+  - Revoke all access for a dashboard administrator within this organization.
+  - Update an administrator.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_admins
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_admin, organizations.Organizations.delete_organization_admin,
+    organizations.Organizations.update_organization_admin,
+  - Paths used are post /organizations/{organizationId}/admins, delete /organizations/{organizationId}/admins/{adminId},
+    put /organizations/{organizationId}/admins/{adminId},
 options:
   adminId:
     description: AdminId path parameter. Admin ID.
     type: str
   authenticationMethod:
-    description: false longer used as of Cisco SecureX end-of-life. Can be one of 'Email'.
-      The default is Email authentication.
+    description: false longer used as of Cisco SecureX end-of-life. Can be one of
+      'Email'. The default is Email authentication.
     type: str
   email:
-    description: The email of the dashboard administrator. This attribute can not be
-      updated.
+    description: The email of the dashboard administrator. This attribute can not
+      be updated.
     type: str
   name:
     description: The name of the dashboard administrator.
@@ -38,55 +40,48 @@ options:
     elements: dict
     suboptions:
       access:
-        description: The privilege of the dashboard administrator on the network. Can
-          be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
+        description: The privilege of the dashboard administrator on the network.
+          Can be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
         type: str
       id:
         description: The network ID.
         type: str
     type: list
   orgAccess:
-    description: The privilege of the dashboard administrator on the organization. Can
-      be one of 'full', 'read-only', 'enterprise' or 'none'.
+    description: The privilege of the dashboard administrator on the organization.
+      Can be one of 'full', 'read-only', 'enterprise' or 'none'.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   tags:
-    description: The list of tags that the dashboard administrator has privileges on.
+    description: The list of tags that the dashboard administrator has privileges
+      on.
     elements: dict
     suboptions:
       access:
-        description: The privilege of the dashboard administrator on the tag. Can be
-          one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
+        description: The privilege of the dashboard administrator on the tag. Can
+          be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
         type: str
       tag:
         description: The name of the tag.
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationAdmin
-  description: Complete reference of the createOrganizationAdmin API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-admin
-- name: Cisco Meraki documentation for organizations deleteOrganizationAdmin
-  description: Complete reference of the deleteOrganizationAdmin API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-admin
-- name: Cisco Meraki documentation for organizations updateOrganizationAdmin
-  description: Complete reference of the updateOrganizationAdmin API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-admin
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_admin,
-    organizations.Organizations.delete_organization_admin,
-    organizations.Organizations.update_organization_admin,
-
-  - Paths used are
-    post /organizations/{organizationId}/admins,
-    delete /organizations/{organizationId}/admins/{adminId},
-    put /organizations/{organizationId}/admins/{adminId},
+  - description: Complete reference of the createOrganizationAdmin API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-admin
+    name: Cisco Meraki documentation for organizations createOrganizationAdmin
+  - description: Complete reference of the deleteOrganizationAdmin API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-admin
+    name: Cisco Meraki documentation for organizations deleteOrganizationAdmin
+  - description: Complete reference of the updateOrganizationAdmin API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-admin
+    name: Cisco Meraki documentation for organizations updateOrganizationAdmin
+short_description: Resource module for organizations _admins
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

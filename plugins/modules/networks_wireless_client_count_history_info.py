@@ -5,86 +5,91 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_client_count_history_info
-short_description: Information module for networks _wireless _client _count _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _client _count _history.
-- Return wireless client counts over time for a network, device, or network client.
-version_added: '2.16.0'
+  - Get all networks _wireless _client _count _history.
+  - Return wireless client counts over time for a network, device, or network client.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_client_count_history_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_client_count_history,
+  - Paths used are get /networks/{networkId}/wireless/clientCountHistory,
 options:
+  apTag:
+    description:
+      - ApTag query parameter. Filter results by AP tag.
+    type: str
+  autoResolution:
+    description:
+      - 'AutoResolution query parameter. Automatically select a data resolution based
+        on the given timespan; this overrides the value specified by the ''resolution''
+        parameter. The default setting is false.
+
+        '
+    type: bool
+  band:
+    description:
+      - Band query parameter. Filter results by band (either '2.4', '5' or '6').
+    type: str
+  clientId:
+    description:
+      - 'ClientId query parameter. Filter results by network client to return per-device
+        client counts over time inner joined by the queried client''s connection history.
+
+        '
+    type: str
+  deviceSerial:
+    description:
+      - DeviceSerial query parameter. Filter results by device.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
+  resolution:
+    description:
+      - 'Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
+        is 86400.
+
+        '
+    type: int
+  ssid:
+    description:
+      - Ssid query parameter. Filter results by SSID number.
+    type: int
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 7 days.
-    type: float
-  resolution:
-    description:
-    - >
-      Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 300,
-      600, 1200, 3600, 14400, 86400. The default is 86400.
-    type: int
-  autoResolution:
-    description:
-    - >
-      AutoResolution query parameter. Automatically select a data resolution based on the given timespan; this
-      overrides the value specified by the 'resolution' parameter. The default setting is false.
-    type: bool
-  clientId:
-    description:
-    - >
-      ClientId query parameter. Filter results by network client to return per-device client counts over time
-      inner joined by the queried client's connection history.
-    type: str
-  deviceSerial:
-    description:
-    - DeviceSerial query parameter. Filter results by device.
-    type: str
-  apTag:
-    description:
-    - ApTag query parameter. Filter results by AP tag.
-    type: str
-  band:
-    description:
-    - Band query parameter. Filter results by band (either '2.4', '5' or '6').
-    type: str
-  ssid:
-    description:
-    - Ssid query parameter. Filter results by SSID number.
-    type: int
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessClientCountHistory
-  description: Complete reference of the getNetworkWirelessClientCountHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-client-count-history
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_client_count_history,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 31 days. The default
+        is 7 days.
 
-  - Paths used are
-    get /networks/{networkId}/wireless/clientCountHistory,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkWirelessClientCountHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-client-count-history
+    name: Cisco Meraki documentation for wireless getNetworkWirelessClientCountHistory
+short_description: Information module for networks _wireless _client _count _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

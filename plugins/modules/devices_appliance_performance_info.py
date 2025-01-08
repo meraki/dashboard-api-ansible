@@ -5,54 +5,55 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_appliance_performance_info
-short_description: Information module for devices _appliance _performance
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _appliance _performance.
-- >
-   Return the performance score for a single MX. Only primary MX devices supported. If no data is available, a 204
-   error code is returned.
-version_added: '2.16.0'
+  - Get all devices _appliance _performance.
+  - 'Return the performance score for a single MX. Only primary MX devices supported.
+    If no data is available, a 204 error code is returned.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_appliance_performance_info
+notes:
+  - SDK Method used are appliance.Appliance.get_device_appliance_performance,
+  - Paths used are get /devices/{serial}/appliance/performance,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 30 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 14 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 14 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 30 minutes
-      and be less than or equal to 14 days. The default is 30 minutes.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be greater than or equal to 30 minutes and be
+        less than or equal to 14 days. The default is 30 minutes.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getDeviceAppliancePerformance
-  description: Complete reference of the getDeviceAppliancePerformance API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-performance
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_device_appliance_performance,
-
-  - Paths used are
-    get /devices/{serial}/appliance/performance,
+  - description: Complete reference of the getDeviceAppliancePerformance API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-performance
+    name: Cisco Meraki documentation for appliance getDeviceAppliancePerformance
+short_description: Information module for devices _appliance _performance
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

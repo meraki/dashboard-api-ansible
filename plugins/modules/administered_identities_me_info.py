@@ -5,33 +5,29 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_identities_me_info
-short_description: Information module for administered _identities _me
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all administered _identities _me.
-- Returns the identity of the current user.
-version_added: '2.16.0'
+  - Get all administered _identities _me.
+  - Returns the identity of the current user.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: administered_identities_me_info
+notes:
+  - SDK Method used are administered.Administered.get_administered_identities_me,
+  - Paths used are get /administered/identities/me,
 options:
   headers:
     description: Additional headers.
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for administered getAdministeredIdentitiesMe
-  description: Complete reference of the getAdministeredIdentitiesMe API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me
-notes:
-  - SDK Method used are
-    administered.Administered.get_administered_identities_me,
-
-  - Paths used are
-    get /administered/identities/me,
+  - description: Complete reference of the getAdministeredIdentitiesMe API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me
+    name: Cisco Meraki documentation for administered getAdministeredIdentitiesMe
+short_description: Information module for administered _identities _me
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

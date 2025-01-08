@@ -5,52 +5,47 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sensor_mqtt_brokers_info
-short_description: Information module for networks _sensor _mqtt _brokers
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sensor _mqtt _brokers.
-- Get networks _sensor _mqtt _brokers by id.
-- >
-   List the sensor settings of all MQTT brokers for this network. To get the brokers themselves, use
-   /networks/{networkId}/mqttBrokers.
-- >
-   Return the sensor settings of an MQTT broker. To get the broker itself, use
-   /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
-version_added: '2.16.0'
+  - Get all networks _sensor _mqtt _brokers.
+  - Get networks _sensor _mqtt _brokers by id.
+  - 'List the sensor settings of all MQTT brokers for this network. To get the brokers
+    themselves, use /networks/{networkId}/mqttBrokers.
+
+    '
+  - 'Return the sensor settings of an MQTT broker. To get the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sensor_mqtt_brokers_info
+notes:
+  - SDK Method used are sensor.Sensor.get_network_sensor_mqtt_broker, sensor.Sensor.get_network_sensor_mqtt_brokers,
+  - Paths used are get /networks/{networkId}/sensor/mqttBrokers, get /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId},
 options:
   headers:
     description: Additional headers.
     type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
   mqttBrokerId:
     description:
-    - MqttBrokerId path parameter. Mqtt broker ID.
+      - MqttBrokerId path parameter. Mqtt broker ID.
+    type: str
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorMqttBroker
-  description: Complete reference of the getNetworkSensorMqttBroker API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-broker
-- name: Cisco Meraki documentation for sensor getNetworkSensorMqttBrokers
-  description: Complete reference of the getNetworkSensorMqttBrokers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-brokers
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_network_sensor_mqtt_broker,
-    sensor.Sensor.get_network_sensor_mqtt_brokers,
-
-  - Paths used are
-    get /networks/{networkId}/sensor/mqttBrokers,
-    get /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId},
+  - description: Complete reference of the getNetworkSensorMqttBroker API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-broker
+    name: Cisco Meraki documentation for sensor getNetworkSensorMqttBroker
+  - description: Complete reference of the getNetworkSensorMqttBrokers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-mqtt-brokers
+    name: Cisco Meraki documentation for sensor getNetworkSensorMqttBrokers
+short_description: Information module for networks _sensor _mqtt _brokers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

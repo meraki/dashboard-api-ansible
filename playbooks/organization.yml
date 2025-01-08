@@ -14,8 +14,8 @@
         state: present
         management:
           details:
-            - name: MSP ID
-              value: "1234567"
+          - name: MSP ID
+            value: '1234567'
         name: Test Ansible
         api:
           enabled: true

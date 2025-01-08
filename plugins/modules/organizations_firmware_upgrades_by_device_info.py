@@ -5,89 +5,100 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_firmware_upgrades_by_device_info
-short_description: Information module for organizations _firmware _upgrades _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _firmware _upgrades _by _device.
-- Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
-version_added: '2.16.0'
+  - Get all organizations _firmware _upgrades _by _device.
+  - Get firmware upgrade status for the filtered devices. This endpoint currently
+    only supports Meraki switches.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_firmware_upgrades_by_device_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_firmware_upgrades_by_device,
+  - Paths used are get /organizations/{organizationId}/firmware/upgrades/byDevice,
 options:
+  currentUpgradesOnly:
+    description:
+      - CurrentUpgradesOnly query parameter. Optional parameter to filter to only
+        current or pending upgrade statuses.
+    type: bool
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  firmwareUpgradeBatchIds:
+    description:
+      - FirmwareUpgradeBatchIds query parameter. Optional parameter to filter by firmware
+        upgrade batch ids.
+    elements: str
+    type: list
   headers:
     description: Additional headers.
     type: dict
+  macs:
+    description:
+      - 'Macs query parameter. Optional parameter to filter by one or more MAC addresses
+        belonging to devices. All devices returned belong to MAC addresses that are
+        an exact match.
+
+        '
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - NetworkIds query parameter. Optional parameter to filter by network.
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  networkIds:
-    description:
-    - NetworkIds query parameter. Optional parameter to filter by network.
-    elements: str
-    type: list
   serials:
     description:
-    - >
-      Serials query parameter. Optional parameter to filter by serial number. All returned devices will have a
-      serial number that is an exact match.
+      - 'Serials query parameter. Optional parameter to filter by serial number. All
+        returned devices will have a serial number that is an exact match.
+
+        '
     elements: str
     type: list
-  macs:
+  startingAfter:
     description:
-    - >
-      Macs query parameter. Optional parameter to filter by one or more MAC addresses belonging to devices. All
-      devices returned belong to MAC addresses that are an exact match.
-    elements: str
-    type: list
-  firmwareUpgradeBatchIds:
-    description:
-    - FirmwareUpgradeBatchIds query parameter. Optional parameter to filter by firmware upgrade batch ids.
-    elements: str
-    type: list
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   upgradeStatuses:
     description:
-    - UpgradeStatuses query parameter. Optional parameter to filter by firmware upgrade statuses.
+      - UpgradeStatuses query parameter. Optional parameter to filter by firmware
+        upgrade statuses.
     elements: str
     type: list
-  currentUpgradesOnly:
-    description:
-    - CurrentUpgradesOnly query parameter. Optional parameter to filter to only current or pending upgrade statuses.
-    type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgradesByDevice
-  description: Complete reference of the getOrganizationFirmwareUpgradesByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades-by-device
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_firmware_upgrades_by_device,
-
-  - Paths used are
-    get /organizations/{organizationId}/firmware/upgrades/byDevice,
+  - description: Complete reference of the getOrganizationFirmwareUpgradesByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades-by-device
+    name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgradesByDevice
+short_description: Information module for organizations _firmware _upgrades _by _device
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

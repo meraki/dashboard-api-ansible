@@ -5,41 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_bypass_activation_lock_attempts_info
-short_description: Information module for networks _sm _bypass _activation _lock _attempts
+author: Francisco Munoz (@fmunoz)
 description:
-- Get networks _sm _bypass _activation _lock _attempts by id.
-- Bypass activation lock attempt status.
-version_added: '2.16.0'
+  - Get networks _sm _bypass _activation _lock _attempts by id.
+  - Bypass activation lock attempt status.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_bypass_activation_lock_attempts_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_bypass_activation_lock_attempt,
+  - Paths used are get /networks/{networkId}/sm/bypassActivationLockAttempts/{attemptId},
 options:
+  attemptId:
+    description:
+      - AttemptId path parameter. Attempt ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  attemptId:
-    description:
-    - AttemptId path parameter. Attempt ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmBypassActivationLockAttempt
-  description: Complete reference of the getNetworkSmBypassActivationLockAttempt API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-bypass-activation-lock-attempt
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_bypass_activation_lock_attempt,
-
-  - Paths used are
-    get /networks/{networkId}/sm/bypassActivationLockAttempts/{attemptId},
+  - description: Complete reference of the getNetworkSmBypassActivationLockAttempt
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-bypass-activation-lock-attempt
+    name: Cisco Meraki documentation for sm getNetworkSmBypassActivationLockAttempt
+short_description: Information module for networks _sm _bypass _activation _lock _attempts
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

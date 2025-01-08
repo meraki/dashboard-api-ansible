@@ -5,24 +5,24 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_wireless_bluetooth_settings
-short_description: Resource module for devices _wireless _bluetooth _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _wireless _bluetooth _settings.
-- Update the bluetooth settings for a wireless device.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _wireless _bluetooth _settings.
+  - Update the bluetooth settings for a wireless device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_bluetooth_settings
+notes:
+  - SDK Method used are wireless.Wireless.update_device_wireless_bluetooth_settings,
+  - Paths used are put /devices/{serial}/wireless/bluetooth/settings,
 options:
   major:
-    description: Desired major value of the beacon. If the value is set to null it will
-      reset to Dashboard's automatically generated value.
+    description: Desired major value of the beacon. If the value is set to null it
+      will reset to Dashboard's automatically generated value.
     type: int
   minor:
-    description: Desired minor value of the beacon. If the value is set to null it will
-      reset to Dashboard's automatically generated value.
+    description: Desired minor value of the beacon. If the value is set to null it
+      will reset to Dashboard's automatically generated value.
     type: int
   serial:
     description: Serial path parameter.
@@ -32,18 +32,14 @@ options:
       to Dashboard's automatically generated value.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateDeviceWirelessBluetoothSettings
-  description: Complete reference of the updateDeviceWirelessBluetoothSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_device_wireless_bluetooth_settings,
-
-  - Paths used are
-    put /devices/{serial}/wireless/bluetooth/settings,
+  - description: Complete reference of the updateDeviceWirelessBluetoothSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings
+    name: Cisco Meraki documentation for wireless updateDeviceWirelessBluetoothSettings
+short_description: Resource module for devices _wireless _bluetooth _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

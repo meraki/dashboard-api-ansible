@@ -5,20 +5,24 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_rf_profiles
-short_description: Resource module for networks _wireless _rf _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _wireless _rf _profiles.
-- Creates new RF profile for this network.
-- Delete a RF Profile.
-- >
-   Updates specified RF profile for this network. Note built-in RF profiles can only be assigned as a default, and
-   its attributes are immutable.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _wireless
+    _rf _profiles.
+  - Creates new RF profile for this network.
+  - Delete a RF Profile.
+  - 'Updates specified RF profile for this network. Note built-in RF profiles can
+    only be assigned as a default, and its attributes are immutable.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_rf_profiles
+notes:
+  - SDK Method used are wireless.Wireless.create_network_wireless_rf_profile, wireless.Wireless.delete_network_wireless_rf_profile,
+    wireless.Wireless.update_network_wireless_rf_profile,
+  - Paths used are post /networks/{networkId}/wireless/rfProfiles, delete /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
+    put /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
 options:
   apBandSettings:
     description: Settings that will be enabled if selectionType is set to 'ap'.
@@ -28,8 +32,8 @@ options:
           to dual.
         type: str
       bandSteeringEnabled:
-        description: Steers client to most open band. Can be either true or false. Defaults
-          to true.
+        description: Steers client to most open band. Can be either true or false.
+          Defaults to true.
         type: bool
       bands:
         description: Settings related to all bands.
@@ -41,44 +45,44 @@ options:
         type: dict
     type: dict
   bandSelectionType:
-    description: Band selection can be set to either 'ssid' or 'ap'. This param is required
-      on creation.
+    description: Band selection can be set to either 'ssid' or 'ap'. This param is
+      required on creation.
     type: str
   clientBalancingEnabled:
-    description: Steers client to best available access point. Can be either true or
-      false. Defaults to true.
+    description: Steers client to best available access point. Can be either true
+      or false. Defaults to true.
     type: bool
   fiveGhzSettings:
     description: Settings related to 5Ghz band.
     suboptions:
       channelWidth:
-        description: Sets channel width (MHz) for 5Ghz band. Can be one of 'auto', '20',
-          '40' or '80'. Defaults to auto.
+        description: Sets channel width (MHz) for 5Ghz band. Can be one of 'auto',
+          '20', '40' or '80'. Defaults to auto.
         type: str
       maxPower:
         description: Sets max power (dBm) of 5Ghz band. Can be integer between 2 and
           30. Defaults to 30.
         type: int
       minBitrate:
-        description: Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12',
-          '18', '24', '36', '48' or '54'. Defaults to 12.
+        description: Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9',
+          '12', '18', '24', '36', '48' or '54'. Defaults to 12.
         type: int
       minPower:
         description: Sets min power (dBm) of 5Ghz band. Can be integer between 2 and
           30. Defaults to 8.
         type: int
       rxsop:
-        description: The RX-SOP level controls the sensitivity of the radio. It is strongly
-          recommended to use RX-SOP only after consulting a wireless expert. RX-SOP
-          can be configured in the range of -65 to -95 (dBm). A value of null will reset
-          this to the default.
+        description: The RX-SOP level controls the sensitivity of the radio. It is
+          strongly recommended to use RX-SOP only after consulting a wireless expert.
+          RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null
+          will reset this to the default.
         type: int
       validAutoChannels:
         description: Sets valid auto channels for 5Ghz band. Can be one of '36', '40',
           '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116', '120',
-          '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or '165'.Defaults
-          to 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128,
-          132, 136, 140, 144, 149, 153, 157, 161, 165.
+          '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or
+          '165'.Defaults to 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116,
+          120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165.
         elements: int
         type: list
     type: dict
@@ -100,14 +104,14 @@ options:
         type: list
     type: dict
   isIndoorDefault:
-    description: Set this profile as the default indoor rf profile. If the profile ID
-      is one of 'indoor' or 'outdoor', then a new profile will be created from the respective
-      ID and set as the default.
+    description: Set this profile as the default indoor rf profile. If the profile
+      ID is one of 'indoor' or 'outdoor', then a new profile will be created from
+      the respective ID and set as the default.
     type: bool
   isOutdoorDefault:
     description: Set this profile as the default outdoor rf profile. If the profile
-      ID is one of 'indoor' or 'outdoor', then a new profile will be created from the
-      respective ID and set as the default.
+      ID is one of 'indoor' or 'outdoor', then a new profile will be created from
+      the respective ID and set as the default.
     type: bool
   minBitrateType:
     description: Minimum bitrate can be set to either 'band' or 'ssid'. Defaults to
@@ -142,8 +146,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '1':
@@ -165,8 +169,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '10':
@@ -188,8 +192,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '11':
@@ -211,8 +215,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '12':
@@ -234,8 +238,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '13':
@@ -257,8 +261,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '14':
@@ -280,8 +284,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '2':
@@ -303,8 +307,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '3':
@@ -326,8 +330,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '4':
@@ -349,8 +353,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '5':
@@ -372,8 +376,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '6':
@@ -395,8 +399,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '7':
@@ -418,8 +422,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '8':
@@ -441,8 +445,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
       '9':
@@ -464,8 +468,8 @@ options:
                 type: list
             type: dict
           minBitrate:
-            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1', '2',
-              '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
+            description: Sets min bitrate (Mbps) of this SSID. Can be one of '1',
+              '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
             type: float
         type: dict
     type: dict
@@ -485,18 +489,18 @@ options:
           30. Defaults to 30.
         type: int
       minBitrate:
-        description: Sets min bitrate (Mbps) of 6Ghz band. Can be one of '6', '9', '12',
-          '18', '24', '36', '48' or '54'. Defaults to 12.
+        description: Sets min bitrate (Mbps) of 6Ghz band. Can be one of '6', '9',
+          '12', '18', '24', '36', '48' or '54'. Defaults to 12.
         type: int
       minPower:
         description: Sets min power (dBm) of 6Ghz band. Can be integer between 2 and
           30. Defaults to 8.
         type: int
       rxsop:
-        description: The RX-SOP level controls the sensitivity of the radio. It is strongly
-          recommended to use RX-SOP only after consulting a wireless expert. RX-SOP
-          can be configured in the range of -65 to -95 (dBm). A value of null will reset
-          this to the default.
+        description: The RX-SOP level controls the sensitivity of the radio. It is
+          strongly recommended to use RX-SOP only after consulting a wireless expert.
+          RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null
+          will reset this to the default.
         type: int
       validAutoChannels:
         description: Sets valid auto channels for 6Ghz band. Can be one of '1', '5',
@@ -505,10 +509,10 @@ options:
           '109', '113', '117', '121', '125', '129', '133', '137', '141', '145', '149',
           '153', '157', '161', '165', '169', '173', '177', '181', '185', '189', '193',
           '197', '201', '205', '209', '213', '217', '221', '225', '229' or '233'.Defaults
-          to 1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73,
-          77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125, 129, 133, 137,
-          141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189, 193, 197,
-          201, 205, 209, 213, 217, 221, 225, 229, 233.
+          to 1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69,
+          73, 77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125, 129, 133,
+          137, 141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189, 193,
+          197, 201, 205, 209, 213, 217, 221, 225, 229, 233.
         elements: int
         type: list
     type: dict
@@ -524,57 +528,50 @@ options:
     description: Settings related to 2.4Ghz band.
     suboptions:
       axEnabled:
-        description: Determines whether ax radio on 2.4Ghz band is on or off. Can be
-          either true or false. If false, we highly recommend disabling band steering.
+        description: Determines whether ax radio on 2.4Ghz band is on or off. Can
+          be either true or false. If false, we highly recommend disabling band steering.
           Defaults to true.
         type: bool
       maxPower:
-        description: Sets max power (dBm) of 2.4Ghz band. Can be integer between 2 and
-          30. Defaults to 30.
+        description: Sets max power (dBm) of 2.4Ghz band. Can be integer between 2
+          and 30. Defaults to 30.
         type: int
       minBitrate:
         description: Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2',
-          '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to 11.
+          '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to
+          11.
         type: float
       minPower:
-        description: Sets min power (dBm) of 2.4Ghz band. Can be integer between 2 and
-          30. Defaults to 5.
+        description: Sets min power (dBm) of 2.4Ghz band. Can be integer between 2
+          and 30. Defaults to 5.
         type: int
       rxsop:
-        description: The RX-SOP level controls the sensitivity of the radio. It is strongly
-          recommended to use RX-SOP only after consulting a wireless expert. RX-SOP
-          can be configured in the range of -65 to -95 (dBm). A value of null will reset
-          this to the default.
+        description: The RX-SOP level controls the sensitivity of the radio. It is
+          strongly recommended to use RX-SOP only after consulting a wireless expert.
+          RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null
+          will reset this to the default.
         type: int
       validAutoChannels:
-        description: Sets valid auto channels for 2.4Ghz band. Can be one of '1', '6'
-          or '11'. Defaults to 1, 6, 11.
+        description: Sets valid auto channels for 2.4Ghz band. Can be one of '1',
+          '6' or '11'. Defaults to 1, 6, 11.
         elements: int
         type: list
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless createNetworkWirelessRfProfile
-  description: Complete reference of the createNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-rf-profile
-- name: Cisco Meraki documentation for wireless deleteNetworkWirelessRfProfile
-  description: Complete reference of the deleteNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-rf-profile
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessRfProfile
-  description: Complete reference of the updateNetworkWirelessRfProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-rf-profile
-notes:
-  - SDK Method used are
-    wireless.Wireless.create_network_wireless_rf_profile,
-    wireless.Wireless.delete_network_wireless_rf_profile,
-    wireless.Wireless.update_network_wireless_rf_profile,
-
-  - Paths used are
-    post /networks/{networkId}/wireless/rfProfiles,
-    delete /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
-    put /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
+  - description: Complete reference of the createNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-rf-profile
+    name: Cisco Meraki documentation for wireless createNetworkWirelessRfProfile
+  - description: Complete reference of the deleteNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-rf-profile
+    name: Cisco Meraki documentation for wireless deleteNetworkWirelessRfProfile
+  - description: Complete reference of the updateNetworkWirelessRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-rf-profile
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessRfProfile
+short_description: Resource module for networks _wireless _rf _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

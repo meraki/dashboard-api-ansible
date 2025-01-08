@@ -5,39 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_topology_link_layer_info
-short_description: Information module for networks _topology _link _layer
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _topology _link _layer.
-- >
-   List the LLDP and CDP information for all discovered devices and connections in a network. At least one MX or MS
-   device must be in the network in order to build the topology.
-version_added: '2.16.0'
+  - Get all networks _topology _link _layer.
+  - 'List the LLDP and CDP information for all discovered devices and connections
+    in a network. At least one MX or MS device must be in the network in order to
+    build the topology.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_topology_link_layer_info
+notes:
+  - SDK Method used are networks.Networks.get_network_topology_link_layer,
+  - Paths used are get /networks/{networkId}/topology/linkLayer,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkTopologyLinkLayer
-  description: Complete reference of the getNetworkTopologyLinkLayer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-topology-link-layer
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_topology_link_layer,
-
-  - Paths used are
-    get /networks/{networkId}/topology/linkLayer,
+  - description: Complete reference of the getNetworkTopologyLinkLayer API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-topology-link-layer
+    name: Cisco Meraki documentation for networks getNetworkTopologyLinkLayer
+short_description: Information module for networks _topology _link _layer
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

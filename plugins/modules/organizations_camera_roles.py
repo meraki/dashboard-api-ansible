@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_roles
-short_description: Resource module for organizations _camera _roles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _camera _roles.
-- Creates new role for this organization.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _camera
+    _roles.
+  - Creates new role for this organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_roles
+notes:
+  - SDK Method used are camera.Camera.create_organization_camera_role,
+  - Paths used are post /organizations/{organizationId}/camera/roles,
 options:
   appliedOnDevices:
     description: Device tag on which this specified permission is applied.
@@ -65,18 +66,14 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera createOrganizationCameraRole
-  description: Complete reference of the createOrganizationCameraRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-role
-notes:
-  - SDK Method used are
-    camera.Camera.create_organization_camera_role,
-
-  - Paths used are
-    post /organizations/{organizationId}/camera/roles,
+  - description: Complete reference of the createOrganizationCameraRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-role
+    name: Cisco Meraki documentation for camera createOrganizationCameraRole
+short_description: Resource module for organizations _camera _roles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

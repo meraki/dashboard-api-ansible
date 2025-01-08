@@ -5,60 +5,64 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_performance_history_info
-short_description: Information module for networks _sm _devices _performance _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _devices _performance _history.
-- Return historical records of various Systems Manager client metrics for desktop devices.
-version_added: '2.16.0'
+  - Get all networks _sm _devices _performance _history.
+  - Return historical records of various Systems Manager client metrics for desktop
+    devices.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_performance_history_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_device_performance_history,
+  - Paths used are get /networks/{networkId}/sm/devices/{deviceId}/performanceHistory,
 options:
+  deviceId:
+    description:
+      - DeviceId path parameter. Device ID.
+    type: str
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  deviceId:
-    description:
-    - DeviceId path parameter. Device ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDevicePerformanceHistory
-  description: Complete reference of the getNetworkSmDevicePerformanceHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-performance-history
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_device_performance_history,
-
-  - Paths used are
-    get /networks/{networkId}/sm/devices/{deviceId}/performanceHistory,
+  - description: Complete reference of the getNetworkSmDevicePerformanceHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-performance-history
+    name: Cisco Meraki documentation for sm getNetworkSmDevicePerformanceHistory
+short_description: Information module for networks _sm _devices _performance _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

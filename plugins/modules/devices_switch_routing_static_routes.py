@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_routing_static_routes
-short_description: Resource module for devices _switch _routing _static _routes
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource devices _switch _routing _static _routes.
-- Create a layer 3 static route for a switch.
-- Delete a layer 3 static route for a switch.
-- Update a layer 3 static route for a switch.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource devices _switch _routing
+    _static _routes.
+  - Create a layer 3 static route for a switch.
+  - Delete a layer 3 static route for a switch.
+  - Update a layer 3 static route for a switch.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_routing_static_routes
+notes:
+  - SDK Method used are switch.Switch.create_device_switch_routing_static_route, switch.Switch.delete_device_switch_routing_static_route,
+    switch.Switch.update_device_switch_routing_static_route,
+  - Paths used are post /devices/{serial}/switch/routing/staticRoutes, delete /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
+    put /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
 options:
   advertiseViaOspfEnabled:
     description: Option to advertise static route via OSPF.
@@ -45,28 +48,20 @@ options:
       in CIDR notation (ex. 1.2.3.0/24).
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createDeviceSwitchRoutingStaticRoute
-  description: Complete reference of the createDeviceSwitchRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-static-route
-- name: Cisco Meraki documentation for switch deleteDeviceSwitchRoutingStaticRoute
-  description: Complete reference of the deleteDeviceSwitchRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-static-route
-- name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingStaticRoute
-  description: Complete reference of the updateDeviceSwitchRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-static-route
-notes:
-  - SDK Method used are
-    switch.Switch.create_device_switch_routing_static_route,
-    switch.Switch.delete_device_switch_routing_static_route,
-    switch.Switch.update_device_switch_routing_static_route,
-
-  - Paths used are
-    post /devices/{serial}/switch/routing/staticRoutes,
-    delete /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
-    put /devices/{serial}/switch/routing/staticRoutes/{staticRouteId},
+  - description: Complete reference of the createDeviceSwitchRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-static-route
+    name: Cisco Meraki documentation for switch createDeviceSwitchRoutingStaticRoute
+  - description: Complete reference of the deleteDeviceSwitchRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-static-route
+    name: Cisco Meraki documentation for switch deleteDeviceSwitchRoutingStaticRoute
+  - description: Complete reference of the updateDeviceSwitchRoutingStaticRoute API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-static-route
+    name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingStaticRoute
+short_description: Resource module for devices _switch _routing _static _routes
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

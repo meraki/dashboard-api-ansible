@@ -5,44 +5,41 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_blink_leds
-short_description: Resource module for devices _blink _leds
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource devices _blink _leds.
-- Blink the LEDs on a device. This endpoint is deprecrated in favor of /devices/{serial}/liveTools/leds/blink.
-version_added: '2.16.0'
+  - Manage operation create of the resource devices _blink _leds.
+  - Blink the LEDs on a device. This endpoint is deprecrated in favor of /devices/{serial}/liveTools/leds/blink.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_blink_leds
+notes:
+  - SDK Method used are devices.Devices.blink_device_leds,
+  - Paths used are post /devices/{serial}/blinkLeds,
 options:
   duration:
-    description: The duration in seconds. Must be between 5 and 120. Default is 20 seconds.
+    description: The duration in seconds. Must be between 5 and 120. Default is 20
+      seconds.
     type: int
   duty:
-    description: The duty cycle as the percent active. Must be between 10 and 90. Default
-      is 50.
+    description: The duty cycle as the percent active. Must be between 10 and 90.
+      Default is 50.
     type: int
   period:
-    description: The period in milliseconds. Must be between 100 and 1000. Default is
-      160 milliseconds.
+    description: The period in milliseconds. Must be between 100 and 1000. Default
+      is 160 milliseconds.
     type: int
   serial:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices blinkDeviceLeds
-  description: Complete reference of the blinkDeviceLeds API.
-  link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
-notes:
-  - SDK Method used are
-    devices.Devices.blink_device_leds,
-
-  - Paths used are
-    post /devices/{serial}/blinkLeds,
+  - description: Complete reference of the blinkDeviceLeds API.
+    link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
+    name: Cisco Meraki documentation for devices blinkDeviceLeds
+short_description: Resource module for devices _blink _leds
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

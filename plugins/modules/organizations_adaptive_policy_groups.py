@@ -5,18 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_adaptive_policy_groups
-short_description: Resource module for organizations _adaptive _policy _groups
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _adaptive _policy _groups.
-- Creates a new adaptive policy group.
-- Deletes the specified adaptive policy group and any associated policies and references.
-- Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _adaptive
+    _policy _groups.
+  - Creates a new adaptive policy group.
+  - Deletes the specified adaptive policy group and any associated policies and references.
+  - Updates an adaptive policy group. If updating "Infrastructure", only the SGT is
+    allowed. Cannot update "Unknown".
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_adaptive_policy_groups
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_adaptive_policy_group,
+    organizations.Organizations.delete_organization_adaptive_policy_group, organizations.Organizations.update_organization_adaptive_policy_group,
+  - Paths used are post /organizations/{organizationId}/adaptivePolicy/groups, delete
+    /organizations/{organizationId}/adaptivePolicy/groups/{id}, put /organizations/{organizationId}/adaptivePolicy/groups/{id},
 options:
   description:
     description: Description of the group (default "").
@@ -32,9 +36,9 @@ options:
     type: str
   policyObjects:
     description: The policy objects that belong to this group; traffic from addresses
-      specified by these policy objects will be tagged with this group's SGT value if
-      no other tagging scheme is being used (each requires one unique attribute) (default
-      ).
+      specified by these policy objects will be tagged with this group's SGT value
+      if no other tagging scheme is being used (each requires one unique attribute)
+      (default ).
     elements: dict
     suboptions:
       id:
@@ -48,28 +52,20 @@ options:
     description: SGT value of the group.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyGroup
-  description: Complete reference of the createOrganizationAdaptivePolicyGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-group
-- name: Cisco Meraki documentation for organizations deleteOrganizationAdaptivePolicyGroup
-  description: Complete reference of the deleteOrganizationAdaptivePolicyGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-group
-- name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicyGroup
-  description: Complete reference of the updateOrganizationAdaptivePolicyGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-group
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_adaptive_policy_group,
-    organizations.Organizations.delete_organization_adaptive_policy_group,
-    organizations.Organizations.update_organization_adaptive_policy_group,
-
-  - Paths used are
-    post /organizations/{organizationId}/adaptivePolicy/groups,
-    delete /organizations/{organizationId}/adaptivePolicy/groups/{id},
-    put /organizations/{organizationId}/adaptivePolicy/groups/{id},
+  - description: Complete reference of the createOrganizationAdaptivePolicyGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-group
+    name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyGroup
+  - description: Complete reference of the deleteOrganizationAdaptivePolicyGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-group
+    name: Cisco Meraki documentation for organizations deleteOrganizationAdaptivePolicyGroup
+  - description: Complete reference of the updateOrganizationAdaptivePolicyGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-group
+    name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicyGroup
+short_description: Resource module for organizations _adaptive _policy _groups
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

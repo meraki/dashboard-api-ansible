@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_routing_ospf
-short_description: Resource module for networks _switch _routing _ospf
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _routing _ospf.
-- Update layer 3 OSPF routing configuration.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _routing _ospf.
+  - Update layer 3 OSPF routing configuration.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_routing_ospf
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_routing_ospf,
+  - Paths used are put /networks/{networkId}/switch/routing/ospf,
 options:
   areas:
     description: OSPF areas.
@@ -35,13 +35,13 @@ options:
       Value must be between 1 and 65535.
     type: int
   enabled:
-    description: Boolean value to enable or disable OSPF routing. OSPF routing is disabled
-      by default.
+    description: Boolean value to enable or disable OSPF routing. OSPF routing is
+      disabled by default.
     type: bool
   helloTimerInSeconds:
     description: Time interval in seconds at which hello packet will be sent to OSPF
-      neighbors to maintain connectivity. Value must be between 1 and 255. Default is
-      10 seconds.
+      neighbors to maintain connectivity. Value must be between 1 and 255. Default
+      is 10 seconds.
     type: int
   md5AuthenticationEnabled:
     description: Boolean value to enable or disable MD5 authentication. MD5 authentication
@@ -52,7 +52,8 @@ options:
       is true.
     suboptions:
       id:
-        description: MD5 authentication key index. Key index must be between 1 to 255.
+        description: MD5 authentication key index. Key index must be between 1 to
+          255.
         type: int
       passphrase:
         description: MD5 authentication passphrase.
@@ -93,18 +94,14 @@ options:
         type: int
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingOspf
-  description: Complete reference of the updateNetworkSwitchRoutingOspf API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-ospf
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_routing_ospf,
-
-  - Paths used are
-    put /networks/{networkId}/switch/routing/ospf,
+  - description: Complete reference of the updateNetworkSwitchRoutingOspf API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-ospf
+    name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingOspf
+short_description: Resource module for networks _switch _routing _ospf
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

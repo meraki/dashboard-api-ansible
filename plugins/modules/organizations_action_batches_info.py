@@ -5,52 +5,48 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_action_batches_info
-short_description: Information module for organizations _action _batches
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _action _batches.
-- Get organizations _action _batches by id.
-- Return an action batch.
-- Return the list of action batches in the organization.
-version_added: '2.16.0'
+  - Get all organizations _action _batches.
+  - Get organizations _action _batches by id.
+  - Return an action batch.
+  - Return the list of action batches in the organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_action_batches_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_action_batch,
+    organizations.Organizations.get_organization_action_batches,
+  - Paths used are get /organizations/{organizationId}/actionBatches, get /organizations/{organizationId}/actionBatches/{actionBatchId},
 options:
+  actionBatchId:
+    description:
+      - ActionBatchId path parameter. Action batch ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   status:
     description:
-    - Status query parameter. Filter batches by status. Valid types are pending, completed, and failed.
-    type: str
-  actionBatchId:
-    description:
-    - ActionBatchId path parameter. Action batch ID.
+      - Status query parameter. Filter batches by status. Valid types are pending,
+        completed, and failed.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationActionBatch
-  description: Complete reference of the getOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batch
-- name: Cisco Meraki documentation for organizations getOrganizationActionBatches
-  description: Complete reference of the getOrganizationActionBatches API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batches
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_action_batch,
-    organizations.Organizations.get_organization_action_batches,
-
-  - Paths used are
-    get /organizations/{organizationId}/actionBatches,
-    get /organizations/{organizationId}/actionBatches/{actionBatchId},
+  - description: Complete reference of the getOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batch
+    name: Cisco Meraki documentation for organizations getOrganizationActionBatch
+  - description: Complete reference of the getOrganizationActionBatches API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batches
+    name: Cisco Meraki documentation for organizations getOrganizationActionBatches
+short_description: Information module for organizations _action _batches
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

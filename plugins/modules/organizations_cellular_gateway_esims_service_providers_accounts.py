@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_cellular_gateway_esims_service_providers_accounts
-short_description: Resource module for organizations _cellular _gateway _esims _service _providers _accounts
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _cellular _gateway _esims _service _providers _accounts.
-- Add a service provider account.
-version_added: '2.20.0'
+  - Manage operation create of the resource organizations _cellular _gateway _esims
+    _service _providers _accounts.
+  - Add a service provider account.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_cellular_gateway_esims_service_providers_accounts
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_service_providers_account,
+  - Paths used are post /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
 options:
   accountId:
     description: Service provider account ID.
@@ -39,18 +40,16 @@ options:
     description: Service provider account username.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsServiceProvidersAccount
-  description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-service-providers-account
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_service_providers_account,
-
-  - Paths used are
-    post /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
+  - description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-service-providers-account
+    name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsServiceProvidersAccount
+short_description: Resource module for organizations _cellular _gateway _esims _service
+  _providers _accounts
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_appliance_radio_settings_info
-short_description: Information module for devices _appliance _radio _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _appliance _radio _settings.
-- Return the radio settings of an appliance.
-version_added: '2.16.0'
+  - Get all devices _appliance _radio _settings.
+  - Return the radio settings of an appliance.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_appliance_radio_settings_info
+notes:
+  - SDK Method used are appliance.Appliance.get_device_appliance_radio_settings,
+  - Paths used are get /devices/{serial}/appliance/radio/settings,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getDeviceApplianceRadioSettings
-  description: Complete reference of the getDeviceApplianceRadioSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-radio-settings
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_device_appliance_radio_settings,
-
-  - Paths used are
-    get /devices/{serial}/appliance/radio/settings,
+  - description: Complete reference of the getDeviceApplianceRadioSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-appliance-radio-settings
+    name: Cisco Meraki documentation for appliance getDeviceApplianceRadioSettings
+short_description: Information module for devices _appliance _radio _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

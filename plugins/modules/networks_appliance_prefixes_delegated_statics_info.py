@@ -5,48 +5,47 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_prefixes_delegated_statics_info
-short_description: Information module for networks _appliance _prefixes _delegated _statics
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _prefixes _delegated _statics.
-- Get networks _appliance _prefixes _delegated _statics by id.
-- List static delegated prefixes for a network.
-- Return a static delegated prefix from a network.
-version_added: '2.16.0'
+  - Get all networks _appliance _prefixes _delegated _statics.
+  - Get networks _appliance _prefixes _delegated _statics by id.
+  - List static delegated prefixes for a network.
+  - Return a static delegated prefix from a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_prefixes_delegated_statics_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_prefixes_delegated_static,
+    appliance.Appliance.get_network_appliance_prefixes_delegated_statics,
+  - Paths used are get /networks/{networkId}/appliance/prefixes/delegated/statics,
+    get /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   staticDelegatedPrefixId:
     description:
-    - StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
+      - StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatic
-  description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-static
-- name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatics
-  description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-statics
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_prefixes_delegated_static,
-    appliance.Appliance.get_network_appliance_prefixes_delegated_statics,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/prefixes/delegated/statics,
-    get /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
+  - description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-static
+    name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatic
+  - description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-statics
+    name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatics
+short_description: Information module for networks _appliance _prefixes _delegated
+  _statics
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,48 +5,46 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_camera_quality_retention_profiles_info
-short_description: Information module for networks _camera _quality _retention _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _camera _quality _retention _profiles.
-- Get networks _camera _quality _retention _profiles by id.
-- List the quality retention profiles for this network.
-- Retrieve a single quality retention profile.
-version_added: '2.16.0'
+  - Get all networks _camera _quality _retention _profiles.
+  - Get networks _camera _quality _retention _profiles by id.
+  - List the quality retention profiles for this network.
+  - Retrieve a single quality retention profile.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_camera_quality_retention_profiles_info
+notes:
+  - SDK Method used are camera.Camera.get_network_camera_quality_retention_profile,
+    camera.Camera.get_network_camera_quality_retention_profiles,
+  - Paths used are get /networks/{networkId}/camera/qualityRetentionProfiles, get
+    /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   qualityRetentionProfileId:
     description:
-    - QualityRetentionProfileId path parameter. Quality retention profile ID.
+      - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfile
-  description: Complete reference of the getNetworkCameraQualityRetentionProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profile
-- name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfiles
-  description: Complete reference of the getNetworkCameraQualityRetentionProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles
-notes:
-  - SDK Method used are
-    camera.Camera.get_network_camera_quality_retention_profile,
-    camera.Camera.get_network_camera_quality_retention_profiles,
-
-  - Paths used are
-    get /networks/{networkId}/camera/qualityRetentionProfiles,
-    get /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
+  - description: Complete reference of the getNetworkCameraQualityRetentionProfile
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profile
+    name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfile
+  - description: Complete reference of the getNetworkCameraQualityRetentionProfiles
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles
+    name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfiles
+short_description: Information module for networks _camera _quality _retention _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

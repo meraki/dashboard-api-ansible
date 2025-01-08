@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations
-short_description: Resource module for organizations
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations.
-- Create a new organization.
-- Delete an organization.
-- Update an organization.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations.
+  - Create a new organization.
+  - Delete an organization.
+  - Update an organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations
+notes:
+  - SDK Method used are organizations.Organizations.create_organization, organizations.Organizations.delete_organization,
+    organizations.Organizations.update_organization,
+  - Paths used are post /organizations, delete /organizations/{organizationId}, put
+    /organizations/{organizationId},
 options:
   api:
     description: API-specific settings.
@@ -47,28 +49,20 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganization
-  description: Complete reference of the createOrganization API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization
-- name: Cisco Meraki documentation for organizations deleteOrganization
-  description: Complete reference of the deleteOrganization API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization
-- name: Cisco Meraki documentation for organizations updateOrganization
-  description: Complete reference of the updateOrganization API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization,
-    organizations.Organizations.delete_organization,
-    organizations.Organizations.update_organization,
-
-  - Paths used are
-    post /organizations,
-    delete /organizations/{organizationId},
-    put /organizations/{organizationId},
+  - description: Complete reference of the createOrganization API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization
+    name: Cisco Meraki documentation for organizations createOrganization
+  - description: Complete reference of the deleteOrganization API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization
+    name: Cisco Meraki documentation for organizations deleteOrganization
+  - description: Complete reference of the updateOrganization API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization
+    name: Cisco Meraki documentation for organizations updateOrganization
+short_description: Resource module for organizations
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

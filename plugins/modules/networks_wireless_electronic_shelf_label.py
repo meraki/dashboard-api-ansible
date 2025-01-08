@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_electronic_shelf_label
-short_description: Resource module for networks _wireless _electronic _shelf _label
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _electronic _shelf _label.
-- Update the ESL settings of a wireless network.
-version_added: '2.20.0'
+  - Manage operation update of the resource networks _wireless _electronic _shelf
+    _label.
+  - Update the ESL settings of a wireless network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_electronic_shelf_label
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_electronic_shelf_label,
+  - Paths used are put /networks/{networkId}/wireless/electronicShelfLabel,
 options:
   enabled:
     description: Turn ESL features on and off for this network.
@@ -26,18 +27,15 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessElectronicShelfLabel
-  description: Complete reference of the updateNetworkWirelessElectronicShelfLabel API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-electronic-shelf-label
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_electronic_shelf_label,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/electronicShelfLabel,
+  - description: Complete reference of the updateNetworkWirelessElectronicShelfLabel
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-electronic-shelf-label
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessElectronicShelfLabel
+short_description: Resource module for networks _wireless _electronic _shelf _label
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

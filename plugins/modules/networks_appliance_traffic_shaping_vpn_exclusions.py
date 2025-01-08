@@ -5,19 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_vpn_exclusions
-short_description: Resource module for networks _appliance _traffic _shaping _vpn _exclusions
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _vpn _exclusions.
-- Update VPN exclusion rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _traffic _shaping
+    _vpn _exclusions.
+  - Update VPN exclusion rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_vpn_exclusions
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_traffic_shaping_vpn_exclusions,
+  - Paths used are put /networks/{networkId}/appliance/trafficShaping/vpnExclusions,
 options:
   custom:
-    description: Custom VPN exclusion rules. Pass an empty array to clear existing rules.
+    description: Custom VPN exclusion rules. Pass an empty array to clear existing
+      rules.
     elements: dict
     suboptions:
       destination:
@@ -31,8 +33,8 @@ options:
         type: str
     type: list
   majorApplications:
-    description: Major Application based VPN exclusion rules. Pass an empty array to
-      clear existing rules.
+    description: Major Application based VPN exclusion rules. Pass an empty array
+      to clear existing rules.
     elements: dict
     suboptions:
       id:
@@ -46,18 +48,16 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingVpnExclusions
-  description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-vpn-exclusions
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_traffic_shaping_vpn_exclusions,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/trafficShaping/vpnExclusions,
+  - description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-vpn-exclusions
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingVpnExclusions
+short_description: Resource module for networks _appliance _traffic _shaping _vpn
+  _exclusions
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,48 +5,54 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stacks_routing_interfaces
-short_description: Resource module for networks _switch _stacks _routing _interfaces
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _switch _stacks _routing _interfaces.
-- Create a layer 3 interface for a switch stack.
-- Delete a layer 3 interface from a switch stack.
-- Update a layer 3 interface for a switch stack.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _switch _stacks
+    _routing _interfaces.
+  - Create a layer 3 interface for a switch stack.
+  - Delete a layer 3 interface from a switch stack.
+  - Update a layer 3 interface for a switch stack.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stacks_routing_interfaces
+notes:
+  - SDK Method used are switch.Switch.create_network_switch_stack_routing_interface,
+    switch.Switch.delete_network_switch_stack_routing_interface, switch.Switch.update_network_switch_stack_routing_interface,
+  - Paths used are post /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces,
+    delete /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
+    put /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
 options:
   defaultGateway:
     description: The next hop for any traffic that isn't going to a directly connected
-      subnet or over a static route. This IP address must exist in a subnet with a routed
-      interface.
+      subnet or over a static route. This IP address must exist in a subnet with a
+      routed interface.
     type: str
   interfaceId:
     description: InterfaceId path parameter. Interface ID.
     type: str
   interfaceIp:
-    description: The IP address this switch stack will use for layer 3 routing on this
-      VLAN or subnet. This cannot be the same as the switch's management IP.
+    description: The IP address this switch stack will use for layer 3 routing on
+      this VLAN or subnet. This cannot be the same as the switch's management IP.
     type: str
   ipv6:
     description: The IPv6 settings of the interface.
     suboptions:
       address:
-        description: The IPv6 address of the interface. Required if assignmentMode is
-          'static'. Must not be included if assignmentMode is 'eui-64'.
+        description: The IPv6 address of the interface. Required if assignmentMode
+          is 'static'. Must not be included if assignmentMode is 'eui-64'.
         type: str
       assignmentMode:
         description: The IPv6 assignment mode for the interface. Can be either 'eui-64'
           or 'static'.
         type: str
       gateway:
-        description: The IPv6 default gateway of the interface. Required if prefix is
-          defined and this is the first interface with IPv6 configured for the stack.
+        description: The IPv6 default gateway of the interface. Required if prefix
+          is defined and this is the first interface with IPv6 configured for the
+          stack.
         type: str
       prefix:
-        description: The IPv6 prefix of the interface. Required if IPv6 object is included.
+        description: The IPv6 prefix of the interface. Required if IPv6 object is
+          included.
         type: str
     type: dict
   multicastRouting:
@@ -83,31 +89,27 @@ options:
     description: SwitchStackId path parameter. Switch stack ID.
     type: str
   vlanId:
-    description: The VLAN this routed interface is on. VLAN must be between 1 and 4094.
+    description: The VLAN this routed interface is on. VLAN must be between 1 and
+      4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingInterface
-  description: Complete reference of the createNetworkSwitchStackRoutingInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-interface
-- name: Cisco Meraki documentation for switch deleteNetworkSwitchStackRoutingInterface
-  description: Complete reference of the deleteNetworkSwitchStackRoutingInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-interface
-- name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterface
-  description: Complete reference of the updateNetworkSwitchStackRoutingInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface
-notes:
-  - SDK Method used are
-    switch.Switch.create_network_switch_stack_routing_interface,
-    switch.Switch.delete_network_switch_stack_routing_interface,
-    switch.Switch.update_network_switch_stack_routing_interface,
-
-  - Paths used are
-    post /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces,
-    delete /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
-    put /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
+  - description: Complete reference of the createNetworkSwitchStackRoutingInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-interface
+    name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingInterface
+  - description: Complete reference of the deleteNetworkSwitchStackRoutingInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-interface
+    name: Cisco Meraki documentation for switch deleteNetworkSwitchStackRoutingInterface
+  - description: Complete reference of the updateNetworkSwitchStackRoutingInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface
+    name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterface
+short_description: Resource module for networks _switch _stacks _routing _interfaces
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

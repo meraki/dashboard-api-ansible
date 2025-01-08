@@ -5,48 +5,43 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_branding_policies_info
-short_description: Information module for organizations _branding _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _branding _policies.
-- Get organizations _branding _policies by id.
-- List the branding policies of an organization.
-- Return a branding policy.
-version_added: '2.16.0'
+  - Get all organizations _branding _policies.
+  - Get organizations _branding _policies by id.
+  - List the branding policies of an organization.
+  - Return a branding policy.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_branding_policies_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_branding_policies,
+    organizations.Organizations.get_organization_branding_policy,
+  - Paths used are get /organizations/{organizationId}/brandingPolicies, get /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
 options:
+  brandingPolicyId:
+    description:
+      - BrandingPolicyId path parameter. Branding policy ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  brandingPolicyId:
-    description:
-    - BrandingPolicyId path parameter. Branding policy ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicies
-  description: Complete reference of the getOrganizationBrandingPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies
-- name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicy
-  description: Complete reference of the getOrganizationBrandingPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policy
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_branding_policies,
-    organizations.Organizations.get_organization_branding_policy,
-
-  - Paths used are
-    get /organizations/{organizationId}/brandingPolicies,
-    get /organizations/{organizationId}/brandingPolicies/{brandingPolicyId},
+  - description: Complete reference of the getOrganizationBrandingPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies
+    name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicies
+  - description: Complete reference of the getOrganizationBrandingPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policy
+    name: Cisco Meraki documentation for organizations getOrganizationBrandingPolicy
+short_description: Information module for organizations _branding _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

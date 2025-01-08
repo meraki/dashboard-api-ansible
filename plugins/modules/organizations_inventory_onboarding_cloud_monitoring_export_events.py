@@ -5,27 +5,28 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_inventory_onboarding_cloud_monitoring_export_events
-short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _export _events
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _export _events.
-- Imports event logs related to the onboarding app into elastisearch.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _inventory _onboarding _cloud
+    _monitoring _export _events.
+  - Imports event logs related to the onboarding app into elastisearch.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_inventory_onboarding_cloud_monitoring_export_events
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_export_event,
+  - Paths used are post /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/exportEvents,
 options:
   logEvent:
-    description: The type of log event this is recording, e.g. Download or opening a
-      banner.
+    description: The type of log event this is recording, e.g. Download or opening
+      a banner.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   request:
-    description: Used to describe if this event was the result of a redirect. E.g. A
-      query param if an info banner is being used.
+    description: Used to describe if this event was the result of a redirect. E.g.
+      A query param if an info banner is being used.
     type: str
   targetOS:
     description: The name of the onboarding distro being downloaded.
@@ -34,18 +35,16 @@ options:
     description: A JavaScript UTC datetime stamp for when the even occurred.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringExportEvent
-  description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-export-event
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_export_event,
-
-  - Paths used are
-    post /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/exportEvents,
+  - description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-export-event
+    name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringExportEvent
+short_description: Resource module for organizations _inventory _onboarding _cloud
+  _monitoring _export _events
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

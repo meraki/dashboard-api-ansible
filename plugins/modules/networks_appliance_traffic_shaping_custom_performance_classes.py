@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_custom_performance_classes
-short_description: Resource module for networks _appliance _traffic _shaping _custom _performance _classes
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _appliance _traffic _shaping _custom _performance _classes.
-- Add a custom performance class for an MX network.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _appliance _traffic _shaping
+    _custom _performance _classes.
+  - Add a custom performance class for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_custom_performance_classes
+notes:
+  - SDK Method used are appliance.Appliance.create_network_appliance_traffic_shaping_custom_performance_class,
+  - Paths used are post /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses,
 options:
   maxJitter:
     description: Maximum jitter in milliseconds.
@@ -32,18 +33,16 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createNetworkApplianceTrafficShapingCustomPerformanceClass
-  description: Complete reference of the createNetworkApplianceTrafficShapingCustomPerformanceClass API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-traffic-shaping-custom-performance-class
-notes:
-  - SDK Method used are
-    appliance.Appliance.create_network_appliance_traffic_shaping_custom_performance_class,
-
-  - Paths used are
-    post /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses,
+  - description: Complete reference of the createNetworkApplianceTrafficShapingCustomPerformanceClass
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-traffic-shaping-custom-performance-class
+    name: Cisco Meraki documentation for appliance createNetworkApplianceTrafficShapingCustomPerformanceClass
+short_description: Resource module for networks _appliance _traffic _shaping _custom
+  _performance _classes
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,58 +5,61 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sensor_alerts_overview_by_metric_info
-short_description: Information module for networks _sensor _alerts _overview _by _metric
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sensor _alerts _overview _by _metric.
-- Return an overview of alert occurrences over a timespan, by metric.
-version_added: '2.16.0'
+  - Get all networks _sensor _alerts _overview _by _metric.
+  - Return an overview of alert occurrences over a timespan, by metric.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sensor_alerts_overview_by_metric_info
+notes:
+  - SDK Method used are sensor.Sensor.get_network_sensor_alerts_overview_by_metric,
+  - Paths used are get /networks/{networkId}/sensor/alerts/overview/byMetric,
 options:
   headers:
     description: Additional headers.
     type: dict
+  interval:
+    description:
+      - 'Interval query parameter. The time interval in seconds for returned data.
+        The valid intervals are 900, 3600, 86400, 604800, 2592000. The default is
+        604800. Interval is calculated if time params are provided.
+
+        '
+    type: int
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 731 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 731 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 366 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 366 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 366 days. The
-      default is 7 days. If interval is provided, the timespan will be autocalculated.
-    type: float
-  interval:
-    description:
-    - >
-      Interval query parameter. The time interval in seconds for returned data. The valid intervals are 900, 3600,
-      86400, 604800, 2592000. The default is 604800. Interval is calculated if time params are provided.
-    type: int
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorAlertsOverviewByMetric
-  description: Complete reference of the getNetworkSensorAlertsOverviewByMetric API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-overview-by-metric
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_network_sensor_alerts_overview_by_metric,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 366 days. The default
+        is 7 days. If interval is provided, the timespan will be autocalculated.
 
-  - Paths used are
-    get /networks/{networkId}/sensor/alerts/overview/byMetric,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkSensorAlertsOverviewByMetric
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-overview-by-metric
+    name: Cisco Meraki documentation for sensor getNetworkSensorAlertsOverviewByMetric
+short_description: Information module for networks _sensor _alerts _overview _by _metric
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_billing
-short_description: Resource module for networks _wireless _billing
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _billing.
-- Update the billing settings.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _billing.
+  - Update the billing settings.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_billing
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_billing,
+  - Paths used are put /networks/{networkId}/wireless/billing,
 options:
   currency:
     description: The currency code of this node group's billing plans.
@@ -51,18 +51,14 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessBilling
-  description: Complete reference of the updateNetworkWirelessBilling API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-billing
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_billing,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/billing,
+  - description: Complete reference of the updateNetworkWirelessBilling API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-billing
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessBilling
+short_description: Resource module for networks _wireless _billing
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

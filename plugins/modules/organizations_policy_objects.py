@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_policy_objects
-short_description: Resource module for organizations _policy _objects
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _policy _objects.
-- Creates a new Policy Object.
-- Deletes a Policy Object.
-- Updates a Policy Object.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _policy
+    _objects.
+  - Creates a new Policy Object.
+  - Deletes a Policy Object.
+  - Updates a Policy Object.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_policy_objects
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_policy_object,
+    organizations.Organizations.delete_organization_policy_object, organizations.Organizations.update_organization_policy_object,
+  - Paths used are post /organizations/{organizationId}/policyObjects, delete /organizations/{organizationId}/policyObjects/{policyObjectId},
+    put /organizations/{organizationId}/policyObjects/{policyObjectId},
 options:
   category:
     description: Category of a policy object (one of adaptivePolicy, network).
@@ -52,28 +55,20 @@ options:
       ipAndMask).
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationPolicyObject
-  description: Complete reference of the createOrganizationPolicyObject API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-object
-- name: Cisco Meraki documentation for organizations deleteOrganizationPolicyObject
-  description: Complete reference of the deleteOrganizationPolicyObject API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-object
-- name: Cisco Meraki documentation for organizations updateOrganizationPolicyObject
-  description: Complete reference of the updateOrganizationPolicyObject API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-object
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_policy_object,
-    organizations.Organizations.delete_organization_policy_object,
-    organizations.Organizations.update_organization_policy_object,
-
-  - Paths used are
-    post /organizations/{organizationId}/policyObjects,
-    delete /organizations/{organizationId}/policyObjects/{policyObjectId},
-    put /organizations/{organizationId}/policyObjects/{policyObjectId},
+  - description: Complete reference of the createOrganizationPolicyObject API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-object
+    name: Cisco Meraki documentation for organizations createOrganizationPolicyObject
+  - description: Complete reference of the deleteOrganizationPolicyObject API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-object
+    name: Cisco Meraki documentation for organizations deleteOrganizationPolicyObject
+  - description: Complete reference of the updateOrganizationPolicyObject API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-object
+    name: Cisco Meraki documentation for organizations updateOrganizationPolicyObject
+short_description: Resource module for organizations _policy _objects
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

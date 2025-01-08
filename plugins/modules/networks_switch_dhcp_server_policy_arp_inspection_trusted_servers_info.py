@@ -5,58 +5,64 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info
-short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
-- >
-   Return the list of servers trusted by Dynamic ARP Inspection on this network. These are also known as allow listed
-   snoop entries.
-version_added: '2.16.0'
+  - Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
+  - 'Return the list of servers trusted by Dynamic ARP Inspection on this network.
+    These are also known as allow listed snoop entries.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_trusted_servers,
+  - Paths used are get /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
-  description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-trusted-servers
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_trusted_servers,
-
-  - Paths used are
-    get /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers,
+  - description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-trusted-servers
+    name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
+short_description: Information module for networks _switch _dhcp _server _policy _arp
+  _inspection _trusted _servers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

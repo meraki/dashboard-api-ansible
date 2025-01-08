@@ -5,67 +5,72 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_policies_by_client_info
-short_description: Information module for networks _policies _by _client
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _policies _by _client.
-- Get policies for all clients with policies.
-version_added: '2.16.0'
+  - Get all networks _policies _by _client.
+  - Get policies for all clients with policies.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_policies_by_client_info
+notes:
+  - SDK Method used are networks.Networks.get_network_policies_by_client,
+  - Paths used are get /networks/{networkId}/policies/byClient,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is
-      1 day.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameter t0. The value must
+        be in seconds and be less than or equal to 31 days. The default is 1 day.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkPoliciesByClient
-  description: Complete reference of the getNetworkPoliciesByClient API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-policies-by-client
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_policies_by_client,
-
-  - Paths used are
-    get /networks/{networkId}/policies/byClient,
+  - description: Complete reference of the getNetworkPoliciesByClient API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-policies-by-client
+    name: Cisco Meraki documentation for networks getNetworkPoliciesByClient
+short_description: Information module for networks _policies _by _client
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

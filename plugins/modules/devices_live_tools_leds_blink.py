@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_live_tools_leds_blink
-short_description: Resource module for devices _live _tools _leds _blink
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource devices _live _tools _leds _blink.
-- Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one request every 10 seconds.
-version_added: '2.20.0'
+  - Manage operation create of the resource devices _live _tools _leds _blink.
+  - Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one
+    request every 10 seconds.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_live_tools_leds_blink
+notes:
+  - SDK Method used are devices.Devices.create_device_live_tools_leds_blink,
+  - Paths used are post /devices/{serial}/liveTools/leds/blink,
 options:
   callback:
     description: Details for the callback. Please include either an httpServerId OR
@@ -24,8 +25,8 @@ options:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying
-              this, please leave the url and sharedSecret fields blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
@@ -37,13 +38,13 @@ options:
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the
-          callback URL. It can be used to verify that the request was sent by Meraki.
-          If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please
-          also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   duration:
@@ -53,18 +54,14 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices createDeviceLiveToolsLedsBlink
-  description: Complete reference of the createDeviceLiveToolsLedsBlink API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-leds-blink
-notes:
-  - SDK Method used are
-    devices.Devices.create_device_live_tools_leds_blink,
-
-  - Paths used are
-    post /devices/{serial}/liveTools/leds/blink,
+  - description: Complete reference of the createDeviceLiveToolsLedsBlink API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-leds-blink
+    name: Cisco Meraki documentation for devices createDeviceLiveToolsLedsBlink
+short_description: Resource module for devices _live _tools _leds _blink
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

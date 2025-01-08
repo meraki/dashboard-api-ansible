@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sensor_alerts_profiles
-short_description: Resource module for networks _sensor _alerts _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _sensor _alerts _profiles.
-- Creates a sensor alert profile for a network.
-- Deletes a sensor alert profile from a network.
-- Updates a sensor alert profile for a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _sensor _alerts
+    _profiles.
+  - Creates a sensor alert profile for a network.
+  - Deletes a sensor alert profile from a network.
+  - Updates a sensor alert profile for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sensor_alerts_profiles
+notes:
+  - SDK Method used are sensor.Sensor.create_network_sensor_alerts_profile, sensor.Sensor.delete_network_sensor_alerts_profile,
+    sensor.Sensor.update_network_sensor_alerts_profile,
+  - Paths used are post /networks/{networkId}/sensor/alerts/profiles, delete /networks/{networkId}/sensor/alerts/profiles/{id},
+    put /networks/{networkId}/sensor/alerts/profiles/{id},
 options:
   conditions:
     description: List of conditions that will cause the profile to send an alert.
@@ -38,8 +41,8 @@ options:
         description: The type of sensor metric that will be monitored for changes.
         type: str
       threshold:
-        description: Threshold for sensor readings that will cause an alert to be sent.
-          This object should contain a single property key matching the condition's
+        description: Threshold for sensor readings that will cause an alert to be
+          sent. This object should contain a single property key matching the condition's
           'metric' value.
         suboptions:
           apparentPower:
@@ -72,8 +75,8 @@ options:
             description: Door open threshold. 'open' must be provided and set to true.
             suboptions:
               open:
-                description: Alerting threshold for a door open event. Must be set to
-                  true.
+                description: Alerting threshold for a door open event. Must be set
+                  to true.
                 type: bool
             type: dict
           frequency:
@@ -110,20 +113,21 @@ options:
             description: Noise threshold. 'ambient' must be provided.
             suboptions:
               ambient:
-                description: Ambient noise threshold. One of 'level' or 'quality' must
-                  be provided.
+                description: Ambient noise threshold. One of 'level' or 'quality'
+                  must be provided.
                 suboptions:
                   level:
                     description: Alerting threshold as adjusted decibels.
                     type: int
                   quality:
-                    description: Alerting threshold as a qualitative ambient noise level.
+                    description: Alerting threshold as a qualitative ambient noise
+                      level.
                     type: str
                 type: dict
             type: dict
           pm25:
-            description: PM2.5 concentration threshold. One of 'concentration' or 'quality'
-              must be provided.
+            description: PM2.5 concentration threshold. One of 'concentration' or
+              'quality' must be provided.
             suboptions:
               concentration:
                 description: Alerting threshold as PM2.5 parts per million.
@@ -148,8 +152,8 @@ options:
                 type: float
             type: dict
           temperature:
-            description: Temperature threshold. One of 'celsius', 'fahrenheit', or 'quality'
-              must be provided.
+            description: Temperature threshold. One of 'celsius', 'fahrenheit', or
+              'quality' must be provided.
             suboptions:
               celsius:
                 description: Alerting threshold in degrees Celsius.
@@ -177,8 +181,8 @@ options:
               and set to true.
             suboptions:
               outageDetected:
-                description: Alerting threshold for an upstream power event. Must be
-                  set to true.
+                description: Alerting threshold for an upstream power event. Must
+                  be set to true.
                 type: bool
             type: dict
           voltage:
@@ -189,12 +193,12 @@ options:
                 type: float
             type: dict
           water:
-            description: Water detection threshold. 'present' must be provided and set
-              to true.
+            description: Water detection threshold. 'present' must be provided and
+              set to true.
             suboptions:
               present:
-                description: Alerting threshold for a water detection event. Must be
-                  set to true.
+                description: Alerting threshold for a water detection event. Must
+                  be set to true.
                 type: bool
             type: dict
         type: dict
@@ -216,12 +220,13 @@ options:
         elements: str
         type: list
       httpServerIds:
-        description: A list of webhook endpoint IDs that will receive information about
-          the alert.
+        description: A list of webhook endpoint IDs that will receive information
+          about the alert.
         elements: str
         type: list
       smsNumbers:
-        description: A list of SMS numbers that will receive information about the alert.
+        description: A list of SMS numbers that will receive information about the
+          alert.
         elements: str
         type: list
     type: dict
@@ -238,28 +243,20 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor createNetworkSensorAlertsProfile
-  description: Complete reference of the createNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-sensor-alerts-profile
-- name: Cisco Meraki documentation for sensor deleteNetworkSensorAlertsProfile
-  description: Complete reference of the deleteNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sensor-alerts-profile
-- name: Cisco Meraki documentation for sensor updateNetworkSensorAlertsProfile
-  description: Complete reference of the updateNetworkSensorAlertsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-alerts-profile
-notes:
-  - SDK Method used are
-    sensor.Sensor.create_network_sensor_alerts_profile,
-    sensor.Sensor.delete_network_sensor_alerts_profile,
-    sensor.Sensor.update_network_sensor_alerts_profile,
-
-  - Paths used are
-    post /networks/{networkId}/sensor/alerts/profiles,
-    delete /networks/{networkId}/sensor/alerts/profiles/{id},
-    put /networks/{networkId}/sensor/alerts/profiles/{id},
+  - description: Complete reference of the createNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-sensor-alerts-profile
+    name: Cisco Meraki documentation for sensor createNetworkSensorAlertsProfile
+  - description: Complete reference of the deleteNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sensor-alerts-profile
+    name: Cisco Meraki documentation for sensor deleteNetworkSensorAlertsProfile
+  - description: Complete reference of the updateNetworkSensorAlertsProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sensor-alerts-profile
+    name: Cisco Meraki documentation for sensor updateNetworkSensorAlertsProfile
+short_description: Resource module for networks _sensor _alerts _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

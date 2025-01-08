@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_rules
-short_description: Resource module for networks _appliance _traffic _shaping _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _rules.
-- Update the traffic shaping settings rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _traffic _shaping
+    _rules.
+  - Update the traffic shaping settings rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_traffic_shaping_rules,
+  - Paths used are put /networks/{networkId}/appliance/trafficShaping/rules,
 options:
   defaultRulesEnabled:
     description: Whether default traffic shaping rules are enabled (true) or disabled
@@ -25,14 +26,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: An array of traffic shaping rules. Rules are applied in the order that
-      they are specified in. An empty list (or null) means no rules. Note that you are
-      allowed a maximum of 8 rules.
+    description: An array of traffic shaping rules. Rules are applied in the order
+      that they are specified in. An empty list (or null) means no rules. Note that
+      you are allowed a maximum of 8 rules.
     elements: dict
     suboptions:
       definitions:
-        description: A list of objects describing the definitions of your traffic shaping
-          rule. At least one definition is required.
+        description: A list of objects describing the definitions of your traffic
+          shaping rule. At least one definition is required.
         elements: dict
         suboptions:
           type:
@@ -42,17 +43,18 @@ options:
           value:
             description: If "type" is 'host', 'port', 'ipRange' or 'localNet', then
               "value" must be a string, matching either a hostname (e.g. "somesite.com"),
-              a port (e.g. 8080), or an IP range ("192.1.0.0", "192.1.0.0/16", or "10.1.0.0/16
-              80"). 'localNet' also supports CIDR notation, excluding custom ports.
-              If "type" is 'application' or 'applicationCategory', then "value" must
-              be an object with the structure { "id" "meraki layer7/..." }, where "id"
-              is the application category or application ID (for a list of IDs for your
-              network, use the trafficShaping/applicationCategories endpoint).
+              a port (e.g. 8080), or an IP range ("192.1.0.0", "192.1.0.0/16", or
+              "10.1.0.0/16 80"). 'localNet' also supports CIDR notation, excluding
+              custom ports. If "type" is 'application' or 'applicationCategory', then
+              "value" must be an object with the structure { "id" "meraki layer7/..."
+              }, where "id" is the application category or application ID (for a list
+              of IDs for your network, use the trafficShaping/applicationCategories
+              endpoint).
             type: str
         type: list
       dscpTagValue:
-        description: The DSCP tag applied by your rule. Null means 'Do not change DSCP
-          tag'. For a list of possible tag values, use the trafficShaping/dscpTaggingOptions
+        description: The DSCP tag applied by your rule. Null means 'Do not change
+          DSCP tag'. For a list of possible tag values, use the trafficShaping/dscpTaggingOptions
           endpoint.
         type: int
       perClientBandwidthLimits:
@@ -60,8 +62,8 @@ options:
         suboptions:
           bandwidthLimits:
             description: The bandwidth limits object, specifying the upload ('limitUp')
-              and download ('limitDown') speed in Kbps. These are only enforced if 'settings'
-              is set to 'custom'.
+              and download ('limitDown') speed in Kbps. These are only enforced if
+              'settings' is set to 'custom'.
             suboptions:
               limitDown:
                 description: The maximum download limit (integer, in Kbps).
@@ -71,28 +73,25 @@ options:
                 type: int
             type: dict
           settings:
-            description: How bandwidth limits are applied by your rule. Can be one of
-              'network default', 'ignore' or 'custom'.
+            description: How bandwidth limits are applied by your rule. Can be one
+              of 'network default', 'ignore' or 'custom'.
             type: str
         type: dict
       priority:
-        description: A string, indicating the priority level for packets bound to your
-          rule. Can be 'low', 'normal' or 'high'.
+        description: A string, indicating the priority level for packets bound to
+          your rule. Can be 'low', 'normal' or 'high'.
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingRules
-  description: Complete reference of the updateNetworkApplianceTrafficShapingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_traffic_shaping_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/trafficShaping/rules,
+  - description: Complete reference of the updateNetworkApplianceTrafficShapingRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingRules
+short_description: Resource module for networks _appliance _traffic _shaping _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

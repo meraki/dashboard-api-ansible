@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_qos_rules_order_info
-short_description: Information module for networks _switch _qos _rules _order
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _qos _rules _order.
-- Get networks _switch _qos _rules _order by id.
-- List quality of service rules.
-- Return a quality of service rule.
-version_added: '2.16.0'
+  - Get all networks _switch _qos _rules _order.
+  - Get networks _switch _qos _rules _order by id.
+  - List quality of service rules.
+  - Return a quality of service rule.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_qos_rules_order_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_qos_rule, switch.Switch.get_network_switch_qos_rules,
+  - Paths used are get /networks/{networkId}/switch/qosRules, get /networks/{networkId}/switch/qosRules/{qosRuleId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   qosRuleId:
     description:
-    - QosRuleId path parameter. Qos rule ID.
+      - QosRuleId path parameter. Qos rule ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchQosRule
-  description: Complete reference of the getNetworkSwitchQosRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-qos-rule
-- name: Cisco Meraki documentation for switch getNetworkSwitchQosRules
-  description: Complete reference of the getNetworkSwitchQosRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-qos-rules
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_qos_rule,
-    switch.Switch.get_network_switch_qos_rules,
-
-  - Paths used are
-    get /networks/{networkId}/switch/qosRules,
-    get /networks/{networkId}/switch/qosRules/{qosRuleId},
+  - description: Complete reference of the getNetworkSwitchQosRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-qos-rule
+    name: Cisco Meraki documentation for switch getNetworkSwitchQosRule
+  - description: Complete reference of the getNetworkSwitchQosRules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-qos-rules
+    name: Cisco Meraki documentation for switch getNetworkSwitchQosRules
+short_description: Information module for networks _switch _qos _rules _order
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

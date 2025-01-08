@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_splash_themes_info
-short_description: Information module for organizations _splash _themes
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _splash _themes.
-- List Splash Themes.
-version_added: '2.20.0'
+  - Get all organizations _splash _themes.
+  - List Splash Themes.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_splash_themes_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_splash_themes,
+  - Paths used are get /organizations/{organizationId}/splash/themes,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSplashThemes
-  description: Complete reference of the getOrganizationSplashThemes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-splash-themes
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_splash_themes,
-
-  - Paths used are
-    get /organizations/{organizationId}/splash/themes,
+  - description: Complete reference of the getOrganizationSplashThemes API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-splash-themes
+    name: Cisco Meraki documentation for organizations getOrganizationSplashThemes
+short_description: Information module for organizations _splash _themes
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

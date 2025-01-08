@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cancel
-short_description: Resource module for networks _cancel
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _cancel.
-- Cancel a scheduled or running auto locate job.
-version_added: '2.20.0'
+  - Manage operation create of the resource networks _cancel.
+  - Cancel a scheduled or running auto locate job.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_cancel
+notes:
+  - SDK Method used are networks.Networks.cancel_network_floor_plans_auto_locate_job,
+  - Paths used are post /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId}/cancel,
 options:
   jobId:
     description: JobId path parameter. Job ID.
@@ -23,18 +23,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks cancelNetworkFloorPlansAutoLocateJob
-  description: Complete reference of the cancelNetworkFloorPlansAutoLocateJob API.
-  link: https://developer.cisco.com/meraki/api-v1/#!cancel-network-floor-plans-auto-locate-job
-notes:
-  - SDK Method used are
-    networks.Networks.cancel_network_floor_plans_auto_locate_job,
-
-  - Paths used are
-    post /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId}/cancel,
+  - description: Complete reference of the cancelNetworkFloorPlansAutoLocateJob API.
+    link: https://developer.cisco.com/meraki/api-v1/#!cancel-network-floor-plans-auto-locate-job
+    name: Cisco Meraki documentation for networks cancelNetworkFloorPlansAutoLocateJob
+short_description: Resource module for networks _cancel
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

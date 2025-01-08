@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_alternate_management_interface
-short_description: Resource module for networks _wireless _alternate _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _alternate _management _interface.
-- Update alternate management interface and device static IP.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _alternate _management
+    _interface.
+  - Update alternate management interface and device static IP.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_alternate_management_interface
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_alternate_management_interface,
+  - Paths used are put /networks/{networkId}/wireless/alternateManagementInterface,
 options:
   accessPoints:
     description: Array of access point serial number and IP assignment. Note accessPoints
@@ -24,8 +25,8 @@ options:
     elements: dict
     suboptions:
       alternateManagementIp:
-        description: Wireless alternate management interface device IP. Provide an empty
-          string to remove alternate management IP assignment.
+        description: Wireless alternate management interface device IP. Provide an
+          empty string to remove alternate management IP assignment.
         type: str
       dns1:
         description: Primary DNS must be in IP format.
@@ -37,8 +38,8 @@ options:
         description: Gateway must be in IP format.
         type: str
       serial:
-        description: Serial number of access point to be configured with alternate management
-          IP.
+        description: Serial number of access point to be configured with alternate
+          management IP.
         type: str
       subnetMask:
         description: Subnet mask must be in IP format.
@@ -59,18 +60,15 @@ options:
     description: Alternate management interface VLAN, must be between 1 and 4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
-  description: Complete reference of the updateNetworkWirelessAlternateManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_alternate_management_interface,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/alternateManagementInterface,
+  - description: Complete reference of the updateNetworkWirelessAlternateManagementInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
+short_description: Resource module for networks _wireless _alternate _management _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

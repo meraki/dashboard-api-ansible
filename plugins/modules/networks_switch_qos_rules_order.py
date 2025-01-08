@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_qos_rules_order
-short_description: Resource module for networks _switch _qos _rules _order
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _switch _qos _rules _order.
-- Add a quality of service rule.
-- Delete a quality of service rule.
-- Update a quality of service rule.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _switch _qos
+    _rules _order.
+  - Add a quality of service rule.
+  - Delete a quality of service rule.
+  - Update a quality of service rule.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_qos_rules_order
+notes:
+  - SDK Method used are switch.Switch.create_network_switch_qos_rule, switch.Switch.delete_network_switch_qos_rule,
+    switch.Switch.update_network_switch_qos_rule,
+  - Paths used are post /networks/{networkId}/switch/qosRules, delete /networks/{networkId}/switch/qosRules/{qosRuleId},
+    put /networks/{networkId}/switch/qosRules/{qosRuleId},
 options:
   dscp:
     description: DSCP tag for the incoming packet. Set this to -1 to trust incoming
@@ -44,35 +47,27 @@ options:
       is TCP or UDP.
     type: int
   srcPortRange:
-    description: The source port range of the incoming packet. Applicable only if protocol
-      is set to TCP or UDP.
+    description: The source port range of the incoming packet. Applicable only if
+      protocol is set to TCP or UDP.
     type: str
   vlan:
     description: The VLAN of the incoming packet. A null value will match any VLAN.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchQosRule
-  description: Complete reference of the createNetworkSwitchQosRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-qos-rule
-- name: Cisco Meraki documentation for switch deleteNetworkSwitchQosRule
-  description: Complete reference of the deleteNetworkSwitchQosRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-qos-rule
-- name: Cisco Meraki documentation for switch updateNetworkSwitchQosRule
-  description: Complete reference of the updateNetworkSwitchQosRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-qos-rule
-notes:
-  - SDK Method used are
-    switch.Switch.create_network_switch_qos_rule,
-    switch.Switch.delete_network_switch_qos_rule,
-    switch.Switch.update_network_switch_qos_rule,
-
-  - Paths used are
-    post /networks/{networkId}/switch/qosRules,
-    delete /networks/{networkId}/switch/qosRules/{qosRuleId},
-    put /networks/{networkId}/switch/qosRules/{qosRuleId},
+  - description: Complete reference of the createNetworkSwitchQosRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-qos-rule
+    name: Cisco Meraki documentation for switch createNetworkSwitchQosRule
+  - description: Complete reference of the deleteNetworkSwitchQosRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-qos-rule
+    name: Cisco Meraki documentation for switch deleteNetworkSwitchQosRule
+  - description: Complete reference of the updateNetworkSwitchQosRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-qos-rule
+    name: Cisco Meraki documentation for switch updateNetworkSwitchQosRule
+short_description: Resource module for networks _switch _qos _rules _order
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

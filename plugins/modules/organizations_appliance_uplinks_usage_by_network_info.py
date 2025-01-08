@@ -5,54 +5,58 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_appliance_uplinks_usage_by_network_info
-short_description: Information module for organizations _appliance _uplinks _usage _by _network
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _appliance _uplinks _usage _by _network.
-- >
-   Get the sent and received bytes for each uplink of all MX and Z networks within an organization. If more than one
-   device was active during the specified timespan, then the sent and received bytes will be aggregated by interface.
-version_added: '2.16.0'
+  - Get all organizations _appliance _uplinks _usage _by _network.
+  - 'Get the sent and received bytes for each uplink of all MX and Z networks within
+    an organization. If more than one device was active during the specified timespan,
+    then the sent and received bytes will be aggregated by interface.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_appliance_uplinks_usage_by_network_info
+notes:
+  - SDK Method used are appliance.Appliance.get_organization_appliance_uplinks_usage_by_network,
+  - Paths used are get /organizations/{organizationId}/appliance/uplinks/usage/byNetwork,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 365 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 14 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 14 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The
-      default is 1 day.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 14 days. The default
+        is 1 day.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksUsageByNetwork
-  description: Complete reference of the getOrganizationApplianceUplinksUsageByNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-usage-by-network
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_organization_appliance_uplinks_usage_by_network,
-
-  - Paths used are
-    get /organizations/{organizationId}/appliance/uplinks/usage/byNetwork,
+  - description: Complete reference of the getOrganizationApplianceUplinksUsageByNetwork
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-usage-by-network
+    name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksUsageByNetwork
+short_description: Information module for organizations _appliance _uplinks _usage
+  _by _network
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

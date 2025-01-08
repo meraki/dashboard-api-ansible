@@ -5,59 +5,56 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_users_info
-short_description: Information module for networks _sm _users
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _users.
-- List the owners in an SM network with various specified fields and filters.
-version_added: '2.16.0'
+  - Get all networks _sm _users.
+  - List the owners in an SM network with various specified fields and filters.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_users_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_users,
+  - Paths used are get /networks/{networkId}/sm/users,
 options:
+  emails:
+    description:
+      - Emails query parameter. Filter users by email(s).
+    elements: str
+    type: list
   headers:
     description: Additional headers.
     type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
   ids:
     description:
-    - Ids query parameter. Filter users by id(s).
+      - Ids query parameter. Filter users by id(s).
+    elements: str
+    type: list
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
+    type: str
+  scope:
+    description:
+      - 'Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll,
+        withoutAny, withoutAll) and a set of tags.
+
+        '
     elements: str
     type: list
   usernames:
     description:
-    - Usernames query parameter. Filter users by username(s).
-    elements: str
-    type: list
-  emails:
-    description:
-    - Emails query parameter. Filter users by email(s).
-    elements: str
-    type: list
-  scope:
-    description:
-    - >
-      Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll, withoutAny, withoutAll) and a
-      set of tags.
+      - Usernames query parameter. Filter users by username(s).
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUsers
-  description: Complete reference of the getNetworkSmUsers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-users
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_users,
-
-  - Paths used are
-    get /networks/{networkId}/sm/users,
+  - description: Complete reference of the getNetworkSmUsers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-users
+    name: Cisco Meraki documentation for sm getNetworkSmUsers
+short_description: Information module for networks _sm _users
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,41 +5,40 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_firewalled_services_info
-short_description: Information module for networks _appliance _firewall _firewalled _services
+author: Francisco Munoz (@fmunoz)
 description:
-- Get networks _appliance _firewall _firewalled _services by id.
-- Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP' .
-version_added: '2.16.0'
+  - Get networks _appliance _firewall _firewalled _services by id.
+  - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP'
+    .
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_firewalled_services_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_firewall_firewalled_service,
+  - Paths used are get /networks/{networkId}/appliance/firewall/firewalledServices/{service},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   service:
     description:
-    - Service path parameter.
+      - Service path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallFirewalledService
-  description: Complete reference of the getNetworkApplianceFirewallFirewalledService API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-service
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_firewall_firewalled_service,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/firewall/firewalledServices/{service},
+  - description: Complete reference of the getNetworkApplianceFirewallFirewalledService
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-service
+    name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallFirewalledService
+short_description: Information module for networks _appliance _firewall _firewalled
+  _services
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

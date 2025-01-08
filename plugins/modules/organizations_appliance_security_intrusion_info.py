@@ -5,37 +5,34 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_appliance_security_intrusion_info
-short_description: Information module for organizations _appliance _security _intrusion
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _appliance _security _intrusion.
-- Returns all supported intrusion settings for an organization.
-version_added: '2.16.0'
+  - Get all organizations _appliance _security _intrusion.
+  - Returns all supported intrusion settings for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_appliance_security_intrusion_info
+notes:
+  - SDK Method used are appliance.Appliance.get_organization_appliance_security_intrusion,
+  - Paths used are get /organizations/{organizationId}/appliance/security/intrusion,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceSecurityIntrusion
-  description: Complete reference of the getOrganizationApplianceSecurityIntrusion API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-intrusion
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_organization_appliance_security_intrusion,
-
-  - Paths used are
-    get /organizations/{organizationId}/appliance/security/intrusion,
+  - description: Complete reference of the getOrganizationApplianceSecurityIntrusion
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-intrusion
+    name: Cisco Meraki documentation for appliance getOrganizationApplianceSecurityIntrusion
+short_description: Information module for organizations _appliance _security _intrusion
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

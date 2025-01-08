@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_alternate_management_interface_info
-short_description: Information module for networks _wireless _alternate _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _alternate _management _interface.
-- Return alternate management interface and devices with IP assigned.
-version_added: '2.16.0'
+  - Get all networks _wireless _alternate _management _interface.
+  - Return alternate management interface and devices with IP assigned.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_alternate_management_interface_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_alternate_management_interface,
+  - Paths used are get /networks/{networkId}/wireless/alternateManagementInterface,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessAlternateManagementInterface
-  description: Complete reference of the getNetworkWirelessAlternateManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-alternate-management-interface
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_alternate_management_interface,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/alternateManagementInterface,
+  - description: Complete reference of the getNetworkWirelessAlternateManagementInterface
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-alternate-management-interface
+    name: Cisco Meraki documentation for wireless getNetworkWirelessAlternateManagementInterface
+short_description: Information module for networks _wireless _alternate _management
+  _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

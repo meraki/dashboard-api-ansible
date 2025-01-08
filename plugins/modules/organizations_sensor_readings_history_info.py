@@ -5,92 +5,101 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_sensor_readings_history_info
-short_description: Information module for organizations _sensor _readings _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _sensor _readings _history.
-- Return all reported readings from sensors in a given timespan, sorted by timestamp.
-version_added: '2.16.0'
+  - Get all organizations _sensor _readings _history.
+  - Return all reported readings from sensors in a given timespan, sorted by timestamp.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_sensor_readings_history_info
+notes:
+  - SDK Method used are sensor.Sensor.get_organization_sensor_readings_history,
+  - Paths used are get /organizations/{organizationId}/sensor/readings/history,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  metrics:
+    description:
+      - 'Metrics query parameter. Types of sensor readings to retrieve. If no metrics
+        are supplied, all available types of readings will be retrieved. Allowed values
+        are apparentPower, battery, button, co2, current, door, downstreamPower, frequency,
+        humidity, indoorAirQuality, noise, pm25, powerFactor, realPower, remoteLockoutSwitch,
+        temperature, tvoc, voltage, and water.
+
+        '
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - NetworkIds query parameter. Optional parameter to filter readings by network.
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
+  serials:
+    description:
+      - Serials query parameter. Optional parameter to filter readings by sensor.
+    elements: str
+    type: list
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   t0:
     description:
-    - >
-      T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 365 days and
-      6 hours from today.
+      - 'T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 365 days and 6 hours from today.
+
+        '
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The
-      default is 2 hours.
-    type: float
-  networkIds:
-    description:
-    - NetworkIds query parameter. Optional parameter to filter readings by network.
-    elements: str
-    type: list
-  serials:
-    description:
-    - Serials query parameter. Optional parameter to filter readings by sensor.
-    elements: str
-    type: list
-  metrics:
-    description:
-    - >
-      Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available
-      types of readings will be retrieved. Allowed values are apparentPower, battery, button, co2, current, door,
-      downstreamPower, frequency, humidity, indoorAirQuality, noise, pm25, powerFactor, realPower,
-      remoteLockoutSwitch, temperature, tvoc, voltage, and water.
-    elements: str
-    type: list
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for sensor getOrganizationSensorReadingsHistory
-  description: Complete reference of the getOrganizationSensorReadingsHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sensor-readings-history
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_organization_sensor_readings_history,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 7 days. The default
+        is 2 hours.
 
-  - Paths used are
-    get /organizations/{organizationId}/sensor/readings/history,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationSensorReadingsHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sensor-readings-history
+    name: Cisco Meraki documentation for sensor getOrganizationSensorReadingsHistory
+short_description: Information module for organizations _sensor _readings _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

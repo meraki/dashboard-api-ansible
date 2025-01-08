@@ -5,18 +5,19 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_wireless_profiles
-short_description: Resource module for devices _camera _wireless _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _camera _wireless _profiles.
-- >
-   Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need
-   to be supplied at once.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _camera _wireless _profiles.
+  - 'Assign wireless profiles to the given camera. Incremental updates are not supported,
+    all profile assignment need to be supplied at once.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_wireless_profiles
+notes:
+  - SDK Method used are camera.Camera.update_device_camera_wireless_profiles,
+  - Paths used are put /devices/{serial}/camera/wirelessProfiles,
 options:
   ids:
     description: The ids of the wireless profile to assign to the given camera.
@@ -35,18 +36,14 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles
-  description: Complete reference of the updateDeviceCameraWirelessProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles
-notes:
-  - SDK Method used are
-    camera.Camera.update_device_camera_wireless_profiles,
-
-  - Paths used are
-    put /devices/{serial}/camera/wirelessProfiles,
+  - description: Complete reference of the updateDeviceCameraWirelessProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-wireless-profiles
+    name: Cisco Meraki documentation for camera updateDeviceCameraWirelessProfiles
+short_description: Resource module for devices _camera _wireless _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

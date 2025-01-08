@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_action_batches
-short_description: Resource module for organizations _action _batches
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _action _batches.
-- Create an action batch.
-- Delete an action batch.
-- Update an action batch.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _action
+    _batches.
+  - Create an action batch.
+  - Delete an action batch.
+  - Update an action batch.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_action_batches
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_action_batch,
+    organizations.Organizations.delete_organization_action_batch, organizations.Organizations.update_organization_action_batch,
+  - Paths used are post /organizations/{organizationId}/actionBatches, delete /organizations/{organizationId}/actionBatches/{actionBatchId},
+    put /organizations/{organizationId}/actionBatches/{actionBatchId},
 options:
   actionBatchId:
     description: ActionBatchId path parameter. Action batch ID.
@@ -44,8 +47,8 @@ options:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying
-              this, please leave the url and sharedSecret fields blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
@@ -57,13 +60,13 @@ options:
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the
-          callback URL. It can be used to verify that the request was sent by Meraki.
-          If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please
-          also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   confirmed:
@@ -79,28 +82,20 @@ options:
       most 20 actions in synchronous batch. Defaults to false.
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationActionBatch
-  description: Complete reference of the createOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-action-batch
-- name: Cisco Meraki documentation for organizations deleteOrganizationActionBatch
-  description: Complete reference of the deleteOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-action-batch
-- name: Cisco Meraki documentation for organizations updateOrganizationActionBatch
-  description: Complete reference of the updateOrganizationActionBatch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-action-batch
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_action_batch,
-    organizations.Organizations.delete_organization_action_batch,
-    organizations.Organizations.update_organization_action_batch,
-
-  - Paths used are
-    post /organizations/{organizationId}/actionBatches,
-    delete /organizations/{organizationId}/actionBatches/{actionBatchId},
-    put /organizations/{organizationId}/actionBatches/{actionBatchId},
+  - description: Complete reference of the createOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-action-batch
+    name: Cisco Meraki documentation for organizations createOrganizationActionBatch
+  - description: Complete reference of the deleteOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-action-batch
+    name: Cisco Meraki documentation for organizations deleteOrganizationActionBatch
+  - description: Complete reference of the updateOrganizationActionBatch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-action-batch
+    name: Cisco Meraki documentation for organizations updateOrganizationActionBatch
+short_description: Resource module for organizations _action _batches
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

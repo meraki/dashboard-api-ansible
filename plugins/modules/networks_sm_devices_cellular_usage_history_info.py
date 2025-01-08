@@ -5,41 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_cellular_usage_history_info
-short_description: Information module for networks _sm _devices _cellular _usage _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _devices _cellular _usage _history.
-- Return the client's daily cellular data usage history. Usage data is in kilobytes.
-version_added: '2.16.0'
+  - Get all networks _sm _devices _cellular _usage _history.
+  - Return the client's daily cellular data usage history. Usage data is in kilobytes.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_cellular_usage_history_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_device_cellular_usage_history,
+  - Paths used are get /networks/{networkId}/sm/devices/{deviceId}/cellularUsageHistory,
 options:
+  deviceId:
+    description:
+      - DeviceId path parameter. Device ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  deviceId:
-    description:
-    - DeviceId path parameter. Device ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceCellularUsageHistory
-  description: Complete reference of the getNetworkSmDeviceCellularUsageHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-cellular-usage-history
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_device_cellular_usage_history,
-
-  - Paths used are
-    get /networks/{networkId}/sm/devices/{deviceId}/cellularUsageHistory,
+  - description: Complete reference of the getNetworkSmDeviceCellularUsageHistory
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-cellular-usage-history
+    name: Cisco Meraki documentation for sm getNetworkSmDeviceCellularUsageHistory
+short_description: Information module for networks _sm _devices _cellular _usage _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

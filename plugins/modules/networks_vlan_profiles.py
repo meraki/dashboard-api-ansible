@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_vlan_profiles
-short_description: Resource module for networks _vlan _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _vlan _profiles.
-- Create a VLAN profile for a network.
-- Delete a VLAN profile of a network.
-- Update an existing VLAN profile of a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _vlan _profiles.
+  - Create a VLAN profile for a network.
+  - Delete a VLAN profile of a network.
+  - Update an existing VLAN profile of a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_vlan_profiles
+notes:
+  - SDK Method used are networks.Networks.create_network_vlan_profile, networks.Networks.delete_network_vlan_profile,
+    networks.Networks.update_network_vlan_profile,
+  - Paths used are post /networks/{networkId}/vlanProfiles, delete /networks/{networkId}/vlanProfiles/{iname},
+    put /networks/{networkId}/vlanProfiles/{iname},
 options:
   iname:
     description: IName of the profile.
@@ -57,28 +59,20 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkVlanProfile
-  description: Complete reference of the createNetworkVlanProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-vlan-profile
-- name: Cisco Meraki documentation for networks deleteNetworkVlanProfile
-  description: Complete reference of the deleteNetworkVlanProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-vlan-profile
-- name: Cisco Meraki documentation for networks updateNetworkVlanProfile
-  description: Complete reference of the updateNetworkVlanProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-vlan-profile
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_vlan_profile,
-    networks.Networks.delete_network_vlan_profile,
-    networks.Networks.update_network_vlan_profile,
-
-  - Paths used are
-    post /networks/{networkId}/vlanProfiles,
-    delete /networks/{networkId}/vlanProfiles/{iname},
-    put /networks/{networkId}/vlanProfiles/{iname},
+  - description: Complete reference of the createNetworkVlanProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-vlan-profile
+    name: Cisco Meraki documentation for networks createNetworkVlanProfile
+  - description: Complete reference of the deleteNetworkVlanProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-vlan-profile
+    name: Cisco Meraki documentation for networks deleteNetworkVlanProfile
+  - description: Complete reference of the updateNetworkVlanProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-vlan-profile
+    name: Cisco Meraki documentation for networks updateNetworkVlanProfile
+short_description: Resource module for networks _vlan _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

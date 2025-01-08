@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices
-short_description: Resource module for devices
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices.
-- Update the attributes of a device.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices.
+  - Update the attributes of a device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices
+notes:
+  - SDK Method used are devices.Devices.update_device,
+  - Paths used are put /devices/{serial},
 options:
   address:
     description: The address of a device.
@@ -43,29 +43,25 @@ options:
     description: Serial path parameter.
     type: str
   switchProfileId:
-    description: The ID of a switch template to bind to the device (for available switch
-      templates, see the 'Switch Templates' endpoint). Use null to unbind the switch
-      device from the current profile. For a device to be bindable to a switch template,
-      it must (1) be a switch, and (2) belong to a network that is bound to a configuration
-      template.
+    description: The ID of a switch template to bind to the device (for available
+      switch templates, see the 'Switch Templates' endpoint). Use null to unbind the
+      switch device from the current profile. For a device to be bindable to a switch
+      template, it must (1) be a switch, and (2) belong to a network that is bound
+      to a configuration template.
     type: str
   tags:
     description: The list of tags of a device.
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDevice
-  description: Complete reference of the updateDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device
-notes:
-  - SDK Method used are
-    devices.Devices.update_device,
-
-  - Paths used are
-    put /devices/{serial},
+  - description: Complete reference of the updateDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device
+    name: Cisco Meraki documentation for devices updateDevice
+short_description: Resource module for devices
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

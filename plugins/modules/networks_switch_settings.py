@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_settings
-short_description: Resource module for networks _switch _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _settings.
-- Update switch network settings.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _settings.
+  - Update switch network settings.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_settings
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_settings,
+  - Paths used are put /networks/{networkId}/switch/settings,
 options:
   macBlocklist:
     description: MAC blocklist.
@@ -45,25 +45,21 @@ options:
         type: bool
     type: dict
   useCombinedPower:
-    description: The use Combined Power as the default behavior of secondary power supplies
-      on supported devices.
+    description: The use Combined Power as the default behavior of secondary power
+      supplies on supported devices.
     type: bool
   vlan:
     description: Management VLAN.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchSettings
-  description: Complete reference of the updateNetworkSwitchSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-settings
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_settings,
-
-  - Paths used are
-    put /networks/{networkId}/switch/settings,
+  - description: Complete reference of the updateNetworkSwitchSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-settings
+    name: Cisco Meraki documentation for switch updateNetworkSwitchSettings
+short_description: Resource module for networks _switch _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

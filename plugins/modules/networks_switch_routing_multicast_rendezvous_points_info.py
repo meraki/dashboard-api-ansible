@@ -5,48 +5,47 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_routing_multicast_rendezvous_points_info
-short_description: Information module for networks _switch _routing _multicast _rendezvous _points
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _routing _multicast _rendezvous _points.
-- Get networks _switch _routing _multicast _rendezvous _points by id.
-- List multicast rendezvous points.
-- Return a multicast rendezvous point.
-version_added: '2.16.0'
+  - Get all networks _switch _routing _multicast _rendezvous _points.
+  - Get networks _switch _routing _multicast _rendezvous _points by id.
+  - List multicast rendezvous points.
+  - Return a multicast rendezvous point.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_routing_multicast_rendezvous_points_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_routing_multicast_rendezvous_point,
+    switch.Switch.get_network_switch_routing_multicast_rendezvous_points,
+  - Paths used are get /networks/{networkId}/switch/routing/multicast/rendezvousPoints,
+    get /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   rendezvousPointId:
     description:
-    - RendezvousPointId path parameter. Rendezvous point ID.
+      - RendezvousPointId path parameter. Rendezvous point ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoint
-  description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoint API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-point
-- name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoints
-  description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoints API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-points
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_routing_multicast_rendezvous_point,
-    switch.Switch.get_network_switch_routing_multicast_rendezvous_points,
-
-  - Paths used are
-    get /networks/{networkId}/switch/routing/multicast/rendezvousPoints,
-    get /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId},
+  - description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoint
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-point
+    name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoint
+  - description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoints
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-points
+    name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoints
+short_description: Information module for networks _switch _routing _multicast _rendezvous
+  _points
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

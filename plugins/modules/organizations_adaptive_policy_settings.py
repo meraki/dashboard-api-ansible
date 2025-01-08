@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_adaptive_policy_settings
-short_description: Resource module for organizations _adaptive _policy _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _adaptive _policy _settings.
-- Update global adaptive policy settings.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _adaptive _policy _settings.
+  - Update global adaptive policy settings.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_adaptive_policy_settings
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_adaptive_policy_settings,
+  - Paths used are put /organizations/{organizationId}/adaptivePolicy/settings,
 options:
   enabledNetworks:
     description: List of network IDs with adaptive policy enabled.
@@ -24,18 +24,15 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicySettings
-  description: Complete reference of the updateOrganizationAdaptivePolicySettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-settings
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_adaptive_policy_settings,
-
-  - Paths used are
-    put /organizations/{organizationId}/adaptivePolicy/settings,
+  - description: Complete reference of the updateOrganizationAdaptivePolicySettings
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-settings
+    name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicySettings
+short_description: Resource module for organizations _adaptive _policy _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

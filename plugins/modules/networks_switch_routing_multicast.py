@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_routing_multicast
-short_description: Resource module for networks _switch _routing _multicast
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _routing _multicast.
-- Update multicast settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _routing _multicast.
+  - Update multicast settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_routing_multicast
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_routing_multicast,
+  - Paths used are put /networks/{networkId}/switch/routing/multicast,
 options:
   defaultSettings:
     description: Default multicast setting for entire network. IGMP snooping and Flood
@@ -36,8 +36,8 @@ options:
     elements: dict
     suboptions:
       floodUnknownMulticastTrafficEnabled:
-        description: Flood unknown multicast traffic setting for switches, switch stacks
-          or switch templates.
+        description: Flood unknown multicast traffic setting for switches, switch
+          stacks or switch templates.
         type: bool
       igmpSnoopingEnabled:
         description: IGMP snooping setting for switches, switch stacks or switch templates.
@@ -56,18 +56,14 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingMulticast
-  description: Complete reference of the updateNetworkSwitchRoutingMulticast API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-multicast
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_routing_multicast,
-
-  - Paths used are
-    put /networks/{networkId}/switch/routing/multicast,
+  - description: Complete reference of the updateNetworkSwitchRoutingMulticast API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-multicast
+    name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingMulticast
+short_description: Resource module for networks _switch _routing _multicast
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

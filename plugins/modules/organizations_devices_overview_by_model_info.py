@@ -5,56 +5,54 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_devices_overview_by_model_info
-short_description: Information module for organizations _devices _overview _by _model
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _devices _overview _by _model.
-- Lists the count for each device model.
-version_added: '2.20.0'
+  - Get all organizations _devices _overview _by _model.
+  - Lists the count for each device model.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_devices_overview_by_model_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_devices_overview_by_model,
+  - Paths used are get /organizations/{organizationId}/devices/overview/byModel,
 options:
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   models:
     description:
-    - >
-      Models query parameter. Optional parameter to filter devices by one or more models. All returned devices
-      will have a model that is an exact match.
+      - 'Models query parameter. Optional parameter to filter devices by one or more
+        models. All returned devices will have a model that is an exact match.
+
+        '
     elements: str
     type: list
   networkIds:
     description:
-    - NetworkIds query parameter. Optional parameter to filter devices by networkId.
+      - NetworkIds query parameter. Optional parameter to filter devices by networkId.
     elements: str
     type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
   productTypes:
     description:
-    - >
-      ProductTypes query parameter. Optional parameter to filter device by device product types. This filter uses
-      multiple exact matches.
+      - 'ProductTypes query parameter. Optional parameter to filter device by device
+        product types. This filter uses multiple exact matches.
+
+        '
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesOverviewByModel
-  description: Complete reference of the getOrganizationDevicesOverviewByModel API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-overview-by-model
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_devices_overview_by_model,
-
-  - Paths used are
-    get /organizations/{organizationId}/devices/overview/byModel,
+  - description: Complete reference of the getOrganizationDevicesOverviewByModel API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-overview-by-model
+    name: Cisco Meraki documentation for organizations getOrganizationDevicesOverviewByModel
+short_description: Information module for organizations _devices _overview _by _model
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

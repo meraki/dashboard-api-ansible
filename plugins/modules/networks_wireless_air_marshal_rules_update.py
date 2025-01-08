@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_air_marshal_rules_update
-short_description: Resource module for networks _wireless _air _marshal _rules _update
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _air _marshal _rules _update.
-- Update a rule.
-version_added: '2.20.0'
+  - Manage operation update of the resource networks _wireless _air _marshal _rules
+    _update.
+  - Update a rule.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_air_marshal_rules_update
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_air_marshal_rule,
+  - Paths used are put /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
 options:
   match:
     description: Object describing the rule specification.
@@ -36,18 +37,14 @@ options:
     description: Indicates if this rule will allow, block, or alert.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalRule
-  description: Complete reference of the updateNetworkWirelessAirMarshalRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-rule
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_air_marshal_rule,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
+  - description: Complete reference of the updateNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-rule
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalRule
+short_description: Resource module for networks _wireless _air _marshal _rules _update
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

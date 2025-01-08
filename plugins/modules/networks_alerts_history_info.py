@@ -5,56 +5,59 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_alerts_history_info
-short_description: Information module for networks _alerts _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _alerts _history.
-- Return the alert history for this network.
-version_added: '2.16.0'
+  - Get all networks _alerts _history.
+  - Return the alert history for this network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_alerts_history_info
+notes:
+  - SDK Method used are networks.Networks.get_network_alerts_history,
+  - Paths used are get /networks/{networkId}/alerts/history,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkAlertsHistory
-  description: Complete reference of the getNetworkAlertsHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-alerts-history
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_alerts_history,
-
-  - Paths used are
-    get /networks/{networkId}/alerts/history,
+  - description: Complete reference of the getNetworkAlertsHistory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-alerts-history
+    name: Cisco Meraki documentation for networks getNetworkAlertsHistory
+short_description: Information module for networks _alerts _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

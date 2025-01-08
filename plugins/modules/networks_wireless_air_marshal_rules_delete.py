@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_air_marshal_rules_delete
-short_description: Resource module for networks _wireless _air _marshal _rules _delete
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation delete of the resource networks _wireless _air _marshal _rules _delete.
-- Delete an Air Marshal rule.
-version_added: '2.20.0'
+  - Manage operation delete of the resource networks _wireless _air _marshal _rules
+    _delete.
+  - Delete an Air Marshal rule.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_air_marshal_rules_delete
+notes:
+  - SDK Method used are wireless.Wireless.delete_network_wireless_air_marshal_rule,
+  - Paths used are delete /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -23,18 +24,14 @@ options:
     description: RuleId path parameter. Rule ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless deleteNetworkWirelessAirMarshalRule
-  description: Complete reference of the deleteNetworkWirelessAirMarshalRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-air-marshal-rule
-notes:
-  - SDK Method used are
-    wireless.Wireless.delete_network_wireless_air_marshal_rule,
-
-  - Paths used are
-    delete /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
+  - description: Complete reference of the deleteNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-air-marshal-rule
+    name: Cisco Meraki documentation for wireless deleteNetworkWirelessAirMarshalRule
+short_description: Resource module for networks _wireless _air _marshal _rules _delete
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

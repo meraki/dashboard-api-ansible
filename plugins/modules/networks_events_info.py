@@ -5,137 +5,156 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_events_info
-short_description: Information module for networks _events
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _events.
-- List the events for the network.
-version_added: '2.16.0'
+  - Get all networks _events.
+  - List the events for the network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_events_info
+notes:
+  - SDK Method used are networks.Networks.get_network_events,
+  - Paths used are get /networks/{networkId}/events,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  productType:
-    description:
-    - >
-      ProductType query parameter. The product type to fetch events for. This parameter is required for networks
-      with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera,
-      cellularGateway, wirelessController, and secureConnect.
-    type: str
-  includedEventTypes:
-    description:
-    - >
-      IncludedEventTypes query parameter. A list of event types. The returned events will be filtered to only
-      include events with these types.
-    elements: str
-    type: list
-  excludedEventTypes:
-    description:
-    - >
-      ExcludedEventTypes query parameter. A list of event types. The returned events will be filtered to exclude
-      events with these types.
-    elements: str
-    type: list
-  deviceMac:
-    description:
-    - DeviceMac query parameter. The MAC address of the Meraki device which the list of events will be filtered with.
-    type: str
-  deviceSerial:
-    description:
-    - DeviceSerial query parameter. The serial of the Meraki device which the list of events will be filtered with.
-    type: str
-  deviceName:
-    description:
-    - DeviceName query parameter. The name of the Meraki device which the list of events will be filtered with.
-    type: str
   clientIp:
     description:
-    - >
-      ClientIp query parameter. The IP of the client which the list of events will be filtered with. Only
-      supported for track-by-IP networks.
+      - 'ClientIp query parameter. The IP of the client which the list of events will
+        be filtered with. Only supported for track-by-IP networks.
+
+        '
     type: str
   clientMac:
     description:
-    - >
-      ClientMac query parameter. The MAC address of the client which the list of events will be filtered with.
-      Only supported for track-by-MAC networks.
+      - 'ClientMac query parameter. The MAC address of the client which the list of
+        events will be filtered with. Only supported for track-by-MAC networks.
+
+        '
     type: str
   clientName:
     description:
-    - >
-      ClientName query parameter. The name, or partial name, of the client which the list of events will be
-      filtered with.
+      - 'ClientName query parameter. The name, or partial name, of the client which
+        the list of events will be filtered with.
+
+        '
     type: str
-  smDeviceMac:
+  deviceMac:
     description:
-    - >
-      SmDeviceMac query parameter. The MAC address of the Systems Manager device which the list of events will be
-      filtered with.
+      - DeviceMac query parameter. The MAC address of the Meraki device which the
+        list of events will be filtered with.
     type: str
-  smDeviceName:
+  deviceName:
     description:
-    - >
-      SmDeviceName query parameter. The name of the Systems Manager device which the list of events will be
-      filtered with.
+      - DeviceName query parameter. The name of the Meraki device which the list of
+        events will be filtered with.
     type: str
-  eventDetails:
+  deviceSerial:
     description:
-    - >
-      EventDetails query parameter. The details of the event(Catalyst device only) which the list of events will
-      be filtered with.
-    type: str
-  eventSeverity:
-    description:
-    - >
-      EventSeverity query parameter. The severity of the event(Catalyst device only) which the list of events will
-      be filtered with.
-    type: str
-  isCatalyst:
-    description:
-    - >
-      IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst device. For Catalyst device,
-      eventDetails and eventSeverity can be used to filter events.
-    type: bool
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - DeviceSerial query parameter. The serial of the Meraki device which the list
+        of events will be filtered with.
     type: str
   endingBefore:
     description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  eventDetails:
+    description:
+      - 'EventDetails query parameter. The details of the event(Catalyst device only)
+        which the list of events will be filtered with.
+
+        '
+    type: str
+  eventSeverity:
+    description:
+      - 'EventSeverity query parameter. The severity of the event(Catalyst device
+        only) which the list of events will be filtered with.
+
+        '
+    type: str
+  excludedEventTypes:
+    description:
+      - 'ExcludedEventTypes query parameter. A list of event types. The returned events
+        will be filtered to exclude events with these types.
+
+        '
+    elements: str
+    type: list
+  headers:
+    description: Additional headers.
+    type: dict
+  includedEventTypes:
+    description:
+      - 'IncludedEventTypes query parameter. A list of event types. The returned events
+        will be filtered to only include events with these types.
+
+        '
+    elements: str
+    type: list
+  isCatalyst:
+    description:
+      - 'IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst
+        device. For Catalyst device, eventDetails and eventSeverity can be used to
+        filter events.
+
+        '
+    type: bool
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 10.
+    type: int
+  productType:
+    description:
+      - 'ProductType query parameter. The product type to fetch events for. This parameter
+        is required for networks with multiple device types. Valid types are wireless,
+        appliance, switch, systemsManager, camera, cellularGateway, wirelessController,
+        and secureConnect.
+
+        '
+    type: str
+  smDeviceMac:
+    description:
+      - 'SmDeviceMac query parameter. The MAC address of the Systems Manager device
+        which the list of events will be filtered with.
+
+        '
+    type: str
+  smDeviceName:
+    description:
+      - 'SmDeviceName query parameter. The name of the Systems Manager device which
+        the list of events will be filtered with.
+
+        '
+    type: str
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkEvents
-  description: Complete reference of the getNetworkEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-events
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_events,
-
-  - Paths used are
-    get /networks/{networkId}/events,
+  - description: Complete reference of the getNetworkEvents API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-events
+    name: Cisco Meraki documentation for networks getNetworkEvents
+short_description: Information module for networks _events
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

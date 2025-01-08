@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_wireless_radio_auto_rf_channels_recalculate
-short_description: Resource module for organizations _wireless _radio _auto _rf _channels _recalculate
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _wireless _radio _auto _rf _channels _recalculate.
-- >
-   Recalculates automatically assigned channels for every AP within specified the specified networks. Note This could
-   cause a brief loss in connectivity for wireless clients.
-version_added: '2.20.0'
+  - Manage operation create of the resource organizations _wireless _radio _auto _rf
+    _channels _recalculate.
+  - 'Recalculates automatically assigned channels for every AP within specified the
+    specified networks. Note This could cause a brief loss in connectivity for wireless
+    clients.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_wireless_radio_auto_rf_channels_recalculate
+notes:
+  - SDK Method used are wireless.Wireless.recalculate_organization_wireless_radio_auto_rf_channels,
+  - Paths used are post /organizations/{organizationId}/wireless/radio/autoRf/channels/recalculate,
 options:
   networkIds:
     description: A list of network ids (limit 15).
@@ -26,18 +29,16 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless recalculateOrganizationWirelessRadioAutoRfChannels
-  description: Complete reference of the recalculateOrganizationWirelessRadioAutoRfChannels API.
-  link: https://developer.cisco.com/meraki/api-v1/#!recalculate-organization-wireless-radio-auto-rf-channels
-notes:
-  - SDK Method used are
-    wireless.Wireless.recalculate_organization_wireless_radio_auto_rf_channels,
-
-  - Paths used are
-    post /organizations/{organizationId}/wireless/radio/autoRf/channels/recalculate,
+  - description: Complete reference of the recalculateOrganizationWirelessRadioAutoRfChannels
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!recalculate-organization-wireless-radio-auto-rf-channels
+    name: Cisco Meraki documentation for wireless recalculateOrganizationWirelessRadioAutoRfChannels
+short_description: Resource module for organizations _wireless _radio _auto _rf _channels
+  _recalculate
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

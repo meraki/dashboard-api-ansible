@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_traffic_shaping_dscp_tagging_options_info
-short_description: Information module for networks _traffic _shaping _dscp _tagging _options
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _traffic _shaping _dscp _tagging _options.
-- Returns the available DSCP tagging options for your traffic shaping rules.
-version_added: '2.16.0'
+  - Get all networks _traffic _shaping _dscp _tagging _options.
+  - Returns the available DSCP tagging options for your traffic shaping rules.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_traffic_shaping_dscp_tagging_options_info
+notes:
+  - SDK Method used are networks.Networks.get_network_traffic_shaping_dscp_tagging_options,
+  - Paths used are get /networks/{networkId}/trafficShaping/dscpTaggingOptions,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkTrafficShapingDscpTaggingOptions
-  description: Complete reference of the getNetworkTrafficShapingDscpTaggingOptions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-dscp-tagging-options
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_traffic_shaping_dscp_tagging_options,
-
-  - Paths used are
-    get /networks/{networkId}/trafficShaping/dscpTaggingOptions,
+  - description: Complete reference of the getNetworkTrafficShapingDscpTaggingOptions
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-dscp-tagging-options
+    name: Cisco Meraki documentation for networks getNetworkTrafficShapingDscpTaggingOptions
+short_description: Information module for networks _traffic _shaping _dscp _tagging
+  _options
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,88 +5,99 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_licensing_subscription_subscriptions_info
-short_description: Information module for administered _licensing _subscription _subscriptions
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all administered _licensing _subscription _subscriptions.
-- List available subscriptions.
-version_added: '2.18.0'
+  - Get all administered _licensing _subscription _subscriptions.
+  - List available subscriptions.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: administered_licensing_subscription_subscriptions_info
+notes:
+  - SDK Method used are licensing.Licensing.get_administered_licensing_subscription_subscriptions,
+  - Paths used are get /administered/licensing/subscription/subscriptions,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  perPage:
+  endDate:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndDate query parameter. Filter subscriptions by end date, ISO 8601 format.
+        To filter with a range of dates, use ''endDate<option>=?'' in the request.
+        Accepted options include lt, gt, lte, gte.
+
+        '
     type: str
   endingBefore:
     description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
-  subscriptionIds:
-    description:
-    - SubscriptionIds query parameter. List of subscription ids to fetch.
-    elements: str
-    type: list
-  organizationIds:
-    description:
-    - OrganizationIds query parameter. Organizations to get associated subscriptions for.
-    elements: str
-    type: list
-  statuses:
-    description:
-    - Statuses query parameter. List of statuses that returned subscriptions can have.
-    elements: str
-    type: list
-  productTypes:
-    description:
-    - ProductTypes query parameter. List of product types that returned subscriptions need to have entitlements for.
-    elements: str
-    type: list
+  headers:
+    description: Additional headers.
+    type: dict
   name:
     description:
-    - Name query parameter. Search for subscription name.
+      - Name query parameter. Search for subscription name.
     type: str
+  organizationIds:
+    description:
+      - OrganizationIds query parameter. Organizations to get associated subscriptions
+        for.
+    elements: str
+    type: list
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
+    type: int
+  productTypes:
+    description:
+      - ProductTypes query parameter. List of product types that returned subscriptions
+        need to have entitlements for.
+    elements: str
+    type: list
   startDate:
     description:
-    - >
-      StartDate query parameter. Filter subscriptions by start date, ISO 8601 format. To filter with a range of
-      dates, use 'startDate<option>=?' in the request. Accepted options include lt, gt, lte, gte.
-    type: str
-  endDate:
-    description:
-    - >
-      EndDate query parameter. Filter subscriptions by end date, ISO 8601 format. To filter with a range of dates,
-      use 'endDate<option>=?' in the request. Accepted options include lt, gt, lte, gte.
-    type: str
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptions
-  description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptions API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions
-notes:
-  - SDK Method used are
-    licensing.Licensing.get_administered_licensing_subscription_subscriptions,
+      - 'StartDate query parameter. Filter subscriptions by start date, ISO 8601 format.
+        To filter with a range of dates, use ''startDate<option>=?'' in the request.
+        Accepted options include lt, gt, lte, gte.
 
-  - Paths used are
-    get /administered/licensing/subscription/subscriptions,
+        '
+    type: str
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  statuses:
+    description:
+      - Statuses query parameter. List of statuses that returned subscriptions can
+        have.
+    elements: str
+    type: list
+  subscriptionIds:
+    description:
+      - SubscriptionIds query parameter. List of subscription ids to fetch.
+    elements: str
+    type: list
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptions
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions
+    name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptions
+short_description: Information module for administered _licensing _subscription _subscriptions
+version_added: 2.18.0
 """
 
 EXAMPLES = r"""

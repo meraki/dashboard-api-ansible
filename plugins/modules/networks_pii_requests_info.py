@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_pii_requests_info
-short_description: Information module for networks _pii _requests
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _pii _requests.
-- Get networks _pii _requests by id.
-- List the PII requests for this network or organization.
-- Return a PII request.
-version_added: '2.16.0'
+  - Get all networks _pii _requests.
+  - Get networks _pii _requests by id.
+  - List the PII requests for this network or organization.
+  - Return a PII request.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_pii_requests_info
+notes:
+  - SDK Method used are networks.Networks.get_network_pii_request, networks.Networks.get_network_pii_requests,
+  - Paths used are get /networks/{networkId}/pii/requests, get /networks/{networkId}/pii/requests/{requestId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   requestId:
     description:
-    - RequestId path parameter. Request ID.
+      - RequestId path parameter. Request ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkPiiRequest
-  description: Complete reference of the getNetworkPiiRequest API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-request
-- name: Cisco Meraki documentation for networks getNetworkPiiRequests
-  description: Complete reference of the getNetworkPiiRequests API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-requests
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_pii_request,
-    networks.Networks.get_network_pii_requests,
-
-  - Paths used are
-    get /networks/{networkId}/pii/requests,
-    get /networks/{networkId}/pii/requests/{requestId},
+  - description: Complete reference of the getNetworkPiiRequest API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-request
+    name: Cisco Meraki documentation for networks getNetworkPiiRequest
+  - description: Complete reference of the getNetworkPiiRequests API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-requests
+    name: Cisco Meraki documentation for networks getNetworkPiiRequests
+short_description: Information module for networks _pii _requests
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

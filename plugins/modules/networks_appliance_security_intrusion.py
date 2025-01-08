@@ -5,21 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_security_intrusion
-short_description: Resource module for networks _appliance _security _intrusion
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _security _intrusion.
-- Set the supported intrusion settings for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _security _intrusion.
+  - Set the supported intrusion settings for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_security_intrusion
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_security_intrusion,
+  - Paths used are put /networks/{networkId}/appliance/security/intrusion,
 options:
   idsRulesets:
     description: Set the detection ruleset 'connectivity'/'balanced'/'security' (optional
-      - omitting will leave current config unchanged). Default value is 'balanced' if
-      none currently saved.
+      - omitting will leave current config unchanged). Default value is 'balanced'
+      if none currently saved.
     type: str
   mode:
     description: Set mode to 'disabled'/'detection'/'prevention' (optional - omitting
@@ -39,8 +39,8 @@ options:
         elements: str
         type: list
       includedCidr:
-        description: List of IP addresses or subnets being protected (required if 'useDefault'
-          is false).
+        description: List of IP addresses or subnets being protected (required if
+          'useDefault' is false).
         elements: str
         type: list
       useDefault:
@@ -49,18 +49,15 @@ options:
         type: bool
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceSecurityIntrusion
-  description: Complete reference of the updateNetworkApplianceSecurityIntrusion API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-security-intrusion
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_security_intrusion,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/security/intrusion,
+  - description: Complete reference of the updateNetworkApplianceSecurityIntrusion
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-security-intrusion
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceSecurityIntrusion
+short_description: Resource module for networks _appliance _security _intrusion
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

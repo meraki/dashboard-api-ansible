@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_config_templates_switch_profiles_ports
-short_description: Resource module for organizations _config _templates _switch _profiles _ports
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _config _templates _switch _profiles _ports.
-- Update a switch template port.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _config _templates _switch
+    _profiles _ports.
+  - Update a switch template port.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_config_templates_switch_profiles_ports
+notes:
+  - SDK Method used are switch.Switch.update_organization_config_template_switch_profile_port,
+  - Paths used are put /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId},
 options:
   accessPolicyNumber:
     description: The number of a custom access policy to configure on the switch template
@@ -26,8 +27,8 @@ options:
       or 'Sticky MAC allow list'.
     type: str
   allowedVlans:
-    description: The VLANs allowed on the switch template port. Only applicable to trunk
-      ports.
+    description: The VLANs allowed on the switch template port. Only applicable to
+      trunk ports.
     type: str
   configTemplateId:
     description: ConfigTemplateId path parameter. Config template ID.
@@ -57,9 +58,9 @@ options:
     description: The link speed for the switch template port.
     type: str
   macAllowList:
-    description: Only devices with MAC addresses specified in this list will have access
-      to this port. Up to 20 MAC addresses can be defined. Only applicable when 'accessPolicyType'
-      is 'MAC allow list'.
+    description: Only devices with MAC addresses specified in this list will have
+      access to this port. Up to 20 MAC addresses can be defined. Only applicable
+      when 'accessPolicyType' is 'MAC allow list'.
     elements: str
     type: list
   name:
@@ -75,17 +76,19 @@ options:
     description: PortId path parameter. Port ID.
     type: str
   portScheduleId:
-    description: The ID of the port schedule. A value of null will clear the port schedule.
+    description: The ID of the port schedule. A value of null will clear the port
+      schedule.
     type: str
   profile:
     description: Profile attributes.
     suboptions:
       enabled:
-        description: When enabled, override this port's configuration with a port profile.
+        description: When enabled, override this port's configuration with a port
+          profile.
         type: bool
       id:
-        description: When enabled, the ID of the port profile used to override the port's
-          configuration.
+        description: When enabled, the ID of the port profile used to override the
+          port's configuration.
         type: str
       iname:
         description: When enabled, the IName of the profile.
@@ -98,8 +101,8 @@ options:
     description: The rapid spanning tree protocol status.
     type: bool
   stickyMacAllowList:
-    description: The initial list of MAC addresses for sticky Mac allow list. Only applicable
-      when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The initial list of MAC addresses for sticky Mac allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     elements: str
     type: list
   stickyMacAllowListLimit:
@@ -133,18 +136,16 @@ options:
       ports.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateOrganizationConfigTemplateSwitchProfilePort
-  description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template-switch-profile-port
-notes:
-  - SDK Method used are
-    switch.Switch.update_organization_config_template_switch_profile_port,
-
-  - Paths used are
-    put /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId},
+  - description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template-switch-profile-port
+    name: Cisco Meraki documentation for switch updateOrganizationConfigTemplateSwitchProfilePort
+short_description: Resource module for organizations _config _templates _switch _profiles
+  _ports
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

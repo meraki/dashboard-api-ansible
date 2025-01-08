@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_sense_info
-short_description: Information module for devices _camera _sense
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _camera _sense.
-- Returns sense settings for a given camera.
-version_added: '2.16.0'
+  - Get all devices _camera _sense.
+  - Returns sense settings for a given camera.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_sense_info
+notes:
+  - SDK Method used are camera.Camera.get_device_camera_sense,
+  - Paths used are get /devices/{serial}/camera/sense,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraSense
-  description: Complete reference of the getDeviceCameraSense API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-sense
-notes:
-  - SDK Method used are
-    camera.Camera.get_device_camera_sense,
-
-  - Paths used are
-    get /devices/{serial}/camera/sense,
+  - description: Complete reference of the getDeviceCameraSense API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-sense
+    name: Cisco Meraki documentation for camera getDeviceCameraSense
+short_description: Information module for devices _camera _sense
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

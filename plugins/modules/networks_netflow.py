@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_netflow
-short_description: Resource module for networks _netflow
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _netflow.
-- Update the NetFlow traffic reporting settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _netflow.
+  - Update the NetFlow traffic reporting settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_netflow
+notes:
+  - SDK Method used are networks.Networks.update_network_netflow,
+  - Paths used are put /networks/{networkId}/netflow,
 options:
   collectorIp:
     description: The IPv4 address of the NetFlow collector.
@@ -27,8 +27,8 @@ options:
       on.
     type: int
   etaEnabled:
-    description: Boolean indicating whether Encrypted Traffic Analytics is enabled (true)
-      or disabled (false).
+    description: Boolean indicating whether Encrypted Traffic Analytics is enabled
+      (true) or disabled (false).
     type: bool
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -38,18 +38,14 @@ options:
       or disabled (false).
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkNetflow
-  description: Complete reference of the updateNetworkNetflow API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-netflow
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_netflow,
-
-  - Paths used are
-    put /networks/{networkId}/netflow,
+  - description: Complete reference of the updateNetworkNetflow API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-netflow
+    name: Cisco Meraki documentation for networks updateNetworkNetflow
+short_description: Resource module for networks _netflow
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

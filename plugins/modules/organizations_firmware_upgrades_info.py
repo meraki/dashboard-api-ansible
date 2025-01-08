@@ -5,66 +5,70 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_firmware_upgrades_info
-short_description: Information module for organizations _firmware _upgrades
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _firmware _upgrades.
-- Get firmware upgrade information for an organization.
-version_added: '2.16.0'
+  - Get all organizations _firmware _upgrades.
+  - Get firmware upgrade information for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_firmware_upgrades_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_firmware_upgrades,
+  - Paths used are get /organizations/{organizationId}/firmware/upgrades,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
+  productTypes:
+    description:
+      - ProductTypes query parameter. Optional parameter to filter the upgrade by
+        product type.
+    elements: str
+    type: list
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   status:
     description:
-    - Status query parameter. Optional parameter to filter the upgrade by status.
-    elements: str
-    type: list
-  productTypes:
-    description:
-    - ProductTypes query parameter. Optional parameter to filter the upgrade by product type.
+      - Status query parameter. Optional parameter to filter the upgrade by status.
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgrades
-  description: Complete reference of the getOrganizationFirmwareUpgrades API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_firmware_upgrades,
-
-  - Paths used are
-    get /organizations/{organizationId}/firmware/upgrades,
+  - description: Complete reference of the getOrganizationFirmwareUpgrades API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades
+    name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgrades
+short_description: Information module for organizations _firmware _upgrades
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

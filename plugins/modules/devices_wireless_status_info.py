@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_wireless_status_info
-short_description: Information module for devices _wireless _status
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _wireless _status.
-- Return the SSID statuses of an access point.
-version_added: '2.16.0'
+  - Get all devices _wireless _status.
+  - Return the SSID statuses of an access point.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_status_info
+notes:
+  - SDK Method used are wireless.Wireless.get_device_wireless_status,
+  - Paths used are get /devices/{serial}/wireless/status,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getDeviceWirelessStatus
-  description: Complete reference of the getDeviceWirelessStatus API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-status
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_device_wireless_status,
-
-  - Paths used are
-    get /devices/{serial}/wireless/status,
+  - description: Complete reference of the getDeviceWirelessStatus API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-status
+    name: Cisco Meraki documentation for wireless getDeviceWirelessStatus
+short_description: Information module for devices _wireless _status
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

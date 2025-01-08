@@ -5,91 +5,101 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_wireless_devices_packet_loss_by_network_info
-short_description: Information module for organizations _wireless _devices _packet _loss _by _network
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _wireless _devices _packet _loss _by _network.
-- Get average packet loss for the given timespan for all networks in the organization.
-version_added: '2.16.0'
+  - Get all organizations _wireless _devices _packet _loss _by _network.
+  - Get average packet loss for the given timespan for all networks in the organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_wireless_devices_packet_loss_by_network_info
+notes:
+  - SDK Method used are wireless.Wireless.get_organization_wireless_devices_packet_loss_by_network,
+  - Paths used are get /organizations/{organizationId}/wireless/devices/packetLoss/byNetwork,
 options:
+  bands:
+    description:
+      - Bands query parameter. Filter results by band. Valid bands are 2.4, 5, and
+        6.
+    elements: str
+    type: list
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   networkIds:
     description:
-    - NetworkIds query parameter. Filter results by network.
+      - NetworkIds query parameter. Filter results by network.
     elements: str
     type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
+    type: int
   serials:
     description:
-    - Serials query parameter. Filter results by device.
+      - Serials query parameter. Filter results by device.
     elements: str
     type: list
   ssids:
     description:
-    - Ssids query parameter. Filter results by SSID number.
+      - Ssids query parameter. Filter results by SSID number.
     elements: int
     type: list
-  bands:
-    description:
-    - Bands query parameter. Filter results by band. Valid bands are 2.4, 5, and 6.
-    elements: str
-    type: list
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-    type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 90 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 90 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 90 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 5 minutes and
-      be less than or equal to 90 days. The default is 7 days.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be greater than or equal to 5 minutes and be
+        less than or equal to 90 days. The default is 7 days.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesPacketLossByNetwork
-  description: Complete reference of the getOrganizationWirelessDevicesPacketLossByNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-packet-loss-by-network
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_organization_wireless_devices_packet_loss_by_network,
-
-  - Paths used are
-    get /organizations/{organizationId}/wireless/devices/packetLoss/byNetwork,
+  - description: Complete reference of the getOrganizationWirelessDevicesPacketLossByNetwork
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-packet-loss-by-network
+    name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesPacketLossByNetwork
+short_description: Information module for organizations _wireless _devices _packet
+  _loss _by _network
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

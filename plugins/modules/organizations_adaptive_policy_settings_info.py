@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_adaptive_policy_settings_info
-short_description: Information module for organizations _adaptive _policy _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _adaptive _policy _settings.
-- Returns global adaptive policy settings in an organization.
-version_added: '2.16.0'
+  - Get all organizations _adaptive _policy _settings.
+  - Returns global adaptive policy settings in an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_adaptive_policy_settings_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_adaptive_policy_settings,
+  - Paths used are get /organizations/{organizationId}/adaptivePolicy/settings,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicySettings
-  description: Complete reference of the getOrganizationAdaptivePolicySettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-settings
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_adaptive_policy_settings,
-
-  - Paths used are
-    get /organizations/{organizationId}/adaptivePolicy/settings,
+  - description: Complete reference of the getOrganizationAdaptivePolicySettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-settings
+    name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicySettings
+short_description: Information module for organizations _adaptive _policy _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

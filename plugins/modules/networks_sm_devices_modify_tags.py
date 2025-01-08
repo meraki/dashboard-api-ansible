@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_modify_tags
-short_description: Resource module for networks _sm _devices _modify _tags
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _sm _devices _modify _tags.
-- Add, delete, or update the tags of a set of devices.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _sm _devices _modify _tags.
+  - Add, delete, or update the tags of a set of devices.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_modify_tags
+notes:
+  - SDK Method used are sm.Sm.modify_network_sm_devices_tags,
+  - Paths used are post /networks/{networkId}/sm/devices/modifyTags,
 options:
   ids:
     description: The ids of the devices to be modified.
@@ -45,18 +45,14 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm modifyNetworkSmDevicesTags
-  description: Complete reference of the modifyNetworkSmDevicesTags API.
-  link: https://developer.cisco.com/meraki/api-v1/#!modify-network-sm-devices-tags
-notes:
-  - SDK Method used are
-    sm.Sm.modify_network_sm_devices_tags,
-
-  - Paths used are
-    post /networks/{networkId}/sm/devices/modifyTags,
+  - description: Complete reference of the modifyNetworkSmDevicesTags API.
+    link: https://developer.cisco.com/meraki/api-v1/#!modify-network-sm-devices-tags
+    name: Cisco Meraki documentation for sm modifyNetworkSmDevicesTags
+short_description: Resource module for networks _sm _devices _modify _tags
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

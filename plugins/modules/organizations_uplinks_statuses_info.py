@@ -5,75 +5,81 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_uplinks_statuses_info
-short_description: Information module for organizations _uplinks _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _uplinks _statuses.
-- List the uplink status of every Meraki MX, MG and Z series devices in the organization.
-version_added: '2.16.0'
+  - Get all organizations _uplinks _statuses.
+  - List the uplink status of every Meraki MX, MG and Z series devices in the organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_uplinks_statuses_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_uplinks_statuses,
+  - Paths used are get /organizations/{organizationId}/uplinks/statuses,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  iccids:
+    description:
+      - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered
+        to only include these ICCIDs.
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - 'NetworkIds query parameter. A list of network IDs. The returned devices will
+        be filtered to only include these networks.
+
+        '
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  networkIds:
-    description:
-    - >
-      NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include
-      these networks.
-    elements: str
-    type: list
   serials:
     description:
-    - >
-      Serials query parameter. A list of serial numbers. The returned devices will be filtered to only include
-      these serials.
-    elements: str
-    type: list
-  iccids:
-    description:
-    - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-    elements: str
-    type: list
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationUplinksStatuses
-  description: Complete reference of the getOrganizationUplinksStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-uplinks-statuses
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_uplinks_statuses,
+      - 'Serials query parameter. A list of serial numbers. The returned devices will
+        be filtered to only include these serials.
 
-  - Paths used are
-    get /organizations/{organizationId}/uplinks/statuses,
+        '
+    elements: str
+    type: list
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationUplinksStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-uplinks-statuses
+    name: Cisco Meraki documentation for organizations getOrganizationUplinksStatuses
+short_description: Information module for organizations _uplinks _statuses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

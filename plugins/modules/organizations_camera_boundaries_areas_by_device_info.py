@@ -5,44 +5,43 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_boundaries_areas_by_device_info
-short_description: Information module for organizations _camera _boundaries _areas _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _camera _boundaries _areas _by _device.
-- Returns all configured area boundaries of cameras.
-version_added: '2.16.0'
+  - Get all organizations _camera _boundaries _areas _by _device.
+  - Returns all configured area boundaries of cameras.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_boundaries_areas_by_device_info
+notes:
+  - SDK Method used are camera.Camera.get_organization_camera_boundaries_areas_by_device,
+  - Paths used are get /organizations/{organizationId}/camera/boundaries/areas/byDevice,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
-    - >
-      Serials query parameter. A list of serial numbers. The returned cameras will be filtered to only include
-      these serials.
+      - 'Serials query parameter. A list of serial numbers. The returned cameras will
+        be filtered to only include these serials.
+
+        '
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraBoundariesAreasByDevice
-  description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-boundaries-areas-by-device
-notes:
-  - SDK Method used are
-    camera.Camera.get_organization_camera_boundaries_areas_by_device,
-
-  - Paths used are
-    get /organizations/{organizationId}/camera/boundaries/areas/byDevice,
+  - description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-boundaries-areas-by-device
+    name: Cisco Meraki documentation for camera getOrganizationCameraBoundariesAreasByDevice
+short_description: Information module for organizations _camera _boundaries _areas
+  _by _device
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

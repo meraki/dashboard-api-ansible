@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sensor_alerts_current_overview_by_metric_info
-short_description: Information module for networks _sensor _alerts _current _overview _by _metric
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sensor _alerts _current _overview _by _metric.
-- Return an overview of currently alerting sensors by metric.
-version_added: '2.16.0'
+  - Get all networks _sensor _alerts _current _overview _by _metric.
+  - Return an overview of currently alerting sensors by metric.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sensor_alerts_current_overview_by_metric_info
+notes:
+  - SDK Method used are sensor.Sensor.get_network_sensor_alerts_current_overview_by_metric,
+  - Paths used are get /networks/{networkId}/sensor/alerts/current/overview/byMetric,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sensor getNetworkSensorAlertsCurrentOverviewByMetric
-  description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-current-overview-by-metric
-notes:
-  - SDK Method used are
-    sensor.Sensor.get_network_sensor_alerts_current_overview_by_metric,
-
-  - Paths used are
-    get /networks/{networkId}/sensor/alerts/current/overview/byMetric,
+  - description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-current-overview-by-metric
+    name: Cisco Meraki documentation for sensor getNetworkSensorAlertsCurrentOverviewByMetric
+short_description: Information module for networks _sensor _alerts _current _overview
+  _by _metric
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

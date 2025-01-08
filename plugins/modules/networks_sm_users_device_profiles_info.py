@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_users_device_profiles_info
-short_description: Information module for networks _sm _users _device _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _users _device _profiles.
-- Get the profiles associated with a user.
-version_added: '2.16.0'
+  - Get all networks _sm _users _device _profiles.
+  - Get the profiles associated with a user.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_users_device_profiles_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_user_device_profiles,
+  - Paths used are get /networks/{networkId}/sm/users/{userId}/deviceProfiles,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   userId:
     description:
-    - UserId path parameter. User ID.
+      - UserId path parameter. User ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUserDeviceProfiles
-  description: Complete reference of the getNetworkSmUserDeviceProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-device-profiles
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_user_device_profiles,
-
-  - Paths used are
-    get /networks/{networkId}/sm/users/{userId}/deviceProfiles,
+  - description: Complete reference of the getNetworkSmUserDeviceProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-device-profiles
+    name: Cisco Meraki documentation for sm getNetworkSmUserDeviceProfiles
+short_description: Information module for networks _sm _users _device _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

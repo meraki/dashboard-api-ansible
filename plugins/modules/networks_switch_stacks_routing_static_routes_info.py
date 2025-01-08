@@ -5,52 +5,51 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stacks_routing_static_routes_info
-short_description: Information module for networks _switch _stacks _routing _static _routes
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _stacks _routing _static _routes.
-- Get networks _switch _stacks _routing _static _routes by id.
-- List layer 3 static routes for a switch stack.
-- Return a layer 3 static route for a switch stack.
-version_added: '2.16.0'
+  - Get all networks _switch _stacks _routing _static _routes.
+  - Get networks _switch _stacks _routing _static _routes by id.
+  - List layer 3 static routes for a switch stack.
+  - Return a layer 3 static route for a switch stack.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stacks_routing_static_routes_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_stack_routing_static_route,
+    switch.Switch.get_network_switch_stack_routing_static_routes,
+  - Paths used are get /networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes,
+    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes/{staticRouteId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  switchStackId:
-    description:
-    - SwitchStackId path parameter. Switch stack ID.
+      - NetworkId path parameter. Network ID.
     type: str
   staticRouteId:
     description:
-    - StaticRouteId path parameter. Static route ID.
+      - StaticRouteId path parameter. Static route ID.
+    type: str
+  switchStackId:
+    description:
+      - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingStaticRoute
-  description: Complete reference of the getNetworkSwitchStackRoutingStaticRoute API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-static-route
-- name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingStaticRoutes
-  description: Complete reference of the getNetworkSwitchStackRoutingStaticRoutes API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-static-routes
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_stack_routing_static_route,
-    switch.Switch.get_network_switch_stack_routing_static_routes,
-
-  - Paths used are
-    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes,
-    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes/{staticRouteId},
+  - description: Complete reference of the getNetworkSwitchStackRoutingStaticRoute
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-static-route
+    name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingStaticRoute
+  - description: Complete reference of the getNetworkSwitchStackRoutingStaticRoutes
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-static-routes
+    name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingStaticRoutes
+short_description: Information module for networks _switch _stacks _routing _static
+  _routes
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

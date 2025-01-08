@@ -5,42 +5,41 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_cellular_gateway_esims_service_providers_accounts_info
-short_description: Information module for organizations _cellular _gateway _esims _service _providers _accounts
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _cellular _gateway _esims _service _providers _accounts.
-- Inventory of service provider accounts tied to the organization.
-version_added: '2.20.0'
+  - Get all organizations _cellular _gateway _esims _service _providers _accounts.
+  - Inventory of service provider accounts tied to the organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_cellular_gateway_esims_service_providers_accounts_info
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.get_organization_cellular_gateway_esims_service_providers_accounts,
+  - Paths used are get /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
 options:
+  accountIds:
+    description:
+      - AccountIds query parameter. Optional parameter to filter the results by service
+        provider account IDs.
+    elements: int
+    type: list
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
-  accountIds:
-    description:
-    - AccountIds query parameter. Optional parameter to filter the results by service provider account IDs.
-    elements: int
-    type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccounts
-  description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccounts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.get_organization_cellular_gateway_esims_service_providers_accounts,
-
-  - Paths used are
-    get /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
+  - description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccounts
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts
+    name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccounts
+short_description: Information module for organizations _cellular _gateway _esims
+  _service _providers _accounts
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_camera_wireless_profiles
-short_description: Resource module for networks _camera _wireless _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _camera _wireless _profiles.
-- Creates a new camera wireless profile for this network.
-- Delete an existing camera wireless profile for this network.
-- Update an existing camera wireless profile in this network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _camera _wireless
+    _profiles.
+  - Creates a new camera wireless profile for this network.
+  - Delete an existing camera wireless profile for this network.
+  - Update an existing camera wireless profile in this network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_camera_wireless_profiles
+notes:
+  - SDK Method used are camera.Camera.create_network_camera_wireless_profile, camera.Camera.delete_network_camera_wireless_profile,
+    camera.Camera.update_network_camera_wireless_profile,
+  - Paths used are post /networks/{networkId}/camera/wirelessProfiles, delete /networks/{networkId}/camera/wirelessProfiles/{wirelessProfileId},
+    put /networks/{networkId}/camera/wirelessProfiles/{wirelessProfileId},
 options:
   identity:
     description: The identity of the wireless profile. Required for creating wireless
@@ -57,28 +60,20 @@ options:
     description: WirelessProfileId path parameter. Wireless profile ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera createNetworkCameraWirelessProfile
-  description: Complete reference of the createNetworkCameraWirelessProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-wireless-profile
-- name: Cisco Meraki documentation for camera deleteNetworkCameraWirelessProfile
-  description: Complete reference of the deleteNetworkCameraWirelessProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-wireless-profile
-- name: Cisco Meraki documentation for camera updateNetworkCameraWirelessProfile
-  description: Complete reference of the updateNetworkCameraWirelessProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-wireless-profile
-notes:
-  - SDK Method used are
-    camera.Camera.create_network_camera_wireless_profile,
-    camera.Camera.delete_network_camera_wireless_profile,
-    camera.Camera.update_network_camera_wireless_profile,
-
-  - Paths used are
-    post /networks/{networkId}/camera/wirelessProfiles,
-    delete /networks/{networkId}/camera/wirelessProfiles/{wirelessProfileId},
-    put /networks/{networkId}/camera/wirelessProfiles/{wirelessProfileId},
+  - description: Complete reference of the createNetworkCameraWirelessProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-wireless-profile
+    name: Cisco Meraki documentation for camera createNetworkCameraWirelessProfile
+  - description: Complete reference of the deleteNetworkCameraWirelessProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-wireless-profile
+    name: Cisco Meraki documentation for camera deleteNetworkCameraWirelessProfile
+  - description: Complete reference of the updateNetworkCameraWirelessProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-wireless-profile
+    name: Cisco Meraki documentation for camera updateNetworkCameraWirelessProfile
+short_description: Resource module for networks _camera _wireless _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

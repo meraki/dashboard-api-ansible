@@ -5,18 +5,19 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_licenses_renew_seats
-short_description: Resource module for organizations _licenses _renew _seats
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _licenses _renew _seats.
-- >
-   Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this
-   license.
-version_added: '2.20.0'
+  - Manage operation create of the resource organizations _licenses _renew _seats.
+  - 'Renew SM seats of a license. This will extend the license expiration date of
+    managed SM devices covered by this license.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_licenses_renew_seats
+notes:
+  - SDK Method used are organizations.Organizations.renew_organization_licenses_seats,
+  - Paths used are post /organizations/{organizationId}/licenses/renewSeats,
 options:
   licenseIdToRenew:
     description: The ID of the SM license to renew. This license must already be assigned
@@ -30,18 +31,14 @@ options:
       license must have at least as many seats available as there are seats on 'licenseIdToRenew'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations renewOrganizationLicensesSeats
-  description: Complete reference of the renewOrganizationLicensesSeats API.
-  link: https://developer.cisco.com/meraki/api-v1/#!renew-organization-licenses-seats
-notes:
-  - SDK Method used are
-    organizations.Organizations.renew_organization_licenses_seats,
-
-  - Paths used are
-    post /organizations/{organizationId}/licenses/renewSeats,
+  - description: Complete reference of the renewOrganizationLicensesSeats API.
+    link: https://developer.cisco.com/meraki/api-v1/#!renew-organization-licenses-seats
+    name: Cisco Meraki documentation for organizations renewOrganizationLicensesSeats
+short_description: Resource module for organizations _licenses _renew _seats
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

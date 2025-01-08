@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_eap_override
-short_description: Resource module for networks _wireless _ssids _eap _override
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids _eap _override.
-- Update the EAP overridden parameters for an SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids _eap _override.
+  - Update the EAP overridden parameters for an SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_eap_override
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_eap_override,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/eapOverride,
 options:
   eapolKey:
     description: EAPOL Key settings.
@@ -49,18 +49,14 @@ options:
     description: General EAP timeout in seconds.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidEapOverride
-  description: Complete reference of the updateNetworkWirelessSsidEapOverride API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-eap-override
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid_eap_override,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number}/eapOverride,
+  - description: Complete reference of the updateNetworkWirelessSsidEapOverride API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-eap-override
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidEapOverride
+short_description: Resource module for networks _wireless _ssids _eap _override
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

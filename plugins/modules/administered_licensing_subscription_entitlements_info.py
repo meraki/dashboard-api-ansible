@@ -5,38 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_licensing_subscription_entitlements_info
-short_description: Information module for administered _licensing _subscription _entitlements
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all administered _licensing _subscription _entitlements.
-- Retrieve the list of purchasable entitlements.
-version_added: '2.18.0'
+  - Get all administered _licensing _subscription _entitlements.
+  - Retrieve the list of purchasable entitlements.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: administered_licensing_subscription_entitlements_info
+notes:
+  - SDK Method used are licensing.Licensing.get_administered_licensing_subscription_entitlements,
+  - Paths used are get /administered/licensing/subscription/entitlements,
 options:
   headers:
     description: Additional headers.
     type: dict
   skus:
     description:
-    - Skus query parameter. Filter to entitlements with the specified SKUs.
+      - Skus query parameter. Filter to entitlements with the specified SKUs.
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
-  description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
-notes:
-  - SDK Method used are
-    licensing.Licensing.get_administered_licensing_subscription_entitlements,
-
-  - Paths used are
-    get /administered/licensing/subscription/entitlements,
+  - description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
+    name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
+short_description: Information module for administered _licensing _subscription _entitlements
+version_added: 2.18.0
 """
 
 EXAMPLES = r"""

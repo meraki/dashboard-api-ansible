@@ -5,41 +5,39 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_device_type_group_policies_info
-short_description: Information module for networks _wireless _ssids _device _type _group _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _device _type _group _policies.
-- List the device type group policies for the SSID.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _device _type _group _policies.
+  - List the device type group policies for the SSID.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_device_type_group_policies_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_device_type_group_policies,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidDeviceTypeGroupPolicies
-  description: Complete reference of the getNetworkWirelessSsidDeviceTypeGroupPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-device-type-group-policies
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_device_type_group_policies,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies,
+  - description: Complete reference of the getNetworkWirelessSsidDeviceTypeGroupPolicies
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-device-type-group-policies
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidDeviceTypeGroupPolicies
+short_description: Information module for networks _wireless _ssids _device _type
+  _group _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

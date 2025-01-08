@@ -5,52 +5,52 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_api_requests_overview_info
-short_description: Information module for organizations _api _requests _overview
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _api _requests _overview.
-- Return an aggregated overview of API requests data.
-version_added: '2.16.0'
+  - Get all organizations _api _requests _overview.
+  - Return an aggregated overview of API requests data.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_api_requests_overview_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_api_requests_overview,
+  - Paths used are get /organizations/{organizationId}/apiRequests/overview,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 31 days.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 31 days. The default
+        is 31 days.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverview
-  description: Complete reference of the getOrganizationApiRequestsOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_api_requests_overview,
-
-  - Paths used are
-    get /organizations/{organizationId}/apiRequests/overview,
+  - description: Complete reference of the getOrganizationApiRequestsOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests-overview
+    name: Cisco Meraki documentation for organizations getOrganizationApiRequestsOverview
+short_description: Information module for organizations _api _requests _overview
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

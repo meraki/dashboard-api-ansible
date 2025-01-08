@@ -5,76 +5,79 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_summary_top_applications_categories_by_usage_info
-short_description: Information module for organizations _summary _top _applications _categories _by _usage
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _summary _top _applications _categories _by _usage.
-- Return the top application categories sorted by data usage over given time range. Default unit is megabytes.
-version_added: '2.20.0'
+  - Get all organizations _summary _top _applications _categories _by _usage.
+  - Return the top application categories sorted by data usage over given time range.
+    Default unit is megabytes.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_summary_top_applications_categories_by_usage_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_summary_top_applications_categories_by_usage,
+  - Paths used are get /organizations/{organizationId}/summary/top/applications/categories/byUsage,
 options:
+  deviceTag:
+    description:
+      - DeviceTag query parameter. Match result to an exact device tag.
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
+  networkId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - NetworkId query parameter. Match result to an exact network id.
     type: str
   networkTag:
     description:
-    - NetworkTag query parameter. Match result to an exact network tag.
+      - NetworkTag query parameter. Match result to an exact network tag.
     type: str
-  deviceTag:
+  organizationId:
     description:
-    - DeviceTag query parameter. Match result to an exact device tag.
-    type: str
-  networkId:
-    description:
-    - NetworkId query parameter. Match result to an exact network id.
+      - OrganizationId path parameter. Organization ID.
     type: str
   quantity:
     description:
-    - Quantity query parameter. Set number of desired results to return. Default is 10.
+      - Quantity query parameter. Set number of desired results to return. Default
+        is 10.
     type: int
   ssidName:
     description:
-    - SsidName query parameter. Filter results by ssid name.
-    type: str
-  usageUplink:
-    description:
-    - UsageUplink query parameter. Filter results by usage uplink.
+      - SsidName query parameter. Filter results by ssid name.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data.
+      - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 186 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 25 minutes
-      and be less than or equal to 186 days. The default is 1 day.
-    type: float
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopApplicationsCategoriesByUsage
-  description: Complete reference of the getOrganizationSummaryTopApplicationsCategoriesByUsage API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-applications-categories-by-usage
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_summary_top_applications_categories_by_usage,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be greater than or equal to 25 minutes and be
+        less than or equal to 186 days. The default is 1 day.
 
-  - Paths used are
-    get /organizations/{organizationId}/summary/top/applications/categories/byUsage,
+        '
+    type: float
+  usageUplink:
+    description:
+      - UsageUplink query parameter. Filter results by usage uplink.
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationSummaryTopApplicationsCategoriesByUsage
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-applications-categories-by-usage
+    name: Cisco Meraki documentation for organizations getOrganizationSummaryTopApplicationsCategoriesByUsage
+short_description: Information module for organizations _summary _top _applications
+  _categories _by _usage
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

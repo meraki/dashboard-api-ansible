@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_appliance_vpn_third_party_vpnpeers_info
-short_description: Information module for organizations _appliance _vpn _third _party _vpnpeers
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _appliance _vpn _third _party _vpnpeers.
-- Return the third party VPN peers for an organization.
-version_added: '2.16.0'
+  - Get all organizations _appliance _vpn _third _party _vpnpeers.
+  - Return the third party VPN peers for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_appliance_vpn_third_party_vpnpeers_info
+notes:
+  - SDK Method used are appliance.Appliance.get_organization_appliance_vpn_third_party_vpnpeers,
+  - Paths used are get /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnThirdPartyVPNPeers
-  description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-third-party-vpn-peers
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_organization_appliance_vpn_third_party_vpnpeers,
-
-  - Paths used are
-    get /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
+  - description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-third-party-vpn-peers
+    name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnThirdPartyVPNPeers
+short_description: Information module for organizations _appliance _vpn _third _party
+  _vpnpeers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

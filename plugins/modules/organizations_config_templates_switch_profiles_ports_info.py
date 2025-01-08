@@ -5,56 +5,55 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_config_templates_switch_profiles_ports_info
-short_description: Information module for organizations _config _templates _switch _profiles _ports
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _config _templates _switch _profiles _ports.
-- Get organizations _config _templates _switch _profiles _ports by id.
-- Return a switch template port.
-- Return all the ports of a switch template.
-version_added: '2.16.0'
+  - Get all organizations _config _templates _switch _profiles _ports.
+  - Get organizations _config _templates _switch _profiles _ports by id.
+  - Return a switch template port.
+  - Return all the ports of a switch template.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_config_templates_switch_profiles_ports_info
+notes:
+  - SDK Method used are switch.Switch.get_organization_config_template_switch_profile_port,
+    switch.Switch.get_organization_config_template_switch_profile_ports,
+  - Paths used are get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports,
+    get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId},
 options:
+  configTemplateId:
+    description:
+      - ConfigTemplateId path parameter. Config template ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  configTemplateId:
-    description:
-    - ConfigTemplateId path parameter. Config template ID.
-    type: str
-  profileId:
-    description:
-    - ProfileId path parameter. Profile ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   portId:
     description:
-    - PortId path parameter. Port ID.
+      - PortId path parameter. Port ID.
+    type: str
+  profileId:
+    description:
+      - ProfileId path parameter. Profile ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePort
-  description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-port
-- name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePorts
-  description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePorts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-ports
-notes:
-  - SDK Method used are
-    switch.Switch.get_organization_config_template_switch_profile_port,
-    switch.Switch.get_organization_config_template_switch_profile_ports,
-
-  - Paths used are
-    get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports,
-    get /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId},
+  - description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePort
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-port
+    name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePort
+  - description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePorts
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-ports
+    name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePorts
+short_description: Information module for organizations _config _templates _switch
+  _profiles _ports
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

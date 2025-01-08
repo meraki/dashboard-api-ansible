@@ -5,30 +5,32 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_appliance_vpn_vpn_firewall_rules
-short_description: Resource module for organizations _appliance _vpn _vpn _firewall _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _appliance _vpn _vpn _firewall _rules.
-- Update the firewall rules of an organization's site-to-site VPN.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _appliance _vpn _vpn _firewall
+    _rules.
+  - Update the firewall rules of an organization's site-to-site VPN.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_appliance_vpn_vpn_firewall_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_organization_appliance_vpn_vpn_firewall_rules,
+  - Paths used are put /organizations/{organizationId}/appliance/vpn/vpnFirewallRules,
 options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   rules:
-    description: An ordered array of the firewall rules (not including the default rule).
+    description: An ordered array of the firewall rules (not including the default
+      rule).
     elements: dict
     suboptions:
       comment:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR
-          notation) or 'any' (FQDN not supported).
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation) or 'any' (FQDN not supported).
         type: str
       destPort:
         description: Comma-separated list of destination port(s) (integer in the range
@@ -42,16 +44,16 @@ options:
           'any').
         type: str
       srcCidr:
-        description: Comma-separated list of source IP address(es) (in IP or CIDR notation),
-          or 'any' (FQDN not supported).
+        description: Comma-separated list of source IP address(es) (in IP or CIDR
+          notation), or 'any' (FQDN not supported).
         type: str
       srcPort:
-        description: Comma-separated list of source port(s) (integer in the range 1-65535),
-          or 'any'.
+        description: Comma-separated list of source port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       syslogEnabled:
-        description: Log this rule to syslog (true or false, boolean value) - only applicable
-          if a syslog has been configured (optional).
+        description: Log this rule to syslog (true or false, boolean value) - only
+          applicable if a syslog has been configured (optional).
         type: bool
     type: list
   syslogDefaultRule:
@@ -59,18 +61,16 @@ options:
       configured a syslog server) (optional).
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnVpnFirewallRules
-  description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-vpn-firewall-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_organization_appliance_vpn_vpn_firewall_rules,
-
-  - Paths used are
-    put /organizations/{organizationId}/appliance/vpn/vpnFirewallRules,
+  - description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-vpn-firewall-rules
+    name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnVpnFirewallRules
+short_description: Resource module for organizations _appliance _vpn _vpn _firewall
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

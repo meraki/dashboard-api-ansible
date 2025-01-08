@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_warm_spare_info
-short_description: Information module for devices _switch _warm _spare
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _switch _warm _spare.
-- Return warm spare configuration for a switch.
-version_added: '2.16.0'
+  - Get all devices _switch _warm _spare.
+  - Return warm spare configuration for a switch.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_warm_spare_info
+notes:
+  - SDK Method used are switch.Switch.get_device_switch_warm_spare,
+  - Paths used are get /devices/{serial}/switch/warmSpare,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getDeviceSwitchWarmSpare
-  description: Complete reference of the getDeviceSwitchWarmSpare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-warm-spare
-notes:
-  - SDK Method used are
-    switch.Switch.get_device_switch_warm_spare,
-
-  - Paths used are
-    get /devices/{serial}/switch/warmSpare,
+  - description: Complete reference of the getDeviceSwitchWarmSpare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-warm-spare
+    name: Cisco Meraki documentation for switch getDeviceSwitchWarmSpare
+short_description: Information module for devices _switch _warm _spare
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

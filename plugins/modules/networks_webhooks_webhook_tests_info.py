@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_webhooks_webhook_tests_info
-short_description: Information module for networks _webhooks _webhook _tests
+author: Francisco Munoz (@fmunoz)
 description:
-- Get networks _webhooks _webhook _tests by id.
-- Return the status of a webhook test for a network.
-version_added: '2.16.0'
+  - Get networks _webhooks _webhook _tests by id.
+  - Return the status of a webhook test for a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_webhooks_webhook_tests_info
+notes:
+  - SDK Method used are networks.Networks.get_network_webhooks_webhook_test,
+  - Paths used are get /networks/{networkId}/webhooks/webhookTests/{webhookTestId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   webhookTestId:
     description:
-    - WebhookTestId path parameter. Webhook test ID.
+      - WebhookTestId path parameter. Webhook test ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkWebhooksWebhookTest
-  description: Complete reference of the getNetworkWebhooksWebhookTest API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-webhook-test
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_webhooks_webhook_test,
-
-  - Paths used are
-    get /networks/{networkId}/webhooks/webhookTests/{webhookTestId},
+  - description: Complete reference of the getNetworkWebhooksWebhookTest API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-webhook-test
+    name: Cisco Meraki documentation for networks getNetworkWebhooksWebhookTest
+short_description: Information module for networks _webhooks _webhook _tests
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

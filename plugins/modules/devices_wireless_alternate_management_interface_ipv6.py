@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_wireless_alternate_management_interface_ipv6
-short_description: Resource module for devices _wireless _alternate _management _interface _ipv6
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
-- Update alternate management interface IPv6 address.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _wireless _alternate _management
+    _interface _ipv6.
+  - Update alternate management interface IPv6 address.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_alternate_management_interface_ipv6
+notes:
+  - SDK Method used are wireless.Wireless.update_device_wireless_alternate_management_interface_ipv6,
+  - Paths used are put /devices/{serial}/wireless/alternateManagementInterface/ipv6,
 options:
   addresses:
     description: Configured alternate management interface addresses.
@@ -33,8 +34,8 @@ options:
         description: The DNS servers settings for this address.
         suboptions:
           addresses:
-            description: Up to 2 nameserver addresses to use, ordered in priority from
-              highest to lowest priority.
+            description: Up to 2 nameserver addresses to use, ordered in priority
+              from highest to lowest priority.
             elements: str
             type: list
         type: dict
@@ -50,18 +51,16 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
-  description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6 API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_device_wireless_alternate_management_interface_ipv6,
-
-  - Paths used are
-    put /devices/{serial}/wireless/alternateManagementInterface/ipv6,
+  - description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
+    name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
+short_description: Resource module for devices _wireless _alternate _management _interface
+  _ipv6
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

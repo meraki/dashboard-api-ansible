@@ -5,51 +5,50 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_bluetooth_clients_info
-short_description: Information module for networks _bluetooth _clients
+author: Francisco Munoz (@fmunoz)
 description:
-- Get networks _bluetooth _clients by id.
-- Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC.
-version_added: '2.16.0'
+  - Get networks _bluetooth _clients by id.
+  - Return a Bluetooth client. Bluetooth clients can be identified by their ID or
+    their MAC.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_bluetooth_clients_info
+notes:
+  - SDK Method used are networks.Networks.get_network_bluetooth_client,
+  - Paths used are get /networks/{networkId}/bluetoothClients/{bluetoothClientId},
 options:
+  bluetoothClientId:
+    description:
+      - BluetoothClientId path parameter. Bluetooth client ID.
+    type: str
+  connectivityHistoryTimespan:
+    description:
+      - 'ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for
+        the connectivityHistory data. By default 1 day, 86400, will be used.
+
+        '
+    type: int
   headers:
     description: Additional headers.
     type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  bluetoothClientId:
-    description:
-    - BluetoothClientId path parameter. Bluetooth client ID.
-    type: str
   includeConnectivityHistory:
     description:
-    - IncludeConnectivityHistory query parameter. Include the connectivity history for this client.
+      - IncludeConnectivityHistory query parameter. Include the connectivity history
+        for this client.
     type: bool
-  connectivityHistoryTimespan:
+  networkId:
     description:
-    - >
-      ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for the connectivityHistory data. By
-      default 1 day, 86400, will be used.
-    type: int
+      - NetworkId path parameter. Network ID.
+    type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkBluetoothClient
-  description: Complete reference of the getNetworkBluetoothClient API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-bluetooth-client
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_bluetooth_client,
-
-  - Paths used are
-    get /networks/{networkId}/bluetoothClients/{bluetoothClientId},
+  - description: Complete reference of the getNetworkBluetoothClient API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-bluetooth-client
+    name: Cisco Meraki documentation for networks getNetworkBluetoothClient
+short_description: Information module for networks _bluetooth _clients
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

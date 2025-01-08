@@ -5,18 +5,23 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_early_access_features_opt_ins
-short_description: Resource module for organizations _early _access _features _opt _ins
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource organizations _early _access _features _opt _ins.
-- Create a new early access feature opt-in for an organization.
-- Delete an early access feature opt-in.
-- Update an early access feature opt-in for an organization.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource organizations _early
+    _access _features _opt _ins.
+  - Create a new early access feature opt-in for an organization.
+  - Delete an early access feature opt-in.
+  - Update an early access feature opt-in for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_early_access_features_opt_ins
+notes:
+  - SDK Method used are organizations.Organizations.create_organization_early_access_features_opt_in,
+    organizations.Organizations.delete_organization_early_access_features_opt_in,
+    organizations.Organizations.update_organization_early_access_features_opt_in,
+  - Paths used are post /organizations/{organizationId}/earlyAccess/features/optIns,
+    delete /organizations/{organizationId}/earlyAccess/features/optIns/{optInId},
+    put /organizations/{organizationId}/earlyAccess/features/optIns/{optInId},
 options:
   limitScopeToNetworks:
     description: A list of network IDs to apply the opt-in to.
@@ -32,28 +37,24 @@ options:
     description: Short name of the early access feature.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations createOrganizationEarlyAccessFeaturesOptIn
-  description: Complete reference of the createOrganizationEarlyAccessFeaturesOptIn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-early-access-features-opt-in
-- name: Cisco Meraki documentation for organizations deleteOrganizationEarlyAccessFeaturesOptIn
-  description: Complete reference of the deleteOrganizationEarlyAccessFeaturesOptIn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-early-access-features-opt-in
-- name: Cisco Meraki documentation for organizations updateOrganizationEarlyAccessFeaturesOptIn
-  description: Complete reference of the updateOrganizationEarlyAccessFeaturesOptIn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-early-access-features-opt-in
-notes:
-  - SDK Method used are
-    organizations.Organizations.create_organization_early_access_features_opt_in,
-    organizations.Organizations.delete_organization_early_access_features_opt_in,
-    organizations.Organizations.update_organization_early_access_features_opt_in,
-
-  - Paths used are
-    post /organizations/{organizationId}/earlyAccess/features/optIns,
-    delete /organizations/{organizationId}/earlyAccess/features/optIns/{optInId},
-    put /organizations/{organizationId}/earlyAccess/features/optIns/{optInId},
+  - description: Complete reference of the createOrganizationEarlyAccessFeaturesOptIn
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-early-access-features-opt-in
+    name: Cisco Meraki documentation for organizations createOrganizationEarlyAccessFeaturesOptIn
+  - description: Complete reference of the deleteOrganizationEarlyAccessFeaturesOptIn
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-early-access-features-opt-in
+    name: Cisco Meraki documentation for organizations deleteOrganizationEarlyAccessFeaturesOptIn
+  - description: Complete reference of the updateOrganizationEarlyAccessFeaturesOptIn
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-early-access-features-opt-in
+    name: Cisco Meraki documentation for organizations updateOrganizationEarlyAccessFeaturesOptIn
+short_description: Resource module for organizations _early _access _features _opt
+  _ins
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

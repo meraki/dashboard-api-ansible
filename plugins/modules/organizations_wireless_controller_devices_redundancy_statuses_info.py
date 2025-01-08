@@ -5,65 +5,73 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_wireless_controller_devices_redundancy_statuses_info
-short_description: Information module for organizations _wireless _controller _devices _redundancy _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _wireless _controller _devices _redundancy _statuses.
-- >
-   List redundancy details of wireless LAN controllers in an organization. The failover count refers to the total
-   failovers system happens from the moment of this device onboarding to Dashboard.
-version_added: '2.20.0'
+  - Get all organizations _wireless _controller _devices _redundancy _statuses.
+  - 'List redundancy details of wireless LAN controllers in an organization. The failover
+    count refers to the total failovers system happens from the moment of this device
+    onboarding to Dashboard.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_wireless_controller_devices_redundancy_statuses_info
+notes:
+  - SDK Method used are wireless_controller.WirelessController.get_organization_wireless_controller_devices_redundancy_statuses,
+  - Paths used are get /organizations/{organizationId}/wirelessController/devices/redundancy/statuses,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
-  serials:
-    description:
-    - >
-      Serials query parameter. Optional parameter to filter wireless LAN controller by its cloud IDs. This filter
-      uses multiple exact matches.
-    elements: str
-    type: list
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
+  serials:
+    description:
+      - 'Serials query parameter. Optional parameter to filter wireless LAN controller
+        by its cloud IDs. This filter uses multiple exact matches.
+
+        '
+    elements: str
+    type: list
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesRedundancyStatuses
-  description: Complete reference of the getOrganizationWirelessControllerDevicesRedundancyStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-redundancy-statuses
-notes:
-  - SDK Method used are
-    wireless_controller.WirelessController.get_organization_wireless_controller_devices_redundancy_statuses,
-
-  - Paths used are
-    get /organizations/{organizationId}/wirelessController/devices/redundancy/statuses,
+  - description: Complete reference of the getOrganizationWirelessControllerDevicesRedundancyStatuses
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-redundancy-statuses
+    name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesRedundancyStatuses
+short_description: Information module for organizations _wireless _controller _devices
+  _redundancy _statuses
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

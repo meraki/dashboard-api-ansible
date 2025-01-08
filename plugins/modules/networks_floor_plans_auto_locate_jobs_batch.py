@@ -5,29 +5,30 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_floor_plans_auto_locate_jobs_batch
-short_description: Resource module for networks _floor _plans _auto _locate _jobs _batch
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _floor _plans _auto _locate _jobs _batch.
-- Schedule auto locate jobs for one or more floor plans in a network.
-version_added: '2.20.0'
+  - Manage operation create of the resource networks _floor _plans _auto _locate _jobs
+    _batch.
+  - Schedule auto locate jobs for one or more floor plans in a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_floor_plans_auto_locate_jobs_batch
+notes:
+  - SDK Method used are networks.Networks.batch_network_floor_plans_auto_locate_jobs,
+  - Paths used are post /networks/{networkId}/floorPlans/autoLocate/jobs/batch,
 options:
   jobs:
-    description: The list of auto locate jobs to be scheduled. Up to 100 jobs can be
-      provided in a request.
+    description: The list of auto locate jobs to be scheduled. Up to 100 jobs can
+      be provided in a request.
     elements: dict
     suboptions:
       floorPlanId:
         description: The ID of the floor plan to run auto locate for.
         type: str
       refresh:
-        description: The types of location data that should be refreshed for this job.
-          The list must either contain both 'gnss' and 'ranging' or be empty, as we
-          currently only support refreshing both 'gnss' and 'ranging', or neither.
+        description: The types of location data that should be refreshed for this
+          job. The list must either contain both 'gnss' and 'ranging' or be empty,
+          as we currently only support refreshing both 'gnss' and 'ranging', or neither.
         elements: str
         type: list
       scheduledAt:
@@ -39,18 +40,15 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks batchNetworkFloorPlansAutoLocateJobs
-  description: Complete reference of the batchNetworkFloorPlansAutoLocateJobs API.
-  link: https://developer.cisco.com/meraki/api-v1/#!batch-network-floor-plans-auto-locate-jobs
-notes:
-  - SDK Method used are
-    networks.Networks.batch_network_floor_plans_auto_locate_jobs,
-
-  - Paths used are
-    post /networks/{networkId}/floorPlans/autoLocate/jobs/batch,
+  - description: Complete reference of the batchNetworkFloorPlansAutoLocateJobs API.
+    link: https://developer.cisco.com/meraki/api-v1/#!batch-network-floor-plans-auto-locate-jobs
+    name: Cisco Meraki documentation for networks batchNetworkFloorPlansAutoLocateJobs
+short_description: Resource module for networks _floor _plans _auto _locate _jobs
+  _batch
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

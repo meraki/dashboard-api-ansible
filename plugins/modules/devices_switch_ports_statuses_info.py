@@ -5,48 +5,46 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_ports_statuses_info
-short_description: Information module for devices _switch _ports _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _switch _ports _statuses.
-- Return the status for all the ports of a switch.
-version_added: '2.16.0'
+  - Get all devices _switch _ports _statuses.
+  - Return the status for all the ports of a switch.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_ports_statuses_info
+notes:
+  - SDK Method used are switch.Switch.get_device_switch_ports_statuses,
+  - Paths used are get /devices/{serial}/switch/ports/statuses,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is
-      1 day.
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameter t0. The value must
+        be in seconds and be less than or equal to 31 days. The default is 1 day.
+
+        '
     type: float
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getDeviceSwitchPortsStatuses
-  description: Complete reference of the getDeviceSwitchPortsStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports-statuses
-notes:
-  - SDK Method used are
-    switch.Switch.get_device_switch_ports_statuses,
-
-  - Paths used are
-    get /devices/{serial}/switch/ports/statuses,
+  - description: Complete reference of the getDeviceSwitchPortsStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports-statuses
+    name: Cisco Meraki documentation for switch getDeviceSwitchPortsStatuses
+short_description: Information module for devices _switch _ports _statuses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

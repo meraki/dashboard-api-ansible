@@ -5,17 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_events
-short_description: Resource module for networks _firmware _upgrades _staged _events
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create and update of the resource networks _firmware _upgrades _staged _events.
-- Create a Staged Upgrade Event for a network.
-- Update the Staged Upgrade Event for a network.
-version_added: '2.16.0'
+  - Manage operations create and update of the resource networks _firmware _upgrades
+    _staged _events.
+  - Create a Staged Upgrade Event for a network.
+  - Update the Staged Upgrade Event for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_events
+notes:
+  - SDK Method used are networks.Networks.create_network_firmware_upgrades_staged_event,
+    networks.Networks.update_network_firmware_upgrades_staged_events,
+  - Paths used are post /networks/{networkId}/firmwareUpgrades/staged/events, put
+    /networks/{networkId}/firmwareUpgrades/staged/events,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -69,29 +72,25 @@ options:
         description: The Staged Upgrade Milestones for the specific stage.
         suboptions:
           scheduledFor:
-            description: The start time of the staged upgrade stage. (In ISO-8601 format,
-              in the time zone of the network.).
+            description: The start time of the staged upgrade stage. (In ISO-8601
+              format, in the time zone of the network.).
             type: str
         type: dict
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedEvent
-  description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-event
-- name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedEvents
-  description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-events
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_firmware_upgrades_staged_event,
-    networks.Networks.update_network_firmware_upgrades_staged_events,
-
-  - Paths used are
-    post /networks/{networkId}/firmwareUpgrades/staged/events,
-    put /networks/{networkId}/firmwareUpgrades/staged/events,
+  - description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-event
+    name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedEvent
+  - description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-events
+    name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedEvents
+short_description: Resource module for networks _firmware _upgrades _staged _events
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

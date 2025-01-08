@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_users_softwares_info
-short_description: Information module for networks _sm _users _softwares
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _users _softwares.
-- Get a list of softwares associated with a user.
-version_added: '2.16.0'
+  - Get all networks _sm _users _softwares.
+  - Get a list of softwares associated with a user.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_users_softwares_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_user_softwares,
+  - Paths used are get /networks/{networkId}/sm/users/{userId}/softwares,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   userId:
     description:
-    - UserId path parameter. User ID.
+      - UserId path parameter. User ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmUserSoftwares
-  description: Complete reference of the getNetworkSmUserSoftwares API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-softwares
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_user_softwares,
-
-  - Paths used are
-    get /networks/{networkId}/sm/users/{userId}/softwares,
+  - description: Complete reference of the getNetworkSmUserSoftwares API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-softwares
+    name: Cisco Meraki documentation for sm getNetworkSmUserSoftwares
+short_description: Information module for networks _sm _users _softwares
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

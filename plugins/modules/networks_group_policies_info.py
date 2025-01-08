@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_group_policies_info
-short_description: Information module for networks _group _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _group _policies.
-- Get networks _group _policies by id.
-- Display a group policy.
-- List the group policies in a network.
-version_added: '2.16.0'
+  - Get all networks _group _policies.
+  - Get networks _group _policies by id.
+  - Display a group policy.
+  - List the group policies in a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_group_policies_info
+notes:
+  - SDK Method used are networks.Networks.get_network_group_policies, networks.Networks.get_network_group_policy,
+  - Paths used are get /networks/{networkId}/groupPolicies, get /networks/{networkId}/groupPolicies/{groupPolicyId},
 options:
+  groupPolicyId:
+    description:
+      - GroupPolicyId path parameter. Group policy ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  groupPolicyId:
-    description:
-    - GroupPolicyId path parameter. Group policy ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkGroupPolicies
-  description: Complete reference of the getNetworkGroupPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policies
-- name: Cisco Meraki documentation for networks getNetworkGroupPolicy
-  description: Complete reference of the getNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policy
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_group_policies,
-    networks.Networks.get_network_group_policy,
-
-  - Paths used are
-    get /networks/{networkId}/groupPolicies,
-    get /networks/{networkId}/groupPolicies/{groupPolicyId},
+  - description: Complete reference of the getNetworkGroupPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policies
+    name: Cisco Meraki documentation for networks getNetworkGroupPolicies
+  - description: Complete reference of the getNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-group-policy
+    name: Cisco Meraki documentation for networks getNetworkGroupPolicy
+short_description: Information module for networks _group _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

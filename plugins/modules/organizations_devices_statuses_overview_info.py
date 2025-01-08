@@ -5,50 +5,49 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_devices_statuses_overview_info
-short_description: Information module for organizations _devices _statuses _overview
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _devices _statuses _overview.
-- Return an overview of current device statuses.
-version_added: '2.16.0'
+  - Get all organizations _devices _statuses _overview.
+  - Return an overview of current device statuses.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_devices_statuses_overview_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_devices_statuses_overview,
+  - Paths used are get /organizations/{organizationId}/devices/statuses/overview,
 options:
   headers:
     description: Additional headers.
     type: dict
+  networkIds:
+    description:
+      - NetworkIds query parameter. An optional parameter to filter device statuses
+        by network.
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   productTypes:
     description:
-    - >
-      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types
-      are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and
-      secureConnect.
-    elements: str
-    type: list
-  networkIds:
-    description:
-    - NetworkIds query parameter. An optional parameter to filter device statuses by network.
+      - 'ProductTypes query parameter. An optional parameter to filter device statuses
+        by product type. Valid types are wireless, appliance, switch, systemsManager,
+        camera, cellularGateway, sensor, wirelessController, and secureConnect.
+
+        '
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
-  description: Complete reference of the getOrganizationDevicesStatusesOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_devices_statuses_overview,
-
-  - Paths used are
-    get /organizations/{organizationId}/devices/statuses/overview,
+  - description: Complete reference of the getOrganizationDevicesStatusesOverview
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
+    name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
+short_description: Information module for organizations _devices _statuses _overview
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

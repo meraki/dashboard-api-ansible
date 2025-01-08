@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cellular_gateway_connectivity_monitoring_destinations
-short_description: Resource module for networks _cellular _gateway _connectivity _monitoring _destinations
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _cellular _gateway _connectivity _monitoring _destinations.
-- Update the connectivity testing destinations for an MG network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _cellular _gateway _connectivity
+    _monitoring _destinations.
+  - Update the connectivity testing destinations for an MG network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_cellular_gateway_connectivity_monitoring_destinations
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.update_network_cellular_gateway_connectivity_monitoring_destinations,
+  - Paths used are put /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations,
 options:
   destinations:
     description: The list of connectivity monitoring destinations.
@@ -25,8 +26,8 @@ options:
           (true) or not (false). Defaults to false. Only one default is allowed.
         type: bool
       description:
-        description: Description of the testing destination. Optional, defaults to an
-          empty string.
+        description: Description of the testing destination. Optional, defaults to
+          an empty string.
         type: str
       ip:
         description: The IP address to test connectivity with.
@@ -36,18 +37,16 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayConnectivityMonitoringDestinations
-  description: Complete reference of the updateNetworkCellularGatewayConnectivityMonitoringDestinations API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-connectivity-monitoring-destinations
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.update_network_cellular_gateway_connectivity_monitoring_destinations,
-
-  - Paths used are
-    put /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations,
+  - description: Complete reference of the updateNetworkCellularGatewayConnectivityMonitoringDestinations
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-connectivity-monitoring-destinations
+    name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayConnectivityMonitoringDestinations
+short_description: Resource module for networks _cellular _gateway _connectivity _monitoring
+  _destinations
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_schedules
-short_description: Resource module for networks _wireless _ssids _schedules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids _schedules.
-- Update the outage schedule for the SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids _schedules.
+  - Update the outage schedule for the SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_schedules
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_schedules,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/schedules,
 options:
   enabled:
     description: If true, the SSID outage schedule is enabled.
@@ -32,8 +32,8 @@ options:
     elements: dict
     suboptions:
       endDay:
-        description: Day of when the outage ends. Can be either full day name, or three
-          letter abbreviation.
+        description: Day of when the outage ends. Can be either full day name, or
+          three letter abbreviation.
         type: str
       endTime:
         description: 24 hour time when the outage ends.
@@ -47,9 +47,9 @@ options:
         type: str
     type: list
   rangesInSeconds:
-    description: List of outage ranges in seconds since Sunday at Midnight. Has a start
-      and end. If this parameter is passed in along with the ranges parameter, ranges
-      will take precedence.
+    description: List of outage ranges in seconds since Sunday at Midnight. Has a
+      start and end. If this parameter is passed in along with the ranges parameter,
+      ranges will take precedence.
     elements: dict
     suboptions:
       end:
@@ -60,18 +60,14 @@ options:
         type: int
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSchedules
-  description: Complete reference of the updateNetworkWirelessSsidSchedules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-schedules
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid_schedules,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number}/schedules,
+  - description: Complete reference of the updateNetworkWirelessSsidSchedules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-schedules
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSchedules
+short_description: Resource module for networks _wireless _ssids _schedules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

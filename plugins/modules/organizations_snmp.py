@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_snmp
-short_description: Resource module for organizations _snmp
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _snmp.
-- Update the SNMP settings for an organization.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _snmp.
+  - Update the SNMP settings for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_snmp
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_snmp,
+  - Paths used are put /organizations/{organizationId}/snmp,
 options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
@@ -44,18 +44,14 @@ options:
       if specified.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationSnmp
-  description: Complete reference of the updateOrganizationSnmp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-snmp
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_snmp,
-
-  - Paths used are
-    put /organizations/{organizationId}/snmp,
+  - description: Complete reference of the updateOrganizationSnmp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-snmp
+    name: Cisco Meraki documentation for organizations updateOrganizationSnmp
+short_description: Resource module for organizations _snmp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

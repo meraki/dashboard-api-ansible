@@ -5,113 +5,129 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_switch_ports_topology_discovery_by_device_info
-short_description: Information module for organizations _switch _ports _topology _discovery _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _switch _ports _topology _discovery _by _device.
-- List most recently seen LLDP/CDP discovery and topology information per switch port in an organization.
-version_added: '2.20.0'
+  - Get all organizations _switch _ports _topology _discovery _by _device.
+  - List most recently seen LLDP/CDP discovery and topology information per switch
+    port in an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_switch_ports_topology_discovery_by_device_info
+notes:
+  - SDK Method used are switch.Switch.get_organization_switch_ports_topology_discovery_by_device,
+  - Paths used are get /organizations/{organizationId}/switch/ports/topology/discovery/byDevice,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  organizationId:
+  configurationUpdatedAfter:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  t0:
-    description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-    type: str
-  timespan:
-    description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is
-      1 day.
-    type: float
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 20. Default is 10.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'ConfigurationUpdatedAfter query parameter. Optional parameter to filter items
+        to switches where the configuration has been updated after the given timestamp.
+
+        '
     type: str
   endingBefore:
     description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
-  configurationUpdatedAfter:
-    description:
-    - >
-      ConfigurationUpdatedAfter query parameter. Optional parameter to filter items to switches where the
-      configuration has been updated after the given timestamp.
-    type: str
+  headers:
+    description: Additional headers.
+    type: dict
   mac:
     description:
-    - >
-      Mac query parameter. Optional parameter to filter items to switches with MAC addresses that contain the
-      search term or are an exact match.
+      - 'Mac query parameter. Optional parameter to filter items to switches with
+        MAC addresses that contain the search term or are an exact match.
+
+        '
     type: str
   macs:
     description:
-    - Macs query parameter. Optional parameter to filter items to switches that have one of the provided MAC addresses.
+      - Macs query parameter. Optional parameter to filter items to switches that
+        have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
-    - >
-      Name query parameter. Optional parameter to filter items to switches with names that contain the search term
-      or are an exact match.
+      - 'Name query parameter. Optional parameter to filter items to switches with
+        names that contain the search term or are an exact match.
+
+        '
     type: str
   networkIds:
     description:
-    - NetworkIds query parameter. Optional parameter to filter items to switches in one of the provided networks.
+      - NetworkIds query parameter. Optional parameter to filter items to switches
+        in one of the provided networks.
     elements: str
     type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 20. Default is 10.
+    type: int
   portProfileIds:
     description:
-    - >
-      PortProfileIds query parameter. Optional parameter to filter items to switches that contain switchports
-      belonging to one of the specified port profiles.
+      - 'PortProfileIds query parameter. Optional parameter to filter items to switches
+        that contain switchports belonging to one of the specified port profiles.
+
+        '
     elements: str
     type: list
   serial:
     description:
-    - >
-      Serial query parameter. Optional parameter to filter items to switches with serial number that contains the
-      search term or are an exact match.
+      - 'Serial query parameter. Optional parameter to filter items to switches with
+        serial number that contains the search term or are an exact match.
+
+        '
     type: str
   serials:
     description:
-    - Serials query parameter. Optional parameter to filter items to switches that have one of the provided serials.
+      - Serials query parameter. Optional parameter to filter items to switches that
+        have one of the provided serials.
     elements: str
     type: list
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for switch getOrganizationSwitchPortsTopologyDiscoveryByDevice
-  description: Complete reference of the getOrganizationSwitchPortsTopologyDiscoveryByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-topology-discovery-by-device
-notes:
-  - SDK Method used are
-    switch.Switch.get_organization_switch_ports_topology_discovery_by_device,
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
 
-  - Paths used are
-    get /organizations/{organizationId}/switch/ports/topology/discovery/byDevice,
+        '
+    type: str
+  t0:
+    description:
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
+    type: str
+  timespan:
+    description:
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameter t0. The value must
+        be in seconds and be less than or equal to 31 days. The default is 1 day.
+
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationSwitchPortsTopologyDiscoveryByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-topology-discovery-by-device
+    name: Cisco Meraki documentation for switch getOrganizationSwitchPortsTopologyDiscoveryByDevice
+short_description: Information module for organizations _switch _ports _topology _discovery
+  _by _device
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_permissions_info
-short_description: Information module for organizations _camera _permissions
+author: Francisco Munoz (@fmunoz)
 description:
-- Get organizations _camera _permissions by id.
-- Retrieve a single permission scope.
-version_added: '2.16.0'
+  - Get organizations _camera _permissions by id.
+  - Retrieve a single permission scope.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_permissions_info
+notes:
+  - SDK Method used are camera.Camera.get_organization_camera_permission,
+  - Paths used are get /organizations/{organizationId}/camera/permissions/{permissionScopeId},
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   permissionScopeId:
     description:
-    - PermissionScopeId path parameter. Permission scope ID.
+      - PermissionScopeId path parameter. Permission scope ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraPermission
-  description: Complete reference of the getOrganizationCameraPermission API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-permission
-notes:
-  - SDK Method used are
-    camera.Camera.get_organization_camera_permission,
-
-  - Paths used are
-    get /organizations/{organizationId}/camera/permissions/{permissionScopeId},
+  - description: Complete reference of the getOrganizationCameraPermission API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-permission
+    name: Cisco Meraki documentation for camera getOrganizationCameraPermission
+short_description: Information module for organizations _camera _permissions
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

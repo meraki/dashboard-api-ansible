@@ -5,29 +5,29 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_wireless_radio_settings
-short_description: Resource module for devices _wireless _radio _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _wireless _radio _settings.
-- Update the radio settings of a device.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _wireless _radio _settings.
+  - Update the radio settings of a device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_radio_settings
+notes:
+  - SDK Method used are wireless.Wireless.update_device_wireless_radio_settings,
+  - Paths used are put /devices/{serial}/wireless/radio/settings,
 options:
   fiveGhzSettings:
     description: Manual radio settings for 5 GHz.
     suboptions:
       channel:
         description: Sets a manual channel for 5 GHz. Can be '36', '40', '44', '48',
-          '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124', '128',
-          '132', '136', '140', '144', '149', '153', '157', '161', '165', '169', '173'
-          or '177' or null for using auto channel.
+          '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124',
+          '128', '132', '136', '140', '144', '149', '153', '157', '161', '165', '169',
+          '173' or '177' or null for using auto channel.
         type: int
       channelWidth:
-        description: Sets a manual channel for 5 GHz. Can be '0', '20', '40', '80' or
-          '160' or null for using auto channel width.
+        description: Sets a manual channel for 5 GHz. Can be '0', '20', '40', '80'
+          or '160' or null for using auto channel width.
         type: int
       targetPower:
         description: Set a manual target power for 5 GHz (dBm). Enter null for using
@@ -35,10 +35,10 @@ options:
         type: int
     type: dict
   rfProfileId:
-    description: The ID of an RF profile to assign to the device. If the value of this
-      parameter is null, the appropriate basic RF profile (indoor or outdoor) will be
-      assigned to the device. Assigning an RF profile will clear ALL manually configured
-      overrides on the device (channel width, channel, power).
+    description: The ID of an RF profile to assign to the device. If the value of
+      this parameter is null, the appropriate basic RF profile (indoor or outdoor)
+      will be assigned to the device. Assigning an RF profile will clear ALL manually
+      configured overrides on the device (channel width, channel, power).
     type: str
   serial:
     description: Serial path parameter.
@@ -47,9 +47,9 @@ options:
     description: Manual radio settings for 2.4 GHz.
     suboptions:
       channel:
-        description: Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4', '5',
-          '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using auto
-          channel.
+        description: Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4',
+          '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using
+          auto channel.
         type: int
       targetPower:
         description: Set a manual target power for 2.4 GHz (dBm). Enter null for using
@@ -57,18 +57,14 @@ options:
         type: int
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings
-  description: Complete reference of the updateDeviceWirelessRadioSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_device_wireless_radio_settings,
-
-  - Paths used are
-    put /devices/{serial}/wireless/radio/settings,
+  - description: Complete reference of the updateDeviceWirelessRadioSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-radio-settings
+    name: Cisco Meraki documentation for wireless updateDeviceWirelessRadioSettings
+short_description: Resource module for devices _wireless _radio _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

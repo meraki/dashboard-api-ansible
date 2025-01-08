@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_uplink_bandwidth
-short_description: Resource module for networks _appliance _traffic _shaping _uplink _bandwidth
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _uplink _bandwidth.
-- Updates the uplink bandwidth settings for your MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _traffic _shaping
+    _uplink _bandwidth.
+  - Updates the uplink bandwidth settings for your MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_uplink_bandwidth
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_traffic_shaping_uplink_bandwidth,
+  - Paths used are put /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth,
 options:
   bandwidthLimits:
     description: A mapping of uplinks to their bandwidth settings (be sure to check
@@ -61,18 +62,16 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkBandwidth
-  description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-bandwidth
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_traffic_shaping_uplink_bandwidth,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth,
+  - description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-bandwidth
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkBandwidth
+short_description: Resource module for networks _appliance _traffic _shaping _uplink
+  _bandwidth
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

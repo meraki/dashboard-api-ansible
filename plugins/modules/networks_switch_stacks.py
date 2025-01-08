@@ -5,17 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stacks
-short_description: Resource module for networks _switch _stacks
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create and delete of the resource networks _switch _stacks.
-- Create a switch stack.
-- Delete a stack.
-version_added: '2.16.0'
+  - Manage operations create and delete of the resource networks _switch _stacks.
+  - Create a switch stack.
+  - Delete a stack.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stacks
+notes:
+  - SDK Method used are switch.Switch.create_network_switch_stack, switch.Switch.delete_network_switch_stack,
+  - Paths used are post /networks/{networkId}/switch/stacks, delete /networks/{networkId}/switch/stacks/{switchStackId},
 options:
   name:
     description: The name of the new stack.
@@ -31,23 +31,17 @@ options:
     description: SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchStack
-  description: Complete reference of the createNetworkSwitchStack API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack
-- name: Cisco Meraki documentation for switch deleteNetworkSwitchStack
-  description: Complete reference of the deleteNetworkSwitchStack API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack
-notes:
-  - SDK Method used are
-    switch.Switch.create_network_switch_stack,
-    switch.Switch.delete_network_switch_stack,
-
-  - Paths used are
-    post /networks/{networkId}/switch/stacks,
-    delete /networks/{networkId}/switch/stacks/{switchStackId},
+  - description: Complete reference of the createNetworkSwitchStack API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack
+    name: Cisco Meraki documentation for switch createNetworkSwitchStack
+  - description: Complete reference of the deleteNetworkSwitchStack API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack
+    name: Cisco Meraki documentation for switch deleteNetworkSwitchStack
+short_description: Resource module for networks _switch _stacks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,18 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_prefixes_delegated_statics
-short_description: Resource module for networks _appliance _prefixes _delegated _statics
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _appliance _prefixes _delegated _statics.
-- Add a static delegated prefix from a network.
-- Delete a static delegated prefix from a network.
-- Update a static delegated prefix from a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _appliance
+    _prefixes _delegated _statics.
+  - Add a static delegated prefix from a network.
+  - Delete a static delegated prefix from a network.
+  - Update a static delegated prefix from a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_prefixes_delegated_statics
+notes:
+  - SDK Method used are appliance.Appliance.create_network_appliance_prefixes_delegated_static,
+    appliance.Appliance.delete_network_appliance_prefixes_delegated_static, appliance.Appliance.update_network_appliance_prefixes_delegated_static,
+  - Paths used are post /networks/{networkId}/appliance/prefixes/delegated/statics,
+    delete /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
+    put /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
 options:
   description:
     description: A name or description for the prefix.
@@ -42,28 +46,23 @@ options:
     description: StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createNetworkAppliancePrefixesDelegatedStatic
-  description: Complete reference of the createNetworkAppliancePrefixesDelegatedStatic API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-prefixes-delegated-static
-- name: Cisco Meraki documentation for appliance deleteNetworkAppliancePrefixesDelegatedStatic
-  description: Complete reference of the deleteNetworkAppliancePrefixesDelegatedStatic API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-prefixes-delegated-static
-- name: Cisco Meraki documentation for appliance updateNetworkAppliancePrefixesDelegatedStatic
-  description: Complete reference of the updateNetworkAppliancePrefixesDelegatedStatic API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-prefixes-delegated-static
-notes:
-  - SDK Method used are
-    appliance.Appliance.create_network_appliance_prefixes_delegated_static,
-    appliance.Appliance.delete_network_appliance_prefixes_delegated_static,
-    appliance.Appliance.update_network_appliance_prefixes_delegated_static,
-
-  - Paths used are
-    post /networks/{networkId}/appliance/prefixes/delegated/statics,
-    delete /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
-    put /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId},
+  - description: Complete reference of the createNetworkAppliancePrefixesDelegatedStatic
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-prefixes-delegated-static
+    name: Cisco Meraki documentation for appliance createNetworkAppliancePrefixesDelegatedStatic
+  - description: Complete reference of the deleteNetworkAppliancePrefixesDelegatedStatic
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-prefixes-delegated-static
+    name: Cisco Meraki documentation for appliance deleteNetworkAppliancePrefixesDelegatedStatic
+  - description: Complete reference of the updateNetworkAppliancePrefixesDelegatedStatic
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-prefixes-delegated-static
+    name: Cisco Meraki documentation for appliance updateNetworkAppliancePrefixesDelegatedStatic
+short_description: Resource module for networks _appliance _prefixes _delegated _statics
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

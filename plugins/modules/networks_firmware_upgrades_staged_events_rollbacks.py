@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_events_rollbacks
-short_description: Resource module for networks _firmware _upgrades _staged _events _rollbacks
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _firmware _upgrades _staged _events _rollbacks.
-- Rollback a Staged Upgrade Event for a network.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _firmware _upgrades _staged _events
+    _rollbacks.
+  - Rollback a Staged Upgrade Event for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_events_rollbacks
+notes:
+  - SDK Method used are networks.Networks.rollbacks_network_firmware_upgrades_staged_events,
+  - Paths used are post /networks/{networkId}/firmwareUpgrades/staged/events/rollbacks,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -31,8 +32,8 @@ options:
         type: str
     type: list
   stages:
-    description: All completed or in-progress stages in the network with their new start
-      times. All pending stages will be canceled.
+    description: All completed or in-progress stages in the network with their new
+      start times. All pending stages will be canceled.
     elements: dict
     suboptions:
       group:
@@ -46,24 +47,22 @@ options:
         description: The Staged Upgrade Milestones for the specific stage.
         suboptions:
           scheduledFor:
-            description: The start time of the staged upgrade stage. (In ISO-8601 format,
-              in the time zone of the network.).
+            description: The start time of the staged upgrade stage. (In ISO-8601
+              format, in the time zone of the network.).
             type: str
         type: dict
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks rollbacksNetworkFirmwareUpgradesStagedEvents
-  description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!rollbacks-network-firmware-upgrades-staged-events
-notes:
-  - SDK Method used are
-    networks.Networks.rollbacks_network_firmware_upgrades_staged_events,
-
-  - Paths used are
-    post /networks/{networkId}/firmwareUpgrades/staged/events/rollbacks,
+  - description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!rollbacks-network-firmware-upgrades-staged-events
+    name: Cisco Meraki documentation for networks rollbacksNetworkFirmwareUpgradesStagedEvents
+short_description: Resource module for networks _firmware _upgrades _staged _events
+  _rollbacks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

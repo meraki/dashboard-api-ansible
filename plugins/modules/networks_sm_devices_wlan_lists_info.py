@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_wlan_lists_info
-short_description: Information module for networks _sm _devices _wlan _lists
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _devices _wlan _lists.
-- List the saved SSID names on a device.
-version_added: '2.16.0'
+  - Get all networks _sm _devices _wlan _lists.
+  - List the saved SSID names on a device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_wlan_lists_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_device_wlan_lists,
+  - Paths used are get /networks/{networkId}/sm/devices/{deviceId}/wlanLists,
 options:
+  deviceId:
+    description:
+      - DeviceId path parameter. Device ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  deviceId:
-    description:
-    - DeviceId path parameter. Device ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceWlanLists
-  description: Complete reference of the getNetworkSmDeviceWlanLists API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-wlan-lists
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_device_wlan_lists,
-
-  - Paths used are
-    get /networks/{networkId}/sm/devices/{deviceId}/wlanLists,
+  - description: Complete reference of the getNetworkSmDeviceWlanLists API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-wlan-lists
+    name: Cisco Meraki documentation for sm getNetworkSmDeviceWlanLists
+short_description: Information module for networks _sm _devices _wlan _lists
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

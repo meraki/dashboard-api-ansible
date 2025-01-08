@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_l7_firewall_rules
-short_description: Resource module for networks _appliance _firewall l7 _firewall _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall l7 _firewall _rules.
-- Update the MX L7 firewall rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall l7 _firewall
+    _rules.
+  - Update the MX L7 firewall rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_l7_firewall_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_l7_firewall_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/l7FirewallRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -38,18 +39,16 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL7FirewallRules
-  description: Complete reference of the updateNetworkApplianceFirewallL7FirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l7-firewall-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_l7_firewall_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/l7FirewallRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallL7FirewallRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l7-firewall-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL7FirewallRules
+short_description: Resource module for networks _appliance _firewall l7 _firewall
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

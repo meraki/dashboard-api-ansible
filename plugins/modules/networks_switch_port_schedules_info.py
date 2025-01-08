@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_port_schedules_info
-short_description: Information module for networks _switch _port _schedules
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _port _schedules.
-- List switch port schedules.
-version_added: '2.16.0'
+  - Get all networks _switch _port _schedules.
+  - List switch port schedules.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_port_schedules_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_port_schedules,
+  - Paths used are get /networks/{networkId}/switch/portSchedules,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchPortSchedules
-  description: Complete reference of the getNetworkSwitchPortSchedules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-port-schedules
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_port_schedules,
-
-  - Paths used are
-    get /networks/{networkId}/switch/portSchedules,
+  - description: Complete reference of the getNetworkSwitchPortSchedules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-port-schedules
+    name: Cisco Meraki documentation for switch getNetworkSwitchPortSchedules
+short_description: Information module for networks _switch _port _schedules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,22 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_ports
-short_description: Resource module for networks _appliance _ports
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _ports.
-- Update the per-port VLAN settings for a single MX port.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _ports.
+  - Update the per-port VLAN settings for a single MX port.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_ports
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_port,
+  - Paths used are put /networks/{networkId}/appliance/ports/{portId},
 options:
   accessPolicy:
     description: The name of the policy. Only applicable to Access ports. Valid values
-      are 'open', '8021x-radius', 'mac-radius', 'hybris-radius' for MX64 or Z3 or any
-      MX supporting the per port authentication feature. Otherwise, 'open' is the only
-      valid value and 'open' is the default value if the field is missing.
+      are 'open', '8021x-radius', 'mac-radius', 'hybris-radius' for MX64 or Z3 or
+      any MX supporting the per port authentication feature. Otherwise, 'open' is
+      the only valid value and 'open' is the default value if the field is missing.
     type: str
   allowedVlans:
     description: Comma-delimited list of the VLAN ID's allowed on the port, or 'all'
@@ -43,22 +43,18 @@ options:
     description: The type of the port 'access' or 'trunk'.
     type: str
   vlan:
-    description: Native VLAN when the port is in Trunk mode. Access VLAN when the port
-      is in Access mode.
+    description: Native VLAN when the port is in Trunk mode. Access VLAN when the
+      port is in Access mode.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkAppliancePort
-  description: Complete reference of the updateNetworkAppliancePort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-port
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_port,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/ports/{portId},
+  - description: Complete reference of the updateNetworkAppliancePort API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-port
+    name: Cisco Meraki documentation for appliance updateNetworkAppliancePort
+short_description: Resource module for networks _appliance _ports
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

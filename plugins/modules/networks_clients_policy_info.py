@@ -5,43 +5,41 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_clients_policy_info
-short_description: Information module for networks _clients _policy
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _clients _policy.
-- >
-   Return the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC
-   or IP depending on whether the network uses Track-by-IP.
-version_added: '2.16.0'
+  - Get all networks _clients _policy.
+  - 'Return the policy assigned to a client on the network. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_clients_policy_info
+notes:
+  - SDK Method used are networks.Networks.get_network_client_policy,
+  - Paths used are get /networks/{networkId}/clients/{clientId}/policy,
 options:
+  clientId:
+    description:
+      - ClientId path parameter. Client ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  clientId:
-    description:
-    - ClientId path parameter. Client ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClientPolicy
-  description: Complete reference of the getNetworkClientPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-policy
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_client_policy,
-
-  - Paths used are
-    get /networks/{networkId}/clients/{clientId}/policy,
+  - description: Complete reference of the getNetworkClientPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-client-policy
+    name: Cisco Meraki documentation for networks getNetworkClientPolicy
+short_description: Information module for networks _clients _policy
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

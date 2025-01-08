@@ -5,33 +5,30 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_identities_me_api_keys_info
-short_description: Information module for administered _identities _me _api _keys
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all administered _identities _me _api _keys.
-- List the non-sensitive metadata associated with the API keys that belong to the user.
-version_added: '2.20.0'
+  - Get all administered _identities _me _api _keys.
+  - List the non-sensitive metadata associated with the API keys that belong to the
+    user.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: administered_identities_me_api_keys_info
+notes:
+  - SDK Method used are administered.Administered.get_administered_identities_me_api_keys,
+  - Paths used are get /administered/identities/me/api/keys,
 options:
   headers:
     description: Additional headers.
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for administered getAdministeredIdentitiesMeApiKeys
-  description: Complete reference of the getAdministeredIdentitiesMeApiKeys API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me-api-keys
-notes:
-  - SDK Method used are
-    administered.Administered.get_administered_identities_me_api_keys,
-
-  - Paths used are
-    get /administered/identities/me/api/keys,
+  - description: Complete reference of the getAdministeredIdentitiesMeApiKeys API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-identities-me-api-keys
+    name: Cisco Meraki documentation for administered getAdministeredIdentitiesMeApiKeys
+short_description: Information module for administered _identities _me _api _keys
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_licensing_subscription_subscriptions_bind
-short_description: Resource module for administered _licensing _subscription _subscriptions _bind
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource administered _licensing _subscription _subscriptions _bind.
-- Bind networks to a subscription.
-version_added: '2.18.0'
+  - Manage operation create of the resource administered _licensing _subscription
+    _subscriptions _bind.
+  - Bind networks to a subscription.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: administered_licensing_subscription_subscriptions_bind
+notes:
+  - SDK Method used are licensing.Licensing.bind_administered_licensing_subscription_subscription,
+  - Paths used are post /administered/licensing/subscription/subscriptions/{subscriptionId}/bind,
 options:
   networkIds:
     description: List of network ids to bind to the subscription.
@@ -24,18 +25,16 @@ options:
     description: SubscriptionId path parameter. Subscription ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for licensing bindAdministeredLicensingSubscriptionSubscription
-  description: Complete reference of the bindAdministeredLicensingSubscriptionSubscription API.
-  link: https://developer.cisco.com/meraki/api-v1/#!bind-administered-licensing-subscription-subscription
-notes:
-  - SDK Method used are
-    licensing.Licensing.bind_administered_licensing_subscription_subscription,
-
-  - Paths used are
-    post /administered/licensing/subscription/subscriptions/{subscriptionId}/bind,
+  - description: Complete reference of the bindAdministeredLicensingSubscriptionSubscription
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!bind-administered-licensing-subscription-subscription
+    name: Cisco Meraki documentation for licensing bindAdministeredLicensingSubscriptionSubscription
+short_description: Resource module for administered _licensing _subscription _subscriptions
+  _bind
+version_added: 2.18.0
 """
 
 EXAMPLES = r"""

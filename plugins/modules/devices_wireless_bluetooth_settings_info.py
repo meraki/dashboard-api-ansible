@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_wireless_bluetooth_settings_info
-short_description: Information module for devices _wireless _bluetooth _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _wireless _bluetooth _settings.
-- Return the bluetooth settings for a wireless device.
-version_added: '2.16.0'
+  - Get all devices _wireless _bluetooth _settings.
+  - Return the bluetooth settings for a wireless device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_bluetooth_settings_info
+notes:
+  - SDK Method used are wireless.Wireless.get_device_wireless_bluetooth_settings,
+  - Paths used are get /devices/{serial}/wireless/bluetooth/settings,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings
-  description: Complete reference of the getDeviceWirelessBluetoothSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_device_wireless_bluetooth_settings,
-
-  - Paths used are
-    get /devices/{serial}/wireless/bluetooth/settings,
+  - description: Complete reference of the getDeviceWirelessBluetoothSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-bluetooth-settings
+    name: Cisco Meraki documentation for wireless getDeviceWirelessBluetoothSettings
+short_description: Information module for devices _wireless _bluetooth _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

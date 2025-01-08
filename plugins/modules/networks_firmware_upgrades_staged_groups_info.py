@@ -5,48 +5,44 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_groups_info
-short_description: Information module for networks _firmware _upgrades _staged _groups
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _firmware _upgrades _staged _groups.
-- Get networks _firmware _upgrades _staged _groups by id.
-- Get a Staged Upgrade Group from a network.
-- List of Staged Upgrade Groups in a network.
-version_added: '2.16.0'
+  - Get all networks _firmware _upgrades _staged _groups.
+  - Get networks _firmware _upgrades _staged _groups by id.
+  - Get a Staged Upgrade Group from a network.
+  - List of Staged Upgrade Groups in a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_groups_info
+notes:
+  - SDK Method used are networks.Networks.get_network_firmware_upgrades_staged_group,
+    networks.Networks.get_network_firmware_upgrades_staged_groups,
+  - Paths used are get /networks/{networkId}/firmwareUpgrades/staged/groups, get /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
 options:
+  groupId:
+    description:
+      - GroupId path parameter. Group ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  groupId:
-    description:
-    - GroupId path parameter. Group ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the getNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-group
-- name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedGroups
-  description: Complete reference of the getNetworkFirmwareUpgradesStagedGroups API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-groups
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_firmware_upgrades_staged_group,
-    networks.Networks.get_network_firmware_upgrades_staged_groups,
-
-  - Paths used are
-    get /networks/{networkId}/firmwareUpgrades/staged/groups,
-    get /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
+  - description: Complete reference of the getNetworkFirmwareUpgradesStagedGroup API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-group
+    name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedGroup
+  - description: Complete reference of the getNetworkFirmwareUpgradesStagedGroups
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-groups
+    name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedGroups
+short_description: Information module for networks _firmware _upgrades _staged _groups
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

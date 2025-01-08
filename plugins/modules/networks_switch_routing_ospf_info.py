@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_routing_ospf_info
-short_description: Information module for networks _switch _routing _ospf
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _routing _ospf.
-- Return layer 3 OSPF routing configuration.
-version_added: '2.16.0'
+  - Get all networks _switch _routing _ospf.
+  - Return layer 3 OSPF routing configuration.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_routing_ospf_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_routing_ospf,
+  - Paths used are get /networks/{networkId}/switch/routing/ospf,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchRoutingOspf
-  description: Complete reference of the getNetworkSwitchRoutingOspf API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-ospf
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_routing_ospf,
-
-  - Paths used are
-    get /networks/{networkId}/switch/routing/ospf,
+  - description: Complete reference of the getNetworkSwitchRoutingOspf API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-ospf
+    name: Cisco Meraki documentation for switch getNetworkSwitchRoutingOspf
+short_description: Information module for networks _switch _routing _ospf
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

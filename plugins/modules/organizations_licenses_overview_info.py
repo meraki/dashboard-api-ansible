@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_licenses_overview_info
-short_description: Information module for organizations _licenses _overview
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _licenses _overview.
-- Return an overview of the license state for an organization.
-version_added: '2.16.0'
+  - Get all organizations _licenses _overview.
+  - Return an overview of the license state for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_licenses_overview_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_licenses_overview,
+  - Paths used are get /organizations/{organizationId}/licenses/overview,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationLicensesOverview
-  description: Complete reference of the getOrganizationLicensesOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-licenses-overview
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_licenses_overview,
-
-  - Paths used are
-    get /organizations/{organizationId}/licenses/overview,
+  - description: Complete reference of the getOrganizationLicensesOverview API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-licenses-overview
+    name: Cisco Meraki documentation for organizations getOrganizationLicensesOverview
+short_description: Information module for organizations _licenses _overview
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

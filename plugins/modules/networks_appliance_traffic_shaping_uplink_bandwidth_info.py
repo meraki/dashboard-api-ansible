@@ -5,40 +5,40 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_uplink_bandwidth_info
-short_description: Information module for networks _appliance _traffic _shaping _uplink _bandwidth
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _traffic _shaping _uplink _bandwidth.
-- >
-   Returns the uplink bandwidth limits for your MX network. This may not reflect the affected device's hardware
-   capabilities. For more information on your device's hardware capabilities, please consult our MX Family Datasheet
-   - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file .
-version_added: '2.16.0'
+  - Get all networks _appliance _traffic _shaping _uplink _bandwidth.
+  - 'Returns the uplink bandwidth limits for your MX network. This may not reflect
+    the affected device''s hardware capabilities. For more information on your device''s
+    hardware capabilities, please consult our MX Family Datasheet - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file
+    .
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_uplink_bandwidth_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_traffic_shaping_uplink_bandwidth,
+  - Paths used are get /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkBandwidth
-  description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-bandwidth
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_traffic_shaping_uplink_bandwidth,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth,
+  - description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-bandwidth
+    name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkBandwidth
+short_description: Information module for networks _appliance _traffic _shaping _uplink
+  _bandwidth
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

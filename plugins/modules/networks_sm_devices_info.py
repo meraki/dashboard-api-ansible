@@ -5,102 +5,109 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_info
-short_description: Information module for networks _sm _devices
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _devices.
-- List the devices enrolled in an SM network with various specified fields and filters.
-version_added: '2.16.0'
+  - Get all networks _sm _devices.
+  - List the devices enrolled in an SM network with various specified fields and filters.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_devices,
+  - Paths used are get /networks/{networkId}/sm/devices,
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  networkId:
+  endingBefore:
     description:
-    - NetworkId path parameter. Network ID.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   fields:
     description:
-    - >
-      Fields query parameter. Additional fields that will be displayed for each device. The default fields are id,
-      name, tags, ssid, wifiMac, osName, systemModel, uuid, and serialNumber. The additional fields are ip,
-      systemType, availableDeviceCapacity, kioskAppName, biosVersion, lastConnected, missingAppsCount,
-      userSuppliedAddress, location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber,
-      diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid, simCarrierNetwork,
-      cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge, quarantined, avName, avRunning, asName,
-      fwName, isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled, autoTags, hasMdm,
-      hasDesktopAgent, diskEncryptionEnabled, hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore,
-      androidSecurityPatchVersion, cellular, and url.
+      - 'Fields query parameter. Additional fields that will be displayed for each
+        device. The default fields are id, name, tags, ssid, wifiMac, osName, systemModel,
+        uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity,
+        kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress,
+        location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber,
+        diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei,
+        iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge,
+        quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled,
+        screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled,
+        hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion,
+        cellular, and url.
+
+        '
     elements: str
     type: list
-  wifiMacs:
+  headers:
+    description: Additional headers.
+    type: dict
+  ids:
     description:
-    - WifiMacs query parameter. Filter devices by wifi mac(s).
+      - Ids query parameter. Filter devices by id(s).
+    elements: str
+    type: list
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
+    type: int
+  scope:
+    description:
+      - 'Scope query parameter. Specify a scope (one of all, none, withAny, withAll,
+        withoutAny, or withoutAll) and a set of tags.
+
+        '
     elements: str
     type: list
   serials:
     description:
-    - Serials query parameter. Filter devices by serial(s).
+      - Serials query parameter. Filter devices by serial(s).
     elements: str
     type: list
-  ids:
+  startingAfter:
     description:
-    - Ids query parameter. Filter devices by id(s).
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  systemTypes:
+    description:
+      - SystemTypes query parameter. Filter devices by system type(s).
     elements: str
     type: list
   uuids:
     description:
-    - Uuids query parameter. Filter devices by uuid(s).
+      - Uuids query parameter. Filter devices by uuid(s).
     elements: str
     type: list
-  systemTypes:
+  wifiMacs:
     description:
-    - SystemTypes query parameter. Filter devices by system type(s).
+      - WifiMacs query parameter. Filter devices by wifi mac(s).
     elements: str
     type: list
-  scope:
-    description:
-    - >
-      Scope query parameter. Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a
-      set of tags.
-    elements: str
-    type: list
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDevices
-  description: Complete reference of the getNetworkSmDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-devices
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_devices,
-
-  - Paths used are
-    get /networks/{networkId}/sm/devices,
+  - description: Complete reference of the getNetworkSmDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-devices
+    name: Cisco Meraki documentation for sm getNetworkSmDevices
+short_description: Information module for networks _sm _devices
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

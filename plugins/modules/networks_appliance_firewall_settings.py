@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_settings
-short_description: Resource module for networks _appliance _firewall _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _settings.
-- Update the firewall settings for this network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _settings.
+  - Update the firewall settings for this network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_settings
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_settings,
+  - Paths used are put /networks/{networkId}/appliance/firewall/settings,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -31,18 +31,15 @@ options:
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallSettings
-  description: Complete reference of the updateNetworkApplianceFirewallSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-settings
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_settings,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/settings,
+  - description: Complete reference of the updateNetworkApplianceFirewallSettings
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-settings
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallSettings
+short_description: Resource module for networks _appliance _firewall _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

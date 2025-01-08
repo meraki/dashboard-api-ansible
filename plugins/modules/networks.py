@@ -5,23 +5,25 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks
-short_description: Resource module for networks
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks.
-- Create a network.
-- Delete a network.
-- Update a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks.
+  - Create a network.
+  - Delete a network.
+  - Update a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks
+notes:
+  - SDK Method used are networks.Networks.create_organization_network, networks.Networks.delete_network,
+    networks.Networks.update_network,
+  - Paths used are post /organizations/{organizationId}/networks, delete /networks/{networkId},
+    put /networks/{networkId},
 options:
   copyFromNetworkId:
-    description: The ID of the network to copy configuration from. Other provided parameters
-      will override the copied configuration, except type which must match this network's
-      type exactly.
+    description: The ID of the network to copy configuration from. Other provided
+      parameters will override the copied configuration, except type which must match
+      this network's type exactly.
     type: str
   enrollmentString:
     description: A unique identifier which can be used for device enrollment or easy
@@ -41,8 +43,8 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   productTypes:
-    description: The product type(s) of the new network. If more than one type is included,
-      the network will be a combined network.
+    description: The product type(s) of the new network. If more than one type is
+      included, the network will be a combined network.
     elements: str
     type: list
   tags:
@@ -55,28 +57,20 @@ options:
       article.</a>.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createOrganizationNetwork
-  description: Complete reference of the createOrganizationNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-network
-- name: Cisco Meraki documentation for networks deleteNetwork
-  description: Complete reference of the deleteNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network
-- name: Cisco Meraki documentation for networks updateNetwork
-  description: Complete reference of the updateNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network
-notes:
-  - SDK Method used are
-    networks.Networks.create_organization_network,
-    networks.Networks.delete_network,
-    networks.Networks.update_network,
-
-  - Paths used are
-    post /organizations/{organizationId}/networks,
-    delete /networks/{networkId},
-    put /networks/{networkId},
+  - description: Complete reference of the createOrganizationNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-network
+    name: Cisco Meraki documentation for networks createOrganizationNetwork
+  - description: Complete reference of the deleteNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network
+    name: Cisco Meraki documentation for networks deleteNetwork
+  - description: Complete reference of the updateNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network
+    name: Cisco Meraki documentation for networks updateNetwork
+short_description: Resource module for networks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

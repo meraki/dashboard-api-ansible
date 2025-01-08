@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_devices_remove
-short_description: Resource module for networks _devices _remove
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _devices _remove.
-- Remove a single device.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _devices _remove.
+  - Remove a single device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_devices_remove
+notes:
+  - SDK Method used are networks.Networks.remove_network_devices,
+  - Paths used are post /networks/{networkId}/devices/remove,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -23,18 +23,14 @@ options:
     description: The serial of a device.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks removeNetworkDevices
-  description: Complete reference of the removeNetworkDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!remove-network-devices
-notes:
-  - SDK Method used are
-    networks.Networks.remove_network_devices,
-
-  - Paths used are
-    post /networks/{networkId}/devices/remove,
+  - description: Complete reference of the removeNetworkDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!remove-network-devices
+    name: Cisco Meraki documentation for networks removeNetworkDevices
+short_description: Resource module for networks _devices _remove
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

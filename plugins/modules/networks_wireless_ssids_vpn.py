@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_vpn
-short_description: Resource module for networks _wireless _ssids _vpn
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids _vpn.
-- Update the VPN settings for the SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids _vpn.
+  - Update the VPN settings for the SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_vpn
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_vpn,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/vpn,
 options:
   concentrator:
     description: The VPN concentrator settings for this SSID.
@@ -64,8 +64,8 @@ options:
               domain names (FQDN) or 'any'.
             type: str
           destPort:
-            description: Destination port for this split tunnel rule, (integer in the
-              range 1-65535), or 'any'.
+            description: Destination port for this split tunnel rule, (integer in
+              the range 1-65535), or 'any'.
             type: str
           policy:
             description: Traffic policy specified for this split tunnel rule, 'allow'
@@ -77,18 +77,14 @@ options:
         type: list
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidVpn
-  description: Complete reference of the updateNetworkWirelessSsidVpn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-vpn
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid_vpn,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number}/vpn,
+  - description: Complete reference of the updateNetworkWirelessSsidVpn API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-vpn
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidVpn
+short_description: Resource module for networks _wireless _ssids _vpn
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

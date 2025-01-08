@@ -5,100 +5,110 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_devices_statuses_info
-short_description: Information module for organizations _devices _statuses
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _devices _statuses.
-- List the status of every Meraki device in the organization.
-version_added: '2.16.0'
+  - Get all organizations _devices _statuses.
+  - List the status of every Meraki device in the organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_devices_statuses_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_devices_statuses,
+  - Paths used are get /organizations/{organizationId}/devices/statuses,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  models:
+    description:
+      - Models query parameter. Optional parameter to filter devices by models.
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - NetworkIds query parameter. Optional parameter to filter devices by network
+        ids.
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
-  startingAfter:
+  productTypes:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  networkIds:
-    description:
-    - NetworkIds query parameter. Optional parameter to filter devices by network ids.
+      - 'ProductTypes query parameter. An optional parameter to filter device statuses
+        by product type. Valid types are wireless, appliance, switch, systemsManager,
+        camera, cellularGateway, sensor, wirelessController, and secureConnect.
+
+        '
     elements: str
     type: list
   serials:
     description:
-    - Serials query parameter. Optional parameter to filter devices by serials.
+      - Serials query parameter. Optional parameter to filter devices by serials.
     elements: str
     type: list
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   statuses:
     description:
-    - >
-      Statuses query parameter. Optional parameter to filter devices by statuses. Valid statuses are "online",
-      "alerting", "offline", "dormant".
-    elements: str
-    type: list
-  productTypes:
-    description:
-    - >
-      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types
-      are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and
-      secureConnect.
-    elements: str
-    type: list
-  models:
-    description:
-    - Models query parameter. Optional parameter to filter devices by models.
+      - 'Statuses query parameter. Optional parameter to filter devices by statuses.
+        Valid statuses are "online", "alerting", "offline", "dormant".
+
+        '
     elements: str
     type: list
   tags:
     description:
-    - >
-      Tags query parameter. An optional parameter to filter devices by tags. The filtering is case-sensitive. If
-      tags are included, 'tagsFilterType' should also be included (see below).
+      - 'Tags query parameter. An optional parameter to filter devices by tags. The
+        filtering is case-sensitive. If tags are included, ''tagsFilterType'' should
+        also be included (see below).
+
+        '
     elements: str
     type: list
   tagsFilterType:
     description:
-    - >
-      TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate
-      whether to return devices which contain ANY or ALL of the included tags. If no type is included,
-      'withAnyTags' will be selected.
+      - 'TagsFilterType query parameter. An optional parameter of value ''withAnyTags''
+        or ''withAllTags'' to indicate whether to return devices which contain ANY
+        or ALL of the included tags. If no type is included, ''withAnyTags'' will
+        be selected.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationDevicesStatuses
-  description: Complete reference of the getOrganizationDevicesStatuses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_devices_statuses,
-
-  - Paths used are
-    get /organizations/{organizationId}/devices/statuses,
+  - description: Complete reference of the getOrganizationDevicesStatuses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses
+    name: Cisco Meraki documentation for organizations getOrganizationDevicesStatuses
+short_description: Information module for organizations _devices _statuses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

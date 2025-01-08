@@ -5,73 +5,81 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_vlan_profiles_assignments_by_device_info
-short_description: Information module for networks _vlan _profiles _assignments _by _device
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _vlan _profiles _assignments _by _device.
-- Get the assigned VLAN Profiles for devices in a network.
-version_added: '2.16.0'
+  - Get all networks _vlan _profiles _assignments _by _device.
+  - Get the assigned VLAN Profiles for devices in a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_vlan_profiles_assignments_by_device_info
+notes:
+  - SDK Method used are networks.Networks.get_network_vlan_profiles_assignments_by_device,
+  - Paths used are get /networks/{networkId}/vlanProfiles/assignments/byDevice,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  serials:
-    description:
-    - >
-      Serials query parameter. Optional parameter to filter devices by serials. All devices returned belong to
-      serial numbers that are an exact match.
-    elements: str
-    type: list
   productTypes:
     description:
-    - ProductTypes query parameter. Optional parameter to filter devices by product types.
+      - ProductTypes query parameter. Optional parameter to filter devices by product
+        types.
+    elements: str
+    type: list
+  serials:
+    description:
+      - 'Serials query parameter. Optional parameter to filter devices by serials.
+        All devices returned belong to serial numbers that are an exact match.
+
+        '
     elements: str
     type: list
   stackIds:
     description:
-    - StackIds query parameter. Optional parameter to filter devices by Switch Stack ids.
+      - StackIds query parameter. Optional parameter to filter devices by Switch Stack
+        ids.
     elements: str
     type: list
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for networks getNetworkVlanProfilesAssignmentsByDevice
-  description: Complete reference of the getNetworkVlanProfilesAssignmentsByDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profiles-assignments-by-device
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_vlan_profiles_assignments_by_device,
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
 
-  - Paths used are
-    get /networks/{networkId}/vlanProfiles/assignments/byDevice,
+        '
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkVlanProfilesAssignmentsByDevice
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profiles-assignments-by-device
+    name: Cisco Meraki documentation for networks getNetworkVlanProfilesAssignmentsByDevice
+short_description: Information module for networks _vlan _profiles _assignments _by
+  _device
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

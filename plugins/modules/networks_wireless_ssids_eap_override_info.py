@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_eap_override_info
-short_description: Information module for networks _wireless _ssids _eap _override
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _eap _override.
-- Return the EAP overridden parameters for an SSID.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _eap _override.
+  - Return the EAP overridden parameters for an SSID.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_eap_override_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_eap_override,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/eapOverride,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidEapOverride
-  description: Complete reference of the getNetworkWirelessSsidEapOverride API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-eap-override
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_eap_override,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/eapOverride,
+  - description: Complete reference of the getNetworkWirelessSsidEapOverride API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-eap-override
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidEapOverride
+short_description: Information module for networks _wireless _ssids _eap _override
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_insight_applications_info
-short_description: Information module for organizations _insight _applications
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _insight _applications.
-- List all Insight tracked applications.
-version_added: '2.16.0'
+  - Get all organizations _insight _applications.
+  - List all Insight tracked applications.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_insight_applications_info
+notes:
+  - SDK Method used are insight.Insight.get_organization_insight_applications,
+  - Paths used are get /organizations/{organizationId}/insight/applications,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for insight getOrganizationInsightApplications
-  description: Complete reference of the getOrganizationInsightApplications API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-applications
-notes:
-  - SDK Method used are
-    insight.Insight.get_organization_insight_applications,
-
-  - Paths used are
-    get /organizations/{organizationId}/insight/applications,
+  - description: Complete reference of the getOrganizationInsightApplications API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-applications
+    name: Cisco Meraki documentation for insight getOrganizationInsightApplications
+short_description: Information module for organizations _insight _applications
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_saml
-short_description: Resource module for organizations _saml
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _saml.
-- Updates the SAML SSO enabled settings for an organization.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _saml.
+  - Updates the SAML SSO enabled settings for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_saml
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_saml,
+  - Paths used are put /organizations/{organizationId}/saml,
 options:
   enabled:
     description: Boolean for updating SAML SSO enabled settings.
@@ -23,18 +23,14 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationSaml
-  description: Complete reference of the updateOrganizationSaml API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_saml,
-
-  - Paths used are
-    put /organizations/{organizationId}/saml,
+  - description: Complete reference of the updateOrganizationSaml API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml
+    name: Cisco Meraki documentation for organizations updateOrganizationSaml
+short_description: Resource module for organizations _saml
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

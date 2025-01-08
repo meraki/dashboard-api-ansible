@@ -1,10 +1,12 @@
 ---
+
 - hosts: localhost
   vars:
     network_id: "L_828099381482771185" # Branch-1234
     org_id: "828099381482762270"
   gather_facts: false
   tasks:
+
     # - name: Get all networks _appliance _ports
     #   cisco.meraki.networks_appliance_ports_info:
     #     networkId: L_828099381482771185
@@ -17,7 +19,7 @@
     #     vlan: 50
     #     # type: access
     #     state: present
-    #     poeEnabled: false
+    #     poeEnabled: false 
     # - name: Update appliance Vlans
     #   cisco.meraki.networks_appliance_vlans:
     #     state: present
@@ -51,9 +53,10 @@
     #       port: 1000
     #       secret: secret
     #     visible: true
-    #     wpaEncryptionMode: WPA2 only
+    #     wpaEncryptionMode: WPA2 only 
 
-    # ################################################################
+
+# ################################################################
 
     # - name: Update appliance traffic sharping
     #   cisco.meraki.networks_appliance_traffic_shaping:
@@ -89,7 +92,7 @@
     # - name: Show result
     #   ansible.builtin.debug:
     #     msg: "{{ result.meraki_response[0].id }}"
-
+    
     # - name: Bind a template from a network
     #   meraki_config_template:
     #     auth_key: "{{ meraki_api_key }}"
@@ -99,7 +102,8 @@
     #     config_template: "{{ item.value.template_name }}"
     #   delegate_to: localhost
     #   loop: "{{ lookup('dict', devices) }}"
-
+  
+  
     # - name: Create
     #   cisco.meraki.organizations_config_templates:
     #     # meraki_api_key: "{{ meraki_api_key }}"
@@ -114,12 +118,13 @@
     #     configTemplateId: "{{ result.meraki_response.id }}"
     #     networkId: "{{ network_id }}"
 
+
     # - name: change name of device
     #   cisco.meraki.devices:
     #     name: new name 4
     #     serial: QBSB-D5ZD-9CXT
     #     # organizationId: "{{ org_id }}"
-    #     state: present
+    #     state: present 
     #     meraki_suppress_logging: false
 
     # - name: onboard order
@@ -128,6 +133,7 @@
     #     # meraki_simulate: "{{ testpolicy }}"
     #     organizationId: "{{ org_id }}"
     #     orders: "1"
+    
 
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
@@ -163,7 +169,8 @@
     #     id: '300'
     #     name: My VLAN
     #     networkId: "{{ network_id }}"
-    #     subnet: 192.168.3.0/24
+    #     subnet: 192.168.3.0/24 
+
 
     # - name: Enable Vlans on the MX
     #   cisco.meraki.networks_appliance_vlans_settings:
@@ -204,53 +211,55 @@
     #     networkId: "{{ network_id }}"
     #     subnet: 172.16.0.0/24
 
-    # - name: Get all organizations _appliance _vpn _thirdpartyvpnpeers
-    #   cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
-    #     meraki_suppress_logging: false
-    #     organizationId: "828099381482762270"
-    #   register: result
+  
+  # - name: Get all organizations _appliance _vpn _thirdpartyvpnpeers
+  #   cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
+  #     meraki_suppress_logging: false
+  #     organizationId: "828099381482762270"
+  #   register: result
 
-    # - name: Show result
-    #   ansible.builtin.debug:
-    #     msg: "{{ result }}"
+  # - name: Show result
+  #   ansible.builtin.debug:
+  #     msg: "{{ result }}" 
 
-    # - name: Get all networks _appliance _trafficshaping _customperformanceclasses
-    #   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
-    #     networkId: L_828099381482771185
-    #   register: result
 
-    # - name: Show result
-    #   ansible.builtin.debug:
-    #     msg: "{{ result }}"
+  # - name: Get all networks _appliance _trafficshaping _customperformanceclasses
+  #   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
+  #     networkId: L_828099381482771185
+  #   register: result
 
-    # - name: Create
-    #   cisco.meraki.networks_switch_stacks:
-    #     state: present
-    #     meraki_suppress_logging: false
-    #     name: A cool stack
-    #     networkId: "{{ network_id }}"
-    #     serials:
-    #     - QBSB-BNH2-KDXJ
+  # - name: Show result
+  #   ansible.builtin.debug:
+  #     msg: "{{ result }}" 
 
-    - name: Get all networks _clients
-      cisco.meraki.networks_clients_info:
-        # t0: string
-        meraki_suppress_logging: false
-        timespan: 1
-        perPage: 3
-        # startingAfter: string
-        # endingBefore: string
-        # statuses: []
-        # ip: string
-        # ip6: string
-        # ip6Local: string
-        # mac: string
-        # os: string
-        # pskGroup: string
-        # description: string
-        # vlan: string
-        # recentDeviceConnections: []
-        networkId: L_828099381482771185
-        total_pages: -1
-        direction: next
-      register: result
+  # - name: Create
+  #   cisco.meraki.networks_switch_stacks:
+  #     state: present
+  #     meraki_suppress_logging: false
+  #     name: A cool stack
+  #     networkId: "{{ network_id }}"
+  #     serials:
+  #     - QBSB-BNH2-KDXJ
+
+  - name: Get all networks _clients
+    cisco.meraki.networks_clients_info:
+      # t0: string
+      meraki_suppress_logging: false
+      timespan: 1
+      perPage: 3
+      # startingAfter: string
+      # endingBefore: string
+      # statuses: []
+      # ip: string
+      # ip6: string
+      # ip6Local: string
+      # mac: string
+      # os: string
+      # pskGroup: string
+      # description: string
+      # vlan: string
+      # recentDeviceConnections: []
+      networkId: L_828099381482771185
+      total_pages: -1
+      direction: next
+    register: result

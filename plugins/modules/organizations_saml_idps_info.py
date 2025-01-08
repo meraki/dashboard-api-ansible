@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_saml_idps_info
-short_description: Information module for organizations _saml _idps
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _saml _idps.
-- Get organizations _saml _idps by id.
-- Get a SAML IdP from your organization.
-- List the SAML IdPs in your organization.
-version_added: '2.16.0'
+  - Get all organizations _saml _idps.
+  - Get organizations _saml _idps by id.
+  - Get a SAML IdP from your organization.
+  - List the SAML IdPs in your organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_saml_idps_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_saml_idp, organizations.Organizations.get_organization_saml_idps,
+  - Paths used are get /organizations/{organizationId}/saml/idps, get /organizations/{organizationId}/saml/idps/{idpId},
 options:
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   idpId:
     description:
-    - IdpId path parameter. Idp ID.
+      - IdpId path parameter. Idp ID.
+    type: str
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSamlIdp
-  description: Complete reference of the getOrganizationSamlIdp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-idp
-- name: Cisco Meraki documentation for organizations getOrganizationSamlIdps
-  description: Complete reference of the getOrganizationSamlIdps API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-idps
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_saml_idp,
-    organizations.Organizations.get_organization_saml_idps,
-
-  - Paths used are
-    get /organizations/{organizationId}/saml/idps,
-    get /organizations/{organizationId}/saml/idps/{idpId},
+  - description: Complete reference of the getOrganizationSamlIdp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-idp
+    name: Cisco Meraki documentation for organizations getOrganizationSamlIdp
+  - description: Complete reference of the getOrganizationSamlIdps API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-idps
+    name: Cisco Meraki documentation for organizations getOrganizationSamlIdps
+short_description: Information module for organizations _saml _idps
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

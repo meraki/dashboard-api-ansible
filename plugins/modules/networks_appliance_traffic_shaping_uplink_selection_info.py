@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_uplink_selection_info
-short_description: Information module for networks _appliance _traffic _shaping _uplink _selection
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _traffic _shaping _uplink _selection.
-- Show uplink selection settings for an MX network.
-version_added: '2.16.0'
+  - Get all networks _appliance _traffic _shaping _uplink _selection.
+  - Show uplink selection settings for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_uplink_selection_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_traffic_shaping_uplink_selection,
+  - Paths used are get /networks/{networkId}/appliance/trafficShaping/uplinkSelection,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkSelection
-  description: Complete reference of the getNetworkApplianceTrafficShapingUplinkSelection API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-selection
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_traffic_shaping_uplink_selection,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/trafficShaping/uplinkSelection,
+  - description: Complete reference of the getNetworkApplianceTrafficShapingUplinkSelection
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-selection
+    name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkSelection
+short_description: Information module for networks _appliance _traffic _shaping _uplink
+  _selection
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

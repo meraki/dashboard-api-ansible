@@ -5,18 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_groups
-short_description: Resource module for networks _firmware _upgrades _staged _groups
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _firmware _upgrades _staged _groups.
-- Create a Staged Upgrade Group for a network.
-- Delete a Staged Upgrade Group.
-- Update a Staged Upgrade Group for a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _firmware
+    _upgrades _staged _groups.
+  - Create a Staged Upgrade Group for a network.
+  - Delete a Staged Upgrade Group.
+  - Update a Staged Upgrade Group for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_groups
+notes:
+  - SDK Method used are networks.Networks.create_network_firmware_upgrades_staged_group,
+    networks.Networks.delete_network_firmware_upgrades_staged_group, networks.Networks.update_network_firmware_upgrades_staged_group,
+  - Paths used are post /networks/{networkId}/firmwareUpgrades/staged/groups, delete
+    /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}, put /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
 options:
   assignedDevices:
     description: The devices and Switch Stacks assigned to the Group.
@@ -45,7 +48,8 @@ options:
         type: list
     type: dict
   description:
-    description: Description of the Staged Upgrade Group. Length must be 1 to 255 characters.
+    description: Description of the Staged Upgrade Group. Length must be 1 to 255
+      characters.
     type: str
   groupId:
     description: GroupId path parameter. Group ID.
@@ -61,28 +65,23 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-group
-- name: Cisco Meraki documentation for networks deleteNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-firmware-upgrades-staged-group
-- name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedGroup
-  description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-group
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_firmware_upgrades_staged_group,
-    networks.Networks.delete_network_firmware_upgrades_staged_group,
-    networks.Networks.update_network_firmware_upgrades_staged_group,
-
-  - Paths used are
-    post /networks/{networkId}/firmwareUpgrades/staged/groups,
-    delete /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
-    put /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
+  - description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-group
+    name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedGroup
+  - description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-firmware-upgrades-staged-group
+    name: Cisco Meraki documentation for networks deleteNetworkFirmwareUpgradesStagedGroup
+  - description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-group
+    name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedGroup
+short_description: Resource module for networks _firmware _upgrades _staged _groups
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

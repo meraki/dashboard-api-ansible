@@ -5,41 +5,39 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_firewall_l3_firewall_rules_info
-short_description: Information module for networks _wireless _ssids _firewall l3 _firewall _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _firewall l3 _firewall _rules.
-- Return the L3 firewall rules for an SSID on an MR network.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _firewall l3 _firewall _rules.
+  - Return the L3 firewall rules for an SSID on an MR network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_firewall_l3_firewall_rules_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_firewall_l3_firewall_rules,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidFirewallL3FirewallRules
-  description: Complete reference of the getNetworkWirelessSsidFirewallL3FirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-firewall-l3-firewall-rules
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_firewall_l3_firewall_rules,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules,
+  - description: Complete reference of the getNetworkWirelessSsidFirewallL3FirewallRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-firewall-l3-firewall-rules
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidFirewallL3FirewallRules
+short_description: Information module for networks _wireless _ssids _firewall l3 _firewall
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

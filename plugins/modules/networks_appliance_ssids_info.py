@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_ssids_info
-short_description: Information module for networks _appliance _ssids
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _ssids.
-- Get networks _appliance _ssids by id.
-- List the MX SSIDs in a network.
-- Return a single MX SSID.
-version_added: '2.16.0'
+  - Get all networks _appliance _ssids.
+  - Get networks _appliance _ssids by id.
+  - List the MX SSIDs in a network.
+  - Return a single MX SSID.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_ssids_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_ssid, appliance.Appliance.get_network_appliance_ssids,
+  - Paths used are get /networks/{networkId}/appliance/ssids, get /networks/{networkId}/appliance/ssids/{number},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceSsid
-  description: Complete reference of the getNetworkApplianceSsid API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ssid
-- name: Cisco Meraki documentation for appliance getNetworkApplianceSsids
-  description: Complete reference of the getNetworkApplianceSsids API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ssids
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_ssid,
-    appliance.Appliance.get_network_appliance_ssids,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/ssids,
-    get /networks/{networkId}/appliance/ssids/{number},
+  - description: Complete reference of the getNetworkApplianceSsid API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ssid
+    name: Cisco Meraki documentation for appliance getNetworkApplianceSsid
+  - description: Complete reference of the getNetworkApplianceSsids API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ssids
+    name: Cisco Meraki documentation for appliance getNetworkApplianceSsids
+short_description: Information module for networks _appliance _ssids
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

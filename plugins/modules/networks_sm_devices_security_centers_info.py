@@ -5,46 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_security_centers_info
-short_description: Information module for networks _sm _devices _security _centers
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _devices _security _centers.
-- Get a list of softwares associated with a device.
-- List the security centers on a device.
-version_added: '2.16.0'
+  - Get all networks _sm _devices _security _centers.
+  - Get a list of softwares associated with a device.
+  - List the security centers on a device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_security_centers_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_device_softwares,
+  - Paths used are get /networks/{networkId}/sm/devices/{deviceId}/securityCenters,
+    get /networks/{networkId}/sm/devices/{deviceId}/softwares,
 options:
+  deviceId:
+    description:
+      - DeviceId path parameter. Device ID.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  deviceId:
-    description:
-    - DeviceId path parameter. Device ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceSecurityCenters
-  description: Complete reference of the getNetworkSmDeviceSecurityCenters API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-security-centers
-- name: Cisco Meraki documentation for sm getNetworkSmDeviceSoftwares
-  description: Complete reference of the getNetworkSmDeviceSoftwares API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-softwares
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_device_softwares,
-
-  - Paths used are
-    get /networks/{networkId}/sm/devices/{deviceId}/securityCenters,
-    get /networks/{networkId}/sm/devices/{deviceId}/softwares,
+  - description: Complete reference of the getNetworkSmDeviceSecurityCenters API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-security-centers
+    name: Cisco Meraki documentation for sm getNetworkSmDeviceSecurityCenters
+  - description: Complete reference of the getNetworkSmDeviceSoftwares API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-softwares
+    name: Cisco Meraki documentation for sm getNetworkSmDeviceSoftwares
+short_description: Information module for networks _sm _devices _security _centers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

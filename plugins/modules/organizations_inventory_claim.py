@@ -5,20 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_inventory_claim
-short_description: Resource module for organizations _inventory _claim
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _inventory _claim.
-- >
-   Claim a list of devices, licenses, and/or orders into an organization inventory. When claiming by order, all
-   devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be
-   placed in the organization's inventory. This operation can be used up to ten times within a single five minute
-   window.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _inventory _claim.
+  - 'Claim a list of devices, licenses, and/or orders into an organization inventory.
+    When claiming by order, all devices and licenses in the order will be claimed;
+    licenses will be added to the organization and devices will be placed in the organization''s
+    inventory. This operation can be used up to ten times within a single five minute
+    window.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_inventory_claim
+notes:
+  - SDK Method used are organizations.Organizations.claim_into_organization_inventory,
+  - Paths used are post /organizations/{organizationId}/inventory/claim,
 options:
   licenses:
     description: The licenses that should be claimed.
@@ -29,10 +31,10 @@ options:
         type: str
       mode:
         description: Co-term licensing only either 'renew' or 'addDevices'. 'addDevices'
-          will increase the license limit, while 'renew' will extend the amount of time
-          until expiration. Defaults to 'addDevices'. All licenses must be claimed with
-          the same mode, and at most one renewal can be claimed at a time. Does not
-          apply to organizations using per-device licensing model.
+          will increase the license limit, while 'renew' will extend the amount of
+          time until expiration. Defaults to 'addDevices'. All licenses must be claimed
+          with the same mode, and at most one renewal can be claimed at a time. Does
+          not apply to organizations using per-device licensing model.
         type: str
     type: list
   orders:
@@ -47,18 +49,14 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations claimIntoOrganizationInventory
-  description: Complete reference of the claimIntoOrganizationInventory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!claim-into-organization-inventory
-notes:
-  - SDK Method used are
-    organizations.Organizations.claim_into_organization_inventory,
-
-  - Paths used are
-    post /organizations/{organizationId}/inventory/claim,
+  - description: Complete reference of the claimIntoOrganizationInventory API.
+    link: https://developer.cisco.com/meraki/api-v1/#!claim-into-organization-inventory
+    name: Cisco Meraki documentation for organizations claimIntoOrganizationInventory
+short_description: Resource module for organizations _inventory _claim
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

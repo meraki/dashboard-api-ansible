@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_storm_control
-short_description: Resource module for networks _switch _storm _control
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _storm _control.
-- Update the storm control configuration for a switch network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _storm _control.
+  - Update the storm control configuration for a switch network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_storm_control
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_storm_control,
+  - Paths used are put /networks/{networkId}/switch/stormControl,
 options:
   broadcastThreshold:
     description: Percentage (1 to 99) of total available port bandwidth for broadcast
@@ -37,18 +37,14 @@ options:
       rate is to clear the configuration.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchStormControl
-  description: Complete reference of the updateNetworkSwitchStormControl API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-storm-control
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_storm_control,
-
-  - Paths used are
-    put /networks/{networkId}/switch/stormControl,
+  - description: Complete reference of the updateNetworkSwitchStormControl API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-storm-control
+    name: Cisco Meraki documentation for switch updateNetworkSwitchStormControl
+short_description: Resource module for networks _switch _storm _control
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

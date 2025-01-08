@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_saml_roles_info
-short_description: Information module for organizations _saml _roles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _saml _roles.
-- Get organizations _saml _roles by id.
-- List the SAML roles for this organization.
-- Return a SAML role.
-version_added: '2.16.0'
+  - Get all organizations _saml _roles.
+  - Get organizations _saml _roles by id.
+  - List the SAML roles for this organization.
+  - Return a SAML role.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_saml_roles_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_saml_role, organizations.Organizations.get_organization_saml_roles,
+  - Paths used are get /organizations/{organizationId}/samlRoles, get /organizations/{organizationId}/samlRoles/{samlRoleId},
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   samlRoleId:
     description:
-    - SamlRoleId path parameter. Saml role ID.
+      - SamlRoleId path parameter. Saml role ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationSamlRole
-  description: Complete reference of the getOrganizationSamlRole API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-role
-- name: Cisco Meraki documentation for organizations getOrganizationSamlRoles
-  description: Complete reference of the getOrganizationSamlRoles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-roles
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_saml_role,
-    organizations.Organizations.get_organization_saml_roles,
-
-  - Paths used are
-    get /organizations/{organizationId}/samlRoles,
-    get /organizations/{organizationId}/samlRoles/{samlRoleId},
+  - description: Complete reference of the getOrganizationSamlRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-role
+    name: Cisco Meraki documentation for organizations getOrganizationSamlRole
+  - description: Complete reference of the getOrganizationSamlRoles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-roles
+    name: Cisco Meraki documentation for organizations getOrganizationSamlRoles
+short_description: Information module for organizations _saml _roles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

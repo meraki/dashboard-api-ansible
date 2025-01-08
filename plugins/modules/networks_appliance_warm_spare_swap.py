@@ -5,33 +5,29 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_warm_spare_swap
-short_description: Resource module for networks _appliance _warm _spare _swap
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _appliance _warm _spare _swap.
-- Swap MX primary and warm spare appliances.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _appliance _warm _spare _swap.
+  - Swap MX primary and warm spare appliances.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_warm_spare_swap
+notes:
+  - SDK Method used are appliance.Appliance.swap_network_appliance_warm_spare,
+  - Paths used are post /networks/{networkId}/appliance/warmSpare/swap,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance swapNetworkApplianceWarmSpare
-  description: Complete reference of the swapNetworkApplianceWarmSpare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!swap-network-appliance-warm-spare
-notes:
-  - SDK Method used are
-    appliance.Appliance.swap_network_appliance_warm_spare,
-
-  - Paths used are
-    post /networks/{networkId}/appliance/warmSpare/swap,
+  - description: Complete reference of the swapNetworkApplianceWarmSpare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!swap-network-appliance-warm-spare
+    name: Cisco Meraki documentation for appliance swapNetworkApplianceWarmSpare
+short_description: Resource module for networks _appliance _warm _spare _swap
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

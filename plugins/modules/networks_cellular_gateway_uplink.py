@@ -5,23 +5,23 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cellular_gateway_uplink
-short_description: Resource module for networks _cellular _gateway _uplink
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _cellular _gateway _uplink.
-- Updates the uplink settings for your MG network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _cellular _gateway _uplink.
+  - Updates the uplink settings for your MG network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_cellular_gateway_uplink
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.update_network_cellular_gateway_uplink,
+  - Paths used are put /networks/{networkId}/cellularGateway/uplink,
 options:
   bandwidthLimits:
     description: The bandwidth settings for the 'cellular' uplink.
     suboptions:
       limitDown:
-        description: The maximum download limit (integer, in Kbps). Null indicates no
-          limit.
+        description: The maximum download limit (integer, in Kbps). Null indicates
+          no limit.
         type: int
       limitUp:
         description: The maximum upload limit (integer, in Kbps). Null indicates no
@@ -32,18 +32,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayUplink
-  description: Complete reference of the updateNetworkCellularGatewayUplink API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-uplink
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.update_network_cellular_gateway_uplink,
-
-  - Paths used are
-    put /networks/{networkId}/cellularGateway/uplink,
+  - description: Complete reference of the updateNetworkCellularGatewayUplink API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-uplink
+    name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayUplink
+short_description: Resource module for networks _cellular _gateway _uplink
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_licenses_move
-short_description: Resource module for organizations _licenses _move
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _licenses _move.
-- Move licenses to another organization. This will also move any devices that the licenses are assigned to.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _licenses _move.
+  - Move licenses to another organization. This will also move any devices that the
+    licenses are assigned to.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_licenses_move
+notes:
+  - SDK Method used are organizations.Organizations.move_organization_licenses,
+  - Paths used are post /organizations/{organizationId}/licenses/move,
 options:
   destOrganizationId:
     description: The ID of the organization to move the licenses to.
@@ -27,18 +28,14 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations moveOrganizationLicenses
-  description: Complete reference of the moveOrganizationLicenses API.
-  link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses
-notes:
-  - SDK Method used are
-    organizations.Organizations.move_organization_licenses,
-
-  - Paths used are
-    post /organizations/{organizationId}/licenses/move,
+  - description: Complete reference of the moveOrganizationLicenses API.
+    link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses
+    name: Cisco Meraki documentation for organizations moveOrganizationLicenses
+short_description: Resource module for organizations _licenses _move
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

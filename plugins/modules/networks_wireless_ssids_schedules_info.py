@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_schedules_info
-short_description: Information module for networks _wireless _ssids _schedules
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _schedules.
-- List the outage schedule for the SSID.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _schedules.
+  - List the outage schedule for the SSID.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_schedules_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_schedules,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/schedules,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidSchedules
-  description: Complete reference of the getNetworkWirelessSsidSchedules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-schedules
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_schedules,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/schedules,
+  - description: Complete reference of the getNetworkWirelessSsidSchedules API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-schedules
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidSchedules
+short_description: Information module for networks _wireless _ssids _schedules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

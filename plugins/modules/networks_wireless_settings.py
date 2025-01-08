@@ -5,20 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_settings
-short_description: Resource module for networks _wireless _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _settings.
-- Update the wireless settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _settings.
+  - Update the wireless settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_settings
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_settings,
+  - Paths used are put /networks/{networkId}/wireless/settings,
 options:
   ipv6BridgeEnabled:
-    description: Toggle for enabling or disabling IPv6 bridging in a network (Note if
-      enabled, SSIDs must also be configured to use bridge mode).
+    description: Toggle for enabling or disabling IPv6 bridging in a network (Note
+      if enabled, SSIDs must also be configured to use bridge mode).
     type: bool
   ledLightsOn:
     description: Toggle for enabling or disabling LED lights on all APs in the network
@@ -51,22 +51,18 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   upgradeStrategy:
-    description: The default strategy that network devices will use to perform an upgrade.
-      Requires firmware version MR 26.8 or higher.
+    description: The default strategy that network devices will use to perform an
+      upgrade. Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSettings
-  description: Complete reference of the updateNetworkWirelessSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-settings
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_settings,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/settings,
+  - description: Complete reference of the updateNetworkWirelessSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-settings
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSettings
+short_description: Resource module for networks _wireless _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

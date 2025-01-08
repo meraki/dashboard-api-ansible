@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_traffic_shaping_uplink_selection
-short_description: Resource module for networks _appliance _traffic _shaping _uplink _selection
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _traffic _shaping _uplink _selection.
-- Update uplink selection settings for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _traffic _shaping
+    _uplink _selection.
+  - Update uplink selection settings for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_traffic_shaping_uplink_selection
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_traffic_shaping_uplink_selection,
+  - Paths used are put /networks/{networkId}/appliance/trafficShaping/uplinkSelection,
 options:
   activeActiveAutoVpnEnabled:
     description: Toggle for enabling or disabling active-active AutoVPN.
@@ -46,8 +47,8 @@ options:
     elements: dict
     suboptions:
       failOverCriterion:
-        description: Fail over criterion for this uplink preference rule. Must be one
-          of 'poorPerformance' or 'uplinkDown'.
+        description: Fail over criterion for this uplink preference rule. Must be
+          one of 'poorPerformance' or 'uplinkDown'.
         type: str
       performanceClass:
         description: Performance class setting for this uplink preference rule.
@@ -61,13 +62,13 @@ options:
               performanceClass type is 'custom'.
             type: str
           type:
-            description: Type of this performance class. Must be one of 'builtin' or
-              'custom'.
+            description: Type of this performance class. Must be one of 'builtin'
+              or 'custom'.
             type: str
         type: dict
       preferredUplink:
-        description: Preferred uplink for this uplink preference rule. Must be one of
-          'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
+        description: Preferred uplink for this uplink preference rule. Must be one
+          of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
         type: str
       trafficFilters:
         description: Array of traffic filters for this uplink preference rule.
@@ -98,9 +99,10 @@ options:
                       under a template network.
                     type: int
                   network:
-                    description: Meraki network ID. Currently only available under a
-                      template network, and the value should be ID of either same template
-                      network, or another template network currently. E.g. "L_12345678".
+                    description: Meraki network ID. Currently only available under
+                      a template network, and the value should be ID of either same
+                      template network, or another template network currently. E.g.
+                      "L_12345678".
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
@@ -115,8 +117,8 @@ options:
                   filter. E.g. "meraki layer7/category/1", "meraki layer7/application/4".
                 type: str
               protocol:
-                description: Protocol of this custom type traffic filter. Must be one
-                  of 'tcp', 'udp', 'icmp', 'icmp6' or 'any'.
+                description: Protocol of this custom type traffic filter. Must be
+                  one of 'tcp', 'udp', 'icmp', 'icmp6' or 'any'.
                 type: str
               source:
                 description: Source of this custom type traffic filter.
@@ -132,9 +134,10 @@ options:
                       under a template network.
                     type: int
                   network:
-                    description: Meraki network ID. Currently only available under a
-                      template network, and the value should be ID of either same template
-                      network, or another template network currently. E.g. "L_12345678".
+                    description: Meraki network ID. Currently only available under
+                      a template network, and the value should be ID of either same
+                      template network, or another template network currently. E.g.
+                      "L_12345678".
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
@@ -152,8 +155,8 @@ options:
     elements: dict
     suboptions:
       preferredUplink:
-        description: Preferred uplink for this uplink preference rule. Must be one of
-          'wan1' or 'wan2'.
+        description: Preferred uplink for this uplink preference rule. Must be one
+          of 'wan1' or 'wan2'.
         type: str
       trafficFilters:
         description: Array of traffic filters for this uplink preference rule.
@@ -178,8 +181,8 @@ options:
                     type: str
                 type: dict
               protocol:
-                description: Protocol of this custom type traffic filter. Must be one
-                  of 'tcp', 'udp', 'icmp6' or 'any'.
+                description: Protocol of this custom type traffic filter. Must be
+                  one of 'tcp', 'udp', 'icmp6' or 'any'.
                 type: str
               source:
                 description: Source of this custom type traffic filter.
@@ -206,18 +209,16 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkSelection
-  description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-selection
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_traffic_shaping_uplink_selection,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/trafficShaping/uplinkSelection,
+  - description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-selection
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkSelection
+short_description: Resource module for networks _appliance _traffic _shaping _uplink
+  _selection
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

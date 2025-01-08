@@ -5,21 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_licenses
-short_description: Resource module for organizations _licenses
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _licenses.
-- Update a license.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _licenses.
+  - Update a license.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_licenses
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_license,
+  - Paths used are put /organizations/{organizationId}/licenses/{licenseId},
 options:
   deviceSerial:
     description: The serial number of the device to assign this license to. Set this
-      to null to unassign the license. If a different license is already active on the
-      device, this parameter will control queueing/dequeuing this license.
+      to null to unassign the license. If a different license is already active on
+      the device, this parameter will control queueing/dequeuing this license.
     type: str
   licenseId:
     description: LicenseId path parameter. License ID.
@@ -28,18 +28,14 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationLicense
-  description: Complete reference of the updateOrganizationLicense API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-license
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_license,
-
-  - Paths used are
-    put /organizations/{organizationId}/licenses/{licenseId},
+  - description: Complete reference of the updateOrganizationLicense API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-license
+    name: Cisco Meraki documentation for organizations updateOrganizationLicense
+short_description: Resource module for organizations _licenses
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

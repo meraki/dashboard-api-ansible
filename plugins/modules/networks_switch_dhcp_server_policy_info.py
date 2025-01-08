@@ -5,39 +5,36 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_dhcp_server_policy_info
-short_description: Information module for networks _switch _dhcp _server _policy
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _dhcp _server _policy.
-- >
-   Return the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block,
-   respectively.
-version_added: '2.16.0'
+  - Get all networks _switch _dhcp _server _policy.
+  - 'Return the DHCP server settings. Blocked/allowed servers are only applied when
+    default policy is allow/block, respectively.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_dhcp_server_policy_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_dhcp_server_policy,
+  - Paths used are get /networks/{networkId}/switch/dhcpServerPolicy,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicy
-  description: Complete reference of the getNetworkSwitchDhcpServerPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_dhcp_server_policy,
-
-  - Paths used are
-    get /networks/{networkId}/switch/dhcpServerPolicy,
+  - description: Complete reference of the getNetworkSwitchDhcpServerPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy
+    name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicy
+short_description: Information module for networks _switch _dhcp _server _policy
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

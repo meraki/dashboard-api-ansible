@@ -5,20 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_settings
-short_description: Resource module for networks _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _settings.
-- Update the settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _settings.
+  - Update the settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_settings
+notes:
+  - SDK Method used are networks.Networks.update_network_settings,
+  - Paths used are put /networks/{networkId}/settings,
 options:
   localStatusPage:
-    description: A hash of Local Status page(s)' authentication options applied to the
-      Network.
+    description: A hash of Local Status page(s)' authentication options applied to
+      the Network.
     suboptions:
       authentication:
         description: A hash of Local Status page(s)' authentication options applied
@@ -52,8 +52,8 @@ options:
     type: str
   remoteStatusPageEnabled:
     description: Enables / disables access to the device status page (<a target='_blank'>http
-      //device's LAN IP)</a>. Optional. Can only be set if localStatusPageEnabled is
-      set to true.
+      //device's LAN IP)</a>. Optional. Can only be set if localStatusPageEnabled
+      is set to true.
     type: bool
   securePort:
     description: A hash of SecureConnect options applied to the Network.
@@ -63,18 +63,14 @@ options:
         type: bool
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkSettings
-  description: Complete reference of the updateNetworkSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-settings
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_settings,
-
-  - Paths used are
-    put /networks/{networkId}/settings,
+  - description: Complete reference of the updateNetworkSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-settings
+    name: Cisco Meraki documentation for networks updateNetworkSettings
+short_description: Resource module for networks _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_cellular_gateway_lan_info
-short_description: Information module for devices _cellular _gateway _lan
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _cellular _gateway _lan.
-- Show the LAN Settings of a MG.
-version_added: '2.16.0'
+  - Get all devices _cellular _gateway _lan.
+  - Show the LAN Settings of a MG.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_cellular_gateway_lan_info
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.get_device_cellular_gateway_lan,
+  - Paths used are get /devices/{serial}/cellularGateway/lan,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayLan
-  description: Complete reference of the getDeviceCellularGatewayLan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-lan
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.get_device_cellular_gateway_lan,
-
-  - Paths used are
-    get /devices/{serial}/cellularGateway/lan,
+  - description: Complete reference of the getDeviceCellularGatewayLan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-lan
+    name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayLan
+short_description: Information module for devices _cellular _gateway _lan
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

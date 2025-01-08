@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_traffic_analysis
-short_description: Resource module for networks _traffic _analysis
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _traffic _analysis.
-- Update the traffic analysis settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _traffic _analysis.
+  - Update the traffic analysis settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_traffic_analysis
+notes:
+  - SDK Method used are networks.Networks.update_network_traffic_analysis,
+  - Paths used are put /networks/{networkId}/trafficAnalysis,
 options:
   customPieChartItems:
     description: The list of items that make up the custom pie chart for traffic reporting.
@@ -24,13 +24,13 @@ options:
         description: The name of the custom pie chart item.
         type: str
       type:
-        description: The signature type for the custom pie chart item. Can be one of
-          'host', 'port' or 'ipRange'.
+        description: The signature type for the custom pie chart item. Can be one
+          of 'host', 'port' or 'ipRange'.
         type: str
       value:
-        description: The value of the custom pie chart item. Valid syntax depends on
-          the signature type of the chart item (see sample request/response for more
-          details).
+        description: The value of the custom pie chart item. Valid syntax depends
+          on the signature type of the chart item (see sample request/response for
+          more details).
         type: str
     type: list
   mode:
@@ -42,18 +42,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkTrafficAnalysis
-  description: Complete reference of the updateNetworkTrafficAnalysis API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-traffic-analysis
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_traffic_analysis,
-
-  - Paths used are
-    put /networks/{networkId}/trafficAnalysis,
+  - description: Complete reference of the updateNetworkTrafficAnalysis API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-traffic-analysis
+    name: Cisco Meraki documentation for networks updateNetworkTrafficAnalysis
+short_description: Resource module for networks _traffic _analysis
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

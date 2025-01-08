@@ -15,128 +15,169 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mx_third_party_vpn_peers
-short_description: Manage third party (IPSec) VPN peers for MX devices
-description:
-- Create, edit, query, or delete third party VPN peers in a Meraki environment.
+author:
+  - Kevin Breit (@kbreit)
 deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
   alternative: cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Create, edit, query, or delete third party VPN peers in a Meraki environment.
+extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mx_third_party_vpn_peers
 options:
-    state:
-      description:
-      - Specifies whether object should be queried, created/modified, or removed.
-      choices: [absent, present, query]
-      default: query
-      type: str
-    peers:
-      description:
+  peers:
+    description:
       - The list of VPN peers.
-      type: list
-      elements: dict
-      suboptions:
-        name:
-          description:
+    elements: dict
+    suboptions:
+      ike_version:
+        choices:
+          - '1'
+          - '2'
+        default: '1'
+        description:
+          - The IKE version to be used for the IPsec VPN peer configuration.
+        type: str
+      ipsec_policies:
+        description:
+          - Custom IPSec policies for the VPN peer. If not included and a preset has
+            not been chosen, the default preset for IPSec policies will be used.
+        suboptions:
+          child_auth_algo:
+            choices:
+              - sha256
+              - sha1
+              - md5
+            description:
+              - This is the authentication algorithms to be used in Phase 2.
+            elements: str
+            type: list
+          child_cipher_algo:
+            choices:
+              - aes256
+              - aes192
+              - aes128
+              - tripledes
+              - des
+              - 'null'
+            description:
+              - This is the cipher algorithms to be used in Phase 2.
+            elements: str
+            type: list
+          child_lifetime:
+            description:
+              - The lifetime of the Phase 2 SA in seconds.
+            type: int
+          child_pfs_group:
+            choices:
+              - disabled
+              - group14
+              - group5
+              - group2
+              - group1
+            description:
+              - This is the Diffie-Hellman group to be used for Perfect Forward Secrecy
+                in Phase 2.
+            elements: str
+            type: list
+          ike_auth_algo:
+            choices:
+              - sha256
+              - sha1
+              - md5
+            description:
+              - This is the authentication algorithm to be used in Phase 1.
+            elements: str
+            type: list
+          ike_cipher_algo:
+            choices:
+              - aes256
+              - aes192
+              - aes128
+              - tripledes
+              - des
+            description:
+              - This is the cipher algorithm to be used in Phase 1.
+            elements: str
+            type: list
+          ike_diffie_hellman_group:
+            choices:
+              - group14
+              - group5
+              - group2
+              - group1
+            description:
+              - This is the Diffie-Hellman group to be used in Phase 1.
+            elements: str
+            type: list
+          ike_lifetime:
+            description:
+              - The lifetime of the Phase 1 SA in seconds.
+            type: int
+          ike_prf_algo:
+            choices:
+              - prfsha256
+              - prfsha1
+              - prfmd5
+              - default
+            description:
+              - This is the pseudo-random function to be used in IKE_SA.
+            elements: str
+            type: list
+        type: dict
+      ipsec_policies_preset:
+        choices:
+          - default
+          - aws
+          - azure
+        description:
+          - Specifies IPsec preset values. If this is provided, the 'ipsecPolicies'
+            parameter is ignored.
+        type: str
+      name:
+        description:
           - The name of the VPN peer.
           - Required when state is present.
-          type: str
-        public_ip:
-          description:
-          - The public IP of the VPN peer.
-          - Required when state is present.
-          type: str
-        secret:
-          description:
-          - The shared secret with the VPN peer.
-          - Required when state is present.
-          type: str
-        private_subnets:
-          description:
+        type: str
+      network_tags:
+        description:
+          - A list of network tags that will connect with this peer. If not included,
+            the default is ['all'].
+        elements: str
+        type: list
+      private_subnets:
+        description:
           - The list of the private subnets of the VPN peer.
           - Required when state is present.
-          type: list
-          elements: str
-        ike_version:
-          description:
-          - The IKE version to be used for the IPsec VPN peer configuration.
-          default: "1"
-          type: str
-          choices: ["1", "2"]
-        ipsec_policies_preset:
-          description:
-          - Specifies IPsec preset values. If this is provided, the 'ipsecPolicies' parameter is ignored.
-          type: str
-          choices: ["default", "aws", "azure"]
-        remote_id:
-          description:
-          - The remote ID is used to identify the connecting VPN peer. This can either be a valid IPv4 Address, FQDN or User FQDN.
-          type: str
-        network_tags:
-          description:
-          - A list of network tags that will connect with this peer. If not included, the default is ['all'].
-          type: list
-          elements: str
-        ipsec_policies:
-          description:
-          - Custom IPSec policies for the VPN peer. If not included and a preset has not been chosen, the default preset for IPSec policies will be used.
-          type: dict
-          suboptions:
-            child_lifetime:
-              description:
-              - The lifetime of the Phase 2 SA in seconds.
-              type: int
-            ike_lifetime:
-              description:
-              - The lifetime of the Phase 1 SA in seconds.
-              type: int
-            child_auth_algo:
-              description:
-              - This is the authentication algorithms to be used in Phase 2.
-              type: list
-              elements: str
-              choices: ['sha256', 'sha1', 'md5']
-            child_cipher_algo:
-              description:
-              - This is the cipher algorithms to be used in Phase 2.
-              choices: ['aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null']
-              type: list
-              elements: str
-            child_pfs_group:
-              description:
-              - This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2.
-              type: list
-              elements: str
-              choices: ['disabled','group14', 'group5', 'group2', 'group1']
-            ike_auth_algo:
-              description:
-              - This is the authentication algorithm to be used in Phase 1.
-              type: list
-              elements: str
-              choices: ['sha256', 'sha1', 'md5']
-            ike_cipher_algo:
-              description:
-              - This is the cipher algorithm to be used in Phase 1.
-              type: list
-              elements: str
-              choices: ['aes256', 'aes192', 'aes128', 'tripledes', 'des']
-            ike_diffie_hellman_group:
-              description:
-              - This is the Diffie-Hellman group to be used in Phase 1.
-              type: list
-              elements: str
-              choices: ['group14', 'group5', 'group2', 'group1']
-            ike_prf_algo:
-              description:
-              - This is the pseudo-random function to be used in IKE_SA.
-              type: list
-              elements: str
-              choices: ['prfsha256', 'prfsha1', 'prfmd5', 'default']
-
-author:
-- Kevin Breit (@kbreit)
-extends_documentation_fragment: cisco.meraki.meraki
+        elements: str
+        type: list
+      public_ip:
+        description:
+          - The public IP of the VPN peer.
+          - Required when state is present.
+        type: str
+      remote_id:
+        description:
+          - The remote ID is used to identify the connecting VPN peer. This can either
+            be a valid IPv4 Address, FQDN or User FQDN.
+        type: str
+      secret:
+        description:
+          - The shared secret with the VPN peer.
+          - Required when state is present.
+        type: str
+    type: list
+  state:
+    choices:
+      - absent
+      - present
+      - query
+    default: query
+    description:
+      - Specifies whether object should be queried, created/modified, or removed.
+    type: str
+short_description: Manage third party (IPSec) VPN peers for MX devices
 """
 
 EXAMPLES = r"""

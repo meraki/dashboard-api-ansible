@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_login_security_info
-short_description: Information module for organizations _login _security
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _login _security.
-- Returns the login security settings for an organization.
-version_added: '2.16.0'
+  - Get all organizations _login _security.
+  - Returns the login security settings for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_login_security_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_login_security,
+  - Paths used are get /organizations/{organizationId}/loginSecurity,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationLoginSecurity
-  description: Complete reference of the getOrganizationLoginSecurity API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-login-security
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_login_security,
-
-  - Paths used are
-    get /organizations/{organizationId}/loginSecurity,
+  - description: Complete reference of the getOrganizationLoginSecurity API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-login-security
+    name: Cisco Meraki documentation for organizations getOrganizationLoginSecurity
+short_description: Information module for organizations _login _security
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_group_policies
-short_description: Resource module for networks _group _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _group _policies.
-- Create a group policy.
-- Delete a group policy.
-- Update a group policy.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _group _policies.
+  - Create a group policy.
+  - Delete a group policy.
+  - Update a group policy.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_group_policies
+notes:
+  - SDK Method used are networks.Networks.create_network_group_policy, networks.Networks.delete_network_group_policy,
+    networks.Networks.update_network_group_policy,
+  - Paths used are post /networks/{networkId}/groupPolicies, delete /networks/{networkId}/groupPolicies/{groupPolicyId},
+    put /networks/{networkId}/groupPolicies/{groupPolicyId},
 options:
   bandwidth:
     description: The bandwidth settings for clients bound to your group policy.
@@ -36,8 +38,8 @@ options:
             type: int
         type: dict
       settings:
-        description: How bandwidth limits are enforced. Can be 'network default', 'ignore'
-          or 'custom'.
+        description: How bandwidth limits are enforced. Can be 'network default',
+          'ignore' or 'custom'.
         type: str
     type: dict
   bonjourForwarding:
@@ -45,18 +47,18 @@ options:
       has a wireless configuration.
     suboptions:
       rules:
-        description: A list of the Bonjour forwarding rules for your group policy. If
-          'settings' is set to 'custom', at least one rule must be specified.
+        description: A list of the Bonjour forwarding rules for your group policy.
+          If 'settings' is set to 'custom', at least one rule must be specified.
         elements: dict
         suboptions:
           description:
             description: A description for your Bonjour forwarding rule. Optional.
             type: str
           services:
-            description: A list of Bonjour services. At least one service must be specified.
-              Available services are 'All Services', 'AFP', 'AirPlay', 'Apple screen
-              share', 'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers',
-              'Samba', 'Scanners', 'Spotify' and 'SSH'.
+            description: A list of Bonjour services. At least one service must be
+              specified. Available services are 'All Services', 'AFP', 'AirPlay',
+              'Apple screen share', 'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes',
+              'Printers', 'Samba', 'Scanners', 'Spotify' and 'SSH'.
             elements: str
             type: list
           vlanId:
@@ -91,8 +93,8 @@ options:
             elements: str
             type: list
           settings:
-            description: How URL categories are applied. Can be 'network default', 'append'
-              or 'override'.
+            description: How URL categories are applied. Can be 'network default',
+              'append' or 'override'.
             type: str
         type: dict
       blockedUrlPatterns:
@@ -159,8 +161,8 @@ options:
         type: str
       trafficShapingRules:
         description: An array of traffic shaping rules. Rules are applied in the order
-          that they are specified in. An empty list (or null) means no rules. Note that
-          you are allowed a maximum of 8 rules.
+          that they are specified in. An empty list (or null) means no rules. Note
+          that you are allowed a maximum of 8 rules.
         elements: dict
         suboptions:
           definitions:
@@ -169,18 +171,18 @@ options:
             elements: dict
             suboptions:
               type:
-                description: The type of definition. Can be one of 'application', 'applicationCategory',
-                  'host', 'port', 'ipRange' or 'localNet'.
+                description: The type of definition. Can be one of 'application',
+                  'applicationCategory', 'host', 'port', 'ipRange' or 'localNet'.
                 type: str
               value:
-                description: If "type" is 'host', 'port', 'ipRange' or 'localNet', then
-                  "value" must be a string, matching either a hostname (e.g. "somesite.com"),
-                  a port (e.g. 8080), or an IP range ("192.1.0.0", "192.1.0.0/16", or
-                  "10.1.0.0/16 80"). 'localNet' also supports CIDR notation, excluding
-                  custom ports. If "type" is 'application' or 'applicationCategory',
-                  then "value" must be an object with the structure { "id" "meraki layer7/..."
-                  }, where "id" is the application category or application ID (for a
-                  list of IDs for your network, use the trafficShaping/applicationCategories
+                description: If "type" is 'host', 'port', 'ipRange' or 'localNet',
+                  then "value" must be a string, matching either a hostname (e.g.
+                  "somesite.com"), a port (e.g. 8080), or an IP range ("192.1.0.0",
+                  "192.1.0.0/16", or "10.1.0.0/16 80"). 'localNet' also supports CIDR
+                  notation, excluding custom ports. If "type" is 'application' or
+                  'applicationCategory', then "value" must be an object with the structure
+                  { "id" "meraki layer7/..." }, where "id" is the application category
+                  or application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories
                   endpoint).
                 type: str
             type: list
@@ -209,20 +211,21 @@ options:
                     type: int
                 type: dict
               settings:
-                description: How bandwidth limits are applied by your rule. Can be one
-                  of 'network default', 'ignore' or 'custom'.
+                description: How bandwidth limits are applied by your rule. Can be
+                  one of 'network default', 'ignore' or 'custom'.
                 type: str
             type: dict
           priority:
-            description: A string, indicating the priority level for packets bound to
-              your rule. Can be 'low', 'normal' or 'high'.
+            description: A string, indicating the priority level for packets bound
+              to your rule. Can be 'low', 'normal' or 'high'.
             type: str
         type: list
     type: dict
   force:
-    description: Force query parameter. If true, the system deletes the GP even if there
-      are active clients using the GP. After deletion, active clients that were assigned
-      to that Group Policy will be left without any policy applied. Default is false.
+    description: Force query parameter. If true, the system deletes the GP even if
+      there are active clients using the GP. After deletion, active clients that were
+      assigned to that Group Policy will be left without any policy applied. Default
+      is false.
     type: bool
   groupPolicyId:
     description: GroupPolicyId path parameter. Group policy ID.
@@ -234,25 +237,25 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   scheduling:
-    description: The schedule for the group policy. Schedules are applied to days of
-      the week.
+    description: The schedule for the group policy. Schedules are applied to days
+      of the week.
     suboptions:
       enabled:
         description: Whether scheduling is enabled (true) or disabled (false). Defaults
-          to false. If true, the schedule objects for each day of the week (monday -
-          sunday) are parsed.
+          to false. If true, the schedule objects for each day of the week (monday
+          - sunday) are parsed.
         type: bool
       friday:
         description: The schedule object for Friday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -264,13 +267,13 @@ options:
         description: The schedule object for Monday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -282,13 +285,13 @@ options:
         description: The schedule object for Saturday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -300,13 +303,13 @@ options:
         description: The schedule object for Sunday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -318,13 +321,13 @@ options:
         description: The schedule object for Thursday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -336,13 +339,13 @@ options:
         description: The schedule object for Tuesday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -354,13 +357,13 @@ options:
         description: The schedule object for Wednesday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during
-              the time specified between 'from' and 'to'. Defaults to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time
-              specified in 'to'. Defaults to '00 00'. Only 30 minute increments are
-              allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
             description: The time, from '00 00' to '24 00'. Must be greater than the
@@ -371,8 +374,8 @@ options:
     type: dict
   splashAuthSettings:
     description: Whether clients bound to your policy will bypass splash authorization
-      or behave according to the network's rules. Can be one of 'network default' or
-      'bypass'. Only available if your network has a wireless configuration.
+      or behave according to the network's rules. Can be one of 'network default'
+      or 'bypass'. Only available if your network has a wireless configuration.
     type: str
   vlanTagging:
     description: The VLAN tagging settings for your group policy. Only available if
@@ -388,28 +391,20 @@ options:
         type: str
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkGroupPolicy
-  description: Complete reference of the createNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy
-- name: Cisco Meraki documentation for networks deleteNetworkGroupPolicy
-  description: Complete reference of the deleteNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-group-policy
-- name: Cisco Meraki documentation for networks updateNetworkGroupPolicy
-  description: Complete reference of the updateNetworkGroupPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-group-policy
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_group_policy,
-    networks.Networks.delete_network_group_policy,
-    networks.Networks.update_network_group_policy,
-
-  - Paths used are
-    post /networks/{networkId}/groupPolicies,
-    delete /networks/{networkId}/groupPolicies/{groupPolicyId},
-    put /networks/{networkId}/groupPolicies/{groupPolicyId},
+  - description: Complete reference of the createNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy
+    name: Cisco Meraki documentation for networks createNetworkGroupPolicy
+  - description: Complete reference of the deleteNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-group-policy
+    name: Cisco Meraki documentation for networks deleteNetworkGroupPolicy
+  - description: Complete reference of the updateNetworkGroupPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-group-policy
+    name: Cisco Meraki documentation for networks updateNetworkGroupPolicy
+short_description: Resource module for networks _group _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

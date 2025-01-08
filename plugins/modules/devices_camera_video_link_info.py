@@ -5,43 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_video_link_info
-short_description: Information module for devices _camera _video _link
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _camera _video _link.
-- Returns video link to the specified camera. If a timestamp is supplied, it links to that timestamp.
-version_added: '2.16.0'
+  - Get all devices _camera _video _link.
+  - Returns video link to the specified camera. If a timestamp is supplied, it links
+    to that timestamp.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_video_link_info
+notes:
+  - SDK Method used are camera.Camera.get_device_camera_video_link,
+  - Paths used are get /devices/{serial}/camera/videoLink,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
   timestamp:
     description:
-    - >
-      Timestamp query parameter. Optional The video link will start at this time. The timestamp should be a string
-      in ISO8601 format. If no timestamp is specified, we will assume current time.
+      - 'Timestamp query parameter. Optional The video link will start at this time.
+        The timestamp should be a string in ISO8601 format. If no timestamp is specified,
+        we will assume current time.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraVideoLink
-  description: Complete reference of the getDeviceCameraVideoLink API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-link
-notes:
-  - SDK Method used are
-    camera.Camera.get_device_camera_video_link,
-
-  - Paths used are
-    get /devices/{serial}/camera/videoLink,
+  - description: Complete reference of the getDeviceCameraVideoLink API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-link
+    name: Cisco Meraki documentation for camera getDeviceCameraVideoLink
+short_description: Information module for devices _camera _video _link
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

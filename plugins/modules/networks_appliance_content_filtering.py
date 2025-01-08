@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_content_filtering
-short_description: Resource module for networks _appliance _content _filtering
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _content _filtering.
-- Update the content filtering settings for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _content _filtering.
+  - Update the content filtering settings for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_content_filtering
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_content_filtering,
+  - Paths used are put /networks/{networkId}/appliance/contentFiltering,
 options:
   allowedUrlPatterns:
     description: A list of URL patterns that are allowed.
@@ -35,18 +35,15 @@ options:
     description: URL category list size which is either 'topSites' or 'fullList'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
-  description: Complete reference of the updateNetworkApplianceContentFiltering API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_content_filtering,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/contentFiltering,
+  - description: Complete reference of the updateNetworkApplianceContentFiltering
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
+short_description: Resource module for networks _appliance _content _filtering
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

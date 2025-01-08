@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_clients_policy
-short_description: Resource module for networks _clients _policy
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _clients _policy.
-- >
-   Update the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC
-   or IP depending on whether the network uses Track-by-IP.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _clients _policy.
+  - 'Update the policy assigned to a client on the network. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_clients_policy
+notes:
+  - SDK Method used are networks.Networks.update_network_client_policy,
+  - Paths used are put /networks/{networkId}/clients/{clientId}/policy,
 options:
   clientId:
     description: ClientId path parameter. Client ID.
@@ -26,25 +28,21 @@ options:
       'Group policy'. Required.
     type: str
   groupPolicyId:
-    description: Optional If 'devicePolicy' is set to 'Group policy' this param is used
-      to specify the group policy ID.
+    description: Optional If 'devicePolicy' is set to 'Group policy' this param is
+      used to specify the group policy ID.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkClientPolicy
-  description: Complete reference of the updateNetworkClientPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-policy
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_client_policy,
-
-  - Paths used are
-    put /networks/{networkId}/clients/{clientId}/policy,
+  - description: Complete reference of the updateNetworkClientPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-policy
+    name: Cisco Meraki documentation for networks updateNetworkClientPolicy
+short_description: Resource module for networks _clients _policy
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

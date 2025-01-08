@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_hotspot20
-short_description: Resource module for networks _wireless _ssids _hotspot20
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids _hotspot20.
-- Update the Hotspot 2.0 settings of an SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids _hotspot20.
+  - Update the Hotspot 2.0 settings of an SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_hotspot20
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_hotspot20,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/hotspot20,
 options:
   domains:
     description: An array of domain names.
@@ -46,15 +46,15 @@ options:
         elements: dict
         suboptions:
           authenticationTypes:
-            description: The authentication types for the method. These should be formatted
-              as an object with the EAP method category in camelcase as the key and
-              the list of types as the value (nonEapInnerAuthentication Reserved, PAP,
-              CHAP, MSCHAP, MSCHAPV2; eapInnerAuthentication EAP-TLS, EAP-SIM, EAP-AKA,
-              EAP-TTLS with MSCHAPv2; credentials SIM, USIM, NFC Secure Element, Hardware
-              Token, Softoken, Certificate, username/password, none, Reserved, Vendor
-              Specific; tunneledEapMethodCredentials SIM, USIM, NFC Secure Element,
-              Hardware Token, Softoken, Certificate, username/password, Reserved, Anonymous,
-              Vendor Specific).
+            description: The authentication types for the method. These should be
+              formatted as an object with the EAP method category in camelcase as
+              the key and the list of types as the value (nonEapInnerAuthentication
+              Reserved, PAP, CHAP, MSCHAP, MSCHAPV2; eapInnerAuthentication EAP-TLS,
+              EAP-SIM, EAP-AKA, EAP-TTLS with MSCHAPv2; credentials SIM, USIM, NFC
+              Secure Element, Hardware Token, Softoken, Certificate, username/password,
+              none, Reserved, Vendor Specific; tunneledEapMethodCredentials SIM, USIM,
+              NFC Secure Element, Hardware Token, Softoken, Certificate, username/password,
+              Reserved, Anonymous, Vendor Specific).
             type: dict
           id:
             description: ID of method.
@@ -67,7 +67,8 @@ options:
   networkAccessType:
     description: The network type of this SSID ('Private network', 'Private network
       with guest access', 'Chargeable public network', 'Free public network', 'Personal
-      device network', 'Emergency services only network', 'Test or experimental', 'Wildcard').
+      device network', 'Emergency services only network', 'Test or experimental',
+      'Wildcard').
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -83,8 +84,8 @@ options:
         type: str
     type: dict
   roamConsortOis:
-    description: An array of roaming consortium OIs (hexadecimal number 3-5 octets in
-      length).
+    description: An array of roaming consortium OIs (hexadecimal number 3-5 octets
+      in length).
     elements: str
     type: list
   venue:
@@ -104,9 +105,9 @@ options:
           Secondary', 'University or College', 'Unspecified Factory and Industrial',
           'Factory', 'Unspecified Institutional', 'Hospital', 'Long-Term Care Facility',
           'Alcohol and Drug Rehabilitation Center', 'Group Home', 'Prison or Jail',
-          'Unspecified Mercantile', 'Retail Store', 'Grocery Market', 'Automotive Service
-          Station', 'Shopping Mall', 'Gas Station', 'Unspecified Residential', 'Private
-          Residence', 'Hotel or Motel', 'Dormitory', 'Boarding House', 'Unspecified
+          'Unspecified Mercantile', 'Retail Store', 'Grocery Market', 'Automotive
+          Service Station', 'Shopping Mall', 'Gas Station', 'Unspecified Residential',
+          'Private Residence', 'Hotel or Motel', 'Dormitory', 'Boarding House', 'Unspecified
           Storage', 'Unspecified Utility and Miscellaneous', 'Unspecified Vehicular',
           'Automobile or Truck', 'Airplane', 'Bus', 'Ferry', 'Ship or Boat', 'Train',
           'Motor Bike', 'Unspecified Outdoor', 'Muni-mesh Network', 'City Park', 'Rest
@@ -114,18 +115,14 @@ options:
         type: str
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidHotspot20
-  description: Complete reference of the updateNetworkWirelessSsidHotspot20 API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-hotspot20
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid_hotspot20,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number}/hotspot20,
+  - description: Complete reference of the updateNetworkWirelessSsidHotspot20 API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-hotspot20
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidHotspot20
+short_description: Resource module for networks _wireless _ssids _hotspot20
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

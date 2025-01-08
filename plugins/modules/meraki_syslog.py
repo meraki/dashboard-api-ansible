@@ -15,64 +15,69 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_syslog
-short_description: Manage syslog server settings in the Meraki cloud.
-description:
-- Allows for creation and management of Syslog servers within Meraki.
-notes:
-- Changes to existing syslog servers replaces existing configuration. If you need to add to an
-  existing configuration set state to query to gather the existing configuration and then modify or add.
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_syslog_servers
-options:
-    auth_key:
-        description:
-        - Authentication key provided by the dashboard. Required if environmental variable MERAKI_KEY is not set.
-        type: str
-    state:
-        description:
-        - Query or edit syslog servers
-        - To delete a syslog server, do not include server in list of servers
-        choices: [present, query]
-        default: present
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        aliases: [name, network]
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    servers:
-        description:
-        - List of syslog server settings
-        type: list
-        elements: dict
-        suboptions:
-            host:
-                description:
-                - IP address or hostname of Syslog server.
-                type: str
-            port:
-                description:
-                - Port number Syslog server is listening on.
-                default: "514"
-                type: int
-            roles:
-                description:
-                - List of applicable Syslog server roles.
-                - Choices can be one of Wireless Event log, Appliance event log, Switch event log, Air Marshal events, Flows, URLs, IDS alerts, Security events
-                type: list
-                elements: str
-
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_syslog_servers
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for creation and management of Syslog servers within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_syslog
+notes:
+  - Changes to existing syslog servers replaces existing configuration. If you need
+    to add to an existing configuration set state to query to gather the existing
+    configuration and then modify or add.
+options:
+  auth_key:
+    description:
+      - Authentication key provided by the dashboard. Required if environmental variable
+        MERAKI_KEY is not set.
+    type: str
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    aliases:
+      - name
+      - network
+    description:
+      - Name of a network.
+    type: str
+  servers:
+    description:
+      - List of syslog server settings
+    elements: dict
+    suboptions:
+      host:
+        description:
+          - IP address or hostname of Syslog server.
+        type: str
+      port:
+        default: '514'
+        description:
+          - Port number Syslog server is listening on.
+        type: int
+      roles:
+        description:
+          - List of applicable Syslog server roles.
+          - Choices can be one of Wireless Event log, Appliance event log, Switch
+            event log, Air Marshal events, Flows, URLs, IDS alerts, Security events
+        elements: str
+        type: list
+    type: list
+  state:
+    choices:
+      - present
+      - query
+    default: present
+    description:
+      - Query or edit syslog servers
+      - To delete a syslog server, do not include server in list of servers
+    type: str
+short_description: Manage syslog server settings in the Meraki cloud.
 """
 
 EXAMPLES = r"""

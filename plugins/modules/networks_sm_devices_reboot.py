@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_reboot
-short_description: Resource module for networks _sm _devices _reboot
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _sm _devices _reboot.
-- Reboot a set of endpoints.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _sm _devices _reboot.
+  - Reboot a set of endpoints.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_reboot
+notes:
+  - SDK Method used are sm.Sm.reboot_network_sm_devices,
+  - Paths used are post /networks/{networkId}/sm/devices/reboot,
 options:
   ids:
     description: The ids of the endpoints to be rebooted.
@@ -29,16 +29,16 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   notifyUser:
-    description: Whether or not to notify the user before rebooting the endpoint. Available
-      for macOS 11.3+.
+    description: Whether or not to notify the user before rebooting the endpoint.
+      Available for macOS 11.3+.
     type: bool
   rebuildKernelCache:
     description: Whether or not to rebuild the kernel cache when rebooting the endpoint.
       Available for macOS 11+.
     type: bool
   requestRequiresNetworkTether:
-    description: Whether or not the request requires network tethering. Available for
-      macOS and supervised iOS or tvOS.
+    description: Whether or not the request requires network tethering. Available
+      for macOS and supervised iOS or tvOS.
     type: bool
   scope:
     description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
@@ -54,18 +54,14 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm rebootNetworkSmDevices
-  description: Complete reference of the rebootNetworkSmDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!reboot-network-sm-devices
-notes:
-  - SDK Method used are
-    sm.Sm.reboot_network_sm_devices,
-
-  - Paths used are
-    post /networks/{networkId}/sm/devices/reboot,
+  - description: Complete reference of the rebootNetworkSmDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!reboot-network-sm-devices
+    name: Cisco Meraki documentation for sm rebootNetworkSmDevices
+short_description: Resource module for networks _sm _devices _reboot
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

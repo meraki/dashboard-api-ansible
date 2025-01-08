@@ -5,70 +5,72 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_clients_bandwidth_usage_history_info
-short_description: Information module for organizations _clients _bandwidth _usage _history
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _clients _bandwidth _usage _history.
-- >
-   Return data usage in megabits per second over time for all clients in the given organization within a given time
-   range.
-version_added: '2.16.0'
+  - Get all organizations _clients _bandwidth _usage _history.
+  - 'Return data usage in megabits per second over time for all clients in the given
+    organization within a given time range.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_clients_bandwidth_usage_history_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_clients_bandwidth_usage_history,
+  - Paths used are get /organizations/{organizationId}/clients/bandwidthUsageHistory,
 options:
+  deviceTag:
+    description:
+      - DeviceTag query parameter. Match result to an exact device tag.
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   networkTag:
     description:
-    - NetworkTag query parameter. Match result to an exact network tag.
+      - NetworkTag query parameter. Match result to an exact network tag.
     type: str
-  deviceTag:
+  organizationId:
     description:
-    - DeviceTag query parameter. Match result to an exact device tag.
+      - OrganizationId path parameter. Organization ID.
     type: str
   ssidName:
     description:
-    - SsidName query parameter. Filter results by ssid name.
-    type: str
-  usageUplink:
-    description:
-    - UsageUplink query parameter. Filter results by usage uplink.
+      - SsidName query parameter. Filter results by ssid name.
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data.
+      - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 186 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 186 days. The
-      default is 1 day.
-    type: float
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationClientsBandwidthUsageHistory
-  description: Complete reference of the getOrganizationClientsBandwidthUsageHistory API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-bandwidth-usage-history
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_clients_bandwidth_usage_history,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 186 days. The default
+        is 1 day.
 
-  - Paths used are
-    get /organizations/{organizationId}/clients/bandwidthUsageHistory,
+        '
+    type: float
+  usageUplink:
+    description:
+      - UsageUplink query parameter. Filter results by usage uplink.
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationClientsBandwidthUsageHistory
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-bandwidth-usage-history
+    name: Cisco Meraki documentation for organizations getOrganizationClientsBandwidthUsageHistory
+short_description: Information module for organizations _clients _bandwidth _usage
+  _history
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

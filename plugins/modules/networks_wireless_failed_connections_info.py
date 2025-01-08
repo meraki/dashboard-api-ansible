@@ -5,77 +5,78 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_failed_connections_info
-short_description: Information module for networks _wireless _failed _connections
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _failed _connections.
-- List of all failed client connection events on this network in a given time range.
-version_added: '2.16.0'
+  - Get all networks _wireless _failed _connections.
+  - List of all failed client connection events on this network in a given time range.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_failed_connections_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_failed_connections,
+  - Paths used are get /networks/{networkId}/wireless/failedConnections,
 options:
+  apTag:
+    description:
+      - ApTag query parameter. Filter results by AP Tag.
+    type: str
+  band:
+    description:
+      - 'Band query parameter. Filter results by band (either ''2.4'', ''5'' or ''6'').
+        Note that data prior to February 2020 will not have band information.
+
+        '
+    type: str
+  clientId:
+    description:
+      - ClientId query parameter. Filter by client MAC.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  t0:
-    description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-    type: str
-  t1:
-    description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
-    type: str
-  timespan:
-    description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-    type: float
-  band:
-    description:
-    - >
-      Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note that data prior to February
-      2020 will not have band information.
-    type: str
-  ssid:
-    description:
-    - Ssid query parameter. Filter results by SSID.
-    type: int
-  vlan:
-    description:
-    - Vlan query parameter. Filter results by VLAN.
-    type: int
-  apTag:
-    description:
-    - ApTag query parameter. Filter results by AP Tag.
+      - NetworkId path parameter. Network ID.
     type: str
   serial:
     description:
-    - Serial query parameter. Filter by AP.
+      - Serial query parameter. Filter by AP.
     type: str
-  clientId:
+  ssid:
     description:
-    - ClientId query parameter. Filter by client MAC.
+      - Ssid query parameter. Filter results by SSID.
+    type: int
+  t0:
+    description:
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 180 days from today.
     type: str
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessFailedConnections
-  description: Complete reference of the getNetworkWirelessFailedConnections API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-failed-connections
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_failed_connections,
+  t1:
+    description:
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
+    type: str
+  timespan:
+    description:
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 7 days.
 
-  - Paths used are
-    get /networks/{networkId}/wireless/failedConnections,
+        '
+    type: float
+  vlan:
+    description:
+      - Vlan query parameter. Filter results by VLAN.
+    type: int
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getNetworkWirelessFailedConnections API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-failed-connections
+    name: Cisco Meraki documentation for wireless getNetworkWirelessFailedConnections
+short_description: Information module for networks _wireless _failed _connections
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

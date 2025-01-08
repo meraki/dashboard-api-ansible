@@ -5,48 +5,49 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_insight_monitored_media_servers_info
-short_description: Information module for organizations _insight _monitored _media _servers
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _insight _monitored _media _servers.
-- Get organizations _insight _monitored _media _servers by id.
-- List the monitored media servers for this organization. Only valid for organizations with Meraki Insight.
-- Return a monitored media server for this organization. Only valid for organizations with Meraki Insight.
-version_added: '2.16.0'
+  - Get all organizations _insight _monitored _media _servers.
+  - Get organizations _insight _monitored _media _servers by id.
+  - List the monitored media servers for this organization. Only valid for organizations
+    with Meraki Insight.
+  - Return a monitored media server for this organization. Only valid for organizations
+    with Meraki Insight.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_insight_monitored_media_servers_info
+notes:
+  - SDK Method used are insight.Insight.get_organization_insight_monitored_media_server,
+    insight.Insight.get_organization_insight_monitored_media_servers,
+  - Paths used are get /organizations/{organizationId}/insight/monitoredMediaServers,
+    get /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId},
 options:
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   monitoredMediaServerId:
     description:
-    - MonitoredMediaServerId path parameter. Monitored media server ID.
+      - MonitoredMediaServerId path parameter. Monitored media server ID.
+    type: str
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServer
-  description: Complete reference of the getOrganizationInsightMonitoredMediaServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-server
-- name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServers
-  description: Complete reference of the getOrganizationInsightMonitoredMediaServers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-servers
-notes:
-  - SDK Method used are
-    insight.Insight.get_organization_insight_monitored_media_server,
-    insight.Insight.get_organization_insight_monitored_media_servers,
-
-  - Paths used are
-    get /organizations/{organizationId}/insight/monitoredMediaServers,
-    get /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId},
+  - description: Complete reference of the getOrganizationInsightMonitoredMediaServer
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-server
+    name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServer
+  - description: Complete reference of the getOrganizationInsightMonitoredMediaServers
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-servers
+    name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServers
+short_description: Information module for organizations _insight _monitored _media
+  _servers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

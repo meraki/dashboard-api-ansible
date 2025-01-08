@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_roles_info
-short_description: Information module for organizations _camera _roles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _camera _roles.
-- List all the roles in this organization.
-version_added: '2.16.0'
+  - Get all organizations _camera _roles.
+  - List all the roles in this organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_roles_info
+notes:
+  - SDK Method used are camera.Camera.get_organization_camera_roles,
+  - Paths used are get /organizations/{organizationId}/camera/roles,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getOrganizationCameraRoles
-  description: Complete reference of the getOrganizationCameraRoles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-roles
-notes:
-  - SDK Method used are
-    camera.Camera.get_organization_camera_roles,
-
-  - Paths used are
-    get /organizations/{organizationId}/camera/roles,
+  - description: Complete reference of the getOrganizationCameraRoles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-roles
+    name: Cisco Meraki documentation for camera getOrganizationCameraRoles
+short_description: Information module for organizations _camera _roles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

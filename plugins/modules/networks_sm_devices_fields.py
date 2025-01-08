@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_fields
-short_description: Resource module for networks _sm _devices _fields
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _sm _devices _fields.
-- Modify the fields of a device.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _sm _devices _fields.
+  - Modify the fields of a device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_fields
+notes:
+  - SDK Method used are sm.Sm.update_network_sm_devices_fields,
+  - Paths used are put /networks/{networkId}/sm/devices/fields,
 options:
   deviceFields:
     description: The new fields of the device. Each field of this object is optional.
@@ -39,18 +39,14 @@ options:
     description: The wifiMac of the device to be modified.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm updateNetworkSmDevicesFields
-  description: Complete reference of the updateNetworkSmDevicesFields API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-devices-fields
-notes:
-  - SDK Method used are
-    sm.Sm.update_network_sm_devices_fields,
-
-  - Paths used are
-    put /networks/{networkId}/sm/devices/fields,
+  - description: Complete reference of the updateNetworkSmDevicesFields API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-devices-fields
+    name: Cisco Meraki documentation for sm updateNetworkSmDevicesFields
+short_description: Resource module for networks _sm _devices _fields
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

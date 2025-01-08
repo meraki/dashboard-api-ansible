@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_one_to_one_nat_rules
-short_description: Resource module for networks _appliance _firewall _one _to _one _nat _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _one _to _one _nat _rules.
-- Set the 1 1 NAT mapping rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _one _to
+    _one _nat _rules.
+  - Set the 1 1 NAT mapping rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_one_to_one_nat_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_one_to_one_nat_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/oneToOneNatRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -24,8 +25,8 @@ options:
     elements: dict
     suboptions:
       allowedInbound:
-        description: The ports this mapping will provide access on, and the remote IPs
-          that will be allowed access to the resource.
+        description: The ports this mapping will provide access on, and the remote
+          IPs that will be allowed access to the resource.
         elements: dict
         suboptions:
           allowedIps:
@@ -59,18 +60,16 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToOneNatRules
-  description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-one-nat-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_one_to_one_nat_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/oneToOneNatRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-one-nat-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToOneNatRules
+short_description: Resource module for networks _appliance _firewall _one _to _one
+  _nat _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

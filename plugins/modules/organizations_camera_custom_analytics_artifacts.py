@@ -5,19 +5,24 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_camera_custom_analytics_artifacts
-short_description: Resource module for organizations _camera _custom _analytics _artifacts
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create and delete of the resource organizations _camera _custom _analytics _artifacts.
-- >
-   Create custom analytics artifact. Returns an artifact upload URL with expiry time. Upload the artifact file with a
-   put request to the returned upload URL before its expiry.
-- Delete Custom Analytics Artifact.
-version_added: '2.16.0'
+  - Manage operations create and delete of the resource organizations _camera _custom
+    _analytics _artifacts.
+  - 'Create custom analytics artifact. Returns an artifact upload URL with expiry
+    time. Upload the artifact file with a put request to the returned upload URL before
+    its expiry.
+
+    '
+  - Delete Custom Analytics Artifact.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_camera_custom_analytics_artifacts
+notes:
+  - SDK Method used are camera.Camera.create_organization_camera_custom_analytics_artifact,
+    camera.Camera.delete_organization_camera_custom_analytics_artifact,
+  - Paths used are post /organizations/{organizationId}/camera/customAnalytics/artifacts,
+    delete /organizations/{organizationId}/camera/customAnalytics/artifacts/{artifactId},
 options:
   artifactId:
     description: ArtifactId path parameter. Artifact ID.
@@ -29,23 +34,19 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera createOrganizationCameraCustomAnalyticsArtifact
-  description: Complete reference of the createOrganizationCameraCustomAnalyticsArtifact API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-custom-analytics-artifact
-- name: Cisco Meraki documentation for camera deleteOrganizationCameraCustomAnalyticsArtifact
-  description: Complete reference of the deleteOrganizationCameraCustomAnalyticsArtifact API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-camera-custom-analytics-artifact
-notes:
-  - SDK Method used are
-    camera.Camera.create_organization_camera_custom_analytics_artifact,
-    camera.Camera.delete_organization_camera_custom_analytics_artifact,
-
-  - Paths used are
-    post /organizations/{organizationId}/camera/customAnalytics/artifacts,
-    delete /organizations/{organizationId}/camera/customAnalytics/artifacts/{artifactId},
+  - description: Complete reference of the createOrganizationCameraCustomAnalyticsArtifact
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-custom-analytics-artifact
+    name: Cisco Meraki documentation for camera createOrganizationCameraCustomAnalyticsArtifact
+  - description: Complete reference of the deleteOrganizationCameraCustomAnalyticsArtifact
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-camera-custom-analytics-artifact
+    name: Cisco Meraki documentation for camera deleteOrganizationCameraCustomAnalyticsArtifact
+short_description: Resource module for organizations _camera _custom _analytics _artifacts
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

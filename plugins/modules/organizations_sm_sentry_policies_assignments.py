@@ -5,19 +5,21 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_sm_sentry_policies_assignments
-short_description: Resource module for organizations _sm _sentry _policies _assignments
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _sm _sentry _policies _assignments.
-- >
-   Update an Organizations Sentry Policies using the provided list. Sentry Policies are ordered in descending order
-   of priority i.e. Highest priority at the bottom, this is opposite the Dashboard UI. Policies not present in the
-   request will be deleted.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _sm _sentry _policies _assignments.
+  - 'Update an Organizations Sentry Policies using the provided list. Sentry Policies
+    are ordered in descending order of priority i.e. Highest priority at the bottom,
+    this is opposite the Dashboard UI. Policies not present in the request will be
+    deleted.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_sm_sentry_policies_assignments
+notes:
+  - SDK Method used are sm.Sm.update_organization_sm_sentry_policies_assignments,
+  - Paths used are put /organizations/{organizationId}/sm/sentry/policies/assignments,
 options:
   items:
     description: Sentry Group Policies for the Organization keyed by Network Id.
@@ -52,18 +54,15 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm updateOrganizationSmSentryPoliciesAssignments
-  description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-sm-sentry-policies-assignments
-notes:
-  - SDK Method used are
-    sm.Sm.update_organization_sm_sentry_policies_assignments,
-
-  - Paths used are
-    put /organizations/{organizationId}/sm/sentry/policies/assignments,
+  - description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-sm-sentry-policies-assignments
+    name: Cisco Meraki documentation for sm updateOrganizationSmSentryPoliciesAssignments
+short_description: Resource module for organizations _sm _sentry _policies _assignments
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

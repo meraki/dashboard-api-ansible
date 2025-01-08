@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_analytics_live_info
-short_description: Information module for devices _camera _analytics _live
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _camera _analytics _live.
-- Returns live state from camera analytics zones.
-version_added: '2.16.0'
+  - Get all devices _camera _analytics _live.
+  - Returns live state from camera analytics zones.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_analytics_live_info
+notes:
+  - SDK Method used are camera.Camera.get_device_camera_analytics_live,
+  - Paths used are get /devices/{serial}/camera/analytics/live,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera getDeviceCameraAnalyticsLive
-  description: Complete reference of the getDeviceCameraAnalyticsLive API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-analytics-live
-notes:
-  - SDK Method used are
-    camera.Camera.get_device_camera_analytics_live,
-
-  - Paths used are
-    get /devices/{serial}/camera/analytics/live,
+  - description: Complete reference of the getDeviceCameraAnalyticsLive API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-analytics-live
+    name: Cisco Meraki documentation for camera getDeviceCameraAnalyticsLive
+short_description: Information module for devices _camera _analytics _live
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,31 +5,31 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_bluetooth_settings
-short_description: Resource module for networks _wireless _bluetooth _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _bluetooth _settings.
-- Update the Bluetooth settings for a network. See the docs page for Bluetooth.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _bluetooth _settings.
+  - Update the Bluetooth settings for a network. See the docs page for Bluetooth.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_bluetooth_settings
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_bluetooth_settings,
+  - Paths used are put /networks/{networkId}/wireless/bluetooth/settings,
 options:
   advertisingEnabled:
     description: Whether APs will advertise beacons.
     type: bool
   major:
-    description: The major number to be used in the beacon identifier. Only valid in
-      'Non-unique' mode.
+    description: The major number to be used in the beacon identifier. Only valid
+      in 'Non-unique' mode.
     type: int
   majorMinorAssignmentMode:
-    description: The way major and minor number should be assigned to nodes in the network.
-      ('Unique', 'Non-unique').
+    description: The way major and minor number should be assigned to nodes in the
+      network. ('Unique', 'Non-unique').
     type: str
   minor:
-    description: The minor number to be used in the beacon identifier. Only valid in
-      'Non-unique' mode.
+    description: The minor number to be used in the beacon identifier. Only valid
+      in 'Non-unique' mode.
     type: int
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -41,18 +41,15 @@ options:
     description: The UUID to be used in the beacon identifier.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessBluetoothSettings
-  description: Complete reference of the updateNetworkWirelessBluetoothSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-bluetooth-settings
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_bluetooth_settings,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/bluetooth/settings,
+  - description: Complete reference of the updateNetworkWirelessBluetoothSettings
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-bluetooth-settings
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessBluetoothSettings
+short_description: Resource module for networks _wireless _bluetooth _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

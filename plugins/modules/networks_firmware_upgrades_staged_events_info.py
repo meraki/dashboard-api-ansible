@@ -5,37 +5,34 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_firmware_upgrades_staged_events_info
-short_description: Information module for networks _firmware _upgrades _staged _events
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _firmware _upgrades _staged _events.
-- Get the Staged Upgrade Event from a network.
-version_added: '2.16.0'
+  - Get all networks _firmware _upgrades _staged _events.
+  - Get the Staged Upgrade Event from a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_firmware_upgrades_staged_events_info
+notes:
+  - SDK Method used are networks.Networks.get_network_firmware_upgrades_staged_events,
+  - Paths used are get /networks/{networkId}/firmwareUpgrades/staged/events,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedEvents
-  description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-events
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_firmware_upgrades_staged_events,
-
-  - Paths used are
-    get /networks/{networkId}/firmwareUpgrades/staged/events,
+  - description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-events
+    name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedEvents
+short_description: Information module for networks _firmware _upgrades _staged _events
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

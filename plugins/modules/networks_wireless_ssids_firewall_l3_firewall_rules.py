@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_firewall_l3_firewall_rules
-short_description: Resource module for networks _wireless _ssids _firewall l3 _firewall _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids _firewall l3 _firewall _rules.
-- Update the L3 firewall rules of an SSID on an MR network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids _firewall l3
+    _firewall _rules.
+  - Update the L3 firewall rules of an SSID on an MR network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_firewall_l3_firewall_rules
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_firewall_l3_firewall_rules,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules,
 options:
   allowLanAccess:
     description: Allow wireless client access to local LAN (boolean value - true allows
@@ -35,8 +36,8 @@ options:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR
-          notation), fully-qualified domain names (FQDN) or 'any'.
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation), fully-qualified domain names (FQDN) or 'any'.
         type: str
       destPort:
         description: Comma-separated list of destination port(s) (integer in the range
@@ -51,18 +52,16 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL3FirewallRules
-  description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l3-firewall-rules
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid_firewall_l3_firewall_rules,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules,
+  - description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l3-firewall-rules
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL3FirewallRules
+short_description: Resource module for networks _wireless _ssids _firewall l3 _firewall
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

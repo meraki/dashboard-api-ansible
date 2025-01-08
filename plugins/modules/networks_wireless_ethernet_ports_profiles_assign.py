@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ethernet_ports_profiles_assign
-short_description: Resource module for networks _wireless _ethernet _ports _profiles _assign
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _wireless _ethernet _ports _profiles _assign.
-- Assign AP port profile to list of APs.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _wireless _ethernet _ports _profiles
+    _assign.
+  - Assign AP port profile to list of APs.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ethernet_ports_profiles_assign
+notes:
+  - SDK Method used are wireless.Wireless.assign_network_wireless_ethernet_ports_profiles,
+  - Paths used are post /networks/{networkId}/wireless/ethernet/ports/profiles/assign,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -27,18 +28,16 @@ options:
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless assignNetworkWirelessEthernetPortsProfiles
-  description: Complete reference of the assignNetworkWirelessEthernetPortsProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!assign-network-wireless-ethernet-ports-profiles
-notes:
-  - SDK Method used are
-    wireless.Wireless.assign_network_wireless_ethernet_ports_profiles,
-
-  - Paths used are
-    post /networks/{networkId}/wireless/ethernet/ports/profiles/assign,
+  - description: Complete reference of the assignNetworkWirelessEthernetPortsProfiles
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!assign-network-wireless-ethernet-ports-profiles
+    name: Cisco Meraki documentation for wireless assignNetworkWirelessEthernetPortsProfiles
+short_description: Resource module for networks _wireless _ethernet _ports _profiles
+  _assign
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

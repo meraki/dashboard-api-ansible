@@ -5,64 +5,69 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_inventory_onboarding_cloud_monitoring_networks_info
-short_description: Information module for organizations _inventory _onboarding _cloud _monitoring _networks
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _inventory _onboarding _cloud _monitoring _networks.
-- Returns list of networks eligible for adding cloud monitored device.
-version_added: '2.16.0'
+  - Get all organizations _inventory _onboarding _cloud _monitoring _networks.
+  - Returns list of networks eligible for adding cloud monitored device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_inventory_onboarding_cloud_monitoring_networks_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_inventory_onboarding_cloud_monitoring_networks,
+  - Paths used are get /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/networks,
 options:
+  deviceType:
+    description:
+      - DeviceType query parameter. Device Type switch or wireless controller.
+    type: str
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  deviceType:
-    description:
-    - DeviceType query parameter. Device Type switch or wireless controller.
-    type: str
-  search:
-    description:
-    - Search query parameter. Optional parameter to search on network name.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100000. Default is 1000.
     type: int
+  search:
+    description:
+      - Search query parameter. Optional parameter to search on network name.
+    type: str
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringNetworks
-  description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-networks
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_inventory_onboarding_cloud_monitoring_networks,
-
-  - Paths used are
-    get /organizations/{organizationId}/inventory/onboarding/cloudMonitoring/networks,
+  - description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-networks
+    name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringNetworks
+short_description: Information module for organizations _inventory _onboarding _cloud
+  _monitoring _networks
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

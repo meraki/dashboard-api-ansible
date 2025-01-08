@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_ports_info
-short_description: Information module for networks _appliance _ports
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _ports.
-- Get networks _appliance _ports by id.
-- List per-port VLAN settings for all ports of a MX.
-- Return per-port VLAN settings for a single MX port.
-version_added: '2.16.0'
+  - Get all networks _appliance _ports.
+  - Get networks _appliance _ports by id.
+  - List per-port VLAN settings for all ports of a MX.
+  - Return per-port VLAN settings for a single MX port.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_ports_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_port, appliance.Appliance.get_network_appliance_ports,
+  - Paths used are get /networks/{networkId}/appliance/ports, get /networks/{networkId}/appliance/ports/{portId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   portId:
     description:
-    - PortId path parameter. Port ID.
+      - PortId path parameter. Port ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkAppliancePort
-  description: Complete reference of the getNetworkAppliancePort API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-port
-- name: Cisco Meraki documentation for appliance getNetworkAppliancePorts
-  description: Complete reference of the getNetworkAppliancePorts API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ports
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_port,
-    appliance.Appliance.get_network_appliance_ports,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/ports,
-    get /networks/{networkId}/appliance/ports/{portId},
+  - description: Complete reference of the getNetworkAppliancePort API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-port
+    name: Cisco Meraki documentation for appliance getNetworkAppliancePort
+  - description: Complete reference of the getNetworkAppliancePorts API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ports
+    name: Cisco Meraki documentation for appliance getNetworkAppliancePorts
+short_description: Information module for networks _appliance _ports
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

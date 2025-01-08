@@ -5,69 +5,72 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_devices_connection_stats_info
-short_description: Information module for networks _wireless _devices _connection _stats
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _devices _connection _stats.
-- Aggregated connectivity info for this network, grouped by node.
-version_added: '2.16.0'
+  - Get all networks _wireless _devices _connection _stats.
+  - Aggregated connectivity info for this network, grouped by node.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_devices_connection_stats_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_devices_connection_stats,
+  - Paths used are get /networks/{networkId}/wireless/devices/connectionStats,
 options:
+  apTag:
+    description:
+      - ApTag query parameter. Filter results by AP Tag.
+    type: str
+  band:
+    description:
+      - 'Band query parameter. Filter results by band (either ''2.4'', ''5'' or ''6'').
+        Note that data prior to February 2020 will not have band information.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  t0:
-    description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-    type: str
-  t1:
-    description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
-    type: str
-  timespan:
-    description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-    type: float
-  band:
-    description:
-    - >
-      Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note that data prior to February
-      2020 will not have band information.
+      - NetworkId path parameter. Network ID.
     type: str
   ssid:
     description:
-    - Ssid query parameter. Filter results by SSID.
+      - Ssid query parameter. Filter results by SSID.
     type: int
+  t0:
+    description:
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 180 days from today.
+    type: str
+  t1:
+    description:
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
+    type: str
+  timespan:
+    description:
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 7 days.
+
+        '
+    type: float
   vlan:
     description:
-    - Vlan query parameter. Filter results by VLAN.
+      - Vlan query parameter. Filter results by VLAN.
     type: int
-  apTag:
-    description:
-    - ApTag query parameter. Filter results by AP Tag.
-    type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessDevicesConnectionStats
-  description: Complete reference of the getNetworkWirelessDevicesConnectionStats API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-devices-connection-stats
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_devices_connection_stats,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/devices/connectionStats,
+  - description: Complete reference of the getNetworkWirelessDevicesConnectionStats
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-devices-connection-stats
+    name: Cisco Meraki documentation for wireless getNetworkWirelessDevicesConnectionStats
+short_description: Information module for networks _wireless _devices _connection
+  _stats
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

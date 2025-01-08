@@ -5,20 +5,25 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_webhooks_payload_templates
-short_description: Resource module for networks _webhooks _payload _templates
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _webhooks _payload _templates.
-- Create a webhook payload template for a network.
-- >
-   Destroy a webhook payload template for a network. Does not work for included templates 'wpt_00001', 'wpt_00002',
-   'wpt_00003', 'wpt_00004', 'wpt_00005' or 'wpt_00006' .
-- Update a webhook payload template for a network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _webhooks
+    _payload _templates.
+  - Create a webhook payload template for a network.
+  - 'Destroy a webhook payload template for a network. Does not work for included
+    templates ''wpt_00001'', ''wpt_00002'', ''wpt_00003'', ''wpt_00004'', ''wpt_00005''
+    or ''wpt_00006'' .
+
+    '
+  - Update a webhook payload template for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_webhooks_payload_templates
+notes:
+  - SDK Method used are networks.Networks.create_network_webhooks_payload_template,
+    networks.Networks.delete_network_webhooks_payload_template, networks.Networks.update_network_webhooks_payload_template,
+  - Paths used are post /networks/{networkId}/webhooks/payloadTemplates, delete /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId},
+    put /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId},
 options:
   body:
     description: The liquid template used for the body of the webhook message. Either
@@ -53,28 +58,20 @@ options:
     description: PayloadTemplateId path parameter. Payload template ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks createNetworkWebhooksPayloadTemplate
-  description: Complete reference of the createNetworkWebhooksPayloadTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-payload-template
-- name: Cisco Meraki documentation for networks deleteNetworkWebhooksPayloadTemplate
-  description: Complete reference of the deleteNetworkWebhooksPayloadTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-webhooks-payload-template
-- name: Cisco Meraki documentation for networks updateNetworkWebhooksPayloadTemplate
-  description: Complete reference of the updateNetworkWebhooksPayloadTemplate API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-webhooks-payload-template
-notes:
-  - SDK Method used are
-    networks.Networks.create_network_webhooks_payload_template,
-    networks.Networks.delete_network_webhooks_payload_template,
-    networks.Networks.update_network_webhooks_payload_template,
-
-  - Paths used are
-    post /networks/{networkId}/webhooks/payloadTemplates,
-    delete /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId},
-    put /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId},
+  - description: Complete reference of the createNetworkWebhooksPayloadTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-payload-template
+    name: Cisco Meraki documentation for networks createNetworkWebhooksPayloadTemplate
+  - description: Complete reference of the deleteNetworkWebhooksPayloadTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-webhooks-payload-template
+    name: Cisco Meraki documentation for networks deleteNetworkWebhooksPayloadTemplate
+  - description: Complete reference of the updateNetworkWebhooksPayloadTemplate API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-webhooks-payload-template
+    name: Cisco Meraki documentation for networks updateNetworkWebhooksPayloadTemplate
+short_description: Resource module for networks _webhooks _payload _templates
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

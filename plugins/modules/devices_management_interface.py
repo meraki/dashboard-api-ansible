@@ -5,17 +5,18 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_management_interface
-short_description: Resource module for devices _management _interface
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create and update of the resource devices _management _interface.
-- Reboot a device. This endpoint has a sustained rate limit of one request every 60 seconds.
-- Update the management interface settings for a device.
-version_added: '2.16.0'
+  - Manage operations create and update of the resource devices _management _interface.
+  - Reboot a device. This endpoint has a sustained rate limit of one request every
+    60 seconds.
+  - Update the management interface settings for a device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_management_interface
+notes:
+  - SDK Method used are devices.Devices.reboot_device, devices.Devices.update_device_management_interface,
+  - Paths used are post /devices/{serial}/reboot, put /devices/{serial}/managementInterface,
 options:
   serial:
     description: Serial path parameter.
@@ -44,8 +45,8 @@ options:
           whether usingStaticIp is true or false.
         type: int
       wanEnabled:
-        description: Enable or disable the interface (only for MX devices). Valid values
-          are 'enabled', 'disabled', and 'not configured'.
+        description: Enable or disable the interface (only for MX devices). Valid
+          values are 'enabled', 'disabled', and 'not configured'.
         type: str
     type: dict
   wan2:
@@ -72,28 +73,22 @@ options:
           whether usingStaticIp is true or false.
         type: int
       wanEnabled:
-        description: Enable or disable the interface (only for MX devices). Valid values
-          are 'enabled', 'disabled', and 'not configured'.
+        description: Enable or disable the interface (only for MX devices). Valid
+          values are 'enabled', 'disabled', and 'not configured'.
         type: str
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices rebootDevice
-  description: Complete reference of the rebootDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!reboot-device
-- name: Cisco Meraki documentation for devices updateDeviceManagementInterface
-  description: Complete reference of the updateDeviceManagementInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-management-interface
-notes:
-  - SDK Method used are
-    devices.Devices.reboot_device,
-    devices.Devices.update_device_management_interface,
-
-  - Paths used are
-    post /devices/{serial}/reboot,
-    put /devices/{serial}/managementInterface,
+  - description: Complete reference of the rebootDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!reboot-device
+    name: Cisco Meraki documentation for devices rebootDevice
+  - description: Complete reference of the updateDeviceManagementInterface API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-management-interface
+    name: Cisco Meraki documentation for devices updateDeviceManagementInterface
+short_description: Resource module for devices _management _interface
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

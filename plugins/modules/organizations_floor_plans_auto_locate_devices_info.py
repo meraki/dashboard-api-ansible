@@ -5,66 +5,73 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_floor_plans_auto_locate_devices_info
-short_description: Information module for organizations _floor _plans _auto _locate _devices
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _floor _plans _auto _locate _devices.
-- List auto locate details for each device in your organization.
-version_added: '2.20.0'
+  - Get all organizations _floor _plans _auto _locate _devices.
+  - List auto locate details for each device in your organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_floor_plans_auto_locate_devices_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_floor_plans_auto_locate_devices,
+  - Paths used are get /organizations/{organizationId}/floorPlans/autoLocate/devices,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  floorPlanIds:
+    description:
+      - FloorPlanIds query parameter. Optional parameter to filter devices by one
+        or more floorplan IDs.
+    elements: str
+    type: list
   headers:
     description: Additional headers.
     type: dict
+  networkIds:
+    description:
+      - NetworkIds query parameter. Optional parameter to filter devices by one or
+        more network IDs.
+    elements: str
+    type: list
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 10000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 10000. Default is 1000.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  networkIds:
-    description:
-    - NetworkIds query parameter. Optional parameter to filter devices by one or more network IDs.
-    elements: str
-    type: list
-  floorPlanIds:
-    description:
-    - FloorPlanIds query parameter. Optional parameter to filter devices by one or more floorplan IDs.
-    elements: str
-    type: list
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateDevices
-  description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-devices
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_floor_plans_auto_locate_devices,
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
 
-  - Paths used are
-    get /organizations/{organizationId}/floorPlans/autoLocate/devices,
+        '
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-devices
+    name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateDevices
+short_description: Information module for organizations _floor _plans _auto _locate
+  _devices
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

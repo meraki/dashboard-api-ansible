@@ -5,33 +5,31 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_appliance_vmx_authentication_token
-short_description: Resource module for devices _appliance _vmx _authentication _token
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource devices _appliance _vmx _authentication _token.
-- Generate a new vMX authentication token.
-version_added: '2.16.0'
+  - Manage operation create of the resource devices _appliance _vmx _authentication
+    _token.
+  - Generate a new vMX authentication token.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_appliance_vmx_authentication_token
+notes:
+  - SDK Method used are appliance.Appliance.create_device_appliance_vmx_authentication_token,
+  - Paths used are post /devices/{serial}/appliance/vmx/authenticationToken,
 options:
   serial:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance createDeviceApplianceVmxAuthenticationToken
-  description: Complete reference of the createDeviceApplianceVmxAuthenticationToken API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-device-appliance-vmx-authentication-token
-notes:
-  - SDK Method used are
-    appliance.Appliance.create_device_appliance_vmx_authentication_token,
-
-  - Paths used are
-    post /devices/{serial}/appliance/vmx/authenticationToken,
+  - description: Complete reference of the createDeviceApplianceVmxAuthenticationToken
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-device-appliance-vmx-authentication-token
+    name: Cisco Meraki documentation for appliance createDeviceApplianceVmxAuthenticationToken
+short_description: Resource module for devices _appliance _vmx _authentication _token
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -1,4 +1,5 @@
 ---
+
 - hosts: localhost
   vars:
     network_id: "L_828099381482771185" # Branch-1234
@@ -20,27 +21,27 @@
         state: present
         applianceIp: 192.168.1.2
         cidr: 192.168.1.0/24
-        id: "1234"
+        id: '1234'
         name: My VLAN
         networkId: "{{ network_id }}"
         subnet: 192.168.1.0/24
 
     - name: Update appliance SSID
       cisco.meraki.networks_appliance_ssids:
-        meraki_suppress_logging: false
-        state: present
-        authMode: 8021x-radius
-        defaultVlanId: 10
-        enabled: true
-        name: My SSID
-        networkId: "{{ network_id }}"
-        number: 1234
-        radiusServers:
-          - host: 1.2.3.4
-            port: 1000
-            secret: secret
-        visible: true
-        wpaEncryptionMode: WPA2 only
+       meraki_suppress_logging: false
+       state: present
+       authMode: 8021x-radius
+       defaultVlanId: 10
+       enabled: true
+       name: My SSID
+       networkId: "{{ network_id }}"
+       number: 1234
+       radiusServers:
+       - host: 1.2.3.4
+         port: 1000
+         secret: secret
+       visible: true
+       wpaEncryptionMode: WPA2 only
 
     - name: Update appliance traffic shaping
       cisco.meraki.networks_appliance_traffic_shaping:
@@ -77,24 +78,24 @@
       cisco.meraki.networks_appliance_firewall_inbound_firewall_rules:
         networkId: "{{ network_id }}"
         rules:
-          - comment: Allow HTTP traffic to VLAN 1234 with HTTP servers.
-            destCidr: VLAN(1234).*
-            destPort: "80"
-            policy: allow
-            protocol: tcp
-            srcCidr: Any
-            srcPort: Any
-            syslogEnabled: false
+        - comment: Allow HTTP traffic to VLAN 1234 with HTTP servers.
+          destCidr: VLAN(1234).*
+          destPort: '80'
+          policy: allow
+          protocol: tcp
+          srcCidr: Any
+          srcPort: Any
+          syslogEnabled: false
 
     - name: Create FW L7 rules
       cisco.meraki.networks_appliance_firewall_l7_firewall_rules:
         networkId: "{{ network_id }}"
         rules:
-          - policy: deny
-            type: applicationCategory
-            value:
-              name: Sports
-              id: meraki:layer7/category/5
+        - policy: deny
+          type: applicationCategory
+          value: 
+            name: Sports
+            id: meraki:layer7/category/5
 
     - name: Get all networks _appliance _firewall l3firewallrules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules_info:

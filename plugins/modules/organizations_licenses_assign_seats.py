@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_licenses_assign_seats
-short_description: Resource module for organizations _licenses _assign _seats
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource organizations _licenses _assign _seats.
-- Assign SM seats to a network. This will increase the managed SM device limit of the network.
-version_added: '2.16.0'
+  - Manage operation create of the resource organizations _licenses _assign _seats.
+  - Assign SM seats to a network. This will increase the managed SM device limit of
+    the network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_licenses_assign_seats
+notes:
+  - SDK Method used are organizations.Organizations.assign_organization_licenses_seats,
+  - Paths used are post /organizations/{organizationId}/licenses/assignSeats,
 options:
   licenseId:
     description: The ID of the SM license to assign seats from.
@@ -30,18 +31,14 @@ options:
       or equal to the total number of seats of the license.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations assignOrganizationLicensesSeats
-  description: Complete reference of the assignOrganizationLicensesSeats API.
-  link: https://developer.cisco.com/meraki/api-v1/#!assign-organization-licenses-seats
-notes:
-  - SDK Method used are
-    organizations.Organizations.assign_organization_licenses_seats,
-
-  - Paths used are
-    post /organizations/{organizationId}/licenses/assignSeats,
+  - description: Complete reference of the assignOrganizationLicensesSeats API.
+    link: https://developer.cisco.com/meraki/api-v1/#!assign-organization-licenses-seats
+    name: Cisco Meraki documentation for organizations assignOrganizationLicensesSeats
+short_description: Resource module for organizations _licenses _assign _seats
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

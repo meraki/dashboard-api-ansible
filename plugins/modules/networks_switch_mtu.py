@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_mtu
-short_description: Resource module for networks _switch _mtu
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _mtu.
-- Update the MTU configuration.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _mtu.
+  - Update the MTU configuration.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_mtu
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_mtu,
+  - Paths used are put /networks/{networkId}/switch/mtu,
 options:
   defaultMtuSize:
     description: MTU size for the entire network. Default value is 9578.
@@ -23,8 +23,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   overrides:
-    description: Override MTU size for individual switches or switch templates. An empty
-      array will clear overrides.
+    description: Override MTU size for individual switches or switch templates. An
+      empty array will clear overrides.
     elements: dict
     suboptions:
       mtuSize:
@@ -40,18 +40,14 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchMtu
-  description: Complete reference of the updateNetworkSwitchMtu API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-mtu
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_mtu,
-
-  - Paths used are
-    put /networks/{networkId}/switch/mtu,
+  - description: Complete reference of the updateNetworkSwitchMtu API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-mtu
+    name: Cisco Meraki documentation for switch updateNetworkSwitchMtu
+short_description: Resource module for networks _switch _mtu
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

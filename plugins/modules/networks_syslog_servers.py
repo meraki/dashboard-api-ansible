@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_syslog_servers
-short_description: Resource module for networks _syslog _servers
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _syslog _servers.
-- Update the syslog servers for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _syslog _servers.
+  - Update the syslog servers for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_syslog_servers
+notes:
+  - SDK Method used are networks.Networks.update_network_syslog_servers,
+  - Paths used are put /networks/{networkId}/syslogServers,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -37,18 +37,14 @@ options:
         type: list
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkSyslogServers
-  description: Complete reference of the updateNetworkSyslogServers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-syslog-servers
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_syslog_servers,
-
-  - Paths used are
-    put /networks/{networkId}/syslogServers,
+  - description: Complete reference of the updateNetworkSyslogServers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-syslog-servers
+    name: Cisco Meraki documentation for networks updateNetworkSyslogServers
+short_description: Resource module for networks _syslog _servers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

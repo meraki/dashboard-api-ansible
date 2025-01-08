@@ -5,39 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_branding_policies_priorities_info
-short_description: Information module for organizations _branding _policies _priorities
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _branding _policies _priorities.
-- >
-   Return the branding policy IDs of an organization in priority order. IDs are ordered in ascending order of
-   priority IDs later in the array have higher priority .
-version_added: '2.16.0'
+  - Get all organizations _branding _policies _priorities.
+  - 'Return the branding policy IDs of an organization in priority order. IDs are
+    ordered in ascending order of priority IDs later in the array have higher priority
+    .
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_branding_policies_priorities_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_branding_policies_priorities,
+  - Paths used are get /organizations/{organizationId}/brandingPolicies/priorities,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationBrandingPoliciesPriorities
-  description: Complete reference of the getOrganizationBrandingPoliciesPriorities API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies-priorities
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_branding_policies_priorities,
-
-  - Paths used are
-    get /organizations/{organizationId}/brandingPolicies/priorities,
+  - description: Complete reference of the getOrganizationBrandingPoliciesPriorities
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies-priorities
+    name: Cisco Meraki documentation for organizations getOrganizationBrandingPoliciesPriorities
+short_description: Information module for organizations _branding _policies _priorities
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

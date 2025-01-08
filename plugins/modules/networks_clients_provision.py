@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_clients_provision
-short_description: Resource module for networks _clients _provision
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _clients _provision.
-- Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _clients _provision.
+  - Provisions a client with a name and policy. Clients can be provisioned before
+    they associate to the network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_clients_provision
+notes:
+  - SDK Method used are networks.Networks.provision_network_clients,
+  - Paths used are post /networks/{networkId}/clients/provision,
 options:
   clients:
     description: The array of clients to provision.
@@ -40,8 +41,8 @@ options:
     type: str
   policiesBySecurityAppliance:
     description: An object, describing what the policy-connection association is for
-      the security appliance. (Only relevant if the security appliance is actually within
-      the network).
+      the security appliance. (Only relevant if the security appliance is actually
+      within the network).
     suboptions:
       devicePolicy:
         description: The policy to apply to the specified client. Can be 'Allowed',
@@ -49,9 +50,9 @@ options:
         type: str
     type: dict
   policiesBySsid:
-    description: An object, describing the policy-connection associations for each active
-      SSID within the network. Keys should be the number of enabled SSIDs, mapping to
-      an object describing the client's policy.
+    description: An object, describing the policy-connection associations for each
+      active SSID within the network. Keys should be the number of enabled SSIDs,
+      mapping to an object describing the client's policy.
     suboptions:
       '0':
         description: The number for the SSID.
@@ -62,8 +63,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '1':
@@ -75,8 +76,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '10':
@@ -88,8 +89,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '11':
@@ -101,8 +102,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '12':
@@ -114,8 +115,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '13':
@@ -127,8 +128,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '14':
@@ -140,8 +141,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '2':
@@ -153,8 +154,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '3':
@@ -166,8 +167,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '4':
@@ -179,8 +180,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '5':
@@ -192,8 +193,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '6':
@@ -205,8 +206,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '7':
@@ -218,8 +219,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '8':
@@ -231,8 +232,8 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '9':
@@ -244,24 +245,20 @@ options:
             type: str
           groupPolicyId:
             description: The ID of the desired group policy to apply to the client.
-              Required if 'devicePolicy' is set to "Group policy". Otherwise this is
-              ignored.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
     type: dict
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks provisionNetworkClients
-  description: Complete reference of the provisionNetworkClients API.
-  link: https://developer.cisco.com/meraki/api-v1/#!provision-network-clients
-notes:
-  - SDK Method used are
-    networks.Networks.provision_network_clients,
-
-  - Paths used are
-    post /networks/{networkId}/clients/provision,
+  - description: Complete reference of the provisionNetworkClients API.
+    link: https://developer.cisco.com/meraki/api-v1/#!provision-network-clients
+    name: Cisco Meraki documentation for networks provisionNetworkClients
+short_description: Resource module for networks _clients _provision
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

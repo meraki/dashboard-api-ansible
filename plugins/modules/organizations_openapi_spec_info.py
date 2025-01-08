@@ -5,41 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_openapi_spec_info
-short_description: Information module for organizations _openapi _spec
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _openapi _spec.
-- Return the OpenAPI Specification of the organization's API documentation in JSON.
-version_added: '2.16.0'
+  - Get all organizations _openapi _spec.
+  - Return the OpenAPI Specification of the organization's API documentation in JSON.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_openapi_spec_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_openapi_spec,
+  - Paths used are get /organizations/{organizationId}/openapiSpec,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   version:
     description:
-    - Version query parameter. OpenAPI Specification version to return. Default is 2.
+      - Version query parameter. OpenAPI Specification version to return. Default
+        is 2.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationOpenapiSpec
-  description: Complete reference of the getOrganizationOpenapiSpec API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-openapi-spec
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_openapi_spec,
-
-  - Paths used are
-    get /organizations/{organizationId}/openapiSpec,
+  - description: Complete reference of the getOrganizationOpenapiSpec API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-openapi-spec
+    name: Cisco Meraki documentation for organizations getOrganizationOpenapiSpec
+short_description: Information module for organizations _openapi _spec
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

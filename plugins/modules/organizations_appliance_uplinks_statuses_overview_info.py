@@ -5,37 +5,35 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_appliance_uplinks_statuses_overview_info
-short_description: Information module for organizations _appliance _uplinks _statuses _overview
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _appliance _uplinks _statuses _overview.
-- Returns an overview of uplink statuses.
-version_added: '2.16.0'
+  - Get all organizations _appliance _uplinks _statuses _overview.
+  - Returns an overview of uplink statuses.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_appliance_uplinks_statuses_overview_info
+notes:
+  - SDK Method used are appliance.Appliance.get_organization_appliance_uplinks_statuses_overview,
+  - Paths used are get /organizations/{organizationId}/appliance/uplinks/statuses/overview,
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksStatusesOverview
-  description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-statuses-overview
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_organization_appliance_uplinks_statuses_overview,
-
-  - Paths used are
-    get /organizations/{organizationId}/appliance/uplinks/statuses/overview,
+  - description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-statuses-overview
+    name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksStatusesOverview
+short_description: Information module for organizations _appliance _uplinks _statuses
+  _overview
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_port_forwarding_rules
-short_description: Resource module for networks _appliance _firewall _port _forwarding _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall _port _forwarding _rules.
-- Update the port forwarding rules for an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall _port _forwarding
+    _rules.
+  - Update the port forwarding rules for an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_port_forwarding_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_port_forwarding_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/portForwardingRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -33,8 +34,8 @@ options:
           resource that you wish to make available on the WAN.
         type: str
       localPort:
-        description: A port or port ranges that will receive the forwarded traffic from
-          the WAN.
+        description: A port or port ranges that will receive the forwarded traffic
+          from the WAN.
         type: str
       name:
         description: A descriptive name for the rule.
@@ -52,18 +53,16 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallPortForwardingRules
-  description: Complete reference of the updateNetworkApplianceFirewallPortForwardingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-port-forwarding-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_port_forwarding_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/portForwardingRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallPortForwardingRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-port-forwarding-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallPortForwardingRules
+short_description: Resource module for networks _appliance _firewall _port _forwarding
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

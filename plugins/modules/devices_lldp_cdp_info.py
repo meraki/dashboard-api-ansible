@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_lldp_cdp_info
-short_description: Information module for devices _lldp _cdp
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all devices _lldp _cdp.
-- List LLDP and CDP information for a device.
-version_added: '2.16.0'
+  - Get all devices _lldp _cdp.
+  - List LLDP and CDP information for a device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_lldp_cdp_info
+notes:
+  - SDK Method used are devices.Devices.get_device_lldp_cdp,
+  - Paths used are get /devices/{serial}/lldpCdp,
 options:
   headers:
     description: Additional headers.
     type: dict
   serial:
     description:
-    - Serial path parameter.
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceLldpCdp
-  description: Complete reference of the getDeviceLldpCdp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-lldp-cdp
-notes:
-  - SDK Method used are
-    devices.Devices.get_device_lldp_cdp,
-
-  - Paths used are
-    get /devices/{serial}/lldpCdp,
+  - description: Complete reference of the getDeviceLldpCdp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-lldp-cdp
+    name: Cisco Meraki documentation for devices getDeviceLldpCdp
+short_description: Information module for devices _lldp _cdp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,41 +5,37 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_live_tools_ping_info
-short_description: Information module for devices _live _tools _ping
+author: Francisco Munoz (@fmunoz)
 description:
-- Get devices _live _tools _ping by id.
-- Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
-version_added: '2.16.0'
+  - Get devices _live _tools _ping by id.
+  - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_live_tools_ping_info
+notes:
+  - SDK Method used are devices.Devices.get_device_live_tools_ping,
+  - Paths used are get /devices/{serial}/liveTools/ping/{id},
 options:
   headers:
     description: Additional headers.
     type: dict
-  serial:
-    description:
-    - Serial path parameter.
-    type: str
   id:
     description:
-    - Id path parameter.
+      - Id path parameter.
+    type: str
+  serial:
+    description:
+      - Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices getDeviceLiveToolsPing
-  description: Complete reference of the getDeviceLiveToolsPing API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping
-notes:
-  - SDK Method used are
-    devices.Devices.get_device_live_tools_ping,
-
-  - Paths used are
-    get /devices/{serial}/liveTools/ping/{id},
+  - description: Complete reference of the getDeviceLiveToolsPing API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping
+    name: Cisco Meraki documentation for devices getDeviceLiveToolsPing
+short_description: Information module for devices _live _tools _ping
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

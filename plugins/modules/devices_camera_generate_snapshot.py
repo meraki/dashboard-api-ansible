@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_camera_generate_snapshot
-short_description: Resource module for devices _camera _generate _snapshot
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource devices _camera _generate _snapshot.
-- Generate a snapshot of what the camera sees at the specified time and return a link to that image.
-version_added: '2.16.0'
+  - Manage operation create of the resource devices _camera _generate _snapshot.
+  - Generate a snapshot of what the camera sees at the specified time and return a
+    link to that image.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_camera_generate_snapshot
+notes:
+  - SDK Method used are camera.Camera.generate_device_camera_snapshot,
+  - Paths used are post /devices/{serial}/camera/generateSnapshot,
 options:
   fullframe:
     description: Optional If set to "true" the snapshot will be taken at full sensor
@@ -24,23 +25,19 @@ options:
     description: Serial path parameter.
     type: str
   timestamp:
-    description: Optional The snapshot will be taken from this time on the camera. The
-      timestamp is expected to be in ISO 8601 format. If no timestamp is specified,
+    description: Optional The snapshot will be taken from this time on the camera.
+      The timestamp is expected to be in ISO 8601 format. If no timestamp is specified,
       we will assume current time.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for camera generateDeviceCameraSnapshot
-  description: Complete reference of the generateDeviceCameraSnapshot API.
-  link: https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot
-notes:
-  - SDK Method used are
-    camera.Camera.generate_device_camera_snapshot,
-
-  - Paths used are
-    post /devices/{serial}/camera/generateSnapshot,
+  - description: Complete reference of the generateDeviceCameraSnapshot API.
+    link: https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot
+    name: Cisco Meraki documentation for camera generateDeviceCameraSnapshot
+short_description: Resource module for devices _camera _generate _snapshot
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

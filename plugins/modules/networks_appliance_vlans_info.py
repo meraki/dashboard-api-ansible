@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_vlans_info
-short_description: Information module for networks _appliance _vlans
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _appliance _vlans.
-- Get networks _appliance _vlans by id.
-- List the VLANs for an MX network.
-- Return a VLAN.
-version_added: '2.16.0'
+  - Get all networks _appliance _vlans.
+  - Get networks _appliance _vlans by id.
+  - List the VLANs for an MX network.
+  - Return a VLAN.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_vlans_info
+notes:
+  - SDK Method used are appliance.Appliance.get_network_appliance_vlan, appliance.Appliance.get_network_appliance_vlans,
+  - Paths used are get /networks/{networkId}/appliance/vlans, get /networks/{networkId}/appliance/vlans/{vlanId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   vlanId:
     description:
-    - VlanId path parameter. Vlan ID.
+      - VlanId path parameter. Vlan ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance getNetworkApplianceVlan
-  description: Complete reference of the getNetworkApplianceVlan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlan
-- name: Cisco Meraki documentation for appliance getNetworkApplianceVlans
-  description: Complete reference of the getNetworkApplianceVlans API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlans
-notes:
-  - SDK Method used are
-    appliance.Appliance.get_network_appliance_vlan,
-    appliance.Appliance.get_network_appliance_vlans,
-
-  - Paths used are
-    get /networks/{networkId}/appliance/vlans,
-    get /networks/{networkId}/appliance/vlans/{vlanId},
+  - description: Complete reference of the getNetworkApplianceVlan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlan
+    name: Cisco Meraki documentation for appliance getNetworkApplianceVlan
+  - description: Complete reference of the getNetworkApplianceVlans API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlans
+    name: Cisco Meraki documentation for appliance getNetworkApplianceVlans
+short_description: Information module for networks _appliance _vlans
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,18 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_vpn_site_to_site_vpn
-short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _vpn _site _to _site _vpn.
-- Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _vpn _site _to _site
+    _vpn.
+  - Update the site-to-site VPN settings of a network. Only valid for MX networks
+    in NAT mode.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_vpn_site_to_site_vpn
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_vpn_site_to_site_vpn,
+  - Paths used are put /networks/{networkId}/appliance/vpn/siteToSiteVpn,
 options:
   hubs:
     description: The list of VPN hubs, in order of preference. In spoke mode, at least
@@ -47,18 +49,15 @@ options:
         type: bool
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceVpnSiteToSiteVpn
-  description: Complete reference of the updateNetworkApplianceVpnSiteToSiteVpn API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vpn-site-to-site-vpn
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_vpn_site_to_site_vpn,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/vpn/siteToSiteVpn,
+  - description: Complete reference of the updateNetworkApplianceVpnSiteToSiteVpn
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vpn-site-to-site-vpn
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceVpnSiteToSiteVpn
+short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

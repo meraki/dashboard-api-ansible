@@ -5,33 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: administered_identities_me_api_keys_generate
-short_description: Resource module for administered _identities _me _api _keys _generate
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource administered _identities _me _api _keys _generate.
-- >
-   Generates an API key for an identity. For users who have access to more than one organization, the change will
-   take up to five minutes to propagate. If one of the organizations is currently under maintenance, the change may
-   not propagate fully until after the maintenance has been completed.
-version_added: '2.20.0'
+  - Manage operation create of the resource administered _identities _me _api _keys
+    _generate.
+  - 'Generates an API key for an identity. For users who have access to more than
+    one organization, the change will take up to five minutes to propagate. If one
+    of the organizations is currently under maintenance, the change may not propagate
+    fully until after the maintenance has been completed.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: administered_identities_me_api_keys_generate
+notes:
+  - SDK Method used are administered.Administered.generate_administered_identities_me_api_keys,
+  - Paths used are post /administered/identities/me/api/keys/generate,
 options: {}
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for administered generateAdministeredIdentitiesMeApiKeys
-  description: Complete reference of the generateAdministeredIdentitiesMeApiKeys API.
-  link: https://developer.cisco.com/meraki/api-v1/#!generate-administered-identities-me-api-keys
-notes:
-  - SDK Method used are
-    administered.Administered.generate_administered_identities_me_api_keys,
-
-  - Paths used are
-    post /administered/identities/me/api/keys/generate,
+  - description: Complete reference of the generateAdministeredIdentitiesMeApiKeys
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!generate-administered-identities-me-api-keys
+    name: Cisco Meraki documentation for administered generateAdministeredIdentitiesMeApiKeys
+short_description: Resource module for administered _identities _me _api _keys _generate
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

@@ -5,46 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cellular_gateway_dhcp
-short_description: Resource module for networks _cellular _gateway _dhcp
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _cellular _gateway _dhcp.
-- Update common DHCP settings of MGs.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _cellular _gateway _dhcp.
+  - Update common DHCP settings of MGs.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_cellular_gateway_dhcp
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.update_network_cellular_gateway_dhcp,
+  - Paths used are put /networks/{networkId}/cellularGateway/dhcp,
 options:
   dhcpLeaseTime:
     description: DHCP Lease time for all MG of the network. Possible values are '30
       minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week'.
     type: str
   dnsCustomNameservers:
-    description: List of fixed IPs representing the the DNS Name servers when the mode
-      is 'custom'.
+    description: List of fixed IPs representing the the DNS Name servers when the
+      mode is 'custom'.
     elements: str
     type: list
   dnsNameservers:
-    description: DNS name servers mode for all MG of the network. Possible values are
-      'upstream_dns', 'google_dns', 'opendns', 'custom'.
+    description: DNS name servers mode for all MG of the network. Possible values
+      are 'upstream_dns', 'google_dns', 'opendns', 'custom'.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayDhcp
-  description: Complete reference of the updateNetworkCellularGatewayDhcp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-dhcp
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.update_network_cellular_gateway_dhcp,
-
-  - Paths used are
-    put /networks/{networkId}/cellularGateway/dhcp,
+  - description: Complete reference of the updateNetworkCellularGatewayDhcp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-dhcp
+    name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewayDhcp
+short_description: Resource module for networks _cellular _gateway _dhcp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_single_lan
-short_description: Resource module for networks _appliance _single _lan
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _single _lan.
-- Update single LAN configuration.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _single _lan.
+  - Update single LAN configuration.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_single_lan
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_single_lan,
+  - Paths used are put /networks/{networkId}/appliance/singleLan,
 options:
   applianceIp:
     description: The appliance IP address of the single LAN.
@@ -53,8 +53,9 @@ options:
     type: dict
   mandatoryDhcp:
     description: Mandatory DHCP will enforce that clients connecting to this LAN must
-      use the IP address assigned by the DHCP server. Clients who use a static IP address
-      won't be able to associate. Only available on firmware versions 17.0 and above.
+      use the IP address assigned by the DHCP server. Clients who use a static IP
+      address won't be able to associate. Only available on firmware versions 17.0
+      and above.
     suboptions:
       enabled:
         description: Enable Mandatory DHCP on LAN.
@@ -67,18 +68,14 @@ options:
     description: The subnet of the single LAN configuration.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceSingleLan
-  description: Complete reference of the updateNetworkApplianceSingleLan API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-single-lan
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_single_lan,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/singleLan,
+  - description: Complete reference of the updateNetworkApplianceSingleLan API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-single-lan
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceSingleLan
+short_description: Resource module for networks _appliance _single _lan
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

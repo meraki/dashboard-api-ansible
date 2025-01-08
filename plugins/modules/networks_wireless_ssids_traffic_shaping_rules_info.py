@@ -5,41 +5,39 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids_traffic_shaping_rules_info
-short_description: Information module for networks _wireless _ssids _traffic _shaping _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _wireless _ssids _traffic _shaping _rules.
-- Display the traffic shaping settings for a SSID on an MR network.
-version_added: '2.16.0'
+  - Get all networks _wireless _ssids _traffic _shaping _rules.
+  - Display the traffic shaping settings for a SSID on an MR network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_traffic_shaping_rules_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ssid_traffic_shaping_rules,
+  - Paths used are get /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-    - Number path parameter.
+      - Number path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidTrafficShapingRules
-  description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-traffic-shaping-rules
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ssid_traffic_shaping_rules,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules,
+  - description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-traffic-shaping-rules
+    name: Cisco Meraki documentation for wireless getNetworkWirelessSsidTrafficShapingRules
+short_description: Information module for networks _wireless _ssids _traffic _shaping
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

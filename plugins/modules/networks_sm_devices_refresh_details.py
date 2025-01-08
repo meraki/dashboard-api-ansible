@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_devices_refresh_details
-short_description: Resource module for networks _sm _devices _refresh _details
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _sm _devices _refresh _details.
-- Refresh the details of a device.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _sm _devices _refresh _details.
+  - Refresh the details of a device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_devices_refresh_details
+notes:
+  - SDK Method used are sm.Sm.refresh_network_sm_device_details,
+  - Paths used are post /networks/{networkId}/sm/devices/{deviceId}/refreshDetails,
 options:
   deviceId:
     description: DeviceId path parameter. Device ID.
@@ -23,18 +23,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm refreshNetworkSmDeviceDetails
-  description: Complete reference of the refreshNetworkSmDeviceDetails API.
-  link: https://developer.cisco.com/meraki/api-v1/#!refresh-network-sm-device-details
-notes:
-  - SDK Method used are
-    sm.Sm.refresh_network_sm_device_details,
-
-  - Paths used are
-    post /networks/{networkId}/sm/devices/{deviceId}/refreshDetails,
+  - description: Complete reference of the refreshNetworkSmDeviceDetails API.
+    link: https://developer.cisco.com/meraki/api-v1/#!refresh-network-sm-device-details
+    name: Cisco Meraki documentation for sm refreshNetworkSmDeviceDetails
+short_description: Resource module for networks _sm _devices _refresh _details
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

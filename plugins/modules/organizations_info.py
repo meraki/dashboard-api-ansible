@@ -5,63 +5,64 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_info
-short_description: Information module for organizations
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations.
-- Get organizations by id.
-- List the organizations that the user has privileges on.
-- Return an organization.
-version_added: '2.16.0'
+  - Get all organizations.
+  - Get organizations by id.
+  - List the organizations that the user has privileges on.
+  - Return an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization, organizations.Organizations.get_organizations,
+  - Paths used are get /organizations, get /organizations/{organizationId},
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 9000. Default is 9000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 9000. Default is 9000.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganization
-  description: Complete reference of the getOrganization API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization
-- name: Cisco Meraki documentation for organizations getOrganizations
-  description: Complete reference of the getOrganizations API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organizations
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization,
-    organizations.Organizations.get_organizations,
-
-  - Paths used are
-    get /organizations,
-    get /organizations/{organizationId},
+  - description: Complete reference of the getOrganization API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization
+    name: Cisco Meraki documentation for organizations getOrganization
+  - description: Complete reference of the getOrganizations API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organizations
+    name: Cisco Meraki documentation for organizations getOrganizations
+short_description: Information module for organizations
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

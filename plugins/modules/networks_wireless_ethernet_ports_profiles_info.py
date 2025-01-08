@@ -5,41 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ethernet_ports_profiles_info
-short_description: Information module for networks _wireless _ethernet _ports _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get networks _wireless _ethernet _ports _profiles by id.
-- Show the AP port profile by ID for this network.
-version_added: '2.16.0'
+  - Get networks _wireless _ethernet _ports _profiles by id.
+  - Show the AP port profile by ID for this network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ethernet_ports_profiles_info
+notes:
+  - SDK Method used are wireless.Wireless.get_network_wireless_ethernet_ports_profile,
+  - Paths used are get /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId},
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   profileId:
     description:
-    - ProfileId path parameter. Profile ID.
+      - ProfileId path parameter. Profile ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless getNetworkWirelessEthernetPortsProfile
-  description: Complete reference of the getNetworkWirelessEthernetPortsProfile API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ethernet-ports-profile
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_network_wireless_ethernet_ports_profile,
-
-  - Paths used are
-    get /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId},
+  - description: Complete reference of the getNetworkWirelessEthernetPortsProfile
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ethernet-ports-profile
+    name: Cisco Meraki documentation for wireless getNetworkWirelessEthernetPortsProfile
+short_description: Information module for networks _wireless _ethernet _ports _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

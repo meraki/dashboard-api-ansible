@@ -5,122 +5,133 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_inventory_devices_info
-short_description: Information module for organizations _inventory _devices
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _inventory _devices.
-- Get organizations _inventory _devices by id.
-- Return a single device from the inventory of an organization.
-- Return the device inventory for an organization.
-version_added: '2.16.0'
+  - Get all organizations _inventory _devices.
+  - Get organizations _inventory _devices by id.
+  - Return a single device from the inventory of an organization.
+  - Return the device inventory for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_inventory_devices_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_inventory_device,
+    organizations.Organizations.get_organization_inventory_devices,
+  - Paths used are get /organizations/{organizationId}/inventory/devices, get /organizations/{organizationId}/inventory/devices/{serial},
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  usedState:
-    description:
-    - UsedState query parameter. Filter results by used or unused inventory. Accepted values are 'used' or 'unused'.
-    type: str
-  search:
-    description:
-    - Search query parameter. Search for devices in inventory based on serial number, mac address, or model.
-    type: str
   macs:
     description:
-    - Macs query parameter. Search for devices in inventory based on mac addresses.
-    elements: str
-    type: list
-  networkIds:
-    description:
-    - >
-      NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null' value
-      to get available devices only.
-    elements: str
-    type: list
-  serials:
-    description:
-    - Serials query parameter. Search for devices in inventory based on serials.
+      - Macs query parameter. Search for devices in inventory based on mac addresses.
     elements: str
     type: list
   models:
     description:
-    - Models query parameter. Search for devices in inventory based on model.
+      - Models query parameter. Search for devices in inventory based on model.
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - 'NetworkIds query parameter. Search for devices in inventory based on network
+        ids. Use explicit ''null'' value to get available devices only.
+
+        '
     elements: str
     type: list
   orderNumbers:
     description:
-    - OrderNumbers query parameter. Search for devices in inventory based on order numbers.
+      - OrderNumbers query parameter. Search for devices in inventory based on order
+        numbers.
     elements: str
     type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
+    type: int
+  productTypes:
+    description:
+      - 'ProductTypes query parameter. Filter devices by product type. Accepted values
+        are appliance, camera, cellularGateway, secureConnect, sensor, switch, systemsManager,
+        wireless, and wirelessController.
+
+        '
+    elements: str
+    type: list
+  search:
+    description:
+      - Search query parameter. Search for devices in inventory based on serial number,
+        mac address, or model.
+    type: str
+  serial:
+    description:
+      - Serial path parameter.
+    type: str
+  serials:
+    description:
+      - Serials query parameter. Search for devices in inventory based on serials.
+    elements: str
+    type: list
+  startingAfter:
+    description:
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   tags:
     description:
-    - >
-      Tags query parameter. Filter devices by tags. The filtering is case-sensitive. If tags are included,
-      'tagsFilterType' should also be included (see below).
+      - 'Tags query parameter. Filter devices by tags. The filtering is case-sensitive.
+        If tags are included, ''tagsFilterType'' should also be included (see below).
+
+        '
     elements: str
     type: list
   tagsFilterType:
     description:
-    - >
-      TagsFilterType query parameter. To use with 'tags' parameter, to filter devices which contain ANY or ALL
-      given tags. Accepted values are 'withAnyTags' or 'withAllTags', default is 'withAnyTags'.
+      - 'TagsFilterType query parameter. To use with ''tags'' parameter, to filter
+        devices which contain ANY or ALL given tags. Accepted values are ''withAnyTags''
+        or ''withAllTags'', default is ''withAnyTags''.
+
+        '
     type: str
-  productTypes:
+  usedState:
     description:
-    - >
-      ProductTypes query parameter. Filter devices by product type. Accepted values are appliance, camera,
-      cellularGateway, secureConnect, sensor, switch, systemsManager, wireless, and wirelessController.
-    elements: str
-    type: list
-  serial:
-    description:
-    - Serial path parameter.
+      - UsedState query parameter. Filter results by used or unused inventory. Accepted
+        values are 'used' or 'unused'.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationInventoryDevice
-  description: Complete reference of the getOrganizationInventoryDevice API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-device
-- name: Cisco Meraki documentation for organizations getOrganizationInventoryDevices
-  description: Complete reference of the getOrganizationInventoryDevices API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-devices
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_inventory_device,
-    organizations.Organizations.get_organization_inventory_devices,
-
-  - Paths used are
-    get /organizations/{organizationId}/inventory/devices,
-    get /organizations/{organizationId}/inventory/devices/{serial},
+  - description: Complete reference of the getOrganizationInventoryDevice API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-device
+    name: Cisco Meraki documentation for organizations getOrganizationInventoryDevice
+  - description: Complete reference of the getOrganizationInventoryDevices API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-devices
+    name: Cisco Meraki documentation for organizations getOrganizationInventoryDevices
+short_description: Information module for organizations _inventory _devices
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

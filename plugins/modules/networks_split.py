@@ -5,33 +5,29 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_split
-short_description: Resource module for networks _split
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _split.
-- Split a combined network into individual networks for each type of device.
-version_added: '2.16.0'
+  - Manage operation create of the resource networks _split.
+  - Split a combined network into individual networks for each type of device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_split
+notes:
+  - SDK Method used are networks.Networks.split_network,
+  - Paths used are post /networks/{networkId}/split,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks splitNetwork
-  description: Complete reference of the splitNetwork API.
-  link: https://developer.cisco.com/meraki/api-v1/#!split-network
-notes:
-  - SDK Method used are
-    networks.Networks.split_network,
-
-  - Paths used are
-    post /networks/{networkId}/split,
+  - description: Complete reference of the splitNetwork API.
+    link: https://developer.cisco.com/meraki/api-v1/#!split-network
+    name: Cisco Meraki documentation for networks splitNetwork
+short_description: Resource module for networks _split
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

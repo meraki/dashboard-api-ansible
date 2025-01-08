@@ -5,60 +5,63 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_clients_search_info
-short_description: Information module for organizations _clients _search
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _clients _search.
-- Return the client details in an organization.
-version_added: '2.16.0'
+  - Get all organizations _clients _search.
+  - Return the client details in an organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_clients_search_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_clients_search,
+  - Paths used are get /organizations/{organizationId}/clients/search,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
+  mac:
+    description:
+      - Mac query parameter. The MAC address of the client. Required.
+    type: str
   organizationId:
     description:
-    - OrganizationId path parameter. Organization ID.
+      - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 5. Default is 5.
     type: int
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  mac:
-    description:
-    - Mac query parameter. The MAC address of the client. Required.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationClientsSearch
-  description: Complete reference of the getOrganizationClientsSearch API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-search
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_clients_search,
-
-  - Paths used are
-    get /organizations/{organizationId}/clients/search,
+  - description: Complete reference of the getOrganizationClientsSearch API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-search
+    name: Cisco Meraki documentation for organizations getOrganizationClientsSearch
+short_description: Information module for organizations _clients _search
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

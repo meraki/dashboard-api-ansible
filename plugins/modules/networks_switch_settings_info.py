@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_settings_info
-short_description: Information module for networks _switch _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _settings.
-- Returns the switch network settings.
-version_added: '2.16.0'
+  - Get all networks _switch _settings.
+  - Returns the switch network settings.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_settings_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_settings,
+  - Paths used are get /networks/{networkId}/switch/settings,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchSettings
-  description: Complete reference of the getNetworkSwitchSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-settings
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_settings,
-
-  - Paths used are
-    get /networks/{networkId}/switch/settings,
+  - description: Complete reference of the getNetworkSwitchSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-settings
+    name: Cisco Meraki documentation for switch getNetworkSwitchSettings
+short_description: Information module for networks _switch _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

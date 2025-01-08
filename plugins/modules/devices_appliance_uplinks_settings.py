@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_appliance_uplinks_settings
-short_description: Resource module for devices _appliance _uplinks _settings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _appliance _uplinks _settings.
-- Update the uplink settings for an MX appliance.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _appliance _uplinks _settings.
+  - Update the uplink settings for an MX appliance.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_appliance_uplinks_settings
+notes:
+  - SDK Method used are appliance.Appliance.update_device_appliance_uplinks_settings,
+  - Paths used are put /devices/{serial}/appliance/uplinks/settings,
 options:
   interfaces:
     description: Interface settings.
@@ -35,8 +35,8 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter is
-                      not returned.
+                    description: Password for PPPoE authentication. This parameter
+                      is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -66,8 +66,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in
-                          priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -91,8 +91,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in
-                          priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -125,8 +125,8 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter is
-                      not returned.
+                    description: Password for PPPoE authentication. This parameter
+                      is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -156,8 +156,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in
-                          priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -181,8 +181,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in
-                          priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -204,18 +204,14 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
-  description: Complete reference of the updateDeviceApplianceUplinksSettings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-appliance-uplinks-settings
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_device_appliance_uplinks_settings,
-
-  - Paths used are
-    put /devices/{serial}/appliance/uplinks/settings,
+  - description: Complete reference of the updateDeviceApplianceUplinksSettings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-appliance-uplinks-settings
+    name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
+short_description: Resource module for devices _appliance _uplinks _settings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

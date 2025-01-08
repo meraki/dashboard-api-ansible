@@ -5,18 +5,23 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers
-short_description: Resource module for networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operations create, update and delete of the resource networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
-- Add a server to be trusted by Dynamic ARP Inspection on this network.
-- Remove a server from being trusted by Dynamic ARP Inspection on this network.
-- Update a server that is trusted by Dynamic ARP Inspection on this network.
-version_added: '2.16.0'
+  - Manage operations create, update and delete of the resource networks _switch _dhcp
+    _server _policy _arp _inspection _trusted _servers.
+  - Add a server to be trusted by Dynamic ARP Inspection on this network.
+  - Remove a server from being trusted by Dynamic ARP Inspection on this network.
+  - Update a server that is trusted by Dynamic ARP Inspection on this network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers
+notes:
+  - SDK Method used are switch.Switch.create_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
+    switch.Switch.delete_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
+    switch.Switch.update_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
+  - Paths used are post /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers,
+    delete /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers/{trustedServerId},
+    put /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers/{trustedServerId},
 options:
   ipv4:
     description: The IPv4 attributes of the trusted server being added.
@@ -35,32 +40,28 @@ options:
     description: TrustedServerId path parameter. Trusted server ID.
     type: str
   vlan:
-    description: The VLAN of the trusted server being added. It must be between 1 and
-      4094.
+    description: The VLAN of the trusted server being added. It must be between 1
+      and 4094.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-dhcp-server-policy-arp-inspection-trusted-server
-- name: Cisco Meraki documentation for switch deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-dhcp-server-policy-arp-inspection-trusted-server
-- name: Cisco Meraki documentation for switch updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
-  description: Complete reference of the updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dhcp-server-policy-arp-inspection-trusted-server
-notes:
-  - SDK Method used are
-    switch.Switch.create_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
-    switch.Switch.delete_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
-    switch.Switch.update_network_switch_dhcp_server_policy_arp_inspection_trusted_server,
-
-  - Paths used are
-    post /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers,
-    delete /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers/{trustedServerId},
-    put /networks/{networkId}/switch/dhcpServerPolicy/arpInspection/trustedServers/{trustedServerId},
+  - description: Complete reference of the createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+    name: Cisco Meraki documentation for switch createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+  - description: Complete reference of the deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+    name: Cisco Meraki documentation for switch deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+  - description: Complete reference of the updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dhcp-server-policy-arp-inspection-trusted-server
+    name: Cisco Meraki documentation for switch updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
+short_description: Resource module for networks _switch _dhcp _server _policy _arp
+  _inspection _trusted _servers
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

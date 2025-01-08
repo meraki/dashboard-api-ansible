@@ -5,42 +5,39 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_admins_info
-short_description: Information module for organizations _admins
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _admins.
-- List the dashboard administrators in this organization.
-version_added: '2.16.0'
+  - Get all organizations _admins.
+  - List the dashboard administrators in this organization.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: organizations_admins_info
+notes:
+  - SDK Method used are organizations.Organizations.get_organization_admins,
+  - Paths used are get /organizations/{organizationId}/admins,
 options:
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
-    description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
   networkIds:
     description:
-    - NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
+      - NetworkIds query parameter. Optional parameter to filter the result set by
+        the included set of network IDs.
     elements: str
     type: list
+  organizationId:
+    description:
+      - OrganizationId path parameter. Organization ID.
+    type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations getOrganizationAdmins
-  description: Complete reference of the getOrganizationAdmins API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-admins
-notes:
-  - SDK Method used are
-    organizations.Organizations.get_organization_admins,
-
-  - Paths used are
-    get /organizations/{organizationId}/admins,
+  - description: Complete reference of the getOrganizationAdmins API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-admins
+    name: Cisco Meraki documentation for organizations getOrganizationAdmins
+short_description: Information module for organizations _admins
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

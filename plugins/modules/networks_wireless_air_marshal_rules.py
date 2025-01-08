@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_air_marshal_rules
-short_description: Resource module for networks _wireless _air _marshal _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation create of the resource networks _wireless _air _marshal _rules.
-- Creates a new rule.
-version_added: '2.20.0'
+  - Manage operation create of the resource networks _wireless _air _marshal _rules.
+  - Creates a new rule.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_air_marshal_rules
+notes:
+  - SDK Method used are wireless.Wireless.create_network_wireless_air_marshal_rule,
+  - Paths used are post /networks/{networkId}/wireless/airMarshal/rules,
 options:
   match:
     description: Object describing the rule specification.
@@ -33,18 +33,14 @@ options:
     description: Indicates if this rule will allow, block, or alert.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless createNetworkWirelessAirMarshalRule
-  description: Complete reference of the createNetworkWirelessAirMarshalRule API.
-  link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-air-marshal-rule
-notes:
-  - SDK Method used are
-    wireless.Wireless.create_network_wireless_air_marshal_rule,
-
-  - Paths used are
-    post /networks/{networkId}/wireless/airMarshal/rules,
+  - description: Complete reference of the createNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-air-marshal-rule
+    name: Cisco Meraki documentation for wireless createNetworkWirelessAirMarshalRule
+short_description: Resource module for networks _wireless _air _marshal _rules
+version_added: 2.20.0
 """
 
 EXAMPLES = r"""

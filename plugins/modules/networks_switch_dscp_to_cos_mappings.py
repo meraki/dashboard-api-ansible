@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_dscp_to_cos_mappings
-short_description: Resource module for networks _switch _dscp _to _cos _mappings
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
-- Update the DSCP to CoS mappings.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
+  - Update the DSCP to CoS mappings.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_dscp_to_cos_mappings
+notes:
+  - SDK Method used are switch.Switch.update_network_switch_dscp_to_cos_mappings,
+  - Paths used are put /networks/{networkId}/switch/dscpToCosMappings,
 options:
   mappings:
     description: An array of DSCP to CoS mappings. An empty array will reset the mappings
@@ -23,12 +23,13 @@ options:
     suboptions:
       cos:
         description: The actual layer-2 CoS queue the DSCP value is mapped to. These
-          are not bits set on outgoing frames. Value can be in the range of 0 to 5 inclusive.
+          are not bits set on outgoing frames. Value can be in the range of 0 to 5
+          inclusive.
         type: int
       dscp:
         description: The Differentiated Services Code Point (DSCP) tag in the IP header
-          that will be mapped to a particular Class-of-Service (CoS) queue. Value can
-          be in the range of 0 to 63 inclusive.
+          that will be mapped to a particular Class-of-Service (CoS) queue. Value
+          can be in the range of 0 to 63 inclusive.
         type: int
       title:
         description: Label for the mapping (optional).
@@ -38,18 +39,14 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateNetworkSwitchDscpToCosMappings
-  description: Complete reference of the updateNetworkSwitchDscpToCosMappings API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dscp-to-cos-mappings
-notes:
-  - SDK Method used are
-    switch.Switch.update_network_switch_dscp_to_cos_mappings,
-
-  - Paths used are
-    put /networks/{networkId}/switch/dscpToCosMappings,
+  - description: Complete reference of the updateNetworkSwitchDscpToCosMappings API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-dscp-to-cos-mappings
+    name: Cisco Meraki documentation for switch updateNetworkSwitchDscpToCosMappings
+short_description: Resource module for networks _switch _dscp _to _cos _mappings
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

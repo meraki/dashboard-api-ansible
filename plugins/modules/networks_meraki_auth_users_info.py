@@ -5,50 +5,46 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_meraki_auth_users_info
-short_description: Information module for networks _meraki _auth _users
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _meraki _auth _users.
-- Get networks _meraki _auth _users by id.
-- >
-   List the authorized users configured under Meraki Authentication for a network splash guest or RADIUS users for a
-   wireless network, or client VPN users for a MX network .
-- Return the Meraki Auth splash guest, RADIUS, or client VPN user.
-version_added: '2.16.0'
+  - Get all networks _meraki _auth _users.
+  - Get networks _meraki _auth _users by id.
+  - 'List the authorized users configured under Meraki Authentication for a network
+    splash guest or RADIUS users for a wireless network, or client VPN users for a
+    MX network .
+
+    '
+  - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_meraki_auth_users_info
+notes:
+  - SDK Method used are networks.Networks.get_network_meraki_auth_user, networks.Networks.get_network_meraki_auth_users,
+  - Paths used are get /networks/{networkId}/merakiAuthUsers, get /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId},
 options:
   headers:
     description: Additional headers.
     type: dict
-  networkId:
-    description:
-    - NetworkId path parameter. Network ID.
-    type: str
   merakiAuthUserId:
     description:
-    - MerakiAuthUserId path parameter. Meraki auth user ID.
+      - MerakiAuthUserId path parameter. Meraki auth user ID.
+    type: str
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkMerakiAuthUser
-  description: Complete reference of the getNetworkMerakiAuthUser API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-meraki-auth-user
-- name: Cisco Meraki documentation for networks getNetworkMerakiAuthUsers
-  description: Complete reference of the getNetworkMerakiAuthUsers API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-meraki-auth-users
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_meraki_auth_user,
-    networks.Networks.get_network_meraki_auth_users,
-
-  - Paths used are
-    get /networks/{networkId}/merakiAuthUsers,
-    get /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId},
+  - description: Complete reference of the getNetworkMerakiAuthUser API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-meraki-auth-user
+    name: Cisco Meraki documentation for networks getNetworkMerakiAuthUser
+  - description: Complete reference of the getNetworkMerakiAuthUsers API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-meraki-auth-users
+    name: Cisco Meraki documentation for networks getNetworkMerakiAuthUsers
+short_description: Information module for networks _meraki _auth _users
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

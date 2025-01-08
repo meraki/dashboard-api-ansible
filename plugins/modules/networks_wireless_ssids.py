@@ -5,26 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_wireless_ssids
-short_description: Resource module for networks _wireless _ssids
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _wireless _ssids.
-- Update the attributes of an MR SSID.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _wireless _ssids.
+  - Update the attributes of an MR SSID.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids
+notes:
+  - SDK Method used are wireless.Wireless.update_network_wireless_ssid,
+  - Paths used are put /networks/{networkId}/wireless/ssids/{number},
 options:
   activeDirectory:
     description: The current setting for Active Directory. Only valid if splashPage
       is 'Password-protected with Active Directory'.
     suboptions:
       credentials:
-        description: (Optional) The credentials of the user account to be used by the
-          AP to bind to your Active Directory server. The Active Directory account should
-          have permissions on all your Active Directory servers. Only valid if the splashPage
-          is 'Password-protected with Active Directory'.
+        description: (Optional) The credentials of the user account to be used by
+          the AP to bind to your Active Directory server. The Active Directory account
+          should have permissions on all your Active Directory servers. Only valid
+          if the splashPage is 'Password-protected with Active Directory'.
         suboptions:
           logonName:
             description: The logon name of the Active Directory account.
@@ -80,8 +80,8 @@ options:
       if the SSID has availability tags.
     type: bool
   bandSelection:
-    description: The client-serving radio frequencies of this SSID in the default indoor
-      RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation
+    description: The client-serving radio frequencies of this SSID in the default
+      indoor RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation
       with Band Steering').
     type: str
   concentratorNetworkId:
@@ -89,8 +89,8 @@ options:
       with a concentrator' or 'VPN'.
     type: str
   defaultVlanId:
-    description: The default VLAN ID used for 'all other APs'. This param is only valid
-      when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
+    description: The default VLAN ID used for 'all other APs'. This param is only
+      valid when the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
     type: int
   disassociateClientsOnVpnFailover:
     description: Disassociate clients when 'VPN' concentrator failover occurs in order
@@ -133,8 +133,8 @@ options:
     description: Whether or not the SSID is enabled.
     type: bool
   encryptionMode:
-    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param is
-      only valid if the authMode is 'psk'.
+    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param
+      is only valid if the authMode is 'psk'.
     type: str
   enterpriseAdminAccess:
     description: Whether or not an SSID is accessible by 'enterprise' administrators
@@ -152,13 +152,14 @@ options:
             type: str
         type: dict
       key:
-        description: Optional numerical identifier that will add the GRE key field to
-          the GRE header. Used to identify an individual traffic flow within a tunnel.
+        description: Optional numerical identifier that will add the GRE key field
+          to the GRE header. Used to identify an individual traffic flow within a
+          tunnel.
         type: int
     type: dict
   ipAssignmentMode:
-    description: The client IP assignment mode ('NAT mode', 'Bridge mode', 'Layer 3
-      roaming', 'Ethernet over GRE', 'Layer 3 roaming with a concentrator' or 'VPN').
+    description: The client IP assignment mode ('NAT mode', 'Bridge mode', 'Layer
+      3 roaming', 'Ethernet over GRE', 'Layer 3 roaming with a concentrator' or 'VPN').
     type: str
   lanIsolationEnabled:
     description: Boolean indicating whether Layer 2 LAN isolation should be enabled
@@ -172,12 +173,13 @@ options:
         description: The base distinguished name of users on the LDAP server.
         type: str
       credentials:
-        description: (Optional) The credentials of the user account to be used by the
-          AP to bind to your LDAP server. The LDAP account should have permissions on
-          all your LDAP servers.
+        description: (Optional) The credentials of the user account to be used by
+          the AP to bind to your LDAP server. The LDAP account should have permissions
+          on all your LDAP servers.
         suboptions:
           distinguishedName:
-            description: The distinguished name of the LDAP user account (example cn=user,dc=meraki,dc=com).
+            description: The distinguished name of the LDAP user account (example
+              cn=user,dc=meraki,dc=com).
             type: str
           password:
             description: The password of the LDAP user account.
@@ -187,7 +189,8 @@ options:
         description: The CA certificate used to sign the LDAP server's key.
         suboptions:
           contents:
-            description: The contents of the CA certificate. Must be in PEM or DER format.
+            description: The contents of the CA certificate. Must be in PEM or DER
+              format.
             type: str
         type: dict
       servers:
@@ -207,7 +210,8 @@ options:
       on the access point. Only valid if authMode is '8021x-localradius'.
     suboptions:
       cacheTimeout:
-        description: The duration (in seconds) for which LDAP and OCSP lookups are cached.
+        description: The duration (in seconds) for which LDAP and OCSP lookups are
+          cached.
         type: int
       certificateAuthentication:
         description: The current setting for certificate verification.
@@ -216,8 +220,8 @@ options:
             description: The Client CA Certificate used to sign the client certificate.
             suboptions:
               contents:
-                description: The contents of the Client CA Certificate. Must be in PEM
-                  or DER format.
+                description: The contents of the Client CA Certificate. Must be in
+                  PEM or DER format.
                 type: str
             type: dict
           enabled:
@@ -225,8 +229,8 @@ options:
               to validate wireless clients.
             type: bool
           ocspResponderUrl:
-            description: (Optional) The URL of the OCSP responder to verify client certificate
-              status.
+            description: (Optional) The URL of the OCSP responder to verify client
+              certificate status.
             type: str
           useLdap:
             description: Whether or not to verify the certificate with LDAP.
@@ -246,12 +250,12 @@ options:
     type: dict
   mandatoryDhcpEnabled:
     description: If true, Mandatory DHCP will enforce that clients connecting to this
-      SSID must use the IP address assigned by the DHCP server. Clients who use a static
-      IP address won't be able to associate.
+      SSID must use the IP address assigned by the DHCP server. Clients who use a
+      static IP address won't be able to associate.
     type: bool
   minBitrate:
-    description: The minimum bitrate in Mbps of this SSID in the default indoor RF profile.
-      ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54').
+    description: The minimum bitrate in Mbps of this SSID in the default indoor RF
+      profile. ('1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54').
     type: float
   name:
     description: The name of the SSID.
@@ -295,12 +299,12 @@ options:
                 type: str
             type: list
           defaultVlanName:
-            description: The default VLAN name used to tag traffic in the absence of
-              a matching AP tag.
+            description: The default VLAN name used to tag traffic in the absence
+              of a matching AP tag.
             type: str
           enabled:
-            description: Whether or not traffic should be directed to use specific VLAN
-              names.
+            description: Whether or not traffic should be directed to use specific
+              VLAN names.
             type: bool
         type: dict
     type: dict
@@ -364,8 +368,8 @@ options:
           server. Requires radiusProxyEnabled.
         type: bool
       secret:
-        description: Shared key used to authenticate messages between the APs and RADIUS
-          server.
+        description: Shared key used to authenticate messages between the APs and
+          RADIUS server.
         type: str
     type: list
   radiusAttributeForGroupPolicies:
@@ -401,8 +405,9 @@ options:
       or 'nat' mode.
     type: bool
   radiusGuestVlanId:
-    description: VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode
-      is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
+    description: VLAN ID of the RADIUS Guest VLAN. This param is only valid if the
+      authMode is 'open-with-radius' and addressing mode is not set to 'isolated'
+      or 'nat' mode.
     type: int
   radiusLoadBalancingPolicy:
     description: This policy determines which RADIUS server will be contacted first
@@ -457,8 +462,9 @@ options:
     type: bool
   secondaryConcentratorNetworkId:
     description: The secondary concentrator to use when the ipAssignmentMode is 'VPN'.
-      If configured, the APs will switch to using this concentrator if the primary concentrator
-      is unreachable. This param is optional. ('disabled' represents no secondary concentrator.).
+      If configured, the APs will switch to using this concentrator if the primary
+      concentrator is unreachable. This param is optional. ('disabled' represents
+      no secondary concentrator.).
     type: str
   speedBurst:
     description: The SpeedBurst setting for this SSID'.
@@ -482,20 +488,21 @@ options:
       Apps domain'). This attribute is not supported for template children.
     type: str
   useVlanTagging:
-    description: Whether or not traffic should be directed to use specific VLANs. This
-      param is only valid if the ipAssignmentMode is 'Bridge mode' or 'Layer 3 roaming'.
+    description: Whether or not traffic should be directed to use specific VLANs.
+      This param is only valid if the ipAssignmentMode is 'Bridge mode' or 'Layer
+      3 roaming'.
     type: bool
   visible:
     description: Boolean indicating whether APs should advertise or hide this SSID.
       APs will only broadcast this SSID if set to true.
     type: bool
   vlanId:
-    description: The VLAN ID used for VLAN tagging. This param is only valid when the
-      ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'.
+    description: The VLAN ID used for VLAN tagging. This param is only valid when
+      the ipAssignmentMode is 'Layer 3 roaming with a concentrator' or 'VPN'.
     type: int
   walledGardenEnabled:
-    description: Allow access to a configurable list of IP ranges, which users may access
-      prior to sign-on.
+    description: Allow access to a configurable list of IP ranges, which users may
+      access prior to sign-on.
     type: bool
   walledGardenRanges:
     description: Specify your walled garden by entering an array of addresses, ranges
@@ -505,22 +512,18 @@ options:
     elements: str
     type: list
   wpaEncryptionMode:
-    description: The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2 only',
-      'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
+    description: The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2
+      only', 'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
-  description: Complete reference of the updateNetworkWirelessSsid API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
-notes:
-  - SDK Method used are
-    wireless.Wireless.update_network_wireless_ssid,
-
-  - Paths used are
-    put /networks/{networkId}/wireless/ssids/{number},
+  - description: Complete reference of the updateNetworkWirelessSsid API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
+    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
+short_description: Resource module for networks _wireless _ssids
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,37 +5,33 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_link_aggregations_info
-short_description: Information module for networks _switch _link _aggregations
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _link _aggregations.
-- List link aggregation groups.
-version_added: '2.16.0'
+  - Get all networks _switch _link _aggregations.
+  - List link aggregation groups.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_link_aggregations_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_link_aggregations,
+  - Paths used are get /networks/{networkId}/switch/linkAggregations,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchLinkAggregations
-  description: Complete reference of the getNetworkSwitchLinkAggregations API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-link-aggregations
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_link_aggregations,
-
-  - Paths used are
-    get /networks/{networkId}/switch/linkAggregations,
+  - description: Complete reference of the getNetworkSwitchLinkAggregations API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-link-aggregations
+    name: Cisco Meraki documentation for switch getNetworkSwitchLinkAggregations
+short_description: Information module for networks _switch _link _aggregations
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

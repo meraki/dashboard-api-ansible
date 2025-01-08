@@ -5,52 +5,49 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_stacks_routing_interfaces_info
-short_description: Information module for networks _switch _stacks _routing _interfaces
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _stacks _routing _interfaces.
-- Get networks _switch _stacks _routing _interfaces by id.
-- List layer 3 interfaces for a switch stack.
-- Return a layer 3 interface from a switch stack.
-version_added: '2.16.0'
+  - Get all networks _switch _stacks _routing _interfaces.
+  - Get networks _switch _stacks _routing _interfaces by id.
+  - List layer 3 interfaces for a switch stack.
+  - Return a layer 3 interface from a switch stack.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_stacks_routing_interfaces_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_stack_routing_interface,
+    switch.Switch.get_network_switch_stack_routing_interfaces,
+  - Paths used are get /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces,
+    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
 options:
   headers:
     description: Additional headers.
     type: dict
+  interfaceId:
+    description:
+      - InterfaceId path parameter. Interface ID.
+    type: str
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
-    - SwitchStackId path parameter. Switch stack ID.
-    type: str
-  interfaceId:
-    description:
-    - InterfaceId path parameter. Interface ID.
+      - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterface
-  description: Complete reference of the getNetworkSwitchStackRoutingInterface API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interface
-- name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterfaces
-  description: Complete reference of the getNetworkSwitchStackRoutingInterfaces API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interfaces
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_stack_routing_interface,
-    switch.Switch.get_network_switch_stack_routing_interfaces,
-
-  - Paths used are
-    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces,
-    get /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId},
+  - description: Complete reference of the getNetworkSwitchStackRoutingInterface API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interface
+    name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterface
+  - description: Complete reference of the getNetworkSwitchStackRoutingInterfaces
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interfaces
+    name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterfaces
+short_description: Information module for networks _switch _stacks _routing _interfaces
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

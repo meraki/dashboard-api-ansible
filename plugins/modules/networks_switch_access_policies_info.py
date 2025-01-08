@@ -5,50 +5,45 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_switch_access_policies_info
-short_description: Information module for networks _switch _access _policies
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _switch _access _policies.
-- Get networks _switch _access _policies by id.
-- >
-   List the access policies for a switch network. Only returns access policies with 'my RADIUS server' as
-   authentication method.
-- Return a specific access policy for a switch network.
-version_added: '2.16.0'
+  - Get all networks _switch _access _policies.
+  - Get networks _switch _access _policies by id.
+  - 'List the access policies for a switch network. Only returns access policies with
+    ''my RADIUS server'' as authentication method.
+
+    '
+  - Return a specific access policy for a switch network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_access_policies_info
+notes:
+  - SDK Method used are switch.Switch.get_network_switch_access_policies, switch.Switch.get_network_switch_access_policy,
+  - Paths used are get /networks/{networkId}/switch/accessPolicies, get /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
 options:
+  accessPolicyNumber:
+    description:
+      - AccessPolicyNumber path parameter. Access policy number.
+    type: str
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  accessPolicyNumber:
-    description:
-    - AccessPolicyNumber path parameter. Access policy number.
+      - NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch getNetworkSwitchAccessPolicies
-  description: Complete reference of the getNetworkSwitchAccessPolicies API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-access-policies
-- name: Cisco Meraki documentation for switch getNetworkSwitchAccessPolicy
-  description: Complete reference of the getNetworkSwitchAccessPolicy API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-access-policy
-notes:
-  - SDK Method used are
-    switch.Switch.get_network_switch_access_policies,
-    switch.Switch.get_network_switch_access_policy,
-
-  - Paths used are
-    get /networks/{networkId}/switch/accessPolicies,
-    get /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+  - description: Complete reference of the getNetworkSwitchAccessPolicies API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-access-policies
+    name: Cisco Meraki documentation for switch getNetworkSwitchAccessPolicies
+  - description: Complete reference of the getNetworkSwitchAccessPolicy API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-access-policy
+    name: Cisco Meraki documentation for switch getNetworkSwitchAccessPolicy
+short_description: Information module for networks _switch _access _policies
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

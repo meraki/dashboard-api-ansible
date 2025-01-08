@@ -5,18 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_switch_warm_spare
-short_description: Resource module for devices _switch _warm _spare
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _switch _warm _spare.
-- >
-   Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note
-   that this will irreversibly destroy any existing L3 configuration on the spare.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _switch _warm _spare.
+  - 'Update warm spare configuration for a switch. The spare will use the same L3
+    configuration as the primary. Note that this will irreversibly destroy any existing
+    L3 configuration on the spare.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_switch_warm_spare
+notes:
+  - SDK Method used are switch.Switch.update_device_switch_warm_spare,
+  - Paths used are put /devices/{serial}/switch/warmSpare,
 options:
   enabled:
     description: Enable or disable warm spare for a switch.
@@ -28,18 +30,14 @@ options:
     description: Serial number of the warm spare switch.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for switch updateDeviceSwitchWarmSpare
-  description: Complete reference of the updateDeviceSwitchWarmSpare API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-warm-spare
-notes:
-  - SDK Method used are
-    switch.Switch.update_device_switch_warm_spare,
-
-  - Paths used are
-    put /devices/{serial}/switch/warmSpare,
+  - description: Complete reference of the updateDeviceSwitchWarmSpare API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-warm-spare
+    name: Cisco Meraki documentation for switch updateDeviceSwitchWarmSpare
+short_description: Resource module for devices _switch _warm _spare
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

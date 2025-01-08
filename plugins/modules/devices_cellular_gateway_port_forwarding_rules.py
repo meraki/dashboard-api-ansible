@@ -5,16 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_cellular_gateway_port_forwarding_rules
-short_description: Resource module for devices _cellular _gateway _port _forwarding _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _cellular _gateway _port _forwarding _rules.
-- Updates the port forwarding rules for a single MG.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _cellular _gateway _port _forwarding
+    _rules.
+  - Updates the port forwarding rules for a single MG.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_cellular_gateway_port_forwarding_rules
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.update_device_cellular_gateway_port_forwarding_rules,
+  - Paths used are put /devices/{serial}/cellularGateway/portForwardingRules,
 options:
   rules:
     description: An array of port forwarding params.
@@ -35,8 +36,8 @@ options:
           resource that you wish to make available on the WAN.
         type: str
       localPort:
-        description: A port or port ranges that will receive the forwarded traffic from
-          the WAN.
+        description: A port or port ranges that will receive the forwarded traffic
+          from the WAN.
         type: str
       name:
         description: A descriptive name for the rule.
@@ -53,18 +54,16 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayPortForwardingRules
-  description: Complete reference of the updateDeviceCellularGatewayPortForwardingRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-port-forwarding-rules
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.update_device_cellular_gateway_port_forwarding_rules,
-
-  - Paths used are
-    put /devices/{serial}/cellularGateway/portForwardingRules,
+  - description: Complete reference of the updateDeviceCellularGatewayPortForwardingRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-port-forwarding-rules
+    name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayPortForwardingRules
+short_description: Resource module for devices _cellular _gateway _port _forwarding
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

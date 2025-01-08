@@ -5,32 +5,32 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_login_security
-short_description: Resource module for organizations _login _security
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource organizations _login _security.
-- Update the login security settings for an organization.
-version_added: '2.16.0'
+  - Manage operation update of the resource organizations _login _security.
+  - Update the login security settings for an organization.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: organizations_login_security
+notes:
+  - SDK Method used are organizations.Organizations.update_organization_login_security,
+  - Paths used are put /organizations/{organizationId}/loginSecurity,
 options:
   accountLockoutAttempts:
     description: Number of consecutive failed login attempts after which users' accounts
       will be locked.
     type: int
   apiAuthentication:
-    description: Details for indicating whether organization will restrict access to
-      API (but not Dashboard) to certain IP addresses.
+    description: Details for indicating whether organization will restrict access
+      to API (but not Dashboard) to certain IP addresses.
     suboptions:
       ipRestrictionsForKeys:
         description: Details for API-only IP restrictions.
         suboptions:
           enabled:
-            description: Boolean indicating whether the organization will restrict API
-              key (not Dashboard GUI) usage to a specific list of IP addresses or CIDR
-              ranges.
+            description: Boolean indicating whether the organization will restrict
+              API key (not Dashboard GUI) usage to a specific list of IP addresses
+              or CIDR ranges.
             type: bool
           ranges:
             description: List of acceptable IP ranges. Entries can be single IP addresses,
@@ -60,9 +60,9 @@ options:
       every X number of days.
     type: bool
   enforceStrongPasswords:
-    description: Boolean indicating whether users will be forced to choose strong passwords
-      for their accounts. Strong passwords are at least 8 characters that contain 3
-      of the following number, uppercase letter, lowercase letter, and symbol.
+    description: Boolean indicating whether users will be forced to choose strong
+      passwords for their accounts. Strong passwords are at least 8 characters that
+      contain 3 of the following number, uppercase letter, lowercase letter, and symbol.
     type: bool
   enforceTwoFactorAuth:
     description: Boolean indicating whether users in this organization will be required
@@ -75,8 +75,8 @@ options:
       their accounts.
     type: int
   loginIpRanges:
-    description: List of acceptable IP ranges. Entries can be single IP addresses, IP
-      address ranges, and CIDR subnets.
+    description: List of acceptable IP ranges. Entries can be single IP addresses,
+      IP address ranges, and CIDR subnets.
     elements: str
     type: list
   numDifferentPasswords:
@@ -89,18 +89,14 @@ options:
     description: Number of days after which users will be forced to change their password.
     type: int
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for organizations updateOrganizationLoginSecurity
-  description: Complete reference of the updateOrganizationLoginSecurity API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-login-security
-notes:
-  - SDK Method used are
-    organizations.Organizations.update_organization_login_security,
-
-  - Paths used are
-    put /organizations/{organizationId}/loginSecurity,
+  - description: Complete reference of the updateOrganizationLoginSecurity API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-login-security
+    name: Cisco Meraki documentation for organizations updateOrganizationLoginSecurity
+short_description: Resource module for organizations _login _security
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

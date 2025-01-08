@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: devices_cellular_sims
-short_description: Resource module for devices _cellular _sims
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource devices _cellular _sims.
-- Updates the SIM and APN configurations for a cellular device.
-version_added: '2.16.0'
+  - Manage operation update of the resource devices _cellular _sims.
+  - Updates the SIM and APN configurations for a cellular device.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: devices_cellular_sims
+notes:
+  - SDK Method used are devices.Devices.update_device_cellular_sims,
+  - Paths used are put /devices/{serial}/cellular/sims,
 options:
   serial:
     description: Serial path parameter.
@@ -30,10 +30,10 @@ options:
         type: int
     type: dict
   simOrdering:
-    description: Specifies the ordering of all SIMs for an MG primary, secondary, and
-      not-in-use (when applicable). It's required for devices with 3 or more SIMs and
-      can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM, use
-      'sim3'. Sim failover will occur only between primary and secondary sim slots.
+    description: Specifies the ordering of all SIMs for an MG primary, secondary,
+      and not-in-use (when applicable). It's required for devices with 3 or more SIMs
+      and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM,
+      use 'sim3'. Sim failover will occur only between primary and secondary sim slots.
     elements: str
     type: list
   sims:
@@ -46,15 +46,16 @@ options:
         elements: dict
         suboptions:
           allowedIpTypes:
-            description: IP versions to support (permitted values include 'ipv4', 'ipv6').
+            description: IP versions to support (permitted values include 'ipv4',
+              'ipv6').
             elements: str
             type: list
           authentication:
             description: APN authentication configurations.
             suboptions:
               password:
-                description: APN password, if type is set (if APN password is not supplied,
-                  the password is left unchanged).
+                description: APN password, if type is set (if APN password is not
+                  supplied, the password is left unchanged).
                 type: str
               type:
                 description: APN auth type.
@@ -68,13 +69,13 @@ options:
             type: str
         type: list
       isPrimary:
-        description: If true, this SIM is activated on platform bootup. It must be true
-          on single-SIM devices and is a required field for dual-SIM MGs unless it is
-          being configured using 'simOrdering'.
+        description: If true, this SIM is activated on platform bootup. It must be
+          true on single-SIM devices and is a required field for dual-SIM MGs unless
+          it is being configured using 'simOrdering'.
         type: bool
       simOrder:
-        description: Priority of SIM slot being configured. Use a value between 1 and
-          total number of SIMs available. The value must be unique for each SIM.
+        description: Priority of SIM slot being configured. Use a value between 1
+          and total number of SIMs available. The value must be unique for each SIM.
         type: int
       slot:
         description: SIM slot being configured. Must be 'sim1' on single-sim devices.
@@ -82,18 +83,14 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for devices updateDeviceCellularSims
-  description: Complete reference of the updateDeviceCellularSims API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-sims
-notes:
-  - SDK Method used are
-    devices.Devices.update_device_cellular_sims,
-
-  - Paths used are
-    put /devices/{serial}/cellular/sims,
+  - description: Complete reference of the updateDeviceCellularSims API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-sims
+    name: Cisco Meraki documentation for devices updateDeviceCellularSims
+short_description: Resource module for devices _cellular _sims
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_snmp
-short_description: Resource module for networks _snmp
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _snmp.
-- Update the SNMP settings for a network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _snmp.
+  - Update the SNMP settings for a network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_snmp
+notes:
+  - SDK Method used are networks.Networks.update_network_snmp,
+  - Paths used are put /networks/{networkId}/snmp,
 options:
   access:
     description: The type of SNMP access. Can be one of 'none' (disabled), 'community'
@@ -38,18 +38,14 @@ options:
         type: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks updateNetworkSnmp
-  description: Complete reference of the updateNetworkSnmp API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-snmp
-notes:
-  - SDK Method used are
-    networks.Networks.update_network_snmp,
-
-  - Paths used are
-    put /networks/{networkId}/snmp,
+  - description: Complete reference of the updateNetworkSnmp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-snmp
+    name: Cisco Meraki documentation for networks updateNetworkSnmp
+short_description: Resource module for networks _snmp
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

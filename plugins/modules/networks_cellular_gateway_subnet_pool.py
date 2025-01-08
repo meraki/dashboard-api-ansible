@@ -5,16 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_cellular_gateway_subnet_pool
-short_description: Resource module for networks _cellular _gateway _subnet _pool
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _cellular _gateway _subnet _pool.
-- Update the subnet pool and mask configuration for MGs in the network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _cellular _gateway _subnet _pool.
+  - Update the subnet pool and mask configuration for MGs in the network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_cellular_gateway_subnet_pool
+notes:
+  - SDK Method used are cellular_gateway.CellularGateway.update_network_cellular_gateway_subnet_pool,
+  - Paths used are put /networks/{networkId}/cellularGateway/subnetPool,
 options:
   cidr:
     description: CIDR of the pool of subnets. Each MG in this network will automatically
@@ -27,18 +27,15 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewaySubnetPool
-  description: Complete reference of the updateNetworkCellularGatewaySubnetPool API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-subnet-pool
-notes:
-  - SDK Method used are
-    cellular_gateway.CellularGateway.update_network_cellular_gateway_subnet_pool,
-
-  - Paths used are
-    put /networks/{networkId}/cellularGateway/subnetPool,
+  - description: Complete reference of the updateNetworkCellularGatewaySubnetPool
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-subnet-pool
+    name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewaySubnetPool
+short_description: Resource module for networks _cellular _gateway _subnet _pool
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

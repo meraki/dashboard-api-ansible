@@ -15,96 +15,95 @@ ANSIBLE_METADATA = {
 }
 
 DOCUMENTATION = r"""
----
-module: meraki_mx_static_route
-short_description: Manage static routes in the Meraki cloud
-description:
-- Allows for creation, management, and visibility into static routes within Meraki.
-
-deprecated:
-  removed_in: '3.0.0'
-  why: Updated modules released with increased functionality
-  alternative: cisco.meraki.networks_appliance_static_routes
-options:
-    state:
-        description:
-        - Create or modify an organization.
-        choices: [ absent, query, present ]
-        default: present
-        type: str
-    net_name:
-        description:
-        - Name of a network.
-        type: str
-    net_id:
-        description:
-        - ID number of a network.
-        type: str
-    name:
-        description:
-        - Descriptive name of the static route.
-        type: str
-    subnet:
-        description:
-        - CIDR notation based subnet for static route.
-        type: str
-    gateway_ip:
-        description:
-        - IP address of the gateway for the subnet.
-        type: str
-    route_id:
-        description:
-        - Unique ID of static route.
-        type: str
-    gateway_vlan_id:
-        description:
-        - The gateway IP (next hop) VLAN ID of the static route.
-        type: int
-    fixed_ip_assignments:
-        description:
-        - List of fixed MAC to IP bindings for DHCP.
-        type: list
-        elements: dict
-        suboptions:
-            mac:
-                description:
-                - MAC address of endpoint.
-                type: str
-            ip:
-                description:
-                - IP address of endpoint.
-                type: str
-            name:
-                description:
-                - Hostname of endpoint.
-                type: str
-    reserved_ip_ranges:
-        description:
-        - List of IP ranges reserved for static IP assignments.
-        type: list
-        elements: dict
-        suboptions:
-            start:
-                description:
-                - First IP address of reserved range.
-                type: str
-            end:
-                description:
-                - Last IP address of reserved range.
-                type: str
-            comment:
-                description:
-                - Human readable description of reservation range.
-                type: str
-    enabled:
-        description:
-        - Indicates whether static route is enabled within a network.
-        type: bool
-
-
 author:
-    - Kevin Breit (@kbreit)
+  - Kevin Breit (@kbreit)
+deprecated:
+  alternative: cisco.meraki.networks_appliance_static_routes
+  removed_in: 3.0.0
+  why: Updated modules released with increased functionality
+description:
+  - Allows for creation, management, and visibility into static routes within Meraki.
 extends_documentation_fragment: cisco.meraki.meraki
+module: meraki_mx_static_route
+options:
+  enabled:
+    description:
+      - Indicates whether static route is enabled within a network.
+    type: bool
+  fixed_ip_assignments:
+    description:
+      - List of fixed MAC to IP bindings for DHCP.
+    elements: dict
+    suboptions:
+      ip:
+        description:
+          - IP address of endpoint.
+        type: str
+      mac:
+        description:
+          - MAC address of endpoint.
+        type: str
+      name:
+        description:
+          - Hostname of endpoint.
+        type: str
+    type: list
+  gateway_ip:
+    description:
+      - IP address of the gateway for the subnet.
+    type: str
+  gateway_vlan_id:
+    description:
+      - The gateway IP (next hop) VLAN ID of the static route.
+    type: int
+  name:
+    description:
+      - Descriptive name of the static route.
+    type: str
+  net_id:
+    description:
+      - ID number of a network.
+    type: str
+  net_name:
+    description:
+      - Name of a network.
+    type: str
+  reserved_ip_ranges:
+    description:
+      - List of IP ranges reserved for static IP assignments.
+    elements: dict
+    suboptions:
+      comment:
+        description:
+          - Human readable description of reservation range.
+        type: str
+      end:
+        description:
+          - Last IP address of reserved range.
+        type: str
+      start:
+        description:
+          - First IP address of reserved range.
+        type: str
+    type: list
+  route_id:
+    description:
+      - Unique ID of static route.
+    type: str
+  state:
+    choices:
+      - absent
+      - query
+      - present
+    default: present
+    description:
+      - Create or modify an organization.
+    type: str
+  subnet:
+    description:
+      - CIDR notation based subnet for static route.
+    type: str
+short_description: Manage static routes in the Meraki cloud
 """
 
 EXAMPLES = r"""

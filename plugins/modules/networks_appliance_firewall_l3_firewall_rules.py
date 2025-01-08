@@ -5,30 +5,32 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_appliance_firewall_l3_firewall_rules
-short_description: Resource module for networks _appliance _firewall l3 _firewall _rules
+author: Francisco Munoz (@fmunoz)
 description:
-- Manage operation update of the resource networks _appliance _firewall l3 _firewall _rules.
-- Update the L3 firewall rules of an MX network.
-version_added: '2.16.0'
+  - Manage operation update of the resource networks _appliance _firewall l3 _firewall
+    _rules.
+  - Update the L3 firewall rules of an MX network.
 extends_documentation_fragment:
   - cisco.meraki.module
-author: Francisco Munoz (@fmunoz)
+module: networks_appliance_firewall_l3_firewall_rules
+notes:
+  - SDK Method used are appliance.Appliance.update_network_appliance_firewall_l3_firewall_rules,
+  - Paths used are put /networks/{networkId}/appliance/firewall/l3FirewallRules,
 options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: An ordered array of the firewall rules (not including the default rule).
+    description: An ordered array of the firewall rules (not including the default
+      rule).
     elements: dict
     suboptions:
       comment:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR
-          notation), fully-qualified domain names (FQDN) or 'any'.
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation), fully-qualified domain names (FQDN) or 'any'.
         type: str
       destPort:
         description: Comma-separated list of destination port(s) (integer in the range
@@ -42,16 +44,16 @@ options:
           'any').
         type: str
       srcCidr:
-        description: Comma-separated list of source IP address(es) (in IP or CIDR notation),
-          or 'any' (note FQDN not supported for source addresses).
+        description: Comma-separated list of source IP address(es) (in IP or CIDR
+          notation), or 'any' (note FQDN not supported for source addresses).
         type: str
       srcPort:
-        description: Comma-separated list of source port(s) (integer in the range 1-65535),
-          or 'any'.
+        description: Comma-separated list of source port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       syslogEnabled:
-        description: Log this rule to syslog (true or false, boolean value) - only applicable
-          if a syslog has been configured (optional).
+        description: Log this rule to syslog (true or false, boolean value) - only
+          applicable if a syslog has been configured (optional).
         type: bool
     type: list
   syslogDefaultRule:
@@ -59,18 +61,16 @@ options:
       configured a syslog server) (optional).
     type: bool
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL3FirewallRules
-  description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules API.
-  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l3-firewall-rules
-notes:
-  - SDK Method used are
-    appliance.Appliance.update_network_appliance_firewall_l3_firewall_rules,
-
-  - Paths used are
-    put /networks/{networkId}/appliance/firewall/l3FirewallRules,
+  - description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l3-firewall-rules
+    name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL3FirewallRules
+short_description: Resource module for networks _appliance _firewall l3 _firewall
+  _rules
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

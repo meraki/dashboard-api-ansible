@@ -5,87 +5,99 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: organizations_wireless_devices_channel_utilization_history_by_device_by_interval_info
-short_description: Information module for organizations _wireless _devices _channel _utilization _history _by _device _by _interval
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all organizations _wireless _devices _channel _utilization _history _by _device _by _interval.
-- Get a time-series of average channel utilization for all bands, segmented by device.
-version_added: '2.16.0'
+  - Get all organizations _wireless _devices _channel _utilization _history _by _device
+    _by _interval.
+  - Get a time-series of average channel utilization for all bands, segmented by device.
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: organizations_wireless_devices_channel_utilization_history_by_device_by_interval_info
+notes:
+  - SDK Method used are wireless.Wireless.get_organization_wireless_devices_channel_utilization_history_by_device_by_interval,
+  - Paths used are get /organizations/{organizationId}/wireless/devices/channelUtilization/history/byDevice/byInterval,
 options:
+  endingBefore:
+    description:
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
   headers:
     description: Additional headers.
     type: dict
-  organizationId:
+  interval:
     description:
-    - OrganizationId path parameter. Organization ID.
-    type: str
+      - 'Interval query parameter. The time interval in seconds for returned data.
+        The valid intervals are 300, 600, 3600, 7200, 14400, 21600. The default is
+        3600.
+
+        '
+    type: int
   networkIds:
     description:
-    - NetworkIds query parameter. Filter results by network.
+      - NetworkIds query parameter. Filter results by network.
     elements: str
     type: list
-  serials:
+  organizationId:
     description:
-    - Serials query parameter. Filter results by device.
-    elements: str
-    type: list
+      - OrganizationId path parameter. Organization ID.
+    type: str
   perPage:
     description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
+  serials:
+    description:
+      - Serials query parameter. Filter results by device.
+    elements: str
+    type: list
   startingAfter:
     description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
     type: str
   t0:
     description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-    - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The
-      default is 7 days.
-    type: float
-  interval:
-    description:
-    - >
-      Interval query parameter. The time interval in seconds for returned data. The valid intervals are 300, 600,
-      3600, 7200, 14400, 21600. The default is 3600.
-    type: int
-requirements:
-- meraki >= 2.4.9
-- python >= 3.5
-seealso:
-- name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval
-  description: Complete reference of the getOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-channel-utilization-history-by-device-by-interval
-notes:
-  - SDK Method used are
-    wireless.Wireless.get_organization_wireless_devices_channel_utilization_history_by_device_by_interval,
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameters t0 and t1. The
+        value must be in seconds and be less than or equal to 31 days. The default
+        is 7 days.
 
-  - Paths used are
-    get /organizations/{organizationId}/wireless/devices/channelUtilization/history/byDevice/byInterval,
+        '
+    type: float
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - description: Complete reference of the getOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-channel-utilization-history-by-device-by-interval
+    name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval
+short_description: Information module for organizations _wireless _devices _channel
+  _utilization _history _by _device _by _interval
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

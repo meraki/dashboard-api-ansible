@@ -5,128 +5,145 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_clients_info
-short_description: Information module for networks _clients
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _clients.
-- Get networks _clients by id.
-- List the clients that have used this network in the timespan. The data is updated at most once every five minutes.
-- >
-   Return the client associated with the given identifier. Clients can be identified by a client key or either the
-   MAC or IP depending on whether the network uses Track-by-IP.
-version_added: '2.16.0'
+  - Get all networks _clients.
+  - Get networks _clients by id.
+  - List the clients that have used this network in the timespan. The data is updated
+    at most once every five minutes.
+  - 'Return the client associated with the given identifier. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
+
+    '
 extends_documentation_fragment:
   - cisco.meraki.module_info
   - cisco.meraki.module_info_pagination
-author: Francisco Munoz (@fmunoz)
+module: networks_clients_info
+notes:
+  - SDK Method used are networks.Networks.get_network_client, networks.Networks.get_network_clients,
+  - Paths used are get /networks/{networkId}/clients, get /networks/{networkId}/clients/{clientId},
 options:
-  headers:
-    description: Additional headers.
-    type: dict
-  networkId:
+  clientId:
     description:
-    - NetworkId path parameter. Network ID.
-    type: str
-  t0:
-    description:
-    - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-    type: str
-  timespan:
-    description:
-    - >
-      Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do
-      not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is
-      1 day.
-    type: float
-  perPage:
-    description:
-    - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5000. Default is 10.
-    type: int
-  startingAfter:
-    description:
-    - >
-      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  endingBefore:
-    description:
-    - >
-      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a
-      timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-      applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-    type: str
-  statuses:
-    description:
-    - Statuses query parameter. Filters clients based on status. Can be one of 'Online' or 'Offline'.
-    elements: str
-    type: list
-  ip:
-    description:
-    - Ip query parameter. Filters clients based on a partial or full match for the ip address field.
-    type: str
-  ip6:
-    description:
-    - Ip6 query parameter. Filters clients based on a partial or full match for the ip6 address field.
-    type: str
-  ip6Local:
-    description:
-    - Ip6Local query parameter. Filters clients based on a partial or full match for the ip6Local address field.
-    type: str
-  mac:
-    description:
-    - Mac query parameter. Filters clients based on a partial or full match for the mac address field.
-    type: str
-  os:
-    description:
-    - Os query parameter. Filters clients based on a partial or full match for the os (operating system) field.
-    type: str
-  pskGroup:
-    description:
-    - PskGroup query parameter. Filters clients based on partial or full match for the iPSK name field.
+      - ClientId path parameter. Client ID.
     type: str
   description:
     description:
-    - Description query parameter. Filters clients based on a partial or full match for the description field.
+      - Description query parameter. Filters clients based on a partial or full match
+        for the description field.
     type: str
-  vlan:
+  endingBefore:
     description:
-    - Vlan query parameter. Filters clients based on the full match for the VLAN field.
+      - 'EndingBefore query parameter. A token used by the server to indicate the
+        end of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  headers:
+    description: Additional headers.
+    type: dict
+  ip:
+    description:
+      - Ip query parameter. Filters clients based on a partial or full match for the
+        ip address field.
+    type: str
+  ip6:
+    description:
+      - Ip6 query parameter. Filters clients based on a partial or full match for
+        the ip6 address field.
+    type: str
+  ip6Local:
+    description:
+      - Ip6Local query parameter. Filters clients based on a partial or full match
+        for the ip6Local address field.
+    type: str
+  mac:
+    description:
+      - Mac query parameter. Filters clients based on a partial or full match for
+        the mac address field.
     type: str
   namedVlan:
     description:
-    - NamedVlan query parameter. Filters clients based on the partial or full match for the named VLAN field.
+      - NamedVlan query parameter. Filters clients based on the partial or full match
+        for the named VLAN field.
+    type: str
+  networkId:
+    description:
+      - NetworkId path parameter. Network ID.
+    type: str
+  os:
+    description:
+      - Os query parameter. Filters clients based on a partial or full match for the
+        os (operating system) field.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 5000. Default is 10.
+    type: int
+  pskGroup:
+    description:
+      - PskGroup query parameter. Filters clients based on partial or full match for
+        the iPSK name field.
     type: str
   recentDeviceConnections:
     description:
-    - >
-      RecentDeviceConnections query parameter. Filters clients based on recent connection type. Can be one of
-      'Wired' or 'Wireless'.
+      - 'RecentDeviceConnections query parameter. Filters clients based on recent
+        connection type. Can be one of ''Wired'' or ''Wireless''.
+
+        '
     elements: str
     type: list
-  clientId:
+  startingAfter:
     description:
-    - ClientId path parameter. Client ID.
+      - 'StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+
+        '
+    type: str
+  statuses:
+    description:
+      - Statuses query parameter. Filters clients based on status. Can be one of 'Online'
+        or 'Offline'.
+    elements: str
+    type: list
+  t0:
+    description:
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
+    type: str
+  timespan:
+    description:
+      - 'Timespan query parameter. The timespan for which the information will be
+        fetched. If specifying timespan, do not specify parameter t0. The value must
+        be in seconds and be less than or equal to 31 days. The default is 1 day.
+
+        '
+    type: float
+  vlan:
+    description:
+      - Vlan query parameter. Filters clients based on the full match for the VLAN
+        field.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for networks getNetworkClient
-  description: Complete reference of the getNetworkClient API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-client
-- name: Cisco Meraki documentation for networks getNetworkClients
-  description: Complete reference of the getNetworkClients API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients
-notes:
-  - SDK Method used are
-    networks.Networks.get_network_client,
-    networks.Networks.get_network_clients,
-
-  - Paths used are
-    get /networks/{networkId}/clients,
-    get /networks/{networkId}/clients/{clientId},
+  - description: Complete reference of the getNetworkClient API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-client
+    name: Cisco Meraki documentation for networks getNetworkClient
+  - description: Complete reference of the getNetworkClients API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-clients
+    name: Cisco Meraki documentation for networks getNetworkClients
+short_description: Information module for networks _clients
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

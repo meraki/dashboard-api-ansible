@@ -5,42 +5,38 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
-module: networks_sm_profiles_info
-short_description: Information module for networks _sm _profiles
+author: Francisco Munoz (@fmunoz)
 description:
-- Get all networks _sm _profiles.
-- List all profiles in a network.
-version_added: '2.16.0'
+  - Get all networks _sm _profiles.
+  - List all profiles in a network.
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: networks_sm_profiles_info
+notes:
+  - SDK Method used are sm.Sm.get_network_sm_profiles,
+  - Paths used are get /networks/{networkId}/sm/profiles,
 options:
   headers:
     description: Additional headers.
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   payloadTypes:
     description:
-    - PayloadTypes query parameter. Filter by payload types.
+      - PayloadTypes query parameter. Filter by payload types.
     elements: str
     type: list
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
-- name: Cisco Meraki documentation for sm getNetworkSmProfiles
-  description: Complete reference of the getNetworkSmProfiles API.
-  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-profiles
-notes:
-  - SDK Method used are
-    sm.Sm.get_network_sm_profiles,
-
-  - Paths used are
-    get /networks/{networkId}/sm/profiles,
+  - description: Complete reference of the getNetworkSmProfiles API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-profiles
+    name: Cisco Meraki documentation for sm getNetworkSmProfiles
+short_description: Information module for networks _sm _profiles
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""
