@@ -39,7 +39,7 @@
       mode: hub
       subnets:
         - local_subnet: '192.168.129.0/24'
-          use_vpn: no
+          use_vpn: false
     delegate_to: localhost
     register: set_hub_check
     check_mode: true
@@ -86,7 +86,7 @@
       mode: hub
       subnets:
         - local_subnet: '192.0.1.0/24'
-          use_vpn: no
+          use_vpn: false
     delegate_to: localhost
     register: set_hub
 
@@ -119,7 +119,7 @@
       mode: hub
       subnets:
         - local_subnet: '192.168.128.0/24'
-          use_vpn: yes
+          use_vpn: true
     delegate_to: localhost
     register: enable_hub_subnet
 

@@ -143,14 +143,14 @@ EXAMPLES = r"""
         state: query
         org_name: YourOrg
         net_name: MyNet
-        enable_vlans: yes
+        enable_vlans: true
     - name: Modify local status page enabled state
       meraki_network:
         auth_key: abc12345
         state: query
         org_name: YourOrg
         net_name: MyNet
-        local_status_page_enabled: yes
+        local_status_page_enabled: true
 """
 
 RETURN = r"""

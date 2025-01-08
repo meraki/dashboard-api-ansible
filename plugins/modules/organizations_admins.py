@@ -22,7 +22,7 @@ options:
     description: AdminId path parameter. Admin ID.
     type: str
   authenticationMethod:
-    description: No longer used as of Cisco SecureX end-of-life. Can be one of 'Email'.
+    description: false longer used as of Cisco SecureX end-of-life. Can be one of 'Email'.
       The default is Email authentication.
     type: str
   email:

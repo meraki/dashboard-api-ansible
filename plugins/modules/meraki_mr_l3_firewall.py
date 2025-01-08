@@ -53,7 +53,7 @@ options:
         description:
         - Sets whether devices can talk to other devices on the same LAN.
         type: bool
-        default: yes
+        default: true
     rules:
         description:
         - List of firewall rules.
@@ -101,7 +101,7 @@ EXAMPLES = r'''
         protocol: tcp
         dest_port: 80
         dest_cidr: 192.0.2.0/24
-    allow_lan_access: no
+    allow_lan_access: false
   delegate_to: localhost
 
 - name: Enable local LAN access
@@ -112,7 +112,7 @@ EXAMPLES = r'''
     net_id: 123
     number: 1
     rules:
-    allow_lan_access: yes
+    allow_lan_access: true
   delegate_to: localhost
 
 - name: Query firewall rules

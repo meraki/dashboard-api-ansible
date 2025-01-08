@@ -39,7 +39,7 @@
       state: present
       name: TestTemplate
       body: "a fake body"
-    check_mode: yes
+    check_mode: true
     register: create_one_check
 
   - ansible.builtin.debug:
@@ -142,7 +142,7 @@
       net_id: '{{ net }}'
       state: absent
       name: TestTemplate
-    check_mode: yes
+    check_mode: true
     register: delete_check
 
   - ansible.builtin.debug:

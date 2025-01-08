@@ -123,7 +123,7 @@ EXAMPLES = r"""
     org_name: YourOrg
     net_name: YourNet
     number: 1
-    categories: yes
+    categories: true
     state: query
   delegate_to: localhost
 

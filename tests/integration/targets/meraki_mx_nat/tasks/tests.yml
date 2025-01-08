@@ -30,7 +30,7 @@
               allowed_ips: 
                 - 10.10.10.10
     register: create_one_one_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_one_one_check
@@ -109,7 +109,7 @@
               allowed_ips:
                 - any
     register: create_one_many_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_one_many_check
@@ -186,7 +186,7 @@
           public_port: 10
           local_port: 11
     register: create_pf_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_pf_check

@@ -13,7 +13,7 @@
       timezone: America/Chicago
     delegate_to: localhost
     register: create_net_no_type
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -27,7 +27,7 @@
       timezone: America/Chicago
     delegate_to: localhost
     register: create_net_no_org
-    ignore_errors: yes
+    ignore_errors: true
 
   - name: Create network with type switch with check mode
     meraki_network:
@@ -38,7 +38,7 @@
       type: switch
       timezone: America/Chicago
     delegate_to: localhost
-    check_mode: yes
+    check_mode: true
     register: create_net_switch_check
 
   - assert:
@@ -105,9 +105,9 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      enable_vlans: yes
+      enable_vlans: true
     delegate_to: localhost
-    check_mode: yes
+    check_mode: true
     register: enable_vlan_check
 
   - assert:
@@ -121,7 +121,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      enable_vlans: yes
+      enable_vlans: true
     delegate_to: localhost
     register: enable_vlan
 
@@ -135,7 +135,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      enable_vlans: yes
+      enable_vlans: true
     delegate_to: localhost
     register: enable_vlan_idempotent
 
@@ -150,7 +150,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      enable_vlans: no
+      enable_vlans: false
     delegate_to: localhost
     register: disable_vlan
 
@@ -164,7 +164,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      enable_vlans: no
+      enable_vlans: false
     delegate_to: localhost
     register: disable_vlan_idempotent
 
@@ -272,8 +272,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
-      local_status_page_enabled: no
-      remote_status_page_enabled: no
+      local_status_page_enabled: false
+      remote_status_page_enabled: false
     delegate_to: localhost
     register: status_pages_1
     
@@ -289,8 +289,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
-      local_status_page_enabled: yes
-      remote_status_page_enabled: no
+      local_status_page_enabled: true
+      remote_status_page_enabled: false
     delegate_to: localhost
     register: status_pages_2
     
@@ -306,8 +306,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
-      local_status_page_enabled: yes
-      remote_status_page_enabled: yes
+      local_status_page_enabled: true
+      remote_status_page_enabled: true
     delegate_to: localhost
     register: status_pages_3
     
@@ -324,11 +324,11 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkCombined
-      local_status_page_enabled: no
-      remote_status_page_enabled: yes
+      local_status_page_enabled: false
+      remote_status_page_enabled: true
     delegate_to: localhost
     register: status_pages_4
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -419,7 +419,7 @@
       state: query
       org_name: '{{ test_org_name }}'
       net_name: '{{ test_template_name }}'
-      local_status_page_enabled: yes
+      local_status_page_enabled: true
     delegate_to: localhost
     register: query_settings
 
@@ -493,7 +493,7 @@
       net_name: IntTestNetworkSwitch
     delegate_to: localhost
     register: delete_all_no_org
-    ignore_errors: yes
+    ignore_errors: true
       
   - name: Delete network by org ID and check mode
     meraki_network:
@@ -502,7 +502,7 @@
       org_id: '{{ test_org_id }}'
       net_name: IntTestNetworkSwitchOrgID
     delegate_to: localhost
-    check_mode: yes
+    check_mode: true
     register: delete_net_org_id_check
 
   - assert:
@@ -535,7 +535,7 @@
       net_name: '{{ item }}'
     delegate_to: localhost
     register: delete_all
-    ignore_errors: yes
+    ignore_errors: true
     loop:
       - IntTestNetworkSwitch
       - IntTestNetworkSwitchCopied

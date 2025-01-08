@@ -34,7 +34,7 @@
           limit_up: 0
     delegate_to: localhost
     register: set_bw_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: set_bw_check

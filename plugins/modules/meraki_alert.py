@@ -124,21 +124,21 @@ EXAMPLES = r"""
       emails:
       - 'youremail@yourcorp'
       - 'youremail2@yourcorp'
-      all_admins: yes
-      snmp: no
+      all_admins: true
+      snmp: false
     alerts:
       - alert_type: "gatewayDown"
-        enabled: yes
+        enabled: true
         filters:
           timeout: 60
         alert_destinations:
           emails:
           - 'youremail@yourcorp'
           - 'youremail2@yourcorp'
-          all_admins: yes
-          snmp: no
+          all_admins: true
+          snmp: false
       - alert_type: "usageAlert"
-        enabled: yes
+        enabled: true
         filters:
           period: 1200
           threshold: 104857600
@@ -146,8 +146,8 @@ EXAMPLES = r"""
           emails:
           - 'youremail@yourcorp'
           - 'youremail2@yourcorp'
-          all_admins: yes
-          snmp: no
+          all_admins: true
+          snmp: false
 
 - name: Query all settings
   meraki_alert:

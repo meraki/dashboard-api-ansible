@@ -214,8 +214,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
-      local_status_page_enabled: no
-      remote_status_page_enabled: no
+      local_status_page_enabled: false
+      remote_status_page_enabled: false
     delegate_to: localhost
     register: status_pages_1
     
@@ -232,8 +232,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
-      local_status_page_enabled: yes
-      remote_status_page_enabled: no
+      local_status_page_enabled: true
+      remote_status_page_enabled: false
     delegate_to: localhost
     register: status_pages_2
     
@@ -250,8 +250,8 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
-      local_status_page_enabled: yes
-      remote_status_page_enabled: yes
+      local_status_page_enabled: true
+      remote_status_page_enabled: true
     delegate_to: localhost
     register: status_pages_3
     
@@ -269,11 +269,11 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: NetworkSettingsTestNet
-      local_status_page_enabled: no
-      remote_status_page_enabled: yes
+      local_status_page_enabled: false
+      remote_status_page_enabled: true
     delegate_to: localhost
     register: status_pages_4
-    ignore_errors: yes
+    ignore_errors: true
 
   - name: Assert status pages - local disabled remote enabled
     ansible.builtin.assert:

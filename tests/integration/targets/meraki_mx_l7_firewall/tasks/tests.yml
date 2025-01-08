@@ -35,7 +35,7 @@
   #     org_name: '{{ test_org_name }}'
   #     net_name: TestNetAppliance
   #     state: query
-  #     categories: yes
+  #     categories: true
   #   register: query_categories
 
   # - assert:
@@ -85,7 +85,7 @@
         - type: ip_range
           ip_range: 10.11.12.0/24
     register: create_ip_range_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_ip_range_check
@@ -123,7 +123,7 @@
         - type: ip_range
           ip_range: 10.11.12.0/24
     register: create_ip_range_idempotent_check
-    check_mode: yes
+    check_mode: true
 
   - assert:
       that:
@@ -191,7 +191,7 @@
         - type: ip_range
           ip_range: 10.11.12.0/24
     register: create_ip_range_idempotent_check
-    check_mode: yes
+    check_mode: true
 
   - assert:
       that:
@@ -256,7 +256,7 @@
           application:
             name: ansible
     register: application_rule_invalid
-    ignore_errors: yes
+    ignore_errors: true
 
   - name: Create firewall rule for application category
     meraki_mx_l7_firewall:
@@ -429,7 +429,7 @@
       rules:
         - type: blocked_countries
     register: error_allowed
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -444,7 +444,7 @@
       rules:
         - type: blocked_countries
     register: error_denied
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -459,7 +459,7 @@
       rules:
         - type: application_category
     register: error_app_cat
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -474,7 +474,7 @@
       rules:
         - type: application
     register: error_app_cat
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -489,7 +489,7 @@
       rules:
         - type: host
     register: error_app_cat
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:
@@ -504,7 +504,7 @@
       rules:
         - type: port
     register: error_app_cat
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that:

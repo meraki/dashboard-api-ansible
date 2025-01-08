@@ -144,7 +144,7 @@ EXAMPLES = r'''
         dest_port: any
         protocol: any
         policy: deny
-    syslog_default_rule: yes
+    syslog_default_rule: true
   delegate_to: localhost
 '''
 

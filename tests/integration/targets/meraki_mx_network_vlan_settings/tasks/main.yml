@@ -32,10 +32,10 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      vlans_enabled: yes
+      vlans_enabled: true
     delegate_to: localhost
     register: enable_vlans_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: enable_vlans_check
@@ -51,7 +51,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      vlans_enabled: yes
+      vlans_enabled: true
     delegate_to: localhost
     register: enable_vlans
 
@@ -69,7 +69,7 @@
       state: present
       org_name: '{{ test_org_name }}'
       net_name: IntTestNetworkAppliance
-      vlans_enabled: yes
+      vlans_enabled: true
     delegate_to: localhost
     register: enable_vlans_idempotent
 

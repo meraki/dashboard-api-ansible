@@ -31,7 +31,7 @@
       state: present
     loop: "{{ switchports }}"
     loop_control:
-      extended: yes
+      extended: true
       label: "{{ item.name }}"
       pause: 0.3
     register: async_results

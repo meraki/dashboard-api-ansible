@@ -14,7 +14,7 @@
       auth_key: '{{ auth_key }}'
       state: query
     register: query_all
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that: query_all.msg == "Organization must be specified via org_name or org_id"
@@ -41,7 +41,7 @@
             - "192.0.2.0/24"
           ike_version: "2"
     register: create_one_no_name
-    ignore_errors: yes
+    ignore_errors: true
 
   - assert:
       that: create_one_no_name.msg == "Peer name must be specified"
@@ -60,7 +60,7 @@
           ike_version: "2"
           ipsec_policies_preset: default
     register: create_one_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_one_check

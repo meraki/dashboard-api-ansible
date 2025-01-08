@@ -112,7 +112,7 @@ EXAMPLES = r'''
     auth_key: abc12345
     org_name: YourOrg
     state: present
-    v2c_enabled: yes
+    v2c_enabled: true
   delegate_to: localhost
 
 - name: Disable SNMPv2
@@ -120,7 +120,7 @@ EXAMPLES = r'''
     auth_key: abc12345
     org_name: YourOrg
     state: present
-    v2c_enabled: no
+    v2c_enabled: false
   delegate_to: localhost
 
 - name: Enable SNMPv3

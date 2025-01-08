@@ -153,7 +153,7 @@ EXAMPLES = r'''
     serial: AAAA-BBBB-CCCC
     wan2:
       wan_enabled: enabled
-      using_static_ip: yes
+      using_static_ip: true
       static_ip: 192.168.16.195
       static_gateway_ip: 192.168.16.1
       static_subnet_mask: 255.255.255.0

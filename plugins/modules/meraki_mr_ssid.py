@@ -282,7 +282,7 @@ EXAMPLES = r"""
     auth_mode: psk
     psk: abc1234
     encryption_mode: eap
-  ignore_errors: yes
+  ignore_errors: true
   delegate_to: localhost
 
 - name: Configure RADIUS servers

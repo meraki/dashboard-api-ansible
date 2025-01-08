@@ -51,11 +51,11 @@ options:
         description:
         - Whether a switchport should be enabled or disabled.
         type: bool
-        default: yes
+        default: true
     isolation_enabled:
         description:
         - Isolation status of switchport.
-        default: no
+        default: false
         type: bool
     link_negotiation:
         description:

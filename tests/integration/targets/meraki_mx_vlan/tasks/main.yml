@@ -28,7 +28,7 @@
       state: present
       org_id: '{{ test_org_id }}'
       net_id: '{{ test_net_id }}'
-      enable_vlans: yes
+      enable_vlans: true
     delegate_to: localhost
 
   - name: Create VLAN in check mode
@@ -43,7 +43,7 @@
       appliance_ip: 192.168.250.1
     delegate_to: localhost
     register: create_vlan_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: create_vlan_check
@@ -97,7 +97,7 @@
       dns_nameservers: opendns
     delegate_to: localhost
     register: update_vlan_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: update_vlan_check
@@ -157,7 +157,7 @@
       dns_nameservers: opendns
     delegate_to: localhost
     register: update_vlan_idempotent_check
-    check_mode: yes
+    check_mode: true
 
   - debug:
       var: update_vlan_idempotent_check
@@ -447,7 +447,7 @@
       vlan_id: 2
     delegate_to: localhost
     register: delete_vlan_check
-    check_mode: yes
+    check_mode: true
 
   - assert:
       that:

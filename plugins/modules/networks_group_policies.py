@@ -486,7 +486,7 @@ EXAMPLES = r"""
             limitUp: 1000000
           settings: custom
         priority: normal
-    name: No video streaming
+    name: false video streaming
     networkId: string
     scheduling:
       enabled: true
@@ -624,7 +624,7 @@ EXAMPLES = r"""
           settings: custom
         priority: normal
     groupPolicyId: string
-    name: No video streaming
+    name: false video streaming
     networkId: string
     scheduling:
       enabled: true
