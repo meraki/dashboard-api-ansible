@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments
 short_description: Resource module for organizations _sm _sentry _policies _assignments
 description:
-  - Manage operation update of the resource organizations _sm _sentry _policies _assignments.
-  - >
+- Manage operation update of the resource organizations _sm _sentry _policies _assignments.
+- >
    Update an Organizations Sentry Policies using the provided list. Sentry Policies are ordered in descending order
    of priority i.e. Highest priority at the bottom, this is opposite the Dashboard UI. Policies not present in the
    request will be deleted.
@@ -52,12 +52,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm updateOrganizationSmSentryPoliciesAssignments
-    description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-sm-sentry-policies-assignments
+- name: Cisco Meraki documentation for sm updateOrganizationSmSentryPoliciesAssignments
+  description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-sm-sentry-policies-assignments
 notes:
   - SDK Method used are
     sm.Sm.update_organization_sm_sentry_policies_assignments,

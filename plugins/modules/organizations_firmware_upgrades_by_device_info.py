@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_firmware_upgrades_by_device_info
 short_description: Information module for organizations _firmware _upgrades _by _device
 description:
-  - Get all organizations _firmware _upgrades _by _device.
-  - Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
+- Get all organizations _firmware _upgrades _by _device.
+- Get firmware upgrade status for the filtered devices. This endpoint currently only supports Meraki switches.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -76,12 +76,12 @@ options:
     - CurrentUpgradesOnly query parameter. Optional parameter to filter to only current or pending upgrade statuses.
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgradesByDevice
-    description: Complete reference of the getOrganizationFirmwareUpgradesByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades-by-device
+- name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgradesByDevice
+  description: Complete reference of the getOrganizationFirmwareUpgradesByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades-by-device
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_firmware_upgrades_by_device,

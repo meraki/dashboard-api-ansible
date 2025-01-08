@@ -19,9 +19,9 @@ DOCUMENTATION = r"""
 module: meraki_mr_l7_firewall
 short_description: Manage MR access point layer 7 firewalls in the Meraki cloud
 description:
-  - Allows for creation, management, and visibility into layer 7 firewalls implemented on Meraki MR access points.
-  - Module assumes a complete list of firewall rules are passed as a parameter.
-  - If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
+- Allows for creation, management, and visibility into layer 7 firewalls implemented on Meraki MR access points.
+- Module assumes a complete list of firewall rules are passed as a parameter.
+- If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -103,7 +103,7 @@ options:
         - When C(True), specifies that applications and application categories should be queried instead of firewall rules.
         type: bool
 author:
-  - Joshua Coronado (@joshuajcoronado)
+- Joshua Coronado (@joshuajcoronado)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_imports_info
 short_description: Information module for organizations _inventory _onboarding _cloud _monitoring _imports
 description:
-  - Get all organizations _inventory _onboarding _cloud _monitoring _imports.
-  - Check the status of a committed Import operation.
+- Get all organizations _inventory _onboarding _cloud _monitoring _imports.
+- Check the status of a committed Import operation.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -29,12 +29,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringImports
-    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringImports API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-imports
+- name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringImports
+  description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringImports API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-imports
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_inventory_onboarding_cloud_monitoring_imports,

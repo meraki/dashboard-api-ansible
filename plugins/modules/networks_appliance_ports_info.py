@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_appliance_ports_info
 short_description: Information module for networks _appliance _ports
 description:
-  - Get all networks _appliance _ports.
-  - Get networks _appliance _ports by id.
-  - List per-port VLAN settings for all ports of a MX.
-  - Return per-port VLAN settings for a single MX port.
+- Get all networks _appliance _ports.
+- Get networks _appliance _ports by id.
+- List per-port VLAN settings for all ports of a MX.
+- Return per-port VLAN settings for a single MX port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - PortId path parameter. Port ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkAppliancePort
-    description: Complete reference of the getNetworkAppliancePort API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-port
+- name: Cisco Meraki documentation for appliance getNetworkAppliancePort
+  description: Complete reference of the getNetworkAppliancePort API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-port
 - name: Cisco Meraki documentation for appliance getNetworkAppliancePorts
-    description: Complete reference of the getNetworkAppliancePorts API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ports
+  description: Complete reference of the getNetworkAppliancePorts API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ports
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_port,

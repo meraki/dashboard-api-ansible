@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_live_tools_ping_device_info
 short_description: Information module for devices _live _tools _ping _device
 description:
-  - Get devices _live _tools _ping _device by id.
-  - Return a ping device job. Latency unit in response is in milliseconds. Size is in bytes.
+- Get devices _live _tools _ping _device by id.
+- Return a ping device job. Latency unit in response is in milliseconds. Size is in bytes.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Id path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices getDeviceLiveToolsPingDevice
-    description: Complete reference of the getDeviceLiveToolsPingDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping-device
+- name: Cisco Meraki documentation for devices getDeviceLiveToolsPingDevice
+  description: Complete reference of the getDeviceLiveToolsPingDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping-device
 notes:
   - SDK Method used are
     devices.Devices.get_device_live_tools_ping_device,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_info
 short_description: Information module for networks
 description:
-  - Get all networks.
-  - Get networks by id.
-  - List the networks that the user has privileges on in an organization.
-  - Return a network.
+- Get all networks.
+- Get networks by id.
+- List the networks that the user has privileges on in an organization.
+- Return a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -82,15 +82,15 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetwork
-    description: Complete reference of the getNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network
+- name: Cisco Meraki documentation for networks getNetwork
+  description: Complete reference of the getNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network
 - name: Cisco Meraki documentation for networks getOrganizationNetworks
-    description: Complete reference of the getOrganizationNetworks API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-networks
+  description: Complete reference of the getOrganizationNetworks API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-networks
 notes:
   - SDK Method used are
     networks.Networks.get_network,

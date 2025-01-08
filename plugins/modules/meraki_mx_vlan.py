@@ -18,11 +18,11 @@ DOCUMENTATION = r'''
 module: meraki_mx_vlan
 short_description: Manage VLANs in the Meraki cloud
 description:
-  - Create, edit, query, or delete VLANs in a Meraki environment.
+- Create, edit, query, or delete VLANs in a Meraki environment.
 notes:
-  - Meraki's API will return an error if VLANs aren't enabled on a network. VLANs are returned properly if VLANs are enabled on a network.
-  - Some of the options are likely only used for developers within Meraki.
-  - Meraki's API defaults to networks having VLAN support disabled and there is no way to enable VLANs support in the API. VLAN support must be enabled manually.
+- Meraki's API will return an error if VLANs aren't enabled on a network. VLANs are returned properly if VLANs are enabled on a network.
+- Some of the options are likely only used for developers within Meraki.
+- Meraki's API defaults to networks having VLAN support disabled and there is no way to enable VLANs support in the API. VLAN support must be enabled manually.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -158,7 +158,7 @@ options:
                 - Value for DHCP option.
                 type: str
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

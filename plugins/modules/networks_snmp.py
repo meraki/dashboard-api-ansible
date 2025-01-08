@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_snmp
 short_description: Resource module for networks _snmp
 description:
-  - Manage operation update of the resource networks _snmp.
-  - Update the SNMP settings for a network.
+- Manage operation update of the resource networks _snmp.
+- Update the SNMP settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -38,12 +38,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkSnmp
-    description: Complete reference of the updateNetworkSnmp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-snmp
+- name: Cisco Meraki documentation for networks updateNetworkSnmp
+  description: Complete reference of the updateNetworkSnmp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-snmp
 notes:
   - SDK Method used are
     networks.Networks.update_network_snmp,

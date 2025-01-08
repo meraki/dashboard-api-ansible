@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_fields
 short_description: Resource module for networks _sm _devices _fields
 description:
-  - Manage operation update of the resource networks _sm _devices _fields.
-  - Modify the fields of a device.
+- Manage operation update of the resource networks _sm _devices _fields.
+- Modify the fields of a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -39,12 +39,12 @@ options:
     description: The wifiMac of the device to be modified.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm updateNetworkSmDevicesFields
-    description: Complete reference of the updateNetworkSmDevicesFields API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-devices-fields
+- name: Cisco Meraki documentation for sm updateNetworkSmDevicesFields
+  description: Complete reference of the updateNetworkSmDevicesFields API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-devices-fields
 notes:
   - SDK Method used are
     sm.Sm.update_network_sm_devices_fields,

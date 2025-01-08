@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_mx_nat
 short_description: Manage NAT rules in Meraki cloud
 description:
-  - Allows for creation, management, and visibility of NAT rules (1:1, 1:many, port forwarding) within Meraki.
+- Allows for creation, management, and visibility of NAT rules (1:1, 1:many, port forwarding) within Meraki.
 
 deprecated:
   removed_in: '3.0.0'

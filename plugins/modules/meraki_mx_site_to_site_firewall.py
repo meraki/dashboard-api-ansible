@@ -19,9 +19,9 @@ module: meraki_mx_site_to_site_firewall
 short_description: Manage MX appliance firewall rules for site-to-site VPNs
 version_added: "1.0.0"
 description:
-  - Allows for creation, management, and visibility into firewall rules for site-to-site VPNs implemented on Meraki MX firewalls.
+- Allows for creation, management, and visibility into firewall rules for site-to-site VPNs implemented on Meraki MX firewalls.
 notes:
-  - Module assumes a complete list of firewall rules are passed as a parameter.
+- Module assumes a complete list of firewall rules are passed as a parameter.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -86,7 +86,7 @@ options:
         - This is not shown in response from Meraki. Instead, refer to the C(syslog_enabled) value in the default rule.
         type: bool
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

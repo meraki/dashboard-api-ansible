@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_clients_search_info
 short_description: Information module for organizations _clients _search
 description:
-  - Get all organizations _clients _search.
-  - Return the client details in an organization.
+- Get all organizations _clients _search.
+- Return the client details in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -47,12 +47,12 @@ options:
     - Mac query parameter. The MAC address of the client. Required.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationClientsSearch
-    description: Complete reference of the getOrganizationClientsSearch API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-search
+- name: Cisco Meraki documentation for organizations getOrganizationClientsSearch
+  description: Complete reference of the getOrganizationClientsSearch API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-search
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_clients_search,

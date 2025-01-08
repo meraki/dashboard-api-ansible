@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_policies_by_client_info
 short_description: Information module for networks _policies _by _client
 description:
-  - Get all networks _policies _by _client.
-  - Get policies for all clients with policies.
+- Get all networks _policies _by _client.
+- Get policies for all clients with policies.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -54,12 +54,12 @@ options:
       1 day.
     type: float
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkPoliciesByClient
-    description: Complete reference of the getNetworkPoliciesByClient API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-policies-by-client
+- name: Cisco Meraki documentation for networks getNetworkPoliciesByClient
+  description: Complete reference of the getNetworkPoliciesByClient API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-policies-by-client
 notes:
   - SDK Method used are
     networks.Networks.get_network_policies_by_client,

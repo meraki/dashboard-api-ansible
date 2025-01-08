@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_licensing_coterm_licenses_info
 short_description: Information module for organizations _licensing _coterm _licenses
 description:
-  - Get all organizations _licensing _coterm _licenses.
-  - List the licenses in a coterm organization.
+- Get all organizations _licensing _coterm _licenses.
+- List the licenses in a coterm organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -51,12 +51,12 @@ options:
     - Expired query parameter. Filter for licenses that are expired.
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for licensing getOrganizationLicensingCotermLicenses
-    description: Complete reference of the getOrganizationLicensingCotermLicenses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-licensing-coterm-licenses
+- name: Cisco Meraki documentation for licensing getOrganizationLicensingCotermLicenses
+  description: Complete reference of the getOrganizationLicensingCotermLicenses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-licensing-coterm-licenses
 notes:
   - SDK Method used are
     licensing.Licensing.get_organization_licensing_coterm_licenses,

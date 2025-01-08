@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_device_profiles_info
 short_description: Information module for networks _sm _devices _device _profiles
 description:
-  - Get all networks _sm _devices _device _profiles.
-  - Get the installed profiles associated with a device.
+- Get all networks _sm _devices _device _profiles.
+- Get the installed profiles associated with a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - DeviceId path parameter. Device ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getNetworkSmDeviceDeviceProfiles
-    description: Complete reference of the getNetworkSmDeviceDeviceProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-device-profiles
+- name: Cisco Meraki documentation for sm getNetworkSmDeviceDeviceProfiles
+  description: Complete reference of the getNetworkSmDeviceDeviceProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-device-profiles
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_device_profiles,

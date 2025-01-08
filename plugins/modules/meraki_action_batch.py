@@ -19,9 +19,9 @@ DOCUMENTATION = r"""
 module: meraki_action_batch
 short_description: Manage Action Batch jobs within the Meraki Dashboard.
 description:
-  - Allows for management of Action Batch jobs for Meraki.
+- Allows for management of Action Batch jobs for Meraki.
 notes:
-  - This module is in active development and the interface may change.
+- This module is in active development and the interface may change.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -91,7 +91,7 @@ options:
         - Required body of action.
         type: raw
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

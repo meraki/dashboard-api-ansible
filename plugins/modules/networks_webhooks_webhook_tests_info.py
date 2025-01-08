@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_webhooks_webhook_tests_info
 short_description: Information module for networks _webhooks _webhook _tests
 description:
-  - Get networks _webhooks _webhook _tests by id.
-  - Return the status of a webhook test for a network.
+- Get networks _webhooks _webhook _tests by id.
+- Return the status of a webhook test for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - WebhookTestId path parameter. Webhook test ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkWebhooksWebhookTest
-    description: Complete reference of the getNetworkWebhooksWebhookTest API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-webhook-test
+- name: Cisco Meraki documentation for networks getNetworkWebhooksWebhookTest
+  description: Complete reference of the getNetworkWebhooksWebhookTest API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-webhook-test
 notes:
   - SDK Method used are
     networks.Networks.get_network_webhooks_webhook_test,

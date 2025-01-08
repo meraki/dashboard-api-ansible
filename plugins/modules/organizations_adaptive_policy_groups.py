@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_adaptive_policy_groups
 short_description: Resource module for organizations _adaptive _policy _groups
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptive _policy _groups.
-  - Creates a new adaptive policy group.
-  - Deletes the specified adaptive policy group and any associated policies and references.
-  - Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _groups.
+- Creates a new adaptive policy group.
+- Deletes the specified adaptive policy group and any associated policies and references.
+- Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -48,18 +48,18 @@ options:
     description: SGT value of the group.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyGroup
-    description: Complete reference of the createOrganizationAdaptivePolicyGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-group
+- name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyGroup
+  description: Complete reference of the createOrganizationAdaptivePolicyGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-group
 - name: Cisco Meraki documentation for organizations deleteOrganizationAdaptivePolicyGroup
-    description: Complete reference of the deleteOrganizationAdaptivePolicyGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-group
+  description: Complete reference of the deleteOrganizationAdaptivePolicyGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-group
 - name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicyGroup
-    description: Complete reference of the updateOrganizationAdaptivePolicyGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-group
+  description: Complete reference of the updateOrganizationAdaptivePolicyGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-group
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_adaptive_policy_group,

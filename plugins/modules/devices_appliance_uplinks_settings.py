@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_appliance_uplinks_settings
 short_description: Resource module for devices _appliance _uplinks _settings
 description:
-  - Manage operation update of the resource devices _appliance _uplinks _settings.
-  - Update the uplink settings for an MX appliance.
+- Manage operation update of the resource devices _appliance _uplinks _settings.
+- Update the uplink settings for an MX appliance.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -204,12 +204,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
-    description: Complete reference of the updateDeviceApplianceUplinksSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-appliance-uplinks-settings
+- name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
+  description: Complete reference of the updateDeviceApplianceUplinksSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-appliance-uplinks-settings
 notes:
   - SDK Method used are
     appliance.Appliance.update_device_appliance_uplinks_settings,
@@ -258,15 +258,15 @@ EXAMPLES = r"""
             gateway: 13.14.15.16
             nameservers:
               addresses:
-                - 1.2.3.4
+              - 1.2.3.4
           ipv6:
             address: 1:2:3::4
             assignmentMode: static
             gateway: 1:2:3::5
             nameservers:
               addresses:
-                - 1001:4860:4860::8888
-                - 1001:4860:4860::8844
+              - 1001:4860:4860::8888
+              - 1001:4860:4860::8844
         vlanTagging:
           enabled: true
           vlanId: 1
@@ -285,15 +285,15 @@ EXAMPLES = r"""
             gateway: 13.14.15.16
             nameservers:
               addresses:
-                - 1.2.3.4
+              - 1.2.3.4
           ipv6:
             address: 1:2:3::4
             assignmentMode: static
             gateway: 1:2:3::5
             nameservers:
               addresses:
-                - 1001:4860:4860::8888
-                - 1001:4860:4860::8844
+              - 1001:4860:4860::8888
+              - 1001:4860:4860::8844
         vlanTagging:
           enabled: true
           vlanId: 1

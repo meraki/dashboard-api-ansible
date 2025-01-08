@@ -19,11 +19,11 @@ module: meraki_config_template
 short_description: Manage configuration templates in the Meraki cloud
 version_added: "1.0.0"
 description:
-  - Allows for querying, deleting, binding, and unbinding of configuration templates.
+- Allows for querying, deleting, binding, and unbinding of configuration templates.
 notes:
-  - Module is not idempotent as the Meraki API is limited in what information it provides about configuration templates.
-  - Meraki's API does not support creating new configuration templates.
-  - To use the configuration template, simply pass its ID via C(net_id) parameters in Meraki modules.
+- Module is not idempotent as the Meraki API is limited in what information it provides about configuration templates.
+- Meraki's API does not support creating new configuration templates.
+- To use the configuration template, simply pass its ID via C(net_id) parameters in Meraki modules.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -64,7 +64,7 @@ options:
         type: bool
 
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

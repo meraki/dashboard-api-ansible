@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades
 short_description: Resource module for networks _firmware _upgrades
 description:
-  - Manage operation update of the resource networks _firmware _upgrades.
-  - Update firmware upgrade information for a network.
+- Manage operation update of the resource networks _firmware _upgrades.
+- Update firmware upgrade information for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -226,12 +226,12 @@ options:
         type: str
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgrades
-    description: Complete reference of the updateNetworkFirmwareUpgrades API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades
+- name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgrades
+  description: Complete reference of the updateNetworkFirmwareUpgrades API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades
 notes:
   - SDK Method used are
     networks.Networks.update_network_firmware_upgrades,

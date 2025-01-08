@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces
 short_description: Resource module for devices _switch _routing _interfaces
 description:
-  - Manage operations create, update and delete of the resource devices _switch _routing _interfaces.
-  - Create a layer 3 interface for a switch.
-  - Delete a layer 3 interface from the switch.
-  - Update a layer 3 interface for a switch.
+- Manage operations create, update and delete of the resource devices _switch _routing _interfaces.
+- Create a layer 3 interface for a switch.
+- Delete a layer 3 interface from the switch.
+- Update a layer 3 interface for a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -83,18 +83,18 @@ options:
     description: The VLAN this routed interface is on. VLAN must be between 1 and 4094.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch createDeviceSwitchRoutingInterface
-    description: Complete reference of the createDeviceSwitchRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-interface
+- name: Cisco Meraki documentation for switch createDeviceSwitchRoutingInterface
+  description: Complete reference of the createDeviceSwitchRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-interface
 - name: Cisco Meraki documentation for switch deleteDeviceSwitchRoutingInterface
-    description: Complete reference of the deleteDeviceSwitchRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-interface
+  description: Complete reference of the deleteDeviceSwitchRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-device-switch-routing-interface
 - name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterface
-    description: Complete reference of the updateDeviceSwitchRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface
+  description: Complete reference of the updateDeviceSwitchRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface
 notes:
   - SDK Method used are
     switch.Switch.create_device_switch_routing_interface,

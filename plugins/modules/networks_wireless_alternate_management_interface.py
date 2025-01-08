@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_alternate_management_interface
 short_description: Resource module for networks _wireless _alternate _management _interface
 description:
-  - Manage operation update of the resource networks _wireless _alternate _management _interface.
-  - Update alternate management interface and device static IP.
+- Manage operation update of the resource networks _wireless _alternate _management _interface.
+- Update alternate management interface and device static IP.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -59,12 +59,12 @@ options:
     description: Alternate management interface VLAN, must be between 1 and 4094.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
-    description: Complete reference of the updateNetworkWirelessAlternateManagementInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
+  description: Complete reference of the updateNetworkWirelessAlternateManagementInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_alternate_management_interface,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_policy
 short_description: Resource module for networks _clients _policy
 description:
-  - Manage operation update of the resource networks _clients _policy.
-  - >
+- Manage operation update of the resource networks _clients _policy.
+- >
    Update the policy assigned to a client on the network. Clients can be identified by a client key or either the MAC
    or IP depending on whether the network uses Track-by-IP.
 version_added: '2.16.0'
@@ -33,12 +33,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkClientPolicy
-    description: Complete reference of the updateNetworkClientPolicy API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-policy
+- name: Cisco Meraki documentation for networks updateNetworkClientPolicy
+  description: Complete reference of the updateNetworkClientPolicy API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-policy
 notes:
   - SDK Method used are
     networks.Networks.update_network_client_policy,

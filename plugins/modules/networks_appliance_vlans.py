@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_appliance_vlans
 short_description: Resource module for networks _appliance _vlans
 description:
-  - Manage operations create, update and delete of the resource networks _appliance _vlans.
-  - Add a VLAN.
-  - Delete a VLAN from a network.
-  - Update a VLAN.
+- Manage operations create, update and delete of the resource networks _appliance _vlans.
+- Add a VLAN.
+- Delete a VLAN from a network.
+- Update a VLAN.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -160,18 +160,18 @@ options:
       on the VLAN.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
-    description: Complete reference of the createNetworkApplianceVlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
+- name: Cisco Meraki documentation for appliance createNetworkApplianceVlan
+  description: Complete reference of the createNetworkApplianceVlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan
 - name: Cisco Meraki documentation for appliance deleteNetworkApplianceVlan
-    description: Complete reference of the deleteNetworkApplianceVlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
+  description: Complete reference of the deleteNetworkApplianceVlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan
 - name: Cisco Meraki documentation for appliance updateNetworkApplianceVlan
-    description: Complete reference of the updateNetworkApplianceVlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
+  description: Complete reference of the updateNetworkApplianceVlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan
 notes:
   - SDK Method used are
     appliance.Appliance.create_network_appliance_vlan,

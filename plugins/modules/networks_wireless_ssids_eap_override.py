@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_eap_override
 short_description: Resource module for networks _wireless _ssids _eap _override
 description:
-  - Manage operation update of the resource networks _wireless _ssids _eap _override.
-  - Update the EAP overridden parameters for an SSID.
+- Manage operation update of the resource networks _wireless _ssids _eap _override.
+- Update the EAP overridden parameters for an SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -49,12 +49,12 @@ options:
     description: General EAP timeout in seconds.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidEapOverride
-    description: Complete reference of the updateNetworkWirelessSsidEapOverride API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-eap-override
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidEapOverride
+  description: Complete reference of the updateNetworkWirelessSsidEapOverride API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-eap-override
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_eap_override,

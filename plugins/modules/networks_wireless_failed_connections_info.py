@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_failed_connections_info
 short_description: Information module for networks _wireless _failed _connections
 description:
-  - Get all networks _wireless _failed _connections.
-  - List of all failed client connection events on this network in a given time range.
+- Get all networks _wireless _failed _connections.
+- List of all failed client connection events on this network in a given time range.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -64,12 +64,12 @@ options:
     - ClientId query parameter. Filter by client MAC.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessFailedConnections
-    description: Complete reference of the getNetworkWirelessFailedConnections API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-failed-connections
+- name: Cisco Meraki documentation for wireless getNetworkWirelessFailedConnections
+  description: Complete reference of the getNetworkWirelessFailedConnections API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-failed-connections
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_failed_connections,

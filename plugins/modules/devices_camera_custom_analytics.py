@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_custom_analytics
 short_description: Resource module for devices _camera _custom _analytics
 description:
-  - Manage operation update of the resource devices _camera _custom _analytics.
-  - Update custom analytics settings for a camera.
+- Manage operation update of the resource devices _camera _custom _analytics.
+- Update custom analytics settings for a camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -37,12 +37,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera updateDeviceCameraCustomAnalytics
-    description: Complete reference of the updateDeviceCameraCustomAnalytics API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-custom-analytics
+- name: Cisco Meraki documentation for camera updateDeviceCameraCustomAnalytics
+  description: Complete reference of the updateDeviceCameraCustomAnalytics API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-custom-analytics
 notes:
   - SDK Method used are
     camera.Camera.update_device_camera_custom_analytics,
@@ -78,8 +78,8 @@ EXAMPLES = r"""
     artifactId: '1'
     enabled: true
     parameters:
-      - name: detection_threshold
-        value: '0.5'
+    - name: detection_threshold
+      value: '0.5'
     serial: string
 
 """

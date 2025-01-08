@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_summary_top_networks_by_status_info
 short_description: Information module for organizations _summary _top _networks _by _status
 description:
-  - Get all organizations _summary _top _networks _by _status.
-  - >
+- Get all organizations _summary _top _networks _by _status.
+- >
    List the client and status overview information for the networks in an organization. Usage is measured in
    kilobytes and from the last seven days.
 version_added: '2.16.0'
@@ -65,12 +65,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopNetworksByStatus
-    description: Complete reference of the getOrganizationSummaryTopNetworksByStatus API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-networks-by-status
+- name: Cisco Meraki documentation for organizations getOrganizationSummaryTopNetworksByStatus
+  description: Complete reference of the getOrganizationSummaryTopNetworksByStatus API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-networks-by-status
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_summary_top_networks_by_status,

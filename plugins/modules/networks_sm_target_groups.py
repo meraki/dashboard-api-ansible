@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_sm_target_groups
 short_description: Resource module for networks _sm _target _groups
 description:
-  - Manage operations create, update and delete of the resource networks _sm _target _groups.
-  - Add a target group.
-  - Delete a target group from a network.
-  - Update a target group.
+- Manage operations create, update and delete of the resource networks _sm _target _groups.
+- Add a target group.
+- Delete a target group from a network.
+- Update a target group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -33,18 +33,18 @@ options:
     description: TargetGroupId path parameter. Target group ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm createNetworkSmTargetGroup
-    description: Complete reference of the createNetworkSmTargetGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-sm-target-group
+- name: Cisco Meraki documentation for sm createNetworkSmTargetGroup
+  description: Complete reference of the createNetworkSmTargetGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-sm-target-group
 - name: Cisco Meraki documentation for sm deleteNetworkSmTargetGroup
-    description: Complete reference of the deleteNetworkSmTargetGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sm-target-group
+  description: Complete reference of the deleteNetworkSmTargetGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-sm-target-group
 - name: Cisco Meraki documentation for sm updateNetworkSmTargetGroup
-    description: Complete reference of the updateNetworkSmTargetGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-target-group
+  description: Complete reference of the updateNetworkSmTargetGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-sm-target-group
 notes:
   - SDK Method used are
     sm.Sm.create_network_sm_target_group,

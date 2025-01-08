@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_traffic_shaping_application_categories_info
 short_description: Information module for networks _traffic _shaping _application _categories
 description:
-  - Get all networks _traffic _shaping _application _categories.
-  - Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
+- Get all networks _traffic _shaping _application _categories.
+- Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkTrafficShapingApplicationCategories
-    description: Complete reference of the getNetworkTrafficShapingApplicationCategories API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-application-categories
+- name: Cisco Meraki documentation for networks getNetworkTrafficShapingApplicationCategories
+  description: Complete reference of the getNetworkTrafficShapingApplicationCategories API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-application-categories
 notes:
   - SDK Method used are
     networks.Networks.get_network_traffic_shaping_application_categories,

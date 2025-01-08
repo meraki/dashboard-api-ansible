@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_split
 short_description: Resource module for networks _split
 description:
-  - Manage operation create of the resource networks _split.
-  - Split a combined network into individual networks for each type of device.
+- Manage operation create of the resource networks _split.
+- Split a combined network into individual networks for each type of device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -20,12 +20,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks splitNetwork
-    description: Complete reference of the splitNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!split-network
+- name: Cisco Meraki documentation for networks splitNetwork
+  description: Complete reference of the splitNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!split-network
 notes:
   - SDK Method used are
     networks.Networks.split_network,

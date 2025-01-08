@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_desktop_logs_info
 short_description: Information module for networks _sm _devices _desktop _logs
 description:
-  - Get all networks _sm _devices _desktop _logs.
-  - Return historical records of various Systems Manager network connection details for desktop devices.
+- Get all networks _sm _devices _desktop _logs.
+- Return historical records of various Systems Manager network connection details for desktop devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -47,12 +47,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getNetworkSmDeviceDesktopLogs
-    description: Complete reference of the getNetworkSmDeviceDesktopLogs API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-desktop-logs
+- name: Cisco Meraki documentation for sm getNetworkSmDeviceDesktopLogs
+  description: Complete reference of the getNetworkSmDeviceDesktopLogs API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-device-desktop-logs
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_device_desktop_logs,

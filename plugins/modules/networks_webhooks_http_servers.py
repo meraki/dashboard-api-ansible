@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_webhooks_http_servers
 short_description: Resource module for networks _webhooks _http _servers
 description:
-  - Manage operations create, update and delete of the resource networks _webhooks _http _servers.
-  - Add an HTTP server to a network.
-  - Delete an HTTP server from a network.
-  - Update an HTTP server. To change a URL, create a new HTTP server.
+- Manage operations create, update and delete of the resource networks _webhooks _http _servers.
+- Add an HTTP server to a network.
+- Delete an HTTP server from a network.
+- Update an HTTP server. To change a URL, create a new HTTP server.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -49,18 +49,18 @@ options:
     description: The URL of the HTTP server. Once set, cannot be updated.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks createNetworkWebhooksHttpServer
-    description: Complete reference of the createNetworkWebhooksHttpServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-http-server
+- name: Cisco Meraki documentation for networks createNetworkWebhooksHttpServer
+  description: Complete reference of the createNetworkWebhooksHttpServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-http-server
 - name: Cisco Meraki documentation for networks deleteNetworkWebhooksHttpServer
-    description: Complete reference of the deleteNetworkWebhooksHttpServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-webhooks-http-server
+  description: Complete reference of the deleteNetworkWebhooksHttpServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-webhooks-http-server
 - name: Cisco Meraki documentation for networks updateNetworkWebhooksHttpServer
-    description: Complete reference of the updateNetworkWebhooksHttpServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-webhooks-http-server
+  description: Complete reference of the updateNetworkWebhooksHttpServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-webhooks-http-server
 notes:
   - SDK Method used are
     networks.Networks.create_network_webhooks_http_server,

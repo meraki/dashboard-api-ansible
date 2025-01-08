@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_claim
 short_description: Resource module for administered _licensing _subscription _subscriptions _claim
 description:
-  - Manage operation create of the resource administered _licensing _subscription _subscriptions _claim.
-  - Claim a subscription into an organization.
+- Manage operation create of the resource administered _licensing _subscription _subscriptions _claim.
+- Claim a subscription into an organization.
 version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -29,12 +29,12 @@ options:
     description: The id of the organization claiming the subscription.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for licensing claimAdministeredLicensingSubscriptionSubscriptions
-    description: Complete reference of the claimAdministeredLicensingSubscriptionSubscriptions API.
-    link: https://developer.cisco.com/meraki/api-v1/#!claim-administered-licensing-subscription-subscriptions
+- name: Cisco Meraki documentation for licensing claimAdministeredLicensingSubscriptionSubscriptions
+  description: Complete reference of the claimAdministeredLicensingSubscriptionSubscriptions API.
+  link: https://developer.cisco.com/meraki/api-v1/#!claim-administered-licensing-subscription-subscriptions
 notes:
   - SDK Method used are
     licensing.Licensing.claim_administered_licensing_subscription_subscriptions,

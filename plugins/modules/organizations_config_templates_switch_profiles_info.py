@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_info
 short_description: Information module for organizations _config _templates _switch _profiles
 description:
-  - Get all organizations _config _templates _switch _profiles.
-  - List the switch templates for your switch template configuration.
+- Get all organizations _config _templates _switch _profiles.
+- List the switch templates for your switch template configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfiles
-    description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profiles
+- name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfiles
+  description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profiles
 notes:
   - SDK Method used are
     switch.Switch.get_organization_config_template_switch_profiles,

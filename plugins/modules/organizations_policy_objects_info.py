@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_policy_objects_info
 short_description: Information module for organizations _policy _objects
 description:
-  - Get all organizations _policy _objects.
-  - Get organizations _policy _objects by id.
-  - Lists Policy Objects belonging to the organization.
-  - Shows details of a Policy Object.
+- Get all organizations _policy _objects.
+- Get organizations _policy _objects by id.
+- Lists Policy Objects belonging to the organization.
+- Shows details of a Policy Object.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -49,15 +49,15 @@ options:
     - PolicyObjectId path parameter. Policy object ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationPolicyObject
-    description: Complete reference of the getOrganizationPolicyObject API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-object
+- name: Cisco Meraki documentation for organizations getOrganizationPolicyObject
+  description: Complete reference of the getOrganizationPolicyObject API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-object
 - name: Cisco Meraki documentation for organizations getOrganizationPolicyObjects
-    description: Complete reference of the getOrganizationPolicyObjects API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects
+  description: Complete reference of the getOrganizationPolicyObjects API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_policy_object,

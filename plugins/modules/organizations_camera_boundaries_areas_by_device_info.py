@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_camera_boundaries_areas_by_device_info
 short_description: Information module for organizations _camera _boundaries _areas _by _device
 description:
-  - Get all organizations _camera _boundaries _areas _by _device.
-  - Returns all configured area boundaries of cameras.
+- Get all organizations _camera _boundaries _areas _by _device.
+- Returns all configured area boundaries of cameras.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -31,12 +31,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera getOrganizationCameraBoundariesAreasByDevice
-    description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-boundaries-areas-by-device
+- name: Cisco Meraki documentation for camera getOrganizationCameraBoundariesAreasByDevice
+  description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-boundaries-areas-by-device
 notes:
   - SDK Method used are
     camera.Camera.get_organization_camera_boundaries_areas_by_device,

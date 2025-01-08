@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_ports
 short_description: Resource module for organizations _config _templates _switch _profiles _ports
 description:
-  - Manage operation update of the resource organizations _config _templates _switch _profiles _ports.
-  - Update a switch template port.
+- Manage operation update of the resource organizations _config _templates _switch _profiles _ports.
+- Update a switch template port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -133,12 +133,12 @@ options:
       ports.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch updateOrganizationConfigTemplateSwitchProfilePort
-    description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template-switch-profile-port
+- name: Cisco Meraki documentation for switch updateOrganizationConfigTemplateSwitchProfilePort
+  description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template-switch-profile-port
 notes:
   - SDK Method used are
     switch.Switch.update_organization_config_template_switch_profile_port,

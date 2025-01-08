@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_policy_objects
 short_description: Resource module for organizations _policy _objects
 description:
-  - Manage operations create, update and delete of the resource organizations _policy _objects.
-  - Creates a new Policy Object.
-  - Deletes a Policy Object.
-  - Updates a Policy Object.
+- Manage operations create, update and delete of the resource organizations _policy _objects.
+- Creates a new Policy Object.
+- Deletes a Policy Object.
+- Updates a Policy Object.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -52,18 +52,18 @@ options:
       ipAndMask).
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationPolicyObject
-    description: Complete reference of the createOrganizationPolicyObject API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-object
+- name: Cisco Meraki documentation for organizations createOrganizationPolicyObject
+  description: Complete reference of the createOrganizationPolicyObject API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-object
 - name: Cisco Meraki documentation for organizations deleteOrganizationPolicyObject
-    description: Complete reference of the deleteOrganizationPolicyObject API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-object
+  description: Complete reference of the deleteOrganizationPolicyObject API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-object
 - name: Cisco Meraki documentation for organizations updateOrganizationPolicyObject
-    description: Complete reference of the updateOrganizationPolicyObject API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-object
+  description: Complete reference of the updateOrganizationPolicyObject API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-object
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_policy_object,

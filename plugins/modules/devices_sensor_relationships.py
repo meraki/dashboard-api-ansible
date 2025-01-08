@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_sensor_relationships
 short_description: Resource module for devices _sensor _relationships
 description:
-  - Manage operation update of the resource devices _sensor _relationships.
-  - Assign one or more sensor roles to a given sensor or camera device.
+- Manage operation update of the resource devices _sensor _relationships.
+- Assign one or more sensor roles to a given sensor or camera device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -34,12 +34,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sensor updateDeviceSensorRelationships
-    description: Complete reference of the updateDeviceSensorRelationships API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-sensor-relationships
+- name: Cisco Meraki documentation for sensor updateDeviceSensorRelationships
+  description: Complete reference of the updateDeviceSensorRelationships API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-sensor-relationships
 notes:
   - SDK Method used are
     sensor.Sensor.update_device_sensor_relationships,

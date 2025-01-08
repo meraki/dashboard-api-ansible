@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_mesh_statuses_info
 short_description: Information module for networks _wireless _mesh _statuses
 description:
-  - Get all networks _wireless _mesh _statuses.
-  - List wireless mesh statuses for repeaters.
+- Get all networks _wireless _mesh _statuses.
+- List wireless mesh statuses for repeaters.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -43,12 +43,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessMeshStatuses
-    description: Complete reference of the getNetworkWirelessMeshStatuses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-mesh-statuses
+- name: Cisco Meraki documentation for wireless getNetworkWirelessMeshStatuses
+  description: Complete reference of the getNetworkWirelessMeshStatuses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-mesh-statuses
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_mesh_statuses,

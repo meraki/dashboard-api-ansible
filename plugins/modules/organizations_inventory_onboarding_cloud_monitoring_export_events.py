@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_export_events
 short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _export _events
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _export _events.
-  - Imports event logs related to the onboarding app into elastisearch.
+- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _export _events.
+- Imports event logs related to the onboarding app into elastisearch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -34,12 +34,12 @@ options:
     description: A JavaScript UTC datetime stamp for when the even occurred.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringExportEvent
-    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-export-event
+- name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringExportEvent
+  description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-export-event
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_export_event,

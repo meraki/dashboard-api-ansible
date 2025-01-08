@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_l7_firewall_rules_application_categories_info
 short_description: Information module for networks _appliance _firewall l7 _firewall _rules _application _categories
 description:
-  - Get all networks _appliance _firewall l7 _firewall _rules _application _categories.
-  - Return the L7 firewall application categories and their associated applications for an MX network.
+- Get all networks _appliance _firewall l7 _firewall _rules _application _categories.
+- Return the L7 firewall application categories and their associated applications for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallL7FirewallRulesApplicationCategories
-    description: Complete reference of the getNetworkApplianceFirewallL7FirewallRulesApplicationCategories API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-l7-firewall-rules-application-categories
+- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallL7FirewallRulesApplicationCategories
+  description: Complete reference of the getNetworkApplianceFirewallL7FirewallRulesApplicationCategories API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-l7-firewall-rules-application-categories
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_firewall_l7_firewall_rules_application_categories,

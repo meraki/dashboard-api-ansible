@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_mr_settings
 short_description: Manage general settings for Meraki wireless networks
 description:
-  - Allows for configuration of general settings in Meraki MR wireless networks.
+- Allows for configuration of general settings in Meraki MR wireless networks.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -61,7 +61,7 @@ options:
         description: Toggle for enabling or disabling meshing in a network.
         type: bool
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

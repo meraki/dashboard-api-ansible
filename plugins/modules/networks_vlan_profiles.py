@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_vlan_profiles
 short_description: Resource module for networks _vlan _profiles
 description:
-  - Manage operations create, update and delete of the resource networks _vlan _profiles.
-  - Create a VLAN profile for a network.
-  - Delete a VLAN profile of a network.
-  - Update an existing VLAN profile of a network.
+- Manage operations create, update and delete of the resource networks _vlan _profiles.
+- Create a VLAN profile for a network.
+- Delete a VLAN profile of a network.
+- Update an existing VLAN profile of a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -57,18 +57,18 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks createNetworkVlanProfile
-    description: Complete reference of the createNetworkVlanProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-vlan-profile
+- name: Cisco Meraki documentation for networks createNetworkVlanProfile
+  description: Complete reference of the createNetworkVlanProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-vlan-profile
 - name: Cisco Meraki documentation for networks deleteNetworkVlanProfile
-    description: Complete reference of the deleteNetworkVlanProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-vlan-profile
+  description: Complete reference of the deleteNetworkVlanProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-vlan-profile
 - name: Cisco Meraki documentation for networks updateNetworkVlanProfile
-    description: Complete reference of the updateNetworkVlanProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-vlan-profile
+  description: Complete reference of the updateNetworkVlanProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-vlan-profile
 notes:
   - SDK Method used are
     networks.Networks.create_network_vlan_profile,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_settings_info
 short_description: Information module for networks _appliance _firewall _settings
 description:
-  - Get all networks _appliance _firewall _settings.
-  - Return the firewall settings for this network.
+- Get all networks _appliance _firewall _settings.
+- Return the firewall settings for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallSettings
-    description: Complete reference of the getNetworkApplianceFirewallSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-settings
+- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallSettings
+  description: Complete reference of the getNetworkApplianceFirewallSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-settings
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_firewall_settings,

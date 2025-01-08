@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_content_filtering
 short_description: Resource module for networks _appliance _content _filtering
 description:
-  - Manage operation update of the resource networks _appliance _content _filtering.
-  - Update the content filtering settings for an MX network.
+- Manage operation update of the resource networks _appliance _content _filtering.
+- Update the content filtering settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -35,12 +35,12 @@ options:
     description: URL category list size which is either 'topSites' or 'fullList'.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
-    description: Complete reference of the updateNetworkApplianceContentFiltering API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceContentFiltering
+  description: Complete reference of the updateNetworkApplianceContentFiltering API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-content-filtering
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_content_filtering,

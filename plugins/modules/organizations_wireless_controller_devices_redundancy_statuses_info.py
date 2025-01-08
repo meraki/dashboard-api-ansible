@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_devices_redundancy_statuses_info
 short_description: Information module for organizations _wireless _controller _devices _redundancy _statuses
 description:
-  - Get all organizations _wireless _controller _devices _redundancy _statuses.
-  - >
+- Get all organizations _wireless _controller _devices _redundancy _statuses.
+- >
    List redundancy details of wireless LAN controllers in an organization. The failover count refers to the total
    failovers system happens from the moment of this device onboarding to Dashboard.
 version_added: '2.20.0'
@@ -52,12 +52,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesRedundancyStatuses
-    description: Complete reference of the getOrganizationWirelessControllerDevicesRedundancyStatuses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-redundancy-statuses
+- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesRedundancyStatuses
+  description: Complete reference of the getOrganizationWirelessControllerDevicesRedundancyStatuses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-redundancy-statuses
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_devices_redundancy_statuses,

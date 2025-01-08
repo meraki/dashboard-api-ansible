@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_generate_snapshot
 short_description: Resource module for devices _camera _generate _snapshot
 description:
-  - Manage operation create of the resource devices _camera _generate _snapshot.
-  - Generate a snapshot of what the camera sees at the specified time and return a link to that image.
+- Manage operation create of the resource devices _camera _generate _snapshot.
+- Generate a snapshot of what the camera sees at the specified time and return a link to that image.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -29,12 +29,12 @@ options:
       we will assume current time.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera generateDeviceCameraSnapshot
-    description: Complete reference of the generateDeviceCameraSnapshot API.
-    link: https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot
+- name: Cisco Meraki documentation for camera generateDeviceCameraSnapshot
+  description: Complete reference of the generateDeviceCameraSnapshot API.
+  link: https://developer.cisco.com/meraki/api-v1/#!generate-device-camera-snapshot
 notes:
   - SDK Method used are
     camera.Camera.generate_device_camera_snapshot,

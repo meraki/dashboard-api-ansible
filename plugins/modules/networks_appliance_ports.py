@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_ports
 short_description: Resource module for networks _appliance _ports
 description:
-  - Manage operation update of the resource networks _appliance _ports.
-  - Update the per-port VLAN settings for a single MX port.
+- Manage operation update of the resource networks _appliance _ports.
+- Update the per-port VLAN settings for a single MX port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -47,12 +47,12 @@ options:
       is in Access mode.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkAppliancePort
-    description: Complete reference of the updateNetworkAppliancePort API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-port
+- name: Cisco Meraki documentation for appliance updateNetworkAppliancePort
+  description: Complete reference of the updateNetworkAppliancePort API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-port
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_port,

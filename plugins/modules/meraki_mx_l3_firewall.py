@@ -18,10 +18,10 @@ DOCUMENTATION = r'''
 module: meraki_mx_l3_firewall
 short_description: Manage MX appliance layer 3 firewalls in the Meraki cloud
 description:
-  - Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MX firewalls.
+- Allows for creation, management, and visibility into layer 3 firewalls implemented on Meraki MX firewalls.
 notes:
-  - Module assumes a complete list of firewall rules are passed as a parameter.
-  - If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
+- Module assumes a complete list of firewall rules are passed as a parameter.
+- If there is interest in this module allowing manipulation of a single firewall rule, please submit an issue against this module.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -94,7 +94,7 @@ options:
         - This is not shown in response from Meraki. Instead, refer to the C(syslog_enabled) value in the default rule.
         type: bool
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

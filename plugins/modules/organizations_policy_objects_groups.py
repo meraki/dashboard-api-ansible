@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_policy_objects_groups
 short_description: Resource module for organizations _policy _objects _groups
 description:
-  - Manage operations create, update and delete of the resource organizations _policy _objects _groups.
-  - Creates a new Policy Object Group.
-  - Deletes a Policy Object Group.
-  - Updates a Policy Object Group.
+- Manage operations create, update and delete of the resource organizations _policy _objects _groups.
+- Creates a new Policy Object Group.
+- Deletes a Policy Object Group.
+- Updates a Policy Object Group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -38,18 +38,18 @@ options:
     description: PolicyObjectGroupId path parameter. Policy object group ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationPolicyObjectsGroup
-    description: Complete reference of the createOrganizationPolicyObjectsGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-objects-group
+- name: Cisco Meraki documentation for organizations createOrganizationPolicyObjectsGroup
+  description: Complete reference of the createOrganizationPolicyObjectsGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-policy-objects-group
 - name: Cisco Meraki documentation for organizations deleteOrganizationPolicyObjectsGroup
-    description: Complete reference of the deleteOrganizationPolicyObjectsGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-objects-group
+  description: Complete reference of the deleteOrganizationPolicyObjectsGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-policy-objects-group
 - name: Cisco Meraki documentation for organizations updateOrganizationPolicyObjectsGroup
-    description: Complete reference of the updateOrganizationPolicyObjectsGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-objects-group
+  description: Complete reference of the updateOrganizationPolicyObjectsGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-policy-objects-group
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_policy_objects_group,

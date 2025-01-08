@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_camera_wireless_profiles_info
 short_description: Information module for networks _camera _wireless _profiles
 description:
-  - Get all networks _camera _wireless _profiles.
-  - Get networks _camera _wireless _profiles by id.
-  - List the camera wireless profiles for this network.
-  - Retrieve a single camera wireless profile.
+- Get all networks _camera _wireless _profiles.
+- Get networks _camera _wireless _profiles by id.
+- List the camera wireless profiles for this network.
+- Retrieve a single camera wireless profile.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - WirelessProfileId path parameter. Wireless profile ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera getNetworkCameraWirelessProfile
-    description: Complete reference of the getNetworkCameraWirelessProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-wireless-profile
+- name: Cisco Meraki documentation for camera getNetworkCameraWirelessProfile
+  description: Complete reference of the getNetworkCameraWirelessProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-wireless-profile
 - name: Cisco Meraki documentation for camera getNetworkCameraWirelessProfiles
-    description: Complete reference of the getNetworkCameraWirelessProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-wireless-profiles
+  description: Complete reference of the getNetworkCameraWirelessProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-wireless-profiles
 notes:
   - SDK Method used are
     camera.Camera.get_network_camera_wireless_profile,

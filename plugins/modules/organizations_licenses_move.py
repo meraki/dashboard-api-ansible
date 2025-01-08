@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_licenses_move
 short_description: Resource module for organizations _licenses _move
 description:
-  - Manage operation create of the resource organizations _licenses _move.
-  - Move licenses to another organization. This will also move any devices that the licenses are assigned to.
+- Manage operation create of the resource organizations _licenses _move.
+- Move licenses to another organization. This will also move any devices that the licenses are assigned to.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,12 +27,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations moveOrganizationLicenses
-    description: Complete reference of the moveOrganizationLicenses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses
+- name: Cisco Meraki documentation for organizations moveOrganizationLicenses
+  description: Complete reference of the moveOrganizationLicenses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses
 notes:
   - SDK Method used are
     organizations.Organizations.move_organization_licenses,

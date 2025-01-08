@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_vpn_third_party_vpnpeers
 short_description: Resource module for organizations _appliance _vpn _third _party _vpnpeers
 description:
-  - Manage operation update of the resource organizations _appliance _vpn _third _party _vpnpeers.
-  - Update the third party VPN peers for an organization.
+- Manage operation update of the resource organizations _appliance _vpn _third _party _vpnpeers.
+- Update the third party VPN peers for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -118,12 +118,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnThirdPartyVPNPeers
-    description: Complete reference of the updateOrganizationApplianceVpnThirdPartyVPNPeers API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-third-party-vpn-peers
+- name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnThirdPartyVPNPeers
+  description: Complete reference of the updateOrganizationApplianceVpnThirdPartyVPNPeers API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-third-party-vpn-peers
 notes:
   - SDK Method used are
     appliance.Appliance.update_organization_appliance_vpn_third_party_vpnpeers,

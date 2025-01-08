@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_insight_monitored_media_servers
 short_description: Resource module for organizations _insight _monitored _media _servers
 description:
-  - Manage operations create, update and delete of the resource organizations _insight _monitored _media _servers.
-  - Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.
-  - Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.
-  - Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.
+- Manage operations create, update and delete of the resource organizations _insight _monitored _media _servers.
+- Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.
+- Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.
+- Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -35,18 +35,18 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for insight createOrganizationInsightMonitoredMediaServer
-    description: Complete reference of the createOrganizationInsightMonitoredMediaServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-insight-monitored-media-server
+- name: Cisco Meraki documentation for insight createOrganizationInsightMonitoredMediaServer
+  description: Complete reference of the createOrganizationInsightMonitoredMediaServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-insight-monitored-media-server
 - name: Cisco Meraki documentation for insight deleteOrganizationInsightMonitoredMediaServer
-    description: Complete reference of the deleteOrganizationInsightMonitoredMediaServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-insight-monitored-media-server
+  description: Complete reference of the deleteOrganizationInsightMonitoredMediaServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-insight-monitored-media-server
 - name: Cisco Meraki documentation for insight updateOrganizationInsightMonitoredMediaServer
-    description: Complete reference of the updateOrganizationInsightMonitoredMediaServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-insight-monitored-media-server
+  description: Complete reference of the updateOrganizationInsightMonitoredMediaServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-insight-monitored-media-server
 notes:
   - SDK Method used are
     insight.Insight.create_organization_insight_monitored_media_server,

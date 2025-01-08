@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_network
 short_description: Manage networks in the Meraki cloud
 description:
-  - Allows for creation, management, and visibility into networks within Meraki.
+- Allows for creation, management, and visibility into networks within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_uplinks_usage_by_network_info
 short_description: Information module for organizations _appliance _uplinks _usage _by _network
 description:
-  - Get all organizations _appliance _uplinks _usage _by _network.
-  - >
+- Get all organizations _appliance _uplinks _usage _by _network.
+- >
    Get the sent and received bytes for each uplink of all MX and Z networks within an organization. If more than one
    device was active during the specified timespan, then the sent and received bytes will be aggregated by interface.
 version_added: '2.16.0'
@@ -41,12 +41,12 @@ options:
       default is 1 day.
     type: float
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksUsageByNetwork
-    description: Complete reference of the getOrganizationApplianceUplinksUsageByNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-usage-by-network
+- name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksUsageByNetwork
+  description: Complete reference of the getOrganizationApplianceUplinksUsageByNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-usage-by-network
 notes:
   - SDK Method used are
     appliance.Appliance.get_organization_appliance_uplinks_usage_by_network,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_bluetooth_clients_info
 short_description: Information module for networks _bluetooth _clients
 description:
-  - Get networks _bluetooth _clients by id.
-  - Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC.
+- Get networks _bluetooth _clients by id.
+- Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -38,12 +38,12 @@ options:
       default 1 day, 86400, will be used.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkBluetoothClient
-    description: Complete reference of the getNetworkBluetoothClient API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-bluetooth-client
+- name: Cisco Meraki documentation for networks getNetworkBluetoothClient
+  description: Complete reference of the getNetworkBluetoothClient API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-bluetooth-client
 notes:
   - SDK Method used are
     networks.Networks.get_network_bluetooth_client,

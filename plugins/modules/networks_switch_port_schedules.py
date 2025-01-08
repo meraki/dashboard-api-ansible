@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_port_schedules
 short_description: Resource module for networks _switch _port _schedules
 description:
-  - Manage operations create, update and delete of the resource networks _switch _port _schedules.
-  - Add a switch port schedule.
-  - Delete a switch port schedule.
-  - Update a switch port schedule.
+- Manage operations create, update and delete of the resource networks _switch _port _schedules.
+- Add a switch port schedule.
+- Delete a switch port schedule.
+- Update a switch port schedule.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -161,18 +161,18 @@ options:
     description: PortScheduleId path parameter. Port schedule ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch createNetworkSwitchPortSchedule
-    description: Complete reference of the createNetworkSwitchPortSchedule API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-port-schedule
+- name: Cisco Meraki documentation for switch createNetworkSwitchPortSchedule
+  description: Complete reference of the createNetworkSwitchPortSchedule API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-port-schedule
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchPortSchedule
-    description: Complete reference of the deleteNetworkSwitchPortSchedule API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-port-schedule
+  description: Complete reference of the deleteNetworkSwitchPortSchedule API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-port-schedule
 - name: Cisco Meraki documentation for switch updateNetworkSwitchPortSchedule
-    description: Complete reference of the updateNetworkSwitchPortSchedule API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-port-schedule
+  description: Complete reference of the updateNetworkSwitchPortSchedule API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-port-schedule
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_port_schedule,

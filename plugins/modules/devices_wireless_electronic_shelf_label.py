@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_electronic_shelf_label
 short_description: Resource module for devices _wireless _electronic _shelf _label
 description:
-  - Manage operation update of the resource devices _wireless _electronic _shelf _label.
-  - Update the ESL settings of a device.
+- Manage operation update of the resource devices _wireless _electronic _shelf _label.
+- Update the ESL settings of a device.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,12 +27,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateDeviceWirelessElectronicShelfLabel
-    description: Complete reference of the updateDeviceWirelessElectronicShelfLabel API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-electronic-shelf-label
+- name: Cisco Meraki documentation for wireless updateDeviceWirelessElectronicShelfLabel
+  description: Complete reference of the updateDeviceWirelessElectronicShelfLabel API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
     wireless.Wireless.update_device_wireless_electronic_shelf_label,

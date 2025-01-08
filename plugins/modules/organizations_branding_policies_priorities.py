@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_branding_policies_priorities
 short_description: Resource module for organizations _branding _policies _priorities
 description:
-  - Manage operation update of the resource organizations _branding _policies _priorities.
-  - Update the priority ordering of an organization's branding policies.
+- Manage operation update of the resource organizations _branding _policies _priorities.
+- Update the priority ordering of an organization's branding policies.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -25,12 +25,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations updateOrganizationBrandingPoliciesPriorities
-    description: Complete reference of the updateOrganizationBrandingPoliciesPriorities API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policies-priorities
+- name: Cisco Meraki documentation for organizations updateOrganizationBrandingPoliciesPriorities
+  description: Complete reference of the updateOrganizationBrandingPoliciesPriorities API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-branding-policies-priorities
 notes:
   - SDK Method used are
     organizations.Organizations.update_organization_branding_policies_priorities,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids
 short_description: Resource module for networks _wireless _ssids
 description:
-  - Manage operation update of the resource networks _wireless _ssids.
-  - Update the attributes of an MR SSID.
+- Manage operation update of the resource networks _wireless _ssids.
+- Update the attributes of an MR SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -509,12 +509,12 @@ options:
       'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
-    description: Complete reference of the updateNetworkWirelessSsid API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsid
+  description: Complete reference of the updateNetworkWirelessSsid API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid,

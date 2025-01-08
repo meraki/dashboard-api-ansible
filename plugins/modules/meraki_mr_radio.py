@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_mr_radio
 short_description: Manage device radio settings for Meraki wireless networks
 description:
-  - Allows for configuration of radio settings in Meraki MR wireless networks.
+- Allows for configuration of radio settings in Meraki MR wireless networks.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -138,7 +138,7 @@ options:
         - 14
         type: int
 author:
-  - Tyler Christiansen (@supertylerc)
+- Tyler Christiansen (@supertylerc)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 
@@ -196,20 +196,20 @@ data:
       contains:
         target_power:
           description:
-            - Configured manual target power for 5 GHz.
-            - Null indicates auto power.
+          - Configured manual target power for 5 GHz.
+          - Null indicates auto power.
           type: int
           sample: 25
         channel_width:
           description:
-            - Configured manual channel for 5 GHz.
-            - Null indicates auto channel width.
+          - Configured manual channel for 5 GHz.
+          - Null indicates auto channel width.
           type: str
           sample: 40
         channel:
           description:
-            - Configured manual channel for 5 GHz.
-            - Null indicates auto channel.
+          - Configured manual channel for 5 GHz.
+          - Null indicates auto channel.
           type: str
           sample: 56
     two_four_ghz_settings:
@@ -220,14 +220,14 @@ data:
       contains:
         target_power:
           description:
-            - Configured manual target power for 2.4 GHz.
-            - Null indicates auto power.
+          - Configured manual target power for 2.4 GHz.
+          - Null indicates auto power.
           type: int
           sample: 15
         channel:
           description:
-            - Configured manual channel for 2.4 GHz.
-            - Null indicates auto channel.
+          - Configured manual channel for 2.4 GHz.
+          - Null indicates auto channel.
           type: str
           sample: 11
 """

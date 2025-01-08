@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_identities_me_api_keys_revoke
 short_description: Resource module for administered _identities _me _api _keys _revoke
 description:
-  - Manage operation create of the resource administered _identities _me _api _keys _revoke.
-  - >
+- Manage operation create of the resource administered _identities _me _api _keys _revoke.
+- >
    Revokes an identity's API key, using the last four characters of the key. For users who have access to more than
    one organization, the change will take up to five minutes to propagate. If one of the organizations is currently
    under maintenance, the change may not propagate fully until after the maintenance has been completed.
@@ -23,12 +23,12 @@ options:
     description: Suffix path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for administered revokeAdministeredIdentitiesMeApiKeys
-    description: Complete reference of the revokeAdministeredIdentitiesMeApiKeys API.
-    link: https://developer.cisco.com/meraki/api-v1/#!revoke-administered-identities-me-api-keys
+- name: Cisco Meraki documentation for administered revokeAdministeredIdentitiesMeApiKeys
+  description: Complete reference of the revokeAdministeredIdentitiesMeApiKeys API.
+  link: https://developer.cisco.com/meraki/api-v1/#!revoke-administered-identities-me-api-keys
 notes:
   - SDK Method used are
     administered.Administered.revoke_administered_identities_me_api_keys,

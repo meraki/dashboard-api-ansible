@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_link_aggregations
 short_description: Resource module for networks _switch _link _aggregations
 description:
-  - Manage operations create, update and delete of the resource networks _switch _link _aggregations.
-  - Create a link aggregation group.
-  - Split a link aggregation group into separate ports.
-  - Update a link aggregation group.
+- Manage operations create, update and delete of the resource networks _switch _link _aggregations.
+- Create a link aggregation group.
+- Split a link aggregation group into separate ports.
+- Update a link aggregation group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -53,18 +53,18 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch createNetworkSwitchLinkAggregation
-    description: Complete reference of the createNetworkSwitchLinkAggregation API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-link-aggregation
+- name: Cisco Meraki documentation for switch createNetworkSwitchLinkAggregation
+  description: Complete reference of the createNetworkSwitchLinkAggregation API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-link-aggregation
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchLinkAggregation
-    description: Complete reference of the deleteNetworkSwitchLinkAggregation API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-link-aggregation
+  description: Complete reference of the deleteNetworkSwitchLinkAggregation API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-link-aggregation
 - name: Cisco Meraki documentation for switch updateNetworkSwitchLinkAggregation
-    description: Complete reference of the updateNetworkSwitchLinkAggregation API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-link-aggregation
+  description: Complete reference of the updateNetworkSwitchLinkAggregation API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-link-aggregation
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_link_aggregation,

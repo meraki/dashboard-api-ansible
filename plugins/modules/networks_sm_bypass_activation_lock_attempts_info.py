@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_bypass_activation_lock_attempts_info
 short_description: Information module for networks _sm _bypass _activation _lock _attempts
 description:
-  - Get networks _sm _bypass _activation _lock _attempts by id.
-  - Bypass activation lock attempt status.
+- Get networks _sm _bypass _activation _lock _attempts by id.
+- Bypass activation lock attempt status.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - AttemptId path parameter. Attempt ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getNetworkSmBypassActivationLockAttempt
-    description: Complete reference of the getNetworkSmBypassActivationLockAttempt API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-bypass-activation-lock-attempt
+- name: Cisco Meraki documentation for sm getNetworkSmBypassActivationLockAttempt
+  description: Complete reference of the getNetworkSmBypassActivationLockAttempt API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-bypass-activation-lock-attempt
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_bypass_activation_lock_attempt,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_licenses_assign_seats
 short_description: Resource module for organizations _licenses _assign _seats
 description:
-  - Manage operation create of the resource organizations _licenses _assign _seats.
-  - Assign SM seats to a network. This will increase the managed SM device limit of the network.
+- Manage operation create of the resource organizations _licenses _assign _seats.
+- Assign SM seats to a network. This will increase the managed SM device limit of the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -30,12 +30,12 @@ options:
       or equal to the total number of seats of the license.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations assignOrganizationLicensesSeats
-    description: Complete reference of the assignOrganizationLicensesSeats API.
-    link: https://developer.cisco.com/meraki/api-v1/#!assign-organization-licenses-seats
+- name: Cisco Meraki documentation for organizations assignOrganizationLicensesSeats
+  description: Complete reference of the assignOrganizationLicensesSeats API.
+  link: https://developer.cisco.com/meraki/api-v1/#!assign-organization-licenses-seats
 notes:
   - SDK Method used are
     organizations.Organizations.assign_organization_licenses_seats,

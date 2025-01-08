@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_recalculate
 short_description: Resource module for networks _recalculate
 description:
-  - Manage operation create of the resource networks _recalculate.
-  - Trigger auto locate recalculation for a job, and optionally set anchors.
+- Manage operation create of the resource networks _recalculate.
+- Trigger auto locate recalculation for a job, and optionally set anchors.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -45,12 +45,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks recalculateNetworkFloorPlansAutoLocateJob
-    description: Complete reference of the recalculateNetworkFloorPlansAutoLocateJob API.
-    link: https://developer.cisco.com/meraki/api-v1/#!recalculate-network-floor-plans-auto-locate-job
+- name: Cisco Meraki documentation for networks recalculateNetworkFloorPlansAutoLocateJob
+  description: Complete reference of the recalculateNetworkFloorPlansAutoLocateJob API.
+  link: https://developer.cisco.com/meraki/api-v1/#!recalculate-network-floor-plans-auto-locate-job
 notes:
   - SDK Method used are
     networks.Networks.recalculate_network_floor_plans_auto_locate_job,

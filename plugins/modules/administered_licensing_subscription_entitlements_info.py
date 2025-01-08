@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_entitlements_info
 short_description: Information module for administered _licensing _subscription _entitlements
 description:
-  - Get all administered _licensing _subscription _entitlements.
-  - Retrieve the list of purchasable entitlements.
+- Get all administered _licensing _subscription _entitlements.
+- Retrieve the list of purchasable entitlements.
 version_added: '2.18.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -25,12 +25,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
-    description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
+- name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
+  description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
 notes:
   - SDK Method used are
     licensing.Licensing.get_administered_licensing_subscription_entitlements,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_sense
 short_description: Resource module for devices _camera _sense
 description:
-  - Manage operation update of the resource devices _camera _sense.
-  - Update sense settings for the given camera.
+- Manage operation update of the resource devices _camera _sense.
+- Update sense settings for the given camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -39,12 +39,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera updateDeviceCameraSense
-    description: Complete reference of the updateDeviceCameraSense API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-sense
+- name: Cisco Meraki documentation for camera updateDeviceCameraSense
+  description: Complete reference of the updateDeviceCameraSense API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-camera-sense
 notes:
   - SDK Method used are
     camera.Camera.update_device_camera_sense,

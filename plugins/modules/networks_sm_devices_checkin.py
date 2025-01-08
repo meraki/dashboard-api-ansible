@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_checkin
 short_description: Resource module for networks _sm _devices _checkin
 description:
-  - Manage operation create of the resource networks _sm _devices _checkin.
-  - Force check-in a set of devices.
+- Manage operation create of the resource networks _sm _devices _checkin.
+- Force check-in a set of devices.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -37,12 +37,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm checkinNetworkSmDevices
-    description: Complete reference of the checkinNetworkSmDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!checkin-network-sm-devices
+- name: Cisco Meraki documentation for sm checkinNetworkSmDevices
+  description: Complete reference of the checkinNetworkSmDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!checkin-network-sm-devices
 notes:
   - SDK Method used are
     sm.Sm.checkin_network_sm_devices,

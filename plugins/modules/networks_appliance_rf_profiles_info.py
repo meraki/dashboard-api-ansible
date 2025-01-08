@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_rf_profiles_info
 short_description: Information module for networks _appliance _rf _profiles
 description:
-  - Get all networks _appliance _rf _profiles.
-  - List the RF profiles for this network.
+- Get all networks _appliance _rf _profiles.
+- List the RF profiles for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceRfProfiles
-    description: Complete reference of the getNetworkApplianceRfProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-rf-profiles
+- name: Cisco Meraki documentation for appliance getNetworkApplianceRfProfiles
+  description: Complete reference of the getNetworkApplianceRfProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-rf-profiles
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_rf_profiles,

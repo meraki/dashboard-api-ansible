@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_billing
 short_description: Resource module for networks _wireless _billing
 description:
-  - Manage operation update of the resource networks _wireless _billing.
-  - Update the billing settings.
+- Manage operation update of the resource networks _wireless _billing.
+- Update the billing settings.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -51,12 +51,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessBilling
-    description: Complete reference of the updateNetworkWirelessBilling API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-billing
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessBilling
+  description: Complete reference of the updateNetworkWirelessBilling API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-billing
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_billing,

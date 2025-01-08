@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles_info
 short_description: Information module for networks _camera _quality _retention _profiles
 description:
-  - Get all networks _camera _quality _retention _profiles.
-  - Get networks _camera _quality _retention _profiles by id.
-  - List the quality retention profiles for this network.
-  - Retrieve a single quality retention profile.
+- Get all networks _camera _quality _retention _profiles.
+- Get networks _camera _quality _retention _profiles by id.
+- List the quality retention profiles for this network.
+- Retrieve a single quality retention profile.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfile
-    description: Complete reference of the getNetworkCameraQualityRetentionProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profile
+- name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfile
+  description: Complete reference of the getNetworkCameraQualityRetentionProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profile
 - name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfiles
-    description: Complete reference of the getNetworkCameraQualityRetentionProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles
+  description: Complete reference of the getNetworkCameraQualityRetentionProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles
 notes:
   - SDK Method used are
     camera.Camera.get_network_camera_quality_retention_profile,

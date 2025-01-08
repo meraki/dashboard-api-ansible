@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_bonjour_forwarding
 short_description: Resource module for networks _wireless _ssids _bonjour _forwarding
 description:
-  - Manage operation update of the resource networks _wireless _ssids _bonjour _forwarding.
-  - Update the bonjour forwarding setting and rules for the SSID.
+- Manage operation update of the resource networks _wireless _ssids _bonjour _forwarding.
+- Update the bonjour forwarding setting and rules for the SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -53,12 +53,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidBonjourForwarding
-    description: Complete reference of the updateNetworkWirelessSsidBonjourForwarding API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-bonjour-forwarding
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidBonjourForwarding
+  description: Complete reference of the updateNetworkWirelessSsidBonjourForwarding API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-bonjour-forwarding
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_bonjour_forwarding,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_alerts_profiles
 short_description: Resource module for organizations _alerts _profiles
 description:
-  - Manage operations create, update and delete of the resource organizations _alerts _profiles.
-  - Create an organization-wide alert configuration.
-  - Removes an organization-wide alert config.
-  - Update an organization-wide alert config.
+- Manage operations create, update and delete of the resource organizations _alerts _profiles.
+- Create an organization-wide alert configuration.
+- Removes an organization-wide alert config.
+- Update an organization-wide alert config.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -86,18 +86,18 @@ options:
     description: The alert type.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationAlertsProfile
-    description: Complete reference of the createOrganizationAlertsProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-alerts-profile
+- name: Cisco Meraki documentation for organizations createOrganizationAlertsProfile
+  description: Complete reference of the createOrganizationAlertsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-alerts-profile
 - name: Cisco Meraki documentation for organizations deleteOrganizationAlertsProfile
-    description: Complete reference of the deleteOrganizationAlertsProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-alerts-profile
+  description: Complete reference of the deleteOrganizationAlertsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-alerts-profile
 - name: Cisco Meraki documentation for organizations updateOrganizationAlertsProfile
-    description: Complete reference of the updateOrganizationAlertsProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-alerts-profile
+  description: Complete reference of the updateOrganizationAlertsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-alerts-profile
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_alerts_profile,

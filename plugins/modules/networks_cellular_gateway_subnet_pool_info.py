@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_cellular_gateway_subnet_pool_info
 short_description: Information module for networks _cellular _gateway _subnet _pool
 description:
-  - Get all networks _cellular _gateway _subnet _pool.
-  - Return the subnet pool and mask configured for MGs in the network.
+- Get all networks _cellular _gateway _subnet _pool.
+- Return the subnet pool and mask configured for MGs in the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewaySubnetPool
-    description: Complete reference of the getNetworkCellularGatewaySubnetPool API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-subnet-pool
+- name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewaySubnetPool
+  description: Complete reference of the getNetworkCellularGatewaySubnetPool API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-subnet-pool
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.get_network_cellular_gateway_subnet_pool,

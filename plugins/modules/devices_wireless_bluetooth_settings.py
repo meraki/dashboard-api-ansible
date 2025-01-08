@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_bluetooth_settings
 short_description: Resource module for devices _wireless _bluetooth _settings
 description:
-  - Manage operation update of the resource devices _wireless _bluetooth _settings.
-  - Update the bluetooth settings for a wireless device.
+- Manage operation update of the resource devices _wireless _bluetooth _settings.
+- Update the bluetooth settings for a wireless device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -32,12 +32,12 @@ options:
       to Dashboard's automatically generated value.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateDeviceWirelessBluetoothSettings
-    description: Complete reference of the updateDeviceWirelessBluetoothSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings
+- name: Cisco Meraki documentation for wireless updateDeviceWirelessBluetoothSettings
+  description: Complete reference of the updateDeviceWirelessBluetoothSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-bluetooth-settings
 notes:
   - SDK Method used are
     wireless.Wireless.update_device_wireless_bluetooth_settings,

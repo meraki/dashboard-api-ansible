@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_electronic_shelf_label_info
 short_description: Information module for networks _wireless _electronic _shelf _label
 description:
-  - Get all networks _wireless _electronic _shelf _label.
-  - Return the ESL settings of a wireless network.
+- Get all networks _wireless _electronic _shelf _label.
+- Return the ESL settings of a wireless network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabel
-    description: Complete reference of the getNetworkWirelessElectronicShelfLabel API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label
+- name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabel
+  description: Complete reference of the getNetworkWirelessElectronicShelfLabel API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_electronic_shelf_label,

@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_network_settings
 short_description: Manage the settings of networks in the Meraki cloud
 description:
-  - Allows for management of settings of networks within Meraki.
+- Allows for management of settings of networks within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality

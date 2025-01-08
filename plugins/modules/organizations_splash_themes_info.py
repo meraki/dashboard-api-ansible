@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_splash_themes_info
 short_description: Information module for organizations _splash _themes
 description:
-  - Get all organizations _splash _themes.
-  - List Splash Themes.
+- Get all organizations _splash _themes.
+- List Splash Themes.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationSplashThemes
-    description: Complete reference of the getOrganizationSplashThemes API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-splash-themes
+- name: Cisco Meraki documentation for organizations getOrganizationSplashThemes
+  description: Complete reference of the getOrganizationSplashThemes API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-splash-themes
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_splash_themes,

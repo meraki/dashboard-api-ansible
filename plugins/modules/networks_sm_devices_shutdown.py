@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_shutdown
 short_description: Resource module for networks _sm _devices _shutdown
 description:
-  - Manage operation create of the resource networks _sm _devices _shutdown.
-  - Shutdown a set of endpoints.
+- Manage operation create of the resource networks _sm _devices _shutdown.
+- Shutdown a set of endpoints.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -37,12 +37,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm shutdownNetworkSmDevices
-    description: Complete reference of the shutdownNetworkSmDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!shutdown-network-sm-devices
+- name: Cisco Meraki documentation for sm shutdownNetworkSmDevices
+  description: Complete reference of the shutdownNetworkSmDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!shutdown-network-sm-devices
 notes:
   - SDK Method used are
     sm.Sm.shutdown_network_sm_devices,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_info
 short_description: Information module for networks _switch _stacks
 description:
-  - Get all networks _switch _stacks.
-  - Get networks _switch _stacks by id.
-  - List the switch stacks in a network.
-  - Show a switch stack.
+- Get all networks _switch _stacks.
+- Get networks _switch _stacks by id.
+- List the switch stacks in a network.
+- Show a switch stack.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getNetworkSwitchStack
-    description: Complete reference of the getNetworkSwitchStack API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack
+- name: Cisco Meraki documentation for switch getNetworkSwitchStack
+  description: Complete reference of the getNetworkSwitchStack API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack
 - name: Cisco Meraki documentation for switch getNetworkSwitchStacks
-    description: Complete reference of the getNetworkSwitchStacks API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks
+  description: Complete reference of the getNetworkSwitchStacks API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_stack,

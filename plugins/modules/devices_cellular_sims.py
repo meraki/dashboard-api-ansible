@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_cellular_sims
 short_description: Resource module for devices _cellular _sims
 description:
-  - Manage operation update of the resource devices _cellular _sims.
-  - Updates the SIM and APN configurations for a cellular device.
+- Manage operation update of the resource devices _cellular _sims.
+- Updates the SIM and APN configurations for a cellular device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -82,12 +82,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices updateDeviceCellularSims
-    description: Complete reference of the updateDeviceCellularSims API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-sims
+- name: Cisco Meraki documentation for devices updateDeviceCellularSims
+  description: Complete reference of the updateDeviceCellularSims API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-sims
 notes:
   - SDK Method used are
     devices.Devices.update_device_cellular_sims,
@@ -125,19 +125,19 @@ EXAMPLES = r"""
       enabled: true
       timeout: 300
     simOrdering:
-      - sim1
-      - sim2
-      - sim3
+    - sim1
+    - sim2
+    - sim3
     sims:
-      - apns:
-        - allowedIpTypes:
-            - ipv4
-            - ipv6
-          authentication:
-            password: secret
-            type: pap
-            username: milesmeraki
-          name: internet
+    - apns:
+      - allowedIpTypes:
+        - ipv4
+        - ipv6
+        authentication:
+          password: secret
+          type: pap
+          username: milesmeraki
+        name: internet
       isPrimary: false
       simOrder: 3
       slot: sim1

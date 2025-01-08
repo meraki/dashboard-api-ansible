@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_imports
 short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _imports
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _imports.
-  - Commits the import operation to complete the onboarding of a device into Dashboard for monitoring.
+- Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _imports.
+- Commits the import operation to complete the onboarding of a device into Dashboard for monitoring.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -34,12 +34,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringImport
-    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringImport API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-import
+- name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringImport
+  description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringImport API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-import
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_inventory_onboarding_cloud_monitoring_import,

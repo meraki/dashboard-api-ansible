@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_one_to_one_nat_rules_info
 short_description: Information module for networks _appliance _firewall _one _to _one _nat _rules
 description:
-  - Get all networks _appliance _firewall _one _to _one _nat _rules.
-  - Return the 1 1 NAT mapping rules for an MX network.
+- Get all networks _appliance _firewall _one _to _one _nat _rules.
+- Return the 1 1 NAT mapping rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallOneToOneNatRules
-    description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-one-to-one-nat-rules
+- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallOneToOneNatRules
+  description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-one-to-one-nat-rules
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_firewall_one_to_one_nat_rules,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces
 short_description: Resource module for networks _switch _stacks _routing _interfaces
 description:
-  - Manage operations create, update and delete of the resource networks _switch _stacks _routing _interfaces.
-  - Create a layer 3 interface for a switch stack.
-  - Delete a layer 3 interface from a switch stack.
-  - Update a layer 3 interface for a switch stack.
+- Manage operations create, update and delete of the resource networks _switch _stacks _routing _interfaces.
+- Create a layer 3 interface for a switch stack.
+- Delete a layer 3 interface from a switch stack.
+- Update a layer 3 interface for a switch stack.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -86,18 +86,18 @@ options:
     description: The VLAN this routed interface is on. VLAN must be between 1 and 4094.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingInterface
-    description: Complete reference of the createNetworkSwitchStackRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-interface
+- name: Cisco Meraki documentation for switch createNetworkSwitchStackRoutingInterface
+  description: Complete reference of the createNetworkSwitchStackRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-interface
 - name: Cisco Meraki documentation for switch deleteNetworkSwitchStackRoutingInterface
-    description: Complete reference of the deleteNetworkSwitchStackRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-interface
+  description: Complete reference of the deleteNetworkSwitchStackRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-stack-routing-interface
 - name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterface
-    description: Complete reference of the updateNetworkSwitchStackRoutingInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface
+  description: Complete reference of the updateNetworkSwitchStackRoutingInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface
 notes:
   - SDK Method used are
     switch.Switch.create_network_switch_stack_routing_interface,

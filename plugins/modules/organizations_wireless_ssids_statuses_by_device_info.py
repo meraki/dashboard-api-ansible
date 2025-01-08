@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_ssids_statuses_by_device_info
 short_description: Information module for organizations _wireless _ssids _statuses _by _device
 description:
-  - Get all organizations _wireless _ssids _statuses _by _device.
-  - List status information of all BSSIDs in your organization.
+- Get all organizations _wireless _ssids _statuses _by _device.
+- List status information of all BSSIDs in your organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -64,12 +64,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getOrganizationWirelessSsidsStatusesByDevice
-    description: Complete reference of the getOrganizationWirelessSsidsStatusesByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-ssids-statuses-by-device
+- name: Cisco Meraki documentation for wireless getOrganizationWirelessSsidsStatusesByDevice
+  description: Complete reference of the getOrganizationWirelessSsidsStatusesByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-ssids-statuses-by-device
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_ssids_statuses_by_device,

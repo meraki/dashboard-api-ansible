@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_rollbacks
 short_description: Resource module for networks _firmware _upgrades _staged _events _rollbacks
 description:
-  - Manage operation create of the resource networks _firmware _upgrades _staged _events _rollbacks.
-  - Rollback a Staged Upgrade Event for a network.
+- Manage operation create of the resource networks _firmware _upgrades _staged _events _rollbacks.
+- Rollback a Staged Upgrade Event for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -52,12 +52,12 @@ options:
         type: dict
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks rollbacksNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents API.
-    link: https://developer.cisco.com/meraki/api-v1/#!rollbacks-network-firmware-upgrades-staged-events
+- name: Cisco Meraki documentation for networks rollbacksNetworkFirmwareUpgradesStagedEvents
+  description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents API.
+  link: https://developer.cisco.com/meraki/api-v1/#!rollbacks-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
     networks.Networks.rollbacks_network_firmware_upgrades_staged_events,

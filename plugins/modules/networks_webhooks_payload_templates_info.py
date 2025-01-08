@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_webhooks_payload_templates_info
 short_description: Information module for networks _webhooks _payload _templates
 description:
-  - Get all networks _webhooks _payload _templates.
-  - Get networks _webhooks _payload _templates by id.
-  - Get the webhook payload template for a network.
-  - List the webhook payload templates for a network.
+- Get all networks _webhooks _payload _templates.
+- Get networks _webhooks _payload _templates by id.
+- Get the webhook payload template for a network.
+- List the webhook payload templates for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - PayloadTemplateId path parameter. Payload template ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkWebhooksPayloadTemplate
-    description: Complete reference of the getNetworkWebhooksPayloadTemplate API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-payload-template
+- name: Cisco Meraki documentation for networks getNetworkWebhooksPayloadTemplate
+  description: Complete reference of the getNetworkWebhooksPayloadTemplate API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-payload-template
 - name: Cisco Meraki documentation for networks getNetworkWebhooksPayloadTemplates
-    description: Complete reference of the getNetworkWebhooksPayloadTemplates API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-payload-templates
+  description: Complete reference of the getNetworkWebhooksPayloadTemplates API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-payload-templates
 notes:
   - SDK Method used are
     networks.Networks.get_network_webhooks_payload_template,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces_dhcp_info
 short_description: Information module for devices _switch _routing _interfaces _dhcp
 description:
-  - Get all devices _switch _routing _interfaces _dhcp.
-  - Return a layer 3 interface DHCP configuration for a switch.
+- Get all devices _switch _routing _interfaces _dhcp.
+- Return a layer 3 interface DHCP configuration for a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - InterfaceId path parameter. Interface ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaceDhcp
-    description: Complete reference of the getDeviceSwitchRoutingInterfaceDhcp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface-dhcp
+- name: Cisco Meraki documentation for switch getDeviceSwitchRoutingInterfaceDhcp
+  description: Complete reference of the getDeviceSwitchRoutingInterfaceDhcp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interface-dhcp
 notes:
   - SDK Method used are
     switch.Switch.get_device_switch_routing_interface_dhcp,

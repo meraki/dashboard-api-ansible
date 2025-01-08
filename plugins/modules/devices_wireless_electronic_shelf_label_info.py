@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_electronic_shelf_label_info
 short_description: Information module for devices _wireless _electronic _shelf _label
 description:
-  - Get all devices _wireless _electronic _shelf _label.
-  - Return the ESL settings of a device.
+- Get all devices _wireless _electronic _shelf _label.
+- Return the ESL settings of a device.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getDeviceWirelessElectronicShelfLabel
-    description: Complete reference of the getDeviceWirelessElectronicShelfLabel API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-electronic-shelf-label
+- name: Cisco Meraki documentation for wireless getDeviceWirelessElectronicShelfLabel
+  description: Complete reference of the getDeviceWirelessElectronicShelfLabel API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
     wireless.Wireless.get_device_wireless_electronic_shelf_label,

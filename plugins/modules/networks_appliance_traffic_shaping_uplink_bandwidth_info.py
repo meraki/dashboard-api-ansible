@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_bandwidth_info
 short_description: Information module for networks _appliance _traffic _shaping _uplink _bandwidth
 description:
-  - Get all networks _appliance _traffic _shaping _uplink _bandwidth.
-  - >
+- Get all networks _appliance _traffic _shaping _uplink _bandwidth.
+- >
    Returns the uplink bandwidth limits for your MX network. This may not reflect the affected device's hardware
    capabilities. For more information on your device's hardware capabilities, please consult our MX Family Datasheet
    - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file .
@@ -27,12 +27,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkBandwidth
-    description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-bandwidth
+- name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkBandwidth
+  description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-bandwidth
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_traffic_shaping_uplink_bandwidth,

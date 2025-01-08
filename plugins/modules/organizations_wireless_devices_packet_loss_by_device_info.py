@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_devices_packet_loss_by_device_info
 short_description: Information module for organizations _wireless _devices _packet _loss _by _device
 description:
-  - Get all organizations _wireless _devices _packet _loss _by _device.
-  - >
+- Get all organizations _wireless _devices _packet _loss _by _device.
+- >
    Get average packet loss for the given timespan for all devices in the organization. Does not include device's own
    traffic.
 version_added: '2.16.0'
@@ -80,12 +80,12 @@ options:
       be less than or equal to 90 days. The default is 7 days.
     type: float
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesPacketLossByDevice
-    description: Complete reference of the getOrganizationWirelessDevicesPacketLossByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-packet-loss-by-device
+- name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesPacketLossByDevice
+  description: Complete reference of the getOrganizationWirelessDevicesPacketLossByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-packet-loss-by-device
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_devices_packet_loss_by_device,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_settings_info
 short_description: Information module for networks _switch _settings
 description:
-  - Get all networks _switch _settings.
-  - Returns the switch network settings.
+- Get all networks _switch _settings.
+- Returns the switch network settings.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getNetworkSwitchSettings
-    description: Complete reference of the getNetworkSwitchSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-settings
+- name: Cisco Meraki documentation for switch getNetworkSwitchSettings
+  description: Complete reference of the getNetworkSwitchSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-settings
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_settings,

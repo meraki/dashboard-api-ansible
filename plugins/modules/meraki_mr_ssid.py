@@ -19,9 +19,9 @@ DOCUMENTATION = r"""
 module: meraki_mr_ssid
 short_description: Manage wireless SSIDs in the Meraki cloud
 description:
-  - Allows for management of SSIDs in a Meraki wireless environment.
+- Allows for management of SSIDs in a Meraki wireless environment.
 notes:
-  - Deleting an SSID does not delete RADIUS servers.
+- Deleting an SSID does not delete RADIUS servers.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -256,7 +256,7 @@ options:
         type: list
         elements: str
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_move
 short_description: Resource module for networks _sm _devices _move
 description:
-  - Manage operation create of the resource networks _sm _devices _move.
-  - Move a set of devices to a new network.
+- Manage operation create of the resource networks _sm _devices _move.
+- Move a set of devices to a new network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -40,12 +40,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm moveNetworkSmDevices
-    description: Complete reference of the moveNetworkSmDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!move-network-sm-devices
+- name: Cisco Meraki documentation for sm moveNetworkSmDevices
+  description: Complete reference of the moveNetworkSmDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!move-network-sm-devices
 notes:
   - SDK Method used are
     sm.Sm.move_network_sm_devices,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_one_to_many_nat_rules
 short_description: Resource module for networks _appliance _firewall _one _to _many _nat _rules
 description:
-  - Manage operation update of the resource networks _appliance _firewall _one _to _many _nat _rules.
-  - Set the 1 Many NAT mapping rules for an MX network.
+- Manage operation update of the resource networks _appliance _firewall _one _to _many _nat _rules.
+- Set the 1 Many NAT mapping rules for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -61,12 +61,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToManyNatRules
-    description: Complete reference of the updateNetworkApplianceFirewallOneToManyNatRules API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-many-nat-rules
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToManyNatRules
+  description: Complete reference of the updateNetworkApplianceFirewallOneToManyNatRules API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-many-nat-rules
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_firewall_one_to_many_nat_rules,

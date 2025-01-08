@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_firmware_upgrades_info
 short_description: Information module for organizations _firmware _upgrades
 description:
-  - Get all organizations _firmware _upgrades.
-  - Get firmware upgrade information for an organization.
+- Get all organizations _firmware _upgrades.
+- Get firmware upgrade information for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -53,12 +53,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgrades
-    description: Complete reference of the getOrganizationFirmwareUpgrades API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades
+- name: Cisco Meraki documentation for organizations getOrganizationFirmwareUpgrades
+  description: Complete reference of the getOrganizationFirmwareUpgrades API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-firmware-upgrades
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_firmware_upgrades,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_claim
 short_description: Resource module for organizations _inventory _claim
 description:
-  - Manage operation create of the resource organizations _inventory _claim.
-  - >
+- Manage operation create of the resource organizations _inventory _claim.
+- >
    Claim a list of devices, licenses, and/or orders into an organization inventory. When claiming by order, all
    devices and licenses in the order will be claimed; licenses will be added to the organization and devices will be
    placed in the organization's inventory. This operation can be used up to ten times within a single five minute
@@ -47,12 +47,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations claimIntoOrganizationInventory
-    description: Complete reference of the claimIntoOrganizationInventory API.
-    link: https://developer.cisco.com/meraki/api-v1/#!claim-into-organization-inventory
+- name: Cisco Meraki documentation for organizations claimIntoOrganizationInventory
+  description: Complete reference of the claimIntoOrganizationInventory API.
+  link: https://developer.cisco.com/meraki/api-v1/#!claim-into-organization-inventory
 notes:
   - SDK Method used are
     organizations.Organizations.claim_into_organization_inventory,

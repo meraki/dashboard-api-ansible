@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_switch_ports
 short_description: Resource module for devices _switch _ports
 description:
-  - Manage operation update of the resource devices _switch _ports.
-  - Update a switch port.
+- Manage operation update of the resource devices _switch _ports.
+- Update a switch port.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -136,12 +136,12 @@ options:
     description: The voice VLAN of the switch port. Only applicable to access ports.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch updateDeviceSwitchPort
-    description: Complete reference of the updateDeviceSwitchPort API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port
+- name: Cisco Meraki documentation for switch updateDeviceSwitchPort
+  description: Complete reference of the updateDeviceSwitchPort API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-port
 notes:
   - SDK Method used are
     switch.Switch.update_device_switch_port,

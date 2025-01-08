@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_switch_ports_cycle
 short_description: Resource module for devices _switch _ports _cycle
 description:
-  - Manage operation create of the resource devices _switch _ports _cycle.
-  - Cycle a set of switch ports.
+- Manage operation create of the resource devices _switch _ports _cycle.
+- Cycle a set of switch ports.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,12 +24,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch cycleDeviceSwitchPorts
-    description: Complete reference of the cycleDeviceSwitchPorts API.
-    link: https://developer.cisco.com/meraki/api-v1/#!cycle-device-switch-ports
+- name: Cisco Meraki documentation for switch cycleDeviceSwitchPorts
+  description: Complete reference of the cycleDeviceSwitchPorts API.
+  link: https://developer.cisco.com/meraki/api-v1/#!cycle-device-switch-ports
 notes:
   - SDK Method used are
     switch.Switch.cycle_device_switch_ports,

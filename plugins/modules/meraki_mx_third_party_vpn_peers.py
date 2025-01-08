@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_mx_third_party_vpn_peers
 short_description: Manage third party (IPSec) VPN peers for MX devices
 description:
-  - Create, edit, query, or delete third party VPN peers in a Meraki environment.
+- Create, edit, query, or delete third party VPN peers in a Meraki environment.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -39,23 +39,23 @@ options:
       suboptions:
         name:
           description:
-            - The name of the VPN peer.
-            - Required when state is present.
+          - The name of the VPN peer.
+          - Required when state is present.
           type: str
         public_ip:
           description:
-            - The public IP of the VPN peer.
-            - Required when state is present.
+          - The public IP of the VPN peer.
+          - Required when state is present.
           type: str
         secret:
           description:
-            - The shared secret with the VPN peer.
-            - Required when state is present.
+          - The shared secret with the VPN peer.
+          - Required when state is present.
           type: str
         private_subnets:
           description:
-            - The list of the private subnets of the VPN peer.
-            - Required when state is present.
+          - The list of the private subnets of the VPN peer.
+          - Required when state is present.
           type: list
           elements: str
         ike_version:
@@ -135,7 +135,7 @@ options:
               choices: ['prfsha256', 'prfsha1', 'prfmd5', 'default']
 
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 """
 

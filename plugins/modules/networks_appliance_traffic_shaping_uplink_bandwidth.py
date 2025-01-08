@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_bandwidth
 short_description: Resource module for networks _appliance _traffic _shaping _uplink _bandwidth
 description:
-  - Manage operation update of the resource networks _appliance _traffic _shaping _uplink _bandwidth.
-  - Updates the uplink bandwidth settings for your MX network.
+- Manage operation update of the resource networks _appliance _traffic _shaping _uplink _bandwidth.
+- Updates the uplink bandwidth settings for your MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -61,12 +61,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkBandwidth
-    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-bandwidth
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkBandwidth
+  description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-bandwidth
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_traffic_shaping_uplink_bandwidth,

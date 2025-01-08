@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_switch_routing_multicast_rendezvous_points_info
 short_description: Information module for networks _switch _routing _multicast _rendezvous _points
 description:
-  - Get all networks _switch _routing _multicast _rendezvous _points.
-  - Get networks _switch _routing _multicast _rendezvous _points by id.
-  - List multicast rendezvous points.
-  - Return a multicast rendezvous point.
+- Get all networks _switch _routing _multicast _rendezvous _points.
+- Get networks _switch _routing _multicast _rendezvous _points by id.
+- List multicast rendezvous points.
+- Return a multicast rendezvous point.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - RendezvousPointId path parameter. Rendezvous point ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoint
-    description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoint API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-point
+- name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoint
+  description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoint API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-point
 - name: Cisco Meraki documentation for switch getNetworkSwitchRoutingMulticastRendezvousPoints
-    description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoints API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-points
+  description: Complete reference of the getNetworkSwitchRoutingMulticastRendezvousPoints API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-points
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_routing_multicast_rendezvous_point,

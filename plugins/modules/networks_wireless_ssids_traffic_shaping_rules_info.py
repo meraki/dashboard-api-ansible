@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_traffic_shaping_rules_info
 short_description: Information module for networks _wireless _ssids _traffic _shaping _rules
 description:
-  - Get all networks _wireless _ssids _traffic _shaping _rules.
-  - Display the traffic shaping settings for a SSID on an MR network.
+- Get all networks _wireless _ssids _traffic _shaping _rules.
+- Display the traffic shaping settings for a SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Number path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidTrafficShapingRules
-    description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-traffic-shaping-rules
+- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidTrafficShapingRules
+  description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-traffic-shaping-rules
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_ssid_traffic_shaping_rules,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_custom_analytics_info
 short_description: Information module for devices _camera _custom _analytics
 description:
-  - Get all devices _camera _custom _analytics.
-  - Return custom analytics settings for a camera.
+- Get all devices _camera _custom _analytics.
+- Return custom analytics settings for a camera.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera getDeviceCameraCustomAnalytics
-    description: Complete reference of the getDeviceCameraCustomAnalytics API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-custom-analytics
+- name: Cisco Meraki documentation for camera getDeviceCameraCustomAnalytics
+  description: Complete reference of the getDeviceCameraCustomAnalytics API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-custom-analytics
 notes:
   - SDK Method used are
     camera.Camera.get_device_camera_custom_analytics,

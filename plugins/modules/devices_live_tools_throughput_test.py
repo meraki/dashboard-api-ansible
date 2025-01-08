@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_live_tools_throughput_test
 short_description: Resource module for devices _live _tools _throughput _test
 description:
-  - Manage operation create of the resource devices _live _tools _throughput _test.
-  - >
+- Manage operation create of the resource devices _live _tools _throughput _test.
+- >
    Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a
    rate limit of one request every five seconds per device.
 version_added: '2.16.0'
@@ -52,12 +52,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices createDeviceLiveToolsThroughputTest
-    description: Complete reference of the createDeviceLiveToolsThroughputTest API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-throughput-test
+- name: Cisco Meraki documentation for devices createDeviceLiveToolsThroughputTest
+  description: Complete reference of the createDeviceLiveToolsThroughputTest API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-throughput-test
 notes:
   - SDK Method used are
     devices.Devices.create_device_live_tools_throughput_test,

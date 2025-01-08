@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_connectivity_monitoring_destinations_info
 short_description: Information module for networks _appliance _connectivity _monitoring _destinations
 description:
-  - Get all networks _appliance _connectivity _monitoring _destinations.
-  - Return the connectivity testing destinations for an MX network.
+- Get all networks _appliance _connectivity _monitoring _destinations.
+- Return the connectivity testing destinations for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceConnectivityMonitoringDestinations
-    description: Complete reference of the getNetworkApplianceConnectivityMonitoringDestinations API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-connectivity-monitoring-destinations
+- name: Cisco Meraki documentation for appliance getNetworkApplianceConnectivityMonitoringDestinations
+  description: Complete reference of the getNetworkApplianceConnectivityMonitoringDestinations API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-connectivity-monitoring-destinations
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_connectivity_monitoring_destinations,

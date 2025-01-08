@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_power_modules_statuses_by_device_info
 short_description: Information module for organizations _devices _power _modules _statuses _by _device
 description:
-  - Get all organizations _devices _power _modules _statuses _by _device.
-  - >
+- Get all organizations _devices _power _modules _statuses _by _device.
+- >
    List the most recent status information for power modules in rackmount MX and MS devices that support them. The
    data returned by this endpoint is updated every 5 minutes.
 version_added: '2.16.0'
@@ -81,12 +81,12 @@ options:
       'withAnyTags' will be selected.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationDevicesPowerModulesStatusesByDevice
-    description: Complete reference of the getOrganizationDevicesPowerModulesStatusesByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-power-modules-statuses-by-device
+- name: Cisco Meraki documentation for organizations getOrganizationDevicesPowerModulesStatusesByDevice
+  description: Complete reference of the getOrganizationDevicesPowerModulesStatusesByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-power-modules-statuses-by-device
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_power_modules_statuses_by_device,

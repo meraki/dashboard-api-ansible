@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_alternate_management_interface_ipv6
 short_description: Resource module for devices _wireless _alternate _management _interface _ipv6
 description:
-  - Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
-  - Update alternate management interface IPv6 address.
+- Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
+- Update alternate management interface IPv6 address.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -50,12 +50,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
-    description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6 API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
+- name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
+  description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6 API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
 notes:
   - SDK Method used are
     wireless.Wireless.update_device_wireless_alternate_management_interface_ipv6,

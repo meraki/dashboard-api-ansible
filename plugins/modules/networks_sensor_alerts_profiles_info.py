@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_profiles_info
 short_description: Information module for networks _sensor _alerts _profiles
 description:
-  - Get all networks _sensor _alerts _profiles.
-  - Get networks _sensor _alerts _profiles by id.
-  - Lists all sensor alert profiles for a network.
-  - Show details of a sensor alert profile for a network.
+- Get all networks _sensor _alerts _profiles.
+- Get networks _sensor _alerts _profiles by id.
+- Lists all sensor alert profiles for a network.
+- Show details of a sensor alert profile for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - Id path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sensor getNetworkSensorAlertsProfile
-    description: Complete reference of the getNetworkSensorAlertsProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-profile
+- name: Cisco Meraki documentation for sensor getNetworkSensorAlertsProfile
+  description: Complete reference of the getNetworkSensorAlertsProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-profile
 - name: Cisco Meraki documentation for sensor getNetworkSensorAlertsProfiles
-    description: Complete reference of the getNetworkSensorAlertsProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-profiles
+  description: Complete reference of the getNetworkSensorAlertsProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-profiles
 notes:
   - SDK Method used are
     sensor.Sensor.get_network_sensor_alerts_profile,

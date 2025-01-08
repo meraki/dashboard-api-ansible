@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_netflow
 short_description: Resource module for networks _netflow
 description:
-  - Manage operation update of the resource networks _netflow.
-  - Update the NetFlow traffic reporting settings for a network.
+- Manage operation update of the resource networks _netflow.
+- Update the NetFlow traffic reporting settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -38,12 +38,12 @@ options:
       or disabled (false).
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkNetflow
-    description: Complete reference of the updateNetworkNetflow API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-netflow
+- name: Cisco Meraki documentation for networks updateNetworkNetflow
+  description: Complete reference of the updateNetworkNetflow API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-netflow
 notes:
   - SDK Method used are
     networks.Networks.update_network_netflow,

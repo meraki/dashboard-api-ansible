@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_rollbacks
 short_description: Resource module for networks _firmware _upgrades _rollbacks
 description:
-  - Manage operation create of the resource networks _firmware _upgrades _rollbacks.
-  - Rollback a Firmware Upgrade For A Network.
+- Manage operation create of the resource networks _firmware _upgrades _rollbacks.
+- Rollback a Firmware Upgrade For A Network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -44,12 +44,12 @@ options:
         type: str
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesRollback
-    description: Complete reference of the createNetworkFirmwareUpgradesRollback API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-rollback
+- name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesRollback
+  description: Complete reference of the createNetworkFirmwareUpgradesRollback API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-rollback
 notes:
   - SDK Method used are
     networks.Networks.create_network_firmware_upgrades_rollback,

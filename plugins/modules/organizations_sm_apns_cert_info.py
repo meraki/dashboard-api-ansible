@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_sm_apns_cert_info
 short_description: Information module for organizations _sm _apns _cert
 description:
-  - Get all organizations _sm _apns _cert.
-  - Get the organization's APNS certificate.
+- Get all organizations _sm _apns _cert.
+- Get the organization's APNS certificate.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getOrganizationSmApnsCert
-    description: Complete reference of the getOrganizationSmApnsCert API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-apns-cert
+- name: Cisco Meraki documentation for sm getOrganizationSmApnsCert
+  description: Complete reference of the getOrganizationSmApnsCert API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-apns-cert
 notes:
   - SDK Method used are
     sm.Sm.get_organization_sm_apns_cert,

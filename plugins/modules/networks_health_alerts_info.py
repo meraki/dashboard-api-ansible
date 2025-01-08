@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_health_alerts_info
 short_description: Information module for networks _health _alerts
 description:
-  - Get all networks _health _alerts.
-  - Return all global alerts on this network.
+- Get all networks _health _alerts.
+- Return all global alerts on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkHealthAlerts
-    description: Complete reference of the getNetworkHealthAlerts API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-health-alerts
+- name: Cisco Meraki documentation for networks getNetworkHealthAlerts
+  description: Complete reference of the getNetworkHealthAlerts API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-health-alerts
 notes:
   - SDK Method used are
     networks.Networks.get_network_health_alerts,

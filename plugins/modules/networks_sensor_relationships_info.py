@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sensor_relationships_info
 short_description: Information module for networks _sensor _relationships
 description:
-  - Get all networks _sensor _relationships.
-  - List the sensor roles for devices in a given network.
+- Get all networks _sensor _relationships.
+- List the sensor roles for devices in a given network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sensor getNetworkSensorRelationships
-    description: Complete reference of the getNetworkSensorRelationships API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-relationships
+- name: Cisco Meraki documentation for sensor getNetworkSensorRelationships
+  description: Complete reference of the getNetworkSensorRelationships API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-relationships
 notes:
   - SDK Method used are
     sensor.Sensor.get_network_sensor_relationships,

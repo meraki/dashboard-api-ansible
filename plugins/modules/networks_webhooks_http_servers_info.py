@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_webhooks_http_servers_info
 short_description: Information module for networks _webhooks _http _servers
 description:
-  - Get all networks _webhooks _http _servers.
-  - Get networks _webhooks _http _servers by id.
-  - List the HTTP servers for a network.
-  - Return an HTTP server for a network.
+- Get all networks _webhooks _http _servers.
+- Get networks _webhooks _http _servers by id.
+- List the HTTP servers for a network.
+- Return an HTTP server for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - HttpServerId path parameter. Http server ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkWebhooksHttpServer
-    description: Complete reference of the getNetworkWebhooksHttpServer API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-http-server
+- name: Cisco Meraki documentation for networks getNetworkWebhooksHttpServer
+  description: Complete reference of the getNetworkWebhooksHttpServer API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-http-server
 - name: Cisco Meraki documentation for networks getNetworkWebhooksHttpServers
-    description: Complete reference of the getNetworkWebhooksHttpServers API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-http-servers
+  description: Complete reference of the getNetworkWebhooksHttpServers API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-http-servers
 notes:
   - SDK Method used are
     networks.Networks.get_network_webhooks_http_server,

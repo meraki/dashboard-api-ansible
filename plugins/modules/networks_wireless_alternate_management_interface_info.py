@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_alternate_management_interface_info
 short_description: Information module for networks _wireless _alternate _management _interface
 description:
-  - Get all networks _wireless _alternate _management _interface.
-  - Return alternate management interface and devices with IP assigned.
+- Get all networks _wireless _alternate _management _interface.
+- Return alternate management interface and devices with IP assigned.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessAlternateManagementInterface
-    description: Complete reference of the getNetworkWirelessAlternateManagementInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-alternate-management-interface
+- name: Cisco Meraki documentation for wireless getNetworkWirelessAlternateManagementInterface
+  description: Complete reference of the getNetworkWirelessAlternateManagementInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-alternate-management-interface
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_alternate_management_interface,

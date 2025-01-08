@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_floor_plans
 short_description: Resource module for networks _floor _plans
 description:
-  - Manage operations create, update and delete of the resource networks _floor _plans.
-  - Upload a floor plan.
-  - Destroy a floor plan.
-  - Update a floor plan's geolocation and other meta data.
+- Manage operations create, update and delete of the resource networks _floor _plans.
+- Upload a floor plan.
+- Destroy a floor plan.
+- Update a floor plan's geolocation and other meta data.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -93,18 +93,18 @@ options:
         type: float
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks createNetworkFloorPlan
-    description: Complete reference of the createNetworkFloorPlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-floor-plan
+- name: Cisco Meraki documentation for networks createNetworkFloorPlan
+  description: Complete reference of the createNetworkFloorPlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-floor-plan
 - name: Cisco Meraki documentation for networks deleteNetworkFloorPlan
-    description: Complete reference of the deleteNetworkFloorPlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-floor-plan
+  description: Complete reference of the deleteNetworkFloorPlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-floor-plan
 - name: Cisco Meraki documentation for networks updateNetworkFloorPlan
-    description: Complete reference of the updateNetworkFloorPlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-floor-plan
+  description: Complete reference of the updateNetworkFloorPlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-floor-plan
 notes:
   - SDK Method used are
     networks.Networks.create_network_floor_plan,

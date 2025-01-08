@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_clients_overview_history_by_device_by_interval_info
 short_description: Information module for organizations _wireless _controller _clients _overview _history _by _device _by _interval
 description:
-  - Get all organizations _wireless _controller _clients _overview _history _by _device _by _interval.
-  - List wireless client counts of wireless LAN controllers over time in an organization.
+- Get all organizations _wireless _controller _clients _overview _history _by _device _by _interval.
+- List wireless client counts of wireless LAN controllers over time in an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -78,12 +78,12 @@ options:
       600, 1200, 3600, 14400, 86400. The default is 86400.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerClientsOverviewHistoryByDeviceByInterval
-    description: Complete reference of the getOrganizationWirelessControllerClientsOverviewHistoryByDeviceByInterval API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-clients-overview-history-by-device-by-interval
+- name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerClientsOverviewHistoryByDeviceByInterval
+  description: Complete reference of the getOrganizationWirelessControllerClientsOverviewHistoryByDeviceByInterval API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-clients-overview-history-by-device-by-interval
 notes:
   - SDK Method used are
     wireless_controller.WirelessController.get_organization_wireless_controller_clients_overview_history_by_device_by_interval,

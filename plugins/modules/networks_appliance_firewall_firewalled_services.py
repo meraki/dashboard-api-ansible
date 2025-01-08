@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_firewalled_services
 short_description: Resource module for networks _appliance _firewall _firewalled _services
 description:
-  - Manage operation update of the resource networks _appliance _firewall _firewalled _services.
-  - Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP' .
+- Manage operation update of the resource networks _appliance _firewall _firewalled _services.
+- Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP' .
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -34,12 +34,12 @@ options:
     description: Service path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallFirewalledService
-    description: Complete reference of the updateNetworkApplianceFirewallFirewalledService API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-firewalled-service
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallFirewalledService
+  description: Complete reference of the updateNetworkApplianceFirewallFirewalledService API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-firewalled-service
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_firewall_firewalled_service,

@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_vlan_profiles_info
 short_description: Information module for networks _vlan _profiles
 description:
-  - Get all networks _vlan _profiles.
-  - Get networks _vlan _profiles by name.
-  - Get an existing VLAN profile of a network.
-  - List VLAN profiles for a network.
+- Get all networks _vlan _profiles.
+- Get networks _vlan _profiles by name.
+- Get an existing VLAN profile of a network.
+- List VLAN profiles for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - Iname path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkVlanProfile
-    description: Complete reference of the getNetworkVlanProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profile
+- name: Cisco Meraki documentation for networks getNetworkVlanProfile
+  description: Complete reference of the getNetworkVlanProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profile
 - name: Cisco Meraki documentation for networks getNetworkVlanProfiles
-    description: Complete reference of the getNetworkVlanProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profiles
+  description: Complete reference of the getNetworkVlanProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-vlan-profiles
 notes:
   - SDK Method used are
     networks.Networks.get_network_vlan_profile,

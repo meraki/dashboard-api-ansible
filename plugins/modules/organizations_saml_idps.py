@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_saml_idps
 short_description: Resource module for organizations _saml _idps
 description:
-  - Manage operations create, update and delete of the resource organizations _saml _idps.
-  - Create a SAML IdP for your organization.
-  - Remove a SAML IdP in your organization.
-  - Update a SAML IdP in your organization.
+- Manage operations create, update and delete of the resource organizations _saml _idps.
+- Create a SAML IdP for your organization.
+- Remove a SAML IdP in your organization.
+- Update a SAML IdP in your organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -32,18 +32,18 @@ options:
       Provider (IdP). This will be used for encryption / validation.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationSamlIdp
-    description: Complete reference of the createOrganizationSamlIdp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-idp
+- name: Cisco Meraki documentation for organizations createOrganizationSamlIdp
+  description: Complete reference of the createOrganizationSamlIdp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-idp
 - name: Cisco Meraki documentation for organizations deleteOrganizationSamlIdp
-    description: Complete reference of the deleteOrganizationSamlIdp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-saml-idp
+  description: Complete reference of the deleteOrganizationSamlIdp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-saml-idp
 - name: Cisco Meraki documentation for organizations updateOrganizationSamlIdp
-    description: Complete reference of the updateOrganizationSamlIdp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml-idp
+  description: Complete reference of the updateOrganizationSamlIdp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-saml-idp
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_saml_idp,

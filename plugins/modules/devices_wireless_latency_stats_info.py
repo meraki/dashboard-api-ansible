@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_wireless_latency_stats_info
 short_description: Information module for devices _wireless _latency _stats
 description:
-  - Get all devices _wireless _latency _stats.
-  - Aggregated latency info for a given AP on this network.
+- Get all devices _wireless _latency _stats.
+- Aggregated latency info for a given AP on this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -63,12 +63,12 @@ options:
       separated string.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getDeviceWirelessLatencyStats
-    description: Complete reference of the getDeviceWirelessLatencyStats API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-latency-stats
+- name: Cisco Meraki documentation for wireless getDeviceWirelessLatencyStats
+  description: Complete reference of the getDeviceWirelessLatencyStats API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-wireless-latency-stats
 notes:
   - SDK Method used are
     wireless.Wireless.get_device_wireless_latency_stats,

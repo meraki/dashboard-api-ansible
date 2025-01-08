@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_saml_info
 short_description: Information module for organizations _saml
 description:
-  - Get all organizations _saml.
-  - Returns the SAML SSO enabled settings for an organization.
+- Get all organizations _saml.
+- Returns the SAML SSO enabled settings for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationSaml
-    description: Complete reference of the getOrganizationSaml API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml
+- name: Cisco Meraki documentation for organizations getOrganizationSaml
+  description: Complete reference of the getOrganizationSaml API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-saml
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_saml,

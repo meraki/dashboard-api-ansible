@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_floor_plans_auto_locate_devices_info
 short_description: Information module for organizations _floor _plans _auto _locate _devices
 description:
-  - Get all organizations _floor _plans _auto _locate _devices.
-  - List auto locate details for each device in your organization.
+- Get all organizations _floor _plans _auto _locate _devices.
+- List auto locate details for each device in your organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -53,12 +53,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateDevices
-    description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-devices
+- name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateDevices
+  description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-devices
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_floor_plans_auto_locate_devices,

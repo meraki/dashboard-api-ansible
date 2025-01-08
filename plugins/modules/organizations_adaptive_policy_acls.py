@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_adaptive_policy_acls
 short_description: Resource module for organizations _adaptive _policy _acls
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptive _policy _acls.
-  - Creates new adaptive policy ACL.
-  - Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.
-  - Updates an adaptive policy ACL.
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _acls.
+- Creates new adaptive policy ACL.
+- Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.
+- Updates an adaptive policy ACL.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -55,18 +55,18 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyAcl
-    description: Complete reference of the createOrganizationAdaptivePolicyAcl API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-acl
+- name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyAcl
+  description: Complete reference of the createOrganizationAdaptivePolicyAcl API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-acl
 - name: Cisco Meraki documentation for organizations deleteOrganizationAdaptivePolicyAcl
-    description: Complete reference of the deleteOrganizationAdaptivePolicyAcl API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-acl
+  description: Complete reference of the deleteOrganizationAdaptivePolicyAcl API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-acl
 - name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicyAcl
-    description: Complete reference of the updateOrganizationAdaptivePolicyAcl API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-acl
+  description: Complete reference of the updateOrganizationAdaptivePolicyAcl API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-acl
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_adaptive_policy_acl,

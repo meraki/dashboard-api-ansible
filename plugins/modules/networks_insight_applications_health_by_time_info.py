@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_insight_applications_health_by_time_info
 short_description: Information module for networks _insight _applications _health _by _time
 description:
-  - Get all networks _insight _applications _health _by _time.
-  - Get application health by time.
+- Get all networks _insight _applications _health _by _time.
+- Get application health by time.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -49,12 +49,12 @@ options:
       300, 3600, 86400. The default is 300.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for insight getNetworkInsightApplicationHealthByTime
-    description: Complete reference of the getNetworkInsightApplicationHealthByTime API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-insight-application-health-by-time
+- name: Cisco Meraki documentation for insight getNetworkInsightApplicationHealthByTime
+  description: Complete reference of the getNetworkInsightApplicationHealthByTime API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-insight-application-health-by-time
 notes:
   - SDK Method used are
     insight.Insight.get_network_insight_application_health_by_time,

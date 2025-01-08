@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_snmp
 short_description: Resource module for organizations _snmp
 description:
-  - Manage operation update of the resource organizations _snmp.
-  - Update the SNMP settings for an organization.
+- Manage operation update of the resource organizations _snmp.
+- Update the SNMP settings for an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -44,12 +44,12 @@ options:
       if specified.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations updateOrganizationSnmp
-    description: Complete reference of the updateOrganizationSnmp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-snmp
+- name: Cisco Meraki documentation for organizations updateOrganizationSnmp
+  description: Complete reference of the updateOrganizationSnmp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-snmp
 notes:
   - SDK Method used are
     organizations.Organizations.update_organization_snmp,

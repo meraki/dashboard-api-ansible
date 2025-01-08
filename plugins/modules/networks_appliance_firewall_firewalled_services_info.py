@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_firewalled_services_info
 short_description: Information module for networks _appliance _firewall _firewalled _services
 description:
-  - Get networks _appliance _firewall _firewalled _services by id.
-  - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP' .
+- Get networks _appliance _firewall _firewalled _services by id.
+- Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP' .
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Service path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallFirewalledService
-    description: Complete reference of the getNetworkApplianceFirewallFirewalledService API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-service
+- name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallFirewalledService
+  description: Complete reference of the getNetworkApplianceFirewallFirewalledService API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-service
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_firewall_firewalled_service,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_devices_channel_utilization_by_device_info
 short_description: Information module for organizations _wireless _devices _channel _utilization _by _device
 description:
-  - Get all organizations _wireless _devices _channel _utilization _by _device.
-  - Get average channel utilization for all bands in a network, split by AP.
+- Get all organizations _wireless _devices _channel _utilization _by _device.
+- Get average channel utilization for all bands in a network, split by AP.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -74,12 +74,12 @@ options:
       3600, 7200, 14400, 21600. The default is 3600.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesChannelUtilizationByDevice
-    description: Complete reference of the getOrganizationWirelessDevicesChannelUtilizationByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-channel-utilization-by-device
+- name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesChannelUtilizationByDevice
+  description: Complete reference of the getOrganizationWirelessDevicesChannelUtilizationByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-channel-utilization-by-device
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_devices_channel_utilization_by_device,

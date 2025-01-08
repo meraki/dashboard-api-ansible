@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_single_lan
 short_description: Resource module for networks _appliance _single _lan
 description:
-  - Manage operation update of the resource networks _appliance _single _lan.
-  - Update single LAN configuration.
+- Manage operation update of the resource networks _appliance _single _lan.
+- Update single LAN configuration.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -67,12 +67,12 @@ options:
     description: The subnet of the single LAN configuration.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceSingleLan
-    description: Complete reference of the updateNetworkApplianceSingleLan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-single-lan
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceSingleLan
+  description: Complete reference of the updateNetworkApplianceSingleLan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-single-lan
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_single_lan,

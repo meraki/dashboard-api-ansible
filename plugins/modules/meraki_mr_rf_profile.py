@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_mr_rf_profile
 short_description: Manage RF profiles for Meraki wireless networks
 description:
-  - Allows for configuration of radio frequency (RF)  profiles in Meraki MR wireless networks.
+- Allows for configuration of radio frequency (RF)  profiles in Meraki MR wireless networks.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -176,7 +176,7 @@ options:
                 type: list
                 elements: int
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

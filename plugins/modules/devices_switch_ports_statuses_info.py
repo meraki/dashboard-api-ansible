@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_switch_ports_statuses_info
 short_description: Information module for devices _switch _ports _statuses
 description:
-  - Get all devices _switch _ports _statuses.
-  - Return the status for all the ports of a switch.
+- Get all devices _switch _ports _statuses.
+- Return the status for all the ports of a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -35,12 +35,12 @@ options:
       1 day.
     type: float
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getDeviceSwitchPortsStatuses
-    description: Complete reference of the getDeviceSwitchPortsStatuses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports-statuses
+- name: Cisco Meraki documentation for switch getDeviceSwitchPortsStatuses
+  description: Complete reference of the getDeviceSwitchPortsStatuses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports-statuses
 notes:
   - SDK Method used are
     switch.Switch.get_device_switch_ports_statuses,

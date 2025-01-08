@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_adaptive_policy_policies
 short_description: Resource module for organizations _adaptive _policy _policies
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptive _policy _policies.
-  - Add an Adaptive Policy.
-  - Delete an Adaptive Policy.
-  - Update an Adaptive Policy.
+- Manage operations create, update and delete of the resource organizations _adaptive _policy _policies.
+- Add an Adaptive Policy.
+- Delete an Adaptive Policy.
+- Update an Adaptive Policy.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -66,18 +66,18 @@ options:
         type: int
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyPolicy
-    description: Complete reference of the createOrganizationAdaptivePolicyPolicy API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-policy
+- name: Cisco Meraki documentation for organizations createOrganizationAdaptivePolicyPolicy
+  description: Complete reference of the createOrganizationAdaptivePolicyPolicy API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-policy
 - name: Cisco Meraki documentation for organizations deleteOrganizationAdaptivePolicyPolicy
-    description: Complete reference of the deleteOrganizationAdaptivePolicyPolicy API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-policy
+  description: Complete reference of the deleteOrganizationAdaptivePolicyPolicy API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-adaptive-policy-policy
 - name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicyPolicy
-    description: Complete reference of the updateOrganizationAdaptivePolicyPolicy API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-policy
+  description: Complete reference of the updateOrganizationAdaptivePolicyPolicy API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-policy
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_adaptive_policy_policy,

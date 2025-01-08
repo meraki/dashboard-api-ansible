@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l3_firewall_rules
 short_description: Resource module for networks _wireless _ssids _firewall l3 _firewall _rules
 description:
-  - Manage operation update of the resource networks _wireless _ssids _firewall l3 _firewall _rules.
-  - Update the L3 firewall rules of an SSID on an MR network.
+- Manage operation update of the resource networks _wireless _ssids _firewall l3 _firewall _rules.
+- Update the L3 firewall rules of an SSID on an MR network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -51,12 +51,12 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL3FirewallRules
-    description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l3-firewall-rules
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL3FirewallRules
+  description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l3-firewall-rules
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_firewall_l3_firewall_rules,

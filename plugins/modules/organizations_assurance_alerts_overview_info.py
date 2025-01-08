@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_info
 short_description: Information module for organizations _assurance _alerts _overview
 description:
-  - Get all organizations _assurance _alerts _overview.
-  - Return overview of active health alerts for an organization.
+- Get all organizations _assurance _alerts _overview.
+- Return overview of active health alerts for an organization.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -84,12 +84,12 @@ options:
       will be returned. Defaults to false.
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverview
-    description: Complete reference of the getOrganizationAssuranceAlertsOverview API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview
+- name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverview
+  description: Complete reference of the getOrganizationAssuranceAlertsOverview API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_assurance_alerts_overview,

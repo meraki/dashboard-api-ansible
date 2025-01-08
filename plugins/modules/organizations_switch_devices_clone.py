@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_switch_devices_clone
 short_description: Resource module for organizations _switch _devices _clone
 description:
-  - Manage operation create of the resource organizations _switch _devices _clone.
-  - >
+- Manage operation create of the resource organizations _switch _devices _clone.
+- >
    Clone port-level and some switch-level configuration settings from a source switch to one or more target switches.
    Cloned settings include Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge
    priority, Port Mirroring.
@@ -32,12 +32,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch cloneOrganizationSwitchDevices
-    description: Complete reference of the cloneOrganizationSwitchDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!clone-organization-switch-devices
+- name: Cisco Meraki documentation for switch cloneOrganizationSwitchDevices
+  description: Complete reference of the cloneOrganizationSwitchDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!clone-organization-switch-devices
 notes:
   - SDK Method used are
     switch.Switch.clone_organization_switch_devices,

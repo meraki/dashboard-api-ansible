@@ -18,8 +18,8 @@ options:
     description: Additional headers.
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 notes:
   - Paths used are
 """

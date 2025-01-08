@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_clients_splash_authorization_status
 short_description: Resource module for networks _clients _splash _authorization _status
 description:
-  - Manage operation update of the resource networks _clients _splash _authorization _status.
-  - >
+- Manage operation update of the resource networks _clients _splash _authorization _status.
+- >
    Update a client's splash authorization. Clients can be identified by a client key or either the MAC or IP
    depending on whether the network uses Track-by-IP.
 version_added: '2.16.0'
@@ -137,12 +137,12 @@ options:
         type: dict
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkClientSplashAuthorizationStatus
-    description: Complete reference of the updateNetworkClientSplashAuthorizationStatus API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-splash-authorization-status
+- name: Cisco Meraki documentation for networks updateNetworkClientSplashAuthorizationStatus
+  description: Complete reference of the updateNetworkClientSplashAuthorizationStatus API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-client-splash-authorization-status
 notes:
   - SDK Method used are
     networks.Networks.update_network_client_splash_authorization_status,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info
 short_description: Information module for organizations _appliance _traffic _shaping _vpn _exclusions _by _network
 description:
-  - Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network.
-  - Display VPN exclusion rules for MX networks.
+- Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network.
+- Display VPN exclusion rules for MX networks.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -48,12 +48,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork
-    description: Complete reference of the getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-traffic-shaping-vpn-exclusions-by-network
+- name: Cisco Meraki documentation for appliance getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork
+  description: Complete reference of the getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-traffic-shaping-vpn-exclusions-by-network
 notes:
   - SDK Method used are
     appliance.Appliance.get_organization_appliance_traffic_shaping_vpn_exclusions_by_network,

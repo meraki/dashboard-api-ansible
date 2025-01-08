@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_licenses
 short_description: Resource module for organizations _licenses
 description:
-  - Manage operation update of the resource organizations _licenses.
-  - Update a license.
+- Manage operation update of the resource organizations _licenses.
+- Update a license.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -28,12 +28,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations updateOrganizationLicense
-    description: Complete reference of the updateOrganizationLicense API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-license
+- name: Cisco Meraki documentation for organizations updateOrganizationLicense
+  description: Complete reference of the updateOrganizationLicense API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-license
 notes:
   - SDK Method used are
     organizations.Organizations.update_organization_license,

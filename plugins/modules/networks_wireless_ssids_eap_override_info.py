@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_eap_override_info
 short_description: Information module for networks _wireless _ssids _eap _override
 description:
-  - Get all networks _wireless _ssids _eap _override.
-  - Return the EAP overridden parameters for an SSID.
+- Get all networks _wireless _ssids _eap _override.
+- Return the EAP overridden parameters for an SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,12 +28,12 @@ options:
     - Number path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidEapOverride
-    description: Complete reference of the getNetworkWirelessSsidEapOverride API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-eap-override
+- name: Cisco Meraki documentation for wireless getNetworkWirelessSsidEapOverride
+  description: Complete reference of the getNetworkWirelessSsidEapOverride API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-eap-override
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_ssid_eap_override,

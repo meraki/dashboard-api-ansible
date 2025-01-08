@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_appliance_vlans_info
 short_description: Information module for networks _appliance _vlans
 description:
-  - Get all networks _appliance _vlans.
-  - Get networks _appliance _vlans by id.
-  - List the VLANs for an MX network.
-  - Return a VLAN.
+- Get all networks _appliance _vlans.
+- Get networks _appliance _vlans by id.
+- List the VLANs for an MX network.
+- Return a VLAN.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - VlanId path parameter. Vlan ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceVlan
-    description: Complete reference of the getNetworkApplianceVlan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlan
+- name: Cisco Meraki documentation for appliance getNetworkApplianceVlan
+  description: Complete reference of the getNetworkApplianceVlan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlan
 - name: Cisco Meraki documentation for appliance getNetworkApplianceVlans
-    description: Complete reference of the getNetworkApplianceVlans API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlans
+  description: Complete reference of the getNetworkApplianceVlans API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlans
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_vlan,

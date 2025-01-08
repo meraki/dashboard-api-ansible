@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_traffic_analysis
 short_description: Resource module for networks _traffic _analysis
 description:
-  - Manage operation update of the resource networks _traffic _analysis.
-  - Update the traffic analysis settings for a network.
+- Manage operation update of the resource networks _traffic _analysis.
+- Update the traffic analysis settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -42,12 +42,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks updateNetworkTrafficAnalysis
-    description: Complete reference of the updateNetworkTrafficAnalysis API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-traffic-analysis
+- name: Cisco Meraki documentation for networks updateNetworkTrafficAnalysis
+  description: Complete reference of the updateNetworkTrafficAnalysis API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-traffic-analysis
 notes:
   - SDK Method used are
     networks.Networks.update_network_traffic_analysis,

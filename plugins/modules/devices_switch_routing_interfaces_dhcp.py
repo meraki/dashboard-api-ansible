@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces_dhcp
 short_description: Resource module for devices _switch _routing _interfaces _dhcp
 description:
-  - Manage operation update of the resource devices _switch _routing _interfaces _dhcp.
-  - Update a layer 3 interface DHCP configuration for a switch.
+- Manage operation update of the resource devices _switch _routing _interfaces _dhcp.
+- Update a layer 3 interface DHCP configuration for a switch.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -102,12 +102,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterfaceDhcp
-    description: Complete reference of the updateDeviceSwitchRoutingInterfaceDhcp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface-dhcp
+- name: Cisco Meraki documentation for switch updateDeviceSwitchRoutingInterfaceDhcp
+  description: Complete reference of the updateDeviceSwitchRoutingInterfaceDhcp API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-switch-routing-interface-dhcp
 notes:
   - SDK Method used are
     switch.Switch.update_device_switch_routing_interface_dhcp,

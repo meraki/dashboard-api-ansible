@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_api_requests_info
 short_description: Information module for organizations _api _requests
 description:
-  - Get all organizations _api _requests.
-  - List the API requests made by an organization.
+- Get all organizations _api _requests.
+- List the API requests made by an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -93,12 +93,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationApiRequests
-    description: Complete reference of the getOrganizationApiRequests API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests
+- name: Cisco Meraki documentation for organizations getOrganizationApiRequests
+  description: Complete reference of the getOrganizationApiRequests API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-api-requests
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_api_requests,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_availabilities_change_history_info
 short_description: Information module for organizations _devices _availabilities _change _history
 description:
-  - Get all organizations _devices _availabilities _change _history.
-  - List the availability history information for devices in an organization.
+- Get all organizations _devices _availabilities _change _history.
+- List the availability history information for devices in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -78,12 +78,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationDevicesAvailabilitiesChangeHistory
-    description: Complete reference of the getOrganizationDevicesAvailabilitiesChangeHistory API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-availabilities-change-history
+- name: Cisco Meraki documentation for organizations getOrganizationDevicesAvailabilitiesChangeHistory
+  description: Complete reference of the getOrganizationDevicesAvailabilitiesChangeHistory API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-availabilities-change-history
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_availabilities_change_history,

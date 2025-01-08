@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_details_bulk_update
 short_description: Resource module for organizations _devices _details _bulk _update
 description:
-  - Manage operation create of the resource organizations _devices _details _bulk _update.
-  - Updating device details currently only used for Catalyst devices .
+- Manage operation create of the resource organizations _devices _details _bulk _update.
+- Updating device details currently only used for Catalyst devices .
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -35,12 +35,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations bulkUpdateOrganizationDevicesDetails
-    description: Complete reference of the bulkUpdateOrganizationDevicesDetails API.
-    link: https://developer.cisco.com/meraki/api-v1/#!bulk-update-organization-devices-details
+- name: Cisco Meraki documentation for organizations bulkUpdateOrganizationDevicesDetails
+  description: Complete reference of the bulkUpdateOrganizationDevicesDetails API.
+  link: https://developer.cisco.com/meraki/api-v1/#!bulk-update-organization-devices-details
 notes:
   - SDK Method used are
     organizations.Organizations.bulk_update_organization_devices_details,

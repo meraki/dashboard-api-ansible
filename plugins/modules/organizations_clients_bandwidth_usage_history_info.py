@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_clients_bandwidth_usage_history_info
 short_description: Information module for organizations _clients _bandwidth _usage _history
 description:
-  - Get all organizations _clients _bandwidth _usage _history.
-  - >
+- Get all organizations _clients _bandwidth _usage _history.
+- >
    Return data usage in megabits per second over time for all clients in the given organization within a given time
    range.
 version_added: '2.16.0'
@@ -57,12 +57,12 @@ options:
       default is 1 day.
     type: float
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationClientsBandwidthUsageHistory
-    description: Complete reference of the getOrganizationClientsBandwidthUsageHistory API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-bandwidth-usage-history
+- name: Cisco Meraki documentation for organizations getOrganizationClientsBandwidthUsageHistory
+  description: Complete reference of the getOrganizationClientsBandwidthUsageHistory API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-clients-bandwidth-usage-history
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_clients_bandwidth_usage_history,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_uplinks_addresses_by_device_info
 short_description: Information module for organizations _devices _uplinks _addresses _by _device
 description:
-  - Get all organizations _devices _uplinks _addresses _by _device.
-  - List the current uplink addresses for devices in an organization.
+- Get all organizations _devices _uplinks _addresses _by _device.
+- List the current uplink addresses for devices in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -79,12 +79,12 @@ options:
       'withAnyTags' will be selected.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksAddressesByDevice
-    description: Complete reference of the getOrganizationDevicesUplinksAddressesByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-addresses-by-device
+- name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksAddressesByDevice
+  description: Complete reference of the getOrganizationDevicesUplinksAddressesByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-addresses-by-device
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_uplinks_addresses_by_device,

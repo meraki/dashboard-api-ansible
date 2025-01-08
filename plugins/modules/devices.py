@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices
 short_description: Resource module for devices
 description:
-  - Manage operation update of the resource devices.
-  - Update the attributes of a device.
+- Manage operation update of the resource devices.
+- Update the attributes of a device.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -54,12 +54,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices updateDevice
-    description: Complete reference of the updateDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device
+- name: Cisco Meraki documentation for devices updateDevice
+  description: Complete reference of the updateDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device
 notes:
   - SDK Method used are
     devices.Devices.update_device,
@@ -102,7 +102,7 @@ EXAMPLES = r"""
     serial: string
     switchProfileId: '1234'
     tags:
-      - ' recently-added '
+    - ' recently-added '
 
 """
 RETURN = r"""

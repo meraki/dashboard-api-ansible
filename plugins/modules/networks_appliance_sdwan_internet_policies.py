@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_sdwan_internet_policies
 short_description: Resource module for networks _appliance _sdwan _internet _policies
 description:
-  - Manage operation update of the resource networks _appliance _sdwan _internet _policies.
-  - Update SDWAN internet traffic preferences for an MX network.
+- Manage operation update of the resource networks _appliance _sdwan _internet _policies.
+- Update SDWAN internet traffic preferences for an MX network.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -116,12 +116,12 @@ options:
         type: list
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceSdwanInternetPolicies
-    description: Complete reference of the updateNetworkApplianceSdwanInternetPolicies API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-sdwan-internet-policies
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceSdwanInternetPolicies
+  description: Complete reference of the updateNetworkApplianceSdwanInternetPolicies API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-sdwan-internet-policies
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_sdwan_internet_policies,

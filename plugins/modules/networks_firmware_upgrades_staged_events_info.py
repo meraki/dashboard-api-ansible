@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_info
 short_description: Information module for networks _firmware _upgrades _staged _events
 description:
-  - Get all networks _firmware _upgrades _staged _events.
-  - Get the Staged Upgrade Event from a network.
+- Get all networks _firmware _upgrades _staged _events.
+- Get the Staged Upgrade Event from a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-events
+- name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedEvents
+  description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
     networks.Networks.get_network_firmware_upgrades_staged_events,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_settings
 short_description: Resource module for networks _appliance _settings
 description:
-  - Manage operation update of the resource networks _appliance _settings.
-  - Update the appliance settings for a network.
+- Manage operation update of the resource networks _appliance _settings.
+- Update the appliance settings for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -36,12 +36,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceSettings
-    description: Complete reference of the updateNetworkApplianceSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-settings
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceSettings
+  description: Complete reference of the updateNetworkApplianceSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-settings
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_settings,

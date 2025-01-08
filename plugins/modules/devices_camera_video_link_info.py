@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_camera_video_link_info
 short_description: Information module for devices _camera _video _link
 description:
-  - Get all devices _camera _video _link.
-  - Returns video link to the specified camera. If a timestamp is supplied, it links to that timestamp.
+- Get all devices _camera _video _link.
+- Returns video link to the specified camera. If a timestamp is supplied, it links to that timestamp.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,12 +30,12 @@ options:
       in ISO8601 format. If no timestamp is specified, we will assume current time.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera getDeviceCameraVideoLink
-    description: Complete reference of the getDeviceCameraVideoLink API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-link
+- name: Cisco Meraki documentation for camera getDeviceCameraVideoLink
+  description: Complete reference of the getDeviceCameraVideoLink API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-device-camera-video-link
 notes:
   - SDK Method used are
     camera.Camera.get_device_camera_video_link,

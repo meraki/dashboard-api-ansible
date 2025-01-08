@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_mx_intrusion_prevention
 short_description: Manage intrustion prevention in the Meraki cloud
 description:
-  - Allows for management of intrusion prevention rules networks within Meraki MX networks.
+- Allows for management of intrusion prevention rules networks within Meraki MX networks.
 
 deprecated:
   removed_in: '3.0.0'

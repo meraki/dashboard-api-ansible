@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_electronic_shelf_label_configured_devices_info
 short_description: Information module for networks _wireless _electronic _shelf _label _configured _devices
 description:
-  - Get all networks _wireless _electronic _shelf _label _configured _devices.
-  - Get a list of all ESL eligible devices of a network.
+- Get all networks _wireless _electronic _shelf _label _configured _devices.
+- Get a list of all ESL eligible devices of a network.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabelConfiguredDevices
-    description: Complete reference of the getNetworkWirelessElectronicShelfLabelConfiguredDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label-configured-devices
+- name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabelConfiguredDevices
+  description: Complete reference of the getNetworkWirelessElectronicShelfLabelConfiguredDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label-configured-devices
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_electronic_shelf_label_configured_devices,

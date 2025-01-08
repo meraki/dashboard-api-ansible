@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_wireless_rf_profiles_info
 short_description: Information module for networks _wireless _rf _profiles
 description:
-  - Get all networks _wireless _rf _profiles.
-  - Get networks _wireless _rf _profiles by id.
-  - List RF profiles for this network.
-  - Return a RF profile.
+- Get all networks _wireless _rf _profiles.
+- Get networks _wireless _rf _profiles by id.
+- List RF profiles for this network.
+- Return a RF profile.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -37,15 +37,15 @@ options:
     - RfProfileId path parameter. Rf profile ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfile
-    description: Complete reference of the getNetworkWirelessRfProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profile
+- name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfile
+  description: Complete reference of the getNetworkWirelessRfProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profile
 - name: Cisco Meraki documentation for wireless getNetworkWirelessRfProfiles
-    description: Complete reference of the getNetworkWirelessRfProfiles API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profiles
+  description: Complete reference of the getNetworkWirelessRfProfiles API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profiles
 notes:
   - SDK Method used are
     wireless.Wireless.get_network_wireless_rf_profile,

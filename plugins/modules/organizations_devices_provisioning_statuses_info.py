@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_provisioning_statuses_info
 short_description: Information module for organizations _devices _provisioning _statuses
 description:
-  - Get all organizations _devices _provisioning _statuses.
-  - List the provisioning statuses information for devices in an organization.
+- Get all organizations _devices _provisioning _statuses.
+- List the provisioning statuses information for devices in an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -85,12 +85,12 @@ options:
       'withAnyTags' will be selected.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationDevicesProvisioningStatuses
-    description: Complete reference of the getOrganizationDevicesProvisioningStatuses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-provisioning-statuses
+- name: Cisco Meraki documentation for organizations getOrganizationDevicesProvisioningStatuses
+  description: Complete reference of the getOrganizationDevicesProvisioningStatuses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-provisioning-statuses
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_provisioning_statuses,

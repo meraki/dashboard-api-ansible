@@ -9,9 +9,9 @@ DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events
 short_description: Resource module for networks _firmware _upgrades _staged _events
 description:
-  - Manage operations create and update of the resource networks _firmware _upgrades _staged _events.
-  - Create a Staged Upgrade Event for a network.
-  - Update the Staged Upgrade Event for a network.
+- Manage operations create and update of the resource networks _firmware _upgrades _staged _events.
+- Create a Staged Upgrade Event for a network.
+- Update the Staged Upgrade Event for a network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -75,15 +75,15 @@ options:
         type: dict
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedEvent
-    description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-event
+- name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedEvent
+  description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-event
 - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-events
+  description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
     networks.Networks.create_network_firmware_upgrades_staged_event,

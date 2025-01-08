@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_statuses_overview_info
 short_description: Information module for organizations _devices _statuses _overview
 description:
-  - Get all organizations _devices _statuses _overview.
-  - Return an overview of current device statuses.
+- Get all organizations _devices _statuses _overview.
+- Return an overview of current device statuses.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -37,12 +37,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
-    description: Complete reference of the getOrganizationDevicesStatusesOverview API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
+- name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
+  description: Complete reference of the getOrganizationDevicesStatusesOverview API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_devices_statuses_overview,

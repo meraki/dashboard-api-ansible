@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_custom_performance_classes_info
 short_description: Information module for networks _appliance _traffic _shaping _custom _performance _classes
 description:
-  - Get all networks _appliance _traffic _shaping _custom _performance _classes.
-  - Get networks _appliance _traffic _shaping _custom _performance _classes by id.
-  - List all custom performance classes for an MX network.
-  - Return a custom performance class for an MX network.
+- Get all networks _appliance _traffic _shaping _custom _performance _classes.
+- Get networks _appliance _traffic _shaping _custom _performance _classes by id.
+- List all custom performance classes for an MX network.
+- Return a custom performance class for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - CustomPerformanceClassId path parameter. Custom performance class ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingCustomPerformanceClass
-    description: Complete reference of the getNetworkApplianceTrafficShapingCustomPerformanceClass API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-custom-performance-class
+- name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingCustomPerformanceClass
+  description: Complete reference of the getNetworkApplianceTrafficShapingCustomPerformanceClass API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-custom-performance-class
 - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingCustomPerformanceClasses
-    description: Complete reference of the getNetworkApplianceTrafficShapingCustomPerformanceClasses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-custom-performance-classes
+  description: Complete reference of the getNetworkApplianceTrafficShapingCustomPerformanceClasses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-custom-performance-classes
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_traffic_shaping_custom_performance_class,

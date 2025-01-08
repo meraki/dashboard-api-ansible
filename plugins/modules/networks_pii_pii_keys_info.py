@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_pii_pii_keys_info
 short_description: Information module for networks _pii _pii _keys
 description:
-  - Get all networks _pii _pii _keys.
-  - >
+- Get all networks _pii _pii _keys.
+- >
    List the keys required to access Personally Identifiable Information PII for a given identifier. Exactly one
    identifier will be accepted. If the organization contains org-wide Systems Manager users matching the key provided
    then there will be an entry with the key "0" containing the applicable keys.
@@ -51,12 +51,12 @@ options:
     - BluetoothMac query parameter. The MAC of a Bluetooth client.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks getNetworkPiiPiiKeys
-    description: Complete reference of the getNetworkPiiPiiKeys API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-pii-keys
+- name: Cisco Meraki documentation for networks getNetworkPiiPiiKeys
+  description: Complete reference of the getNetworkPiiPiiKeys API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-pii-pii-keys
 notes:
   - SDK Method used are
     networks.Networks.get_network_pii_pii_keys,

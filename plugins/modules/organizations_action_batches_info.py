@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_action_batches_info
 short_description: Information module for organizations _action _batches
 description:
-  - Get all organizations _action _batches.
-  - Get organizations _action _batches by id.
-  - Return an action batch.
-  - Return the list of action batches in the organization.
+- Get all organizations _action _batches.
+- Get organizations _action _batches by id.
+- Return an action batch.
+- Return the list of action batches in the organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -34,15 +34,15 @@ options:
     - ActionBatchId path parameter. Action batch ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationActionBatch
-    description: Complete reference of the getOrganizationActionBatch API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batch
+- name: Cisco Meraki documentation for organizations getOrganizationActionBatch
+  description: Complete reference of the getOrganizationActionBatch API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batch
 - name: Cisco Meraki documentation for organizations getOrganizationActionBatches
-    description: Complete reference of the getOrganizationActionBatches API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batches
+  description: Complete reference of the getOrganizationActionBatches API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batches
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_action_batch,

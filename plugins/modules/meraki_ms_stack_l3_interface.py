@@ -18,9 +18,9 @@ DOCUMENTATION = r'''
 module: meraki_ms_stack_l3_interface
 short_description: Manage routed interfaces on MS switches
 description:
-  - Allows for creation, management, and visibility into routed interfaces on Meraki MS switches.
+- Allows for creation, management, and visibility into routed interfaces on Meraki MS switches.
 notes:
-  - Once a layer 3 interface is created, the API does not allow updating the interface and specifying C(default_gateway).
+- Once a layer 3 interface is created, the API does not allow updating the interface and specifying C(default_gateway).
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -96,7 +96,7 @@ options:
                 - When enabled, OSPF will not run on the interface, but the subnet will still be advertised.
                 type: bool
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

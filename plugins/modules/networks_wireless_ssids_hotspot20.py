@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_hotspot20
 short_description: Resource module for networks _wireless _ssids _hotspot20
 description:
-  - Manage operation update of the resource networks _wireless _ssids _hotspot20.
-  - Update the Hotspot 2.0 settings of an SSID.
+- Manage operation update of the resource networks _wireless _ssids _hotspot20.
+- Update the Hotspot 2.0 settings of an SSID.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -114,12 +114,12 @@ options:
         type: str
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidHotspot20
-    description: Complete reference of the updateNetworkWirelessSsidHotspot20 API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-hotspot20
+- name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidHotspot20
+  description: Complete reference of the updateNetworkWirelessSsidHotspot20 API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-hotspot20
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_ssid_hotspot20,

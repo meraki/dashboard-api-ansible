@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info
 short_description: Information module for networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device
 description:
-  - Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device.
-  - Return the devices that have a Dynamic ARP Inspection warning and their warnings.
+- Get all networks _switch _dhcp _server _policy _arp _inspection _warnings _by _device.
+- Return the devices that have a Dynamic ARP Inspection warning and their warnings.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -43,12 +43,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
-    description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-warnings-by-device
+- name: Cisco Meraki documentation for switch getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
+  description: Complete reference of the getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-dhcp-server-policy-arp-inspection-warnings-by-device
 notes:
   - SDK Method used are
     switch.Switch.get_network_switch_dhcp_server_policy_arp_inspection_warnings_by_device,

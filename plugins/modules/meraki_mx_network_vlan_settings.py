@@ -19,7 +19,7 @@ DOCUMENTATION = r"""
 module: meraki_mx_network_vlan_settings
 short_description: Manage VLAN settings for Meraki Networks
 description:
-  - Edits VLAN enabled status on a network within Meraki.
+- Edits VLAN enabled status on a network within Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality

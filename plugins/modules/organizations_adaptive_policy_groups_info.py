@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_adaptive_policy_groups_info
 short_description: Information module for organizations _adaptive _policy _groups
 description:
-  - Get all organizations _adaptive _policy _groups.
-  - Get organizations _adaptive _policy _groups by id.
-  - List adaptive policy groups in a organization.
-  - Returns an adaptive policy group.
+- Get all organizations _adaptive _policy _groups.
+- Get organizations _adaptive _policy _groups by id.
+- List adaptive policy groups in a organization.
+- Returns an adaptive policy group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - Id path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyGroup
-    description: Complete reference of the getOrganizationAdaptivePolicyGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-group
+- name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyGroup
+  description: Complete reference of the getOrganizationAdaptivePolicyGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-group
 - name: Cisco Meraki documentation for organizations getOrganizationAdaptivePolicyGroups
-    description: Complete reference of the getOrganizationAdaptivePolicyGroups API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-groups
+  description: Complete reference of the getOrganizationAdaptivePolicyGroups API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-groups
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_adaptive_policy_group,

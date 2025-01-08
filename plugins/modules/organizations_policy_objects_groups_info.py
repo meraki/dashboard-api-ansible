@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_policy_objects_groups_info
 short_description: Information module for organizations _policy _objects _groups
 description:
-  - Get all organizations _policy _objects _groups.
-  - Get organizations _policy _objects _groups by id.
-  - Lists Policy Object Groups belonging to the organization.
-  - Shows details of a Policy Object Group.
+- Get all organizations _policy _objects _groups.
+- Get organizations _policy _objects _groups by id.
+- Lists Policy Object Groups belonging to the organization.
+- Shows details of a Policy Object Group.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -49,15 +49,15 @@ options:
     - PolicyObjectGroupId path parameter. Policy object group ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroup
-    description: Complete reference of the getOrganizationPolicyObjectsGroup API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-group
+- name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroup
+  description: Complete reference of the getOrganizationPolicyObjectsGroup API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-group
 - name: Cisco Meraki documentation for organizations getOrganizationPolicyObjectsGroups
-    description: Complete reference of the getOrganizationPolicyObjectsGroups API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-groups
+  description: Complete reference of the getOrganizationPolicyObjectsGroups API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-policy-objects-groups
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_policy_objects_group,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments_by_network_info
 short_description: Information module for organizations _sm _sentry _policies _assignments _by _network
 description:
-  - Get all organizations _sm _sentry _policies _assignments _by _network.
-  - List the Sentry Policies for an organization ordered in ascending order of priority.
+- Get all organizations _sm _sentry _policies _assignments _by _network.
+- List the Sentry Policies for an organization ordered in ascending order of priority.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -48,12 +48,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getOrganizationSmSentryPoliciesAssignmentsByNetwork
-    description: Complete reference of the getOrganizationSmSentryPoliciesAssignmentsByNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-sentry-policies-assignments-by-network
+- name: Cisco Meraki documentation for sm getOrganizationSmSentryPoliciesAssignmentsByNetwork
+  description: Complete reference of the getOrganizationSmSentryPoliciesAssignmentsByNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-sentry-policies-assignments-by-network
 notes:
   - SDK Method used are
     sm.Sm.get_organization_sm_sentry_policies_assignments_by_network,

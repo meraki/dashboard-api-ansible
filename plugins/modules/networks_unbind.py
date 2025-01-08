@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_unbind
 short_description: Resource module for networks _unbind
 description:
-  - Manage operation create of the resource networks _unbind.
-  - Unbind a network from a template.
+- Manage operation create of the resource networks _unbind.
+- Unbind a network from a template.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -23,12 +23,12 @@ options:
     description: Optional boolean to retain all the current configs given by the template.
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for networks unbindNetwork
-    description: Complete reference of the unbindNetwork API.
-    link: https://developer.cisco.com/meraki/api-v1/#!unbind-network
+- name: Cisco Meraki documentation for networks unbindNetwork
+  description: Complete reference of the unbindNetwork API.
+  link: https://developer.cisco.com/meraki/api-v1/#!unbind-network
 notes:
   - SDK Method used are
     networks.Networks.unbind_network,

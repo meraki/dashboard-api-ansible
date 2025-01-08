@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_switch_alternate_management_interface
 short_description: Resource module for networks _switch _alternate _management _interface
 description:
-  - Manage operation update of the resource networks _switch _alternate _management _interface.
-  - Update the switch alternate management interface for the network.
+- Manage operation update of the resource networks _switch _alternate _management _interface.
+- Update the switch alternate management interface for the network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -54,12 +54,12 @@ options:
     description: Alternate management VLAN, must be between 1 and 4094.
     type: int
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for switch updateNetworkSwitchAlternateManagementInterface
-    description: Complete reference of the updateNetworkSwitchAlternateManagementInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-alternate-management-interface
+- name: Cisco Meraki documentation for switch updateNetworkSwitchAlternateManagementInterface
+  description: Complete reference of the updateNetworkSwitchAlternateManagementInterface API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-alternate-management-interface
 notes:
   - SDK Method used are
     switch.Switch.update_network_switch_alternate_management_interface,

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_inventory_release
 short_description: Resource module for organizations _inventory _release
 description:
-  - Manage operation create of the resource organizations _inventory _release.
-  - Release a list of claimed devices from an organization.
+- Manage operation create of the resource organizations _inventory _release.
+- Release a list of claimed devices from an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,12 +24,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations releaseFromOrganizationInventory
-    description: Complete reference of the releaseFromOrganizationInventory API.
-    link: https://developer.cisco.com/meraki/api-v1/#!release-from-organization-inventory
+- name: Cisco Meraki documentation for organizations releaseFromOrganizationInventory
+  description: Complete reference of the releaseFromOrganizationInventory API.
+  link: https://developer.cisco.com/meraki/api-v1/#!release-from-organization-inventory
 notes:
   - SDK Method used are
     organizations.Organizations.release_from_organization_inventory,

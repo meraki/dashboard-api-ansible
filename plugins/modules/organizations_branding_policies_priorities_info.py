@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_branding_policies_priorities_info
 short_description: Information module for organizations _branding _policies _priorities
 description:
-  - Get all organizations _branding _policies _priorities.
-  - >
+- Get all organizations _branding _policies _priorities.
+- >
    Return the branding policy IDs of an organization in priority order. IDs are ordered in ascending order of
    priority IDs later in the array have higher priority .
 version_added: '2.16.0'
@@ -26,12 +26,12 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganizationBrandingPoliciesPriorities
-    description: Complete reference of the getOrganizationBrandingPoliciesPriorities API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies-priorities
+- name: Cisco Meraki documentation for organizations getOrganizationBrandingPoliciesPriorities
+  description: Complete reference of the getOrganizationBrandingPoliciesPriorities API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies-priorities
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_branding_policies_priorities,

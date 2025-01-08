@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: devices_cellular_gateway_lan
 short_description: Resource module for devices _cellular _gateway _lan
 description:
-  - Manage operation update of the resource devices _cellular _gateway _lan.
-  - Update the LAN Settings for a single MG.
+- Manage operation update of the resource devices _cellular _gateway _lan.
+- Update the LAN Settings for a single MG.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -49,12 +49,12 @@ options:
     description: Serial path parameter.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayLan
-    description: Complete reference of the updateDeviceCellularGatewayLan API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-lan
+- name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayLan
+  description: Complete reference of the updateDeviceCellularGatewayLan API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-lan
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.update_device_cellular_gateway_lan,
@@ -88,13 +88,13 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     fixedIpAssignments:
-      - ip: 192.168.0.10
-        mac: 0b:00:00:00:00:ac
-        name: server 1
+    - ip: 192.168.0.10
+      mac: 0b:00:00:00:00:ac
+      name: server 1
     reservedIpRanges:
-      - comment: A reserved IP range
-        end: 192.168.1.1
-        start: 192.168.1.0
+    - comment: A reserved IP range
+      end: 192.168.1.1
+      start: 192.168.1.0
     serial: string
 
 """

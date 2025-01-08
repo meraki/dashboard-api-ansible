@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_vlans_settings
 short_description: Resource module for networks _appliance _vlans _settings
 description:
-  - Manage operation update of the resource networks _appliance _vlans _settings.
-  - Enable/Disable VLANs for the given network.
+- Manage operation update of the resource networks _appliance _vlans _settings.
+- Enable/Disable VLANs for the given network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,12 +24,12 @@ options:
       for the network.
     type: bool
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance updateNetworkApplianceVlansSettings
-    description: Complete reference of the updateNetworkApplianceVlansSettings API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlans-settings
+- name: Cisco Meraki documentation for appliance updateNetworkApplianceVlansSettings
+  description: Complete reference of the updateNetworkApplianceVlansSettings API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlans-settings
 notes:
   - SDK Method used are
     appliance.Appliance.update_network_appliance_vlans_settings,

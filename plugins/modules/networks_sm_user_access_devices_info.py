@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_sm_user_access_devices_info
 short_description: Information module for networks _sm _user _access _devices
 description:
-  - Get all networks _sm _user _access _devices.
-  - List User Access Devices and its Trusted Access Connections.
+- Get all networks _sm _user _access _devices.
+- List User Access Devices and its Trusted Access Connections.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -43,12 +43,12 @@ options:
       applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getNetworkSmUserAccessDevices
-    description: Complete reference of the getNetworkSmUserAccessDevices API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-access-devices
+- name: Cisco Meraki documentation for sm getNetworkSmUserAccessDevices
+  description: Complete reference of the getNetworkSmUserAccessDevices API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-access-devices
 notes:
   - SDK Method used are
     sm.Sm.get_network_sm_user_access_devices,

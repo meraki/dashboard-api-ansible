@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_admins
 short_description: Resource module for organizations _admins
 description:
-  - Manage operations create, update and delete of the resource organizations _admins.
-  - Create a new dashboard administrator.
-  - Revoke all access for a dashboard administrator within this organization.
-  - Update an administrator.
+- Manage operations create, update and delete of the resource organizations _admins.
+- Create a new dashboard administrator.
+- Revoke all access for a dashboard administrator within this organization.
+- Update an administrator.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -65,18 +65,18 @@ options:
         type: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations createOrganizationAdmin
-    description: Complete reference of the createOrganizationAdmin API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-admin
+- name: Cisco Meraki documentation for organizations createOrganizationAdmin
+  description: Complete reference of the createOrganizationAdmin API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-organization-admin
 - name: Cisco Meraki documentation for organizations deleteOrganizationAdmin
-    description: Complete reference of the deleteOrganizationAdmin API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-admin
+  description: Complete reference of the deleteOrganizationAdmin API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-admin
 - name: Cisco Meraki documentation for organizations updateOrganizationAdmin
-    description: Complete reference of the updateOrganizationAdmin API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-admin
+  description: Complete reference of the updateOrganizationAdmin API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-organization-admin
 notes:
   - SDK Method used are
     organizations.Organizations.create_organization_admin,

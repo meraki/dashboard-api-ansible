@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_snmp
 short_description: Manage organizations in the Meraki cloud
 description:
-  - Allows for management of SNMP settings for Meraki.
+- Allows for management of SNMP settings for Meraki.
 deprecated:
   removed_in: '3.0.0'
   why: Updated modules released with increased functionality
@@ -95,7 +95,7 @@ options:
                 description: Passphrase for user SNMP access.
                 type: str
 author:
-  - Kevin Breit (@kbreit)
+- Kevin Breit (@kbreit)
 extends_documentation_fragment: cisco.meraki.meraki
 '''
 

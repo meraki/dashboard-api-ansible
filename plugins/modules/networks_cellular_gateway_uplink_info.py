@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_cellular_gateway_uplink_info
 short_description: Information module for networks _cellular _gateway _uplink
 description:
-  - Get all networks _cellular _gateway _uplink.
-  - Returns the uplink settings for your MG network.
+- Get all networks _cellular _gateway _uplink.
+- Returns the uplink settings for your MG network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewayUplink
-    description: Complete reference of the getNetworkCellularGatewayUplink API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-uplink
+- name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewayUplink
+  description: Complete reference of the getNetworkCellularGatewayUplink API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-uplink
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.get_network_cellular_gateway_uplink,

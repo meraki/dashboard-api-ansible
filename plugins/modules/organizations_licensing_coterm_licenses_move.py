@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_licensing_coterm_licenses_move
 short_description: Resource module for organizations _licensing _coterm _licenses _move
 description:
-  - Manage operation create of the resource organizations _licensing _coterm _licenses _move.
-  - Moves a license to a different organization coterm only .
+- Manage operation create of the resource organizations _licensing _coterm _licenses _move.
+- Moves a license to a different organization coterm only .
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -49,12 +49,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for licensing moveOrganizationLicensingCotermLicenses
-    description: Complete reference of the moveOrganizationLicensingCotermLicenses API.
-    link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licensing-coterm-licenses
+- name: Cisco Meraki documentation for licensing moveOrganizationLicensingCotermLicenses
+  description: Complete reference of the moveOrganizationLicensingCotermLicenses API.
+  link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licensing-coterm-licenses
 notes:
   - SDK Method used are
     licensing.Licensing.move_organization_licensing_coterm_licenses,

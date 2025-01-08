@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles
 short_description: Resource module for networks _camera _quality _retention _profiles
 description:
-  - Manage operations create, update and delete of the resource networks _camera _quality _retention _profiles.
-  - Creates new quality retention profile for this network.
-  - Delete an existing quality retention profile for this network.
-  - Update an existing quality retention profile for this network.
+- Manage operations create, update and delete of the resource networks _camera _quality _retention _profiles.
+- Creates new quality retention profile for this network.
+- Delete an existing quality retention profile for this network.
+- Update an existing quality retention profile for this network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -332,18 +332,18 @@ options:
         type: dict
     type: dict
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for camera createNetworkCameraQualityRetentionProfile
-    description: Complete reference of the createNetworkCameraQualityRetentionProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-quality-retention-profile
+- name: Cisco Meraki documentation for camera createNetworkCameraQualityRetentionProfile
+  description: Complete reference of the createNetworkCameraQualityRetentionProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!create-network-camera-quality-retention-profile
 - name: Cisco Meraki documentation for camera deleteNetworkCameraQualityRetentionProfile
-    description: Complete reference of the deleteNetworkCameraQualityRetentionProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-quality-retention-profile
+  description: Complete reference of the deleteNetworkCameraQualityRetentionProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!delete-network-camera-quality-retention-profile
 - name: Cisco Meraki documentation for camera updateNetworkCameraQualityRetentionProfile
-    description: Complete reference of the updateNetworkCameraQualityRetentionProfile API.
-    link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-quality-retention-profile
+  description: Complete reference of the updateNetworkCameraQualityRetentionProfile API.
+  link: https://developer.cisco.com/meraki/api-v1/#!update-network-camera-quality-retention-profile
 notes:
   - SDK Method used are
     camera.Camera.create_network_camera_quality_retention_profile,

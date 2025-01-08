@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_info
 short_description: Information module for organizations
 description:
-  - Get all organizations.
-  - Get organizations by id.
-  - List the organizations that the user has privileges on.
-  - Return an organization.
+- Get all organizations.
+- Get organizations by id.
+- List the organizations that the user has privileges on.
+- Return an organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -45,15 +45,15 @@ options:
     - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for organizations getOrganization
-    description: Complete reference of the getOrganization API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization
+- name: Cisco Meraki documentation for organizations getOrganization
+  description: Complete reference of the getOrganization API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization
 - name: Cisco Meraki documentation for organizations getOrganizations
-    description: Complete reference of the getOrganizations API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organizations
+  description: Complete reference of the getOrganizations API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organizations
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization,

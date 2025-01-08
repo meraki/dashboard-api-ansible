@@ -18,7 +18,7 @@ DOCUMENTATION = r'''
 module: meraki_firewalled_services
 short_description: Edit firewall policies for administrative network services
 description:
-  - Allows for setting policy firewalled services for Meraki network devices.
+- Allows for setting policy firewalled services for Meraki network devices.
 
 deprecated:
   removed_in: '3.0.0'

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_info
 short_description: Information module for networks _appliance _traffic _shaping
 description:
-  - Get all networks _appliance _traffic _shaping.
-  - Display the traffic shaping settings for an MX network.
+- Get all networks _appliance _traffic _shaping.
+- Display the traffic shaping settings for an MX network.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,12 +24,12 @@ options:
     - NetworkId path parameter. Network ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShaping
-    description: Complete reference of the getNetworkApplianceTrafficShaping API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping
+- name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShaping
+  description: Complete reference of the getNetworkApplianceTrafficShaping API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping
 notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_traffic_shaping,

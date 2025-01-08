@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_wireless_rf_profiles_assignments_by_device_info
 short_description: Information module for organizations _wireless _rf _profiles _assignments _by _device
 description:
-  - Get all organizations _wireless _rf _profiles _assignments _by _device.
-  - List the RF profiles of an organization by device.
+- Get all organizations _wireless _rf _profiles _assignments _by _device.
+- List the RF profiles of an organization by device.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -101,12 +101,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for wireless getOrganizationWirelessRfProfilesAssignmentsByDevice
-    description: Complete reference of the getOrganizationWirelessRfProfilesAssignmentsByDevice API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-rf-profiles-assignments-by-device
+- name: Cisco Meraki documentation for wireless getOrganizationWirelessRfProfilesAssignmentsByDevice
+  description: Complete reference of the getOrganizationWirelessRfProfilesAssignmentsByDevice API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-rf-profiles-assignments-by-device
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_rf_profiles_assignments_by_device,

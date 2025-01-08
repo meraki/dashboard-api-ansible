@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts_rate_plans_info
 short_description: Information module for organizations _cellular _gateway _esims _service _providers _accounts _rate _plans
 description:
-  - Get all organizations _cellular _gateway _esims _service _providers _accounts _rate _plans.
-  - The rate plans available for a given provider.
+- Get all organizations _cellular _gateway _esims _service _providers _accounts _rate _plans.
+- The rate plans available for a given provider.
 version_added: '2.20.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -29,12 +29,12 @@ options:
     elements: str
     type: list
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans
-    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts-rate-plans
+- name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans
+  description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts-rate-plans
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.get_organization_cellular_gateway_esims_service_providers_accounts_rate_plans,

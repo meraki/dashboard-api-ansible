@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: organizations_sm_vpp_accounts_info
 short_description: Information module for organizations _sm _vpp _accounts
 description:
-  - Get all organizations _sm _vpp _accounts.
-  - Get organizations _sm _vpp _accounts by id.
-  - Get a hash containing the unparsed token of the VPP account with the given ID.
-  - List the VPP accounts in the organization.
+- Get all organizations _sm _vpp _accounts.
+- Get organizations _sm _vpp _accounts by id.
+- Get a hash containing the unparsed token of the VPP account with the given ID.
+- List the VPP accounts in the organization.
 version_added: '2.16.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -30,15 +30,15 @@ options:
     - VppAccountId path parameter. Vpp account ID.
     type: str
 requirements:
-  - meraki >= 2.4.9
-  - python >= 3.5
+- meraki >= 2.4.9
+- python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for sm getOrganizationSmVppAccount
-    description: Complete reference of the getOrganizationSmVppAccount API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-vpp-account
+- name: Cisco Meraki documentation for sm getOrganizationSmVppAccount
+  description: Complete reference of the getOrganizationSmVppAccount API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-vpp-account
 - name: Cisco Meraki documentation for sm getOrganizationSmVppAccounts
-    description: Complete reference of the getOrganizationSmVppAccounts API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-vpp-accounts
+  description: Complete reference of the getOrganizationSmVppAccounts API.
+  link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-vpp-accounts
 notes:
   - SDK Method used are
     sm.Sm.get_organization_sm_vpp_account,
