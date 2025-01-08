@@ -10,7 +10,7 @@
         state: present
         name: New network by Ansible
         notes: Additional description of the network
-        organizationId: '{{ org_id }}'
+        organizationId: "{{ org_id }}"
         productTypes:
           - appliance
           - switch

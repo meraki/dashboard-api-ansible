@@ -8,4 +8,4 @@
       register: result
     - name: Show Results
       ansible.builtin.debug:
-        msg: '{{ result }}'
+        msg: "{{ result }}"

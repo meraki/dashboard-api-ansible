@@ -6,16 +6,16 @@
   tasks:
     - name: Get all networks _appliance _vlans
       cisco.meraki.networks_appliance_vlans_info:
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
       register: result
     - name: Update appliance Vlans
       cisco.meraki.networks_appliance_vlans:
         state: present
         applianceIp: 192.168.1.2
         cidr: 192.168.1.0/24
-        id: '1234'
+        id: "1234"
         name: My VLAN
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
         subnet: 192.168.1.0/24
     - name: Update appliance SSID
       cisco.meraki.networks_appliance_ssids:
@@ -25,7 +25,7 @@
         defaultVlanId: 10
         enabled: true
         name: My SSID
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
         number: 1234
         radiusServers:
           - host: 1.2.3.4
@@ -39,19 +39,19 @@
         globalBandwidthLimits:
           limitDown: 5120
           limitUp: 2048
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
     - name: Update appliance ports
       cisco.meraki.networks_appliance_ports:
         allowedVlans: all
         enabled: true
-        networkId: '{{ network_id }}'
-        portId: '4'
+        networkId: "{{ network_id }}"
+        portId: "4"
         type: trunk
         vlan: 10
         state: present
     - name: Create FW outbound L3 rules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules:
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
         state: present
         rules:
           - comment: Block internetbadguys.com
@@ -63,11 +63,11 @@
             syslogEnabled: false
     - name: Create FW inbound L3 rules
       cisco.meraki.networks_appliance_firewall_inbound_firewall_rules:
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
         rules:
           - comment: Allow HTTP traffic to VLAN 1234 with HTTP servers.
             destCidr: VLAN(1234).*
-            destPort: '80'
+            destPort: "80"
             policy: allow
             protocol: tcp
             srcCidr: Any
@@ -75,7 +75,7 @@
             syslogEnabled: false
     - name: Create FW L7 rules
       cisco.meraki.networks_appliance_firewall_l7_firewall_rules:
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
         rules:
           - policy: deny
             type: applicationCategory
@@ -84,8 +84,8 @@
               id: meraki:layer7/category/5
     - name: Get all networks _appliance _firewall l3firewallrules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules_info:
-        networkId: '{{ network_id }}'
+        networkId: "{{ network_id }}"
       register: result
     - name: Show result
       ansible.builtin.debug:
-        msg: '{{ result }}'
+        msg: "{{ result }}"

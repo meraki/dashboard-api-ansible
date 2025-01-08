@@ -8,4 +8,4 @@
       register: result
     - name: Show current Meraki administrator
       ansible.builtin.debug:
-        msg: '{{ result | json_query(''meraki_response[*].name'') }}'
+        msg: "{{ result | json_query('meraki_response[*].name') }}"

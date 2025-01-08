@@ -6,15 +6,15 @@
   tasks:
     - name: Get security login settings
       cisco.meraki.organizations_login_security_info:
-        organizationId: '{{ org_id }}'
+        organizationId: "{{ org_id }}"
       register: result
     - name: Show result
       ansible.builtin.debug:
-        msg: '{{ result }}'
+        msg: "{{ result }}"
     - name: Update security login settings
       cisco.meraki.organizations_login_security:
         meraki_suppress_logging: false
-        organizationId: '{{ org_id }}'
+        organizationId: "{{ org_id }}"
         state: present
         accountLockoutAttempts: 3
         enforceIdleTimeout: true

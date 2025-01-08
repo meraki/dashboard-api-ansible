@@ -8,5 +8,5 @@
         mac: 4c:c8:a1:01:01:c2
         perPage: 3
         total_pages: -1
-        organizationId: '828099381482762270'
+        organizationId: "828099381482762270"
       register: result

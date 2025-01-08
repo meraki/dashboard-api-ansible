@@ -9,7 +9,7 @@
         management:
           details:
             - name: MSP ID
-              value: '1234567'
+              value: "1234567"
         name: Test Ansible
         api:
           enabled: true

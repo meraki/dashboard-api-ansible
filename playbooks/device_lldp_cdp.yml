@@ -6,8 +6,8 @@
   tasks:
     - name: Get device's LLDP and CDP neighbors
       cisco.meraki.devices_lldp_cdp_info:
-        serial: '{{ sn }}'
+        serial: "{{ sn }}"
       register: result
     - name: Show result
       ansible.builtin.debug:
-        msg: '{{ result }}'
+        msg: "{{ result }}"

@@ -7,5 +7,5 @@
         meraki_suppress_logging: true
         state: present
         name: My config template
-        organizationId: '828099381482762270'
+        organizationId: "828099381482762270"
         timeZone: America/Los_Angeles

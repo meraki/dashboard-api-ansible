@@ -11,9 +11,9 @@
     - name: Change DNS management information
       cisco.meraki.devices_management_interface:
         state: present
-        serial: '{{ item.value.serial_no }}'
+        serial: "{{ item.value.serial_no }}"
         wan1:
           staticDns:
             - 192.168.20.2
             - 8.8.8.8
-      loop: '{{ lookup(''dict'', devices) }}'
+      loop: "{{ lookup('dict', devices) }}"

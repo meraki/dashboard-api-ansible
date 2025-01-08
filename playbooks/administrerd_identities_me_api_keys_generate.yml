@@ -10,4 +10,4 @@
         name: devices
     - name: Create
       cisco.meraki.administered_identities_me_api_keys_generate:
-        meraki_suppress_logging: 'false'
+        meraki_suppress_logging: "false"
