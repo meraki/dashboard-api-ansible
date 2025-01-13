@@ -79,7 +79,7 @@ class NetworksApplianceVlansSettings(object):
             )
             if isinstance(items, dict):
                 if 'vlansEnabled' in items:
-                    items = items.get('vlansEnabled')
+                    items = { "vlansEnabled": items.get('vlansEnabled') }
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
