@@ -77,9 +77,6 @@ class NetworksApplianceVlansSettings(object):
                 function="getNetworkApplianceVlansSettings",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'vlansEnabled' in items:
-                    items = { "vlansEnabled": items.get('vlansEnabled') }
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
