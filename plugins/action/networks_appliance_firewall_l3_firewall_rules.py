@@ -83,9 +83,6 @@ class NetworksApplianceFirewallL3FirewallRules(object):
                 function="getNetworkApplianceFirewallL3FirewallRules",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'rules' in items:
-                    items = items.get('rules')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
