@@ -1,4 +1,3 @@
-
 - name: Update all
   hosts: localhost
   vars:
@@ -6,7 +5,7 @@
     serial_number: QBSB-D5ZD-9CXT
   gather_facts: false
   tasks:
-    - name: networks_appliance_traffic_shaping_rules
+    - name: Networks_appliance_traffic_shaping_rules
       cisco.meraki.networks_appliance_traffic_shaping_rules:
         state: present
         defaultRulesEnabled: true
