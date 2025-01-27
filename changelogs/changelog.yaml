@@ -1172,6 +1172,8 @@ releases:
     changes:
       bugfixes:
         - cisco.meraki.networks_devices_claim failed with error unexpected keyword argument 'add_atomically' - bad naming solved.
-        - cisco.meraki.networks_appliance_firewall_l3_firewall_rules fails with "Unexpected failure during module execution 'rules' - specific 'rules' extraction has been removed.
-        - cisco.meraki.networks_appliance_vlans_settings fails with "msg" "Object does not exists, plugin only has update" - specific 'vlansEnabled' extraction has been removed.
+        - cisco.meraki.networks_appliance_firewall_l3_firewall_rules fails with "Unexpected failure 
+          during module execution 'rules' - specific 'rules' extraction has been removed.
+        - cisco.meraki.networks_appliance_vlans_settings fails with "msg" "Object does not exists, 
+          plugin only has update" - specific 'vlansEnabled' extraction has been removed.
     release_date: "2025-01-08"
