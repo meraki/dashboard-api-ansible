@@ -1177,3 +1177,8 @@ releases:
         - cisco.meraki.networks_appliance_vlans_settings fails with "msg" "Object does not exists,
           plugin only has update" - specific 'vlansEnabled' extraction has been removed.
     release_date: "2025-01-08"
+  2.20.6:
+    changes:
+      bugfixes:
+        - cisco.meraki.devices_switch_ports idempotency error fixed.
+    release_date: "2025-02-06"

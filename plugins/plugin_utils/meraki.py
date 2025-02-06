@@ -229,7 +229,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller="MerakiAnsibleCollection/2.20.5 Cisco",
+                caller="MerakiAnsibleCollection/2.20.6 Cisco",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(
