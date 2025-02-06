@@ -20,7 +20,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -141,9 +141,11 @@ class DevicesSwitchPorts(object):
         if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
         if self.new_object.get('flexibleStackingEnabled') is not None or self.new_object.get('flexible_stacking_enabled') is not None:
-            new_object_params['flexibleStackingEnabled'] = self.new_object.get('flexibleStackingEnabled')
+            new_object_params['flexibleStackingEnabled'] = self.new_object.get(
+                'flexibleStackingEnabled')
         if self.new_object.get('isolationEnabled') is not None or self.new_object.get('isolation_enabled') is not None:
-            new_object_params['isolationEnabled'] = self.new_object.get('isolationEnabled')
+            new_object_params['isolationEnabled'] = self.new_object.get(
+                'isolationEnabled')
         if self.new_object.get('linkNegotiation') is not None or self.new_object.get('link_negotiation') is not None:
             new_object_params['linkNegotiation'] = self.new_object.get('linkNegotiation') or \
                 self.new_object.get('link_negotiation')
@@ -154,7 +156,8 @@ class DevicesSwitchPorts(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('peerSgtCapable') is not None or self.new_object.get('peer_sgt_capable') is not None:
-            new_object_params['peerSgtCapable'] = self.new_object.get('peerSgtCapable')
+            new_object_params['peerSgtCapable'] = self.new_object.get(
+                'peerSgtCapable')
         if self.new_object.get('poeEnabled') is not None or self.new_object.get('poe_enabled') is not None:
             new_object_params['poeEnabled'] = self.new_object.get('poeEnabled')
         if self.new_object.get('portScheduleId') is not None or self.new_object.get('port_schedule_id') is not None:
@@ -164,7 +167,8 @@ class DevicesSwitchPorts(object):
             new_object_params['profile'] = self.new_object.get('profile') or \
                 self.new_object.get('profile')
         if self.new_object.get('rstpEnabled') is not None or self.new_object.get('rstp_enabled') is not None:
-            new_object_params['rstpEnabled'] = self.new_object.get('rstpEnabled')
+            new_object_params['rstpEnabled'] = self.new_object.get(
+                'rstpEnabled')
         if self.new_object.get('stickyMacAllowList') is not None or self.new_object.get('sticky_mac_allow_list') is not None:
             new_object_params['stickyMacAllowList'] = self.new_object.get('stickyMacAllowList') or \
                 self.new_object.get('sticky_mac_allow_list')
@@ -172,7 +176,8 @@ class DevicesSwitchPorts(object):
             new_object_params['stickyMacAllowListLimit'] = self.new_object.get('stickyMacAllowListLimit') or \
                 self.new_object.get('sticky_mac_allow_list_limit')
         if self.new_object.get('stormControlEnabled') is not None or self.new_object.get('storm_control_enabled') is not None:
-            new_object_params['stormControlEnabled'] = self.new_object.get('stormControlEnabled')
+            new_object_params['stormControlEnabled'] = self.new_object.get(
+                'stormControlEnabled')
         if self.new_object.get('stpGuard') is not None or self.new_object.get('stp_guard') is not None:
             new_object_params['stpGuard'] = self.new_object.get('stpGuard') or \
                 self.new_object.get('stp_guard')
@@ -295,13 +300,13 @@ class DevicesSwitchPorts(object):
             ("udld", "udld"),
             ("vlan", "vlan"),
             ("voiceVlan", "voiceVlan"),
-            ("serial", "serial"),
+            # ("serial", "serial"),
             ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
+        return any(not meraki_compare_equality(current_obj.get(meraki_param),
+                                               requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
     def update(self):
