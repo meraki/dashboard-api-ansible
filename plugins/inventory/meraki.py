@@ -1,9 +1,13 @@
-from __future__ import (absolute_import, division, print_function)
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+from __future__ import absolute_import, division, print_function
 
 __metaclass__ = type
 
-DOCUMENTATION = '''
+DOCUMENTATION = """
 name: meraki
 author:
   - Nilashish Chakrabirty (@NilashishC)
@@ -28,41 +32,42 @@ options:
       - The organization ID to fetch the networks and devices from.
     type: str
     required: true
-'''
+"""
 
-EXAMPLES = '''
+EXAMPLES = """
 # cisco_meraki.yml
 ---
 plugin: cisco.meraki.meraki
-meraki_api_key: "a80f0b3fd8d5fc214faf67c8398b04a23574b48d"
-meraki_org_id: "828099381482762270"
+meraki_api_key: "<enter Meraki API key>"
+meraki_org_id: "<enter Meraki Org ID>"
 keyed_groups:
   # group devices based on network ID
   - prefix: meraki_network_id
-    key: meraki_network_id
+    key: network_id
   # group devices based on device type
   - prefix: meraki_device_type
-    key: meraki_device_type
+    key: device_type
   # group devices based on meraki device tag
   - prefix: meraki_tag
     key: tags
-'''
+"""
 
 from ansible.errors import AnsibleError
-from ansible.module_utils.common.text.converters import to_native
+from ansible.module_utils.common.text.converters import to_native, to_text
 from ansible.plugins.inventory import BaseInventoryPlugin, Constructable
 from ansible.module_utils.basic import missing_required_lib
 
 
 try:
     import meraki
+
     HAS_MERAKI = True
 except ImportError:
     HAS_MERAKI = False
 
 
 class InventoryModule(BaseInventoryPlugin, Constructable):
-    NAME = 'cisco.meraki.meraki'
+    NAME = "cisco.meraki.meraki"
 
     def verify_file(self, path):
         """return true/false if this is possibly a valid file for this plugin to consume"""
@@ -72,6 +77,15 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
             if path.endswith(("cisco_meraki.yaml", "cisco_meraki.yml")):
                 valid = True
         return valid
+
+    def _build_network_map(self, dashboard, org_id):
+        """Build a dictionary mapping network ID to network names."""
+        self._networks = {}
+        networks = dashboard.organizations.getOrganizationNetworks(
+            org_id, total_pages="all"
+        )
+        for network in networks:
+            self._networks[network["id"]] = to_text(network.get("name", ""))
 
     def parse(self, inventory, loader, path, cache=True):
         """Talk to the Meraki API and build the inventory."""
@@ -86,8 +100,8 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
         meraki_api_key = self.get_option("meraki_api_key")
         meraki_org_id = self.get_option("meraki_org_id")
 
-        strict = self.get_option('strict')
-        keyed_groups = self.get_option('keyed_groups')
+        strict = self.get_option("strict")
+        keyed_groups = self.get_option("keyed_groups")
 
         if not meraki_api_key:
             raise AnsibleError("`meraki_api_key` option is not set or is empty.")
@@ -96,29 +110,48 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
 
         dashboard = meraki.DashboardAPI(
             api_key=meraki_api_key.strip(),
-            base_url='https://api.meraki.com/api/v1/',
+            base_url="https://api.meraki.com/api/v1/",
             output_log=False,
-            print_console=False
+            print_console=False,
         )
         try:
-            devices = dashboard.organizations.getOrganizationDevices(meraki_org_id, total_pages='all')
-            for device in devices:
-                hostname = device.get('name')
-                if not hostname:
-                    self.display.warning(f"No name set for device with MAC {device['mac']}")
-                    hostname = device['mac']
-                self.inventory.add_host(hostname, group="all")
-                self.inventory.set_variable(hostname, 'ansible_host', device.get('lanIp', ""))
-                self.inventory.set_variable(hostname, 'meraki_device_type', device['model'])
-                self.inventory.set_variable(hostname, 'meraki_network_id', device['networkId'])
-                self.inventory.set_variable(hostname, 'mac', device['mac'])
+            devices = dashboard.organizations.getOrganizationDevices(
+                meraki_org_id, total_pages="all"
+            )
+            if devices:
+                self._build_network_map(dashboard, meraki_org_id)
 
-                # Add the host to the keyed groups
-                self._add_host_to_keyed_groups(
-                    keys=keyed_groups,
-                    variables=device,
-                    host=hostname,
-                    strict=strict
-                )
+                for device in devices:
+                    hostname = device.get("name")
+                    if not hostname:
+                        self.display.warning(
+                            f"No name set for device with MAC {device['mac']}"
+                        )
+                        hostname = device["mac"]
+                    self.inventory.add_host(hostname, group="all")
+                    self.inventory.set_variable(
+                        hostname, "ansible_host", device.get("lanIp", "")
+                    )
+                    self.inventory.set_variable(
+                        hostname, "device_type", device["model"]
+                    )
+                    self.inventory.set_variable(
+                        hostname, "network_id", device["networkId"]
+                    )
+                    self.inventory.set_variable(
+                        hostname, "network", self._networks[device["networkId"]]
+                    )
+                    self.inventory.set_variable(
+                        hostname, "serial_number", device["serial"]
+                    )
+                    self.inventory.set_variable(hostname, "mac", device["mac"])
+
+                    # Add the host to the keyed groups
+                    self._add_host_to_keyed_groups(
+                        keys=keyed_groups,
+                        variables=device,
+                        host=hostname,
+                        strict=strict,
+                    )
         except Exception as e:
             raise AnsibleError(f"Failed to get devices from Meraki API: {to_native(e)}")
