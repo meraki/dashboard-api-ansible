@@ -44,6 +44,9 @@ keyed_groups:
   # group devices based on network ID
   - prefix: meraki_network_id
     key: network_id
+  # group devices based on network name
+  - prefix: meraki_network
+    key: network
   # group devices based on device type
   - prefix: meraki_device_type
     key: device_type
@@ -129,12 +132,6 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                         )
                         hostname = device["mac"]
                     self.inventory.add_host(hostname, group="all")
-                    self.inventory.set_variable(
-                        hostname, "ansible_host", device.get("lanIp", "")
-                    )
-                    self.inventory.set_variable(
-                        hostname, "device_type", device["model"]
-                    )
 
                     if device.get("networkId"):
                         self.inventory.set_variable(
@@ -148,6 +145,20 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                         self.display.vvvv(
                             f"Device {hostname} is not associated with a network."
                         )
+
+                    if device.get("lanIp"):
+                        self.inventory.set_variable(
+                            hostname, "ansible_host", device["lanIp"]
+                        )
+                    else:
+                        self.display.warning(
+                            f"No lanIp found for device with {hostname}."
+                            " The `ansible_host` variable will not be set for this host."
+                        )
+
+                    self.inventory.set_variable(
+                        hostname, "device_type", device["model"]
+                    )
 
                     self.inventory.set_variable(
                         hostname, "serial_number", device["serial"]
