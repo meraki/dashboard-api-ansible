@@ -135,12 +135,20 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                     self.inventory.set_variable(
                         hostname, "device_type", device["model"]
                     )
-                    self.inventory.set_variable(
-                        hostname, "network_id", device["networkId"]
-                    )
-                    self.inventory.set_variable(
-                        hostname, "network", self._networks[device["networkId"]]
-                    )
+
+                    if device.get("networkId"):
+                        self.inventory.set_variable(
+                            hostname, "network_id", device["networkId"]
+                        )
+                        self.inventory.set_variable(
+                            hostname, "network",
+                            self._networks[device["networkId"]]
+                        )
+                    else:
+                        self.display.vvvv(
+                            f"Device {hostname} is not associated with a network."
+                        )
+
                     self.inventory.set_variable(
                         hostname, "serial_number", device["serial"]
                     )
