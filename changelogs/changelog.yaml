@@ -1182,3 +1182,10 @@ releases:
       bugfixes:
         - cisco.meraki.devices_switch_ports idempotency error fixed.
     release_date: "2025-02-06"
+  2.20.7:
+    changes:
+      bugfixes:
+        - cisco.meraki.networks_appliance_traffic_shaping_rules Always Pushes Configuration Even When Unchanged.
+        - Changes at compare equality function.
+        - Unable to create Syslog Server Object. Action module manually fixing.
+    release_date: "2025-02-11"

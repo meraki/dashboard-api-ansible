@@ -21,7 +21,6 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
-    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -31,7 +30,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present"]),
+    state=dict(type="str", default="present", choices=["present", "absent"]),
     servers=dict(type="list"),
     networkId=dict(type="str"),
 ))
@@ -78,10 +77,10 @@ class NetworksSyslogServers(object):
                 function="getNetworkSyslogServers",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'servers' in items:
-                    items = items.get('servers')
-            result = get_dict_result(items, 'name', name)
+            # if isinstance(items, dict):
+            #     if 'servers' in items:
+            #         items = items.get('servers')
+            # result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -94,11 +93,26 @@ class NetworksSyslogServers(object):
         # NOTE: Does not have a get by id method or it is in another action
         return result
 
+    def delete(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        par = self.update_all_params()
+        par["servers"] = []
+        result = self.meraki.exec_meraki(
+            family="networks",
+            function="updateNetworkSyslogServers",
+            params=par,
+            op_modifies=True,
+        )
+        return result
+
     def exists(self):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -121,7 +135,7 @@ class NetworksSyslogServers(object):
 
         obj_params = [
             ("servers", "servers"),
-            ("networkId", "networkId"),
+            # ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -192,8 +206,15 @@ class ActionModule(ActionBase):
                     response = prev_obj
                     meraki.object_already_present()
             else:
-                meraki.fail_json(
-                    "Object does not exists, plugin only has update")
+                response = obj.update()
+                meraki.object_created()
+        elif state == "absent":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists and len(prev_obj["servers"]) > 0:
+                response = obj.delete()
+                meraki.object_deleted()
+            else:
+                meraki.object_already_absent()
 
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())
