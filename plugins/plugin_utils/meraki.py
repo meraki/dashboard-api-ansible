@@ -38,6 +38,7 @@ def has_diff_elem(ls1, ls2):
         return True
     return any(elem not in ls1 for elem in ls2)
 
+
 def compare_dicts(dict1, dict2):
     """Compares two dictionaries considering the defined rules."""
     for key in dict1:
@@ -55,6 +56,7 @@ def compare_dicts(dict1, dict2):
                     return True
     return False
 
+
 def has_diff_elem2(ls1, ls2):
     """Compares two lists, with dictionaries inside them, to detect differences."""
     if len(ls1) != len(ls2):
@@ -71,7 +73,7 @@ def has_diff_elem2(ls1, ls2):
             # If elements are not dictionaries, compare them directly
             if str(ls1[i]) != str(elem):
                 return True
-                
+
     return False
 
 
@@ -166,13 +168,15 @@ def meraki_compare_equality2(current_value, requested_value):
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
             list(requested_value.keys())
-        print("meraki_compare_equality 4: ", any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params)))
+        print("meraki_compare_equality 4: ", any((not fn_comp_key(
+            param, current_value, requested_value) for param in all_dict_params)))
         return not any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params))
     elif isinstance(current_value, list) and isinstance(requested_value, list):
-        print("meraki_compare_equality 5: ", compare_list(current_value, requested_value))
+        print("meraki_compare_equality 5: ", compare_list(
+            current_value, requested_value))
         return compare_list(current_value, requested_value)
     else:
-        print("meraki_compare_equality 6: ",current_value == requested_value)
+        print("meraki_compare_equality 6: ", current_value == requested_value)
         return current_value == requested_value
 
 

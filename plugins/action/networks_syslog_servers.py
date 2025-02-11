@@ -31,7 +31,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present","absent"]),
+    state=dict(type="str", default="present", choices=["present", "absent"]),
     servers=dict(type="list"),
     networkId=dict(type="str"),
 ))
@@ -98,8 +98,8 @@ class NetworksSyslogServers(object):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        par= self.update_all_params()
-        par["servers"]=[]
+        par = self.update_all_params()
+        par["servers"] = []
         result = self.meraki.exec_meraki(
             family="networks",
             function="updateNetworkSyslogServers",
