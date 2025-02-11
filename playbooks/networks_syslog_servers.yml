@@ -4,20 +4,19 @@
   vars:
     networkId: "L_828099381482771185"
   tasks:
-
-  - name: Syslog servers
-    cisco.meraki.networks_syslog_servers:
-      networkId: "{{ networkId }}"
-      meraki_suppress_logging: false
-      servers:
-      - host: 1.2.3.4
-        port: 8000
-        roles:
-        - URLs
-        - Wireless event log 
-      # - host: 1.2.3.4
-      #   port: 5000
-      #   roles:
-      #   - URLs
-      #   - Wireless event log
-      state: present
+    - name: Syslog servers
+      cisco.meraki.networks_syslog_servers:
+        networkId: "{{ networkId }}"
+        meraki_suppress_logging: false
+        servers:
+          - host: 1.2.3.4
+            port: 8000
+            roles:
+              - URLs
+              - Wireless event log
+        # - host: 1.2.3.4
+        #   port: 5000
+        #   roles:
+        #   - URLs
+        #   - Wireless event log
+        state: present
