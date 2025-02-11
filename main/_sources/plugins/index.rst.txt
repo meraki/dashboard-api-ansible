@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.20.6
+Collection version 2.20.7
 
 .. contents::
    :local:
