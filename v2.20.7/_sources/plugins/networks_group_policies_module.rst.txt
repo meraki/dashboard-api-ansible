@@ -1,0 +1,4197 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_group_policies_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.networks_group_policies module -- Resource module for networks \_group \_policies
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.7).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.networks_group_policies_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.networks_group_policies`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 2.16.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource networks \_group \_policies.
+- Create a group policy.
+- Delete a group policy.
+- Update a group policy.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.networks_group_policies_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bandwidth"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bandwidth:
+
+      .. rst-class:: ansible-option-title
+
+      **bandwidth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bandwidth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The bandwidth settings for clients bound to your group policy.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bandwidth/bandwidthLimits"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bandwidth/bandwidthlimits:
+
+      .. rst-class:: ansible-option-title
+
+      **bandwidthLimits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bandwidth/bandwidthLimits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The bandwidth limits object, specifying upload and download speed for clients bound to the group policy. These are only enforced if 'settings' is set to 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bandwidth/bandwidthLimits/limitDown"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bandwidth/bandwidthlimits/limitdown:
+
+      .. rst-class:: ansible-option-title
+
+      **limitDown**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bandwidth/bandwidthLimits/limitDown" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The maximum download limit (integer, in Kbps). Null indicates no limit.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bandwidth/bandwidthLimits/limitUp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bandwidth/bandwidthlimits/limitup:
+
+      .. rst-class:: ansible-option-title
+
+      **limitUp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bandwidth/bandwidthLimits/limitUp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The maximum upload limit (integer, in Kbps). Null indicates no limit.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bandwidth/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bandwidth/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bandwidth/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How bandwidth limits are enforced. Can be 'network default', 'ignore' or 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding:
+
+      .. rst-class:: ansible-option-title
+
+      **bonjourForwarding**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Bonjour settings for your group policy. Only valid if your network has a wireless configuration.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding/rules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding/rules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of the Bonjour forwarding rules for your group policy. If 'settings' is set to 'custom', at least one rule must be specified.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding/rules/description"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding/rules/description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding/rules/description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A description for your Bonjour forwarding rule. Optional.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding/rules/services"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding/rules/services:
+
+      .. rst-class:: ansible-option-title
+
+      **services**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding/rules/services" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of Bonjour services. At least one service must be specified. Available services are 'All Services', 'AFP', 'AirPlay', 'Apple screen share', 'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers', 'Samba', 'Scanners', 'Spotify' and 'SSH'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding/rules/vlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding/rules/vlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **vlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding/rules/vlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the service VLAN. Required.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-bonjourForwarding/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-bonjourforwarding/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-bonjourForwarding/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How Bonjour rules are applied. Can be 'network default', 'ignore' or 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering:
+
+      .. rst-class:: ansible-option-title
+
+      **contentFiltering**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The content filtering settings for your group policy.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/allowedUrlPatterns"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/allowedurlpatterns:
+
+      .. rst-class:: ansible-option-title
+
+      **allowedUrlPatterns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/allowedUrlPatterns" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for allowed URL patterns.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/allowedUrlPatterns/patterns"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/allowedurlpatterns/patterns:
+
+      .. rst-class:: ansible-option-title
+
+      **patterns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/allowedUrlPatterns/patterns" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of URL patterns that are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/allowedUrlPatterns/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/allowedurlpatterns/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/allowedUrlPatterns/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How URL patterns are applied. Can be 'network default', 'append' or 'override'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlCategories"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlcategories:
+
+      .. rst-class:: ansible-option-title
+
+      **blockedUrlCategories**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlCategories" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for blocked URL categories.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlCategories/categories"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlcategories/categories:
+
+      .. rst-class:: ansible-option-title
+
+      **categories**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlCategories/categories" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of URL categories to block.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlCategories/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlcategories/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlCategories/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How URL categories are applied. Can be 'network default', 'append' or 'override'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlPatterns"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlpatterns:
+
+      .. rst-class:: ansible-option-title
+
+      **blockedUrlPatterns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlPatterns" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for blocked URL patterns.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlPatterns/patterns"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlpatterns/patterns:
+
+      .. rst-class:: ansible-option-title
+
+      **patterns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlPatterns/patterns" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of URL patterns that are blocked.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-contentFiltering/blockedUrlPatterns/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-contentfiltering/blockedurlpatterns/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-contentFiltering/blockedUrlPatterns/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How URL patterns are applied. Can be 'network default', 'append' or 'override'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping:
+
+      .. rst-class:: ansible-option-title
+
+      **firewallAndTrafficShaping**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The firewall and traffic shaping rules and settings for your policy.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules:
+
+      .. rst-class:: ansible-option-title
+
+      **l3FirewallRules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An ordered array of the L3 firewall rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules/comment"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules/comment:
+
+      .. rst-class:: ansible-option-title
+
+      **comment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules/comment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Description of the rule (optional).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules/destCidr"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules/destcidr:
+
+      .. rst-class:: ansible-option-title
+
+      **destCidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules/destCidr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Destination IP address (in IP or CIDR notation), a fully-qualified domain name (FQDN, if your network supports it) or 'any'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules/destPort"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules/destport:
+
+      .. rst-class:: ansible-option-title
+
+      **destPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules/destPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Destination port (integer in the range 1-65535), a port range (e.g. 8080-9090), or 'any'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules/policy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules/policy:
+
+      .. rst-class:: ansible-option-title
+
+      **policy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules/policy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      'allow' or 'deny' traffic specified by this rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l3FirewallRules/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l3firewallrules/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l3FirewallRules/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or 'any').
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l7FirewallRules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l7firewallrules:
+
+      .. rst-class:: ansible-option-title
+
+      **l7FirewallRules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l7FirewallRules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An ordered array of L7 firewall rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l7FirewallRules/policy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l7firewallrules/policy:
+
+      .. rst-class:: ansible-option-title
+
+      **policy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l7FirewallRules/policy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The policy applied to matching traffic. Must be 'deny'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l7FirewallRules/type"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l7firewallrules/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l7FirewallRules/type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type of the L7 Rule. Must be 'application', 'applicationCategory', 'host', 'port' or 'ipRange'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/l7FirewallRules/value"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/l7firewallrules/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/l7FirewallRules/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The 'value' of what you want to block. If 'type' is 'host', 'port' or 'ipRange', 'value' must be a string matching either a hostname (e.g. Somewhere.com), a port (e.g. 8080), or an IP range (e.g. 192.1.0.0/16). If 'type' is 'application' or 'applicationCategory', then 'value' must be an object with an ID for the application.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How firewall and traffic shaping rules are enforced. Can be 'network default', 'ignore' or 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules:
+
+      .. rst-class:: ansible-option-title
+
+      **trafficShapingRules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of traffic shaping rules. Rules are applied in the order that they are specified in. An empty list (or null) means no rules. Note that you are allowed a maximum of 8 rules.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/definitions"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/definitions:
+
+      .. rst-class:: ansible-option-title
+
+      **definitions**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/definitions" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A list of objects describing the definitions of your traffic shaping rule. At least one definition is required.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/definitions/type"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/definitions/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/definitions/type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type of definition. Can be one of 'application', 'applicationCategory', 'host', 'port', 'ipRange' or 'localNet'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/definitions/value"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/definitions/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/definitions/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If "type" is 'host', 'port', 'ipRange' or 'localNet', then "value" must be a string, matching either a hostname (e.g. "somesite.com"), a port (e.g. 8080), or an IP range ("192.1.0.0", "192.1.0.0/16", or "10.1.0.0/16 80"). 'localNet' also supports CIDR notation, excluding custom ports. If "type" is 'application' or 'applicationCategory', then "value" must be an object with the structure { "id" "meraki layer7/..." }, where "id" is the application category or application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories endpoint).
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/dscpTagValue"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/dscptagvalue:
+
+      .. rst-class:: ansible-option-title
+
+      **dscpTagValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/dscpTagValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The DSCP tag applied by your rule. Null means 'Do not change DSCP tag'. For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/pcpTagValue"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/pcptagvalue:
+
+      .. rst-class:: ansible-option-title
+
+      **pcpTagValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/pcpTagValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority). Null means 'Do not set PCP tag'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/perclientbandwidthlimits:
+
+      .. rst-class:: ansible-option-title
+
+      **perClientBandwidthLimits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An object describing the bandwidth settings for your rule.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/perclientbandwidthlimits/bandwidthlimits:
+
+      .. rst-class:: ansible-option-title
+
+      **bandwidthLimits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The bandwidth limits object, specifying the upload ('limitUp') and download ('limitDown') speed in Kbps. These are only enforced if 'settings' is set to 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits/limitDown"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/perclientbandwidthlimits/bandwidthlimits/limitdown:
+
+      .. rst-class:: ansible-option-title
+
+      **limitDown**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits/limitDown" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The maximum download limit (integer, in Kbps).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits/limitUp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/perclientbandwidthlimits/bandwidthlimits/limitup:
+
+      .. rst-class:: ansible-option-title
+
+      **limitUp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/bandwidthLimits/limitUp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The maximum upload limit (integer, in Kbps).
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/perclientbandwidthlimits/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/perClientBandwidthLimits/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How bandwidth limits are applied by your rule. Can be one of 'network default', 'ignore' or 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-firewallAndTrafficShaping/trafficShapingRules/priority"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-firewallandtrafficshaping/trafficshapingrules/priority:
+
+      .. rst-class:: ansible-option-title
+
+      **priority**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-firewallAndTrafficShaping/trafficShapingRules/priority" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A string, indicating the priority level for packets bound to your rule. Can be 'low', 'normal' or 'high'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-force"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-force:
+
+      .. rst-class:: ansible-option-title
+
+      **force**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-force" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Force query parameter. If true, the system deletes the GP even if there are active clients using the GP. After deletion, active clients that were assigned to that Group Policy will be left without any policy applied. Default is false.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-grouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **groupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      GroupPolicyId path parameter. Group policy ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The name for your group policy. Required.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkId path parameter. Network ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling:
+
+      .. rst-class:: ansible-option-title
+
+      **scheduling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The schedule for the group policy. Schedules are applied to days of the week.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether scheduling is enabled (true) or disabled (false). Defaults to false. If true, the schedule objects for each day of the week (monday - sunday) are parsed.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/friday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/friday:
+
+      .. rst-class:: ansible-option-title
+
+      **friday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/friday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Friday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/friday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/friday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/friday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/friday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/friday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/friday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/friday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/friday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/friday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/monday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/monday:
+
+      .. rst-class:: ansible-option-title
+
+      **monday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/monday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Monday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/monday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/monday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/monday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/monday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/monday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/monday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/monday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/monday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/monday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/saturday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/saturday:
+
+      .. rst-class:: ansible-option-title
+
+      **saturday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/saturday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Saturday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/saturday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/saturday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/saturday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/saturday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/saturday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/saturday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/saturday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/saturday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/saturday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/sunday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/sunday:
+
+      .. rst-class:: ansible-option-title
+
+      **sunday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/sunday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Sunday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/sunday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/sunday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/sunday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/sunday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/sunday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/sunday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/sunday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/sunday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/sunday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/thursday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/thursday:
+
+      .. rst-class:: ansible-option-title
+
+      **thursday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/thursday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Thursday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/thursday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/thursday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/thursday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/thursday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/thursday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/thursday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/thursday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/thursday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/thursday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/tuesday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/tuesday:
+
+      .. rst-class:: ansible-option-title
+
+      **tuesday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/tuesday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Tuesday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/tuesday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/tuesday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/tuesday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/tuesday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/tuesday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/tuesday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/tuesday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/tuesday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/tuesday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/wednesday"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/wednesday:
+
+      .. rst-class:: ansible-option-title
+
+      **wednesday**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/wednesday" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The schedule object for Wednesday.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/wednesday/active"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/wednesday/active:
+
+      .. rst-class:: ansible-option-title
+
+      **active**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/wednesday/active" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/wednesday/from"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/wednesday/from:
+
+      .. rst-class:: ansible-option-title
+
+      **from**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/wednesday/from" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-scheduling/wednesday/to"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-scheduling/wednesday/to:
+
+      .. rst-class:: ansible-option-title
+
+      **to**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-scheduling/wednesday/to" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute increments are allowed.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-splashAuthSettings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-splashauthsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **splashAuthSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-splashAuthSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether clients bound to your policy will bypass splash authorization or behave according to the network's rules. Can be one of 'network default' or 'bypass'. Only available if your network has a wireless configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlanTagging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-vlantagging:
+
+      .. rst-class:: ansible-option-title
+
+      **vlanTagging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlanTagging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The VLAN tagging settings for your group policy. Only available if your network has a wireless configuration.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlanTagging/settings"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-vlantagging/settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlanTagging/settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How VLAN tagging is applied. Can be 'network default', 'ignore' or 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlanTagging/vlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__parameter-vlantagging/vlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **vlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlanTagging/vlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the vlan you want to tag. This only applies if 'settings' is set to 'custom'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are networks.Networks.create\_network\_group\_policy, networks.Networks.delete\_network\_group\_policy, networks.Networks.update\_network\_group\_policy,
+   - Paths used are post /networks/{networkId}/groupPolicies, delete /networks/{networkId}/groupPolicies/{groupPolicyId}, put /networks/{networkId}/groupPolicies/{groupPolicyId},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for networks createNetworkGroupPolicy <https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy>`_
+       Complete reference of the createNetworkGroupPolicy API.
+   `Cisco Meraki documentation for networks deleteNetworkGroupPolicy <https://developer.cisco.com/meraki/api-v1/#!delete-network-group-policy>`_
+       Complete reference of the deleteNetworkGroupPolicy API.
+   `Cisco Meraki documentation for networks updateNetworkGroupPolicy <https://developer.cisco.com/meraki/api-v1/#!update-network-group-policy>`_
+       Complete reference of the updateNetworkGroupPolicy API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.meraki.networks_group_policies:
+        meraki_api_key: '{{ meraki_api_key }}'
+        meraki_base_url: '{{ meraki_base_url }}'
+        meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+        meraki_certificate_path: '{{ meraki_certificate_path }}'
+        meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+        meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+        meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+        meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+        meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+        meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+        meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+        meraki_output_log: '{{ meraki_output_log }}'
+        meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+        meraki_log_path: '{{ meraki_log_path }}'
+        meraki_print_console: '{{ meraki_print_console }}'
+        meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+        meraki_simulate: '{{ meraki_simulate }}'
+        meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+        meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+        meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+        state: present
+        bandwidth:
+          bandwidthLimits:
+            limitDown: 1000000
+            limitUp: 1000000
+          settings: custom
+        bonjourForwarding:
+          rules:
+            - description: A simple bonjour rule
+              services:
+                - All Services
+              vlanId: '1'
+          settings: custom
+        contentFiltering:
+          allowedUrlPatterns:
+            patterns: []
+            settings: network default
+          blockedUrlCategories:
+            categories:
+              - meraki:contentFiltering/category/1
+              - meraki:contentFiltering/category/7
+            settings: override
+          blockedUrlPatterns:
+            patterns:
+              - http://www.example.com
+              - http://www.betting.com
+            settings: append
+        firewallAndTrafficShaping:
+          l3FirewallRules:
+            - comment: Allow TCP traffic to subnet with HTTP servers.
+              destCidr: 192.168.1.0/24
+              destPort: '443'
+              policy: allow
+              protocol: tcp
+          l7FirewallRules:
+            - policy: deny
+              type: host
+              value: google.com
+          settings: custom
+          trafficShapingRules:
+            - definitions:
+                - type: host
+                  value: google.com
+              dscpTagValue: 0
+              pcpTagValue: 0
+              perClientBandwidthLimits:
+                bandwidthLimits:
+                  limitDown: 1000000
+                  limitUp: 1000000
+                settings: custom
+              priority: normal
+        name: false video streaming
+        networkId: string
+        scheduling:
+          enabled: true
+          friday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          monday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          saturday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          sunday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          thursday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          tuesday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          wednesday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+        splashAuthSettings: bypass
+        vlanTagging:
+          settings: custom
+          vlanId: '1'
+    - name: Delete by id
+      cisco.meraki.networks_group_policies:
+        meraki_api_key: '{{ meraki_api_key }}'
+        meraki_base_url: '{{ meraki_base_url }}'
+        meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+        meraki_certificate_path: '{{ meraki_certificate_path }}'
+        meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+        meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+        meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+        meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+        meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+        meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+        meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+        meraki_output_log: '{{ meraki_output_log }}'
+        meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+        meraki_log_path: '{{ meraki_log_path }}'
+        meraki_print_console: '{{ meraki_print_console }}'
+        meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+        meraki_simulate: '{{ meraki_simulate }}'
+        meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+        meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+        meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+        state: absent
+        force: true
+        groupPolicyId: string
+        networkId: string
+    - name: Update by id
+      cisco.meraki.networks_group_policies:
+        meraki_api_key: '{{ meraki_api_key }}'
+        meraki_base_url: '{{ meraki_base_url }}'
+        meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
+        meraki_certificate_path: '{{ meraki_certificate_path }}'
+        meraki_requests_proxy: '{{ meraki_requests_proxy }}'
+        meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
+        meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
+        meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
+        meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
+        meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
+        meraki_maximum_retries: '{{ meraki_maximum_retries }}'
+        meraki_output_log: '{{ meraki_output_log }}'
+        meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
+        meraki_log_path: '{{ meraki_log_path }}'
+        meraki_print_console: '{{ meraki_print_console }}'
+        meraki_suppress_logging: '{{ meraki_suppress_logging }}'
+        meraki_simulate: '{{ meraki_simulate }}'
+        meraki_be_geo_id: '{{ meraki_be_geo_id }}'
+        meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
+        meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+        state: present
+        bandwidth:
+          bandwidthLimits:
+            limitDown: 1000000
+            limitUp: 1000000
+          settings: custom
+        bonjourForwarding:
+          rules:
+            - description: A simple bonjour rule
+              services:
+                - All Services
+              vlanId: '1'
+          settings: custom
+        contentFiltering:
+          allowedUrlPatterns:
+            patterns: []
+            settings: network default
+          blockedUrlCategories:
+            categories:
+              - meraki:contentFiltering/category/1
+              - meraki:contentFiltering/category/7
+            settings: override
+          blockedUrlPatterns:
+            patterns:
+              - http://www.example.com
+              - http://www.betting.com
+            settings: append
+        firewallAndTrafficShaping:
+          l3FirewallRules:
+            - comment: Allow TCP traffic to subnet with HTTP servers.
+              destCidr: 192.168.1.0/24
+              destPort: '443'
+              policy: allow
+              protocol: tcp
+          l7FirewallRules:
+            - policy: deny
+              type: host
+              value: google.com
+          settings: custom
+          trafficShapingRules:
+            - definitions:
+                - type: host
+                  value: google.com
+              dscpTagValue: 0
+              pcpTagValue: 0
+              perClientBandwidthLimits:
+                bandwidthLimits:
+                  limitDown: 1000000
+                  limitUp: 1000000
+                settings: custom
+              priority: normal
+        groupPolicyId: string
+        name: false video streaming
+        networkId: string
+        scheduling:
+          enabled: true
+          friday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          monday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          saturday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          sunday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          thursday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          tuesday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+          wednesday:
+            active: true
+            from: '9:00'
+            to: '17:00'
+        splashAuthSettings: bypass
+        vlanTagging:
+          settings: custom
+          vlanId: '1'
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_group_policies_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"bandwidth": {"bandwidthLimits": {"limitDown": 0, "limitUp": 0}, "settings": "string"}, "bonjourForwarding": {"rules": [{"description": "string", "services": ["string"], "vlanId": "string"}], "settings": "string"}, "contentFiltering": {"allowedUrlPatterns": {"patterns": ["string"], "settings": "string"}, "blockedUrlCategories": {"categories": ["string"], "settings": "string"}, "blockedUrlPatterns": {"patterns": ["string"], "settings": "string"}}, "firewallAndTrafficShaping": {"l3FirewallRules": [{"comment": "string", "destCidr": "string", "destPort": "string", "policy": "string", "protocol": "string"}], "l7FirewallRules": [{"policy": "string", "type": "string", "value": "string"}], "settings": "string", "trafficShapingRules": [{"definitions": [{"type": "string", "value": "string"}], "dscpTagValue": 0, "pcpTagValue": 0, "perClientBandwidthLimits": {"bandwidthLimits": {"limitDown": 0, "limitUp": 0}, "settings": "string"}, "priority": "string"}]}, "groupPolicyId": "string", "scheduling": {"enabled": true, "friday": {"active": true, "from": "string", "to": "string"}, "monday": {"active": true, "from": "string", "to": "string"}, "saturday": {"active": true, "from": "string", "to": "string"}, "sunday": {"active": true, "from": "string", "to": "string"}, "thursday": {"active": true, "from": "string", "to": "string"}, "tuesday": {"active": true, "from": "string", "to": "string"}, "wednesday": {"active": true, "from": "string", "to": "string"}}, "splashAuthSettings": "string", "vlanTagging": {"settings": "string", "vlanId": "string"}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
