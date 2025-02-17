@@ -6,8 +6,8 @@ cisco.meraki.networks_info:
      map({
         name: .name,
         canonical_facts: {
-          ansible_meraki_network_id: .id,
-          ansible_meraki_org_id: .organizationId
+          network_id: .id,
+          org_id: .organizationId
         },
         facts: {
           device_type: "network"
@@ -23,8 +23,8 @@ cisco.meraki.networks:
       {
         name: .name,
         canonical_facts: {
-          ansible_meraki_network_id: .id,
-          ansible_meraki_org_id: .organizationId
+          network_id: .id,
+          org_id: .organizationId
         },
         facts: {
             device_type: "network"
@@ -32,3 +32,23 @@ cisco.meraki.networks:
       }
     else empty
     end
+
+# Devices
+cisco.meraki.devices_info:
+  query: >-
+    .meraki_response | [.] | flatten |
+      map({
+          name: ((.name | select(. != "")) // (.productType + "-" + .serial)),
+          canonical_facts: {
+            ansible_product_serial: .serial,
+            macaddress: .mac
+          },
+          facts: {
+            device_type: .productType,
+            meraki_network_id: .networkId,
+            ansible_hostname: (.lanIp // ""),
+            ansible_product_name: .model,
+            ansible_bios_version: .firmware,
+          }
+        })
+      | .[]
