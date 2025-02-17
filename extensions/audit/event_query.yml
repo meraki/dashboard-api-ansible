@@ -1,0 +1,16 @@
+---
+# Networks
+cisco.meraki.networks_info:
+  query: >-
+    .meraki_response | [.] | flatten |
+     map({
+        name: .name,
+        canonical_facts: {
+          ansible_meraki_network_id: .id,
+          ansible_meraki_org_id: .organizationId
+        },
+        facts: {
+          device_type: "network"
+        }
+      })
+    | .[]
