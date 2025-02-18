@@ -1189,3 +1189,8 @@ releases:
         - Changes at compare equality function.
         - Unable to create Syslog Server Object. Action module manually fixing.
     release_date: "2025-02-11"
+  2.20.8:
+    changes:
+      bugfixes:
+        - cisco.meraki.organizations_login_security module update organization security settings.
+    release_date: "2025-02-18"
