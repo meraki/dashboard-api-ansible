@@ -21,7 +21,6 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
-    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -131,10 +130,10 @@ class OrganizationsLoginSecurity(object):
                 function="getOrganizationLoginSecurity",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
-            result = get_dict_result(items, 'name', name)
+            # if isinstance(items, dict):
+            #     if 'response' in items:
+            #         items = items.get('response')
+            # result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -151,8 +150,8 @@ class OrganizationsLoginSecurity(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        o_id = self.new_object
+        name = self.new_object
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
