@@ -18,8 +18,8 @@ cisco.meraki.networks_info:
 # delete operation returns "meraki_response": null
 cisco.meraki.networks:
   query: >-
-    if .meraki_response then 
-      .meraki_response | 
+    if .meraki_response then
+      .meraki_response |
       {
         name: .name,
         canonical_facts: {
