@@ -1,0 +1,16 @@
+- name: Play Name
+  hosts: localhost
+  vars:
+    network_id: L_828099381482771185
+    org_id: "828099381482762270"
+  gather_facts: false
+  tasks:
+    - name: Get all networks _clients
+      cisco.meraki.networks_clients_info:
+        meraki_suppress_logging: false
+        timespan: 1
+        perPage: 3
+        networkId: L_828099381482771185
+        total_pages: -1
+        direction: next
+      register: result
