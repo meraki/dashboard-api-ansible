@@ -1,0 +1,54 @@
+---
+# Networks
+cisco.meraki.networks_info:
+  query: >-
+    .meraki_response | [.] | flatten |
+     map({
+        name: .name,
+        canonical_facts: {
+          network_id: .id,
+          org_id: .organizationId
+        },
+        facts: {
+          device_type: "network"
+        }
+      })
+    | .[]
+
+# delete operation returns "meraki_response": null
+cisco.meraki.networks:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      {
+        name: .name,
+        canonical_facts: {
+          network_id: .id,
+          org_id: .organizationId
+        },
+        facts: {
+            device_type: "network"
+        }
+      }
+    else empty
+    end
+
+# Devices
+cisco.meraki.devices_info:
+  query: >-
+    .meraki_response | [.] | flatten |
+      map({
+          name: ((.name | select(. != "")) // (.productType + "-" + .serial)),
+          canonical_facts: {
+            ansible_product_serial: .serial,
+            macaddress: .mac
+          },
+          facts: {
+            device_type: .productType,
+            meraki_network_id: .networkId,
+            ansible_hostname: (.lanIp // ""),
+            ansible_product_name: .model,
+            ansible_bios_version: .firmware,
+          }
+        })
+      | .[]
