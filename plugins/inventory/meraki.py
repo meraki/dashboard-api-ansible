@@ -216,7 +216,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
             devices = dashboard.exec_meraki(
                 family="organizations",
                 function="getOrganizationDevices",
-                params={"organizationId": meraki_org_id},
+                params={"organizationId": meraki_org_id, "total_pages": "all"},
             )
             if devices:
                 network_map = self._build_network_map(dashboard, meraki_org_id)
