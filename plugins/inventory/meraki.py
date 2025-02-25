@@ -191,7 +191,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
         result = argspec_validator.validate(parameters)
 
         if result.error_messages:
-            raise AnsibleError(f"Validation failed: {", ".join(result.error_messages)}")
+            raise AnsibleError(f"Validation failed: {', '.join(result.error_messages)}")
 
         return result.validated_parameters
 
