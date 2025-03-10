@@ -52,3 +52,28 @@ cisco.meraki.devices_info:
           }
         })
       | .[]
+
+# updateDevice does not seem to return productType field
+cisco.meraki.devices:
+  query: >-
+    .meraki_response | [.] | flatten |
+      map({
+          name: ((.name | select(. != "")) // (.model + "-" + .serial)),
+          canonical_facts: {
+            ansible_product_serial: .serial,
+            macaddress: .mac
+          },
+          facts: {
+            device_type: (if .model | startswith("MV") then "camera"
+                      elif .model | startswith("MR") then "wireless"
+                      elif .model | startswith("MS") then "switch"
+                      elif .model | startswith("MX") then "appliance"
+                      else "unknown"
+                      end),
+            meraki_network_id: .networkId,
+            ansible_hostname: (.lanIp // ""),
+            ansible_product_name: .model,
+            ansible_bios_version: .firmware,
+          }
+        })
+      | .[]
