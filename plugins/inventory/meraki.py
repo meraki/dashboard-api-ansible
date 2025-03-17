@@ -259,9 +259,9 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                     )
 
                     self.inventory.set_variable(
-                        hostname, "serial_number", device["serial"]
+                        hostname, "ansible_product_serial", device["serial"]
                     )
-                    self.inventory.set_variable(hostname, "mac", device["mac"])
+                    self.inventory.set_variable(hostname, "macaddress", device["mac"])
 
                     # Add variables created by the user's Jinja2 expressions to the host
                     self._set_composite_vars(self.get_option("compose"), device, hostname, strict=True)
