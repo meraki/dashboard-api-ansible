@@ -210,6 +210,8 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
 
         meraki_org_id = validated_config.pop("meraki_org_id")
 
+        strict = self.get_option("strict")
+
         dashboard = MERAKI(params=validated_config)
 
         try:
@@ -261,12 +263,17 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                     )
                     self.inventory.set_variable(hostname, "mac", device["mac"])
 
+                    # Add variables created by the user's Jinja2 expressions to the host
+                    self._set_composite_vars(self.get_option("compose"), device, hostname, strict=True)
+
+                    # Create user-defined groups using variables and Jinja2 conditionals
+                    self._add_host_to_composed_groups(self.get_option("groups"), device, hostname, strict=strict)
                     # Add the host to the keyed groups
                     self._add_host_to_keyed_groups(
                         keys=self.get_option("keyed_groups"),
                         variables=device,
                         host=hostname,
-                        strict=self.get_option("strict"),
+                        strict=strict,
                     )
         except Exception as e:
             raise AnsibleError(f"Failed to get devices from Meraki API: {to_native(e)}")
