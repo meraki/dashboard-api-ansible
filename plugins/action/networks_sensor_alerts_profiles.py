@@ -89,7 +89,8 @@ class NetworksSensorAlertsProfiles(object):
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
         if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
-            new_object_params['includeSensorUrl'] = self.new_object.get('includeSensorUrl')
+            new_object_params['includeSensorUrl'] = self.new_object.get(
+                'includeSensorUrl')
         if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
             new_object_params['message'] = self.new_object.get('message') or \
                 self.new_object.get('message')
@@ -126,7 +127,8 @@ class NetworksSensorAlertsProfiles(object):
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
         if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
-            new_object_params['includeSensorUrl'] = self.new_object.get('includeSensorUrl')
+            new_object_params['includeSensorUrl'] = self.new_object.get(
+                'includeSensorUrl')
         if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
             new_object_params['message'] = self.new_object.get('message') or \
                 self.new_object.get('message')

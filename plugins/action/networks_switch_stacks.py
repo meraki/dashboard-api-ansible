@@ -138,7 +138,8 @@ class NetworksSwitchStacks(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "switch_stack_id") or self.new_object.get("switchStackId")
         name = self.new_object.get("name")

@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
+from copy import deepcopy
 
 __metaclass__ = type
 
@@ -147,13 +153,6 @@ data:
             sample: "Wireless event log, URLs"
 """
 
-from copy import deepcopy
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def sort_roles(syslog_servers):
     """Accept a full payload and sort roles"""
@@ -184,7 +183,8 @@ def validate_role_choices(meraki, servers):
         for role in servers[server]["roles"]:
             if role.lower() not in choices:
                 meraki.fail_json(
-                    msg="Invalid role found in {0}.".format(servers[server]["host"])
+                    msg="Invalid role found in {0}.".format(
+                        servers[server]["host"])
                 )
 
 
@@ -216,7 +216,8 @@ def main():
     argument_spec.update(
         net_id=dict(type="str"),
         servers=dict(type="list", elements="dict", options=server_arg_spec),
-        state=dict(type="str", choices=["present", "query"], default="present"),
+        state=dict(type="str", choices=[
+                   "present", "query"], default="present"),
         net_name=dict(type="str", aliases=["name", "network"]),
     )
 
@@ -259,7 +260,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         path = meraki.construct_path("query_update", net_id=net_id)

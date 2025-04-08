@@ -5,6 +5,10 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from copy import deepcopy
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.common.dict_transformations import recursive_diff
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -190,11 +194,6 @@ data:
                 returned: success
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from copy import deepcopy
-
 
 def construct_payload(params):
     payload = {'rules': []}
@@ -237,8 +236,10 @@ def main():
 
     rules_arg_spec = dict(comment=dict(type='str'),
                           policy=dict(type='str', choices=['allow', 'deny']),
-                          ip_version=dict(type='str', choices=['ipv4', 'ipv6', 'any']),
-                          protocol=dict(type='str', choices=['tcp', 'udp', 'any']),
+                          ip_version=dict(type='str', choices=[
+                                          'ipv4', 'ipv6', 'any']),
+                          protocol=dict(type='str', choices=[
+                                        'tcp', 'udp', 'any']),
                           src_cidr=dict(type='str'),
                           src_port=dict(type='str'),
                           dst_cidr=dict(type='str'),
@@ -250,7 +251,8 @@ def main():
     argument_spec.update(state=dict(type='str', choices=['absent', 'present', 'query'], default='query'),
                          net_name=dict(type='str', aliases=['network']),
                          net_id=dict(type='str'),
-                         rules=dict(type='list', elements='dict', options=rules_arg_spec),
+                         rules=dict(type='list', elements='dict',
+                                    options=rules_arg_spec),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -264,8 +266,10 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_url = {'switch_access_list': '/networks/{net_id}/switch/accessControlLists'}
-    update_url = {'switch_access_list': '/networks/{net_id}/switch/accessControlLists'}
+    query_url = {
+        'switch_access_list': '/networks/{net_id}/switch/accessControlLists'}
+    update_url = {
+        'switch_access_list': '/networks/{net_id}/switch/accessControlLists'}
 
     meraki.url_catalog['get_all'].update(query_url)
     meraki.url_catalog['update'] = update_url
@@ -276,7 +280,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         path = meraki.construct_path('get_all', net_id=net_id)
@@ -289,7 +294,8 @@ def main():
         payload = construct_payload(meraki.params)
         comparable = deepcopy(original)
         if len(comparable['rules']) > 1:
-            del comparable['rules'][len(comparable['rules']) - 1]  # Delete the default rule for comparison
+            # Delete the default rule for comparison
+            del comparable['rules'][len(comparable['rules']) - 1]
         else:
             del comparable['rules'][0]
         if meraki.is_update_required(comparable, payload):
@@ -304,7 +310,8 @@ def main():
                                          'after': diff[1]}
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('update', net_id=net_id)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 diff = recursive_diff(original, payload)
                 meraki.result['data'] = response

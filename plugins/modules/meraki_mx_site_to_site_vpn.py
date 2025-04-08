@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from copy import deepcopy
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -171,10 +174,6 @@ data:
                     sample: true
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from copy import deepcopy
-
 
 def assemble_payload(meraki):
     payload = {'mode': meraki.params['mode']}
@@ -206,9 +205,12 @@ def main():
     argument_spec.update(state=dict(type='str', choices=['present', 'query'], default='present'),
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
-                         hubs=dict(type='list', default=None, elements='dict', options=hubs_args),
-                         subnets=dict(type='list', default=None, elements='dict', options=subnets_args),
-                         mode=dict(type='str', choices=['none', 'hub', 'spoke']),
+                         hubs=dict(type='list', default=None,
+                                   elements='dict', options=hubs_args),
+                         subnets=dict(type='list', default=None,
+                                      elements='dict', options=subnets_args),
+                         mode=dict(type='str', choices=[
+                                   'none', 'hub', 'spoke']),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -222,8 +224,10 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'site_to_site_vpn': '/networks/{net_id}/appliance/vpn/siteToSiteVpn/'}
-    update_urls = {'site_to_site_vpn': '/networks/{net_id}/appliance/vpn/siteToSiteVpn/'}
+    query_urls = {
+        'site_to_site_vpn': '/networks/{net_id}/appliance/vpn/siteToSiteVpn/'}
+    update_urls = {
+        'site_to_site_vpn': '/networks/{net_id}/appliance/vpn/siteToSiteVpn/'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['update'] = update_urls
@@ -259,7 +263,8 @@ def main():
                 meraki.result['data'] = payload
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('update', net_id=net_id)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             meraki.result['changed'] = True
             meraki.result['data'] = response
         else:

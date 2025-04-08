@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -166,9 +168,6 @@ data:
             sample: true
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def construct_payload(meraki):
     payload = {}
@@ -196,10 +195,12 @@ def main():
     argument_spec.update(
         net_id=dict(type='str'),
         net_name=dict(type='str', aliases=['name', 'network']),
-        state=dict(type='str', choices=['present', 'query'], default='present'),
+        state=dict(type='str', choices=[
+                   'present', 'query'], default='present'),
         number=dict(type='int', aliases=['port', 'port_id']),
         vlan=dict(type='int'),
-        access_policy=dict(type='str', choices=['open', '8021x-radius', 'mac-radius', 'hybris-radius']),
+        access_policy=dict(type='str', choices=[
+                           'open', '8021x-radius', 'mac-radius', 'hybris-radius']),
         allowed_vlans=dict(type='str'),
         port_type=dict(type='str', choices=['access', 'trunk']),
         drop_untagged_traffic=dict(type='bool'),
@@ -218,8 +219,10 @@ def main():
     module.params['follow_redirects'] = 'all'
 
     get_all_urls = {'mx_l2_interface': '/networks/{net_id}/appliance/ports'}
-    get_one_urls = {'mx_l2_interface': '/networks/{net_id}/appliance/ports/{port_id}'}
-    update_urls = {'mx_l2_interface': '/networks/{net_id}/appliance/ports/{port_id}'}
+    get_one_urls = {
+        'mx_l2_interface': '/networks/{net_id}/appliance/ports/{port_id}'}
+    update_urls = {
+        'mx_l2_interface': '/networks/{net_id}/appliance/ports/{port_id}'}
     meraki.url_catalog['query_all'] = get_all_urls
     meraki.url_catalog['query_one'] = get_one_urls
     meraki.url_catalog['update'] = update_urls
@@ -228,7 +231,8 @@ def main():
         meraki.fail_json(msg='net_name and net_id are mutually exclusive.')
     if meraki.params['port_type'] == 'access':
         if meraki.params['allowed_vlans'] is not None:
-            meraki.meraki.fail_json(msg='allowed_vlans is mutually exclusive with port type trunk.')
+            meraki.meraki.fail_json(
+                msg='allowed_vlans is mutually exclusive with port type trunk.')
 
     org_id = meraki.params['org_id']
     if not org_id:
@@ -236,18 +240,21 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         if meraki.params['number'] is not None:
-            path = meraki.construct_path('query_one', net_id=net_id, custom={'port_id': meraki.params['number']})
+            path = meraki.construct_path('query_one', net_id=net_id, custom={
+                                         'port_id': meraki.params['number']})
         else:
             path = meraki.construct_path('query_all', net_id=net_id)
         response = meraki.request(path, method='GET')
         meraki.result['data'] = response
         meraki.exit_json(**meraki.result)
     elif meraki.params['state'] == 'present':
-        path = meraki.construct_path('query_one', net_id=net_id, custom={'port_id': meraki.params['number']})
+        path = meraki.construct_path('query_one', net_id=net_id, custom={
+                                     'port_id': meraki.params['number']})
         original = meraki.request(path, method='GET')
         payload = construct_payload(meraki)
         if meraki.is_update_required(original, payload):
@@ -257,8 +264,10 @@ def main():
                 meraki.result['data'] = original
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path('update', net_id=net_id, custom={'port_id': meraki.params['number']})
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            path = meraki.construct_path('update', net_id=net_id, custom={
+                                         'port_id': meraki.params['number']})
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result['data'] = response
                 meraki.result['changed'] = True

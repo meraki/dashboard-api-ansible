@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -206,9 +208,6 @@ data:
                     sample: true
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def construct_payload(meraki):
     payload = {}
@@ -266,10 +265,12 @@ def main():
                          subnet=dict(type='str'),
                          interface_id=dict(type='str'),
                          interface_ip=dict(type='str'),
-                         multicast_routing=dict(type='str', choices=['disabled', 'enabled', 'IGMP snooping querier']),
+                         multicast_routing=dict(type='str', choices=[
+                                                'disabled', 'enabled', 'IGMP snooping querier']),
                          vlan_id=dict(type='int'),
                          default_gateway=dict(type='str'),
-                         ospf_settings=dict(type='dict', default=None, options=ospf_arg_spec),
+                         ospf_settings=dict(
+                             type='dict', default=None, options=ospf_arg_spec),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -283,11 +284,16 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
-    query_one_urls = {'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
-    create_urls = {'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
-    update_urls = {'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces/{interface_id}'}
-    delete_urls = {'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces/{interface_id}'}
+    query_urls = {
+        'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
+    query_one_urls = {
+        'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
+    create_urls = {
+        'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces'}
+    update_urls = {
+        'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces/{interface_id}'}
+    delete_urls = {
+        'ms_l3_interfaces': '/devices/{serial}/switch/routing/interfaces/{interface_id}'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['get_one'].update(query_one_urls)
@@ -305,9 +311,11 @@ def main():
     interfaces = None
     if interface_id is None:
         if meraki.params['name'] is not None:
-            path = meraki.construct_path('get_all', custom={'serial': meraki.params['serial']})
+            path = meraki.construct_path(
+                'get_all', custom={'serial': meraki.params['serial']})
             interfaces = meraki.request(path, method='GET')
-            interface_id = get_interface_id(meraki, interfaces, meraki.params['name'])
+            interface_id = get_interface_id(
+                meraki, interfaces, meraki.params['name'])
 
     # manipulate or modify the state as needed (this is going to be the
     # part where your module will do what it needs to do)
@@ -320,7 +328,8 @@ def main():
             meraki.result['data'] = response
             meraki.exit_json(**meraki.result)
         else:  # Query all interfaces
-            path = meraki.construct_path('get_all', custom={'serial': meraki.params['serial']})
+            path = meraki.construct_path(
+                'get_all', custom={'serial': meraki.params['serial']})
             response = meraki.request(path, method='GET')
             meraki.result['data'] = response
             meraki.exit_json(**meraki.result)
@@ -331,14 +340,17 @@ def main():
                 meraki.result['data'] = payload
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path('create', custom={'serial': meraki.params['serial']})
-            response = meraki.request(path, method='POST', payload=json.dumps(payload))
+            path = meraki.construct_path(
+                'create', custom={'serial': meraki.params['serial']})
+            response = meraki.request(
+                path, method='POST', payload=json.dumps(payload))
             meraki.result['data'] = response
             meraki.result['changed'] = True
             meraki.exit_json(**meraki.result)
         else:
             if interfaces is None:
-                path = meraki.construct_path('get_all', custom={'serial': meraki.params['serial']})
+                path = meraki.construct_path(
+                    'get_all', custom={'serial': meraki.params['serial']})
                 interfaces = meraki.request(path, method='GET')
             payload = construct_payload(meraki)
             interface = get_interface(interfaces, interface_id)
@@ -350,7 +362,8 @@ def main():
                     meraki.exit_json(**meraki.result)
                 path = meraki.construct_path('update', custom={'serial': meraki.params['serial'],
                                                                'interface_id': interface_id})
-                response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                response = meraki.request(
+                    path, method='PUT', payload=json.dumps(payload))
                 meraki.result['data'] = response
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)

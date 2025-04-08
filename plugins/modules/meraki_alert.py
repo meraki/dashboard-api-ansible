@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -231,12 +236,6 @@ data:
                             returned: success
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def get_alert_by_type(type, meraki):
     for alert in meraki.params["alerts"]:
@@ -269,7 +268,8 @@ def construct_payload(meraki, current):
         payload["alerts"] = []
         # All data should be resubmitted, otherwise it will clear the alert
         # Also, the order matters so it should go in the same order as current
-        modified_types = [type["alert_type"] for type in meraki.params["alerts"]]
+        modified_types = [type["alert_type"]
+                          for type in meraki.params["alerts"]]
 
         # for alert in meraki.params["alerts"]:
         for current_alert in current["alerts"]:
@@ -331,7 +331,8 @@ def main():
     argument_spec.update(
         net_id=dict(type="str"),
         net_name=dict(type="str", aliases=["name", "network"]),
-        state=dict(type="str", choices=["present", "query"], default="present"),
+        state=dict(type="str", choices=[
+                   "present", "query"], default="present"),
         default_destinations=dict(
             type="dict", default=None, options=destinations_arg_spec
         ),
@@ -364,7 +365,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         path = meraki.construct_path("get_all", net_id=net_id)
@@ -383,7 +385,8 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("update", net_id=net_id)
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.generate_diff(original, payload)
                 meraki.result["data"] = response

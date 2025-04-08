@@ -4,6 +4,14 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
+    MERAKI,
+    meraki_argument_spec,
+)
+from ansible.plugins.inventory import BaseInventoryPlugin, Constructable
+from ansible.module_utils.common.text.converters import to_native, to_text
+from ansible.module_utils.common.arg_spec import ArgumentSpecValidator
+from ansible.errors import AnsibleError
 
 __metaclass__ = type
 
@@ -147,17 +155,10 @@ keyed_groups:
     key: tags
 """
 
-from ansible.errors import AnsibleError
-from ansible.module_utils.common.arg_spec import ArgumentSpecValidator
-from ansible.module_utils.common.text.converters import to_native, to_text
-from ansible.plugins.inventory import BaseInventoryPlugin, Constructable
-from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
-    MERAKI,
-    meraki_argument_spec,
-)
 
 meraki_argument_spec = meraki_argument_spec()
-meraki_argument_spec.update(dict(meraki_org_id=dict(type="str", required=True)))
+meraki_argument_spec.update(
+    dict(meraki_org_id=dict(type="str", required=True)))
 
 
 class InventoryModule(BaseInventoryPlugin, Constructable):
@@ -191,7 +192,8 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
         result = argspec_validator.validate(parameters)
 
         if result.error_messages:
-            raise AnsibleError(f"Validation failed: {', '.join(result.error_messages)}")
+            raise AnsibleError(
+                f"Validation failed: {', '.join(result.error_messages)}")
 
         return result.validated_parameters
 
@@ -206,7 +208,8 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
             k: config[k] for k in config if k in meraki_argument_spec
         }
 
-        validated_config = self._validate_argspec(parameters=meraki_connect_config)
+        validated_config = self._validate_argspec(
+            parameters=meraki_connect_config)
 
         meraki_org_id = validated_config.pop("meraki_org_id")
 
@@ -261,13 +264,16 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                     self.inventory.set_variable(
                         hostname, "ansible_product_serial", device["serial"]
                     )
-                    self.inventory.set_variable(hostname, "macaddress", device["mac"])
+                    self.inventory.set_variable(
+                        hostname, "macaddress", device["mac"])
 
                     # Add variables created by the user's Jinja2 expressions to the host
-                    self._set_composite_vars(self.get_option("compose"), device, hostname, strict=True)
+                    self._set_composite_vars(self.get_option(
+                        "compose"), device, hostname, strict=True)
 
                     # Create user-defined groups using variables and Jinja2 conditionals
-                    self._add_host_to_composed_groups(self.get_option("groups"), device, hostname, strict=strict)
+                    self._add_host_to_composed_groups(self.get_option(
+                        "groups"), device, hostname, strict=strict)
                     # Add the host to the keyed groups
                     self._add_host_to_keyed_groups(
                         keys=self.get_option("keyed_groups"),
@@ -276,4 +282,5 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
                         strict=strict,
                     )
         except Exception as e:
-            raise AnsibleError(f"Failed to get devices from Meraki API: {to_native(e)}")
+            raise AnsibleError(
+                f"Failed to get devices from Meraki API: {to_native(e)}")

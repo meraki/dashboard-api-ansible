@@ -73,12 +73,14 @@ class NetworksSettings(object):
             new_object_params['localStatusPage'] = self.new_object.get('localStatusPage') or \
                 self.new_object.get('local_status_page')
         if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get('local_status_page_enabled') is not None:
-            new_object_params['localStatusPageEnabled'] = self.new_object.get('localStatusPageEnabled')
+            new_object_params['localStatusPageEnabled'] = self.new_object.get(
+                'localStatusPageEnabled')
         if self.new_object.get('namedVlans') is not None or self.new_object.get('named_vlans') is not None:
             new_object_params['namedVlans'] = self.new_object.get('namedVlans') or \
                 self.new_object.get('named_vlans')
         if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get('remote_status_page_enabled') is not None:
-            new_object_params['remoteStatusPageEnabled'] = self.new_object.get('remoteStatusPageEnabled')
+            new_object_params['remoteStatusPageEnabled'] = self.new_object.get(
+                'remoteStatusPageEnabled')
         if self.new_object.get('securePort') is not None or self.new_object.get('secure_port') is not None:
             new_object_params['securePort'] = self.new_object.get('securePort') or \
                 self.new_object.get('secure_port')
@@ -116,7 +118,8 @@ class NetworksSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

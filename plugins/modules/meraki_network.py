@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -215,12 +220,6 @@ data:
         sample: true
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def is_net_valid(data, net_name=None, net_id=None):
     if net_name is None and net_id is None:
@@ -293,8 +292,10 @@ def main():
     delete_urls = {"network": "/networks/{net_id}"}
     update_settings_urls = {"network": "/networks/{net_id}/settings"}
     get_settings_urls = {"network": "/networks/{net_id}/settings"}
-    enable_vlans_urls = {"network": "/networks/{net_id}/appliance/vlans/settings"}
-    get_vlan_status_urls = {"network": "/networks/{net_id}/appliance/vlans/settings"}
+    enable_vlans_urls = {
+        "network": "/networks/{net_id}/appliance/vlans/settings"}
+    get_vlan_status_urls = {
+        "network": "/networks/{net_id}/appliance/vlans/settings"}
     meraki.url_catalog["create"] = create_urls
     meraki.url_catalog["update"] = update_urls
     meraki.url_catalog["update_settings"] = update_settings_urls
@@ -362,7 +363,8 @@ def main():
         net_exists = True
     elif meraki.params["net_name"]:
         if is_net_valid(nets, net_name=meraki.params["net_name"]) is True:
-            net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+            net_id = meraki.get_net_id(
+                net_name=meraki.params["net_name"], data=nets)
             net_exists = True
 
     if meraki.params["state"] == "query":
@@ -394,13 +396,15 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("create", org_id=org_id)
-            r = meraki.request(path, method="POST", payload=json.dumps(payload))
+            r = meraki.request(path, method="POST",
+                               payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result["data"] = r
                 meraki.result["changed"] = True
         else:  # Network exists, make changes
             if meraki.params["enable_vlans"] is not None:  # Modify VLANs configuration
-                status_path = meraki.construct_path("status_vlans", net_id=net_id)
+                status_path = meraki.construct_path(
+                    "status_vlans", net_id=net_id)
                 status = meraki.request(status_path, method="GET")
                 payload = {"vlansEnabled": meraki.params["enable_vlans"]}
                 if meraki.is_update_required(status, payload):
@@ -413,7 +417,8 @@ def main():
                         meraki.result["changed"] = True
                         meraki.exit_json(**meraki.result)
                     path = meraki.construct_path("enable_vlans", net_id=net_id)
-                    r = meraki.request(path, method="PUT", payload=json.dumps(payload))
+                    r = meraki.request(path, method="PUT",
+                                       payload=json.dumps(payload))
                     if meraki.status == 200:
                         meraki.result["data"] = r
                         meraki.result["changed"] = True
@@ -442,7 +447,8 @@ def main():
                         meraki.result["data"] = original
                         meraki.result["changed"] = True
                         meraki.exit_json(**meraki.result)
-                    path = meraki.construct_path("update_settings", net_id=net_id)
+                    path = meraki.construct_path(
+                        "update_settings", net_id=net_id)
                     response = meraki.request(
                         path, method="PUT", payload=json.dumps(payload)
                     )
@@ -452,7 +458,8 @@ def main():
                 else:
                     meraki.result["data"] = original
                     meraki.exit_json(**meraki.result)
-            net = meraki.get_net(meraki.params["org_name"], net_id=net_id, data=nets)
+            net = meraki.get_net(
+                meraki.params["org_name"], net_id=net_id, data=nets)
             if meraki.is_update_required(net, payload):
                 if meraki.check_mode is True:
                     data = net
@@ -461,7 +468,8 @@ def main():
                     meraki.result["changed"] = True
                     meraki.exit_json(**meraki.result)
                 path = meraki.construct_path("update", net_id=net_id)
-                r = meraki.request(path, method="PUT", payload=json.dumps(payload))
+                r = meraki.request(path, method="PUT",
+                                   payload=json.dumps(payload))
                 if meraki.status == 200:
                     meraki.result["data"] = r
                     meraki.result["changed"] = True

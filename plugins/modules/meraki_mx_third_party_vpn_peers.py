@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+import json
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -330,13 +336,6 @@ response:
               sample: ["prfmd5"]
 """
 
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-import json
-
 
 def validate_payload(meraki):
     for peer in meraki.params["peers"]:
@@ -467,12 +466,14 @@ def main():
         ),
         remote_id=dict(type="str", default=None),
         network_tags=dict(type="list", elements="str", default=None),
-        ipsec_policies=dict(type="dict", options=ipsec_policies_arg_spec, default=None),
+        ipsec_policies=dict(
+            type="dict", options=ipsec_policies_arg_spec, default=None),
     )
 
     argument_spec = meraki_argument_spec()
     argument_spec.update(
-        state=dict(type="str", choices=["absent", "present", "query"], default="query"),
+        state=dict(type="str", choices=[
+                   "absent", "present", "query"], default="query"),
         peers=dict(type="list", elements="dict", options=peers_arg_spec),
     )
 
@@ -500,7 +501,8 @@ def main():
 
     payload = None
     if meraki.params["org_id"] is None and meraki.params["org_name"] is None:
-        meraki.fail_json(msg="Organization must be specified via org_name or org_id")
+        meraki.fail_json(
+            msg="Organization must be specified via org_name or org_id")
 
     org_id = meraki.params["org_id"]
     if org_id is None:
@@ -512,13 +514,15 @@ def main():
         meraki.result["data"] = response
     elif meraki.params["state"] == "present":
         payload = construct_payload(meraki)
-        have = meraki.request(meraki.construct_path("get_all", org_id=org_id), "GET")
+        have = meraki.request(meraki.construct_path(
+            "get_all", org_id=org_id), "GET")
         # meraki.fail_json(msg="Compare", have=have, payload=payload)
         if meraki.is_update_required(have, payload):
             meraki.generate_diff(have, payload)
             path = meraki.construct_path("update", org_id=org_id)
             if meraki.module.check_mode is False:
-                response = meraki.request(path, "PUT", payload=json.dumps(payload))
+                response = meraki.request(
+                    path, "PUT", payload=json.dumps(payload))
                 meraki.result["data"] = response
             else:
                 meraki.result["data"] = payload

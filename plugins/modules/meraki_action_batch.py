@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -209,12 +214,6 @@ data:
             type: dict
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def _construct_payload(meraki):
     payload = dict()
@@ -338,7 +337,8 @@ def main():
         if meraki.params["action_batch_id"] is None:  # Create a new Action Batch job
             payload = _construct_payload(meraki)
             path = meraki.construct_path("create", org_id=org_id)
-            response = meraki.request(path, method="POST", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="POST", payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result["data"] = response
                 meraki.result["changed"] = True
@@ -361,7 +361,8 @@ def main():
                 path = meraki.construct_path(
                     "update",
                     org_id=org_id,
-                    custom={"action_batch_id": meraki.params["action_batch_id"]},
+                    custom={
+                        "action_batch_id": meraki.params["action_batch_id"]},
                 )
                 response = meraki.request(
                     path, method="PUT", payload=json.dumps(payload)

@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -178,9 +180,6 @@ data:
                     type: str
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def construct_payload(meraki):
     payload_key_mapping = {'enabled': 'enabled',
@@ -229,7 +228,8 @@ def main():
 
     areas_arg_spec = dict(area_id=dict(type='int', aliases=['id']),
                           area_name=dict(type='str', aliases=['name']),
-                          area_type=dict(type='str', aliases=['type'], choices=['normal', 'stub', 'nssa']),
+                          area_type=dict(type='str', aliases=['type'], choices=[
+                                         'normal', 'stub', 'nssa']),
                           )
 
     md5_auth_arg_spec = dict(id=dict(type='str'),
@@ -239,13 +239,16 @@ def main():
     argument_spec = meraki_argument_spec()
     argument_spec.update(state=dict(type='str', choices=['present', 'query'], default='present'),
                          net_id=dict(type='str'),
-                         net_name=dict(type='str', aliases=['name', 'network']),
+                         net_name=dict(type='str', aliases=[
+                                       'name', 'network']),
                          enabled=dict(type='bool'),
                          hello_timer=dict(type='int'),
                          dead_timer=dict(type='int'),
-                         areas=dict(type='list', default=None, elements='dict', options=areas_arg_spec),
+                         areas=dict(type='list', default=None,
+                                    elements='dict', options=areas_arg_spec),
                          md5_authentication_enabled=dict(type='bool'),
-                         md5_authentication_key=dict(type='dict', default=None, options=md5_auth_arg_spec, no_log=True),
+                         md5_authentication_key=dict(
+                             type='dict', default=None, options=md5_auth_arg_spec, no_log=True),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -277,7 +280,8 @@ def main():
             meraki.fail_json(msg='hello_timer must be between 1 and 65535')
     if meraki.params['md5_authentication_enabled'] is False:
         if meraki.params['md5_authentication_key'] is not None:
-            meraki.fail_json(msg='md5_authentication_key must not be configured when md5_authentication_enabled is false')
+            meraki.fail_json(
+                msg='md5_authentication_key must not be configured when md5_authentication_enabled is false')
 
     # manipulate or modify the state as needed (this is going to be the
     # part where your module will do what it needs to do)
@@ -288,14 +292,16 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None and meraki.params['net_name']:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
     if meraki.params['state'] == 'query':
         path = meraki.construct_path('get_all', net_id=net_id)
         response = meraki.request(path, method='GET')
         meraki.result['data'] = response
         meraki.exit_json(**meraki.result)
     elif meraki.params['state'] == 'present':
-        original = meraki.request(meraki.construct_path('get_all', net_id=net_id), method='GET')
+        original = meraki.request(meraki.construct_path(
+            'get_all', net_id=net_id), method='GET')
         payload = construct_payload(meraki)
         if meraki.is_update_required(original, payload) is True:
             if meraki.check_mode is True:
@@ -303,7 +309,8 @@ def main():
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('update', net_id=net_id)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if 'md5_authentication_key' in response:
                 response['md5_authentication_key']['passphrase'] = 'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER'
             meraki.result['data'] = response

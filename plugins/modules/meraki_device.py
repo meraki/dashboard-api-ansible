@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -205,9 +207,6 @@ response:
     returned: info
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def is_device_valid(meraki, serial, data):
     """ Parse a list of devices for a serial and return True if it's in the list """
@@ -222,7 +221,8 @@ def get_org_devices(meraki, org_id):
     path = meraki.construct_path('get_all_org', org_id=org_id)
     response = meraki.request(path, method='GET')
     if meraki.status != 200:
-        meraki.fail_json(msg='Failed to query all devices belonging to the organization')
+        meraki.fail_json(
+            msg='Failed to query all devices belonging to the organization')
     return response
 
 
@@ -231,7 +231,8 @@ def get_net_devices(meraki, net_id):
     path = meraki.construct_path('get_all', net_id=net_id)
     response = meraki.request(path, method='GET')
     if meraki.status != 200:
-        meraki.fail_json(msg='Failed to query all devices belonging to the network')
+        meraki.fail_json(
+            msg='Failed to query all devices belonging to the network')
     return response
 
 
@@ -268,12 +269,15 @@ def main():
                          hostname=dict(type='str', aliases=['name']),
                          model=dict(type='str'),
                          tags=dict(type='list', elements='str', default=None),
-                         lat=dict(type='float', aliases=['latitude'], default=None),
-                         lng=dict(type='float', aliases=['longitude'], default=None),
+                         lat=dict(type='float', aliases=[
+                                  'latitude'], default=None),
+                         lng=dict(type='float', aliases=[
+                                  'longitude'], default=None),
                          address=dict(type='str', default=None),
                          move_map_marker=dict(type='bool', default=None),
                          note=dict(type='str', default=None),
-                         query=dict(type='str', default=None, choices=['lldp_cdp', 'uplink'])
+                         query=dict(type='str', default=None,
+                                    choices=['lldp_cdp', 'uplink'])
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -288,7 +292,8 @@ def main():
     if meraki.params['query'] is not None \
        and meraki.params['query'] == 'lldp_cdp' \
        and not meraki.params['lldp_cdp_timespan']:
-        meraki.fail_json(msg='lldp_cdp_timespan is required when querying LLDP and CDP information')
+        meraki.fail_json(
+            msg='lldp_cdp_timespan is required when querying LLDP and CDP information')
     if meraki.params['net_name'] and meraki.params['net_id']:
         meraki.fail_json(msg='net_name and net_id are mutually exclusive')
 
@@ -327,24 +332,31 @@ def main():
     if meraki.params['net_id'] or meraki.params['net_name']:
         net_id = meraki.params['net_id']
         if net_id is None:
-            net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+            net_id = meraki.get_net_id(
+                net_name=meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         if meraki.params['net_name'] or meraki.params['net_id']:
             device = []
             if meraki.params['serial']:
-                path = meraki.construct_path('get_device', net_id=net_id, custom={'serial': meraki.params['serial']})
+                path = meraki.construct_path('get_device', net_id=net_id, custom={
+                                             'serial': meraki.params['serial']})
                 request = meraki.request(path, method='GET')
                 device.append(request)
                 meraki.result['data'] = device
                 if meraki.params['query'] == 'uplink':
-                    path = meraki.construct_path('get_device_uplink', net_id=net_id, custom={'serial': meraki.params['serial']})
-                    meraki.result['data'] = (meraki.request(path, method='GET'))
+                    path = meraki.construct_path('get_device_uplink', net_id=net_id, custom={
+                                                 'serial': meraki.params['serial']})
+                    meraki.result['data'] = (
+                        meraki.request(path, method='GET'))
                 elif meraki.params['query'] == 'lldp_cdp':
                     if meraki.params['lldp_cdp_timespan'] > 2592000:
-                        meraki.fail_json(msg='LLDP/CDP timespan must be less than a month (2592000 seconds)')
-                    path = meraki.construct_path('get_device_lldp', net_id=net_id, custom={'serial': meraki.params['serial']})
-                    path = path + '?timespan=' + str(meraki.params['lldp_cdp_timespan'])
+                        meraki.fail_json(
+                            msg='LLDP/CDP timespan must be less than a month (2592000 seconds)')
+                    path = meraki.construct_path('get_device_lldp', net_id=net_id, custom={
+                                                 'serial': meraki.params['serial']})
+                    path = path + '?timespan=' + \
+                        str(meraki.params['lldp_cdp_timespan'])
                     device.append(meraki.request(path, method='GET'))
                     meraki.result['data'] = device
             elif meraki.params['hostname']:
@@ -370,7 +382,8 @@ def main():
                 request = meraki.request(path, method='GET')
                 meraki.result['data'] = request
         else:
-            path = meraki.construct_path('get_all_org', org_id=org_id, params={'perPage': '1000'})
+            path = meraki.construct_path(
+                'get_all_org', org_id=org_id, params={'perPage': '1000'})
             devices = meraki.request(path, method='GET', pagination_items=1000)
             if meraki.params['serial']:
                 for device in devices:
@@ -386,22 +399,28 @@ def main():
                 payload = {'serial': meraki.params['serial']}
                 path = meraki.construct_path('bind_org', org_id=org_id)
                 created_device = []
-                created_device.append(meraki.request(path, method='POST', payload=json.dumps(payload)))
+                created_device.append(meraki.request(
+                    path, method='POST', payload=json.dumps(payload)))
                 meraki.result['data'] = created_device
                 meraki.result['changed'] = True
         else:  # A device is assumed to be in an organization
             device_list = get_net_devices(meraki, net_id)
-            if is_device_valid(meraki, meraki.params['serial'], device_list) is True:  # Device is in network, update
+            # Device is in network, update
+            if is_device_valid(meraki, meraki.params['serial'], device_list) is True:
                 query_path = meraki.construct_path('get_all', net_id=net_id)
                 if is_device_valid(meraki, meraki.params['serial'], device_list):
                     payload = construct_payload(meraki.params)
-                    query_path = meraki.construct_path('get_device', net_id=net_id, custom={'serial': meraki.params['serial']})
+                    query_path = meraki.construct_path('get_device', net_id=net_id, custom={
+                                                       'serial': meraki.params['serial']})
                     device_data = meraki.request(query_path, method='GET')
-                    ignore_keys = ['lanIp', 'serial', 'mac', 'model', 'networkId', 'moveMapMarker', 'wan1Ip', 'wan2Ip']
+                    ignore_keys = ['lanIp', 'serial', 'mac', 'model',
+                                   'networkId', 'moveMapMarker', 'wan1Ip', 'wan2Ip']
                     if meraki.is_update_required(device_data, payload, optional_ignore=ignore_keys):
-                        path = meraki.construct_path('update', custom={'serial': meraki.params['serial']})
+                        path = meraki.construct_path(
+                            'update', custom={'serial': meraki.params['serial']})
                         updated_device = []
-                        updated_device.append(meraki.request(path, method='PUT', payload=json.dumps(payload)))
+                        updated_device.append(meraki.request(
+                            path, method='PUT', payload=json.dumps(payload)))
                         meraki.result['data'] = updated_device
                         meraki.result['changed'] = True
                     else:
@@ -414,7 +433,8 @@ def main():
                         payload = {'serials': [meraki.params['serial']]}
                         path = meraki.construct_path('create', net_id=net_id)
                         created_device = []
-                        created_device.append(meraki.request(path, method='POST', payload=json.dumps(payload)))
+                        created_device.append(meraki.request(
+                            path, method='POST', payload=json.dumps(payload)))
                         meraki.result['data'] = created_device
                         meraki.result['changed'] = True
     elif meraki.params['state'] == 'absent':
@@ -424,7 +444,8 @@ def main():
         if is_device_valid(meraki, meraki.params['serial'], device_list) is True:
             payload = {'serial': meraki.params['serial']}
             path = meraki.construct_path('delete', net_id=net_id)
-            request = meraki.request(path, method='POST', payload=json.dumps(payload))
+            request = meraki.request(
+                path, method='POST', payload=json.dumps(payload))
             meraki.result['changed'] = True
 
     # in the event of a successful module execution, you will want to

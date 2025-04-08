@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from copy import deepcopy
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -126,10 +129,6 @@ data:
               - "QBAB-CDEF-GHIJ"
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from copy import deepcopy
-
 
 def get_stacks(meraki, net_id):
     path = meraki.construct_path('get_all', net_id=net_id)
@@ -168,7 +167,8 @@ def main():
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
                          stack_id=dict(type='str'),
-                         serials=dict(type='list', elements='str', default=None),
+                         serials=dict(
+                             type='list', elements='str', default=None),
                          name=dict(type='str'),
                          )
 
@@ -185,10 +185,13 @@ def main():
 
     query_urls = {'switch_stack': '/networks/{net_id}/switch/stacks'}
     query_url = {'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}'}
-    add_urls = {'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}/add'}
-    remove_urls = {'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}/remove'}
+    add_urls = {
+        'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}/add'}
+    remove_urls = {
+        'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}/remove'}
     create_urls = {'switch_stack': '/networks/{net_id}/switch/stacks'}
-    delete_urls = {'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}'}
+    delete_urls = {
+        'switch_stack': '/networks/{net_id}/switch/stacks/{stack_id}'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['get_one'].update(query_url)
@@ -230,7 +233,8 @@ def main():
                        'name': meraki.params['name'],
                        }
             path = meraki.construct_path('create', net_id=net_id)
-            response = meraki.request(path, method='POST', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='POST', payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result['data'] = response
                 meraki.result['changed'] = True
@@ -243,8 +247,10 @@ def main():
                 comparable['serials'].append(meraki.params['serials'][0])
             # meraki.fail_json(msg=comparable)
             if meraki.is_update_required(original, comparable, optional_ignore=['serial']):
-                path = meraki.construct_path('add', net_id=net_id, custom={'stack_id': stack_id})
-                response = meraki.request(path, method='POST', payload=json.dumps(payload))
+                path = meraki.construct_path(
+                    'add', net_id=net_id, custom={'stack_id': stack_id})
+                response = meraki.request(
+                    path, method='POST', payload=json.dumps(payload))
                 if meraki.status == 200:
                     meraki.result['data'] = response
                     meraki.result['changed'] = True
@@ -252,7 +258,8 @@ def main():
                 meraki.result['data'] = original
     elif meraki.params['state'] == 'absent':
         if meraki.params['serials'] is None:
-            path = meraki.construct_path('delete', net_id=net_id, custom={'stack_id': stack_id})
+            path = meraki.construct_path(
+                'delete', net_id=net_id, custom={'stack_id': stack_id})
             response = meraki.request(path, method='DELETE')
             meraki.result['data'] = {}
             meraki.result['changed'] = True
@@ -265,8 +272,10 @@ def main():
                 if serial in comparable['serials']:
                     comparable['serials'].remove(serial)
                 if meraki.is_update_required(original, comparable, optional_ignore=['serial']):
-                    path = meraki.construct_path('remove', net_id=net_id, custom={'stack_id': stack_id})
-                    response = meraki.request(path, method='POST', payload=json.dumps(payload))
+                    path = meraki.construct_path(
+                        'remove', net_id=net_id, custom={'stack_id': stack_id})
+                    response = meraki.request(
+                        path, method='POST', payload=json.dumps(payload))
                     if meraki.status == 200:
                         meraki.result['data'] = response
                         meraki.result['changed'] = True

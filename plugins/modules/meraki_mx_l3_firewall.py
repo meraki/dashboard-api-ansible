@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -200,9 +202,6 @@ data:
                     sample: true
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def assemble_payload(meraki):
     params_map = {'policy': 'policy',
@@ -264,7 +263,8 @@ def main():
     # the module
 
     fw_rules = dict(policy=dict(type='str', choices=['allow', 'deny']),
-                    protocol=dict(type='str', choices=['tcp', 'udp', 'icmp', 'any']),
+                    protocol=dict(type='str', choices=[
+                                  'tcp', 'udp', 'icmp', 'any']),
                     dest_port=dict(type='str'),
                     dest_cidr=dict(type='str'),
                     src_port=dict(type='str'),
@@ -277,7 +277,8 @@ def main():
     argument_spec.update(state=dict(type='str', choices=['present', 'query'], default='present'),
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
-                         rules=dict(type='list', default=None, elements='dict', options=fw_rules),
+                         rules=dict(type='list', default=None,
+                                    elements='dict', options=fw_rules),
                          syslog_default_rule=dict(type='bool'),
                          )
 
@@ -292,8 +293,10 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'mx_l3_firewall': '/networks/{net_id}/appliance/firewall/l3FirewallRules/'}
-    update_urls = {'mx_l3_firewall': '/networks/{net_id}/appliance/firewall/l3FirewallRules/'}
+    query_urls = {
+        'mx_l3_firewall': '/networks/{net_id}/appliance/firewall/l3FirewallRules/'}
+    update_urls = {
+        'mx_l3_firewall': '/networks/{net_id}/appliance/firewall/l3FirewallRules/'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['update'] = update_urls
@@ -329,14 +332,16 @@ def main():
             payload['syslogDefaultRule'] = meraki.params['syslog_default_rule']
         try:
             if meraki.params['rules'] is not None:
-                if len(rules['rules']) - 1 != len(payload['rules']):  # Quick and simple check to avoid more processing
+                # Quick and simple check to avoid more processing
+                if len(rules['rules']) - 1 != len(payload['rules']):
                     update = True
             if meraki.params['syslog_default_rule'] is not None:
                 if rules['rules'][len(rules['rules']) - 1]['syslogEnabled'] != meraki.params['syslog_default_rule']:
                     update = True
             if update is False:
                 default_rule = rules['rules'][len(rules['rules']) - 1].copy()
-                del rules['rules'][len(rules['rules']) - 1]  # Remove default rule for comparison
+                # Remove default rule for comparison
+                del rules['rules'][len(rules['rules']) - 1]
                 if len(rules['rules']) - 1 == 0:  # There is only a single rule
                     normalize_case(rules['rules'][0])
                     normalize_case(payload['rules'][0])
@@ -355,17 +360,21 @@ def main():
             if meraki.check_mode is True:
                 if meraki.params['rules'] is not None:
                     data = payload['rules']
-                    data.append(rules['rules'][len(rules['rules']) - 1])  # Append the default rule
+                    # Append the default rule
+                    data.append(rules['rules'][len(rules['rules']) - 1])
                     if meraki.params['syslog_default_rule'] is not None:
-                        data[len(payload) - 1]['syslog_enabled'] = meraki.params['syslog_default_rule']
+                        data[len(
+                            payload) - 1]['syslog_enabled'] = meraki.params['syslog_default_rule']
                 else:
                     if meraki.params['syslog_default_rule'] is not None:
                         data = rules
-                        data['rules'][len(data['rules']) - 1]['syslogEnabled'] = meraki.params['syslog_default_rule']
+                        data['rules'][len(
+                            data['rules']) - 1]['syslogEnabled'] = meraki.params['syslog_default_rule']
                 meraki.result['data'] = data
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result['data'] = response
                 meraki.result['changed'] = True

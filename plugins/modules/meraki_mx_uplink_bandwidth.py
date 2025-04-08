@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.common.dict_transformations import recursive_diff
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -199,9 +202,6 @@ data:
               type: int
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
 
 INT_NAMES = ('wan1', 'wan2', 'cellular')
 
@@ -242,9 +242,12 @@ def main():
     argument_spec.update(state=dict(type='str', choices=['absent', 'present', 'query'], default='query'),
                          net_name=dict(type='str', aliases=['network']),
                          net_id=dict(type='str'),
-                         wan1=dict(type='dict', default=None, options=interface_arg_spec),
-                         wan2=dict(type='dict', default=None, options=interface_arg_spec),
-                         cellular=dict(type='dict', default=None, options=interface_arg_spec),
+                         wan1=dict(type='dict', default=None,
+                                   options=interface_arg_spec),
+                         wan2=dict(type='dict', default=None,
+                                   options=interface_arg_spec),
+                         cellular=dict(type='dict', default=None,
+                                       options=interface_arg_spec),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -258,8 +261,10 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'mx_uplink': '/networks/{net_id}/appliance/trafficShaping/uplinkBandwidth'}
-    update_bw_url = {'mx_uplink': '/networks/{net_id}/appliance/trafficShaping/uplinkBandwidth'}
+    query_urls = {
+        'mx_uplink': '/networks/{net_id}/appliance/trafficShaping/uplinkBandwidth'}
+    update_bw_url = {
+        'mx_uplink': '/networks/{net_id}/appliance/trafficShaping/uplinkBandwidth'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['update_bw'] = update_bw_url
@@ -272,7 +277,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         path = meraki.construct_path('get_all', net_id=net_id)
@@ -299,17 +305,21 @@ def main():
                 diff = recursive_diff(clean_custom_format(meraki_struct_to_custom_format(original)),
                                       clean_custom_format(meraki_struct_to_custom_format(payload)))
                 original.update(payload)
-                meraki.result['data'] = clean_custom_format(meraki_struct_to_custom_format(original))
+                meraki.result['data'] = clean_custom_format(
+                    meraki_struct_to_custom_format(original))
                 meraki.result['diff'] = {'before': diff[0],
                                          'after': diff[1],
                                          }
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('update_bw', net_id=net_id)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
-                formatted_original = clean_custom_format(meraki_struct_to_custom_format(original))
-                formatted_response = clean_custom_format(meraki_struct_to_custom_format(response))
+                formatted_original = clean_custom_format(
+                    meraki_struct_to_custom_format(original))
+                formatted_response = clean_custom_format(
+                    meraki_struct_to_custom_format(response))
                 diff = recursive_diff(formatted_original, formatted_response)
                 meraki.result['diff'] = {'before': diff[0],
                                          'after': diff[1],
@@ -317,7 +327,8 @@ def main():
                 meraki.result['data'] = formatted_response
                 meraki.result['changed'] = True
         else:
-            meraki.result['data'] = clean_custom_format(meraki_struct_to_custom_format(original))
+            meraki.result['data'] = clean_custom_format(
+                meraki_struct_to_custom_format(original))
 
     # in the event of a successful module execution, you will want to
     # simple AnsibleModule.exit_json(), passing the key/value results

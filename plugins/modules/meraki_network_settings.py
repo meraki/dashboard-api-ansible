@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -188,12 +193,6 @@ data:
             sample: true
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def is_net_valid(data, net_name=None, net_id=None):
     if net_name is None and net_id is None:
@@ -260,7 +259,8 @@ def main():
         net_id=dict(type="str"),
         local_status_page_enabled=dict(type="bool"),
         remote_status_page_enabled=dict(type="bool"),
-        local_status_page=dict(type="dict", default=None, options=local_status_page_args),
+        local_status_page=dict(type="dict", default=None,
+                               options=local_status_page_args),
         secure_port=dict(type="dict", default=None, options=secure_port_args)
     )
 
@@ -308,7 +308,8 @@ def main():
         org_id = meraki.get_org_id(meraki.params["org_name"])
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         path = meraki.construct_path("get_settings", net_id=net_id)
@@ -328,7 +329,8 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("update_settings", net_id=net_id)
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result["changed"] = True
                 meraki.result["data"] = response

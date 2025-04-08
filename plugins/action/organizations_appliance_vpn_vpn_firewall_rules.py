@@ -67,7 +67,8 @@ class OrganizationsApplianceVpnVpnFirewallRules(object):
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
         if self.new_object.get('syslogDefaultRule') is not None or self.new_object.get('syslog_default_rule') is not None:
-            new_object_params['syslogDefaultRule'] = self.new_object.get('syslogDefaultRule')
+            new_object_params['syslogDefaultRule'] = self.new_object.get(
+                'syslogDefaultRule')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -102,7 +103,8 @@ class OrganizationsApplianceVpnVpnFirewallRules(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("organizationId") or self.new_object.get("organization_id")
+        o_id = self.new_object.get(
+            "organizationId") or self.new_object.get("organization_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -182,7 +184,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsApplianceVpnVpnFirewallRules(self._task.args, meraki)
+        obj = OrganizationsApplianceVpnVpnFirewallRules(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -224,12 +229,6 @@ data:
               sample: JimLaptop
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def fixed_ip_factory(meraki, data):
     fixed_ips = dict()
@@ -321,7 +320,8 @@ def main():
     query_one_urls = {
         "static_route": "/networks/{net_id}/appliance/staticRoutes/{route_id}"
     }
-    create_urls = {"static_route": "/networks/{net_id}/appliance/staticRoutes/"}
+    create_urls = {
+        "static_route": "/networks/{net_id}/appliance/staticRoutes/"}
     update_urls = {
         "static_route": "/networks/{net_id}/appliance/staticRoutes/{route_id}"
     }
@@ -360,7 +360,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         if meraki.params["route_id"] is not None:

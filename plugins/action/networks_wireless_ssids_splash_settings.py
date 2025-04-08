@@ -67,8 +67,10 @@ class NetworksWirelessSsidsSplashSettings(object):
         self.new_object = dict(
             allowSimultaneousLogins=params.get("allowSimultaneousLogins"),
             billing=params.get("billing"),
-            blockAllTrafficBeforeSignOn=params.get("blockAllTrafficBeforeSignOn"),
-            controllerDisconnectionBehavior=params.get("controllerDisconnectionBehavior"),
+            blockAllTrafficBeforeSignOn=params.get(
+                "blockAllTrafficBeforeSignOn"),
+            controllerDisconnectionBehavior=params.get(
+                "controllerDisconnectionBehavior"),
             guestSponsorship=params.get("guestSponsorship"),
             redirectUrl=params.get("redirectUrl"),
             selfRegistration=params.get("selfRegistration"),
@@ -98,12 +100,14 @@ class NetworksWirelessSsidsSplashSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('allowSimultaneousLogins') is not None or self.new_object.get('allow_simultaneous_logins') is not None:
-            new_object_params['allowSimultaneousLogins'] = self.new_object.get('allowSimultaneousLogins')
+            new_object_params['allowSimultaneousLogins'] = self.new_object.get(
+                'allowSimultaneousLogins')
         if self.new_object.get('billing') is not None or self.new_object.get('billing') is not None:
             new_object_params['billing'] = self.new_object.get('billing') or \
                 self.new_object.get('billing')
         if self.new_object.get('blockAllTrafficBeforeSignOn') is not None or self.new_object.get('block_all_traffic_before_sign_on') is not None:
-            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get('blockAllTrafficBeforeSignOn')
+            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get(
+                'blockAllTrafficBeforeSignOn')
         if self.new_object.get('controllerDisconnectionBehavior') is not None or self.new_object.get('controller_disconnection_behavior') is not None:
             new_object_params['controllerDisconnectionBehavior'] = self.new_object.get('controllerDisconnectionBehavior') or \
                 self.new_object.get('controller_disconnection_behavior')
@@ -138,9 +142,11 @@ class NetworksWirelessSsidsSplashSettings(object):
             new_object_params['themeId'] = self.new_object.get('themeId') or \
                 self.new_object.get('theme_id')
         if self.new_object.get('useRedirectUrl') is not None or self.new_object.get('use_redirect_url') is not None:
-            new_object_params['useRedirectUrl'] = self.new_object.get('useRedirectUrl')
+            new_object_params['useRedirectUrl'] = self.new_object.get(
+                'useRedirectUrl')
         if self.new_object.get('useSplashUrl') is not None or self.new_object.get('use_splash_url') is not None:
-            new_object_params['useSplashUrl'] = self.new_object.get('useSplashUrl')
+            new_object_params['useSplashUrl'] = self.new_object.get(
+                'useSplashUrl')
         if self.new_object.get('welcomeMessage') is not None or self.new_object.get('welcome_message') is not None:
             new_object_params['welcomeMessage'] = self.new_object.get('welcomeMessage') or \
                 self.new_object.get('welcome_message')
@@ -181,7 +187,8 @@ class NetworksWirelessSsidsSplashSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

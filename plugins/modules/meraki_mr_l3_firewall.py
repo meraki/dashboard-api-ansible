@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -129,9 +131,6 @@ RETURN = r'''
 
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def assemble_payload(meraki):
     params_map = {'policy': 'policy',
@@ -151,7 +150,8 @@ def assemble_payload(meraki):
 
 
 def get_rules(meraki, net_id, number):
-    path = meraki.construct_path('get_all', net_id=net_id, custom={'number': number})
+    path = meraki.construct_path(
+        'get_all', net_id=net_id, custom={'number': number})
     response = meraki.request(path, method='GET')
     if meraki.status == 200:
         return normalize_rule_case(response)
@@ -186,7 +186,8 @@ def main():
     # the module
 
     fw_rules = dict(policy=dict(type='str', choices=['allow', 'deny']),
-                    protocol=dict(type='str', choices=['tcp', 'udp', 'icmp', 'any']),
+                    protocol=dict(type='str', choices=[
+                                  'tcp', 'udp', 'icmp', 'any']),
                     dest_port=dict(type='str'),
                     dest_cidr=dict(type='str'),
                     comment=dict(type='str'),
@@ -198,7 +199,8 @@ def main():
                          net_id=dict(type='str'),
                          number=dict(type='str', aliases=['ssid_number']),
                          ssid_name=dict(type='str', aliases=['ssid']),
-                         rules=dict(type='list', default=None, elements='dict', options=fw_rules),
+                         rules=dict(type='list', default=None,
+                                    elements='dict', options=fw_rules),
                          allow_lan_access=dict(type='bool', default=True),
                          )
 
@@ -213,8 +215,10 @@ def main():
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'mr_l3_firewall': '/networks/{net_id}/wireless/ssids/{number}/firewall/l3FirewallRules'}
-    update_urls = {'mr_l3_firewall': '/networks/{net_id}/wireless/ssids/{number}/firewall/l3FirewallRules'}
+    query_urls = {
+        'mr_l3_firewall': '/networks/{net_id}/wireless/ssids/{number}/firewall/l3FirewallRules'}
+    update_urls = {
+        'mr_l3_firewall': '/networks/{net_id}/wireless/ssids/{number}/firewall/l3FirewallRules'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['update'] = update_urls
@@ -240,20 +244,23 @@ def main():
                                    data=meraki.get_nets(org_id=org_id))
     number = meraki.params['number']
     if meraki.params['ssid_name']:
-        number = get_ssid_number(meraki.params['ssid_name'], get_ssids(meraki, net_id))
+        number = get_ssid_number(
+            meraki.params['ssid_name'], get_ssids(meraki, net_id))
 
     if meraki.params['state'] == 'query':
         meraki.result['data'] = get_rules(meraki, net_id, number)
     elif meraki.params['state'] == 'present':
         rules = get_rules(meraki, net_id, number)
-        path = meraki.construct_path('get_all', net_id=net_id, custom={'number': number})
+        path = meraki.construct_path(
+            'get_all', net_id=net_id, custom={'number': number})
         if meraki.params['rules']:
             payload = assemble_payload(meraki)
         else:
             payload = dict()
         update = False
         try:
-            if len(rules) != len(payload['rules']):  # Quick and simple check to avoid more processing
+            # Quick and simple check to avoid more processing
+            if len(rules) != len(payload['rules']):
                 update = True
             if update is False:
                 for r in range(len(rules) - 2):
@@ -270,25 +277,33 @@ def main():
                 # This code is disgusting, rework it at some point
                 if 'rules' in payload:
                     cleansed_payload = payload['rules']
-                    cleansed_payload.append(rules['rules'][len(rules['rules']) - 1])
-                    cleansed_payload.append(rules['rules'][len(rules['rules']) - 2])
+                    cleansed_payload.append(
+                        rules['rules'][len(rules['rules']) - 1])
+                    cleansed_payload.append(
+                        rules['rules'][len(rules['rules']) - 2])
                     if meraki.params['allow_lan_access'] is None:
-                        cleansed_payload[len(cleansed_payload) - 2]['policy'] = rules['rules'][len(rules['rules']) - 2]['policy']
+                        cleansed_payload[len(
+                            cleansed_payload) - 2]['policy'] = rules['rules'][len(rules['rules']) - 2]['policy']
                     else:
                         if meraki.params['allow_lan_access'] is True:
-                            cleansed_payload[len(cleansed_payload) - 2]['policy'] = 'allow'
+                            cleansed_payload[len(
+                                cleansed_payload) - 2]['policy'] = 'allow'
                         else:
-                            cleansed_payload[len(cleansed_payload) - 2]['policy'] = 'deny'
+                            cleansed_payload[len(
+                                cleansed_payload) - 2]['policy'] = 'deny'
                 else:
                     if meraki.params['allow_lan_access'] is True:
-                        rules['rules'][len(rules['rules']) - 2]['policy'] = 'allow'
+                        rules['rules'][len(rules['rules']) -
+                                       2]['policy'] = 'allow'
                     else:
-                        rules['rules'][len(rules['rules']) - 2]['policy'] = 'deny'
+                        rules['rules'][len(rules['rules']) -
+                                       2]['policy'] = 'deny'
                     cleansed_payload = rules
                 meraki.result['data'] = cleansed_payload
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result['data'] = response
                 meraki.result['changed'] = True

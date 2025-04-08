@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.common.dict_transformations import recursive_diff
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -420,9 +423,6 @@ data:
                             example: internet1
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
 
 key_map = {'name': 'name',
            'public_ip': 'publicIp',
@@ -464,34 +464,43 @@ def main():
     # the module
 
     one_to_one_allowed_inbound_spec = dict(protocol=dict(type='str', choices=['tcp', 'udp', 'icmp-ping', 'any'], default='any'),
-                                           destination_ports=dict(type='list', elements='str'),
-                                           allowed_ips=dict(type='list', elements='str'),
+                                           destination_ports=dict(
+                                               type='list', elements='str'),
+                                           allowed_ips=dict(
+                                               type='list', elements='str'),
                                            )
 
     one_to_many_port_inbound_spec = dict(protocol=dict(type='str', choices=['tcp', 'udp']),
                                          name=dict(type='str'),
                                          local_ip=dict(type='str'),
                                          local_port=dict(type='str'),
-                                         allowed_ips=dict(type='list', elements='str'),
+                                         allowed_ips=dict(
+                                             type='list', elements='str'),
                                          public_port=dict(type='str'),
                                          )
 
     one_to_one_spec = dict(name=dict(type='str'),
                            public_ip=dict(type='str'),
                            lan_ip=dict(type='str'),
-                           uplink=dict(type='str', choices=['internet1', 'internet2', 'both']),
-                           allowed_inbound=dict(type='list', elements='dict', options=one_to_one_allowed_inbound_spec),
+                           uplink=dict(type='str', choices=[
+                                       'internet1', 'internet2', 'both']),
+                           allowed_inbound=dict(
+                               type='list', elements='dict', options=one_to_one_allowed_inbound_spec),
                            )
 
     one_to_many_spec = dict(public_ip=dict(type='str'),
-                            uplink=dict(type='str', choices=['internet1', 'internet2', 'both']),
-                            port_rules=dict(type='list', elements='dict', options=one_to_many_port_inbound_spec),
+                            uplink=dict(type='str', choices=[
+                                        'internet1', 'internet2', 'both']),
+                            port_rules=dict(
+                                type='list', elements='dict', options=one_to_many_port_inbound_spec),
                             )
 
     port_forwarding_spec = dict(name=dict(type='str'),
                                 lan_ip=dict(type='str'),
-                                uplink=dict(type='str', choices=['internet1', 'internet2', 'both']),
-                                protocol=dict(type='str', choices=['tcp', 'udp']),
+                                uplink=dict(type='str', choices=[
+                                            'internet1', 'internet2', 'both']),
+                                protocol=dict(
+                                    type='str', choices=['tcp', 'udp']),
                                 public_port=dict(type='int'),
                                 local_port=dict(type='int'),
                                 allowed_ips=dict(type='list', elements='str'),
@@ -501,11 +510,15 @@ def main():
     argument_spec.update(
         net_id=dict(type='str'),
         net_name=dict(type='str', aliases=['name', 'network']),
-        state=dict(type='str', choices=['present', 'query'], default='present'),
-        subset=dict(type='list', elements='str', choices=['1:1', '1:many', 'all', 'port_forwarding'], default='all'),
+        state=dict(type='str', choices=[
+                   'present', 'query'], default='present'),
+        subset=dict(type='list', elements='str', choices=[
+                    '1:1', '1:many', 'all', 'port_forwarding'], default='all'),
         one_to_one=dict(type='list', elements='dict', options=one_to_one_spec),
-        one_to_many=dict(type='list', elements='dict', options=one_to_many_spec),
-        port_forwarding=dict(type='list', elements='dict', options=port_forwarding_spec),
+        one_to_many=dict(type='list', elements='dict',
+                         options=one_to_many_spec),
+        port_forwarding=dict(type='list', elements='dict',
+                             options=port_forwarding_spec),
     )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -533,7 +546,8 @@ def main():
                         'allowedInbound': construct_payload(i['allowed_inbound'])
                         }
                 for inbound in data['allowedInbound']:
-                    inbound['destinationPorts'] = list_int_to_str(inbound['destinationPorts'])
+                    inbound['destinationPorts'] = list_int_to_str(
+                        inbound['destinationPorts'])
                 rules.append(data)
             one_to_one_payload = {'rules': rules}
         if meraki.params['one_to_many'] is not None:
@@ -556,14 +570,18 @@ def main():
                 rules.append(data)
             one_to_many_payload = {'rules': rules}
         if meraki.params['port_forwarding'] is not None:
-            port_forwarding_payload = {'rules': construct_payload(meraki.params['port_forwarding'])}
+            port_forwarding_payload = {'rules': construct_payload(
+                meraki.params['port_forwarding'])}
             for rule in port_forwarding_payload['rules']:
                 rule['localPort'] = str(rule['localPort'])
                 rule['publicPort'] = str(rule['publicPort'])
 
-    onetomany_urls = {'nat': '/networks/{net_id}/appliance/firewall/oneToManyNatRules'}
-    onetoone_urls = {'nat': '/networks/{net_id}/appliance/firewall/oneToOneNatRules'}
-    port_forwarding_urls = {'nat': '/networks/{net_id}/appliance/firewall/portForwardingRules'}
+    onetomany_urls = {
+        'nat': '/networks/{net_id}/appliance/firewall/oneToManyNatRules'}
+    onetoone_urls = {
+        'nat': '/networks/{net_id}/appliance/firewall/oneToOneNatRules'}
+    port_forwarding_urls = {
+        'nat': '/networks/{net_id}/appliance/firewall/portForwardingRules'}
     meraki.url_catalog['1:many'] = onetomany_urls
     meraki.url_catalog['1:1'] = onetoone_urls
     meraki.url_catalog['port_forwarding'] = port_forwarding_urls
@@ -577,7 +595,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         if meraki.params['subset'][0] == 'all':
@@ -607,18 +626,23 @@ def main():
                     current.update(one_to_one_payload)
                     if 'diff' not in meraki.result:
                         meraki.result['diff'] = {'before': {}, 'after': {}}
-                    meraki.result['diff']['before'].update({'one_to_one': diff[0]})
-                    meraki.result['diff']['after'].update({'one_to_one': diff[1]})
+                    meraki.result['diff']['before'].update(
+                        {'one_to_one': diff[0]})
+                    meraki.result['diff']['after'].update(
+                        {'one_to_one': diff[1]})
                     meraki.result['data'] = {'one_to_one': current}
                     meraki.result['changed'] = True
                 else:
-                    r = meraki.request(path, method='PUT', payload=json.dumps(one_to_one_payload))
+                    r = meraki.request(path, method='PUT',
+                                       payload=json.dumps(one_to_one_payload))
                     if meraki.status == 200:
                         diff = recursive_diff(current, one_to_one_payload)
                         if 'diff' not in meraki.result:
                             meraki.result['diff'] = {'before': {}, 'after': {}}
-                        meraki.result['diff']['before'].update({'one_to_one': diff[0]})
-                        meraki.result['diff']['after'].update({'one_to_one': diff[1]})
+                        meraki.result['diff']['before'].update(
+                            {'one_to_one': diff[0]})
+                        meraki.result['diff']['after'].update(
+                            {'one_to_one': diff[1]})
                         meraki.result['data'] = {'one_to_one': r}
                         meraki.result['changed'] = True
             else:
@@ -632,18 +656,23 @@ def main():
                     current.update(one_to_many_payload)
                     if 'diff' not in meraki.result:
                         meraki.result['diff'] = {'before': {}, 'after': {}}
-                    meraki.result['diff']['before'].update({'one_to_many': diff[0]})
-                    meraki.result['diff']['after'].update({'one_to_many': diff[1]})
+                    meraki.result['diff']['before'].update(
+                        {'one_to_many': diff[0]})
+                    meraki.result['diff']['after'].update(
+                        {'one_to_many': diff[1]})
                     meraki.result['data']['one_to_many'] = current
                     meraki.result['changed'] = True
                 else:
-                    r = meraki.request(path, method='PUT', payload=json.dumps(one_to_many_payload))
+                    r = meraki.request(path, method='PUT',
+                                       payload=json.dumps(one_to_many_payload))
                     if meraki.status == 200:
                         diff = recursive_diff(current, one_to_many_payload)
                         if 'diff' not in meraki.result:
                             meraki.result['diff'] = {'before': {}, 'after': {}}
-                        meraki.result['diff']['before'].update({'one_to_many': diff[0]})
-                        meraki.result['diff']['after'].update({'one_to_many': diff[1]})
+                        meraki.result['diff']['before'].update(
+                            {'one_to_many': diff[0]})
+                        meraki.result['diff']['after'].update(
+                            {'one_to_many': diff[1]})
                         meraki.result['data'].update({'one_to_many': r})
                         meraki.result['changed'] = True
             else:
@@ -657,18 +686,23 @@ def main():
                     current.update(port_forwarding_payload)
                     if 'diff' not in meraki.result:
                         meraki.result['diff'] = {'before': {}, 'after': {}}
-                    meraki.result['diff']['before'].update({'port_forwarding': diff[0]})
-                    meraki.result['diff']['after'].update({'port_forwarding': diff[1]})
+                    meraki.result['diff']['before'].update(
+                        {'port_forwarding': diff[0]})
+                    meraki.result['diff']['after'].update(
+                        {'port_forwarding': diff[1]})
                     meraki.result['data']['port_forwarding'] = current
                     meraki.result['changed'] = True
                 else:
-                    r = meraki.request(path, method='PUT', payload=json.dumps(port_forwarding_payload))
+                    r = meraki.request(
+                        path, method='PUT', payload=json.dumps(port_forwarding_payload))
                     if meraki.status == 200:
                         if 'diff' not in meraki.result:
                             meraki.result['diff'] = {'before': {}, 'after': {}}
                         diff = recursive_diff(current, port_forwarding_payload)
-                        meraki.result['diff']['before'].update({'port_forwarding': diff[0]})
-                        meraki.result['diff']['after'].update({'port_forwarding': diff[1]})
+                        meraki.result['diff']['before'].update(
+                            {'port_forwarding': diff[0]})
+                        meraki.result['diff']['after'].update(
+                            {'port_forwarding': diff[1]})
                         meraki.result['data'].update({'port_forwarding': r})
                         meraki.result['changed'] = True
             else:

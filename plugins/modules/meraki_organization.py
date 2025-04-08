@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -120,9 +122,6 @@ data:
 
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def get_org(meraki, org_id, data):
     # meraki.fail_json(msg=str(org_id), data=data, oid0=data[0]['id'], oid1=data[1]['id'])
@@ -139,8 +138,10 @@ def main():
     # the module
     argument_spec = meraki_argument_spec()
     argument_spec.update(clone=dict(type='str'),
-                         state=dict(type='str', choices=['absent', 'present', 'query'], default='present'),
-                         org_name=dict(type='str', aliases=['name', 'organization']),
+                         state=dict(type='str', choices=[
+                                    'absent', 'present', 'query'], default='present'),
+                         org_name=dict(type='str', aliases=[
+                                       'name', 'organization']),
                          org_id=dict(type='str', aliases=['id']),
                          delete_confirm=dict(type='str'),
                          )
@@ -173,7 +174,8 @@ def main():
     orgs = meraki.get_orgs()
     if meraki.params['state'] == 'query':
         if meraki.params['org_name']:  # Query by organization name
-            module.warn('All matching organizations will be returned, even if there are duplicate named organizations')
+            module.warn(
+                'All matching organizations will be returned, even if there are duplicate named organizations')
             for o in orgs:
                 if o['name'] == meraki.params['org_name']:
                     meraki.result['data'] = o
@@ -195,7 +197,8 @@ def main():
                 meraki.fail_json(msg='Organization clone failed')
             meraki.result['data'] = response
             meraki.result['changed'] = True
-        elif not meraki.params['org_id'] and meraki.params['org_name']:  # Create new organization
+        # Create new organization
+        elif not meraki.params['org_id'] and meraki.params['org_name']:
             payload = {'name': meraki.params['org_name']}
             response = meraki.request(meraki.construct_path('create'),
                                       method='POST',
@@ -203,7 +206,8 @@ def main():
             if meraki.status == 201:
                 meraki.result['data'] = response
                 meraki.result['changed'] = True
-        elif meraki.params['org_id'] and meraki.params['org_name']:  # Update an existing organization
+        # Update an existing organization
+        elif meraki.params['org_id'] and meraki.params['org_name']:
             payload = {'name': meraki.params['org_name'],
                        'id': meraki.params['org_id'],
                        }
@@ -226,7 +230,8 @@ def main():
         elif meraki.params['org_id'] is not None:
             org_id = meraki.params['org_id']
         if meraki.params['delete_confirm'] != org_id:
-            meraki.fail_json(msg="delete_confirm must match the network ID of the network to be deleted.")
+            meraki.fail_json(
+                msg="delete_confirm must match the network ID of the network to be deleted.")
         if meraki.check_mode is True:
             meraki.result['data'] = {}
             meraki.result['changed'] = True

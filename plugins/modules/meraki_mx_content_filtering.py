@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from copy import deepcopy
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec, recursive_diff
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -158,16 +161,12 @@ data:
 '''
 
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec, recursive_diff
-from copy import deepcopy
-
-
 def get_category_dict(meraki, full_list, category):
     for i in full_list['categories']:
         if i['name'] == category:
             return i['id']
-    meraki.fail_json(msg="{0} is not a valid content filtering category".format(category))
+    meraki.fail_json(
+        msg="{0} is not a valid content filtering category".format(category))
 
 
 def main():
@@ -179,11 +178,13 @@ def main():
     argument_spec.update(
         net_id=dict(type='str'),
         net_name=dict(type='str', aliases=['network']),
-        state=dict(type='str', default='present', choices=['present', 'query']),
+        state=dict(type='str', default='present',
+                   choices=['present', 'query']),
         allowed_urls=dict(type='list', elements='str'),
         blocked_urls=dict(type='list', elements='str'),
         blocked_categories=dict(type='list', elements='str'),
-        category_list_size=dict(type='str', choices=['top sites', 'full list']),
+        category_list_size=dict(type='str', choices=[
+                                'top sites', 'full list']),
         subset=dict(type='str', choices=['categories', 'policy']),
     )
 
@@ -198,8 +199,10 @@ def main():
     meraki = MerakiModule(module, function='content_filtering')
     module.params['follow_redirects'] = 'all'
 
-    category_urls = {'content_filtering': '/networks/{net_id}/appliance/contentFiltering/categories'}
-    policy_urls = {'content_filtering': '/networks/{net_id}/appliance/contentFiltering'}
+    category_urls = {
+        'content_filtering': '/networks/{net_id}/appliance/contentFiltering/categories'}
+    policy_urls = {
+        'content_filtering': '/networks/{net_id}/appliance/contentFiltering'}
 
     meraki.url_catalog['categories'] = category_urls
     meraki.url_catalog['policy'] = policy_urls
@@ -216,7 +219,8 @@ def main():
     net_id = None
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         if meraki.params['subset']:
@@ -250,7 +254,8 @@ def main():
             if meraki.params['blocked_categories'] == ['None']:  # Corner case for resetting
                 payload['blockedUrlCategories'] = []
             else:
-                category_path = meraki.construct_path('categories', net_id=net_id)
+                category_path = meraki.construct_path(
+                    'categories', net_id=net_id)
                 categories = meraki.request(category_path, method='GET')
                 payload['blockedUrlCategories'] = []
                 for category in meraki.params['blocked_categories']:
@@ -281,7 +286,8 @@ def main():
                 meraki.result['changed'] = True
                 meraki.result['data'] = current
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             meraki.result['data'] = response
             if recursive_diff(current, response) is None:
                 meraki.result['changed'] = False

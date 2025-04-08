@@ -6,6 +6,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -305,12 +310,6 @@ data:
             sample: false
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def convert_vlan_id(vlan_id):
     if vlan_id == "":
@@ -373,7 +372,8 @@ def main():
         ),
         host_mode=dict(
             type="str",
-            choices=["Single-Host", "Multi-Domain", "Multi-Host", "Multi-Auth"],
+            choices=["Single-Host", "Multi-Domain",
+                     "Multi-Host", "Multi-Auth"],
         ),
         data_vlan_id=dict(type="int"),
         voice_vlan_id=dict(type="int"),
@@ -408,14 +408,16 @@ def main():
             nets = meraki.get_nets(org_id=org_id)
             net_id = meraki.get_net_id(net_name=net_name, data=nets)
 
-    query_urls = {"access_policies": "/networks/{net_id}/switch/accessPolicies"}
+    query_urls = {
+        "access_policies": "/networks/{net_id}/switch/accessPolicies"}
     query_url = {
         "access_policies": "/networks/{net_id}/switch/accessPolicies/{number}"
     }
     update_url = {
         "access_policies": "/networks/{net_id}/switch/accessPolicies/{number}"
     }
-    create_url = {"access_policies": "/networks/{net_id}/switch/accessPolicies"}
+    create_url = {
+        "access_policies": "/networks/{net_id}/switch/accessPolicies"}
 
     meraki.url_catalog["get_all"].update(query_urls)
     meraki.url_catalog["get_one"].update(query_url)

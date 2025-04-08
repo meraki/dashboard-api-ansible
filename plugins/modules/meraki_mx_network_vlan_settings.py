@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -73,12 +78,6 @@ data:
             type: bool
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def construct_payload(meraki):
     payload = {"vlansEnabled": meraki.params["vlans_enabled"]}
@@ -128,7 +127,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         path = meraki.construct_path("get_all", net_id=net_id)
@@ -147,7 +147,8 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("update", net_id=net_id)
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.generate_diff(original, payload)
                 meraki.result["data"] = response

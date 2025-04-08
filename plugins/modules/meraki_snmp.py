@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.common.dict_transformations import snake_dict_to_camel_dict
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -232,10 +235,6 @@ data:
                     returned: success, when network specified
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import snake_dict_to_camel_dict
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def get_snmp(meraki, org_id):
     path = meraki.construct_path('get_all', org_id=org_id)
@@ -253,12 +252,14 @@ def set_snmp(meraki, org_id):
                    }
     if meraki.params['v3_enabled'] is True:
         if len(meraki.params['v3_auth_pass']) < 8 or len(meraki.params['v3_priv_pass']) < 8:
-            meraki.fail_json(msg='v3_auth_pass and v3_priv_pass must both be at least 8 characters long.')
+            meraki.fail_json(
+                msg='v3_auth_pass and v3_priv_pass must both be at least 8 characters long.')
         if meraki.params['v3_auth_mode'] is None or \
            meraki.params['v3_auth_pass'] is None or \
            meraki.params['v3_priv_mode'] is None or \
            meraki.params['v3_priv_pass'] is None:
-            meraki.fail_json(msg='v3_auth_mode, v3_auth_pass, v3_priv_mode, and v3_auth_pass are required')
+            meraki.fail_json(
+                msg='v3_auth_mode, v3_auth_pass, v3_priv_mode, and v3_auth_pass are required')
         payload = {'v3Enabled': meraki.params['v3_enabled'],
                    'v3AuthMode': meraki.params['v3_auth_mode'].upper(),
                    'v3AuthPass': meraki.params['v3_auth_pass'],
@@ -272,7 +273,8 @@ def set_snmp(meraki, org_id):
     full_compare = snake_dict_to_camel_dict(payload)
     path = meraki.construct_path('create', org_id=org_id)
     snmp = get_snmp(meraki, org_id)
-    ignored_parameters = ['v3AuthPass', 'v3PrivPass', 'hostname', 'port', 'v2CommunityString', 'v3User']
+    ignored_parameters = ['v3AuthPass', 'v3PrivPass',
+                          'hostname', 'port', 'v2CommunityString', 'v3User']
     if meraki.is_update_required(snmp, full_compare, optional_ignore=ignored_parameters):
         if meraki.module.check_mode is True:
             meraki.generate_diff(snmp, full_compare)
@@ -305,12 +307,16 @@ def main():
                          v3_enabled=dict(type='bool'),
                          v3_auth_mode=dict(type='str', choices=['SHA', 'MD5']),
                          v3_auth_pass=dict(type='str', no_log=True),
-                         v3_priv_mode=dict(type='str', choices=['DES', 'AES128']),
+                         v3_priv_mode=dict(type='str', choices=[
+                                           'DES', 'AES128']),
                          v3_priv_pass=dict(type='str', no_log=True),
-                         peer_ips=dict(type='list', default=None, elements='str'),
-                         access=dict(type='str', choices=['none', 'community', 'users']),
+                         peer_ips=dict(type='list', default=None,
+                                       elements='str'),
+                         access=dict(type='str', choices=[
+                                     'none', 'community', 'users']),
                          community_string=dict(type='str', no_log=True),
-                         users=dict(type='list', default=None, elements='dict', options=user_arg_spec),
+                         users=dict(type='list', default=None,
+                                    elements='dict', options=user_arg_spec),
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
                          )
@@ -346,7 +352,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None and meraki.params['net_name']:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'present':
         if net_id is not None:
@@ -372,7 +379,8 @@ def main():
             original = meraki.request(path, method='GET')
             if meraki.is_update_required(original, payload):
                 path = meraki.construct_path('create_net', net_id=net_id)
-                response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                response = meraki.request(
+                    path, method='PUT', payload=json.dumps(payload))
                 if meraki.status == 200:
                     if response['access'] == 'none':
                         meraki.result['data'] = {}

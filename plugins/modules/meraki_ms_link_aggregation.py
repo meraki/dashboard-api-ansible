@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -129,9 +131,6 @@ data:
                 sample: "ABCD-1234-WXYZ"
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def get_lags(meraki, net_id):
     path = meraki.construct_path('get_all', net_id=net_id)
@@ -184,7 +183,8 @@ def main():
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
                          lag_id=dict(type='str'),
-                         switch_ports=dict(type='list', default=None, elements='dict', options=switch_ports_args),
+                         switch_ports=dict(
+                             type='list', default=None, elements='dict', options=switch_ports_args),
                          # switch_profile_ports=dict(type='list', default=None, elements='dict', options=switch_profile_ports_args),
                          )
 
@@ -198,10 +198,14 @@ def main():
     meraki = MerakiModule(module, function='ms_link_aggregation')
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations'}
-    create_url = {'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations'}
-    update_url = {'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations/{lag_id}'}
-    delete_url = {'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations/{lag_id}'}
+    query_urls = {
+        'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations'}
+    create_url = {
+        'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations'}
+    update_url = {
+        'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations/{lag_id}'}
+    delete_url = {
+        'ms_link_aggregation': '/networks/{net_id}/switch/linkAggregations/{lag_id}'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['create'] = create_url
@@ -219,7 +223,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         path = meraki.construct_path('get_all', net_id=net_id)
@@ -228,12 +233,15 @@ def main():
         meraki.exit_json(**meraki.result)
     elif meraki.params['state'] == 'present':
         if meraki.params['lag_id'] is not None:  # Need to update
-            lag = is_lag_valid(get_lags(meraki, net_id), meraki.params['lag_id'])
+            lag = is_lag_valid(get_lags(meraki, net_id),
+                               meraki.params['lag_id'])
             if lag is not False:  # Lag ID is valid
                 payload = construct_payload(meraki)
                 if meraki.is_update_required(lag, payload) is True:
-                    path = meraki.construct_path('update', net_id=net_id, custom={'lag_id': meraki.params['lag_id']})
-                    response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                    path = meraki.construct_path('update', net_id=net_id, custom={
+                                                 'lag_id': meraki.params['lag_id']})
+                    response = meraki.request(
+                        path, method='PUT', payload=json.dumps(payload))
                     meraki.result['changed'] = True
                     meraki.result['data'] = response
                 else:
@@ -243,12 +251,14 @@ def main():
         else:
             path = meraki.construct_path('create', net_id=net_id)
             payload = construct_payload(meraki)
-            response = meraki.request(path, method='POST', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='POST', payload=json.dumps(payload))
             meraki.result['changed'] = True
             meraki.result['data'] = response
         meraki.exit_json(**meraki.result)
     elif meraki.params['state'] == 'absent':
-        path = meraki.construct_path('delete', net_id=net_id, custom={'lag_id': meraki.params['lag_id']})
+        path = meraki.construct_path('delete', net_id=net_id, custom={
+                                     'lag_id': meraki.params['lag_id']})
         response = meraki.request(path, method='DELETE')
         meraki.result['data'] = {}
         meraki.result['changed'] = True

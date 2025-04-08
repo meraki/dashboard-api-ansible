@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
+import copy
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -253,10 +256,6 @@ data:
                     sample: layer7/category/1
 '''
 
-import copy
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def get_applications(meraki, net_id):
     path = meraki.construct_path('get_categories', net_id=net_id)
@@ -271,7 +270,8 @@ def lookup_application(meraki, net_id, application):
         for app in category['applications']:
             if app['name'].lower() == application.lower():
                 return app['id']
-    meraki.fail_json(msg="No application or category named {0} found".format(application))
+    meraki.fail_json(
+        msg="No application or category named {0} found".format(application))
 
 
 def assemble_payload(meraki, net_id, rule):
@@ -282,7 +282,8 @@ def assemble_payload(meraki, net_id, rule):
         if rule['application']['id']:
             new_rule['value'] = {'id': rule['application']['id']}
         elif rule['application']['name']:
-            new_rule['value'] = {'id': lookup_application(meraki, net_id, rule['application']['name'])}
+            new_rule['value'] = {'id': lookup_application(
+                meraki, net_id, rule['application']['name'])}
     elif rule['type'] == 'application_category':
         new_rule = {'policy': rule['policy'],
                     'type': 'applicationCategory',
@@ -290,7 +291,8 @@ def assemble_payload(meraki, net_id, rule):
         if rule['application']['id']:
             new_rule['value'] = {'id': rule['application']['id']}
         elif rule['application']['name']:
-            new_rule['value'] = {'id': lookup_application(meraki, net_id, rule['application']['name'])}
+            new_rule['value'] = {'id': lookup_application(
+                meraki, net_id, rule['application']['name'])}
     elif rule['type'] == 'ip_range':
         new_rule = {'policy': rule['policy'],
                     'type': 'ipRange',
@@ -348,7 +350,8 @@ def main():
                                                         'port',
                                                         'allowed_countries']),
                          ip_range=dict(type='str'),
-                         application=dict(type='dict', default=None, options=application_arg_spec),
+                         application=dict(
+                             type='dict', default=None, options=application_arg_spec),
                          host=dict(type='str'),
                          port=dict(type='str'),
                          countries=dict(type='list', elements='str'),
@@ -358,7 +361,8 @@ def main():
     argument_spec.update(state=dict(type='str', choices=['present', 'query'], default='present'),
                          net_name=dict(type='str'),
                          net_id=dict(type='str'),
-                         rules=dict(type='list', default=None, elements='dict', options=rule_arg_spec),
+                         rules=dict(type='list', default=None,
+                                    elements='dict', options=rule_arg_spec),
                          categories=dict(type='bool'),
                          )
 
@@ -375,23 +379,32 @@ def main():
     if meraki.params['rules']:
         for rule in meraki.params['rules']:
             if rule['type'] == 'application' and rule['application'] is None:
-                meraki.fail_json(msg="application argument is required when type is application.")
+                meraki.fail_json(
+                    msg="application argument is required when type is application.")
             elif rule['type'] == 'application_category' and rule['application'] is None:
-                meraki.fail_json(msg="application argument is required when type is application_category.")
+                meraki.fail_json(
+                    msg="application argument is required when type is application_category.")
             elif rule['type'] == 'blocked_countries' and rule['countries'] is None:
-                meraki.fail_json(msg="countries argument is required when type is blocked_countries.")
+                meraki.fail_json(
+                    msg="countries argument is required when type is blocked_countries.")
             elif rule['type'] == 'host' and rule['host'] is None:
-                meraki.fail_json(msg="host argument is required when type is host.")
+                meraki.fail_json(
+                    msg="host argument is required when type is host.")
             elif rule['type'] == 'port' and rule['port'] is None:
-                meraki.fail_json(msg="port argument is required when type is port.")
+                meraki.fail_json(
+                    msg="port argument is required when type is port.")
             elif rule['type'] == 'allowed_countries' and rule['countries'] is None:
-                meraki.fail_json(msg="countries argument is required when type is allowed_countries.")
+                meraki.fail_json(
+                    msg="countries argument is required when type is allowed_countries.")
 
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/'}
-    query_category_urls = {'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/applicationCategories'}
-    update_urls = {'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/'}
+    query_urls = {
+        'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/'}
+    query_category_urls = {
+        'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/applicationCategories'}
+    update_urls = {
+        'mx_l7_firewall': '/networks/{net_id}/appliance/firewall/l7FirewallRules/'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['get_categories'] = (query_category_urls)
@@ -419,7 +432,8 @@ def main():
         if meraki.params['categories'] is True:  # Output only applications
             meraki.result['data'] = get_applications(meraki, net_id)
         else:
-            meraki.result['data'] = restructure_response(get_rules(meraki, net_id))
+            meraki.result['data'] = restructure_response(
+                get_rules(meraki, net_id))
     elif meraki.params['state'] == 'present':
         rules = get_rules(meraki, net_id)
         path = meraki.construct_path('get_all', net_id=net_id)
@@ -437,7 +451,8 @@ def main():
                     meraki.result['changed'] = True
                     meraki.exit_json(**meraki.result)
                 payload = {'rules': []}
-                response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                response = meraki.request(
+                    path, method='PUT', payload=json.dumps(payload))
                 meraki.result['data'] = response
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
@@ -457,7 +472,8 @@ def main():
                 meraki.result['data'] = response
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             response = restructure_response(response)
             if meraki.status == 200:
                 meraki.generate_diff(restructure_response(rules), response)

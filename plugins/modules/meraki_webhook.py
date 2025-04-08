@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -185,12 +190,6 @@ data:
             name: Meraki (included)
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def get_webhook_id(name, webhooks):
     for webhook in webhooks:
@@ -238,7 +237,8 @@ def get_webhook_payload_template_id(meraki, templates, name):
     for template in templates:
         if template["name"] == name:
             return template["payloadTemplateId"]
-    meraki.fail_json(msg="No payload template found with the name {0}".format(name))
+    meraki.fail_json(
+        msg="No payload template found with the name {0}".format(name))
 
 
 def main():
@@ -247,7 +247,8 @@ def main():
 
     argument_spec = meraki_argument_spec()
     argument_spec.update(
-        state=dict(type="str", choices=["absent", "present", "query"], default="query"),
+        state=dict(type="str", choices=[
+                   "absent", "present", "query"], default="query"),
         net_name=dict(type="str", aliases=["network"]),
         net_id=dict(type="str"),
         name=dict(type="str"),
@@ -273,12 +274,16 @@ def main():
     meraki.params["follow_redirects"] = "all"
 
     query_url = {"webhooks": "/networks/{net_id}/webhooks/httpServers"}
-    query_one_url = {"webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
+    query_one_url = {
+        "webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
     create_url = {"webhooks": "/networks/{net_id}/webhooks/httpServers"}
-    update_url = {"webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
-    delete_url = {"webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
+    update_url = {
+        "webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
+    delete_url = {
+        "webhooks": "/networks/{net_id}/webhooks/httpServers/{hookid}"}
     test_url = {"webhooks": "/networks/{net_id}/webhooks/webhookTests"}
-    test_status_url = {"webhooks": "/networks/{net_id}/webhooks/webhookTests/{testid}"}
+    test_status_url = {
+        "webhooks": "/networks/{net_id}/webhooks/webhookTests/{testid}"}
     query_payload_templates = {
         "webhooks": "/networks/{net_id}/webhooks/payloadTemplates"
     }
@@ -298,7 +303,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     templates = get_webhook_payload_templates(meraki, net_id)
     payload_template_id = meraki.params["payload_template_id"]
@@ -324,7 +330,8 @@ def main():
         if meraki.params["shared_secret"] is not None:
             payload["sharedSecret"] = meraki.params["shared_secret"]
         if payload_template_id is not None:
-            payload["payloadTemplate"] = {"payloadTemplateId": payload_template_id}
+            payload["payloadTemplate"] = {
+                "payloadTemplateId": payload_template_id}
 
     if meraki.params["state"] == "query":
         if webhook_id is not None:  # Query a single webhook
@@ -359,7 +366,8 @@ def main():
         if meraki.params["test"] == "test":
             payload = {"url": meraki.params["url"]}
             path = meraki.construct_path("test", net_id=net_id)
-            response = meraki.request(path, method="POST", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="POST", payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result["data"] = response
                 meraki.exit_json(**meraki.result)
@@ -370,7 +378,8 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("create", net_id=net_id)
-            response = meraki.request(path, method="POST", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="POST", payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result["data"] = response
                 meraki.result["changed"] = True

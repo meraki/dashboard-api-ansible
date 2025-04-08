@@ -5,6 +5,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -191,8 +193,6 @@ data:
 
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
 
 param_map = {'allowed_rules': 'allowedrules',
              'rule_id': 'ruleId',
@@ -216,19 +216,25 @@ def main():
                                  )
 
     protected_nets_arg_spec = dict(use_default=dict(type='bool'),
-                                   included_cidr=dict(type='list', elements='str'),
-                                   excluded_cidr=dict(type='list', elements='str'),
+                                   included_cidr=dict(
+                                       type='list', elements='str'),
+                                   excluded_cidr=dict(
+                                       type='list', elements='str'),
                                    )
 
     argument_spec = meraki_argument_spec()
     argument_spec.update(
         net_id=dict(type='str'),
         net_name=dict(type='str', aliases=['name', 'network']),
-        state=dict(type='str', choices=['absent', 'present', 'query'], default='present'),
-        allowed_rules=dict(type='list', default=None, elements='dict', options=allowedrules_arg_spec),
+        state=dict(type='str', choices=[
+                   'absent', 'present', 'query'], default='present'),
+        allowed_rules=dict(type='list', default=None,
+                           elements='dict', options=allowedrules_arg_spec),
         mode=dict(type='str', choices=['detection', 'disabled', 'prevention']),
-        ids_rulesets=dict(type='str', choices=['connectivity', 'balanced', 'security']),
-        protected_networks=dict(type='dict', default=None, options=protected_nets_arg_spec),
+        ids_rulesets=dict(type='str', choices=[
+                          'connectivity', 'balanced', 'security']),
+        protected_networks=dict(type='dict', default=None,
+                                options=protected_nets_arg_spec),
     )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -243,10 +249,14 @@ def main():
     module.params['follow_redirects'] = 'all'
     payload = None
 
-    query_org_urls = {'intrusion_prevention': '/organizations/{org_id}/appliance/security/intrusion'}
-    query_net_urls = {'intrusion_prevention': '/networks/{net_id}/appliance/security/intrusion'}
-    set_org_urls = {'intrusion_prevention': '/organizations/{org_id}/appliance/security/intrusion'}
-    set_net_urls = {'intrusion_prevention': '/networks/{net_id}/appliance/security/intrusion'}
+    query_org_urls = {
+        'intrusion_prevention': '/organizations/{org_id}/appliance/security/intrusion'}
+    query_net_urls = {
+        'intrusion_prevention': '/networks/{net_id}/appliance/security/intrusion'}
+    set_org_urls = {
+        'intrusion_prevention': '/organizations/{org_id}/appliance/security/intrusion'}
+    set_net_urls = {
+        'intrusion_prevention': '/networks/{net_id}/appliance/security/intrusion'}
     meraki.url_catalog['query_org'] = query_org_urls
     meraki.url_catalog['query_net'] = query_net_urls
     meraki.url_catalog['set_org'] = set_org_urls
@@ -256,17 +266,21 @@ def main():
         meraki.fail_json(msg='org_name or org_id parameters are required')
     if meraki.params['net_name'] and meraki.params['net_id']:
         meraki.fail_json(msg='net_name and net_id are mutually exclusive')
-    if meraki.params['net_name'] is None and meraki.params['net_id'] is None:  # Organization param check
+    # Organization param check
+    if meraki.params['net_name'] is None and meraki.params['net_id'] is None:
         if meraki.params['state'] == 'present':
             if meraki.params['allowed_rules'] is None:
-                meraki.fail_json(msg='allowed_rules is required when state is present and no network is specified.')
+                meraki.fail_json(
+                    msg='allowed_rules is required when state is present and no network is specified.')
     if meraki.params['net_name'] or meraki.params['net_id']:  # Network param check
         if meraki.params['state'] == 'present':
             if meraki.params['protected_networks'] is not None:
                 if meraki.params['protected_networks']['use_default'] is False and meraki.params['protected_networks']['included_cidr'] is None:
-                    meraki.fail_json(msg="included_cidr is required when use_default is False.")
+                    meraki.fail_json(
+                        msg="included_cidr is required when use_default is False.")
                 if meraki.params['protected_networks']['use_default'] is False and meraki.params['protected_networks']['excluded_cidr'] is None:
-                    meraki.fail_json(msg="excluded_cidr is required when use_default is False.")
+                    meraki.fail_json(
+                        msg="excluded_cidr is required when use_default is False.")
 
     org_id = meraki.params['org_id']
     if not org_id:
@@ -274,7 +288,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None and meraki.params['net_name']:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     # Assemble payload
     if meraki.params['state'] == 'present':
@@ -294,11 +309,14 @@ def main():
             if meraki.params['protected_networks']:
                 payload['protectedNetworks'] = {}
                 if meraki.params['protected_networks']['use_default']:
-                    payload['protectedNetworks'].update({'useDefault': meraki.params['protected_networks']['use_default']})
+                    payload['protectedNetworks'].update(
+                        {'useDefault': meraki.params['protected_networks']['use_default']})
                 if meraki.params['protected_networks']['included_cidr']:
-                    payload['protectedNetworks'].update({'includedCidr': meraki.params['protected_networks']['included_cidr']})
+                    payload['protectedNetworks'].update(
+                        {'includedCidr': meraki.params['protected_networks']['included_cidr']})
                 if meraki.params['protected_networks']['excluded_cidr']:
-                    payload['protectedNetworks'].update({'excludedCidr': meraki.params['protected_networks']['excluded_cidr']})
+                    payload['protectedNetworks'].update(
+                        {'excludedCidr': meraki.params['protected_networks']['excluded_cidr']})
     elif meraki.params['state'] == 'absent':
         if net_id is None:  # Create payload for organization
             payload = {'allowedRules': []}
@@ -323,7 +341,8 @@ def main():
                     meraki.result['changed'] = True
                     meraki.exit_json(**meraki.result)
                 path = meraki.construct_path('set_org', org_id=org_id)
-                data = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                data = meraki.request(path, method='PUT',
+                                      payload=json.dumps(payload))
                 if meraki.status == 200:
                     meraki.result['data'] = data
                     meraki.result['changed'] = True
@@ -340,7 +359,8 @@ def main():
                     meraki.result['changed'] = True
                     meraki.exit_json(**meraki.result)
                 path = meraki.construct_path('set_net', net_id=net_id)
-                data = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                data = meraki.request(path, method='PUT',
+                                      payload=json.dumps(payload))
                 if meraki.status == 200:
                     meraki.result['data'] = data
                     meraki.result['changed'] = True
@@ -358,7 +378,8 @@ def main():
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('set_org', org_id=org_id)
-            data = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            data = meraki.request(path, method='PUT',
+                                  payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result['data'] = data
                 meraki.result['changed'] = True

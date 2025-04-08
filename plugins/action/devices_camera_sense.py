@@ -76,7 +76,8 @@ class DevicesCameraSense(object):
             new_object_params['mqttBrokerId'] = self.new_object.get('mqttBrokerId') or \
                 self.new_object.get('mqtt_broker_id')
         if self.new_object.get('senseEnabled') is not None or self.new_object.get('sense_enabled') is not None:
-            new_object_params['senseEnabled'] = self.new_object.get('senseEnabled')
+            new_object_params['senseEnabled'] = self.new_object.get(
+                'senseEnabled')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')

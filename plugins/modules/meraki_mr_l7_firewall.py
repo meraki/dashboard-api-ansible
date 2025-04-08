@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
+import copy
 
 __metaclass__ = type
 
@@ -247,13 +253,6 @@ data:
                     sample: layer7/category/1
 """
 
-import copy
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def get_applications(meraki, net_id):
     path = meraki.construct_path("get_categories", net_id=net_id)
@@ -339,7 +338,8 @@ def get_ssids(meraki, net_id):
 
 
 def get_rules(meraki, net_id, number):
-    path = meraki.construct_path("get_all", net_id=net_id, custom={"number": number})
+    path = meraki.construct_path(
+        "get_all", net_id=net_id, custom={"number": number})
     response = meraki.request(path, method="GET")
     if meraki.status == 200:
         return response
@@ -358,22 +358,26 @@ def main():
         policy=dict(type="str", choices=["deny"], default="deny"),
         type=dict(
             type="str",
-            choices=["application", "application_category", "host", "ip_range", "port"],
+            choices=["application", "application_category",
+                     "host", "ip_range", "port"],
         ),
         ip_range=dict(type="str"),
-        application=dict(type="dict", default=None, options=application_arg_spec),
+        application=dict(type="dict", default=None,
+                         options=application_arg_spec),
         host=dict(type="str"),
         port=dict(type="str"),
     )
 
     argument_spec = meraki_argument_spec()
     argument_spec.update(
-        state=dict(type="str", choices=["present", "query"], default="present"),
+        state=dict(type="str", choices=[
+                   "present", "query"], default="present"),
         net_name=dict(type="str"),
         net_id=dict(type="str"),
         number=dict(type="str", aliases=["ssid_number"]),
         ssid_name=dict(type="str", aliases=["ssid"]),
-        rules=dict(type="list", default=None, elements="dict", options=rule_arg_spec),
+        rules=dict(type="list", default=None,
+                   elements="dict", options=rule_arg_spec),
         categories=dict(type="bool"),
     )
 
@@ -399,9 +403,11 @@ def main():
                     msg="application argument is required when type is application_category."
                 )
             elif rule["type"] == "host" and rule["host"] is None:
-                meraki.fail_json(msg="host argument is required when type is host.")
+                meraki.fail_json(
+                    msg="host argument is required when type is host.")
             elif rule["type"] == "port" and rule["port"] is None:
-                meraki.fail_json(msg="port argument is required when type is port.")
+                meraki.fail_json(
+                    msg="port argument is required when type is port.")
 
     meraki.params["follow_redirects"] = "all"
     query_ssids_urls = {"mr_l7_firewall": "/networks/{net_id}/wireless/ssids"}
@@ -436,7 +442,8 @@ def main():
         if orgs is None:
             orgs = meraki.get_orgs()
         net_id = meraki.get_net_id(
-            net_name=meraki.params["net_name"], data=meraki.get_nets(org_id=org_id)
+            net_name=meraki.params["net_name"], data=meraki.get_nets(
+                org_id=org_id)
         )
     number = meraki.params["number"]
     if meraki.params["ssid_name"]:
@@ -491,7 +498,8 @@ def main():
                 meraki.result["data"] = response
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             response = restructure_response(response)
             if meraki.status == 200:
                 meraki.generate_diff(restructure_response(rules), response)

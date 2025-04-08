@@ -62,7 +62,8 @@ class NetworksApplianceVlansSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('vlansEnabled') is not None or self.new_object.get('vlans_enabled') is not None:
-            new_object_params['vlansEnabled'] = self.new_object.get('vlansEnabled')
+            new_object_params['vlansEnabled'] = self.new_object.get(
+                'vlansEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -94,7 +95,8 @@ class NetworksApplianceVlansSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

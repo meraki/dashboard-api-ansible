@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.common.dict_transformations import recursive_diff
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -110,10 +113,6 @@ data:
             sample: 42
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def construct_payload(params):
     payload = dict()
@@ -148,8 +147,10 @@ def main():
     meraki = MerakiModule(module, function='switch_storm_control')
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'switch_storm_control': '/networks/{net_id}/switch/stormControl'}
-    update_url = {'switch_storm_control': '/networks/{net_id}/switch/stormControl'}
+    query_urls = {
+        'switch_storm_control': '/networks/{net_id}/switch/stormControl'}
+    update_url = {
+        'switch_storm_control': '/networks/{net_id}/switch/stormControl'}
 
     meraki.url_catalog['get_all'].update(query_urls)
     meraki.url_catalog['update'] = update_url
@@ -162,7 +163,8 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     # execute checks for argument completeness
 
@@ -187,7 +189,8 @@ def main():
                                          'after': diff[1]}
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('update', net_id=net_id)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.result['diff'] = {'before': diff[0],
                                          'after': diff[1]}

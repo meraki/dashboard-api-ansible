@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from re import sub
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -237,13 +243,6 @@ data:
           sample: 11
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-from re import sub
-
 
 def convert_to_camel_case(string):
     """Convert "snake case" to "camel case"."""
@@ -352,7 +351,8 @@ def get_net_id(meraki):
     if net_id is None:
         org_id = get_org_id(meraki)
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params["net_name"], data=nets)
     return net_id
 
 
@@ -377,7 +377,8 @@ def get_rf_profile_id(meraki):
 
 def meraki_get_radio_settings(meraki):
     """Query the Meraki API for the current radio settings."""
-    path = meraki.construct_path("get_one", custom={"serial": meraki.params["serial"]})
+    path = meraki.construct_path(
+        "get_one", custom={"serial": meraki.params["serial"]})
     return meraki.request(path, method="GET")
 
 
@@ -402,7 +403,8 @@ def _meraki_run_present(meraki):
             path = meraki.construct_path(
                 "update", custom={"serial": meraki.params["serial"]}
             )
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             meraki.result["data"] = response
             meraki.result["changed"] = True
     meraki.exit_json(**meraki.result)
@@ -426,7 +428,8 @@ def update_url_catalog(meraki):
     """Update the URL catalog available to the helper."""
     query_urls = {"mr_radio": "/devices/{serial}/wireless/radio/settings"}
     update_urls = {"mr_radio": "/devices/{serial}/wireless/radio/settings"}
-    query_all_urls = {"mr_rf_profile": "/networks/{net_id}/wireless/rfProfiles"}
+    query_all_urls = {
+        "mr_rf_profile": "/networks/{net_id}/wireless/rfProfiles"}
 
     meraki.url_catalog["get_one"].update(query_urls)
     meraki.url_catalog["update"] = update_urls
@@ -461,7 +464,8 @@ def validate_params(params):
 def main():
     argument_spec = meraki_argument_spec()
     argument_spec.update(
-        state=dict(type="str", choices=["present", "query"], default="present"),
+        state=dict(type="str", choices=[
+                   "present", "query"], default="present"),
         org_name=dict(type="str", aliases=["organization"]),
         org_id=dict(type="str"),
         net_name=dict(type="str", aliases=["network"]),

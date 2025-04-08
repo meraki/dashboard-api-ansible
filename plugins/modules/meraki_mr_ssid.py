@@ -5,6 +5,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -428,12 +433,6 @@ data:
             sample: 0
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def get_available_number(data):
     for item in data:
@@ -549,13 +548,15 @@ def main():
         enabled=dict(type="bool"),
         auth_mode=dict(
             type="str",
-            choices=["open", "psk", "open-with-radius", "8021x-meraki", "8021x-radius"],
+            choices=["open", "psk", "open-with-radius",
+                     "8021x-meraki", "8021x-radius"],
         ),
         encryption_mode=dict(type="str", choices=["wpa", "eap", "wpa-eap"]),
         psk=dict(type="str", no_log=True),
         wpa_encryption_mode=dict(
             type="str",
-            choices=["WPA1 and WPA2", "WPA2 only", "WPA3 Transition Mode", "WPA3 only"],
+            choices=["WPA1 and WPA2", "WPA2 only",
+                     "WPA3 Transition Mode", "WPA3 only"],
         ),
         splash_page=dict(
             type="str",
@@ -656,7 +657,8 @@ def main():
     # execute checks for argument completeness
     if meraki.params["psk"]:
         if meraki.params["auth_mode"] != "psk":
-            meraki.fail_json(msg="PSK is only allowed when auth_mode is set to psk")
+            meraki.fail_json(
+                msg="PSK is only allowed when auth_mode is set to psk")
         if meraki.params["encryption_mode"] != "wpa":
             meraki.fail_json(msg="PSK requires encryption_mode be set to wpa")
     if meraki.params["radius_servers"]:
@@ -671,7 +673,8 @@ def main():
             )
     if meraki.params["radius_accounting_servers"] is True:
         if (
-            meraki.params["auth_mode"] not in ("open-with-radius", "8021x-radius")
+            meraki.params["auth_mode"] not in (
+                "open-with-radius", "8021x-radius")
             or meraki.params["radius_accounting_enabled"] is False
         ):
             meraki.fail_json(
@@ -706,11 +709,13 @@ def main():
         org_id = meraki.get_org_id(meraki.params["org_name"])
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         if meraki.params["name"]:
-            ssid_id = get_ssid_number(meraki.params["name"], get_ssids(meraki, net_id))
+            ssid_id = get_ssid_number(
+                meraki.params["name"], get_ssids(meraki, net_id))
             path = meraki.construct_path(
                 "get_one", net_id=net_id, custom={"number": ssid_id}
             )
@@ -744,7 +749,8 @@ def main():
                 meraki.result["data"] = original
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path("update", net_id=net_id) + str(ssid_id)
+            path = meraki.construct_path(
+                "update", net_id=net_id) + str(ssid_id)
             result = meraki.request(path, "PUT", payload=json.dumps(payload))
             meraki.result["data"] = result
             meraki.result["changed"] = True

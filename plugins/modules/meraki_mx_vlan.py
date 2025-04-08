@@ -5,6 +5,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+import json
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -370,10 +373,6 @@ response:
           sample: 192.0.1.2
 '''
 
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-import json
-
 
 def fixed_ip_factory(meraki, data):
     fixed_ips = dict()
@@ -404,17 +403,20 @@ def construct_payload(meraki):
                }
     if meraki.params['dns_nameservers']:
         if meraki.params['dns_nameservers'] not in ('opendns', 'google_dns', 'upstream_dns'):
-            payload['dnsNameservers'] = format_dns(meraki.params['dns_nameservers'])
+            payload['dnsNameservers'] = format_dns(
+                meraki.params['dns_nameservers'])
         else:
             payload['dnsNameservers'] = meraki.params['dns_nameservers']
     if meraki.params['fixed_ip_assignments']:
-        payload['fixedIpAssignments'] = fixed_ip_factory(meraki, meraki.params['fixed_ip_assignments'])
+        payload['fixedIpAssignments'] = fixed_ip_factory(
+            meraki, meraki.params['fixed_ip_assignments'])
     if meraki.params['reserved_ip_range']:
         payload['reservedIpRanges'] = meraki.params['reserved_ip_range']
     if meraki.params['vpn_nat_subnet']:
         payload['vpnNatSubnet'] = meraki.params['vpn_nat_subnet']
     if meraki.params['dhcp_handling']:
-        payload['dhcpHandling'] = normalize_dhcp_handling(meraki.params['dhcp_handling'])
+        payload['dhcpHandling'] = normalize_dhcp_handling(
+            meraki.params['dhcp_handling'])
     if meraki.params['dhcp_relay_server_ips']:
         payload['dhcpRelayServerIps'] = meraki.params['dhcp_relay_server_ips']
     if meraki.params['dhcp_lease_time']:
@@ -461,7 +463,8 @@ def main():
                                 )
 
     dhcp_options_arg_spec = dict(code=dict(type='int'),
-                                 type=dict(type='str', choices=['text', 'ip', 'hex', 'integer']),
+                                 type=dict(type='str', choices=[
+                                           'text', 'ip', 'hex', 'integer']),
                                  value=dict(type='str'),
                                  )
 
@@ -473,8 +476,10 @@ def main():
                          name=dict(type='str', aliases=['vlan_name']),
                          subnet=dict(type='str'),
                          appliance_ip=dict(type='str'),
-                         fixed_ip_assignments=dict(type='list', default=None, elements='dict', options=fixed_ip_arg_spec),
-                         reserved_ip_range=dict(type='list', default=None, elements='dict', options=reserved_ip_arg_spec),
+                         fixed_ip_assignments=dict(
+                             type='list', default=None, elements='dict', options=fixed_ip_arg_spec),
+                         reserved_ip_range=dict(
+                             type='list', default=None, elements='dict', options=reserved_ip_arg_spec),
                          vpn_nat_subnet=dict(type='str'),
                          dns_nameservers=dict(type='str'),
                          dhcp_handling=dict(type='str', choices=['Run a DHCP server',
@@ -484,7 +489,8 @@ def main():
                                                                  'server',
                                                                  'relay'],
                                             ),
-                         dhcp_relay_server_ips=dict(type='list', default=None, elements='str'),
+                         dhcp_relay_server_ips=dict(
+                             type='list', default=None, elements='str'),
                          dhcp_lease_time=dict(type='str', choices=['30 minutes',
                                                                    '1 hour',
                                                                    '4 hours',
@@ -494,7 +500,8 @@ def main():
                          dhcp_boot_options_enabled=dict(type='bool'),
                          dhcp_boot_next_server=dict(type='str'),
                          dhcp_boot_filename=dict(type='str'),
-                         dhcp_options=dict(type='list', default=None, elements='dict', options=dhcp_options_arg_spec),
+                         dhcp_options=dict(
+                             type='list', default=None, elements='dict', options=dhcp_options_arg_spec),
                          )
 
     # the AnsibleModule object will be our abstraction working with Ansible
@@ -528,28 +535,33 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
         if not meraki.params['vlan_id']:
             meraki.result['data'] = get_vlans(meraki, net_id)
         else:
-            path = meraki.construct_path('get_one', net_id=net_id, custom={'vlan_id': meraki.params['vlan_id']})
+            path = meraki.construct_path('get_one', net_id=net_id, custom={
+                                         'vlan_id': meraki.params['vlan_id']})
             response = meraki.request(path, method='GET')
             meraki.result['data'] = response
     elif meraki.params['state'] == 'present':
         payload = construct_payload(meraki)
-        if is_vlan_valid(meraki, net_id, meraki.params['vlan_id']) is False:  # Create new VLAN
+        # Create new VLAN
+        if is_vlan_valid(meraki, net_id, meraki.params['vlan_id']) is False:
             if meraki.module.check_mode is True:
                 meraki.result['data'] = payload
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path('create', net_id=net_id)
-            response = meraki.request(path, method='POST', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='POST', payload=json.dumps(payload))
             meraki.result['changed'] = True
             meraki.result['data'] = response
         else:  # Update existing VLAN
-            path = meraki.construct_path('get_one', net_id=net_id, custom={'vlan_id': meraki.params['vlan_id']})
+            path = meraki.construct_path('get_one', net_id=net_id, custom={
+                                         'vlan_id': meraki.params['vlan_id']})
             original = meraki.request(path, method='GET')
             ignored = ['networkId']
             if meraki.is_update_required(original, payload, optional_ignore=ignored):
@@ -559,8 +571,10 @@ def main():
                     meraki.result['changed'] = True
                     meraki.result['data'] = original
                     meraki.exit_json(**meraki.result)
-                path = meraki.construct_path('update', net_id=net_id) + str(meraki.params['vlan_id'])
-                response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+                path = meraki.construct_path(
+                    'update', net_id=net_id) + str(meraki.params['vlan_id'])
+                response = meraki.request(
+                    path, method='PUT', payload=json.dumps(payload))
                 meraki.result['changed'] = True
                 meraki.result['data'] = response
                 meraki.generate_diff(original, response)
@@ -575,7 +589,8 @@ def main():
                 meraki.result['data'] = {}
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path('delete', net_id=net_id) + str(meraki.params['vlan_id'])
+            path = meraki.construct_path(
+                'delete', net_id=net_id) + str(meraki.params['vlan_id'])
             response = meraki.request(path, 'DELETE')
             meraki.result['changed'] = True
             meraki.result['data'] = response

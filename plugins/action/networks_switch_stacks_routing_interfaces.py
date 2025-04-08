@@ -46,8 +46,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["interfaceId", "name", "networkId", "switchStackId"], True),
-    ("state", "absent", ["interfaceId", "name", "networkId", "switchStackId"], True),
+    ("state", "present", ["interfaceId", "name",
+     "networkId", "switchStackId"], True),
+    ("state", "absent", ["interfaceId", "name",
+     "networkId", "switchStackId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []

@@ -104,7 +104,8 @@ class ActionModule(ActionBase):
         if not id:
             # NOTE: Does not have a get all method or it is in another action
             response = None
-            meraki.object_modify_result(changed=False, result="Module does not have get all, check arguments of module")
+            meraki.object_modify_result(
+                changed=False, result="Module does not have get all, check arguments of module")
             self._result.update(dict(meraki_response=response))
             self._result.update(meraki.exit_json())
             return self._result
