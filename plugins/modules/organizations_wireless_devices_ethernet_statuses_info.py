@@ -44,7 +44,7 @@ options:
   networkIds:
     description:
       - >
-        NetworkIds query parameter. A list of Meraki network IDs to filter results to contain only specified networks. E.g. NetworkIds=N_12345678&networkIds=L_3456.
+        NetworkIds query parameter. A list of Meraki network IDs to filter results to contain only specified networks.
     elements: str
     type: list
 requirements:

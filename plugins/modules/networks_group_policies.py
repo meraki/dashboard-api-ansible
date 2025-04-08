@@ -160,8 +160,8 @@ options:
                 type: str
             type: list
           dscpTagValue:
-            description: The DSCP tag applied by your rule. Null means 'Do not change DSCP tag'. For a list of possible tag values, use the trafficShaping/dscpTaggingOptions
-              endpoint.
+            description: The DSCP tag applied by your rule. Null means 'Do not change DSCP tag'. For a list of possible tag values, use the
+              trafficShaping/dscpTaggingOptions endpoint.
             type: int
           pcpTagValue:
             description: The PCP tag applied by your rule. Can be 0 (lowest priority) through 7 (highest priority). Null means 'Do not set PCP

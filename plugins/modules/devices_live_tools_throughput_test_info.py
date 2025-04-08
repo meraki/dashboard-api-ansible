@@ -5,13 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_live_tools_throughput_test_info
-short_description: Information module for devices _live _tools _throughput _test
-description:
-version_added: '1.0.0'
+author: Francisco Munoz (@fmunoz)
+description: Information module for devices _live _tools _throughput _test
 extends_documentation_fragment:
   - cisco.meraki.module_info
-author: Francisco Munoz (@fmunoz)
+module: devices_live_tools_throughput_test_info
+notes:
+  - Paths used are
 options:
   headers:
     description: Additional headers.
@@ -19,8 +19,8 @@ options:
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
-notes:
-  - Paths used are
+short_description: Information module for devices _live _tools _throughput _test
+version_added: 2.16.0
 """
 
 EXAMPLES = r"""

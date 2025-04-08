@@ -42,8 +42,8 @@ options:
         type: str
     type: dict
   ports:
-    description: A list of ports for which to perform the cable test. For Catalyst switches, IOS interface names are also supported, such as "GigabitEthernet1/0/8",
-      "Gi1/0/8", or even "1/0/8".
+    description: A list of ports for which to perform the cable test. For Catalyst switches, IOS interface names are also supported, such as
+      "GigabitEthernet1/0/8","Gi1/0/8", or even "1/0/8".
     elements: str
     type: list
   serial:

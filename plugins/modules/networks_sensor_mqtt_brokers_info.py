@@ -10,7 +10,8 @@ short_description: Information module for networks _sensor _mqtt _brokers
 description:
   - Get all networks _sensor _mqtt _brokers.
   - Get networks _sensor _mqtt _brokers by id. - > List the sensor settings of all MQTT brokers for this network. To get the brokers themselves,
-    use /networks/{networkId}/mqttBrokers. - > Return the sensor settings of an MQTT broker. To get the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
+    use /networks/{networkId}/mqttBrokers. - > Return the sensor settings of an MQTT broker. To get the broker itself, use
+    /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

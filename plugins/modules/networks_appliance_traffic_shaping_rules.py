@@ -43,8 +43,8 @@ options:
             type: str
         type: list
       dscpTagValue:
-        description: The DSCP tag applied by your rule. Null means 'Do not change DSCP tag'. For a list of possible tag values, use the trafficShaping/dscpTaggingOptions
-          endpoint.
+        description: The DSCP tag applied by your rule. Null means 'Do not change DSCP tag'. For a list of possible tag values, use the
+          trafficShaping/dscpTaggingOptions endpoint.
         type: int
       perClientBandwidthLimits:
         description: An object describing the bandwidth settings for your rule.
