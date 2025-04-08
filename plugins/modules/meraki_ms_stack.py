@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 
+from __future__ import absolute_import, division, print_function
 DOCUMENTATION = r'''
 ---
 module: meraki_ms_stack
@@ -117,7 +118,7 @@ data:
               - "QBZY-XWVU-TSRQ"
               - "QBAB-CDEF-GHIJ"
 '''
-from __future__ import absolute_import, division, print_function
+
 from copy import deepcopy
 from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
 from ansible.module_utils.basic import AnsibleModule, json

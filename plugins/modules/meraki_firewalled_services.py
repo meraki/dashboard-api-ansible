@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 
+from __future__ import absolute_import, division, print_function
 DOCUMENTATION = r'''
 ---
 module: meraki_firewalled_services
@@ -131,7 +132,7 @@ data:
         sample: 192.0.1.0
 '''
 
-from __future__ import absolute_import, division, print_function
+
 from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
 from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
