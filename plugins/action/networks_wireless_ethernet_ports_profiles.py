@@ -123,7 +123,8 @@ class NetworksWirelessEthernetPortsProfiles(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "profile_id") or self.new_object.get("profileId")
         name = self.new_object.get("name")

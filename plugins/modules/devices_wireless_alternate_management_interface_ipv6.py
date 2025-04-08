@@ -5,17 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: devices_wireless_alternate_management_interface_ipv6
+short_description: Resource module for devices _wireless _alternate _management _interface _ipv6
 description:
-  - Manage operation update of the resource devices _wireless _alternate _management
-    _interface _ipv6.
+  - Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
   - Update alternate management interface IPv6 address.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: devices_wireless_alternate_management_interface_ipv6
-notes:
-  - SDK Method used are wireless.Wireless.update_device_wireless_alternate_management_interface_ipv6,
-  - Paths used are put /devices/{serial}/wireless/alternateManagementInterface/ipv6,
+author: Francisco Munoz (@fmunoz)
 options:
   addresses:
     description: Configured alternate management interface addresses.
@@ -34,14 +32,12 @@ options:
         description: The DNS servers settings for this address.
         suboptions:
           addresses:
-            description: Up to 2 nameserver addresses to use, ordered in priority
-              from highest to lowest priority.
+            description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
             elements: str
             type: list
         type: dict
       prefix:
-        description: The IPv6 prefix length of the IPv6 interface. Required if IPv6
-          object is included.
+        description: The IPv6 prefix length of the IPv6 interface. Required if IPv6 object is included.
         type: str
       protocol:
         description: The IP protocol used for the address.
@@ -54,38 +50,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6
-      API.
+  - name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
+    description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6 API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
-    name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
-short_description: Resource module for devices _wireless _alternate _management _interface
-  _ipv6
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    wireless.Wireless.update_device_wireless_alternate_management_interface_ipv6,
+  - Paths used are
+    put /devices/{serial}/wireless/alternateManagementInterface/ipv6,
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.devices_wireless_alternate_management_interface_ipv6:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     addresses:
       - address: 2001:db8:3c4d:15::1
         assignmentMode: static

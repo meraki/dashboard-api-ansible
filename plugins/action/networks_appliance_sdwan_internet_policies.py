@@ -65,7 +65,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
+            wanTrafficUplinkPreferences=params.get(
+                "wanTrafficUplinkPreferences"),
             networkId=params.get("networkId"),
         )
         return new_object

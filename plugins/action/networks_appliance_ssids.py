@@ -61,7 +61,8 @@ class NetworksApplianceSsids(object):
         self.new_object = dict(
             authMode=params.get("authMode"),
             defaultVlanId=params.get("defaultVlanId"),
-            dhcpEnforcedDeauthentication=params.get("dhcpEnforcedDeauthentication"),
+            dhcpEnforcedDeauthentication=params.get(
+                "dhcpEnforcedDeauthentication"),
             dot11w=params.get("dot11w"),
             enabled=params.get("enabled"),
             encryptionMode=params.get("encryptionMode"),
@@ -172,7 +173,8 @@ class NetworksApplianceSsids(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "number") or self.new_object.get("number")
         name = self.new_object.get("name")

@@ -279,7 +279,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksSwitchRoutingMulticastRendezvousPoints(self._task.args, meraki)
+        obj = NetworksSwitchRoutingMulticastRendezvousPoints(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

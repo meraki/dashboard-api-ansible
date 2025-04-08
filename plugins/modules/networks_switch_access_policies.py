@@ -5,59 +5,44 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: networks_switch_access_policies
+short_description: Resource module for networks _switch _access _policies
 description:
-  - Manage operations create, update and delete of the resource networks _switch _access
-    _policies.
-  - 'Create an access policy for a switch network. If you would like to enable Meraki
-    Authentication, set radiusServers to empty array.
-
-    '
-  - Delete an access policy for a switch network.
-  - 'Update an access policy for a switch network. If you would like to enable Meraki
-    Authentication, set radiusServers to empty array.
-
-    '
+  - Manage operations create, update and delete of the resource networks _switch _access _policies. - > Create an access policy for a switch network.
+    If you would like to enable Meraki Authentication, set radiusServers to empty array.
+  - Delete an access policy for a switch network. - > Update an access policy for a switch network. If you would like to enable Meraki Authentication,
+    set radiusServers to empty array.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: networks_switch_access_policies
-notes:
-  - SDK Method used are switch.Switch.create_network_switch_access_policy, switch.Switch.delete_network_switch_access_policy,
-    switch.Switch.update_network_switch_access_policy,
-  - Paths used are post /networks/{networkId}/switch/accessPolicies, delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
-    put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+author: Francisco Munoz (@fmunoz)
 options:
   accessPolicyNumber:
     description: AccessPolicyNumber path parameter. Access policy number.
     type: str
   accessPolicyType:
-    description: Access Type of the policy. Automatically 'Hybrid authentication'
-      when hostMode is 'Multi-Domain'.
+    description: Access Type of the policy. Automatically 'Hybrid authentication' when hostMode is 'Multi-Domain'.
     type: str
   dot1x:
     description: 802.1x Settings.
     suboptions:
       controlDirection:
-        description: Supports either 'both' or 'inbound'. Set to 'inbound' to allow
-          unauthorized egress on the switchport. Set to 'both' to control both traffic
-          directions with authorization. Defaults to 'both'.
+        description: Supports either 'both' or 'inbound'. Set to 'inbound' to allow unauthorized egress on the switchport. Set to 'both' to control
+          both traffic directions with authorization. Defaults to 'both'.
         type: str
     type: dict
   guestPortBouncing:
-    description: If enabled, Meraki devices will periodically send access-request
-      messages to these RADIUS servers.
+    description: If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
     type: bool
   guestVlanId:
-    description: ID for the guest VLAN allow unauthorized devices access to limited
-      network resources.
+    description: ID for the guest VLAN allow unauthorized devices access to limited network resources.
     type: int
   hostMode:
     description: Choose the Host Mode for the access policy.
     type: str
   increaseAccessSpeed:
-    description: Enabling this option will make switches execute 802.1X and MAC-bypass
-      authentication simultaneously so that clients authenticate faster. Only required
-      when accessPolicyType is 'Hybrid Authentication.
+    description: Enabling this option will make switches execute 802.1X and MAC-bypass authentication simultaneously so that clients authenticate
+      faster. Only required when accessPolicyType is 'Hybrid Authentication.
     type: bool
   name:
     description: Name of the access policy.
@@ -72,59 +57,48 @@ options:
         description: Object for RADIUS Cache Settings.
         suboptions:
           enabled:
-            description: Enable to cache authorization and authentication responses
-              on the RADIUS server.
+            description: Enable to cache authorization and authentication responses on the RADIUS server.
             type: bool
           timeout:
-            description: If RADIUS caching is enabled, this value dictates how long
-              the cache will remain in the RADIUS server, in hours, to allow network
-              access without authentication.
+            description: If RADIUS caching is enabled, this value dictates how long the cache will remain in the RADIUS server, in hours, to allow
+              network access without authentication.
             type: int
         type: dict
       criticalAuth:
-        description: Critical auth settings for when authentication is rejected by
-          the RADIUS server.
+        description: Critical auth settings for when authentication is rejected by the RADIUS server.
         suboptions:
           dataVlanId:
-            description: VLAN that clients who use data will be placed on when RADIUS
-              authentication fails. Will be null if hostMode is Multi-Auth.
+            description: VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
             type: int
           suspendPortBounce:
             description: Enable to suspend port bounce when RADIUS servers are unreachable.
             type: bool
           voiceVlanId:
-            description: VLAN that clients who use voice will be placed on when RADIUS
-              authentication fails. Will be null if hostMode is Multi-Auth.
+            description: VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
             type: int
         type: dict
       failedAuthVlanId:
-        description: VLAN that clients will be placed on when RADIUS authentication
-          fails. Will be null if hostMode is Multi-Auth.
+        description: VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
         type: int
       reAuthenticationInterval:
-        description: Re-authentication period in seconds. Will be null if hostMode
-          is Multi-Auth.
+        description: Re-authentication period in seconds. Will be null if hostMode is Multi-Auth.
         type: int
     type: dict
   radiusAccountingEnabled:
-    description: Enable to send start, interim-update and stop messages to a configured
-      RADIUS accounting server for tracking connected clients.
+    description: Enable to send start, interim-update and stop messages to a configured RADIUS accounting server for tracking connected clients.
     type: bool
   radiusAccountingServers:
-    description: List of RADIUS accounting servers to require connecting devices to
-      authenticate against before granting network access.
+    description: List of RADIUS accounting servers to require connecting devices to authenticate against before granting network access.
     elements: dict
     suboptions:
       host:
         description: Public IP address of the RADIUS accounting server.
         type: str
       organizationRadiusServerId:
-        description: Organization wide RADIUS server ID. If this field is provided,
-          the host, port and secret field will be ignored.
+        description: Organization wide RADIUS server ID. If this field is provided, the host, port and secret field will be ignored.
         type: str
       port:
-        description: UDP port that the RADIUS Accounting server listens on for access
-          requests.
+        description: UDP port that the RADIUS Accounting server listens on for access requests.
         type: int
       secret:
         description: RADIUS client shared secret.
@@ -134,20 +108,17 @@ options:
     description: Change of authentication for RADIUS re-authentication and disconnection.
     type: bool
   radiusGroupAttribute:
-    description: Acceptable values are `""` for None, or `"11"` for Group Policies
-      ACL.
+    description: Acceptable values are `""` for None, or `"11"` for Group Policies ACL.
     type: str
   radiusServers:
-    description: List of RADIUS servers to require connecting devices to authenticate
-      against before granting network access.
+    description: List of RADIUS servers to require connecting devices to authenticate against before granting network access.
     elements: dict
     suboptions:
       host:
         description: Public IP address of the RADIUS server.
         type: str
       organizationRadiusServerId:
-        description: Organization wide RADIUS server ID. If this field is provided,
-          the host, port and secret field will be ignored.
+        description: Organization wide RADIUS server ID. If this field is provided, the host, port and secret field will be ignored.
         type: str
       port:
         description: UDP port that the RADIUS server listens on for access requests.
@@ -157,62 +128,66 @@ options:
         type: str
     type: list
   radiusTestingEnabled:
-    description: If enabled, Meraki devices will periodically send access-request
-      messages to these RADIUS servers.
+    description: If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
     type: bool
   urlRedirectWalledGardenEnabled:
-    description: Enable to restrict access for clients to a specific set of IP addresses
-      or hostnames prior to authentication.
+    description: Enable to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.
     type: bool
   urlRedirectWalledGardenRanges:
-    description: IP address ranges, in CIDR notation, to restrict access for clients
-      to a specific set of IP addresses or hostnames prior to authentication.
+    description: IP address ranges, in CIDR notation, to restrict access for clients to a specific set of IP addresses or hostnames prior to authentication.
     elements: str
     type: list
   voiceVlanClients:
-    description: CDP/LLDP capable voice clients will be able to use this VLAN. Automatically
-      true when hostMode is 'Multi-Domain'.
+    description: CDP/LLDP capable voice clients will be able to use this VLAN. Automatically true when hostMode is 'Multi-Domain'.
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the createNetworkSwitchAccessPolicy API.
+  - name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
+    description: Complete reference of the createNetworkSwitchAccessPolicy API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy
-    name: Cisco Meraki documentation for switch createNetworkSwitchAccessPolicy
-  - description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
+  - name: Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy
+    description: Complete reference of the deleteNetworkSwitchAccessPolicy API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-access-policy
-    name: Cisco Meraki documentation for switch deleteNetworkSwitchAccessPolicy
-  - description: Complete reference of the updateNetworkSwitchAccessPolicy API.
+  - name: Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy
+    description: Complete reference of the updateNetworkSwitchAccessPolicy API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-access-policy
-    name: Cisco Meraki documentation for switch updateNetworkSwitchAccessPolicy
-short_description: Resource module for networks _switch _access _policies
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    switch.Switch.create_network_switch_access_policy,
+    switch.Switch.delete_network_switch_access_policy,
+    switch.Switch.update_network_switch_access_policy,
+  - Paths used are
+    post /networks/{networkId}/switch/accessPolicies,
+    delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
+    put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.networks_switch_access_policies:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     accessPolicyType: Hybrid authentication
     dot1x:
@@ -253,51 +228,53 @@ EXAMPLES = r"""
     voiceVlanClients: true
 - name: Delete by id
   cisco.meraki.networks_switch_access_policies:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: absent
     accessPolicyNumber: string
     networkId: string
 - name: Update by id
   cisco.meraki.networks_switch_access_policies:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     accessPolicyNumber: string
     accessPolicyType: Hybrid authentication

@@ -91,7 +91,8 @@ class OrganizationsActionBatches(object):
         if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
             new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
-            new_object_params['synchronous'] = self.new_object.get('synchronous')
+            new_object_params['synchronous'] = self.new_object.get(
+                'synchronous')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')
@@ -112,7 +113,8 @@ class OrganizationsActionBatches(object):
         if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
             new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
-            new_object_params['synchronous'] = self.new_object.get('synchronous')
+            new_object_params['synchronous'] = self.new_object.get(
+                'synchronous')
         if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get('organizationId') or \
                 self.new_object.get('organization_id')

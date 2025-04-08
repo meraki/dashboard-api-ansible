@@ -26,7 +26,6 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     serial=dict(type="str"),
-    commandId=dict(type="str"),
     organizationId=dict(type="str"),
     perPage=dict(type="int"),
     total_pages=dict(type="int"),
@@ -87,9 +86,6 @@ class ActionModule(ActionBase):
         if params.get("serial") is not None:
             new_object["serial"] = params.get(
                 "serial")
-        if params.get("commandId") is not None:
-            new_object["commandId"] = params.get(
-                "commandId")
         return new_object
 
     def get_all(self, params):
@@ -165,11 +161,11 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        id = self._task.args.get("commandId")
+        id = self._task.args.get("serial")
         if id:
             response = meraki.exec_meraki(
                 family="devices",
-                function='getDeviceSensorCommand',
+                function='getDevice',
                 params=self.get_object(self._task.args),
             )
             self._result.update(dict(meraki_response=response))

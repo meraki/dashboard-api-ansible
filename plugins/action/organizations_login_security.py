@@ -42,6 +42,7 @@ argument_spec.update(dict(
     enforceTwoFactorAuth=dict(type="bool"),
     idleTimeoutMinutes=dict(type="int"),
     loginIpRanges=dict(type="list"),
+    minimumPasswordLength=dict(type="int"),
     numDifferentPasswords=dict(type="int"),
     passwordExpirationDays=dict(type="int"),
     organizationId=dict(type="str"),
@@ -70,6 +71,7 @@ class OrganizationsLoginSecurity(object):
             enforceTwoFactorAuth=params.get("enforceTwoFactorAuth"),
             idleTimeoutMinutes=params.get("idleTimeoutMinutes"),
             loginIpRanges=params.get("loginIpRanges"),
+            minimumPasswordLength=params.get("minimumPasswordLength"),
             numDifferentPasswords=params.get("numDifferentPasswords"),
             passwordExpirationDays=params.get("passwordExpirationDays"),
             organization_id=params.get("organizationId"),
@@ -91,25 +93,35 @@ class OrganizationsLoginSecurity(object):
             new_object_params['apiAuthentication'] = self.new_object.get('apiAuthentication') or \
                 self.new_object.get('api_authentication')
         if self.new_object.get('enforceAccountLockout') is not None or self.new_object.get('enforce_account_lockout') is not None:
-            new_object_params['enforceAccountLockout'] = self.new_object.get('enforceAccountLockout')
+            new_object_params['enforceAccountLockout'] = self.new_object.get(
+                'enforceAccountLockout')
         if self.new_object.get('enforceDifferentPasswords') is not None or self.new_object.get('enforce_different_passwords') is not None:
-            new_object_params['enforceDifferentPasswords'] = self.new_object.get('enforceDifferentPasswords')
+            new_object_params['enforceDifferentPasswords'] = self.new_object.get(
+                'enforceDifferentPasswords')
         if self.new_object.get('enforceIdleTimeout') is not None or self.new_object.get('enforce_idle_timeout') is not None:
-            new_object_params['enforceIdleTimeout'] = self.new_object.get('enforceIdleTimeout')
+            new_object_params['enforceIdleTimeout'] = self.new_object.get(
+                'enforceIdleTimeout')
         if self.new_object.get('enforceLoginIpRanges') is not None or self.new_object.get('enforce_login_ip_ranges') is not None:
-            new_object_params['enforceLoginIpRanges'] = self.new_object.get('enforceLoginIpRanges')
+            new_object_params['enforceLoginIpRanges'] = self.new_object.get(
+                'enforceLoginIpRanges')
         if self.new_object.get('enforcePasswordExpiration') is not None or self.new_object.get('enforce_password_expiration') is not None:
-            new_object_params['enforcePasswordExpiration'] = self.new_object.get('enforcePasswordExpiration')
+            new_object_params['enforcePasswordExpiration'] = self.new_object.get(
+                'enforcePasswordExpiration')
         if self.new_object.get('enforceStrongPasswords') is not None or self.new_object.get('enforce_strong_passwords') is not None:
-            new_object_params['enforceStrongPasswords'] = self.new_object.get('enforceStrongPasswords')
+            new_object_params['enforceStrongPasswords'] = self.new_object.get(
+                'enforceStrongPasswords')
         if self.new_object.get('enforceTwoFactorAuth') is not None or self.new_object.get('enforce_two_factor_auth') is not None:
-            new_object_params['enforceTwoFactorAuth'] = self.new_object.get('enforceTwoFactorAuth')
+            new_object_params['enforceTwoFactorAuth'] = self.new_object.get(
+                'enforceTwoFactorAuth')
         if self.new_object.get('idleTimeoutMinutes') is not None or self.new_object.get('idle_timeout_minutes') is not None:
             new_object_params['idleTimeoutMinutes'] = self.new_object.get('idleTimeoutMinutes') or \
                 self.new_object.get('idle_timeout_minutes')
         if self.new_object.get('loginIpRanges') is not None or self.new_object.get('login_ip_ranges') is not None:
             new_object_params['loginIpRanges'] = self.new_object.get('loginIpRanges') or \
                 self.new_object.get('login_ip_ranges')
+        if self.new_object.get('minimumPasswordLength') is not None or self.new_object.get('minimum_password_length') is not None:
+            new_object_params['minimumPasswordLength'] = self.new_object.get('minimumPasswordLength') or \
+                self.new_object.get('minimum_password_length')
         if self.new_object.get('numDifferentPasswords') is not None or self.new_object.get('num_different_passwords') is not None:
             new_object_params['numDifferentPasswords'] = self.new_object.get('numDifferentPasswords') or \
                 self.new_object.get('num_different_passwords')
@@ -183,6 +195,7 @@ class OrganizationsLoginSecurity(object):
             ("enforceTwoFactorAuth", "enforceTwoFactorAuth"),
             ("idleTimeoutMinutes", "idleTimeoutMinutes"),
             ("loginIpRanges", "loginIpRanges"),
+            ("minimumPasswordLength", "minimumPasswordLength"),
             ("numDifferentPasswords", "numDifferentPasswords"),
             ("organizationId", "organizationId"),
         ]

@@ -72,7 +72,8 @@ class ActionModule(ActionBase):
             clients=params.get("clients"),
             devicePolicy=params.get("devicePolicy"),
             groupPolicyId=params.get("groupPolicyId"),
-            policiesBySecurityAppliance=params.get("policiesBySecurityAppliance"),
+            policiesBySecurityAppliance=params.get(
+                "policiesBySecurityAppliance"),
             policiesBySsid=params.get("policiesBySsid"),
             networkId=params.get("networkId"),
         )

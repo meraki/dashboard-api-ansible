@@ -92,7 +92,8 @@ class DevicesSwitchRoutingInterfacesDhcp(object):
             new_object_params['bootNextServer'] = self.new_object.get('bootNextServer') or \
                 self.new_object.get('boot_next_server')
         if self.new_object.get('bootOptionsEnabled') is not None or self.new_object.get('boot_options_enabled') is not None:
-            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled')
+            new_object_params['bootOptionsEnabled'] = self.new_object.get(
+                'bootOptionsEnabled')
         if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
             new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
                 self.new_object.get('dhcp_lease_time')

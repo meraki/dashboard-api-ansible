@@ -71,6 +71,8 @@ class DevicesSwitchRoutingInterfaces(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
+            new_object_params['protocol'] = self.new_object.get('protocol')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params

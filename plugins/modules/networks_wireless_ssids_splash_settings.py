@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: networks_wireless_ssids_splash_settings
+short_description: Resource module for networks _wireless _ssids _splash _settings
 description:
   - Manage operation update of the resource networks _wireless _ssids _splash _settings.
   - Modify the splash page settings for the given SSID.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: networks_wireless_ssids_splash_settings
-notes:
-  - SDK Method used are wireless.Wireless.update_network_wireless_ssid_splash_settings,
-  - Paths used are put /networks/{networkId}/wireless/ssids/{number}/splash/settings,
+author: Francisco Munoz (@fmunoz)
 options:
   allowSimultaneousLogins:
     description: Whether or not to allow simultaneous logins from different devices.
@@ -40,20 +39,17 @@ options:
         type: str
     type: dict
   blockAllTrafficBeforeSignOn:
-    description: How restricted allowing traffic should be. If true, all traffic types
-      are blocked until the splash page is acknowledged. If false, all non-HTTP traffic
-      is allowed before the splash page is acknowledged.
+    description: How restricted allowing traffic should be. If true, all traffic types are blocked until the splash page is acknowledged. If false,
+      all non-HTTP traffic is allowed before the splash page is acknowledged.
     type: bool
   controllerDisconnectionBehavior:
-    description: How login attempts should be handled when the controller is unreachable.
-      Can be either 'open', 'restricted', or 'default'.
+    description: How login attempts should be handled when the controller is unreachable. Can be either 'open', 'restricted', or 'default'.
     type: str
   guestSponsorship:
     description: Details associated with guest sponsored splash.
     suboptions:
       durationInMinutes:
-        description: Duration in minutes of sponsored guest authorization. Must be
-          between 1 and 60480 (6 weeks).
+        description: Duration in minutes of sponsored guest authorization. Must be between 1 and 60480 (6 weeks).
         type: int
       guestCanRequestTimeframe:
         description: Whether or not guests can specify how much time they are requesting.
@@ -66,20 +62,27 @@ options:
     description: Number path parameter.
     type: str
   redirectUrl:
-    description: The custom redirect URL where the users will go after the splash
-      page.
+    description: The custom redirect URL where the users will go after the splash page.
     type: str
+  selfRegistration:
+    description: Self-registration settings for splash with Meraki authentication.
+    suboptions:
+      authorizationType:
+        description: How created user accounts should be authorized. Must be included in admin, auto, self_email.
+        type: str
+      enabled:
+        description: Whether or not to allow users to create their own account on the network.
+        type: bool
+    type: dict
   sentryEnrollment:
     description: Systems Manager sentry enrollment splash settings.
     suboptions:
       enforcedSystems:
-        description: The system types that the Sentry enforces. Must be included in
-          'iOS, 'Android', 'macOS', and 'Windows'.
+        description: The system types that the Sentry enforces. Must be included in 'iOS, 'Android', 'macOS', and 'Windows'.
         elements: str
         type: list
       strength:
-        description: The strength of the enforcement of selected system types. Must
-          be one of 'focused', 'click-through', and 'strict'.
+        description: The strength of the enforcement of selected system types. Must be one of 'focused', 'click-through', and 'strict'.
         type: str
       systemsManagerNetwork:
         description: Systems Manager network targeted for sentry enrollment.
@@ -99,17 +102,14 @@ options:
         description: Properties for setting a new image.
         suboptions:
           contents:
-            description: The file contents (a base 64 encoded string) of your new
-              image.
+            description: The file contents (a base 64 encoded string) of your new image.
             type: str
           format:
-            description: The format of the encoded contents. Supported formats are
-              'png', 'gif', and jpg'.
+            description: The format of the encoded contents. Supported formats are 'png', 'gif', and jpg'.
             type: str
         type: dict
       md5:
-        description: The MD5 value of the image file. Setting this to null will remove
-          the image from the splash page.
+        description: The MD5 value of the image file. Setting this to null will remove the image from the splash page.
         type: str
     type: dict
   splashLogo:
@@ -122,17 +122,14 @@ options:
         description: Properties for setting a new image.
         suboptions:
           contents:
-            description: The file contents (a base 64 encoded string) of your new
-              logo.
+            description: The file contents (a base 64 encoded string) of your new logo.
             type: str
           format:
-            description: The format of the encoded contents. Supported formats are
-              'png', 'gif', and jpg'.
+            description: The format of the encoded contents. Supported formats are 'png', 'gif', and jpg'.
             type: str
         type: dict
       md5:
-        description: The MD5 value of the logo file. Setting this to null will remove
-          the logo from the splash page.
+        description: The MD5 value of the logo file. Setting this to null will remove the logo from the splash page.
         type: str
     type: dict
   splashPrepaidFront:
@@ -145,41 +142,33 @@ options:
         description: Properties for setting a new image.
         suboptions:
           contents:
-            description: The file contents (a base 64 encoded string) of your new
-              prepaid front.
+            description: The file contents (a base 64 encoded string) of your new prepaid front.
             type: str
           format:
-            description: The format of the encoded contents. Supported formats are
-              'png', 'gif', and jpg'.
+            description: The format of the encoded contents. Supported formats are 'png', 'gif', and jpg'.
             type: str
         type: dict
       md5:
-        description: The MD5 value of the prepaid front image file. Setting this to
-          null will remove the prepaid front from the splash page.
+        description: The MD5 value of the prepaid front image file. Setting this to null will remove the prepaid front from the splash page.
         type: str
     type: dict
   splashTimeout:
-    description: Splash timeout in minutes. This will determine how often users will
-      see the splash page.
+    description: Splash timeout in minutes. This will determine how often users will see the splash page.
     type: int
   splashUrl:
-    description: Optional The custom splash URL of the click-through splash page.
-      Note that the URL can be configured without necessarily being used. In order
-      to enable the custom URL, see 'useSplashUrl'.
+    description: Optional The custom splash URL of the click-through splash page. Note that the URL can be configured without necessarily being
+      used. In order to enable the custom URL, see 'useSplashUrl'.
     type: str
   themeId:
     description: The id of the selected splash theme.
     type: str
   useRedirectUrl:
-    description: The Boolean indicating whether the the user will be redirected to
-      the custom redirect URL after the splash page. A custom redirect URL must be
-      set if this is true.
+    description: The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. A custom redirect
+      URL must be set if this is true.
     type: bool
   useSplashUrl:
-    description: Optional Boolean indicating whether the users will be redirected
-      to the custom splash url. A custom splash URL must be set if this is true. Note
-      that depending on your SSID's access control settings, it may not be possible
-      to use the custom splash URL.
+    description: Optional Boolean indicating whether the users will be redirected to the custom splash url. A custom splash URL must be set if
+      this is true. Note that depending on your SSID's access control settings, it may not be possible to use the custom splash URL.
     type: bool
   welcomeMessage:
     description: The welcome message for the users on the splash page.
@@ -188,37 +177,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the updateNetworkWirelessSsidSplashSettings
-      API.
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSplashSettings
+    description: Complete reference of the updateNetworkWirelessSsidSplashSettings API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-splash-settings
-    name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidSplashSettings
-short_description: Resource module for networks _wireless _ssids _splash _settings
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    wireless.Wireless.update_network_wireless_ssid_splash_settings,
+  - Paths used are
+    put /networks/{networkId}/wireless/ssids/{number}/splash/settings,
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.networks_wireless_ssids_splash_settings:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     allowSimultaneousLogins: false
     billing:
@@ -235,6 +227,9 @@ EXAMPLES = r"""
     networkId: string
     number: string
     redirectUrl: https://example.com
+    selfRegistration:
+      authorizationType: admin
+      enabled: true
     sentryEnrollment:
       enforcedSystems:
         - iOS

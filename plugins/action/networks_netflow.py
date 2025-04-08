@@ -81,7 +81,8 @@ class NetworksNetflow(object):
         if self.new_object.get('etaEnabled') is not None or self.new_object.get('eta_enabled') is not None:
             new_object_params['etaEnabled'] = self.new_object.get('etaEnabled')
         if self.new_object.get('reportingEnabled') is not None or self.new_object.get('reporting_enabled') is not None:
-            new_object_params['reportingEnabled'] = self.new_object.get('reportingEnabled')
+            new_object_params['reportingEnabled'] = self.new_object.get(
+                'reportingEnabled')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -116,7 +117,8 @@ class NetworksNetflow(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

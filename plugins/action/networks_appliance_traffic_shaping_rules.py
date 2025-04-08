@@ -64,7 +64,8 @@ class NetworksApplianceTrafficShapingRules(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('defaultRulesEnabled') is not None or self.new_object.get('default_rules_enabled') is not None:
-            new_object_params['defaultRulesEnabled'] = self.new_object.get('defaultRulesEnabled')
+            new_object_params['defaultRulesEnabled'] = self.new_object.get(
+                'defaultRulesEnabled')
         if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
@@ -102,7 +103,8 @@ class NetworksApplianceTrafficShapingRules(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

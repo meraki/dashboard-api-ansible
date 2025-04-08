@@ -236,7 +236,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsCameraCustomAnalyticsArtifacts(self._task.args, meraki)
+        obj = OrganizationsCameraCustomAnalyticsArtifacts(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

@@ -98,7 +98,8 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             new_object_params['bootNextServer'] = self.new_object.get('bootNextServer') or \
                 self.new_object.get('boot_next_server')
         if self.new_object.get('bootOptionsEnabled') is not None or self.new_object.get('boot_options_enabled') is not None:
-            new_object_params['bootOptionsEnabled'] = self.new_object.get('bootOptionsEnabled')
+            new_object_params['bootOptionsEnabled'] = self.new_object.get(
+                'bootOptionsEnabled')
         if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
             new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
                 self.new_object.get('dhcp_lease_time')
@@ -163,7 +164,8 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -254,7 +256,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksSwitchStacksRoutingInterfacesDhcp(self._task.args, meraki)
+        obj = NetworksSwitchStacksRoutingInterfacesDhcp(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

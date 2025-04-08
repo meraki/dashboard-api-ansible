@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: devices_cellular_sims
+short_description: Resource module for devices _cellular _sims
 description:
   - Manage operation update of the resource devices _cellular _sims.
   - Updates the SIM and APN configurations for a cellular device.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: devices_cellular_sims
-notes:
-  - SDK Method used are devices.Devices.update_device_cellular_sims,
-  - Paths used are put /devices/{serial}/cellular/sims,
+author: Francisco Munoz (@fmunoz)
 options:
   serial:
     description: Serial path parameter.
@@ -30,15 +29,13 @@ options:
         type: int
     type: dict
   simOrdering:
-    description: Specifies the ordering of all SIMs for an MG primary, secondary,
-      and not-in-use (when applicable). It's required for devices with 3 or more SIMs
-      and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM,
-      use 'sim3'. Sim failover will occur only between primary and secondary sim slots.
+    description: Specifies the ordering of all SIMs for an MG primary, secondary, and not-in-use (when applicable). It's required for devices
+      with 3 or more SIMs and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM, use 'sim3'. Sim failover will occur
+      only between primary and secondary sim slots.
     elements: str
     type: list
   sims:
-    description: List of SIMs. If a SIM was previously configured and not specified
-      in this request, it will remain unchanged.
+    description: List of SIMs. If a SIM was previously configured and not specified in this request, it will remain unchanged.
     elements: dict
     suboptions:
       apns:
@@ -46,16 +43,14 @@ options:
         elements: dict
         suboptions:
           allowedIpTypes:
-            description: IP versions to support (permitted values include 'ipv4',
-              'ipv6').
+            description: IP versions to support (permitted values include 'ipv4', 'ipv6').
             elements: str
             type: list
           authentication:
             description: APN authentication configurations.
             suboptions:
               password:
-                description: APN password, if type is set (if APN password is not
-                  supplied, the password is left unchanged).
+                description: APN password, if type is set (if APN password is not supplied, the password is left unchanged).
                 type: str
               type:
                 description: APN auth type.
@@ -69,53 +64,55 @@ options:
             type: str
         type: list
       isPrimary:
-        description: If true, this SIM is activated on platform bootup. It must be
-          true on single-SIM devices and is a required field for dual-SIM MGs unless
-          it is being configured using 'simOrdering'.
+        description: If true, this SIM is activated on platform bootup. It must be true on single-SIM devices and is a required field for dual-SIM
+          MGs unless it is being configured using 'simOrdering'.
         type: bool
       simOrder:
-        description: Priority of SIM slot being configured. Use a value between 1
-          and total number of SIMs available. The value must be unique for each SIM.
+        description: Priority of SIM slot being configured. Use a value between 1 and total number of SIMs available. The value must be unique
+          for each SIM.
         type: int
       slot:
-        description: SIM slot being configured. Must be 'sim1' on single-sim devices.
-          Use 'sim3' for eSIM.
+        description: SIM slot being configured. Must be 'sim1' on single-sim devices. Use 'sim3' for eSIM.
         type: str
     type: list
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the updateDeviceCellularSims API.
+  - name: Cisco Meraki documentation for devices updateDeviceCellularSims
+    description: Complete reference of the updateDeviceCellularSims API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-sims
-    name: Cisco Meraki documentation for devices updateDeviceCellularSims
-short_description: Resource module for devices _cellular _sims
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    devices.Devices.update_device_cellular_sims,
+  - Paths used are
+    put /devices/{serial}/cellular/sims,
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.devices_cellular_sims:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     serial: string
     simFailover:

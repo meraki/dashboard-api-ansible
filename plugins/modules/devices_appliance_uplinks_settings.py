@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: devices_appliance_uplinks_settings
+short_description: Resource module for devices _appliance _uplinks _settings
 description:
   - Manage operation update of the resource devices _appliance _uplinks _settings.
   - Update the uplink settings for an MX appliance.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: devices_appliance_uplinks_settings
-notes:
-  - SDK Method used are appliance.Appliance.update_device_appliance_uplinks_settings,
-  - Paths used are put /devices/{serial}/appliance/uplinks/settings,
+author: Francisco Munoz (@fmunoz)
 options:
   interfaces:
     description: Interface settings.
@@ -35,8 +34,7 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter
-                      is not returned.
+                    description: Password for PPPoE authentication. This parameter is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -56,8 +54,7 @@ options:
                     description: IP address and subnet mask when in static mode.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when
-                      PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
                     type: str
                   gateway:
                     description: Gateway IP address when in static mode.
@@ -66,8 +63,7 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -76,23 +72,19 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received
-                      by SLAAC.
+                    description: Static address that will override the one(s) received by SLAAC.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when
-                      PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
                     type: str
                   gateway:
-                    description: Static gateway that will override the one received
-                      by autoconf.
+                    description: Static gateway that will override the one received by autoconf.
                     type: str
                   nameservers:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -125,8 +117,7 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter
-                      is not returned.
+                    description: Password for PPPoE authentication. This parameter is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -146,8 +137,7 @@ options:
                     description: IP address and subnet mask when in static mode.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when
-                      PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
                     type: str
                   gateway:
                     description: Gateway IP address when in static mode.
@@ -156,8 +146,7 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -166,23 +155,19 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received
-                      by SLAAC.
+                    description: Static address that will override the one(s) received by SLAAC.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when
-                      PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
                     type: str
                   gateway:
-                    description: Static gateway that will override the one received
-                      by autoconf.
+                    description: Static gateway that will override the one received by autoconf.
                     type: str
                   nameservers:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -207,36 +192,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the updateDeviceApplianceUplinksSettings API.
+  - name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
+    description: Complete reference of the updateDeviceApplianceUplinksSettings API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-appliance-uplinks-settings
-    name: Cisco Meraki documentation for appliance updateDeviceApplianceUplinksSettings
-short_description: Resource module for devices _appliance _uplinks _settings
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    appliance.Appliance.update_device_appliance_uplinks_settings,
+  - Paths used are
+    put /devices/{serial}/appliance/uplinks/settings,
 """
 
 EXAMPLES = r"""
 - name: Update all
   cisco.meraki.devices_appliance_uplinks_settings:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     interfaces:
       wan1:

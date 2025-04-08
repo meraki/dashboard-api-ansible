@@ -47,8 +47,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name", "networkId", "qualityRetentionProfileId"], True),
-    ("state", "absent", ["name", "networkId", "qualityRetentionProfileId"], True),
+    ("state", "present", ["name", "networkId",
+     "qualityRetentionProfileId"], True),
+    ("state", "absent", ["name", "networkId",
+     "qualityRetentionProfileId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -62,10 +64,12 @@ class NetworksCameraQualityRetentionProfiles(object):
             audioRecordingEnabled=params.get("audioRecordingEnabled"),
             cloudArchiveEnabled=params.get("cloudArchiveEnabled"),
             maxRetentionDays=params.get("maxRetentionDays"),
-            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
+            motionBasedRetentionEnabled=params.get(
+                "motionBasedRetentionEnabled"),
             motionDetectorVersion=params.get("motionDetectorVersion"),
             name=params.get("name"),
-            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
+            restrictedBandwidthModeEnabled=params.get(
+                "restrictedBandwidthModeEnabled"),
             scheduleId=params.get("scheduleId"),
             smartRetention=params.get("smartRetention"),
             videoSettings=params.get("videoSettings"),
@@ -93,14 +97,17 @@ class NetworksCameraQualityRetentionProfiles(object):
     def create_params(self):
         new_object_params = {}
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get(
+                'audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
-            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
+            new_object_params['cloudArchiveEnabled'] = self.new_object.get(
+                'cloudArchiveEnabled')
         if self.new_object.get('maxRetentionDays') is not None or self.new_object.get('max_retention_days') is not None:
             new_object_params['maxRetentionDays'] = self.new_object.get('maxRetentionDays') or \
                 self.new_object.get('max_retention_days')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get(
+                'motionBasedRetentionEnabled')
         if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
             new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
                 self.new_object.get('motion_detector_version')
@@ -108,7 +115,8 @@ class NetworksCameraQualityRetentionProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get(
+                'restrictedBandwidthModeEnabled')
         if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
             new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
                 self.new_object.get('schedule_id')
@@ -136,14 +144,17 @@ class NetworksCameraQualityRetentionProfiles(object):
     def update_by_id_params(self):
         new_object_params = {}
         if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
+            new_object_params['audioRecordingEnabled'] = self.new_object.get(
+                'audioRecordingEnabled')
         if self.new_object.get('cloudArchiveEnabled') is not None or self.new_object.get('cloud_archive_enabled') is not None:
-            new_object_params['cloudArchiveEnabled'] = self.new_object.get('cloudArchiveEnabled')
+            new_object_params['cloudArchiveEnabled'] = self.new_object.get(
+                'cloudArchiveEnabled')
         if self.new_object.get('maxRetentionDays') is not None or self.new_object.get('max_retention_days') is not None:
             new_object_params['maxRetentionDays'] = self.new_object.get('maxRetentionDays') or \
                 self.new_object.get('max_retention_days')
         if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
+            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get(
+                'motionBasedRetentionEnabled')
         if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
             new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
                 self.new_object.get('motion_detector_version')
@@ -151,7 +162,8 @@ class NetworksCameraQualityRetentionProfiles(object):
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
         if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get(
+                'restrictedBandwidthModeEnabled')
         if self.new_object.get('scheduleId') is not None or self.new_object.get('schedule_id') is not None:
             new_object_params['scheduleId'] = self.new_object.get('scheduleId') or \
                 self.new_object.get('schedule_id')

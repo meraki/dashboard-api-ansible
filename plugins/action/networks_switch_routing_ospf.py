@@ -85,7 +85,8 @@ class NetworksSwitchRoutingOspf(object):
             new_object_params['helloTimerInSeconds'] = self.new_object.get('helloTimerInSeconds') or \
                 self.new_object.get('hello_timer_in_seconds')
         if self.new_object.get('md5AuthenticationEnabled') is not None or self.new_object.get('md5_authentication_enabled') is not None:
-            new_object_params['md5AuthenticationEnabled'] = self.new_object.get('md5AuthenticationEnabled')
+            new_object_params['md5AuthenticationEnabled'] = self.new_object.get(
+                'md5AuthenticationEnabled')
         if self.new_object.get('md5AuthenticationKey') is not None or self.new_object.get('md5_authentication_key') is not None:
             new_object_params['md5AuthenticationKey'] = self.new_object.get('md5AuthenticationKey') or \
                 self.new_object.get('md5_authentication_key')
@@ -126,7 +127,8 @@ class NetworksSwitchRoutingOspf(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

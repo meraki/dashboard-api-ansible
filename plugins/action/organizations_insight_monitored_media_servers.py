@@ -40,8 +40,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["monitoredMediaServerId", "name", "organizationId"], True),
-    ("state", "absent", ["monitoredMediaServerId", "name", "organizationId"], True),
+    ("state", "present", ["monitoredMediaServerId",
+     "name", "organizationId"], True),
+    ("state", "absent", ["monitoredMediaServerId",
+     "name", "organizationId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -53,7 +55,8 @@ class OrganizationsInsightMonitoredMediaServers(object):
         self.meraki = meraki
         self.new_object = dict(
             address=params.get("address"),
-            bestEffortMonitoringEnabled=params.get("bestEffortMonitoringEnabled"),
+            bestEffortMonitoringEnabled=params.get(
+                "bestEffortMonitoringEnabled"),
             name=params.get("name"),
             organizationId=params.get("organizationId"),
             monitoredMediaServerId=params.get("monitoredMediaServerId"),
@@ -82,7 +85,8 @@ class OrganizationsInsightMonitoredMediaServers(object):
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
+                'bestEffortMonitoringEnabled')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -107,7 +111,8 @@ class OrganizationsInsightMonitoredMediaServers(object):
             new_object_params['address'] = self.new_object.get('address') or \
                 self.new_object.get('address')
         if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get('bestEffortMonitoringEnabled')
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
+                'bestEffortMonitoringEnabled')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -286,7 +291,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsInsightMonitoredMediaServers(self._task.args, meraki)
+        obj = OrganizationsInsightMonitoredMediaServers(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

@@ -6,7 +6,7 @@
 
 DOCUMENTATION = r"""
 author: Francisco Munoz (@fmunoz)
-description: Information module for devices _livetools _arptable
+description: Information module for devices _live_tools _arp_table
 extends_documentation_fragment:
   - cisco.meraki.module_info
 module: devices_live_tools_arp_table_info

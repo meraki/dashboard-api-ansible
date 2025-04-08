@@ -98,7 +98,8 @@ class NetworksMerakiAuthUsers(object):
             new_object_params['email'] = self.new_object.get('email') or \
                 self.new_object.get('email')
         if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
-            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
+            new_object_params['emailPasswordToUser'] = self.new_object.get(
+                'emailPasswordToUser')
         if self.new_object.get('isAdmin') is not None or self.new_object.get('is_admin') is not None:
             new_object_params['isAdmin'] = self.new_object.get('isAdmin')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
@@ -130,7 +131,8 @@ class NetworksMerakiAuthUsers(object):
             new_object_params['authorizations'] = self.new_object.get('authorizations') or \
                 self.new_object.get('authorizations')
         if self.new_object.get('emailPasswordToUser') is not None or self.new_object.get('email_password_to_user') is not None:
-            new_object_params['emailPasswordToUser'] = self.new_object.get('emailPasswordToUser')
+            new_object_params['emailPasswordToUser'] = self.new_object.get(
+                'emailPasswordToUser')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')

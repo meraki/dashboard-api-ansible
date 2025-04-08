@@ -27,6 +27,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
+    protocol=dict(type="str"),
     interfaceId=dict(type="str"),
 ))
 
@@ -85,6 +86,9 @@ class ActionModule(ActionBase):
         if params.get("switchStackId") is not None:
             new_object["switchStackId"] = params.get(
                 "switchStackId")
+        if params.get("protocol") is not None:
+            new_object["protocol"] = params.get(
+                "protocol")
 
         return new_object
 

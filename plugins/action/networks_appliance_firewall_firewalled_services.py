@@ -106,7 +106,8 @@ class NetworksApplianceFirewallFirewalledServices(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "service") or self.new_object.get("service")
         name = self.new_object.get("name")
@@ -202,7 +203,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksApplianceFirewallFirewalledServices(self._task.args, meraki)
+        obj = NetworksApplianceFirewallFirewalledServices(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 
