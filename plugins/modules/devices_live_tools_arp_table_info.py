@@ -5,13 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
-description: Information module for devices _livetools _arptable
+module: devices_live_tools_arp_table_info
+short_description: Information module for devices _live _tools _arp _table
+description:
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
-module: devices_live_tools_arp_table_info
-notes:
-  - Paths used are
+author: Francisco Munoz (@fmunoz)
 options:
   headers:
     description: Additional headers.
@@ -19,8 +19,8 @@ options:
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
-short_description: Information module for devices _live _tools _arp _table
-version_added: 2.16.0
+notes:
+  - Paths used are
 """
 
 EXAMPLES = r"""
