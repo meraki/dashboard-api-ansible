@@ -73,6 +73,8 @@ class NetworksSwitchStacksRoutingInterfaces(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
+            new_object_params['protocol'] = self.new_object.get('protocol')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')

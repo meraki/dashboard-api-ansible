@@ -21,13 +21,12 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_argument_spec,
 )
 
-# Get common arguments specification
+# Get common arguements specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    serial=dict(type="str"),
-    protocol=dict(type="str"),
-    interfaceId=dict(type="str"),
+    items=dict(type="list"),
+    organizationId=dict(type="str"),
 ))
 
 required_if = []
@@ -43,7 +42,7 @@ class ActionModule(ActionBase):
                 "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = True
+        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -65,24 +64,10 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail(errors)
 
     def get_object(self, params):
-        new_object = {}
-        if params.get("serial") is not None:
-            new_object["serial"] = params.get(
-                "serial")
-        if params.get("interfaceId") is not None:
-            new_object["interfaceId"] = params.get(
-                "interfaceId")
-        return new_object
-
-    def get_all(self, params):
-        new_object = {}
-        if params.get("serial") is not None:
-            new_object["serial"] = params.get(
-                "serial")
-        if params.get("protocol") is not None:
-            new_object["protocol"] = params.get(
-                "protocol")
-
+        new_object = dict(
+            items=params.get("items"),
+            organizationId=params.get("organizationId"),
+        )
         return new_object
 
     def run(self, tmp=None, task_vars=None):
@@ -91,26 +76,14 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(meraki_response={}))
-
         meraki = MERAKI(params=self._task.args)
 
-        id = self._task.args.get("interfaceId")
-        if id:
-            response = meraki.exec_meraki(
-                family="switch",
-                function='getDeviceSwitchRoutingInterface',
-                params=self.get_object(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
-        if not id:
-            response = meraki.exec_meraki(
-                family="switch",
-                function='getDeviceSwitchRoutingInterfaces',
-                params=self.get_all(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
+        response = meraki.exec_meraki(
+            family="appliance",
+            function='bulkOrganizationApplianceDnsLocalProfilesAssignmentsCreate',
+            op_modifies=True,
+            params=self.get_object(self._task.args),
+        )
+        self._result.update(dict(meraki_response=response))
+        self._result.update(meraki.exit_json())
+        return self._result

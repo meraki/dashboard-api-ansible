@@ -25,9 +25,9 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    serial=dict(type="str"),
-    protocol=dict(type="str"),
-    interfaceId=dict(type="str"),
+    organizationId=dict(type="str"),
+    profileIds=dict(type="list"),
+    networkIds=dict(type="list"),
 ))
 
 required_if = []
@@ -64,24 +64,17 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(self, params):
-        new_object = {}
-        if params.get("serial") is not None:
-            new_object["serial"] = params.get(
-                "serial")
-        if params.get("interfaceId") is not None:
-            new_object["interfaceId"] = params.get(
-                "interfaceId")
-        return new_object
-
     def get_all(self, params):
         new_object = {}
-        if params.get("serial") is not None:
-            new_object["serial"] = params.get(
-                "serial")
-        if params.get("protocol") is not None:
-            new_object["protocol"] = params.get(
-                "protocol")
+        if params.get("organizationId") is not None:
+            new_object["organizationId"] = params.get(
+                "organizationId")
+        if params.get("profileIds") is not None:
+            new_object["profileIds"] = params.get(
+                "profileIds")
+        if params.get("networkIds") is not None:
+            new_object["networkIds"] = params.get(
+                "networkIds")
 
         return new_object
 
@@ -95,22 +88,11 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        id = self._task.args.get("interfaceId")
-        if id:
-            response = meraki.exec_meraki(
-                family="switch",
-                function='getDeviceSwitchRoutingInterface',
-                params=self.get_object(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
-        if not id:
-            response = meraki.exec_meraki(
-                family="switch",
-                function='getDeviceSwitchRoutingInterfaces',
-                params=self.get_all(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
+        response = meraki.exec_meraki(
+            family="appliance",
+            function='getOrganizationApplianceDnsLocalProfilesAssignments',
+            params=self.get_all(self._task.args),
+        )
+        self._result.update(dict(meraki_response=response))
+        self._result.update(meraki.exit_json())
+        return self._result

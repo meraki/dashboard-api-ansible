@@ -38,6 +38,7 @@ argument_spec.update(dict(
     controllerDisconnectionBehavior=dict(type="str"),
     guestSponsorship=dict(type="dict"),
     redirectUrl=dict(type="str"),
+    selfRegistration=dict(type="dict"),
     sentryEnrollment=dict(type="dict"),
     splashImage=dict(type="dict"),
     splashLogo=dict(type="dict"),
@@ -70,6 +71,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             controllerDisconnectionBehavior=params.get("controllerDisconnectionBehavior"),
             guestSponsorship=params.get("guestSponsorship"),
             redirectUrl=params.get("redirectUrl"),
+            selfRegistration=params.get("selfRegistration"),
             sentryEnrollment=params.get("sentryEnrollment"),
             splashImage=params.get("splashImage"),
             splashLogo=params.get("splashLogo"),
@@ -111,6 +113,9 @@ class NetworksWirelessSsidsSplashSettings(object):
         if self.new_object.get('redirectUrl') is not None or self.new_object.get('redirect_url') is not None:
             new_object_params['redirectUrl'] = self.new_object.get('redirectUrl') or \
                 self.new_object.get('redirect_url')
+        if self.new_object.get('selfRegistration') is not None or self.new_object.get('self_registration') is not None:
+            new_object_params['selfRegistration'] = self.new_object.get('selfRegistration') or \
+                self.new_object.get('self_registration')
         if self.new_object.get('sentryEnrollment') is not None or self.new_object.get('sentry_enrollment') is not None:
             new_object_params['sentryEnrollment'] = self.new_object.get('sentryEnrollment') or \
                 self.new_object.get('sentry_enrollment')
@@ -204,6 +209,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             ("controllerDisconnectionBehavior", "controllerDisconnectionBehavior"),
             ("guestSponsorship", "guestSponsorship"),
             ("redirectUrl", "redirectUrl"),
+            ("selfRegistration", "selfRegistration"),
             ("sentryEnrollment", "sentryEnrollment"),
             ("splashImage", "splashImage"),
             ("splashLogo", "splashLogo"),

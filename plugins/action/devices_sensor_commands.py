@@ -32,64 +32,69 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    audioRecordingEnabled=dict(type="bool"),
-    motionBasedRetentionEnabled=dict(type="bool"),
-    motionDetectorVersion=dict(type="int"),
-    profileId=dict(type="str"),
-    quality=dict(type="str"),
-    resolution=dict(type="str"),
-    restrictedBandwidthModeEnabled=dict(type="bool"),
+    operation=dict(type="str"),
     serial=dict(type="str"),
+    commandId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["serial"], True),
+    ("state", "present", ["commandId", "serial"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class DevicesCameraQualityAndRetention(object):
+class DevicesSensorCommands(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            audioRecordingEnabled=params.get("audioRecordingEnabled"),
-            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
-            motionDetectorVersion=params.get("motionDetectorVersion"),
-            profileId=params.get("profileId"),
-            quality=params.get("quality"),
-            resolution=params.get("resolution"),
-            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
+            operation=params.get("operation"),
             serial=params.get("serial"),
+            command_id=params.get("commandId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('operations') is not None or self.new_object.get('operations') is not None:
+            new_object_params['operations'] = self.new_object.get('operations')
+        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+            new_object_params['perPage'] = self.new_object.get('perPage') or \
+                self.new_object.get('per_page')
+        new_object_params['total_pages'] = -1
+        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
+                self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
+                self.new_object.get('ending_before')
+        if self.new_object.get('sortOrder') is not None or self.new_object.get('sort_order') is not None:
+            new_object_params['sortOrder'] = self.new_object.get('sortOrder') or \
+                self.new_object.get('sort_order')
+        if self.new_object.get('t0') is not None or self.new_object.get('t0') is not None:
+            new_object_params['t0'] = self.new_object.get('t0')
+        if self.new_object.get('t1') is not None or self.new_object.get('t1') is not None:
+            new_object_params['t1'] = self.new_object.get('t1')
+        if self.new_object.get('timespan') is not None or self.new_object.get('timespan') is not None:
+            new_object_params['timespan'] = self.new_object.get('timespan')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
-    def update_all_params(self):
+    def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get('audioRecordingEnabled')
-        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
-            new_object_params['motionBasedRetentionEnabled'] = self.new_object.get('motionBasedRetentionEnabled')
-        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
-            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
-                self.new_object.get('motion_detector_version')
-        if self.new_object.get('profileId') is not None or self.new_object.get('profile_id') is not None:
-            new_object_params['profileId'] = self.new_object.get('profileId') or \
-                self.new_object.get('profile_id')
-        if self.new_object.get('quality') is not None or self.new_object.get('quality') is not None:
-            new_object_params['quality'] = self.new_object.get('quality') or \
-                self.new_object.get('quality')
-        if self.new_object.get('resolution') is not None or self.new_object.get('resolution') is not None:
-            new_object_params['resolution'] = self.new_object.get('resolution') or \
-                self.new_object.get('resolution')
-        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
-            new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get('restrictedBandwidthModeEnabled')
+        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial')
+        if self.new_object.get('commandId') is not None or self.new_object.get('command_id') is not None:
+            new_object_params['commandId'] = self.new_object.get('commandId') or \
+                self.new_object.get('command_id')
+        return new_object_params
+
+    def create_params(self):
+        new_object_params = {}
+        if self.new_object.get('operation') is not None or self.new_object.get('operation') is not None:
+            new_object_params['operation'] = self.new_object.get('operation') or \
+                self.new_object.get('operation')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
@@ -100,8 +105,8 @@ class DevicesCameraQualityAndRetention(object):
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(
-                family="camera",
-                function="getDeviceCameraQualityAndRetention",
+                family="sensor",
+                function="getDeviceSensorCommands",
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
@@ -117,7 +122,19 @@ class DevicesCameraQualityAndRetention(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        try:
+            items = self.meraki.exec_meraki(
+                family="sensor",
+                function="getDeviceSensorCommand",
+                params=self.get_params_by_id()
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = items
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def exists(self):
@@ -125,20 +142,26 @@ class DevicesCameraQualityAndRetention(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("serial")
+        o_id = o_id or self.new_object.get(
+            "command_id") or self.new_object.get("commandId")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_name(o_id)
+            prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("commandId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(commandId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -146,14 +169,9 @@ class DevicesCameraQualityAndRetention(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("audioRecordingEnabled", "audioRecordingEnabled"),
-            ("motionBasedRetentionEnabled", "motionBasedRetentionEnabled"),
-            ("motionDetectorVersion", "motionDetectorVersion"),
-            ("profileId", "profileId"),
-            ("quality", "quality"),
-            ("resolution", "resolution"),
-            ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
+            ("operation", "operation"),
             ("serial", "serial"),
+            ("commandId", "commandId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -161,14 +179,11 @@ class DevicesCameraQualityAndRetention(object):
                                                 requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)
 
-    def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
+    def create(self):
         result = self.meraki.exec_meraki(
-            family="camera",
-            function="updateDeviceCameraQualityAndRetention",
-            params=self.update_all_params(),
+            family="sensor",
+            function="createDeviceSensorCommand",
+            params=self.create_params(),
             op_modifies=True,
         )
         return result
@@ -209,7 +224,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = DevicesCameraQualityAndRetention(self._task.args, meraki)
+        obj = DevicesSensorCommands(self._task.args, meraki)
 
         state = self._task.args.get("state")
 
@@ -218,14 +233,14 @@ class ActionModule(ActionBase):
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = obj.update()
-                    meraki.object_updated()
+                    response = prev_obj
+                    meraki.object_present_and_different()
                 else:
                     response = prev_obj
                     meraki.object_already_present()
             else:
-                meraki.fail_json(
-                    "Object does not exists, plugin only has update")
+                response = obj.create()
+                meraki.object_created()
 
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

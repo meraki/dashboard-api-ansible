@@ -77,6 +77,7 @@ argument_spec.update(dict(
     radiusLoadBalancingPolicy=dict(type="str"),
     radiusOverride=dict(type="bool"),
     radiusProxyEnabled=dict(type="bool"),
+    radiusRadsec=dict(type="dict"),
     radiusServerAttemptsLimit=dict(type="int"),
     radiusServerTimeout=dict(type="int"),
     radiusServers=dict(type="list"),
@@ -157,6 +158,7 @@ class NetworksWirelessSsids(object):
             radiusLoadBalancingPolicy=params.get("radiusLoadBalancingPolicy"),
             radiusOverride=params.get("radiusOverride"),
             radiusProxyEnabled=params.get("radiusProxyEnabled"),
+            radiusRadsec=params.get("radiusRadsec"),
             radiusServerAttemptsLimit=params.get("radiusServerAttemptsLimit"),
             radiusServerTimeout=params.get("radiusServerTimeout"),
             radiusServers=params.get("radiusServers"),
@@ -328,6 +330,9 @@ class NetworksWirelessSsids(object):
         if self.new_object.get('radiusProxyEnabled') is not None or self.new_object.get('radius_proxy_enabled') is not None:
             new_object_params['radiusProxyEnabled'] = self.new_object.get(
                 'radiusProxyEnabled')
+        if self.new_object.get('radiusRadsec') is not None or self.new_object.get('radius_radsec') is not None:
+            new_object_params['radiusRadsec'] = self.new_object.get('radiusRadsec') or \
+                self.new_object.get('radius_radsec')
         if self.new_object.get('radiusServerAttemptsLimit') is not None or self.new_object.get('radius_server_attempts_limit') is not None:
             new_object_params['radiusServerAttemptsLimit'] = self.new_object.get('radiusServerAttemptsLimit') or \
                 self.new_object.get('radius_server_attempts_limit')
@@ -493,6 +498,7 @@ class NetworksWirelessSsids(object):
             ("radiusLoadBalancingPolicy", "radiusLoadBalancingPolicy"),
             ("radiusOverride", "radiusOverride"),
             ("radiusProxyEnabled", "radiusProxyEnabled"),
+            ("radiusRadsec", "radiusRadsec"),
             ("radiusServerAttemptsLimit", "radiusServerAttemptsLimit"),
             ("radiusServerTimeout", "radiusServerTimeout"),
             ("radiusServers", "radiusServers"),

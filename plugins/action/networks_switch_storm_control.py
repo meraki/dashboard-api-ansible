@@ -53,8 +53,7 @@ class NetworksSwitchStormControl(object):
         self.new_object = dict(
             broadcastThreshold=params.get("broadcastThreshold"),
             multicastThreshold=params.get("multicastThreshold"),
-            treatTheseTrafficTypesAsOneThreshold=params.get(
-                "treatTheseTrafficTypesAsOneThreshold"),
+            treatTheseTrafficTypesAsOneThreshold=params.get("treatTheseTrafficTypesAsOneThreshold"),
             unknownUnicastThreshold=params.get("unknownUnicastThreshold"),
             network_id=params.get("networkId"),
         )
@@ -74,14 +73,9 @@ class NetworksSwitchStormControl(object):
         if self.new_object.get('multicastThreshold') is not None or self.new_object.get('multicast_threshold') is not None:
             new_object_params['multicastThreshold'] = self.new_object.get('multicastThreshold') or \
                 self.new_object.get('multicast_threshold')
-        if self.new_object.get('treatTheseTrafficTypesAsOneThreshold') is not None:
+        if self.new_object.get('treatTheseTrafficTypesAsOneThreshold') is not None or self.new_object.get('treat_these_traffic_types_as_one_threshold') is not None:
             new_object_params['treatTheseTrafficTypesAsOneThreshold'] = self.new_object.get('treatTheseTrafficTypesAsOneThreshold') or \
-                self.new_object.get(
-                    'treat_these_traffic_types_as_one_threshold')
-        if self.new_object.get('treat_these_traffic_types_as_one_threshold') is not None:
-            new_object_params['treatTheseTrafficTypesAsOneThreshold'] = self.new_object.get('treatTheseTrafficTypesAsOneThreshold') or \
-                self.new_object.get(
-                    'treat_these_traffic_types_as_one_threshold')
+                self.new_object.get('treat_these_traffic_types_as_one_threshold')
         if self.new_object.get('unknownUnicastThreshold') is not None or self.new_object.get('unknown_unicast_threshold') is not None:
             new_object_params['unknownUnicastThreshold'] = self.new_object.get('unknownUnicastThreshold') or \
                 self.new_object.get('unknown_unicast_threshold')
@@ -119,8 +113,7 @@ class NetworksSwitchStormControl(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get(
-            "networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -144,8 +137,7 @@ class NetworksSwitchStormControl(object):
         obj_params = [
             ("broadcastThreshold", "broadcastThreshold"),
             ("multicastThreshold", "multicastThreshold"),
-            ("treatTheseTrafficTypesAsOneThreshold",
-             "treatTheseTrafficTypesAsOneThreshold"),
+            ("treatTheseTrafficTypesAsOneThreshold", "treatTheseTrafficTypesAsOneThreshold"),
             ("unknownUnicastThreshold", "unknownUnicastThreshold"),
             ("networkId", "networkId"),
         ]

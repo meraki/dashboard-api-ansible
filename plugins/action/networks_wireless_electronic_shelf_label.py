@@ -34,6 +34,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     enabled=dict(type="bool"),
     hostname=dict(type="str"),
+    mode=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -51,6 +52,7 @@ class NetworksWirelessElectronicShelfLabel(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             hostname=params.get("hostname"),
+            mode=params.get("mode"),
             network_id=params.get("networkId"),
         )
 
@@ -68,6 +70,9 @@ class NetworksWirelessElectronicShelfLabel(object):
         if self.new_object.get('hostname') is not None or self.new_object.get('hostname') is not None:
             new_object_params['hostname'] = self.new_object.get('hostname') or \
                 self.new_object.get('hostname')
+        if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
+            new_object_params['mode'] = self.new_object.get('mode') or \
+                self.new_object.get('mode')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
@@ -126,6 +131,7 @@ class NetworksWirelessElectronicShelfLabel(object):
         obj_params = [
             ("enabled", "enabled"),
             ("hostname", "hostname"),
+            ("mode", "mode"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

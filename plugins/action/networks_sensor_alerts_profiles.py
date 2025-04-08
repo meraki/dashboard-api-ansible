@@ -33,6 +33,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     conditions=dict(type="list"),
+    includeSensorUrl=dict(type="bool"),
+    message=dict(type="str"),
     name=dict(type="str"),
     recipients=dict(type="dict"),
     schedule=dict(type="dict"),
@@ -55,6 +57,8 @@ class NetworksSensorAlertsProfiles(object):
         self.meraki = meraki
         self.new_object = dict(
             conditions=params.get("conditions"),
+            includeSensorUrl=params.get("includeSensorUrl"),
+            message=params.get("message"),
             name=params.get("name"),
             recipients=params.get("recipients"),
             schedule=params.get("schedule"),
@@ -84,6 +88,11 @@ class NetworksSensorAlertsProfiles(object):
         if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
+        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
+            new_object_params['includeSensorUrl'] = self.new_object.get('includeSensorUrl')
+        if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
+            new_object_params['message'] = self.new_object.get('message') or \
+                self.new_object.get('message')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -116,6 +125,11 @@ class NetworksSensorAlertsProfiles(object):
         if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
             new_object_params['conditions'] = self.new_object.get('conditions') or \
                 self.new_object.get('conditions')
+        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
+            new_object_params['includeSensorUrl'] = self.new_object.get('includeSensorUrl')
+        if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
+            new_object_params['message'] = self.new_object.get('message') or \
+                self.new_object.get('message')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -202,6 +216,8 @@ class NetworksSensorAlertsProfiles(object):
 
         obj_params = [
             ("conditions", "conditions"),
+            ("includeSensorUrl", "includeSensorUrl"),
+            ("message", "message"),
             ("name", "name"),
             ("recipients", "recipients"),
             ("schedule", "schedule"),

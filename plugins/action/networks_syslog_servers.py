@@ -21,6 +21,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
+    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -30,7 +31,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
+    state=dict(type="str", default="present", choices=["present"]),
     servers=dict(type="list"),
     networkId=dict(type="str"),
 ))
@@ -111,8 +112,7 @@ class NetworksSyslogServers(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get(
-            "networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
