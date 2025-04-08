@@ -2,6 +2,8 @@
 
 # Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+from __future__ import (absolute_import, division, print_function)
+__metaclass__ = type
 
 DOCUMENTATION = r"""
 name: meraki
@@ -143,7 +145,6 @@ keyed_groups:
     key: tags
 """
 
-from __future__ import absolute_import, division, print_function
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
@@ -153,7 +154,7 @@ from ansible.module_utils.common.text.converters import to_native, to_text
 from ansible.module_utils.common.arg_spec import ArgumentSpecValidator
 from ansible.errors import AnsibleError
 
-__metaclass__ = type
+
 meraki_argument_spec = meraki_argument_spec()
 meraki_argument_spec.update(
     dict(meraki_org_id=dict(type="str", required=True)))
