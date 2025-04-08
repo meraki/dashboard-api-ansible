@@ -5,21 +5,6 @@
 # Marcin Woźniak (@y0rune) <y0rune@aol.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
-from __future__ import absolute_import, division, print_function
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-from ansible.module_utils.basic import AnsibleModule, json
-
-__metaclass__ = type
-
-ANSIBLE_METADATA = {
-    "metadata_version": "1.1",
-    "status": ["deprecated"],
-    "supported_by": "community",
-}
-
 DOCUMENTATION = r"""
 author:
   - "Marcin Wo\u017Aniak (@y0rune)"
@@ -309,7 +294,20 @@ data:
             type: bool
             sample: false
 """
+from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule,
+    meraki_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule, json
 
+__metaclass__ = type
+
+ANSIBLE_METADATA = {
+    "metadata_version": "1.1",
+    "status": ["deprecated"],
+    "supported_by": "community",
+}
 
 def convert_vlan_id(vlan_id):
     if vlan_id == "":
