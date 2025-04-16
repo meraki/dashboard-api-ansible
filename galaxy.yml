@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: meraki
-version: 2.20.8
+version: 2.20.9
 readme: README.md
 authors:
   - Francisco Muñoz <fmunoz@cloverhound.com>
@@ -18,7 +18,7 @@ tags:
   - networking
   - sdn
 dependencies:
-  ansible.utils: ">=2.0.0,<6.0"
+  ansible.utils: ">=2.0.0,<7.0"
 build_ignore:
   - docs/_build/
 repository: https://github.com/meraki/dashboard-api-ansible
