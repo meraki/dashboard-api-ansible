@@ -1212,3 +1212,8 @@ releases:
         - Added validation for `radiusServerTimeout` with a range of valid values `[1-10]`.
         - cisco.meraki.devices_wireless_radio_settings changed compare equality method to use `meraki_compare_equality`
     release_date: "2025-04-16"
+  2.20.10:
+    changes:
+      bugfixes:
+        - cisco.meraki.networks_wireless_ssids refactor parameter handling to avoid None values
+    release_date: "2025-04-21"

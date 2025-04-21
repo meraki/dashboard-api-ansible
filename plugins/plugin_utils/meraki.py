@@ -78,7 +78,6 @@ def has_diff_elem2(ls1, ls2):
 
 
 def have_to_change_to_lowercase(attr):
-    # print("hola")
     return attr in lowercase_change_words
 
 
@@ -89,7 +88,6 @@ def delete_default_rule(ls):
             del ls[index]
             break
         index = index + 1
-    print(ls)
     return ls
 
 
@@ -97,35 +95,28 @@ def compare_list(list1, list2):
     len_list1 = len(list1)
     len_list2 = len(list2)
     if len_list1 != len_list2:
-        print("1")
         return False
 
     if len_list1 == 0:
-        print("2")
         return True
 
     attempt_std_cmp = list1 == list2
     if attempt_std_cmp:
-        print("3")
         return True
 
     if not is_list_complex(list1) and not is_list_complex(list2):
-        print("4")
         return set(list1) == set(list2)
 
     # Compare normally if it exceeds expected size * 2 (len_list1==len_list2)
     MAX_SIZE_CMP = 100
     # Fail fast if elem not in list, thanks to any and generators
     if len_list1 > MAX_SIZE_CMP:
-        print("5")
         return attempt_std_cmp
     else:
         # not changes 'has diff elem' to list1 != list2 ':lists are not equal'
         if isinstance(list1[0], dict):
-            print("6")
             return not (has_diff_elem2(list1, list2)) or not (has_diff_elem2(list2, list1))
         else:
-            print("7")
             return not (has_diff_elem(list1, list2)) or not (has_diff_elem(list2, list1))
 
 
@@ -134,49 +125,36 @@ def fn_comp_key(k, dict1, dict2):
 
 
 def meraki_compare_equality(current_value, requested_value):
-    print("meraki_compare_equality", current_value, requested_value)
+    # print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
-        print("meraki_compare_equality")
         return True
     if current_value is None:
         if requested_value is not None:
-            print("meraki_compare_equality 2")
             return False
-        print("meraki_compare_equality 3")
         return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
             list(requested_value.keys())
-        print("meraki_compare_equality 4")
         return not any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params))
     elif isinstance(current_value, list) and isinstance(requested_value, list):
-        print("meraki_compare_equality 5")
         return compare_list(current_value, requested_value)
     else:
-        print("meraki_compare_equality 6")
         return current_value == requested_value
 
 
 def meraki_compare_equality2(current_value, requested_value):
     # print("meraki_compare_equality", current_value, requested_value)
     if requested_value is None:
-        print("meraki_compare_equality 2")
         return True
     if current_value is None:
-        print("meraki_compare_equality 3")
         return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
             list(requested_value.keys())
-        print("meraki_compare_equality 4: ", any((not fn_comp_key(
-            param, current_value, requested_value) for param in all_dict_params)))
         return not any((not fn_comp_key(param, current_value, requested_value) for param in all_dict_params))
     elif isinstance(current_value, list) and isinstance(requested_value, list):
-        print("meraki_compare_equality 5: ", compare_list(
-            current_value, requested_value))
         return compare_list(current_value, requested_value)
     else:
-        print("meraki_compare_equality 6: ", current_value == requested_value)
         return current_value == requested_value
 
 
@@ -263,7 +241,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller="MerakiAnsibleCollection/2.20.9 Cisco",
+                caller="MerakiAnsibleCollection/2.20.10 Cisco",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(
