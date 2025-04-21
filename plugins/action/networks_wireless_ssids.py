@@ -265,12 +265,17 @@ class NetworksWirelessSsids(object):
             new_object_params["concentratorNetworkId"] = self.new_object.get(
                 "concentratorNetworkId"
             ) or self.new_object.get("concentrator_network_id")
-        if "defaultVlanId" in self.new_object or "default_vlan_id" in self.new_object:
-            new_object_params["defaultVlanId"] = (
-                self.new_object["defaultVlanId"]
+        if (
+            "defaultVlanId" in self.new_object
+            or "default_vlan_id" in self.new_object
+        ):
+            default_vlan_id = (
+                self.new_object.get("defaultVlanId")
                 if "defaultVlanId" in self.new_object
                 else self.new_object.get("default_vlan_id")
             )
+            if default_vlan_id is not None:
+                new_object_params["defaultVlanId"] = default_vlan_id
         if (
             self.new_object.get("disassociateClientsOnVpnFailover") is not None
             or self.new_object.get("disassociate_clients_on_vpn_failover") is not None
@@ -392,38 +397,46 @@ class NetworksWirelessSsids(object):
             "perClientBandwidthLimitDown" in self.new_object
             or "per_client_bandwidth_limit_down" in self.new_object
         ):
-            new_object_params["perClientBandwidthLimitDown"] = (
-                self.new_object["perClientBandwidthLimitDown"]
+            per_client_bandwidth_limit_down = (
+                self.new_object.get("perClientBandwidthLimitDown")
                 if "perClientBandwidthLimitDown" in self.new_object
                 else self.new_object.get("per_client_bandwidth_limit_down")
             )
+            if per_client_bandwidth_limit_down is not None:
+                new_object_params["perClientBandwidthLimitDown"] = per_client_bandwidth_limit_down
         if (
             "perClientBandwidthLimitUp" in self.new_object
             or "per_client_bandwidth_limit_up" in self.new_object
         ):
-            new_object_params["perClientBandwidthLimitUp"] = (
-                self.new_object["perClientBandwidthLimitUp"]
+            per_client_bandwidth_limit_up = (
+                self.new_object.get("perClientBandwidthLimitUp")
                 if "perClientBandwidthLimitUp" in self.new_object
                 else self.new_object.get("per_client_bandwidth_limit_up")
             )
+            if per_client_bandwidth_limit_up is not None:
+                new_object_params["perClientBandwidthLimitUp"] = per_client_bandwidth_limit_up
         if (
             "perSsidBandwidthLimitDown" in self.new_object
             or "per_ssid_bandwidth_limit_down" in self.new_object
         ):
-            new_object_params["perSsidBandwidthLimitDown"] = (
-                self.new_object["perSsidBandwidthLimitDown"]
+            per_ssid_bandwidth_limit_down = (
+                self.new_object.get("perSsidBandwidthLimitDown")
                 if "perSsidBandwidthLimitDown" in self.new_object
                 else self.new_object.get("per_ssid_bandwidth_limit_down")
             )
+            if per_ssid_bandwidth_limit_down is not None:
+                new_object_params["perSsidBandwidthLimitDown"] = per_ssid_bandwidth_limit_down
         if (
             "perSsidBandwidthLimitUp" in self.new_object
             or "per_ssid_bandwidth_limit_up" in self.new_object
         ):
-            new_object_params["perSsidBandwidthLimitUp"] = (
-                self.new_object["perSsidBandwidthLimitUp"]
+            per_ssid_bandwidth_limit_up = (
+                self.new_object.get("perSsidBandwidthLimitUp")
                 if "perSsidBandwidthLimitUp" in self.new_object
                 else self.new_object.get("per_ssid_bandwidth_limit_up")
             )
+            if per_ssid_bandwidth_limit_up is not None:
+                new_object_params["perSsidBandwidthLimitUp"] = per_ssid_bandwidth_limit_up
         if (
             self.new_object.get("psk") is not None
             or self.new_object.get("psk") is not None
@@ -442,11 +455,13 @@ class NetworksWirelessSsids(object):
             "radiusAccountingInterimInterval" in self.new_object
             or "radius_accounting_interim_interval" in self.new_object
         ):
-            new_object_params["radiusAccountingInterimInterval"] = (
-                self.new_object["radiusAccountingInterimInterval"]
+            radius_accounting_interim_interval = (
+                self.new_object.get("radiusAccountingInterimInterval")
                 if "radiusAccountingInterimInterval" in self.new_object
                 else self.new_object.get("radius_accounting_interim_interval")
             )
+            if radius_accounting_interim_interval is not None:
+                new_object_params["radiusAccountingInterimInterval"] = radius_accounting_interim_interval
         if (
             self.new_object.get("radiusAccountingServers") is not None
             or self.new_object.get("radius_accounting_servers") is not None
@@ -507,11 +522,13 @@ class NetworksWirelessSsids(object):
             "radiusGuestVlanId" in self.new_object
             or "radius_guest_vlan_id" in self.new_object
         ):
-            new_object_params["radiusGuestVlanId"] = (
-                self.new_object["radiusGuestVlanId"]
+            radius_guest_vlan_id = (
+                self.new_object.get("radiusGuestVlanId")
                 if "radiusGuestVlanId" in self.new_object
                 else self.new_object.get("radius_guest_vlan_id")
             )
+            if radius_guest_vlan_id is not None:
+                new_object_params["radiusGuestVlanId"] = radius_guest_vlan_id
         if (
             self.new_object.get("radiusLoadBalancingPolicy") is not None
             or self.new_object.get("radius_load_balancing_policy") is not None
@@ -535,20 +552,24 @@ class NetworksWirelessSsids(object):
             "radiusServerAttemptsLimit" in self.new_object
             or "radius_server_attempts_limit" in self.new_object
         ):
-            new_object_params["radiusServerAttemptsLimit"] = (
-                self.new_object["radiusServerAttemptsLimit"]
+            radius_server_attempts_limit = (
+                self.new_object.get("radiusServerAttemptsLimit")
                 if "radiusServerAttemptsLimit" in self.new_object
                 else self.new_object.get("radius_server_attempts_limit")
             )
+            if radius_server_attempts_limit is not None:
+                new_object_params["radiusServerAttemptsLimit"] = radius_server_attempts_limit
         if (
             "radiusServerTimeout" in self.new_object
             or "radius_server_timeout" in self.new_object
         ):
-            new_object_params["radiusServerTimeout"] = (
+            radius_server_timeout = (
                 self.new_object["radiusServerTimeout"]
                 if "radiusServerTimeout" in self.new_object
                 else self.new_object.get("radius_server_timeout")
             )
+            if radius_server_timeout is not None:
+                new_object_params["radiusServerTimeout"] = radius_server_timeout
         if (
             self.new_object.get("radiusServers") is not None
             or self.new_object.get("radius_servers") is not None
@@ -602,11 +623,13 @@ class NetworksWirelessSsids(object):
         ):
             new_object_params["visible"] = self.new_object.get("visible")
         if "vlanId" in self.new_object or "vlan_id" in self.new_object:
-            new_object_params["vlanId"] = (
-                self.new_object["vlanId"]
+            vlan_id = (
+                self.new_object.get("vlanId")
                 if "vlanId" in self.new_object
                 else self.new_object.get("vlan_id")
             )
+            if vlan_id is not None:
+                new_object_params["vlanId"] = vlan_id
         if (
             self.new_object.get("walledGardenEnabled") is not None
             or self.new_object.get("walled_garden_enabled") is not None
