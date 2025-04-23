@@ -46,8 +46,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["interfaceId", "name", "networkId", "switchStackId"], True),
-    ("state", "absent", ["interfaceId", "name", "networkId", "switchStackId"], True),
+    ("state", "present", ["interfaceId", "name",
+     "networkId", "switchStackId"], True),
+    ("state", "absent", ["interfaceId", "name",
+     "networkId", "switchStackId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -73,6 +75,8 @@ class NetworksSwitchStacksRoutingInterfaces(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
+            new_object_params['protocol'] = self.new_object.get('protocol')
         if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')

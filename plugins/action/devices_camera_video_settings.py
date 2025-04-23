@@ -61,7 +61,8 @@ class DevicesCameraVideoSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('externalRtspEnabled') is not None or self.new_object.get('external_rtsp_enabled') is not None:
-            new_object_params['externalRtspEnabled'] = self.new_object.get('externalRtspEnabled')
+            new_object_params['externalRtspEnabled'] = self.new_object.get(
+                'externalRtspEnabled')
         if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')

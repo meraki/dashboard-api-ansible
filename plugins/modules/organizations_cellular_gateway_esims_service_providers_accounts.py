@@ -5,17 +5,17 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: organizations_cellular_gateway_esims_service_providers_accounts
+short_description: Resource module for organizations _cellular _gateway _esims _service _providers _accounts
 description:
-  - Manage operation create of the resource organizations _cellular _gateway _esims
-    _service _providers _accounts.
+  - Manage operations create, update and delete of the resource organizations _cellular _gateway _esims _service _providers _accounts.
   - Add a service provider account.
+  - Remove a service provider account's integration with the Dashboard.
+  - Edit service provider account info stored in Meraki's database.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: organizations_cellular_gateway_esims_service_providers_accounts
-notes:
-  - SDK Method used are cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_service_providers_account,
-  - Paths used are post /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
+author: Francisco Munoz (@fmunoz)
 options:
   accountId:
     description: Service provider account ID.
@@ -43,46 +43,112 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount
-      API.
+  - name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsServiceProvidersAccount
+    description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-service-providers-account
-    name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsServiceProvidersAccount
-short_description: Resource module for organizations _cellular _gateway _esims _service
-  _providers _accounts
-version_added: 2.20.0
+  - name: Cisco Meraki documentation for cellularGateway deleteOrganizationCellularGatewayEsimsServiceProvidersAccount
+    description: Complete reference of the deleteOrganizationCellularGatewayEsimsServiceProvidersAccount API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-cellular-gateway-esims-service-providers-account
+  - name: Cisco Meraki documentation for cellularGateway updateOrganizationCellularGatewayEsimsServiceProvidersAccount
+    description: Complete reference of the updateOrganizationCellularGatewayEsimsServiceProvidersAccount API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-cellular-gateway-esims-service-providers-account
+notes:
+  - SDK Method used are
+    cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_service_providers_account,
+    cellular_gateway.CellularGateway.delete_organization_cellular_gateway_esims_service_providers_account,
+    cellular_gateway.CellularGateway.update_organization_cellular_gateway_esims_service_providers_account,
+  - Paths used are
+    post /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
+    delete /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts/{accountId},
+    put /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts/{accountId},
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-    accountId: 0987654321
+    accountId: 987654321
     apiKey: foobarfoobarfoobarfoobarfoobarfoobar
     organizationId: string
     serviceProvider:
       name: ATT
     title: My AT&T account
     username: MerakiUser
+- name: Delete by id
+  cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    accountId: string
+    organizationId: string
+- name: Update by id
+  cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
+    accountId: string
+    apiKey: foobarfoobarfoobarfoobarfoobarfoobar
+    organizationId: string
+    title: My AT&T account
 """
 RETURN = r"""
 meraki_response:

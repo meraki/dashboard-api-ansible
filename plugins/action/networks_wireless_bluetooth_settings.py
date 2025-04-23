@@ -72,7 +72,8 @@ class NetworksWirelessBluetoothSettings(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('advertisingEnabled') is not None or self.new_object.get('advertising_enabled') is not None:
-            new_object_params['advertisingEnabled'] = self.new_object.get('advertisingEnabled')
+            new_object_params['advertisingEnabled'] = self.new_object.get(
+                'advertisingEnabled')
         if self.new_object.get('major') is not None or self.new_object.get('major') is not None:
             new_object_params['major'] = self.new_object.get('major') or \
                 self.new_object.get('major')
@@ -83,7 +84,8 @@ class NetworksWirelessBluetoothSettings(object):
             new_object_params['minor'] = self.new_object.get('minor') or \
                 self.new_object.get('minor')
         if self.new_object.get('scanningEnabled') is not None or self.new_object.get('scanning_enabled') is not None:
-            new_object_params['scanningEnabled'] = self.new_object.get('scanningEnabled')
+            new_object_params['scanningEnabled'] = self.new_object.get(
+                'scanningEnabled')
         if self.new_object.get('uuid') is not None or self.new_object.get('uuid') is not None:
             new_object_params['uuid'] = self.new_object.get('uuid') or \
                 self.new_object.get('uuid')
@@ -121,7 +123,8 @@ class NetworksWirelessBluetoothSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

@@ -44,8 +44,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name", "networkId", "staticRouteId", "switchStackId"], True),
-    ("state", "absent", ["name", "networkId", "staticRouteId", "switchStackId"], True),
+    ("state", "present", ["name", "networkId",
+     "staticRouteId", "switchStackId"], True),
+    ("state", "absent", ["name", "networkId",
+     "staticRouteId", "switchStackId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -59,7 +61,8 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             advertiseViaOspfEnabled=params.get("advertiseViaOspfEnabled"),
             name=params.get("name"),
             nextHopIp=params.get("nextHopIp"),
-            preferOverOspfRoutesEnabled=params.get("preferOverOspfRoutesEnabled"),
+            preferOverOspfRoutesEnabled=params.get(
+                "preferOverOspfRoutesEnabled"),
             subnet=params.get("subnet"),
             networkId=params.get("networkId"),
             switchStackId=params.get("switchStackId"),
@@ -93,7 +96,8 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
     def create_params(self):
         new_object_params = {}
         if self.new_object.get('advertiseViaOspfEnabled') is not None or self.new_object.get('advertise_via_ospf_enabled') is not None:
-            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled')
+            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get(
+                'advertiseViaOspfEnabled')
         if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
@@ -101,7 +105,8 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             new_object_params['nextHopIp'] = self.new_object.get('nextHopIp') or \
                 self.new_object.get('next_hop_ip')
         if self.new_object.get('preferOverOspfRoutesEnabled') is not None or self.new_object.get('prefer_over_ospf_routes_enabled') is not None:
-            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled')
+            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get(
+                'preferOverOspfRoutesEnabled')
         if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')
@@ -129,7 +134,8 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
     def update_by_id_params(self):
         new_object_params = {}
         if self.new_object.get('advertiseViaOspfEnabled') is not None or self.new_object.get('advertise_via_ospf_enabled') is not None:
-            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get('advertiseViaOspfEnabled')
+            new_object_params['advertiseViaOspfEnabled'] = self.new_object.get(
+                'advertiseViaOspfEnabled')
         if self.new_object.get('managementNextHop') is not None or self.new_object.get('management_next_hop') is not None:
             new_object_params['managementNextHop'] = self.new_object.get('managementNextHop') or \
                 self.new_object.get('management_next_hop')
@@ -140,7 +146,8 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             new_object_params['nextHopIp'] = self.new_object.get('nextHopIp') or \
                 self.new_object.get('next_hop_ip')
         if self.new_object.get('preferOverOspfRoutesEnabled') is not None or self.new_object.get('prefer_over_ospf_routes_enabled') is not None:
-            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get('preferOverOspfRoutesEnabled')
+            new_object_params['preferOverOspfRoutesEnabled'] = self.new_object.get(
+                'preferOverOspfRoutesEnabled')
         if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')

@@ -41,7 +41,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["customPerformanceClassId", "name", "networkId"], True),
+    ("state", "present", [
+     "customPerformanceClassId", "name", "networkId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -137,7 +138,8 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         o_id = o_id or self.new_object.get(
             "custom_performance_class_id") or self.new_object.get("customPerformanceClassId")
         name = self.new_object.get("name")
@@ -223,7 +225,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksApplianceTrafficShapingCustomPerformanceClasses(self._task.args, meraki)
+        obj = NetworksApplianceTrafficShapingCustomPerformanceClasses(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

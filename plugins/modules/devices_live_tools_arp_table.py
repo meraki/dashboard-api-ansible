@@ -5,49 +5,41 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: devices_live_tools_arp_table
+short_description: Resource module for devices _live _tools _arp _table
 description:
-  - Manage operation create of the resource devices _live _tools _arp _table.
-  - 'Enqueue a job to perform a ARP table request for the device. This endpoint currently
-    supports switches. This endpoint has a sustained rate limit of one request every
-    five seconds per device, with an allowed burst of five requests.
-
-    '
+  - Manage operation create of the resource devices _live _tools _arp _table. - > Enqueue a job to perform a ARP table request for the device.
+    This endpoint currently supports switches. This endpoint has a sustained rate limit of one request every five seconds per device, with an
+    allowed burst of five requests.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: devices_live_tools_arp_table
-notes:
-  - SDK Method used are devices.Devices.create_device_live_tools_arp_table,
-  - Paths used are post /devices/{serial}/liveTools/arpTable,
+author: Francisco Munoz (@fmunoz)
 options:
   callback:
-    description: Details for the callback. Please include either an httpServerId OR
-      url and sharedSecret.
+    description: Details for the callback. Please include either an httpServerId OR url and sharedSecret.
     suboptions:
       httpServer:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If
-              specifying this, please leave the url and sharedSecret fields blank.
+            description: The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields
+              blank.
             type: str
         type: dict
       payloadTemplate:
         description: The payload template of the webhook used for the callback.
         suboptions:
           id:
-            description: The ID of the payload template. Defaults to 'wpt_00005' for
-              the Callback (included) template.
+            description: The ID of the payload template. Defaults to 'wpt_00005' for the Callback (included) template.
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to
-          the callback URL. It can be used to verify that the request was sent by
-          Meraki. If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request
+          was sent by Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field,
-          please also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
         type: str
     type: dict
   serial:
@@ -57,36 +49,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the createDeviceLiveToolsArpTable API.
+  - name: Cisco Meraki documentation for devices createDeviceLiveToolsArpTable
+    description: Complete reference of the createDeviceLiveToolsArpTable API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-device-live-tools-arp-table
-    name: Cisco Meraki documentation for devices createDeviceLiveToolsArpTable
-short_description: Resource module for devices _live _tools _arp _table
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    devices.Devices.create_device_live_tools_arp_table,
+  - Paths used are
+    post /devices/{serial}/liveTools/arpTable,
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.devices_live_tools_arp_table:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     callback:
       httpServer:

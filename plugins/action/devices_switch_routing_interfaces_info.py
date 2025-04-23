@@ -26,6 +26,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     serial=dict(type="str"),
+    protocol=dict(type="str"),
     interfaceId=dict(type="str"),
 ))
 
@@ -78,6 +79,9 @@ class ActionModule(ActionBase):
         if params.get("serial") is not None:
             new_object["serial"] = params.get(
                 "serial")
+        if params.get("protocol") is not None:
+            new_object["protocol"] = params.get(
+                "protocol")
 
         return new_object
 

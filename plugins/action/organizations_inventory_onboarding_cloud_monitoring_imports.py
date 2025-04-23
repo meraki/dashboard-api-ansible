@@ -177,7 +177,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsInventoryOnboardingCloudMonitoringImports(self._task.args, meraki)
+        obj = OrganizationsInventoryOnboardingCloudMonitoringImports(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

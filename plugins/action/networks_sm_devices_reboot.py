@@ -76,7 +76,8 @@ class ActionModule(ActionBase):
             kextPaths=params.get("kextPaths"),
             notifyUser=params.get("notifyUser"),
             rebuildKernelCache=params.get("rebuildKernelCache"),
-            requestRequiresNetworkTether=params.get("requestRequiresNetworkTether"),
+            requestRequiresNetworkTether=params.get(
+                "requestRequiresNetworkTether"),
             scope=params.get("scope"),
             serials=params.get("serials"),
             wifiMacs=params.get("wifiMacs"),

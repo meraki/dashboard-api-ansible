@@ -25,8 +25,10 @@ def meraki_argument_spec():
                 use_proxy=dict(type='bool', default=False),
                 use_https=dict(type='bool', default=True),
                 validate_certs=dict(type='bool', default=True),
-                output_format=dict(type='str', choices=['camelcase', 'snakecase'], default='snakecase', fallback=(env_fallback, ['ANSIBLE_MERAKI_FORMAT'])),
-                output_level=dict(type='str', default='normal', choices=['normal', 'debug']),
+                output_format=dict(type='str', choices=['camelcase', 'snakecase'], default='snakecase', fallback=(
+                    env_fallback, ['ANSIBLE_MERAKI_FORMAT'])),
+                output_level=dict(type='str', default='normal',
+                                  choices=['normal', 'debug']),
                 timeout=dict(type='int', default=30),
                 org_name=dict(type='str', aliases=['organization']),
                 org_id=dict(type='str'),
@@ -117,7 +119,8 @@ class MerakiModule(object):
                             }
 
         if self.module._debug or self.params['output_level'] == 'debug':
-            self.module.warn('Enable debug output because ANSIBLE_DEBUG was set or output_level is set to debug.')
+            self.module.warn(
+                'Enable debug output because ANSIBLE_DEBUG was set or output_level is set to debug.')
 
         # TODO: This should be removed as org_name isn't always required
         self.module.required_if = [('state', 'present', ['org_name']),
@@ -193,7 +196,8 @@ class MerakiModule(object):
         else:
             if original != proposed:
                 if debug is True:
-                    self.fail_json(msg="Fallback", original=original, proposed=proposed)
+                    self.fail_json(
+                        msg="Fallback", original=original, proposed=proposed)
                 return True
         return False
 
@@ -246,9 +250,11 @@ class MerakiModule(object):
                 return self.params['org_id']
         org_count = self.is_org_valid(orgs, org_name=org_name)
         if org_count == 0:
-            self.fail_json(msg='There are no organizations with the name {org_name}'.format(org_name=org_name))
+            self.fail_json(msg='There are no organizations with the name {org_name}'.format(
+                org_name=org_name))
         if org_count > 1:
-            self.fail_json(msg='There are multiple organizations with the name {org_name}'.format(org_name=org_name))
+            self.fail_json(msg='There are multiple organizations with the name {org_name}'.format(
+                org_name=org_name))
         elif org_count == 1:
             for i in orgs:
                 if org_name == i['name']:
@@ -259,7 +265,8 @@ class MerakiModule(object):
         """Downloads all networks in an organization."""
         if org_name:
             org_id = self.get_org_id(org_name)
-        path = self.construct_path('get_all', org_id=org_id, function='network', params={'perPage': '1000'})
+        path = self.construct_path(
+            'get_all', org_id=org_id, function='network', params={'perPage': '1000'})
         r = self.request(path, method='GET', pagination_items=1000)
         if self.status != 200:
             self.fail_json(msg='Network lookup failed')
@@ -291,10 +298,12 @@ class MerakiModule(object):
         for n in data:
             if n['name'] == net_name:
                 return n['id']
-        self.fail_json(msg='No network found with the name {0}'.format(net_name))
+        self.fail_json(
+            msg='No network found with the name {0}'.format(net_name))
 
     def get_config_templates(self, org_id):
-        path = self.construct_path('get_all', function='configTemplates', org_id=org_id)
+        path = self.construct_path(
+            'get_all', function='configTemplates', org_id=org_id)
         response = self.request(path, 'GET')
         if self.status != 200:
             self.fail_json(msg='Unable to get configuration templates')
@@ -304,7 +313,8 @@ class MerakiModule(object):
         for template in data:
             if name == template['name']:
                 return template['id']
-        self.fail_json(msg='No configuration template named {0} found'.format(name))
+        self.fail_json(
+            msg='No configuration template named {0} found'.format(name))
 
     def convert_camel_to_snake(self, data):
         """
@@ -366,7 +376,8 @@ class MerakiModule(object):
         if org_name:
             org_id = self.get_org_id(org_name)
         if custom:
-            built_path = built_path.format(org_id=org_id, net_id=net_id, **custom)
+            built_path = built_path.format(
+                org_id=org_id, net_id=net_id, **custom)
         else:
             built_path = built_path.format(org_id=org_id, net_id=net_id)
         if params:
@@ -380,7 +391,8 @@ class MerakiModule(object):
         if method is not None:
             self.method = method
 
-        self.url = '{protocol}://{host}/api/v1/{path}'.format(path=self.path.lstrip('/'), **self.params)
+        self.url = '{protocol}://{host}/api/v1/{path}'.format(
+            path=self.path.lstrip('/'), **self.params)
 
     @staticmethod
     def _parse_pagination_header(link):
@@ -391,7 +403,8 @@ class MerakiModule(object):
                 }
         for rel in link.split(','):
             kv = rel.split('rel=')
-            rels[kv[1]] = kv[0].split('<')[1].split('>')[0].strip()  # This should return just the URL for <url>
+            # This should return just the URL for <url>
+            rels[kv[1]] = kv[0].split('<')[1].split('>')[0].strip()
         return rels
 
     def _execute_request(self, path, method=None, payload=None, params=None):
@@ -411,26 +424,32 @@ class MerakiModule(object):
                 if self.retry <= 10:
                     # retry-after isn't returned for over 10 concurrent connections per IP
                     try:
-                        self.module.warn("Rate limiter hit, retry {0}...pausing for {1} seconds".format(self.retry, info['Retry-After']))
+                        self.module.warn("Rate limiter hit, retry {0}...pausing for {1} seconds".format(
+                            self.retry, info['Retry-After']))
                         time.sleep(info['Retry-After'])
                     except KeyError:
-                        self.module.warn("Rate limiter hit, retry {0}...pausing for 5 seconds".format(self.retry))
+                        self.module.warn(
+                            "Rate limiter hit, retry {0}...pausing for 5 seconds".format(self.retry))
                         time.sleep(5)
                     return self._execute_request(path, method=method, payload=payload, params=params)
                 else:
-                    self.fail_json(msg="Rate limit retries failed for {url}".format(url=self.url))
+                    self.fail_json(
+                        msg="Rate limit retries failed for {url}".format(url=self.url))
             elif self.status == 500:
                 self.retry += 1
-                self.module.warn("Internal server error 500, retry {0}".format(self.retry))
+                self.module.warn(
+                    "Internal server error 500, retry {0}".format(self.retry))
                 if self.retry <= 10:
                     self.retry_time += self.retry * INTERNAL_ERROR_RETRY_MULTIPLIER
                     time.sleep(self.retry_time)
                     return self._execute_request(path, method=method, payload=payload, params=params)
                 else:
                     # raise RateLimitException(e)
-                    self.fail_json(msg="Rate limit retries failed for {url}".format(url=self.url))
+                    self.fail_json(
+                        msg="Rate limit retries failed for {url}".format(url=self.url))
             elif self.status == 502:
-                self.module.warn("Internal server error 502, retry {0}".format(self.retry))
+                self.module.warn(
+                    "Internal server error 502, retry {0}".format(self.retry))
             elif self.status == 400:
                 raise HTTPError("")
             elif self.status >= 400:
@@ -438,9 +457,11 @@ class MerakiModule(object):
                 raise HTTPError("")
         except HTTPError:
             try:
-                self.fail_json(msg="HTTP error {0} - {1} - {2}".format(self.status, self.url, json.loads(info['body'])['errors'][0]))
+                self.fail_json(msg="HTTP error {0} - {1} - {2}".format(
+                    self.status, self.url, json.loads(info['body'])['errors'][0]))
             except json.decoder.JSONDecodeError:
-                self.fail_json(msg="HTTP error {0} - {1}".format(self.status, self.url))
+                self.fail_json(
+                    msg="HTTP error {0} - {1}".format(self.status, self.url))
         self.retry = 0  # Needs to reset in case of future retries
         return resp, info
 
@@ -450,9 +471,11 @@ class MerakiModule(object):
 
         try:
             # Gather the body (resp) and header (info)
-            resp, info = self._execute_request(path, method=method, payload=payload, params=params)
+            resp, info = self._execute_request(
+                path, method=method, payload=payload, params=params)
         except HTTPError:
-            self.fail_json(msg="HTTP request to {url} failed with error code {code}".format(url=self.url, code=self.status))
+            self.fail_json(msg="HTTP request to {url} failed with error code {code}".format(
+                url=self.url, code=self.status))
         self.response = info['msg']
         self.status = info['status']
         # This needs to be refactored as it's not very clean
@@ -474,9 +497,11 @@ class MerakiModule(object):
                 self.url = header_link['next']
                 try:
                     # Gather the body (resp) and header (info)
-                    resp, info = self._execute_request(header_link['next'], method=method, payload=payload, params=params)
+                    resp, info = self._execute_request(
+                        header_link['next'], method=method, payload=payload, params=params)
                 except HTTPError:
-                    self.fail_json(msg="HTTP request to {url} failed with error code {code}".format(url=self.url, code=self.status))
+                    self.fail_json(msg="HTTP request to {url} failed with error code {code}".format(
+                        url=self.url, code=self.status))
                 header_link = self._parse_pagination_header(info['link'])
                 try:
                     data.extend(json.loads(to_native(resp.read())))
@@ -506,7 +531,8 @@ class MerakiModule(object):
         self.result['response'] = self.response
         self.result['status'] = self.status
         if self.retry > 0:
-            self.module.warn("Rate limiter triggered - retry count {0}".format(self.retry))
+            self.module.warn(
+                "Rate limiter triggered - retry count {0}".format(self.retry))
         # Return the gory details when we need it
         if self.params['output_level'] == 'debug':
             self.result['method'] = self.method
@@ -519,8 +545,10 @@ class MerakiModule(object):
         else:
             if 'data' in self.result:
                 try:
-                    self.result['data'] = self.convert_camel_to_snake(self.result['data'])
-                    self.result['diff'] = self.convert_camel_to_snake(self.result['diff'])
+                    self.result['data'] = self.convert_camel_to_snake(
+                        self.result['data'])
+                    self.result['diff'] = self.convert_camel_to_snake(
+                        self.result['diff'])
                 except (KeyError, AttributeError):
                     pass
         self.module.exit_json(**self.result)

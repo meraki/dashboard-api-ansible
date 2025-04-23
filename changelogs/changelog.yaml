@@ -1217,3 +1217,33 @@ releases:
       bugfixes:
         - cisco.meraki.networks_wireless_ssids refactor parameter handling to avoid None values
     release_date: "2025-04-21"
+  2.21.0:
+    changes:
+      minor_changes:
+        - plugins/action/devices_sensor_commands - new plugin.
+        - plugins/action/devices_sensor_commands_info - new plugin.
+        - plugins/action/networks_appliance_firewall_multicast_forwarding - new plugin.
+        - plugins/action/organizations_appliance_dns_local_profiles - new plugin.
+        - plugins/action/organizations_appliance_dns_local_profiles_assignments_bulk_create - new plugin.
+        - plugins/action/organizations_appliance_dns_local_profiles_assignments_bulk_delete - new plugin.
+        - plugins/action/organizations_appliance_dns_local_profiles_assignments_info - new plugin.
+        - plugins/action/organizations_appliance_dns_local_profiles_info - new plugin.
+        - plugins/action/organizations_appliance_dns_local_records - new plugin.
+        - plugins/action/organizations_appliance_dns_local_records_info - new plugin.
+        - plugins/action/organizations_appliance_dns_split_profiles - new plugin.
+        - plugins/action/organizations_appliance_dns_split_profiles_assignments_bulk_create - new plugin.
+        - plugins/action/organizations_appliance_dns_split_profiles_assignments_bulk_delete - new plugin.
+        - plugins/action/organizations_appliance_dns_split_profiles_assignments_info - new plugin.
+        - plugins/action/organizations_appliance_dns_split_profiles_info - new plugin.
+        - plugins/action/organizations_appliance_firewall_multicast_forwarding_by_network_info - new plugin.
+        - plugins/action/organizations_devices_controller_migrations - new plugin.
+        - plugins/action/organizations_devices_controller_migrations_info - new plugin.
+        - plugins/action/organizations_devices_system_memory_usage_history_by_interval_info - new plugin.
+        - plugins/action/organizations_integrations_xdr_networks_disable - new plugin.
+        - plugins/action/organizations_integrations_xdr_networks_enable - new plugin.
+        - plugins/action/organizations_integrations_xdr_networks_info - new plugin.
+        - plugins/action/organizations_switch_ports_usage_history_by_device_by_interval_info - new plugin.
+        - plugins/action/organizations_wireless_devices_power_mode_history_info - new plugin.
+        - plugins/action/organizations_wireless_devices_system_cpu_load_history_info - new plugin.
+        - plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries - new plugin.
+        - plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries_info - new plugin.

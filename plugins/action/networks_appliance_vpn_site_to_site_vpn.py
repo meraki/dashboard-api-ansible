@@ -34,6 +34,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     hubs=dict(type="list"),
     mode=dict(type="str"),
+    subnet=dict(type="dict"),
     subnets=dict(type="list"),
     networkId=dict(type="str"),
 ))
@@ -52,6 +53,7 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         self.new_object = dict(
             hubs=params.get("hubs"),
             mode=params.get("mode"),
+            subnet=params.get("subnet"),
             subnets=params.get("subnets"),
             network_id=params.get("networkId"),
         )
@@ -71,6 +73,9 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         if self.new_object.get('mode') is not None or self.new_object.get('mode') is not None:
             new_object_params['mode'] = self.new_object.get('mode') or \
                 self.new_object.get('mode')
+        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+            new_object_params['subnet'] = self.new_object.get('subnet') or \
+                self.new_object.get('subnet')
         if self.new_object.get('subnets') is not None or self.new_object.get('subnets') is not None:
             new_object_params['subnets'] = self.new_object.get('subnets') or \
                 self.new_object.get('subnets')
@@ -108,7 +113,8 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -132,6 +138,7 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         obj_params = [
             ("hubs", "hubs"),
             ("mode", "mode"),
+            ("subnet", "subnet"),
             ("subnets", "subnets"),
             ("networkId", "networkId"),
         ]

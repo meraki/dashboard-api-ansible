@@ -53,12 +53,15 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            activeActiveAutoVpnEnabled=params.get("activeActiveAutoVpnEnabled"),
+            activeActiveAutoVpnEnabled=params.get(
+                "activeActiveAutoVpnEnabled"),
             defaultUplink=params.get("defaultUplink"),
             failoverAndFailback=params.get("failoverAndFailback"),
             loadBalancingEnabled=params.get("loadBalancingEnabled"),
-            vpnTrafficUplinkPreferences=params.get("vpnTrafficUplinkPreferences"),
-            wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
+            vpnTrafficUplinkPreferences=params.get(
+                "vpnTrafficUplinkPreferences"),
+            wanTrafficUplinkPreferences=params.get(
+                "wanTrafficUplinkPreferences"),
             network_id=params.get("networkId"),
         )
 
@@ -72,7 +75,8 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('activeActiveAutoVpnEnabled') is not None or self.new_object.get('active_active_auto_vpn_enabled') is not None:
-            new_object_params['activeActiveAutoVpnEnabled'] = self.new_object.get('activeActiveAutoVpnEnabled')
+            new_object_params['activeActiveAutoVpnEnabled'] = self.new_object.get(
+                'activeActiveAutoVpnEnabled')
         if self.new_object.get('defaultUplink') is not None or self.new_object.get('default_uplink') is not None:
             new_object_params['defaultUplink'] = self.new_object.get('defaultUplink') or \
                 self.new_object.get('default_uplink')
@@ -80,7 +84,8 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
             new_object_params['failoverAndFailback'] = self.new_object.get('failoverAndFailback') or \
                 self.new_object.get('failover_and_failback')
         if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get('load_balancing_enabled') is not None:
-            new_object_params['loadBalancingEnabled'] = self.new_object.get('loadBalancingEnabled')
+            new_object_params['loadBalancingEnabled'] = self.new_object.get(
+                'loadBalancingEnabled')
         if self.new_object.get('vpnTrafficUplinkPreferences') is not None or self.new_object.get('vpn_traffic_uplink_preferences') is not None:
             new_object_params['vpnTrafficUplinkPreferences'] = self.new_object.get('vpnTrafficUplinkPreferences') or \
                 self.new_object.get('vpn_traffic_uplink_preferences')
@@ -121,7 +126,8 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -205,7 +211,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksApplianceTrafficShapingUplinkSelection(self._task.args, meraki)
+        obj = NetworksApplianceTrafficShapingUplinkSelection(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

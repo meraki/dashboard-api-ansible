@@ -108,7 +108,8 @@ class NetworksWirelessRfProfiles(object):
             new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
                 self.new_object.get('band_selection_type')
         if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
+            new_object_params['clientBalancingEnabled'] = self.new_object.get(
+                'clientBalancingEnabled')
         if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
             new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
                 self.new_object.get('five_ghz_settings')
@@ -157,7 +158,8 @@ class NetworksWirelessRfProfiles(object):
             new_object_params['bandSelectionType'] = self.new_object.get('bandSelectionType') or \
                 self.new_object.get('band_selection_type')
         if self.new_object.get('clientBalancingEnabled') is not None or self.new_object.get('client_balancing_enabled') is not None:
-            new_object_params['clientBalancingEnabled'] = self.new_object.get('clientBalancingEnabled')
+            new_object_params['clientBalancingEnabled'] = self.new_object.get(
+                'clientBalancingEnabled')
         if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
             new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
                 self.new_object.get('five_ghz_settings')
@@ -165,9 +167,11 @@ class NetworksWirelessRfProfiles(object):
             new_object_params['flexRadios'] = self.new_object.get('flexRadios') or \
                 self.new_object.get('flex_radios')
         if self.new_object.get('isIndoorDefault') is not None or self.new_object.get('is_indoor_default') is not None:
-            new_object_params['isIndoorDefault'] = self.new_object.get('isIndoorDefault')
+            new_object_params['isIndoorDefault'] = self.new_object.get(
+                'isIndoorDefault')
         if self.new_object.get('isOutdoorDefault') is not None or self.new_object.get('is_outdoor_default') is not None:
-            new_object_params['isOutdoorDefault'] = self.new_object.get('isOutdoorDefault')
+            new_object_params['isOutdoorDefault'] = self.new_object.get(
+                'isOutdoorDefault')
         if self.new_object.get('minBitrateType') is not None or self.new_object.get('min_bitrate_type') is not None:
             new_object_params['minBitrateType'] = self.new_object.get('minBitrateType') or \
                 self.new_object.get('min_bitrate_type')

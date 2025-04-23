@@ -40,8 +40,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name", "organizationId", "policyObjectGroupId"], True),
-    ("state", "absent", ["name", "organizationId", "policyObjectGroupId"], True),
+    ("state", "present", [
+     "name", "organizationId", "policyObjectGroupId"], True),
+    ("state", "absent", ["name", "organizationId",
+     "policyObjectGroupId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []

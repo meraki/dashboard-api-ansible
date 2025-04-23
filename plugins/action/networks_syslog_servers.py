@@ -30,7 +30,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
+    state=dict(type="str", default="present", choices=["present"]),
     servers=dict(type="list"),
     networkId=dict(type="str"),
 ))

@@ -79,7 +79,8 @@ class NetworksSwitchSettings(object):
             new_object_params['uplinkClientSampling'] = self.new_object.get('uplinkClientSampling') or \
                 self.new_object.get('uplink_client_sampling')
         if self.new_object.get('useCombinedPower') is not None or self.new_object.get('use_combined_power') is not None:
-            new_object_params['useCombinedPower'] = self.new_object.get('useCombinedPower')
+            new_object_params['useCombinedPower'] = self.new_object.get(
+                'useCombinedPower')
         if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
@@ -117,7 +118,8 @@ class NetworksSwitchSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get(
+            "networkId") or self.new_object.get("network_id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

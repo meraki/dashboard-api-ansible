@@ -122,7 +122,8 @@ class NetworksApplianceVlans(object):
             new_object_params['cidr'] = self.new_object.get('cidr') or \
                 self.new_object.get('cidr')
         if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
+                'dhcpBootOptionsEnabled')
         if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
             new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
                 self.new_object.get('dhcp_handling')
@@ -187,7 +188,8 @@ class NetworksApplianceVlans(object):
             new_object_params['dhcpBootNextServer'] = self.new_object.get('dhcpBootNextServer') or \
                 self.new_object.get('dhcp_boot_next_server')
         if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get('dhcpBootOptionsEnabled')
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
+                'dhcpBootOptionsEnabled')
         if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
             new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
                 self.new_object.get('dhcp_handling')

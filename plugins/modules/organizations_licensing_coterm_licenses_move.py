@@ -5,17 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: organizations_licensing_coterm_licenses_move
+short_description: Resource module for organizations _licensing _coterm _licenses _move
 description:
-  - Manage operation create of the resource organizations _licensing _coterm _licenses
-    _move.
+  - Manage operation create of the resource organizations _licensing _coterm _licenses _move.
   - Moves a license to a different organization coterm only .
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
-module: organizations_licensing_coterm_licenses_move
-notes:
-  - SDK Method used are licensing.Licensing.move_organization_licensing_coterm_licenses,
-  - Paths used are post /organizations/{organizationId}/licensing/coterm/licenses/move,
+author: Francisco Munoz (@fmunoz)
 options:
   destination:
     description: Destination data for the license move.
@@ -53,38 +51,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the moveOrganizationLicensingCotermLicenses
-      API.
+  - name: Cisco Meraki documentation for licensing moveOrganizationLicensingCotermLicenses
+    description: Complete reference of the moveOrganizationLicensingCotermLicenses API.
     link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licensing-coterm-licenses
-    name: Cisco Meraki documentation for licensing moveOrganizationLicensingCotermLicenses
-short_description: Resource module for organizations _licensing _coterm _licenses
-  _move
-version_added: 2.16.0
+notes:
+  - SDK Method used are
+    licensing.Licensing.move_organization_licensing_coterm_licenses,
+  - Paths used are
+    post /organizations/{organizationId}/licensing/coterm/licenses/move,
 """
 
 EXAMPLES = r"""
 - name: Create
   cisco.meraki.organizations_licensing_coterm_licenses_move:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     destination:
       mode: addDevices
       organizationId: '123'

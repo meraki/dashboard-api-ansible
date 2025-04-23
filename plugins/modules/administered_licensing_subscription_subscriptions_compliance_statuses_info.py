@@ -5,24 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-author: Francisco Munoz (@fmunoz)
+module: administered_licensing_subscription_subscriptions_compliance_statuses_info
+short_description: Information module for administered _licensing _subscription _subscriptions _compliance _statuses
 description:
   - Get all administered _licensing _subscription _subscriptions _compliance _statuses.
   - Get compliance status for requested subscriptions.
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
-module: administered_licensing_subscription_subscriptions_compliance_statuses_info
-notes:
-  - SDK Method used are licensing.Licensing.get_administered_licensing_subscription_subscriptions_compliance_statuses,
-  - Paths used are get /administered/licensing/subscription/subscriptions/compliance/statuses,
+author: Francisco Munoz (@fmunoz)
 options:
   headers:
     description: Additional headers.
     type: dict
   organizationIds:
     description:
-      - OrganizationIds query parameter. Organizations to get subscription compliance
-        information for.
+      - OrganizationIds query parameter. Organizations to get subscription compliance information for.
     elements: str
     type: list
   subscriptionIds:
@@ -34,38 +32,40 @@ requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
-      API.
+  - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
+    description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions-compliance-statuses
-    name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
-short_description: Information module for administered _licensing _subscription _subscriptions
-  _compliance _statuses
-version_added: 2.18.0
+notes:
+  - SDK Method used are
+    licensing.Licensing.get_administered_licensing_subscription_subscriptions_compliance_statuses,
+  - Paths used are
+    get /administered/licensing/subscription/subscriptions/compliance/statuses,
 """
 
 EXAMPLES = r"""
 - name: Get all administered _licensing _subscription _subscriptions _compliance _statuses
   cisco.meraki.administered_licensing_subscription_subscriptions_compliance_statuses_info:
-    meraki_api_key: '{{ meraki_api_key }}'
-    meraki_base_url: '{{ meraki_base_url }}'
-    meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-    meraki_certificate_path: '{{ meraki_certificate_path }}'
-    meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-    meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-    meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-    meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-    meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-    meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-    meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-    meraki_output_log: '{{ meraki_output_log }}'
-    meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-    meraki_log_path: '{{ meraki_log_path }}'
-    meraki_print_console: '{{ meraki_print_console }}'
-    meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-    meraki_simulate: '{{ meraki_simulate }}'
-    meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-    meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-    meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationIds: []
     subscriptionIds: []
   register: result
