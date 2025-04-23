@@ -42,7 +42,7 @@ cisco.meraki.devices_info module -- Information module for devices
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.20.10).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -54,7 +54,7 @@ cisco.meraki.devices_info module -- Information module for devices
 
 .. rst-class:: ansible-version-added
 
-New in cisco.meraki 2.16.0
+New in cisco.meraki 1.0.0
 
 .. contents::
    :local:
@@ -72,8 +72,6 @@ Synopsis
 - Get devices by id.
 - List the devices in an organization that have been assigned to a network.
 - Return a single device.
-- Returns a historical log of all commands.
-- Returns information about the command's execution, including the status.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -111,40 +109,6 @@ Parameters
 
   * - Parameter
     - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-commandId"></div>
-
-      .. _ansible_collections.cisco.meraki.devices_info_module__parameter-commandid:
-
-      .. rst-class:: ansible-option-title
-
-      **commandId**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-commandId" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      CommandId path parameter. Command ID.
-
-
-      .. raw:: html
-
-        </div>
 
   * - .. raw:: html
 
@@ -1675,8 +1639,8 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are devices.Devices.get\_device\_sensor\_command, devices.Devices.get\_organization\_devices,
-   - Paths used are get /devices/{serial}, get /devices/{serial}/sensor/commands, get /devices/{serial}/sensor/commands/{commandId}, get /organizations/{organizationId}/devices,
+   - SDK Method used are devices.Devices.get\_device, devices.Devices.get\_organization\_devices,
+   - Paths used are get /devices/{serial}, get /organizations/{organizationId}/devices,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
    - The parameters starting with meraki\_ are used by the Cisco meraki Python SDK to establish the connection
@@ -1690,10 +1654,6 @@ See Also
 
    `Cisco Meraki documentation for devices getDevice <https://developer.cisco.com/meraki/api-v1/#!get-device>`_
        Complete reference of the getDevice API.
-   `Cisco Meraki documentation for devices getDeviceSensorCommand <https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-command>`_
-       Complete reference of the getDeviceSensorCommand API.
-   `Cisco Meraki documentation for devices getDeviceSensorCommands <https://developer.cisco.com/meraki/api-v1/#!get-device-sensor-commands>`_
-       Complete reference of the getDeviceSensorCommands API.
    `Cisco Meraki documentation for devices getOrganizationDevices <https://developer.cisco.com/meraki/api-v1/#!get-organization-devices>`_
        Complete reference of the getOrganizationDevices API.
 
@@ -1707,26 +1667,27 @@ Examples
     
     - name: Get all devices
       cisco.meraki.devices_info:
-        meraki_api_key: '{{ meraki_api_key }}'
-        meraki_base_url: '{{ meraki_base_url }}'
-        meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-        meraki_certificate_path: '{{ meraki_certificate_path }}'
-        meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-        meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-        meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-        meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-        meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-        meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-        meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-        meraki_output_log: '{{ meraki_output_log }}'
-        meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-        meraki_log_path: '{{ meraki_log_path }}'
-        meraki_print_console: '{{ meraki_print_console }}'
-        meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-        meraki_simulate: '{{ meraki_simulate }}'
-        meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-        meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-        meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         perPage: 0
         startingAfter: string
         endingBefore: string
@@ -1750,28 +1711,28 @@ Examples
       register: result
     - name: Get devices by id
       cisco.meraki.devices_info:
-        meraki_api_key: '{{ meraki_api_key }}'
-        meraki_base_url: '{{ meraki_base_url }}'
-        meraki_single_request_timeout: '{{ meraki_single_request_timeout }}'
-        meraki_certificate_path: '{{ meraki_certificate_path }}'
-        meraki_requests_proxy: '{{ meraki_requests_proxy }}'
-        meraki_wait_on_rate_limit: '{{ meraki_wait_on_rate_limit }}'
-        meraki_nginx_429_retry_wait_time: '{{ meraki_nginx_429_retry_wait_time }}'
-        meraki_action_batch_retry_wait_time: '{{ meraki_action_batch_retry_wait_time }}'
-        meraki_retry_4xx_error: '{{ meraki_retry_4xx_error }}'
-        meraki_retry_4xx_error_wait_time: '{{ meraki_retry_4xx_error_wait_time }}'
-        meraki_maximum_retries: '{{ meraki_maximum_retries }}'
-        meraki_output_log: '{{ meraki_output_log }}'
-        meraki_log_file_prefix: '{{ meraki_log_file_prefix }}'
-        meraki_log_path: '{{ meraki_log_path }}'
-        meraki_print_console: '{{ meraki_print_console }}'
-        meraki_suppress_logging: '{{ meraki_suppress_logging }}'
-        meraki_simulate: '{{ meraki_simulate }}'
-        meraki_be_geo_id: '{{ meraki_be_geo_id }}'
-        meraki_use_iterator_for_get_pages: '{{ meraki_use_iterator_for_get_pages }}'
-        meraki_inherit_logging_config: '{{ meraki_inherit_logging_config }}'
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         serial: string
-        commandId: string
       register: result
 
 
@@ -1833,7 +1794,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"commandId": "string", "completedAt": "string", "createdAt": "string", "createdBy": {"adminId": "string", "email": "string", "name": "string"}, "errors": ["string"], "operation": "string", "status": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"address": "string", "beaconIdParams": {"major": 0, "minor": 0, "uuid": "string"}, "details": [{"name": "string", "value": "string"}], "firmware": "string", "floorPlanId": "string", "lanIp": "string", "lat": 0, "lng": 0, "mac": "string", "model": "string", "name": "string", "networkId": "string", "notes": "string", "serial": "string", "tags": ["string"]}`
 
 
       .. raw:: html

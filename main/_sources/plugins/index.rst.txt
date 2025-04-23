@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.20.10
+Collection version 2.21.0
 
 .. contents::
    :local:
@@ -104,6 +104,8 @@ Modules
 * :ref:`devices_lldp_cdp_info module <ansible_collections.cisco.meraki.devices_lldp_cdp_info_module>` -- Information module for devices \_lldp \_cdp
 * :ref:`devices_management_interface module <ansible_collections.cisco.meraki.devices_management_interface_module>` -- Resource module for devices \_management \_interface
 * :ref:`devices_management_interface_info module <ansible_collections.cisco.meraki.devices_management_interface_info_module>` -- Information module for devices \_management \_interface
+* :ref:`devices_sensor_commands module <ansible_collections.cisco.meraki.devices_sensor_commands_module>` -- Resource module for devices \_sensor \_commands
+* :ref:`devices_sensor_commands_info module <ansible_collections.cisco.meraki.devices_sensor_commands_info_module>` -- Information module for devices \_sensor \_commands
 * :ref:`devices_sensor_relationships module <ansible_collections.cisco.meraki.devices_sensor_relationships_module>` -- Resource module for devices \_sensor \_relationships
 * :ref:`devices_sensor_relationships_info module <ansible_collections.cisco.meraki.devices_sensor_relationships_info_module>` -- Information module for devices \_sensor \_relationships
 * :ref:`devices_switch_ports module <ansible_collections.cisco.meraki.devices_switch_ports_module>` -- Resource module for devices \_switch \_ports
@@ -191,6 +193,7 @@ Modules
 * :ref:`networks_appliance_firewall_l7_firewall_rules module <ansible_collections.cisco.meraki.networks_appliance_firewall_l7_firewall_rules_module>` -- Resource module for networks \_appliance \_firewall l7 \_firewall \_rules
 * :ref:`networks_appliance_firewall_l7_firewall_rules_application_categories_info module <ansible_collections.cisco.meraki.networks_appliance_firewall_l7_firewall_rules_application_categories_info_module>` -- Information module for networks \_appliance \_firewall l7 \_firewall \_rules \_application \_categories
 * :ref:`networks_appliance_firewall_l7_firewall_rules_info module <ansible_collections.cisco.meraki.networks_appliance_firewall_l7_firewall_rules_info_module>` -- Information module for networks \_appliance \_firewall l7 \_firewall \_rules
+* :ref:`networks_appliance_firewall_multicast_forwarding module <ansible_collections.cisco.meraki.networks_appliance_firewall_multicast_forwarding_module>` -- Resource module for networks \_appliance \_firewall \_multicast \_forwarding
 * :ref:`networks_appliance_firewall_one_to_many_nat_rules module <ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_module>` -- Resource module for networks \_appliance \_firewall \_one \_to \_many \_nat \_rules
 * :ref:`networks_appliance_firewall_one_to_many_nat_rules_info module <ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_many_nat_rules_info_module>` -- Information module for networks \_appliance \_firewall \_one \_to \_many \_nat \_rules
 * :ref:`networks_appliance_firewall_one_to_one_nat_rules module <ansible_collections.cisco.meraki.networks_appliance_firewall_one_to_one_nat_rules_module>` -- Resource module for networks \_appliance \_firewall \_one \_to \_one \_nat \_rules
@@ -481,6 +484,19 @@ Modules
 * :ref:`organizations_api_requests_info module <ansible_collections.cisco.meraki.organizations_api_requests_info_module>` -- Information module for organizations \_api \_requests
 * :ref:`organizations_api_requests_overview_info module <ansible_collections.cisco.meraki.organizations_api_requests_overview_info_module>` -- Information module for organizations \_api \_requests \_overview
 * :ref:`organizations_api_requests_overview_response_codes_by_interval_info module <ansible_collections.cisco.meraki.organizations_api_requests_overview_response_codes_by_interval_info_module>` -- Information module for organizations \_api \_requests \_overview \_response \_codes \_by \_interval
+* :ref:`organizations_appliance_dns_local_profiles module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_profiles_module>` -- Resource module for organizations \_appliance \_dns \_local \_profiles
+* :ref:`organizations_appliance_dns_local_profiles_assignments_bulk_create module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_profiles_assignments_bulk_create_module>` -- Resource module for organizations \_appliance \_dns \_local \_profiles \_assignments \_bulk \_create
+* :ref:`organizations_appliance_dns_local_profiles_assignments_bulk_delete module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_profiles_assignments_bulk_delete_module>` -- Resource module for organizations \_appliance \_dns \_local \_profiles \_assignments \_bulk \_delete
+* :ref:`organizations_appliance_dns_local_profiles_assignments_info module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_profiles_assignments_info_module>` -- Information module for organizations \_appliance \_dns \_local \_profiles \_assignments
+* :ref:`organizations_appliance_dns_local_profiles_info module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_profiles_info_module>` -- Information module for organizations \_appliance \_dns \_local \_profiles
+* :ref:`organizations_appliance_dns_local_records module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_records_module>` -- Resource module for organizations \_appliance \_dns \_local \_records
+* :ref:`organizations_appliance_dns_local_records_info module <ansible_collections.cisco.meraki.organizations_appliance_dns_local_records_info_module>` -- Information module for organizations \_appliance \_dns \_local \_records
+* :ref:`organizations_appliance_dns_split_profiles module <ansible_collections.cisco.meraki.organizations_appliance_dns_split_profiles_module>` -- Resource module for organizations \_appliance \_dns \_split \_profiles
+* :ref:`organizations_appliance_dns_split_profiles_assignments_bulk_create module <ansible_collections.cisco.meraki.organizations_appliance_dns_split_profiles_assignments_bulk_create_module>` -- Resource module for organizations \_appliance \_dns \_split \_profiles \_assignments \_bulk \_create
+* :ref:`organizations_appliance_dns_split_profiles_assignments_bulk_delete module <ansible_collections.cisco.meraki.organizations_appliance_dns_split_profiles_assignments_bulk_delete_module>` -- Resource module for organizations \_appliance \_dns \_split \_profiles \_assignments \_bulk \_delete
+* :ref:`organizations_appliance_dns_split_profiles_assignments_info module <ansible_collections.cisco.meraki.organizations_appliance_dns_split_profiles_assignments_info_module>` -- Information module for organizations \_appliance \_dns \_split \_profiles \_assignments
+* :ref:`organizations_appliance_dns_split_profiles_info module <ansible_collections.cisco.meraki.organizations_appliance_dns_split_profiles_info_module>` -- Information module for organizations \_appliance \_dns \_split \_profiles
+* :ref:`organizations_appliance_firewall_multicast_forwarding_by_network_info module <ansible_collections.cisco.meraki.organizations_appliance_firewall_multicast_forwarding_by_network_info_module>` -- Information module for organizations \_appliance \_firewall \_multicast \_forwarding \_by \_network
 * :ref:`organizations_appliance_security_intrusion module <ansible_collections.cisco.meraki.organizations_appliance_security_intrusion_module>` -- Resource module for organizations \_appliance \_security \_intrusion
 * :ref:`organizations_appliance_security_intrusion_info module <ansible_collections.cisco.meraki.organizations_appliance_security_intrusion_info_module>` -- Information module for organizations \_appliance \_security \_intrusion
 * :ref:`organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info module <ansible_collections.cisco.meraki.organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info_module>` -- Information module for organizations \_appliance \_traffic \_shaping \_vpn \_exclusions \_by \_network
@@ -530,6 +546,8 @@ Modules
 * :ref:`organizations_config_templates_switch_profiles_ports_info module <ansible_collections.cisco.meraki.organizations_config_templates_switch_profiles_ports_info_module>` -- Information module for organizations \_config \_templates \_switch \_profiles \_ports
 * :ref:`organizations_devices_availabilities_change_history_info module <ansible_collections.cisco.meraki.organizations_devices_availabilities_change_history_info_module>` -- Information module for organizations \_devices \_availabilities \_change \_history
 * :ref:`organizations_devices_availabilities_info module <ansible_collections.cisco.meraki.organizations_devices_availabilities_info_module>` -- Information module for organizations \_devices \_availabilities
+* :ref:`organizations_devices_controller_migrations module <ansible_collections.cisco.meraki.organizations_devices_controller_migrations_module>` -- Resource module for organizations \_devices \_controller \_migrations
+* :ref:`organizations_devices_controller_migrations_info module <ansible_collections.cisco.meraki.organizations_devices_controller_migrations_info_module>` -- Information module for organizations \_devices \_controller \_migrations
 * :ref:`organizations_devices_details_bulk_update module <ansible_collections.cisco.meraki.organizations_devices_details_bulk_update_module>` -- Resource module for organizations \_devices \_details \_bulk \_update
 * :ref:`organizations_devices_info module <ansible_collections.cisco.meraki.organizations_devices_info_module>` -- Information module for organizations \_devices
 * :ref:`organizations_devices_overview_by_model_info module <ansible_collections.cisco.meraki.organizations_devices_overview_by_model_info_module>` -- Information module for organizations \_devices \_overview \_by \_model
@@ -537,6 +555,7 @@ Modules
 * :ref:`organizations_devices_provisioning_statuses_info module <ansible_collections.cisco.meraki.organizations_devices_provisioning_statuses_info_module>` -- Information module for organizations \_devices \_provisioning \_statuses
 * :ref:`organizations_devices_statuses_info module <ansible_collections.cisco.meraki.organizations_devices_statuses_info_module>` -- Information module for organizations \_devices \_statuses
 * :ref:`organizations_devices_statuses_overview_info module <ansible_collections.cisco.meraki.organizations_devices_statuses_overview_info_module>` -- Information module for organizations \_devices \_statuses \_overview
+* :ref:`organizations_devices_system_memory_usage_history_by_interval_info module <ansible_collections.cisco.meraki.organizations_devices_system_memory_usage_history_by_interval_info_module>` -- Information module for organizations \_devices \_system \_memory \_usage \_history \_by \_interval
 * :ref:`organizations_devices_uplinks_addresses_by_device_info module <ansible_collections.cisco.meraki.organizations_devices_uplinks_addresses_by_device_info_module>` -- Information module for organizations \_devices \_uplinks \_addresses \_by \_device
 * :ref:`organizations_devices_uplinks_loss_and_latency_info module <ansible_collections.cisco.meraki.organizations_devices_uplinks_loss_and_latency_info_module>` -- Information module for organizations \_devices \_uplinks \_loss \_and \_latency
 * :ref:`organizations_early_access_features_info module <ansible_collections.cisco.meraki.organizations_early_access_features_info_module>` -- Information module for organizations \_early \_access \_features
@@ -550,6 +569,9 @@ Modules
 * :ref:`organizations_insight_applications_info module <ansible_collections.cisco.meraki.organizations_insight_applications_info_module>` -- Information module for organizations \_insight \_applications
 * :ref:`organizations_insight_monitored_media_servers module <ansible_collections.cisco.meraki.organizations_insight_monitored_media_servers_module>` -- Resource module for organizations \_insight \_monitored \_media \_servers
 * :ref:`organizations_insight_monitored_media_servers_info module <ansible_collections.cisco.meraki.organizations_insight_monitored_media_servers_info_module>` -- Information module for organizations \_insight \_monitored \_media \_servers
+* :ref:`organizations_integrations_xdr_networks_disable module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_disable_module>` -- Resource module for organizations \_integrations \_xdr \_networks \_disable
+* :ref:`organizations_integrations_xdr_networks_enable module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_enable_module>` -- Resource module for organizations \_integrations \_xdr \_networks \_enable
+* :ref:`organizations_integrations_xdr_networks_info module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_info_module>` -- Information module for organizations \_integrations \_xdr \_networks
 * :ref:`organizations_inventory_claim module <ansible_collections.cisco.meraki.organizations_inventory_claim_module>` -- Resource module for organizations \_inventory \_claim
 * :ref:`organizations_inventory_devices_info module <ansible_collections.cisco.meraki.organizations_inventory_devices_info_module>` -- Information module for organizations \_inventory \_devices
 * :ref:`organizations_inventory_onboarding_cloud_monitoring_export_events module <ansible_collections.cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_export_events_module>` -- Resource module for organizations \_inventory \_onboarding \_cloud \_monitoring \_export \_events
@@ -609,6 +631,7 @@ Modules
 * :ref:`organizations_switch_ports_overview_info module <ansible_collections.cisco.meraki.organizations_switch_ports_overview_info_module>` -- Information module for organizations \_switch \_ports \_overview
 * :ref:`organizations_switch_ports_statuses_by_switch_info module <ansible_collections.cisco.meraki.organizations_switch_ports_statuses_by_switch_info_module>` -- Information module for organizations \_switch \_ports \_statuses \_by \_switch
 * :ref:`organizations_switch_ports_topology_discovery_by_device_info module <ansible_collections.cisco.meraki.organizations_switch_ports_topology_discovery_by_device_info_module>` -- Information module for organizations \_switch \_ports \_topology \_discovery \_by \_device
+* :ref:`organizations_switch_ports_usage_history_by_device_by_interval_info module <ansible_collections.cisco.meraki.organizations_switch_ports_usage_history_by_device_by_interval_info_module>` -- Information module for organizations \_switch \_ports \_usage \_history \_by \_device \_by \_interval
 * :ref:`organizations_uplinks_statuses_info module <ansible_collections.cisco.meraki.organizations_uplinks_statuses_info_module>` -- Information module for organizations \_uplinks \_statuses
 * :ref:`organizations_webhooks_callbacks_statuses_info module <ansible_collections.cisco.meraki.organizations_webhooks_callbacks_statuses_info_module>` -- Information module for organizations \_webhooks \_callbacks \_statuses
 * :ref:`organizations_webhooks_logs_info module <ansible_collections.cisco.meraki.organizations_webhooks_logs_info_module>` -- Information module for organizations \_webhooks \_logs
@@ -638,9 +661,13 @@ Modules
 * :ref:`organizations_wireless_devices_packet_loss_by_client_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_packet_loss_by_client_info_module>` -- Information module for organizations \_wireless \_devices \_packet \_loss \_by \_client
 * :ref:`organizations_wireless_devices_packet_loss_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_packet_loss_by_device_info_module>` -- Information module for organizations \_wireless \_devices \_packet \_loss \_by \_device
 * :ref:`organizations_wireless_devices_packet_loss_by_network_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_packet_loss_by_network_info_module>` -- Information module for organizations \_wireless \_devices \_packet \_loss \_by \_network
+* :ref:`organizations_wireless_devices_power_mode_history_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_power_mode_history_info_module>` -- Information module for organizations \_wireless \_devices \_power \_mode \_history
+* :ref:`organizations_wireless_devices_system_cpu_load_history_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_system_cpu_load_history_info_module>` -- Information module for organizations \_wireless \_devices \_system \_cpu \_load \_history
 * :ref:`organizations_wireless_devices_wireless_controllers_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_wireless_controllers_by_device_info_module>` -- Information module for organizations \_wireless \_devices \_wireless \_controllers \_by \_device
 * :ref:`organizations_wireless_radio_auto_rf_channels_recalculate module <ansible_collections.cisco.meraki.organizations_wireless_radio_auto_rf_channels_recalculate_module>` -- Resource module for organizations \_wireless \_radio \_auto \_rf \_channels \_recalculate
 * :ref:`organizations_wireless_rf_profiles_assignments_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_rf_profiles_assignments_by_device_info_module>` -- Information module for organizations \_wireless \_rf \_profiles \_assignments \_by \_device
+* :ref:`organizations_wireless_ssids_firewall_isolation_allowlist_entries module <ansible_collections.cisco.meraki.organizations_wireless_ssids_firewall_isolation_allowlist_entries_module>` -- Resource module for organizations \_wireless \_ssids \_firewall \_isolation \_allowlist \_entries
+* :ref:`organizations_wireless_ssids_firewall_isolation_allowlist_entries_info module <ansible_collections.cisco.meraki.organizations_wireless_ssids_firewall_isolation_allowlist_entries_info_module>` -- Information module for organizations \_wireless \_ssids \_firewall \_isolation \_allowlist \_entries
 * :ref:`organizations_wireless_ssids_statuses_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_ssids_statuses_by_device_info_module>` -- Information module for organizations \_wireless \_ssids \_statuses \_by \_device
 
 .. toctree::
@@ -701,6 +728,8 @@ Modules
     devices_lldp_cdp_info_module
     devices_management_interface_module
     devices_management_interface_info_module
+    devices_sensor_commands_module
+    devices_sensor_commands_info_module
     devices_sensor_relationships_module
     devices_sensor_relationships_info_module
     devices_switch_ports_module
@@ -788,6 +817,7 @@ Modules
     networks_appliance_firewall_l7_firewall_rules_module
     networks_appliance_firewall_l7_firewall_rules_application_categories_info_module
     networks_appliance_firewall_l7_firewall_rules_info_module
+    networks_appliance_firewall_multicast_forwarding_module
     networks_appliance_firewall_one_to_many_nat_rules_module
     networks_appliance_firewall_one_to_many_nat_rules_info_module
     networks_appliance_firewall_one_to_one_nat_rules_module
@@ -1078,6 +1108,19 @@ Modules
     organizations_api_requests_info_module
     organizations_api_requests_overview_info_module
     organizations_api_requests_overview_response_codes_by_interval_info_module
+    organizations_appliance_dns_local_profiles_module
+    organizations_appliance_dns_local_profiles_assignments_bulk_create_module
+    organizations_appliance_dns_local_profiles_assignments_bulk_delete_module
+    organizations_appliance_dns_local_profiles_assignments_info_module
+    organizations_appliance_dns_local_profiles_info_module
+    organizations_appliance_dns_local_records_module
+    organizations_appliance_dns_local_records_info_module
+    organizations_appliance_dns_split_profiles_module
+    organizations_appliance_dns_split_profiles_assignments_bulk_create_module
+    organizations_appliance_dns_split_profiles_assignments_bulk_delete_module
+    organizations_appliance_dns_split_profiles_assignments_info_module
+    organizations_appliance_dns_split_profiles_info_module
+    organizations_appliance_firewall_multicast_forwarding_by_network_info_module
     organizations_appliance_security_intrusion_module
     organizations_appliance_security_intrusion_info_module
     organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info_module
@@ -1127,6 +1170,8 @@ Modules
     organizations_config_templates_switch_profiles_ports_info_module
     organizations_devices_availabilities_change_history_info_module
     organizations_devices_availabilities_info_module
+    organizations_devices_controller_migrations_module
+    organizations_devices_controller_migrations_info_module
     organizations_devices_details_bulk_update_module
     organizations_devices_info_module
     organizations_devices_overview_by_model_info_module
@@ -1134,6 +1179,7 @@ Modules
     organizations_devices_provisioning_statuses_info_module
     organizations_devices_statuses_info_module
     organizations_devices_statuses_overview_info_module
+    organizations_devices_system_memory_usage_history_by_interval_info_module
     organizations_devices_uplinks_addresses_by_device_info_module
     organizations_devices_uplinks_loss_and_latency_info_module
     organizations_early_access_features_info_module
@@ -1147,6 +1193,9 @@ Modules
     organizations_insight_applications_info_module
     organizations_insight_monitored_media_servers_module
     organizations_insight_monitored_media_servers_info_module
+    organizations_integrations_xdr_networks_disable_module
+    organizations_integrations_xdr_networks_enable_module
+    organizations_integrations_xdr_networks_info_module
     organizations_inventory_claim_module
     organizations_inventory_devices_info_module
     organizations_inventory_onboarding_cloud_monitoring_export_events_module
@@ -1206,6 +1255,7 @@ Modules
     organizations_switch_ports_overview_info_module
     organizations_switch_ports_statuses_by_switch_info_module
     organizations_switch_ports_topology_discovery_by_device_info_module
+    organizations_switch_ports_usage_history_by_device_by_interval_info_module
     organizations_uplinks_statuses_info_module
     organizations_webhooks_callbacks_statuses_info_module
     organizations_webhooks_logs_info_module
@@ -1235,9 +1285,25 @@ Modules
     organizations_wireless_devices_packet_loss_by_client_info_module
     organizations_wireless_devices_packet_loss_by_device_info_module
     organizations_wireless_devices_packet_loss_by_network_info_module
+    organizations_wireless_devices_power_mode_history_info_module
+    organizations_wireless_devices_system_cpu_load_history_info_module
     organizations_wireless_devices_wireless_controllers_by_device_info_module
     organizations_wireless_radio_auto_rf_channels_recalculate_module
     organizations_wireless_rf_profiles_assignments_by_device_info_module
+    organizations_wireless_ssids_firewall_isolation_allowlist_entries_module
+    organizations_wireless_ssids_firewall_isolation_allowlist_entries_info_module
     organizations_wireless_ssids_statuses_by_device_info_module
+
+
+Inventory Plugins
+~~~~~~~~~~~~~~~~~
+
+* :ref:`meraki inventory <ansible_collections.cisco.meraki.meraki_inventory>` -- Ansible dynamic inventory plugin for Cisco Meraki devices.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    meraki_inventory
 
 
