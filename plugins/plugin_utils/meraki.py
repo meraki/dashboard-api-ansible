@@ -321,7 +321,7 @@ class MERAKI(object):
         except exceptions.APIError as e:
             self.fail_json(
                 msg=(
-                    "An error occured when executing operation."
+                    "An error occurred when executing operation."
                     "The error was: {error}"
                 ).format(error=to_native(e))
             )
