@@ -42,7 +42,7 @@ cisco.meraki.meraki inventory -- Ansible dynamic inventory plugin for Cisco Mera
 .. Collection note
 
 .. note::
-    This inventory plugin is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.0).
+    This inventory plugin is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this inventory plugin,
