@@ -5,7 +5,7 @@ The Meraki-Ansible project provides an Ansible collection for managing and autom
 # Quick Start Guide
 
 ## Installation
-1. Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
+1. Ansible must be installed just in case needed. Check if your environment does not provide it. Example AAP. ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
 ```
 pip install ansible-core
 ```
@@ -68,7 +68,7 @@ Other versions of this collection have support for previous Cisco Meraki version
 | 1.33.0                    | 2.17.0                      |1.33.0                         |
 | 1.44.1                    | 2.18.3                      |1.44.1                         |
 | 1.53.0                    | 2.20.8                      |1.53.0                         |
-| 1.57.0                    | 2.21.0                      |1.57.0                         |
+| 1.57.0                    | 2.21.1                      |1.57.0                         |
 
 *Notes*:
 

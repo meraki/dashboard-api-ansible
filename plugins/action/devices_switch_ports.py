@@ -206,6 +206,7 @@ class DevicesSwitchPorts(object):
 
     def get_object_by_name(self, name):
         result = None
+        name = self.new_object.get('portId') or self.new_object.get('port_id')
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(

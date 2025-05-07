@@ -4,11 +4,389 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.1
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.devices_switch_ports - fix get_object_by_name method.
+
+v2.21.0
+=======
+
+Minor Changes
+-------------
+
+- plugins/action/devices_sensor_commands - new plugin.
+- plugins/action/devices_sensor_commands_info - new plugin.
+- plugins/action/networks_appliance_firewall_multicast_forwarding - new plugin.
+- plugins/action/organizations_appliance_dns_local_profiles - new plugin.
+- plugins/action/organizations_appliance_dns_local_profiles_assignments_bulk_create - new plugin.
+- plugins/action/organizations_appliance_dns_local_profiles_assignments_bulk_delete - new plugin.
+- plugins/action/organizations_appliance_dns_local_profiles_assignments_info - new plugin.
+- plugins/action/organizations_appliance_dns_local_profiles_info - new plugin.
+- plugins/action/organizations_appliance_dns_local_records - new plugin.
+- plugins/action/organizations_appliance_dns_local_records_info - new plugin.
+- plugins/action/organizations_appliance_dns_split_profiles - new plugin.
+- plugins/action/organizations_appliance_dns_split_profiles_assignments_bulk_create - new plugin.
+- plugins/action/organizations_appliance_dns_split_profiles_assignments_bulk_delete - new plugin.
+- plugins/action/organizations_appliance_dns_split_profiles_assignments_info - new plugin.
+- plugins/action/organizations_appliance_dns_split_profiles_info - new plugin.
+- plugins/action/organizations_appliance_firewall_multicast_forwarding_by_network_info - new plugin.
+- plugins/action/organizations_devices_controller_migrations - new plugin.
+- plugins/action/organizations_devices_controller_migrations_info - new plugin.
+- plugins/action/organizations_devices_system_memory_usage_history_by_interval_info - new plugin.
+- plugins/action/organizations_integrations_xdr_networks_disable - new plugin.
+- plugins/action/organizations_integrations_xdr_networks_enable - new plugin.
+- plugins/action/organizations_integrations_xdr_networks_info - new plugin.
+- plugins/action/organizations_switch_ports_usage_history_by_device_by_interval_info - new plugin.
+- plugins/action/organizations_wireless_devices_power_mode_history_info - new plugin.
+- plugins/action/organizations_wireless_devices_system_cpu_load_history_info - new plugin.
+- plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries - new plugin.
+- plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries_info - new plugin.
+
+v2.20.10
+========
+
+Bugfixes
+--------
+
+- cisco.meraki.networks_wireless_ssids refactor parameter handling to avoid None values
+
+v2.20.9
+=======
+
+Bugfixes
+--------
+
+- Fixed parameter handling for `update_by_id_params` in cisco.meraki.networks_wireless_ssids to correctly map the following parameters
+  - `perClientBandwidthLimitDown`
+  - `perClientBandwidthLimitUp`
+  - `perSsidBandwidthLimitDown`
+  - `perSsidBandwidthLimitUp`
+  - `defaultVlanId`
+  - `radiusAccountingInterimInterval`
+  - `radiusGuestVlanId`
+  - `vlanId`
+  - `radiusServerAttemptsLimit`
+  - `radiusServerTimeout`
+- Added validation for `radiusServerAttemptsLimit` with choices `[1, 2, 3, 4, 5]`.
+- Added validation for `radiusServerTimeout` with a range of valid values `[1-10]`.
+- cisco.meraki.devices_wireless_radio_settings changed compare equality method to use `meraki_compare_equality`
+
+v2.20.8
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.organizations_login_security module update organization security settings.
+
+v2.20.7
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.networks_appliance_traffic_shaping_rules Always Pushes Configuration Even When Unchanged.
+- Changes at compare equality function.
+- Unable to create Syslog Server Object. Action module manually fixing.
+
+v2.20.6
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.devices_switch_ports idempotency error fixed.
+
+v2.20.5
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.networks_devices_claim failed with error unexpected keyword argument 'add_atomically' - bad naming solved.
+- cisco.meraki.networks_appliance_firewall_l3_firewall_rules fails with "Unexpected failure during module execution 'rules' - specific 'rules' extraction has been removed.
+- cisco.meraki.networks_appliance_vlans_settings fails with "msg" "Object does not exists, plugin only has update" - specific 'vlansEnabled' extraction has been removed.
+
+v2.20.4
+=======
+
+Bugfixes
+--------
+
+- Issue fixes for workflow-ansible-lint.
+- Change alias 'message' to 'message_rule' due is a reserved ansible word in meraki_mx_intrusion_prevention module.
+- Old playbook tests removed.
+
+v2.20.3
+=======
+
+Bugfixes
+--------
+
+- README fixes.
+
+v2.20.2
+=======
+
+Bugfixes
+--------
+
+- runtime updated requires_ansible from 2.14.0 to '>=2.15.0'.
+
+v2.20.1
+=======
+
+Minor Changes
+-------------
+
+- Sanity and CI fixes.
+
+v2.20.0
+=======
+
+Minor Changes
+-------------
+
+- administered_identities_me_api_keys_info - new plugin.
+- administered_identities_me_api_keys_revoke - new plugin.
+- devices_live_tools_leds_blink - new plugin.
+- devices_wireless_electronic_shelf_label - new plugin.
+- devices_wireless_electronic_shelf_label_info - new plugin.
+- networks_appliance_sdwan_internet_policies - new plugin.
+- networks_cancel - new plugin.
+- networks_floor_plans_auto_locate_jobs_batch - new plugin.
+- networks_floor_plans_devices_batch_update - new plugin.
+- networks_publish - new plugin.
+- networks_recalculate - new plugin.
+- networks_wireless_air_marshal_rules - new plugin.
+- networks_wireless_air_marshal_rules_delete - new plugin.
+- networks_wireless_air_marshal_rules_update - new plugin.
+- networks_wireless_air_marshal_settings - new plugin.
+- networks_wireless_electronic_shelf_label - new plugin.
+- organizations_assets - new plugin.
+- organizations_assurance_alerts_info - new plugin.
+- organizations_assurance_alerts_overview_by_network_info - new plugin.
+- organizations_assurance_alerts_overview_by_type_info - new plugin.
+- organizations_assurance_alerts_overview_historical_info - new plugin.
+- organizations_assurance_alerts_overview_info - new plugin.
+- organizations_assurance_alerts_restore - new plugin.
+- organizations_cellular_gateway_esims_inventory_info - new plugin.
+- organizations_cellular_gateway_esims_service_providers_accounts - new plugin.
+- organizations_cellular_gateway_esims_service_providers_accounts_communication_plans_info - new plugin.
+- organizations_cellular_gateway_esims_service_providers_accounts_info - new plugin.
+- organizations_cellular_gateway_esims_service_providers_accounts_rate_plans_info - new plugin.
+- organizations_cellular_gateway_esims_service_providers_info - new plugin.
+- organizations_cellular_gateway_esims_swap - new plugin.
+- organizations_devices_details_bulk_update - new plugin.
+- organizations_devices_overview_by_model_info - new plugin.
+- organizations_floor_plans_auto_locate_devices_info - new plugin.
+- organizations_floor_plans_auto_locate_statuses_info - new plugin.
+- organizations_splash_themes - new plugin.
+- organizations_splash_themes_info - new plugin.
+- organizations_summary_top_applications_by_usage_info - new plugin.
+- organizations_summary_top_applications_categories_by_usage_info - new plugin.
+- organizations_switch_ports_clients_overview_by_device_info - new plugin.
+- organizations_switch_ports_overview_info - new plugin.
+- organizations_switch_ports_statuses_by_switch_info - new plugin.
+- organizations_switch_ports_topology_discovery_by_device_info - new plugin.
+- organizations_wireless_air_marshal_rules_info - new plugin.
+- organizations_wireless_air_marshal_settings_by_network_info - new plugin.
+- organizations_wireless_clients_overview_by_device_info - new plugin.
+- organizations_wireless_controller_clients_overview_history_by_device_by_interval_info - new plugin.
+- organizations_wireless_controller_connections_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l2_by_device_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l2_statuses_change_history_by_device_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l2_usage_history_by_interval_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l3_by_device_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l3_statuses_change_history_by_device_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_l3_usage_history_by_interval_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_packets_overview_by_device_info - new plugin.
+- organizations_wireless_controller_devices_interfaces_usage_history_by_interval_info - new plugin.
+- organizations_wireless_controller_devices_redundancy_failover_history_info - new plugin.
+- organizations_wireless_controller_devices_redundancy_statuses_info - new plugin.
+- organizations_wireless_controller_devices_system_utilization_history_by_interval_info - new plugin.
+- organizations_wireless_controller_overview_by_device_info - new plugin.
+- organizations_wireless_devices_wireless_controllers_by_device_info - new plugin.
+- organizations_wireless_radio_auto_rf_channels_recalculate - new plugin.
+- organizations_wireless_rf_profiles_assignments_by_device_info - new plugin.
+- organizations_wireless_ssids_statuses_by_device_info - new plugin.
+
+v2.19.0
+=======
+
+Bugfixes
+--------
+
+- Ansible utils requirements updated.
+- cisco.meraki.networks_switch_stacks delete stack not working, fixing path parameters.
+- cisco.meraki.networks_clients_info - incorrect API endpoint, fixing info module.
+
+v2.18.2
+=======
+
+Minor Changes
+-------------
+
+- Include networks_appliance_traffic_shaping_custom_performance_classes_info plugin.
+
+v2.18.1
+=======
+
+Minor Changes
+-------------
+
+- The `id` parameter is now required for `networks_appliance_vlans` module.
+- The `id` parameter is change type to an `integer` in `networks_appliance_vlans` module.
+- Fixing problem of naming in `organizations_appliance_vpn_third_party_vpnpeers_info`.
+- Removing `state` from allowed parameters for `networks_syslog_servers` module.
+
+v2.18.0
+=======
+
+Minor Changes
+-------------
+
+- Ansible collection now support v1.44.1 of Dashboard Api.
+- administered_licensing_subscription_entitlements_info - new plugin.
+- administered_licensing_subscription_subscriptions_bind - new plugin.
+- administered_licensing_subscription_subscriptions_claim_key_validate - new plugin.
+- administered_licensing_subscription_subscriptions_claim - new plugin.
+- administered_licensing_subscription_subscriptions_compliance_statuses_info - new plugin.
+- administered_licensing_subscription_subscriptions_info - new plugin.
+- devices_appliance_radio_settings_info - new plugin.
+- devices_appliance_radio_settings - new plugin.
+- devices_live_tools_arp_table_info - new plugin.
+- devices_live_tools_arp_table - new plugin.
+- devices_live_tools_cable_test_info - new plugin.
+- devices_live_tools_cable_test - new plugin.
+- devices_live_tools_throughput_test_info - new plugin.
+- devices_live_tools_throughput_test - new plugin.
+- devices_live_tools_wake_on_lan_info - new plugin.
+- devices_live_tools_wake_on_lan - new plugin.
+- devices_wireless_alternate_management_interface_ipv6 - new plugin.
+- networks_appliance_rf_profiles_info - new plugin.
+- networks_appliance_rf_profiles - new plugin.
+- networks_appliance_traffic_shaping_vpn_exclusions - new plugin.
+- networks_sm_devices_install_apps - new plugin.
+- networks_sm_devices_reboot - new plugin.
+- networks_sm_devices_shutdown - new plugin.
+- networks_sm_devices_uninstall_apps - new plugin.
+- networks_vlan_profiles_assignments_by_device_info - new plugin.
+- networks_vlan_profiles_assignments_reassign - new plugin.
+- networks_vlan_profiles_info - new plugin.
+- networks_vlan_profiles - new plugin.
+- networks_wireless_ethernet_ports_profiles_assign - new plugin.
+- networks_wireless_ethernet_ports_profiles_info - new plugin.
+- networks_wireless_ethernet_ports_profiles_set_default - new plugin.
+- networks_wireless_ethernet_ports_profiles - new plugin.
+- organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info - new plugin.
+- organizations_appliance_uplinks_statuses_overview_info - new plugin.
+- organizations_appliance_uplinks_usage_by_network_info - new plugin.
+- organizations_camera_boundaries_areas_by_device_info - new plugin.
+- organizations_camera_boundaries_lines_by_device_info - new plugin.
+- organizations_camera_detections_history_by_boundary_by_interval_info - new plugin.
+- organizations_camera_permissions_info - new plugin.
+- organizations_camera_roles_info - new plugin.
+- organizations_camera_roles - new plugin.
+- organizations_devices_availabilities_change_history_info - new plugin.
+- organizations_devices_boots_history_info - new plugin.
+- organizations_sm_admins_roles_info - new plugin.
+- organizations_sm_admins_roles - new plugin.
+- organizations_sm_sentry_policies_assignments_by_network_info - new plugin.
+- organizations_sm_sentry_policies_assignments - new plugin.
+- organizations_summary_top_networks_by_status_info - new plugin.
+- organizations_webhooks_callbacks_statuses_info - new plugin.
+- organizations_wireless_devices_channel_utilization_by_device_info - new plugin.
+- organizations_wireless_devices_channel_utilization_by_network_info - new plugin.
+- organizations_wireless_devices_channel_utilization_history_by_device_by_interval_info - new plugin.
+- organizations_wireless_devices_channel_utilization_history_by_network_by_interval_info - new plugin.
+- organizations_wireless_devices_packet_loss_by_client_info - new plugin.
+- organizations_wireless_devices_packet_loss_by_device_info - new plugin.
+- organizations_wireless_devices_packet_loss_by_network_info - new plugin.
+
+v2.17.2
+=======
+
+Bugfixes
+--------
+
+- Adding `smartquotes = False` to `conf.py` and romoving `'` from rst files.
+
+v2.17.1
+=======
+
+Bugfixes
+--------
+
+- Adding build_ignore property to galaxy file.
+
+v2.17.0
+=======
+
+Minor Changes
+-------------
+
+- Adding support to ansible.utils ">=2.0.0, <4.00".
+
+v2.16.17
+========
+
+Bugfixes
+--------
+
+- Adding support to ansible.utils >=3.0
+
+v2.16.16
+========
+
+Bugfixes
+--------
+
+- Idempotency bugs fixed in devices_switch_ports.
+- Adding `product_types` for update request on networks.
+- networks_syslog_servers is now just an Update action to API.
+- Parameter`organization_id` change to `organizationId` organizations_claim.
+- Parameter`organization_id` change to `organizationId` organizations_clone.
+- Parameter`organization_id` change to `organizationId` organizations_inventory_claim.
+- Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_export_events.
+- Parameter`organization_id` change to `organizationId` organizations_inventory_onboarding_cloud_monitoring_prepare.
+- Parameter`organization_id` change to `organizationId` organizations_inventory_release.
+- Parameter`organization_id` change to `organizationId` organizations_licenses_assign_seats.
+- Parameter`organization_id` change to `organizationId` organizations_licenses_move.
+- Parameter`organization_id` change to `organizationId` organizations_licenses_move_seats.
+- Parameter`organization_id` change to `organizationId` organizations_licenses_renew_seats.
+- Parameter`organization_id` change to `organizationId` organizations_licensing_coterm_licenses_move.
+- Parameter`organization_id` change to `organizationId` organizations_networks_combine.
+- Parameter`organization_id` change to `organizationId` organizations_switch_devices_clone.
+- Parameter`organization_id` change to `organizationId` organizations_users.
+- Removing logs in meraki.py.
+
+v2.16.15
+========
+
+Bugfixes
+--------
+
+- Adding `network_clients_info` and `network_client_info`.
+- Adding `platform_meraki.rst` to docs.
+
+v2.16.14
+========
+
+Bugfixes
+--------
+
+- Adding condition to avoid error on exists on devices.
+
 v2.16.13
 =======
 
 Bugfixes
--------------
+--------
 
 - Meraki Compare Equality 2 added.
 
