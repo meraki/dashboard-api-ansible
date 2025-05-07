@@ -1247,3 +1247,8 @@ releases:
         - plugins/action/organizations_wireless_devices_system_cpu_load_history_info - new plugin.
         - plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries - new plugin.
         - plugins/action/organizations_wireless_ssids_firewall_isolation_allowlist_entries_info - new plugin.
+  2.21.1:
+    changes:
+      bugfixes:
+        - cisco.meraki.devices_switch_ports - fix get_object_by_name method.
+    release_date: "2025-05-07"
