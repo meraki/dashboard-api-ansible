@@ -10,11 +10,11 @@
         rules:
           - policy: deny
             type: applicationCategory
-            value: 
+            value:
               id: meraki:layer7/category/5
               name: Sports
           - policy: deny
             type: applicationCategory
-            value: 
+            value:
               id: meraki:layer7/category/6
               name: Gaming
