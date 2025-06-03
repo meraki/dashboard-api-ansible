@@ -68,7 +68,7 @@ Other versions of this collection have support for previous Cisco Meraki version
 | 1.33.0                    | 2.17.0                      |1.33.0                         |
 | 1.44.1                    | 2.18.3                      |1.44.1                         |
 | 1.53.0                    | 2.20.8                      |1.53.0                         |
-| 1.57.0                    | 2.21.1                      |1.57.0                         |
+| 1.57.0                    | 2.21.2                      |1.57.0                         |
 
 *Notes*:
 

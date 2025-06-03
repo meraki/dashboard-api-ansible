@@ -1252,3 +1252,8 @@ releases:
       bugfixes:
         - cisco.meraki.devices_switch_ports - fix get_object_by_name method.
     release_date: "2025-05-07"
+  2.21.2:
+    changes:
+      bugfixes:
+        - cisco.meraki.networks_appliance_firewall_l7_firewall_rules - fix idempotency error.
+    release_date: "2025-05-07"
