@@ -80,10 +80,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
             )
             if isinstance(items, dict):
                 if 'rules' in items:
-                    items = items.get('rules')
-            result = get_dict_result(items, 'name', name)
-            if result is None:
-                result = items
+                    result = items
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -114,15 +111,17 @@ class NetworksApplianceFirewallL7FirewallRules(object):
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
-        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        it_exists = prev_obj is not None
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-
+        if len(current_obj) == 0:
+            return True
+        if len(requested_obj) == 0:
+            return True
         obj_params = [
             ("rules", "rules"),
-            ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
