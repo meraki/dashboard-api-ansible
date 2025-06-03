@@ -4,6 +4,13 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.2
+
+Bugfixes
+--------
+
+- cisco.meraki.networks_appliance_firewall_l7_firewall_rules - fix idempotency error.
+
 v2.21.1
 =======
 
