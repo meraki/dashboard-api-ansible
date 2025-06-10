@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_controller_devices_interfaces_l2_by_device_i
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.3).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
