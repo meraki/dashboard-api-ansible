@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.3
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.devices_cellular_sims - fix idempotency error.
+
 v2.21.2
 
 Bugfixes

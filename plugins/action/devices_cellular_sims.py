@@ -87,12 +87,7 @@ class DevicesCellularSims(object):
                 function="getDeviceCellularSims",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'sims' in items:
-                    items = items.get('sims')
-            result = get_dict_result(items, 'name', name)
-            if result is None:
-                result = items
+            result = items
         except Exception as e:
             print("Error: ", e)
             result = None
