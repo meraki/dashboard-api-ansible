@@ -1257,3 +1257,8 @@ releases:
       bugfixes:
         - cisco.meraki.networks_appliance_firewall_l7_firewall_rules - fix idempotency error.
     release_date: "2025-05-07"
+  2.21.3:
+    changes:
+      bugfixes:
+        - cisco.meraki.devices_cellular_sims - fix idempotency error.
+    release_date: "2025-06-10"
