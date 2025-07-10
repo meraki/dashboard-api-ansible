@@ -42,7 +42,7 @@
         name: My route
         nextHopIp: 192.168.1.100
         subnet: 1.2.3.0/24
-    - name: Create a static route
+    - name: Create a static route2
       cisco.meraki.devices_switch_routing_static_routes:
         serial: "{{ serial_number }}"
         name: My route

@@ -15,6 +15,6 @@
       cisco.meraki.organizations_info:
         meraki_suppress_logging: true
       register: orgresults
-    - name: Show current Meraki administrator
+    - name: Show current Meraki administrator2
       ansible.builtin.debug:
         msg: "{{ orgresults | json_query('meraki_response[*].name') }}"
