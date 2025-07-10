@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.4
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth - fix idempotency error.
+
 v2.21.3
 =======
 

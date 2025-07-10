@@ -1262,3 +1262,8 @@ releases:
       bugfixes:
         - cisco.meraki.devices_cellular_sims - fix idempotency error.
     release_date: "2025-06-10"
+  2.21.4:
+    changes:
+      bugfixes:
+        - cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth - fix idempotency error.
+    release_date: "2025-06-10"
