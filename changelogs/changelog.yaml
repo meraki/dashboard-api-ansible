@@ -1267,3 +1267,8 @@ releases:
       bugfixes:
         - cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth - fix idempotency error.
     release_date: "2025-06-10"
+  2.21.5:
+    changes:
+      bugfixes:
+        - cisco.meraki.devices_appliance_uplinks_settings - fix idempotency error.
+    release_date: "2025-09-11"

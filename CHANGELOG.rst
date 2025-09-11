@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.5
+=======
+
+Bugfixes
+--------
+
+- cisco.meraki.devices_appliance_uplinks_settings - fix idempotency error.
+
 v2.21.4
 =======
 
