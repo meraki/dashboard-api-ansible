@@ -13,12 +13,12 @@ jobs:
     strategy:
       matrix:
         ansible:
-          - stable-2.10
-          - stable-2.11
+          - stable-2.15
+          - stable-2.16
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: meraki/meraki-ansible
       - name: Create directory
@@ -26,9 +26,9 @@ jobs:
       - name: Move repository
         run: mv ./meraki/meraki-ansible ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: 3.12
       - name: Install ansible-base (${{ matrix.ansible }})
         run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
       - name: Run sanity tests

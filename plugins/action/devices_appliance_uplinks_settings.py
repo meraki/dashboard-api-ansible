@@ -21,7 +21,6 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
-    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -77,10 +76,6 @@ class DevicesApplianceUplinksSettings(object):
                 function="getDeviceApplianceUplinksSettings",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'interfaces' in items:
-                    items = items.get('interfaces')
-            result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
