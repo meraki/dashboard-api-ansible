@@ -21,7 +21,6 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
-    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -96,9 +95,8 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         name_exists = False
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if True:
-            prev_obj = self.get_object_by_name(o_id)
-            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        prev_obj = self.get_object_by_name(o_id)
+        id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)

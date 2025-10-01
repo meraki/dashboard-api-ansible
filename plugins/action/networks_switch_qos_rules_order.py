@@ -164,8 +164,7 @@ class NetworksSwitchQosRulesOrder(object):
             )
             if isinstance(items, dict):
                 if 'response' in items:
-                    items = items.get('response')
-            
+                    items = items.get('response')            
             result = get_dict_result(items, 'vlan', name)
             if result is None:
                 result = items
