@@ -1272,3 +1272,23 @@ releases:
       bugfixes:
         - cisco.meraki.devices_appliance_uplinks_settings - fix idempotency error.
     release_date: "2025-09-11"
+  2.21.6:
+    changes:
+      bugfixes:
+        - "Fixed function name typo in organizations_appliance_vpn_third_party_vpnpeers
+          changed 'getOrganizationApplianceVpnThirdPartyVpnpeers' to 'getOrganizationApplianceVpnThirdPartyVPNPeers'"
+        - "Fixed function name typo in organizations_appliance_vpn_third_party_vpnpeers
+           changed 'updateOrganizationApplianceVpnThirdPartyVpnpeers' to 'updateOrganizationApplianceVpnThirdPartyVPNPeers'"
+        - "Fixed comparison function call in networks_switch_dscp_to_cos_mappings
+           changed 'meraki_compare_equality2' to 'meraki_compare_equality'"
+        - "Fixed VLAN parameter handling in networks_switch_qos_rules_order
+           changed name parameter to vlan parameter for proper object lookup"
+        - "Improved dictionary comparison logic in meraki.py plugin utils to handle nested dictionaries correctly"
+      features:
+        - "Added new organizations_appliance_vpn_stats_info module and action plugin for retrieving
+          VPN history statistics for networks in an organization"
+        - "Added new playbook for networks_switch_dscp_to_cos_mappings configuration"
+        - "Added new playbook for organizations_appliance_vpn_third_party_vpnpeers configuration"
+        - "Enhanced networks_switch_qos_rules_order with improved VLAN handling and debugging capabilities"
+
+    release_date: "2025-01-11"
