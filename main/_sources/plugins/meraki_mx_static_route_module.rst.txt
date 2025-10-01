@@ -42,7 +42,7 @@ cisco.meraki.meraki_mx_static_route module -- Manage static routes in the Meraki
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.5).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.6).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
