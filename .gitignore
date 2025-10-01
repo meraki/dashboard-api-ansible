@@ -20,3 +20,6 @@ docs/_build/
 changelogs/.plugin-cache.yaml
 playbooks/credentials.yml
 .DS_Store
+PLAYBOOKS_EXECUTION_README.md
+run_playbooks_advanced.sh
+run_all_playbooks.sh

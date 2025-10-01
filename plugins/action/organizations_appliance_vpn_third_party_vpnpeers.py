@@ -75,13 +75,9 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         try:
             items = self.meraki.exec_meraki(
                 family="appliance",
-                function="getOrganizationApplianceVpnThirdPartyVpnpeers",
+                function="getOrganizationApplianceVpnThirdPartyVPNPeers",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'peers' in items:
-                    items = items.get('peers')
-            result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -100,7 +96,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         name_exists = False
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if o_id:
+        if True:
             prev_obj = self.get_object_by_name(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
@@ -135,7 +131,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         result = None
         result = self.meraki.exec_meraki(
             family="appliance",
-            function="updateOrganizationApplianceVpnThirdPartyVpnpeers",
+            function="updateOrganizationApplianceVpnThirdPartyVPNPeers",
             params=self.update_all_params(),
             op_modifies=True,
         )

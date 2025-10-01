@@ -165,7 +165,8 @@ class NetworksSwitchQosRulesOrder(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'name', name)
+            
+            result = get_dict_result(items, 'vlan', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -197,11 +198,11 @@ class NetworksSwitchQosRulesOrder(object):
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "qos_rule_id") or self.new_object.get("qosRuleId")
-        name = self.new_object.get("name")
+        name = self.new_object.get("vlan")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
+        if not id_exists and name or name is None:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
@@ -239,10 +240,15 @@ class NetworksSwitchQosRulesOrder(object):
                    for (meraki_param, ansible_param) in obj_params)
 
     def create(self):
+        print("creating object.....")
+        params = self.create_params()
+        if params.get("vlan") is None:
+            params["vlan"] = None
+        print(params)
         result = self.meraki.exec_meraki(
             family="switch",
             function="createNetworkSwitchQosRule",
-            params=self.create_params(),
+            params=params,
             op_modifies=True,
         )
         return result
