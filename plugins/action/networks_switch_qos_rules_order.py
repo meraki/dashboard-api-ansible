@@ -23,9 +23,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_compare_equality2,
     get_dict_result,
 )
-from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
-    InconsistentParameters,
-)
+
 
 # Get common arguments specification
 argument_spec = meraki_argument_spec()
@@ -165,9 +163,13 @@ class NetworksSwitchQosRulesOrder(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'vlan', name)
-            if result is None:
-                result = items
+            for item in items:
+                if (item.get("vlan") == self.new_object.get("vlan") and
+                        item.get("protocol") == self.new_object.get("protocol") and
+                        item.get("srcPort") == self.new_object.get("srcPort") and
+                        item.get("dstPort") == self.new_object.get("dstPort")):
+                    result = item
+                    break
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -184,7 +186,12 @@ class NetworksSwitchQosRulesOrder(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'qosRuleId', id)
+            if id is not None:
+                print("Is NOT NONE")
+                result = get_dict_result(items, 'qosRuleId', id)
+            else:
+                # Validate if this
+                print("Is NONE")
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -194,33 +201,21 @@ class NetworksSwitchQosRulesOrder(object):
         id_exists = False
         name_exists = False
         prev_obj = None
-        o_id = self.new_object.get("id")
+        o_id = self.new_object.get("qosRuleId") or self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "qos_rule_id") or self.new_object.get("qosRuleId")
-        name = self.new_object.get("vlan")
+        name = self.new_object.get("name") or self.new_object.get("id")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
-            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name or name is None:
+        else:
+            print("Is NONE")
             prev_obj = self.get_object_by_name(name)
-            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if name_exists:
-            _id = prev_obj.get("id")
-            _id = _id or prev_obj.get("qosRuleId")
-            if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters(
-                    "The 'id' and 'name' params don't refer to the same object")
-            if _id:
-                self.new_object.update(dict(id=_id))
-                self.new_object.update(dict(qosRuleId=_id))
-            if _id:
-                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-
+        current_obj["networkId"] = requested_obj.get("networkId") or None
         obj_params = [
             ("dscp", "dscp"),
             ("dstPort", "dstPort"),

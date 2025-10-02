@@ -4,6 +4,17 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.7
+=======
+
+Bugfixes
+--------
+
+- "Enhanced networks_switch_qos_rules_order object lookup logic to properly match QoS rules by vlan, protocol, srcPort, and dstPort parameters"
+- "Fixed parameter handling in networks_switch_switch_qos_rules_order to use qosRuleId instead of id for object identification"
+- "Improved meraki_compare_equality2 function to handle None value comparisons more accurately"
+- "Updated networks_switch_qos_rules_order playbook with corrected parameter values and VLAN configuration"
+
 v2.21.6
 =======
 
