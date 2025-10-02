@@ -23,9 +23,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_compare_equality2,
     get_dict_result,
 )
-from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
-    InconsistentParameters,
-)
+
 
 # Get common arguments specification
 argument_spec = meraki_argument_spec()
