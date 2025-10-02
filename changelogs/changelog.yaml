@@ -1292,3 +1292,11 @@ releases:
         - "Enhanced networks_switch_qos_rules_order with improved VLAN handling and debugging capabilities"
 
     release_date: "2025-01-11"
+  2.21.7:
+    changes:
+      bugfixes:
+        - "Enhanced networks_switch_qos_rules_order object lookup logic to properly match QoS rules by vlan, protocol, srcPort, and dstPort parameters"
+        - "Fixed parameter handling in networks_switch_qos_rules_order to use qosRuleId instead of id for object identification"
+        - "Improved meraki_compare_equality2 function to handle None value comparisons more accurately"
+        - "Updated networks_switch_qos_rules_order playbook with corrected parameter values and VLAN configuration"
+    release_date: "2025-01-11"

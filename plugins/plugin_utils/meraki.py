@@ -152,9 +152,14 @@ def meraki_compare_equality(current_value, requested_value):
 
 def meraki_compare_equality2(current_value, requested_value):
     # print("meraki_compare_equality", current_value, requested_value)
+    if requested_value is not None and current_value is None:
+        # print("requested_value is not None and current_value is None", False)
+        return False
     if requested_value is None:
+        # print("requested_value is None", True)
         return True
     if current_value is None:
+        # print("current_value", True)
         return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
@@ -163,6 +168,7 @@ def meraki_compare_equality2(current_value, requested_value):
     elif isinstance(current_value, list) and isinstance(requested_value, list):
         return compare_list(current_value, requested_value)
     else:
+        # print("current_value == requested_value", current_value == requested_value)
         return current_value == requested_value
 
 
