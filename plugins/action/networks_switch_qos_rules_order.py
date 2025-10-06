@@ -167,7 +167,9 @@ class NetworksSwitchQosRulesOrder(object):
                 if (item.get("vlan") == self.new_object.get("vlan") and
                         item.get("protocol") == self.new_object.get("protocol") and
                         item.get("srcPort") == self.new_object.get("srcPort") and
-                        item.get("dstPort") == self.new_object.get("dstPort")):
+                        item.get("dstPort") == self.new_object.get("dstPort") and
+                        item.get("srcPortRange") == self.new_object.get("srcPortRange") and
+                        item.get("dstPortRange") == self.new_object.get("dstPortRange")):
                     result = item
                     break
         except Exception as e:

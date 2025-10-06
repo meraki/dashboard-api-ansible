@@ -1271,7 +1271,7 @@ releases:
     changes:
       bugfixes:
         - cisco.meraki.devices_appliance_uplinks_settings - fix idempotency error.
-    release_date: "2025-09-11"
+    release_date: "2025-09-10"
   2.21.6:
     changes:
       bugfixes:
@@ -1291,7 +1291,7 @@ releases:
         - "Added new playbook for organizations_appliance_vpn_third_party_vpnpeers configuration"
         - "Enhanced networks_switch_qos_rules_order with improved VLAN handling and debugging capabilities"
 
-    release_date: "2025-01-11"
+    release_date: "2025-01-10"
   2.21.7:
     changes:
       bugfixes:
@@ -1299,4 +1299,9 @@ releases:
         - "Fixed parameter handling in networks_switch_qos_rules_order to use qosRuleId instead of id for object identification"
         - "Improved meraki_compare_equality2 function to handle None value comparisons more accurately"
         - "Updated networks_switch_qos_rules_order playbook with corrected parameter values and VLAN configuration"
-    release_date: "2025-01-11"
+    release_date: "2025-01-10"
+  2.21.8:
+    changes:
+      bugfixes:
+        - "networks_switch_qos_rules_order: extend object lookup to include srcPortRange and dstPortRange when matching existing QoS rules to improve idempotency"
+    release_date: "2025-06-10"

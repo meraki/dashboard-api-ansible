@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.8
+=======
+
+Bugfixes
+--------
+
+- "networks_switch_qos_rules_order: extend object lookup to include srcPortRange and dstPortRange when matching existing QoS rules to improve idempotency"
+
 v2.21.7
 =======
 
