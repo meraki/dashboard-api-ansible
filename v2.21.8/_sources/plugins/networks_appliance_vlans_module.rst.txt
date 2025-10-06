@@ -1,0 +1,2510 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.networks_appliance_vlans_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.meraki.networks_appliance_vlans module -- Resource module for networks \_appliance \_vlans
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.8).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.networks_appliance_vlans_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.networks_appliance_vlans`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource networks \_appliance \_vlans.
+- Add a VLAN.
+- Delete a VLAN from a network.
+- Update a VLAN.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.networks_appliance_vlans_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-applianceIp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-applianceip:
+
+      .. rst-class:: ansible-option-title
+
+      **applianceIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-applianceIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The local IP of the appliance on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-cidr"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-cidr:
+
+      .. rst-class:: ansible-option-title
+
+      **cidr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-cidr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      CIDR of the pool of subnets. Applicable only for template network. Each network bound to the template will automatically pick a subnet from this pool to build its own VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpBootFilename"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpbootfilename:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpBootFilename**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpBootFilename" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      DHCP boot option for boot filename.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpBootNextServer"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpbootnextserver:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpBootNextServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpBootNextServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      DHCP boot option to direct boot clients to the server to load the boot file from.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpBootOptionsEnabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpbootoptionsenabled:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpBootOptionsEnabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpBootOptionsEnabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use DHCP boot options specified in other properties.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpHandling"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcphandling:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpHandling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpHandling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The appliance's handling of DHCP requests on this VLAN. One of 'Run a DHCP server', 'Relay DHCP to another server' or 'Do not respond to DHCP requests'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpLeaseTime"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpleasetime:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpLeaseTime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpLeaseTime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The term of DHCP leases if the appliance is running a DHCP server on this VLAN. One of '30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpOptions"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpoptions:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpOptions**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpOptions" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The list of DHCP options that will be included in DHCP responses. Each object in the list should have "code", "type", and "value" properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpOptions/code"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpoptions/code:
+
+      .. rst-class:: ansible-option-title
+
+      **code**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpOptions/code" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The code for the DHCP option. This should be an integer between 2 and 254.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpOptions/type"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpoptions/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpOptions/type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The type for the DHCP option. One of 'text', 'ip', 'hex' or 'integer'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpOptions/value"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcpoptions/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpOptions/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The value for the DHCP option.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dhcpRelayServerIps"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dhcprelayserverips:
+
+      .. rst-class:: ansible-option-title
+
+      **dhcpRelayServerIps**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dhcpRelayServerIps" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The IPs of the DHCP servers that DHCP requests should be relayed to.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dnsNameservers"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-dnsnameservers:
+
+      .. rst-class:: ansible-option-title
+
+      **dnsNameservers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dnsNameservers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The DNS nameservers used for DHCP responses, either "upstream\_dns", "google\_dns", "opendns", or a newline seperated string of IP addresses or domain names.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-fixedIpAssignments"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-fixedipassignments:
+
+      .. rst-class:: ansible-option-title
+
+      **fixedIpAssignments**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-fixedIpAssignments" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The DHCP fixed IP assignments on the VLAN. This should be an object that contains mappings from MAC addresses to objects that themselves each contain "ip" and "name" string fields. See the sample request/response for more details.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-grouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **groupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The id of the desired group policy to apply to the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The VLAN ID of the new VLAN (must be between 1 and 4094).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      IPv6 configuration on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable IPv6 on VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments:
+
+      .. rst-class:: ansible-option-title
+
+      **prefixAssignments**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Prefix assignments on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/autonomous"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/autonomous:
+
+      .. rst-class:: ansible-option-title
+
+      **autonomous**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/autonomous" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Auto assign a /64 prefix from the origin to the VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/origin"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/origin:
+
+      .. rst-class:: ansible-option-title
+
+      **origin**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/origin" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The origin of the prefix.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/origin/interfaces"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/origin/interfaces:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaces**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/origin/interfaces" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interfaces associated with the prefix.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/origin/type"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/origin/type:
+
+      .. rst-class:: ansible-option-title
+
+      **type**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/origin/type" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Type of the origin.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/staticApplianceIp6"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/staticapplianceip6:
+
+      .. rst-class:: ansible-option-title
+
+      **staticApplianceIp6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/staticApplianceIp6" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Manual configuration of the IPv6 Appliance IP.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6/prefixAssignments/staticPrefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-ipv6/prefixassignments/staticprefix:
+
+      .. rst-class:: ansible-option-title
+
+      **staticPrefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6/prefixAssignments/staticPrefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Manual configuration of a /64 prefix on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mandatoryDhcp"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-mandatorydhcp:
+
+      .. rst-class:: ansible-option-title
+
+      **mandatoryDhcp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mandatoryDhcp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Mandatory DHCP will enforce that clients connecting to this VLAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mandatoryDhcp/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-mandatorydhcp/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mandatoryDhcp/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable Mandatory DHCP on VLAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mask"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-mask:
+
+      .. rst-class:: ansible-option-title
+
+      **mask**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mask" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Mask used for the subnet of all bound to the template networks. Applicable only for template network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The name of the new VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-networkid:
+
+      .. rst-class:: ansible-option-title
+
+      **networkId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkId path parameter. Network ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reservedIpRanges"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-reservedipranges:
+
+      .. rst-class:: ansible-option-title
+
+      **reservedIpRanges**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reservedIpRanges" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The DHCP reserved IP ranges on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reservedIpRanges/comment"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-reservedipranges/comment:
+
+      .. rst-class:: ansible-option-title
+
+      **comment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reservedIpRanges/comment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A text comment for the reserved range.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reservedIpRanges/end"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-reservedipranges/end:
+
+      .. rst-class:: ansible-option-title
+
+      **end**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reservedIpRanges/end" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The last IP in the reserved range.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reservedIpRanges/start"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-reservedipranges/start:
+
+      .. rst-class:: ansible-option-title
+
+      **start**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reservedIpRanges/start" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The first IP in the reserved range.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-subnet"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-subnet:
+
+      .. rst-class:: ansible-option-title
+
+      **subnet**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-subnet" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The subnet of the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-templateVlanType"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-templatevlantype:
+
+      .. rst-class:: ansible-option-title
+
+      **templateVlanType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-templateVlanType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Type of subnetting of the VLAN. Applicable only for template network.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlanId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-vlanid:
+
+      .. rst-class:: ansible-option-title
+
+      **vlanId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlanId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      VlanId path parameter. Vlan ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vpnNatSubnet"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-vpnnatsubnet:
+
+      .. rst-class:: ansible-option-title
+
+      **vpnNatSubnet**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vpnNatSubnet" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The translated VPN subnet if VPN and VPN subnet translation are enabled on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are appliance.Appliance.create\_network\_appliance\_vlan, appliance.Appliance.delete\_network\_appliance\_vlan, appliance.Appliance.update\_network\_appliance\_vlan,
+   - Paths used are post /networks/{networkId}/appliance/vlans, delete /networks/{networkId}/appliance/vlans/{vlanId}, put /networks/{networkId}/appliance/vlans/{vlanId},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
+   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for appliance createNetworkApplianceVlan <https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan>`_
+       Complete reference of the createNetworkApplianceVlan API.
+   `Cisco Meraki documentation for appliance deleteNetworkApplianceVlan <https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-vlan>`_
+       Complete reference of the deleteNetworkApplianceVlan API.
+   `Cisco Meraki documentation for appliance updateNetworkApplianceVlan <https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vlan>`_
+       Complete reference of the updateNetworkApplianceVlan API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: present
+        applianceIp: 192.168.1.2
+        cidr: 192.168.1.0/24
+        dhcpBootOptionsEnabled: true
+        dhcpHandling: Run a DHCP server
+        dhcpLeaseTime: 30 minutes
+        dhcpOptions:
+          - code: '3'
+            type: text
+            value: five
+        groupPolicyId: '101'
+        id: '1234'
+        ipv6:
+          enabled: true
+          prefixAssignments:
+            - autonomous: false
+              origin:
+                interfaces:
+                  - wan0
+                type: internet
+              staticApplianceIp6: 2001:db8:3c4d:15::1
+              staticPrefix: 2001:db8:3c4d:15::/64
+        mandatoryDhcp:
+          enabled: true
+        mask: 28
+        name: My VLAN
+        networkId: string
+        subnet: 192.168.1.0/24
+        templateVlanType: same
+    - name: Delete by id
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: absent
+        networkId: string
+        vlanId: string
+    - name: Update by id
+      cisco.meraki.networks_appliance_vlans:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: present
+        adaptivePolicyGroupId: '1234'
+        applianceIp: 192.168.1.2
+        cidr: 192.168.1.0/24
+        dhcpBootFilename: sample.file
+        dhcpBootNextServer: 1.2.3.4
+        dhcpBootOptionsEnabled: false
+        dhcpHandling: Run a DHCP server
+        dhcpLeaseTime: 1 day
+        dhcpOptions:
+          - code: '5'
+            type: text
+            value: five
+        dhcpRelayServerIps:
+          - 192.168.1.0/24
+          - 192.168.128.0/24
+        dnsNameservers: google_dns
+        fixedIpAssignments:
+          22:33:44:55:66:77:
+            ip: 1.2.3.4
+            name: Some client name
+        groupPolicyId: '101'
+        ipv6:
+          enabled: true
+          prefixAssignments:
+            - autonomous: false
+              origin:
+                interfaces:
+                  - wan0
+                type: internet
+              staticApplianceIp6: 2001:db8:3c4d:15::1
+              staticPrefix: 2001:db8:3c4d:15::/64
+        mandatoryDhcp:
+          enabled: true
+        mask: 28
+        name: My VLAN
+        networkId: string
+        reservedIpRanges:
+          - comment: A reserved IP range
+            end: 192.168.1.1
+            start: 192.168.1.0
+        subnet: 192.168.1.0/24
+        templateVlanType: same
+        vlanId: string
+        vpnNatSubnet: 192.168.1.0/24
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"applianceIp": "string", "cidr": "string", "groupPolicyId": "string", "id": "string", "interfaceId": "string", "ipv6": {"enabled": true, "prefixAssignments": [{"autonomous": true, "origin": {"interfaces": ["string"], "type": "string"}, "staticApplianceIp6": "string", "staticPrefix": "string"}]}, "mandatoryDhcp": {"enabled": true}, "mask": 0, "name": "string", "subnet": "string", "templateVlanType": "string"}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
