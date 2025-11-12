@@ -1,0 +1,6 @@
+{
+  "broadcastThreshold": 30,
+  "multicastThreshold": 30,
+  "unknownUnicastThreshold": 30,
+  "treatTheseTrafficTypesAsOneThreshold": ["broadcast", "multicast"]
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "interfaceId": "1234",
+    "name": "L3 interface",
+    "mode": "vlan",
+    "subnet": "192.168.1.0/24",
+    "interfaceIp": "192.168.1.2",
+    "serial": "Q234-ABCD-5678",
+    "switchPortId": "1",
+    "multicastRouting": "disabled",
+    "vlanId": 100,
+    "uplinkV4": false,
+    "uplinkV6": false,
+    "ospfSettings": {
+      "area": "0",
+      "cost": 1,
+      "isPassiveEnabled": true,
+      "networkType": "broadcast"
+    },
+    "ospfV3": {
+      "area": "1",
+      "cost": 2,
+      "isPassiveEnabled": true,
+      "networkType": "broadcast"
+    },
+    "ipv6": {
+      "assignmentMode": "static",
+      "address": "2001:db8::1",
+      "prefix": "2001:db8::/32",
+      "gateway": "2001:db8::2"
+    },
+    "vrf": { "name": "Blue" },
+    "defaultGateway": "192.168.1.1"
+  }
+]

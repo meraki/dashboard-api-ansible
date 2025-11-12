@@ -1,0 +1,9 @@
+[
+  {
+    "rendezvousPointId": "1234",
+    "serial": "Q234-ABCD-5678",
+    "interfaceName": "l3_interface_0",
+    "interfaceIp": "192.168.1.2",
+    "multicastGroup": "Any"
+  }
+]
