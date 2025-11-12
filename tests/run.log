@@ -1,0 +1,2460 @@
+Running event query on Response #2 - getNetworkSwitchMtu:
+[
+    [
+        {
+            "name": "Network Switch MTU Settings",
+            "canonical_facts": {},
+            "facts": {
+                "device_type": "switch",
+                "default_mtu_size": 9578,
+                "overrides": [
+                    {
+                        "switches": [
+                            "Q234-ABCD-0001",
+                            "Q234-ABCD-0002",
+                            "Q234-ABCD-0003"
+                        ],
+                        "switchProfiles": [
+                            "1284392014819",
+                            "2983092129865"
+                        ],
+                        "mtuSize": 1500
+                    }
+                ]
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getOrganizationDevices:
+[
+    [
+        {
+            "name": "My AP",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "1.2.3.4"
+            },
+            "facts": {
+                "device_type": "wireless",
+                "meraki_network_id": "N_24329156",
+                "ansible_hostname": "1.2.3.4",
+                "ansible_product_name": "MR34",
+                "ansible_bios_version": "wireless-25-14",
+                "macaddress": "00:11:22:33:44:55"
+            }
+        },
+        {
+            "name": "My AP 2",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5679",
+                "hostname": "1.2.3.4"
+            },
+            "facts": {
+                "device_type": "wireless",
+                "meraki_network_id": "N_24329157",
+                "ansible_hostname": "1.2.3.4",
+                "ansible_product_name": "MR34",
+                "ansible_bios_version": "wireless-25-14",
+                "macaddress": "00:11:22:33:44:55"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchPort:
+[
+    [
+        {
+            "name": "My switch port",
+            "canonical_facts": {
+                "ansible_product_serial": "3_MA-MOD-4X10G"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_id": "1",
+                "vlan_id": 10,
+                "port_config": {
+                    "enabled": true,
+                    "type": "access",
+                    "tags": [
+                        "tag1",
+                        "tag2"
+                    ],
+                    "voice_vlan": 20,
+                    "allowed_vlans": "1,3,5-10",
+                    "link_negotiation": "Auto negotiate",
+                    "link_negotiation_capabilities": [
+                        "Auto negotiate",
+                        "1 Gigabit full duplex (auto)"
+                    ]
+                },
+                "poe": {
+                    "enabled": true
+                },
+                "spanning_tree": {
+                    "rstp_enabled": true,
+                    "stp_guard": "disabled"
+                },
+                "security": {
+                    "isolation_enabled": false,
+                    "udld": "Alert only",
+                    "access_policy_type": "Sticky MAC allow list",
+                    "access_policy_number": 2,
+                    "mac_allow_list": [
+                        "34:56:fe:ce:8e:a0",
+                        "34:56:fe:ce:8e:a1"
+                    ],
+                    "mac_whitelist_limit": 10,
+                    "sticky_mac_allow_list": [
+                        "34:56:fe:ce:8e:b0",
+                        "34:56:fe:ce:8e:b1"
+                    ],
+                    "sticky_mac_allow_list_limit": 5,
+                    "storm_control_enabled": true,
+                    "dai_trusted": false,
+                    "peer_sgt_capable": false
+                },
+                "adaptive_policy": {
+                    "group_id": "123",
+                    "group_name": "Adaptive Policy Group"
+                },
+                "schedule": {
+                    "id": "1234",
+                    "name": "Port Schedule"
+                },
+                "advanced": {
+                    "flexible_stacking_enabled": true,
+                    "dot3az_enabled": false,
+                    "high_speed_enabled": false,
+                    "mirror_mode": "Not mirroring traffic"
+                },
+                "profile": {
+                    "enabled": false,
+                    "id": "1284392014819",
+                    "iname": "iname"
+                },
+                "module": {
+                    "model": "MA-MOD-4X10G",
+                    "serial": "3_MA-MOD-4X10G",
+                    "slot": 1
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchStack:
+[
+    [
+        {
+            "name": "A cool stack",
+            "canonical_facts": {
+                "ansible_machine_id": "8473"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "virtual_mac": "00:18:0a:4f:21:19",
+                "stack_config": {
+                    "serials": [
+                        "QBZY-XWVU-TSRQ",
+                        "QBAB-CDEF-GHIJ"
+                    ],
+                    "is_monitor_only": false,
+                    "member_count": 1
+                },
+                "members": [
+                    {
+                        "serial": "QBZY-XWVU-TSRQ",
+                        "name": "switch 1",
+                        "model": "MS350-24-HW",
+                        "mac": "00:18:0a:00:00:09",
+                        "role": "active"
+                    }
+                ]
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchStackRoutingInterfaces:
+[
+    [
+        {
+            "name": "L3 interface",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "1234",
+                "vlan_id": 100,
+                "interface_ip": "192.168.1.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.1.0/24",
+                    "default_gateway": "192.168.1.1",
+                    "serial": "Q234-ABCD-5678",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::1",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        },
+        {
+            "name": "L3 interface1",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5611",
+                "hostname": "192.168.2.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "9234",
+                "vlan_id": 200,
+                "interface_ip": "192.168.2.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.2.0/24",
+                    "default_gateway": "192.168.1.2",
+                    "serial": "Q234-ABCD-5611",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::2",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateDeviceSwitchPort:
+[
+    [
+        {
+            "name": "My switch port",
+            "canonical_facts": {
+                "ansible_product_serial": "3_MA-MOD-4X10G"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_id": "1",
+                "vlan_id": 10,
+                "port_config": {
+                    "enabled": true,
+                    "type": "access",
+                    "tags": [
+                        "tag1",
+                        "tag2"
+                    ],
+                    "voice_vlan": 20,
+                    "allowed_vlans": "1,3,5-10",
+                    "link_negotiation": "Auto negotiate",
+                    "link_negotiation_capabilities": [
+                        "Auto negotiate",
+                        "1 Gigabit full duplex (auto)"
+                    ]
+                },
+                "poe": {
+                    "enabled": true
+                },
+                "spanning_tree": {
+                    "rstp_enabled": true,
+                    "stp_guard": "disabled"
+                },
+                "security": {
+                    "isolation_enabled": false,
+                    "udld": "Alert only",
+                    "access_policy_type": "Sticky MAC allow list",
+                    "access_policy_number": 2,
+                    "mac_allow_list": [
+                        "34:56:fe:ce:8e:a0",
+                        "34:56:fe:ce:8e:a1"
+                    ],
+                    "mac_whitelist_limit": 10,
+                    "sticky_mac_allow_list": [
+                        "34:56:fe:ce:8e:b0",
+                        "34:56:fe:ce:8e:b1"
+                    ],
+                    "sticky_mac_allow_list_limit": 5,
+                    "storm_control_enabled": true,
+                    "dai_trusted": false,
+                    "peer_sgt_capable": false
+                },
+                "adaptive_policy": {
+                    "group_id": "123",
+                    "group_name": "Adaptive Policy Group"
+                },
+                "schedule": {
+                    "id": "1234",
+                    "name": "Port Schedule"
+                },
+                "advanced": {
+                    "flexible_stacking_enabled": true,
+                    "dot3az_enabled": false,
+                    "high_speed_enabled": false,
+                    "mirror_mode": "Not mirroring traffic"
+                },
+                "profile": {
+                    "enabled": false,
+                    "id": "1284392014819",
+                    "iname": "iname"
+                },
+                "module": {
+                    "model": "MA-MOD-4X10G",
+                    "serial": "3_MA-MOD-4X10G",
+                    "slot": 1
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getOrganizationSwitchPortsBySwitch:
+[
+    [
+        {
+            "name": "Example Switch",
+            "canonical_facts": {
+                "ansible_product_serial": "Q555-5555-5555",
+                "hostname": "01:23:45:67:ab:cd"
+            },
+            "facts": {
+                "device_type": "switch",
+                "mac_address": "01:23:45:67:ab:cd",
+                "model": "MS120-8",
+                "switch_info": {
+                    "network_name": "Example Network",
+                    "network_id": "L_12345"
+                },
+                "ports": [
+                    {
+                        "port_id": "1",
+                        "name": "My switch port",
+                        "tags": [
+                            "tag1",
+                            "tag2"
+                        ],
+                        "config": {
+                            "enabled": true,
+                            "type": "access",
+                            "vlan": 10,
+                            "voice_vlan": 20,
+                            "allowed_vlans": "1,3,5-10",
+                            "link_negotiation": "Auto negotiate"
+                        },
+                        "poe": {
+                            "enabled": true
+                        },
+                        "spanning_tree": {
+                            "rstp_enabled": true,
+                            "stp_guard": "disabled"
+                        },
+                        "security": {
+                            "access_policy_type": "Sticky MAC allow list",
+                            "sticky_mac_allow_list": [
+                                "34:56:fe:ce:8e:b0",
+                                "34:56:fe:ce:8e:b1"
+                            ],
+                            "sticky_mac_allow_list_limit": 5
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchPortsStatuses:
+[
+    [
+        {
+            "name": "Example Switch",
+            "canonical_facts": {
+                "ansible_product_serial": "Q555-5555-5555",
+                "hostname": "01:23:45:67:ab:cd"
+            },
+            "facts": {
+                "device_type": "switch",
+                "mac_address": "01:23:45:67:ab:cd",
+                "model": "MS120-8",
+                "switch_info": {
+                    "network_name": "Example Network",
+                    "network_id": "L_12345"
+                },
+                "ports": [
+                    {
+                        "port_id": "1",
+                        "operational_status": {
+                            "enabled": true,
+                            "status": "Connected",
+                            "is_uplink": false,
+                            "speed": "10 Gbps",
+                            "duplex": "full"
+                        },
+                        "health": {
+                            "errors": [
+                                "PoE overload",
+                                "Very high proportion of CRC errors"
+                            ],
+                            "warnings": [
+                                "SecurePort authentication in progress",
+                                "PoE port was denied power",
+                                "High proportion of CRC errors"
+                            ]
+                        },
+                        "spanning_tree": {
+                            "statuses": [
+                                "Learning"
+                            ]
+                        },
+                        "poe": {
+                            "is_allocated": false
+                        },
+                        "secure_port": {
+                            "active": true,
+                            "authentication_status": "Authentication in progress"
+                        }
+                    }
+                ],
+                "meta": {
+                    "total_items": 0,
+                    "remaining_items": 0
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchAccessPolicies:
+[
+    [
+        {
+            "name": "Access policy #1",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "access_policy_number": "1234",
+                "access_policy_type": "Hybrid authentication",
+                "policy_config": {
+                    "host_mode": "Single-Host",
+                    "increase_access_speed": false,
+                    "guest_vlan_id": 100,
+                    "guest_group_policy_id": "1234",
+                    "guest_sgt_id": 1284392014819,
+                    "voice_vlan_clients": true,
+                    "guest_port_bouncing": false
+                },
+                "radius": {
+                    "servers": [
+                        {
+                            "server_id": "1",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "accounting_enabled": true,
+                    "accounting_servers": [
+                        {
+                            "server_id": "2",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "group_attribute": "11",
+                    "testing_enabled": false,
+                    "coa_support_enabled": false,
+                    "enforce_monitoring": false,
+                    "critical_auth": {
+                        "data_vlan_id": 100,
+                        "voice_vlan_id": 100,
+                        "suspend_port_bounce": true,
+                        "data_group_policy_id": "1234",
+                        "voice_group_policy_id": "1234",
+                        "data_sgt_id": 1234,
+                        "voice_sgt_id": 1234
+                    },
+                    "failed_auth": {
+                        "vlan_id": 100,
+                        "group_policy_id": "1234",
+                        "sgt_id": 1284392014819
+                    },
+                    "re_authentication_interval": 120,
+                    "cache": {
+                        "enabled": false,
+                        "timeout": 24
+                    },
+                    "authentication": {
+                        "mode": "Open"
+                    },
+                    "pre_authentication_group_policy_id": "1234"
+                },
+                "dot1x": {
+                    "control_direction": "inbound"
+                },
+                "captive_portal": {
+                    "url_redirect_walled_garden_enabled": true,
+                    "url_redirect_walled_garden_ranges": [
+                        "192.168.1.0/24"
+                    ]
+                },
+                "usage": {
+                    "ports_with_policy": 12
+                }
+            }
+        },
+        {
+            "name": "Access policy #1",
+            "canonical_facts": {
+                "ansible_machine_id": "9999"
+            },
+            "facts": {
+                "device_type": "switch",
+                "access_policy_number": "9999",
+                "access_policy_type": "Hybrid authentication",
+                "policy_config": {
+                    "host_mode": "Single-Host",
+                    "increase_access_speed": false,
+                    "guest_vlan_id": 100,
+                    "guest_group_policy_id": "1234",
+                    "guest_sgt_id": 1284392014819,
+                    "voice_vlan_clients": true,
+                    "guest_port_bouncing": false
+                },
+                "radius": {
+                    "servers": [
+                        {
+                            "server_id": "1",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "accounting_enabled": true,
+                    "accounting_servers": [
+                        {
+                            "server_id": "2",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "group_attribute": "11",
+                    "testing_enabled": false,
+                    "coa_support_enabled": false,
+                    "enforce_monitoring": false,
+                    "critical_auth": {
+                        "data_vlan_id": 100,
+                        "voice_vlan_id": 100,
+                        "suspend_port_bounce": true,
+                        "data_group_policy_id": "1234",
+                        "voice_group_policy_id": "1234",
+                        "data_sgt_id": 1234,
+                        "voice_sgt_id": 1234
+                    },
+                    "failed_auth": {
+                        "vlan_id": 100,
+                        "group_policy_id": "1234",
+                        "sgt_id": 1284392014819
+                    },
+                    "re_authentication_interval": 120,
+                    "cache": {
+                        "enabled": false,
+                        "timeout": 24
+                    },
+                    "authentication": {
+                        "mode": "Open"
+                    },
+                    "pre_authentication_group_policy_id": "1234"
+                },
+                "dot1x": {
+                    "control_direction": "inbound"
+                },
+                "captive_portal": {
+                    "url_redirect_walled_garden_enabled": true,
+                    "url_redirect_walled_garden_ranges": [
+                        "192.168.1.0/24"
+                    ]
+                },
+                "usage": {
+                    "ports_with_policy": 12
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchSettings:
+[
+    [
+        {
+            "name": "Network Switch Settings",
+            "canonical_facts": {},
+            "facts": {
+                "device_type": "switch",
+                "vlan_id": 100,
+                "power_management": {
+                    "use_combined_power": false,
+                    "exceptions": [
+                        {
+                            "serial": "Q234-ABCD-0001",
+                            "power_type": "redundant"
+                        }
+                    ]
+                },
+                "uplink_client_sampling": {
+                    "enabled": true
+                },
+                "mac_blocklist": {
+                    "enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchAccessPolicy:
+[
+    [
+        {
+            "name": "Access policy #1",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "access_policy_number": "1234",
+                "access_policy_type": "Hybrid authentication",
+                "policy_config": {
+                    "host_mode": "Single-Host",
+                    "increase_access_speed": false,
+                    "guest_vlan_id": 100,
+                    "guest_group_policy_id": "1234",
+                    "guest_sgt_id": 1284392014819,
+                    "voice_vlan_clients": true,
+                    "guest_port_bouncing": false
+                },
+                "radius": {
+                    "servers": [
+                        {
+                            "server_id": "1",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "accounting_enabled": true,
+                    "accounting_servers": [
+                        {
+                            "server_id": "2",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "group_attribute": "11",
+                    "testing_enabled": false,
+                    "coa_support_enabled": false,
+                    "enforce_monitoring": false,
+                    "critical_auth": {
+                        "data_vlan_id": 100,
+                        "voice_vlan_id": 100,
+                        "suspend_port_bounce": true,
+                        "data_group_policy_id": "1234",
+                        "voice_group_policy_id": "1234",
+                        "data_sgt_id": 1234,
+                        "voice_sgt_id": 1234
+                    },
+                    "failed_auth": {
+                        "vlan_id": 100,
+                        "group_policy_id": "1234",
+                        "sgt_id": 1284392014819
+                    },
+                    "re_authentication_interval": 120,
+                    "cache": {
+                        "enabled": false,
+                        "timeout": 24
+                    },
+                    "authentication": {
+                        "mode": "Open"
+                    },
+                    "pre_authentication_group_policy_id": "1234"
+                },
+                "dot1x": {
+                    "control_direction": "inbound"
+                },
+                "captive_portal": {
+                    "url_redirect_walled_garden_enabled": true,
+                    "url_redirect_walled_garden_ranges": [
+                        "192.168.1.0/24"
+                    ]
+                },
+                "usage": {
+                    "ports_with_policy": 12
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createNetworkSwitchStackRoutingInterface:
+[
+    [
+        {
+            "name": "L3 interface",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "1234",
+                "vlan_id": 100,
+                "interface_ip": "192.168.1.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.1.0/24",
+                    "default_gateway": "192.168.1.1",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::1",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchStp:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0002"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0003"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createNetworkSwitchQosRule:
+[
+    [
+        {
+            "name": "qos-rule-1284392014819",
+            "canonical_facts": {
+                "ansible_machine_id": "1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "qos_rule": {
+                    "id": "1284392014819",
+                    "vlan": 100,
+                    "protocol": "TCP",
+                    "src_port": 2000,
+                    "src_port_range": "70-80",
+                    "dst_port": 3000,
+                    "dst_port_range": "3000-3100",
+                    "dscp": 0
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - cycleDeviceSwitchPorts:
+[
+    [
+        {
+            "name": "port-1",
+            "canonical_facts": {
+                "ansible_machine_id": "1"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_identifier": "1"
+            }
+        },
+        {
+            "name": "port-2-5",
+            "canonical_facts": {
+                "ansible_machine_id": "2-5"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_identifier": "2-5"
+            }
+        },
+        {
+            "name": "port-1_MA-MOD-8X10G_1",
+            "canonical_facts": {
+                "ansible_machine_id": "1_MA-MOD-8X10G_1"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_identifier": "1_MA-MOD-8X10G_1"
+            }
+        },
+        {
+            "name": "port-1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8",
+            "canonical_facts": {
+                "ansible_machine_id": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
+            },
+            "facts": {
+                "device_type": "switch",
+                "port_identifier": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchAccessControlLists:
+[
+    [
+        {
+            "name": "Deny SSH",
+            "canonical_facts": {
+                "ansible_machine_id": "Deny SSH-deny-tcp-10.1.10.0/24-172.16.30/24-0"
+            },
+            "facts": {
+                "device_type": "switch",
+                "acl_rule": {
+                    "comment": "Deny SSH",
+                    "policy": "deny",
+                    "ip_version": "ipv4",
+                    "protocol": "tcp",
+                    "src_cidr": "10.1.10.0/24",
+                    "src_port": "any",
+                    "dst_cidr": "172.16.30/24",
+                    "dst_port": "22",
+                    "vlan": "10",
+                    "rule_index": 0
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createNetworkSwitchStack:
+[
+    [
+        {
+            "name": {
+                "name": "A cool stack",
+                "canonical_facts": {
+                    "ansible_machine_id": "8473"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "stack_id": "8473",
+                    "workflow_id": "8473",
+                    "stack_name": "A cool stack",
+                    "switch_count": 2
+                }
+            },
+            "canonical_facts": {
+                "ansible_product_serial": {
+                    "name": "A cool stack",
+                    "canonical_facts": {
+                        "ansible_machine_id": "8473"
+                    },
+                    "facts": {
+                        "device_type": "switch",
+                        "stack_id": "8473",
+                        "workflow_id": "8473",
+                        "stack_name": "A cool stack",
+                        "switch_count": 2
+                    }
+                }
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "workflow_id": "8473"
+            }
+        },
+        {
+            "name": "QBZY-XWVU-TSRQ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBZY-XWVU-TSRQ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "workflow_id": "8473"
+            }
+        },
+        {
+            "name": "QBAB-CDEF-GHIJ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBAB-CDEF-GHIJ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "workflow_id": "8473"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchSettings:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "power_exception": {
+                    "power_type": "redundant"
+                },
+                "network_settings": {
+                    "vlan": 100,
+                    "use_combined_power": false,
+                    "uplink_client_sampling": {
+                        "enabled": true
+                    },
+                    "mac_blocklist": {
+                        "enabled": true
+                    },
+                    "uplink_selection": {
+                        "failback": {
+                            "enabled": true
+                        },
+                        "candidates": "all"
+                    }
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchStackRoutingInterfaceDhcp:
+[
+    [
+        {
+            "name": "Cisco Meraki valued client",
+            "canonical_facts": {
+                "hostname": "192.168.1.12",
+                "ansible_machine_id": "22:33:44:55:66:77"
+            },
+            "facts": {
+                "device_type": "switch",
+                "fixed_ip_assignment": {
+                    "mac": "22:33:44:55:66:77",
+                    "ip": "192.168.1.12",
+                    "name": "Cisco Meraki valued client"
+                },
+                "dhcp_config": {
+                    "dhcp_mode": "dhcpServer",
+                    "dhcp_lease_time": "1 day",
+                    "dns_nameservers_option": "custom",
+                    "boot_options_enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createNetworkSwitchAccessPolicy:
+[
+    [
+        {
+            "name": "Access policy #1",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "access_policy_number": "1234",
+                "access_policy_type": "Hybrid authentication",
+                "policy_config": {
+                    "host_mode": "Single-Host",
+                    "increase_access_speed": false,
+                    "guest_vlan_id": 100,
+                    "guest_group_policy_id": "1234",
+                    "guest_sgt_id": 1284392014819,
+                    "voice_vlan_clients": true,
+                    "guest_port_bouncing": false
+                },
+                "radius": {
+                    "servers": [
+                        {
+                            "server_id": "1",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "accounting_enabled": true,
+                    "accounting_servers": [
+                        {
+                            "server_id": "2",
+                            "organization_radius_server_id": "42",
+                            "host": "1.2.3.4",
+                            "port": 22
+                        }
+                    ],
+                    "group_attribute": "11",
+                    "testing_enabled": false,
+                    "coa_support_enabled": false,
+                    "enforce_monitoring": false,
+                    "critical_auth": {
+                        "data_vlan_id": 100,
+                        "voice_vlan_id": 100,
+                        "suspend_port_bounce": true,
+                        "data_group_policy_id": "1234",
+                        "voice_group_policy_id": "1234",
+                        "data_sgt_id": 1234,
+                        "voice_sgt_id": 1234
+                    },
+                    "failed_auth": {
+                        "vlan_id": 100,
+                        "group_policy_id": "1234",
+                        "sgt_id": 1284392014819
+                    },
+                    "re_authentication_interval": 120,
+                    "cache": {
+                        "enabled": false,
+                        "timeout": 24
+                    },
+                    "authentication": {
+                        "mode": "Open"
+                    },
+                    "pre_authentication_group_policy_id": "1234"
+                },
+                "dot1x": {
+                    "control_direction": "inbound"
+                },
+                "captive_portal": {
+                    "url_redirect_walled_garden_enabled": true,
+                    "url_redirect_walled_garden_ranges": [
+                        "192.168.1.0/24"
+                    ]
+                },
+                "usage": {
+                    "ports_with_policy": 12
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchStackRoutingInterfaceDhcp:
+[
+    [
+        {
+            "name": "Cisco Meraki valued client",
+            "canonical_facts": {
+                "hostname": "192.168.1.12",
+                "ansible_machine_id": "22:33:44:55:66:77"
+            },
+            "facts": {
+                "device_type": "switch",
+                "fixed_ip_assignment": {
+                    "mac": "22:33:44:55:66:77",
+                    "ip": "192.168.1.12",
+                    "name": "Cisco Meraki valued client"
+                },
+                "dhcp_config": {
+                    "dhcp_mode": "dhcpServer",
+                    "dhcp_lease_time": "1 day",
+                    "dns_nameservers_option": "custom",
+                    "boot_options_enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchDhcpServerPolicy:
+[
+    [
+        {
+            "name": "blocked-dhcp-server-00:50:56:00:00:03",
+            "canonical_facts": {
+                "ansible_machine_id": "00:50:56:00:00:03"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "blocked",
+                    "mac_address": "00:50:56:00:00:03",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": true
+                }
+            }
+        },
+        {
+            "name": "blocked-dhcp-server-00:50:56:00:00:04",
+            "canonical_facts": {
+                "ansible_machine_id": "00:50:56:00:00:04"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "blocked",
+                    "mac_address": "00:50:56:00:00:04",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": true
+                }
+            }
+        },
+        {
+            "name": "allowed-dhcp-server-00:50:56:00:00:01",
+            "canonical_facts": {
+                "ansible_machine_id": "00:50:56:00:00:01"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "allowed",
+                    "mac_address": "00:50:56:00:00:01",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": true
+                }
+            }
+        },
+        {
+            "name": "allowed-dhcp-server-00:50:56:00:00:02",
+            "canonical_facts": {
+                "ansible_machine_id": "00:50:56:00:00:02"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "allowed",
+                    "mac_address": "00:50:56:00:00:02",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchStp:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0002"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0003"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true
+            }
+        },
+        {
+            "name": "stack-789102",
+            "canonical_facts": {
+                "ansible_machine_id": "789102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "stack_id": "789102"
+            }
+        },
+        {
+            "name": "stack-123456",
+            "canonical_facts": {
+                "ansible_machine_id": "123456"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "stack_id": "123456"
+            }
+        },
+        {
+            "name": "stack-129102",
+            "canonical_facts": {
+                "ansible_machine_id": "129102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "stack_id": "129102"
+            }
+        },
+        {
+            "name": "switch-profile-1098",
+            "canonical_facts": {
+                "ansible_machine_id": "1098"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "switch_profile_id": "1098"
+            }
+        },
+        {
+            "name": "switch-profile-1099",
+            "canonical_facts": {
+                "ansible_machine_id": "1099"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "switch_profile_id": "1099"
+            }
+        },
+        {
+            "name": "switch-profile-1100",
+            "canonical_facts": {
+                "ansible_machine_id": "1100"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stp_priority": 4096,
+                "rstp_enabled": true,
+                "switch_profile_id": "1100"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createNetworkSwitchLinkAggregation:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001-port-1",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "link_aggregation": {
+                    "aggregation_id": "NDU2N18yXzM=",
+                    "port_id": "1",
+                    "serial": "Q234-ABCD-0001"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchRoutingInterfaces:
+[
+    [
+        {
+            "name": "L3 interface",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "1234",
+                "vlan_id": 100,
+                "interface_ip": "192.168.1.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.1.0/24",
+                    "default_gateway": "192.168.1.1",
+                    "serial": "Q234-ABCD-5678",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::1",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - createDeviceSwitchRoutingInterface:
+[
+    [
+        {
+            "name": "L3 interface",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "1234",
+                "vlan_id": 100,
+                "interface_ip": "192.168.1.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.1.0/24",
+                    "default_gateway": "192.168.1.1",
+                    "serial": "Q234-ABCD-5678",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::1",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchAccessControlLists:
+[
+    [
+        {
+            "name": "Deny SSH",
+            "canonical_facts": {
+                "ansible_machine_id": "Deny SSH-deny-tcp-10.1.10.0/24-172.16.30/24-0"
+            },
+            "facts": {
+                "device_type": "switch",
+                "acl_rule": {
+                    "comment": "Deny SSH",
+                    "policy": "deny",
+                    "ip_version": "ipv4",
+                    "protocol": "tcp",
+                    "src_cidr": "10.1.10.0/24",
+                    "src_port": "any",
+                    "dst_cidr": "172.16.30/24",
+                    "dst_port": "22",
+                    "vlan": "10",
+                    "rule_index": 0
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchRoutingMulticast:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0002"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0003"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "stack-789102",
+            "canonical_facts": {
+                "ansible_machine_id": "789102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "789102"
+            }
+        },
+        {
+            "name": "stack-123456",
+            "canonical_facts": {
+                "ansible_machine_id": "123456"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "123456"
+            }
+        },
+        {
+            "name": "stack-129102",
+            "canonical_facts": {
+                "ansible_machine_id": "129102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "129102"
+            }
+        },
+        {
+            "name": "switch-profile-1234",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "switch_profile_id": "1234"
+            }
+        },
+        {
+            "name": "switch-profile-4567",
+            "canonical_facts": {
+                "ansible_machine_id": "4567"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "switch_profile_id": "4567"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchStackRoutingInterface:
+[
+    [
+        {
+            "name": "L3 interface",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "1234",
+                "vlan_id": 100,
+                "interface_ip": "192.168.1.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.1.0/24",
+                    "default_gateway": "192.168.1.1",
+                    "serial": "Q234-ABCD-5678",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::1",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        },
+        {
+            "name": "L3 interface1",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5611",
+                "hostname": "192.168.2.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "interface_id": "9234",
+                "vlan_id": 200,
+                "interface_ip": "192.168.2.2",
+                "interface_config": {
+                    "mode": "vlan",
+                    "subnet": "192.168.2.0/24",
+                    "default_gateway": "192.168.1.2",
+                    "serial": "Q234-ABCD-5611",
+                    "switch_port_id": "1",
+                    "multicast_routing": "disabled"
+                },
+                "uplink": {
+                    "ipv4_enabled": false,
+                    "ipv6_enabled": false
+                },
+                "ipv6": {
+                    "assignment_mode": "static",
+                    "address": "2001:db8::2",
+                    "prefix": "2001:db8::/32",
+                    "gateway": "2001:db8::2"
+                },
+                "ospf": {
+                    "v2": {
+                        "area": "0",
+                        "cost": 1,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    },
+                    "v3": {
+                        "area": "1",
+                        "cost": 2,
+                        "is_passive_enabled": true,
+                        "network_type": "broadcast"
+                    }
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchRoutingOspf:
+[
+    [
+        {
+            "name": "Backbone",
+            "canonical_facts": {
+                "ansible_machine_id": "1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "ospf_version": "v2",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "Backbone",
+                    "area_type": "normal"
+                },
+                "ospf_config": {
+                    "enabled": true,
+                    "hello_timer": 10,
+                    "dead_timer": 40,
+                    "md5_authentication_enabled": true
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        },
+        {
+            "name": "V3 Backbone",
+            "canonical_facts": {
+                "ansible_machine_id": "v3-1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "ospf_version": "v3",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "V3 Backbone",
+                    "area_type": "normal"
+                },
+                "ospf_config": {
+                    "enabled": true,
+                    "hello_timer": 10,
+                    "dead_timer": 40
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchAlternateManagementInterface:
+[
+    [
+        {
+            "name": "Q234-ABCD-5678",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "1.2.3.4"
+            },
+            "facts": {
+                "device_type": "switch",
+                "alternate_management_interface": {
+                    "enabled": true,
+                    "vlan_id": 100,
+                    "protocols": [
+                        "radius",
+                        "snmp",
+                        "syslog"
+                    ],
+                    "alternate_management_ip": "1.2.3.4",
+                    "subnet_mask": "255.255.255.0",
+                    "gateway": "1.2.3.5"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getOrganizationConfigTemplateSwitchProfiles:
+[
+    [
+        {
+            "name": "A Simple Switch Template",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "switch_profile": {
+                    "profile_id": "1234",
+                    "name": "A Simple Switch Template",
+                    "model": "MS450-24"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchRoutingOspf:
+[
+    [
+        {
+            "name": "Backbone",
+            "canonical_facts": {
+                "ansible_machine_id": "1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "ospf_version": "v2",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "Backbone",
+                    "area_type": "normal"
+                },
+                "ospf_config": {
+                    "enabled": true,
+                    "hello_timer": 10,
+                    "dead_timer": 40,
+                    "md5_authentication_enabled": true
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        },
+        {
+            "name": "V3 Backbone",
+            "canonical_facts": {
+                "ansible_machine_id": "v3-1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "ospf_version": "v3",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "V3 Backbone",
+                    "area_type": "normal"
+                },
+                "ospf_config": {
+                    "enabled": true,
+                    "hello_timer": 10,
+                    "dead_timer": 40
+                },
+                "vrf": {
+                    "name": "Blue"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers:
+[
+    [
+        {
+            "name": "trusted-server-123",
+            "canonical_facts": {
+                "ansible_machine_id": "00:11:22:33:44:55",
+                "hostname": "1.2.3.4"
+            },
+            "facts": {
+                "device_type": "switch",
+                "trusted_server": {
+                    "trusted_server_id": "123",
+                    "mac_address": "00:11:22:33:44:55",
+                    "vlan": 100,
+                    "ipv4_address": "1.2.3.4"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice:
+[
+    [
+        {
+            "name": "My switch",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "arp_inspection_warning": {
+                    "supports_inspection": false,
+                    "has_trusted_port": false,
+                    "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchDhcpV4ServersSeen:
+[
+    [
+        {
+            "name": "My AP-00:11:22:33:44:55",
+            "canonical_facts": {
+                "ansible_machine_id": "00:11:22:33:44:55",
+                "hostname": "10.0.0.0/24"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server": {
+                    "mac_address": "00:11:22:33:44:55",
+                    "vlan": 100,
+                    "client_id": "k74272e",
+                    "type": "device",
+                    "is_allowed": true,
+                    "is_configured": true,
+                    "last_seen_at": "2018-02-11T00:00:00.090210Z",
+                    "ipv4": {
+                        "address": "10.0.0.0/24",
+                        "subnet": "192.168.1.0/24",
+                        "gateway": "1.2.3.5"
+                    },
+                    "device": {
+                        "serial": "Q234-ABCD-0002",
+                        "name": "My AP",
+                        "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
+                        "interface": {
+                            "name": "My L3 Interface",
+                            "url": "https://n1.meraki.com//n//manage/configure/switch_l3/l3_interface/00000"
+                        }
+                    },
+                    "seen_by": [
+                        {
+                            "serial": "Q234-ABCD-0001",
+                            "name": "My switch2",
+                            "url": "https://n1.meraki.com//n//manage/nodes/new_list/0000000000001"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchLinkAggregations:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001-port-1",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "link_aggregation": {
+                    "aggregation_id": "NDU2N18yXzM=",
+                    "port_id": "1",
+                    "serial": "Q234-ABCD-0001"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchQosRule:
+[
+    [
+        {
+            "name": "qos-rule-1284392014819",
+            "canonical_facts": {
+                "ansible_machine_id": "1284392014819"
+            },
+            "facts": {
+                "device_type": "switch",
+                "qos_rule": {
+                    "id": "1284392014819",
+                    "vlan": 100,
+                    "protocol": "TCP",
+                    "src_port": 2000,
+                    "src_port_range": "70-80",
+                    "dst_port": 3000,
+                    "dst_port_range": "3000-3100",
+                    "dscp": 0
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getNetworkSwitchRoutingMulticastRendezvousPoints:
+[
+    [
+        {
+            "name": "rendezvous-point-1234",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-5678",
+                "hostname": "192.168.1.2"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_rendezvous_point": {
+                    "rendezvous_point_id": "1234",
+                    "serial": "Q234-ABCD-5678",
+                    "interface_name": "l3_interface_0",
+                    "interface_ip": "192.168.1.2",
+                    "multicast_group": "Any"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchRoutingStaticRoute:
+[
+    [
+        {
+            "name": "My route",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "static_route": {
+                    "route_id": "1234",
+                    "name": "My route",
+                    "subnet": "192.168.1.0/24",
+                    "next_hop_ip": "1.2.3.4",
+                    "management_next_hop": "1.2.3.5",
+                    "advertise_via_ospf_enabled": false,
+                    "prefer_over_ospf_routes_enabled": false,
+                    "vrf": {
+                        "name": "Blue",
+                        "leak_route_to_default_vrf": false
+                    }
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - removeNetworkSwitchStack:
+[
+    [
+        {
+            "name": {
+                "name": "A cool stack",
+                "canonical_facts": {
+                    "ansible_machine_id": "8473"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "stack_id": "8473",
+                    "stack_name": "A cool stack",
+                    "is_monitor_only": false,
+                    "virtual_mac": "00:18:0a:4f:21:19",
+                    "switch_count": 2
+                }
+            },
+            "canonical_facts": {
+                "ansible_product_serial": {
+                    "name": "A cool stack",
+                    "canonical_facts": {
+                        "ansible_machine_id": "8473"
+                    },
+                    "facts": {
+                        "device_type": "switch",
+                        "stack_id": "8473",
+                        "stack_name": "A cool stack",
+                        "is_monitor_only": false,
+                        "virtual_mac": "00:18:0a:4f:21:19",
+                        "switch_count": 2
+                    }
+                }
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        },
+        {
+            "name": "QBZY-XWVU-TSRQ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBZY-XWVU-TSRQ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        },
+        {
+            "name": "QBAB-CDEF-GHIJ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBAB-CDEF-GHIJ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchWarmSpare:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "warm_spare": {
+                    "enabled": true,
+                    "role": "primary",
+                    "spare_serial": "Q234-ABCD-0002"
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0002"
+            },
+            "facts": {
+                "device_type": "switch",
+                "warm_spare": {
+                    "enabled": true,
+                    "role": "spare",
+                    "primary_serial": "Q234-ABCD-0001"
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getOrganizationSummaryTopSwitchesByEnergyUsage:
+[
+    [
+        {
+            "name": "My switch",
+            "canonical_facts": {
+                "ansible_machine_id": "00:11:22:33:44:55"
+            },
+            "facts": {
+                "device_type": "switch",
+                "switch_info": {
+                    "name": "My switch",
+                    "model": "MS",
+                    "mac_address": "00:11:22:33:44:55"
+                },
+                "network": {
+                    "id": "N_24329156",
+                    "name": "Main Office"
+                },
+                "energy_usage": {
+                    "total": 800.021
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - addNetworkSwitchStack:
+[
+    [
+        {
+            "name": {
+                "name": "A cool stack",
+                "canonical_facts": {
+                    "ansible_machine_id": "8473"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "stack_id": "8473",
+                    "stack_name": "A cool stack",
+                    "is_monitor_only": false,
+                    "virtual_mac": "00:18:0a:4f:21:19",
+                    "switch_count": 2
+                }
+            },
+            "canonical_facts": {
+                "ansible_product_serial": {
+                    "name": "A cool stack",
+                    "canonical_facts": {
+                        "ansible_machine_id": "8473"
+                    },
+                    "facts": {
+                        "device_type": "switch",
+                        "stack_id": "8473",
+                        "stack_name": "A cool stack",
+                        "is_monitor_only": false,
+                        "virtual_mac": "00:18:0a:4f:21:19",
+                        "switch_count": 2
+                    }
+                }
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        },
+        {
+            "name": "QBZY-XWVU-TSRQ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBZY-XWVU-TSRQ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        },
+        {
+            "name": "QBAB-CDEF-GHIJ",
+            "canonical_facts": {
+                "ansible_product_serial": "QBAB-CDEF-GHIJ"
+            },
+            "facts": {
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": false,
+                "virtual_mac": "00:18:0a:4f:21:19"
+            }
+        }
+    ]
+]
+Running event query on Response #2 - getDeviceSwitchRoutingInterfaceDhcp:
+[
+    [
+        {
+            "name": "Cisco Meraki valued client",
+            "canonical_facts": {
+                "hostname": "192.168.1.12",
+                "ansible_machine_id": "22:33:44:55:66:77"
+            },
+            "facts": {
+                "device_type": "switch",
+                "fixed_ip_assignment": {
+                    "mac": "22:33:44:55:66:77",
+                    "ip": "192.168.1.12",
+                    "name": "Cisco Meraki valued client"
+                },
+                "dhcp_config": {
+                    "dhcp_mode": "dhcpServer",
+                    "dhcp_lease_time": "1 day",
+                    "dns_nameservers_option": "custom",
+                    "boot_options_enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateDeviceSwitchRoutingInterfaceDhcp:
+[
+    [
+        {
+            "name": "Cisco Meraki valued client",
+            "canonical_facts": {
+                "hostname": "192.168.1.12",
+                "ansible_machine_id": "22:33:44:55:66:77"
+            },
+            "facts": {
+                "device_type": "switch",
+                "fixed_ip_assignment": {
+                    "mac": "22:33:44:55:66:77",
+                    "ip": "192.168.1.12",
+                    "name": "Cisco Meraki valued client"
+                },
+                "dhcp_config": {
+                    "dhcp_mode": "dhcpServer",
+                    "dhcp_lease_time": "1 day",
+                    "dns_nameservers_option": "custom",
+                    "boot_options_enabled": true
+                }
+            }
+        }
+    ]
+]
+Running event query on Response #2 - updateNetworkSwitchRoutingMulticast:
+[
+    [
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0002"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0003"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                }
+            }
+        },
+        {
+            "name": "stack-789102",
+            "canonical_facts": {
+                "ansible_machine_id": "789102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "789102"
+            }
+        },
+        {
+            "name": "stack-123456",
+            "canonical_facts": {
+                "ansible_machine_id": "123456"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "123456"
+            }
+        },
+        {
+            "name": "stack-129102",
+            "canonical_facts": {
+                "ansible_machine_id": "129102"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "stack_id": "129102"
+            }
+        },
+        {
+            "name": "switch-profile-1234",
+            "canonical_facts": {
+                "ansible_machine_id": "1234"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "switch_profile_id": "1234"
+            }
+        },
+        {
+            "name": "switch-profile-4567",
+            "canonical_facts": {
+                "ansible_machine_id": "4567"
+            },
+            "facts": {
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": true,
+                    "flood_unknown_multicast_traffic_enabled": true
+                },
+                "switch_profile_id": "4567"
+            }
+        }
+    ]
+]
+Warning: File not found: /home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/tests/api_fixtures/.json
