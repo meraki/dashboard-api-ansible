@@ -145,7 +145,7 @@ class NetworksApplianceContentFiltering(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
 
-        new_blocked_url_categories =[]
+        new_blocked_url_categories = []
         for category in current_obj.get("blockedUrlCategories"):
             new_blocked_url_categories.append(category.get("id"))
 
