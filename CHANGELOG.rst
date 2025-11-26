@@ -4,6 +4,16 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.21.9
+=======
+
+Bugfixes
+--------
+
+- administered_licensing_subscription_subscriptions_bind - Fixed parameter naming from 'subscription_id' to 'subscriptionId' for proper API compatibility
+- networks_appliance_content_filtering - Enhanced idempotency by extracting category IDs from blockedUrlCategories before comparison
+- meraki.py plugin utils - Added type checking in has_diff_elem2 function to prevent errors when comparing lists of non-dictionary elements
+
 v2.21.8
 =======
 

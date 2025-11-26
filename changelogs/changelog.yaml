@@ -1303,5 +1303,16 @@ releases:
   2.21.8:
     changes:
       bugfixes:
-        - "networks_switch_qos_rules_order: extend object lookup to include srcPortRange and dstPortRange when matching existing QoS rules to improve idempotency"
+        - "networks_switch_qos_rules_order: extend object lookup to include srcPortRange and dstPortRange when matching existing QoS rules
+          to improve idempotency"
     release_date: "2025-06-10"
+  2.21.9:
+    changes:
+      bugfixes:
+        - "administered_licensing_subscription_subscriptions_bind - Fixed parameter naming from 'subscription_id' to 'subscriptionId'
+          for proper API compatibility"
+        - "networks_appliance_content_filtering - Enhanced idempotency by extracting category IDs from blockedUrlCategories
+          before comparison"
+        - "meraki.py plugin utils - Added type checking in has_diff_elem2 function to prevent errors when comparing lists
+          of non-dictionary elements"
+    release_date: "2025-11-26"
