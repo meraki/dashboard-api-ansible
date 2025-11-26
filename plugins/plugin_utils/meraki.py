@@ -68,6 +68,15 @@ def has_diff_elem2(ls1, ls2):
     """Compares two lists, with dictionaries inside them, to detect differences."""
     if len(ls1) != len(ls2):
         return True
+    
+    # Check if first elements are dictionaries before accessing keys
+    if not (isinstance(ls1[0], dict) and isinstance(ls2[0], dict)):
+        # If not both dicts, fall back to simple comparison
+        for i, elem in enumerate(ls2):
+            if str(ls1[i]) != str(elem):
+                return True
+        return False
+    
     # Only compare common keys between ls1 and ls2
     common_keys = set(ls1[0].keys()) & set(ls2[0].keys())
     for i, elem in enumerate(ls2):

@@ -1,41 +1,16 @@
 - name: Play Name
   hosts: localhost
   vars:
-    network_id: L_828099381482771185
+    network_id: L_828099381482778041
     org_id: "828099381482762270"
+    blocked_url_category_ids:
+      - meraki:contentFiltering/category/C1
+      - meraki:contentFiltering/category/C3
   gather_facts: false
   tasks:
-    # - name: Get all networks _clients
-    #   cisco.meraki.networks_clients_info:
-    #     meraki_suppress_logging: false
-    #     timespan: 1
-    #     perPage: 3
-    #     networkId: L_828099381482771185
-    #     total_pages: -1
-    #     direction: next
-    #   register: result
     - name: Update all
-      cisco.meraki.devices_cellular_sims:
-        meraki_base_url: "http://localhost:3002"
+      cisco.meraki.networks_appliance_content_filtering:
+        meraki_suppress_logging: false
+        networkId: "{{ network_id }}"
+        blockedUrlCategories: "{{ blocked_url_category_ids }}"
         state: present
-        serial: string
-        simFailover:
-          enabled: true
-          timeout: 300
-        simOrdering:
-          - sim1
-          - sim2
-          - sim3
-        sims:
-          - apns:
-              - allowedIpTypes:
-                  - ipv4
-                  - ipv6
-                authentication:
-                  password: secret
-                  type: pap
-                  username: milesmeraki
-                name: internet
-            isPrimary: false
-            simOrder: 3
-            slot: sim2
