@@ -1,0 +1,2175 @@
+---
+# Networks
+cisco.meraki.networks_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response | [.] | flatten |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_machine_id: .id
+        },
+        facts: {
+          device_type: "network",
+          meraki_organization_id: .organizationId
+        }
+      })
+    else []
+    end
+
+# delete operation returns "meraki_response": null
+cisco.meraki.networks:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_machine_id: .id
+        },
+        facts: {
+          device_type: "switch",
+          meraki_organization_id: .organizationId
+        }
+      })
+    else []
+    end
+
+# Devices
+cisco.meraki.devices_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response | [.] | flatten |
+      map({
+        name: ((.name | select(. != "")) // (.productType + "-" + .serial)),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.lanIp // "")
+        },
+        facts: {
+          device_type: .productType,
+          meraki_network_id: .networkId,
+          ansible_hostname: (.lanIp // ""),
+          ansible_product_name: .model,
+          ansible_bios_version: .firmware,
+          macaddress: .mac
+        }
+      })
+    else []
+    end
+
+# updateDevice does not seem to return productType field
+cisco.meraki.devices:
+  query: >-
+    if .meraki_response then
+      .meraki_response | [.] | flatten |
+      map({
+        name: ((.name | select(. != "")) // (.model + "-" + .serial)),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.lanIp // "")
+        },
+        facts: {
+          device_type: (if .model | startswith("MV") then "camera"
+                    elif .model | startswith("MR") then "wireless"
+                    elif .model | startswith("MS") then "switch"
+                    elif .model | startswith("MX") then "appliance"
+                    else "unknown"
+                    end),
+          meraki_network_id: .networkId,
+          ansible_hostname: (.lanIp // ""),
+          ansible_product_name: .model,
+          ansible_bios_version: .firmware,
+          macaddress: .mac
+        }
+      })
+    else []
+    end
+
+# getDeviceSwitchPort
+cisco.meraki.devices_switch_ports_info:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: (.name // ("port-" + (.portId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .module.serial
+        },
+        facts: {
+          device_type: "switch",
+          port_id: .portId,
+          vlan_id: .vlan,
+          port_config: {
+            enabled: .enabled,
+            type: .type,
+            tags: .tags,
+            voice_vlan: .voiceVlan,
+            allowed_vlans: .allowedVlans,
+            link_negotiation: .linkNegotiation,
+            link_negotiation_capabilities: .linkNegotiationCapabilities
+          },
+          poe: {
+            enabled: .poeEnabled
+          },
+          spanning_tree: {
+            rstp_enabled: .rstpEnabled,
+            stp_guard: .stpGuard
+          },
+          security: {
+            isolation_enabled: .isolationEnabled,
+            udld: .udld,
+            access_policy_type: .accessPolicyType,
+            access_policy_number: .accessPolicyNumber,
+            mac_allow_list: .macAllowList,
+            mac_whitelist_limit: .macWhitelistLimit,
+            sticky_mac_allow_list: .stickyMacAllowList,
+            sticky_mac_allow_list_limit: .stickyMacAllowListLimit,
+            storm_control_enabled: .stormControlEnabled,
+            dai_trusted: .daiTrusted,
+            peer_sgt_capable: .peerSgtCapable
+          },
+          adaptive_policy: {
+            group_id: .adaptivePolicyGroupId,
+            group_name: .adaptivePolicyGroup.name
+          },
+          schedule: {
+            id: .portScheduleId,
+            name: .schedule.name
+          },
+          advanced: {
+            flexible_stacking_enabled: .flexibleStackingEnabled,
+            dot3az_enabled: .dot3az.enabled,
+            high_speed_enabled: .highSpeed.enabled,
+            mirror_mode: .mirror.mode
+          },
+          profile: {
+            enabled: .profile.enabled,
+            id: .profile.id,
+            iname: .profile.iname
+          },
+          module: {
+            model: .module.model,
+            serial: .module.serial,
+            slot: .module.slot
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchMtu
+cisco.meraki.networks_switch_mtu_info:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: (.name // "Network Switch MTU Settings"),
+        canonical_facts: {},
+        facts: {
+          device_type: "switch",
+          default_mtu_size: .defaultMtuSize,
+          overrides: .overrides
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchStack
+cisco.meraki.networks_switch_stacks_info:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_machine_id: .id
+        },
+        facts: {
+          device_type: "switch",
+          stack_id: .id,
+          virtual_mac: .virtualMac,
+          stack_config: {
+            serials: .serials,
+            is_monitor_only: .isMonitorOnly,
+            member_count: (.members | length)
+          },
+          members: [
+            .members[] | {
+              serial: .serial,
+              name: .name,
+              model: .model,
+              mac: .mac,
+              role: .role
+            }
+          ]
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchStackRoutingInterfaces
+cisco.meraki.networks_switch_stacks_routing_interfaces_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: .interfaceIp
+        },
+        facts: {
+          device_type: "switch",
+          interface_id: .interfaceId,
+          vlan_id: .vlanId,
+          interface_ip: .interfaceIp,
+          interface_config: {
+            mode: .mode,
+            subnet: .subnet,
+            default_gateway: .defaultGateway,
+            serial: .serial,
+            switch_port_id: .switchPortId,
+            multicast_routing: .multicastRouting
+          },
+          uplink: {
+            ipv4_enabled: .uplinkV4,
+            ipv6_enabled: .uplinkV6
+          },
+          ipv6: {
+            assignment_mode: .ipv6.assignmentMode,
+            address: .ipv6.address,
+            prefix: .ipv6.prefix,
+            gateway: .ipv6.gateway
+          },
+          ospf: {
+            v2: {
+              area: .ospfSettings.area,
+              cost: .ospfSettings.cost,
+              is_passive_enabled: .ospfSettings.isPassiveEnabled,
+              network_type: .ospfSettings.networkType
+            },
+            v3: {
+              area: .ospfV3.area,
+              cost: .ospfV3.cost,
+              is_passive_enabled: .ospfV3.isPassiveEnabled,
+              network_type: .ospfV3.networkType
+            }
+          },
+          vrf: {
+            name: .vrf.name
+          }
+        }
+      })
+    else []
+    end
+
+# updateDeviceSwitchPort
+cisco.meraki.devices_switch_ports:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: (.name // ("port-" + (.portId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .module.serial
+        },
+        facts: {
+          device_type: "switch",
+          port_id: .portId,
+          vlan_id: .vlan,
+          port_config: {
+            enabled: .enabled,
+            type: .type,
+            tags: .tags,
+            voice_vlan: .voiceVlan,
+            allowed_vlans: .allowedVlans,
+            link_negotiation: .linkNegotiation,
+            link_negotiation_capabilities: .linkNegotiationCapabilities
+          },
+          poe: {
+            enabled: .poeEnabled
+          },
+          spanning_tree: {
+            rstp_enabled: .rstpEnabled,
+            stp_guard: .stpGuard
+          },
+          security: {
+            isolation_enabled: .isolationEnabled,
+            udld: .udld,
+            access_policy_type: .accessPolicyType,
+            access_policy_number: .accessPolicyNumber,
+            mac_allow_list: .macAllowList,
+            mac_whitelist_limit: .macWhitelistLimit,
+            sticky_mac_allow_list: .stickyMacAllowList,
+            sticky_mac_allow_list_limit: .stickyMacAllowListLimit,
+            storm_control_enabled: .stormControlEnabled,
+            dai_trusted: .daiTrusted,
+            peer_sgt_capable: .peerSgtCapable
+          },
+          adaptive_policy: {
+            group_id: .adaptivePolicyGroupId,
+            group_name: .adaptivePolicyGroup.name
+          },
+          schedule: {
+            id: .portScheduleId,
+            name: .schedule.name
+          },
+          advanced: {
+            flexible_stacking_enabled: .flexibleStackingEnabled,
+            dot3az_enabled: .dot3az.enabled,
+            high_speed_enabled: .highSpeed.enabled,
+            mirror_mode: .mirror.mode
+          },
+          profile: {
+            enabled: .profile.enabled,
+            id: .profile.id,
+            iname: .profile.iname
+          },
+          module: {
+            model: .module.model,
+            serial: .module.serial,
+            slot: .module.slot
+          }
+        }
+      })
+    else []
+    end
+
+# getOrganizationSwitchPortsBySwitch
+cisco.meraki.organizations_switch_ports_by_switch_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.mac // "")
+        },
+        facts: {
+          device_type: "switch",
+          mac_address: .mac,
+          model: .model,
+          switch_info: {
+            network_name: .network.name,
+            network_id: .network.id
+          },
+          ports: [
+            .ports[] | {
+              port_id: .portId,
+              name: .name,
+              tags: .tags,
+              config: {
+                enabled: .enabled,
+                type: .type,
+                vlan: .vlan,
+                voice_vlan: .voiceVlan,
+                allowed_vlans: .allowedVlans,
+                link_negotiation: .linkNegotiation
+              },
+              poe: {
+                enabled: .poeEnabled
+              },
+              spanning_tree: {
+                rstp_enabled: .rstpEnabled,
+                stp_guard: .stpGuard
+              },
+              security: {
+                access_policy_type: .accessPolicyType,
+                sticky_mac_allow_list: .stickyMacAllowList,
+                sticky_mac_allow_list_limit: .stickyMacAllowListLimit
+              }
+            }
+          ]
+        }
+      })
+    else []
+    end
+
+# getDeviceSwitchPortsStatuses
+cisco.meraki.devices_switch_ports_statuses_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response.items | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.mac // "")
+        },
+        facts: {
+          device_type: "switch",
+          mac_address: .mac,
+          model: .model,
+          switch_info: {
+            network_name: .network.name,
+            network_id: .network.id
+          },
+          ports: [
+            .ports[] | {
+              port_id: .portId,
+              operational_status: {
+                enabled: .enabled,
+                status: .status,
+                is_uplink: .isUplink,
+                speed: .speed,
+                duplex: .duplex
+              },
+              health: {
+                errors: .errors,
+                warnings: .warnings
+              },
+              spanning_tree: {
+                statuses: .spanningTree.statuses
+              },
+              poe: {
+                is_allocated: .poe.isAllocated
+              },
+              secure_port: {
+                active: .securePort.active,
+                authentication_status: .securePort.authenticationStatus
+              }
+            }
+          ],
+          meta: {
+            total_items: (.meta.counts.items.total // 0),
+            remaining_items: (.meta.counts.items.remaining // 0)
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchAccessPolicies
+cisco.meraki.networks_switch_access_policies_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_machine_id: (.accessPolicyNumber | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          access_policy_number: .accessPolicyNumber,
+          access_policy_type: .accessPolicyType,
+          policy_config: {
+            host_mode: .hostMode,
+            increase_access_speed: .increaseAccessSpeed,
+            guest_vlan_id: .guestVlanId,
+            guest_group_policy_id: .guestGroupPolicyId,
+            guest_sgt_id: .guestSgtId,
+            voice_vlan_clients: .voiceVlanClients,
+            guest_port_bouncing: .guestPortBouncing
+          },
+          radius: {
+            servers: [
+              .radiusServers[] | {
+                server_id: .serverId,
+                organization_radius_server_id: .organizationRadiusServerId,
+                host: .host,
+                port: .port
+              }
+            ],
+            accounting_enabled: .radiusAccountingEnabled,
+            accounting_servers: [
+              .radiusAccountingServers[] | {
+                server_id: .serverId,
+                organization_radius_server_id: .organizationRadiusServerId,
+                host: .host,
+                port: .port
+              }
+            ],
+            group_attribute: .radiusGroupAttribute,
+            testing_enabled: .radiusTestingEnabled,
+            coa_support_enabled: .radiusCoaSupportEnabled,
+            enforce_monitoring: .enforceRadiusMonitoring,
+            critical_auth: {
+              data_vlan_id: .radius.criticalAuth.dataVlanId,
+              voice_vlan_id: .radius.criticalAuth.voiceVlanId,
+              suspend_port_bounce: .radius.criticalAuth.suspendPortBounce,
+              data_group_policy_id: .radius.criticalAuth.dataGroupPolicyId,
+              voice_group_policy_id: .radius.criticalAuth.voiceGroupPolicyId,
+              data_sgt_id: .radius.criticalAuth.dataSgtId,
+              voice_sgt_id: .radius.criticalAuth.voiceSgtId
+            },
+            failed_auth: {
+              vlan_id: .radius.failedAuthVlanId,
+              group_policy_id: .radius.failedAuthGroupPolicyId,
+              sgt_id: .radius.failedAuthSgtId
+            },
+            re_authentication_interval: .radius.reAuthenticationInterval,
+            cache: {
+              enabled: .radius.cache.enabled,
+              timeout: .radius.cache.timeout
+            },
+            authentication: {
+              mode: .radius.authentication.mode
+            },
+            pre_authentication_group_policy_id: .radius.preAuthenticationGroupPolicyId
+          },
+          dot1x: {
+            control_direction: .dot1x.controlDirection
+          },
+          captive_portal: {
+            url_redirect_walled_garden_enabled: .urlRedirectWalledGardenEnabled,
+            url_redirect_walled_garden_ranges: .urlRedirectWalledGardenRanges
+          },
+          usage: {
+            ports_with_policy: .counts.ports.withThisPolicy
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchSettings
+cisco.meraki.networks_switch_settings_info:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: "Network Switch Settings",
+        canonical_facts: {},
+        facts: {
+          device_type: "switch",
+          vlan_id: .vlan,
+          power_management: {
+            use_combined_power: .useCombinedPower,
+            exceptions: [
+              .powerExceptions[] | {
+                serial: .serial,
+                power_type: .powerType
+              }
+            ]
+          },
+          uplink_client_sampling: {
+            enabled: .uplinkClientSampling.enabled
+          },
+          mac_blocklist: {
+            enabled: .macBlocklist.enabled
+          }
+        }
+      })
+    else []
+    end
+
+# updateNetworkSwitchAccessPolicy
+cisco.meraki.networks_switch_access_policies:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_machine_id: (.accessPolicyNumber | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          access_policy_number: .accessPolicyNumber,
+          access_policy_type: .accessPolicyType,
+          policy_config: {
+            host_mode: .hostMode,
+            increase_access_speed: .increaseAccessSpeed,
+            guest_vlan_id: .guestVlanId,
+            guest_group_policy_id: .guestGroupPolicyId,
+            guest_sgt_id: .guestSgtId,
+            voice_vlan_clients: .voiceVlanClients,
+            guest_port_bouncing: .guestPortBouncing
+          },
+          radius: {
+            servers: [
+              .radiusServers[] | {
+                server_id: .serverId,
+                organization_radius_server_id: .organizationRadiusServerId,
+                host: .host,
+                port: .port
+              }
+            ],
+            accounting_enabled: .radiusAccountingEnabled,
+            accounting_servers: [
+              .radiusAccountingServers[] | {
+                server_id: .serverId,
+                organization_radius_server_id: .organizationRadiusServerId,
+                host: .host,
+                port: .port
+              }
+            ],
+            group_attribute: .radiusGroupAttribute,
+            testing_enabled: .radiusTestingEnabled,
+            coa_support_enabled: .radiusCoaSupportEnabled,
+            enforce_monitoring: .enforceRadiusMonitoring,
+            critical_auth: {
+              data_vlan_id: .radius.criticalAuth.dataVlanId,
+              voice_vlan_id: .radius.criticalAuth.voiceVlanId,
+              suspend_port_bounce: .radius.criticalAuth.suspendPortBounce,
+              data_group_policy_id: .radius.criticalAuth.dataGroupPolicyId,
+              voice_group_policy_id: .radius.criticalAuth.voiceGroupPolicyId,
+              data_sgt_id: .radius.criticalAuth.dataSgtId,
+              voice_sgt_id: .radius.criticalAuth.voiceSgtId
+            },
+            failed_auth: {
+              vlan_id: .radius.failedAuthVlanId,
+              group_policy_id: .radius.failedAuthGroupPolicyId,
+              sgt_id: .radius.failedAuthSgtId
+            },
+            re_authentication_interval: .radius.reAuthenticationInterval,
+            cache: {
+              enabled: .radius.cache.enabled,
+              timeout: .radius.cache.timeout
+            },
+            authentication: {
+              mode: .radius.authentication.mode
+            },
+            pre_authentication_group_policy_id: .radius.preAuthenticationGroupPolicyId
+          },
+          dot1x: {
+            control_direction: .dot1x.controlDirection
+          },
+          captive_portal: {
+            url_redirect_walled_garden_enabled: .urlRedirectWalledGardenEnabled,
+            url_redirect_walled_garden_ranges: .urlRedirectWalledGardenRanges
+          },
+          usage: {
+            ports_with_policy: .counts.ports.withThisPolicy
+          }
+        }
+      })
+    else []
+    end
+
+# createNetworkSwitchStackRoutingInterface
+cisco.meraki.networks_switch_stacks_routing_interfaces:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: .name,
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: .interfaceIp
+        },
+        facts: {
+          device_type: "switch",
+          interface_id: .interfaceId,
+          vlan_id: .vlanId,
+          interface_ip: .interfaceIp,
+          interface_config: {
+            mode: .mode,
+            subnet: .subnet,
+            default_gateway: .defaultGateway,
+            switch_port_id: .switchPortId,
+            multicast_routing: .multicastRouting
+          },
+          uplink: {
+            ipv4_enabled: .uplinkV4,
+            ipv6_enabled: .uplinkV6
+          },
+          ipv6: {
+            assignment_mode: .ipv6.assignmentMode,
+            address: .ipv6.address,
+            prefix: .ipv6.prefix,
+            gateway: .ipv6.gateway
+          },
+          ospf: {
+            v2: {
+              area: .ospfSettings.area,
+              cost: .ospfSettings.cost,
+              is_passive_enabled: .ospfSettings.isPassiveEnabled,
+              network_type: .ospfSettings.networkType
+            },
+            v3: {
+              area: .ospfV3.area,
+              cost: .ospfV3.cost,
+              is_passive_enabled: .ospfV3.isPassiveEnabled,
+              network_type: .ospfV3.networkType
+            }
+          },
+          vrf: {
+            name: .vrf.name
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchStp
+cisco.meraki.networks_switch_stp_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      if .stpBridgePriority and (.stpBridgePriority | length > 0) then
+        . as $parent |
+        [
+          $parent.stpBridgePriority[] |
+          . as $priority_config |
+          (
+            # Create entries for each switch serial
+            ($priority_config.switches // [])[] |
+            {
+              name: (. | tostring),
+              canonical_facts: {
+                ansible_product_serial: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                stp_priority: $priority_config.stpPriority,
+                rstp_enabled: $parent.rstpEnabled
+              }
+            }
+          )
+        ] | flatten
+      else
+        []
+      end
+    else []
+    end
+
+# updateNetworkSwitchStp
+cisco.meraki.networks_switch_stp:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      if .stpBridgePriority and (.stpBridgePriority | length > 0) then
+        . as $parent |
+        [
+          $parent.stpBridgePriority[] |
+          . as $priority_config |
+          (
+            # Create entries for each switch serial
+            ($priority_config.switches // [])[] |
+            {
+              name: (. | tostring),
+              canonical_facts: {
+                ansible_product_serial: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                stp_priority: $priority_config.stpPriority,
+                rstp_enabled: $parent.rstpEnabled
+              }
+            }
+          ),
+          (
+            # Create entries for each stack ID
+            ($priority_config.stacks // [])[] |
+            {
+              name: ("stack-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                stp_priority: $priority_config.stpPriority,
+                rstp_enabled: $parent.rstpEnabled,
+                stack_id: (. | tostring)
+              }
+            }
+          ),
+          (
+            # Create entries for each switch profile ID
+            ($priority_config.switchProfiles // [])[] |
+            {
+              name: ("switch-profile-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                stp_priority: $priority_config.stpPriority,
+                rstp_enabled: $parent.rstpEnabled,
+                switch_profile_id: (. | tostring)
+              }
+            }
+          )
+        ] | flatten
+      else
+        []
+      end
+    else []
+    end
+
+# getNetworkSwitchQosRules / getNetworkSwitchQosRule
+cisco.meraki.networks_switch_qos_rules_order_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: ("qos-rule-" + (.id | tostring)),
+        canonical_facts: {
+          ansible_machine_id: (.id | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          qos_rule: {
+            id: (.id | tostring),
+            vlan: .vlan,
+            protocol: .protocol,
+            src_port: .srcPort,
+            src_port_range: .srcPortRange,
+            dst_port: .dstPort,
+            dst_port_range: .dstPortRange,
+            dscp: .dscp
+          }
+        }
+      })
+    else []
+    end
+
+# createNetworkSwitchQosRule / updateNetworkSwitchQosRule / deleteNetworkSwitchQosRule
+cisco.meraki.networks_switch_qos_rules_order:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: ("qos-rule-" + (.id | tostring)),
+        canonical_facts: {
+          ansible_machine_id: (.id | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          qos_rule: {
+            id: (.id | tostring),
+            vlan: .vlan,
+            protocol: .protocol,
+            src_port: .srcPort,
+            src_port_range: .srcPortRange,
+            dst_port: .dstPort,
+            dst_port_range: .dstPortRange,
+            dscp: .dscp
+          }
+        }
+      })
+    else []
+    end
+
+# cycleDeviceSwitchPorts
+cisco.meraki.devices_switch_ports_cycle:
+  query: >-
+    if .meraki_response then
+      (.meraki_response.ports // []) |
+      map({
+        name: ("port-" + .),
+        canonical_facts: {
+          ansible_machine_id: .
+        },
+        facts: {
+          device_type: "switch",
+          port_identifier: .
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchAccessControlLists
+cisco.meraki.networks_switch_access_control_lists_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response.rules // []) |
+      to_entries |
+      map({
+        name: (.value.comment // ("acl-rule-" + (.key | tostring))),
+        canonical_facts: {
+          ansible_machine_id: (
+            (.value.comment // "") + "-" +
+            (.value.policy // "") + "-" +
+            (.value.protocol // "") + "-" +
+            (.value.srcCidr // "") + "-" +
+            (.value.dstCidr // "") + "-" +
+            (.key | tostring)
+          )
+        },
+        facts: {
+          device_type: "switch",
+          acl_rule: {
+            comment: .value.comment,
+            policy: .value.policy,
+            ip_version: .value.ipVersion,
+            protocol: .value.protocol,
+            src_cidr: .value.srcCidr,
+            src_port: .value.srcPort,
+            dst_cidr: .value.dstCidr,
+            dst_port: .value.dstPort,
+            vlan: .value.vlan,
+            rule_index: .key
+          }
+        }
+      })
+    else []
+    end
+
+# updateNetworkSwitchAccessControlLists
+cisco.meraki.networks_switch_access_control_lists:
+  query: >-
+    if .meraki_response then
+      (.meraki_response.rules // []) |
+      to_entries |
+      map({
+        name: (.value.comment // ("acl-rule-" + (.key | tostring))),
+        canonical_facts: {
+          ansible_machine_id: (
+            (.value.comment // "") + "-" +
+            (.value.policy // "") + "-" +
+            (.value.protocol // "") + "-" +
+            (.value.srcCidr // "") + "-" +
+            (.value.dstCidr // "") + "-" +
+            (.key | tostring)
+          )
+        },
+        facts: {
+          device_type: "switch",
+          acl_rule: {
+            comment: .value.comment,
+            policy: .value.policy,
+            ip_version: .value.ipVersion,
+            protocol: .value.protocol,
+            src_cidr: .value.srcCidr,
+            src_port: .value.srcPort,
+            dst_cidr: .value.dstCidr,
+            dst_port: .value.dstPort,
+            vlan: .value.vlan,
+            rule_index: .key
+          }
+        }
+      })
+    else []
+    end
+
+# createNetworkSwitchStack / deleteNetworkSwitchStack
+cisco.meraki.networks_switch_stacks:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entry for the stack itself
+        {
+          name: .name,
+          canonical_facts: {
+            ansible_machine_id: (.id | tostring)
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: (.id | tostring),
+            workflow_id: (.workflowId | tostring),
+            stack_name: .name,
+            switch_count: (.serials | length)
+          }
+        },
+        # Create entries for each switch serial in the stack
+        ($parent.serials // [])[] |
+        {
+          name: .,
+          canonical_facts: {
+            ansible_product_serial: .
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: ($parent.id | tostring),
+            stack_name: $parent.name,
+            workflow_id: ($parent.workflowId | tostring)
+          }
+        }
+      ]
+    else []
+    end
+
+# updateNetworkSwitchSettings
+cisco.meraki.networks_switch_settings:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each switch with power exceptions
+        ($parent.powerExceptions // [])[] |
+        {
+          name: .serial,
+          canonical_facts: {
+            ansible_product_serial: .serial
+          },
+          facts: {
+            device_type: "switch",
+            power_exception: {
+              power_type: .powerType
+            },
+            network_settings: {
+              vlan: $parent.vlan,
+              use_combined_power: $parent.useCombinedPower,
+              uplink_client_sampling: {
+                enabled: ($parent.uplinkClientSampling.enabled // false)
+              },
+              mac_blocklist: {
+                enabled: ($parent.macBlocklist.enabled // false)
+              },
+              uplink_selection: (
+                if $parent.uplinkSelection then
+                  {
+                    failback: {
+                      enabled: ($parent.uplinkSelection.failback.enabled // false)
+                    },
+                    candidates: ($parent.uplinkSelection.candidates // "")
+                  }
+                else
+                  {}
+                end
+              )
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getNetworkSwitchStackRoutingInterfaceDhcp
+cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each device with fixed IP assignment
+        ($parent.fixedIpAssignments // [])[] |
+        {
+          name: (.name // .mac),
+          canonical_facts: {
+            hostname: .ip,
+            ansible_machine_id: .mac
+          },
+          facts: {
+            device_type: "switch",
+            fixed_ip_assignment: {
+              mac: .mac,
+              ip: .ip,
+              name: .name
+            },
+            dhcp_config: {
+              dhcp_mode: $parent.dhcpMode,
+              dhcp_lease_time: $parent.dhcpLeaseTime,
+              dns_nameservers_option: $parent.dnsNameserversOption,
+              boot_options_enabled: $parent.bootOptionsEnabled
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# updateNetworkSwitchStackRoutingInterfaceDhcp
+cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each device with fixed IP assignment
+        ($parent.fixedIpAssignments // [])[] |
+        {
+          name: (.name // .mac),
+          canonical_facts: {
+            hostname: .ip,
+            ansible_machine_id: .mac
+          },
+          facts: {
+            device_type: "switch",
+            fixed_ip_assignment: {
+              mac: .mac,
+              ip: .ip,
+              name: .name
+            },
+            dhcp_config: {
+              dhcp_mode: $parent.dhcpMode,
+              dhcp_lease_time: $parent.dhcpLeaseTime,
+              dns_nameservers_option: $parent.dnsNameserversOption,
+              boot_options_enabled: $parent.bootOptionsEnabled
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getNetworkSwitchDhcpServerPolicy
+cisco.meraki.networks_switch_dhcp_server_policy_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        (
+          # Create entries for each blocked DHCP server
+          ($parent.blockedServers // [])[] |
+          {
+            name: ("blocked-dhcp-server-" + .),
+            canonical_facts: {
+              ansible_machine_id: .
+            },
+            facts: {
+              device_type: "switch",
+              dhcp_server_policy: {
+                status: "blocked",
+                mac_address: .,
+                default_policy: $parent.defaultPolicy,
+                arp_inspection_enabled: ($parent.arpInspection.enabled // false)
+              }
+            }
+          }
+        ),
+        (
+          # Create entries for each allowed DHCP server
+          ($parent.allowedServers // [])[] |
+          {
+            name: ("allowed-dhcp-server-" + .),
+            canonical_facts: {
+              ansible_machine_id: .
+            },
+            facts: {
+              device_type: "switch",
+              dhcp_server_policy: {
+                status: "allowed",
+                mac_address: .,
+                default_policy: $parent.defaultPolicy,
+                arp_inspection_enabled: ($parent.arpInspection.enabled // false)
+              }
+            }
+          }
+        )
+      ]
+    else []
+    end
+
+# updateNetworkSwitchDhcpServerPolicy
+cisco.meraki.networks_switch_dhcp_server_policy:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        (
+          # Create entries for each blocked DHCP server
+          ($parent.blockedServers // [])[] |
+          {
+            name: ("blocked-dhcp-server-" + .),
+            canonical_facts: {
+              ansible_machine_id: .
+            },
+            facts: {
+              device_type: "switch",
+              dhcp_server_policy: {
+                status: "blocked",
+                mac_address: .,
+                default_policy: $parent.defaultPolicy,
+                arp_inspection_enabled: ($parent.arpInspection.enabled // false)
+              }
+            }
+          }
+        ),
+        (
+          # Create entries for each allowed DHCP server
+          ($parent.allowedServers // [])[] |
+          {
+            name: ("allowed-dhcp-server-" + .),
+            canonical_facts: {
+              ansible_machine_id: .
+            },
+            facts: {
+              device_type: "switch",
+              dhcp_server_policy: {
+                status: "allowed",
+                mac_address: .,
+                default_policy: $parent.defaultPolicy,
+                arp_inspection_enabled: ($parent.arpInspection.enabled // false)
+              }
+            }
+          }
+        )
+      ]
+    else []
+    end
+
+# createNetworkSwitchLinkAggregation / updateNetworkSwitchLinkAggregation / deleteNetworkSwitchLinkAggregation
+cisco.meraki.networks_switch_link_aggregations:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each port in the link aggregation
+        ($parent.switchPorts // [])[] |
+        {
+          name: (.serial + "-port-" + (.portId | tostring)),
+          canonical_facts: {
+            ansible_product_serial: .serial
+          },
+          facts: {
+            device_type: "switch",
+            link_aggregation: {
+              aggregation_id: ($parent.id | tostring),
+              port_id: (.portId | tostring),
+              serial: .serial
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getNetworkSwitchLinkAggregations
+cisco.meraki.networks_switch_link_aggregations_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      [
+        .[] |
+        . as $aggregation |
+        ($aggregation.switchPorts // [])[] |
+        {
+          name: (.serial + "-port-" + (.portId | tostring)),
+          canonical_facts: {
+            ansible_product_serial: .serial
+          },
+          facts: {
+            device_type: "switch",
+            link_aggregation: {
+              aggregation_id: ($aggregation.id | tostring),
+              port_id: (.portId | tostring),
+              serial: .serial
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getDeviceSwitchRoutingInterfaces / getDeviceSwitchRoutingInterface
+cisco.meraki.devices_switch_routing_interfaces_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: (.name // ("interface-" + (.interfaceId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.interfaceIp // "")
+        },
+        facts: {
+          device_type: "switch",
+          interface_id: (.interfaceId | tostring),
+          vlan_id: .vlanId,
+          interface_ip: .interfaceIp,
+          interface_config: {
+            mode: .mode,
+            subnet: .subnet,
+            default_gateway: .defaultGateway,
+            serial: .serial,
+            switch_port_id: .switchPortId,
+            multicast_routing: .multicastRouting
+          },
+          uplink: {
+            ipv4_enabled: .uplinkV4,
+            ipv6_enabled: .uplinkV6
+          },
+          ipv6: (
+            if .ipv6 then
+              {
+                assignment_mode: .ipv6.assignmentMode,
+                address: .ipv6.address,
+                prefix: .ipv6.prefix,
+                gateway: .ipv6.gateway
+              }
+            else
+              {}
+            end
+          ),
+          ospf: {
+            v2: (
+              if .ospfSettings then
+                {
+                  area: .ospfSettings.area,
+                  cost: .ospfSettings.cost,
+                  is_passive_enabled: .ospfSettings.isPassiveEnabled,
+                  network_type: .ospfSettings.networkType
+                }
+              else
+                {}
+              end
+            ),
+            v3: (
+              if .ospfV3 then
+                {
+                  area: .ospfV3.area,
+                  cost: .ospfV3.cost,
+                  is_passive_enabled: .ospfV3.isPassiveEnabled,
+                  network_type: .ospfV3.networkType
+                }
+              else
+                {}
+              end
+            )
+          },
+          vrf: (
+            if .vrf then
+              {
+                name: .vrf.name
+              }
+            else
+              {}
+            end
+          )
+        }
+      })
+    else []
+    end
+
+# createDeviceSwitchRoutingInterface / updateDeviceSwitchRoutingInterface / deleteDeviceSwitchRoutingInterface
+cisco.meraki.devices_switch_routing_interfaces:
+  query: >-
+    if .meraki_response then
+      [.meraki_response] |
+      map({
+        name: (.name // ("interface-" + (.interfaceId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.interfaceIp // "")
+        },
+        facts: {
+          device_type: "switch",
+          interface_id: (.interfaceId | tostring),
+          vlan_id: .vlanId,
+          interface_ip: .interfaceIp,
+          interface_config: {
+            mode: .mode,
+            subnet: .subnet,
+            default_gateway: .defaultGateway,
+            serial: .serial,
+            switch_port_id: .switchPortId,
+            multicast_routing: .multicastRouting
+          },
+          uplink: {
+            ipv4_enabled: .uplinkV4,
+            ipv6_enabled: .uplinkV6
+          },
+          ipv6: (
+            if .ipv6 then
+              {
+                assignment_mode: .ipv6.assignmentMode,
+                address: .ipv6.address,
+                prefix: .ipv6.prefix,
+                gateway: .ipv6.gateway
+              }
+            else
+              {}
+            end
+          ),
+          ospf: {
+            v2: (
+              if .ospfSettings then
+                {
+                  area: .ospfSettings.area,
+                  cost: .ospfSettings.cost,
+                  is_passive_enabled: .ospfSettings.isPassiveEnabled,
+                  network_type: .ospfSettings.networkType
+                }
+              else
+                {}
+              end
+            ),
+            v3: (
+              if .ospfV3 then
+                {
+                  area: .ospfV3.area,
+                  cost: .ospfV3.cost,
+                  is_passive_enabled: .ospfV3.isPassiveEnabled,
+                  network_type: .ospfV3.networkType
+                }
+              else
+                {}
+              end
+            )
+          },
+          vrf: (
+            if .vrf then
+              {
+                name: .vrf.name
+              }
+            else
+              {}
+            end
+          )
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchRoutingMulticast
+cisco.meraki.networks_switch_routing_multicast_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      if .overrides and (.overrides | length > 0) then
+        . as $parent |
+        [
+          $parent.overrides[] |
+          . as $override |
+          (
+            # Create entries for each switch serial
+            ($override.switches // [])[] |
+            {
+              name: (. | tostring),
+              canonical_facts: {
+                ansible_product_serial: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                }
+              }
+            }
+          ),
+          (
+            # Create entries for each stack ID
+            ($override.stacks // [])[] |
+            {
+              name: ("stack-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                },
+                stack_id: (. | tostring)
+              }
+            }
+          ),
+          (
+            # Create entries for each switch profile ID
+            ($override.switchProfiles // [])[] |
+            {
+              name: ("switch-profile-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                },
+                switch_profile_id: (. | tostring)
+              }
+            }
+          )
+        ] | flatten
+      else
+        []
+      end
+    else []
+    end
+
+# updateNetworkSwitchRoutingMulticast
+cisco.meraki.networks_switch_routing_multicast:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      if .overrides and (.overrides | length > 0) then
+        . as $parent |
+        [
+          $parent.overrides[] |
+          . as $override |
+          (
+            # Create entries for each switch serial
+            ($override.switches // [])[] |
+            {
+              name: (. | tostring),
+              canonical_facts: {
+                ansible_product_serial: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                }
+              }
+            }
+          ),
+          (
+            # Create entries for each stack ID
+            ($override.stacks // [])[] |
+            {
+              name: ("stack-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                },
+                stack_id: (. | tostring)
+              }
+            }
+          ),
+          (
+            # Create entries for each switch profile ID
+            ($override.switchProfiles // [])[] |
+            {
+              name: ("switch-profile-" + (. | tostring)),
+              canonical_facts: {
+                ansible_machine_id: (. | tostring)
+              },
+              facts: {
+                device_type: "switch",
+                multicast_settings: {
+                  igmp_snooping_enabled: $override.igmpSnoopingEnabled,
+                  flood_unknown_multicast_traffic_enabled: $override.floodUnknownMulticastTrafficEnabled
+                },
+                default_settings: {
+                  igmp_snooping_enabled: ($parent.defaultSettings.igmpSnoopingEnabled // false),
+                  flood_unknown_multicast_traffic_enabled: ($parent.defaultSettings.floodUnknownMulticastTrafficEnabled // false)
+                },
+                switch_profile_id: (. | tostring)
+              }
+            }
+          )
+        ] | flatten
+      else
+        []
+      end
+    else []
+    end
+
+# getNetworkSwitchRoutingOspf
+cisco.meraki.networks_switch_routing_ospf_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        (
+          # Create entries for each OSPFv2 area
+          ($parent.areas // [])[] |
+          {
+            name: (.areaName // ("ospf-area-" + (.areaId | tostring))),
+            canonical_facts: {
+              ansible_machine_id: (.areaId | tostring)
+            },
+            facts: {
+              device_type: "switch",
+              ospf_version: "v2",
+              ospf_area: {
+                area_id: (.areaId | tostring),
+                area_name: .areaName,
+                area_type: .areaType
+              },
+              ospf_config: {
+                enabled: $parent.enabled,
+                hello_timer: $parent.helloTimerInSeconds,
+                dead_timer: $parent.deadTimerInSeconds,
+                md5_authentication_enabled: ($parent.md5AuthenticationEnabled // false)
+              },
+              vrf: (
+                if $parent.vrf then
+                  {
+                    name: $parent.vrf.name
+                  }
+                else
+                  {}
+                end
+              )
+            }
+          }
+        ),
+        (
+          # Create entries for each OSPFv3 area
+          (($parent.v3 // {}).areas // [])[] |
+          {
+            name: (.areaName // ("ospfv3-area-" + (.areaId | tostring))),
+            canonical_facts: {
+              ansible_machine_id: ("v3-" + (.areaId | tostring))
+            },
+            facts: {
+              device_type: "switch",
+              ospf_version: "v3",
+              ospf_area: {
+                area_id: (.areaId | tostring),
+                area_name: .areaName,
+                area_type: .areaType
+              },
+              ospf_config: {
+                enabled: ($parent.v3.enabled // false),
+                hello_timer: ($parent.v3.helloTimerInSeconds // 0),
+                dead_timer: ($parent.v3.deadTimerInSeconds // 0)
+              },
+              vrf: (
+                if $parent.vrf then
+                  {
+                    name: $parent.vrf.name
+                  }
+                else
+                  {}
+                end
+              )
+            }
+          }
+        )
+      ]
+    else []
+    end
+
+# updateNetworkSwitchRoutingOspf
+cisco.meraki.networks_switch_routing_ospf:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        (
+          # Create entries for each OSPFv2 area
+          ($parent.areas // [])[] |
+          {
+            name: (.areaName // ("ospf-area-" + (.areaId | tostring))),
+            canonical_facts: {
+              ansible_machine_id: (.areaId | tostring)
+            },
+            facts: {
+              device_type: "switch",
+              ospf_version: "v2",
+              ospf_area: {
+                area_id: (.areaId | tostring),
+                area_name: .areaName,
+                area_type: .areaType
+              },
+              ospf_config: {
+                enabled: $parent.enabled,
+                hello_timer: $parent.helloTimerInSeconds,
+                dead_timer: $parent.deadTimerInSeconds,
+                md5_authentication_enabled: ($parent.md5AuthenticationEnabled // false)
+              },
+              vrf: (
+                if $parent.vrf then
+                  {
+                    name: $parent.vrf.name
+                  }
+                else
+                  {}
+                end
+              )
+            }
+          }
+        ),
+        (
+          # Create entries for each OSPFv3 area
+          (($parent.v3 // {}).areas // [])[] |
+          {
+            name: (.areaName // ("ospfv3-area-" + (.areaId | tostring))),
+            canonical_facts: {
+              ansible_machine_id: ("v3-" + (.areaId | tostring))
+            },
+            facts: {
+              device_type: "switch",
+              ospf_version: "v3",
+              ospf_area: {
+                area_id: (.areaId | tostring),
+                area_name: .areaName,
+                area_type: .areaType
+              },
+              ospf_config: {
+                enabled: ($parent.v3.enabled // false),
+                hello_timer: ($parent.v3.helloTimerInSeconds // 0),
+                dead_timer: ($parent.v3.deadTimerInSeconds // 0)
+              },
+              vrf: (
+                if $parent.vrf then
+                  {
+                    name: $parent.vrf.name
+                  }
+                else
+                  {}
+                end
+              )
+            }
+          }
+        )
+      ]
+    else []
+    end
+
+# getNetworkSwitchAlternateManagementInterface
+cisco.meraki.networks_switch_alternate_management_interface_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each switch with alternate management interface
+        ($parent.switches // [])[] |
+        {
+          name: .serial,
+          canonical_facts: {
+            ansible_product_serial: .serial,
+            hostname: (.alternateManagementIp // "")
+          },
+          facts: {
+            device_type: "switch",
+            alternate_management_interface: {
+              enabled: $parent.enabled,
+              vlan_id: $parent.vlanId,
+              protocols: ($parent.protocols // []),
+              alternate_management_ip: .alternateManagementIp,
+              subnet_mask: .subnetMask,
+              gateway: .gateway
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getOrganizationConfigTemplateSwitchProfiles
+cisco.meraki.organizations_config_templates_switch_profiles_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: (.name // ("switch-profile-" + (.switchProfileId | tostring))),
+        canonical_facts: {
+          ansible_machine_id: (.switchProfileId | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          switch_profile: {
+            profile_id: (.switchProfileId | tostring),
+            name: .name,
+            model: .model
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
+cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: ("trusted-server-" + (.trustedServerId | tostring)),
+        canonical_facts: {
+          ansible_machine_id: .mac,
+          hostname: (.ipv4.address // "")
+        },
+        facts: {
+          device_type: "switch",
+          trusted_server: {
+            trusted_server_id: (.trustedServerId | tostring),
+            mac_address: .mac,
+            vlan: .vlan,
+            ipv4_address: (.ipv4.address // "")
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice
+cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: (.name // .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "switch",
+          arp_inspection_warning: {
+            supports_inspection: .supportsInspection,
+            has_trusted_port: .hasTrustedPort,
+            url: .url
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchDhcpV4ServersSeen
+cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: ((.device.name // "") + "-" + (.mac // "")),
+        canonical_facts: {
+          ansible_machine_id: .mac,
+          hostname: (.ipv4.address // "")
+        },
+        facts: {
+          device_type: "switch",
+          dhcp_server: {
+            mac_address: .mac,
+            vlan: .vlan,
+            client_id: .clientId,
+            type: .type,
+            is_allowed: .isAllowed,
+            is_configured: .isConfigured,
+            last_seen_at: .lastSeenAt,
+            ipv4: {
+              address: .ipv4.address,
+              subnet: .ipv4.subnet,
+              gateway: .ipv4.gateway
+            },
+            device: (
+              if .device then
+                {
+                  serial: .device.serial,
+                  name: .device.name,
+                  url: .device.url,
+                  interface: (
+                    if .device.interface then
+                      {
+                        name: .device.interface.name,
+                        url: .device.interface.url
+                      }
+                    else
+                      {}
+                    end
+                  )
+                }
+              else
+                {}
+              end
+            ),
+            seen_by: [
+              (.seenBy // [])[] |
+              {
+                serial: .serial,
+                name: .name,
+                url: .url
+              }
+            ]
+          }
+        }
+      })
+    else []
+    end
+
+# getNetworkSwitchRoutingMulticastRendezvousPoints / getNetworkSwitchRoutingMulticastRendezvousPoint
+cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: ("rendezvous-point-" + (.rendezvousPointId | tostring)),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.interfaceIp // "")
+        },
+        facts: {
+          device_type: "switch",
+          multicast_rendezvous_point: {
+            rendezvous_point_id: (.rendezvousPointId | tostring),
+            serial: .serial,
+            interface_name: .interfaceName,
+            interface_ip: .interfaceIp,
+            multicast_group: .multicastGroup
+          }
+        }
+      })
+    else []
+    end
+
+# getDeviceSwitchRoutingStaticRoutes / getDeviceSwitchRoutingStaticRoute
+cisco.meraki.devices_switch_routing_static_routes_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: (.name // ("static-route-" + (.staticRouteId | tostring))),
+        canonical_facts: {
+          ansible_machine_id: (.staticRouteId | tostring)
+        },
+        facts: {
+          device_type: "switch",
+          static_route: {
+            route_id: (.staticRouteId | tostring),
+            name: .name,
+            subnet: .subnet,
+            next_hop_ip: .nextHopIp,
+            management_next_hop: .managementNextHop,
+            advertise_via_ospf_enabled: .advertiseViaOspfEnabled,
+            prefer_over_ospf_routes_enabled: .preferOverOspfRoutesEnabled,
+            vrf: (
+              if .vrf then
+                {
+                  name: .vrf.name,
+                  leak_route_to_default_vrf: .vrf.leakRouteToDefaultVrf
+                }
+              else
+                {}
+              end
+            )
+          }
+        }
+      })
+    else []
+    end
+
+# removeNetworkSwitchStack
+cisco.meraki.networks_switch_stacks_remove:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entry for the stack itself
+        {
+          name: .name,
+          canonical_facts: {
+            ansible_machine_id: (.id | tostring)
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: (.id | tostring),
+            stack_name: .name,
+            is_monitor_only: .isMonitorOnly,
+            virtual_mac: .virtualMac,
+            switch_count: (.serials | length)
+          }
+        },
+        # Create entries for each switch serial in the stack
+        ($parent.serials // [])[] |
+        {
+          name: .,
+          canonical_facts: {
+            ansible_product_serial: .
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: ($parent.id | tostring),
+            stack_name: $parent.name,
+            is_monitor_only: $parent.isMonitorOnly,
+            virtual_mac: $parent.virtualMac
+          }
+        }
+      ]
+    else []
+    end
+
+# addNetworkSwitchStack
+cisco.meraki.networks_switch_stacks_add:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entry for the stack itself
+        {
+          name: .name,
+          canonical_facts: {
+            ansible_machine_id: (.id | tostring)
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: (.id | tostring),
+            stack_name: .name,
+            is_monitor_only: .isMonitorOnly,
+            virtual_mac: .virtualMac,
+            switch_count: (.serials | length)
+          }
+        },
+        # Create entries for each switch serial in the stack
+        ($parent.serials // [])[] |
+        {
+          name: .,
+          canonical_facts: {
+            ansible_product_serial: .
+          },
+          facts: {
+            device_type: "switch",
+            stack_id: ($parent.id | tostring),
+            stack_name: $parent.name,
+            is_monitor_only: $parent.isMonitorOnly,
+            virtual_mac: $parent.virtualMac
+          }
+        }
+      ]
+    else []
+    end
+
+# getDeviceSwitchWarmSpare
+cisco.meraki.devices_switch_warm_spare_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      if .enabled then
+        . as $parent |
+        [
+          # Create entry for primary switch
+          {
+            name: $parent.primarySerial,
+            canonical_facts: {
+              ansible_product_serial: $parent.primarySerial
+            },
+            facts: {
+              device_type: "switch",
+              warm_spare: {
+                enabled: $parent.enabled,
+                role: "primary",
+                spare_serial: $parent.spareSerial
+              }
+            }
+          },
+          # Create entry for spare switch
+          {
+            name: $parent.spareSerial,
+            canonical_facts: {
+              ansible_product_serial: $parent.spareSerial
+            },
+            facts: {
+              device_type: "switch",
+              warm_spare: {
+                enabled: $parent.enabled,
+                role: "spare",
+                primary_serial: $parent.primarySerial
+              }
+            }
+          }
+        ]
+      else
+        []
+      end
+    else []
+    end
+
+# getDeviceSwitchRoutingInterfaceDhcp
+cisco.meraki.devices_switch_routing_interfaces_dhcp_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each device with fixed IP assignment
+        ($parent.fixedIpAssignments // [])[] |
+        {
+          name: (.name // .mac),
+          canonical_facts: {
+            hostname: .ip,
+            ansible_machine_id: .mac
+          },
+          facts: {
+            device_type: "switch",
+            fixed_ip_assignment: {
+              mac: .mac,
+              ip: .ip,
+              name: .name
+            },
+            dhcp_config: {
+              dhcp_mode: $parent.dhcpMode,
+              dhcp_lease_time: $parent.dhcpLeaseTime,
+              dns_nameservers_option: $parent.dnsNameserversOption,
+              boot_options_enabled: $parent.bootOptionsEnabled
+            }
+          }
+        }
+      ]
+    else []
+    end
+
+# getOrganizationSummaryTopSwitchesByEnergyUsage
+cisco.meraki.organizations_summary_top_switches_by_energy_usage_info:
+  query: >-
+    if .meraki_response then
+      (.meraki_response | if type == "array" then . else [.] end) |
+      map({
+        name: (.name // .mac),
+        canonical_facts: {
+          ansible_machine_id: .mac
+        },
+        facts: {
+          device_type: "switch",
+          switch_info: {
+            name: .name,
+            model: .model,
+            mac_address: .mac
+          },
+          network: (
+            if .network then
+              {
+                id: .network.id,
+                name: .network.name
+              }
+            else
+              {}
+            end
+          ),
+          energy_usage: {
+            total: .usage.total
+          }
+        }
+      })
+    else []
+    end
+
+# getDeviceSwitchRoutingInterfaceDhcp
+cisco.meraki.devices_switch_routing_interfaces_dhcp:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      . as $parent |
+      [
+        # Create entries for each device with fixed IP assignment
+        ($parent.fixedIpAssignments // [])[] |
+        {
+          name: (.name // .mac),
+          canonical_facts: {
+            hostname: .ip,
+            ansible_machine_id: .mac
+          },
+          facts: {
+            device_type: "switch",
+            fixed_ip_assignment: {
+              mac: .mac,
+              ip: .ip,
+              name: .name
+            },
+            dhcp_config: {
+              dhcp_mode: $parent.dhcpMode,
+              dhcp_lease_time: $parent.dhcpLeaseTime,
+              dns_nameservers_option: $parent.dnsNameserversOption,
+              boot_options_enabled: $parent.bootOptionsEnabled
+            }
+          }
+        }
+      ]
+    else []
+    end

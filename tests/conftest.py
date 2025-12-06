@@ -1,93 +1,43 @@
-import jq
+"""
+Pytest configuration and fixtures for Meraki query tests.
+"""
+
 import json
-import yaml
 import os
+import pytest
+import yaml
+from pathlib import Path
 
-QUERY_FILE = "/home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/extensions/audit/event_query.yml"
-DATA_DIR = "/home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/tests/api_fixtures"
-
-apis = [
-    "getNetworkSwitchStacks",
-    "getDeviceSwitchPort",
-    "getNetworkSwitchStackRoutingInterfaces",
-    "getDeviceSwitchPorts",
-    "updateDeviceSwitchPort",
-    "getOrganizationSwitchPortsBySwitch",
-    "getDeviceSwitchPortsStatuses",
-    "getNetworkSwitchAccessPolicies",
-    "getNetworkSwitchSettings",
-    "getNetworkSwitchAccessPolicy",
-    "updateNetworkSwitchAccessPolicy",
-    "createNetworkSwitchStackRoutingInterface",
-    "getNetworkSwitchStp",
-    "createNetworkSwitchQosRule",
-    "cycleDeviceSwitchPorts",
-    "getNetworkSwitchAccessControlLists",
-    "createNetworkSwitchStack",
-    "getNetworkSwitchStormControl",
-    "updateNetworkSwitchSettings",
-    "getNetworkSwitchStackRoutingInterfaceDhcp",
-    "createNetworkSwitchAccessPolicy",
-    "updateNetworkSwitchStackRoutingInterfaceDhcp",
-    "getNetworkSwitchDhcpServerPolicy",
-    "updateNetworkSwitchStp",
-    "getNetworkSwitchStack",
-    "createNetworkSwitchLinkAggregation",
-    "getDeviceSwitchRoutingInterfaces",
-    "createDeviceSwitchRoutingInterface",
-    "deleteNetworkSwitchStack",
-    "getNetworkSwitchMtu",
-    "updateNetworkSwitchAccessControlLists",
-    "updateNetworkSwitchStormControl",
-    "getNetworkSwitchDscpToCosMappings",
-    "getNetworkSwitchRoutingMulticast",
-    "getNetworkSwitchStackRoutingInterface",
-    "updateNetworkSwitchStackRoutingInterface",
-    "getNetworkSwitchRoutingOspf",
-    "deleteNetworkSwitchAccessPolicy",
-    "getNetworkSwitchAlternateManagementInterface",
-    "getOrganizationConfigTemplateSwitchProfiles",
-    "updateNetworkSwitchDscpToCosMappings",
-    "updateNetworkSwitchRoutingOspf",
-    "getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers",
-    "getNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice",
-    "getNetworkSwitchDhcpV4ServersSeen",
-    "getNetworkSwitchLinkAggregations",
-    "getNetworkSwitchQosRules",
-    "getNetworkSwitchPortSchedules",
-    "getNetworkSwitchRoutingMulticastRendezvousPoints",
-    "getDeviceSwitchRoutingStaticRoutes",
-    "updateDeviceSwitchRoutingInterface",
-    "getDeviceSwitchRoutingInterface",
-    "removeNetworkSwitchStack",
-    "getOrganizationConfigTemplateSwitchProfilePorts",
-    "getDeviceSwitchWarmSpare",
-    "createDeviceSwitchRoutingStaticRoute",
-    "getOrganizationSummaryTopSwitchesByEnergyUsage",
-    "addNetworkSwitchStack",
-    "getDeviceSwitchRoutingInterfaceDhcp",
-    "updateDeviceSwitchRoutingInterfaceDhcp",
-    "updateNetworkSwitchRoutingMulticast",
-]
+# Paths
+QUERY_FILE = Path(__file__).parent.parent / "extensions" / "audit" / "event_query.yml"
+DATA_DIR = Path(__file__).parent / "api_fixtures"
 
 
-def query_tester(response, module_fqcn, method_name):
-    final_response = {"meraki_response": response}
-
-    # Load event query
-    with open(QUERY_FILE) as query_file:
-        data = yaml.safe_load(query_file)
-
-    jq_counter = data[module_fqcn]["query"]
-
-    print(f"Running event query on Response #2 - {method_name}:")
-    results = jq.compile(jq_counter).input(final_response).all()
-    print(json.dumps(results, indent=4))
+@pytest.fixture(scope="session")
+def query_data():
+    """Load the event_query.yml file once for all tests."""
+    with open(QUERY_FILE) as f:
+        return yaml.safe_load(f)
 
 
-if __name__ == "__main__":
-    # Mapping between module_fqcn and method_name
-    test_mappings = [
+@pytest.fixture
+def load_fixture():
+    """Fixture factory to load JSON fixture files."""
+
+    def _load_fixture(module_fqcn):
+        filepath = DATA_DIR / f"{module_fqcn}.json"
+        if filepath.exists():
+            with open(filepath, "r") as f:
+                return json.load(f)
+        return None
+
+    return _load_fixture
+
+
+@pytest.fixture
+def test_mappings():
+    """Return the mapping between module_fqcn and method_name."""
+    return [
         ("cisco.meraki.networks_switch_mtu_info", "getNetworkSwitchMtu"),
         ("cisco.meraki.devices_info", "getOrganizationDevices"),
         ("cisco.meraki.devices_switch_ports_info", "getDeviceSwitchPort"),
@@ -262,13 +212,3 @@ if __name__ == "__main__":
             "updateNetworkSwitchRoutingMulticast",
         ),
     ]
-
-    # Read data from JSON files and run tests
-    for module_fqcn, method_name in test_mappings:
-        filepath = os.path.join(DATA_DIR, f"{module_fqcn}.json")
-        if os.path.exists(filepath):
-            with open(filepath, "r") as f:
-                data = json.load(f)
-            query_tester(data, module_fqcn, method_name)
-        else:
-            print(f"Warning: File not found: {filepath}")

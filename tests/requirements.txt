@@ -1,0 +1,5 @@
+# Test dependencies for Meraki query tests
+pytest>=7.0.0
+jq>=1.2.0
+pyyaml>=6.0
+
