@@ -184,7 +184,7 @@ if __name__ == "__main__":
         (
             "cisco.meraki.networks_switch_routing_multicast_info",
             "getNetworkSwitchRoutingMulticast",
-        ),
+        ),  # -- ship line
         (
             "cisco.meraki.networks_switch_stacks_routing_interfaces_info",
             "getNetworkSwitchStackRoutingInterface",
