@@ -186,10 +186,6 @@ if __name__ == "__main__":
             "getNetworkSwitchRoutingMulticast",
         ),  # -- ship line
         (
-            "cisco.meraki.networks_switch_stacks_routing_interfaces_info",
-            "getNetworkSwitchStackRoutingInterface",
-        ),
-        (
             "cisco.meraki.networks_switch_routing_ospf_info",
             "getNetworkSwitchRoutingOspf",
         ),

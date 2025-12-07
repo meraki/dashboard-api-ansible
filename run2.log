@@ -788,41 +788,6 @@ Running event query on Response #2 - getNetworkSwitchRoutingMulticast:
         }
     ]
 ]
-Running event query on Response #2 - getNetworkSwitchStackRoutingInterface:
-[
-    [
-        {
-            "name": "L3 interface",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-5678",
-                "hostname": "192.168.1.2"
-            },
-            "facts": {
-                "device_type": "switch",
-                "interface_id": "1234",
-                "uplink": {
-                    "ipv4_enabled": false,
-                    "ipv6_enabled": false
-                }
-            }
-        },
-        {
-            "name": "L3 interface1",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-5611",
-                "hostname": "192.168.2.2"
-            },
-            "facts": {
-                "device_type": "switch",
-                "interface_id": "9234",
-                "uplink": {
-                    "ipv4_enabled": false,
-                    "ipv6_enabled": false
-                }
-            }
-        }
-    ]
-]
 Running event query on Response #2 - getNetworkSwitchRoutingOspf:
 [
     [
@@ -1017,42 +982,41 @@ Running event query on Response #2 - getNetworkSwitchDhcpV4ServersSeen:
 [
     [
         {
-            "name": "My AP-00:11:22:33:44:55",
+            "name": "Q234-ABCD-0002",
             "canonical_facts": {
-                "ansible_machine_id": "00:11:22:33:44:55",
-                "hostname": "10.0.0.0/24"
+                "ansible_product_serial": "Q234-ABCD-0002"
             },
             "facts": {
                 "device_type": "switch",
-                "dhcp_server": {
+                "dhcp_server_seen": {
                     "mac_address": "00:11:22:33:44:55",
                     "vlan": 100,
-                    "client_id": "k74272e",
-                    "type": "device",
-                    "is_allowed": true,
-                    "is_configured": true,
-                    "last_seen_at": "2018-02-11T00:00:00.090210Z",
                     "ipv4": {
                         "address": "10.0.0.0/24",
                         "subnet": "192.168.1.0/24",
                         "gateway": "1.2.3.5"
                     },
-                    "device": {
-                        "serial": "Q234-ABCD-0002",
-                        "name": "My AP",
-                        "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
-                        "interface": {
-                            "name": "My L3 Interface",
-                            "url": "https://n1.meraki.com//n//manage/configure/switch_l3/l3_interface/00000"
-                        }
-                    },
-                    "seen_by": [
-                        {
-                            "serial": "Q234-ABCD-0001",
-                            "name": "My switch2",
-                            "url": "https://n1.meraki.com//n//manage/nodes/new_list/0000000000001"
-                        }
-                    ]
+                    "device_name": "My AP"
+                }
+            }
+        },
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {
+                "ansible_product_serial": "Q234-ABCD-0001"
+            },
+            "facts": {
+                "device_type": "switch",
+                "dhcp_server_seen": {
+                    "mac_address": "00:11:22:33:44:55",
+                    "vlan": 100,
+                    "client_id": "k74272e",
+                    "type": "device",
+                    "ipv4": {
+                        "address": "10.0.0.0/24",
+                        "subnet": "192.168.1.0/24",
+                        "gateway": "1.2.3.5"
+                    }
                 }
             }
         }
@@ -1154,45 +1118,6 @@ Running event query on Response #2 - removeNetworkSwitchStack:
 [
     [
         {
-            "name": {
-                "name": "A cool stack",
-                "canonical_facts": {
-                    "ansible_machine_id": "8473"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "is_monitor_only": false,
-                    "virtual_mac": "00:18:0a:4f:21:19",
-                    "switch_count": 2
-                }
-            },
-            "canonical_facts": {
-                "ansible_product_serial": {
-                    "name": "A cool stack",
-                    "canonical_facts": {
-                        "ansible_machine_id": "8473"
-                    },
-                    "facts": {
-                        "device_type": "switch",
-                        "stack_id": "8473",
-                        "stack_name": "A cool stack",
-                        "is_monitor_only": false,
-                        "virtual_mac": "00:18:0a:4f:21:19",
-                        "switch_count": 2
-                    }
-                }
-            },
-            "facts": {
-                "device_type": "switch",
-                "stack_id": "8473",
-                "stack_name": "A cool stack",
-                "is_monitor_only": false,
-                "virtual_mac": "00:18:0a:4f:21:19"
-            }
-        },
-        {
             "name": "QBZY-XWVU-TSRQ",
             "canonical_facts": {
                 "ansible_product_serial": "QBZY-XWVU-TSRQ"
@@ -1282,45 +1207,6 @@ Running event query on Response #2 - getOrganizationSummaryTopSwitchesByEnergyUs
 Running event query on Response #2 - addNetworkSwitchStack:
 [
     [
-        {
-            "name": {
-                "name": "A cool stack",
-                "canonical_facts": {
-                    "ansible_machine_id": "8473"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "is_monitor_only": false,
-                    "virtual_mac": "00:18:0a:4f:21:19",
-                    "switch_count": 2
-                }
-            },
-            "canonical_facts": {
-                "ansible_product_serial": {
-                    "name": "A cool stack",
-                    "canonical_facts": {
-                        "ansible_machine_id": "8473"
-                    },
-                    "facts": {
-                        "device_type": "switch",
-                        "stack_id": "8473",
-                        "stack_name": "A cool stack",
-                        "is_monitor_only": false,
-                        "virtual_mac": "00:18:0a:4f:21:19",
-                        "switch_count": 2
-                    }
-                }
-            },
-            "facts": {
-                "device_type": "switch",
-                "stack_id": "8473",
-                "stack_name": "A cool stack",
-                "is_monitor_only": false,
-                "virtual_mac": "00:18:0a:4f:21:19"
-            }
-        },
         {
             "name": "QBZY-XWVU-TSRQ",
             "canonical_facts": {
@@ -1453,96 +1339,6 @@ Running event query on Response #2 - updateNetworkSwitchRoutingMulticast:
                     "igmp_snooping_enabled": true,
                     "flood_unknown_multicast_traffic_enabled": true
                 }
-            }
-        },
-        {
-            "name": "stack-789102",
-            "canonical_facts": {
-                "ansible_machine_id": "789102"
-            },
-            "facts": {
-                "device_type": "switch",
-                "multicast_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "default_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "stack_id": "789102"
-            }
-        },
-        {
-            "name": "stack-123456",
-            "canonical_facts": {
-                "ansible_machine_id": "123456"
-            },
-            "facts": {
-                "device_type": "switch",
-                "multicast_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "default_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "stack_id": "123456"
-            }
-        },
-        {
-            "name": "stack-129102",
-            "canonical_facts": {
-                "ansible_machine_id": "129102"
-            },
-            "facts": {
-                "device_type": "switch",
-                "multicast_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "default_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "stack_id": "129102"
-            }
-        },
-        {
-            "name": "switch-profile-1234",
-            "canonical_facts": {
-                "ansible_machine_id": "1234"
-            },
-            "facts": {
-                "device_type": "switch",
-                "multicast_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "default_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "switch_profile_id": "1234"
-            }
-        },
-        {
-            "name": "switch-profile-4567",
-            "canonical_facts": {
-                "ansible_machine_id": "4567"
-            },
-            "facts": {
-                "device_type": "switch",
-                "multicast_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "default_settings": {
-                    "igmp_snooping_enabled": true,
-                    "flood_unknown_multicast_traffic_enabled": true
-                },
-                "switch_profile_id": "4567"
             }
         }
     ]
