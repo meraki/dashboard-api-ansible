@@ -144,6 +144,12 @@ class NetworksApplianceContentFiltering(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
+
+        new_blocked_url_categories = []
+        for category in current_obj.get("blockedUrlCategories"):
+            new_blocked_url_categories.append(category.get("id"))
+
+        current_obj["blockedUrlCategories"] = new_blocked_url_categories
         return any(not meraki_compare_equality2(current_obj.get(meraki_param),
                                                 requested_obj.get(ansible_param))
                    for (meraki_param, ansible_param) in obj_params)

@@ -67,7 +67,7 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             networkIds=params.get("networkIds"),
-            subscription_id=params.get("subscriptionId"),
+            subscriptionId=params.get("subscriptionId"),
             validate=params.get("validate"),
         )
         return new_object
