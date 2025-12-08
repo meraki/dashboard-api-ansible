@@ -4,7 +4,7 @@ import yaml
 import os
 
 QUERY_FILE = "/home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/extensions/audit/event_query.yml"
-DATA_DIR = "/home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/tests/api_fixtures"
+DATA_DIR = "/home/sagpaul/Work/AnsibleNetwork/collections/ansible_collections/cisco/meraki/tests/unit/api_fixtures"
 
 apis = [
     "getNetworkSwitchStacks",

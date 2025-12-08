@@ -9,7 +9,7 @@ import yaml
 from pathlib import Path
 
 # Paths
-QUERY_FILE = Path(__file__).parent.parent / "extensions" / "audit" / "event_query.yml"
+QUERY_FILE = Path(__file__).parent.parent.parent / "extensions" / "audit" / "event_query.yml"
 DATA_DIR = Path(__file__).parent / "api_fixtures"
 
 
