@@ -1,0 +1,43 @@
+[
+  {
+    "items": [
+      {
+        "profileId": "1284392014819",
+        "name": "Phone",
+        "description": "IP Phones for all office workers",
+        "createdAt": "2018-02-11T00:00:00.090210Z",
+        "updatedAt": "2018-02-11T00:00:00.090210Z",
+        "network": {
+          "id": "N_24329156"
+        },
+        "counts": {
+          "assigned": {
+            "ports": 4,
+            "switches": 2,
+            "automations": 6
+          },
+          "networksCount": {
+            "included": 40,
+            "excluded": 20
+          }
+        },
+        "isOrganizationWide": false,
+        "networks": {
+          "values": [
+            {
+              "id": "N_11865",
+              "name": "Wonderland-Dev"
+            }
+          ],
+          "type": "included"
+        },
+        "access": "full"
+      }
+    ],
+    "meta": {
+      "counts": {
+        "items": { "total": 1 }
+      }
+    }
+  }
+]

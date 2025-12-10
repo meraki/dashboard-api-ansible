@@ -1,0 +1,16 @@
+{
+  "id": "8473",
+  "name": "A cool stack",
+  "serials": ["QBZY-XWVU-TSRQ", "QBAB-CDEF-GHIJ"],
+  "isMonitorOnly": false,
+  "virtualMac": "00:18:0a:4f:21:19",
+  "members": [
+    {
+      "serial": "QBZY-XWVU-TSRQ",
+      "name": "switch 1",
+      "model": "MS350-24-HW",
+      "mac": "00:18:0a:00:00:09",
+      "role": "active"
+    }
+  ]
+}

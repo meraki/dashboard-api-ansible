@@ -1,0 +1,10 @@
+{
+  "alerts": { "email": { "enabled": true } },
+  "defaultPolicy": "block",
+  "blockedServers": ["00:50:56:00:00:03", "00:50:56:00:00:04"],
+  "allowedServers": ["00:50:56:00:00:01", "00:50:56:00:00:02"],
+  "arpInspection": {
+    "enabled": true,
+    "unsupportedModels": ["MS120-8", "MS125-24"]
+  }
+}

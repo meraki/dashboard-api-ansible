@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "name": "Example Switch",
+      "serial": "Q555-5555-5555",
+      "mac": "01:23:45:67:ab:cd",
+      "network": {
+        "name": "Example Network",
+        "id": "L_12345"
+      },
+      "model": "MS120-8",
+      "ports": [
+        {
+          "portId": "1",
+          "enabled": true,
+          "status": "Connected",
+          "isUplink": false,
+          "errors": [
+            "PoE overload",
+            "Very high proportion of CRC errors"
+          ],
+          "warnings": [
+            "SecurePort authentication in progress",
+            "PoE port was denied power",
+            "High proportion of CRC errors"
+          ],
+          "speed": "10 Gbps",
+          "duplex": "full",
+          "spanningTree": {
+            "statuses": [
+              "Learning"
+            ]
+          },
+          "poe": {
+            "isAllocated": false
+          },
+          "securePort": {
+            "active": true,
+            "authenticationStatus": "Authentication in progress"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "counts": {
+      "items": {
+        "total": 1,
+        "remaining": 0
+      }
+    }
+  }
+}

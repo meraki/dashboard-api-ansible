@@ -1,0 +1,13 @@
+{
+  "staticRouteId": "1234",
+  "name": "My route",
+  "subnet": "192.168.1.0/24",
+  "nextHopIp": "1.2.3.4",
+  "managementNextHop": "1.2.3.5",
+  "vrf": {
+    "name": "Blue",
+    "leakRouteToDefaultVrf": false
+  },
+  "advertiseViaOspfEnabled": false,
+  "preferOverOspfRoutesEnabled": false
+}
