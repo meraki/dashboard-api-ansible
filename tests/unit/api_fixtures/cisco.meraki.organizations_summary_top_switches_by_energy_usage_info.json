@@ -1,0 +1,12 @@
+[
+  {
+    "network": {
+      "name": "Main Office",
+      "id": "N_24329156"
+    },
+    "name": "My switch",
+    "mac": "00:11:22:33:44:55",
+    "model": "MS",
+    "usage": { "total": 800.021 }
+  }
+]

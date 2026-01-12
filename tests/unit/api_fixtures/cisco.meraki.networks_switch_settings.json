@@ -1,0 +1,16 @@
+{
+  "vlan": 100,
+  "useCombinedPower": false,
+  "powerExceptions": [
+    {
+      "serial": "Q234-ABCD-0001",
+      "powerType": "redundant"
+    }
+  ],
+  "uplinkClientSampling": { "enabled": true },
+  "macBlocklist": { "enabled": true },
+  "uplinkSelection": {
+    "failback": { "enabled": true },
+    "candidates": "all"
+  }
+}

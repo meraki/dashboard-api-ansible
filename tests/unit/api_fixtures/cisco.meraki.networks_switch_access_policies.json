@@ -1,0 +1,68 @@
+{
+  "accessPolicyNumber": "1234",
+  "name": "Access policy #1",
+  "radiusServers": [
+    {
+      "serverId": "1",
+      "organizationRadiusServerId": "42",
+      "host": "1.2.3.4",
+      "port": 22
+    }
+  ],
+  "radius": {
+    "criticalAuth": {
+      "dataVlanId": 100,
+      "voiceVlanId": 100,
+      "suspendPortBounce": true,
+      "dataGroupPolicyId": "1234",
+      "voiceGroupPolicyId": "1234",
+      "dataSgtId": 1234,
+      "voiceSgtId": 1234
+    },
+    "failedAuthVlanId": 100,
+    "failedAuthGroupPolicyId": "1234",
+    "failedAuthSgtId": 1284392014819,
+    "reAuthenticationInterval": 120,
+    "cache": {
+      "enabled": false,
+      "timeout": 24
+    },
+    "authentication": {
+      "mode": "Open"
+    },
+    "preAuthenticationGroupPolicyId": "1234"
+  },
+  "enforceRadiusMonitoring": false,
+  "guestPortBouncing": false,
+  "radiusTestingEnabled": false,
+  "radiusCoaSupportEnabled": false,
+  "radiusAccountingEnabled": true,
+  "radiusAccountingServers": [
+    {
+      "serverId": "2",
+      "organizationRadiusServerId": "42",
+      "host": "1.2.3.4",
+      "port": 22
+    }
+  ],
+  "radiusGroupAttribute": "11",
+  "hostMode": "Single-Host",
+  "accessPolicyType": "Hybrid authentication",
+  "increaseAccessSpeed": false,
+  "guestVlanId": 100,
+  "dot1x": {
+    "controlDirection": "inbound"
+  },
+  "voiceVlanClients": true,
+  "urlRedirectWalledGardenEnabled": true,
+  "urlRedirectWalledGardenRanges": [
+    "192.168.1.0/24"
+  ],
+  "counts": {
+    "ports": {
+      "withThisPolicy": 12
+    }
+  },
+  "guestGroupPolicyId": "1234",
+  "guestSgtId": 1284392014819
+}
