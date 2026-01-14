@@ -1,0 +1,94 @@
+[
+  {
+    "mac": "00:11:22:33:44:55",
+    "vlan": 100,
+    "clientId": "k74272e",
+    "isAllowed": true,
+    "lastSeenAt": "2018-02-11T00:00:00.090210Z",
+    "seenBy": [
+      {
+        "serial": "Q234-ABCD-0001",
+        "name": "My switch2",
+        "url": "https://n1.meraki.com//n//manage/nodes/new_list/0000000000001"
+      }
+    ],
+    "type": "device",
+    "device": {
+      "serial": "Q234-ABCD-0002",
+      "name": "My AP",
+      "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
+      "interface": {
+        "name": "My L3 Interface",
+        "url": "https://n1.meraki.com//n//manage/configure/switch_l3/l3_interface/00000"
+      }
+    },
+    "ipv4": {
+      "address": "10.0.0.0/24",
+      "subnet": "192.168.1.0/24",
+      "gateway": "1.2.3.5"
+    },
+    "isConfigured": true,
+    "lastAck": {
+      "ts": "2018-02-11T00:00:00.090210Z",
+      "ipv4": {
+        "address": "123.123.123.1"
+      }
+    },
+    "lastPacket": {
+      "source": {
+        "mac": "00:11:22:33:44:55",
+        "ipv4": {
+          "address": "1.2.3.4"
+        },
+        "port": 443
+      },
+      "destination": {
+        "mac": "22:33:44:55:66:77",
+        "ipv4": {
+          "address": "123.123.123.1"
+        },
+        "port": 444
+      },
+      "type": "ACK",
+      "ethernet": { "type": "0x1212" },
+      "ip": {
+        "id": "0x1313",
+        "version": 4,
+        "length": 24929,
+        "headerLength": 1,
+        "protocol": 1,
+        "ttl": 50,
+        "dscp": {
+          "tag": 24,
+          "ecn": 1
+        }
+      },
+      "udp": {
+        "length": 24929,
+        "checksum": "0x1414"
+      },
+      "fields": {
+        "op": 1,
+        "htype": 1,
+        "hlen": 6,
+        "hops": 0,
+        "xid": "0x11111111",
+        "secs": 1526087474,
+        "flags": "0x0000",
+        "ciaddr": "1.2.3.4",
+        "yiaddr": "123.123.123.1",
+        "siaddr": "1.2.3.4",
+        "giaddr": "1.2.3.5",
+        "chaddr": "abcdefghijkl",
+        "sname": "1.2.3.4",
+        "magicCookie": "0x22222222",
+        "options": [
+          {
+            "name": "Lease time",
+            "value": "86400 seconds"
+          }
+        ]
+      }
+    }
+  }
+]

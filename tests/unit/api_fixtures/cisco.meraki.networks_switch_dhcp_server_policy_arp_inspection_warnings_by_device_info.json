@@ -1,0 +1,9 @@
+[
+  {
+    "serial": "Q234-ABCD-0001",
+    "name": "My switch",
+    "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
+    "supportsInspection": false,
+    "hasTrustedPort": false
+  }
+]
