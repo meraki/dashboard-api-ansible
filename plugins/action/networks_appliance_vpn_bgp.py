@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +31,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    asNumber=dict(type="int"),
     enabled=dict(type="bool"),
+    asNumber=dict(type="int"),
     ibgpHoldTimer=dict(type="int"),
     neighbors=dict(type="list"),
     networkId=dict(type="str"),
@@ -51,8 +50,8 @@ class NetworksApplianceVpnBgp(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            asNumber=params.get("asNumber"),
             enabled=params.get("enabled"),
+            asNumber=params.get("asNumber"),
             ibgpHoldTimer=params.get("ibgpHoldTimer"),
             neighbors=params.get("neighbors"),
             network_id=params.get("networkId"),
@@ -60,27 +59,33 @@ class NetworksApplianceVpnBgp(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('asNumber') is not None or self.new_object.get('as_number') is not None:
-            new_object_params['asNumber'] = self.new_object.get('asNumber') or \
-                self.new_object.get('as_number')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('ibgpHoldTimer') is not None or self.new_object.get('ibgp_hold_timer') is not None:
-            new_object_params['ibgpHoldTimer'] = self.new_object.get('ibgpHoldTimer') or \
-                self.new_object.get('ibgp_hold_timer')
-        if self.new_object.get('neighbors') is not None or self.new_object.get('neighbors') is not None:
-            new_object_params['neighbors'] = self.new_object.get('neighbors') or \
-                self.new_object.get('neighbors')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('asNumber') is not None or self.new_object.get(
+                'as_number') is not None:
+            new_object_params['asNumber'] = self.new_object.get(
+                'asNumber') or self.new_object.get('as_number')
+        if self.new_object.get('ibgpHoldTimer') is not None or self.new_object.get(
+                'ibgp_hold_timer') is not None:
+            new_object_params['ibgpHoldTimer'] = self.new_object.get(
+                'ibgpHoldTimer') or self.new_object.get('ibgp_hold_timer')
+        if self.new_object.get('neighbors') is not None or self.new_object.get(
+                'neighbors') is not None:
+            new_object_params['neighbors'] = self.new_object.get(
+                'neighbors') or self.new_object.get('neighbors')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -135,17 +140,20 @@ class NetworksApplianceVpnBgp(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("asNumber", "asNumber"),
             ("enabled", "enabled"),
+            ("asNumber", "asNumber"),
             ("ibgpHoldTimer", "ibgpHoldTimer"),
             ("neighbors", "neighbors"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

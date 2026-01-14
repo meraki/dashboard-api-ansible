@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -20,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -32,13 +31,13 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    conditions=dict(type="list"),
-    includeSensorUrl=dict(type="bool"),
-    message=dict(type="str"),
     name=dict(type="str"),
-    recipients=dict(type="dict"),
     schedule=dict(type="dict"),
+    conditions=dict(type="list"),
+    recipients=dict(type="dict"),
     serials=dict(type="list"),
+    includeSensorUrl=dict(type="bool"),
+    message=dict(type="['string', 'null']"),
     networkId=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -56,98 +55,120 @@ class NetworksSensorAlertsProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            name=params.get("name"),
+            schedule=params.get("schedule"),
             conditions=params.get("conditions"),
+            recipients=params.get("recipients"),
+            serials=params.get("serials"),
             includeSensorUrl=params.get("includeSensorUrl"),
             message=params.get("message"),
-            name=params.get("name"),
-            recipients=params.get("recipients"),
-            schedule=params.get("schedule"),
-            serials=params.get("serials"),
             networkId=params.get("networkId"),
             id=params.get("id"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
-            new_object_params['conditions'] = self.new_object.get('conditions') or \
-                self.new_object.get('conditions')
-        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
-            new_object_params['includeSensorUrl'] = self.new_object.get(
-                'includeSensorUrl')
-        if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
-            new_object_params['message'] = self.new_object.get('message') or \
-                self.new_object.get('message')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
-            new_object_params['schedule'] = self.new_object.get('schedule') or \
-                self.new_object.get('schedule')
-        if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
+        if self.new_object.get('schedule') is not None or self.new_object.get(
+                'schedule') is not None:
+            new_object_params['schedule'] = self.new_object.get(
+                'schedule') or self.new_object.get('schedule')
+        if self.new_object.get('conditions') is not None or self.new_object.get(
+                'conditions') is not None:
+            new_object_params['conditions'] = self.new_object.get(
+                'conditions') or self.new_object.get('conditions')
+        if self.new_object.get('recipients') is not None or self.new_object.get(
+                'recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get(
+                'recipients') or self.new_object.get('recipients')
+        if self.new_object.get('serials') is not None or self.new_object.get(
+                'serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials') or \
                 self.new_object.get('serials')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get(
+                'include_sensor_url') is not None:
+            new_object_params['includeSensorUrl'] = self.new_object.get(
+                'includeSensorUrl')
+        if self.new_object.get('message') is not None or self.new_object.get(
+                'message') is not None:
+            new_object_params['message'] = self.new_object.get('message') or \
+                self.new_object.get('message')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('conditions') is not None or self.new_object.get('conditions') is not None:
-            new_object_params['conditions'] = self.new_object.get('conditions') or \
-                self.new_object.get('conditions')
-        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get('include_sensor_url') is not None:
-            new_object_params['includeSensorUrl'] = self.new_object.get(
-                'includeSensorUrl')
-        if self.new_object.get('message') is not None or self.new_object.get('message') is not None:
-            new_object_params['message'] = self.new_object.get('message') or \
-                self.new_object.get('message')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('schedule') is not None or self.new_object.get('schedule') is not None:
-            new_object_params['schedule'] = self.new_object.get('schedule') or \
-                self.new_object.get('schedule')
-        if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
+        if self.new_object.get('schedule') is not None or self.new_object.get(
+                'schedule') is not None:
+            new_object_params['schedule'] = self.new_object.get(
+                'schedule') or self.new_object.get('schedule')
+        if self.new_object.get('conditions') is not None or self.new_object.get(
+                'conditions') is not None:
+            new_object_params['conditions'] = self.new_object.get(
+                'conditions') or self.new_object.get('conditions')
+        if self.new_object.get('recipients') is not None or self.new_object.get(
+                'recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get(
+                'recipients') or self.new_object.get('recipients')
+        if self.new_object.get('serials') is not None or self.new_object.get(
+                'serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials') or \
                 self.new_object.get('serials')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('includeSensorUrl') is not None or self.new_object.get(
+                'include_sensor_url') is not None:
+            new_object_params['includeSensorUrl'] = self.new_object.get(
+                'includeSensorUrl')
+        if self.new_object.get('message') is not None or self.new_object.get(
+                'message') is not None:
+            new_object_params['message'] = self.new_object.get('message') or \
+                self.new_object.get('message')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
@@ -217,21 +238,24 @@ class NetworksSensorAlertsProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
+            ("schedule", "schedule"),
             ("conditions", "conditions"),
+            ("recipients", "recipients"),
+            ("serials", "serials"),
             ("includeSensorUrl", "includeSensorUrl"),
             ("message", "message"),
-            ("name", "name"),
-            ("recipients", "recipients"),
-            ("schedule", "schedule"),
-            ("serials", "serials"),
             ("networkId", "networkId"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

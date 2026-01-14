@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -33,6 +32,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     enabled=dict(type="bool"),
+    spInitiated=dict(type="dict"),
     organizationId=dict(type="str"),
 ))
 
@@ -49,23 +49,31 @@ class OrganizationsSaml(object):
         self.meraki = meraki
         self.new_object = dict(
             enabled=params.get("enabled"),
+            spInitiated=params.get("spInitiated"),
             organization_id=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('spInitiated') is not None or self.new_object.get(
+                'sp_initiated') is not None:
+            new_object_params['spInitiated'] = self.new_object.get(
+                'spInitiated') or self.new_object.get('sp_initiated')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -78,8 +86,8 @@ class OrganizationsSaml(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'enabled' in items:
-                    items = items.get('enabled')
+                if 'response' in items:
+                    items = items.get('response')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
@@ -120,13 +128,17 @@ class OrganizationsSaml(object):
 
         obj_params = [
             ("enabled", "enabled"),
+            ("spInitiated", "spInitiated"),
             ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -20,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -56,39 +55,49 @@ class OrganizationsDevicesControllerMigrations(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
+        if self.new_object.get('serials') is not None or self.new_object.get(
+                'serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials')
-        if self.new_object.get('networkIds') is not None or self.new_object.get('network_ids') is not None:
-            new_object_params['networkIds'] = self.new_object.get('networkIds') or \
-                self.new_object.get('network_ids')
-        if self.new_object.get('target') is not None or self.new_object.get('target') is not None:
+        if self.new_object.get('networkIds') is not None or self.new_object.get(
+                'network_ids') is not None:
+            new_object_params['networkIds'] = self.new_object.get(
+                'networkIds') or self.new_object.get('network_ids')
+        if self.new_object.get('target') is not None or self.new_object.get(
+                'target') is not None:
             new_object_params['target'] = self.new_object.get('target')
-        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')
         new_object_params['total_pages'] = -1
-        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
-            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
-                self.new_object.get('starting_after')
-        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
-            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
-                self.new_object.get('ending_before')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
+        if self.new_object.get('serials') is not None or self.new_object.get(
+                'serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials') or \
                 self.new_object.get('serials')
-        if self.new_object.get('target') is not None or self.new_object.get('target') is not None:
+        if self.new_object.get('target') is not None or self.new_object.get(
+                'target') is not None:
             new_object_params['target'] = self.new_object.get('target') or \
                 self.new_object.get('target')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -148,9 +157,12 @@ class OrganizationsDevicesControllerMigrations(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

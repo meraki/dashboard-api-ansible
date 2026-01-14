@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,12 +31,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    accessPolicy=dict(type="str"),
-    allowedVlans=dict(type="str"),
-    dropUntaggedTraffic=dict(type="bool"),
     enabled=dict(type="bool"),
+    dropUntaggedTraffic=dict(type="bool"),
     type=dict(type="str"),
     vlan=dict(type="int"),
+    allowedVlans=dict(type="str"),
+    accessPolicy=dict(type="str"),
     networkId=dict(type="str"),
     portId=dict(type="str"),
 ))
@@ -54,56 +53,67 @@ class NetworksAppliancePorts(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            accessPolicy=params.get("accessPolicy"),
-            allowedVlans=params.get("allowedVlans"),
-            dropUntaggedTraffic=params.get("dropUntaggedTraffic"),
             enabled=params.get("enabled"),
+            dropUntaggedTraffic=params.get("dropUntaggedTraffic"),
             type=params.get("type"),
             vlan=params.get("vlan"),
+            allowedVlans=params.get("allowedVlans"),
+            accessPolicy=params.get("accessPolicy"),
             network_id=params.get("networkId"),
             port_id=params.get("portId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('portId') is not None or self.new_object.get('port_id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('portId') is not None or self.new_object.get(
+                'port_id') is not None:
             new_object_params['portId'] = self.new_object.get('portId') or \
                 self.new_object.get('port_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('accessPolicy') is not None or self.new_object.get('access_policy') is not None:
-            new_object_params['accessPolicy'] = self.new_object.get('accessPolicy') or \
-                self.new_object.get('access_policy')
-        if self.new_object.get('allowedVlans') is not None or self.new_object.get('allowed_vlans') is not None:
-            new_object_params['allowedVlans'] = self.new_object.get('allowedVlans') or \
-                self.new_object.get('allowed_vlans')
-        if self.new_object.get('dropUntaggedTraffic') is not None or self.new_object.get('drop_untagged_traffic') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('dropUntaggedTraffic') is not None or self.new_object.get(
+                'drop_untagged_traffic') is not None:
             new_object_params['dropUntaggedTraffic'] = self.new_object.get(
                 'dropUntaggedTraffic')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+        if self.new_object.get('type') is not None or self.new_object.get(
+                'type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
                 self.new_object.get('type')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('portId') is not None or self.new_object.get('port_id') is not None:
+        if self.new_object.get('allowedVlans') is not None or self.new_object.get(
+                'allowed_vlans') is not None:
+            new_object_params['allowedVlans'] = self.new_object.get(
+                'allowedVlans') or self.new_object.get('allowed_vlans')
+        if self.new_object.get('accessPolicy') is not None or self.new_object.get(
+                'access_policy') is not None:
+            new_object_params['accessPolicy'] = self.new_object.get(
+                'accessPolicy') or self.new_object.get('access_policy')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('portId') is not None or self.new_object.get(
+                'port_id') is not None:
             new_object_params['portId'] = self.new_object.get('portId') or \
                 self.new_object.get('port_id')
         return new_object_params
@@ -178,20 +188,23 @@ class NetworksAppliancePorts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("accessPolicy", "accessPolicy"),
-            ("allowedVlans", "allowedVlans"),
-            ("dropUntaggedTraffic", "dropUntaggedTraffic"),
             ("enabled", "enabled"),
+            ("dropUntaggedTraffic", "dropUntaggedTraffic"),
             ("type", "type"),
             ("vlan", "vlan"),
+            ("allowedVlans", "allowedVlans"),
+            ("accessPolicy", "accessPolicy"),
             ("networkId", "networkId"),
             ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

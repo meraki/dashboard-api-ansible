@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,11 +31,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    macBlocklist=dict(type="dict"),
+    vlan=dict(type="int"),
+    useCombinedPower=dict(type="bool"),
     powerExceptions=dict(type="list"),
     uplinkClientSampling=dict(type="dict"),
-    useCombinedPower=dict(type="bool"),
-    vlan=dict(type="int"),
+    macBlocklist=dict(type="dict"),
+    uplinkSelection=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -52,41 +52,53 @@ class NetworksSwitchSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            macBlocklist=params.get("macBlocklist"),
+            vlan=params.get("vlan"),
+            useCombinedPower=params.get("useCombinedPower"),
             powerExceptions=params.get("powerExceptions"),
             uplinkClientSampling=params.get("uplinkClientSampling"),
-            useCombinedPower=params.get("useCombinedPower"),
-            vlan=params.get("vlan"),
+            macBlocklist=params.get("macBlocklist"),
+            uplinkSelection=params.get("uplinkSelection"),
             network_id=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('macBlocklist') is not None or self.new_object.get('mac_blocklist') is not None:
-            new_object_params['macBlocklist'] = self.new_object.get('macBlocklist') or \
-                self.new_object.get('mac_blocklist')
-        if self.new_object.get('powerExceptions') is not None or self.new_object.get('power_exceptions') is not None:
-            new_object_params['powerExceptions'] = self.new_object.get('powerExceptions') or \
-                self.new_object.get('power_exceptions')
-        if self.new_object.get('uplinkClientSampling') is not None or self.new_object.get('uplink_client_sampling') is not None:
-            new_object_params['uplinkClientSampling'] = self.new_object.get('uplinkClientSampling') or \
-                self.new_object.get('uplink_client_sampling')
-        if self.new_object.get('useCombinedPower') is not None or self.new_object.get('use_combined_power') is not None:
-            new_object_params['useCombinedPower'] = self.new_object.get(
-                'useCombinedPower')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('useCombinedPower') is not None or self.new_object.get(
+                'use_combined_power') is not None:
+            new_object_params['useCombinedPower'] = self.new_object.get(
+                'useCombinedPower')
+        if self.new_object.get('powerExceptions') is not None or self.new_object.get(
+                'power_exceptions') is not None:
+            new_object_params['powerExceptions'] = self.new_object.get(
+                'powerExceptions') or self.new_object.get('power_exceptions')
+        if self.new_object.get('uplinkClientSampling') is not None or self.new_object.get(
+                'uplink_client_sampling') is not None:
+            new_object_params['uplinkClientSampling'] = self.new_object.get(
+                'uplinkClientSampling') or self.new_object.get('uplink_client_sampling')
+        if self.new_object.get('macBlocklist') is not None or self.new_object.get(
+                'mac_blocklist') is not None:
+            new_object_params['macBlocklist'] = self.new_object.get(
+                'macBlocklist') or self.new_object.get('mac_blocklist')
+        if self.new_object.get('uplinkSelection') is not None or self.new_object.get(
+                'uplink_selection') is not None:
+            new_object_params['uplinkSelection'] = self.new_object.get(
+                'uplinkSelection') or self.new_object.get('uplink_selection')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -141,18 +153,22 @@ class NetworksSwitchSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("macBlocklist", "macBlocklist"),
+            ("vlan", "vlan"),
+            ("useCombinedPower", "useCombinedPower"),
             ("powerExceptions", "powerExceptions"),
             ("uplinkClientSampling", "uplinkClientSampling"),
-            ("useCombinedPower", "useCombinedPower"),
-            ("vlan", "vlan"),
+            ("macBlocklist", "macBlocklist"),
+            ("uplinkSelection", "uplinkSelection"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

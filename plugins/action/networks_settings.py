@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -20,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -32,11 +31,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    localStatusPage=dict(type="dict"),
     localStatusPageEnabled=dict(type="bool"),
-    namedVlans=dict(type="dict"),
     remoteStatusPageEnabled=dict(type="bool"),
+    localStatusPage=dict(type="dict"),
     securePort=dict(type="dict"),
+    namedVlans=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -52,41 +51,48 @@ class NetworksSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            localStatusPage=params.get("localStatusPage"),
             localStatusPageEnabled=params.get("localStatusPageEnabled"),
-            namedVlans=params.get("namedVlans"),
             remoteStatusPageEnabled=params.get("remoteStatusPageEnabled"),
+            localStatusPage=params.get("localStatusPage"),
             securePort=params.get("securePort"),
+            namedVlans=params.get("namedVlans"),
             network_id=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('localStatusPage') is not None or self.new_object.get('local_status_page') is not None:
-            new_object_params['localStatusPage'] = self.new_object.get('localStatusPage') or \
-                self.new_object.get('local_status_page')
-        if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get('local_status_page_enabled') is not None:
+        if self.new_object.get('localStatusPageEnabled') is not None or self.new_object.get(
+                'local_status_page_enabled') is not None:
             new_object_params['localStatusPageEnabled'] = self.new_object.get(
                 'localStatusPageEnabled')
-        if self.new_object.get('namedVlans') is not None or self.new_object.get('named_vlans') is not None:
-            new_object_params['namedVlans'] = self.new_object.get('namedVlans') or \
-                self.new_object.get('named_vlans')
-        if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get('remote_status_page_enabled') is not None:
+        if self.new_object.get('remoteStatusPageEnabled') is not None or self.new_object.get(
+                'remote_status_page_enabled') is not None:
             new_object_params['remoteStatusPageEnabled'] = self.new_object.get(
                 'remoteStatusPageEnabled')
-        if self.new_object.get('securePort') is not None or self.new_object.get('secure_port') is not None:
-            new_object_params['securePort'] = self.new_object.get('securePort') or \
-                self.new_object.get('secure_port')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('localStatusPage') is not None or self.new_object.get(
+                'local_status_page') is not None:
+            new_object_params['localStatusPage'] = self.new_object.get(
+                'localStatusPage') or self.new_object.get('local_status_page')
+        if self.new_object.get('securePort') is not None or self.new_object.get(
+                'secure_port') is not None:
+            new_object_params['securePort'] = self.new_object.get(
+                'securePort') or self.new_object.get('secure_port')
+        if self.new_object.get('namedVlans') is not None or self.new_object.get(
+                'named_vlans') is not None:
+            new_object_params['namedVlans'] = self.new_object.get(
+                'namedVlans') or self.new_object.get('named_vlans')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -141,18 +147,21 @@ class NetworksSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("localStatusPage", "localStatusPage"),
             ("localStatusPageEnabled", "localStatusPageEnabled"),
-            ("namedVlans", "namedVlans"),
             ("remoteStatusPageEnabled", "remoteStatusPageEnabled"),
+            ("localStatusPage", "localStatusPage"),
             ("securePort", "securePort"),
+            ("namedVlans", "namedVlans"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

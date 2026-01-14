@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -20,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -32,17 +31,17 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    authMode=dict(type="str"),
-    defaultVlanId=dict(type="int"),
-    dhcpEnforcedDeauthentication=dict(type="dict"),
-    dot11w=dict(type="dict"),
-    enabled=dict(type="bool"),
-    encryptionMode=dict(type="str"),
     name=dict(type="str"),
+    enabled=dict(type="bool"),
+    defaultVlanId=dict(type="int"),
+    authMode=dict(type="str"),
     psk=dict(type="str"),
     radiusServers=dict(type="list"),
-    visible=dict(type="bool"),
+    encryptionMode=dict(type="str"),
     wpaEncryptionMode=dict(type="str"),
+    visible=dict(type="bool"),
+    dhcpEnforcedDeauthentication=dict(type="dict"),
+    dot11w=dict(type="dict"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -59,75 +58,90 @@ class NetworksApplianceSsids(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            authMode=params.get("authMode"),
-            defaultVlanId=params.get("defaultVlanId"),
-            dhcpEnforcedDeauthentication=params.get(
-                "dhcpEnforcedDeauthentication"),
-            dot11w=params.get("dot11w"),
-            enabled=params.get("enabled"),
-            encryptionMode=params.get("encryptionMode"),
             name=params.get("name"),
+            enabled=params.get("enabled"),
+            defaultVlanId=params.get("defaultVlanId"),
+            authMode=params.get("authMode"),
             psk=params.get("psk"),
             radiusServers=params.get("radiusServers"),
-            visible=params.get("visible"),
+            encryptionMode=params.get("encryptionMode"),
             wpaEncryptionMode=params.get("wpaEncryptionMode"),
+            visible=params.get("visible"),
+            dhcpEnforcedDeauthentication=params.get("dhcpEnforcedDeauthentication"),
+            dot11w=params.get("dot11w"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('authMode') is not None or self.new_object.get('auth_mode') is not None:
-            new_object_params['authMode'] = self.new_object.get('authMode') or \
-                self.new_object.get('auth_mode')
-        if self.new_object.get('defaultVlanId') is not None or self.new_object.get('default_vlan_id') is not None:
-            new_object_params['defaultVlanId'] = self.new_object.get('defaultVlanId') or \
-                self.new_object.get('default_vlan_id')
-        if self.new_object.get('dhcpEnforcedDeauthentication') is not None or self.new_object.get('dhcp_enforced_deauthentication') is not None:
-            new_object_params['dhcpEnforcedDeauthentication'] = self.new_object.get('dhcpEnforcedDeauthentication') or \
-                self.new_object.get('dhcp_enforced_deauthentication')
-        if self.new_object.get('dot11w') is not None or self.new_object.get('dot11w') is not None:
-            new_object_params['dot11w'] = self.new_object.get('dot11w') or \
-                self.new_object.get('dot11w')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('encryptionMode') is not None or self.new_object.get('encryption_mode') is not None:
-            new_object_params['encryptionMode'] = self.new_object.get('encryptionMode') or \
-                self.new_object.get('encryption_mode')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('psk') is not None or self.new_object.get('psk') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('defaultVlanId') is not None or self.new_object.get(
+                'default_vlan_id') is not None:
+            new_object_params['defaultVlanId'] = self.new_object.get(
+                'defaultVlanId') or self.new_object.get('default_vlan_id')
+        if self.new_object.get('authMode') is not None or self.new_object.get(
+                'auth_mode') is not None:
+            new_object_params['authMode'] = self.new_object.get(
+                'authMode') or self.new_object.get('auth_mode')
+        if self.new_object.get(
+                'psk') is not None or self.new_object.get('psk') is not None:
             new_object_params['psk'] = self.new_object.get('psk') or \
                 self.new_object.get('psk')
-        if self.new_object.get('radiusServers') is not None or self.new_object.get('radius_servers') is not None:
-            new_object_params['radiusServers'] = self.new_object.get('radiusServers') or \
-                self.new_object.get('radius_servers')
-        if self.new_object.get('visible') is not None or self.new_object.get('visible') is not None:
+        if self.new_object.get('radiusServers') is not None or self.new_object.get(
+                'radius_servers') is not None:
+            new_object_params['radiusServers'] = self.new_object.get(
+                'radiusServers') or self.new_object.get('radius_servers')
+        if self.new_object.get('encryptionMode') is not None or self.new_object.get(
+                'encryption_mode') is not None:
+            new_object_params['encryptionMode'] = self.new_object.get(
+                'encryptionMode') or self.new_object.get('encryption_mode')
+        if self.new_object.get('wpaEncryptionMode') is not None or self.new_object.get(
+                'wpa_encryption_mode') is not None:
+            new_object_params['wpaEncryptionMode'] = self.new_object.get(
+                'wpaEncryptionMode') or self.new_object.get('wpa_encryption_mode')
+        if self.new_object.get('visible') is not None or self.new_object.get(
+                'visible') is not None:
             new_object_params['visible'] = self.new_object.get('visible')
-        if self.new_object.get('wpaEncryptionMode') is not None or self.new_object.get('wpa_encryption_mode') is not None:
-            new_object_params['wpaEncryptionMode'] = self.new_object.get('wpaEncryptionMode') or \
-                self.new_object.get('wpa_encryption_mode')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('dhcpEnforcedDeauthentication') is not None or self.new_object.get(
+                'dhcp_enforced_deauthentication') is not None:
+            new_object_params['dhcpEnforcedDeauthentication'] = self.new_object.get(
+                'dhcpEnforcedDeauthentication') or self.new_object.get('dhcp_enforced_deauthentication')
+        if self.new_object.get('dot11w') is not None or self.new_object.get(
+                'dot11w') is not None:
+            new_object_params['dot11w'] = self.new_object.get('dot11w') or \
+                self.new_object.get('dot11w')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -202,25 +216,28 @@ class NetworksApplianceSsids(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("authMode", "authMode"),
-            ("defaultVlanId", "defaultVlanId"),
-            ("dhcpEnforcedDeauthentication", "dhcpEnforcedDeauthentication"),
-            ("dot11w", "dot11w"),
-            ("enabled", "enabled"),
-            ("encryptionMode", "encryptionMode"),
             ("name", "name"),
+            ("enabled", "enabled"),
+            ("defaultVlanId", "defaultVlanId"),
+            ("authMode", "authMode"),
             ("psk", "psk"),
             ("radiusServers", "radiusServers"),
-            ("visible", "visible"),
+            ("encryptionMode", "encryptionMode"),
             ("wpaEncryptionMode", "wpaEncryptionMode"),
+            ("visible", "visible"),
+            ("dhcpEnforcedDeauthentication", "dhcpEnforcedDeauthentication"),
+            ("dot11w", "dot11w"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

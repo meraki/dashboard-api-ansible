@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
     appliedOnDevices=dict(type="list"),
     appliedOnNetworks=dict(type="list"),
     appliedOrgWide=dict(type="list"),
-    name=dict(type="str"),
     organizationId=dict(type="str"),
 ))
 
@@ -52,37 +51,43 @@ class OrganizationsCameraRoles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            name=params.get("name"),
             appliedOnDevices=params.get("appliedOnDevices"),
             appliedOnNetworks=params.get("appliedOnNetworks"),
             appliedOrgWide=params.get("appliedOrgWide"),
-            name=params.get("name"),
             organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('appliedOnDevices') is not None or self.new_object.get('applied_on_devices') is not None:
-            new_object_params['appliedOnDevices'] = self.new_object.get('appliedOnDevices') or \
-                self.new_object.get('applied_on_devices')
-        if self.new_object.get('appliedOnNetworks') is not None or self.new_object.get('applied_on_networks') is not None:
-            new_object_params['appliedOnNetworks'] = self.new_object.get('appliedOnNetworks') or \
-                self.new_object.get('applied_on_networks')
-        if self.new_object.get('appliedOrgWide') is not None or self.new_object.get('applied_org_wide') is not None:
-            new_object_params['appliedOrgWide'] = self.new_object.get('appliedOrgWide') or \
-                self.new_object.get('applied_org_wide')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('appliedOnDevices') is not None or self.new_object.get(
+                'applied_on_devices') is not None:
+            new_object_params['appliedOnDevices'] = self.new_object.get(
+                'appliedOnDevices') or self.new_object.get('applied_on_devices')
+        if self.new_object.get('appliedOnNetworks') is not None or self.new_object.get(
+                'applied_on_networks') is not None:
+            new_object_params['appliedOnNetworks'] = self.new_object.get(
+                'appliedOnNetworks') or self.new_object.get('applied_on_networks')
+        if self.new_object.get('appliedOrgWide') is not None or self.new_object.get(
+                'applied_org_wide') is not None:
+            new_object_params['appliedOrgWide'] = self.new_object.get(
+                'appliedOrgWide') or self.new_object.get('applied_org_wide')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -149,17 +154,20 @@ class OrganizationsCameraRoles(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
             ("appliedOnDevices", "appliedOnDevices"),
             ("appliedOnNetworks", "appliedOnNetworks"),
             ("appliedOrgWide", "appliedOrgWide"),
-            ("name", "name"),
             ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -60,27 +59,34 @@ class NetworksWirelessSsidsSchedules(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('ranges') is not None or self.new_object.get('ranges') is not None:
+        if self.new_object.get('ranges') is not None or self.new_object.get(
+                'ranges') is not None:
             new_object_params['ranges'] = self.new_object.get('ranges') or \
                 self.new_object.get('ranges')
-        if self.new_object.get('rangesInSeconds') is not None or self.new_object.get('ranges_in_seconds') is not None:
-            new_object_params['rangesInSeconds'] = self.new_object.get('rangesInSeconds') or \
-                self.new_object.get('ranges_in_seconds')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('rangesInSeconds') is not None or self.new_object.get(
+                'ranges_in_seconds') is not None:
+            new_object_params['rangesInSeconds'] = self.new_object.get(
+                'rangesInSeconds') or self.new_object.get('ranges_in_seconds')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -145,9 +151,12 @@ class NetworksWirelessSsidsSchedules(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

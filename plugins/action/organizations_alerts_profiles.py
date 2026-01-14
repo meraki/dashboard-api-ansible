@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -31,11 +30,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    alertCondition=dict(type="dict"),
-    description=dict(type="str"),
-    networkTags=dict(type="list"),
-    recipients=dict(type="dict"),
     type=dict(type="str"),
+    alertCondition=dict(type="dict"),
+    recipients=dict(type="dict"),
+    networkTags=dict(type="list"),
+    description=dict(type="str"),
     organizationId=dict(type="str"),
     enabled=dict(type="bool"),
     alertConfigId=dict(type="str"),
@@ -54,11 +53,11 @@ class OrganizationsAlertsProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            alertCondition=params.get("alertCondition"),
-            description=params.get("description"),
-            networkTags=params.get("networkTags"),
-            recipients=params.get("recipients"),
             type=params.get("type"),
+            alertCondition=params.get("alertCondition"),
+            recipients=params.get("recipients"),
+            networkTags=params.get("networkTags"),
+            description=params.get("description"),
             organization_id=params.get("organizationId"),
             enabled=params.get("enabled"),
             alert_config_id=params.get("alertConfigId"),
@@ -66,61 +65,77 @@ class OrganizationsAlertsProfiles(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('alertCondition') is not None or self.new_object.get('alert_condition') is not None:
-            new_object_params['alertCondition'] = self.new_object.get('alertCondition') or \
-                self.new_object.get('alert_condition')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
-            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
-                self.new_object.get('network_tags')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+        if self.new_object.get('type') is not None or self.new_object.get(
+                'type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
                 self.new_object.get('type')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('alertCondition') is not None or self.new_object.get(
+                'alert_condition') is not None:
+            new_object_params['alertCondition'] = self.new_object.get(
+                'alertCondition') or self.new_object.get('alert_condition')
+        if self.new_object.get('recipients') is not None or self.new_object.get(
+                'recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get(
+                'recipients') or self.new_object.get('recipients')
+        if self.new_object.get('networkTags') is not None or self.new_object.get(
+                'network_tags') is not None:
+            new_object_params['networkTags'] = self.new_object.get(
+                'networkTags') or self.new_object.get('network_tags')
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('alertConfigId') is not None or self.new_object.get('alert_config_id') is not None:
-            new_object_params['alertConfigId'] = self.new_object.get('alertConfigId') or \
-                self.new_object.get('alert_config_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('alertConfigId') is not None or self.new_object.get(
+                'alert_config_id') is not None:
+            new_object_params['alertConfigId'] = self.new_object.get(
+                'alertConfigId') or self.new_object.get('alert_config_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('alertCondition') is not None or self.new_object.get('alert_condition') is not None:
-            new_object_params['alertCondition'] = self.new_object.get('alertCondition') or \
-                self.new_object.get('alert_condition')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('networkTags') is not None or self.new_object.get('network_tags') is not None:
-            new_object_params['networkTags'] = self.new_object.get('networkTags') or \
-                self.new_object.get('network_tags')
-        if self.new_object.get('recipients') is not None or self.new_object.get('recipients') is not None:
-            new_object_params['recipients'] = self.new_object.get('recipients') or \
-                self.new_object.get('recipients')
-        if self.new_object.get('type') is not None or self.new_object.get('type') is not None:
+        if self.new_object.get('type') is not None or self.new_object.get(
+                'type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
                 self.new_object.get('type')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('alertConfigId') is not None or self.new_object.get('alert_config_id') is not None:
-            new_object_params['alertConfigId'] = self.new_object.get('alertConfigId') or \
-                self.new_object.get('alert_config_id')
+        if self.new_object.get('alertCondition') is not None or self.new_object.get(
+                'alert_condition') is not None:
+            new_object_params['alertCondition'] = self.new_object.get(
+                'alertCondition') or self.new_object.get('alert_condition')
+        if self.new_object.get('recipients') is not None or self.new_object.get(
+                'recipients') is not None:
+            new_object_params['recipients'] = self.new_object.get(
+                'recipients') or self.new_object.get('recipients')
+        if self.new_object.get('networkTags') is not None or self.new_object.get(
+                'network_tags') is not None:
+            new_object_params['networkTags'] = self.new_object.get(
+                'networkTags') or self.new_object.get('network_tags')
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('alertConfigId') is not None or self.new_object.get(
+                'alert_config_id') is not None:
+            new_object_params['alertConfigId'] = self.new_object.get(
+                'alertConfigId') or self.new_object.get('alert_config_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -163,20 +178,23 @@ class OrganizationsAlertsProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("alertCondition", "alertCondition"),
-            ("description", "description"),
-            ("networkTags", "networkTags"),
-            ("recipients", "recipients"),
             ("type", "type"),
+            ("alertCondition", "alertCondition"),
+            ("recipients", "recipients"),
+            ("networkTags", "networkTags"),
+            ("description", "description"),
             ("organizationId", "organizationId"),
             ("enabled", "enabled"),
             ("alertConfigId", "alertConfigId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

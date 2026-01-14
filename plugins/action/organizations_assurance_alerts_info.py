@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -46,6 +46,7 @@ argument_spec.update(dict(
     dismissed=dict(type="bool"),
     resolved=dict(type="bool"),
     suppressAlertsForOfflineNodes=dict(type="bool"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -81,6 +82,16 @@ class ActionModule(ActionBase):
         valid, errors, self._task.args = aav.validate()
         if not valid:
             raise AnsibleActionFail(errors)
+
+    def get_object(self, params):
+        new_object = {}
+        if params.get("organizationId") is not None:
+            new_object["organizationId"] = params.get(
+                "organizationId")
+        if params.get("id") is not None:
+            new_object["id"] = params.get(
+                "id")
+        return new_object
 
     def get_all(self, params):
         new_object = {}
@@ -158,11 +169,22 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        response = meraki.exec_meraki(
-            family="organizations",
-            function='getOrganizationAssuranceAlerts',
-            params=self.get_all(self._task.args),
-        )
-        self._result.update(dict(meraki_response=response))
-        self._result.update(meraki.exit_json())
-        return self._result
+        id = self._task.args.get("id")
+        if id:
+            response = meraki.exec_meraki(
+                family="organizations",
+                function='getOrganizationAssuranceAlert',
+                params=self.get_object(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result
+        if not id:
+            response = meraki.exec_meraki(
+                family="organizations",
+                function='getOrganizationAssuranceAlerts',
+                params=self.get_all(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result

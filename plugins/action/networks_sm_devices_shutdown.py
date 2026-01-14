@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -25,10 +25,10 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    ids=dict(type="list"),
-    scope=dict(type="list"),
-    serials=dict(type="list"),
     wifiMacs=dict(type="list"),
+    ids=dict(type="list"),
+    serials=dict(type="list"),
+    scope=dict(type="list"),
     networkId=dict(type="str"),
 ))
 
@@ -68,11 +68,11 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            ids=params.get("ids"),
-            scope=params.get("scope"),
-            serials=params.get("serials"),
             wifiMacs=params.get("wifiMacs"),
-            networkId=params.get("networkId"),
+            ids=params.get("ids"),
+            serials=params.get("serials"),
+            scope=params.get("scope"),
+            network_id=params.get("networkId"),
         )
         return new_object
 

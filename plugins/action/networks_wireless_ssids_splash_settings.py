@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,23 +31,23 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    allowSimultaneousLogins=dict(type="bool"),
-    billing=dict(type="dict"),
+    splashUrl=dict(type="str"),
+    useSplashUrl=dict(type="bool"),
+    splashTimeout=dict(type="int"),
+    redirectUrl=dict(type="str"),
+    useRedirectUrl=dict(type="bool"),
+    welcomeMessage=dict(type="str"),
+    themeId=dict(type="str"),
+    splashLogo=dict(type="dict"),
+    splashImage=dict(type="dict"),
+    splashPrepaidFront=dict(type="dict"),
     blockAllTrafficBeforeSignOn=dict(type="bool"),
     controllerDisconnectionBehavior=dict(type="str"),
+    allowSimultaneousLogins=dict(type="bool"),
     guestSponsorship=dict(type="dict"),
-    redirectUrl=dict(type="str"),
-    selfRegistration=dict(type="dict"),
+    billing=dict(type="dict"),
     sentryEnrollment=dict(type="dict"),
-    splashImage=dict(type="dict"),
-    splashLogo=dict(type="dict"),
-    splashPrepaidFront=dict(type="dict"),
-    splashTimeout=dict(type="int"),
-    splashUrl=dict(type="str"),
-    themeId=dict(type="str"),
-    useRedirectUrl=dict(type="bool"),
-    useSplashUrl=dict(type="bool"),
-    welcomeMessage=dict(type="str"),
+    selfRegistration=dict(type="dict"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -65,95 +64,114 @@ class NetworksWirelessSsidsSplashSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            allowSimultaneousLogins=params.get("allowSimultaneousLogins"),
-            billing=params.get("billing"),
-            blockAllTrafficBeforeSignOn=params.get(
-                "blockAllTrafficBeforeSignOn"),
-            controllerDisconnectionBehavior=params.get(
-                "controllerDisconnectionBehavior"),
-            guestSponsorship=params.get("guestSponsorship"),
-            redirectUrl=params.get("redirectUrl"),
-            selfRegistration=params.get("selfRegistration"),
-            sentryEnrollment=params.get("sentryEnrollment"),
-            splashImage=params.get("splashImage"),
-            splashLogo=params.get("splashLogo"),
-            splashPrepaidFront=params.get("splashPrepaidFront"),
-            splashTimeout=params.get("splashTimeout"),
             splashUrl=params.get("splashUrl"),
-            themeId=params.get("themeId"),
-            useRedirectUrl=params.get("useRedirectUrl"),
             useSplashUrl=params.get("useSplashUrl"),
+            splashTimeout=params.get("splashTimeout"),
+            redirectUrl=params.get("redirectUrl"),
+            useRedirectUrl=params.get("useRedirectUrl"),
             welcomeMessage=params.get("welcomeMessage"),
+            themeId=params.get("themeId"),
+            splashLogo=params.get("splashLogo"),
+            splashImage=params.get("splashImage"),
+            splashPrepaidFront=params.get("splashPrepaidFront"),
+            blockAllTrafficBeforeSignOn=params.get("blockAllTrafficBeforeSignOn"),
+            controllerDisconnectionBehavior=params.get("controllerDisconnectionBehavior"),
+            allowSimultaneousLogins=params.get("allowSimultaneousLogins"),
+            guestSponsorship=params.get("guestSponsorship"),
+            billing=params.get("billing"),
+            sentryEnrollment=params.get("sentryEnrollment"),
+            selfRegistration=params.get("selfRegistration"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('allowSimultaneousLogins') is not None or self.new_object.get('allow_simultaneous_logins') is not None:
-            new_object_params['allowSimultaneousLogins'] = self.new_object.get(
-                'allowSimultaneousLogins')
-        if self.new_object.get('billing') is not None or self.new_object.get('billing') is not None:
-            new_object_params['billing'] = self.new_object.get('billing') or \
-                self.new_object.get('billing')
-        if self.new_object.get('blockAllTrafficBeforeSignOn') is not None or self.new_object.get('block_all_traffic_before_sign_on') is not None:
-            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get(
-                'blockAllTrafficBeforeSignOn')
-        if self.new_object.get('controllerDisconnectionBehavior') is not None or self.new_object.get('controller_disconnection_behavior') is not None:
-            new_object_params['controllerDisconnectionBehavior'] = self.new_object.get('controllerDisconnectionBehavior') or \
-                self.new_object.get('controller_disconnection_behavior')
-        if self.new_object.get('guestSponsorship') is not None or self.new_object.get('guest_sponsorship') is not None:
-            new_object_params['guestSponsorship'] = self.new_object.get('guestSponsorship') or \
-                self.new_object.get('guest_sponsorship')
-        if self.new_object.get('redirectUrl') is not None or self.new_object.get('redirect_url') is not None:
-            new_object_params['redirectUrl'] = self.new_object.get('redirectUrl') or \
-                self.new_object.get('redirect_url')
-        if self.new_object.get('selfRegistration') is not None or self.new_object.get('self_registration') is not None:
-            new_object_params['selfRegistration'] = self.new_object.get('selfRegistration') or \
-                self.new_object.get('self_registration')
-        if self.new_object.get('sentryEnrollment') is not None or self.new_object.get('sentry_enrollment') is not None:
-            new_object_params['sentryEnrollment'] = self.new_object.get('sentryEnrollment') or \
-                self.new_object.get('sentry_enrollment')
-        if self.new_object.get('splashImage') is not None or self.new_object.get('splash_image') is not None:
-            new_object_params['splashImage'] = self.new_object.get('splashImage') or \
-                self.new_object.get('splash_image')
-        if self.new_object.get('splashLogo') is not None or self.new_object.get('splash_logo') is not None:
-            new_object_params['splashLogo'] = self.new_object.get('splashLogo') or \
-                self.new_object.get('splash_logo')
-        if self.new_object.get('splashPrepaidFront') is not None or self.new_object.get('splash_prepaid_front') is not None:
-            new_object_params['splashPrepaidFront'] = self.new_object.get('splashPrepaidFront') or \
-                self.new_object.get('splash_prepaid_front')
-        if self.new_object.get('splashTimeout') is not None or self.new_object.get('splash_timeout') is not None:
-            new_object_params['splashTimeout'] = self.new_object.get('splashTimeout') or \
-                self.new_object.get('splash_timeout')
-        if self.new_object.get('splashUrl') is not None or self.new_object.get('splash_url') is not None:
-            new_object_params['splashUrl'] = self.new_object.get('splashUrl') or \
-                self.new_object.get('splash_url')
-        if self.new_object.get('themeId') is not None or self.new_object.get('theme_id') is not None:
-            new_object_params['themeId'] = self.new_object.get('themeId') or \
-                self.new_object.get('theme_id')
-        if self.new_object.get('useRedirectUrl') is not None or self.new_object.get('use_redirect_url') is not None:
-            new_object_params['useRedirectUrl'] = self.new_object.get(
-                'useRedirectUrl')
-        if self.new_object.get('useSplashUrl') is not None or self.new_object.get('use_splash_url') is not None:
+        if self.new_object.get('splashUrl') is not None or self.new_object.get(
+                'splash_url') is not None:
+            new_object_params['splashUrl'] = self.new_object.get(
+                'splashUrl') or self.new_object.get('splash_url')
+        if self.new_object.get('useSplashUrl') is not None or self.new_object.get(
+                'use_splash_url') is not None:
             new_object_params['useSplashUrl'] = self.new_object.get(
                 'useSplashUrl')
-        if self.new_object.get('welcomeMessage') is not None or self.new_object.get('welcome_message') is not None:
-            new_object_params['welcomeMessage'] = self.new_object.get('welcomeMessage') or \
-                self.new_object.get('welcome_message')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('splashTimeout') is not None or self.new_object.get(
+                'splash_timeout') is not None:
+            new_object_params['splashTimeout'] = self.new_object.get(
+                'splashTimeout') or self.new_object.get('splash_timeout')
+        if self.new_object.get('redirectUrl') is not None or self.new_object.get(
+                'redirect_url') is not None:
+            new_object_params['redirectUrl'] = self.new_object.get(
+                'redirectUrl') or self.new_object.get('redirect_url')
+        if self.new_object.get('useRedirectUrl') is not None or self.new_object.get(
+                'use_redirect_url') is not None:
+            new_object_params['useRedirectUrl'] = self.new_object.get(
+                'useRedirectUrl')
+        if self.new_object.get('welcomeMessage') is not None or self.new_object.get(
+                'welcome_message') is not None:
+            new_object_params['welcomeMessage'] = self.new_object.get(
+                'welcomeMessage') or self.new_object.get('welcome_message')
+        if self.new_object.get('themeId') is not None or self.new_object.get(
+                'theme_id') is not None:
+            new_object_params['themeId'] = self.new_object.get('themeId') or \
+                self.new_object.get('theme_id')
+        if self.new_object.get('splashLogo') is not None or self.new_object.get(
+                'splash_logo') is not None:
+            new_object_params['splashLogo'] = self.new_object.get(
+                'splashLogo') or self.new_object.get('splash_logo')
+        if self.new_object.get('splashImage') is not None or self.new_object.get(
+                'splash_image') is not None:
+            new_object_params['splashImage'] = self.new_object.get(
+                'splashImage') or self.new_object.get('splash_image')
+        if self.new_object.get('splashPrepaidFront') is not None or self.new_object.get(
+                'splash_prepaid_front') is not None:
+            new_object_params['splashPrepaidFront'] = self.new_object.get(
+                'splashPrepaidFront') or self.new_object.get('splash_prepaid_front')
+        if self.new_object.get('blockAllTrafficBeforeSignOn') is not None or self.new_object.get(
+                'block_all_traffic_before_sign_on') is not None:
+            new_object_params['blockAllTrafficBeforeSignOn'] = self.new_object.get(
+                'blockAllTrafficBeforeSignOn')
+        if self.new_object.get('controllerDisconnectionBehavior') is not None or self.new_object.get(
+                'controller_disconnection_behavior') is not None:
+            new_object_params['controllerDisconnectionBehavior'] = self.new_object.get(
+                'controllerDisconnectionBehavior') or self.new_object.get('controller_disconnection_behavior')
+        if self.new_object.get('allowSimultaneousLogins') is not None or self.new_object.get(
+                'allow_simultaneous_logins') is not None:
+            new_object_params['allowSimultaneousLogins'] = self.new_object.get(
+                'allowSimultaneousLogins')
+        if self.new_object.get('guestSponsorship') is not None or self.new_object.get(
+                'guest_sponsorship') is not None:
+            new_object_params['guestSponsorship'] = self.new_object.get(
+                'guestSponsorship') or self.new_object.get('guest_sponsorship')
+        if self.new_object.get('billing') is not None or self.new_object.get(
+                'billing') is not None:
+            new_object_params['billing'] = self.new_object.get('billing') or \
+                self.new_object.get('billing')
+        if self.new_object.get('sentryEnrollment') is not None or self.new_object.get(
+                'sentry_enrollment') is not None:
+            new_object_params['sentryEnrollment'] = self.new_object.get(
+                'sentryEnrollment') or self.new_object.get('sentry_enrollment')
+        if self.new_object.get('selfRegistration') is not None or self.new_object.get(
+                'self_registration') is not None:
+            new_object_params['selfRegistration'] = self.new_object.get(
+                'selfRegistration') or self.new_object.get('self_registration')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -210,31 +228,34 @@ class NetworksWirelessSsidsSplashSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("allowSimultaneousLogins", "allowSimultaneousLogins"),
-            ("billing", "billing"),
+            ("splashUrl", "splashUrl"),
+            ("useSplashUrl", "useSplashUrl"),
+            ("splashTimeout", "splashTimeout"),
+            ("redirectUrl", "redirectUrl"),
+            ("useRedirectUrl", "useRedirectUrl"),
+            ("welcomeMessage", "welcomeMessage"),
+            ("themeId", "themeId"),
+            ("splashLogo", "splashLogo"),
+            ("splashImage", "splashImage"),
+            ("splashPrepaidFront", "splashPrepaidFront"),
             ("blockAllTrafficBeforeSignOn", "blockAllTrafficBeforeSignOn"),
             ("controllerDisconnectionBehavior", "controllerDisconnectionBehavior"),
+            ("allowSimultaneousLogins", "allowSimultaneousLogins"),
             ("guestSponsorship", "guestSponsorship"),
-            ("redirectUrl", "redirectUrl"),
-            ("selfRegistration", "selfRegistration"),
+            ("billing", "billing"),
             ("sentryEnrollment", "sentryEnrollment"),
-            ("splashImage", "splashImage"),
-            ("splashLogo", "splashLogo"),
-            ("splashPrepaidFront", "splashPrepaidFront"),
-            ("splashTimeout", "splashTimeout"),
-            ("splashUrl", "splashUrl"),
-            ("themeId", "themeId"),
-            ("useRedirectUrl", "useRedirectUrl"),
-            ("useSplashUrl", "useSplashUrl"),
-            ("welcomeMessage", "welcomeMessage"),
+            ("selfRegistration", "selfRegistration"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
