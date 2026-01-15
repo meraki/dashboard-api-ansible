@@ -29,13 +29,6 @@
       cisco.meraki.organizations_summary_top_devices_by_usage_info:
         organizationId: "{{ org_id }}"
       register: result
-    - name: Show result4
-      ansible.builtin.debug:
-        msg: "{{ result }}"
-    - name: Get all organizations summary top devices by models
-      cisco.meraki.organizations_summary_top_devices_models_by_usage_info:
-        organizationId: "{{ org_id }}"
-      register: result
     - name: Show result5
       ansible.builtin.debug:
         msg: "{{ result }}"
