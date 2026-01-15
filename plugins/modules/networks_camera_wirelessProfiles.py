@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_camera_wirelessProfiles
+module: networks_camera_wireless_profiles
 short_description: Resource module for networks _camera _wirelessprofiles
 description:
   - Manage operations create, update and delete of the resource networks _camera _wirelessprofiles.

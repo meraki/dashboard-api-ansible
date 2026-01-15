@@ -5,12 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_managementInterface_info
-short_description: Information module for devices _managementinterface
+module: devices_lldp_cdp_info
+short_description: Information module for devices _lldpcdp
 description:
-  - Information module for Devices Managementinterface Info.
-  - Get all devices _managementinterface.
-  - Return the management interface settings for a device.
+  - Information module for Devices Lldpcdp Info.
+  - Get all devices _lldpcdp.
+  - List LLDP and CDP information for a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,26 +21,26 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Managementinterface Info.
+      - Information module for Devices Lldpcdp Info.
       - Serial path parameter.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices getDeviceManagementInterface
-    description: Complete reference of the getDeviceManagementInterface API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-management-interface
+  - name: Cisco Meraki documentation for devices getDeviceLldpCdp
+    description: Complete reference of the getDeviceLldpCdp API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-lldp-cdp
 notes:
   - SDK Method used are
-    devices.Devices.get_device_management_interface,
+    devices.Devices.get_device_lldp_cdp,
   - Paths used are
-    get /devices/{serial}/managementInterface,
+    get /devices/{serial}/lldpCdp,
 """
 
 EXAMPLES = r"""
-- name: Get all devices _managementinterface
-  cisco.meraki.devices_management_interface_info:
+- name: Get all devices _lldpcdp
+  cisco.meraki.devices_lldp_cdp_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -72,38 +72,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "ddnsHostnames": {
-        "activeDdnsHostname": "string",
-        "ddnsHostnameWan1": "string",
-        "ddnsHostnameWan2": "string"
-      },
-      "wan1": {
-        "wanEnabled": "string",
-        "usingStaticIp": true,
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "staticGatewayIp": "string",
-        "staticDns": [
-          "string"
-        ],
-        "vlan": 0,
-        "vrf": {
-          "name": "string"
-        }
-      },
-      "wan2": {
-        "wanEnabled": "string",
-        "usingStaticIp": true,
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "staticGatewayIp": "string",
-        "staticDns": [
-          "string"
-        ],
-        "vlan": 0,
-        "vrf": {
-          "name": "string"
-        }
-      }
+      "sourceMac": "string",
+      "ports": {}
     }
 """

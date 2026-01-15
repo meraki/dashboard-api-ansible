@@ -5,48 +5,42 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_blinkLeds
-short_description: Resource module for devices _blinkleds
+module: devices_management_interface_info
+short_description: Information module for devices _managementinterface
 description:
-  - Manage operation create of the resource devices _blinkleds.
-  - Blink the LEDs on a device. This endpoint is deprecrated in favor of "/devices/{serial}/liveTools/leds/blink".
+  - Information module for Devices Managementinterface Info.
+  - Get all devices _managementinterface.
+  - Return the management interface settings for a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
-  - cisco.meraki.module
+  - cisco.meraki.module_info
 author: Francisco Munoz (@fmunoz)
 options:
-  duration:
-    description: The duration in seconds. Must be between 5 and 120. Default is 20
-      seconds.
-    type: int
-  duty:
-    description: The duty cycle as the percent active. Must be between 10 and 90.
-      Default is 50.
-    type: int
-  period:
-    description: The period in milliseconds. Must be between 100 and 1000. Default
-      is 160 milliseconds.
-    type: int
+  headers:
+    description: Additional headers.
+    type: dict
   serial:
-    description: Serial path parameter.
+    description:
+      - Information module for Devices Managementinterface Info.
+      - Serial path parameter.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices blinkDeviceLeds
-    description: Complete reference of the blinkDeviceLeds API.
-    link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
+  - name: Cisco Meraki documentation for devices getDeviceManagementInterface
+    description: Complete reference of the getDeviceManagementInterface API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-management-interface
 notes:
   - SDK Method used are
-    devices.Devices.blink_device_leds,
+    devices.Devices.get_device_management_interface,
   - Paths used are
-    post /devices/{serial}/blinkLeds,
+    get /devices/{serial}/managementInterface,
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.meraki.devices_blink_leds:
+- name: Get all devices _managementinterface
+  cisco.meraki.devices_management_interface_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -68,10 +62,8 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    duration: 20
-    duty: 50
-    period: 160
     serial: string
+  register: result
 """
 RETURN = r"""
 meraki_response:
@@ -80,8 +72,38 @@ meraki_response:
   type: dict
   sample: >
     {
-      "duration": 0,
-      "period": 0,
-      "duty": 0
+      "ddnsHostnames": {
+        "activeDdnsHostname": "string",
+        "ddnsHostnameWan1": "string",
+        "ddnsHostnameWan2": "string"
+      },
+      "wan1": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
+        "staticDns": [
+          "string"
+        ],
+        "vlan": 0,
+        "vrf": {
+          "name": "string"
+        }
+      },
+      "wan2": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
+        "staticDns": [
+          "string"
+        ],
+        "vlan": 0,
+        "vrf": {
+          "name": "string"
+        }
+      }
     }
 """

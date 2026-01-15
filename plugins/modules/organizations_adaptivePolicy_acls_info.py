@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_adaptivePolicy_acls_info
+module: organizations_adaptive_policy_acls_info
 short_description: Information module for organizations _adaptivepolicy _acls
 description:
   - Information module for Organizations Adaptivepolicy Acls Info.

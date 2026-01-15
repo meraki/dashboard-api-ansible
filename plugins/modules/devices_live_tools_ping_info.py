@@ -5,12 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_lldpCdp_info
-short_description: Information module for devices _lldpcdp
+module: devices_live_tools_ping_info
+short_description: Information module for devices _livetools _ping
 description:
-  - Information module for Devices Lldpcdp Info.
-  - Get all devices _lldpcdp.
-  - List LLDP and CDP information for a device.
+  - Information module for Devices Livetools Ping Info.
+  - Get devices _livetools _ping by id.
+  - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,26 +21,31 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Lldpcdp Info.
+      - Information module for Devices Livetools Ping Info.
       - Serial path parameter.
+    type: str
+  id:
+    description:
+      - Information module for Devices Livetools Ping Info.
+      - Id path parameter.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices getDeviceLldpCdp
-    description: Complete reference of the getDeviceLldpCdp API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-lldp-cdp
+  - name: Cisco Meraki documentation for devices getDeviceLiveToolsPing
+    description: Complete reference of the getDeviceLiveToolsPing API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping
 notes:
   - SDK Method used are
-    devices.Devices.get_device_lldp_cdp,
+    devices.Devices.get_device_live_tools_ping,
   - Paths used are
-    get /devices/{serial}/lldpCdp,
+    get /devices/{serial}/liveTools/ping/{id},
 """
 
 EXAMPLES = r"""
-- name: Get all devices _lldpcdp
-  cisco.meraki.devices_lldp_cdp_info:
+- name: Get devices _livetools _ping by id
+  cisco.meraki.devices_live_tools_ping_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -63,6 +68,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serial: string
+    id: string
   register: result
 """
 RETURN = r"""
@@ -72,7 +78,32 @@ meraki_response:
   type: dict
   sample: >
     {
-      "sourceMac": "string",
-      "ports": {}
+      "pingId": "string",
+      "url": "string",
+      "request": {
+        "serial": "string",
+        "target": "string",
+        "count": 0
+      },
+      "status": "string",
+      "results": {
+        "sent": 0,
+        "received": 0,
+        "loss": {
+          "percentage": 0
+        },
+        "latencies": {
+          "minimum": 0,
+          "average": 0,
+          "maximum": 0
+        },
+        "replies": [
+          {
+            "sequenceId": 0,
+            "size": 0,
+            "latency": 0
+          }
+        ]
+      }
     }
 """

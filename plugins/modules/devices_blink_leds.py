@@ -5,47 +5,48 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_liveTools_ping_info
-short_description: Information module for devices _livetools _ping
+module: devices_blink_leds
+short_description: Resource module for devices _blinkleds
 description:
-  - Information module for Devices Livetools Ping Info.
-  - Get devices _livetools _ping by id.
-  - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
+  - Manage operation create of the resource devices _blinkleds.
+  - Blink the LEDs on a device. This endpoint is deprecrated in favor of "/devices/{serial}/liveTools/leds/blink".
 version_added: '1.0.0'
 extends_documentation_fragment:
-  - cisco.meraki.module_info
+  - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
-  headers:
-    description: Additional headers.
-    type: dict
+  duration:
+    description: The duration in seconds. Must be between 5 and 120. Default is 20
+      seconds.
+    type: int
+  duty:
+    description: The duty cycle as the percent active. Must be between 10 and 90.
+      Default is 50.
+    type: int
+  period:
+    description: The period in milliseconds. Must be between 100 and 1000. Default
+      is 160 milliseconds.
+    type: int
   serial:
-    description:
-      - Information module for Devices Livetools Ping Info.
-      - Serial path parameter.
-    type: str
-  id:
-    description:
-      - Information module for Devices Livetools Ping Info.
-      - Id path parameter.
+    description: Serial path parameter.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for devices getDeviceLiveToolsPing
-    description: Complete reference of the getDeviceLiveToolsPing API.
-    link: https://developer.cisco.com/meraki/api-v1/#!get-device-live-tools-ping
+  - name: Cisco Meraki documentation for devices blinkDeviceLeds
+    description: Complete reference of the blinkDeviceLeds API.
+    link: https://developer.cisco.com/meraki/api-v1/#!blink-device-leds
 notes:
   - SDK Method used are
-    devices.Devices.get_device_live_tools_ping,
+    devices.Devices.blink_device_leds,
   - Paths used are
-    get /devices/{serial}/liveTools/ping/{id},
+    post /devices/{serial}/blinkLeds,
 """
 
 EXAMPLES = r"""
-- name: Get devices _livetools _ping by id
-  cisco.meraki.devices_live_tools_ping_info:
+- name: Create
+  cisco.meraki.devices_blink_leds:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -67,9 +68,10 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    duration: 20
+    duty: 50
+    period: 160
     serial: string
-    id: string
-  register: result
 """
 RETURN = r"""
 meraki_response:
@@ -78,32 +80,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "pingId": "string",
-      "url": "string",
-      "request": {
-        "serial": "string",
-        "target": "string",
-        "count": 0
-      },
-      "status": "string",
-      "results": {
-        "sent": 0,
-        "received": 0,
-        "loss": {
-          "percentage": 0
-        },
-        "latencies": {
-          "minimum": 0,
-          "average": 0,
-          "maximum": 0
-        },
-        "replies": [
-          {
-            "sequenceId": 0,
-            "size": 0,
-            "latency": 0
-          }
-        ]
-      }
+      "duration": 0,
+      "period": 0,
+      "duty": 0
     }
 """

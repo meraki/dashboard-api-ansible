@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_summary_top_appliances_byUtilization_info
+module: organizations_summary_top_appliances_by_utilization_info
 short_description: Information module for organizations _summary _top _appliances
   _byutilization
 description:

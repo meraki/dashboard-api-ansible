@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_qosRules_order
+module: networks_switch_qos_rules_order
 short_description: Resource module for networks _switch _qosrules _order
 description:
   - Manage operations create, update and delete of the resource networks _switch _qosrules

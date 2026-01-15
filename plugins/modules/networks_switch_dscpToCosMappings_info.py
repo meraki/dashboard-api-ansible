@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_dscpToCosMappings_info
+module: networks_switch_dscp_to_cos_mappings_info
 short_description: Information module for networks _switch _dscptocosmappings
 description:
   - Information module for Networks Switch Dscptocosmappings Info.

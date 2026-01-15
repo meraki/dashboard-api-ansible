@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_trafficShaping_rules
+module: networks_appliance_traffic_shaping_rules
 short_description: Resource module for networks _appliance _trafficshaping _rules
 description:
   - Manage operation update of the resource networks _appliance _trafficshaping _rules.
