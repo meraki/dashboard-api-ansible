@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_firewall_l7FirewallRules_info
+module: networks_appliance_firewall_l7_firewall_rules_info
 short_description: Information module for networks _appliance _firewall l7firewallrules
 description:
   - Information module for Networks Appliance Firewall L7Firewallrules Info.
