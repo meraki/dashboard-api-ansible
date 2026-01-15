@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_switch_ports_bySwitch_info
+module: organizations_switch_ports_by_switch_info
 short_description: Information module for organizations _switch _ports _byswitch
 description:
   - Information module for Organizations Switch Ports Byswitch Info.
