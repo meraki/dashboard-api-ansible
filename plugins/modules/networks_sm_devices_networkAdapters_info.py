@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Devices Networkadapters Info.
+      - Information module for Networks Sm Devices Networkadapters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-  - Information module for Networks Sm Devices Networkadapters Info.
+      - Information module for Networks Sm Devices Networkadapters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:

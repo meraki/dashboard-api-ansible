@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Alternatemanagementinterface Info.
+      - Information module for Networks Wireless Alternatemanagementinterface Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Warmspare Info.
+      - Information module for Devices Switch Warmspare Info.
       - Serial path parameter.
     type: str
 requirements:

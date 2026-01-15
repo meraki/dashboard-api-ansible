@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Sense Info.
+      - Information module for Devices Camera Sense Info.
       - Serial path parameter.
     type: str
 requirements:

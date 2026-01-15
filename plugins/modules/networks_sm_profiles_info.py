@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Profiles Info.
+      - Information module for Networks Sm Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   payloadTypes:
     description:
-  - Information module for Networks Sm Profiles Info.
+      - Information module for Networks Sm Profiles Info.
       - PayloadTypes query parameter. Filter by payload types.
     elements: str
     type: list

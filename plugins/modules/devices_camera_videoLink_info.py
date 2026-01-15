@@ -22,12 +22,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Videolink Info.
+      - Information module for Devices Camera Videolink Info.
       - Serial path parameter.
     type: str
   timestamp:
     description:
-  - Information module for Devices Camera Videolink Info.
+      - Information module for Devices Camera Videolink Info.
       - >
         Timestamp query parameter. Optional The video link will start at this time.
         The timestamp should be a string in ISO8601 format. If no timestamp is specified,

@@ -23,28 +23,28 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   deviceType:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - DeviceType query parameter. Device Type switch or wireless controller.
     type: str
   search:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - Search query parameter. Optional parameter to search on network name.
     type: str
   perPage:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 100000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -54,7 +54,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

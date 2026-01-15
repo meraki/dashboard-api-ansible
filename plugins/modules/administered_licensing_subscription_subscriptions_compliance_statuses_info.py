@@ -22,14 +22,14 @@ options:
     type: dict
   organizationIds:
     description:
-  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
+      - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
       - OrganizationIds query parameter. Organizations to get subscription compliance
         information for.
     elements: str
     type: list
   subscriptionIds:
     description:
-  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
+      - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
       - SubscriptionIds query parameter. Subscription ids.
     elements: str
     type: list

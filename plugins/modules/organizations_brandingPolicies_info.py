@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Brandingpolicies Info.
+      - Information module for Organizations Brandingpolicies Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   brandingPolicyId:
     description:
-  - Information module for Organizations Brandingpolicies Info.
+      - Information module for Organizations Brandingpolicies Info.
       - BrandingPolicyId path parameter. Branding policy ID.
     type: str
 requirements:

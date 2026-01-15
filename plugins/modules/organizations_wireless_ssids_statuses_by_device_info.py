@@ -23,19 +23,19 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - NetworkIds query parameter. Optional parameter to filter the result set by
         the included set of network IDs.
     elements: str
     type: list
   serials:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
         Serials query parameter. A list of serial numbers. The returned devices will
         be filtered to only include these serials.
@@ -43,26 +43,26 @@ options:
     type: list
   bssids:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - Bssids query parameter. A list of BSSIDs. The returned devices will be filtered
         to only include these BSSIDs.
     elements: str
     type: list
   hideDisabled:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - HideDisabled query parameter. If true, the returned devices will not include
         disabled SSIDs. (default true).
     type: bool
   perPage:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 500. Default is 100.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -72,7 +72,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

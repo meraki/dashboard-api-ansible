@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,20 +53,20 @@ options:
     type: str
   t0:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - >
         T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 365 days and 6 hours from today.
     type: str
   t1:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 7 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -74,19 +74,19 @@ options:
     type: float
   networkIds:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - NetworkIds query parameter. Optional parameter to filter readings by network.
     elements: str
     type: list
   serials:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - Serials query parameter. Optional parameter to filter readings by sensor.
     elements: str
     type: list
   metrics:
     description:
-  - Information module for Organizations Sensor Readings History Info.
+      - Information module for Organizations Sensor Readings History Info.
       - >
         Metrics query parameter. Types of sensor readings to retrieve. If no metrics
         are supplied, all available types of readings will be retrieved.

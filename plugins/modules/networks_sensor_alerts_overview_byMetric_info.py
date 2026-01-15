@@ -21,24 +21,24 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 731 days from today.
     type: str
   t1:
     description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 366 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -47,7 +47,7 @@ options:
     type: float
   interval:
     description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - >
         Interval query parameter. The time interval in seconds for returned data.
         The valid intervals are 900, 3600, 86400, 604800, 2592000. The default is

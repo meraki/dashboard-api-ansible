@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Sm Vppaccounts Info.
+      - Information module for Organizations Sm Vppaccounts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   vppAccountId:
     description:
-  - Information module for Organizations Sm Vppaccounts Info.
+      - Information module for Organizations Sm Vppaccounts Info.
       - VppAccountId path parameter. Vpp account ID.
     type: str
 requirements:

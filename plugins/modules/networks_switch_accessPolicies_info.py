@@ -25,12 +25,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Accesspolicies Info.
+      - Information module for Networks Switch Accesspolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   accessPolicyNumber:
     description:
-  - Information module for Networks Switch Accesspolicies Info.
+      - Information module for Networks Switch Accesspolicies Info.
       - AccessPolicyNumber path parameter. Access policy number.
     type: str
 requirements:

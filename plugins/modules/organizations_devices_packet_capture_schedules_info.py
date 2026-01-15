@@ -22,26 +22,26 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Devices Packet Capture Schedules Info.
+      - Information module for Organizations Devices Packet Capture Schedules Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   scheduleIds:
     description:
-  - Information module for Organizations Devices Packet Capture Schedules Info.
+      - Information module for Organizations Devices Packet Capture Schedules Info.
       - ScheduleIds query parameter. Return the packet captures schedules of the specified
         packet capture schedule ids.
     elements: str
     type: list
   networkIds:
     description:
-  - Information module for Organizations Devices Packet Capture Schedules Info.
+      - Information module for Organizations Devices Packet Capture Schedules Info.
       - NetworkIds query parameter. Return the scheduled packet captures of the specified
         network(s).
     elements: str
     type: list
   deviceIds:
     description:
-  - Information module for Organizations Devices Packet Capture Schedules Info.
+      - Information module for Organizations Devices Packet Capture Schedules Info.
       - DeviceIds query parameter. Return the scheduled packet captures of the specified
         device(s).
     elements: str

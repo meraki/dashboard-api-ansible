@@ -24,12 +24,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Prefixes Delegated Statics Info.
+      - Information module for Networks Appliance Prefixes Delegated Statics Info.
       - NetworkId path parameter. Network ID.
     type: str
   staticDelegatedPrefixId:
     description:
-  - Information module for Networks Appliance Prefixes Delegated Statics Info.
+      - Information module for Networks Appliance Prefixes Delegated Statics Info.
       - StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
     type: str
 requirements:

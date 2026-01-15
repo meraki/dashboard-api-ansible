@@ -23,17 +23,17 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Stacks Routing Staticroutes Info.
+      - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
-  - Information module for Networks Switch Stacks Routing Staticroutes Info.
+      - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
   staticRouteId:
     description:
-  - Information module for Networks Switch Stacks Routing Staticroutes Info.
+      - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:

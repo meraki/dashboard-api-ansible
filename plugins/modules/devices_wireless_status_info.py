@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Wireless Status Info.
+      - Information module for Devices Wireless Status Info.
       - Serial path parameter.
     type: str
 requirements:

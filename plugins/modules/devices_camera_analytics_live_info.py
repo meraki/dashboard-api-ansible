@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Analytics Live Info.
+      - Information module for Devices Camera Analytics Live Info.
       - Serial path parameter.
     type: str
 requirements:

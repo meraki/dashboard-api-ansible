@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Ssids Info.
+      - Information module for Networks Wireless Ssids Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-  - Information module for Networks Wireless Ssids Info.
+      - Information module for Networks Wireless Ssids Info.
       - Number path parameter.
     type: str
 requirements:

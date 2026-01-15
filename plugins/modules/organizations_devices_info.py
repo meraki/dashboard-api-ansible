@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 5000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,20 +53,20 @@ options:
     type: str
   configurationUpdatedAfter:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         ConfigurationUpdatedAfter query parameter. Filter results by whether or not
         the device's configuration has been updated after the given timestamp.
     type: str
   networkIds:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - NetworkIds query parameter. Optional parameter to filter devices by network.
     elements: str
     type: list
   productTypes:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         ProductTypes query parameter. Optional parameter to filter devices by product
         type. Valid types are wireless, appliance, switch, systemsManager, camera,
@@ -75,13 +75,13 @@ options:
     type: list
   tags:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - Tags query parameter. Optional parameter to filter devices by tags.
     elements: str
     type: list
   tagsFilterType:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         TagsFilterType query parameter. Optional parameter of value 'withAnyTags'
         or 'withAllTags' to indicate whether to return networks which contain ANY
@@ -90,14 +90,14 @@ options:
     type: str
   name:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Name query parameter. Optional parameter to filter devices by name. All returned
         devices will have a name that contains the search term or is an exact match.
     type: str
   mac:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Mac query parameter. Optional parameter to filter devices by MAC address.
         All returned devices will have a MAC address that contains the search term
@@ -105,7 +105,7 @@ options:
     type: str
   serial:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Serial query parameter. Optional parameter to filter devices by serial number.
         All returned devices will have a serial number that contains the search term
@@ -113,7 +113,7 @@ options:
     type: str
   model:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Model query parameter. Optional parameter to filter devices by model. All
         returned devices will have a model that contains the search term or is an
@@ -121,7 +121,7 @@ options:
     type: str
   macs:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Macs query parameter. Optional parameter to filter devices by one or more
         MAC addresses. All returned devices will have a MAC address that is an exact
@@ -130,7 +130,7 @@ options:
     type: list
   serials:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Serials query parameter. Optional parameter to filter devices by one or more
         serial numbers. All returned devices will have a serial number that is an
@@ -139,7 +139,7 @@ options:
     type: list
   sensorMetrics:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         SensorMetrics query parameter. Optional parameter to filter devices by the
         metrics that they provide. Only applies to sensor devices.
@@ -147,7 +147,7 @@ options:
     type: list
   sensorAlertProfileIds:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         SensorAlertProfileIds query parameter. Optional parameter to filter devices
         by the alert profiles that are bound to them. Only applies to sensor devices.
@@ -155,7 +155,7 @@ options:
     type: list
   models:
     description:
-  - Information module for Organizations Devices Info.
+      - Information module for Organizations Devices Info.
       - >
         Models query parameter. Optional parameter to filter devices by one or more
         models. All returned devices will have a model that is an exact match.

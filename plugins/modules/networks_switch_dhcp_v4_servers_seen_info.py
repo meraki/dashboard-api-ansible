@@ -23,18 +23,18 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in
@@ -42,13 +42,13 @@ options:
     type: float
   perPage:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -58,7 +58,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

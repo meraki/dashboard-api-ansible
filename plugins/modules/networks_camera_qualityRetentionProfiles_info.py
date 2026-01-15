@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Camera Qualityretentionprofiles Info.
+      - Information module for Networks Camera Qualityretentionprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   qualityRetentionProfileId:
     description:
-  - Information module for Networks Camera Qualityretentionprofiles Info.
+      - Information module for Networks Camera Qualityretentionprofiles Info.
       - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:

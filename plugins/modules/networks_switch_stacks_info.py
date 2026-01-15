@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Stacks Info.
+      - Information module for Networks Switch Stacks Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
-  - Information module for Networks Switch Stacks Info.
+      - Information module for Networks Switch Stacks Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:

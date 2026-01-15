@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Trafficshaping Uplinkselection Info.
+      - Information module for Networks Appliance Trafficshaping Uplinkselection Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

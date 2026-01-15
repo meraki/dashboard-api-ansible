@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Firewall Inboundfirewallrules Info.
+      - Information module for Networks Appliance Firewall Inboundfirewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

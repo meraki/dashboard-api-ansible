@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Security Intrusion Info.
+      - Information module for Organizations Appliance Security Intrusion Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

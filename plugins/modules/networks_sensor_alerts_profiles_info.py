@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sensor Alerts Profiles Info.
+      - Information module for Networks Sensor Alerts Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   id:
     description:
-  - Information module for Networks Sensor Alerts Profiles Info.
+      - Information module for Networks Sensor Alerts Profiles Info.
       - Id path parameter.
     type: str
 requirements:

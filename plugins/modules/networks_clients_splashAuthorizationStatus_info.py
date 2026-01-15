@@ -25,12 +25,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Clients Splashauthorizationstatus Info.
+      - Information module for Networks Clients Splashauthorizationstatus Info.
       - NetworkId path parameter. Network ID.
     type: str
   clientId:
     description:
-  - Information module for Networks Clients Splashauthorizationstatus Info.
+      - Information module for Networks Clients Splashauthorizationstatus Info.
       - ClientId path parameter. Client ID.
     type: str
 requirements:

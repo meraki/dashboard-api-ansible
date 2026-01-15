@@ -23,19 +23,19 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Targetgroups Info.
+      - Information module for Networks Sm Targetgroups Info.
       - NetworkId path parameter. Network ID.
     type: str
   withDetails:
     description:
-  - Information module for Networks Sm Targetgroups Info.
+      - Information module for Networks Sm Targetgroups Info.
       - >
         WithDetails query parameter. Boolean indicating if the the ids of the devices
         or users scoped by the target group should be included in the response.
     type: bool
   targetGroupId:
     description:
-  - Information module for Networks Sm Targetgroups Info.
+      - Information module for Networks Sm Targetgroups Info.
       - TargetGroupId path parameter. Target group ID.
     type: str
 requirements:

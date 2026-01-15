@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Firmwareupgrades Staged Groups Info.
+      - Information module for Networks Firmwareupgrades Staged Groups Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupId:
     description:
-  - Information module for Networks Firmwareupgrades Staged Groups Info.
+      - Information module for Networks Firmwareupgrades Staged Groups Info.
       - GroupId path parameter. Group ID.
     type: str
 requirements:

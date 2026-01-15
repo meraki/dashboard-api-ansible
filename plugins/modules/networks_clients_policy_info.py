@@ -24,12 +24,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Clients Policy Info.
+      - Information module for Networks Clients Policy Info.
       - NetworkId path parameter. Network ID.
     type: str
   clientId:
     description:
-  - Information module for Networks Clients Policy Info.
+      - Information module for Networks Clients Policy Info.
       - ClientId path parameter. Client ID.
     type: str
 requirements:

@@ -26,23 +26,23 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Devices Devicecommandlogs Info.
+      - Information module for Networks Sm Devices Devicecommandlogs Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-  - Information module for Networks Sm Devices Devicecommandlogs Info.
+      - Information module for Networks Sm Devices Devicecommandlogs Info.
       - DeviceId path parameter. Device ID.
     type: str
   perPage:
     description:
-  - Information module for Networks Sm Devices Devicecommandlogs Info.
+      - Information module for Networks Sm Devices Devicecommandlogs Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Networks Sm Devices Devicecommandlogs Info.
+      - Information module for Networks Sm Devices Devicecommandlogs Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -52,7 +52,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Networks Sm Devices Devicecommandlogs Info.
+      - Information module for Networks Sm Devices Devicecommandlogs Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

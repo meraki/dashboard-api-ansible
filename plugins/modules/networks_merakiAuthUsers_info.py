@@ -26,12 +26,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Merakiauthusers Info.
+      - Information module for Networks Merakiauthusers Info.
       - NetworkId path parameter. Network ID.
     type: str
   merakiAuthUserId:
     description:
-  - Information module for Networks Merakiauthusers Info.
+      - Information module for Networks Merakiauthusers Info.
       - MerakiAuthUserId path parameter. Meraki auth user ID.
     type: str
 requirements:

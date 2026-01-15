@@ -22,7 +22,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
+      - Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

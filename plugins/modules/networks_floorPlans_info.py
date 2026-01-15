@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Floorplans Info.
+      - Information module for Networks Floorplans Info.
       - NetworkId path parameter. Network ID.
     type: str
   floorPlanId:
     description:
-  - Information module for Networks Floorplans Info.
+      - Information module for Networks Floorplans Info.
       - FloorPlanId path parameter. Floor plan ID.
     type: str
 requirements:

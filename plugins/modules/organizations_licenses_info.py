@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Licenses Info.
+      - Information module for Organizations Licenses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   licenseId:
     description:
-  - Information module for Organizations Licenses Info.
+      - Information module for Organizations Licenses Info.
       - LicenseId path parameter. License ID.
     type: str
 requirements:

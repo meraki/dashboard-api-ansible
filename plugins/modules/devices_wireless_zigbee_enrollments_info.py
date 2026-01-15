@@ -21,12 +21,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Wireless Zigbee Enrollments Info.
+      - Information module for Devices Wireless Zigbee Enrollments Info.
       - Serial path parameter.
     type: str
   enrollmentId:
     description:
-  - Information module for Devices Wireless Zigbee Enrollments Info.
+      - Information module for Devices Wireless Zigbee Enrollments Info.
       - EnrollmentId path parameter. Enrollment ID.
     type: str
 requirements:

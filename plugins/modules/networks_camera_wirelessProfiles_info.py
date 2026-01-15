@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Camera Wirelessprofiles Info.
+      - Information module for Networks Camera Wirelessprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   wirelessProfileId:
     description:
-  - Information module for Networks Camera Wirelessprofiles Info.
+      - Information module for Networks Camera Wirelessprofiles Info.
       - WirelessProfileId path parameter. Wireless profile ID.
     type: str
 requirements:

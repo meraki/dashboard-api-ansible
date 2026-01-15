@@ -22,23 +22,23 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Bluetoothclients Info.
+      - Information module for Networks Bluetoothclients Info.
       - NetworkId path parameter. Network ID.
     type: str
   bluetoothClientId:
     description:
-  - Information module for Networks Bluetoothclients Info.
+      - Information module for Networks Bluetoothclients Info.
       - BluetoothClientId path parameter. Bluetooth client ID.
     type: str
   includeConnectivityHistory:
     description:
-  - Information module for Networks Bluetoothclients Info.
+      - Information module for Networks Bluetoothclients Info.
       - IncludeConnectivityHistory query parameter. Include the connectivity history
         for this client.
     type: bool
   connectivityHistoryTimespan:
     description:
-  - Information module for Networks Bluetoothclients Info.
+      - Information module for Networks Bluetoothclients Info.
       - >
         ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for
         the connectivityHistory data. By default 1 day, 86400, will be used.

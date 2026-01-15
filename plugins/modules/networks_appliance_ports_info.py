@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Ports Info.
+      - Information module for Networks Appliance Ports Info.
       - NetworkId path parameter. Network ID.
     type: str
   portId:
     description:
-  - Information module for Networks Appliance Ports Info.
+      - Information module for Networks Appliance Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

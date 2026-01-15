@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
+      - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

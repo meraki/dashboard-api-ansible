@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Dns Local Records Info.
+      - Information module for Organizations Appliance Dns Local Records Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-  - Information module for Organizations Appliance Dns Local Records Info.
+      - Information module for Organizations Appliance Dns Local Records Info.
       - ProfileIds query parameter. Optional parameter to filter the results by profile
         IDs.
     elements: str

@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Camera Permissions Info.
+      - Information module for Organizations Camera Permissions Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   permissionScopeId:
     description:
-  - Information module for Organizations Camera Permissions Info.
+      - Information module for Organizations Camera Permissions Info.
       - PermissionScopeId path parameter. Permission scope ID.
     type: str
 requirements:

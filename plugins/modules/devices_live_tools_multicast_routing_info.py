@@ -21,12 +21,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Live Tools Multicast Routing Info.
+      - Information module for Devices Live Tools Multicast Routing Info.
       - Serial path parameter.
     type: str
   multicastRoutingId:
     description:
-  - Information module for Devices Live Tools Multicast Routing Info.
+      - Information module for Devices Live Tools Multicast Routing Info.
       - MulticastRoutingId path parameter. Multicast routing ID.
     type: str
 requirements:

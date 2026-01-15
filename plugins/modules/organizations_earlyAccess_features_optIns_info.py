@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Earlyaccess Features Optins Info.
+      - Information module for Organizations Earlyaccess Features Optins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   optInId:
     description:
-  - Information module for Organizations Earlyaccess Features Optins Info.
+      - Information module for Organizations Earlyaccess Features Optins Info.
       - OptInId path parameter. Opt in ID.
     type: str
 requirements:

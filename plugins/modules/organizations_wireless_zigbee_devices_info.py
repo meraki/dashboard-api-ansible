@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 10.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,7 +53,7 @@ options:
     type: str
   networkIds:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - >
         NetworkIds query parameter. Parameter of networks you want the zigbee devices
         for. E.g. NetworkIds=N_12345678&networkIds=N_3456.
@@ -61,13 +61,13 @@ options:
     type: list
   isEnrolled:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - IsEnrolled query parameter. Filter devices based on if they are enrolled or
         not.
     type: bool
   search:
     description:
-  - Information module for Organizations Wireless Zigbee Devices Info.
+      - Information module for Organizations Wireless Zigbee Devices Info.
       - Search query parameter. Filter devices by their name, tag or serial.
     type: str
 requirements:

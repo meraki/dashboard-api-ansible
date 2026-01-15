@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Webhooks Httpservers Info.
+      - Information module for Networks Webhooks Httpservers Info.
       - NetworkId path parameter. Network ID.
     type: str
   httpServerId:
     description:
-  - Information module for Networks Webhooks Httpservers Info.
+      - Information module for Networks Webhooks Httpservers Info.
       - HttpServerId path parameter. Http server ID.
     type: str
 requirements:

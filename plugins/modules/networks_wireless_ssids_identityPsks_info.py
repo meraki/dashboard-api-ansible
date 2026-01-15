@@ -23,17 +23,17 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Ssids Identitypsks Info.
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-  - Information module for Networks Wireless Ssids Identitypsks Info.
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - Number path parameter.
     type: str
   identityPskId:
     description:
-  - Information module for Networks Wireless Ssids Identitypsks Info.
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - IdentityPskId path parameter. Identity psk ID.
     type: str
 requirements:

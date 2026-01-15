@@ -21,7 +21,7 @@ options:
     type: dict
   skus:
     description:
-  - Information module for Administered Licensing Subscription Entitlements Info.
+      - Information module for Administered Licensing Subscription Entitlements Info.
       - Skus query parameter. Filter to entitlements with the specified SKUs.
     elements: str
     type: list

@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Stormcontrol Info.
+      - Information module for Networks Switch Stormcontrol Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

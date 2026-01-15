@@ -23,18 +23,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Actionbatches Info.
+      - Information module for Organizations Actionbatches Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   status:
     description:
-  - Information module for Organizations Actionbatches Info.
+      - Information module for Organizations Actionbatches Info.
       - Status query parameter. Filter batches by status. Valid types are pending,
         completed, and failed.
     type: str
   actionBatchId:
     description:
-  - Information module for Organizations Actionbatches Info.
+      - Information module for Organizations Actionbatches Info.
       - ActionBatchId path parameter. Action batch ID.
     type: str
 requirements:

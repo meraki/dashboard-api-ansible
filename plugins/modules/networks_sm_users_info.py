@@ -21,30 +21,30 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Users Info.
+      - Information module for Networks Sm Users Info.
       - NetworkId path parameter. Network ID.
     type: str
   ids:
     description:
-  - Information module for Networks Sm Users Info.
+      - Information module for Networks Sm Users Info.
       - Ids query parameter. Filter users by id(s).
     elements: str
     type: list
   usernames:
     description:
-  - Information module for Networks Sm Users Info.
+      - Information module for Networks Sm Users Info.
       - Usernames query parameter. Filter users by username(s).
     elements: str
     type: list
   emails:
     description:
-  - Information module for Networks Sm Users Info.
+      - Information module for Networks Sm Users Info.
       - Emails query parameter. Filter users by email(s).
     elements: str
     type: list
   scope:
     description:
-  - Information module for Networks Sm Users Info.
+      - Information module for Networks Sm Users Info.
       - >
         Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll,
         withoutAny, withoutAll) and a set of tags.

@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Routing Ospf Info.
+      - Information module for Networks Switch Routing Ospf Info.
       - NetworkId path parameter. Network ID.
     type: str
   vrf:
     description:
-  - Information module for Networks Switch Routing Ospf Info.
+      - Information module for Networks Switch Routing Ospf Info.
       - >
         Vrf query parameter. The VRF to return the OSPF routing configuration for.
         When not provided, the default VRF is used. Included on networks with IOS

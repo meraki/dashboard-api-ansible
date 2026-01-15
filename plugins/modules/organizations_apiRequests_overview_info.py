@@ -21,24 +21,24 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Apirequests Overview Info.
+      - Information module for Organizations Apirequests Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-  - Information module for Organizations Apirequests Overview Info.
+      - Information module for Organizations Apirequests Overview Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
-  - Information module for Organizations Apirequests Overview Info.
+      - Information module for Organizations Apirequests Overview Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Organizations Apirequests Overview Info.
+      - Information module for Organizations Apirequests Overview Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

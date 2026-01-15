@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Openapispec Info.
+      - Information module for Organizations Openapispec Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   version:
     description:
-  - Information module for Organizations Openapispec Info.
+      - Information module for Organizations Openapispec Info.
       - Version query parameter. OpenAPI Specification version to return. Default
         is 2.
     type: int

@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Admins Info.
+      - Information module for Organizations Admins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-  - Information module for Organizations Admins Info.
+      - Information module for Organizations Admins Info.
       - NetworkIds query parameter. Optional parameter to filter the result set by
         the included set of network IDs.
     elements: str

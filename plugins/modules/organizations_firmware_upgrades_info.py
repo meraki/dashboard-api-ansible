@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,13 +53,13 @@ options:
     type: str
   status:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - Status query parameter. Optional parameter to filter the upgrade by status.
     elements: str
     type: list
   productTypes:
     description:
-  - Information module for Organizations Firmware Upgrades Info.
+      - Information module for Organizations Firmware Upgrades Info.
       - ProductTypes query parameter. Optional parameter to filter the upgrade by
         product type.
     elements: str

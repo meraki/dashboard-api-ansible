@@ -25,7 +25,6 @@ notes:
 """
 
 EXAMPLES = r"""
-
 """
 RETURN = r"""
 meraki_response:

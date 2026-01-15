@@ -21,24 +21,24 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 180 days from today.
     type: str
   t1:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 7 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -46,29 +46,29 @@ options:
     type: float
   band:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - >
         Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note
         that data prior to February 2020 will not have band information.
     type: str
   ssid:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - Ssid query parameter. Filter results by SSID.
     type: int
   apTag:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - ApTag query parameter. Filter results by AP Tag.
     type: str
   serial:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - Serial query parameter. Filter by AP.
     type: str
   clientId:
     description:
-  - Information module for Networks Wireless Failedconnections Info.
+      - Information module for Networks Wireless Failedconnections Info.
       - ClientId query parameter. Filter by client MAC.
     type: str
 requirements:

@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Sensor Relationships Info.
+      - Information module for Devices Sensor Relationships Info.
       - Serial path parameter.
     type: str
 requirements:

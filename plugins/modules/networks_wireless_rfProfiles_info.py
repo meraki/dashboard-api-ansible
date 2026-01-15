@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Rfprofiles Info.
+      - Information module for Networks Wireless Rfprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   includeTemplateProfiles:
     description:
-  - Information module for Networks Wireless Rfprofiles Info.
+      - Information module for Networks Wireless Rfprofiles Info.
       - >
         IncludeTemplateProfiles query parameter. If the network is bound to a template,
         this parameter controls whether or not the non-basic RF profiles defined on
@@ -37,7 +37,7 @@ options:
     type: bool
   rfProfileId:
     description:
-  - Information module for Networks Wireless Rfprofiles Info.
+      - Information module for Networks Wireless Rfprofiles Info.
       - RfProfileId path parameter. Rf profile ID.
     type: str
 requirements:

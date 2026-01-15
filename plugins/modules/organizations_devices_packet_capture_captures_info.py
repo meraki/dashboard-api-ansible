@@ -29,85 +29,85 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   captureIds:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - CaptureIds query parameter. Return the packet captures of the specified capture
         ids.
     elements: str
     type: list
   networkIds:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - NetworkIds query parameter. Return the packet captures of the specified network(s).
     elements: str
     type: list
   serials:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - Serials query parameter. Return the packet captures of the specified device(s).
     elements: str
     type: list
   process:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - Process query parameter. Return the packet captures of the specified process.
     elements: str
     type: list
   captureStatus:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - CaptureStatus query parameter. Return the packet captures of the specified
         capture status.
     elements: str
     type: list
   name:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - Name query parameter. Return the packet captures matching the specified name.
     elements: str
     type: list
   clientMac:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - ClientMac query parameter. Return the packet captures matching the specified
         client macs.
     elements: str
     type: list
   notes:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - Notes query parameter. Return the packet captures matching the specified notes.
     type: str
   deviceName:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - DeviceName query parameter. Return the packet captures matching the specified
         device name.
     type: str
   adminName:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - AdminName query parameter. Return the packet captures matching the admin name.
     type: str
   t0:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 365 days from today.
     type: str
   t1:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 365 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -115,13 +115,13 @@ options:
     type: float
   perPage:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 100. Default is 10.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -131,7 +131,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -141,7 +141,7 @@ options:
     type: str
   sortOrder:
     description:
-  - Information module for Organizations Devices Packet Capture Captures Info.
+      - Information module for Organizations Devices Packet Capture Captures Info.
       - >
         SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
         and 'descending'. Default is 'descending'.

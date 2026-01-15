@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Stp Info.
+      - Information module for Networks Switch Stp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

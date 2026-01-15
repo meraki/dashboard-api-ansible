@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Snmp Info.
+      - Information module for Organizations Snmp Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

@@ -22,7 +22,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Electronic Shelf Label Configured Devices Info.
+      - Information module for Networks Wireless Electronic Shelf Label Configured Devices Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

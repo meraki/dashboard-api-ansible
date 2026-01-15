@@ -24,22 +24,22 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
   profileId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ProfileId path parameter. Profile ID.
     type: str
   portId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

@@ -21,81 +21,81 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkId:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - NetworkId query parameter. Optional parameter to filter alerts overview by
         network ids.
     type: str
   severity:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Severity query parameter. Optional parameter to filter alerts overview by
         severity type.
     type: str
   types:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - TsStart query parameter. Optional parameter to filter by starting timestamp.
     type: str
   tsEnd:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp.
     type: str
   category:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   serials:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
   deviceTags:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - DeviceTags query parameter. Optional parameter to filter by device tags.
     elements: str
     type: list
   active:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Active query parameter. Optional parameter to filter by active alerts defaults
         to true.
     type: bool
   dismissed:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Dismissed query parameter. Optional parameter to filter by dismissed alerts
         defaults to false.
     type: bool
   resolved:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Resolved query parameter. Optional parameter to filter by resolved alerts
         defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
-  - Information module for Organizations Assurance Alerts Overview Info.
+      - Information module for Organizations Assurance Alerts Overview Info.
       - >
         SuppressAlertsForOfflineNodes query parameter. When set to true the api will
         only return connectivity alerts for a given device if that device is in an

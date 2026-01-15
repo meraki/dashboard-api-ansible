@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Adaptivepolicy Acls Info.
+      - Information module for Organizations Adaptivepolicy Acls Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   aclId:
     description:
-  - Information module for Organizations Adaptivepolicy Acls Info.
+      - Information module for Organizations Adaptivepolicy Acls Info.
       - AclId path parameter. Acl ID.
     type: str
 requirements:

@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
+      - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - NetworkId path parameter. Network ID.
     type: str
   customPerformanceClassId:
     description:
-  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
+      - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - CustomPerformanceClassId path parameter. Custom performance class ID.
     type: str
 requirements:

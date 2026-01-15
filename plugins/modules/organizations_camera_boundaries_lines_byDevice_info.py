@@ -22,12 +22,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Camera Boundaries Lines Bydevice Info.
+      - Information module for Organizations Camera Boundaries Lines Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
-  - Information module for Organizations Camera Boundaries Lines Bydevice Info.
+      - Information module for Organizations Camera Boundaries Lines Bydevice Info.
       - >
         Serials query parameter. A list of serial numbers. The returned cameras will
         be filtered to only include these serials.

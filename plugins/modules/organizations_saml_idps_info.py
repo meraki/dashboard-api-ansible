@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Saml Idps Info.
+      - Information module for Organizations Saml Idps Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   idpId:
     description:
-  - Information module for Organizations Saml Idps Info.
+      - Information module for Organizations Saml Idps Info.
       - IdpId path parameter. Idp ID.
     type: str
 requirements:

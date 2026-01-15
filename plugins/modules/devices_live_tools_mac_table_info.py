@@ -21,12 +21,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Live Tools Mac Table Info.
+      - Information module for Devices Live Tools Mac Table Info.
       - Serial path parameter.
     type: str
   macTableId:
     description:
-  - Information module for Devices Live Tools Mac Table Info.
+      - Information module for Devices Live Tools Mac Table Info.
       - MacTableId path parameter. Mac table ID.
     type: str
 requirements:

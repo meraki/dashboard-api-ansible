@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,7 +53,7 @@ options:
     type: str
   networkIds:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         NetworkIds query parameter. Optional parameter to filter device by network
         ID. This filter uses multiple exact matches.
@@ -61,7 +61,7 @@ options:
     type: list
   productTypes:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         ProductTypes query parameter. Optional parameter to filter device by device
         product types. This filter uses multiple exact matches.
@@ -69,7 +69,7 @@ options:
     type: list
   serials:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         Serials query parameter. Optional parameter to filter device by device serial
         numbers. This filter uses multiple exact matches.
@@ -77,14 +77,14 @@ options:
     type: list
   status:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         Status query parameter. An optional parameter to filter devices by the provisioning
         status. Accepted statuses unprovisioned, incomplete, complete.
     type: str
   tags:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         Tags query parameter. An optional parameter to filter devices by tags. The
         filtering is case-sensitive. If tags are included, 'tagsFilterType' should
@@ -93,7 +93,7 @@ options:
     type: list
   tagsFilterType:
     description:
-  - Information module for Organizations Devices Provisioning Statuses Info.
+      - Information module for Organizations Devices Provisioning Statuses Info.
       - >
         TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
         or 'withAllTags' to indicate whether to return devices which contain ANY or

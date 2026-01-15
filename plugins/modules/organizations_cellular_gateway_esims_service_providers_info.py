@@ -22,7 +22,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Cellular Gateway Esims Service Providers Info.
+      - Information module for Organizations Cellular Gateway Esims Service Providers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

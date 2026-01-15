@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Rfprofiles Info.
+      - Information module for Networks Appliance Rfprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

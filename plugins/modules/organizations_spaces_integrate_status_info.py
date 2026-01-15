@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Spaces Integrate Status Info.
+      - Information module for Organizations Spaces Integrate Status Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

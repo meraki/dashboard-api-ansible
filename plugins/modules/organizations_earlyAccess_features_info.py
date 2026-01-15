@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Earlyaccess Features Info.
+      - Information module for Organizations Earlyaccess Features Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

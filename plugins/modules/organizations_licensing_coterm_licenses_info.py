@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,12 +53,12 @@ options:
     type: str
   invalidated:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - Invalidated query parameter. Filter for licenses that are invalidated.
     type: bool
   expired:
     description:
-  - Information module for Organizations Licensing Coterm Licenses Info.
+      - Information module for Organizations Licensing Coterm Licenses Info.
       - Expired query parameter. Filter for licenses that are expired.
     type: bool
 requirements:

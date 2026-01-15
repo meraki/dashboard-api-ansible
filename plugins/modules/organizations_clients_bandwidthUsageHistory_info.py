@@ -23,43 +23,43 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   deviceTag:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   ssidName:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
+      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

@@ -22,7 +22,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Assurance Alerts Taxonomy Categories Info.
+      - Information module for Organizations Assurance Alerts Taxonomy Categories Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

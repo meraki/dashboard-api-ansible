@@ -22,12 +22,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Livetools Pingdevice Info.
+      - Information module for Devices Livetools Pingdevice Info.
       - Serial path parameter.
     type: str
   id:
     description:
-  - Information module for Devices Livetools Pingdevice Info.
+      - Information module for Devices Livetools Pingdevice Info.
       - Id path parameter.
     type: str
 requirements:

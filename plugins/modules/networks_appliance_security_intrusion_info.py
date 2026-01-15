@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Security Intrusion Info.
+      - Information module for Networks Appliance Security Intrusion Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

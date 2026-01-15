@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Vpn Thirdpartyvpnpeers Info.
+      - Information module for Organizations Appliance Vpn Thirdpartyvpnpeers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

@@ -25,39 +25,39 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - NetworkId path parameter. Network ID.
     type: str
   username:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Username query parameter. The username of a Systems Manager user.
     type: str
   email:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Email query parameter. The email of a network user account or a Systems Manager
         device.
     type: str
   mac:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Mac query parameter. The MAC of a network client device or a Systems Manager
         device.
     type: str
   serial:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Serial query parameter. The serial of a Systems Manager device.
     type: str
   imei:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Imei query parameter. The IMEI of a Systems Manager device.
     type: str
   bluetoothMac:
     description:
-  - Information module for Networks Pii Smdevicesforkey Info.
+      - Information module for Networks Pii Smdevicesforkey Info.
       - BluetoothMac query parameter. The MAC of a Bluetooth client.
     type: str
 requirements:

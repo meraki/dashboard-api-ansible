@@ -22,7 +22,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
+      - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

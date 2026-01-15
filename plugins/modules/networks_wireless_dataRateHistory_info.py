@@ -21,24 +21,24 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -46,7 +46,7 @@ options:
     type: float
   resolution:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
         Resolution query parameter. The time resolution in seconds for returned data.
         The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
@@ -54,7 +54,7 @@ options:
     type: int
   autoResolution:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
         AutoResolution query parameter. Automatically select a data resolution based
         on the given timespan; this overrides the value specified by the 'resolution'
@@ -62,27 +62,27 @@ options:
     type: bool
   clientId:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - ClientId query parameter. Filter results by network client.
     type: str
   deviceSerial:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - DeviceSerial query parameter. Filter results by device.
     type: str
   apTag:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - ApTag query parameter. Filter results by AP tag.
     type: str
   band:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - Band query parameter. Filter results by band (either '2.4', '5' or '6').
     type: str
   ssid:
     description:
-  - Information module for Networks Wireless Dataratehistory Info.
+      - Information module for Networks Wireless Dataratehistory Info.
       - Ssid query parameter. Filter results by SSID number.
     type: int
 requirements:

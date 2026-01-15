@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Camera Customanalytics Artifacts Info.
+      - Information module for Organizations Camera Customanalytics Artifacts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   artifactId:
     description:
-  - Information module for Organizations Camera Customanalytics Artifacts Info.
+      - Information module for Organizations Camera Customanalytics Artifacts Info.
       - ArtifactId path parameter. Artifact ID.
     type: str
 requirements:

@@ -22,18 +22,18 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,7 +53,7 @@ options:
     type: str
   serials:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - >
         Serials query parameter. Optional parameter to filter devices by serials.
         All devices returned belong to serial numbers that are an exact match.
@@ -61,14 +61,14 @@ options:
     type: list
   productTypes:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - ProductTypes query parameter. Optional parameter to filter devices by product
         types.
     elements: str
     type: list
   stackIds:
     description:
-  - Information module for Networks Vlanprofiles Assignments Bydevice Info.
+      - Information module for Networks Vlanprofiles Assignments Bydevice Info.
       - StackIds query parameter. Optional parameter to filter devices by Switch Stack
         ids.
     elements: str

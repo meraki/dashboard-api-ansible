@@ -23,7 +23,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Dhcpserverpolicy Info.
+      - Information module for Networks Switch Dhcpserverpolicy Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

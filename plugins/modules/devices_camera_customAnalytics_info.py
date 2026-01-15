@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Customanalytics Info.
+      - Information module for Devices Camera Customanalytics Info.
       - Serial path parameter.
     type: str
 requirements:

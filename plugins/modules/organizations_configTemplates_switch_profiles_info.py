@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Info.
+      - Information module for Organizations Configtemplates Switch Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
-  - Information module for Organizations Configtemplates Switch Profiles Info.
+      - Information module for Organizations Configtemplates Switch Profiles Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:

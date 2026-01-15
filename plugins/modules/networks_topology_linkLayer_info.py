@@ -24,7 +24,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Topology Linklayer Info.
+      - Information module for Networks Topology Linklayer Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

@@ -21,12 +21,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Live Tools Leds Blink Info.
+      - Information module for Devices Live Tools Leds Blink Info.
       - Serial path parameter.
     type: str
   ledsBlinkId:
     description:
-  - Information module for Devices Live Tools Leds Blink Info.
+      - Information module for Devices Live Tools Leds Blink Info.
       - LedsBlinkId path parameter. Leds blink ID.
     type: str
 requirements:

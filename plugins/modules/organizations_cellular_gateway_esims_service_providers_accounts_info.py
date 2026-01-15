@@ -22,12 +22,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
+      - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   accountIds:
     description:
-  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
+      - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
       - AccountIds query parameter. Optional parameter to filter the results by service
         provider account IDs.
     elements: int

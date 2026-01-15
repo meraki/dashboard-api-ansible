@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Splash Themes Info.
+      - Information module for Organizations Splash Themes Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

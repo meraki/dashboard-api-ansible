@@ -27,12 +27,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
+      - Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   certificateAuthorityIds:
     description:
-  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
+      - Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
       - >
         CertificateAuthorityIds query parameter. Optional parameter to filter CAs
         by one or more CA IDs. All returned CAs will have an ID that is an exact match.

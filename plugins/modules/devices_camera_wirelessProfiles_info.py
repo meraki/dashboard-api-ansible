@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Wirelessprofiles Info.
+      - Information module for Devices Camera Wirelessprofiles Info.
       - Serial path parameter.
     type: str
 requirements:

@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Cellular Sims Info.
+      - Information module for Devices Cellular Sims Info.
       - Serial path parameter.
     type: str
 requirements:

@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Devices Cellularusagehistory Info.
+      - Information module for Networks Sm Devices Cellularusagehistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-  - Information module for Networks Sm Devices Cellularusagehistory Info.
+      - Information module for Networks Sm Devices Cellularusagehistory Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:

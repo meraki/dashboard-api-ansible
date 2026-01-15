@@ -21,7 +21,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Insight Applications Info.
+      - Information module for Organizations Insight Applications Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

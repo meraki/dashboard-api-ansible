@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Camera Qualityandretention Info.
+      - Information module for Devices Camera Qualityandretention Info.
       - Serial path parameter.
     type: str
 requirements:

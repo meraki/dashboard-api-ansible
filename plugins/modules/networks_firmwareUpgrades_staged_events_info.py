@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Firmwareupgrades Staged Events Info.
+      - Information module for Networks Firmwareupgrades Staged Events Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

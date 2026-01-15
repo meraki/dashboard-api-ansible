@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Webhooks Callbacks Statuses Info.
+      - Information module for Organizations Webhooks Callbacks Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   callbackId:
     description:
-  - Information module for Organizations Webhooks Callbacks Statuses Info.
+      - Information module for Organizations Webhooks Callbacks Statuses Info.
       - CallbackId path parameter. Callback ID.
     type: str
 requirements:

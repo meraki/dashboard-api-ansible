@@ -23,12 +23,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Ports Info.
+      - Information module for Devices Switch Ports Info.
       - Serial path parameter.
     type: str
   portId:
     description:
-  - Information module for Devices Switch Ports Info.
+      - Information module for Devices Switch Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Wireless Electronic Shelf Label Info.
+      - Information module for Devices Wireless Electronic Shelf Label Info.
       - Serial path parameter.
     type: str
 requirements:

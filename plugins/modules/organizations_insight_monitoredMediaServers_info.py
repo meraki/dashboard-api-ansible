@@ -25,12 +25,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Insight Monitoredmediaservers Info.
+      - Information module for Organizations Insight Monitoredmediaservers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   monitoredMediaServerId:
     description:
-  - Information module for Organizations Insight Monitoredmediaservers Info.
+      - Information module for Organizations Insight Monitoredmediaservers Info.
       - MonitoredMediaServerId path parameter. Monitored media server ID.
     type: str
 requirements:

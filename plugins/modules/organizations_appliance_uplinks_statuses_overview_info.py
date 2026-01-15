@@ -22,12 +22,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Uplinks Statuses Overview Info.
+      - Information module for Organizations Appliance Uplinks Statuses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-  - Information module for Organizations Appliance Uplinks Statuses Overview Info.
+      - Information module for Organizations Appliance Uplinks Statuses Overview Info.
       - >
         NetworkIds query parameter. A list of network IDs. The returned devices will
         be filtered to only include these networks.

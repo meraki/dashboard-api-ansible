@@ -24,22 +24,22 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Routing Interfaces Info.
+      - Information module for Devices Switch Routing Interfaces Info.
       - Serial path parameter.
     type: str
   mode:
     description:
-  - Information module for Devices Switch Routing Interfaces Info.
+      - Information module for Devices Switch Routing Interfaces Info.
       - Mode query parameter. Optional parameter to filter L3 interfaces by mode.
     type: str
   protocol:
     description:
-  - Information module for Devices Switch Routing Interfaces Info.
+      - Information module for Devices Switch Routing Interfaces Info.
       - Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
     type: str
   interfaceId:
     description:
-  - Information module for Devices Switch Routing Interfaces Info.
+      - Information module for Devices Switch Routing Interfaces Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

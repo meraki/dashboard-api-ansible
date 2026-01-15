@@ -22,7 +22,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Trafficshaping Applicationcategories Info.
+      - Information module for Networks Trafficshaping Applicationcategories Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

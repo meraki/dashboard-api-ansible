@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Linkaggregations Info.
+      - Information module for Networks Switch Linkaggregations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

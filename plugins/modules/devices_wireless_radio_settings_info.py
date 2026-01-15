@@ -22,7 +22,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Wireless Radio Settings Info.
+      - Information module for Devices Wireless Radio Settings Info.
       - Serial path parameter.
     type: str
 requirements:

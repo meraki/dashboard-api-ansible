@@ -25,18 +25,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -46,7 +46,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -56,7 +56,7 @@ options:
     type: str
   networkIds:
     description:
-  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
         NetworkIds query parameter. A list of Meraki network IDs to filter results
         to contain only specified networks. E.g. NetworkIds=N_12345678&networkIds=L_3456.

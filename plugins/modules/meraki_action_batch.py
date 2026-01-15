@@ -87,8 +87,8 @@ options:
     default: present
     description:
       - Specifies whether to lookup,
-    create,
-    or delete an Action Batch job.
+                create,
+                or delete an Action Batch job.
     type: str
   synchronous:
     default: true

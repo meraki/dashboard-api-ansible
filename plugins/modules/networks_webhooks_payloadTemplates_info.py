@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Webhooks Payloadtemplates Info.
+      - Information module for Networks Webhooks Payloadtemplates Info.
       - NetworkId path parameter. Network ID.
     type: str
   payloadTemplateId:
     description:
-  - Information module for Networks Webhooks Payloadtemplates Info.
+      - Information module for Networks Webhooks Payloadtemplates Info.
       - PayloadTemplateId path parameter. Payload template ID.
     type: str
 requirements:

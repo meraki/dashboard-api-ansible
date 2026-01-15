@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Ssids Eapoverride Info.
+      - Information module for Networks Wireless Ssids Eapoverride Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-  - Information module for Networks Wireless Ssids Eapoverride Info.
+      - Information module for Networks Wireless Ssids Eapoverride Info.
       - Number path parameter.
     type: str
 requirements:

@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Webhooks Webhooktests Info.
+      - Information module for Networks Webhooks Webhooktests Info.
       - NetworkId path parameter. Network ID.
     type: str
   webhookTestId:
     description:
-  - Information module for Networks Webhooks Webhooktests Info.
+      - Information module for Networks Webhooks Webhooktests Info.
       - WebhookTestId path parameter. Webhook test ID.
     type: str
 requirements:

@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Routing Multicast Rendezvouspoints Info.
+      - Information module for Networks Switch Routing Multicast Rendezvouspoints Info.
       - NetworkId path parameter. Network ID.
     type: str
   rendezvousPointId:
     description:
-  - Information module for Networks Switch Routing Multicast Rendezvouspoints Info.
+      - Information module for Networks Switch Routing Multicast Rendezvouspoints Info.
       - RendezvousPointId path parameter. Rendezvous point ID.
     type: str
 requirements:

@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Trafficshaping Dscptaggingoptions Info.
+      - Information module for Networks Trafficshaping Dscptaggingoptions Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

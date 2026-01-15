@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Zigbee Disenrollments Info.
+      - Information module for Organizations Wireless Zigbee Disenrollments Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   disenrollmentId:
     description:
-  - Information module for Organizations Wireless Zigbee Disenrollments Info.
+      - Information module for Organizations Wireless Zigbee Disenrollments Info.
       - DisenrollmentId path parameter. Disenrollment ID.
     type: str
 requirements:

@@ -22,12 +22,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   importIds:
     description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - ImportIds query parameter. Import ids from an imports.
     elements: str
     type: list

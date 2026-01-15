@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Events Eventtypes Info.
+      - Information module for Networks Events Eventtypes Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

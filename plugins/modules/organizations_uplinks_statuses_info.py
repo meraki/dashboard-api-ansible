@@ -22,18 +22,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +43,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,7 +53,7 @@ options:
     type: str
   networkIds:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - >
         NetworkIds query parameter. A list of network IDs. The returned devices will
         be filtered to only include these networks.
@@ -61,7 +61,7 @@ options:
     type: list
   serials:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - >
         Serials query parameter. A list of serial numbers. The returned devices will
         be filtered to only include these serials.
@@ -69,7 +69,7 @@ options:
     type: list
   iccids:
     description:
-  - Information module for Organizations Uplinks Statuses Info.
+      - Information module for Organizations Uplinks Statuses Info.
       - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered
         to only include these ICCIDs.
     elements: str

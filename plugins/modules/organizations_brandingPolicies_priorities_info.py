@@ -23,7 +23,7 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Brandingpolicies Priorities Info.
+      - Information module for Organizations Brandingpolicies Priorities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

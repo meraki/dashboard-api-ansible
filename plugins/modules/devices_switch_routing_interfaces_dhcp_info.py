@@ -21,12 +21,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Routing Interfaces Dhcp Info.
+      - Information module for Devices Switch Routing Interfaces Dhcp Info.
       - Serial path parameter.
     type: str
   interfaceId:
     description:
-  - Information module for Devices Switch Routing Interfaces Dhcp Info.
+      - Information module for Devices Switch Routing Interfaces Dhcp Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

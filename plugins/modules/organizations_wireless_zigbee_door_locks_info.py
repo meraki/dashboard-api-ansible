@@ -22,29 +22,29 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - NetworkIds query parameter. Filter by specified Network IDs.
     elements: str
     type: list
   serial:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - Serial query parameter. Filter by device serial.
     type: str
   perPage:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 500. Default is 50.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -54,7 +54,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Wireless Zigbee Door Locks Info.
+      - Information module for Organizations Wireless Zigbee Door Locks Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

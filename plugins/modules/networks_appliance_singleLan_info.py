@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Singlelan Info.
+      - Information module for Networks Appliance Singlelan Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

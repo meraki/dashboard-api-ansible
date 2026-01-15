@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Samlroles Info.
+      - Information module for Organizations Samlroles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   samlRoleId:
     description:
-  - Information module for Organizations Samlroles Info.
+      - Information module for Organizations Samlroles Info.
       - SamlRoleId path parameter. Saml role ID.
     type: str
 requirements:

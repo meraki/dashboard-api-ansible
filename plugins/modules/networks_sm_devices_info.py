@@ -22,12 +22,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - NetworkId path parameter. Network ID.
     type: str
   fields:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - >
         Fields query parameter. Additional fields that will be displayed for each
         device. The default fields are id, name, tags, ssid, wifiMac, osName, systemModel,
@@ -44,37 +44,37 @@ options:
     type: list
   wifiMacs:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - WifiMacs query parameter. Filter devices by wifi mac(s).
     elements: str
     type: list
   serials:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - Serials query parameter. Filter devices by serial(s).
     elements: str
     type: list
   ids:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - Ids query parameter. Filter devices by id(s).
     elements: str
     type: list
   uuids:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - Uuids query parameter. Filter devices by uuid(s).
     elements: str
     type: list
   systemTypes:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - SystemTypes query parameter. Filter devices by system type(s).
     elements: str
     type: list
   scope:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - >
         Scope query parameter. Specify a scope (one of all, none, withAny, withAll,
         withoutAny, or withoutAll) and a set of tags.
@@ -82,13 +82,13 @@ options:
     type: list
   perPage:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -98,7 +98,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Networks Sm Devices Info.
+      - Information module for Networks Sm Devices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

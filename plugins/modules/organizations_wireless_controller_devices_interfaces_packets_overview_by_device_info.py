@@ -24,12 +24,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - >
         Serials query parameter. Optional parameter to filter wireless LAN controller
         by its cloud ID. This filter uses multiple exact matches.
@@ -37,7 +37,7 @@ options:
     type: list
   names:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - >
         Names query parameter. Optional parameter to filter wireless LAN controller
         by its interface name. This filter uses multiple exact matches.
@@ -45,19 +45,19 @@ options:
     type: list
   t0:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 1 day from today.
     type: str
   t1:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 1 day after t0.
     type: str
   timespan:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -65,13 +65,13 @@ options:
     type: float
   perPage:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -81,7 +81,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
+      - Information module for Organizations Wireless Controller Devices Interfaces Packets Overview By Device Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

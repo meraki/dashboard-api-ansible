@@ -24,18 +24,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -45,7 +45,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -55,25 +55,25 @@ options:
     type: str
   usedState:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - UsedState query parameter. Filter results by used or unused inventory. Accepted
         values are 'used' or 'unused'.
     type: str
   search:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - Search query parameter. Search for devices in inventory based on serial number,
         mac address, or model.
     type: str
   macs:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - Macs query parameter. Search for devices in inventory based on mac addresses.
     elements: str
     type: list
   networkIds:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         NetworkIds query parameter. Search for devices in inventory based on network
         ids. Use explicit 'null' value to get available devices only.
@@ -81,26 +81,26 @@ options:
     type: list
   serials:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - Serials query parameter. Search for devices in inventory based on serials.
     elements: str
     type: list
   models:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - Models query parameter. Search for devices in inventory based on model.
     elements: str
     type: list
   orderNumbers:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - OrderNumbers query parameter. Search for devices in inventory based on order
         numbers.
     elements: str
     type: list
   tags:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         Tags query parameter. Filter devices by tags. The filtering is case-sensitive.
         If tags are included, 'tagsFilterType' should also be included (see below).
@@ -108,7 +108,7 @@ options:
     type: list
   tagsFilterType:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         TagsFilterType query parameter. To use with 'tags' parameter, to filter devices
         which contain ANY or ALL given tags. Accepted values are 'withAnyTags' or
@@ -116,7 +116,7 @@ options:
     type: str
   productTypes:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - >
         ProductTypes query parameter. Filter devices by product type. Accepted values
         are appliance, camera, campusGateway, cellularGateway, secureConnect, sensor,
@@ -125,7 +125,7 @@ options:
     type: list
   serial:
     description:
-  - Information module for Organizations Inventory Devices Info.
+      - Information module for Organizations Inventory Devices Info.
       - Serial path parameter.
     type: str
 requirements:

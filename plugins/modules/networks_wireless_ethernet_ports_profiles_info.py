@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Wireless Ethernet Ports Profiles Info.
+      - Information module for Networks Wireless Ethernet Ports Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   profileId:
     description:
-  - Information module for Networks Wireless Ethernet Ports Profiles Info.
+      - Information module for Networks Wireless Ethernet Ports Profiles Info.
       - ProfileId path parameter. Profile ID.
     type: str
 requirements:

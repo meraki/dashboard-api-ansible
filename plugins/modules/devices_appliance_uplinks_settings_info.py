@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Appliance Uplinks Settings Info.
+      - Information module for Devices Appliance Uplinks Settings Info.
       - Serial path parameter.
     type: str
 requirements:

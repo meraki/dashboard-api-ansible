@@ -22,12 +22,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Cellular Gateway Esims Inventory Info.
+      - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   eids:
     description:
-  - Information module for Organizations Cellular Gateway Esims Inventory Info.
+      - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - Eids query parameter. Optional parameter to filter the results by EID.
     elements: str
     type: list

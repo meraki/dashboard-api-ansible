@@ -23,12 +23,12 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Routing Staticroutes Info.
+      - Information module for Devices Switch Routing Staticroutes Info.
       - Serial path parameter.
     type: str
   staticRouteId:
     description:
-  - Information module for Devices Switch Routing Staticroutes Info.
+      - Information module for Devices Switch Routing Staticroutes Info.
       - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:

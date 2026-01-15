@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Qosrules Order Info.
+      - Information module for Networks Switch Qosrules Order Info.
       - NetworkId path parameter. Network ID.
     type: str
   qosRuleId:
     description:
-  - Information module for Networks Switch Qosrules Order Info.
+      - Information module for Networks Switch Qosrules Order Info.
       - QosRuleId path parameter. Qos rule ID.
     type: str
 requirements:

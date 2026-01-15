@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Configtemplates Info.
+      - Information module for Organizations Configtemplates Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
-  - Information module for Organizations Configtemplates Info.
+      - Information module for Organizations Configtemplates Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:

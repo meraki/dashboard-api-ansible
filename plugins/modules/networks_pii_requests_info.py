@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Pii Requests Info.
+      - Information module for Networks Pii Requests Info.
       - NetworkId path parameter. Network ID.
     type: str
   requestId:
     description:
-  - Information module for Networks Pii Requests Info.
+      - Information module for Networks Pii Requests Info.
       - RequestId path parameter. Request ID.
     type: str
 requirements:

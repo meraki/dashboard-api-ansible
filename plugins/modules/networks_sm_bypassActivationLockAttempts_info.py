@@ -21,12 +21,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Sm Bypassactivationlockattempts Info.
+      - Information module for Networks Sm Bypassactivationlockattempts Info.
       - NetworkId path parameter. Network ID.
     type: str
   attemptId:
     description:
-  - Information module for Networks Sm Bypassactivationlockattempts Info.
+      - Information module for Networks Sm Bypassactivationlockattempts Info.
       - AttemptId path parameter. Attempt ID.
     type: str
 requirements:

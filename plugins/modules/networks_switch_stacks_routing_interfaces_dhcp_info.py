@@ -22,17 +22,17 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
-  - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
   interfaceId:
     description:
-  - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

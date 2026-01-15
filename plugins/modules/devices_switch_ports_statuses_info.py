@@ -21,18 +21,18 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Switch Ports Statuses Info.
+      - Information module for Devices Switch Ports Statuses Info.
       - Serial path parameter.
     type: str
   t0:
     description:
-  - Information module for Devices Switch Ports Statuses Info.
+      - Information module for Devices Switch Ports Statuses Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-  - Information module for Devices Switch Ports Statuses Info.
+      - Information module for Devices Switch Ports Statuses Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in

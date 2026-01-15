@@ -24,18 +24,18 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 4 - 300. Default is 30.
     type: int
   startingAfter:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -45,7 +45,7 @@ options:
     type: str
   endingBefore:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -55,87 +55,87 @@ options:
     type: str
   sortOrder:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - >
         SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
         and 'descending'. Default is 'ascending'.
     type: str
   networkId:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - NetworkId query parameter. Optional parameter to filter alerts by network
         ids.
     type: str
   severity:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Severity query parameter. Optional parameter to filter by severity type.
     type: str
   types:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - TsStart query parameter. Optional parameter to filter by starting timestamp.
     type: str
   tsEnd:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp.
     type: str
   category:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   sortBy:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - SortBy query parameter. Optional parameter to set column to sort by.
     type: str
   serials:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
   deviceTags:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - DeviceTags query parameter. Optional parameter to filter by device tags.
     elements: str
     type: list
   active:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Active query parameter. Optional parameter to filter by active alerts defaults
         to true.
     type: bool
   dismissed:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Dismissed query parameter. Optional parameter to filter by dismissed alerts
         defaults to false.
     type: bool
   resolved:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Resolved query parameter. Optional parameter to filter by resolved alerts
         defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - >
         SuppressAlertsForOfflineNodes query parameter. When set to true the api will
         only return connectivity alerts for a given device if that device is in an
@@ -145,7 +145,7 @@ options:
     type: bool
   id:
     description:
-  - Information module for Organizations Assurance Alerts Info.
+      - Information module for Organizations Assurance Alerts Info.
       - Id path parameter.
     type: str
 requirements:

@@ -21,12 +21,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Splash Assets Info.
+      - Information module for Organizations Splash Assets Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   id:
     description:
-  - Information module for Organizations Splash Assets Info.
+      - Information module for Organizations Splash Assets Info.
       - Id path parameter.
     type: str
 requirements:

@@ -22,19 +22,19 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-  - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
       - ProfileIds query parameter. Optional parameter to filter the results by profile
         IDs.
     elements: str
     type: list
   networkIds:
     description:
-  - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
       - NetworkIds query parameter. Optional parameter to filter the results by network
         IDs.
     elements: str

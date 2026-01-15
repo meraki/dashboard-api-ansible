@@ -23,12 +23,12 @@ options:
     type: dict
   organizationId:
     description:
-  - Information module for Organizations Adaptivepolicy Policies Info.
+      - Information module for Organizations Adaptivepolicy Policies Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   id:
     description:
-  - Information module for Organizations Adaptivepolicy Policies Info.
+      - Information module for Organizations Adaptivepolicy Policies Info.
       - Id path parameter.
     type: str
 requirements:

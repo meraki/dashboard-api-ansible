@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Vlanprofiles Info.
+      - Information module for Networks Vlanprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   iname:
     description:
-  - Information module for Networks Vlanprofiles Info.
+      - Information module for Networks Vlanprofiles Info.
       - Iname path parameter.
     type: str
 requirements:

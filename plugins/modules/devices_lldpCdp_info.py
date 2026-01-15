@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Lldpcdp Info.
+      - Information module for Devices Lldpcdp Info.
       - Serial path parameter.
     type: str
 requirements:

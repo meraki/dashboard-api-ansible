@@ -21,7 +21,7 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Netflow Info.
+      - Information module for Networks Netflow Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

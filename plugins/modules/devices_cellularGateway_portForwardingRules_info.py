@@ -21,7 +21,7 @@ options:
     type: dict
   serial:
     description:
-  - Information module for Devices Cellulargateway Portforwardingrules Info.
+      - Information module for Devices Cellulargateway Portforwardingrules Info.
       - Serial path parameter.
     type: str
 requirements:

@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Vlans Info.
+      - Information module for Networks Appliance Vlans Info.
       - NetworkId path parameter. Network ID.
     type: str
   vlanId:
     description:
-  - Information module for Networks Appliance Vlans Info.
+      - Information module for Networks Appliance Vlans Info.
       - VlanId path parameter. Vlan ID.
     type: str
 requirements:

@@ -23,12 +23,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Grouppolicies Info.
+      - Information module for Networks Grouppolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupPolicyId:
     description:
-  - Information module for Networks Grouppolicies Info.
+      - Information module for Networks Grouppolicies Info.
       - GroupPolicyId path parameter. Group policy ID.
     type: str
 requirements:

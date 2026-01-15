@@ -22,12 +22,12 @@ options:
     type: dict
   networkId:
     description:
-  - Information module for Networks Appliance Firewall Firewalledservices Info.
+      - Information module for Networks Appliance Firewall Firewalledservices Info.
       - NetworkId path parameter. Network ID.
     type: str
   service:
     description:
-  - Information module for Networks Appliance Firewall Firewalledservices Info.
+      - Information module for Networks Appliance Firewall Firewalledservices Info.
       - Service path parameter.
     type: str
 requirements:
