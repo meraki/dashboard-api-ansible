@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_switch_routing_staticRoutes_info
+module: devices_switch_routing_static_routes_info
 short_description: Information module for devices _switch _routing _staticroutes
 description:
   - Information module for Devices Switch Routing Staticroutes Info.
