@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_settings_info
 short_description: Information module for networks _appliance _firewall _settings
 description:
+  - Information module for Networks Appliance Firewall Settings Info.
   - Get all networks _appliance _firewall _settings.
   - Return the firewall settings for this network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Firewall Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

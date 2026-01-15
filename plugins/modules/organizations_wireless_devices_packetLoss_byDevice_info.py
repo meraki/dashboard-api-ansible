@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_wireless_devices_packet_loss_by_device_info
+module: organizations_wireless_devices_packetLoss_byDevice_info
 short_description: Information module for organizations _wireless _devices _packetloss
   _bydevice
 description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
   - Get all organizations _wireless _devices _packetloss _bydevice.
   - >
     Get average packet loss for the given timespan for all devices in the organization.
@@ -24,36 +25,43 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - NetworkIds query parameter. Filter results by network.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - Serials query parameter. Filter results by device.
     elements: str
     type: list
   ssids:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - Ssids query parameter. Filter results by SSID number.
     elements: int
     type: list
   bands:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - Bands query parameter. Filter results by band. Valid bands are 2.4, 5, and
         6.
     elements: str
     type: list
   perPage:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -63,6 +71,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -72,16 +81,19 @@ options:
     type: str
   t0:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 90 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 90 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Wireless Devices Packetloss Bydevice Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

@@ -9,6 +9,7 @@ module: organizations_wireless_controller_clients_overview_history_by_device_by_
 short_description: Information module for organizations _wireless _controller _clients
   _overview _history _by _device _by _interval
 description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
   - Get all organizations _wireless _controller _clients _overview _history _by _device
     _by _interval.
   - List wireless client counts of wireless LAN controllers over time in an organization.
@@ -23,10 +24,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         NetworkIds query parameter. Optional parameter to filter wireless LAN controllers
         by network ID. This filter uses multiple exact matches.
@@ -34,6 +37,7 @@ options:
     type: list
   serials:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         Serials query parameter. Optional parameter to filter wireless LAN controller
         by its cloud ID. This filter uses multiple exact matches.
@@ -41,16 +45,19 @@ options:
     type: list
   t0:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -58,11 +65,13 @@ options:
     type: float
   perPage:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -72,6 +81,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -81,6 +91,7 @@ options:
     type: str
   resolution:
     description:
+  - Information module for Organizations Wireless Controller Clients Overview History By Device By Interval Info.
       - >
         Resolution query parameter. The time resolution in seconds for returned data.
         The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default

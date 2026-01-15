@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_wireless_radio_settings_info
 short_description: Information module for devices _wireless _radio _settings
 description:
+  - Information module for Devices Wireless Radio Settings Info.
   - Get all devices _wireless _radio _settings.
   - Return the manually configured radio settings overrides of a device, which take
     precedence over RF profiles.
@@ -21,6 +22,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Wireless Radio Settings Info.
       - Serial path parameter.
     type: str
 requirements:

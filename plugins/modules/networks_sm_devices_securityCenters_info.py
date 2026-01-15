@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_devices_security_centers_info
+module: networks_sm_devices_securityCenters_info
 short_description: Information module for networks _sm _devices _securitycenters
 description:
+  - Information module for Networks Sm Devices Securitycenters Info.
   - Get all networks _sm _devices _securitycenters.
   - Get a list of softwares associated with a device.
   - List the security centers on a device.
@@ -21,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Devices Securitycenters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+  - Information module for Networks Sm Devices Securitycenters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:

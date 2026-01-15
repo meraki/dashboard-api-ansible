@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_cellular_gateway_subnet_pool_info
+module: networks_cellularGateway_subnetPool_info
 short_description: Information module for networks _cellulargateway _subnetpool
 description:
+  - Information module for Networks Cellulargateway Subnetpool Info.
   - Get all networks _cellulargateway _subnetpool.
   - Return the subnet pool and mask configured for MGs in the network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Cellulargateway Subnetpool Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

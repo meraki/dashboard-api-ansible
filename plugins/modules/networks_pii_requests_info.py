@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_pii_requests_info
 short_description: Information module for networks _pii _requests
 description:
+  - Information module for Networks Pii Requests Info.
   - Get all networks _pii _requests.
   - Get networks _pii _requests by id.
   - List the PII requests for this network or organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Pii Requests Info.
       - NetworkId path parameter. Network ID.
     type: str
   requestId:
     description:
+  - Information module for Networks Pii Requests Info.
       - RequestId path parameter. Request ID.
     type: str
 requirements:

@@ -18,24 +18,18 @@ options:
   major:
     description: Desired major value of the beacon. If the value is set to null it
       will reset to Dashboard's automatically generated value.
-    type:
-      - integer
-      - 'null'
+    type: int
   minor:
     description: Desired minor value of the beacon. If the value is set to null it
       will reset to Dashboard's automatically generated value.
-    type:
-      - integer
-      - 'null'
+    type: int
   serial:
     description: Serial path parameter.
     type: str
   uuid:
     description: Desired UUID of the beacon. If the value is set to null it will reset
       to Dashboard's automatically generated value.
-    type:
-      - string
-      - 'null'
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

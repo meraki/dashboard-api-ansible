@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_info
 short_description: Information module for networks _wireless _ssids
 description:
+  - Information module for Networks Wireless Ssids Info.
   - Get all networks _wireless _ssids.
   - Get networks _wireless _ssids by id.
   - List the MR SSIDs in a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Info.
       - Number path parameter.
     type: str
 requirements:

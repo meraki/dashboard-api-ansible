@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_qos_rules_order
+module: networks_switch_qosRules_order
 short_description: Resource module for networks _switch _qosrules _order
 description:
   - Manage operations create, update and delete of the resource networks _switch _qosrules
@@ -25,9 +25,7 @@ options:
   dstPort:
     description: The destination port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type:
-      - integer
-      - 'null'
+    type: int
   dstPortRange:
     description: The destination port range of the incoming packet. Applicable only
       if protocol is set to TCP or UDP.
@@ -44,18 +42,14 @@ options:
   srcPort:
     description: The source port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type:
-      - integer
-      - 'null'
+    type: int
   srcPortRange:
     description: The source port range of the incoming packet. Applicable only if
       protocol is set to TCP or UDP.
     type: str
   vlan:
     description: The VLAN of the incoming packet. A null value will match any VLAN.
-    type:
-      - integer
-      - 'null'
+    type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

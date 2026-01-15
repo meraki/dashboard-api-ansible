@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_appliance_ssids_info
 short_description: Information module for networks _appliance _ssids
 description:
+  - Information module for Networks Appliance Ssids Info.
   - Get all networks _appliance _ssids.
   - Get networks _appliance _ssids by id.
   - List the MX SSIDs in a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Ssids Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Appliance Ssids Info.
       - Number path parameter.
     type: str
 requirements:

@@ -9,6 +9,7 @@ module: organizations_appliance_uplinks_statuses_overview_info
 short_description: Information module for organizations _appliance _uplinks _statuses
   _overview
 description:
+  - Information module for Organizations Appliance Uplinks Statuses Overview Info.
   - Get all organizations _appliance _uplinks _statuses _overview.
   - Returns an overview of uplink statuses.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Uplinks Statuses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Appliance Uplinks Statuses Overview Info.
       - >
         NetworkIds query parameter. A list of network IDs. The returned devices will
         be filtered to only include these networks.

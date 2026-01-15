@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_live_tools_mac_table_info
 short_description: Information module for devices _live _tools _mac _table
 description:
+  - Information module for Devices Live Tools Mac Table Info.
   - Get devices _live _tools _mac _table by id.
   - Return a MAC table live tool job.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Live Tools Mac Table Info.
       - Serial path parameter.
     type: str
   macTableId:
     description:
+  - Information module for Devices Live Tools Mac Table Info.
       - MacTableId path parameter. Mac table ID.
     type: str
 requirements:

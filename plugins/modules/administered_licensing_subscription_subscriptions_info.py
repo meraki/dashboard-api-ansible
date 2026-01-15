@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_info
 short_description: Information module for administered _licensing _subscription _subscriptions
 description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
   - Get all administered _licensing _subscription _subscriptions.
   - List available subscriptions.
 version_added: '1.0.0'
@@ -21,11 +22,13 @@ options:
     type: dict
   perPage:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -35,6 +38,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -44,39 +48,46 @@ options:
     type: str
   subscriptionIds:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - SubscriptionIds query parameter. List of subscription ids to fetch.
     elements: str
     type: list
   organizationIds:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - OrganizationIds query parameter. Organizations to get associated subscriptions
         for.
     elements: str
     type: list
   statuses:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - Statuses query parameter. List of statuses that returned subscriptions can
         have.
     elements: str
     type: list
   productTypes:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - ProductTypes query parameter. List of product types that returned subscriptions
         need to have entitlements for.
     elements: str
     type: list
   skus:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - Skus query parameter. List of SKUs that returned subscriptions need to have
         entitlements for.
     elements: str
     type: list
   name:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - Name query parameter. Search for subscription name.
     type: str
   startDate:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - >
         StartDate query parameter. Filter subscriptions by start date, ISO 8601 format.
         To filter with a range of dates, use 'startDate<option>=?' in the request.
@@ -84,6 +95,7 @@ options:
     type: str
   endDate:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Info.
       - >
         EndDate query parameter. Filter subscriptions by end date, ISO 8601 format.
         To filter with a range of dates, use 'endDate<option>=?' in the request. Accepted

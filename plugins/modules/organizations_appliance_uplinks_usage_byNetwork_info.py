@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_appliance_uplinks_usage_by_network_info
+module: organizations_appliance_uplinks_usage_byNetwork_info
 short_description: Information module for organizations _appliance _uplinks _usage
   _bynetwork
 description:
+  - Information module for Organizations Appliance Uplinks Usage Bynetwork Info.
   - Get all organizations _appliance _uplinks _usage _bynetwork.
   - >
     Get the sent and received bytes for each uplink of all MX and Z networks within
@@ -24,20 +25,24 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Uplinks Usage Bynetwork Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
+  - Information module for Organizations Appliance Uplinks Usage Bynetwork Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 30 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Appliance Uplinks Usage Bynetwork Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 14 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Appliance Uplinks Usage Bynetwork Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

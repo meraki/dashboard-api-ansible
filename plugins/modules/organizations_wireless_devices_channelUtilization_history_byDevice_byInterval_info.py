@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_wireless_devices_channel_utilization_history_by_device_by_interval_info
+module: organizations_wireless_devices_channelUtilization_history_byDevice_byInterval_info
 short_description: Information module for organizations _wireless _devices _channelutilization
   _history _bydevice _byinterval
 description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
   - Get all organizations _wireless _devices _channelutilization _history _bydevice
     _byinterval.
   - Get a time-series of average channel utilization for all bands, segmented by device.
@@ -23,25 +24,30 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - NetworkIds query parameter. Filter results by network.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - Serials query parameter. Filter results by device.
     elements: str
     type: list
   perPage:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -51,6 +57,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -60,16 +67,19 @@ options:
     type: str
   t0:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -77,6 +87,7 @@ options:
     type: float
   interval:
     description:
+  - Information module for Organizations Wireless Devices Channelutilization History Bydevice Byinterval Info.
       - >
         Interval query parameter. The time interval in seconds for returned data.
         The valid intervals are 300, 600, 3600, 7200, 14400, 21600. The default is

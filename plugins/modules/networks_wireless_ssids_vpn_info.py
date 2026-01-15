@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_vpn_info
 short_description: Information module for networks _wireless _ssids _vpn
 description:
+  - Information module for Networks Wireless Ssids Vpn Info.
   - Get all networks _wireless _ssids _vpn.
   - List the VPN settings for the SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Vpn Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Vpn Info.
       - Number path parameter.
     type: str
 requirements:

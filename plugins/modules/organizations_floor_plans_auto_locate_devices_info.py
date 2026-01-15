@@ -9,6 +9,7 @@ module: organizations_floor_plans_auto_locate_devices_info
 short_description: Information module for organizations _floor _plans _auto _locate
   _devices
 description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
   - Get all organizations _floor _plans _auto _locate _devices.
   - List auto locate details for each device in your organization.
 version_added: '1.0.0'
@@ -22,15 +23,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 10000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -40,6 +44,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -49,12 +54,14 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - NetworkIds query parameter. Optional parameter to filter devices by one or
         more network IDs.
     elements: str
     type: list
   floorPlanIds:
     description:
+  - Information module for Organizations Floor Plans Auto Locate Devices Info.
       - FloorPlanIds query parameter. Optional parameter to filter devices by one
         or more floorplan IDs.
     elements: str

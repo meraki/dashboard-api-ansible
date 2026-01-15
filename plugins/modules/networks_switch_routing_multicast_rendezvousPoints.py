@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_routing_multicast_rendezvous_points
+module: networks_switch_routing_multicast_rendezvousPoints
 short_description: Resource module for networks _switch _routing _multicast _rendezvouspoints
 description:
   - Manage operations create, update and delete of the resource networks _switch _routing

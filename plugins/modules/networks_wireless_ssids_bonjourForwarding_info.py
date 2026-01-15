@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_bonjour_forwarding_info
+module: networks_wireless_ssids_bonjourForwarding_info
 short_description: Information module for networks _wireless _ssids _bonjourforwarding
 description:
+  - Information module for Networks Wireless Ssids Bonjourforwarding Info.
   - Get all networks _wireless _ssids _bonjourforwarding.
   - List the Bonjour forwarding setting and rules for the SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Bonjourforwarding Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Bonjourforwarding Info.
       - Number path parameter.
     type: str
 requirements:

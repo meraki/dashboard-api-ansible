@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_camera_video_link_info
+module: devices_camera_videoLink_info
 short_description: Information module for devices _camera _videolink
 description:
+  - Information module for Devices Camera Videolink Info.
   - Get all devices _camera _videolink.
   - Returns video link to the specified camera. If a timestamp is supplied, it links
     to that timestamp.
@@ -21,10 +22,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Camera Videolink Info.
       - Serial path parameter.
     type: str
   timestamp:
     description:
+  - Information module for Devices Camera Videolink Info.
       - >
         Timestamp query parameter. Optional The video link will start at this time.
         The timestamp should be a string in ISO8601 format. If no timestamp is specified,

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_wireless_status_info
 short_description: Information module for devices _wireless _status
 description:
+  - Information module for Devices Wireless Status Info.
   - Get all devices _wireless _status.
   - Return the SSID statuses of an access point.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Wireless Status Info.
       - Serial path parameter.
     type: str
 requirements:

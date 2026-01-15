@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_eap_override
+module: networks_wireless_ssids_eapOverride
 short_description: Resource module for networks _wireless _ssids _eapoverride
 description:
   - Manage operation update of the resource networks _wireless _ssids _eapoverride.

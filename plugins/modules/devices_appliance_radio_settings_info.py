@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_appliance_radio_settings_info
 short_description: Information module for devices _appliance _radio _settings
 description:
+  - Information module for Devices Appliance Radio Settings Info.
   - Get all devices _appliance _radio _settings.
   - Return the radio settings of an appliance.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Appliance Radio Settings Info.
       - Serial path parameter.
     type: str
 requirements:

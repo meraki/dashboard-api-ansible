@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_firewall_l3_firewall_rules
+module: networks_wireless_ssids_firewall_l3FirewallRules
 short_description: Resource module for networks _wireless _ssids _firewall l3firewallrules
 description:
   - Manage operation update of the resource networks _wireless _ssids _firewall l3firewallrules.

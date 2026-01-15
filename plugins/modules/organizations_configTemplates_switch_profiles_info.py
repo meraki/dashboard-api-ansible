@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_config_templates_switch_profiles_info
+module: organizations_configTemplates_switch_profiles_info
 short_description: Information module for organizations _configtemplates _switch _profiles
 description:
+  - Information module for Organizations Configtemplates Switch Profiles Info.
   - Get all organizations _configtemplates _switch _profiles.
   - List the switch templates for your switch template configuration.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:

@@ -35,9 +35,7 @@ options:
     type: str
   notes:
     description: Add any notes or additional information about this network here.
-    type:
-      - string
-      - 'null'
+    type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str

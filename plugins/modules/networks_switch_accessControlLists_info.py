@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_access_control_lists_info
+module: networks_switch_accessControlLists_info
 short_description: Information module for networks _switch _accesscontrollists
 description:
+  - Information module for Networks Switch Accesscontrollists Info.
   - Get all networks _switch _accesscontrollists.
   - Return the access control lists for a MS network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Accesscontrollists Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

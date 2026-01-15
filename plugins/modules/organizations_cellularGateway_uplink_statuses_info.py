@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_cellular_gateway_uplink_statuses_info
+module: organizations_cellularGateway_uplink_statuses_info
 short_description: Information module for organizations _cellulargateway _uplink _statuses
 description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
   - Get all organizations _cellulargateway _uplink _statuses.
   - List the uplink status of every Meraki MG cellular gateway in the organization.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -48,6 +53,7 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
         NetworkIds query parameter. A list of network IDs. The returned devices will
         be filtered to only include these networks.
@@ -55,6 +61,7 @@ options:
     type: list
   serials:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
         Serials query parameter. A list of serial numbers. The returned devices will
         be filtered to only include these serials.
@@ -62,6 +69,7 @@ options:
     type: list
   iccids:
     description:
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered
         to only include these ICCIDs.
     elements: str

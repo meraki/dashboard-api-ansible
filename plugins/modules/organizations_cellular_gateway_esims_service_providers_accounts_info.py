@@ -9,6 +9,7 @@ module: organizations_cellular_gateway_esims_service_providers_accounts_info
 short_description: Information module for organizations _cellular _gateway _esims
   _service _providers _accounts
 description:
+  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
   - Get all organizations _cellular _gateway _esims _service _providers _accounts.
   - Inventory of service provider accounts tied to the organization.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   accountIds:
     description:
+  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
       - AccountIds query parameter. Optional parameter to filter the results by service
         provider account IDs.
     elements: int

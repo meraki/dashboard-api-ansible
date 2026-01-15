@@ -9,6 +9,7 @@ module: organizations_wireless_ssids_open_roaming_by_network_info
 short_description: Information module for organizations _wireless _ssids _open _roaming
   _by _network
 description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
   - Get all organizations _wireless _ssids _open _roaming _by _network.
   - Returns an array of objects, each containing SSID OpenRoaming configs for the
     corresponding network.
@@ -23,15 +24,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -41,6 +45,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -50,12 +55,14 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - NetworkIds query parameter. Optional parameter to filter OpenRoaming configuration
         by Network Id.
     elements: str
     type: list
   includeDisabledSsids:
     description:
+  - Information module for Organizations Wireless Ssids Open Roaming By Network Info.
       - IncludeDisabledSsids query parameter. Optional parameter to include OpenRoaming
         configuration for disabled ssids.
     type: bool

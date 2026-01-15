@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_topology_link_layer_info
+module: networks_topology_linkLayer_info
 short_description: Information module for networks _topology _linklayer
 description:
+  - Information module for Networks Topology Linklayer Info.
   - Get all networks _topology _linklayer.
   - >
     List the LLDP and CDP information for all discovered devices and connections in
@@ -23,6 +24,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Topology Linklayer Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

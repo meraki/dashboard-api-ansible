@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_pii_sm_owners_for_key_info
+module: networks_pii_smOwnersForKey_info
 short_description: Information module for networks _pii _smownersforkey
 description:
+  - Information module for Networks Pii Smownersforkey Info.
   - Get all networks _pii _smownersforkey.
   - >
     Given a piece of Personally Identifiable Information PII , return the Systems
@@ -24,32 +25,39 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - NetworkId path parameter. Network ID.
     type: str
   username:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - Username query parameter. The username of a Systems Manager user.
     type: str
   email:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - Email query parameter. The email of a network user account or a Systems Manager
         device.
     type: str
   mac:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - Mac query parameter. The MAC of a network client device or a Systems Manager
         device.
     type: str
   serial:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - Serial query parameter. The serial of a Systems Manager device.
     type: str
   imei:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - Imei query parameter. The IMEI of a Systems Manager device.
     type: str
   bluetoothMac:
     description:
+  - Information module for Networks Pii Smownersforkey Info.
       - BluetoothMac query parameter. The MAC of a Bluetooth client.
     type: str
 requirements:

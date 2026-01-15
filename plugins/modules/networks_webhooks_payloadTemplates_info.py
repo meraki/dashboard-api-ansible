@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_webhooks_payload_templates_info
+module: networks_webhooks_payloadTemplates_info
 short_description: Information module for networks _webhooks _payloadtemplates
 description:
+  - Information module for Networks Webhooks Payloadtemplates Info.
   - Get all networks _webhooks _payloadtemplates.
   - Get networks _webhooks _payloadtemplates by id.
   - Get the webhook payload template for a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Webhooks Payloadtemplates Info.
       - NetworkId path parameter. Network ID.
     type: str
   payloadTemplateId:
     description:
+  - Information module for Networks Webhooks Payloadtemplates Info.
       - PayloadTemplateId path parameter. Payload template ID.
     type: str
 requirements:

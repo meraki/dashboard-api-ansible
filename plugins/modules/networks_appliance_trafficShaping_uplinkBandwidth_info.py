@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_traffic_shaping_uplink_bandwidth_info
+module: networks_appliance_trafficShaping_uplinkBandwidth_info
 short_description: Information module for networks _appliance _trafficshaping _uplinkbandwidth
 description:
+  - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
   - Get all networks _appliance _trafficshaping _uplinkbandwidth.
   - >
     Returns the uplink bandwidth limits for your MX network. This may not reflect
@@ -24,6 +25,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

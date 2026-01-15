@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ethernet_ports_profiles_set_default
+module: networks_wireless_ethernet_ports_profiles_setDefault
 short_description: Resource module for networks _wireless _ethernet _ports _profiles
   _setdefault
 description:
@@ -22,9 +22,7 @@ options:
     type: str
   profileId:
     description: AP profile ID.
-    type:
-      - string
-      - 'null'
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

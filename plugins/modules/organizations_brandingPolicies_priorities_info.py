@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_branding_policies_priorities_info
+module: organizations_brandingPolicies_priorities_info
 short_description: Information module for organizations _brandingpolicies _priorities
 description:
+  - Information module for Organizations Brandingpolicies Priorities Info.
   - Get all organizations _brandingpolicies _priorities.
   - >
     Return the branding policy IDs of an organization in priority order. IDs are ordered
@@ -22,6 +23,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Brandingpolicies Priorities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_summary_top_appliances_by_utilization_info
+module: organizations_summary_top_appliances_byUtilization_info
 short_description: Information module for organizations _summary _top _appliances
   _byutilization
 description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
   - Get all organizations _summary _top _appliances _byutilization.
   - Return the top 10 appliances sorted by utilization over given time range.
 version_added: '1.0.0'
@@ -21,40 +22,49 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   deviceTag:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   quantity:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - Quantity query parameter. Set number of desired results to return. Default
         is 10. Maximum is 50.
     type: int
   ssidName:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Summary Top Appliances Byutilization Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

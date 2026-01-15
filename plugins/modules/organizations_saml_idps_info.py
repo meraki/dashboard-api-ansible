@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_saml_idps_info
 short_description: Information module for organizations _saml _idps
 description:
+  - Information module for Organizations Saml Idps Info.
   - Get all organizations _saml _idps.
   - Get organizations _saml _idps by id.
   - Get a SAML IdP from your organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Saml Idps Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   idpId:
     description:
+  - Information module for Organizations Saml Idps Info.
       - IdpId path parameter. Idp ID.
     type: str
 requirements:

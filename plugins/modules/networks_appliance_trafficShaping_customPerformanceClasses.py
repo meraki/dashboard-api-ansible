@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_traffic_shaping_custom_performance_classes
+module: networks_appliance_trafficShaping_customPerformanceClasses
 short_description: Resource module for networks _appliance _trafficshaping _customperformanceclasses
 description:
   - Manage operation create of the resource networks _appliance _trafficshaping _customperformanceclasses.
@@ -17,19 +17,13 @@ author: Francisco Munoz (@fmunoz)
 options:
   maxJitter:
     description: Maximum jitter in milliseconds.
-    type:
-      - integer
-      - 'null'
+    type: int
   maxLatency:
     description: Maximum latency in milliseconds.
-    type:
-      - integer
-      - 'null'
+    type: int
   maxLossPercentage:
     description: Maximum percentage of packet loss.
-    type:
-      - integer
-      - 'null'
+    type: int
   name:
     description: Name of the custom performance class.
     type: str

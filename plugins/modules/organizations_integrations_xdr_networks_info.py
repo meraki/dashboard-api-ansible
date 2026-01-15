@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_integrations_xdr_networks_info
 short_description: Information module for organizations _integrations _xdr _networks
 description:
+  - Information module for Organizations Integrations Xdr Networks Info.
   - Get all organizations _integrations _xdr _networks.
   - Returns the networks in the organization that have XDR enabled.
 version_added: '1.0.0'
@@ -21,21 +22,25 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Integrations Xdr Networks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Integrations Xdr Networks Info.
       - NetworkIds query parameter. Optional parameter to filter the results by network
         IDs.
     elements: str
     type: list
   perPage:
     description:
+  - Information module for Organizations Integrations Xdr Networks Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 100. Default is 20.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Integrations Xdr Networks Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -45,6 +50,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Integrations Xdr Networks Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

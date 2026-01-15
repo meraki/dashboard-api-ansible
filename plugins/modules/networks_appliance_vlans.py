@@ -78,9 +78,7 @@ options:
     type: dict
   groupPolicyId:
     description: The id of the desired group policy to apply to the VLAN.
-    type:
-      - string
-      - 'null'
+    type: str
   id:
     description: The VLAN ID of the new VLAN (must be between 1 and 4094).
     type: str

@@ -9,6 +9,7 @@ module: administered_licensing_subscription_subscriptions_compliance_statuses_in
 short_description: Information module for administered _licensing _subscription _subscriptions
   _compliance _statuses
 description:
+  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
   - Get all administered _licensing _subscription _subscriptions _compliance _statuses.
   - Get compliance status for requested subscriptions.
 version_added: '1.0.0'
@@ -21,12 +22,14 @@ options:
     type: dict
   organizationIds:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
       - OrganizationIds query parameter. Organizations to get subscription compliance
         information for.
     elements: str
     type: list
   subscriptionIds:
     description:
+  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
       - SubscriptionIds query parameter. Subscription ids.
     elements: str
     type: list

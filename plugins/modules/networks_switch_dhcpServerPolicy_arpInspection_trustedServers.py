@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers
+module: networks_switch_dhcpServerPolicy_arpInspection_trustedServers
 short_description: Resource module for networks _switch _dhcpserverpolicy _arpinspection
   _trustedservers
 description:

@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_camera_custom_analytics_artifacts_info
+module: organizations_camera_customAnalytics_artifacts_info
 short_description: Information module for organizations _camera _customanalytics _artifacts
 description:
+  - Information module for Organizations Camera Customanalytics Artifacts Info.
   - Get all organizations _camera _customanalytics _artifacts.
   - Get organizations _camera _customanalytics _artifacts by id.
   - Get Custom Analytics Artifact.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Camera Customanalytics Artifacts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   artifactId:
     description:
+  - Information module for Organizations Camera Customanalytics Artifacts Info.
       - ArtifactId path parameter. Artifact ID.
     type: str
 requirements:

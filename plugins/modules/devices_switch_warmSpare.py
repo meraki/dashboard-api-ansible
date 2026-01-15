@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_switch_warm_spare
+module: devices_switch_warmSpare
 short_description: Resource module for devices _switch _warmspare
 description:
   - Manage operation update of the resource devices _switch _warmspare.

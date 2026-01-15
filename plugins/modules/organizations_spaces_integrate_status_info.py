@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_spaces_integrate_status_info
 short_description: Information module for organizations _spaces _integrate _status
 description:
+  - Information module for Organizations Spaces Integrate Status Info.
   - Get all organizations _spaces _integrate _status.
   - Get the status of the Spaces integration in Meraki.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Spaces Integrate Status Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_adaptive_policy_groups_info
+module: organizations_adaptivePolicy_groups_info
 short_description: Information module for organizations _adaptivepolicy _groups
 description:
+  - Information module for Organizations Adaptivepolicy Groups Info.
   - Get all organizations _adaptivepolicy _groups.
   - Get organizations _adaptivepolicy _groups by id.
   - List adaptive policy groups in a organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Adaptivepolicy Groups Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   id:
     description:
+  - Information module for Organizations Adaptivepolicy Groups Info.
       - Id path parameter.
     type: str
 requirements:

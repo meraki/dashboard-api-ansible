@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_adaptive_policy_settings
+module: organizations_adaptivePolicy_settings
 short_description: Resource module for organizations _adaptivepolicy _settings
 description:
   - Manage operation update of the resource organizations _adaptivepolicy _settings.

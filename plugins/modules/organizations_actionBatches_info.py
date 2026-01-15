@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_action_batches_info
+module: organizations_actionBatches_info
 short_description: Information module for organizations _actionbatches
 description:
+  - Information module for Organizations Actionbatches Info.
   - Get all organizations _actionbatches.
   - Get organizations _actionbatches by id.
   - Return an action batch.
@@ -22,15 +23,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Actionbatches Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   status:
     description:
+  - Information module for Organizations Actionbatches Info.
       - Status query parameter. Filter batches by status. Valid types are pending,
         completed, and failed.
     type: str
   actionBatchId:
     description:
+  - Information module for Organizations Actionbatches Info.
       - ActionBatchId path parameter. Action batch ID.
     type: str
 requirements:

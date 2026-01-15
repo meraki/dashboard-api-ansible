@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_early_access_features_opt_ins
+module: organizations_earlyAccess_features_optIns
 short_description: Resource module for organizations _earlyaccess _features _optins
 description:
   - Manage operations create, update and delete of the resource organizations _earlyaccess

@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_rf_profiles_info
+module: networks_wireless_rfProfiles_info
 short_description: Information module for networks _wireless _rfprofiles
 description:
+  - Information module for Networks Wireless Rfprofiles Info.
   - Get all networks _wireless _rfprofiles.
   - Get networks _wireless _rfprofiles by id.
   - List RF profiles for this network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Rfprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   includeTemplateProfiles:
     description:
+  - Information module for Networks Wireless Rfprofiles Info.
       - >
         IncludeTemplateProfiles query parameter. If the network is bound to a template,
         this parameter controls whether or not the non-basic RF profiles defined on
@@ -34,6 +37,7 @@ options:
     type: bool
   rfProfileId:
     description:
+  - Information module for Networks Wireless Rfprofiles Info.
       - RfProfileId path parameter. Rf profile ID.
     type: str
 requirements:

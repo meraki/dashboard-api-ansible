@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_vlan_profiles_info
+module: networks_vlanProfiles_info
 short_description: Information module for networks _vlanprofiles
 description:
+  - Information module for Networks Vlanprofiles Info.
   - Get all networks _vlanprofiles.
   - Get networks _vlanprofiles by name.
   - Get an existing VLAN profile of a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Vlanprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   iname:
     description:
+  - Information module for Networks Vlanprofiles Info.
       - Iname path parameter.
     type: str
 requirements:

@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_alternate_management_interface
+module: networks_switch_alternateManagementInterface
 short_description: Resource module for networks _switch _alternatemanagementinterface
 description:
   - Manage operation update of the resource networks _switch _alternatemanagementinterface.

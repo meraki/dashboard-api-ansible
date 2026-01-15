@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_wireless_alternate_management_interface_ipv6
+module: devices_wireless_alternateManagementInterface_ipv6
 short_description: Resource module for devices _wireless _alternatemanagementinterface
   _ipv6
 description:

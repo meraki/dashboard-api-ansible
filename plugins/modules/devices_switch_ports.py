@@ -29,9 +29,7 @@ options:
       this switch port. This ID must pre-exist during the configuration, else needs
       to be created using adaptivePolicy/groups API. Cannot be applied to a port on
       a switch bound to profile.
-    type:
-      - string
-      - 'null'
+    type: str
   allowedVlans:
     description: The VLANs allowed on the switch port. Only applicable to trunk ports.
     type: str
@@ -79,9 +77,7 @@ options:
     type: int
   name:
     description: The name of the switch port.
-    type:
-      - string
-      - 'null'
+    type: str
   peerSgtCapable:
     description: If true, Peer SGT is enabled for traffic through this switch port.
       Applicable to trunk port only, not access port. Cannot be applied to a port
@@ -96,9 +92,7 @@ options:
   portScheduleId:
     description: The ID of the port schedule. A value of null will clear the port
       schedule.
-    type:
-      - string
-      - 'null'
+    type: str
   profile:
     description: Profile attributes.
     suboptions:
@@ -154,14 +148,10 @@ options:
   vlan:
     description: The VLAN of the switch port. For a trunk port, this is the native
       VLAN. A null value will clear the value set for trunk ports.
-    type:
-      - integer
-      - 'null'
+    type: int
   voiceVlan:
     description: The voice VLAN of the switch port. Only applicable to access ports.
-    type:
-      - integer
-      - 'null'
+    type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

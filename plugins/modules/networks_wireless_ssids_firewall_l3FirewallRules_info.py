@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_firewall_l3_firewall_rules_info
+module: networks_wireless_ssids_firewall_l3FirewallRules_info
 short_description: Information module for networks _wireless _ssids _firewall l3firewallrules
 description:
+  - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
   - Get all networks _wireless _ssids _firewall l3firewallrules.
   - Return the L3 firewall rules for an SSID on an MR network.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
       - Number path parameter.
     type: str
 requirements:

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_settings_info
 short_description: Information module for networks _switch _settings
 description:
+  - Information module for Networks Switch Settings Info.
   - Get all networks _switch _settings.
   - Returns the switch network settings.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

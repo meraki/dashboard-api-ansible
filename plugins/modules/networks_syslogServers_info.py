@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_syslog_servers_info
+module: networks_syslogServers_info
 short_description: Information module for networks _syslogservers
 description:
+  - Information module for Networks Syslogservers Info.
   - Get all networks _syslogservers.
   - List the syslog servers for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Syslogservers Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

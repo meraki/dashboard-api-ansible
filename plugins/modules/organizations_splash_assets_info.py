@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_splash_assets_info
 short_description: Information module for organizations _splash _assets
 description:
+  - Information module for Organizations Splash Assets Info.
   - Get organizations _splash _assets by id.
   - Get a Splash Theme Asset.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Splash Assets Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   id:
     description:
+  - Information module for Organizations Splash Assets Info.
       - Id path parameter.
     type: str
 requirements:

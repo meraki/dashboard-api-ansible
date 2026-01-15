@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_camera_sense_info
 short_description: Information module for devices _camera _sense
 description:
+  - Information module for Devices Camera Sense Info.
   - Get all devices _camera _sense.
   - Returns sense settings for a given camera.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Camera Sense Info.
       - Serial path parameter.
     type: str
 requirements:

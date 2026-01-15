@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_cellular_gateway_dhcp_info
+module: networks_cellularGateway_dhcp_info
 short_description: Information module for networks _cellulargateway _dhcp
 description:
+  - Information module for Networks Cellulargateway Dhcp Info.
   - Get all networks _cellulargateway _dhcp.
   - List common DHCP settings of MGs.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Cellulargateway Dhcp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

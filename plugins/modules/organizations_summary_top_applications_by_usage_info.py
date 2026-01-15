@@ -9,6 +9,7 @@ module: organizations_summary_top_applications_by_usage_info
 short_description: Information module for organizations _summary _top _applications
   _by _usage
 description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
   - Get all organizations _summary _top _applications _by _usage.
   - Return the top applications sorted by data usage over given time range. Default
     unit is megabytes.
@@ -22,44 +23,54 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   device:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - Device query parameter. Match result to an exact device tag.
     type: str
   networkId:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - NetworkId query parameter. Match result to an exact network id.
     type: str
   quantity:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - Quantity query parameter. Set number of desired results to return. Default
         is 10. Maximum is 50.
     type: int
   ssidName:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Summary Top Applications By Usage Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

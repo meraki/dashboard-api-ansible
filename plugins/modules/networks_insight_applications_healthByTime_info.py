@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_insight_applications_health_by_time_info
+module: networks_insight_applications_healthByTime_info
 short_description: Information module for networks _insight _applications _healthbytime
 description:
+  - Information module for Networks Insight Applications Healthbytime Info.
   - Get all networks _insight _applications _healthbytime.
   - Get application health by time.
 version_added: '1.0.0'
@@ -20,24 +21,29 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - NetworkId path parameter. Network ID.
     type: str
   applicationId:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - ApplicationId path parameter. Application ID.
     type: str
   t0:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 7 days from today.
     type: str
   t1:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 7 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -45,6 +51,7 @@ options:
     type: float
   resolution:
     description:
+  - Information module for Networks Insight Applications Healthbytime Info.
       - >
         Resolution query parameter. The time resolution in seconds for returned data.
         The valid resolutions are 60, 300, 3600, 86400. The default is 300.

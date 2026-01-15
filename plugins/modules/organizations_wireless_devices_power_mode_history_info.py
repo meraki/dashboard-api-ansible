@@ -9,6 +9,7 @@ module: organizations_wireless_devices_power_mode_history_info
 short_description: Information module for organizations _wireless _devices _power
   _mode _history
 description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
   - Get all organizations _wireless _devices _power _mode _history.
   - >
     Return a record of power mode changes for wireless devices in the organization.
@@ -25,20 +26,24 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 1 day from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 1 day after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -46,11 +51,13 @@ options:
     type: float
   perPage:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 20. Default is 10.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -60,6 +67,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -69,12 +77,14 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - NetworkIds query parameter. Optional parameter to filter the result set by
         the included set of network IDs.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Wireless Devices Power Mode History Info.
       - Serials query parameter. Optional parameter to filter device availabilities
         history by device serial numbers.
     elements: str

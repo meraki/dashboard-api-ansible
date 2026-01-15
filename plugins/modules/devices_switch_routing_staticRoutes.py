@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_switch_routing_static_routes
+module: devices_switch_routing_staticRoutes
 short_description: Resource module for devices _switch _routing _staticroutes
 description:
   - Manage operations create, update and delete of the resource devices _switch _routing
@@ -23,9 +23,7 @@ options:
     type: bool
   managementNextHop:
     description: Optional fallback IP address for management traffic.
-    type:
-      - string
-      - 'null'
+    type: str
   name:
     description: Name or description for layer 3 static route.
     type: str

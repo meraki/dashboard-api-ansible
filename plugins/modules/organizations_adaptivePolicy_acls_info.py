@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_adaptive_policy_acls_info
+module: organizations_adaptivePolicy_acls_info
 short_description: Information module for organizations _adaptivepolicy _acls
 description:
+  - Information module for Organizations Adaptivepolicy Acls Info.
   - Get all organizations _adaptivepolicy _acls.
   - Get organizations _adaptivepolicy _acls by id.
   - List adaptive policy ACLs in a organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Adaptivepolicy Acls Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   aclId:
     description:
+  - Information module for Organizations Adaptivepolicy Acls Info.
       - AclId path parameter. Acl ID.
     type: str
 requirements:

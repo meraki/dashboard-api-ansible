@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_meraki_auth_users_info
+module: networks_merakiAuthUsers_info
 short_description: Information module for networks _merakiauthusers
 description:
+  - Information module for Networks Merakiauthusers Info.
   - Get all networks _merakiauthusers.
   - Get networks _merakiauthusers by id.
   - >
@@ -25,10 +26,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Merakiauthusers Info.
       - NetworkId path parameter. Network ID.
     type: str
   merakiAuthUserId:
     description:
+  - Information module for Networks Merakiauthusers Info.
       - MerakiAuthUserId path parameter. Meraki auth user ID.
     type: str
 requirements:

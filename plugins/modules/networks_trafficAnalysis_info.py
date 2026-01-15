@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_traffic_analysis_info
+module: networks_trafficAnalysis_info
 short_description: Information module for networks _trafficanalysis
 description:
+  - Information module for Networks Trafficanalysis Info.
   - Get all networks _trafficanalysis.
   - Return the traffic analysis settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Trafficanalysis Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

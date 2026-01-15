@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_traffic_shaping_application_categories_info
+module: networks_trafficShaping_applicationCategories_info
 short_description: Information module for networks _trafficshaping _applicationcategories
 description:
+  - Information module for Networks Trafficshaping Applicationcategories Info.
   - Get all networks _trafficshaping _applicationcategories.
   - Returns the application categories for traffic shaping rules. Only applicable
     on networks with a security applicance.
@@ -21,6 +22,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Trafficshaping Applicationcategories Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

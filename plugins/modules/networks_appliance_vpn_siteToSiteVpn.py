@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_vpn_site_to_site_vpn
+module: networks_appliance_vpn_siteToSiteVpn
 short_description: Resource module for networks _appliance _vpn _sitetositevpn
 description:
   - Manage operation update of the resource networks _appliance _vpn _sitetositevpn.

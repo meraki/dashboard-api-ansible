@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_live_tools_multicast_routing_info
 short_description: Information module for devices _live _tools _multicast _routing
 description:
+  - Information module for Devices Live Tools Multicast Routing Info.
   - Get devices _live _tools _multicast _routing by id.
   - Return a Multicast routing live tool job.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Live Tools Multicast Routing Info.
       - Serial path parameter.
     type: str
   multicastRoutingId:
     description:
+  - Information module for Devices Live Tools Multicast Routing Info.
       - MulticastRoutingId path parameter. Multicast routing ID.
     type: str
 requirements:

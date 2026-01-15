@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_mtu_info
 short_description: Information module for networks _switch _mtu
 description:
+  - Information module for Networks Switch Mtu Info.
   - Get all networks _switch _mtu.
   - Return the MTU configuration.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Mtu Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

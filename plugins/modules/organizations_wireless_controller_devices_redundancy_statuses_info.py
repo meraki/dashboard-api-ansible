@@ -9,6 +9,7 @@ module: organizations_wireless_controller_devices_redundancy_statuses_info
 short_description: Information module for organizations _wireless _controller _devices
   _redundancy _statuses
 description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
   - Get all organizations _wireless _controller _devices _redundancy _statuses.
   - >
     List redundancy details of wireless LAN controllers in an organization. The failover
@@ -25,10 +26,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
       - >
         Serials query parameter. Optional parameter to filter wireless LAN controller
         by its cloud IDs. This filter uses multiple exact matches.
@@ -36,11 +39,13 @@ options:
     type: list
   perPage:
     description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -50,6 +55,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Controller Devices Redundancy Statuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

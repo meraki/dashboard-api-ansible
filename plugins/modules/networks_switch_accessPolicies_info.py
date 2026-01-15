@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_access_policies_info
+module: networks_switch_accessPolicies_info
 short_description: Information module for networks _switch _accesspolicies
 description:
+  - Information module for Networks Switch Accesspolicies Info.
   - Get all networks _switch _accesspolicies.
   - Get networks _switch _accesspolicies by id.
   - >
@@ -24,10 +25,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Accesspolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   accessPolicyNumber:
     description:
+  - Information module for Networks Switch Accesspolicies Info.
       - AccessPolicyNumber path parameter. Access policy number.
     type: str
 requirements:

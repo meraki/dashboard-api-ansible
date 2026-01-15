@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_alerts_history_info
 short_description: Information module for networks _alerts _history
 description:
+  - Information module for Networks Alerts History Info.
   - Get all networks _alerts _history.
   - Return the alert history for this network.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Alerts History Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
+  - Information module for Networks Alerts History Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Alerts History Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Alerts History Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

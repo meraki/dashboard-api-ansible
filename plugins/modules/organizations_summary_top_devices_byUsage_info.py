@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_summary_top_devices_by_usage_info
+module: organizations_summary_top_devices_byUsage_info
 short_description: Information module for organizations _summary _top _devices _byusage
 description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
   - Get all organizations _summary _top _devices _byusage.
   - >
     Return metrics for organization's top 10 devices sorted by data usage over given
@@ -22,40 +23,49 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   deviceTag:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   quantity:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - Quantity query parameter. Set number of desired results to return. Default
         is 10. Maximum is 50.
     type: int
   ssidName:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Summary Top Devices Byusage Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

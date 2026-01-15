@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_sm_apns_cert_info
+module: organizations_sm_apnsCert_info
 short_description: Information module for organizations _sm _apnscert
 description:
+  - Information module for Organizations Sm Apnscert Info.
   - Get all organizations _sm _apnscert.
   - Get the organization's APNS certificate.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Sm Apnscert Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

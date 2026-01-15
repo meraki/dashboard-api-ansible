@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_firmware_upgrades_staged_events_defer
+module: networks_firmwareUpgrades_staged_events_defer
 short_description: Resource module for networks _firmwareupgrades _staged _events
   _defer
 description:

@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_camera_custom_analytics_artifacts
+module: organizations_camera_customAnalytics_artifacts
 short_description: Resource module for organizations _camera _customanalytics _artifacts
 description:
   - Manage operations create and delete of the resource organizations _camera _customanalytics

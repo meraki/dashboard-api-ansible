@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_config_templates_info
+module: organizations_configTemplates_info
 short_description: Information module for organizations _configtemplates
 description:
+  - Information module for Organizations Configtemplates Info.
   - Get all organizations _configtemplates.
   - Get organizations _configtemplates by id.
   - List the configuration templates for this organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Configtemplates Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+  - Information module for Organizations Configtemplates Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:

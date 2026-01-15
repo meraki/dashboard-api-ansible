@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_devices_desktop_logs_info
+module: networks_sm_devices_desktopLogs_info
 short_description: Information module for networks _sm _devices _desktoplogs
 description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
   - Get all networks _sm _devices _desktoplogs.
   - Return historical records of various Systems Manager network connection details
     for desktop devices.
@@ -22,19 +23,23 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
       - DeviceId path parameter. Device ID.
     type: str
   perPage:
     description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,6 +49,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Sm Devices Desktoplogs Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

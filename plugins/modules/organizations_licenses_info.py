@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_licenses_info
 short_description: Information module for organizations _licenses
 description:
+  - Information module for Organizations Licenses Info.
   - Get organizations _licenses by id.
   - Display a license.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Licenses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   licenseId:
     description:
+  - Information module for Organizations Licenses Info.
       - LicenseId path parameter. License ID.
     type: str
 requirements:

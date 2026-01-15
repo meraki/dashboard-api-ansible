@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_rf_profiles
+module: networks_wireless_rfProfiles
 short_description: Resource module for networks _wireless _rfprofiles
 description:
   - Manage operations create, update and delete of the resource networks _wireless

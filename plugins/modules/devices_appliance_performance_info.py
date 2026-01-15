@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_appliance_performance_info
 short_description: Information module for devices _appliance _performance
 description:
+  - Information module for Devices Appliance Performance Info.
   - Get all devices _appliance _performance.
   - >
     Return the performance score for a single MX. Only primary MX devices supported.
@@ -22,20 +23,24 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Appliance Performance Info.
       - Serial path parameter.
     type: str
   t0:
     description:
+  - Information module for Devices Appliance Performance Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 30 days from today.
     type: str
   t1:
     description:
+  - Information module for Devices Appliance Performance Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 14 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Devices Appliance Performance Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

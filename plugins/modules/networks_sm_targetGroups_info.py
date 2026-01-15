@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_target_groups_info
+module: networks_sm_targetGroups_info
 short_description: Information module for networks _sm _targetgroups
 description:
+  - Information module for Networks Sm Targetgroups Info.
   - Get all networks _sm _targetgroups.
   - Get networks _sm _targetgroups by id.
   - List the target groups in this network.
@@ -22,16 +23,19 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Targetgroups Info.
       - NetworkId path parameter. Network ID.
     type: str
   withDetails:
     description:
+  - Information module for Networks Sm Targetgroups Info.
       - >
         WithDetails query parameter. Boolean indicating if the the ids of the devices
         or users scoped by the target group should be included in the response.
     type: bool
   targetGroupId:
     description:
+  - Information module for Networks Sm Targetgroups Info.
       - TargetGroupId path parameter. Target group ID.
     type: str
 requirements:

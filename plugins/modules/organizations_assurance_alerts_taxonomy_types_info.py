@@ -9,6 +9,7 @@ module: organizations_assurance_alerts_taxonomy_types_info
 short_description: Information module for organizations _assurance _alerts _taxonomy
   _types
 description:
+  - Information module for Organizations Assurance Alerts Taxonomy Types Info.
   - Get all organizations _assurance _alerts _taxonomy _types.
   - Return a list of alert types.
 version_added: '1.0.0'
@@ -21,6 +22,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Assurance Alerts Taxonomy Types Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

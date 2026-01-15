@@ -29,9 +29,7 @@ options:
   mqttBrokerId:
     description: The ID of the MQTT broker to be enabled on the camera. A value of
       null will disable MQTT on the camera.
-    type:
-      - string
-      - 'null'
+    type: str
   senseEnabled:
     description: Boolean indicating if sense(license) is enabled(true) or disabled(false)
       on the camera.

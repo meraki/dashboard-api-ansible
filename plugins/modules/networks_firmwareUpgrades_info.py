@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_firmware_upgrades_info
+module: networks_firmwareUpgrades_info
 short_description: Information module for networks _firmwareupgrades
 description:
+  - Information module for Networks Firmwareupgrades Info.
   - Get all networks _firmwareupgrades.
   - Get firmware upgrade information for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Firmwareupgrades Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_webhooks_webhook_tests_info
+module: networks_webhooks_webhookTests_info
 short_description: Information module for networks _webhooks _webhooktests
 description:
+  - Information module for Networks Webhooks Webhooktests Info.
   - Get networks _webhooks _webhooktests by id.
   - Return the status of a webhook test for a network.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Webhooks Webhooktests Info.
       - NetworkId path parameter. Network ID.
     type: str
   webhookTestId:
     description:
+  - Information module for Networks Webhooks Webhooktests Info.
       - WebhookTestId path parameter. Webhook test ID.
     type: str
 requirements:

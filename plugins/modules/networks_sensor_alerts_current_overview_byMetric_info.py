@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sensor_alerts_current_overview_by_metric_info
+module: networks_sensor_alerts_current_overview_byMetric_info
 short_description: Information module for networks _sensor _alerts _current _overview
   _bymetric
 description:
+  - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
   - Get all networks _sensor _alerts _current _overview _bymetric.
   - Return an overview of currently alerting sensors by metric.
 version_added: '1.0.0'
@@ -21,6 +22,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

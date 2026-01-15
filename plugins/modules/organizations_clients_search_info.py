@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_clients_search_info
 short_description: Information module for organizations _clients _search
 description:
+  - Information module for Organizations Clients Search Info.
   - Get all organizations _clients _search.
   - Return the client details in an organization.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Clients Search Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Clients Search Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 5. Default is 5.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Clients Search Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Clients Search Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -48,6 +53,7 @@ options:
     type: str
   mac:
     description:
+  - Information module for Organizations Clients Search Info.
       - Mac query parameter. The MAC address of the client. Required.
     type: str
 requirements:

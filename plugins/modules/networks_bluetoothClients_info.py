@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_bluetooth_clients_info
+module: networks_bluetoothClients_info
 short_description: Information module for networks _bluetoothclients
 description:
+  - Information module for Networks Bluetoothclients Info.
   - Get networks _bluetoothclients by id.
   - Return a Bluetooth client. Bluetooth clients can be identified by their ID or
     their MAC.
@@ -21,19 +22,23 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Bluetoothclients Info.
       - NetworkId path parameter. Network ID.
     type: str
   bluetoothClientId:
     description:
+  - Information module for Networks Bluetoothclients Info.
       - BluetoothClientId path parameter. Bluetooth client ID.
     type: str
   includeConnectivityHistory:
     description:
+  - Information module for Networks Bluetoothclients Info.
       - IncludeConnectivityHistory query parameter. Include the connectivity history
         for this client.
     type: bool
   connectivityHistoryTimespan:
     description:
+  - Information module for Networks Bluetoothclients Info.
       - >
         ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for
         the connectivityHistory data. By default 1 day, 86400, will be used.

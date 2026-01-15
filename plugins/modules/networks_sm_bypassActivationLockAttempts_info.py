@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_bypass_activation_lock_attempts_info
+module: networks_sm_bypassActivationLockAttempts_info
 short_description: Information module for networks _sm _bypassactivationlockattempts
 description:
+  - Information module for Networks Sm Bypassactivationlockattempts Info.
   - Get networks _sm _bypassactivationlockattempts by id.
   - Bypass activation lock attempt status.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Bypassactivationlockattempts Info.
       - NetworkId path parameter. Network ID.
     type: str
   attemptId:
     description:
+  - Information module for Networks Sm Bypassactivationlockattempts Info.
       - AttemptId path parameter. Attempt ID.
     type: str
 requirements:

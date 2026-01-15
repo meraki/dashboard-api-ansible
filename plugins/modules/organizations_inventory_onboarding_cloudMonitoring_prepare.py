@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_inventory_onboarding_cloud_monitoring_prepare
+module: organizations_inventory_onboarding_cloudMonitoring_prepare
 short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring
   _prepare
 description:

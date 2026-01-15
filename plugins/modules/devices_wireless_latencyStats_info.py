@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_wireless_latency_stats_info
+module: devices_wireless_latencyStats_info
 short_description: Information module for devices _wireless _latencystats
 description:
+  - Information module for Devices Wireless Latencystats Info.
   - Get all devices _wireless _latencystats.
   - Aggregated latency info for a given AP on this network.
 version_added: '1.0.0'
@@ -20,20 +21,24 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - Serial path parameter.
     type: str
   t0:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 180 days from today.
     type: str
   t1:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 7 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -41,24 +46,29 @@ options:
     type: float
   band:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - >
         Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note
         that data prior to February 2020 will not have band information.
     type: str
   ssid:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - Ssid query parameter. Filter results by SSID.
     type: int
   apTag:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - ApTag query parameter. Filter results by AP Tag.
     type: str
   vlan:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - Vlan query parameter. Filter results by VLAN.
     type: int
   fields:
     description:
+  - Information module for Devices Wireless Latencystats Info.
       - >
         Fields query parameter. Partial selection If present, this call will return
         only the selected fields of "rawDistribution", "avg". All fields will be returned

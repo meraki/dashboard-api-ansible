@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_access_policies
+module: networks_switch_accessPolicies
 short_description: Resource module for networks _switch _accesspolicies
 description:
   - Manage operations create, update and delete of the resource networks _switch _accesspolicies.
@@ -39,24 +39,18 @@ options:
     type: dict
   guestGroupPolicyId:
     description: Group policy Number for guest group policy.
-    type:
-      - string
-      - 'null'
+    type: str
   guestPortBouncing:
     description: If enabled, Meraki devices will periodically send access-request
       messages to these RADIUS servers.
     type: bool
   guestSgtId:
     description: Security Group Tag ID for guest group policy.
-    type:
-      - integer
-      - 'null'
+    type: int
   guestVlanId:
     description: ID for the guest VLAN allow unauthorized devices access to limited
       network resources.
-    type:
-      - integer
-      - 'null'
+    type: int
   hostMode:
     description: Choose the Host Mode for the access policy.
     type: str

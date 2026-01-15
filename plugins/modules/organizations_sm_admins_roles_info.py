@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_sm_admins_roles_info
 short_description: Information module for organizations _sm _admins _roles
 description:
+  - Information module for Organizations Sm Admins Roles Info.
   - Get all organizations _sm _admins _roles.
   - List the Limited Access Roles for an organization.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Sm Admins Roles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Sm Admins Roles Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Sm Admins Roles Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Sm Admins Roles Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

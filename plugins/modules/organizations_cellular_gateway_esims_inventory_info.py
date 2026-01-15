@@ -9,6 +9,7 @@ module: organizations_cellular_gateway_esims_inventory_info
 short_description: Information module for organizations _cellular _gateway _esims
   _inventory
 description:
+  - Information module for Organizations Cellular Gateway Esims Inventory Info.
   - Get all organizations _cellular _gateway _esims _inventory.
   - The eSIM inventory of a given organization.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   eids:
     description:
+  - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - Eids query parameter. Optional parameter to filter the results by EID.
     elements: str
     type: list

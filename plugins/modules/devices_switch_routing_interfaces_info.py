@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces_info
 short_description: Information module for devices _switch _routing _interfaces
 description:
+  - Information module for Devices Switch Routing Interfaces Info.
   - Get all devices _switch _routing _interfaces.
   - Get devices _switch _routing _interfaces by id.
   - List layer 3 interfaces for a switch. Those for a stack may be found under switch
@@ -23,18 +24,22 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Switch Routing Interfaces Info.
       - Serial path parameter.
     type: str
   mode:
     description:
+  - Information module for Devices Switch Routing Interfaces Info.
       - Mode query parameter. Optional parameter to filter L3 interfaces by mode.
     type: str
   protocol:
     description:
+  - Information module for Devices Switch Routing Interfaces Info.
       - Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
     type: str
   interfaceId:
     description:
+  - Information module for Devices Switch Routing Interfaces Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

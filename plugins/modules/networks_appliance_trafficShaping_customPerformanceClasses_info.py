@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_traffic_shaping_custom_performance_classes_info
+module: networks_appliance_trafficShaping_customPerformanceClasses_info
 short_description: Information module for networks _appliance _trafficshaping _customperformanceclasses
 description:
+  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
   - Get all networks _appliance _trafficshaping _customperformanceclasses.
   - Get networks _appliance _trafficshaping _customperformanceclasses by id.
   - List all custom performance classes for an MX network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - NetworkId path parameter. Network ID.
     type: str
   customPerformanceClassId:
     description:
+  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - CustomPerformanceClassId path parameter. Custom performance class ID.
     type: str
 requirements:

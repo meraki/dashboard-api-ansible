@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_splash_settings_info
 short_description: Information module for networks _wireless _ssids _splash _settings
 description:
+  - Information module for Networks Wireless Ssids Splash Settings Info.
   - Get all networks _wireless _ssids _splash _settings.
   - Display the splash page settings for the given SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Splash Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Splash Settings Info.
       - Number path parameter.
     type: str
 requirements:

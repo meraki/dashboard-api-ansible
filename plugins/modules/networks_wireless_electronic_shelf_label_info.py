@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_electronic_shelf_label_info
 short_description: Information module for networks _wireless _electronic _shelf _label
 description:
+  - Information module for Networks Wireless Electronic Shelf Label Info.
   - Get all networks _wireless _electronic _shelf _label.
   - Return the ESL settings of a wireless network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Electronic Shelf Label Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

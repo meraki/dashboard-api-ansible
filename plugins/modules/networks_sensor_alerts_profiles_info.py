@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_profiles_info
 short_description: Information module for networks _sensor _alerts _profiles
 description:
+  - Information module for Networks Sensor Alerts Profiles Info.
   - Get all networks _sensor _alerts _profiles.
   - Get networks _sensor _alerts _profiles by id.
   - Lists all sensor alert profiles for a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sensor Alerts Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   id:
     description:
+  - Information module for Networks Sensor Alerts Profiles Info.
       - Id path parameter.
     type: str
 requirements:

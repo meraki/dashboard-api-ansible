@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_events_info
 short_description: Information module for networks _events
 description:
+  - Information module for Networks Events Info.
   - Get all networks _events.
   - List the events for the network.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Events Info.
       - NetworkId path parameter. Network ID.
     type: str
   productType:
     description:
+  - Information module for Networks Events Info.
       - >
         ProductType query parameter. The product type to fetch events for. This parameter
         is required for networks with multiple device types. Valid types are wireless,
@@ -33,6 +36,7 @@ options:
     type: str
   includedEventTypes:
     description:
+  - Information module for Networks Events Info.
       - >
         IncludedEventTypes query parameter. A list of event types. The returned events
         will be filtered to only include events with these types.
@@ -40,6 +44,7 @@ options:
     type: list
   excludedEventTypes:
     description:
+  - Information module for Networks Events Info.
       - >
         ExcludedEventTypes query parameter. A list of event types. The returned events
         will be filtered to exclude events with these types.
@@ -47,63 +52,74 @@ options:
     type: list
   deviceMac:
     description:
+  - Information module for Networks Events Info.
       - DeviceMac query parameter. The MAC address of the Meraki device which the
         list of events will be filtered with.
     type: str
   deviceSerial:
     description:
+  - Information module for Networks Events Info.
       - DeviceSerial query parameter. The serial of the Meraki device which the list
         of events will be filtered with.
     type: str
   deviceName:
     description:
+  - Information module for Networks Events Info.
       - DeviceName query parameter. The name of the Meraki device which the list of
         events will be filtered with.
     type: str
   clientIp:
     description:
+  - Information module for Networks Events Info.
       - >
         ClientIp query parameter. The IP of the client which the list of events will
         be filtered with. Only supported for track-by-IP networks.
     type: str
   clientMac:
     description:
+  - Information module for Networks Events Info.
       - >
         ClientMac query parameter. The MAC address of the client which the list of
         events will be filtered with. Only supported for track-by-MAC networks.
     type: str
   clientName:
     description:
+  - Information module for Networks Events Info.
       - >
         ClientName query parameter. The name, or partial name, of the client which
         the list of events will be filtered with.
     type: str
   smDeviceMac:
     description:
+  - Information module for Networks Events Info.
       - >
         SmDeviceMac query parameter. The MAC address of the Systems Manager device
         which the list of events will be filtered with.
     type: str
   smDeviceName:
     description:
+  - Information module for Networks Events Info.
       - >
         SmDeviceName query parameter. The name of the Systems Manager device which
         the list of events will be filtered with.
     type: str
   eventDetails:
     description:
+  - Information module for Networks Events Info.
       - >
         EventDetails query parameter. The details of the event(Catalyst device only)
         which the list of events will be filtered with.
     type: str
   eventSeverity:
     description:
+  - Information module for Networks Events Info.
       - >
         EventSeverity query parameter. The severity of the event(Catalyst device only)
         which the list of events will be filtered with.
     type: str
   isCatalyst:
     description:
+  - Information module for Networks Events Info.
       - >
         IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst
         device. For Catalyst device, eventDetails and eventSeverity can be used to
@@ -111,11 +127,13 @@ options:
     type: bool
   perPage:
     description:
+  - Information module for Networks Events Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 10.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Events Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -125,6 +143,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Events Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

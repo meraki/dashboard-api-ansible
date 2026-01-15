@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_traffic_shaping_info
+module: networks_appliance_trafficShaping_info
 short_description: Information module for networks _appliance _trafficshaping
 description:
+  - Information module for Networks Appliance Trafficshaping Info.
   - Get all networks _appliance _trafficshaping.
   - Display the traffic shaping settings for an MX network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Trafficshaping Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

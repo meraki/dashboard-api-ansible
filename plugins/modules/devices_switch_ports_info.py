@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_switch_ports_info
 short_description: Information module for devices _switch _ports
 description:
+  - Information module for Devices Switch Ports Info.
   - Get all devices _switch _ports.
   - Get devices _switch _ports by id.
   - List the switch ports for a switch.
@@ -22,10 +23,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Switch Ports Info.
       - Serial path parameter.
     type: str
   portId:
     description:
+  - Information module for Devices Switch Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

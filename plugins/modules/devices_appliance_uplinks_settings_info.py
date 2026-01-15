@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_appliance_uplinks_settings_info
 short_description: Information module for devices _appliance _uplinks _settings
 description:
+  - Information module for Devices Appliance Uplinks Settings Info.
   - Get all devices _appliance _uplinks _settings.
   - Return the uplink settings for an MX appliance.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Appliance Uplinks Settings Info.
       - Serial path parameter.
     type: str
 requirements:

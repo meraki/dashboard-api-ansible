@@ -9,6 +9,7 @@ module: organizations_appliance_vpn_site_to_site_ipsec_peers_slas_info
 short_description: Information module for organizations _appliance _vpn _site _to
   _site _ipsec _peers _slas
 description:
+  - Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
   - Get all organizations _appliance _vpn _site _to _site _ipsec _peers _slas.
   - Get the list of available IPsec SLA policies for an organization.
 version_added: '1.0.0'
@@ -21,6 +22,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_webhooks_payload_templates
+module: networks_webhooks_payloadTemplates
 short_description: Resource module for networks _webhooks _payloadtemplates
 description:
   - Manage operations create, update and delete of the resource networks _webhooks

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_wireless_zigbee_disenrollments_info
 short_description: Information module for organizations _wireless _zigbee _disenrollments
 description:
+  - Information module for Organizations Wireless Zigbee Disenrollments Info.
   - Get organizations _wireless _zigbee _disenrollments by id.
   - Return a disenrollment.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Zigbee Disenrollments Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   disenrollmentId:
     description:
+  - Information module for Organizations Wireless Zigbee Disenrollments Info.
       - DisenrollmentId path parameter. Disenrollment ID.
     type: str
 requirements:

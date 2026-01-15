@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_config_templates_switch_profiles_ports_info
+module: organizations_configTemplates_switch_profiles_ports_info
 short_description: Information module for organizations _configtemplates _switch _profiles
   _ports
 description:
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
   - Get all organizations _configtemplates _switch _profiles _ports.
   - Get organizations _configtemplates _switch _profiles _ports by id.
   - Return a switch template port.
@@ -23,18 +24,22 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
   profileId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ProfileId path parameter. Profile ID.
     type: str
   portId:
     description:
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

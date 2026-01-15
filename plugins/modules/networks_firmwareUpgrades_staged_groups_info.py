@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_firmware_upgrades_staged_groups_info
+module: networks_firmwareUpgrades_staged_groups_info
 short_description: Information module for networks _firmwareupgrades _staged _groups
 description:
+  - Information module for Networks Firmwareupgrades Staged Groups Info.
   - Get all networks _firmwareupgrades _staged _groups.
   - Get networks _firmwareupgrades _staged _groups by id.
   - Get a Staged Upgrade Group from a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Firmwareupgrades Staged Groups Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupId:
     description:
+  - Information module for Networks Firmwareupgrades Staged Groups Info.
       - GroupId path parameter. Group ID.
     type: str
 requirements:

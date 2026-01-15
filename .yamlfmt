@@ -1,0 +1,37 @@
+formatter:
+  indent: 2
+  include_document_start: false
+  line_ending: lf
+  line_width: 50
+  max_line_length: 80
+  retain_line_breaks: false
+  retain_line_breaks_single: true
+  trim_trailing_whitespace: true
+  eof_newline: true
+  force_array_style: block
+  array_indent: 2
+  indent_root_array: false
+  disable_alias_key_correction: false
+
+include:
+  - "**/*.yaml"
+  - "**/*.yml"
+
+exclude:
+  - "vendor/**"
+  - "third_party/**"
+  - "**/generated/**"
+  - "**/*.lock.yaml"
+  - ".venv/**"
+  - "venv/**"
+  - "node_modules/**"
+
+gitignore_excludes: true
+
+debug:
+  config: false
+  paths: false
+
+format:
+  strict: false
+

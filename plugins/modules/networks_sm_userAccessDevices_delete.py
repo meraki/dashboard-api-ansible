@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_user_access_devices_delete
+module: networks_sm_userAccessDevices_delete
 short_description: Resource module for networks _sm _useraccessdevices _delete
 description:
   - Manage operation delete of the resource networks _sm _useraccessdevices _delete.

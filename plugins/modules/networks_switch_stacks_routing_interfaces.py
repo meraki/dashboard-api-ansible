@@ -29,9 +29,7 @@ options:
   interfaceIp:
     description: The IP address that will be used for Layer 3 routing on this VLAN
       or subnet. This cannot be the same as the device management IP.
-    type:
-      - string
-      - 'null'
+    type: str
   ipv6:
     description: The IPv6 settings of the interface.
     suboptions:
@@ -91,22 +89,16 @@ options:
     type: dict
   subnet:
     description: The network that this L3 interface is on, in CIDR notation (ex. 10.1.1.0/24).
-    type:
-      - string
-      - 'null'
+    type: str
   switchPortId:
     description: Switch Port ID when in Routed mode (CS 17.18 or higher required).
-    type:
-      - string
-      - 'null'
+    type: str
   switchStackId:
     description: SwitchStackId path parameter. Switch stack ID.
     type: str
   vlanId:
     description: The VLAN this L3 interface is on. VLAN must be between 1 and 4094.
-    type:
-      - integer
-      - 'null'
+    type: int
   vrf:
     description: The VRF settings of the interface. Requires IOS XE 17.18 or higher.
     suboptions:

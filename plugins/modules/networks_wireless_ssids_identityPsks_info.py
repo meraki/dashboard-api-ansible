@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_identity_psks_info
+module: networks_wireless_ssids_identityPsks_info
 short_description: Information module for networks _wireless _ssids _identitypsks
 description:
+  - Information module for Networks Wireless Ssids Identitypsks Info.
   - Get all networks _wireless _ssids _identitypsks.
   - Get networks _wireless _ssids _identitypsks by id.
   - List all Identity PSKs in a wireless network.
@@ -22,14 +23,17 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Identitypsks Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Identitypsks Info.
       - Number path parameter.
     type: str
   identityPskId:
     description:
+  - Information module for Networks Wireless Ssids Identitypsks Info.
       - IdentityPskId path parameter. Identity psk ID.
     type: str
 requirements:

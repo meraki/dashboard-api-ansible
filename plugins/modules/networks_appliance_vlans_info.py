@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_appliance_vlans_info
 short_description: Information module for networks _appliance _vlans
 description:
+  - Information module for Networks Appliance Vlans Info.
   - Get all networks _appliance _vlans.
   - Get networks _appliance _vlans by id.
   - List the VLANs for a Cisco Secure Router network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Vlans Info.
       - NetworkId path parameter. Network ID.
     type: str
   vlanId:
     description:
+  - Information module for Networks Appliance Vlans Info.
       - VlanId path parameter. Vlan ID.
     type: str
 requirements:

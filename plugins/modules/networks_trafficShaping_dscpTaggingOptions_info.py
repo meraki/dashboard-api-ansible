@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_traffic_shaping_dscp_tagging_options_info
+module: networks_trafficShaping_dscpTaggingOptions_info
 short_description: Information module for networks _trafficshaping _dscptaggingoptions
 description:
+  - Information module for Networks Trafficshaping Dscptaggingoptions Info.
   - Get all networks _trafficshaping _dscptaggingoptions.
   - Returns the available DSCP tagging options for your traffic shaping rules.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Trafficshaping Dscptaggingoptions Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

@@ -197,6 +197,12 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                response = prev_obj
+                meraki.object_already_present()
+            else:
+                meraki.fail_json("Object does not exist")
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:

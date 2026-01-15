@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_mesh_statuses_info
+module: networks_wireless_meshStatuses_info
 short_description: Information module for networks _wireless _meshstatuses
 description:
+  - Information module for Networks Wireless Meshstatuses Info.
   - Get all networks _wireless _meshstatuses.
   - List wireless mesh statuses for repeaters.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Meshstatuses Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
+  - Information module for Networks Wireless Meshstatuses Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 500. Default is 50.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Wireless Meshstatuses Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Wireless Meshstatuses Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

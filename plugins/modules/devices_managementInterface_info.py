@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_management_interface_info
+module: devices_managementInterface_info
 short_description: Information module for devices _managementinterface
 description:
+  - Information module for Devices Managementinterface Info.
   - Get all devices _managementinterface.
   - Return the management interface settings for a device.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Managementinterface Info.
       - Serial path parameter.
     type: str
 requirements:

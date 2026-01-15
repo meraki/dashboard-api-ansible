@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_alternate_management_interface_info
+module: networks_switch_alternateManagementInterface_info
 short_description: Information module for networks _switch _alternatemanagementinterface
 description:
+  - Information module for Networks Switch Alternatemanagementinterface Info.
   - Get all networks _switch _alternatemanagementinterface.
   - Return the switch alternate management interface for the network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Alternatemanagementinterface Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

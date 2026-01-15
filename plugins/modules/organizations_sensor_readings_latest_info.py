@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_sensor_readings_latest_info
 short_description: Information module for organizations _sensor _readings _latest
 description:
+  - Information module for Organizations Sensor Readings Latest Info.
   - Get all organizations _sensor _readings _latest.
   - Return the latest available reading for each metric from each sensor, sorted by
     sensor serial.
@@ -22,15 +23,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -40,6 +44,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -49,16 +54,19 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - NetworkIds query parameter. Optional parameter to filter readings by network.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - Serials query parameter. Optional parameter to filter readings by sensor.
     elements: str
     type: list
   metrics:
     description:
+  - Information module for Organizations Sensor Readings Latest Info.
       - >
         Metrics query parameter. Types of sensor readings to retrieve. If no metrics
         are supplied, all available types of readings will be retrieved.

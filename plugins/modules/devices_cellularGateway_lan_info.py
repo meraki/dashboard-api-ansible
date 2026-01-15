@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_cellular_gateway_lan_info
+module: devices_cellularGateway_lan_info
 short_description: Information module for devices _cellulargateway _lan
 description:
+  - Information module for Devices Cellulargateway Lan Info.
   - Get all devices _cellulargateway _lan.
   - Show the LAN Settings of a MG.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Cellulargateway Lan Info.
       - Serial path parameter.
     type: str
 requirements:

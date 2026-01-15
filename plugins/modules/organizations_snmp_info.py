@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_snmp_info
 short_description: Information module for organizations _snmp
 description:
+  - Information module for Organizations Snmp Info.
   - Get all organizations _snmp.
   - Return the SNMP settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Snmp Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

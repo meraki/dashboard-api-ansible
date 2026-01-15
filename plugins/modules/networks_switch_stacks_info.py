@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_info
 short_description: Information module for networks _switch _stacks
 description:
+  - Information module for Networks Switch Stacks Info.
   - Get all networks _switch _stacks.
   - Get networks _switch _stacks by id.
   - List the switch stacks in a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Stacks Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
+  - Information module for Networks Switch Stacks Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
 requirements:

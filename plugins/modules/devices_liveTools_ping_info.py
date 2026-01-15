@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_live_tools_ping_info
+module: devices_liveTools_ping_info
 short_description: Information module for devices _livetools _ping
 description:
+  - Information module for Devices Livetools Ping Info.
   - Get devices _livetools _ping by id.
   - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Livetools Ping Info.
       - Serial path parameter.
     type: str
   id:
     description:
+  - Information module for Devices Livetools Ping Info.
       - Id path parameter.
     type: str
 requirements:

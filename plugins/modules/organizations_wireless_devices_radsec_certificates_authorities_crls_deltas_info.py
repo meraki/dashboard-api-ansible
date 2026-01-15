@@ -9,6 +9,7 @@ module: organizations_wireless_devices_radsec_certificates_authorities_crls_delt
 short_description: Information module for organizations _wireless _devices _radsec
   _certificates _authorities _crls _deltas
 description:
+  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
   - Get all organizations _wireless _devices _radsec _certificates _authorities _crls
     _deltas.
   - >
@@ -24,10 +25,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   certificateAuthorityIds:
     description:
+  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
       - >
         CertificateAuthorityIds query parameter. Parameter to filter CAs by one or
         more CA IDs. All returned CAs will have an ID that is an exact match.

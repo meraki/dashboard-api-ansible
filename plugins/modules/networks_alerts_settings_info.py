@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_alerts_settings_info
 short_description: Information module for networks _alerts _settings
 description:
+  - Information module for Networks Alerts Settings Info.
   - Get all networks _alerts _settings.
   - Return the alert configuration for this network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Alerts Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

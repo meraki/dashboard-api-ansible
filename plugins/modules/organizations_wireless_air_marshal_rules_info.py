@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_wireless_air_marshal_rules_info
 short_description: Information module for organizations _wireless _air _marshal _rules
 description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
   - Get all organizations _wireless _air _marshal _rules.
   - Returns the current Air Marshal rules for this organization.
 version_added: '1.0.0'
@@ -21,20 +22,24 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
       - NetworkIds query parameter. (optional) The set of network IDs to include.
     elements: str
     type: list
   perPage:
     description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,6 +49,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Air Marshal Rules Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

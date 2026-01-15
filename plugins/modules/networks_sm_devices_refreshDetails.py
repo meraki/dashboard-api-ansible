@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_devices_refresh_details
+module: networks_sm_devices_refreshDetails
 short_description: Resource module for networks _sm _devices _refreshdetails
 description:
   - Manage operation create of the resource networks _sm _devices _refreshdetails.

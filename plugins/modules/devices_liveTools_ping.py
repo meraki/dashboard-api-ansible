@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_live_tools_ping
+module: devices_liveTools_ping
 short_description: Resource module for devices _livetools _ping
 description:
   - Manage operation create of the resource devices _livetools _ping.

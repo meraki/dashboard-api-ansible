@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_mqtt_brokers
+module: networks_mqttBrokers
 short_description: Resource module for networks _mqttbrokers
 description:
   - Manage operation create of the resource networks _mqttbrokers.

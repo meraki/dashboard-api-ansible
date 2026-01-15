@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_camera_quality_retention_profiles_info
+module: networks_camera_qualityRetentionProfiles_info
 short_description: Information module for networks _camera _qualityretentionprofiles
 description:
+  - Information module for Networks Camera Qualityretentionprofiles Info.
   - Get all networks _camera _qualityretentionprofiles.
   - Get networks _camera _qualityretentionprofiles by id.
   - List the quality retention profiles for this network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Camera Qualityretentionprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   qualityRetentionProfileId:
     description:
+  - Information module for Networks Camera Qualityretentionprofiles Info.
       - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:

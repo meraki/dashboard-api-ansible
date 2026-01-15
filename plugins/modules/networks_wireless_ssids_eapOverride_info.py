@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_eap_override_info
+module: networks_wireless_ssids_eapOverride_info
 short_description: Information module for networks _wireless _ssids _eapoverride
 description:
+  - Information module for Networks Wireless Ssids Eapoverride Info.
   - Get all networks _wireless _ssids _eapoverride.
   - Return the EAP overridden parameters for an SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Eapoverride Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Eapoverride Info.
       - Number path parameter.
     type: str
 requirements:

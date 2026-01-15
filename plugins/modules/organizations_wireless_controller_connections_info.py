@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_wireless_controller_connections_info
 short_description: Information module for organizations _wireless _controller _connections
 description:
+  - Information module for Organizations Wireless Controller Connections Info.
   - Get all organizations _wireless _controller _connections.
   - List all access points associated with wireless LAN controllers in an organization.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - >
         NetworkIds query parameter. Optional parameter to filter access points by
         network ID. This filter uses multiple exact matches.
@@ -32,6 +35,7 @@ options:
     type: list
   controllerSerials:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - >
         ControllerSerials query parameter. Optional parameter to filter access points
         by its controller cloud ID. This filter uses multiple exact matches.
@@ -39,11 +43,13 @@ options:
     type: list
   perPage:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -53,6 +59,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Wireless Controller Connections Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

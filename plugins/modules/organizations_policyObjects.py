@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_policy_objects
+module: organizations_policyObjects
 short_description: Resource module for organizations _policyobjects
 description:
   - Manage operations create, update and delete of the resource organizations _policyobjects.

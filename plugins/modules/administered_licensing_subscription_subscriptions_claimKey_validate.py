@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: administered_licensing_subscription_subscriptions_claim_key_validate
+module: administered_licensing_subscription_subscriptions_claimKey_validate
 short_description: Resource module for administered _licensing _subscription _subscriptions
   _claimkey _validate
 description:

@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_traffic_shaping_rules_info
+module: networks_wireless_ssids_trafficShaping_rules_info
 short_description: Information module for networks _wireless _ssids _trafficshaping
   _rules
 description:
+  - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
   - Get all networks _wireless _ssids _trafficshaping _rules.
   - Display the traffic shaping settings for a SSID on an MR network.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+  - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
       - Number path parameter.
     type: str
 requirements:

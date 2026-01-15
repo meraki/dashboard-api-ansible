@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_branding_policies_priorities
+module: organizations_brandingPolicies_priorities
 short_description: Resource module for organizations _brandingpolicies _priorities
 description:
   - Manage operation update of the resource organizations _brandingpolicies _priorities.

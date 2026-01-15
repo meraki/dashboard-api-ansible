@@ -9,6 +9,7 @@ module: organizations_assurance_alerts_overview_historical_info
 short_description: Information module for organizations _assurance _alerts _overview
   _historical
 description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
   - Get all organizations _assurance _alerts _overview _historical.
   - Returns historical health alert overviews.
 version_added: '1.0.0'
@@ -21,49 +22,59 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   segmentDuration:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - SegmentDuration query parameter. Amount of time in seconds for each segment
         in the returned dataset.
     type: int
   networkId:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - NetworkId query parameter. Optional parameter to filter alerts overview by
         network ids.
     type: str
   severity:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Severity query parameter. Optional parameter to filter alerts overview by
         severity type.
     type: str
   types:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - TsStart query parameter. Parameter to define starting timestamp of historical
         totals.
     type: str
   tsEnd:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp defaults
         to the current time.
     type: str
   category:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   serials:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list

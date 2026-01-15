@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_live_tools_throughput_test_info
+module: devices_liveTools_throughputTest_info
 short_description: Information module for devices _livetools _throughputtest
 description:
+  - Information module for Devices Livetools Throughputtest Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

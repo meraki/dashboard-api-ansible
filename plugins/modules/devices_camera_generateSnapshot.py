@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_camera_generate_snapshot
+module: devices_camera_generateSnapshot
 short_description: Resource module for devices _camera _generatesnapshot
 description:
   - Manage operation create of the resource devices _camera _generatesnapshot.

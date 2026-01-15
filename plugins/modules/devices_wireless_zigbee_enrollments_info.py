@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_wireless_zigbee_enrollments_info
 short_description: Information module for devices _wireless _zigbee _enrollments
 description:
+  - Information module for Devices Wireless Zigbee Enrollments Info.
   - Get devices _wireless _zigbee _enrollments by id.
   - Return an enrollment.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Wireless Zigbee Enrollments Info.
       - Serial path parameter.
     type: str
   enrollmentId:
     description:
+  - Information module for Devices Wireless Zigbee Enrollments Info.
       - EnrollmentId path parameter. Enrollment ID.
     type: str
 requirements:

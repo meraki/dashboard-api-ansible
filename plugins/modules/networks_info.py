@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_info
 short_description: Information module for networks
 description:
+  - Information module for Networks Info.
   - Get all networks.
   - Get networks by id.
   - List the networks that the user has privileges on in an organization.
@@ -23,26 +24,31 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Info.
       - NetworkId path parameter. Network ID.
     type: str
   organizationId:
     description:
+  - Information module for Networks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+  - Information module for Networks Info.
       - >
         ConfigTemplateId query parameter. An optional parameter that is the ID of
         a config template. Will return all networks bound to that template.
     type: str
   isBoundToConfigTemplate:
     description:
+  - Information module for Networks Info.
       - >
         IsBoundToConfigTemplate query parameter. An optional parameter to filter config
         template bound networks. If configTemplateId is set, this cannot be false.
     type: bool
   tags:
     description:
+  - Information module for Networks Info.
       - >
         Tags query parameter. An optional parameter to filter networks by tags. The
         filtering is case-sensitive. If tags are included, 'tagsFilterType' should
@@ -51,6 +57,7 @@ options:
     type: list
   tagsFilterType:
     description:
+  - Information module for Networks Info.
       - >
         TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
         or 'withAllTags' to indicate whether to return networks which contain ANY
@@ -59,6 +66,7 @@ options:
     type: str
   productTypes:
     description:
+  - Information module for Networks Info.
       - >
         ProductTypes query parameter. An optional parameter to filter networks by
         product type. Results will have at least one of the included product types.
@@ -66,11 +74,13 @@ options:
     type: list
   perPage:
     description:
+  - Information module for Networks Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 100000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -80,6 +90,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

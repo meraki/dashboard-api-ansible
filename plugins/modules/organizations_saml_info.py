@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_saml_info
 short_description: Information module for organizations _saml
 description:
+  - Information module for Organizations Saml Info.
   - Get all organizations _saml.
   - Returns the SAML SSO enabled settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Saml Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

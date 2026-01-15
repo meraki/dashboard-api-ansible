@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_camera_quality_and_retention
+module: devices_camera_qualityAndRetention
 short_description: Resource module for devices _camera _qualityandretention
 description:
   - Manage operation update of the resource devices _camera _qualityandretention.
@@ -32,9 +32,7 @@ options:
       The profile's settings will override all of the per-camera quality and retention
       settings. If the value of this parameter is null, any existing profile will
       be unassigned from the camera.
-    type:
-      - string
-      - 'null'
+    type: str
   quality:
     description: Quality of the camera. Can be one of 'Standard', 'High', 'Enhanced'
       or 'Ultra'. Not all qualities are supported by every camera model.

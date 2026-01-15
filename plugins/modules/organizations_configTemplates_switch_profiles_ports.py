@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_config_templates_switch_profiles_ports
+module: organizations_configTemplates_switch_profiles_ports
 short_description: Resource module for organizations _configtemplates _switch _profiles
   _ports
 description:
@@ -77,9 +77,7 @@ options:
     type: int
   name:
     description: The name of the switch template port.
-    type:
-      - string
-      - 'null'
+    type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
@@ -92,9 +90,7 @@ options:
   portScheduleId:
     description: The ID of the port schedule. A value of null will clear the port
       schedule.
-    type:
-      - string
-      - 'null'
+    type: str
   profile:
     description: Profile attributes.
     suboptions:
@@ -150,15 +146,11 @@ options:
   vlan:
     description: The VLAN of the switch template port. For a trunk port, this is the
       native VLAN. A null value will clear the value set for trunk ports.
-    type:
-      - integer
-      - 'null'
+    type: int
   voiceVlan:
     description: The voice VLAN of the switch template port. Only applicable to access
       ports.
-    type:
-      - integer
-      - 'null'
+    type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

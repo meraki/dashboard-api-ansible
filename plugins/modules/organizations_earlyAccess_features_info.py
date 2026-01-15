@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_early_access_features_info
+module: organizations_earlyAccess_features_info
 short_description: Information module for organizations _earlyaccess _features
 description:
+  - Information module for Organizations Earlyaccess Features Info.
   - Get all organizations _earlyaccess _features.
   - List the available early access features for organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Earlyaccess Features Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

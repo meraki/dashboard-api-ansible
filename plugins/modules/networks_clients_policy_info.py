@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_clients_policy_info
 short_description: Information module for networks _clients _policy
 description:
+  - Information module for Networks Clients Policy Info.
   - Get all networks _clients _policy.
   - >
     Return the policy assigned to a client on the network. Clients can be identified
@@ -23,10 +24,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Clients Policy Info.
       - NetworkId path parameter. Network ID.
     type: str
   clientId:
     description:
+  - Information module for Networks Clients Policy Info.
       - ClientId path parameter. Client ID.
     type: str
 requirements:

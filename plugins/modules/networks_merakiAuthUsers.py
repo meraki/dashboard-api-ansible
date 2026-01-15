@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_meraki_auth_users
+module: networks_merakiAuthUsers
 short_description: Resource module for networks _merakiauthusers
 description:
   - Manage operations create, update and delete of the resource networks _merakiauthusers.

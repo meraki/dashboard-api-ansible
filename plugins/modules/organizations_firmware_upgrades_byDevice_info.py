@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_firmware_upgrades_by_device_info
+module: organizations_firmware_upgrades_byDevice_info
 short_description: Information module for organizations _firmware _upgrades _bydevice
 description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
   - Get all organizations _firmware _upgrades _bydevice.
   - >
     Get firmware upgrade status for the filtered devices. This endpoint currently
@@ -23,15 +24,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -41,6 +45,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -50,11 +55,13 @@ options:
     type: str
   networkIds:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - NetworkIds query parameter. Optional parameter to filter by network.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - >
         Serials query parameter. Optional parameter to filter by serial number. All
         returned devices will have a serial number that is an exact match.
@@ -62,6 +69,7 @@ options:
     type: list
   macs:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - >
         Macs query parameter. Optional parameter to filter by one or more MAC addresses
         belonging to devices. All devices returned belong to MAC addresses that are
@@ -70,23 +78,27 @@ options:
     type: list
   firmwareUpgradeBatchIds:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - FirmwareUpgradeBatchIds query parameter. Optional parameter to filter by firmware
         upgrade batch ids.
     elements: str
     type: list
   upgradeStatuses:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - UpgradeStatuses query parameter. Optional parameter to filter by firmware
         upgrade statuses.
     elements: str
     type: list
   currentUpgradesOnly:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - CurrentUpgradesOnly query parameter. Optional parameter to filter to only
         current or pending upgrade statuses.
     type: bool
   limitPerDevice:
     description:
+  - Information module for Organizations Firmware Upgrades Bydevice Info.
       - >
         LimitPerDevice query parameter. Optional parameter to limit the number of
         upgrade statuses returned per device. If omitted, a value of 5 is used.

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_stp_info
 short_description: Information module for networks _switch _stp
 description:
+  - Information module for Networks Switch Stp Info.
   - Get all networks _switch _stp.
   - Returns STP settings.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Stp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

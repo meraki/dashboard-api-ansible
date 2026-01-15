@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles_info
 short_description: Information module for networks _wireless _ethernet _ports _profiles
 description:
+  - Information module for Networks Wireless Ethernet Ports Profiles Info.
   - Get networks _wireless _ethernet _ports _profiles by id.
   - Show the AP port profile by ID for this network.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Ethernet Ports Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   profileId:
     description:
+  - Information module for Networks Wireless Ethernet Ports Profiles Info.
       - ProfileId path parameter. Profile ID.
     type: str
 requirements:

@@ -38,9 +38,7 @@ options:
       this parameter is null, the appropriate basic RF profile (indoor or outdoor)
       will be assigned to the device. Assigning an RF profile will clear ALL manually
       configured overrides on the device (channel width, channel, power).
-    type:
-      - string
-      - 'null'
+    type: str
   serial:
     description: Serial path parameter.
     type: str

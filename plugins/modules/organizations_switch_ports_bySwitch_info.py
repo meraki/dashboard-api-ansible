@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_switch_ports_by_switch_info
+module: organizations_switch_ports_bySwitch_info
 short_description: Information module for organizations _switch _ports _byswitch
 description:
+  - Information module for Organizations Switch Ports Byswitch Info.
   - Get all organizations _switch _ports _byswitch.
   - List the switchports in an organization by switch.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 50. Default is 50.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -48,36 +53,42 @@ options:
     type: str
   configurationUpdatedAfter:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         ConfigurationUpdatedAfter query parameter. Optional parameter to filter items
         to switches where the configuration has been updated after the given timestamp.
     type: str
   mac:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         Mac query parameter. Optional parameter to filter items to switches with MAC
         addresses that contain the search term or are an exact match.
     type: str
   macs:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - Macs query parameter. Optional parameter to filter items to switches that
         have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         Name query parameter. Optional parameter to filter items to switches with
         names that contain the search term or are an exact match.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - NetworkIds query parameter. Optional parameter to filter items to switches
         in one of the provided networks.
     elements: str
     type: list
   portProfileIds:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         PortProfileIds query parameter. Optional parameter to filter items to switches
         that contain switchports belonging to one of the specified port profiles.
@@ -85,12 +96,14 @@ options:
     type: list
   serial:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - >
         Serial query parameter. Optional parameter to filter items to switches with
         serial number that contains the search term or are an exact match.
     type: str
   serials:
     description:
+  - Information module for Organizations Switch Ports Byswitch Info.
       - Serials query parameter. Optional parameter to filter items to switches that
         have one of the provided serials.
     elements: str

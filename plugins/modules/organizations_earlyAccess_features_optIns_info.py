@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_early_access_features_opt_ins_info
+module: organizations_earlyAccess_features_optIns_info
 short_description: Information module for organizations _earlyaccess _features _optins
 description:
+  - Information module for Organizations Earlyaccess Features Optins Info.
   - Get all organizations _earlyaccess _features _optins.
   - Get organizations _earlyaccess _features _optins by id.
   - List the early access feature opt-ins for an organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Earlyaccess Features Optins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   optInId:
     description:
+  - Information module for Organizations Earlyaccess Features Optins Info.
       - OptInId path parameter. Opt in ID.
     type: str
 requirements:

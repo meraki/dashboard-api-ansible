@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces_dhcp_info
 short_description: Information module for devices _switch _routing _interfaces _dhcp
 description:
+  - Information module for Devices Switch Routing Interfaces Dhcp Info.
   - Get all devices _switch _routing _interfaces _dhcp.
   - Return a layer 3 interface DHCP configuration for a switch.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Switch Routing Interfaces Dhcp Info.
       - Serial path parameter.
     type: str
   interfaceId:
     description:
+  - Information module for Devices Switch Routing Interfaces Dhcp Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

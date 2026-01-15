@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_devices_overview_by_model_info
 short_description: Information module for organizations _devices _overview _by _model
 description:
+  - Information module for Organizations Devices Overview By Model Info.
   - Get all organizations _devices _overview _by _model.
   - Lists the count for each device model.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Devices Overview By Model Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   models:
     description:
+  - Information module for Organizations Devices Overview By Model Info.
       - >
         Models query parameter. Optional parameter to filter devices by one or more
         models. All returned devices will have a model that is an exact match.
@@ -31,11 +34,13 @@ options:
     type: list
   networkIds:
     description:
+  - Information module for Organizations Devices Overview By Model Info.
       - NetworkIds query parameter. Optional parameter to filter devices by networkId.
     elements: str
     type: list
   productTypes:
     description:
+  - Information module for Organizations Devices Overview By Model Info.
       - >
         ProductTypes query parameter. Optional parameter to filter device by device
         product types. This filter uses multiple exact matches.

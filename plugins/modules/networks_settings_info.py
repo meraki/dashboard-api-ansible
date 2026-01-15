@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_settings_info
 short_description: Information module for networks _settings
 description:
+  - Information module for Networks Settings Info.
   - Get all networks _settings.
   - Return the settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

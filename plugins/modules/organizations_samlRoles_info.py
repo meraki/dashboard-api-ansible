@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_saml_roles_info
+module: organizations_samlRoles_info
 short_description: Information module for organizations _samlroles
 description:
+  - Information module for Organizations Samlroles Info.
   - Get all organizations _samlroles.
   - Get organizations _samlroles by id.
   - List the SAML roles for this organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Samlroles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   samlRoleId:
     description:
+  - Information module for Organizations Samlroles Info.
       - SamlRoleId path parameter. Saml role ID.
     type: str
 requirements:

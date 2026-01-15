@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_appliance_vpn_vpn_firewall_rules
+module: organizations_appliance_vpn_vpnFirewallRules
 short_description: Resource module for organizations _appliance _vpn _vpnfirewallrules
 description:
   - Manage operation update of the resource organizations _appliance _vpn _vpnfirewallrules.

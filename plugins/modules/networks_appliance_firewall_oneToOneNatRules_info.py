@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_firewall_one_to_one_nat_rules_info
+module: networks_appliance_firewall_oneToOneNatRules_info
 short_description: Information module for networks _appliance _firewall _onetoonenatrules
 description:
+  - Information module for Networks Appliance Firewall Onetoonenatrules Info.
   - Get all networks _appliance _firewall _onetoonenatrules.
   - Return the 1 1 NAT mapping rules for an MX network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Firewall Onetoonenatrules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

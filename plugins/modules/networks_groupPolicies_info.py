@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_group_policies_info
+module: networks_groupPolicies_info
 short_description: Information module for networks _grouppolicies
 description:
+  - Information module for Networks Grouppolicies Info.
   - Get all networks _grouppolicies.
   - Get networks _grouppolicies by id.
   - Display a group policy.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Grouppolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupPolicyId:
     description:
+  - Information module for Networks Grouppolicies Info.
       - GroupPolicyId path parameter. Group policy ID.
     type: str
 requirements:

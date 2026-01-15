@@ -17,15 +17,11 @@ author: Francisco Munoz (@fmunoz)
 options:
   address:
     description: The address of a device.
-    type:
-      - string
-      - 'null'
+    type: str
   floorPlanId:
     description: The floor plan to associate to this device. Null disassociates the
       device from the floorplan.
-    type:
-      - string
-      - 'null'
+    type: str
   lat:
     description: The latitude of a device.
     type: float
@@ -38,14 +34,10 @@ options:
     type: bool
   name:
     description: The name of a device.
-    type:
-      - string
-      - 'null'
+    type: str
   notes:
     description: The notes for the device. String. Limited to 255 characters.
-    type:
-      - string
-      - 'null'
+    type: str
   serial:
     description: Serial path parameter.
     type: str
@@ -55,9 +47,7 @@ options:
       switch device from the current profile. For a device to be bindable to a switch
       template, it must (1) be a switch, and (2) belong to a network that is bound
       to a configuration template.
-    type:
-      - string
-      - 'null'
+    type: str
   tags:
     description: The list of tags of a device.
     elements: str

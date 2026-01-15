@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_target_groups
+module: networks_sm_targetGroups
 short_description: Resource module for networks _sm _targetgroups
 description:
   - Manage operations create, update and delete of the resource networks _sm _targetgroups.

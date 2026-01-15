@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_certs_info
 short_description: Information module for networks _sm _devices _certs
 description:
+  - Information module for Networks Sm Devices Certs Info.
   - Get all networks _sm _devices _certs.
   - List the certs on a device.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Devices Certs Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+  - Information module for Networks Sm Devices Certs Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:

@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_cellular_gateway_connectivity_monitoring_destinations_info
+module: networks_cellularGateway_connectivityMonitoringDestinations_info
 short_description: Information module for networks _cellulargateway _connectivitymonitoringdestinations
 description:
+  - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
   - Get all networks _cellulargateway _connectivitymonitoringdestinations.
   - Return the connectivity testing destinations for an MG network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

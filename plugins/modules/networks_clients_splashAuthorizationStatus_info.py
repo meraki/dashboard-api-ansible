@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_clients_splash_authorization_status_info
+module: networks_clients_splashAuthorizationStatus_info
 short_description: Information module for networks _clients _splashauthorizationstatus
 description:
+  - Information module for Networks Clients Splashauthorizationstatus Info.
   - Get all networks _clients _splashauthorizationstatus.
   - >
     Return the splash authorization for a client, for each SSID they've associated
@@ -24,10 +25,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Clients Splashauthorizationstatus Info.
       - NetworkId path parameter. Network ID.
     type: str
   clientId:
     description:
+  - Information module for Networks Clients Splashauthorizationstatus Info.
       - ClientId path parameter. Client ID.
     type: str
 requirements:

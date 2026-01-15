@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_camera_roles_info
 short_description: Information module for organizations _camera _roles
 description:
+  - Information module for Organizations Camera Roles Info.
   - Get all organizations _camera _roles.
   - List all the roles in this organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Camera Roles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

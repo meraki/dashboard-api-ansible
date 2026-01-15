@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_ssids_traffic_shaping_rules
+module: networks_wireless_ssids_trafficShaping_rules
 short_description: Resource module for networks _wireless _ssids _trafficshaping _rules
 description:
   - Manage operation update of the resource networks _wireless _ssids _trafficshaping

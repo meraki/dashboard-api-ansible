@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sm_user_access_devices_info
+module: networks_sm_userAccessDevices_info
 short_description: Information module for networks _sm _useraccessdevices
 description:
+  - Information module for Networks Sm Useraccessdevices Info.
   - Get all networks _sm _useraccessdevices.
   - List User Access Devices and its Trusted Access Connections.
 version_added: '1.0.0'
@@ -21,15 +22,18 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sm Useraccessdevices Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
+  - Information module for Networks Sm Useraccessdevices Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Sm Useraccessdevices Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -39,6 +43,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Sm Useraccessdevices Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

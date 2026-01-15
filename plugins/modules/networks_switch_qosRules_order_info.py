@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_qos_rules_order_info
+module: networks_switch_qosRules_order_info
 short_description: Information module for networks _switch _qosrules _order
 description:
+  - Information module for Networks Switch Qosrules Order Info.
   - Get all networks _switch _qosrules _order.
   - Get networks _switch _qosrules _order by id.
   - List quality of service rules.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Qosrules Order Info.
       - NetworkId path parameter. Network ID.
     type: str
   qosRuleId:
     description:
+  - Information module for Networks Switch Qosrules Order Info.
       - QosRuleId path parameter. Qos rule ID.
     type: str
 requirements:

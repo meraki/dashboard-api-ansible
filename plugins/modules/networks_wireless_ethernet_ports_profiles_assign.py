@@ -22,9 +22,7 @@ options:
     type: str
   profileId:
     description: AP profile ID.
-    type:
-      - string
-      - 'null'
+    type: str
   serials:
     description: List of AP serials.
     elements: str

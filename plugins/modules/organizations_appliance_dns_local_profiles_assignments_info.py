@@ -9,6 +9,7 @@ module: organizations_appliance_dns_local_profiles_assignments_info
 short_description: Information module for organizations _appliance _dns _local _profiles
   _assignments
 description:
+  - Information module for Organizations Appliance Dns Local Profiles Assignments Info.
   - Get all organizations _appliance _dns _local _profiles _assignments.
   - Fetch the local DNS profile assignments in the organization.
 version_added: '1.0.0'
@@ -21,16 +22,19 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Dns Local Profiles Assignments Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
+  - Information module for Organizations Appliance Dns Local Profiles Assignments Info.
       - ProfileIds query parameter. Optional parameter to filter the results by profile
         IDs.
     elements: str
     type: list
   networkIds:
     description:
+  - Information module for Organizations Appliance Dns Local Profiles Assignments Info.
       - NetworkIds query parameter. Optional parameter to filter the results by network
         IDs.
     elements: str

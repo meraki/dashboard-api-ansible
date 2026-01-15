@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_sm_vpp_accounts_info
+module: organizations_sm_vppAccounts_info
 short_description: Information module for organizations _sm _vppaccounts
 description:
+  - Information module for Organizations Sm Vppaccounts Info.
   - Get all organizations _sm _vppaccounts.
   - Get organizations _sm _vppaccounts by id.
   - Get a hash containing the unparsed token of the VPP account with the given ID.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Sm Vppaccounts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   vppAccountId:
     description:
+  - Information module for Organizations Sm Vppaccounts Info.
       - VppAccountId path parameter. Vpp account ID.
     type: str
 requirements:

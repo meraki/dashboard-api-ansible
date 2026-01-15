@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_bluetooth_settings_info
 short_description: Information module for networks _wireless _bluetooth _settings
 description:
+  - Information module for Networks Wireless Bluetooth Settings Info.
   - Get all networks _wireless _bluetooth _settings.
   - Return the Bluetooth settings for a network. Bluetooth.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Bluetooth Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

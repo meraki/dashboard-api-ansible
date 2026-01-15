@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_login_security_info
+module: organizations_loginSecurity_info
 short_description: Information module for organizations _loginsecurity
 description:
+  - Information module for Organizations Loginsecurity Info.
   - Get all organizations _loginsecurity.
   - Returns the login security settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Loginsecurity Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

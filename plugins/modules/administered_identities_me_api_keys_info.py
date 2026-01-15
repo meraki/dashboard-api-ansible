@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: administered_identities_me_api_keys_info
 short_description: Information module for administered _identities _me _api _keys
 description:
+  - Information module for Administered Identities Me Api Keys Info.
   - Get all administered _identities _me _api _keys.
   - List the non-sensitive metadata associated with the API keys that belong to the
     user.

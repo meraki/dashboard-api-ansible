@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_dhcp_server_policy_arp_inspection_warnings_by_device_info
+module: networks_switch_dhcpServerPolicy_arpInspection_warnings_byDevice_info
 short_description: Information module for networks _switch _dhcpserverpolicy _arpinspection
   _warnings _bydevice
 description:
+  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Warnings Bydevice Info.
   - Get all networks _switch _dhcpserverpolicy _arpinspection _warnings _bydevice.
   - Return the devices that have a Dynamic ARP Inspection warning and their warnings.
 version_added: '1.0.0'
@@ -22,15 +23,18 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Warnings Bydevice Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
+  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Warnings Bydevice Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Warnings Bydevice Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -40,6 +44,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Warnings Bydevice Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

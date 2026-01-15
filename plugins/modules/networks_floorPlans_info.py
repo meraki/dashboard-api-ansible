@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_floor_plans_info
+module: networks_floorPlans_info
 short_description: Information module for networks _floorplans
 description:
+  - Information module for Networks Floorplans Info.
   - Get all networks _floorplans.
   - Get networks _floorplans by id.
   - Find a floor plan by ID.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Floorplans Info.
       - NetworkId path parameter. Network ID.
     type: str
   floorPlanId:
     description:
+  - Information module for Networks Floorplans Info.
       - FloorPlanId path parameter. Floor plan ID.
     type: str
 requirements:

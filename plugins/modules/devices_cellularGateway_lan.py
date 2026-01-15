@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_cellular_gateway_lan
+module: devices_cellularGateway_lan
 short_description: Resource module for devices _cellulargateway _lan
 description:
   - Manage operation update of the resource devices _cellulargateway _lan.

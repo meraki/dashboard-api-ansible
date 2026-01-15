@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_dns_split_profiles_info
 short_description: Information module for organizations _appliance _dns _split _profiles
 description:
+  - Information module for Organizations Appliance Dns Split Profiles Info.
   - Get all organizations _appliance _dns _split _profiles.
   - Fetch the split DNS profiles used in the organization.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Dns Split Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
+  - Information module for Organizations Appliance Dns Split Profiles Info.
       - ProfileIds query parameter. Optional parameter to filter the results by profile
         IDs.
     elements: str

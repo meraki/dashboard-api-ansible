@@ -9,6 +9,7 @@ module: organizations_devices_system_memory_usage_history_by_interval_info
 short_description: Information module for organizations _devices _system _memory _usage
   _history _by _interval
 description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
   - Get all organizations _devices _system _memory _usage _history _by _interval.
   - Return the memory utilization history in kB for devices in the organization.
 version_added: '1.0.0'
@@ -22,15 +23,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 20. Default is 10.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -40,6 +44,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -49,16 +54,19 @@ options:
     type: str
   t0:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -67,6 +75,7 @@ options:
     type: float
   interval:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - >
         Interval query parameter. The time interval in seconds for returned data.
         The valid intervals are 300, 1200, 3600, 14400. The default is 300. Interval
@@ -74,18 +83,21 @@ options:
     type: int
   networkIds:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - NetworkIds query parameter. Optional parameter to filter the result set by
         the included set of network IDs.
     elements: str
     type: list
   serials:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - Serials query parameter. Optional parameter to filter device availabilities
         history by device serial numbers.
     elements: str
     type: list
   productTypes:
     description:
+  - Information module for Organizations Devices System Memory Usage History By Interval Info.
       - >
         ProductTypes query parameter. Optional parameter to filter device statuses
         by product type. Valid types are wireless, appliance, switch, systemsManager,

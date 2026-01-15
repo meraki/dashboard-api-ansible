@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_api_requests_info
+module: organizations_apiRequests_info
 short_description: Information module for organizations _apirequests
 description:
+  - Information module for Organizations Apirequests Info.
   - Get all organizations _apirequests.
   - List the API requests made by an organization.
 version_added: '1.0.0'
@@ -21,20 +22,24 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Apirequests Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
+  - Information module for Organizations Apirequests Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
+  - Information module for Organizations Apirequests Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Apirequests Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -42,11 +47,13 @@ options:
     type: float
   perPage:
     description:
+  - Information module for Organizations Apirequests Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Apirequests Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -56,6 +63,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Apirequests Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -65,41 +73,49 @@ options:
     type: str
   adminId:
     description:
+  - Information module for Organizations Apirequests Info.
       - AdminId query parameter. Filter the results by the ID of the admin who made
         the API requests.
     type: str
   path:
     description:
+  - Information module for Organizations Apirequests Info.
       - Path query parameter. Filter the results by the path of the API requests.
     type: str
   method:
     description:
+  - Information module for Organizations Apirequests Info.
       - >
         Method query parameter. Filter the results by the method of the API requests
         (must be 'GET', 'PUT', 'POST' or 'DELETE').
     type: str
   responseCode:
     description:
+  - Information module for Organizations Apirequests Info.
       - ResponseCode query parameter. Filter the results by the response code of the
         API requests.
     type: int
   sourceIp:
     description:
+  - Information module for Organizations Apirequests Info.
       - SourceIp query parameter. Filter the results by the IP address of the originating
         API request.
     type: str
   userAgent:
     description:
+  - Information module for Organizations Apirequests Info.
       - UserAgent query parameter. Filter the results by the user agent string of
         the API request.
     type: str
   version:
     description:
+  - Information module for Organizations Apirequests Info.
       - Version query parameter. Filter the results by the API version of the API
         request.
     type: int
   operationIds:
     description:
+  - Information module for Organizations Apirequests Info.
       - OperationIds query parameter. Filter the results by one or more operation
         IDs for the API request.
     elements: str

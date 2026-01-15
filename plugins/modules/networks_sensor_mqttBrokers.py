@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sensor_mqtt_brokers
+module: networks_sensor_mqttBrokers
 short_description: Resource module for networks _sensor _mqttbrokers
 description:
   - Manage operation update of the resource networks _sensor _mqttbrokers.

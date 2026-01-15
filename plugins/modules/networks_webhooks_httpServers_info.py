@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_webhooks_http_servers_info
+module: networks_webhooks_httpServers_info
 short_description: Information module for networks _webhooks _httpservers
 description:
+  - Information module for Networks Webhooks Httpservers Info.
   - Get all networks _webhooks _httpservers.
   - Get networks _webhooks _httpservers by id.
   - List the HTTP servers for a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Webhooks Httpservers Info.
       - NetworkId path parameter. Network ID.
     type: str
   httpServerId:
     description:
+  - Information module for Networks Webhooks Httpservers Info.
       - HttpServerId path parameter. Http server ID.
     type: str
 requirements:

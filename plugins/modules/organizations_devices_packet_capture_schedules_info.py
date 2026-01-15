@@ -9,6 +9,7 @@ module: organizations_devices_packet_capture_schedules_info
 short_description: Information module for organizations _devices _packet _capture
   _schedules
 description:
+  - Information module for Organizations Devices Packet Capture Schedules Info.
   - Get all organizations _devices _packet _capture _schedules.
   - List the Packet Capture Schedules.
 version_added: '1.0.0'
@@ -21,22 +22,26 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Devices Packet Capture Schedules Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   scheduleIds:
     description:
+  - Information module for Organizations Devices Packet Capture Schedules Info.
       - ScheduleIds query parameter. Return the packet captures schedules of the specified
         packet capture schedule ids.
     elements: str
     type: list
   networkIds:
     description:
+  - Information module for Organizations Devices Packet Capture Schedules Info.
       - NetworkIds query parameter. Return the scheduled packet captures of the specified
         network(s).
     elements: str
     type: list
   deviceIds:
     description:
+  - Information module for Organizations Devices Packet Capture Schedules Info.
       - DeviceIds query parameter. Return the scheduled packet captures of the specified
         device(s).
     elements: str

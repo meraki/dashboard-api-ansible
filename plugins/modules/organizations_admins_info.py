@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_admins_info
 short_description: Information module for organizations _admins
 description:
+  - Information module for Organizations Admins Info.
   - Get all organizations _admins.
   - List the dashboard administrators in this organization.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Admins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+  - Information module for Organizations Admins Info.
       - NetworkIds query parameter. Optional parameter to filter the result set by
         the included set of network IDs.
     elements: str

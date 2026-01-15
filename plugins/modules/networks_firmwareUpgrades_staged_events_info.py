@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_firmware_upgrades_staged_events_info
+module: networks_firmwareUpgrades_staged_events_info
 short_description: Information module for networks _firmwareupgrades _staged _events
 description:
+  - Information module for Networks Firmwareupgrades Staged Events Info.
   - Get all networks _firmwareupgrades _staged _events.
   - Get the Staged Upgrade Event from a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Firmwareupgrades Staged Events Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

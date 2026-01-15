@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_camera_boundaries_areas_by_device_info
+module: organizations_camera_boundaries_areas_byDevice_info
 short_description: Information module for organizations _camera _boundaries _areas
   _bydevice
 description:
+  - Information module for Organizations Camera Boundaries Areas Bydevice Info.
   - Get all organizations _camera _boundaries _areas _bydevice.
   - Returns all configured area boundaries of cameras.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Camera Boundaries Areas Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
+  - Information module for Organizations Camera Boundaries Areas Bydevice Info.
       - >
         Serials query parameter. A list of serial numbers. The returned cameras will
         be filtered to only include these serials.

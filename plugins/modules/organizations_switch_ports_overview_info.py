@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_switch_ports_overview_info
 short_description: Information module for organizations _switch _ports _overview
 description:
+  - Information module for Organizations Switch Ports Overview Info.
   - Get all organizations _switch _ports _overview.
   - >
     Returns the counts of all active ports for the requested timespan, grouped by
@@ -28,19 +29,23 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Switch Ports Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
+  - Information module for Organizations Switch Ports Overview Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
+  - Information module for Organizations Switch Ports Overview Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Organizations Switch Ports Overview Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

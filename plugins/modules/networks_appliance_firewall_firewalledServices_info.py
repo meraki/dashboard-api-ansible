@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_firewall_firewalled_services_info
+module: networks_appliance_firewall_firewalledServices_info
 short_description: Information module for networks _appliance _firewall _firewalledservices
 description:
+  - Information module for Networks Appliance Firewall Firewalledservices Info.
   - Get networks _appliance _firewall _firewalledservices by id.
   - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP'
     .
@@ -21,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Appliance Firewall Firewalledservices Info.
       - NetworkId path parameter. Network ID.
     type: str
   service:
     description:
+  - Information module for Networks Appliance Firewall Firewalledservices Info.
       - Service path parameter.
     type: str
 requirements:

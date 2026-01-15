@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces_info
 short_description: Information module for networks _switch _stacks _routing _interfaces
 description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
   - Get all networks _switch _stacks _routing _interfaces.
   - Get networks _switch _stacks _routing _interfaces by id.
   - List layer 3 interfaces for a switch stack.
@@ -22,22 +23,27 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
   mode:
     description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
       - Mode query parameter. Optional parameter to filter L3 interfaces by mode.
     type: str
   protocol:
     description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
       - Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
     type: str
   interfaceId:
     description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:

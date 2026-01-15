@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_camera_video_settings_info
 short_description: Information module for devices _camera _video _settings
 description:
+  - Information module for Devices Camera Video Settings Info.
   - Get all devices _camera _video _settings.
   - Returns video settings for the given camera.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+  - Information module for Devices Camera Video Settings Info.
       - Serial path parameter.
     type: str
 requirements:

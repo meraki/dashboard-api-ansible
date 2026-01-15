@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: devices_management_interface
+module: devices_managementInterface
 short_description: Resource module for devices _managementinterface
 description:
   - Manage operations create and update of the resource devices _managementinterface.

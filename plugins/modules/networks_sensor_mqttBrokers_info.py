@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_sensor_mqtt_brokers_info
+module: networks_sensor_mqttBrokers_info
 short_description: Information module for networks _sensor _mqttbrokers
 description:
+  - Information module for Networks Sensor Mqttbrokers Info.
   - Get all networks _sensor _mqttbrokers.
   - Get networks _sensor _mqttbrokers by id.
   - >
@@ -25,10 +26,12 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Sensor Mqttbrokers Info.
       - NetworkId path parameter. Network ID.
     type: str
   mqttBrokerId:
     description:
+  - Information module for Networks Sensor Mqttbrokers Info.
       - MqttBrokerId path parameter. Mqtt broker ID.
     type: str
 requirements:

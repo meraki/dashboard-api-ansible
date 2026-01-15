@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_policy_objects_groups_info
+module: organizations_policyObjects_groups_info
 short_description: Information module for organizations _policyobjects _groups
 description:
+  - Information module for Organizations Policyobjects Groups Info.
   - Get all organizations _policyobjects _groups.
   - Get organizations _policyobjects _groups by id.
   - Lists Policy Object Groups belonging to the organization.
@@ -23,15 +24,18 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Policyobjects Groups Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
+  - Information module for Organizations Policyobjects Groups Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 10 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+  - Information module for Organizations Policyobjects Groups Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -41,6 +45,7 @@ options:
     type: str
   endingBefore:
     description:
+  - Information module for Organizations Policyobjects Groups Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -50,6 +55,7 @@ options:
     type: str
   policyObjectGroupId:
     description:
+  - Information module for Organizations Policyobjects Groups Info.
       - PolicyObjectGroupId path parameter. Policy object group ID.
     type: str
 requirements:

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_security_intrusion_info
 short_description: Information module for organizations _appliance _security _intrusion
 description:
+  - Information module for Organizations Appliance Security Intrusion Info.
   - Get all organizations _appliance _security _intrusion.
   - Returns all supported intrusion settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Appliance Security Intrusion Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

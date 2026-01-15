@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_wireless_usage_history_info
+module: networks_wireless_usageHistory_info
 short_description: Information module for networks _wireless _usagehistory
 description:
+  - Information module for Networks Wireless Usagehistory Info.
   - Get all networks _wireless _usagehistory.
   - Return AP usage over time for a device or network client.
 version_added: '1.0.0'
@@ -20,20 +21,24 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -41,6 +46,7 @@ options:
     type: float
   resolution:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - >
         Resolution query parameter. The time resolution in seconds for returned data.
         The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
@@ -48,6 +54,7 @@ options:
     type: int
   autoResolution:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - >
         AutoResolution query parameter. Automatically select a data resolution based
         on the given timespan; this overrides the value specified by the 'resolution'
@@ -55,25 +62,30 @@ options:
     type: bool
   clientId:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - >
         ClientId query parameter. Filter results by network client to return per-device
         AP usage over time inner joined by the queried client's connection history.
     type: str
   deviceSerial:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - DeviceSerial query parameter. Filter results by device. Requires band.
     type: str
   apTag:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - ApTag query parameter. Filter results by AP tag; either clientId or deviceSerial
         must be jointly specified.
     type: str
   band:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - Band query parameter. Filter results by band (either '2.4', '5' or '6').
     type: str
   ssid:
     description:
+  - Information module for Networks Wireless Usagehistory Info.
       - Ssid query parameter. Filter results by SSID number.
     type: int
 requirements:

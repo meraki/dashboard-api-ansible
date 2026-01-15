@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_switch_stacks_routing_static_routes_info
+module: networks_switch_stacks_routing_staticRoutes_info
 short_description: Information module for networks _switch _stacks _routing _staticroutes
 description:
+  - Information module for Networks Switch Stacks Routing Staticroutes Info.
   - Get all networks _switch _stacks _routing _staticroutes.
   - Get networks _switch _stacks _routing _staticroutes by id.
   - List layer 3 static routes for a switch stack.
@@ -22,14 +23,17 @@ options:
     type: dict
   networkId:
     description:
+  - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
+  - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
   staticRouteId:
     description:
+  - Information module for Networks Switch Stacks Routing Staticroutes Info.
       - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:

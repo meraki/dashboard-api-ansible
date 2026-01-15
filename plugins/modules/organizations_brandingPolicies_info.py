@@ -5,9 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_branding_policies_info
+module: organizations_brandingPolicies_info
 short_description: Information module for organizations _brandingpolicies
 description:
+  - Information module for Organizations Brandingpolicies Info.
   - Get all organizations _brandingpolicies.
   - Get organizations _brandingpolicies by id.
   - List the branding policies of an organization.
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+  - Information module for Organizations Brandingpolicies Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   brandingPolicyId:
     description:
+  - Information module for Organizations Brandingpolicies Info.
       - BrandingPolicyId path parameter. Branding policy ID.
     type: str
 requirements:
