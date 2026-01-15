@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_prefixes_delegated_statics_info
-short_description: Information module for networks _appliance _prefixes _delegated _statics
+short_description: Information module for networks _appliance _prefixes _delegated
+  _statics
 description:
   - Get all networks _appliance _prefixes _delegated _statics.
   - Get networks _appliance _prefixes _delegated _statics by id.
@@ -33,10 +34,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatic
-    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic API.
+    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatic
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-static
   - name: Cisco Meraki documentation for appliance getNetworkAppliancePrefixesDelegatedStatics
-    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics API.
+    description: Complete reference of the getNetworkAppliancePrefixesDelegatedStatics
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-prefixes-delegated-statics
 notes:
   - SDK Method used are
@@ -107,16 +110,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "createdAt": "string",
-      "description": "string",
+      "staticDelegatedPrefixId": "string",
+      "prefix": "string",
       "origin": {
+        "type": "string",
         "interfaces": [
           "string"
-        ],
-        "type": "string"
+        ]
       },
-      "prefix": "string",
-      "staticDelegatedPrefixId": "string",
+      "description": "string",
+      "createdAt": "string",
       "updatedAt": "string"
     }
 """

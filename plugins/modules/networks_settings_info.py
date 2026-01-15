@@ -70,21 +70,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "fips": {
-        "enabled": true
-      },
+      "localStatusPageEnabled": true,
+      "remoteStatusPageEnabled": true,
       "localStatusPage": {
         "authentication": {
           "enabled": true,
           "username": "string"
         }
       },
-      "localStatusPageEnabled": true,
-      "namedVlans": {
+      "securePort": {
         "enabled": true
       },
-      "remoteStatusPageEnabled": true,
-      "securePort": {
+      "fips": {
+        "enabled": true
+      },
+      "namedVlans": {
         "enabled": true
       }
     }

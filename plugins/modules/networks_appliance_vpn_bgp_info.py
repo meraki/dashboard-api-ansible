@@ -70,28 +70,33 @@ meraki_response:
   type: dict
   sample: >
     {
-      "asNumber": 0,
       "enabled": true,
+      "asNumber": 0,
       "ibgpHoldTimer": 0,
       "neighbors": [
         {
-          "allowTransit": true,
-          "authentication": {
-            "password": "string"
-          },
-          "ebgpHoldTimer": 0,
-          "ebgpMultihop": 0,
           "ip": "string",
           "ipv6": {
             "address": "string"
           },
-          "nextHopIp": "string",
-          "receiveLimit": 0,
           "remoteAsNumber": 0,
+          "receiveLimit": 0,
+          "allowTransit": true,
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
           "sourceInterface": "string",
+          "nextHopIp": "string",
           "ttlSecurity": {
             "enabled": true
-          }
+          },
+          "authentication": {
+            "password": "string"
+          },
+          "multiExitDiscriminator": 0,
+          "pathPrepend": [
+            0
+          ],
+          "weight": 0
         }
       ]
     }

@@ -76,7 +76,7 @@ meraki_response:
   sample: >
     {
       "id": "string",
-      "level": "string",
-      "name": "string"
+      "name": "string",
+      "level": "string"
     }
 """

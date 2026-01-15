@@ -19,7 +19,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   vlansEnabled:
-    description: Boolean indicating whether to enable (true) or disable (false) VLANs for the network.
+    description: Boolean indicating whether to enable (true) or disable (false) VLANs
+      for the network.
     type: bool
 requirements:
   - meraki >= 2.4.9

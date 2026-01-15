@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_controller_devices_interfaces_l3_statuses_change_history_by_device_info
-short_description: Information module for organizations _wireless _controller _devices _interfaces l3 _statuses _change _history _by _device
+short_description: Information module for organizations _wireless _controller _devices
+  _interfaces l3 _statuses _change _history _by _device
 description:
-  - Get all organizations _wireless _controller _devices _interfaces l3 _statuses _change _history _by _device.
+  - Get all organizations _wireless _controller _devices _interfaces l3 _statuses
+    _change _history _by _device.
   - List wireless LAN controller layer 3 interfaces history status in an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -26,53 +28,64 @@ options:
   serials:
     description:
       - >
-        Serials query parameter. Optional parameter to filter wireless LAN controller by its cloud ID. This filter uses multiple exact matches.
+        Serials query parameter. Optional parameter to filter wireless LAN controller
+        by its cloud ID. This filter uses multiple exact matches.
     elements: str
     type: list
   includeInterfacesWithoutChanges:
     description:
       - >
-        IncludeInterfacesWithoutChanges query parameter. By default, interfaces without changes are omitted from the response for brevity. If
-        you want to include the interfaces even if they have no changes, set to true. (default false).
+        IncludeInterfacesWithoutChanges query parameter. By default, interfaces without
+        changes are omitted from the response for brevity. If you want to include
+        the interfaces even if they have no changes, set to true. (default false).
     type: bool
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 7 days.
     type: float
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerDevicesInterfacesL3StatusesChangeHistoryByDevice
-    description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesL3StatusesChangeHistoryByDevice API.
+    description: Complete reference of the getOrganizationWirelessControllerDevicesInterfacesL3StatusesChangeHistoryByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-devices-interfaces-l3-statuses-change-history-by-device
 notes:
   - SDK Method used are
@@ -82,7 +95,8 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _wireless _controller _devices _interfaces l3 _statuses _change _history _by _device
+- name: Get all organizations _wireless _controller _devices _interfaces l3 _statuses
+    _change _history _by _device
   cisco.meraki.organizations_wireless_controller_devices_interfaces_l3_statuses_change_history_by_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -106,7 +120,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serials: []
-    includeInterfacesWithoutChanges: true
+    includeInterfacesWithoutChanges: True
     t0: string
     t1: string
     timespan: 0
@@ -127,32 +141,32 @@ meraki_response:
     {
       "items": [
         {
+          "serial": "string",
           "interfaces": [
             {
+              "name": "string",
+              "mac": "string",
               "changes": [
                 {
-                  "errors": [
+                  "ts": "string",
+                  "status": "string",
+                  "warnings": [
                     "string"
                   ],
-                  "status": "string",
-                  "ts": "string",
-                  "warnings": [
+                  "errors": [
                     "string"
                   ]
                 }
-              ],
-              "mac": "string",
-              "name": "string"
+              ]
             }
-          ],
-          "serial": "string"
+          ]
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

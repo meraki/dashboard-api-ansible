@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_profiles
 short_description: Resource module for networks _sensor _alerts _profiles
 description:
-  - Manage operations create, update and delete of the resource networks _sensor _alerts _profiles.
+  - Manage operations create, update and delete of the resource networks _sensor _alerts
+    _profiles.
   - Creates a sensor alert profile for a network.
   - Deletes a sensor alert profile from a network.
   - Updates a sensor alert profile for a network.
@@ -22,31 +23,36 @@ options:
     elements: dict
     suboptions:
       direction:
-        description: If 'above', an alert will be sent when a sensor reads above the threshold. If 'below', an alert will be sent when a sensor
-          reads below the threshold. Only applicable for temperature, humidity, realPower, apparentPower, powerFactor, voltage, current, and frequency
-          thresholds.
+        description: If 'above', an alert will be sent when a sensor reads above the
+          threshold. If 'below', an alert will be sent when a sensor reads below the
+          threshold. Only applicable for temperature, humidity, realPower, apparentPower,
+          powerFactor, voltage, current, and frequency thresholds.
         type: str
       duration:
-        description: Length of time in seconds that the triggering state must persist before an alert is sent. Available options are 0 seconds,
-          1 minute, 2 minutes, 3 minutes, 4 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, and 8 hours. Default
-          is 0.
+        description: Length of time in seconds that the triggering state must persist
+          before an alert is sent. Available options are 0 seconds, 1 minute, 2 minutes,
+          3 minutes, 4 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour,
+          1 hour and 30 minutes, 2 hours, 4 hours, and 8 hours. Default is 0.
         type: int
       metric:
         description: The type of sensor metric that will be monitored for changes.
         type: str
       threshold:
-        description: Threshold for sensor readings that will cause an alert to be sent. This object should contain a single property key matching
-          the condition's 'metric' value.
+        description: Threshold for sensor readings that will cause an alert to be
+          sent. This object should contain a single property key matching the condition's
+          'metric' value.
         suboptions:
           apparentPower:
             description: Apparent power threshold. 'draw' must be provided.
             suboptions:
               draw:
-                description: Alerting threshold in volt-amps. Must be between 0 and 3750.
+                description: Alerting threshold in volt-amps. Must be between 0 and
+                  3750.
                 type: float
             type: dict
           co2:
-            description: CO2 concentration threshold. One of 'concentration' or 'quality' must be provided.
+            description: CO2 concentration threshold. One of 'concentration' or 'quality'
+              must be provided.
             suboptions:
               concentration:
                 description: Alerting threshold as CO2 parts per million.
@@ -66,7 +72,8 @@ options:
             description: Door open threshold. 'open' must be provided and set to true.
             suboptions:
               open:
-                description: Alerting threshold for a door open event. Must be set to true.
+                description: Alerting threshold for a door open event. Must be set
+                  to true.
                 type: bool
             type: dict
           frequency:
@@ -77,7 +84,8 @@ options:
                 type: float
             type: dict
           humidity:
-            description: Humidity threshold. One of 'relativePercentage' or 'quality' must be provided.
+            description: Humidity threshold. One of 'relativePercentage' or 'quality'
+              must be provided.
             suboptions:
               quality:
                 description: Alerting threshold as a qualitative humidity level.
@@ -87,10 +95,12 @@ options:
                 type: int
             type: dict
           indoorAirQuality:
-            description: Indoor air quality score threshold. One of 'score' or 'quality' must be provided.
+            description: Indoor air quality score threshold. One of 'score' or 'quality'
+              must be provided.
             suboptions:
               quality:
-                description: Alerting threshold as a qualitative indoor air quality level.
+                description: Alerting threshold as a qualitative indoor air quality
+                  level.
                 type: str
               score:
                 description: Alerting threshold as indoor air quality score.
@@ -100,18 +110,21 @@ options:
             description: Noise threshold. 'ambient' must be provided.
             suboptions:
               ambient:
-                description: Ambient noise threshold. One of 'level' or 'quality' must be provided.
+                description: Ambient noise threshold. One of 'level' or 'quality'
+                  must be provided.
                 suboptions:
                   level:
                     description: Alerting threshold as adjusted decibels.
                     type: int
                   quality:
-                    description: Alerting threshold as a qualitative ambient noise level.
+                    description: Alerting threshold as a qualitative ambient noise
+                      level.
                     type: str
                 type: dict
             type: dict
           pm25:
-            description: PM2.5 concentration threshold. One of 'concentration' or 'quality' must be provided.
+            description: PM2.5 concentration threshold. One of 'concentration' or
+              'quality' must be provided.
             suboptions:
               concentration:
                 description: Alerting threshold as PM2.5 parts per million.
@@ -124,7 +137,8 @@ options:
             description: Power factor threshold. 'percentage' must be provided.
             suboptions:
               percentage:
-                description: Alerting threshold as the ratio of active power to apparent power. Must be between 0 and 100.
+                description: Alerting threshold as the ratio of active power to apparent
+                  power. Must be between 0 and 100.
                 type: int
             type: dict
           realPower:
@@ -135,7 +149,8 @@ options:
                 type: float
             type: dict
           temperature:
-            description: Temperature threshold. One of 'celsius', 'fahrenheit', or 'quality' must be provided.
+            description: Temperature threshold. One of 'celsius', 'fahrenheit', or
+              'quality' must be provided.
             suboptions:
               celsius:
                 description: Alerting threshold in degrees Celsius.
@@ -148,7 +163,8 @@ options:
                 type: str
             type: dict
           tvoc:
-            description: TVOC concentration threshold. One of 'concentration' or 'quality' must be provided.
+            description: TVOC concentration threshold. One of 'concentration' or 'quality'
+              must be provided.
             suboptions:
               concentration:
                 description: Alerting threshold as TVOC micrograms per cubic meter.
@@ -158,10 +174,12 @@ options:
                 type: str
             type: dict
           upstreamPower:
-            description: Upstream power threshold. 'outageDetected' must be provided and set to true.
+            description: Upstream power threshold. 'outageDetected' must be provided
+              and set to true.
             suboptions:
               outageDetected:
-                description: Alerting threshold for an upstream power event. Must be set to true.
+                description: Alerting threshold for an upstream power event. Must
+                  be set to true.
                 type: bool
             type: dict
           voltage:
@@ -172,10 +190,12 @@ options:
                 type: float
             type: dict
           water:
-            description: Water detection threshold. 'present' must be provided and set to true.
+            description: Water detection threshold. 'present' must be provided and
+              set to true.
             suboptions:
               present:
-                description: Alerting threshold for a water detection event. Must be set to true.
+                description: Alerting threshold for a water detection event. Must
+                  be set to true.
                 type: bool
             type: dict
         type: dict
@@ -188,7 +208,9 @@ options:
     type: bool
   message:
     description: A custom message that will appear in email and text message alerts.
-    type: str
+    type:
+      - string
+      - 'null'
   name:
     description: Name of the sensor alert profile.
     type: str
@@ -203,11 +225,13 @@ options:
         elements: str
         type: list
       httpServerIds:
-        description: A list of webhook endpoint IDs that will receive information about the alert.
+        description: A list of webhook endpoint IDs that will receive information
+          about the alert.
         elements: str
         type: list
       smsNumbers:
-        description: A list of SMS numbers that will receive information about the alert.
+        description: A list of SMS numbers that will receive information about the
+          alert.
         elements: str
         type: list
     type: dict
@@ -215,7 +239,8 @@ options:
     description: The sensor schedule to use with the alert profile.
     suboptions:
       id:
-        description: ID of the sensor schedule to use with the alert profile. If not defined, the alert profile will be active at all times.
+        description: ID of the sensor schedule to use with the alert profile. If not
+          defined, the alert profile will be active at all times.
         type: str
     type: dict
   serials:
@@ -334,32 +359,6 @@ EXAMPLES = r"""
       - Q234-ABCD-0001
       - Q234-ABCD-0002
       - Q234-ABCD-0003
-- name: Delete by id
-  cisco.meraki.networks_sensor_alerts_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    id: string
-    networkId: string
 - name: Update by id
   cisco.meraki.networks_sensor_alerts_profiles:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -448,6 +447,32 @@ EXAMPLES = r"""
       - Q234-ABCD-0001
       - Q234-ABCD-0002
       - Q234-ABCD-0003
+- name: Delete by id
+  cisco.meraki.networks_sensor_alerts_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    id: string
+    networkId: string
 """
 RETURN = r"""
 meraki_response:
@@ -456,35 +481,42 @@ meraki_response:
   type: dict
   sample: >
     {
+      "profileId": "string",
+      "name": "string",
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
       "conditions": [
         {
-          "direction": "string",
-          "duration": 0,
           "metric": "string",
           "threshold": {
-            "apparentPower": {
-              "draw": 0
+            "temperature": {
+              "celsius": 0,
+              "fahrenheit": 0,
+              "quality": "string"
+            },
+            "humidity": {
+              "relativePercentage": 0,
+              "quality": "string"
+            },
+            "water": {
+              "present": true
+            },
+            "door": {
+              "open": true
+            },
+            "tvoc": {
+              "concentration": 0,
+              "quality": "string"
             },
             "co2": {
               "concentration": 0,
               "quality": "string"
             },
-            "current": {
-              "draw": 0
-            },
-            "door": {
-              "open": true
-            },
-            "frequency": {
-              "level": 0
-            },
-            "humidity": {
-              "quality": "string",
-              "relativePercentage": 0
-            },
-            "indoorAirQuality": {
-              "quality": "string",
-              "score": 0
+            "pm25": {
+              "concentration": 0,
+              "quality": "string"
             },
             "noise": {
               "ambient": {
@@ -492,58 +524,51 @@ meraki_response:
                 "quality": "string"
               }
             },
-            "pm25": {
-              "concentration": 0,
+            "indoorAirQuality": {
+              "score": 0,
               "quality": "string"
-            },
-            "powerFactor": {
-              "percentage": 0
             },
             "realPower": {
               "draw": 0
             },
-            "temperature": {
-              "celsius": 0,
-              "fahrenheit": 0,
-              "quality": "string"
+            "apparentPower": {
+              "draw": 0
             },
-            "tvoc": {
-              "concentration": 0,
-              "quality": "string"
+            "powerFactor": {
+              "percentage": 0
             },
-            "upstreamPower": {
-              "outageDetected": true
+            "current": {
+              "draw": 0
             },
             "voltage": {
               "level": 0
             },
-            "water": {
-              "present": true
+            "frequency": {
+              "level": 0
+            },
+            "upstreamPower": {
+              "outageDetected": true
             }
-          }
+          },
+          "direction": "string",
+          "duration": 0
         }
       ],
-      "includeSensorUrl": true,
-      "message": "string",
-      "name": "string",
-      "profileId": "string",
       "recipients": {
         "emails": [
           "string"
         ],
-        "httpServerIds": [
+        "smsNumbers": [
           "string"
         ],
-        "smsNumbers": [
+        "httpServerIds": [
           "string"
         ]
       },
-      "schedule": {
-        "id": "string",
-        "name": "string"
-      },
       "serials": [
         "string"
-      ]
+      ],
+      "includeSensorUrl": true,
+      "message": "string"
     }
 """

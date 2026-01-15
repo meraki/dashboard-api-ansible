@@ -21,6 +21,16 @@ options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
+  spInitiated:
+    description: SP-Initiated SSO settings.
+    suboptions:
+      idpId:
+        description: SAML IdP ID for SP-Initiated SSO Authentication.
+        type: str
+      subdomain:
+        description: Organization's unique SSO identifier.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -62,6 +72,9 @@ EXAMPLES = r"""
     state: present
     enabled: true
     organizationId: string
+    spInitiated:
+      idpId: uu3H_bx28Nnd
+      subdomain: example_subdomain
 """
 RETURN = r"""
 meraki_response:
@@ -69,5 +82,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    true
+    {
+      "enabled": true,
+      "spInitiated": {
+        "subdomain": "string",
+        "idpId": "string"
+      }
+    }
 """

@@ -10,7 +10,7 @@ short_description: Information module for networks _appliance _vlans
 description:
   - Get all networks _appliance _vlans.
   - Get networks _appliance _vlans by id.
-  - List the VLANs for an MX network.
+  - List the VLANs for a Cisco Secure Router network.
   - Return a VLAN.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -107,13 +107,32 @@ meraki_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "interfaceId": "string",
+      "name": "string",
+      "subnet": "string",
       "applianceIp": "string",
+      "groupPolicyId": "string",
+      "templateVlanType": "string",
       "cidr": "string",
-      "dhcpBootFilename": "string",
-      "dhcpBootNextServer": "string",
-      "dhcpBootOptionsEnabled": true,
+      "mask": 0,
+      "dhcpRelayServerIps": [
+        "string"
+      ],
       "dhcpHandling": "string",
       "dhcpLeaseTime": "string",
+      "dhcpBootOptionsEnabled": true,
+      "dhcpBootNextServer": "string",
+      "dhcpBootFilename": "string",
+      "fixedIpAssignments": {},
+      "reservedIpRanges": [
+        {
+          "start": "string",
+          "end": "string",
+          "comment": "string"
+        }
+      ],
+      "dnsNameservers": "string",
       "dhcpOptions": [
         {
           "code": "string",
@@ -121,44 +140,25 @@ meraki_response:
           "value": "string"
         }
       ],
-      "dhcpRelayServerIps": [
-        "string"
-      ],
-      "dnsNameservers": "string",
-      "fixedIpAssignments": {},
-      "groupPolicyId": "string",
-      "id": "string",
-      "interfaceId": "string",
+      "vpnNatSubnet": "string",
+      "mandatoryDhcp": {
+        "enabled": true
+      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
           {
             "autonomous": true,
+            "staticPrefix": "string",
+            "staticApplianceIp6": "string",
             "origin": {
+              "type": "string",
               "interfaces": [
                 "string"
-              ],
-              "type": "string"
-            },
-            "staticApplianceIp6": "string",
-            "staticPrefix": "string"
+              ]
+            }
           }
         ]
-      },
-      "mandatoryDhcp": {
-        "enabled": true
-      },
-      "mask": 0,
-      "name": "string",
-      "reservedIpRanges": [
-        {
-          "comment": "string",
-          "end": "string",
-          "start": "string"
-        }
-      ],
-      "subnet": "string",
-      "templateVlanType": "string",
-      "vpnNatSubnet": "string"
+      }
     }
 """

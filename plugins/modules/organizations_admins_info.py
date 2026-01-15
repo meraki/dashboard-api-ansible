@@ -24,7 +24,8 @@ options:
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
+      - NetworkIds query parameter. Optional parameter to filter the result set by
+        the included set of network IDs.
     elements: str
     type: list
 requirements:
@@ -78,27 +79,27 @@ meraki_response:
   sample: >
     [
       {
-        "accountStatus": "string",
-        "authenticationMethod": "string",
-        "email": "string",
-        "hasApiKey": true,
         "id": "string",
-        "lastActive": "string",
         "name": "string",
-        "networks": [
-          {
-            "access": "string",
-            "id": "string"
-          }
-        ],
+        "email": "string",
         "orgAccess": "string",
+        "accountStatus": "string",
+        "twoFactorAuthEnabled": true,
+        "hasApiKey": true,
+        "lastActive": "string",
         "tags": [
           {
-            "access": "string",
-            "tag": "string"
+            "tag": "string",
+            "access": "string"
           }
         ],
-        "twoFactorAuthEnabled": true
+        "networks": [
+          {
+            "id": "string",
+            "access": "string"
+          }
+        ],
+        "authenticationMethod": "string"
       }
     ]
 """

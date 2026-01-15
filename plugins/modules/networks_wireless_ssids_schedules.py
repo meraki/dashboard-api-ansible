@@ -25,26 +25,30 @@ options:
     description: Number path parameter.
     type: str
   ranges:
-    description: List of outage ranges. Has a start date and time, and end date and time. If this parameter is passed in along with rangesInSeconds
-      parameter, this will take precedence.
+    description: List of outage ranges. Has a start date and time, and end date and
+      time. If this parameter is passed in along with rangesInSeconds parameter, this
+      will take precedence.
     elements: dict
     suboptions:
       endDay:
-        description: Day of when the outage ends. Can be either full day name, or three letter abbreviation.
+        description: Day of when the outage ends. Can be either full day name, or
+          three letter abbreviation.
         type: str
       endTime:
         description: 24 hour time when the outage ends.
         type: str
       startDay:
-        description: Day of when the outage starts. Can be either full day name, or three letter abbreviation.
+        description: Day of when the outage starts. Can be either full day name, or
+          three letter abbreviation.
         type: str
       startTime:
         description: 24 hour time when the outage starts.
         type: str
     type: list
   rangesInSeconds:
-    description: List of outage ranges in seconds since Sunday at Midnight. Has a start and end. If this parameter is passed in along with the
-      ranges parameter, ranges will take precedence.
+    description: List of outage ranges in seconds since Sunday at Midnight. Has a
+      start and end. If this parameter is passed in along with the ranges parameter,
+      ranges will take precedence.
     elements: dict
     suboptions:
       end:
@@ -115,16 +119,16 @@ meraki_response:
       "enabled": true,
       "ranges": [
         {
-          "endDay": "string",
-          "endTime": "string",
           "startDay": "string",
-          "startTime": "string"
+          "startTime": "string",
+          "endDay": "string",
+          "endTime": "string"
         }
       ],
       "rangesInSeconds": [
         {
-          "end": 0,
-          "start": 0
+          "start": 0,
+          "end": 0
         }
       ]
     }

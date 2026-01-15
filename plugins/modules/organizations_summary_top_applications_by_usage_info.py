@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: organizations_summary_top_applications_by_usage_info
-short_description: Information module for organizations _summary _top _applications _by _usage
+short_description: Information module for organizations _summary _top _applications
+  _by _usage
 description:
   - Get all organizations _summary _top _applications _by _usage.
-  - Return the top applications sorted by data usage over given time range. Default unit is megabytes.
+  - Return the top applications sorted by data usage over given time range. Default
+    unit is megabytes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -36,7 +38,8 @@ options:
     type: str
   quantity:
     description:
-      - Quantity query parameter. Set number of desired results to return. Default is 10.
+      - Quantity query parameter. Set number of desired results to return. Default
+        is 10. Maximum is 50.
     type: int
   ssidName:
     description:
@@ -52,21 +55,24 @@ options:
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 186 days after t0.
     type: str
   timespan:
     description:
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be greater than or equal to 25 minutes and be less than or equal to 186 days. The default is
-        1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be greater than or equal to 25 minutes and be less than
+        or equal to 186 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopApplicationsByUsage
-    description: Complete reference of the getOrganizationSummaryTopApplicationsByUsage API.
+    description: Complete reference of the getOrganizationSummaryTopApplicationsByUsage
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-applications-by-usage
 notes:
   - SDK Method used are
@@ -121,10 +127,10 @@ meraki_response:
     [
       {
         "application": "string",
-        "downstream": 0,
-        "percentage": 0,
         "total": 0,
-        "upstream": 0
+        "downstream": 0,
+        "upstream": 0,
+        "percentage": 0
       }
     ]
 """

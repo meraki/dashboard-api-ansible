@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: organizations_alerts_profiles
 short_description: Resource module for organizations _alerts _profiles
 description:
-  - Manage operations create, update and delete of the resource organizations _alerts _profiles.
+  - Manage operations create, update and delete of the resource organizations _alerts
+    _profiles.
   - Create an organization-wide alert configuration.
   - Removes an organization-wide alert config.
   - Update an organization-wide alert config.
@@ -21,25 +22,32 @@ options:
     description: The conditions that determine if the alert triggers.
     suboptions:
       bit_rate_bps:
-        description: The threshold the metric must cross to be valid for alerting. Used only for WAN Utilization alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for WAN Utilization alerts.
         type: int
       duration:
-        description: The total duration in seconds that the threshold should be crossed before alerting.
+        description: The total duration in seconds that the threshold should be crossed
+          before alerting.
         type: int
       interface:
-        description: The uplink observed for the alert. Interface must be one of the following wan1, wan2, wan3, cellular.
+        description: The uplink observed for the alert. Interface must be one of the
+          following wan1, wan2, wan3, cellular.
         type: str
       jitter_ms:
-        description: The threshold the metric must cross to be valid for alerting. Used only for VoIP Jitter alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for VoIP Jitter alerts.
         type: int
       latency_ms:
-        description: The threshold the metric must cross to be valid for alerting. Used only for WAN Latency alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for WAN Latency alerts.
         type: int
       loss_ratio:
-        description: The threshold the metric must cross to be valid for alerting. Used only for Packet Loss alerts.
+        description: The threshold the metric must cross to be valid for alerting.
+          Used only for Packet Loss alerts.
         type: float
       mos:
-        description: The threshold the metric must drop below to be valid for alerting. Used only for VoIP MOS alerts.
+        description: The threshold the metric must drop below to be valid for alerting.
+          Used only for VoIP MOS alerts.
         type: float
       window:
         description: The look back period in seconds for sensing the alert.
@@ -69,7 +77,8 @@ options:
         elements: str
         type: list
       httpServerIds:
-        description: A list base64 encoded urls of webhook endpoints that will receive information about the alert.
+        description: A list base64 encoded urls of webhook endpoints that will receive
+          information about the alert.
         elements: str
         type: list
     type: dict
@@ -145,32 +154,6 @@ EXAMPLES = r"""
       httpServerIds:
         - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
     type: wanUtilization
-- name: Delete by id
-  cisco.meraki.organizations_alerts_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    alertConfigId: string
-    organizationId: string
 - name: Update by id
   cisco.meraki.organizations_alerts_profiles:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -217,6 +200,32 @@ EXAMPLES = r"""
       httpServerIds:
         - aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==
     type: wanUtilization
+- name: Delete by id
+  cisco.meraki.organizations_alerts_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    alertConfigId: string
+    organizationId: string
 """
 RETURN = r"""
 meraki_response:
@@ -225,18 +234,15 @@ meraki_response:
   type: dict
   sample: >
     {
-      "alertCondition": {
-        "bit_rate_bps": 0,
-        "duration": 0,
-        "interface": "string",
-        "window": 0
-      },
-      "description": "string",
-      "enabled": true,
       "id": "string",
-      "networkTags": [
-        "string"
-      ],
+      "type": "string",
+      "enabled": true,
+      "alertCondition": {
+        "duration": 0,
+        "window": 0,
+        "bit_rate_bps": 0,
+        "interface": "string"
+      },
       "recipients": {
         "emails": [
           "string"
@@ -245,6 +251,9 @@ meraki_response:
           "string"
         ]
       },
-      "type": "string"
+      "networkTags": [
+        "string"
+      ],
+      "description": "string"
     }
 """

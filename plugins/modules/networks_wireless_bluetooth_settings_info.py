@@ -70,12 +70,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "advertisingEnabled": true,
-      "eslEnabled": true,
-      "major": 0,
-      "majorMinorAssignmentMode": "string",
-      "minor": 0,
       "scanningEnabled": true,
-      "uuid": "string"
+      "advertisingEnabled": true,
+      "uuid": "string",
+      "majorMinorAssignmentMode": "string",
+      "major": 0,
+      "minor": 0,
+      "eslEnabled": true
     }
 """

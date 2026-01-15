@@ -8,9 +8,13 @@ DOCUMENTATION = r"""
 module: administered_identities_me_api_keys_generate
 short_description: Resource module for administered _identities _me _api _keys _generate
 description:
-  - Manage operation create of the resource administered _identities _me _api _keys _generate. - > Generates an API key for an identity. For users
-    who have access to more than one organization, the change will take up to five minutes to propagate. If one of the organizations is currently
-    under maintenance, the change may not propagate fully until after the maintenance has been completed.
+  - Manage operation create of the resource administered _identities _me _api _keys
+    _generate.
+  - >
+    Generates an API key for an identity. For users who have access to more than one
+    organization, the change will take up to five minutes to propagate. If one of
+    the organizations is currently under maintenance, the change may not propagate
+    fully until after the maintenance has been completed.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -21,7 +25,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for administered generateAdministeredIdentitiesMeApiKeys
-    description: Complete reference of the generateAdministeredIdentitiesMeApiKeys API.
+    description: Complete reference of the generateAdministeredIdentitiesMeApiKeys
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!generate-administered-identities-me-api-keys
 notes:
   - SDK Method used are

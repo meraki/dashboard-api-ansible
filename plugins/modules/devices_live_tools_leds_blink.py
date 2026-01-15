@@ -9,36 +9,41 @@ module: devices_live_tools_leds_blink
 short_description: Resource module for devices _live _tools _leds _blink
 description:
   - Manage operation create of the resource devices _live _tools _leds _blink.
-  - Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one request every 10 seconds.
+  - Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one
+    request every 10 seconds.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   callback:
-    description: Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+    description: Details for the callback. Please include either an httpServerId OR
+      url and sharedSecret.
     suboptions:
       httpServer:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields
-              blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
         description: The payload template of the webhook used for the callback.
         suboptions:
           id:
-            description: The ID of the payload template. Defaults to 'wpt_00005' for the Callback (included) template.
+            description: The ID of the payload template. Defaults to 'wpt_00005' for
+              the Callback (included) template.
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request
-          was sent by Meraki. If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   duration:
@@ -85,6 +90,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
     callback:
       httpServer:
         id: aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=
@@ -102,18 +108,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
+      "ledsBlinkId": "string",
+      "url": "string",
+      "status": "string",
+      "request": {
+        "serial": "string",
+        "duration": 0
       },
       "error": "string",
-      "ledsBlinkId": "string",
-      "request": {
-        "duration": 0,
-        "serial": "string"
-      },
-      "status": "string",
-      "url": "string"
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

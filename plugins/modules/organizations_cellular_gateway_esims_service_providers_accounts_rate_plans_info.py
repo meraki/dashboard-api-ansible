@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts_rate_plans_info
-short_description: Information module for organizations _cellular _gateway _esims _service _providers _accounts _rate _plans
+short_description: Information module for organizations _cellular _gateway _esims
+  _service _providers _accounts _rate _plans
 description:
-  - Get all organizations _cellular _gateway _esims _service _providers _accounts _rate _plans.
+  - Get all organizations _cellular _gateway _esims _service _providers _accounts
+    _rate _plans.
   - The rate plans available for a given provider.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -32,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans
-    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans API.
+    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsRatePlans
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts-rate-plans
 notes:
   - SDK Method used are
@@ -42,7 +45,8 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _cellular _gateway _esims _service _providers _accounts _rate _plans
+- name: Get all organizations _cellular _gateway _esims _service _providers _accounts
+    _rate _plans
   cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts_rate_plans_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -85,8 +89,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

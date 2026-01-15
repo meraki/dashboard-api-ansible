@@ -16,10 +16,12 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   ipv6BridgeEnabled:
-    description: Toggle for enabling or disabling IPv6 bridging in a network (Note if enabled, SSIDs must also be configured to use bridge mode).
+    description: Toggle for enabling or disabling IPv6 bridging in a network (Note
+      if enabled, SSIDs must also be configured to use bridge mode).
     type: bool
   ledLightsOn:
-    description: Toggle for enabling or disabling LED lights on all APs in the network (making them run dark).
+    description: Toggle for enabling or disabling LED lights on all APs in the network
+      (making them run dark).
     type: bool
   locationAnalyticsEnabled:
     description: Toggle for enabling or disabling location analytics for your network.
@@ -34,11 +36,13 @@ options:
         description: Named VLAN Pool DHCP Monitoring settings.
         suboptions:
           duration:
-            description: The duration in minutes that devices will refrain from using dirty VLANs before adding them back to the pool.
+            description: The duration in minutes that devices will refrain from using
+              dirty VLANs before adding them back to the pool.
             type: int
           enabled:
-            description: Whether or not devices using named VLAN pools should remove dirty VLANs from the pool, thereby preventing clients from
-              being assigned to VLANs where they would be unable to obtain an IP address via DHCP.
+            description: Whether or not devices using named VLAN pools should remove
+              dirty VLANs from the pool, thereby preventing clients from being assigned
+              to VLANs where they would be unable to obtain an IP address via DHCP.
             type: bool
         type: dict
     type: dict
@@ -46,7 +50,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   upgradeStrategy:
-    description: The default strategy that network devices will use to perform an upgrade. Requires firmware version MR 26.8 or higher.
+    description: The default strategy that network devices will use to perform an
+      upgrade. Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -105,21 +110,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "ipv6BridgeEnabled": true,
-      "ledLightsOn": true,
-      "locationAnalyticsEnabled": true,
       "meshingEnabled": true,
+      "ipv6BridgeEnabled": true,
+      "locationAnalyticsEnabled": true,
+      "upgradeStrategy": "string",
+      "ledLightsOn": true,
       "namedVlans": {
         "poolDhcpMonitoring": {
-          "duration": 0,
-          "enabled": true
+          "enabled": true,
+          "duration": 0
         }
       },
       "regulatoryDomain": {
-        "countryCode": "string",
         "name": "string",
+        "countryCode": "string",
         "permits6e": true
-      },
-      "upgradeStrategy": "string"
+      }
     }
 """

@@ -17,7 +17,7 @@ ANSIBLE_METADATA = {
 
 DOCUMENTATION = r"""
 author:
-  - "Marcin Wo\u017Aniak (@y0rune)"
+  - "Marcin Woźniak (@y0rune)"
 deprecated:
   alternative: cisco.meraki.networks_switch_access_policies
   removed_in: 3.0.0

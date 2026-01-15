@@ -72,33 +72,33 @@ meraki_response:
   sample: >
     [
       {
+        "name": "string",
         "appliedOnDevices": [
           {
+            "tag": "string",
             "id": "string",
-            "permissionLevel": "string",
-            "permissionScope": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
         ],
         "appliedOnNetworks": [
           {
+            "tag": "string",
             "id": "string",
-            "permissionLevel": "string",
-            "permissionScope": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
         ],
         "appliedOrgWide": [
           {
-            "permissionLevel": "string",
-            "permissionScope": "string",
+            "tag": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
-        ],
-        "name": "string"
+        ]
       }
     ]
 """

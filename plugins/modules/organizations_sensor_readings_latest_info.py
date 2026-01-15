@@ -9,7 +9,8 @@ module: organizations_sensor_readings_latest_info
 short_description: Information module for organizations _sensor _readings _latest
 description:
   - Get all organizations _sensor _readings _latest.
-  - Return the latest available reading for each metric from each sensor, sorted by sensor serial.
+  - Return the latest available reading for each metric from each sensor, sorted by
+    sensor serial.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -25,21 +26,26 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
@@ -54,7 +60,8 @@ options:
   metrics:
     description:
       - >
-        Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved.
+        Metrics query parameter. Types of sensor readings to retrieve. If no metrics
+        are supplied, all available types of readings will be retrieved.
     elements: str
     type: list
 requirements:
@@ -115,12 +122,15 @@ meraki_response:
   sample: >
     [
       {
+        "serial": "string",
         "network": {
           "id": "string",
           "name": "string"
         },
         "readings": [
           {
+            "ts": "string",
+            "metric": "string",
             "apparentPower": {
               "draw": 0
             },
@@ -151,11 +161,19 @@ meraki_response:
             "indoorAirQuality": {
               "score": 0
             },
-            "metric": "string",
             "noise": {
               "ambient": {
                 "level": 0
               }
+            },
+            "no2": {
+              "concentration": 0
+            },
+            "o3": {
+              "concentration": 0
+            },
+            "pm10": {
+              "concentration": 0
             },
             "pm25": {
               "concentration": 0
@@ -170,10 +188,9 @@ meraki_response:
               "locked": true
             },
             "temperature": {
-              "celsius": 0,
-              "fahrenheit": 0
+              "fahrenheit": 0,
+              "celsius": 0
             },
-            "ts": "string",
             "tvoc": {
               "concentration": 0
             },
@@ -182,10 +199,13 @@ meraki_response:
             },
             "water": {
               "present": true
+            },
+            "rawTemperature": {
+              "fahrenheit": 0,
+              "celsius": 0
             }
           }
-        ],
-        "serial": "string"
+        ]
       }
     ]
 """

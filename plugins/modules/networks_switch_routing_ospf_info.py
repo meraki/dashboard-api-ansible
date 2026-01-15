@@ -22,6 +22,13 @@ options:
     description:
       - NetworkId path parameter. Network ID.
     type: str
+  vrf:
+    description:
+      - >
+        Vrf query parameter. The VRF to return the OSPF routing configuration for.
+        When not provided, the default VRF is used. Included on networks with IOS
+        XE 17.18 or higher.
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -60,6 +67,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    vrf: string
     networkId: string
   register: result
 """
@@ -70,6 +78,9 @@ meraki_response:
   type: dict
   sample: >
     {
+      "enabled": true,
+      "helloTimerInSeconds": 0,
+      "deadTimerInSeconds": 0,
       "areas": [
         {
           "areaId": "string",
@@ -77,25 +88,25 @@ meraki_response:
           "areaType": "string"
         }
       ],
-      "deadTimerInSeconds": 0,
-      "enabled": true,
-      "helloTimerInSeconds": 0,
-      "md5AuthenticationEnabled": true,
-      "md5AuthenticationKey": {
-        "id": 0,
-        "passphrase": "string"
-      },
       "v3": {
+        "enabled": true,
+        "helloTimerInSeconds": 0,
+        "deadTimerInSeconds": 0,
         "areas": [
           {
             "areaId": "string",
             "areaName": "string",
             "areaType": "string"
           }
-        ],
-        "deadTimerInSeconds": 0,
-        "enabled": true,
-        "helloTimerInSeconds": 0
+        ]
+      },
+      "md5AuthenticationEnabled": true,
+      "md5AuthenticationKey": {
+        "id": 0,
+        "passphrase": "string"
+      },
+      "vrf": {
+        "name": "string"
       }
     }
 """

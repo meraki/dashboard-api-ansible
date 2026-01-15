@@ -25,33 +25,40 @@ options:
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the results by network IDs.
+      - NetworkIds query parameter. Optional parameter to filter the results by network
+        IDs.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100. Default is 20.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100. Default is 20.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationIntegrationsXdrNetworks
-    description: Complete reference of the getOrganizationIntegrationsXdrNetworks API.
+    description: Complete reference of the getOrganizationIntegrationsXdrNetworks
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-integrations-xdr-networks
 notes:
   - SDK Method used are
@@ -102,20 +109,20 @@ meraki_response:
     {
       "items": [
         {
-          "enabled": true,
-          "isEligible": true,
-          "name": "string",
           "networkId": "string",
           "productTypes": [
             "string"
-          ]
+          ],
+          "name": "string",
+          "enabled": true,
+          "isEligible": true
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

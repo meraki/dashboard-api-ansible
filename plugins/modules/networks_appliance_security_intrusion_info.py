@@ -70,16 +70,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "idsRulesets": "string",
       "mode": "string",
+      "idsRulesets": "string",
       "protectedNetworks": {
-        "excludedCidr": [
-          "string"
-        ],
+        "useDefault": true,
         "includedCidr": [
           "string"
         ],
-        "useDefault": true
+        "excludedCidr": [
+          "string"
+        ]
       }
     }
 """

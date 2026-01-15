@@ -16,9 +16,11 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   operation:
-    description: Operation to run on the sensor. 'enableDownstreamPower', 'disableDownstreamPower', and 'cycleDownstreamPower' turn power on/off
-      to the device that is connected downstream of an MT40 power monitor. 'refreshData' causes an MT15 or MT40 device to upload its latest readings
-      so that they are immediately available in the Dashboard API.
+    description: Operation to run on the sensor. 'enableDownstreamPower', 'disableDownstreamPower',
+      and 'cycleDownstreamPower' turn power on/off to the device that is connected
+      downstream of an MT40 power monitor. 'refreshData' causes an MT15 or MT40 device
+      to upload its latest readings so that they are immediately available in the
+      Dashboard API.
     type: str
   serial:
     description: Serial path parameter.
@@ -73,17 +75,17 @@ meraki_response:
   sample: >
     {
       "commandId": "string",
-      "completedAt": "string",
       "createdAt": "string",
+      "completedAt": "string",
       "createdBy": {
         "adminId": "string",
-        "email": "string",
-        "name": "string"
+        "name": "string",
+        "email": "string"
       },
+      "operation": "string",
+      "status": "string",
       "errors": [
         "string"
-      ],
-      "operation": "string",
-      "status": "string"
+      ]
     }
 """

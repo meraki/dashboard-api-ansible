@@ -27,7 +27,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceSecurityIntrusion
-    description: Complete reference of the getOrganizationApplianceSecurityIntrusion API.
+    description: Complete reference of the getOrganizationApplianceSecurityIntrusion
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-intrusion
 notes:
   - SDK Method used are
@@ -67,13 +68,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "message": "string",
-        "ruleId": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

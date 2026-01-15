@@ -30,23 +30,29 @@ options:
         type: str
     type: list
   deadTimerInSeconds:
-    description: Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535.
+    description: Time interval to determine when the peer will be declared inactive/dead.
+      Value must be between 1 and 65535.
     type: int
   enabled:
-    description: Boolean value to enable or disable OSPF routing. OSPF routing is disabled by default.
+    description: Boolean value to enable or disable OSPF routing. OSPF routing is
+      disabled by default.
     type: bool
   helloTimerInSeconds:
-    description: Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between
-      1 and 255. Default is 10 seconds.
+    description: Time interval in seconds at which hello packet will be sent to OSPF
+      neighbors to maintain connectivity. Value must be between 1 and 255. Default
+      is 10 seconds.
     type: int
   md5AuthenticationEnabled:
-    description: Boolean value to enable or disable MD5 authentication. MD5 authentication is disabled by default.
+    description: Boolean value to enable or disable MD5 authentication. MD5 authentication
+      is disabled by default.
     type: bool
   md5AuthenticationKey:
-    description: MD5 authentication credentials. This param is only relevant if md5AuthenticationEnabled is true.
+    description: MD5 authentication credentials. This param is only relevant if md5AuthenticationEnabled
+      is true.
     suboptions:
       id:
-        description: MD5 authentication key index. Key index must be between 1 to 255.
+        description: MD5 authentication key index. Key index must be between 1 to
+          255.
         type: int
       passphrase:
         description: MD5 authentication passphrase.
@@ -73,14 +79,17 @@ options:
             type: str
         type: list
       deadTimerInSeconds:
-        description: Time interval to determine when the peer will be declared inactive/dead. Value must be between 1 and 65535.
+        description: Time interval to determine when the peer will be declared inactive/dead.
+          Value must be between 1 and 65535.
         type: int
       enabled:
-        description: Boolean value to enable or disable V3 OSPF routing. OSPF V3 routing is disabled by default.
+        description: Boolean value to enable or disable V3 OSPF routing. OSPF V3 routing
+          is disabled by default.
         type: bool
       helloTimerInSeconds:
-        description: Time interval in seconds at which hello packet will be sent to OSPF neighbors to maintain connectivity. Value must be between
-          1 and 255. Default is 10 seconds.
+        description: Time interval in seconds at which hello packet will be sent to
+          OSPF neighbors to maintain connectivity. Value must be between 1 and 255.
+          Default is 10 seconds.
         type: int
     type: dict
 requirements:
@@ -142,6 +151,7 @@ EXAMPLES = r"""
       deadTimerInSeconds: 40
       enabled: true
       helloTimerInSeconds: 10
+    vrf: Blue
 """
 RETURN = r"""
 meraki_response:
@@ -150,6 +160,9 @@ meraki_response:
   type: dict
   sample: >
     {
+      "enabled": true,
+      "helloTimerInSeconds": 0,
+      "deadTimerInSeconds": 0,
       "areas": [
         {
           "areaId": "string",
@@ -157,25 +170,25 @@ meraki_response:
           "areaType": "string"
         }
       ],
-      "deadTimerInSeconds": 0,
-      "enabled": true,
-      "helloTimerInSeconds": 0,
-      "md5AuthenticationEnabled": true,
-      "md5AuthenticationKey": {
-        "id": 0,
-        "passphrase": "string"
-      },
       "v3": {
+        "enabled": true,
+        "helloTimerInSeconds": 0,
+        "deadTimerInSeconds": 0,
         "areas": [
           {
             "areaId": "string",
             "areaName": "string",
             "areaType": "string"
           }
-        ],
-        "deadTimerInSeconds": 0,
-        "enabled": true,
-        "helloTimerInSeconds": 0
+        ]
+      },
+      "md5AuthenticationEnabled": true,
+      "md5AuthenticationKey": {
+        "id": 0,
+        "passphrase": "string"
+      },
+      "vrf": {
+        "name": "string"
       }
     }
 """

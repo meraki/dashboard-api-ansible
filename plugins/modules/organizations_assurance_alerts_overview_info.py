@@ -24,11 +24,13 @@ options:
     type: str
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network ids.
     type: str
   severity:
     description:
-      - Severity query parameter. Optional parameter to filter alerts overview by severity type.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   types:
     description:
@@ -64,29 +66,35 @@ options:
     type: list
   active:
     description:
-      - Active query parameter. Optional parameter to filter by active alerts defaults to true.
+      - Active query parameter. Optional parameter to filter by active alerts defaults
+        to true.
     type: bool
   dismissed:
     description:
-      - Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
+      - Dismissed query parameter. Optional parameter to filter by dismissed alerts
+        defaults to false.
     type: bool
   resolved:
     description:
-      - Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
+      - Resolved query parameter. Optional parameter to filter by resolved alerts
+        defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
       - >
-        SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that
-        device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch
-        and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
+        SuppressAlertsForOfflineNodes query parameter. When set to true the api will
+        only return connectivity alerts for a given device if that device is in an
+        offline state. This only applies to devices. This is ignored when resolved
+        is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only
+        the Unreachable alert will be returned. Defaults to false.
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverview
-    description: Complete reference of the getOrganizationAssuranceAlertsOverview API.
+    description: Complete reference of the getOrganizationAssuranceAlertsOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview
 notes:
   - SDK Method used are
@@ -128,10 +136,10 @@ EXAMPLES = r"""
     serials: []
     deviceTypes: []
     deviceTags: []
-    active: true
-    dismissed: true
-    resolved: true
-    suppressAlertsForOfflineNodes: true
+    active: True
+    dismissed: True
+    resolved: True
+    suppressAlertsForOfflineNodes: True
     organizationId: string
   register: result
 """
@@ -142,12 +150,12 @@ meraki_response:
   type: dict
   sample: >
     {
+      "total": 0,
       "bySeverity": [
         {
-          "count": 0,
-          "type": "string"
+          "type": "string",
+          "count": 0
         }
-      ],
-      "total": 0
+      ]
     }
 """

@@ -26,7 +26,8 @@ options:
     description: The new network to which the devices will be moved.
     type: str
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the devices to be moved.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the devices to be moved.
     elements: str
     type: list
   serials:

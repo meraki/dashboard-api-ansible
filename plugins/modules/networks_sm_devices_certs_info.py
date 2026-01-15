@@ -77,14 +77,14 @@ meraki_response:
   sample: >
     [
       {
-        "certPem": "string",
-        "deviceId": "string",
-        "id": "string",
-        "issuer": "string",
         "name": "string",
         "notValidAfter": "string",
         "notValidBefore": "string",
-        "subject": "string"
+        "certPem": "string",
+        "deviceId": "string",
+        "issuer": "string",
+        "subject": "string",
+        "id": "string"
       }
     ]
 """

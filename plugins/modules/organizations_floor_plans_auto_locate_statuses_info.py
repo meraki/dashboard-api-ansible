@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_floor_plans_auto_locate_statuses_info
-short_description: Information module for organizations _floor _plans _auto _locate _statuses
+short_description: Information module for organizations _floor _plans _auto _locate
+  _statuses
 description:
   - Get all organizations _floor _plans _auto _locate _statuses.
   - List the status of auto locate for each floorplan in your organization.
@@ -25,30 +26,37 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 10000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 10000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter floorplans by one or more network IDs.
+      - NetworkIds query parameter. Optional parameter to filter floorplans by one
+        or more network IDs.
     elements: str
     type: list
   floorPlanIds:
     description:
-      - FloorPlanIds query parameter. Optional parameter to filter floorplans by one or more floorplan IDs.
+      - FloorPlanIds query parameter. Optional parameter to filter floorplans by one
+        or more floorplan IDs.
     elements: str
     type: list
 requirements:
@@ -56,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateStatuses
-    description: Complete reference of the getOrganizationFloorPlansAutoLocateStatuses API.
+    description: Complete reference of the getOrganizationFloorPlansAutoLocateStatuses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-statuses
 notes:
   - SDK Method used are
@@ -110,51 +119,51 @@ meraki_response:
       {
         "items": [
           {
+            "network": {
+              "id": "string"
+            },
+            "floorPlanId": "string",
+            "name": "string",
             "counts": {
               "devices": {
                 "total": 0
               }
             },
-            "floorPlanId": "string",
             "jobs": [
               {
+                "id": "string",
+                "status": "string",
+                "scheduledAt": "string",
                 "completed": {
                   "percentage": 0
+                },
+                "ranging": {
+                  "status": "string",
+                  "completed": {
+                    "percentage": 0
+                  }
+                },
+                "gnss": {
+                  "status": "string",
+                  "completed": {
+                    "percentage": 0
+                  }
                 },
                 "errors": [
                   {
                     "source": "string",
                     "type": "string"
                   }
-                ],
-                "gnss": {
-                  "completed": {
-                    "percentage": 0
-                  },
-                  "status": "string"
-                },
-                "id": "string",
-                "ranging": {
-                  "completed": {
-                    "percentage": 0
-                  },
-                  "status": "string"
-                },
-                "scheduledAt": "string",
-                "status": "string"
+                ]
               }
-            ],
-            "name": "string",
-            "network": {
-              "id": "string"
-            }
+            ]
           }
         ],
         "meta": {
           "counts": {
             "items": {
-              "remaining": 0,
-              "total": 0
+              "total": 0,
+              "remaining": 0
             }
           }
         }

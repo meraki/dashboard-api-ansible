@@ -74,19 +74,20 @@ meraki_response:
   sample: >
     {
       "id": "string",
-      "isMonitorOnly": true,
-      "members": [
-        {
-          "mac": "string",
-          "model": "string",
-          "name": "string",
-          "role": "string",
-          "serial": "string"
-        }
-      ],
       "name": "string",
       "serials": [
         "string"
+      ],
+      "isMonitorOnly": true,
+      "virtualMac": "string",
+      "members": [
+        {
+          "serial": "string",
+          "name": "string",
+          "model": "string",
+          "mac": "string",
+          "role": "string"
+        }
       ]
     }
 """

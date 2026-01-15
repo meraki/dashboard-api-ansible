@@ -31,7 +31,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationWebhooksCallbacksStatus
-    description: Complete reference of the getOrganizationWebhooksCallbacksStatus API.
+    description: Complete reference of the getOrganizationWebhooksCallbacksStatus
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-callbacks-status
 notes:
   - SDK Method used are
@@ -76,22 +77,22 @@ meraki_response:
   sample: >
     {
       "callbackId": "string",
-      "createdBy": {
-        "adminId": "string"
-      },
+      "status": "string",
       "errors": [
         "string"
       ],
-      "status": "string",
+      "createdBy": {
+        "adminId": "string"
+      },
       "webhook": {
+        "url": "string",
         "httpServer": {
           "id": "string"
         },
         "payloadTemplate": {
           "id": "string"
         },
-        "sentAt": "string",
-        "url": "string"
+        "sentAt": "string"
       }
     }
 """

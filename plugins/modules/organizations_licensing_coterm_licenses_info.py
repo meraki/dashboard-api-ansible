@@ -25,21 +25,26 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   invalidated:
     description:
@@ -54,7 +59,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing getOrganizationLicensingCotermLicenses
-    description: Complete reference of the getOrganizationLicensingCotermLicenses API.
+    description: Complete reference of the getOrganizationLicensingCotermLicenses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-licensing-coterm-licenses
 notes:
   - SDK Method used are
@@ -90,8 +96,8 @@ EXAMPLES = r"""
     perPage: 0
     startingAfter: string
     endingBefore: string
-    invalidated: true
-    expired: true
+    invalidated: True
+    expired: True
     organizationId: string
     total_pages: -1
     direction: next
@@ -106,27 +112,27 @@ meraki_response:
   sample: >
     [
       {
-        "claimedAt": "string",
-        "counts": [
-          {
-            "count": 0,
-            "model": "string"
-          }
-        ],
+        "key": "string",
+        "organizationId": "string",
         "duration": 0,
+        "mode": "string",
+        "startedAt": "string",
+        "claimedAt": "string",
+        "invalidated": true,
+        "invalidatedAt": "string",
+        "expired": true,
         "editions": [
           {
             "edition": "string",
             "productType": "string"
           }
         ],
-        "expired": true,
-        "invalidated": true,
-        "invalidatedAt": "string",
-        "key": "string",
-        "mode": "string",
-        "organizationId": "string",
-        "startedAt": "string"
+        "counts": [
+          {
+            "model": "string",
+            "count": 0
+          }
+        ]
       }
     ]
 """

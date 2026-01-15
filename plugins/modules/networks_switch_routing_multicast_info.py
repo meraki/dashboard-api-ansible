@@ -71,22 +71,22 @@ meraki_response:
   sample: >
     {
       "defaultSettings": {
-        "floodUnknownMulticastTrafficEnabled": true,
-        "igmpSnoopingEnabled": true
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
       },
       "overrides": [
         {
-          "floodUnknownMulticastTrafficEnabled": true,
-          "igmpSnoopingEnabled": true,
+          "switches": [
+            "string"
+          ],
           "stacks": [
             "string"
           ],
           "switchProfiles": [
             "string"
           ],
-          "switches": [
-            "string"
-          ]
+          "igmpSnoopingEnabled": true,
+          "floodUnknownMulticastTrafficEnabled": true
         }
       ]
     }

@@ -45,11 +45,32 @@ options:
         elements: dict
         suboptions:
           authenticationTypes:
-            description: The authentication types for the method. These should be formatted as an object with the EAP method category in camelcase
-              as the key and the list of types as the value (nonEapInnerAuthentication Reserved, PAP, CHAP, MSCHAP, MSCHAPV2; eapInnerAuthentication
-              EAP-TLS, EAP-SIM, EAP-AKA, EAP-TTLS with MSCHAPv2; credentials SIM, USIM, NFC Secure Element, Hardware Token, Softoken, Certificate,
-              username/password, none, Reserved, Vendor Specific; tunneledEapMethodCredentials SIM, USIM, NFC Secure Element, Hardware Token,
-              Softoken, Certificate, username/password, Reserved, Anonymous, Vendor Specific).
+            description: The authentication types for the method. These should be
+              formatted as an object with the EAP method category in camelcase as
+              the key and the list of types as the value (nonEapInnerAuthentication
+              Reserved, PAP, CHAP, MSCHAP, MSCHAPV2; eapInnerAuthentication EAP-TLS,
+              EAP-SIM, EAP-AKA, EAP-TTLS with MSCHAPv2; credentials SIM, USIM, NFC
+              Secure Element, Hardware Token, Softoken, Certificate, username/password,
+              none, Reserved, Vendor Specific; tunneledEapMethodCredentials SIM, USIM,
+              NFC Secure Element, Hardware Token, Softoken, Certificate, username/password,
+              Reserved, Anonymous, Vendor Specific).
+            suboptions:
+              credentials:
+                description: An array of credentials.
+                elements: str
+                type: list
+              eapInnerAuthentication:
+                description: An array of EAP inner authentication types.
+                elements: str
+                type: list
+              nonEapInnerAuthentication:
+                description: An array of non-EAP inner authentication types.
+                elements: str
+                type: list
+              tunneledEapMethodCredentials:
+                description: An array of tunneled EAP method credentials.
+                elements: str
+                type: list
             type: dict
           id:
             description: ID of method.
@@ -60,8 +81,10 @@ options:
         type: str
     type: list
   networkAccessType:
-    description: The network type of this SSID ('Private network', 'Private network with guest access', 'Chargeable public network', 'Free public
-      network', 'Personal device network', 'Emergency services only network', 'Test or experimental', 'Wildcard').
+    description: The network type of this SSID ('Private network', 'Private network
+      with guest access', 'Chargeable public network', 'Free public network', 'Personal
+      device network', 'Emergency services only network', 'Test or experimental',
+      'Wildcard').
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -77,7 +100,8 @@ options:
         type: str
     type: dict
   roamConsortOis:
-    description: An array of roaming consortium OIs (hexadecimal number 3-5 octets in length).
+    description: An array of roaming consortium OIs (hexadecimal number 3-5 octets
+      in length).
     elements: str
     type: list
   venue:
@@ -87,16 +111,23 @@ options:
         description: Venue name.
         type: str
       type:
-        description: Venue type ('Unspecified', 'Unspecified Assembly', 'Arena', 'Stadium', 'Passenger Terminal', 'Amphitheater', 'Amusement Park',
-          'Place of Worship', 'Convention Center', 'Library', 'Museum', 'Restaurant', 'Theater', 'Bar', 'Coffee Shop', 'Zoo or Aquarium', 'Emergency
-          Coordination Center', 'Unspecified Business', 'Doctor or Dentist office', 'Bank', 'Fire Station', 'Police Station', 'Post Office', 'Professional
-          Office', 'Research and Development Facility', 'Attorney Office', 'Unspecified Educational', 'School, Primary', 'School, Secondary',
-          'University or College', 'Unspecified Factory and Industrial', 'Factory', 'Unspecified Institutional', 'Hospital', 'Long-Term Care Facility',
-          'Alcohol and Drug Rehabilitation Center', 'Group Home', 'Prison or Jail', 'Unspecified Mercantile', 'Retail Store', 'Grocery Market',
-          'Automotive Service Station', 'Shopping Mall', 'Gas Station', 'Unspecified Residential', 'Private Residence', 'Hotel or Motel', 'Dormitory',
-          'Boarding House', 'Unspecified Storage', 'Unspecified Utility and Miscellaneous', 'Unspecified Vehicular', 'Automobile or Truck', 'Airplane',
-          'Bus', 'Ferry', 'Ship or Boat', 'Train', 'Motor Bike', 'Unspecified Outdoor', 'Muni-mesh Network', 'City Park', 'Rest Area', 'Traffic
-          Control', 'Bus Stop', 'Kiosk').
+        description: Venue type ('Unspecified', 'Unspecified Assembly', 'Arena', 'Stadium',
+          'Passenger Terminal', 'Amphitheater', 'Amusement Park', 'Place of Worship',
+          'Convention Center', 'Library', 'Museum', 'Restaurant', 'Theater', 'Bar',
+          'Coffee Shop', 'Zoo or Aquarium', 'Emergency Coordination Center', 'Unspecified
+          Business', 'Doctor or Dentist office', 'Bank', 'Fire Station', 'Police Station',
+          'Post Office', 'Professional Office', 'Research and Development Facility',
+          'Attorney Office', 'Unspecified Educational', 'School, Primary', 'School,
+          Secondary', 'University or College', 'Unspecified Factory and Industrial',
+          'Factory', 'Unspecified Institutional', 'Hospital', 'Long-Term Care Facility',
+          'Alcohol and Drug Rehabilitation Center', 'Group Home', 'Prison or Jail',
+          'Unspecified Mercantile', 'Retail Store', 'Grocery Market', 'Automotive
+          Service Station', 'Shopping Mall', 'Gas Station', 'Unspecified Residential',
+          'Private Residence', 'Hotel or Motel', 'Dormitory', 'Boarding House', 'Unspecified
+          Storage', 'Unspecified Utility and Miscellaneous', 'Unspecified Vehicular',
+          'Automobile or Truck', 'Airplane', 'Bus', 'Ferry', 'Ship or Boat', 'Train',
+          'Motor Bike', 'Unspecified Outdoor', 'Muni-mesh Network', 'City Park', 'Rest
+          Area', 'Traffic Control', 'Bus Stop', 'Kiosk').
         type: str
     type: dict
 requirements:
@@ -145,8 +176,6 @@ EXAMPLES = r"""
     mccMncs:
       - mcc: '123'
         mnc: '456'
-      - mcc: '563'
-        mnc: '232'
     naiRealms:
       - format: '1'
         methods:
@@ -158,7 +187,7 @@ EXAMPLES = r"""
                 - MSCHAP
               tunneledEapMethodCredentials: []
             id: '1'
-        name: Realm 1
+        realm: Realm 1
     networkAccessType: Private network
     networkId: string
     number: string
@@ -177,5 +206,52 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "operator": {
+        "name": "string"
+      },
+      "venue": {
+        "name": "string",
+        "type": "string"
+      },
+      "networkAccessType": "string",
+      "domains": [
+        "string"
+      ],
+      "roamConsortOis": [
+        "string"
+      ],
+      "mccMncs": [
+        {
+          "mcc": "string",
+          "mnc": "string"
+        }
+      ],
+      "naiRealms": [
+        {
+          "format": "string",
+          "name": "string",
+          "methods": [
+            {
+              "id": "string",
+              "authenticationTypes": {
+                "nonEapInnerAuthentication": [
+                  "string"
+                ],
+                "eapInnerAuthentication": [
+                  "string"
+                ],
+                "credentials": [
+                  "string"
+                ],
+                "tunneledEapMethodCredentials": [
+                  "string"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
 """

@@ -19,13 +19,16 @@ options:
     description: Whether APs will advertise beacons.
     type: bool
   major:
-    description: The major number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+    description: The major number to be used in the beacon identifier. Only valid
+      in 'Non-unique' mode.
     type: int
   majorMinorAssignmentMode:
-    description: The way major and minor number should be assigned to nodes in the network. ('Unique', 'Non-unique').
+    description: The way major and minor number should be assigned to nodes in the
+      network. ('Unique', 'Non-unique').
     type: str
   minor:
-    description: The minor number to be used in the beacon identifier. Only valid in 'Non-unique' mode.
+    description: The minor number to be used in the beacon identifier. Only valid
+      in 'Non-unique' mode.
     type: int
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -41,7 +44,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessBluetoothSettings
-    description: Complete reference of the updateNetworkWirelessBluetoothSettings API.
+    description: Complete reference of the updateNetworkWirelessBluetoothSettings
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-bluetooth-settings
 notes:
   - SDK Method used are
@@ -90,12 +94,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "advertisingEnabled": true,
-      "eslEnabled": true,
-      "major": 0,
-      "majorMinorAssignmentMode": "string",
-      "minor": 0,
       "scanningEnabled": true,
-      "uuid": "string"
+      "advertisingEnabled": true,
+      "uuid": "string",
+      "majorMinorAssignmentMode": "string",
+      "major": 0,
+      "minor": 0,
+      "eslEnabled": true
     }
 """

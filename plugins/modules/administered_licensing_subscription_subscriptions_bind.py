@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_bind
-short_description: Resource module for administered _licensing _subscription _subscriptions _bind
+short_description: Resource module for administered _licensing _subscription _subscriptions
+  _bind
 description:
-  - Manage operation create of the resource administered _licensing _subscription _subscriptions _bind.
+  - Manage operation create of the resource administered _licensing _subscription
+    _subscriptions _bind.
   - Bind networks to a subscription.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing bindAdministeredLicensingSubscriptionSubscription
-    description: Complete reference of the bindAdministeredLicensingSubscriptionSubscription API.
+    description: Complete reference of the bindAdministeredLicensingSubscriptionSubscription
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!bind-administered-licensing-subscription-subscription
 notes:
   - SDK Method used are
@@ -73,21 +76,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "errors": [
-        "string"
-      ],
-      "insufficientEntitlements": [
-        {
-          "quantity": 0,
-          "sku": "string"
-        }
-      ],
+      "subscriptionId": "string",
       "networks": [
         {
           "id": "string",
           "name": "string"
         }
       ],
-      "subscriptionId": "string"
+      "errors": [
+        "string"
+      ],
+      "insufficientEntitlements": [
+        {
+          "sku": "string",
+          "quantity": 0
+        }
+      ]
     }
 """

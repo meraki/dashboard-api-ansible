@@ -16,9 +16,11 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   autoBind:
-    description: Optional boolean indicating whether the network's switches should automatically bind to profiles of the same model. Defaults
-      to false if left unspecified. This option only affects switch networks and switch templates. Auto-bind is not valid unless the switch template
-      has at least one profile and has at most one profile per switch model.
+    description: Optional boolean indicating whether the network's switches should
+      automatically bind to profiles of the same model. Defaults to false if left
+      unspecified. This option only affects switch networks and switch templates.
+      Auto-bind is not valid unless the switch template has at least one profile and
+      has at most one profile per switch model.
     type: bool
   configTemplateId:
     description: The ID of the template to which the network should be bound.
@@ -75,20 +77,20 @@ meraki_response:
   type: dict
   sample: >
     {
-      "configTemplateId": "string",
-      "enrollmentString": "string",
       "id": "string",
-      "isBoundToConfigTemplate": true,
-      "name": "string",
-      "notes": "string",
       "organizationId": "string",
+      "name": "string",
       "productTypes": [
         "string"
       ],
+      "timeZone": "string",
       "tags": [
         "string"
       ],
-      "timeZone": "string",
-      "url": "string"
+      "enrollmentString": "string",
+      "url": "string",
+      "notes": "string",
+      "isBoundToConfigTemplate": true,
+      "configTemplateId": "string"
     }
 """

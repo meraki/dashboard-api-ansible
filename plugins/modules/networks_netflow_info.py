@@ -70,10 +70,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "reportingEnabled": true,
       "collectorIp": "string",
       "collectorPort": 0,
-      "etaDstPort": 0,
       "etaEnabled": true,
-      "reportingEnabled": true
+      "etaDstPort": 0
     }
 """

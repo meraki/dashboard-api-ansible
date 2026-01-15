@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_local_profiles_assignments_info
-short_description: Information module for organizations _appliance _dns _local _profiles _assignments
+short_description: Information module for organizations _appliance _dns _local _profiles
+  _assignments
 description:
   - Get all organizations _appliance _dns _local _profiles _assignments.
   - Fetch the local DNS profile assignments in the organization.
@@ -24,12 +25,14 @@ options:
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the results by network IDs.
+      - NetworkIds query parameter. Optional parameter to filter the results by network
+        IDs.
     elements: str
     type: list
 requirements:
@@ -37,7 +40,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsLocalProfilesAssignments
-    description: Complete reference of the getOrganizationApplianceDnsLocalProfilesAssignments API.
+    description: Complete reference of the getOrganizationApplianceDnsLocalProfilesAssignments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-local-profiles-assignments
 notes:
   - SDK Method used are
@@ -96,8 +100,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

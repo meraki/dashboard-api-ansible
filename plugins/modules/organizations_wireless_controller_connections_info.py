@@ -26,40 +26,47 @@ options:
   networkIds:
     description:
       - >
-        NetworkIds query parameter. Optional parameter to filter access points by network ID. This filter uses multiple exact matches.
+        NetworkIds query parameter. Optional parameter to filter access points by
+        network ID. This filter uses multiple exact matches.
     elements: str
     type: list
   controllerSerials:
     description:
       - >
-        ControllerSerials query parameter. Optional parameter to filter access points by its controller cloud ID. This filter uses multiple exact
-        matches.
+        ControllerSerials query parameter. Optional parameter to filter access points
+        by its controller cloud ID. This filter uses multiple exact matches.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerConnections
-    description: Complete reference of the getOrganizationWirelessControllerConnections API.
+    description: Complete reference of the getOrganizationWirelessControllerConnections
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-connections
 notes:
   - SDK Method used are
@@ -111,22 +118,22 @@ meraki_response:
     {
       "items": [
         {
+          "serial": "string",
           "controller": {
             "serial": "string"
           },
           "network": {
             "id": "string",
-            "name": "string",
-            "url": "string"
-          },
-          "serial": "string"
+            "url": "string",
+            "name": "string"
+          }
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

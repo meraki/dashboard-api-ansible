@@ -70,30 +70,41 @@ meraki_response:
   type: dict
   sample: >
     {
+      "defaultDestinations": {
+        "emails": [
+          "string"
+        ],
+        "allAdmins": true,
+        "snmp": true,
+        "httpServerIds": [
+          "string"
+        ]
+      },
       "alerts": [
         {
+          "type": "string",
+          "enabled": true,
           "alertDestinations": {
-            "allAdmins": true,
             "emails": [
-              "string"
-            ],
-            "httpServerIds": [
               "string"
             ],
             "smsNumbers": [
               "string"
             ],
-            "snmp": true
+            "allAdmins": true,
+            "snmp": true,
+            "httpServerIds": [
+              "string"
+            ]
           },
-          "enabled": true,
           "filters": {
             "conditions": [
               {
-                "direction": "string",
-                "duration": 0,
-                "threshold": 0,
                 "type": "string",
-                "unit": "string"
+                "unit": "string",
+                "duration": 0,
+                "direction": "string",
+                "threshold": 0
               }
             ],
             "failureType": "string",
@@ -111,20 +122,9 @@ meraki_response:
             "tag": "string",
             "threshold": 0,
             "timeout": 0
-          },
-          "type": "string"
+          }
         }
       ],
-      "defaultDestinations": {
-        "allAdmins": true,
-        "emails": [
-          "string"
-        ],
-        "httpServerIds": [
-          "string"
-        ],
-        "snmp": true
-      },
       "muting": {
         "byPortSchedules": {
           "enabled": true

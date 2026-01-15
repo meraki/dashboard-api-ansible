@@ -75,11 +75,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "bootFileName": "string",
-      "bootNextServer": "string",
-      "bootOptionsEnabled": true,
-      "dhcpLeaseTime": "string",
       "dhcpMode": "string",
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dhcpLeaseTime": "string",
+      "dnsNameserversOption": "string",
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "bootOptionsEnabled": true,
+      "bootNextServer": "string",
+      "bootFileName": "string",
       "dhcpOptions": [
         {
           "code": "string",
@@ -87,25 +94,18 @@ meraki_response:
           "value": "string"
         }
       ],
-      "dhcpRelayServerIps": [
-        "string"
-      ],
-      "dnsCustomNameservers": [
-        "string"
-      ],
-      "dnsNameserversOption": "string",
-      "fixedIpAssignments": [
-        {
-          "ip": "string",
-          "mac": "string",
-          "name": "string"
-        }
-      ],
       "reservedIpRanges": [
         {
-          "comment": "string",
+          "start": "string",
           "end": "string",
-          "start": "string"
+          "comment": "string"
+        }
+      ],
+      "fixedIpAssignments": [
+        {
+          "name": "string",
+          "mac": "string",
+          "ip": "string"
         }
       ]
     }

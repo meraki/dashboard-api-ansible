@@ -26,12 +26,16 @@ options:
   fields:
     description:
       - >
-        Fields query parameter. Additional fields that will be displayed for each device. The default fields are id, name, tags, ssid, wifiMac,
-        osName, systemModel, uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity, kioskAppName, biosVersion,
-        lastConnected, missingAppsCount, userSuppliedAddress, location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber, diskInfoJson,
-        deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt,
-        batteryEstCharge, quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled,
-        autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled, hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion,
+        Fields query parameter. Additional fields that will be displayed for each
+        device. The default fields are id, name, tags, ssid, wifiMac, osName, systemModel,
+        uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity,
+        kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress,
+        location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber,
+        diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei,
+        iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge,
+        quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled,
+        screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled,
+        hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion,
         cellular, and url.
     elements: str
     type: list
@@ -63,26 +67,32 @@ options:
   scope:
     description:
       - >
-        Scope query parameter. Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
+        Scope query parameter. Specify a scope (one of all, none, withAny, withAll,
+        withoutAny, or withoutAll) and a set of tags.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -147,19 +157,19 @@ meraki_response:
     [
       {
         "id": "string",
-        "ip": "string",
         "name": "string",
-        "notes": "string",
-        "osName": "string",
-        "serial": "string",
-        "serialNumber": "string",
-        "ssid": "string",
-        "systemModel": "string",
         "tags": [
           "string"
         ],
+        "ssid": "string",
+        "wifiMac": "string",
+        "osName": "string",
+        "systemModel": "string",
         "uuid": "string",
-        "wifiMac": "string"
+        "serialNumber": "string",
+        "serial": "string",
+        "ip": "string",
+        "notes": "string"
       }
     ]
 """

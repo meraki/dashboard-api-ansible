@@ -107,65 +107,68 @@ meraki_response:
   type: dict
   sample: >
     {
-      "accessPolicyNumber": 0,
-      "accessPolicyType": "string",
-      "adaptivePolicyGroup": {
-        "id": "string",
-        "name": "string"
-      },
-      "adaptivePolicyGroupId": "string",
-      "allowedVlans": "string",
-      "daiTrusted": true,
-      "dot3az": {
-        "enabled": true
-      },
+      "portId": "string",
+      "name": "string",
+      "tags": [
+        "string"
+      ],
       "enabled": true,
-      "flexibleStackingEnabled": true,
+      "poeEnabled": true,
+      "type": "string",
+      "vlan": 0,
+      "voiceVlan": 0,
+      "allowedVlans": "string",
       "isolationEnabled": true,
+      "rstpEnabled": true,
+      "stpGuard": "string",
+      "stpPortFastTrunk": true,
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "macAllowList": [
-        "string"
-      ],
-      "mirror": {
-        "mode": "string"
-      },
-      "module": {
-        "model": "string"
-      },
-      "name": "string",
-      "peerSgtCapable": true,
-      "poeEnabled": true,
-      "portId": "string",
       "portScheduleId": "string",
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      },
-      "rstpEnabled": true,
       "schedule": {
         "id": "string",
         "name": "string"
       },
-      "stackwiseVirtual": {
-        "isDualActiveDetector": true,
-        "isStackWiseVirtualLink": true
-      },
+      "udld": "string",
+      "accessPolicyType": "string",
+      "accessPolicyNumber": 0,
+      "macAllowList": [
+        "string"
+      ],
+      "macWhitelistLimit": 0,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "stpGuard": "string",
-      "tags": [
-        "string"
-      ],
-      "type": "string",
-      "udld": "string",
-      "vlan": 0,
-      "voiceVlan": 0
+      "adaptivePolicyGroupId": "string",
+      "adaptivePolicyGroup": {
+        "id": "string",
+        "name": "string"
+      },
+      "peerSgtCapable": true,
+      "flexibleStackingEnabled": true,
+      "daiTrusted": true,
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "module": {
+        "model": "string",
+        "serial": "string",
+        "slot": 0
+      },
+      "mirror": {
+        "mode": "string"
+      },
+      "dot3az": {
+        "enabled": true
+      },
+      "highSpeed": {
+        "enabled": true
+      }
     }
 """

@@ -28,7 +28,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
-    description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements API.
+    description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
 notes:
   - SDK Method used are
@@ -71,11 +72,12 @@ meraki_response:
   type: dict
   sample: >
     {
+      "sku": "string",
+      "name": "string",
+      "productType": "string",
+      "productClass": "string",
       "featureTier": "string",
       "isAddOn": true,
-      "name": "string",
-      "productClass": "string",
-      "productType": "string",
-      "sku": "string"
+      "isFree": true
     }
 """

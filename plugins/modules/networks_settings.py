@@ -16,26 +16,33 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   localStatusPage:
-    description: A hash of Local Status page(s)' authentication options applied to the Network.
+    description: A hash of Local Status page(s)' authentication options applied to
+      the Network.
     suboptions:
       authentication:
-        description: A hash of Local Status page(s)' authentication options applied to the Network.
+        description: A hash of Local Status page(s)' authentication options applied
+          to the Network.
         suboptions:
           enabled:
             description: Enables / disables the authentication on Local Status page(s).
             type: bool
           password:
-            description: The password used for Local Status Page(s). Set this to null to clear the password.
+            description: The password used for Local Status Page(s). Set this to null
+              to clear the password.
             type: str
           username:
-            description: The username used for Local Status Page(s).
+            description: The username used for Local Status Page(s). Setting this
+              to null or empty string will clear the value, allowing you to use the
+              default of 'admin'.
             type: str
         type: dict
     type: dict
   localStatusPageEnabled:
-    description: Enables / disables the local device status pages (<a target='_blank' href='http //my.meraki.com/'>my.meraki.com, </a><a target='_blank'
-      href='http //ap.meraki.com/'>ap.meraki.com, </a><a target='_blank' href='http //switch.meraki.com/'>switch.meraki.com, </a><a target='_blank'
-      href='http //wired.meraki.com/'>wired.meraki.com</a>). Optional (defaults to false).
+    description: Enables / disables the local device status pages (<a target='_blank'
+      href='http //my.meraki.com/'>my.meraki.com, </a><a target='_blank' href='http
+      //ap.meraki.com/'>ap.meraki.com, </a><a target='_blank' href='http //switch.meraki.com/'>switch.meraki.com,
+      </a><a target='_blank' href='http //wired.meraki.com/'>wired.meraki.com</a>).
+      Optional (defaults to false).
     type: bool
   namedVlans:
     description: A hash of Named VLANs options applied to the Network.
@@ -48,8 +55,9 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   remoteStatusPageEnabled:
-    description: Enables / disables access to the device status page (<a target='_blank'>http //device's LAN IP)</a>. Optional. Can only be set
-      if localStatusPageEnabled is set to true.
+    description: Enables / disables access to the device status page (<a target='_blank'>http
+      //device's LAN IP)</a>. Optional. Can only be set if localStatusPageEnabled
+      is set to true.
     type: bool
   securePort:
     description: A hash of SecureConnect options applied to the Network.
@@ -117,21 +125,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "fips": {
-        "enabled": true
-      },
+      "localStatusPageEnabled": true,
+      "remoteStatusPageEnabled": true,
       "localStatusPage": {
         "authentication": {
           "enabled": true,
           "username": "string"
         }
       },
-      "localStatusPageEnabled": true,
-      "namedVlans": {
+      "securePort": {
         "enabled": true
       },
-      "remoteStatusPageEnabled": true,
-      "securePort": {
+      "fips": {
+        "enabled": true
+      },
+      "namedVlans": {
         "enabled": true
       }
     }

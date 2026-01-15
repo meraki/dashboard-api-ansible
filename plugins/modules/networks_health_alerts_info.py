@@ -72,44 +72,44 @@ meraki_response:
   sample: >
     [
       {
-        "category": "string",
         "id": "string",
+        "category": "string",
+        "type": "string",
+        "severity": "string",
         "scope": {
-          "applications": [
-            {
-              "name": "string",
-              "url": "string"
-            }
-          ],
           "devices": [
             {
+              "url": "string",
+              "name": "string",
+              "productType": "string",
+              "serial": "string",
+              "mac": "string",
+              "lldp": {
+                "portId": "string"
+              },
               "clients": [
                 {
                   "mac": "string"
                 }
-              ],
-              "lldp": {
-                "portId": "string"
-              },
-              "mac": "string",
-              "name": "string",
-              "productType": "string",
-              "serial": "string",
-              "url": "string"
+              ]
+            }
+          ],
+          "applications": [
+            {
+              "url": "string",
+              "name": "string"
             }
           ],
           "peers": [
             {
+              "url": "string",
               "network": {
-                "id": "string",
-                "name": "string"
-              },
-              "url": "string"
+                "name": "string",
+                "id": "string"
+              }
             }
           ]
-        },
-        "severity": "string",
-        "type": "string"
+        }
       }
     ]
 """

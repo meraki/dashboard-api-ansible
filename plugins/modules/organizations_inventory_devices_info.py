@@ -27,29 +27,36 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   usedState:
     description:
-      - UsedState query parameter. Filter results by used or unused inventory. Accepted values are 'used' or 'unused'.
+      - UsedState query parameter. Filter results by used or unused inventory. Accepted
+        values are 'used' or 'unused'.
     type: str
   search:
     description:
-      - Search query parameter. Search for devices in inventory based on serial number, mac address, or model.
+      - Search query parameter. Search for devices in inventory based on serial number,
+        mac address, or model.
     type: str
   macs:
     description:
@@ -59,7 +66,8 @@ options:
   networkIds:
     description:
       - >
-        NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null' value to get available devices only.
+        NetworkIds query parameter. Search for devices in inventory based on network
+        ids. Use explicit 'null' value to get available devices only.
     elements: str
     type: list
   serials:
@@ -74,26 +82,29 @@ options:
     type: list
   orderNumbers:
     description:
-      - OrderNumbers query parameter. Search for devices in inventory based on order numbers.
+      - OrderNumbers query parameter. Search for devices in inventory based on order
+        numbers.
     elements: str
     type: list
   tags:
     description:
       - >
-        Tags query parameter. Filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included
-        (see below).
+        Tags query parameter. Filter devices by tags. The filtering is case-sensitive.
+        If tags are included, 'tagsFilterType' should also be included (see below).
     elements: str
     type: list
   tagsFilterType:
     description:
       - >
-        TagsFilterType query parameter. To use with 'tags' parameter, to filter devices which contain ANY or ALL given tags. Accepted values are
-        'withAnyTags' or 'withAllTags', default is 'withAnyTags'.
+        TagsFilterType query parameter. To use with 'tags' parameter, to filter devices
+        which contain ANY or ALL given tags. Accepted values are 'withAnyTags' or
+        'withAllTags', default is 'withAnyTags'.
     type: str
   productTypes:
     description:
       - >
-        ProductTypes query parameter. Filter devices by product type. Accepted values are appliance, camera, cellularGateway, secureConnect, sensor,
+        ProductTypes query parameter. Filter devices by product type. Accepted values
+        are appliance, camera, campusGateway, cellularGateway, secureConnect, sensor,
         switch, systemsManager, wireless, and wirelessController.
     elements: str
     type: list
@@ -195,24 +206,24 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mac": "string",
+      "serial": "string",
+      "name": "string",
+      "model": "string",
+      "networkId": "string",
+      "orderNumber": "string",
       "claimedAt": "string",
+      "licenseExpirationDate": "string",
+      "tags": [
+        "string"
+      ],
+      "productType": "string",
       "countryCode": "string",
       "details": [
         {
           "name": "string",
           "value": "string"
         }
-      ],
-      "licenseExpirationDate": "string",
-      "mac": "string",
-      "model": "string",
-      "name": "string",
-      "networkId": "string",
-      "orderNumber": "string",
-      "productType": "string",
-      "serial": "string",
-      "tags": [
-        "string"
       ]
     }
 """

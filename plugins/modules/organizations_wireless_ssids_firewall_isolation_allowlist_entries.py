@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_ssids_firewall_isolation_allowlist_entries
-short_description: Resource module for organizations _wireless _ssids _firewall _isolation _allowlist _entries
+short_description: Resource module for organizations _wireless _ssids _firewall _isolation
+  _allowlist _entries
 description:
-  - Manage operations create, update and delete of the resource organizations _wireless _ssids _firewall _isolation _allowlist _entries.
+  - Manage operations create, update and delete of the resource organizations _wireless
+    _ssids _firewall _isolation _allowlist _entries.
   - Create isolation allow list MAC entry for this organization.
   - Destroy isolation allow list MAC entry for this organization.
   - Update isolation allow list MAC entry info.
@@ -52,13 +54,16 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless createOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
-    description: Complete reference of the createOrganizationWirelessSsidsFirewallIsolationAllowlistEntry API.
+    description: Complete reference of the createOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-wireless-ssids-firewall-isolation-allowlist-entry
   - name: Cisco Meraki documentation for wireless deleteOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
-    description: Complete reference of the deleteOrganizationWirelessSsidsFirewallIsolationAllowlistEntry API.
+    description: Complete reference of the deleteOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-wireless-ssids-firewall-isolation-allowlist-entry
   - name: Cisco Meraki documentation for wireless updateOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
-    description: Complete reference of the updateOrganizationWirelessSsidsFirewallIsolationAllowlistEntry API.
+    description: Complete reference of the updateOrganizationWirelessSsidsFirewallIsolationAllowlistEntry
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-wireless-ssids-firewall-isolation-allowlist-entry
 notes:
   - SDK Method used are
@@ -167,21 +172,21 @@ meraki_response:
   type: dict
   sample: >
     {
+      "entryId": "string",
+      "createdAt": "string",
+      "lastUpdatedAt": "string",
+      "description": "string",
       "client": {
         "mac": "string"
-      },
-      "createdAt": "string",
-      "description": "string",
-      "entryId": "string",
-      "lastUpdatedAt": "string",
-      "network": {
-        "id": "string",
-        "name": "string"
       },
       "ssid": {
         "id": "string",
         "name": "string",
         "number": 0
+      },
+      "network": {
+        "id": "string",
+        "name": "string"
       }
     }
 """

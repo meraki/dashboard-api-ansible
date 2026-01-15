@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_clients_overview_by_device_info
-short_description: Information module for organizations _wireless _clients _overview _by _device
+short_description: Information module for organizations _wireless _clients _overview
+  _by _device
 description:
   - Get all organizations _wireless _clients _overview _by _device.
   - List access point client count at the moment in an organization.
@@ -26,47 +27,54 @@ options:
   networkIds:
     description:
       - >
-        NetworkIds query parameter. Optional parameter to filter access points client counts by network ID. This filter uses multiple exact matches.
+        NetworkIds query parameter. Optional parameter to filter access points client
+        counts by network ID. This filter uses multiple exact matches.
     elements: str
     type: list
   serials:
     description:
       - >
-        Serials query parameter. Optional parameter to filter access points client counts by its serial numbers. This filter uses multiple exact
-        matches.
+        Serials query parameter. Optional parameter to filter access points client
+        counts by its serial numbers. This filter uses multiple exact matches.
     elements: str
     type: list
   campusGatewayClusterIds:
     description:
       - >
-        CampusGatewayClusterIds query parameter. Optional parameter to filter access points client counts by MCG cluster IDs. This filter uses
-        multiple exact matches.
+        CampusGatewayClusterIds query parameter. Optional parameter to filter access
+        points client counts by MCG cluster IDs. This filter uses multiple exact matches.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessClientsOverviewByDevice
-    description: Complete reference of the getOrganizationWirelessClientsOverviewByDevice API.
+    description: Complete reference of the getOrganizationWirelessClientsOverviewByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-clients-overview-by-device
 notes:
   - SDK Method used are
@@ -119,22 +127,22 @@ meraki_response:
     {
       "items": [
         {
+          "network": {
+            "id": "string"
+          },
+          "serial": "string",
           "counts": {
             "byStatus": {
               "online": 0
             }
-          },
-          "network": {
-            "id": "string"
-          },
-          "serial": "string"
+          }
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

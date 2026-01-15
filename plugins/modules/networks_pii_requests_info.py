@@ -107,14 +107,14 @@ meraki_response:
   type: dict
   sample: >
     {
-      "completedAt": 0,
-      "createdAt": 0,
-      "datasets": "string",
       "id": "string",
-      "mac": "string",
-      "networkId": "string",
       "organizationWide": true,
+      "networkId": "string",
+      "type": "string",
+      "mac": "string",
+      "datasets": "string",
       "status": "string",
-      "type": "string"
+      "createdAt": 0,
+      "completedAt": 0
     }
 """

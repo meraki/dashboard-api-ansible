@@ -9,7 +9,8 @@ module: administered_identities_me_api_keys_info
 short_description: Information module for administered _identities _me _api _keys
 description:
   - Get all administered _identities _me _api _keys.
-  - List the non-sensitive metadata associated with the API keys that belong to the user.
+  - List the non-sensitive metadata associated with the API keys that belong to the
+    user.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -67,8 +68,8 @@ meraki_response:
   sample: >
     [
       {
-        "createdAt": "string",
-        "suffix": "string"
+        "suffix": "string",
+        "createdAt": "string"
       }
     ]
 """

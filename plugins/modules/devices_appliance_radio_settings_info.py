@@ -70,15 +70,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "serial": "string",
+      "rfProfileId": "string",
+      "twoFourGhzSettings": {
+        "channel": 0,
+        "targetPower": 0
+      },
       "fiveGhzSettings": {
         "channel": 0,
         "channelWidth": 0,
-        "targetPower": 0
-      },
-      "rfProfileId": "string",
-      "serial": "string",
-      "twoFourGhzSettings": {
-        "channel": 0,
         "targetPower": 0
       }
     }

@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_air_marshal_settings_by_network_info
-short_description: Information module for organizations _wireless _air _marshal _settings _by _network
+short_description: Information module for organizations _wireless _air _marshal _settings
+  _by _network
 description:
   - Get all organizations _wireless _air _marshal _settings _by _network.
   - Returns the current Air Marshal settings for this network.
@@ -30,28 +31,34 @@ options:
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessAirMarshalSettingsByNetwork
-    description: Complete reference of the getOrganizationWirelessAirMarshalSettingsByNetwork API.
+    description: Complete reference of the getOrganizationWirelessAirMarshalSettingsByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-air-marshal-settings-by-network
 notes:
   - SDK Method used are
@@ -102,15 +109,15 @@ meraki_response:
     {
       "items": [
         {
-          "defaultPolicy": "string",
-          "networkId": "string"
+          "networkId": "string",
+          "defaultPolicy": "string"
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

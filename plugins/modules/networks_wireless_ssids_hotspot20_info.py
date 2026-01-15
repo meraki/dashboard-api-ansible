@@ -75,10 +75,21 @@ meraki_response:
   type: dict
   sample: >
     {
+      "enabled": true,
+      "operator": {
+        "name": "string"
+      },
+      "venue": {
+        "name": "string",
+        "type": "string"
+      },
+      "networkAccessType": "string",
       "domains": [
         "string"
       ],
-      "enabled": true,
+      "roamConsortOis": [
+        "string"
+      ],
       "mccMncs": [
         {
           "mcc": "string",
@@ -88,38 +99,27 @@ meraki_response:
       "naiRealms": [
         {
           "format": "string",
+          "name": "string",
           "methods": [
             {
+              "id": "string",
               "authenticationTypes": {
-                "credentials": [
+                "nonEapInnerAuthentication": [
                   "string"
                 ],
                 "eapInnerAuthentication": [
                   "string"
                 ],
-                "nonEapInnerAuthentication": [
+                "credentials": [
                   "string"
                 ],
                 "tunneledEapMethodCredentials": [
                   "string"
                 ]
-              },
-              "id": "string"
+              }
             }
-          ],
-          "name": "string"
+          ]
         }
-      ],
-      "networkAccessType": "string",
-      "operator": {
-        "name": "string"
-      },
-      "roamConsortOis": [
-        "string"
-      ],
-      "venue": {
-        "name": "string",
-        "type": "string"
-      }
+      ]
     }
 """

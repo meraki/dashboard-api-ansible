@@ -31,7 +31,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessEthernetPortsProfile
-    description: Complete reference of the getNetworkWirelessEthernetPortsProfile API.
+    description: Complete reference of the getNetworkWirelessEthernetPortsProfile
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ethernet-ports-profile
 notes:
   - SDK Method used are
@@ -75,22 +76,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "isDefault": true,
+      "profileId": "string",
       "name": "string",
+      "isDefault": true,
       "ports": [
         {
-          "enabled": true,
           "name": "string",
           "number": 0,
-          "pskGroupId": "string",
-          "ssid": 0
+          "enabled": true,
+          "ssid": 0,
+          "pskGroupId": "string"
         }
       ],
-      "profileId": "string",
       "usbPorts": [
         {
-          "enabled": true,
           "name": "string",
+          "enabled": true,
           "ssid": 0
         }
       ]

@@ -25,21 +25,26 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   status:
     description:
@@ -48,7 +53,8 @@ options:
     type: list
   productTypes:
     description:
-      - ProductTypes query parameter. Optional parameter to filter the upgrade by product type.
+      - ProductTypes query parameter. Optional parameter to filter the upgrade by
+        product type.
     elements: str
     type: list
 requirements:
@@ -108,30 +114,30 @@ meraki_response:
   sample: >
     [
       {
-        "completedAt": "string",
-        "fromVersion": {
-          "firmware": "string",
-          "id": "string",
-          "releaseDate": "string",
-          "releaseType": "string",
-          "shortName": "string"
-        },
+        "upgradeId": "string",
+        "upgradeBatchId": "string",
         "network": {
           "id": "string",
           "name": "string"
         },
-        "productTypes": "string",
         "status": "string",
         "time": "string",
+        "completedAt": "string",
+        "productTypes": "string",
         "toVersion": {
-          "firmware": "string",
           "id": "string",
-          "releaseDate": "string",
+          "shortName": "string",
+          "firmware": "string",
           "releaseType": "string",
-          "shortName": "string"
+          "releaseDate": "string"
         },
-        "upgradeBatchId": "string",
-        "upgradeId": "string"
+        "fromVersion": {
+          "id": "string",
+          "shortName": "string",
+          "firmware": "string",
+          "releaseType": "string",
+          "releaseDate": "string"
+        }
       }
     ]
 """

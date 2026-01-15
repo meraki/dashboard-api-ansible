@@ -10,8 +10,12 @@ short_description: Information module for networks _clients
 description:
   - Get all networks _clients.
   - Get networks _clients by id.
-  - List the clients that have used this network in the timespan. The data is updated at most once every five minutes. - > Return the client associated
-    with the given identifier. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+  - List the clients that have used this network in the timespan. The data is updated
+    at most once every five minutes.
+  - >
+    Return the client associated with the given identifier. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -27,77 +31,95 @@ options:
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0.
-        The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameter t0. The value must be in
+        seconds and be less than or equal to 31 days. The default is 1 day.
     type: float
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5000. Default is 10.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 5000. Default is 10.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   statuses:
     description:
-      - Statuses query parameter. Filters clients based on status. Can be one of 'Online' or 'Offline'.
+      - Statuses query parameter. Filters clients based on status. Can be one of 'Online'
+        or 'Offline'.
     elements: str
     type: list
   ip:
     description:
-      - Ip query parameter. Filters clients based on a partial or full match for the ip address field.
+      - Ip query parameter. Filters clients based on a partial or full match for the
+        ip address field.
     type: str
   ip6:
     description:
-      - Ip6 query parameter. Filters clients based on a partial or full match for the ip6 address field.
+      - Ip6 query parameter. Filters clients based on a partial or full match for
+        the ip6 address field.
     type: str
   ip6Local:
     description:
-      - Ip6Local query parameter. Filters clients based on a partial or full match for the ip6Local address field.
+      - Ip6Local query parameter. Filters clients based on a partial or full match
+        for the ip6Local address field.
     type: str
   mac:
     description:
-      - Mac query parameter. Filters clients based on a partial or full match for the mac address field.
+      - Mac query parameter. Filters clients based on a partial or full match for
+        the mac address field.
     type: str
   os:
     description:
-      - Os query parameter. Filters clients based on a partial or full match for the os (operating system) field.
+      - Os query parameter. Filters clients based on a partial or full match for the
+        os (operating system) field.
     type: str
   pskGroup:
     description:
-      - PskGroup query parameter. Filters clients based on partial or full match for the iPSK name field.
+      - PskGroup query parameter. Filters clients based on partial or full match for
+        the iPSK name field.
     type: str
   description:
     description:
-      - Description query parameter. Filters clients based on a partial or full match for the description field.
+      - Description query parameter. Filters clients based on a partial or full match
+        for the description field.
     type: str
   vlan:
     description:
-      - Vlan query parameter. Filters clients based on the full match for the VLAN field.
+      - Vlan query parameter. Filters clients based on the full match for the VLAN
+        field.
     type: str
   namedVlan:
     description:
-      - NamedVlan query parameter. Filters clients based on the partial or full match for the named VLAN field.
+      - NamedVlan query parameter. Filters clients based on the partial or full match
+        for the named VLAN field.
     type: str
   recentDeviceConnections:
     description:
       - >
-        RecentDeviceConnections query parameter. Filters clients based on recent connection type. Can be one of 'Wired' or 'Wireless'.
+        RecentDeviceConnections query parameter. Filters clients based on recent connection
+        type. Can be one of 'Wired' or 'Wireless'.
     elements: str
     type: list
   clientId:
@@ -201,43 +223,46 @@ meraki_response:
   type: dict
   sample: >
     {
-      "cdp": [
-        [
-          "string"
-        ]
-      ],
-      "clientVpnConnections": [
-        {
-          "connectedAt": 0,
-          "disconnectedAt": 0,
-          "remoteIp": "string"
-        }
-      ],
-      "description": "string",
-      "firstSeen": 0,
       "id": "string",
+      "mac": "string",
       "ip": "string",
       "ip6": "string",
+      "ip6Local": "string",
+      "description": "string",
+      "firstSeen": 0,
       "lastSeen": 0,
+      "manufacturer": "string",
+      "os": "string",
+      "user": "string",
+      "vlan": "string",
+      "namedVlan": "string",
+      "ssid": "string",
+      "switchport": "string",
+      "wirelessCapabilities": "string",
+      "smInstalled": true,
+      "recentDeviceMac": "string",
+      "recentDeviceName": "string",
+      "recentDeviceSerial": "string",
+      "recentDeviceConnection": "string",
+      "clientVpnConnections": [
+        {
+          "remoteIp": "string",
+          "connectedAt": 0,
+          "disconnectedAt": 0
+        }
+      ],
       "lldp": [
         [
           "string"
         ]
       ],
-      "mac": "string",
-      "manufacturer": "string",
-      "notes": "string",
-      "os": "string",
-      "recentDeviceConnection": "string",
-      "recentDeviceMac": "string",
-      "recentDeviceName": "string",
-      "recentDeviceSerial": "string",
-      "smInstalled": true,
-      "ssid": "string",
+      "cdp": [
+        [
+          "string"
+        ]
+      ],
       "status": "string",
-      "switchport": "string",
-      "user": "string",
-      "vlan": "string",
-      "wirelessCapabilities": "string"
+      "notes": "string",
+      "deviceTypePrediction": "string"
     }
 """

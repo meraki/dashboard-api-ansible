@@ -24,7 +24,8 @@ options:
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
 requirements:
@@ -32,7 +33,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsLocalRecords
-    description: Complete reference of the getOrganizationApplianceDnsLocalRecords API.
+    description: Complete reference of the getOrganizationApplianceDnsLocalRecords
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-local-records
 notes:
   - SDK Method used are
@@ -78,12 +80,12 @@ meraki_response:
   sample: >
     [
       {
-        "address": "string",
+        "recordId": "string",
         "hostname": "string",
+        "address": "string",
         "profile": {
           "id": "string"
-        },
-        "recordId": "string"
+        }
       }
     ]
 """

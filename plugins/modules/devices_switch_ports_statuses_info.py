@@ -24,13 +24,15 @@ options:
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0.
-        The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameter t0. The value must be in
+        seconds and be less than or equal to 31 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
@@ -84,72 +86,72 @@ meraki_response:
   sample: >
     [
       {
-        "cdp": {
-          "address": "string",
-          "capabilities": "string",
-          "deviceId": "string",
-          "managementAddress": "string",
-          "nativeVlan": 0,
-          "platform": "string",
-          "portId": "string",
-          "systemName": "string",
-          "version": "string",
-          "vtpManagementDomain": "string"
-        },
-        "clientCount": 0,
-        "duplex": "string",
+        "portId": "string",
         "enabled": true,
+        "status": "string",
+        "isUplink": true,
         "errors": [
           "string"
         ],
-        "isUplink": true,
-        "lldp": {
-          "chassisId": "string",
-          "managementAddress": "string",
-          "managementVlan": 0,
-          "portDescription": "string",
-          "portId": "string",
-          "portVlan": 0,
-          "systemCapabilities": "string",
-          "systemDescription": "string",
-          "systemName": "string"
-        },
-        "poe": {
-          "isAllocated": true
-        },
-        "portId": "string",
-        "powerUsageInWh": 0,
-        "securePort": {
-          "active": true,
-          "authenticationStatus": "string",
-          "configOverrides": {
-            "allowedVlans": "string",
-            "type": "string",
-            "vlan": 0,
-            "voiceVlan": 0
-          },
-          "enabled": true
-        },
+        "warnings": [
+          "string"
+        ],
+        "speed": "string",
+        "duplex": "string",
         "spanningTree": {
           "statuses": [
             "string"
           ]
         },
-        "speed": "string",
-        "status": "string",
-        "trafficInKbps": {
-          "recv": 0,
-          "sent": 0,
-          "total": 0
+        "poe": {
+          "isAllocated": true
         },
         "usageInKb": {
-          "recv": 0,
+          "total": 0,
           "sent": 0,
-          "total": 0
+          "recv": 0
         },
-        "warnings": [
-          "string"
-        ]
+        "cdp": {
+          "systemName": "string",
+          "platform": "string",
+          "deviceId": "string",
+          "portId": "string",
+          "nativeVlan": 0,
+          "address": "string",
+          "managementAddress": "string",
+          "version": "string",
+          "vtpManagementDomain": "string",
+          "capabilities": "string"
+        },
+        "lldp": {
+          "systemName": "string",
+          "systemDescription": "string",
+          "chassisId": "string",
+          "portId": "string",
+          "managementVlan": 0,
+          "portVlan": 0,
+          "managementAddress": "string",
+          "portDescription": "string",
+          "systemCapabilities": "string"
+        },
+        "clientCount": 0,
+        "powerUsageInWh": 0,
+        "trafficInKbps": {
+          "total": 0,
+          "sent": 0,
+          "recv": 0
+        },
+        "securePort": {
+          "enabled": true,
+          "active": true,
+          "authenticationStatus": "string",
+          "configOverrides": {
+            "type": "string",
+            "vlan": 0,
+            "voiceVlan": 0,
+            "allowedVlans": "string"
+          }
+        }
       }
     ]
 """

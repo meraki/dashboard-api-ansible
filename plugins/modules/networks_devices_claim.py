@@ -8,14 +8,39 @@ DOCUMENTATION = r"""
 module: networks_devices_claim
 short_description: Resource module for networks _devices _claim
 description:
-  - Manage operation create of the resource networks _devices _claim. - > Claim devices into a network. Note for recently claimed devices, it
-    may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute
-    window.
+  - Manage operation create of the resource networks _devices _claim.
+  - >
+    Claim devices into a network. Note for recently claimed devices, it may take a
+    few minutes for API requests against that device to succeed. This operation can
+    be used up to ten times within a single five minute window.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  detailsByDevice:
+    description: Optional details for claimed devices (currently only used for Catalyst
+      devices).
+    elements: dict
+    suboptions:
+      details:
+        description: An array of details. Supported list of details includes "device
+          mode", "username", "password", "enable password", "ap mapping type" and
+          "ap network id". For onboarding into hybrid mode, the value of the device
+          mode detail must be "monitored".
+        elements: dict
+        suboptions:
+          name:
+            description: Name of device detail.
+            type: str
+          value:
+            description: Value of device detail.
+            type: str
+        type: list
+      serial:
+        description: The serial of the device these details relate to.
+        type: str
+    type: list
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -62,6 +87,11 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     addAtomically: true
+    detailsByDevice:
+      - details:
+          - name: username
+            value: milesmeraki
+        serial: Q234-ABCD-5678
     networkId: string
     serials:
       - Q234-ABCD-0001
@@ -75,16 +105,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "errors": [
-        {
-          "errors": [
-            "string"
-          ],
-          "serial": "string"
-        }
-      ],
       "serials": [
         "string"
+      ],
+      "errors": [
+        {
+          "serial": "string",
+          "errors": [
+            "string"
+          ]
+        }
       ]
     }
 """

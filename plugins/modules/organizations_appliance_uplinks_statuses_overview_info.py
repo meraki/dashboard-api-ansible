@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_uplinks_statuses_overview_info
-short_description: Information module for organizations _appliance _uplinks _statuses _overview
+short_description: Information module for organizations _appliance _uplinks _statuses
+  _overview
 description:
   - Get all organizations _appliance _uplinks _statuses _overview.
   - Returns an overview of uplink statuses.
@@ -22,12 +23,20 @@ options:
     description:
       - OrganizationId path parameter. Organization ID.
     type: str
+  networkIds:
+    description:
+      - >
+        NetworkIds query parameter. A list of network IDs. The returned devices will
+        be filtered to only include these networks.
+    elements: str
+    type: list
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceUplinksStatusesOverview
-    description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview API.
+    description: Complete reference of the getOrganizationApplianceUplinksStatusesOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-statuses-overview
 notes:
   - SDK Method used are
@@ -60,6 +69,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    networkIds: []
     organizationId: string
   register: result
 """
@@ -72,10 +82,10 @@ meraki_response:
     {
       "byStatus": {
         "active": 0,
-        "connecting": 0,
+        "ready": 0,
         "failed": 0,
-        "notConnected": 0,
-        "ready": 0
+        "connecting": 0,
+        "notConnected": 0
       }
     }
 """

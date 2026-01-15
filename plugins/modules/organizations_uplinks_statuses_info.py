@@ -25,37 +25,45 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
       - >
-        NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include these networks.
+        NetworkIds query parameter. A list of network IDs. The returned devices will
+        be filtered to only include these networks.
     elements: str
     type: list
   serials:
     description:
       - >
-        Serials query parameter. A list of serial numbers. The returned devices will be filtered to only include these serials.
+        Serials query parameter. A list of serial numbers. The returned devices will
+        be filtered to only include these serials.
     elements: str
     type: list
   iccids:
     description:
-      - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
+      - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered
+        to only include these ICCIDs.
     elements: str
     type: list
 requirements:
@@ -116,43 +124,43 @@ meraki_response:
   sample: >
     [
       {
+        "networkId": "string",
+        "serial": "string",
+        "model": "string",
+        "lastReportedAt": "string",
         "highAvailability": {
           "enabled": true,
           "role": "string"
         },
-        "lastReportedAt": "string",
-        "model": "string",
-        "networkId": "string",
-        "serial": "string",
         "uplinks": [
           {
-            "apn": "string",
-            "connectionType": "string",
-            "dns1": "string",
-            "dns2": "string",
-            "gateway": "string",
-            "iccid": "string",
-            "imsi": "string",
             "interface": "string",
+            "status": "string",
             "ip": "string",
-            "ipAssignedBy": "string",
-            "mcc": "string",
-            "mnc": "string",
-            "msisdn": "string",
-            "mtu": 0,
-            "primaryDns": "string",
-            "provider": "string",
+            "gateway": "string",
             "publicIp": "string",
-            "roaming": {
-              "status": "string"
-            },
+            "primaryDns": "string",
             "secondaryDns": "string",
+            "ipAssignedBy": "string",
+            "provider": "string",
             "signalStat": {
               "rsrp": "string",
               "rsrq": "string"
             },
+            "mcc": "string",
+            "mnc": "string",
+            "roaming": {
+              "status": "string"
+            },
+            "connectionType": "string",
+            "apn": "string",
+            "dns1": "string",
+            "dns2": "string",
             "signalType": "string",
-            "status": "string"
+            "mtu": 0,
+            "iccid": "string",
+            "imsi": "string",
+            "msisdn": "string"
           }
         ]
       }

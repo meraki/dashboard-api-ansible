@@ -78,16 +78,16 @@ meraki_response:
       "enabled": true,
       "ranges": [
         {
-          "endDay": "string",
-          "endTime": "string",
           "startDay": "string",
-          "startTime": "string"
+          "startTime": "string",
+          "endDay": "string",
+          "endTime": "string"
         }
       ],
       "rangesInSeconds": [
         {
-          "end": 0,
-          "start": 0
+          "start": 0,
+          "end": 0
         }
       ]
     }

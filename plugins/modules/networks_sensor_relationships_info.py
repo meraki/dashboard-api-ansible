@@ -74,15 +74,15 @@ meraki_response:
       {
         "device": {
           "name": "string",
-          "productType": "string",
-          "serial": "string"
+          "serial": "string",
+          "productType": "string"
         },
         "relationships": {
           "livestream": {
             "relatedDevices": [
               {
-                "productType": "string",
-                "serial": "string"
+                "serial": "string",
+                "productType": "string"
               }
             ]
           }

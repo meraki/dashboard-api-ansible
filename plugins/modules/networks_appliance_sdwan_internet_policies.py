@@ -29,25 +29,30 @@ options:
         description: Performance class setting for uplink preference rule.
         suboptions:
           builtinPerformanceClassName:
-            description: Name of builtin performance class. Must be present when performanceClass type is 'builtin' and value must be one of 'VoIP'.
+            description: Name of builtin performance class. Must be present when performanceClass
+              type is 'builtin' and value must be one of 'VoIP'.
             type: str
           customPerformanceClassId:
-            description: ID of created custom performance class, must be present when performanceClass type is "custom".
+            description: ID of created custom performance class, must be present when
+              performanceClass type is "custom".
             type: str
           type:
-            description: Type of this performance class. Must be one of 'builtin' or 'custom'.
+            description: Type of this performance class. Must be one of 'builtin'
+              or 'custom'.
             type: str
         type: dict
       preferredUplink:
-        description: Preferred uplink for uplink preference rule. Must be one of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
+        description: Preferred uplink for uplink preference rule. Must be one of 'wan1',
+          'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
         type: str
       trafficFilters:
         description: Traffic filters.
         elements: dict
         suboptions:
           type:
-            description: Traffic filter type. Must be 'custom', 'major_application', 'application (NBAR)', if type is 'application', you can pass
-              either an NBAR App Category or Application.
+            description: Traffic filter type. Must be 'custom', 'major_application',
+              'application (NBAR)', if type is 'application', you can pass either
+              an NBAR App Category or Application.
             type: str
           value:
             description: Value of traffic filter.
@@ -56,46 +61,54 @@ options:
                 description: Destination of 'custom' type traffic filter.
                 suboptions:
                   applications:
-                    description: List of application objects (either majorApplication or nbar).
+                    description: List of application objects (either majorApplication
+                      or nbar).
                     elements: dict
                     suboptions:
                       id:
-                        description: Id of the major application, or a list of NBAR Application Category or Application selections.
+                        description: Id of the major application, or a list of NBAR
+                          Application Category or Application selections.
                         type: str
                       name:
-                        description: Name of the major application or application category selected.
+                        description: Name of the major application or application
+                          category selected.
                         type: str
                       type:
                         description: App type (major or nbar).
                         type: str
                     type: list
                   cidr:
-                    description: CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any".
+                    description: CIDR format address (e.g."192.168.10.1", which is
+                      the same as "192.168.10.1/32"), or "any".
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                 type: dict
               protocol:
-                description: Protocol of the traffic filter. Must be one of 'tcp', 'udp', 'icmp6' or 'any'.
+                description: Protocol of the traffic filter. Must be one of 'tcp',
+                  'udp', 'icmp6' or 'any'.
                 type: str
               source:
                 description: Source of traffic filter.
                 suboptions:
                   cidr:
-                    description: CIDR format address (e.g."192.168.10.1", which is the same as "192.168.10.1/32"), or "any". Cannot be used in
+                    description: CIDR format address (e.g."192.168.10.1", which is
+                      the same as "192.168.10.1/32"), or "any". Cannot be used in
                       combination with the "vlan" property.
                     type: str
                   host:
-                    description: Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the "vlan" property
-                      and is currently only available under a template network.
+                    description: Host ID in the VLAN. Should not exceed the VLAN subnet
+                      capacity. Must be used along with the "vlan" property and is
+                      currently only available under a template network.
                     type: int
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                   vlan:
-                    description: VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the "cidr" property
-                      and is currently only available under a template network.
+                    description: VLAN ID of the configured VLAN in the Meraki network.
+                      Cannot be used in combination with the "cidr" property and is
+                      currently only available under a template network.
                     type: int
                 type: dict
             type: dict
@@ -106,7 +119,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceSdwanInternetPolicies
-    description: Complete reference of the updateNetworkApplianceSdwanInternetPolicies API.
+    description: Complete reference of the updateNetworkApplianceSdwanInternetPolicies
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-sdwan-internet-policies
 notes:
   - SDK Method used are
@@ -173,34 +187,34 @@ meraki_response:
     {
       "wanTrafficUplinkPreferences": [
         {
+          "preferredUplink": "string",
           "failOverCriterion": "string",
           "performanceClass": {
+            "type": "string",
             "builtinPerformanceClassName": "string",
-            "customPerformanceClassId": "string",
-            "type": "string"
+            "customPerformanceClassId": "string"
           },
-          "preferredUplink": "string",
           "trafficFilters": [
             {
               "type": "string",
               "value": {
+                "protocol": "string",
+                "source": {
+                  "port": "string",
+                  "cidr": "string",
+                  "vlan": 0,
+                  "host": 0
+                },
                 "destination": {
+                  "port": "string",
+                  "cidr": "string",
                   "applications": [
                     {
                       "id": "string",
                       "name": "string",
                       "type": "string"
                     }
-                  ],
-                  "cidr": "string",
-                  "port": "string"
-                },
-                "protocol": "string",
-                "source": {
-                  "cidr": "string",
-                  "host": 0,
-                  "port": "string",
-                  "vlan": 0
+                  ]
                 }
               }
             }

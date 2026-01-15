@@ -16,25 +16,31 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   asNumber:
-    description: An Autonomous System Number (ASN) is required if you are to run BGP and peer with another BGP Speaker outside of the Auto VPN
-      domain. This ASN will be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported. So, the ASN must be an integer
-      between 1 and 4294967295. When absent, this field is not updated. If no value exists then it defaults to 64512.
+    description: An Autonomous System Number (ASN) is required if you are to run BGP
+      and peer with another BGP Speaker outside of the Auto VPN domain. This ASN will
+      be applied to the entire Auto VPN domain. The entire 4-byte ASN range is supported.
+      So, the ASN must be an integer between 1 and 4294967295. When absent, this field
+      is not updated. If no value exists then it defaults to 64512.
     type: int
   enabled:
-    description: Boolean value to enable or disable the BGP configuration. When BGP is enabled, the asNumber (ASN) will be autopopulated with
-      the preconfigured ASN at other Hubs or a default value if there is no ASN configured.
+    description: Boolean value to enable or disable the BGP configuration. When BGP
+      is enabled, the asNumber (ASN) will be autopopulated with the preconfigured
+      ASN at other Hubs or a default value if there is no ASN configured.
     type: bool
   ibgpHoldTimer:
-    description: The iBGP holdtimer in seconds. The iBGP holdtimer must be an integer between 12 and 240. When absent, this field is not updated.
-      If no value exists then it defaults to 240.
+    description: The iBGP holdtimer in seconds. The iBGP holdtimer must be an integer
+      between 12 and 240. When absent, this field is not updated. If no value exists
+      then it defaults to 240.
     type: int
   neighbors:
-    description: List of BGP neighbors. This list replaces the existing set of neighbors. When absent, this field is not updated.
+    description: List of BGP neighbors. This list replaces the existing set of neighbors.
+      When absent, this field is not updated.
     elements: dict
     suboptions:
       allowTransit:
-        description: When this feature is on, the Meraki device will advertise routes learned from other Autonomous Systems, thereby allowing
-          traffic between Autonomous Systems to transit this AS. When absent, it defaults to false.
+        description: When this feature is on, the Meraki device will advertise routes
+          learned from other Autonomous Systems, thereby allowing traffic between
+          Autonomous Systems to transit this AS. When absent, it defaults to false.
         type: bool
       authentication:
         description: Authentication settings between BGP peers.
@@ -44,42 +50,68 @@ options:
             type: str
         type: dict
       ebgpHoldTimer:
-        description: The eBGP hold timer in seconds for each neighbor. The eBGP hold timer must be an integer between 12 and 240.
+        description: The eBGP hold timer in seconds for each neighbor. The eBGP hold
+          timer must be an integer between 12 and 240.
         type: int
       ebgpMultihop:
-        description: Configure this if the neighbor is not adjacent. The eBGP multi-hop must be an integer between 1 and 255.
+        description: Configure this if the neighbor is not adjacent. The eBGP multi-hop
+          must be an integer between 1 and 255.
         type: int
       ip:
         description: The IPv4 address of the neighbor.
         type: str
       ipv6:
-        description: Information regarding IPv6 address of the neighbor, Required if `ip` is not present.
+        description: Information regarding IPv6 address of the neighbor, Required
+          if `ip` is not present.
         suboptions:
           address:
             description: The IPv6 address of the neighbor.
             type: str
         type: dict
+      multiExitDiscriminator:
+        description: Configures the local metric associated with routes received from
+          the remote peer. Routes from peers with lower metrics are will be preferred.
+          Must be an integer between 0 and 4294967295. MED is 6th in the decision
+          tree when identical routes from multiple peers exist.
+        type: int
       nextHopIp:
-        description: The IPv4 address of the remote BGP peer that will establish a TCP session with the local MX.
+        description: The IPv4 address of the remote BGP peer that will establish a
+          TCP session with the local MX.
         type: str
+      pathPrepend:
+        description: Prepends the AS_PATH BGP Attribute associated with routes received
+          from the remote peer. Configurable value of ASNs to prepend. Length of the
+          array may not exceed 10, and each ASN in the array must be an integer between
+          1 and 4294967295. AS_PATH is 4th in the decision tree when identical routes
+          from multiple peers exist.
+        elements: int
+        type: list
       receiveLimit:
-        description: The receive limit is the maximum number of routes that can be received from any BGP peer. The receive limit must be an integer
-          between 0 and 2147483647. When absent, it defaults to 0.
+        description: The receive limit is the maximum number of routes that can be
+          received from any BGP peer. The receive limit must be an integer between
+          0 and 2147483647. When absent, it defaults to 0.
         type: int
       remoteAsNumber:
-        description: Remote ASN of the neighbor. The remote ASN must be an integer between 1 and 4294967295.
+        description: Remote ASN of the neighbor. The remote ASN must be an integer
+          between 1 and 4294967295.
         type: int
       sourceInterface:
-        description: The output interface for peering with the remote BGP peer. Valid values are 'wan{NUMBER}' (e.g. 'wan3') or 'vlan{VLAN ID}'
-          (e.g. 'vlan123').
+        description: The output interface for peering with the remote BGP peer. Valid
+          values are 'wan{NUMBER}' (e.g. 'wan3') or 'vlan{VLAN ID}' (e.g. 'vlan123').
         type: str
       ttlSecurity:
-        description: Settings for BGP TTL security to protect BGP peering sessions from forged IP attacks.
+        description: Settings for BGP TTL security to protect BGP peering sessions
+          from forged IP attacks.
         suboptions:
           enabled:
             description: Boolean value to enable or disable BGP TTL security.
             type: bool
         type: dict
+      weight:
+        description: Sets the local weight for routes received from the remote peer.
+          Routes from peers with higher weights will be preferred. Must be an integer
+          between 0 and 49.
+        type: int
     type: list
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -135,12 +167,17 @@ EXAMPLES = r"""
         ip: 10.10.10.22
         ipv6:
           address: 2002::1234:abcd:ffff:c0a8:101
+        multiExitDiscriminator: 2
         nextHopIp: 1.2.3.4
+        pathPrepend:
+          - 1
+          - 2
         receiveLimit: 120
         remoteAsNumber: 64343
         sourceInterface: wan1
         ttlSecurity:
           enabled: false
+        weight: 10
     networkId: string
 """
 RETURN = r"""
@@ -150,28 +187,33 @@ meraki_response:
   type: dict
   sample: >
     {
-      "asNumber": 0,
       "enabled": true,
+      "asNumber": 0,
       "ibgpHoldTimer": 0,
       "neighbors": [
         {
-          "allowTransit": true,
-          "authentication": {
-            "password": "string"
-          },
-          "ebgpHoldTimer": 0,
-          "ebgpMultihop": 0,
           "ip": "string",
           "ipv6": {
             "address": "string"
           },
-          "nextHopIp": "string",
-          "receiveLimit": 0,
           "remoteAsNumber": 0,
+          "receiveLimit": 0,
+          "allowTransit": true,
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
           "sourceInterface": "string",
+          "nextHopIp": "string",
           "ttlSecurity": {
             "enabled": true
-          }
+          },
+          "authentication": {
+            "password": "string"
+          },
+          "multiExitDiscriminator": 0,
+          "pathPrepend": [
+            0
+          ],
+          "weight": 0
         }
       ]
     }

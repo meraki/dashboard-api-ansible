@@ -40,7 +40,8 @@ options:
   scope:
     description:
       - >
-        Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll, withoutAny, withoutAll) and a set of tags.
+        Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll,
+        withoutAny, withoutAll) and a set of tags.
     elements: str
     type: list
 requirements:
@@ -97,28 +98,28 @@ meraki_response:
   sample: >
     [
       {
+        "id": "string",
+        "email": "string",
+        "fullName": "string",
+        "username": "string",
+        "hasPassword": true,
+        "tags": "string",
         "adGroups": [
-          "string"
-        ],
-        "asmGroups": [
           "string"
         ],
         "azureAdGroups": [
           "string"
         ],
-        "displayName": "string",
-        "email": "string",
-        "fullName": "string",
-        "hasIdentityCertificate": true,
-        "hasPassword": true,
-        "id": "string",
-        "isExternal": true,
         "samlGroups": [
           "string"
         ],
-        "tags": "string",
-        "userThumbnail": "string",
-        "username": "string"
+        "asmGroups": [
+          "string"
+        ],
+        "isExternal": true,
+        "displayName": "string",
+        "hasIdentityCertificate": true,
+        "userThumbnail": "string"
       }
     ]
 """

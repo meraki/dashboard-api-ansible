@@ -9,7 +9,8 @@ module: devices_wireless_radio_settings_info
 short_description: Information module for devices _wireless _radio _settings
 description:
   - Get all devices _wireless _radio _settings.
-  - Return the manually configured radio settings overrides of a device, which take precedence over RF profiles.
+  - Return the manually configured radio settings overrides of a device, which take
+    precedence over RF profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -70,15 +71,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "serial": "string",
+      "rfProfileId": "string",
+      "twoFourGhzSettings": {
+        "channel": 0,
+        "targetPower": 0
+      },
       "fiveGhzSettings": {
         "channel": 0,
         "channelWidth": 0,
-        "targetPower": 0
-      },
-      "rfProfileId": "string",
-      "serial": "string",
-      "twoFourGhzSettings": {
-        "channel": 0,
         "targetPower": 0
       }
     }

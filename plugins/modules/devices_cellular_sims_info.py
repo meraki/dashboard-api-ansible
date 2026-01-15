@@ -70,31 +70,35 @@ meraki_response:
   type: dict
   sample: >
     {
-      "simFailover": {
-        "enabled": true,
-        "timeout": 0
-      },
-      "simOrdering": [
-        "string"
-      ],
       "sims": [
         {
+          "slot": "string",
+          "iccid": "string",
+          "imsi": "string",
+          "msisdn": "string",
+          "isPrimary": true,
+          "status": "string",
           "apns": [
             {
+              "name": "string",
               "allowedIpTypes": [
                 "string"
               ],
               "authentication": {
-                "password": "string",
                 "type": "string",
-                "username": "string"
-              },
-              "name": "string"
+                "username": "string",
+                "password": "string"
+              }
             }
-          ],
-          "isPrimary": true,
-          "slot": "string"
+          ]
         }
-      ]
+      ],
+      "simOrdering": [
+        "string"
+      ],
+      "simFailover": {
+        "enabled": true,
+        "timeout": 0
+      }
     }
 """

@@ -70,17 +70,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "status": "string",
       "expirationDate": "string",
-      "licenseCount": 0,
-      "licenseTypes": [
-        {
-          "counts": {
-            "unassigned": 0
-          },
-          "licenseType": "string"
-        }
-      ],
       "licensedDeviceCounts": {},
+      "licenseCount": 0,
       "states": {
         "active": {
           "count": 0
@@ -91,12 +84,12 @@ meraki_response:
         "expiring": {
           "count": 0,
           "critical": {
-            "expiringCount": 0,
-            "thresholdInDays": 0
+            "thresholdInDays": 0,
+            "expiringCount": 0
           },
           "warning": {
-            "expiringCount": 0,
-            "thresholdInDays": 0
+            "thresholdInDays": 0,
+            "expiringCount": 0
           }
         },
         "recentlyQueued": {
@@ -117,13 +110,20 @@ meraki_response:
           }
         }
       },
-      "status": "string",
+      "licenseTypes": [
+        {
+          "licenseType": "string",
+          "counts": {
+            "unassigned": 0
+          }
+        }
+      ],
       "systemsManager": {
         "counts": {
-          "activeSeats": 0,
-          "orgwideEnrolledDevices": 0,
           "totalSeats": 0,
-          "unassignedSeats": 0
+          "activeSeats": 0,
+          "unassignedSeats": 0,
+          "orgwideEnrolledDevices": 0
         }
       }
     }

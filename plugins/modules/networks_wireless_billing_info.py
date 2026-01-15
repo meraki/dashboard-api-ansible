@@ -73,12 +73,12 @@ meraki_response:
       "currency": "string",
       "plans": [
         {
-          "bandwidthLimits": {
-            "limitDown": 0,
-            "limitUp": 0
-          },
           "id": "string",
           "price": 0,
+          "bandwidthLimits": {
+            "limitUp": 0,
+            "limitDown": 0
+          },
           "timeLimit": "string"
         }
       ]

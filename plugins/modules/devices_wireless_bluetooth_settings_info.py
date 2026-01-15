@@ -70,8 +70,8 @@ meraki_response:
   type: dict
   sample: >
     {
+      "uuid": "string",
       "major": 0,
-      "minor": 0,
-      "uuid": "string"
+      "minor": 0
     }
 """

@@ -72,16 +72,16 @@ meraki_response:
   sample: >
     [
       {
+        "ssidName": "string",
+        "ssidNumber": 0,
+        "enabled": true,
         "band": "string",
-        "broadcasting": true,
         "bssid": "string",
         "channel": 0,
         "channelWidth": "string",
-        "enabled": true,
         "power": "string",
-        "ssidName": "string",
-        "ssidNumber": 0,
-        "visible": true
+        "visible": true,
+        "broadcasting": true
       }
     ]
 """

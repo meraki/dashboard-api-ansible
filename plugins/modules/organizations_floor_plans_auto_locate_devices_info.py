@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_floor_plans_auto_locate_devices_info
-short_description: Information module for organizations _floor _plans _auto _locate _devices
+short_description: Information module for organizations _floor _plans _auto _locate
+  _devices
 description:
   - Get all organizations _floor _plans _auto _locate _devices.
   - List auto locate details for each device in your organization.
@@ -25,30 +26,37 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 10000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 10000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter devices by one or more network IDs.
+      - NetworkIds query parameter. Optional parameter to filter devices by one or
+        more network IDs.
     elements: str
     type: list
   floorPlanIds:
     description:
-      - FloorPlanIds query parameter. Optional parameter to filter devices by one or more floorplan IDs.
+      - FloorPlanIds query parameter. Optional parameter to filter devices by one
+        or more floorplan IDs.
     elements: str
     type: list
 requirements:
@@ -56,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationFloorPlansAutoLocateDevices
-    description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices API.
+    description: Complete reference of the getOrganizationFloorPlansAutoLocateDevices
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-floor-plans-auto-locate-devices
 notes:
   - SDK Method used are
@@ -110,36 +119,36 @@ meraki_response:
       {
         "items": [
           {
-            "autoLocate": {
-              "lat": 0,
-              "lng": 0
+            "name": "string",
+            "serial": "string",
+            "mac": "string",
+            "model": "string",
+            "tags": [
+              "string"
+            ],
+            "status": "string",
+            "network": {
+              "id": "string"
             },
             "floorPlan": {
               "id": "string",
               "status": "string"
             },
-            "isAnchor": true,
             "lat": 0,
             "lng": 0,
-            "mac": "string",
-            "model": "string",
-            "name": "string",
-            "network": {
-              "id": "string"
+            "autoLocate": {
+              "lat": 0,
+              "lng": 0
             },
-            "serial": "string",
-            "status": "string",
-            "tags": [
-              "string"
-            ],
-            "type": "string"
+            "type": "string",
+            "isAnchor": true
           }
         ],
         "meta": {
           "counts": {
             "items": {
-              "remaining": 0,
-              "total": 0
+              "total": 0,
+              "remaining": 0
             }
           }
         }

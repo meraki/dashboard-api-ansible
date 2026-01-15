@@ -25,13 +25,15 @@ options:
   productTypes:
     description:
       - >
-        ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch,
-        systemsManager, camera, cellularGateway, sensor, wirelessController, and secureConnect.
+        ProductTypes query parameter. An optional parameter to filter device statuses
+        by product type. Valid types are wireless, appliance, switch, systemsManager,
+        camera, cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
     elements: str
     type: list
   networkIds:
     description:
-      - NetworkIds query parameter. An optional parameter to filter device statuses by network.
+      - NetworkIds query parameter. An optional parameter to filter device statuses
+        by network.
     elements: str
     type: list
 requirements:
@@ -39,7 +41,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
-    description: Complete reference of the getOrganizationDevicesStatusesOverview API.
+    description: Complete reference of the getOrganizationDevicesStatusesOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
 notes:
   - SDK Method used are
@@ -85,10 +88,10 @@ meraki_response:
   sample: >
     {
       "byStatus": {
+        "online": 0,
         "alerting": 0,
-        "dormant": 0,
         "offline": 0,
-        "online": 0
+        "dormant": 0
       }
     }
 """

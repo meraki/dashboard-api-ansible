@@ -73,29 +73,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "concentrator": {
-        "name": "string",
-        "networkId": "string",
-        "vlanId": 0
-      },
-      "failover": {
-        "heartbeatInterval": 0,
-        "idleTimeout": 0,
-        "requestIp": "string"
-      },
-      "splitTunnel": {
-        "enabled": true,
-        "rules": [
-          {
-            "comment": "string",
-            "destCidr": "string",
-            "destPort": "string",
-            "policy": "string",
-            "protocol": "string"
-          }
-        ]
-      }
-    }
+  sample:
+  - {}
 """

@@ -72,8 +72,8 @@ meraki_response:
     {
       "relatedDevices": [
         {
-          "productType": "string",
-          "serial": "string"
+          "serial": "string",
+          "productType": "string"
         }
       ]
     }

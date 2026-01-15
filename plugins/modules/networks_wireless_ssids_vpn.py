@@ -26,7 +26,8 @@ options:
         type: int
     type: dict
   failover:
-    description: Secondary VPN concentrator settings. This is only used when two VPN concentrators are configured on the SSID.
+    description: Secondary VPN concentrator settings. This is only used when two VPN
+      concentrators are configured on the SSID.
     suboptions:
       heartbeatInterval:
         description: Idle timer interval in seconds.
@@ -58,13 +59,16 @@ options:
             description: Description for this split tunnel rule (optional).
             type: str
           destCidr:
-            description: Destination for this split tunnel rule. IP address, fully-qualified domain names (FQDN) or 'any'.
+            description: Destination for this split tunnel rule. IP address, fully-qualified
+              domain names (FQDN) or 'any'.
             type: str
           destPort:
-            description: Destination port for this split tunnel rule, (integer in the range 1-65535), or 'any'.
+            description: Destination port for this split tunnel rule, (integer in
+              the range 1-65535), or 'any'.
             type: str
           policy:
-            description: Traffic policy specified for this split tunnel rule, 'allow' or 'deny'.
+            description: Traffic policy specified for this split tunnel rule, 'allow'
+              or 'deny'.
             type: str
           protocol:
             description: Protocol for this split tunnel rule.

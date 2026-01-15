@@ -107,19 +107,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "authMode": "string",
-      "defaultVlanId": 0,
-      "enabled": true,
-      "encryptionMode": "string",
-      "name": "string",
       "number": 0,
+      "name": "string",
+      "enabled": true,
+      "defaultVlanId": 0,
+      "authMode": "string",
       "radiusServers": [
         {
           "host": "string",
           "port": 0
         }
       ],
-      "visible": true,
-      "wpaEncryptionMode": "string"
+      "encryptionMode": "string",
+      "wpaEncryptionMode": "string",
+      "visible": true
     }
 """

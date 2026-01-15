@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_electronic_shelf_label
 short_description: Resource module for networks _wireless _electronic _shelf _label
 description:
-  - Manage operation update of the resource networks _wireless _electronic _shelf _label.
+  - Manage operation update of the resource networks _wireless _electronic _shelf
+    _label.
   - Update the ESL settings of a wireless network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,7 +23,8 @@ options:
     description: Desired ESL hostname of the network.
     type: str
   mode:
-    description: Electronic shelf label mode of the network. Valid options are 'Bluetooth', 'high frequency'.
+    description: Electronic shelf label mode of the network. Valid options are 'Bluetooth',
+      'high frequency'.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -32,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessElectronicShelfLabel
-    description: Complete reference of the updateNetworkWirelessElectronicShelfLabel API.
+    description: Complete reference of the updateNetworkWirelessElectronicShelfLabel
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
@@ -78,8 +81,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "enabled": true,
       "hostname": "string",
+      "enabled": true,
       "mode": "string"
     }
 """

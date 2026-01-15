@@ -9,7 +9,8 @@ module: devices_wireless_radio_settings
 short_description: Resource module for devices _wireless _radio _settings
 description:
   - Manage operation update of the resource devices _wireless _radio _settings.
-  - Update the radio settings overrides of a device, which take precedence over RF profiles.
+  - Update the radio settings overrides of a device, which take precedence over RF
+    profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -19,21 +20,28 @@ options:
     description: Manual radio settings for 5 GHz.
     suboptions:
       channel:
-        description: Sets a manual channel for 5 GHz. Can be '36', '40', '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116',
-          '120', '124', '128', '132', '136', '140', '144', '149', '153', '157', '161', '165', '169', '173' or '177' or null for using auto channel.
+        description: Sets a manual channel for 5 GHz. Can be '36', '40', '44', '48',
+          '52', '56', '60', '64', '100', '104', '108', '112', '116', '120', '124',
+          '128', '132', '136', '140', '144', '149', '153', '157', '161', '165', '169',
+          '173' or '177' or null for using auto channel.
         type: int
       channelWidth:
-        description: Sets a manual channel width for 5 GHz. Can be '0', '20', '40', '80' or '160' or null for using auto channel width.
+        description: Sets a manual channel width for 5 GHz. Can be '0', '20', '40',
+          '80' or '160' or null for using auto channel width.
         type: int
       targetPower:
-        description: Set a manual target power for 5 GHz (dBm). Enter null for using auto power range.
+        description: Set a manual target power for 5 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
   rfProfileId:
-    description: The ID of an RF profile to assign to the device. If the value of this parameter is null, the appropriate basic RF profile (indoor
-      or outdoor) will be assigned to the device. Assigning an RF profile will clear ALL manually configured overrides on the device (channel
-      width, channel, power).
-    type: str
+    description: The ID of an RF profile to assign to the device. If the value of
+      this parameter is null, the appropriate basic RF profile (indoor or outdoor)
+      will be assigned to the device. Assigning an RF profile will clear ALL manually
+      configured overrides on the device (channel width, channel, power).
+    type:
+      - string
+      - 'null'
   serial:
     description: Serial path parameter.
     type: str
@@ -41,11 +49,13 @@ options:
     description: Manual radio settings for 2.4 GHz.
     suboptions:
       channel:
-        description: Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or
-          null for using auto channel.
+        description: Sets a manual channel for 2.4 GHz. Can be '1', '2', '3', '4',
+          '5', '6', '7', '8', '9', '10', '11', '12', '13' or '14' or null for using
+          auto channel.
         type: int
       targetPower:
-        description: Set a manual target power for 2.4 GHz (dBm). Enter null for using auto power range.
+        description: Set a manual target power for 2.4 GHz (dBm). Enter null for using
+          auto power range.
         type: int
     type: dict
 requirements:
@@ -103,5 +113,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "serial": "string",
+      "rfProfileId": "string",
+      "twoFourGhzSettings": {
+        "channel": 0,
+        "targetPower": 0
+      },
+      "fiveGhzSettings": {
+        "channel": 0,
+        "channelWidth": 0,
+        "targetPower": 0
+      }
+    }
 """

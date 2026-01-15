@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts_info
-short_description: Information module for organizations _cellular _gateway _esims _service _providers _accounts
+short_description: Information module for organizations _cellular _gateway _esims
+  _service _providers _accounts
 description:
   - Get all organizations _cellular _gateway _esims _service _providers _accounts.
   - Inventory of service provider accounts tied to the organization.
@@ -24,7 +25,8 @@ options:
     type: str
   accountIds:
     description:
-      - AccountIds query parameter. Optional parameter to filter the results by service provider account IDs.
+      - AccountIds query parameter. Optional parameter to filter the results by service
+        provider account IDs.
     elements: int
     type: list
 requirements:
@@ -32,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccounts
-    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccounts API.
+    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccounts
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts
 notes:
   - SDK Method used are
@@ -83,10 +86,10 @@ meraki_response:
             "accountId": "string",
             "lastUpdatedAt": "string",
             "serviceProvider": {
+              "name": "string",
               "logo": {
                 "url": "string"
-              },
-              "name": "string"
+              }
             },
             "title": "string",
             "username": "string"
@@ -95,8 +98,8 @@ meraki_response:
         "meta": {
           "counts": {
             "items": {
-              "remaining": 0,
-              "total": 0
+              "total": 0,
+              "remaining": 0
             }
           }
         }

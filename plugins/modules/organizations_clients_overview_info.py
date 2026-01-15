@@ -28,13 +28,15 @@ options:
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
@@ -87,16 +89,16 @@ meraki_response:
   type: dict
   sample: >
     {
+      "usage": {
+        "overall": {
+          "total": 0,
+          "downstream": 0,
+          "upstream": 0
+        },
+        "average": 0
+      },
       "counts": {
         "total": 0
-      },
-      "usage": {
-        "average": 0,
-        "overall": {
-          "downstream": 0,
-          "total": 0,
-          "upstream": 0
-        }
       }
     }
 """

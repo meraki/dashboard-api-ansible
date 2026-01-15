@@ -22,7 +22,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   overrides:
-    description: Override MTU size for individual switches or switch templates. An empty array will clear overrides.
+    description: Override MTU size for individual switches or switch templates. An
+      empty array will clear overrides.
     elements: dict
     suboptions:
       mtuSize:
@@ -98,13 +99,13 @@ meraki_response:
       "defaultMtuSize": 0,
       "overrides": [
         {
-          "mtuSize": 0,
+          "switches": [
+            "string"
+          ],
           "switchProfiles": [
             "string"
           ],
-          "switches": [
-            "string"
-          ]
+          "mtuSize": 0
         }
       ]
     }

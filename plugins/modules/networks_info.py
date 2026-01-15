@@ -32,51 +32,60 @@ options:
   configTemplateId:
     description:
       - >
-        ConfigTemplateId query parameter. An optional parameter that is the ID of a config template. Will return all networks bound to that template.
+        ConfigTemplateId query parameter. An optional parameter that is the ID of
+        a config template. Will return all networks bound to that template.
     type: str
   isBoundToConfigTemplate:
     description:
       - >
-        IsBoundToConfigTemplate query parameter. An optional parameter to filter config template bound networks. If configTemplateId is set, this
-        cannot be false.
+        IsBoundToConfigTemplate query parameter. An optional parameter to filter config
+        template bound networks. If configTemplateId is set, this cannot be false.
     type: bool
   tags:
     description:
       - >
-        Tags query parameter. An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType'
-        should also be included (see below).
+        Tags query parameter. An optional parameter to filter networks by tags. The
+        filtering is case-sensitive. If tags are included, 'tagsFilterType' should
+        also be included (see below).
     elements: str
     type: list
   tagsFilterType:
     description:
       - >
-        TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return networks which
-        contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
+        TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
+        or 'withAllTags' to indicate whether to return networks which contain ANY
+        or ALL of the included tags. If no type is included, 'withAnyTags' will be
+        selected.
     type: str
   productTypes:
     description:
       - >
-        ProductTypes query parameter. An optional parameter to filter networks by product type. Results will have at least one of the included
-        product types.
+        ProductTypes query parameter. An optional parameter to filter networks by
+        product type. Results will have at least one of the included product types.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -122,7 +131,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     configTemplateId: string
-    isBoundToConfigTemplate: true
+    isBoundToConfigTemplate: True
     tags: []
     tagsFilterType: string
     productTypes: []
@@ -166,19 +175,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "enrollmentString": "string",
       "id": "string",
-      "isBoundToConfigTemplate": true,
-      "name": "string",
-      "notes": "string",
       "organizationId": "string",
+      "name": "string",
       "productTypes": [
         "string"
       ],
+      "timeZone": "string",
       "tags": [
         "string"
       ],
-      "timeZone": "string",
-      "url": "string"
+      "enrollmentString": "string",
+      "url": "string",
+      "notes": "string",
+      "isBoundToConfigTemplate": true
     }
 """

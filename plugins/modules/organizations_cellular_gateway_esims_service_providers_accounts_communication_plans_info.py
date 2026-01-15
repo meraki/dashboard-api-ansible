@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts_communication_plans_info
-short_description: Information module for organizations _cellular _gateway _esims _service _providers _accounts _communication _plans
+short_description: Information module for organizations _cellular _gateway _esims
+  _service _providers _accounts _communication _plans
 description:
-  - Get all organizations _cellular _gateway _esims _service _providers _accounts _communication _plans.
+  - Get all organizations _cellular _gateway _esims _service _providers _accounts
+    _communication _plans.
   - The communication plans available for a given provider.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -24,7 +26,8 @@ options:
     type: str
   accountIds:
     description:
-      - AccountIds query parameter. Account IDs that communication plans will be fetched for.
+      - AccountIds query parameter. Account IDs that communication plans will be fetched
+        for.
     elements: str
     type: list
 requirements:
@@ -32,7 +35,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsServiceProvidersAccountsCommunicationPlans
-    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsCommunicationPlans API.
+    description: Complete reference of the getOrganizationCellularGatewayEsimsServiceProvidersAccountsCommunicationPlans
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-service-providers-accounts-communication-plans
 notes:
   - SDK Method used are
@@ -42,7 +46,8 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _cellular _gateway _esims _service _providers _accounts _communication _plans
+- name: Get all organizations _cellular _gateway _esims _service _providers _accounts
+    _communication _plans
   cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts_communication_plans_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -90,8 +95,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

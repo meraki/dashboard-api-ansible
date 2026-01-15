@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_integrations_xdr_networks_disable
-short_description: Resource module for organizations _integrations _xdr _networks _disable
+short_description: Resource module for organizations _integrations _xdr _networks
+  _disable
 description:
-  - Manage operation create of the resource organizations _integrations _xdr _networks _disable.
+  - Manage operation create of the resource organizations _integrations _xdr _networks
+    _disable.
   - Disable XDR on networks.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +18,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   networks:
-    description: List containing the network ID and the product type to disable XDR on.
+    description: List containing the network ID and the product type to disable XDR
+      on.
     elements: dict
     suboptions:
       networkId:
@@ -35,7 +38,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations disableOrganizationIntegrationsXdrNetworks
-    description: Complete reference of the disableOrganizationIntegrationsXdrNetworks API.
+    description: Complete reference of the disableOrganizationIntegrationsXdrNetworks
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!disable-organization-integrations-xdr-networks
 notes:
   - SDK Method used are
@@ -83,13 +87,13 @@ meraki_response:
     {
       "networks": [
         {
-          "enabled": true,
-          "isEligible": true,
-          "name": "string",
           "networkId": "string",
           "productTypes": [
             "string"
-          ]
+          ],
+          "name": "string",
+          "enabled": true,
+          "isEligible": true
         }
       ]
     }

@@ -22,16 +22,19 @@ options:
     description: The port that the NetFlow collector will be listening on.
     type: int
   etaDstPort:
-    description: The port that the Encrypted Traffic Analytics collector will be listening on.
+    description: The port that the Encrypted Traffic Analytics collector will be listening
+      on.
     type: int
   etaEnabled:
-    description: Boolean indicating whether Encrypted Traffic Analytics is enabled (true) or disabled (false).
+    description: Boolean indicating whether Encrypted Traffic Analytics is enabled
+      (true) or disabled (false).
     type: bool
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   reportingEnabled:
-    description: Boolean indicating whether NetFlow traffic reporting is enabled (true) or disabled (false).
+    description: Boolean indicating whether NetFlow traffic reporting is enabled (true)
+      or disabled (false).
     type: bool
 requirements:
   - meraki >= 2.4.9
@@ -86,10 +89,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "reportingEnabled": true,
       "collectorIp": "string",
       "collectorPort": 0,
-      "etaDstPort": 0,
       "etaEnabled": true,
-      "reportingEnabled": true
+      "etaDstPort": 0
     }
 """

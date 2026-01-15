@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: networks_appliance_firewall_multicast_forwarding
 short_description: Resource module for networks _appliance _firewall _multicast _forwarding
 description:
-  - Manage operation update of the resource networks _appliance _firewall _multicast _forwarding.
+  - Manage operation update of the resource networks _appliance _firewall _multicast
+    _forwarding.
   - Update static multicast forward rules for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,7 +20,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: Static multicast forwarding rules. Pass an empty array to clear all rules.
+    description: Static multicast forwarding rules. Pass an empty array to clear all
+      rules.
     elements: dict
     suboptions:
       address:
@@ -38,7 +40,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallMulticastForwarding
-    description: Complete reference of the updateNetworkApplianceFirewallMulticastForwarding API.
+    description: Complete reference of the updateNetworkApplianceFirewallMulticastForwarding
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-multicast-forwarding
 notes:
   - SDK Method used are
@@ -91,8 +94,8 @@ meraki_response:
       },
       "rules": [
         {
-          "address": "string",
           "description": "string",
+          "address": "string",
           "vlanIds": [
             "string"
           ]

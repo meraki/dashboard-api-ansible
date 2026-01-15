@@ -78,14 +78,14 @@ meraki_response:
   sample: >
     [
       {
-        "description": "string",
         "id": "string",
         "name": "string",
-        "payloadTypes": [
-          "string"
-        ],
+        "description": "string",
         "scope": "string",
         "tags": [
+          "string"
+        ],
+        "payloadTypes": [
           "string"
         ]
       }

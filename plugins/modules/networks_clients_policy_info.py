@@ -8,8 +8,11 @@ DOCUMENTATION = r"""
 module: networks_clients_policy_info
 short_description: Information module for networks _clients _policy
 description:
-  - Get all networks _clients _policy. - > Return the policy assigned to a client on the network. Clients can be identified by a client key or
-    either the MAC or IP depending on whether the network uses Track-by-IP.
+  - Get all networks _clients _policy.
+  - >
+    Return the policy assigned to a client on the network. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -75,8 +78,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mac": "string",
       "devicePolicy": "string",
       "groupPolicyId": "string",
-      "mac": "string"
+      "policiesBySsid": [
+        {
+          "ssidNumber": 0,
+          "devicePolicy": "string",
+          "groupPolicyId": "string"
+        }
+      ]
     }
 """

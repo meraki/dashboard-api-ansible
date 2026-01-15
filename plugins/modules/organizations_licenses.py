@@ -16,9 +16,12 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   deviceSerial:
-    description: The serial number of the device to assign this license to. Set this to null to unassign the license. If a different license is
-      already active on the device, this parameter will control queueing/dequeuing this license.
-    type: str
+    description: The serial number of the device to assign this license to. Set this
+      to null to unassign the license. If a different license is already active on
+      the device, this parameter will control queueing/dequeuing this license.
+    type:
+      - string
+      - 'null'
   licenseId:
     description: LicenseId path parameter. License ID.
     type: str
@@ -75,28 +78,28 @@ meraki_response:
   type: dict
   sample: >
     {
-      "activationDate": "string",
-      "claimDate": "string",
-      "deviceSerial": "string",
-      "durationInDays": 0,
-      "expirationDate": "string",
-      "headLicenseId": "string",
       "id": "string",
-      "licenseKey": "string",
       "licenseType": "string",
-      "networkId": "string",
+      "licenseKey": "string",
       "orderNumber": "string",
+      "deviceSerial": "string",
+      "networkId": "string",
+      "state": "string",
+      "seatCount": 0,
+      "totalDurationInDays": 0,
+      "durationInDays": 0,
       "permanentlyQueuedLicenses": [
         {
-          "durationInDays": 0,
           "id": "string",
-          "licenseKey": "string",
           "licenseType": "string",
-          "orderNumber": "string"
+          "licenseKey": "string",
+          "orderNumber": "string",
+          "durationInDays": 0
         }
       ],
-      "seatCount": 0,
-      "state": "string",
-      "totalDurationInDays": 0
+      "claimDate": "string",
+      "activationDate": "string",
+      "expirationDate": "string",
+      "headLicenseId": "string"
     }
 """

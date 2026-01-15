@@ -27,7 +27,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessElectronicShelfLabel
-    description: Complete reference of the getNetworkWirelessElectronicShelfLabel API.
+    description: Complete reference of the getNetworkWirelessElectronicShelfLabel
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
@@ -70,8 +71,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "enabled": true,
       "hostname": "string",
+      "enabled": true,
       "mode": "string"
     }
 """

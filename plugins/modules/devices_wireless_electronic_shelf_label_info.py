@@ -71,11 +71,11 @@ meraki_response:
   sample: >
     {
       "apEslId": 0,
+      "serial": "string",
       "channel": "string",
       "enabled": true,
-      "hostname": "string",
       "networkId": "string",
-      "provider": "string",
-      "serial": "string"
+      "hostname": "string",
+      "provider": "string"
     }
 """

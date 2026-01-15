@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: organizations_sm_admins_roles
 short_description: Resource module for organizations _sm _admins _roles
 description:
-  - Manage operations create, update and delete of the resource organizations _sm _admins _roles.
+  - Manage operations create, update and delete of the resource organizations _sm
+    _admins _roles.
   - Create a Limited Access Role.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -80,8 +81,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "name": "string",
       "roleId": "string",
+      "name": "string",
       "scope": "string",
       "tags": [
         "string"

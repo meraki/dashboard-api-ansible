@@ -25,8 +25,8 @@ options:
   models:
     description:
       - >
-        Models query parameter. Optional parameter to filter devices by one or more models. All returned devices will have a model that is an
-        exact match.
+        Models query parameter. Optional parameter to filter devices by one or more
+        models. All returned devices will have a model that is an exact match.
     elements: str
     type: list
   networkIds:
@@ -37,7 +37,8 @@ options:
   productTypes:
     description:
       - >
-        ProductTypes query parameter. Optional parameter to filter device by device product types. This filter uses multiple exact matches.
+        ProductTypes query parameter. Optional parameter to filter device by device
+        product types. This filter uses multiple exact matches.
     elements: str
     type: list
 requirements:

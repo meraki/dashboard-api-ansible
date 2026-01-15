@@ -10,7 +10,8 @@ short_description: Information module for devices _switch _routing _interfaces
 description:
   - Get all devices _switch _routing _interfaces.
   - Get devices _switch _routing _interfaces by id.
-  - List layer 3 interfaces for a switch. Those for a stack may be found under switch stack routing.
+  - List layer 3 interfaces for a switch. Those for a stack may be found under switch
+    stack routing.
   - Return a layer 3 interface for a switch.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,6 +24,10 @@ options:
   serial:
     description:
       - Serial path parameter.
+    type: str
+  mode:
+    description:
+      - Mode query parameter. Optional parameter to filter L3 interfaces by mode.
     type: str
   protocol:
     description:
@@ -75,6 +80,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    mode: string
     protocol: string
     serial: string
   register: result
@@ -112,30 +118,39 @@ meraki_response:
   type: dict
   sample: >
     {
-      "defaultGateway": "string",
       "interfaceId": "string",
-      "interfaceIp": "string",
-      "ipv6": {
-        "address": "string",
-        "assignmentMode": "string",
-        "gateway": "string",
-        "prefix": "string"
-      },
-      "multicastRouting": "string",
       "name": "string",
+      "mode": "string",
+      "subnet": "string",
+      "interfaceIp": "string",
+      "serial": "string",
+      "switchPortId": "string",
+      "multicastRouting": "string",
+      "vlanId": 0,
+      "uplinkV4": true,
+      "uplinkV6": true,
       "ospfSettings": {
         "area": "string",
         "cost": 0,
-        "isPassiveEnabled": true
+        "isPassiveEnabled": true,
+        "networkType": "string"
       },
       "ospfV3": {
         "area": "string",
         "cost": 0,
-        "isPassiveEnabled": true
+        "isPassiveEnabled": true,
+        "networkType": "string"
       },
-      "subnet": "string",
-      "uplinkV4": true,
-      "uplinkV6": true,
-      "vlanId": 0
+      "ipv6": {
+        "assignmentMode": "string",
+        "address": "string",
+        "prefix": "string",
+        "gateway": "string"
+      },
+      "vrf": {
+        "name": "string"
+      },
+      "loopback": {},
+      "defaultGateway": "string"
     }
 """

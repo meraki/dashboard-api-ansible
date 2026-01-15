@@ -75,54 +75,54 @@ meraki_response:
   type: dict
   sample: >
     {
-      "allowSimultaneousLogins": true,
-      "billing": {
-        "freeAccess": {
-          "durationInMinutes": 0,
-          "enabled": true
-        },
-        "prepaidAccessFastLoginEnabled": true,
-        "replyToEmailAddress": "string"
+      "ssidNumber": 0,
+      "splashPage": "string",
+      "useSplashUrl": true,
+      "splashUrl": "string",
+      "splashTimeout": 0,
+      "redirectUrl": "string",
+      "useRedirectUrl": true,
+      "welcomeMessage": "string",
+      "themeId": "string",
+      "splashLogo": {
+        "md5": "string",
+        "extension": "string"
       },
-      "blockAllTrafficBeforeSignOn": true,
-      "controllerDisconnectionBehavior": "string",
+      "splashImage": {
+        "md5": "string",
+        "extension": "string"
+      },
+      "splashPrepaidFront": {
+        "md5": "string",
+        "extension": "string"
+      },
       "guestSponsorship": {
         "durationInMinutes": 0,
         "guestCanRequestTimeframe": true
       },
-      "redirectUrl": "string",
-      "selfRegistration": {
-        "authorizationType": "string",
-        "enabled": true
+      "blockAllTrafficBeforeSignOn": true,
+      "controllerDisconnectionBehavior": "string",
+      "allowSimultaneousLogins": true,
+      "billing": {
+        "freeAccess": {
+          "enabled": true,
+          "durationInMinutes": 0
+        },
+        "prepaidAccessFastLoginEnabled": true,
+        "replyToEmailAddress": "string"
       },
       "sentryEnrollment": {
-        "enforcedSystems": [
-          "string"
-        ],
-        "strength": "string",
         "systemsManagerNetwork": {
           "id": "string"
-        }
+        },
+        "strength": "string",
+        "enforcedSystems": [
+          "string"
+        ]
       },
-      "splashImage": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashLogo": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashPage": "string",
-      "splashPrepaidFront": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashTimeout": 0,
-      "splashUrl": "string",
-      "ssidNumber": 0,
-      "themeId": "string",
-      "useRedirectUrl": true,
-      "useSplashUrl": true,
-      "welcomeMessage": "string"
+      "selfRegistration": {
+        "enabled": true,
+        "authorizationType": "string"
+      }
     }
 """

@@ -43,8 +43,25 @@ options:
         description: Enable uplink client sampling.
         type: bool
     type: dict
+  uplinkSelection:
+    description: Settings related to uplink selection on IOS-XE switches.
+    suboptions:
+      candidates:
+        description: '''all'' lets devices try any potential interface. ''designated''
+          restricts to specified candidates (configured via the Routing & DHCP page).'
+        type: str
+      failback:
+        description: If a preferred uplink ever goes offline, we will periodically
+          reattempt it.
+        suboptions:
+          enabled:
+            description: Enable preferred uplink failback.
+            type: bool
+        type: dict
+    type: dict
   useCombinedPower:
-    description: The use Combined Power as the default behavior of secondary power supplies on supported devices.
+    description: The use Combined Power as the default behavior of secondary power
+      supplies on supported devices.
     type: bool
   vlan:
     description: Management VLAN.
@@ -96,6 +113,10 @@ EXAMPLES = r"""
         serial: string
     uplinkClientSampling:
       enabled: true
+    uplinkSelection:
+      candidates: string
+      failback:
+        enabled: true
     useCombinedPower: true
     vlan: 0
 """
@@ -106,19 +127,25 @@ meraki_response:
   type: dict
   sample: >
     {
-      "macBlocklist": {
-        "enabled": true
-      },
+      "vlan": 0,
+      "useCombinedPower": true,
       "powerExceptions": [
         {
-          "powerType": "string",
-          "serial": "string"
+          "serial": "string",
+          "powerType": "string"
         }
       ],
       "uplinkClientSampling": {
         "enabled": true
       },
-      "useCombinedPower": true,
-      "vlan": 0
+      "macBlocklist": {
+        "enabled": true
+      },
+      "uplinkSelection": {
+        "failback": {
+          "enabled": true
+        },
+        "candidates": "string"
+      }
     }
 """

@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_local_profiles_assignments_bulk_create
-short_description: Resource module for organizations _appliance _dns _local _profiles _assignments _bulk _create
+short_description: Resource module for organizations _appliance _dns _local _profiles
+  _assignments _bulk _create
 description:
-  - Manage operation create of the resource organizations _appliance _dns _local _profiles _assignments _bulk _create.
+  - Manage operation create of the resource organizations _appliance _dns _local _profiles
+    _assignments _bulk _create.
   - Assign the local DNS profile to networks in the organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -42,7 +44,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance bulkOrganizationApplianceDnsLocalProfilesAssignmentsCreate
-    description: Complete reference of the bulkOrganizationApplianceDnsLocalProfilesAssignmentsCreate API.
+    description: Complete reference of the bulkOrganizationApplianceDnsLocalProfilesAssignmentsCreate
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!bulk-organization-appliance-dns-local-profiles-assignments-create
 notes:
   - SDK Method used are

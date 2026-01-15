@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_inventory_info
-short_description: Information module for organizations _cellular _gateway _esims _inventory
+short_description: Information module for organizations _cellular _gateway _esims
+  _inventory
 description:
   - Get all organizations _cellular _gateway _esims _inventory.
   - The eSIM inventory of a given organization.
@@ -32,7 +33,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsInventory
-    description: Complete reference of the getOrganizationCellularGatewayEsimsInventory API.
+    description: Complete reference of the getOrganizationCellularGatewayEsimsInventory
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-inventory
 notes:
   - SDK Method used are
@@ -78,14 +80,14 @@ meraki_response:
     {
       "items": [
         {
-          "active": true,
           "device": {
-            "model": "string",
             "name": "string",
+            "model": "string",
             "serial": "string",
-            "status": "string",
-            "url": "string"
+            "url": "string",
+            "status": "string"
           },
+          "active": true,
           "eid": "string",
           "lastUpdatedAt": "string",
           "network": {
@@ -97,6 +99,7 @@ meraki_response:
                 "string"
               ],
               "iccid": "string",
+              "status": "string",
               "serviceProvider": {
                 "name": "string",
                 "plans": [
@@ -105,8 +108,7 @@ meraki_response:
                     "type": "string"
                   }
                 ]
-              },
-              "status": "string"
+              }
             }
           ]
         }
@@ -114,8 +116,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

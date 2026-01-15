@@ -26,92 +26,111 @@ options:
   productType:
     description:
       - >
-        ProductType query parameter. The product type to fetch events for. This parameter is required for networks with multiple device types.
-        Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, wirelessController, and secureConnect.
+        ProductType query parameter. The product type to fetch events for. This parameter
+        is required for networks with multiple device types. Valid types are wireless,
+        appliance, switch, systemsManager, camera, cellularGateway, wirelessController,
+        campusGateway, and secureConnect.
     type: str
   includedEventTypes:
     description:
       - >
-        IncludedEventTypes query parameter. A list of event types. The returned events will be filtered to only include events with these types.
+        IncludedEventTypes query parameter. A list of event types. The returned events
+        will be filtered to only include events with these types.
     elements: str
     type: list
   excludedEventTypes:
     description:
       - >
-        ExcludedEventTypes query parameter. A list of event types. The returned events will be filtered to exclude events with these types.
+        ExcludedEventTypes query parameter. A list of event types. The returned events
+        will be filtered to exclude events with these types.
     elements: str
     type: list
   deviceMac:
     description:
-      - DeviceMac query parameter. The MAC address of the Meraki device which the list of events will be filtered with.
+      - DeviceMac query parameter. The MAC address of the Meraki device which the
+        list of events will be filtered with.
     type: str
   deviceSerial:
     description:
-      - DeviceSerial query parameter. The serial of the Meraki device which the list of events will be filtered with.
+      - DeviceSerial query parameter. The serial of the Meraki device which the list
+        of events will be filtered with.
     type: str
   deviceName:
     description:
-      - DeviceName query parameter. The name of the Meraki device which the list of events will be filtered with.
+      - DeviceName query parameter. The name of the Meraki device which the list of
+        events will be filtered with.
     type: str
   clientIp:
     description:
       - >
-        ClientIp query parameter. The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
+        ClientIp query parameter. The IP of the client which the list of events will
+        be filtered with. Only supported for track-by-IP networks.
     type: str
   clientMac:
     description:
       - >
-        ClientMac query parameter. The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC
-        networks.
+        ClientMac query parameter. The MAC address of the client which the list of
+        events will be filtered with. Only supported for track-by-MAC networks.
     type: str
   clientName:
     description:
       - >
-        ClientName query parameter. The name, or partial name, of the client which the list of events will be filtered with.
+        ClientName query parameter. The name, or partial name, of the client which
+        the list of events will be filtered with.
     type: str
   smDeviceMac:
     description:
       - >
-        SmDeviceMac query parameter. The MAC address of the Systems Manager device which the list of events will be filtered with.
+        SmDeviceMac query parameter. The MAC address of the Systems Manager device
+        which the list of events will be filtered with.
     type: str
   smDeviceName:
     description:
       - >
-        SmDeviceName query parameter. The name of the Systems Manager device which the list of events will be filtered with.
+        SmDeviceName query parameter. The name of the Systems Manager device which
+        the list of events will be filtered with.
     type: str
   eventDetails:
     description:
       - >
-        EventDetails query parameter. The details of the event(Catalyst device only) which the list of events will be filtered with.
+        EventDetails query parameter. The details of the event(Catalyst device only)
+        which the list of events will be filtered with.
     type: str
   eventSeverity:
     description:
       - >
-        EventSeverity query parameter. The severity of the event(Catalyst device only) which the list of events will be filtered with.
+        EventSeverity query parameter. The severity of the event(Catalyst device only)
+        which the list of events will be filtered with.
     type: str
   isCatalyst:
     description:
       - >
-        IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst device. For Catalyst device, eventDetails and eventSeverity
-        can be used to filter events.
+        IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst
+        device. For Catalyst device, eventDetails and eventSeverity can be used to
+        filter events.
     type: bool
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 10.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -164,7 +183,7 @@ EXAMPLES = r"""
     smDeviceName: string
     eventDetails: string
     eventSeverity: string
-    isCatalyst: true
+    isCatalyst: True
     perPage: 0
     startingAfter: string
     endingBefore: string
@@ -180,32 +199,32 @@ meraki_response:
   type: dict
   sample: >
     {
+      "message": "string",
+      "pageStartAt": "string",
+      "pageEndAt": "string",
       "events": [
         {
-          "category": "string",
-          "clientDescription": "string",
-          "clientId": "string",
-          "clientMac": "string",
-          "description": "string",
-          "deviceName": "string",
-          "deviceSerial": "string",
-          "eventData": {
-            "aid": "string",
-            "channel": "string",
-            "client_ip": "string",
-            "client_mac": "string",
-            "radio": "string",
-            "rssi": "string",
-            "vap": "string"
-          },
-          "networkId": "string",
           "occurredAt": "string",
+          "networkId": "string",
+          "type": "string",
+          "description": "string",
+          "category": "string",
+          "clientId": "string",
+          "clientDescription": "string",
+          "clientMac": "string",
+          "deviceSerial": "string",
+          "deviceName": "string",
           "ssidNumber": 0,
-          "type": "string"
+          "eventData": {
+            "radio": "string",
+            "vap": "string",
+            "client_mac": "string",
+            "client_ip": "string",
+            "channel": "string",
+            "rssi": "string",
+            "aid": "string"
+          }
         }
-      ],
-      "message": "string",
-      "pageEndAt": "string",
-      "pageStartAt": "string"
+      ]
     }
 """

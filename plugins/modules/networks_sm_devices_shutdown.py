@@ -23,7 +23,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the endpoints to be shutdown.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the endpoints to be shutdown.
     elements: str
     type: list
   serials:

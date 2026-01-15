@@ -6,7 +6,8 @@
 
 DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_by_type_info
-short_description: Information module for organizations _assurance _alerts _overview _by _type
+short_description: Information module for organizations _assurance _alerts _overview
+  _by _type
 description:
   - Get all organizations _assurance _alerts _overview _by _type.
   - Return a Summary of Alerts grouped by type and severity.
@@ -25,34 +26,42 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   sortOrder:
     description:
       - >
-        SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'ascending'.
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'ascending'.
     type: str
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network ids.
     type: str
   severity:
     description:
-      - Severity query parameter. Optional parameter to filter alerts overview by severity type.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   types:
     description:
@@ -92,29 +101,35 @@ options:
     type: list
   active:
     description:
-      - Active query parameter. Optional parameter to filter by active alerts defaults to true.
+      - Active query parameter. Optional parameter to filter by active alerts defaults
+        to true.
     type: bool
   dismissed:
     description:
-      - Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
+      - Dismissed query parameter. Optional parameter to filter by dismissed alerts
+        defaults to false.
     type: bool
   resolved:
     description:
-      - Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
+      - Resolved query parameter. Optional parameter to filter by resolved alerts
+        defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
       - >
-        SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that
-        device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch
-        and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
+        SuppressAlertsForOfflineNodes query parameter. When set to true the api will
+        only return connectivity alerts for a given device if that device is in an
+        offline state. This only applies to devices. This is ignored when resolved
+        is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only
+        the Unreachable alert will be returned. Defaults to false.
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewByType
-    description: Complete reference of the getOrganizationAssuranceAlertsOverviewByType API.
+    description: Complete reference of the getOrganizationAssuranceAlertsOverviewByType
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-by-type
 notes:
   - SDK Method used are
@@ -161,10 +176,10 @@ EXAMPLES = r"""
     serials: []
     deviceTypes: []
     deviceTags: []
-    active: true
-    dismissed: true
-    resolved: true
-    suppressAlertsForOfflineNodes: true
+    active: True
+    dismissed: True
+    resolved: True
+    suppressAlertsForOfflineNodes: True
     organizationId: string
     total_pages: -1
     direction: next
@@ -179,8 +194,9 @@ meraki_response:
     {
       "items": [
         {
-          "count": 0,
-          "type": "string"
+          "type": "string",
+          "lastResolvedAt": "string",
+          "count": 0
         }
       ],
       "meta": {

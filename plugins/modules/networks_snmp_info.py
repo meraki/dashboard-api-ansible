@@ -74,8 +74,8 @@ meraki_response:
       "communityString": "string",
       "users": [
         {
-          "passphrase": "string",
-          "username": "string"
+          "username": "string",
+          "passphrase": "string"
         }
       ]
     }

@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: organizations_devices_details_bulk_update
 short_description: Resource module for organizations _devices _details _bulk _update
 description:
-  - Manage operation create of the resource organizations _devices _details _bulk _update.
+  - Manage operation create of the resource organizations _devices _details _bulk
+    _update.
   - Updating device details currently only used for Catalyst devices .
 version_added: '1.0.0'
 extends_documentation_fragment:

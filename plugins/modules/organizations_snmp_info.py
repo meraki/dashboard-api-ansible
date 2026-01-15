@@ -70,16 +70,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "hostname": "string",
+      "v2cEnabled": true,
+      "v2CommunityString": "string",
+      "v3Enabled": true,
+      "v3User": "string",
+      "v3AuthMode": "string",
+      "v3PrivMode": "string",
       "peerIps": [
         "string"
       ],
-      "port": 0,
-      "v2CommunityString": "string",
-      "v2cEnabled": true,
-      "v3AuthMode": "string",
-      "v3Enabled": true,
-      "v3PrivMode": "string",
-      "v3User": "string"
+      "hostname": "string",
+      "port": 0
     }
 """

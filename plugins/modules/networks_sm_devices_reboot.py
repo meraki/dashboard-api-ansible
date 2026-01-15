@@ -20,23 +20,28 @@ options:
     elements: str
     type: list
   kextPaths:
-    description: The KextPaths of the endpoints to be rebooted. Available for macOS 11+.
+    description: The KextPaths of the endpoints to be rebooted. Available for macOS
+      11+.
     elements: str
     type: list
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   notifyUser:
-    description: Whether or not to notify the user before rebooting the endpoint. Available for macOS 11.3+.
+    description: Whether or not to notify the user before rebooting the endpoint.
+      Available for macOS 11.3+.
     type: bool
   rebuildKernelCache:
-    description: Whether or not to rebuild the kernel cache when rebooting the endpoint. Available for macOS 11+.
+    description: Whether or not to rebuild the kernel cache when rebooting the endpoint.
+      Available for macOS 11+.
     type: bool
   requestRequiresNetworkTether:
-    description: Whether or not the request requires network tethering. Available for macOS and supervised iOS or tvOS.
+    description: Whether or not the request requires network tethering. Available
+      for macOS and supervised iOS or tvOS.
     type: bool
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the endpoints to be rebooted.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the endpoints to be rebooted.
     elements: str
     type: list
   serials:
