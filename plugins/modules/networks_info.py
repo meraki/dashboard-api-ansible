@@ -142,7 +142,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     configTemplateId: string
-    isBoundToConfigTemplate: True
+    isBoundToConfigTemplate: true
     tags: []
     tagsFilterType: string
     productTypes: []

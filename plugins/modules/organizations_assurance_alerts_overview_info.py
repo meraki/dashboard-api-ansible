@@ -151,10 +151,10 @@ EXAMPLES = r"""
     serials: []
     deviceTypes: []
     deviceTags: []
-    active: True
-    dismissed: True
-    resolved: True
-    suppressAlertsForOfflineNodes: True
+    active: true
+    dismissed: true
+    resolved: true
+    suppressAlertsForOfflineNodes: true
     organizationId: string
   register: result
 """

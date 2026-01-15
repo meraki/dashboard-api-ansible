@@ -202,7 +202,7 @@ EXAMPLES = r"""
     smDeviceName: string
     eventDetails: string
     eventSeverity: string
-    isCatalyst: True
+    isCatalyst: true
     perPage: 0
     startingAfter: string
     endingBefore: string

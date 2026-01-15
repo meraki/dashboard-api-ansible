@@ -81,7 +81,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    withDetails: True
+    withDetails: true
     networkId: string
   register: result
 - name: Get networks _sm _targetgroups by id
@@ -107,7 +107,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    withDetails: True
+    withDetails: true
     networkId: string
     targetGroupId: string
   register: result

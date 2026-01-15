@@ -115,7 +115,6 @@ options:
         the iPSK name field.
     type: str
   description:
-  - Information module for Networks Clients Info.
     description:
       - Information module for Networks Clients Info.
       - Description query parameter. Filters clients based on a partial or full match

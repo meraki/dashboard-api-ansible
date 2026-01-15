@@ -123,7 +123,7 @@ EXAMPLES = r"""
     endingBefore: string
     t0: string
     timespan: 0
-    includeUndetectedClients: True
+    includeUndetectedClients: true
     networkIds: []
     organizationId: string
     total_pages: -1

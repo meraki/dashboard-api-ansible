@@ -103,8 +103,8 @@ EXAMPLES = r"""
     perPage: 0
     startingAfter: string
     endingBefore: string
-    invalidated: True
-    expired: True
+    invalidated: true
+    expired: true
     organizationId: string
     total_pages: -1
     direction: next

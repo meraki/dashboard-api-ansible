@@ -130,7 +130,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serials: []
-    includeInterfacesWithoutChanges: True
+    includeInterfacesWithoutChanges: true
     t0: string
     t1: string
     timespan: 0

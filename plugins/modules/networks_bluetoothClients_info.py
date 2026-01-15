@@ -81,7 +81,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    includeConnectivityHistory: True
+    includeConnectivityHistory: true
     connectivityHistoryTimespan: 0
     networkId: string
     bluetoothClientId: string

@@ -109,7 +109,7 @@ EXAMPLES = r"""
     startingAfter: string
     endingBefore: string
     networkIds: []
-    includeDisabledSsids: True
+    includeDisabledSsids: true
     organizationId: string
     total_pages: -1
     direction: next

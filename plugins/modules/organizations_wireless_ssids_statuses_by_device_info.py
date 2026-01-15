@@ -122,7 +122,7 @@ EXAMPLES = r"""
     networkIds: []
     serials: []
     bssids: []
-    hideDisabled: True
+    hideDisabled: true
     perPage: 0
     startingAfter: string
     endingBefore: string

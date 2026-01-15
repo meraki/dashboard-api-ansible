@@ -83,7 +83,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    includeTemplateProfiles: True
+    includeTemplateProfiles: true
     networkId: string
   register: result
 - name: Get networks _wireless _rfprofiles by id
