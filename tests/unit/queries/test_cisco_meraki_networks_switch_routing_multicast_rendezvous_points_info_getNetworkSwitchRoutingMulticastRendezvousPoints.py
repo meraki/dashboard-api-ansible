@@ -1,5 +1,6 @@
 """
-Test for cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info using fixture cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info.json
+Test for cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info using fixture
+    cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info.json
 Method: getNetworkSwitchRoutingMulticastRendezvousPoints
 """
 import jq
@@ -26,8 +27,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "rendezvous-point-1234",
             "canonical_facts": {
                 "ansible_product_serial": "Q234-ABCD-5678",
@@ -44,8 +45,10 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

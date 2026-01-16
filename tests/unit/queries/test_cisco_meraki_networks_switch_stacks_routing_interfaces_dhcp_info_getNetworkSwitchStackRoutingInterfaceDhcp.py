@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_dhcp_info_getNet
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "Cisco Meraki valued client",
             "canonical_facts": {
                 "hostname": "192.168.1.12",
@@ -42,8 +42,10 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_dhcp_info_getNet
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

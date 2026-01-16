@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_access_policies_createNetworkSwitchAccessP
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "Access policy #1",
             "canonical_facts": {
                 "ansible_machine_id": "1234"
@@ -38,8 +38,10 @@ def test_cisco_meraki_networks_switch_access_policies_createNetworkSwitchAccessP
                 "access_policy_type": "Hybrid authentication"
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

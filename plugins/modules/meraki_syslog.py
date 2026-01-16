@@ -26,7 +26,8 @@ description:
 extends_documentation_fragment: cisco.meraki.meraki
 module: meraki_syslog
 notes:
-  - Changes to existing syslog servers replaces existing configuration. If you need to add to an existing configuration set state to query to gather the existing configuration and then modify or add.
+  - Changes to existing syslog servers replaces existing configuration.
+  - If you need to add to an existing configuration set state to query to gather the existing configuration and then modify or add.
 options:
   auth_key:
     description:

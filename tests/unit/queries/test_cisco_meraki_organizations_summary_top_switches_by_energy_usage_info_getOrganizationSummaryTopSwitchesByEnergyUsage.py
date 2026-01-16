@@ -1,5 +1,6 @@
 """
-Test for cisco.meraki.organizations_summary_top_switches_by_energy_usage_info using fixture cisco.meraki.organizations_summary_top_switches_by_energy_usage_info.json
+Test for cisco.meraki.organizations_summary_top_switches_by_energy_usage_info using fixture
+    cisco.meraki.organizations_summary_top_switches_by_energy_usage_info.json
 Method: getOrganizationSummaryTopSwitchesByEnergyUsage
 """
 import jq
@@ -26,8 +27,8 @@ def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_ge
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "My switch",
             "canonical_facts": {
                 "ansible_machine_id": "00:11:22:33:44:55"
@@ -48,8 +49,10 @@ def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_ge
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

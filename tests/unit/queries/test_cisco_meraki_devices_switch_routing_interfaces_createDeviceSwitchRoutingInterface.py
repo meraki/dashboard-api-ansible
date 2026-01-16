@@ -26,8 +26,8 @@ def test_cisco_meraki_devices_switch_routing_interfaces_createDeviceSwitchRoutin
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+            {
             "name": "L3 interface",
             "canonical_facts": {
                 "ansible_product_serial": "Q234-ABCD-5678",
@@ -43,8 +43,8 @@ def test_cisco_meraki_devices_switch_routing_interfaces_createDeviceSwitchRoutin
                 }
             }
         }
+        ]
     ]
-]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

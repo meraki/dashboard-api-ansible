@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "qos-rule-1284392014819",
             "canonical_facts": {
                 "ansible_machine_id": "1284392014819"
@@ -46,8 +46,10 @@ def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_access_control_lists_info_getNetworkSwitch
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "Deny SSH",
             "canonical_facts": {
                 "ansible_machine_id": "172.16.30/24-0"
@@ -48,8 +48,10 @@ def test_cisco_meraki_networks_switch_access_control_lists_info_getNetworkSwitch
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

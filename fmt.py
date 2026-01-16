@@ -2,11 +2,13 @@ import os
 import re
 import subprocess
 
+
 def process_files(directory):
     for root, _dirs, files in os.walk(directory):
         for file in files:
             if file.endswith(".py"):
                 process_file(os.path.join(root, file))
+
 
 def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -18,6 +20,7 @@ def process_file(filepath):
 
     with open(filepath, 'w', encoding='utf-8') as file:
         file.write(content)
+
 
 def process_section(content, section):
     pattern = rf'{section} = r""".*?"""'
@@ -48,6 +51,7 @@ def process_section(content, section):
         content = content.replace(section_content, new_section_content)
 
     return content
+
 
 def update_notes_section(content):
     notes_pattern = re.compile(r'notes:\n(  - .*\n)+', re.DOTALL)

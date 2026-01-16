@@ -26,8 +26,8 @@ def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, lo
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+            {
             "name": "My switch port",
             "canonical_facts": {
                 "ansible_product_serial": "3_MA-MOD-4X10G"
@@ -42,8 +42,8 @@ def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, lo
                 }
             }
         }
+        ]
     ]
-]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

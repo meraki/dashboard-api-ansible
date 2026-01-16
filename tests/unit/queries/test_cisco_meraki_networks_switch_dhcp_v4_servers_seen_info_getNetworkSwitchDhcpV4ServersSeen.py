@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_dhcp_v4_servers_seen_info_getNetworkSwitch
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "Q234-ABCD-0002",
             "canonical_facts": {
                 "ansible_product_serial": "Q234-ABCD-0002"
@@ -66,8 +66,10 @@ def test_cisco_meraki_networks_switch_dhcp_v4_servers_seen_info_getNetworkSwitch
                 }
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

@@ -58,7 +58,6 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             title=params.get("title"),
             username=params.get("username"),
             organizationId=params.get("organizationId"),
-            accountId=params.get("accountId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -209,7 +208,6 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             ("title", "title"),
             ("username", "username"),
             ("organizationId", "organizationId"),
-            ("accountId", "accountId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

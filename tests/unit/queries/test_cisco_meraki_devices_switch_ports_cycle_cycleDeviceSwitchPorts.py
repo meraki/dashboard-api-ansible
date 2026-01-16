@@ -26,8 +26,8 @@ def test_cisco_meraki_devices_switch_ports_cycle_cycleDeviceSwitchPorts(query_da
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+            {
             "name": "port-1",
             "canonical_facts": {
                 "ansible_machine_id": "1"
@@ -67,8 +67,8 @@ def test_cisco_meraki_devices_switch_ports_cycle_cycleDeviceSwitchPorts(query_da
                 "port_identifier": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
             }
         }
+        ]
     ]
-]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

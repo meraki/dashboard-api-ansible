@@ -26,8 +26,8 @@ def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data
 
     # Expected output from query_run.log
     expected = [
-    [
-        {
+        [
+        {            {
             "name": "QBZY-XWVU-TSRQ",
             "canonical_facts": {
                 "ansible_product_serial": "QBZY-XWVU-TSRQ"
@@ -51,8 +51,10 @@ def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data
                 "workflow_id": "8473"
             }
         }
-    ]
+        ]
 ]
+
+    # Assert    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"
