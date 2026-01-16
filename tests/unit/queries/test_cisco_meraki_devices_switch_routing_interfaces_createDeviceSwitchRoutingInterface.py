@@ -28,21 +28,21 @@ def test_cisco_meraki_devices_switch_routing_interfaces_createDeviceSwitchRoutin
     expected = [
         [
             {
-            "name": "L3 interface",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-5678",
-                "hostname": "192.168.1.2"
-            },
-            "facts": {
-                "device_type": "switch",
-                "interface_id": "1234",
-                "vlan_id": 100,
-                "interface_ip": "192.168.1.2",
-                "vrf": {
-                    "name": "Blue"
+                "name": "L3 interface",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-5678",
+                    "hostname": "192.168.1.2"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "interface_id": "1234",
+                    "vlan_id": 100,
+                    "interface_ip": "192.168.1.2",
+                    "vrf": {
+                        "name": "Blue"
+                    }
                 }
             }
-        }
         ]
     ]
 

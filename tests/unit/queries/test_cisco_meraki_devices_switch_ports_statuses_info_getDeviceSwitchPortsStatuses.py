@@ -28,21 +28,21 @@ def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsSta
     expected = [
         [
             {
-            "name": "Example Switch",
-            "canonical_facts": {
-                "ansible_product_serial": "Q555-5555-5555",
-                "hostname": "01:23:45:67:ab:cd"
-            },
-            "facts": {
-                "device_type": "switch",
-                "mac_address": "01:23:45:67:ab:cd",
-                "model": "MS120-8",
-                "switch_info": {
-                    "network_name": "Example Network",
-                    "network_id": "L_12345"
+                "name": "Example Switch",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q555-5555-5555",
+                    "hostname": "01:23:45:67:ab:cd"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "mac_address": "01:23:45:67:ab:cd",
+                    "model": "MS120-8",
+                    "switch_info": {
+                        "network_name": "Example Network",
+                        "network_id": "L_12345"
+                    }
                 }
             }
-        }
         ]
     ]
 

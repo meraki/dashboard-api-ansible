@@ -28,45 +28,45 @@ def test_cisco_meraki_devices_switch_ports_cycle_cycleDeviceSwitchPorts(query_da
     expected = [
         [
             {
-            "name": "port-1",
-            "canonical_facts": {
-                "ansible_machine_id": "1"
+                "name": "port-1",
+                "canonical_facts": {
+                    "ansible_machine_id": "1"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "port_identifier": "1"
+                }
             },
-            "facts": {
-                "device_type": "switch",
-                "port_identifier": "1"
-            }
-        },
-        {
-            "name": "port-2-5",
-            "canonical_facts": {
-                "ansible_machine_id": "2-5"
+            {
+                "name": "port-2-5",
+                "canonical_facts": {
+                    "ansible_machine_id": "2-5"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "port_identifier": "2-5"
+                }
             },
-            "facts": {
-                "device_type": "switch",
-                "port_identifier": "2-5"
-            }
-        },
-        {
-            "name": "port-1_MA-MOD-8X10G_1",
-            "canonical_facts": {
-                "ansible_machine_id": "1_MA-MOD-8X10G_1"
+            {
+                "name": "port-1_MA-MOD-8X10G_1",
+                "canonical_facts": {
+                    "ansible_machine_id": "1_MA-MOD-8X10G_1"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "port_identifier": "1_MA-MOD-8X10G_1"
+                }
             },
-            "facts": {
-                "device_type": "switch",
-                "port_identifier": "1_MA-MOD-8X10G_1"
+            {
+                "name": "port-1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8",
+                "canonical_facts": {
+                    "ansible_machine_id": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "port_identifier": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
+                }
             }
-        },
-        {
-            "name": "port-1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8",
-            "canonical_facts": {
-                "ansible_machine_id": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
-            },
-            "facts": {
-                "device_type": "switch",
-                "port_identifier": "1_MA-MOD-8X10G_2-1_MA-MOD-8X10G_8"
-            }
-        }
         ]
     ]
 

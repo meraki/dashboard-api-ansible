@@ -28,20 +28,20 @@ def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, lo
     expected = [
         [
             {
-            "name": "My switch port",
-            "canonical_facts": {
-                "ansible_product_serial": "3_MA-MOD-4X10G"
-            },
-            "facts": {
-                "device_type": "switch",
-                "port_id": "1",
-                "module": {
-                    "model": "MA-MOD-4X10G",
-                    "serial": "3_MA-MOD-4X10G",
-                    "slot": 1
+                "name": "My switch port",
+                "canonical_facts": {
+                    "ansible_product_serial": "3_MA-MOD-4X10G"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "port_id": "1",
+                    "module": {
+                        "model": "MA-MOD-4X10G",
+                        "serial": "3_MA-MOD-4X10G",
+                        "slot": 1
+                    }
                 }
             }
-        }
         ]
     ]
 
