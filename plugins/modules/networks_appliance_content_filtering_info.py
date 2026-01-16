@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: networks_appliance_contentFiltering_info
+module: networks_appliance_content_filtering_info
 short_description: Information module for networks _appliance _contentfiltering
 description:
   - Information module for Networks Appliance Contentfiltering Info.
