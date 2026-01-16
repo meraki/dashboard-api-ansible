@@ -86,7 +86,7 @@ class NetworksVlanProfiles(object):
             new_object_params['iname'] = self.new_object.get('iname') or \
                 self.new_object.get('iname')
         if self.new_object.get('networkId') is not None or self.new_object.get(
-            'network_id') is not None:
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
         return new_object_params
@@ -118,7 +118,7 @@ class NetworksVlanProfiles(object):
             new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
                 self.new_object.get('vlan_groups')
         if self.new_object.get('networkId') is not None or self.new_object.get(
-            'network_id') is not None:
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
         if self.new_object.get('iname') is not None or self.new_object.get(

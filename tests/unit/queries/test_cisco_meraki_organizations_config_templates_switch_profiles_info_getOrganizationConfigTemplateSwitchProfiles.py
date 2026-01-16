@@ -27,24 +27,22 @@ def test_cisco_meraki_organizations_config_templates_switch_profiles_info_getOrg
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "A Simple Switch Template",
-            "canonical_facts": {
-                "ansible_machine_id": "1234"
-            },
-            "facts": {
-                "device_type": "switch",
-                "switch_profile": {
-                    "profile_id": "1234",
-                    "name": "A Simple Switch Template",
-                    "model": "MS450-24"
+            {
+                "name": "A Simple Switch Template",
+                "canonical_facts": {
+                    "ansible_machine_id": "1234"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "switch_profile": {
+                        "profile_id": "1234",
+                        "name": "A Simple Switch Template",
+                        "model": "MS450-24"
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

@@ -27,26 +27,24 @@ def test_cisco_meraki_organizations_switch_ports_by_switch_info_getOrganizationS
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Example Switch",
-            "canonical_facts": {
-                "ansible_product_serial": "Q555-5555-5555",
-                "hostname": "01:23:45:67:ab:cd"
-            },
-            "facts": {
-                "device_type": "switch",
-                "mac_address": "01:23:45:67:ab:cd",
-                "model": "MS120-8",
-                "switch_info": {
-                    "network_name": "Example Network",
-                    "network_id": "L_12345"
+            {
+                "name": "Example Switch",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q555-5555-5555",
+                    "hostname": "01:23:45:67:ab:cd"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "mac_address": "01:23:45:67:ab:cd",
+                    "model": "MS120-8",
+                    "switch_info": {
+                        "network_name": "Example Network",
+                        "network_id": "L_12345"
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

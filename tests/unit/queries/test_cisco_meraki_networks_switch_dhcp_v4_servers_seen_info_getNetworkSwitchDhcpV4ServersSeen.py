@@ -27,49 +27,47 @@ def test_cisco_meraki_networks_switch_dhcp_v4_servers_seen_info_getNetworkSwitch
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Q234-ABCD-0002",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0002"
-            },
-            "facts": {
-                "device_type": "switch",
-                "dhcp_server_seen": {
-                    "mac_address": "00:11:22:33:44:55",
-                    "vlan": 100,
-                    "ipv4": {
-                        "address": "10.0.0.0/24",
-                        "subnet": "192.168.1.0/24",
-                        "gateway": "1.2.3.5"
-                    },
-                    "device_name": "My AP"
+            {
+                "name": "Q234-ABCD-0002",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0002"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "dhcp_server_seen": {
+                        "mac_address": "00:11:22:33:44:55",
+                        "vlan": 100,
+                        "ipv4": {
+                            "address": "10.0.0.0/24",
+                            "subnet": "192.168.1.0/24",
+                            "gateway": "1.2.3.5"
+                        },
+                        "device_name": "My AP"
+                    }
                 }
-            }
-        },
-        {
-            "name": "Q234-ABCD-0001",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0001"
             },
-            "facts": {
-                "device_type": "switch",
-                "dhcp_server_seen": {
-                    "mac_address": "00:11:22:33:44:55",
-                    "vlan": 100,
-                    "client_id": "k74272e",
-                    "type": "device",
-                    "ipv4": {
-                        "address": "10.0.0.0/24",
-                        "subnet": "192.168.1.0/24",
-                        "gateway": "1.2.3.5"
+            {
+                "name": "Q234-ABCD-0001",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0001"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "dhcp_server_seen": {
+                        "mac_address": "00:11:22:33:44:55",
+                        "vlan": 100,
+                        "client_id": "k74272e",
+                        "type": "device",
+                        "ipv4": {
+                            "address": "10.0.0.0/24",
+                            "subnet": "192.168.1.0/24",
+                            "gateway": "1.2.3.5"
+                        }
                     }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

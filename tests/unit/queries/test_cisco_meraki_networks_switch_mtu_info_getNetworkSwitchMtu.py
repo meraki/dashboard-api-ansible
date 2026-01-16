@@ -27,43 +27,41 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Q234-ABCD-0001",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0001"
+            {
+                "name": "Q234-ABCD-0001",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0001"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "mtu_size": 1500,
+                    "default_mtu_size": 9578
+                }
             },
-            "facts": {
-                "device_type": "switch",
-                "mtu_size": 1500,
-                "default_mtu_size": 9578
-            }
-        },
-        {
-            "name": "Q234-ABCD-0002",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0002"
+            {
+                "name": "Q234-ABCD-0002",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0002"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "mtu_size": 1500,
+                    "default_mtu_size": 9578
+                }
             },
-            "facts": {
-                "device_type": "switch",
-                "mtu_size": 1500,
-                "default_mtu_size": 9578
+            {
+                "name": "Q234-ABCD-0003",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0003"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "mtu_size": 1500,
+                    "default_mtu_size": 9578
+                }
             }
-        },
-        {
-            "name": "Q234-ABCD-0003",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0003"
-            },
-            "facts": {
-                "device_type": "switch",
-                "mtu_size": 1500,
-                "default_mtu_size": 9578
-            }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

@@ -30,26 +30,24 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_trusted_
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "trusted-server-123",
-            "canonical_facts": {
-                "ansible_machine_id": "00:11:22:33:44:55",
-                "hostname": "1.2.3.4"
-            },
-            "facts": {
-                "device_type": "switch",
-                "trusted_server": {
-                    "trusted_server_id": "123",
-                    "mac_address": "00:11:22:33:44:55",
-                    "vlan": 100,
-                    "ipv4_address": "1.2.3.4"
+            {
+                "name": "trusted-server-123",
+                "canonical_facts": {
+                    "ansible_machine_id": "00:11:22:33:44:55",
+                    "hostname": "1.2.3.4"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "trusted_server": {
+                        "trusted_server_id": "123",
+                        "mac_address": "00:11:22:33:44:55",
+                        "vlan": 100,
+                        "ipv4_address": "1.2.3.4"
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

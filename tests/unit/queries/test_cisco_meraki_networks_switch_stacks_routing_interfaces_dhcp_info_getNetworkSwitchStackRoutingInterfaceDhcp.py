@@ -27,25 +27,23 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_dhcp_info_getNet
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Cisco Meraki valued client",
-            "canonical_facts": {
-                "hostname": "192.168.1.12",
-                "ansible_machine_id": "22:33:44:55:66:77"
-            },
-            "facts": {
-                "device_type": "switch",
-                "fixed_ip_assignment": {
-                    "mac": "22:33:44:55:66:77",
-                    "ip": "192.168.1.12",
-                    "name": "Cisco Meraki valued client"
+            {
+                "name": "Cisco Meraki valued client",
+                "canonical_facts": {
+                    "hostname": "192.168.1.12",
+                    "ansible_machine_id": "22:33:44:55:66:77"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "fixed_ip_assignment": {
+                        "mac": "22:33:44:55:66:77",
+                        "ip": "192.168.1.12",
+                        "name": "Cisco Meraki valued client"
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

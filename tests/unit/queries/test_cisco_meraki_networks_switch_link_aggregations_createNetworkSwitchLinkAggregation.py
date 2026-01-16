@@ -27,24 +27,22 @@ def test_cisco_meraki_networks_switch_link_aggregations_createNetworkSwitchLinkA
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Q234-ABCD-0001-port-1",
-            "canonical_facts": {
-                "ansible_product_serial": "Q234-ABCD-0001"
-            },
-            "facts": {
-                "device_type": "switch",
-                "link_aggregation": {
-                    "aggregation_id": "NDU2N18yXzM=",
-                    "port_id": "1",
-                    "serial": "Q234-ABCD-0001"
+            {
+                "name": "Q234-ABCD-0001-port-1",
+                "canonical_facts": {
+                    "ansible_product_serial": "Q234-ABCD-0001"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "link_aggregation": {
+                        "aggregation_id": "NDU2N18yXzM=",
+                        "port_id": "1",
+                        "serial": "Q234-ABCD-0001"
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

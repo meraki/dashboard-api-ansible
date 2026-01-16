@@ -27,29 +27,27 @@ def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "qos-rule-1284392014819",
-            "canonical_facts": {
-                "ansible_machine_id": "1284392014819"
-            },
-            "facts": {
-                "device_type": "switch",
-                "qos_rule": {
-                    "id": "1284392014819",
-                    "vlan": 100,
-                    "protocol": "TCP",
-                    "src_port": 2000,
-                    "src_port_range": "70-80",
-                    "dst_port": 3000,
-                    "dst_port_range": "3000-3100",
-                    "dscp": 0
+            {
+                "name": "qos-rule-1284392014819",
+                "canonical_facts": {
+                    "ansible_machine_id": "1284392014819"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "qos_rule": {
+                        "id": "1284392014819",
+                        "vlan": 100,
+                        "protocol": "TCP",
+                        "src_port": 2000,
+                        "src_port_range": "70-80",
+                        "dst_port": 3000,
+                        "dst_port_range": "3000-3100",
+                        "dscp": 0
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"

@@ -27,31 +27,29 @@ def test_cisco_meraki_networks_switch_access_control_lists_updateNetworkSwitchAc
     # Expected output from query_run.log
     expected = [
         [
-        {            {
-            "name": "Deny SSH",
-            "canonical_facts": {
-                "ansible_machine_id": "10.1.10.0/24-172.16.30/24-0"
-            },
-            "facts": {
-                "device_type": "switch",
-                "acl_rule": {
-                    "comment": "Deny SSH",
-                    "policy": "deny",
-                    "ip_version": "ipv4",
-                    "protocol": "tcp",
-                    "src_cidr": "10.1.10.0/24",
-                    "src_port": "any",
-                    "dst_cidr": "172.16.30/24",
-                    "dst_port": "22",
-                    "vlan": "10",
-                    "rule_index": 0
+            {
+                "name": "Deny SSH",
+                "canonical_facts": {
+                    "ansible_machine_id": "10.1.10.0/24-172.16.30/24-0"
+                },
+                "facts": {
+                    "device_type": "switch",
+                    "acl_rule": {
+                        "comment": "Deny SSH",
+                        "policy": "deny",
+                        "ip_version": "ipv4",
+                        "protocol": "tcp",
+                        "src_cidr": "10.1.10.0/24",
+                        "src_port": "any",
+                        "dst_cidr": "172.16.30/24",
+                        "dst_port": "22",
+                        "vlan": "10",
+                        "rule_index": 0
+                    }
                 }
             }
-        }
         ]
-]
-
-    # Assert    ]
+    ]
 
     # Assert results match expected output
     assert results == expected, f"Query results do not match expected output for {method_name}"
