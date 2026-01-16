@@ -4,7 +4,6 @@ Method: getNetworkSwitchAlternateManagementInterface
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_networks_switch_alternate_management_interface_info_getNetworkSwitchAlternateManagementInterface(

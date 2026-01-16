@@ -3,7 +3,7 @@ import re
 import subprocess
 
 def process_files(directory):
-    for root, _, files in os.walk(directory):
+    for root, _dirs, files in os.walk(directory):
         for file in files:
             if file.endswith(".py"):
                 process_file(os.path.join(root, file))
@@ -25,13 +25,13 @@ def process_section(content, section):
     if match:
         section_content = match.group(0)
         yaml_content = section_content.split('r"""')[1].rsplit('"""', 1)[0].strip()
-        
+
         if section == 'DOCUMENTATION' or section == 'EXAMPLES':
             with open('tmp.yaml', 'w', encoding='utf-8') as tmp_file:
                 tmp_file.write(yaml_content)
 
             # subprocess.run(['yamlfmt', 'tmp.yaml'])
-            subprocess.run(['yamlfmt', 'tmp.yaml', '-conf', '.yamlfmt'])
+            subprocess.run(['yamlfmt', 'tmp.yaml', '-conf', '.yamlfmt'], check=False)
 
             with open('tmp.yaml', 'r', encoding='utf-8') as tmp_file:
                 formatted_content = tmp_file.read()

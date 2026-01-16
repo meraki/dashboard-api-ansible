@@ -4,7 +4,6 @@ Method: getNetworkSwitchStack
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_networks_switch_stacks_info_getNetworkSwitchStack(

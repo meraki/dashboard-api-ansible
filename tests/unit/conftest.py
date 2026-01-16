@@ -3,7 +3,6 @@ Pytest configuration and fixtures for Meraki query tests.
 """
 
 import json
-import os
 import pytest
 import yaml
 from pathlib import Path

@@ -4,7 +4,6 @@ Method: getNetworkSwitchRoutingOspf
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_networks_switch_routing_ospf_info_getNetworkSwitchRoutingOspf(

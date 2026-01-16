@@ -4,7 +4,6 @@ Method: updateDeviceSwitchRoutingInterfaceDhcp
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_devices_switch_routing_interfaces_dhcp_updateDeviceSwitchRoutingInterfaceDhcp(
