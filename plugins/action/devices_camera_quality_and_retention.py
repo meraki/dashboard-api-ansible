@@ -31,7 +31,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    profileId=dict(type="['string', 'null']"),
+    profileId=dict(type="str"),
     motionBasedRetentionEnabled=dict(type="bool"),
     audioRecordingEnabled=dict(type="bool"),
     restrictedBandwidthModeEnabled=dict(type="bool"),

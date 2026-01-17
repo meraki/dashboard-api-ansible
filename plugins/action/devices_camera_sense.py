@@ -32,7 +32,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     senseEnabled=dict(type="bool"),
-    mqttBrokerId=dict(type="['string', 'null']"),
+    mqttBrokerId=dict(type="str"),
     audioDetection=dict(type="dict"),
     detectionModelId=dict(type="str"),
     serial=dict(type="str"),

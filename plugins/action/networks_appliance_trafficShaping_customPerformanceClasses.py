@@ -32,9 +32,9 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     name=dict(type="str"),
-    maxLatency=dict(type="['integer', 'null']"),
-    maxJitter=dict(type="['integer', 'null']"),
-    maxLossPercentage=dict(type="['integer', 'null']"),
+    maxLatency=dict(type="int"),
+    maxJitter=dict(type="int"),
+    maxLossPercentage=dict(type="int"),
     networkId=dict(type="str"),
     customPerformanceClassId=dict(type="str"),
 ))

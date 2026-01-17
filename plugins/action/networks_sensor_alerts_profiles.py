@@ -37,7 +37,7 @@ argument_spec.update(dict(
     recipients=dict(type="dict"),
     serials=dict(type="list"),
     includeSensorUrl=dict(type="bool"),
-    message=dict(type="['string', 'null']"),
+    message=dict(type="str"),
     networkId=dict(type="str"),
     id=dict(type="str"),
 ))

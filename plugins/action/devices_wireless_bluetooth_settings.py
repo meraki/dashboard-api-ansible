@@ -31,9 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    uuid=dict(type="['string', 'null']"),
-    major=dict(type="['integer', 'null']"),
-    minor=dict(type="['integer', 'null']"),
+    uuid=dict(type="str"),
+    major=dict(type="int"),
+    minor=dict(type="int"),
     serial=dict(type="str"),
 ))
 

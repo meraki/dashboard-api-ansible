@@ -31,15 +31,15 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    name=dict(type="['string', 'null']"),
+    name=dict(type="str"),
     tags=dict(type="list"),
     lat=dict(type="float"),
     lng=dict(type="float"),
-    address=dict(type="['string', 'null']"),
-    notes=dict(type="['string', 'null']"),
+    address=dict(type="str"),
+    notes=dict(type="str"),
     moveMapMarker=dict(type="bool"),
-    switchProfileId=dict(type="['string', 'null']"),
-    floorPlanId=dict(type="['string', 'null']"),
+    switchProfileId=dict(type="str"),
+    floorPlanId=dict(type="str"),
     serial=dict(type="str"),
     organizationId=dict(type="str"),
 ))

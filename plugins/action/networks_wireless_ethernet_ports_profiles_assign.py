@@ -26,7 +26,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     serials=dict(type="list"),
-    profileId=dict(type="['string', 'null']"),
+    profileId=dict(type="str"),
     networkId=dict(type="str"),
 ))
 

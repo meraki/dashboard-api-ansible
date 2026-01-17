@@ -31,7 +31,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    rfProfileId=dict(type="['string', 'null']"),
+    rfProfileId=dict(type="str"),
     twoFourGhzSettings=dict(type="dict"),
     fiveGhzSettings=dict(type="dict"),
     serial=dict(type="str"),

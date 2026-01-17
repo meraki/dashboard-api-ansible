@@ -33,7 +33,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     body=dict(type="str"),
-    headers=dict(type="['array', 'null']"),
+    headers=dict(type="list"),
     bodyFile=dict(type="str"),
     headersFile=dict(type="str"),
     networkId=dict(type="str"),

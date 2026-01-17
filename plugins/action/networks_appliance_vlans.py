@@ -35,7 +35,7 @@ argument_spec.update(dict(
     name=dict(type="str"),
     subnet=dict(type="str"),
     applianceIp=dict(type="str"),
-    groupPolicyId=dict(type="['string', 'null']"),
+    groupPolicyId=dict(type="str"),
     templateVlanType=dict(type="str"),
     cidr=dict(type="str"),
     mask=dict(type="int"),

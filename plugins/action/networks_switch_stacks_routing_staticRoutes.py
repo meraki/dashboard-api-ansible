@@ -40,7 +40,7 @@ argument_spec.update(dict(
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
     staticRouteId=dict(type="str"),
-    managementNextHop=dict(type="['string', 'null']"),
+    managementNextHop=dict(type="str"),
 ))
 
 required_if = [

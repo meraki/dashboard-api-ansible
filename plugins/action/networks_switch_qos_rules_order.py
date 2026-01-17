@@ -31,11 +31,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    vlan=dict(type="['integer', 'null']"),
+    vlan=dict(type="int"),
     protocol=dict(type="str"),
-    srcPort=dict(type="['integer', 'null']"),
+    srcPort=dict(type="int"),
     srcPortRange=dict(type="str"),
-    dstPort=dict(type="['integer', 'null']"),
+    dstPort=dict(type="int"),
     dstPortRange=dict(type="str"),
     dscp=dict(type="int"),
     networkId=dict(type="str"),

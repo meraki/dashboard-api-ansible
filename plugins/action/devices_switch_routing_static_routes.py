@@ -39,7 +39,7 @@ argument_spec.update(dict(
     vrf=dict(type="dict"),
     serial=dict(type="str"),
     staticRouteId=dict(type="str"),
-    managementNextHop=dict(type="['string', 'null']"),
+    managementNextHop=dict(type="str"),
 ))
 
 required_if = [

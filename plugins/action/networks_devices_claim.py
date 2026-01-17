@@ -69,8 +69,8 @@ class ActionModule(ActionBase):
         new_object = dict(
             serials=params.get("serials"),
             detailsByDevice=params.get("detailsByDevice"),
-            network_id=params.get("networkId"),
-            add_atomically=params.get("addAtomically"),
+            networkId=params.get("networkId"),
+            addAtomically=params.get("addAtomically"),
         )
         return new_object
 

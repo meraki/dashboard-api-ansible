@@ -36,7 +36,7 @@ argument_spec.update(dict(
     tags=dict(type="list"),
     timeZone=dict(type="str"),
     copyFromNetworkId=dict(type="str"),
-    notes=dict(type="['string', 'null']"),
+    notes=dict(type="str"),
     organizationId=dict(type="str"),
     networkId=dict(type="str"),
     enrollmentString=dict(type="str"),

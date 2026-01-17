@@ -30,7 +30,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    deviceSerial=dict(type="['string', 'null']"),
+    deviceSerial=dict(type="str"),
     organizationId=dict(type="str"),
     licenseId=dict(type="str"),
 ))
