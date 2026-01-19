@@ -35,7 +35,6 @@ argument_spec.update(dict(
     apTag=dict(type="str"),
     vlan=dict(type="int"),
     fields=dict(type="str"),
-    vlan=dict(type="int"),
 ))
 
 required_if = []

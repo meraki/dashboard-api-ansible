@@ -197,14 +197,6 @@ class NetworksSwitchQosRulesOrder(object):
                     break
         except Exception as e:
             print("Error: ", e)
-            if id is not None:
-                print("Is NOT NONE")
-                result = get_dict_result(items, 'qosRuleId', id)
-            else:
-                # Validate if this
-                print("Is NONE")
-        except Exception as e:
-            print("Error: ", e)
             result = None
         return result
 

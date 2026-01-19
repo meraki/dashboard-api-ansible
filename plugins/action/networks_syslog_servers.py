@@ -20,7 +20,6 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
-    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -80,10 +79,10 @@ class NetworksSyslogServers(object):
                 function="getNetworkSyslogServers",
                 params=self.get_all_params(name=name),
             )
-            #if isinstance(items, dict):
-            #    if 'servers' in items:
-            #        items = items.get('servers')
-            #result = get_dict_result(items, 'name', name)
+            # if isinstance(items, dict):
+            #     if 'servers' in items:
+            #         items = items.get('servers')
+            # result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
