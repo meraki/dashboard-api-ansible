@@ -42,7 +42,7 @@ cisco.meraki.networks_clients_overview_info module -- Information module for net
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Clients Overview Info.
 - Get all networks \_clients \_overview.
 - Return overview statistics for network clients.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Overview Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Overview Info.
 
       Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 7200, 86400, 604800, 2592000. The default is 604800.
           
@@ -1026,6 +1031,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Overview Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1060,6 +1067,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Overview Info.
+
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
 
 
@@ -1093,6 +1102,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Overview Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           

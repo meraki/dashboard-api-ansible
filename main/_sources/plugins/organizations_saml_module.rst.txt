@@ -42,7 +42,7 @@ cisco.meraki.organizations_saml module -- Resource module for organizations \_sa
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -972,6 +972,109 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-spInitiated"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_saml_module__parameter-spinitiated:
+
+      .. rst-class:: ansible-option-title
+
+      **spInitiated**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-spInitiated" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SP-Initiated SSO settings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-spInitiated/idpId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_saml_module__parameter-spinitiated/idpid:
+
+      .. rst-class:: ansible-option-title
+
+      **idpId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-spInitiated/idpId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SAML IdP ID for SP-Initiated SSO Authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-spInitiated/subdomain"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_saml_module__parameter-spinitiated/subdomain:
+
+      .. rst-class:: ansible-option-title
+
+      **subdomain**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-spInitiated/subdomain" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Organization's unique SSO identifier.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 .. Attributes
 
@@ -1033,6 +1136,9 @@ Examples
         state: present
         enabled: true
         organizationId: string
+        spInitiated:
+          idpId: uu3H_bx28Nnd
+          subdomain: example_subdomain
 
 
 
@@ -1093,7 +1199,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"true\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enabled": true, "spInitiated": {"idpId": "string", "subdomain": "string"}}`
 
 
       .. raw:: html

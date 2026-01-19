@@ -42,7 +42,7 @@ cisco.meraki.organizations_clients_overview_info module -- Information module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Clients Overview Info.
 - Get all organizations \_clients \_overview.
 - Return summary information around client data usage in kb across the given organization.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Clients Overview Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Overview Info.
 
       T0 query parameter. The beginning of the timespan for the data.
 
@@ -1025,6 +1030,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Clients Overview Info.
+
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
 
 
@@ -1058,6 +1065,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Overview Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           

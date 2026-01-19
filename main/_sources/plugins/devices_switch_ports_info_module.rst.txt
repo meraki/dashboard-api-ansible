@@ -42,7 +42,7 @@ cisco.meraki.devices_switch_ports_info module -- Information module for devices 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Switch Ports Info.
 - Get all devices \_switch \_ports.
 - Get devices \_switch \_ports by id.
 - List the switch ports for a switch.
@@ -959,6 +960,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Switch Ports Info.
+
       PortId path parameter. Port ID.
 
 
@@ -992,6 +995,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Switch Ports Info.
 
       Serial path parameter.
 
@@ -1147,7 +1152,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroup": {"id": "string", "name": "string"}, "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stackwiseVirtual": {"isDualActiveDetector": true, "isStackWiseVirtualLink": true}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroup": {"id": "string", "name": "string"}, "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "highSpeed": {"enabled": true}, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "macWhitelistLimit": 0, "mirror": {"mode": "string"}, "module": {"model": "string", "serial": "string", "slot": 0}, "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "stpPortFastTrunk": true, "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

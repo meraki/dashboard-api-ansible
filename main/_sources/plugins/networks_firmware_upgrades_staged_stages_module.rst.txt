@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_firmware_upgrades_staged_stages module -- Resource module for networks \_firmware \_upgrades \_staged \_stages
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_firmware_upgrades_staged_stages module -- Resource module for networks \_firmwareupgrades \_staged \_stages
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_firmware \_upgrades \_staged \_stages.
+- Manage operation update of the resource networks \_firmwareupgrades \_staged \_stages.
 - Assign Staged Upgrade Group order in the sequence.
 
 .. note::
@@ -1157,7 +1157,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"group\\": {\\n      \\"description\\": \\"string\\"", "\\n      \\"id\\": \\"string\\"", "\\n      \\"name\\": \\"string\\"\\n    }\\n  }\\n]\\n"]`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`["[\\n  {\\n    \\"group\\": {\\n      \\"id\\": \\"string\\"", "\\n      \\"name\\": \\"string\\"", "\\n      \\"description\\": \\"string\\"\\n    }\\n  }\\n]\\n"]`
 
 
       .. raw:: html

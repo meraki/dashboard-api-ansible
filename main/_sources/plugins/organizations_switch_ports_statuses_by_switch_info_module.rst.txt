@@ -42,7 +42,7 @@ cisco.meraki.organizations_switch_ports_statuses_by_switch_info module -- Inform
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Switch Ports Statuses By Switch Info.
 - Get all organizations \_switch \_ports \_statuses \_by \_switch.
 - List the switchports in an organization.
 
@@ -134,6 +135,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Switch Ports Statuses By Switch Info.
 
       ConfigurationUpdatedAfter query parameter. Optional parameter to filter items to switches where the configuration has been updated after the given timestamp.
           
@@ -208,6 +211,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -277,6 +282,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       Mac query parameter. Optional parameter to filter items to switches with MAC addresses that contain the search term or are an exact match.
           
 
@@ -311,6 +318,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Switch Ports Statuses By Switch Info.
 
       Macs query parameter. Optional parameter to filter items to switches that have one of the provided MAC addresses.
 
@@ -1134,6 +1143,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       Name query parameter. Optional parameter to filter items to switches with names that contain the search term or are an exact match.
           
 
@@ -1169,6 +1180,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       NetworkIds query parameter. Optional parameter to filter items to switches in one of the provided networks.
 
 
@@ -1202,6 +1215,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Switch Ports Statuses By Switch Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1237,6 +1252,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 20. Default is 10.
 
 
@@ -1270,6 +1287,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Switch Ports Statuses By Switch Info.
 
       PortProfileIds query parameter. Optional parameter to filter items to switches that contain switchports belonging to one of the specified port profiles.
           
@@ -1306,6 +1325,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       Serial query parameter. Optional parameter to filter items to switches with serial number that contains the search term or are an exact match.
           
 
@@ -1341,6 +1362,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Switch Ports Statuses By Switch Info.
+
       Serials query parameter. Optional parameter to filter items to switches that have one of the provided serials.
 
 
@@ -1374,6 +1397,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Switch Ports Statuses By Switch Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

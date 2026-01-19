@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_wireless_ssids_firewall_l3_firewall_rules module -- Resource module for networks \_wireless \_ssids \_firewall l3 \_firewall \_rules
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_wireless_ssids_firewall_l3_firewall_rules module -- Resource module for networks \_wireless \_ssids \_firewall l3firewallrules
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_wireless \_ssids \_firewall l3 \_firewall \_rules.
+- Manage operation update of the resource networks \_wireless \_ssids \_firewall l3firewallrules.
 - Update the L3 firewall rules of an SSID on an MR network.
 
 .. note::
@@ -1033,7 +1033,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      An ordered array of the firewall rules for this SSID (not including the local LAN access rule or the default rule).
+      An ordered array of the firewall rules for this SSID.
 
 
       .. raw:: html
@@ -1136,6 +1136,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Comma-separated list of destination port(s) (integer in the range 1-65535), or 'any'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rules/ipVer"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_firewall_l3_firewall_rules_module__parameter-rules/ipver:
+
+      .. rst-class:: ansible-option-title
+
+      **ipVer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rules/ipVer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP version to which this rule applies (must be one of 'both', 'ipv4' or 'ipv6'). Defaults to 'both' if not specified.
 
 
       .. raw:: html
@@ -1277,6 +1311,7 @@ Examples
           - comment: Allow TCP traffic to subnet with HTTP servers.
             destCidr: 192.168.1.0/24
             destPort: '443'
+            ipVer: both
             policy: allow
             protocol: tcp
 
@@ -1339,7 +1374,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"allowLanAccess": true, "rules": [{"comment": "string", "destCidr": "string", "destPort": "string", "policy": "string", "protocol": "string"}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"allowLanAccess": true, "rules": [{"comment": "string", "destCidr": "string", "destPort": "string", "ipVer": "string", "policy": "string", "protocol": "string"}]}`
 
 
       .. raw:: html

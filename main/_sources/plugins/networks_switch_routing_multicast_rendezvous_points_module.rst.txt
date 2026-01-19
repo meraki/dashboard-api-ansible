@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_switch_routing_multicast_rendezvous_points module -- Resource module for networks \_switch \_routing \_multicast \_rendezvous \_points
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_switch_routing_multicast_rendezvous_points module -- Resource module for networks \_switch \_routing \_multicast \_rendezvouspoints
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_switch \_routing \_multicast \_rendezvous \_points.
+- Manage operations create, update and delete of the resource networks \_switch \_routing \_multicast \_rendezvouspoints.
 - Create a multicast rendezvous point.
 - Delete a multicast rendezvous point.
 - Update a multicast rendezvous point.
@@ -1034,6 +1034,75 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vrf"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_routing_multicast_rendezvous_points_module__parameter-vrf:
+
+      .. rst-class:: ansible-option-title
+
+      **vrf**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vrf" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The VRF with PIM enabled L3 interface.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vrf/name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_routing_multicast_rendezvous_points_module__parameter-vrf/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vrf/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The name of the VRF.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 .. Attributes
 
@@ -1100,6 +1169,8 @@ Examples
         interfaceIp: 192.168.1.2
         multicastGroup: Any
         networkId: string
+        vrf:
+          name: Blue
     - name: Delete by id
       cisco.meraki.networks_switch_routing_multicast_rendezvous_points:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -1154,6 +1225,8 @@ Examples
         multicastGroup: Any
         networkId: string
         rendezvousPointId: string
+        vrf:
+          name: Blue
 
 
 

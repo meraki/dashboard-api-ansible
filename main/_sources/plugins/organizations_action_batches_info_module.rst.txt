@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_action_batches_info module -- Information module for organizations \_action \_batches
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_action_batches_info module -- Information module for organizations \_actionbatches
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_action \_batches.
-- Get organizations \_action \_batches by id.
+- Information module for Organizations Actionbatches Info.
+- Get all organizations \_actionbatches.
+- Get organizations \_actionbatches by id.
 - Return an action batch.
 - Return the list of action batches in the organization.
 
@@ -136,6 +137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Actionbatches Info.
 
       ActionBatchId path parameter. Action batch ID.
 
@@ -993,6 +996,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Actionbatches Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1026,6 +1031,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Actionbatches Info.
 
       Status query parameter. Filter batches by status. Valid types are pending, completed, and failed.
 
@@ -1070,7 +1077,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _action _batches
+    - name: Get all organizations _actionbatches
       cisco.meraki.organizations_action_batches_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1096,7 +1103,7 @@ Examples
         status: string
         organizationId: string
       register: result
-    - name: Get organizations _action _batches by id
+    - name: Get organizations _actionbatches by id
       cisco.meraki.organizations_action_batches_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

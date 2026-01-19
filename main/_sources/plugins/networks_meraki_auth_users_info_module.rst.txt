@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_meraki_auth_users_info module -- Information module for networks \_meraki \_auth \_users
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_meraki_auth_users_info module -- Information module for networks \_merakiauthusers
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,11 @@ Synopsis
 
 .. Description
 
-- Get all networks \_meraki \_auth \_users.
-- Get networks \_meraki \_auth \_users by id. - \> List the authorized users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless network, or client VPN users for a MX network .
+- Information module for Networks Merakiauthusers Info.
+- Get all networks \_merakiauthusers.
+- Get networks \_merakiauthusers by id.
+- List the authorized users configured under Meraki Authentication for a network splash guest or RADIUS users for a wireless network, or client VPN users for a MX network .
+
 - Return the Meraki Auth splash guest, RADIUS, or client VPN user.
 
 .. note::
@@ -958,6 +961,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Merakiauthusers Info.
+
       MerakiAuthUserId path parameter. Meraki auth user ID.
 
 
@@ -991,6 +996,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Merakiauthusers Info.
 
       NetworkId path parameter. Network ID.
 
@@ -1035,7 +1042,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _meraki _auth _users
+    - name: Get all networks _merakiauthusers
       cisco.meraki.networks_meraki_auth_users_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1060,7 +1067,7 @@ Examples
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         networkId: string
       register: result
-    - name: Get networks _meraki _auth _users by id
+    - name: Get networks _merakiauthusers by id
       cisco.meraki.networks_meraki_auth_users_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

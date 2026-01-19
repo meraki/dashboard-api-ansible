@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.devices_camera_wireless_profiles module -- Resource module for devices \_camera \_wireless \_profiles
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.devices_camera_wireless_profiles module -- Resource module for devices \_camera \_wirelessprofiles
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource devices \_camera \_wireless \_profiles. - \> Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need to be supplied at once.
+- Manage operation update of the resource devices \_camera \_wirelessprofiles.
+- Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need to be supplied at once.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_rf_profiles_info module -- Information module for networks \_appliance \_rf \_profiles
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_rf_profiles_info module -- Information module for networks \_appliance \_rfprofiles
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all networks \_appliance \_rf \_profiles.
+- Information module for Networks Appliance Rfprofiles Info.
+- Get all networks \_appliance \_rfprofiles.
 - List the RF profiles for this network.
 
 .. note::
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Appliance Rfprofiles Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -998,7 +1001,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _appliance _rf _profiles
+    - name: Get all networks _appliance _rfprofiles
       cisco.meraki.networks_appliance_rf_profiles_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"fiveGhzSettings\\": {\\n      \\"axEnabled\\": true,\\n      \\"minBitrate\\": 0\\n    },\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"perSsidSettings\\": {\\n      \\"1\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"2\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"3\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"4\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      }\\n    },\\n    \\"twoFourGhzSettings\\": {\\n      \\"axEnabled\\": true,\\n      \\"minBitrate\\": 0\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"twoFourGhzSettings\\": {\\n      \\"minBitrate\\": 0,\\n      \\"axEnabled\\": true\\n    },\\n    \\"fiveGhzSettings\\": {\\n      \\"minBitrate\\": 0,\\n      \\"axEnabled\\": true\\n    },\\n    \\"perSsidSettings\\": {\\n      \\"1\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"2\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"3\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      },\\n      \\"4\\": {\\n        \\"bandOperationMode\\": \\"string\\",\\n        \\"bandSteeringEnabled\\": true\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

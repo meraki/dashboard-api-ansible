@@ -42,7 +42,7 @@ cisco.meraki.networks_wireless_electronic_shelf_label_configured_devices_info mo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Wireless Electronic Shelf Label Configured Devices Info.
 - Get all networks \_wireless \_electronic \_shelf \_label \_configured \_devices.
 - Get a list of all ESL eligible devices of a network.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Wireless Electronic Shelf Label Configured Devices Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"enabled\\": true,\\n    \\"hostname\\": \\"string\\",\\n    \\"mode\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"hostname\\": \\"string\\",\\n    \\"enabled\\": true,\\n    \\"mode\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

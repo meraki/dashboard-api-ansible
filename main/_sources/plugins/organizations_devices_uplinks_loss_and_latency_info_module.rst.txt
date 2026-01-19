@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_devices_uplinks_loss_and_latency_info module -- Information module for organizations \_devices \_uplinks \_loss \_and \_latency
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_devices_uplinks_loss_and_latency_info module -- Information module for organizations \_devices \_uplinkslossandlatency
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_devices \_uplinks \_loss \_and \_latency.
+- Information module for Organizations Devices Uplinkslossandlatency Info.
+- Get all organizations \_devices \_uplinkslossandlatency.
 - Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago.
 
 .. note::
@@ -168,6 +169,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Uplinkslossandlatency Info.
 
       Ip query parameter. Optional filter for a specific destination IP. Default will return all destination IPs.
 
@@ -991,6 +994,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Uplinkslossandlatency Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1025,6 +1030,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Uplinkslossandlatency Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
 
 
@@ -1058,6 +1065,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Uplinkslossandlatency Info.
 
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
           
@@ -1094,6 +1103,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Uplinkslossandlatency Info.
+
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
           
 
@@ -1128,6 +1139,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Uplinkslossandlatency Info.
 
       Uplink query parameter. Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
           
@@ -1171,7 +1184,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _devices _uplinks _loss _and _latency
+    - name: Get all organizations _devices _uplinkslossandlatency
       cisco.meraki.organizations_devices_uplinks_loss_and_latency_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1261,7 +1274,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ip\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"timeSeries\\": [\\n      {\\n        \\"latencyMs\\": 0,\\n        \\"lossPercent\\": 0,\\n        \\"ts\\": \\"string\\"\\n      }\\n    ],\\n    \\"uplink\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"uplink\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"timeSeries\\": [\\n      {\\n        \\"ts\\": \\"string\\",\\n        \\"lossPercent\\": 0,\\n        \\"latencyMs\\": 0\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

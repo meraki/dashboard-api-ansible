@@ -42,7 +42,7 @@ cisco.meraki.networks_wireless_ssids_hotspot20 module -- Resource module for net
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1210,6 +1210,143 @@ Parameters
       .. raw:: html
 
         </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-naiRealms/methods/authenticationTypes/credentials"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_hotspot20_module__parameter-nairealms/methods/authenticationtypes/credentials:
+
+      .. rst-class:: ansible-option-title
+
+      **credentials**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-naiRealms/methods/authenticationTypes/credentials" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of credentials.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-naiRealms/methods/authenticationTypes/eapInnerAuthentication"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_hotspot20_module__parameter-nairealms/methods/authenticationtypes/eapinnerauthentication:
+
+      .. rst-class:: ansible-option-title
+
+      **eapInnerAuthentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-naiRealms/methods/authenticationTypes/eapInnerAuthentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of EAP inner authentication types.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-naiRealms/methods/authenticationTypes/nonEapInnerAuthentication"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_hotspot20_module__parameter-nairealms/methods/authenticationtypes/noneapinnerauthentication:
+
+      .. rst-class:: ansible-option-title
+
+      **nonEapInnerAuthentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-naiRealms/methods/authenticationTypes/nonEapInnerAuthentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of non-EAP inner authentication types.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-naiRealms/methods/authenticationTypes/tunneledEapMethodCredentials"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_hotspot20_module__parameter-nairealms/methods/authenticationtypes/tunneledeapmethodcredentials:
+
+      .. rst-class:: ansible-option-title
+
+      **tunneledEapMethodCredentials**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-naiRealms/methods/authenticationTypes/tunneledEapMethodCredentials" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of tunneled EAP method credentials.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -1655,8 +1792,6 @@ Examples
         mccMncs:
           - mcc: '123'
             mnc: '456'
-          - mcc: '563'
-            mnc: '232'
         naiRealms:
           - format: '1'
             methods:
@@ -1668,7 +1803,7 @@ Examples
                     - MSCHAP
                   tunneledEapMethodCredentials: []
                 id: '1'
-            name: Realm 1
+            realm: Realm 1
         networkAccessType: Private network
         networkId: string
         number: string
@@ -1740,7 +1875,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"domains": ["string"], "enabled": true, "mccMncs": [{"mcc": "string", "mnc": "string"}], "naiRealms": [{"format": "string", "methods": [{"authenticationTypes": {"credentials": ["string"], "eapInnerAuthentication": ["string"], "nonEapInnerAuthentication": ["string"], "tunneledEapMethodCredentials": ["string"]}, "id": "string"}], "name": "string"}], "networkAccessType": "string", "operator": {"name": "string"}, "roamConsortOis": ["string"], "venue": {"name": "string", "type": "string"}}`
 
 
       .. raw:: html

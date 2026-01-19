@@ -42,7 +42,7 @@ cisco.meraki.devices_camera_sense_info module -- Information module for devices 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Camera Sense Info.
 - Get all devices \_camera \_sense.
 - Returns sense settings for a given camera.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Camera Sense Info.
+
       Serial path parameter.
 
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"audioDetection": {"enabled": true}, "mqttBrokerId": "string", "mqttTopics": ["string"], "senseEnabled": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
 
 
       .. raw:: html

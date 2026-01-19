@@ -42,7 +42,7 @@ cisco.meraki.devices_switch_ports_statuses_info module -- Information module for
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Switch Ports Statuses Info.
 - Get all devices \_switch \_ports \_statuses.
 - Return the status for all the ports of a switch.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Switch Ports Statuses Info.
+
       Serial path parameter.
 
 
@@ -991,6 +994,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Switch Ports Statuses Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1024,6 +1029,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Switch Ports Statuses Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           
@@ -1154,7 +1161,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"cdp\\": {\\n      \\"address\\": \\"string\\",\\n      \\"capabilities\\": \\"string\\",\\n      \\"deviceId\\": \\"string\\",\\n      \\"managementAddress\\": \\"string\\",\\n      \\"nativeVlan\\": 0,\\n      \\"platform\\": \\"string\\",\\n      \\"portId\\": \\"string\\",\\n      \\"systemName\\": \\"string\\",\\n      \\"version\\": \\"string\\",\\n      \\"vtpManagementDomain\\": \\"string\\"\\n    },\\n    \\"clientCount\\": 0,\\n    \\"duplex\\": \\"string\\",\\n    \\"enabled\\": true,\\n    \\"errors\\": [\\n      \\"string\\"\\n    ],\\n    \\"isUplink\\": true,\\n    \\"lldp\\": {\\n      \\"chassisId\\": \\"string\\",\\n      \\"managementAddress\\": \\"string\\",\\n      \\"managementVlan\\": 0,\\n      \\"portDescription\\": \\"string\\",\\n      \\"portId\\": \\"string\\",\\n      \\"portVlan\\": 0,\\n      \\"systemCapabilities\\": \\"string\\",\\n      \\"systemDescription\\": \\"string\\",\\n      \\"systemName\\": \\"string\\"\\n    },\\n    \\"poe\\": {\\n      \\"isAllocated\\": true\\n    },\\n    \\"portId\\": \\"string\\",\\n    \\"powerUsageInWh\\": 0,\\n    \\"securePort\\": {\\n      \\"active\\": true,\\n      \\"authenticationStatus\\": \\"string\\",\\n      \\"configOverrides\\": {\\n        \\"allowedVlans\\": \\"string\\",\\n        \\"type\\": \\"string\\",\\n        \\"vlan\\": 0,\\n        \\"voiceVlan\\": 0\\n      },\\n      \\"enabled\\": true\\n    },\\n    \\"spanningTree\\": {\\n      \\"statuses\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"speed\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"trafficInKbps\\": {\\n      \\"recv\\": 0,\\n      \\"sent\\": 0,\\n      \\"total\\": 0\\n    },\\n    \\"usageInKb\\": {\\n      \\"recv\\": 0,\\n      \\"sent\\": 0,\\n      \\"total\\": 0\\n    },\\n    \\"warnings\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"portId\\": \\"string\\",\\n    \\"enabled\\": true,\\n    \\"status\\": \\"string\\",\\n    \\"isUplink\\": true,\\n    \\"errors\\": [\\n      \\"string\\"\\n    ],\\n    \\"warnings\\": [\\n      \\"string\\"\\n    ],\\n    \\"speed\\": \\"string\\",\\n    \\"duplex\\": \\"string\\",\\n    \\"spanningTree\\": {\\n      \\"statuses\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"poe\\": {\\n      \\"isAllocated\\": true\\n    },\\n    \\"usageInKb\\": {\\n      \\"total\\": 0,\\n      \\"sent\\": 0,\\n      \\"recv\\": 0\\n    },\\n    \\"cdp\\": {\\n      \\"systemName\\": \\"string\\",\\n      \\"platform\\": \\"string\\",\\n      \\"deviceId\\": \\"string\\",\\n      \\"portId\\": \\"string\\",\\n      \\"nativeVlan\\": 0,\\n      \\"address\\": \\"string\\",\\n      \\"managementAddress\\": \\"string\\",\\n      \\"version\\": \\"string\\",\\n      \\"vtpManagementDomain\\": \\"string\\",\\n      \\"capabilities\\": \\"string\\"\\n    },\\n    \\"lldp\\": {\\n      \\"systemName\\": \\"string\\",\\n      \\"systemDescription\\": \\"string\\",\\n      \\"chassisId\\": \\"string\\",\\n      \\"portId\\": \\"string\\",\\n      \\"managementVlan\\": 0,\\n      \\"portVlan\\": 0,\\n      \\"managementAddress\\": \\"string\\",\\n      \\"portDescription\\": \\"string\\",\\n      \\"systemCapabilities\\": \\"string\\"\\n    },\\n    \\"clientCount\\": 0,\\n    \\"powerUsageInWh\\": 0,\\n    \\"trafficInKbps\\": {\\n      \\"total\\": 0,\\n      \\"sent\\": 0,\\n      \\"recv\\": 0\\n    },\\n    \\"securePort\\": {\\n      \\"enabled\\": true,\\n      \\"active\\": true,\\n      \\"authenticationStatus\\": \\"string\\",\\n      \\"configOverrides\\": {\\n        \\"type\\": \\"string\\",\\n        \\"vlan\\": 0,\\n        \\"voiceVlan\\": 0,\\n        \\"allowedVlans\\": \\"string\\"\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

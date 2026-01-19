@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_clients_bandwidth_usage_history_info module -- Information module for organizations \_clients \_bandwidth \_usage \_history
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_clients_bandwidth_usage_history_info module -- Information module for organizations \_clients \_bandwidthusagehistory
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,10 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_clients \_bandwidth \_usage \_history. - \> Return data usage in megabits per second over time for all clients in the given organization within a given time range.
+- Information module for Organizations Clients Bandwidthusagehistory Info.
+- Get all organizations \_clients \_bandwidthusagehistory.
+- Return data usage in megabits per second over time for all clients in the given organization within a given time range.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -133,6 +136,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Bandwidthusagehistory Info.
 
       DeviceTag query parameter. Match result to an exact device tag.
 
@@ -990,6 +995,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Clients Bandwidthusagehistory Info.
+
       NetworkTag query parameter. Match result to an exact network tag.
 
 
@@ -1023,6 +1030,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Bandwidthusagehistory Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1058,6 +1067,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Clients Bandwidthusagehistory Info.
+
       SsidName query parameter. Filter results by ssid name.
 
 
@@ -1091,6 +1102,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Bandwidthusagehistory Info.
 
       T0 query parameter. The beginning of the timespan for the data.
 
@@ -1126,6 +1139,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Clients Bandwidthusagehistory Info.
+
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
 
 
@@ -1159,6 +1174,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Bandwidthusagehistory Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 186 days. The default is 1 day.
           
@@ -1194,6 +1211,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Clients Bandwidthusagehistory Info.
 
       UsageUplink query parameter. Filter results by usage uplink.
 
@@ -1236,7 +1255,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _clients _bandwidth _usage _history
+    - name: Get all organizations _clients _bandwidthusagehistory
       cisco.meraki.organizations_clients_bandwidth_usage_history_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1328,7 +1347,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"downstream\\": 0,\\n    \\"total\\": 0,\\n    \\"ts\\": \\"string\\",\\n    \\"upstream\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ts\\": \\"string\\",\\n    \\"total\\": 0,\\n    \\"upstream\\": 0,\\n    \\"downstream\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html

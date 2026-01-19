@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_security_intrusion module -- Resource modul
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1095,7 +1095,8 @@ Examples
         allowedRules:
           - message: SQL sa login failed
             ruleId: meraki:intrusion/snort/GID/01/SID/688
-          - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines
+          - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch
+              engines
             ruleId: meraki:intrusion/snort/GID/01/SID/5805
         organizationId: string
 

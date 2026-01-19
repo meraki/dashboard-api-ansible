@@ -42,7 +42,7 @@ cisco.meraki.organizations_assurance_alerts_overview_by_type_info module -- Info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Assurance Alerts Overview By Type Info.
 - Get all organizations \_assurance \_alerts \_overview \_by \_type.
 - Return a Summary of Alerts grouped by type and severity.
 
@@ -135,6 +136,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       Active query parameter. Optional parameter to filter by active alerts defaults to true.
 
 
@@ -177,6 +180,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       Category query parameter. Optional parameter to filter by category.
 
 
@@ -211,6 +216,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       DeviceTags query parameter. Optional parameter to filter by device tags.
 
 
@@ -244,6 +251,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       DeviceTypes query parameter. Optional parameter to filter by device types.
 
@@ -317,6 +326,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
 
 
@@ -358,6 +369,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1216,6 +1229,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
 
 
@@ -1249,6 +1264,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1284,6 +1301,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1317,6 +1336,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
 
@@ -1360,6 +1381,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       Serials query parameter. Optional parameter to filter by primary device serial.
 
 
@@ -1393,6 +1416,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       Severity query parameter. Optional parameter to filter alerts overview by severity type.
 
@@ -1428,6 +1453,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       SortBy query parameter. Optional parameter to set column to sort by.
 
 
@@ -1461,6 +1488,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'ascending'.
           
@@ -1497,6 +1526,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1531,6 +1562,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
           
@@ -1609,6 +1642,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       TsEnd query parameter. Optional parameter to filter by end timestamp.
 
 
@@ -1643,6 +1678,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview By Type Info.
+
       TsStart query parameter. Optional parameter to filter by starting timestamp.
 
 
@@ -1676,6 +1713,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview By Type Info.
 
       Types query parameter. Optional parameter to filter by alert type.
 
@@ -1823,7 +1862,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"items": [{"count": 0, "type": "string"}], "meta": {"counts": {"items": 0}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"items": [{"count": 0, "lastResolvedAt": "string", "type": "string"}], "meta": {"counts": {"items": 0}}}`
 
 
       .. raw:: html

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_config_templates_switch_profiles_ports_info module -- Information module for organizations \_config \_templates \_switch \_profiles \_ports
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_config_templates_switch_profiles_ports_info module -- Information module for organizations \_configtemplates \_switch \_profiles \_ports
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_config \_templates \_switch \_profiles \_ports.
-- Get organizations \_config \_templates \_switch \_profiles \_ports by id.
+- Information module for Organizations Configtemplates Switch Profiles Ports Info.
+- Get all organizations \_configtemplates \_switch \_profiles \_ports.
+- Get organizations \_configtemplates \_switch \_profiles \_ports by id.
 - Return a switch template port.
 - Return all the ports of a switch template.
 
@@ -136,6 +137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Configtemplates Switch Profiles Ports Info.
 
       ConfigTemplateId path parameter. Config template ID.
 
@@ -993,6 +996,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Configtemplates Switch Profiles Ports Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1027,6 +1032,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Configtemplates Switch Profiles Ports Info.
+
       PortId path parameter. Port ID.
 
 
@@ -1060,6 +1067,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Configtemplates Switch Profiles Ports Info.
 
       ProfileId path parameter. Profile ID.
 
@@ -1104,7 +1113,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _config _templates _switch _profiles _ports
+    - name: Get all organizations _configtemplates _switch _profiles _ports
       cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1131,7 +1140,7 @@ Examples
         configTemplateId: string
         profileId: string
       register: result
-    - name: Get organizations _config _templates _switch _profiles _ports by id
+    - name: Get organizations _configtemplates _switch _profiles _ports by id
       cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1219,7 +1228,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stackwiseVirtual": {"isDualActiveDetector": true, "isStackWiseVirtualLink": true}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "highSpeed": {"enabled": true}, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "macWhitelistLimit": 0, "mirror": {"mode": "string"}, "module": {"model": "string", "serial": "string", "slot": 0}, "name": "string", "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "stpPortFastTrunk": true, "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

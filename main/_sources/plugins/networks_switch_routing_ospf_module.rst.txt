@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_routing_ospf module -- Resource module for networks
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1683,6 +1683,7 @@ Examples
           deadTimerInSeconds: 40
           enabled: true
           helloTimerInSeconds: 10
+        vrf: Blue
 
 
 
@@ -1743,7 +1744,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"areas": [{"areaId": "string", "areaName": "string", "areaType": "string"}], "deadTimerInSeconds": 0, "enabled": true, "helloTimerInSeconds": 0, "md5AuthenticationEnabled": true, "md5AuthenticationKey": {"id": 0, "passphrase": "string"}, "v3": {"areas": [{"areaId": "string", "areaName": "string", "areaType": "string"}], "deadTimerInSeconds": 0, "enabled": true, "helloTimerInSeconds": 0}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"areas": [{"areaId": "string", "areaName": "string", "areaType": "string"}], "deadTimerInSeconds": 0, "enabled": true, "helloTimerInSeconds": 0, "md5AuthenticationEnabled": true, "md5AuthenticationKey": {"id": 0, "passphrase": "string"}, "v3": {"areas": [{"areaId": "string", "areaName": "string", "areaType": "string"}], "deadTimerInSeconds": 0, "enabled": true, "helloTimerInSeconds": 0}, "vrf": {"name": "string"}}`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.meraki.meraki_syslog module -- Manage syslog server settings in the Meraki
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -843,7 +843,8 @@ Notes
 -----
 
 .. note::
-   - Changes to existing syslog servers replaces existing configuration. If you need to add to an existing configuration set state to query to gather the existing configuration and then modify or add.
+   - Changes to existing syslog servers replaces existing configuration.
+   - If you need to add to an existing configuration set state to query to gather the existing configuration and then modify or add.
    - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
    - Some of the options are likely only used for developers within Meraki.
    - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .

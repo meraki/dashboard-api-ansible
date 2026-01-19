@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_webhooks_payload_templates module -- Resource module for networks \_webhooks \_payload \_templates
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_webhooks_payload_templates module -- Resource module for networks \_webhooks \_payloadtemplates
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_webhooks \_payload \_templates.
-- Create a webhook payload template for a network. - \> Destroy a webhook payload template for a network. Does not work for included templates 'wpt\_00001', 'wpt\_00002', 'wpt\_00003', 'wpt\_00004', 'wpt\_00005' or 'wpt\_00006' .
+- Manage operations create, update and delete of the resource networks \_webhooks \_payloadtemplates.
+- Create a webhook payload template for a network.
+- Destroy a webhook payload template for a network. Does not work for included templates 'wpt\_00001', 'wpt\_00002', 'wpt\_00003', 'wpt\_00004', 'wpt\_00005', 'wpt\_00006', 'wpt\_00007' or 'wpt\_00008' .
+
 - Update a webhook payload template for a network.
 
 .. note::

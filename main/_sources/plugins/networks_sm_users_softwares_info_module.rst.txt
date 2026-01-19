@@ -42,7 +42,7 @@ cisco.meraki.networks_sm_users_softwares_info module -- Information module for n
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Sm Users Softwares Info.
 - Get all networks \_sm \_users \_softwares.
 - Get a list of softwares associated with a user.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Users Softwares Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Users Softwares Info.
 
       UserId path parameter. User ID.
 
@@ -1118,7 +1123,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"appId\\": \\"string\\",\\n    \\"bundleSize\\": 0,\\n    \\"createdAt\\": \\"string\\",\\n    \\"deviceId\\": \\"string\\",\\n    \\"dynamicSize\\": 0,\\n    \\"id\\": \\"string\\",\\n    \\"identifier\\": \\"string\\",\\n    \\"installedAt\\": \\"string\\",\\n    \\"iosRedemptionCode\\": true,\\n    \\"isManaged\\": true,\\n    \\"itunesId\\": \\"string\\",\\n    \\"licenseKey\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"path\\": \\"string\\",\\n    \\"redemptionCode\\": 0,\\n    \\"shortVersion\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"toInstall\\": true,\\n    \\"toUninstall\\": true,\\n    \\"uninstalledAt\\": \\"string\\",\\n    \\"updatedAt\\": \\"string\\",\\n    \\"vendor\\": \\"string\\",\\n    \\"version\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"appId\\": \\"string\\",\\n    \\"bundleSize\\": 0,\\n    \\"createdAt\\": \\"string\\",\\n    \\"deviceId\\": \\"string\\",\\n    \\"dynamicSize\\": 0,\\n    \\"id\\": \\"string\\",\\n    \\"identifier\\": \\"string\\",\\n    \\"installedAt\\": \\"string\\",\\n    \\"toInstall\\": true,\\n    \\"iosRedemptionCode\\": true,\\n    \\"isManaged\\": true,\\n    \\"itunesId\\": \\"string\\",\\n    \\"licenseKey\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"path\\": \\"string\\",\\n    \\"redemptionCode\\": 0,\\n    \\"shortVersion\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"toUninstall\\": true,\\n    \\"uninstalledAt\\": \\"string\\",\\n    \\"updatedAt\\": \\"string\\",\\n    \\"vendor\\": \\"string\\",\\n    \\"version\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

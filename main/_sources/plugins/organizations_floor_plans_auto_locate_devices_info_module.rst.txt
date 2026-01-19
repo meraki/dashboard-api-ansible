@@ -42,7 +42,7 @@ cisco.meraki.organizations_floor_plans_auto_locate_devices_info module -- Inform
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Floor Plans Auto Locate Devices Info.
 - Get all organizations \_floor \_plans \_auto \_locate \_devices.
 - List auto locate details for each device in your organization.
 
@@ -173,6 +174,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -207,6 +210,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
 
       FloorPlanIds query parameter. Optional parameter to filter devices by one or more floorplan IDs.
 
@@ -1064,6 +1069,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
+
       NetworkIds query parameter. Optional parameter to filter devices by one or more network IDs.
 
 
@@ -1097,6 +1104,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1132,6 +1141,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 10000. Default is 1000.
 
 
@@ -1165,6 +1176,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Floor Plans Auto Locate Devices Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1334,7 +1347,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"items\\": [\\n      {\\n        \\"autoLocate\\": {\\n          \\"lat\\": 0,\\n          \\"lng\\": 0\\n        },\\n        \\"floorPlan\\": {\\n          \\"id\\": \\"string\\",\\n          \\"status\\": \\"string\\"\\n        },\\n        \\"isAnchor\\": true,\\n        \\"lat\\": 0,\\n        \\"lng\\": 0,\\n        \\"mac\\": \\"string\\",\\n        \\"model\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"network\\": {\\n          \\"id\\": \\"string\\"\\n        },\\n        \\"serial\\": \\"string\\",\\n        \\"status\\": \\"string\\",\\n        \\"tags\\": [\\n          \\"string\\"\\n        ],\\n        \\"type\\": \\"string\\"\\n      }\\n    ],\\n    \\"meta\\": {\\n      \\"counts\\": {\\n        \\"items\\": {\\n          \\"remaining\\": 0,\\n          \\"total\\": 0\\n        }\\n      }\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"items\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"serial\\": \\"string\\",\\n        \\"mac\\": \\"string\\",\\n        \\"model\\": \\"string\\",\\n        \\"tags\\": [\\n          \\"string\\"\\n        ],\\n        \\"status\\": \\"string\\",\\n        \\"network\\": {\\n          \\"id\\": \\"string\\"\\n        },\\n        \\"floorPlan\\": {\\n          \\"id\\": \\"string\\",\\n          \\"status\\": \\"string\\"\\n        },\\n        \\"lat\\": 0,\\n        \\"lng\\": 0,\\n        \\"autoLocate\\": {\\n          \\"lat\\": 0,\\n          \\"lng\\": 0\\n        },\\n        \\"type\\": \\"string\\",\\n        \\"isAnchor\\": true\\n      }\\n    ],\\n    \\"meta\\": {\\n      \\"counts\\": {\\n        \\"items\\": {\\n          \\"total\\": 0,\\n          \\"remaining\\": 0\\n        }\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

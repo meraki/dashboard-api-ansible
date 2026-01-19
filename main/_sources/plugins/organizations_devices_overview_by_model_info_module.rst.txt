@@ -42,7 +42,7 @@ cisco.meraki.organizations_devices_overview_by_model_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Devices Overview By Model Info.
 - Get all organizations \_devices \_overview \_by \_model.
 - Lists the count for each device model.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Overview By Model Info.
+
       Models query parameter. Optional parameter to filter devices by one or more models. All returned devices will have a model that is an exact match.
           
 
@@ -992,6 +995,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Overview By Model Info.
+
       NetworkIds query parameter. Optional parameter to filter devices by networkId.
 
 
@@ -1026,6 +1031,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Overview By Model Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1059,6 +1066,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Overview By Model Info.
 
       ProductTypes query parameter. Optional parameter to filter device by device product types. This filter uses multiple exact matches.
           

@@ -42,7 +42,7 @@ cisco.meraki.devices_switch_routing_interfaces_info module -- Information module
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Switch Routing Interfaces Info.
 - Get all devices \_switch \_routing \_interfaces.
 - Get devices \_switch \_routing \_interfaces by id.
 - List layer 3 interfaces for a switch. Those for a stack may be found under switch stack routing.
@@ -170,6 +171,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Switch Routing Interfaces Info.
 
       InterfaceId path parameter. Interface ID.
 
@@ -969,6 +972,42 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mode"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_switch_routing_interfaces_info_module__parameter-mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Information module for Devices Switch Routing Interfaces Info.
+
+      Mode query parameter. Optional parameter to filter L3 interfaces by mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-protocol"></div>
 
       .. _ansible_collections.cisco.meraki.devices_switch_routing_interfaces_info_module__parameter-protocol:
@@ -992,6 +1031,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Switch Routing Interfaces Info.
 
       Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
 
@@ -1026,6 +1067,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Switch Routing Interfaces Info.
 
       Serial path parameter.
 
@@ -1093,6 +1136,7 @@ Examples
         meraki_caller: "{{ meraki_caller }}"
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        mode: string
         protocol: string
         serial: string
       register: result
@@ -1182,7 +1226,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultGateway": "string", "interfaceId": "string", "interfaceIp": "string", "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "prefix": "string"}, "multicastRouting": "string", "name": "string", "ospfSettings": {"area": "string", "cost": 0, "isPassiveEnabled": true}, "ospfV3": {"area": "string", "cost": 0, "isPassiveEnabled": true}, "subnet": "string", "uplinkV4": true, "uplinkV6": true, "vlanId": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultGateway": "string", "interfaceId": "string", "interfaceIp": "string", "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "prefix": "string"}, "loopback": {}, "mode": "string", "multicastRouting": "string", "name": "string", "ospfSettings": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "ospfV3": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "serial": "string", "subnet": "string", "switchPortId": "string", "uplinkV4": true, "uplinkV6": true, "vlanId": 0, "vrf": {"name": "string"}}`
 
 
       .. raw:: html

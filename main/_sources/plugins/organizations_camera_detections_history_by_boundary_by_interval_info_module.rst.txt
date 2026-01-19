@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_camera_detections_history_by_boundary_by_interval_info module -- Information module for organizations \_camera \_detections \_history \_by \_boundary \_by \_interval
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_camera_detections_history_by_boundary_by_interval_info module -- Information module for organizations \_camera \_detections \_history \_byboundary \_byinterval
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_camera \_detections \_history \_by \_boundary \_by \_interval.
+- Information module for Organizations Camera Detections History Byboundary Byinterval Info.
+- Get all organizations \_camera \_detections \_history \_byboundary \_byinterval.
 - Returns analytics data for timespans.
 
 .. note::
@@ -135,6 +136,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
+
       BoundaryIds query parameter. A list of boundary ids. The returned cameras will be filtered to only include these ids.
           
 
@@ -169,6 +172,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
 
       BoundaryTypes query parameter. The detection types. Defaults to 'person'.
 
@@ -241,6 +246,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
 
       Duration query parameter. The minimum time, in seconds, that the person or car remains in the area to be counted. Defaults to boundary configuration or 60.
           
@@ -1099,6 +1106,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1133,6 +1142,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 1 - 1000. Defaults to 1000.
 
 
@@ -1166,6 +1177,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Camera Detections History Byboundary Byinterval Info.
 
       Ranges query parameter. A list of time ranges with intervals.
 
@@ -1242,7 +1255,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _camera _detections _history _by _boundary _by _interval
+    - name: Get all organizations _camera _detections _history _byboundary _byinterval
       cisco.meraki.organizations_camera_detections_history_by_boundary_by_interval_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1334,7 +1347,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"boundaryId\\": \\"string\\",\\n    \\"results\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"in\\": 0,\\n      \\"objectType\\": \\"string\\",\\n      \\"out\\": 0,\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"type\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"boundaryId\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"results\\": {\\n      \\"startTime\\": \\"string\\",\\n      \\"endTime\\": \\"string\\",\\n      \\"objectType\\": \\"string\\",\\n      \\"in\\": 0,\\n      \\"out\\": 0\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

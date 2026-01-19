@@ -42,7 +42,7 @@ cisco.meraki.organizations_saml_info module -- Information module for organizati
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Saml Info.
 - Get all organizations \_saml.
 - Returns the SAML SSO enabled settings for an organization.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Saml Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1063,7 +1066,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`integer`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"true\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enabled": true, "spInitiated": {"idpId": "string", "subdomain": "string"}}`
 
 
       .. raw:: html

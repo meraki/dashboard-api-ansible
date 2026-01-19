@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_vpn_site_to_site_vpn module -- Resource module for networks \_appliance \_vpn \_site \_to \_site \_vpn
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_vpn_site_to_site_vpn module -- Resource module for networks \_appliance \_vpn \_sitetositevpn
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_appliance \_vpn \_site \_to \_site \_vpn.
+- Manage operation update of the resource networks \_appliance \_vpn \_sitetositevpn.
 - Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
 
 .. note::

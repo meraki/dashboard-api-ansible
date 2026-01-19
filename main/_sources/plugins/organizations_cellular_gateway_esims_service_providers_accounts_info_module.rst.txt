@@ -42,7 +42,7 @@ cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts_inf
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
 - Get all organizations \_cellular \_gateway \_esims \_service \_providers \_accounts.
 - Inventory of service provider accounts tied to the organization.
 
@@ -134,6 +135,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
 
       AccountIds query parameter. Optional parameter to filter the results by service provider account IDs.
 
@@ -991,6 +994,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Cellular Gateway Esims Service Providers Accounts Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1118,7 +1123,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"items\\": [\\n      {\\n        \\"accountId\\": \\"string\\",\\n        \\"lastUpdatedAt\\": \\"string\\",\\n        \\"serviceProvider\\": {\\n          \\"logo\\": {\\n            \\"url\\": \\"string\\"\\n          },\\n          \\"name\\": \\"string\\"\\n        },\\n        \\"title\\": \\"string\\",\\n        \\"username\\": \\"string\\"\\n      }\\n    ],\\n    \\"meta\\": {\\n      \\"counts\\": {\\n        \\"items\\": {\\n          \\"remaining\\": 0,\\n          \\"total\\": 0\\n        }\\n      }\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"items\\": [\\n      {\\n        \\"accountId\\": \\"string\\",\\n        \\"lastUpdatedAt\\": \\"string\\",\\n        \\"serviceProvider\\": {\\n          \\"name\\": \\"string\\",\\n          \\"logo\\": {\\n            \\"url\\": \\"string\\"\\n          }\\n        },\\n        \\"title\\": \\"string\\",\\n        \\"username\\": \\"string\\"\\n      }\\n    ],\\n    \\"meta\\": {\\n      \\"counts\\": {\\n        \\"items\\": {\\n          \\"total\\": 0,\\n          \\"remaining\\": 0\\n        }\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_firewall_multicast_forwarding_by_network_in
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
 - Get all organizations \_appliance \_firewall \_multicast \_forwarding \_by \_network.
 - List Static Multicasting forwarding settings for MX networks.
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
+
       NetworkIds query parameter. Optional parameter to filter the results by network IDs.
 
 
@@ -1063,6 +1068,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1098,6 +1105,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1131,6 +1140,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

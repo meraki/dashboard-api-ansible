@@ -42,7 +42,7 @@ cisco.meraki.networks_devices_claim module -- Resource module for networks \_dev
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource networks \_devices \_claim. - \> Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute window.
+- Manage operation create of the resource networks \_devices \_claim.
+- Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute window.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -106,6 +108,178 @@ Parameters
 
   * - Parameter
     - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-detailsByDevice"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_devices_claim_module__parameter-detailsbydevice:
+
+      .. rst-class:: ansible-option-title
+
+      **detailsByDevice**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-detailsByDevice" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Optional details for claimed devices (currently only used for Catalyst devices).
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-detailsByDevice/details"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_devices_claim_module__parameter-detailsbydevice/details:
+
+      .. rst-class:: ansible-option-title
+
+      **details**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-detailsByDevice/details" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      An array of details. Supported list of details includes "device mode", "username", "password", "enable password", "ap mapping type" and "ap network id". For onboarding into hybrid mode, the value of the device mode detail must be "monitored".
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-detailsByDevice/details/name"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_devices_claim_module__parameter-detailsbydevice/details/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-detailsByDevice/details/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Name of device detail.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-detailsByDevice/details/value"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_devices_claim_module__parameter-detailsbydevice/details/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-detailsByDevice/details/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Value of device detail.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-detailsByDevice/serial"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_devices_claim_module__parameter-detailsbydevice/serial:
+
+      .. rst-class:: ansible-option-title
+
+      **serial**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-detailsByDevice/serial" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The serial of the device these details relate to.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -1022,6 +1196,11 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         addAtomically: true
+        detailsByDevice:
+          - details:
+              - name: username
+                value: milesmeraki
+            serial: Q234-ABCD-5678
         networkId: string
         serials:
           - Q234-ABCD-0001

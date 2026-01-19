@@ -42,7 +42,7 @@ cisco.meraki.networks_sm_devices_info module -- Information module for networks 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Sm Devices Info.
 - Get all networks \_sm \_devices.
 - List the devices enrolled in an SM network with various specified fields and filters.
 
@@ -173,6 +174,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Devices Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -207,6 +210,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       Fields query parameter. Additional fields that will be displayed for each device. The default fields are id, name, tags, ssid, wifiMac, osName, systemModel, uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity, kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress, location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber, diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge, quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled, hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion, cellular, and url.
           
@@ -276,6 +281,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       Ids query parameter. Filter devices by id(s).
 
@@ -1099,6 +1106,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Devices Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1133,6 +1142,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Devices Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1166,6 +1177,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       Scope query parameter. Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
           
@@ -1202,6 +1215,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Devices Info.
+
       Serials query parameter. Filter devices by serial(s).
 
 
@@ -1235,6 +1250,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1270,6 +1287,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       SystemTypes query parameter. Filter devices by system type(s).
 
@@ -1339,6 +1358,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sm Devices Info.
+
       Uuids query parameter. Filter devices by uuid(s).
 
 
@@ -1372,6 +1393,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sm Devices Info.
 
       WifiMacs query parameter. Filter devices by wifi mac(s).
 
@@ -1511,7 +1534,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"notes\\": \\"string\\",\\n    \\"osName\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"serialNumber\\": \\"string\\",\\n    \\"ssid\\": \\"string\\",\\n    \\"systemModel\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"uuid\\": \\"string\\",\\n    \\"wifiMac\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ],\\n    \\"ssid\\": \\"string\\",\\n    \\"wifiMac\\": \\"string\\",\\n    \\"osName\\": \\"string\\",\\n    \\"systemModel\\": \\"string\\",\\n    \\"uuid\\": \\"string\\",\\n    \\"serialNumber\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"notes\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

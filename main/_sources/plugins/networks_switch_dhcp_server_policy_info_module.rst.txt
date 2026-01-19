@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_switch_dhcp_server_policy_info module -- Information module for networks \_switch \_dhcp \_server \_policy
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_switch_dhcp_server_policy_info module -- Information module for networks \_switch \_dhcpserverpolicy
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,10 @@ Synopsis
 
 .. Description
 
-- Get all networks \_switch \_dhcp \_server \_policy. - \> Return the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block, respectively.
+- Information module for Networks Switch Dhcpserverpolicy Info.
+- Get all networks \_switch \_dhcpserverpolicy.
+- Return the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block, respectively.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -956,6 +959,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Switch Dhcpserverpolicy Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -997,7 +1002,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _switch _dhcp _server _policy
+    - name: Get all networks _switch _dhcpserverpolicy
       cisco.meraki.networks_switch_dhcp_server_policy_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

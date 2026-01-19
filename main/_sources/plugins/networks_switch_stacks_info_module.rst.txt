@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_stacks_info module -- Information module for networ
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Switch Stacks Info.
 - Get all networks \_switch \_stacks.
 - Get networks \_switch \_stacks by id.
 - List the switch stacks in a network.
@@ -959,6 +960,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Switch Stacks Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -992,6 +995,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Switch Stacks Info.
 
       SwitchStackId path parameter. Switch stack ID.
 
@@ -1147,7 +1152,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"id": "string", "isMonitorOnly": true, "members": [{"mac": "string", "model": "string", "name": "string", "role": "string", "serial": "string"}], "name": "string", "serials": ["string"]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"id": "string", "isMonitorOnly": true, "members": [{"mac": "string", "model": "string", "name": "string", "role": "string", "serial": "string"}], "name": "string", "serials": ["string"], "virtualMac": "string"}`
 
 
       .. raw:: html

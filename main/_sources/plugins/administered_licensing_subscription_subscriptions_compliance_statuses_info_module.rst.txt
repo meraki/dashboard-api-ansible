@@ -42,7 +42,7 @@ cisco.meraki.administered_licensing_subscription_subscriptions_compliance_status
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
 - Get all administered \_licensing \_subscription \_subscriptions \_compliance \_statuses.
 - Get compliance status for requested subscriptions.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
+
       OrganizationIds query parameter. Organizations to get subscription compliance information for.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
 
       SubscriptionIds query parameter. Subscription ids.
 
@@ -1118,7 +1123,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"subscription\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"status\\": \\"string\\"\\n    },\\n    \\"violations\\": {\\n      \\"byProductClass\\": [\\n        {\\n          \\"gracePeriodEndsAt\\": \\"string\\",\\n          \\"missing\\": {\\n            \\"entitlements\\": [\\n              {\\n                \\"quantity\\": 0,\\n                \\"sku\\": \\"string\\"\\n              }\\n            ]\\n          },\\n          \\"productClass\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"subscription\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"status\\": \\"string\\"\\n    },\\n    \\"violations\\": {\\n      \\"byProductClass\\": [\\n        {\\n          \\"productClass\\": \\"string\\",\\n          \\"gracePeriodEndsAt\\": \\"string\\",\\n          \\"missing\\": {\\n            \\"entitlements\\": [\\n              {\\n                \\"sku\\": \\"string\\",\\n                \\"quantity\\": 0\\n              }\\n            ]\\n          }\\n        }\\n      ]\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

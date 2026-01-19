@@ -42,7 +42,7 @@ cisco.meraki.devices_switch_ports module -- Resource module for devices \_switch
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -450,6 +450,83 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-highSpeed"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-highspeed:
+
+      .. rst-class:: ansible-option-title
+
+      **highSpeed**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-highSpeed" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      High speed port enablement settings for C9500-32QC.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-highSpeed/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-highspeed/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-highSpeed/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      For C9500-32QC, whether or not the port is enabled for high speed.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isolationEnabled"></div>
 
       .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-isolationenabled:
@@ -551,6 +628,40 @@ Parameters
         <div class="ansible-option-cell">
 
       Only devices with MAC addresses specified in this list will have access to this port. Up to 20 MAC addresses can be defined. Only applicable when 'accessPolicyType' is 'MAC allow list'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-macWhitelistLimit"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-macwhitelistlimit:
+
+      .. rst-class:: ansible-option-title
+
+      **macWhitelistLimit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-macWhitelistLimit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The maximum number of MAC addresses for regular MAC allow list. Only applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported on verions greater than ms18 only for classic switches.
 
 
       .. raw:: html
@@ -1899,6 +2010,48 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-stpPortFastTrunk"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-stpportfasttrunk:
+
+      .. rst-class:: ansible-option-title
+
+      **stpPortFastTrunk**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-stpPortFastTrunk" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The state of STP PortFast Trunk on the switch port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-tags"></div>
 
       .. _ansible_collections.cisco.meraki.devices_switch_ports_module__parameter-tags:
@@ -1957,7 +2110,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The type of the switch port ('trunk', 'access', 'stack' or 'routed').
+      The type of the switch port ('access', 'trunk', 'stack', 'routed', 'svl' or 'dad').
 
 
       .. raw:: html
@@ -2134,11 +2287,14 @@ Examples
           enabled: false
         enabled: true
         flexibleStackingEnabled: true
+        highSpeed:
+          enabled: false
         isolationEnabled: false
         linkNegotiation: Auto negotiate
         macAllowList:
           - 34:56:fe:ce:8e:a0
           - 34:56:fe:ce:8e:a1
+        macWhitelistLimit: 10
         name: My switch port
         peerSgtCapable: false
         poeEnabled: true
@@ -2156,6 +2312,7 @@ Examples
         stickyMacAllowListLimit: 5
         stormControlEnabled: true
         stpGuard: disabled
+        stpPortFastTrunk: false
         tags:
           - tag1
           - tag2
@@ -2223,7 +2380,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroup": {"id": "string", "name": "string"}, "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "mirror": {"mode": "string"}, "module": {"model": "string"}, "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stackwiseVirtual": {"isDualActiveDetector": true, "isStackWiseVirtualLink": true}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": 0, "accessPolicyType": "string", "adaptivePolicyGroup": {"id": "string", "name": "string"}, "adaptivePolicyGroupId": "string", "allowedVlans": "string", "daiTrusted": true, "dot3az": {"enabled": true}, "enabled": true, "flexibleStackingEnabled": true, "highSpeed": {"enabled": true}, "isolationEnabled": true, "linkNegotiation": "string", "linkNegotiationCapabilities": ["string"], "macAllowList": ["string"], "macWhitelistLimit": 0, "mirror": {"mode": "string"}, "module": {"model": "string", "serial": "string", "slot": 0}, "name": "string", "peerSgtCapable": true, "poeEnabled": true, "portId": "string", "portScheduleId": "string", "profile": {"enabled": true, "id": "string", "iname": "string"}, "rstpEnabled": true, "schedule": {"id": "string", "name": "string"}, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stormControlEnabled": true, "stpGuard": "string", "stpPortFastTrunk": true, "tags": ["string"], "type": "string", "udld": "string", "vlan": 0, "voiceVlan": 0}`
 
 
       .. raw:: html

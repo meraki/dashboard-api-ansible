@@ -42,7 +42,7 @@ cisco.meraki.networks_info module -- Information module for networks
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Info.
 - Get all networks.
 - Get networks by id.
 - List the networks that the user has privileges on in an organization.
@@ -136,6 +137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Info.
 
       ConfigTemplateId query parameter. An optional parameter that is the ID of a config template. Will return all networks bound to that template.
           
@@ -210,6 +213,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -278,6 +283,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Info.
 
       IsBoundToConfigTemplate query parameter. An optional parameter to filter config template bound networks. If configTemplateId is set, this cannot be false.
           
@@ -1110,6 +1117,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1143,6 +1152,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1178,6 +1189,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
 
 
@@ -1211,6 +1224,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Info.
 
       ProductTypes query parameter. An optional parameter to filter networks by product type. Results will have at least one of the included product types.
           
@@ -1247,6 +1262,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Info.
+
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1282,6 +1299,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Info.
+
       Tags query parameter. An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below).
           
 
@@ -1316,6 +1335,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Info.
 
       TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
           

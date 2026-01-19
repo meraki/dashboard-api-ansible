@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules module -- Resource module for organizations \_appliance \_vpn \_vpn \_firewall \_rules
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules module -- Resource module for organizations \_appliance \_vpn \_vpnfirewallrules
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource organizations \_appliance \_vpn \_vpn \_firewall \_rules.
+- Manage operation update of the resource organizations \_appliance \_vpn \_vpnfirewallrules.
 - Update the firewall rules of an organization's site-to-site VPN.
 
 .. note::
@@ -1417,7 +1417,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"destCidr\\": \\"string\\",\\n    \\"destPort\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"srcCidr\\": \\"string\\",\\n    \\"srcPort\\": \\"string\\",\\n    \\"syslogEnabled\\": true\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"srcPort\\": \\"string\\",\\n    \\"srcCidr\\": \\"string\\",\\n    \\"destPort\\": \\"string\\",\\n    \\"destCidr\\": \\"string\\",\\n    \\"syslogEnabled\\": true\\n  }\\n]\\n"`
 
 
       .. raw:: html

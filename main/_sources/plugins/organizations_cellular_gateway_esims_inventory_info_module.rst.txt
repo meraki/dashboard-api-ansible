@@ -42,7 +42,7 @@ cisco.meraki.organizations_cellular_gateway_esims_inventory_info module -- Infor
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Cellular Gateway Esims Inventory Info.
 - Get all organizations \_cellular \_gateway \_esims \_inventory.
 - The eSIM inventory of a given organization.
 
@@ -134,6 +135,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Cellular Gateway Esims Inventory Info.
 
       Eids query parameter. Optional parameter to filter the results by EID.
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Cellular Gateway Esims Inventory Info.
 
       OrganizationId path parameter. Organization ID.
 

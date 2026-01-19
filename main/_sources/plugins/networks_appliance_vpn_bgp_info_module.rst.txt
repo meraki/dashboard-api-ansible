@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_vpn_bgp_info module -- Information module for ne
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Appliance Vpn Bgp Info.
 - Get all networks \_appliance \_vpn \_bgp.
 - Return a Hub BGP Configuration.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Appliance Vpn Bgp Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"asNumber": 0, "enabled": true, "ibgpHoldTimer": 0, "neighbors": [{"allowTransit": true, "authentication": {"password": "string"}, "ebgpHoldTimer": 0, "ebgpMultihop": 0, "ip": "string", "ipv6": {"address": "string"}, "nextHopIp": "string", "receiveLimit": 0, "remoteAsNumber": 0, "sourceInterface": "string", "ttlSecurity": {"enabled": true}}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"asNumber": 0, "enabled": true, "ibgpHoldTimer": 0, "neighbors": [{"allowTransit": true, "authentication": {"password": "string"}, "ebgpHoldTimer": 0, "ebgpMultihop": 0, "ip": "string", "ipv6": {"address": "string"}, "multiExitDiscriminator": 0, "nextHopIp": "string", "pathPrepend": [0], "receiveLimit": 0, "remoteAsNumber": 0, "sourceInterface": "string", "ttlSecurity": {"enabled": true}, "weight": 0}]}`
 
 
       .. raw:: html

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_events_event_types_info module -- Information module for networks \_events \_event \_types
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_events_event_types_info module -- Information module for networks \_events \_eventtypes
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all networks \_events \_event \_types.
+- Information module for Networks Events Eventtypes Info.
+- Get all networks \_events \_eventtypes.
 - List the event type to human-readable description.
 
 .. note::
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Events Eventtypes Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -998,7 +1001,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _events _event _types
+    - name: Get all networks _events _eventtypes
       cisco.meraki.networks_events_event_types_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"category\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"category\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"description\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

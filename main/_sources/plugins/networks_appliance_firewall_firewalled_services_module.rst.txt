@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_firewall_firewalled_services module -- Resource module for networks \_appliance \_firewall \_firewalled \_services
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_firewall_firewalled_services module -- Resource module for networks \_appliance \_firewall \_firewalledservices
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_appliance \_firewall \_firewalled \_services.
+- Manage operation update of the resource networks \_appliance \_firewall \_firewalledservices.
 - Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP' .
 
 .. note::
@@ -169,7 +169,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      An array of allowed IPs that can access the service. This field is required if "access" is set to "restricted". Otherwise this field is ignored.
+      An array of allowed CIDRs that can access the service. This field is required if "access" is set to "restricted". Otherwise this field is ignored.
 
 
       .. raw:: html

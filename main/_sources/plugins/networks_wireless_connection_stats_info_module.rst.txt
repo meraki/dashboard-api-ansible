@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_wireless_connection_stats_info module -- Information module for networks \_wireless \_connection \_stats
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_wireless_connection_stats_info module -- Information module for networks \_wireless \_connectionstats
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all networks \_wireless \_connection \_stats.
+- Information module for Networks Wireless Connectionstats Info.
+- Get all networks \_wireless \_connectionstats.
 - Aggregated connectivity info for this network.
 
 .. note::
@@ -135,6 +136,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Wireless Connectionstats Info.
+
       ApTag query parameter. Filter results by AP Tag.
 
 
@@ -168,6 +171,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Wireless Connectionstats Info.
 
       Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
           
@@ -1026,6 +1031,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Wireless Connectionstats Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1059,6 +1066,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Wireless Connectionstats Info.
 
       Ssid query parameter. Filter results by SSID.
 
@@ -1094,8 +1103,9 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Wireless Connectionstats Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-          
 
 
       .. raw:: html
@@ -1128,6 +1138,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Wireless Connectionstats Info.
 
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
 
@@ -1163,42 +1175,10 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Wireless Connectionstats Info.
+
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
           
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-vlan"></div>
-
-      .. _ansible_collections.cisco.meraki.networks_wireless_connection_stats_info_module__parameter-vlan:
-
-      .. rst-class:: ansible-option-title
-
-      **vlan**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-vlan" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Vlan query parameter. Filter results by VLAN.
 
 
       .. raw:: html
@@ -1239,7 +1219,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _wireless _connection _stats
+    - name: Get all networks _wireless _connectionstats
       cisco.meraki.networks_wireless_connection_stats_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1267,7 +1247,6 @@ Examples
         timespan: 0
         band: string
         ssid: 0
-        vlan: 0
         apTag: string
         networkId: string
       register: result

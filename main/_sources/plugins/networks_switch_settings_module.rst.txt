@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_settings module -- Resource module for networks \_s
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1190,6 +1190,152 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-uplinkSelection"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_settings_module__parameter-uplinkselection:
+
+      .. rst-class:: ansible-option-title
+
+      **uplinkSelection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-uplinkSelection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Settings related to uplink selection on IOS-XE switches.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-uplinkSelection/candidates"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_settings_module__parameter-uplinkselection/candidates:
+
+      .. rst-class:: ansible-option-title
+
+      **candidates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-uplinkSelection/candidates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      'all' lets devices try any potential interface. 'designated' restricts to specified candidates (configured via the Routing & DHCP page).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-uplinkSelection/failback"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_settings_module__parameter-uplinkselection/failback:
+
+      .. rst-class:: ansible-option-title
+
+      **failback**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-uplinkSelection/failback" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If a preferred uplink ever goes offline, we will periodically reattempt it.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-uplinkSelection/failback/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_settings_module__parameter-uplinkselection/failback/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-uplinkSelection/failback/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable preferred uplink failback.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-useCombinedPower"></div>
 
       .. _ansible_collections.cisco.meraki.networks_switch_settings_module__parameter-usecombinedpower:
@@ -1330,6 +1476,10 @@ Examples
             serial: string
         uplinkClientSampling:
           enabled: true
+        uplinkSelection:
+          candidates: string
+          failback:
+            enabled: true
         useCombinedPower: true
         vlan: 0
 
@@ -1392,7 +1542,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"macBlocklist": {"enabled": true}, "powerExceptions": [{"powerType": "string", "serial": "string"}], "uplinkClientSampling": {"enabled": true}, "useCombinedPower": true, "vlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"macBlocklist": {"enabled": true}, "powerExceptions": [{"powerType": "string", "serial": "string"}], "uplinkClientSampling": {"enabled": true}, "uplinkSelection": {"candidates": "string", "failback": {"enabled": true}}, "useCombinedPower": true, "vlan": 0}`
 
 
       .. raw:: html

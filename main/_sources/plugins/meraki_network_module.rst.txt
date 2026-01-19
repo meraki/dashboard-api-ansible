@@ -42,7 +42,7 @@ cisco.meraki.meraki_network module -- Manage networks in the Meraki cloud
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
 
@@ -317,8 +317,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      - This no longer works and will likely be moved to a separate module. - Enables the local device status pages (U[my.meraki.com](my.meraki.com), U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com), U[wired.meraki.com](wired.meraki.com)). - Only can be specified on its own or with \ :literal:`remote\_status\_page\_enabled`\ .
-          
+      - This no longer works and will likely be moved to a separate module. - Enables the local device status pages (U[my.meraki.com](my.meraki.com), U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com), U[wired.meraki.com](wired.meraki.com)). - Only can be specified on its own or with \ :literal:`remote\_status\_page\_enabled`\ . 
 
 
       .. rst-class:: ansible-option-line

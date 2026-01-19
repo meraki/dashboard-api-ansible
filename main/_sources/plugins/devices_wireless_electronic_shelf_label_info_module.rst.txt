@@ -42,7 +42,7 @@ cisco.meraki.devices_wireless_electronic_shelf_label_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Wireless Electronic Shelf Label Info.
 - Get all devices \_wireless \_electronic \_shelf \_label.
 - Return the ESL settings of a device.
 
@@ -956,6 +957,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Wireless Electronic Shelf Label Info.
 
       Serial path parameter.
 

@@ -42,7 +42,7 @@ cisco.meraki.organizations_admins_info module -- Information module for organiza
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Admins Info.
 - Get all organizations \_admins.
 - List the dashboard administrators in this organization.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Admins Info.
+
       NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Admins Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1118,7 +1123,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"accountStatus\\": \\"string\\",\\n    \\"authenticationMethod\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"hasApiKey\\": true,\\n    \\"id\\": \\"string\\",\\n    \\"lastActive\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networks\\": [\\n      {\\n        \\"access\\": \\"string\\",\\n        \\"id\\": \\"string\\"\\n      }\\n    ],\\n    \\"orgAccess\\": \\"string\\",\\n    \\"tags\\": [\\n      {\\n        \\"access\\": \\"string\\",\\n        \\"tag\\": \\"string\\"\\n      }\\n    ],\\n    \\"twoFactorAuthEnabled\\": true\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"orgAccess\\": \\"string\\",\\n    \\"accountStatus\\": \\"string\\",\\n    \\"twoFactorAuthEnabled\\": true,\\n    \\"hasApiKey\\": true,\\n    \\"lastActive\\": \\"string\\",\\n    \\"tags\\": [\\n      {\\n        \\"tag\\": \\"string\\",\\n        \\"access\\": \\"string\\"\\n      }\\n    ],\\n    \\"networks\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"access\\": \\"string\\"\\n      }\\n    ],\\n    \\"authenticationMethod\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

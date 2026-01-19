@@ -42,7 +42,7 @@ cisco.meraki.organizations_sensor_readings_latest_info module -- Information mod
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Sensor Readings Latest Info.
 - Get all organizations \_sensor \_readings \_latest.
 - Return the latest available reading for each metric from each sensor, sorted by sensor serial.
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Sensor Readings Latest Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Sensor Readings Latest Info.
+
       Metrics query parameter. Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved.
           
 
@@ -1065,6 +1070,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Sensor Readings Latest Info.
+
       NetworkIds query parameter. Optional parameter to filter readings by network.
 
 
@@ -1098,6 +1105,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Sensor Readings Latest Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1133,6 +1142,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Sensor Readings Latest Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1167,6 +1178,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Sensor Readings Latest Info.
+
       Serials query parameter. Optional parameter to filter readings by sensor.
 
 
@@ -1200,6 +1213,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Sensor Readings Latest Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1370,7 +1385,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"readings\\": [\\n      {\\n        \\"apparentPower\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"battery\\": {\\n          \\"percentage\\": 0\\n        },\\n        \\"button\\": {\\n          \\"pressType\\": \\"string\\"\\n        },\\n        \\"co2\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"current\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"door\\": {\\n          \\"open\\": true\\n        },\\n        \\"downstreamPower\\": {\\n          \\"enabled\\": true\\n        },\\n        \\"frequency\\": {\\n          \\"level\\": 0\\n        },\\n        \\"humidity\\": {\\n          \\"relativePercentage\\": 0\\n        },\\n        \\"indoorAirQuality\\": {\\n          \\"score\\": 0\\n        },\\n        \\"metric\\": \\"string\\",\\n        \\"noise\\": {\\n          \\"ambient\\": {\\n            \\"level\\": 0\\n          }\\n        },\\n        \\"pm25\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"powerFactor\\": {\\n          \\"percentage\\": 0\\n        },\\n        \\"realPower\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"remoteLockoutSwitch\\": {\\n          \\"locked\\": true\\n        },\\n        \\"temperature\\": {\\n          \\"celsius\\": 0,\\n          \\"fahrenheit\\": 0\\n        },\\n        \\"ts\\": \\"string\\",\\n        \\"tvoc\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"voltage\\": {\\n          \\"level\\": 0\\n        },\\n        \\"water\\": {\\n          \\"present\\": true\\n        }\\n      }\\n    ],\\n    \\"serial\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"serial\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"readings\\": [\\n      {\\n        \\"ts\\": \\"string\\",\\n        \\"metric\\": \\"string\\",\\n        \\"apparentPower\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"battery\\": {\\n          \\"percentage\\": 0\\n        },\\n        \\"button\\": {\\n          \\"pressType\\": \\"string\\"\\n        },\\n        \\"co2\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"current\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"door\\": {\\n          \\"open\\": true\\n        },\\n        \\"downstreamPower\\": {\\n          \\"enabled\\": true\\n        },\\n        \\"frequency\\": {\\n          \\"level\\": 0\\n        },\\n        \\"humidity\\": {\\n          \\"relativePercentage\\": 0\\n        },\\n        \\"indoorAirQuality\\": {\\n          \\"score\\": 0\\n        },\\n        \\"noise\\": {\\n          \\"ambient\\": {\\n            \\"level\\": 0\\n          }\\n        },\\n        \\"no2\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"o3\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"pm10\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"pm25\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"powerFactor\\": {\\n          \\"percentage\\": 0\\n        },\\n        \\"realPower\\": {\\n          \\"draw\\": 0\\n        },\\n        \\"remoteLockoutSwitch\\": {\\n          \\"locked\\": true\\n        },\\n        \\"temperature\\": {\\n          \\"fahrenheit\\": 0,\\n          \\"celsius\\": 0\\n        },\\n        \\"tvoc\\": {\\n          \\"concentration\\": 0\\n        },\\n        \\"voltage\\": {\\n          \\"level\\": 0\\n        },\\n        \\"water\\": {\\n          \\"present\\": true\\n        },\\n        \\"rawTemperature\\": {\\n          \\"fahrenheit\\": 0,\\n          \\"celsius\\": 0\\n        }\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_dns_local_profiles_assignments_info module 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Appliance Dns Local Profiles Assignments Info.
 - Get all organizations \_appliance \_dns \_local \_profiles \_assignments.
 - Fetch the local DNS profile assignments in the organization.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Appliance Dns Local Profiles Assignments Info.
+
       NetworkIds query parameter. Optional parameter to filter the results by network IDs.
 
 
@@ -991,6 +994,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Appliance Dns Local Profiles Assignments Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1024,6 +1029,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Dns Local Profiles Assignments Info.
 
       ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
 

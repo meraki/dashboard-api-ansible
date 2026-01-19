@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info module -- Information mod
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Switch Dhcp V4 Servers Seen Info.
 - Get all networks \_switch \_dhcp v4 \_servers \_seen.
 - Return the network's DHCPv4 servers seen within the selected timeframe default 1 day .
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1064,6 +1069,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1097,6 +1104,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1133,6 +1142,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1166,6 +1177,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Switch Dhcp V4 Servers Seen Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           
@@ -1335,7 +1348,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"clientId\\": \\"string\\",\\n    \\"device\\": {\\n      \\"interface\\": {\\n        \\"name\\": \\"string\\",\\n        \\"url\\": \\"string\\"\\n      },\\n      \\"name\\": \\"string\\",\\n      \\"serial\\": \\"string\\",\\n      \\"url\\": \\"string\\"\\n    },\\n    \\"ipv4\\": {\\n      \\"address\\": \\"string\\",\\n      \\"gateway\\": \\"string\\",\\n      \\"subnet\\": \\"string\\"\\n    },\\n    \\"isAllowed\\": true,\\n    \\"isConfigured\\": true,\\n    \\"lastAck\\": {\\n      \\"ipv4\\": {\\n        \\"address\\": \\"string\\"\\n      },\\n      \\"ts\\": \\"string\\"\\n    },\\n    \\"lastPacket\\": {\\n      \\"destination\\": {\\n        \\"ipv4\\": {\\n          \\"address\\": \\"string\\"\\n        },\\n        \\"mac\\": \\"string\\",\\n        \\"port\\": 0\\n      },\\n      \\"ethernet\\": {\\n        \\"type\\": \\"string\\"\\n      },\\n      \\"fields\\": {\\n        \\"chaddr\\": \\"string\\",\\n        \\"ciaddr\\": \\"string\\",\\n        \\"flags\\": \\"string\\",\\n        \\"giaddr\\": \\"string\\",\\n        \\"hlen\\": 0,\\n        \\"hops\\": 0,\\n        \\"htype\\": 0,\\n        \\"magicCookie\\": \\"string\\",\\n        \\"op\\": 0,\\n        \\"options\\": [\\n          {\\n            \\"name\\": \\"string\\",\\n            \\"value\\": \\"string\\"\\n          }\\n        ],\\n        \\"secs\\": 0,\\n        \\"siaddr\\": \\"string\\",\\n        \\"sname\\": \\"string\\",\\n        \\"xid\\": \\"string\\",\\n        \\"yiaddr\\": \\"string\\"\\n      },\\n      \\"ip\\": {\\n        \\"dscp\\": {\\n          \\"ecn\\": 0,\\n          \\"tag\\": 0\\n        },\\n        \\"headerLength\\": 0,\\n        \\"id\\": \\"string\\",\\n        \\"length\\": 0,\\n        \\"protocol\\": 0,\\n        \\"ttl\\": 0,\\n        \\"version\\": 0\\n      },\\n      \\"source\\": {\\n        \\"ipv4\\": {\\n          \\"address\\": \\"string\\"\\n        },\\n        \\"mac\\": \\"string\\",\\n        \\"port\\": 0\\n      },\\n      \\"type\\": \\"string\\",\\n      \\"udp\\": {\\n        \\"checksum\\": \\"string\\",\\n        \\"length\\": 0\\n      }\\n    },\\n    \\"lastSeenAt\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"seenBy\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"serial\\": \\"string\\",\\n        \\"url\\": \\"string\\"\\n      }\\n    ],\\n    \\"type\\": \\"string\\",\\n    \\"vlan\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"mac\\": \\"string\\",\\n    \\"vlan\\": 0,\\n    \\"clientId\\": \\"string\\",\\n    \\"isAllowed\\": true,\\n    \\"lastSeenAt\\": \\"string\\",\\n    \\"seenBy\\": [\\n      {\\n        \\"serial\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"url\\": \\"string\\"\\n      }\\n    ],\\n    \\"type\\": \\"string\\",\\n    \\"device\\": {\\n      \\"serial\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"url\\": \\"string\\",\\n      \\"interface\\": {\\n        \\"name\\": \\"string\\",\\n        \\"url\\": \\"string\\"\\n      }\\n    },\\n    \\"ipv4\\": {\\n      \\"address\\": \\"string\\",\\n      \\"subnet\\": \\"string\\",\\n      \\"gateway\\": \\"string\\"\\n    },\\n    \\"isConfigured\\": true,\\n    \\"lastAck\\": {\\n      \\"ts\\": \\"string\\",\\n      \\"ipv4\\": {\\n        \\"address\\": \\"string\\"\\n      }\\n    },\\n    \\"lastPacket\\": {\\n      \\"source\\": {\\n        \\"mac\\": \\"string\\",\\n        \\"ipv4\\": {\\n          \\"address\\": \\"string\\"\\n        },\\n        \\"port\\": 0\\n      },\\n      \\"destination\\": {\\n        \\"mac\\": \\"string\\",\\n        \\"ipv4\\": {\\n          \\"address\\": \\"string\\"\\n        },\\n        \\"port\\": 0\\n      },\\n      \\"type\\": \\"string\\",\\n      \\"ethernet\\": {\\n        \\"type\\": \\"string\\"\\n      },\\n      \\"ip\\": {\\n        \\"id\\": \\"string\\",\\n        \\"version\\": 0,\\n        \\"length\\": 0,\\n        \\"headerLength\\": 0,\\n        \\"protocol\\": 0,\\n        \\"ttl\\": 0,\\n        \\"dscp\\": {\\n          \\"tag\\": 0,\\n          \\"ecn\\": 0\\n        }\\n      },\\n      \\"udp\\": {\\n        \\"length\\": 0,\\n        \\"checksum\\": \\"string\\"\\n      },\\n      \\"fields\\": {\\n        \\"op\\": 0,\\n        \\"htype\\": 0,\\n        \\"hlen\\": 0,\\n        \\"hops\\": 0,\\n        \\"xid\\": \\"string\\",\\n        \\"secs\\": 0,\\n        \\"flags\\": \\"string\\",\\n        \\"ciaddr\\": \\"string\\",\\n        \\"yiaddr\\": \\"string\\",\\n        \\"siaddr\\": \\"string\\",\\n        \\"giaddr\\": \\"string\\",\\n        \\"chaddr\\": \\"string\\",\\n        \\"sname\\": \\"string\\",\\n        \\"magicCookie\\": \\"string\\",\\n        \\"options\\": [\\n          {\\n            \\"name\\": \\"string\\",\\n            \\"value\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

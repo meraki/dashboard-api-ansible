@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_camera_boundaries_lines_by_device_info module -- Information module for organizations \_camera \_boundaries \_lines \_by \_device
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_camera_boundaries_lines_by_device_info module -- Information module for organizations \_camera \_boundaries \_lines \_bydevice
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_camera \_boundaries \_lines \_by \_device.
+- Information module for Organizations Camera Boundaries Lines Bydevice Info.
+- Get all organizations \_camera \_boundaries \_lines \_bydevice.
 - Returns all configured crossingline boundaries of cameras.
 
 .. note::
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Camera Boundaries Lines Bydevice Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Camera Boundaries Lines Bydevice Info.
 
       Serials query parameter. A list of serial numbers. The returned cameras will be filtered to only include these serials.
           
@@ -1033,7 +1038,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _camera _boundaries _lines _by _device
+    - name: Get all organizations _camera _boundaries _lines _bydevice
       cisco.meraki.organizations_camera_boundaries_lines_by_device_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1119,7 +1124,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"boundaries\\": {\\n      \\"directionVertex\\": {\\n        \\"x\\": 0,\\n        \\"y\\": 0\\n      },\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"type\\": \\"string\\",\\n      \\"vertices\\": [\\n        {\\n          \\"x\\": 0,\\n          \\"y\\": 0\\n        }\\n      ]\\n    },\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"boundaries\\": {\\n      \\"id\\": \\"string\\",\\n      \\"type\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"vertices\\": [\\n        {\\n          \\"x\\": 0,\\n          \\"y\\": 0\\n        }\\n      ],\\n      \\"directionVertex\\": {\\n        \\"x\\": 0,\\n        \\"y\\": 0\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

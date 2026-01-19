@@ -42,7 +42,7 @@ cisco.meraki.networks_clients_info module -- Information module for networks \_c
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,12 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Clients Info.
 - Get all networks \_clients.
 - Get networks \_clients by id.
-- List the clients that have used this network in the timespan. The data is updated at most once every five minutes. - \> Return the client associated with the given identifier. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+- List the clients that have used this network in the timespan. The data is updated at most once every five minutes.
+- Return the client associated with the given identifier. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -136,6 +139,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       ClientId path parameter. Client ID.
 
 
@@ -169,6 +174,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       Description query parameter. Filters clients based on a partial or full match for the description field.
 
@@ -242,6 +249,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -311,6 +320,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       Ip query parameter. Filters clients based on a partial or full match for the ip address field.
 
 
@@ -344,6 +355,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       Ip6 query parameter. Filters clients based on a partial or full match for the ip6 address field.
 
@@ -379,6 +392,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       Ip6Local query parameter. Filters clients based on a partial or full match for the ip6Local address field.
 
 
@@ -412,6 +427,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       Mac query parameter. Filters clients based on a partial or full match for the mac address field.
 
@@ -1235,6 +1252,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       NamedVlan query parameter. Filters clients based on the partial or full match for the named VLAN field.
 
 
@@ -1268,6 +1287,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       NetworkId path parameter. Network ID.
 
@@ -1303,6 +1324,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       Os query parameter. Filters clients based on a partial or full match for the os (operating system) field.
 
 
@@ -1336,6 +1359,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5000. Default is 10.
 
@@ -1371,6 +1396,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       PskGroup query parameter. Filters clients based on partial or full match for the iPSK name field.
 
 
@@ -1404,6 +1431,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       RecentDeviceConnections query parameter. Filters clients based on recent connection type. Can be one of 'Wired' or 'Wireless'.
           
@@ -1440,6 +1469,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1475,6 +1506,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       Statuses query parameter. Filters clients based on status. Can be one of 'Online' or 'Offline'.
 
 
@@ -1509,6 +1542,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Clients Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1542,6 +1577,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           
@@ -1611,6 +1648,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Clients Info.
 
       Vlan query parameter. Filters clients based on the full match for the VLAN field.
 
@@ -1784,7 +1823,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"cdp": [["string"]], "clientVpnConnections": [{"connectedAt": 0, "disconnectedAt": 0, "remoteIp": "string"}], "description": "string", "firstSeen": 0, "id": "string", "ip": "string", "ip6": "string", "lastSeen": 0, "lldp": [["string"]], "mac": "string", "manufacturer": "string", "notes": "string", "os": "string", "recentDeviceConnection": "string", "recentDeviceMac": "string", "recentDeviceName": "string", "recentDeviceSerial": "string", "smInstalled": true, "ssid": "string", "status": "string", "switchport": "string", "user": "string", "vlan": "string", "wirelessCapabilities": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"cdp": [["string"]], "clientVpnConnections": [{"connectedAt": 0, "disconnectedAt": 0, "remoteIp": "string"}], "description": "string", "deviceTypePrediction": "string", "firstSeen": 0, "id": "string", "ip": "string", "ip6": "string", "ip6Local": "string", "lastSeen": 0, "lldp": [["string"]], "mac": "string", "manufacturer": "string", "namedVlan": "string", "notes": "string", "os": "string", "recentDeviceConnection": "string", "recentDeviceMac": "string", "recentDeviceName": "string", "recentDeviceSerial": "string", "smInstalled": true, "ssid": "string", "status": "string", "switchport": "string", "user": "string", "vlan": "string", "wirelessCapabilities": "string"}`
 
 
       .. raw:: html

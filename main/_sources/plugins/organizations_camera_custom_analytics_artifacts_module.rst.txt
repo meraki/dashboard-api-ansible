@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_camera_custom_analytics_artifacts module -- Resource module for organizations \_camera \_custom \_analytics \_artifacts
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_camera_custom_analytics_artifacts module -- Resource module for organizations \_camera \_customanalytics \_artifacts
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operations create and delete of the resource organizations \_camera \_custom \_analytics \_artifacts. - \> Create custom analytics artifact. Returns an artifact upload URL with expiry time. Upload the artifact file with a put request to the returned upload URL before its expiry.
+- Manage operations create and delete of the resource organizations \_camera \_customanalytics \_artifacts.
+- Create custom analytics artifact. Returns an artifact upload URL with expiry time. Upload the artifact file with a put request to the returned upload URL before its expiry.
+
 - Delete Custom Analytics Artifact.
 
 .. note::

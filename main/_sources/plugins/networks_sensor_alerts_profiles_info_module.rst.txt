@@ -42,7 +42,7 @@ cisco.meraki.networks_sensor_alerts_profiles_info module -- Information module f
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Sensor Alerts Profiles Info.
 - Get all networks \_sensor \_alerts \_profiles.
 - Get networks \_sensor \_alerts \_profiles by id.
 - Lists all sensor alert profiles for a network.
@@ -170,6 +171,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sensor Alerts Profiles Info.
 
       Id path parameter.
 
@@ -992,6 +995,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sensor Alerts Profiles Info.
 
       NetworkId path parameter. Network ID.
 

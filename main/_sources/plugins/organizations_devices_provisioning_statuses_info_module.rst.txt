@@ -42,7 +42,7 @@ cisco.meraki.organizations_devices_provisioning_statuses_info module -- Informat
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Devices Provisioning Statuses Info.
 - Get all organizations \_devices \_provisioning \_statuses.
 - List the provisioning statuses information for devices in an organization.
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Provisioning Statuses Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       NetworkIds query parameter. Optional parameter to filter device by network ID. This filter uses multiple exact matches.
           
 
@@ -1065,6 +1070,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1099,6 +1106,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1132,6 +1141,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Provisioning Statuses Info.
 
       ProductTypes query parameter. Optional parameter to filter device by device product types. This filter uses multiple exact matches.
           
@@ -1168,6 +1179,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       Serials query parameter. Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
           
 
@@ -1202,6 +1215,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Provisioning Statuses Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1238,6 +1253,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       Status query parameter. An optional parameter to filter devices by the provisioning status. Accepted statuses unprovisioned, incomplete, complete.
           
 
@@ -1273,6 +1290,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Provisioning Statuses Info.
+
       Tags query parameter. An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below). This filter uses multiple exact matches.
           
 
@@ -1307,6 +1326,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Provisioning Statuses Info.
 
       TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
           

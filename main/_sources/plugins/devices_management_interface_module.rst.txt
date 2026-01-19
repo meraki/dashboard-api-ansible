@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.devices_management_interface module -- Resource module for devices \_management \_interface
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.devices_management_interface module -- Resource module for devices \_managementinterface
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create and update of the resource devices \_management \_interface.
+- Manage operations create and update of the resource devices \_managementinterface.
 - Reboot a device. This endpoint has a sustained rate limit of one request every 60 seconds.
 - Update the management interface settings for a device.
 
@@ -1660,7 +1660,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ddnsHostnames": {"activeDdnsHostname": "string", "ddnsHostnameWan1": "string", "ddnsHostnameWan2": "string"}, "wan1": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "wanEnabled": "string"}, "wan2": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "wanEnabled": "string"}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ddnsHostnames": {"activeDdnsHostname": "string", "ddnsHostnameWan1": "string", "ddnsHostnameWan2": "string"}, "wan1": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "vrf": {"name": "string"}, "wanEnabled": "string"}, "wan2": {"staticDns": ["string"], "staticGatewayIp": "string", "staticIp": "string", "staticSubnetMask": "string", "usingStaticIp": true, "vlan": 0, "vrf": {"name": "string"}, "wanEnabled": "string"}}`
 
 
       .. raw:: html

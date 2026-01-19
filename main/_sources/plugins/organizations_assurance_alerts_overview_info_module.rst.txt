@@ -42,7 +42,7 @@ cisco.meraki.organizations_assurance_alerts_overview_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Assurance Alerts Overview Info.
 - Get all organizations \_assurance \_alerts \_overview.
 - Return overview of active health alerts for an organization.
 
@@ -135,6 +136,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       Active query parameter. Optional parameter to filter by active alerts defaults to true.
 
 
@@ -177,6 +180,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       Category query parameter. Optional parameter to filter by category.
 
 
@@ -210,6 +215,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview Info.
 
       DeviceTags query parameter. Optional parameter to filter by device tags.
 
@@ -245,6 +252,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       DeviceTypes query parameter. Optional parameter to filter by device types.
 
 
@@ -278,6 +287,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview Info.
 
       Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
 
@@ -1143,6 +1154,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
 
 
@@ -1177,6 +1190,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1210,6 +1225,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview Info.
 
       Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
 
@@ -1253,6 +1270,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       Serials query parameter. Optional parameter to filter by primary device serial.
 
 
@@ -1287,6 +1306,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       Severity query parameter. Optional parameter to filter alerts overview by severity type.
 
 
@@ -1320,6 +1341,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview Info.
 
       SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
           
@@ -1364,6 +1387,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       TsEnd query parameter. Optional parameter to filter by end timestamp.
 
 
@@ -1398,6 +1423,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Assurance Alerts Overview Info.
+
       TsStart query parameter. Optional parameter to filter by starting timestamp.
 
 
@@ -1431,6 +1458,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Assurance Alerts Overview Info.
 
       Types query parameter. Optional parameter to filter by alert type.
 

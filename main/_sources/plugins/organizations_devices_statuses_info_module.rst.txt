@@ -42,7 +42,7 @@ cisco.meraki.organizations_devices_statuses_info module -- Information module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Devices Statuses Info.
 - Get all organizations \_devices \_statuses.
 - List the status of every Meraki device in the organization.
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Info.
+
       Models query parameter. Optional parameter to filter devices by models.
 
 
@@ -1063,6 +1068,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Info.
 
       NetworkIds query parameter. Optional parameter to filter devices by network ids.
 
@@ -1098,6 +1105,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1131,6 +1140,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Info.
 
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
@@ -1166,7 +1177,9 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and secureConnect.
+      Information module for Organizations Devices Statuses Info.
+
+      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
           
 
 
@@ -1201,6 +1214,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Info.
+
       Serials query parameter. Optional parameter to filter devices by serials.
 
 
@@ -1234,6 +1249,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1270,6 +1287,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Info.
+
       Statuses query parameter. Optional parameter to filter devices by statuses. Valid statuses are "online", "alerting", "offline", "dormant".
           
 
@@ -1305,6 +1324,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Info.
+
       Tags query parameter. An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below).
           
 
@@ -1339,6 +1360,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Info.
 
       TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
           
@@ -1513,7 +1536,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"components\\": {\\n      \\"powerSupplies\\": [\\n        {\\n          \\"model\\": \\"string\\",\\n          \\"poe\\": {\\n            \\"maximum\\": 0,\\n            \\"unit\\": \\"string\\"\\n          },\\n          \\"serial\\": \\"string\\",\\n          \\"slot\\": 0,\\n          \\"status\\": \\"string\\"\\n        }\\n      ]\\n    },\\n    \\"gateway\\": \\"string\\",\\n    \\"ipType\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"lastReportedAt\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"primaryDns\\": \\"string\\",\\n    \\"productType\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"secondaryDns\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"lastReportedAt\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"gateway\\": \\"string\\",\\n    \\"ipType\\": \\"string\\",\\n    \\"primaryDns\\": \\"string\\",\\n    \\"secondaryDns\\": \\"string\\",\\n    \\"productType\\": \\"string\\",\\n    \\"components\\": {\\n      \\"powerSupplies\\": [\\n        {\\n          \\"slot\\": 0,\\n          \\"serial\\": \\"string\\",\\n          \\"model\\": \\"string\\",\\n          \\"status\\": \\"string\\",\\n          \\"poe\\": {\\n            \\"unit\\": \\"string\\",\\n            \\"maximum\\": 0\\n          }\\n        }\\n      ]\\n    },\\n    \\"model\\": \\"string\\",\\n    \\"tags\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

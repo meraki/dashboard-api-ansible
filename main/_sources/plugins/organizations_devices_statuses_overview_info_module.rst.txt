@@ -42,7 +42,7 @@ cisco.meraki.organizations_devices_statuses_overview_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Devices Statuses Overview Info.
 - Get all organizations \_devices \_statuses \_overview.
 - Return an overview of current device statuses.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Devices Statuses Overview Info.
+
       NetworkIds query parameter. An optional parameter to filter device statuses by network.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Devices Statuses Overview Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1025,7 +1030,9 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, and secureConnect.
+      Information module for Organizations Devices Statuses Overview Info.
+
+      ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
           
 
 

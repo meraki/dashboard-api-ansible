@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_sensor_alerts_overview_by_metric_info module -- Information module for networks \_sensor \_alerts \_overview \_by \_metric
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_sensor_alerts_overview_by_metric_info module -- Information module for networks \_sensor \_alerts \_overview \_bymetric
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all networks \_sensor \_alerts \_overview \_by \_metric.
+- Information module for Networks Sensor Alerts Overview Bymetric Info.
+- Get all networks \_sensor \_alerts \_overview \_bymetric.
 - Return an overview of alert occurrences over a timespan, by metric.
 
 .. note::
@@ -168,6 +169,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sensor Alerts Overview Bymetric Info.
 
       Interval query parameter. The time interval in seconds for returned data. The valid intervals are 900, 3600, 86400, 604800, 2592000. The default is 604800. Interval is calculated if time params are provided.
           
@@ -992,6 +995,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sensor Alerts Overview Bymetric Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1026,8 +1031,9 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sensor Alerts Overview Bymetric Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 731 days from today.
-          
 
 
       .. raw:: html
@@ -1060,6 +1066,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sensor Alerts Overview Bymetric Info.
 
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 366 days after t0.
 
@@ -1094,6 +1102,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Sensor Alerts Overview Bymetric Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 366 days. The default is 7 days. If interval is provided, the timespan will be autocalculated.
           
@@ -1137,7 +1147,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _sensor _alerts _overview _by _metric
+    - name: Get all networks _sensor _alerts _overview _bymetric
       cisco.meraki.networks_sensor_alerts_overview_by_metric_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1226,7 +1236,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"counts\\": {\\n      \\"apparentPower\\": 0,\\n      \\"co2\\": 0,\\n      \\"current\\": 0,\\n      \\"door\\": 0,\\n      \\"frequency\\": 0,\\n      \\"humidity\\": 0,\\n      \\"indoorAirQuality\\": 0,\\n      \\"noise\\": {\\n        \\"ambient\\": 0\\n      },\\n      \\"pm25\\": 0,\\n      \\"powerFactor\\": 0,\\n      \\"realPower\\": 0,\\n      \\"temperature\\": 0,\\n      \\"tvoc\\": 0,\\n      \\"upstreamPower\\": 0,\\n      \\"voltage\\": 0,\\n      \\"water\\": 0\\n    },\\n    \\"endTs\\": \\"string\\",\\n    \\"startTs\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"startTs\\": \\"string\\",\\n    \\"endTs\\": \\"string\\",\\n    \\"counts\\": {\\n      \\"apparentPower\\": 0,\\n      \\"co2\\": 0,\\n      \\"current\\": 0,\\n      \\"door\\": 0,\\n      \\"frequency\\": 0,\\n      \\"humidity\\": 0,\\n      \\"indoorAirQuality\\": 0,\\n      \\"noise\\": {\\n        \\"ambient\\": 0\\n      },\\n      \\"pm25\\": 0,\\n      \\"powerFactor\\": 0,\\n      \\"realPower\\": 0,\\n      \\"temperature\\": 0,\\n      \\"tvoc\\": 0,\\n      \\"upstreamPower\\": 0,\\n      \\"voltage\\": 0,\\n      \\"water\\": 0\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

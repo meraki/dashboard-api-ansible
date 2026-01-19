@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.devices_cellular_gateway_port_forwarding_rules module -- Resource module for devices \_cellular \_gateway \_port \_forwarding \_rules
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.devices_cellular_gateway_port_forwarding_rules module -- Resource module for devices \_cellulargateway \_portforwardingrules
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource devices \_cellular \_gateway \_port \_forwarding \_rules.
+- Manage operation update of the resource devices \_cellulargateway \_portforwardingrules.
 - Updates the port forwarding rules for a single MG.
 
 .. note::
@@ -1333,7 +1333,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"access\\": \\"string\\",\\n    \\"allowedIps\\": [\\n      \\"string\\"\\n    ],\\n    \\"lanIp\\": \\"string\\",\\n    \\"localPort\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"publicPort\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"lanIp\\": \\"string\\",\\n    \\"publicPort\\": \\"string\\",\\n    \\"localPort\\": \\"string\\",\\n    \\"allowedIps\\": [\\n      \\"string\\"\\n    ],\\n    \\"protocol\\": \\"string\\",\\n    \\"access\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

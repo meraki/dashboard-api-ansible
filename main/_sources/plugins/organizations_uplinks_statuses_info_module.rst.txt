@@ -42,7 +42,7 @@ cisco.meraki.organizations_uplinks_statuses_info module -- Information module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Uplinks Statuses Info.
 - Get all organizations \_uplinks \_statuses.
 - List the uplink status of every Meraki MX, MG and Z series devices in the organization.
 
@@ -173,6 +174,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Uplinks Statuses Info.
+
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -241,6 +244,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Uplinks Statuses Info.
 
       Iccids query parameter. A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
 
@@ -1064,6 +1069,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Uplinks Statuses Info.
+
       NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include these networks.
           
 
@@ -1099,6 +1106,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Uplinks Statuses Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1132,6 +1141,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Uplinks Statuses Info.
 
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
@@ -1167,6 +1178,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Uplinks Statuses Info.
+
       Serials query parameter. A list of serial numbers. The returned devices will be filtered to only include these serials.
           
 
@@ -1201,6 +1214,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Uplinks Statuses Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1371,7 +1386,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"highAvailability\\": {\\n      \\"enabled\\": true,\\n      \\"role\\": \\"string\\"\\n    },\\n    \\"lastReportedAt\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"uplinks\\": [\\n      {\\n        \\"apn\\": \\"string\\",\\n        \\"connectionType\\": \\"string\\",\\n        \\"dns1\\": \\"string\\",\\n        \\"dns2\\": \\"string\\",\\n        \\"gateway\\": \\"string\\",\\n        \\"iccid\\": \\"string\\",\\n        \\"imsi\\": \\"string\\",\\n        \\"interface\\": \\"string\\",\\n        \\"ip\\": \\"string\\",\\n        \\"ipAssignedBy\\": \\"string\\",\\n        \\"mcc\\": \\"string\\",\\n        \\"mnc\\": \\"string\\",\\n        \\"msisdn\\": \\"string\\",\\n        \\"mtu\\": 0,\\n        \\"primaryDns\\": \\"string\\",\\n        \\"provider\\": \\"string\\",\\n        \\"publicIp\\": \\"string\\",\\n        \\"roaming\\": {\\n          \\"status\\": \\"string\\"\\n        },\\n        \\"secondaryDns\\": \\"string\\",\\n        \\"signalStat\\": {\\n          \\"rsrp\\": \\"string\\",\\n          \\"rsrq\\": \\"string\\"\\n        },\\n        \\"signalType\\": \\"string\\",\\n        \\"status\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"networkId\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"model\\": \\"string\\",\\n    \\"lastReportedAt\\": \\"string\\",\\n    \\"highAvailability\\": {\\n      \\"enabled\\": true,\\n      \\"role\\": \\"string\\"\\n    },\\n    \\"uplinks\\": [\\n      {\\n        \\"interface\\": \\"string\\",\\n        \\"status\\": \\"string\\",\\n        \\"ip\\": \\"string\\",\\n        \\"gateway\\": \\"string\\",\\n        \\"publicIp\\": \\"string\\",\\n        \\"primaryDns\\": \\"string\\",\\n        \\"secondaryDns\\": \\"string\\",\\n        \\"ipAssignedBy\\": \\"string\\",\\n        \\"provider\\": \\"string\\",\\n        \\"signalStat\\": {\\n          \\"rsrp\\": \\"string\\",\\n          \\"rsrq\\": \\"string\\"\\n        },\\n        \\"mcc\\": \\"string\\",\\n        \\"mnc\\": \\"string\\",\\n        \\"roaming\\": {\\n          \\"status\\": \\"string\\"\\n        },\\n        \\"connectionType\\": \\"string\\",\\n        \\"apn\\": \\"string\\",\\n        \\"dns1\\": \\"string\\",\\n        \\"dns2\\": \\"string\\",\\n        \\"signalType\\": \\"string\\",\\n        \\"mtu\\": 0,\\n        \\"iccid\\": \\"string\\",\\n        \\"imsi\\": \\"string\\",\\n        \\"msisdn\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_switch_access_policies module -- Resource module for networks \_switch \_access \_policies
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_switch_access_policies module -- Resource module for networks \_switch \_accesspolicies
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,12 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_switch \_access \_policies. - \> Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
-- Delete an access policy for a switch network. - \> Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+- Manage operations create, update and delete of the resource networks \_switch \_accesspolicies.
+- Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+
+- Delete an access policy for a switch network.
+- Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -248,6 +252,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-guestGroupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-guestgrouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **guestGroupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-guestGroupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Group policy Number for guest group policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-guestPortBouncing"></div>
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-guestportbouncing:
@@ -281,6 +319,40 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-guestSgtId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-guestsgtid:
+
+      .. rst-class:: ansible-option-title
+
+      **guestSgtId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-guestSgtId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Security Group Tag ID for guest group policy.
 
 
       .. raw:: html
@@ -1212,7 +1284,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Name of the access policy.
+      Name of the access policy(max length 255).
 
 
       .. raw:: html
@@ -1287,6 +1359,75 @@ Parameters
 
         </div>
     
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/authentication"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/authentication:
+
+      .. rst-class:: ansible-option-title
+
+      **authentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/authentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Object for authentication mode settings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/authentication/mode"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/authentication/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/authentication/mode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication mode of the policy ( Open | Closed ).
+
+
+      .. raw:: html
+
+        </div>
+
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -1435,6 +1576,74 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataGroupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datagrouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **dataGroupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataGroupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Group policy Number for data VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataSgtId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datasgtid:
+
+      .. rst-class:: ansible-option-title
+
+      **dataSgtId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataSgtId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security Group Tag ID for data VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataVlanId"></div>
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datavlanid:
@@ -1493,7 +1702,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Enable to suspend port bounce when RADIUS servers are unreachable.
+      Disable port bounce when RADIUS servers are unreachable.
 
 
       .. rst-class:: ansible-option-line
@@ -1502,6 +1711,74 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceGroupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicegrouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **voiceGroupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceGroupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Group policy Number for voice VLAN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceSgtId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicesgtid:
+
+      .. rst-class:: ansible-option-title
+
+      **voiceSgtId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceSgtId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security Group Tag ID for voice VLAN.
 
 
       .. raw:: html
@@ -1546,6 +1823,74 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthGroupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthgrouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **failedAuthGroupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/failedAuthGroupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Group policy Number for failed authentication group policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthSgtId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthsgtid:
+
+      .. rst-class:: ansible-option-title
+
+      **failedAuthSgtId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/failedAuthSgtId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security Group Tag ID for failed authentication group policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthVlanId"></div>
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthvlanid:
@@ -1571,6 +1916,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius/preAuthenticationGroupPolicyId"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/preauthenticationgrouppolicyid:
+
+      .. rst-class:: ansible-option-title
+
+      **preAuthenticationGroupPolicyId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius/preAuthenticationGroupPolicyId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Group policy Number for pre-authentication group policy.
 
 
       .. raw:: html
@@ -2298,21 +2677,32 @@ Examples
         accessPolicyType: Hybrid authentication
         dot1x:
           controlDirection: inbound
+        guestGroupPolicyId: '1234'
         guestPortBouncing: false
+        guestSgtId: 1284392014819
         guestVlanId: 100
         hostMode: Single-Host
         increaseAccessSpeed: false
         name: 'Access policy #1'
         networkId: string
         radius:
+          authentication:
+            mode: Open
           cache:
             enabled: false
             timeout: 24
           criticalAuth:
+            dataGroupPolicyId: '1234'
+            dataSgtId: 1234
             dataVlanId: 100
             suspendPortBounce: true
+            voiceGroupPolicyId: '1234'
+            voiceSgtId: 1234
             voiceVlanId: 100
+          failedAuthGroupPolicyId: '1234'
+          failedAuthSgtId: 1284392014819
           failedAuthVlanId: 100
+          preAuthenticationGroupPolicyId: '1234'
           reAuthenticationInterval: 120
         radiusAccountingEnabled: true
         radiusAccountingServers:
@@ -2327,6 +2717,81 @@ Examples
             organizationRadiusServerId: '42'
             port: 22
             secret: secret
+        radiusTestingEnabled: false
+        urlRedirectWalledGardenEnabled: true
+        urlRedirectWalledGardenRanges:
+          - 192.168.1.0/24
+        voiceVlanClients: true
+    - name: Update by id
+      cisco.meraki.networks_switch_access_policies:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: present
+        accessPolicyNumber: string
+        accessPolicyType: Hybrid authentication
+        dot1x:
+          controlDirection: inbound
+        guestGroupPolicyId: '1234'
+        guestPortBouncing: false
+        guestSgtId: 1284392014819
+        guestVlanId: 100
+        hostMode: Single-Host
+        increaseAccessSpeed: false
+        name: 'Access policy #1'
+        networkId: string
+        radius:
+          authentication:
+            mode: Open
+          cache:
+            enabled: false
+            timeout: 24
+          criticalAuth:
+            dataGroupPolicyId: '1234'
+            dataSgtId: 1234
+            dataVlanId: 100
+            suspendPortBounce: true
+            voiceGroupPolicyId: '1234'
+            voiceSgtId: 1234
+            voiceVlanId: 100
+          failedAuthGroupPolicyId: '1234'
+          failedAuthSgtId: 1284392014819
+          failedAuthVlanId: 100
+          preAuthenticationGroupPolicyId: '1234'
+          reAuthenticationInterval: 120
+        radiusAccountingEnabled: true
+        radiusAccountingServers:
+          - host: 1.2.3.4
+            organizationRadiusServerId: '42'
+            port: 22
+            secret: secret
+            serverId: '2'
+        radiusCoaSupportEnabled: false
+        radiusGroupAttribute: '11'
+        radiusServers:
+          - host: 1.2.3.4
+            organizationRadiusServerId: '42'
+            port: 22
+            secret: secret
+            serverId: '1'
         radiusTestingEnabled: false
         urlRedirectWalledGardenEnabled: true
         urlRedirectWalledGardenRanges:
@@ -2358,70 +2823,6 @@ Examples
         state: absent
         accessPolicyNumber: string
         networkId: string
-    - name: Update by id
-      cisco.meraki.networks_switch_access_policies:
-        meraki_api_key: "{{ meraki_api_key }}"
-        meraki_base_url: "{{ meraki_base_url }}"
-        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-        meraki_certificate_path: "{{ meraki_certificate_path }}"
-        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-        meraki_output_log: "{{ meraki_output_log }}"
-        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-        meraki_log_path: "{{ meraki_log_path }}"
-        meraki_print_console: "{{ meraki_print_console }}"
-        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-        meraki_simulate: "{{ meraki_simulate }}"
-        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-        meraki_caller: "{{ meraki_caller }}"
-        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-        state: present
-        accessPolicyNumber: string
-        accessPolicyType: Hybrid authentication
-        dot1x:
-          controlDirection: inbound
-        guestPortBouncing: false
-        guestVlanId: 100
-        hostMode: Single-Host
-        increaseAccessSpeed: false
-        name: 'Access policy #1'
-        networkId: string
-        radius:
-          cache:
-            enabled: false
-            timeout: 24
-          criticalAuth:
-            dataVlanId: 100
-            suspendPortBounce: true
-            voiceVlanId: 100
-          failedAuthVlanId: 100
-          reAuthenticationInterval: 120
-        radiusAccountingEnabled: true
-        radiusAccountingServers:
-          - host: 1.2.3.4
-            organizationRadiusServerId: '42'
-            port: 22
-            secret: secret
-            serverId: '2'
-        radiusCoaSupportEnabled: false
-        radiusGroupAttribute: '11'
-        radiusServers:
-          - host: 1.2.3.4
-            organizationRadiusServerId: '42'
-            port: 22
-            secret: secret
-            serverId: '1'
-        radiusTestingEnabled: false
-        urlRedirectWalledGardenEnabled: true
-        urlRedirectWalledGardenRanges:
-          - 192.168.1.0/24
-        voiceVlanClients: true
 
 
 
@@ -2482,7 +2883,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": "string"}, "guestPortBouncing": true, "guestVlanId": 0, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataVlanId": 0, "suspendPortBounce": true, "voiceVlanId": 0}, "failedAuthVlanId": 0, "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": "string", "accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": "string"}, "enforceRadiusMonitoring": true, "guestGroupPolicyId": "string", "guestPortBouncing": true, "guestSgtId": 0, "guestVlanId": {}, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"authentication": {"mode": "string"}, "cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataGroupPolicyId": "string", "dataSgtId": 0, "dataVlanId": 0, "suspendPortBounce": true, "voiceGroupPolicyId": "string", "voiceSgtId": 0, "voiceVlanId": 0}, "failedAuthGroupPolicyId": "string", "failedAuthSgtId": 0, "failedAuthVlanId": 0, "preAuthenticationGroupPolicyId": "string", "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
 
 
       .. raw:: html

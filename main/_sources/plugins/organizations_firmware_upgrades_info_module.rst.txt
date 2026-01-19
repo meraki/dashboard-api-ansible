@@ -42,7 +42,7 @@ cisco.meraki.organizations_firmware_upgrades_info module -- Information module f
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Firmware Upgrades Info.
 - Get all organizations \_firmware \_upgrades.
 - Get firmware upgrade information for an organization.
 
@@ -172,6 +173,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Firmware Upgrades Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1030,6 +1033,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Firmware Upgrades Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1063,6 +1068,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Firmware Upgrades Info.
 
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
@@ -1098,6 +1105,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Firmware Upgrades Info.
+
       ProductTypes query parameter. Optional parameter to filter the upgrade by product type.
 
 
@@ -1131,6 +1140,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Firmware Upgrades Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1166,6 +1177,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Firmware Upgrades Info.
 
       Status query parameter. Optional parameter to filter the upgrade by status.
 
@@ -1334,7 +1347,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"completedAt\\": \\"string\\",\\n    \\"fromVersion\\": {\\n      \\"firmware\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"shortName\\": \\"string\\"\\n    },\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"productTypes\\": \\"string\\",\\n    \\"status\\": \\"string\\",\\n    \\"time\\": \\"string\\",\\n    \\"toVersion\\": {\\n      \\"firmware\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"shortName\\": \\"string\\"\\n    },\\n    \\"upgradeBatchId\\": \\"string\\",\\n    \\"upgradeId\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"upgradeId\\": \\"string\\",\\n    \\"upgradeBatchId\\": \\"string\\",\\n    \\"network\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\"\\n    },\\n    \\"status\\": \\"string\\",\\n    \\"time\\": \\"string\\",\\n    \\"completedAt\\": \\"string\\",\\n    \\"productTypes\\": \\"string\\",\\n    \\"toVersion\\": {\\n      \\"id\\": \\"string\\",\\n      \\"shortName\\": \\"string\\",\\n      \\"firmware\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\"\\n    },\\n    \\"fromVersion\\": {\\n      \\"id\\": \\"string\\",\\n      \\"shortName\\": \\"string\\",\\n      \\"firmware\\": \\"string\\",\\n      \\"releaseType\\": \\"string\\",\\n      \\"releaseDate\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

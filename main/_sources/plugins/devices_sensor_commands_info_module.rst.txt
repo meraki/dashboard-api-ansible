@@ -42,7 +42,7 @@ cisco.meraki.devices_sensor_commands_info module -- Information module for devic
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Devices Sensor Commands Info.
 - Get all devices \_sensor \_commands.
 - Get devices \_sensor \_commands by id.
 - Returns a historical log of all commands.
@@ -136,6 +137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Sensor Commands Info.
 
       CommandId path parameter. Command ID.
 
@@ -208,6 +211,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Sensor Commands Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1066,6 +1071,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       Operations query parameter. Optional parameter to filter commands by operation. Allowed values are disableDownstreamPower, enableDownstreamPower, cycleDownstreamPower, and refreshData.
           
 
@@ -1101,6 +1108,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
 
 
@@ -1135,6 +1144,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       Serial path parameter.
 
 
@@ -1168,6 +1179,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Sensor Commands Info.
 
       SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'descending'.
           
@@ -1204,6 +1217,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1239,6 +1254,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
 
 
@@ -1273,6 +1290,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Devices Sensor Commands Info.
+
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 30 days after t0.
 
 
@@ -1306,6 +1325,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Devices Sensor Commands Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 30 days. The default is 30 days.
           

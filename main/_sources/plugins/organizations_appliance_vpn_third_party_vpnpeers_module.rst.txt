@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers module -- Resource module for organizations \_appliance \_vpn \_third \_party \_vpnpeers
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers module -- Resource module for organizations \_appliance \_vpn \_thirdpartyvpnpeers
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource organizations \_appliance \_vpn \_third \_party \_vpnpeers.
+- Manage operation update of the resource organizations \_appliance \_vpn \_thirdpartyvpnpeers.
 - Update the third party VPN peers for an organization.
 
 .. note::
@@ -967,6 +967,535 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor:
+
+      .. rst-class:: ansible-option-title
+
+      **ebgpNeighbor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional The BGP neighbor configuration for the VPN peer. Supported only for MX 19.1 and above.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ebgpHoldTimer"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/ebgpholdtimer:
+
+      .. rst-class:: ansible-option-title
+
+      **ebgpHoldTimer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ebgpHoldTimer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eBGP hold timer in seconds for each neighbor. The eBGP hold timer must be an integer between 12 and 240.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ebgpMultihop"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/ebgpmultihop:
+
+      .. rst-class:: ansible-option-title
+
+      **ebgpMultihop**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ebgpMultihop" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configure this if the neighbor is not adjacent. The eBGP multi-hop must be an integer between 1 and 255.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ipVersion"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/ipversion:
+
+      .. rst-class:: ansible-option-title
+
+      **ipVersion**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ipVersion" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The IP version of the neighbor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/multiExitDiscriminator"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/multiexitdiscriminator:
+
+      .. rst-class:: ansible-option-title
+
+      **multiExitDiscriminator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/multiExitDiscriminator" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configures the local metric associated with routes received from the remote peer. Routes from peers with lower metrics are will be preferred. Must be an integer between 0 and 4294967295. MED is 6th in the decision tree when identical routes from multiple peers exist.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/neighborIp"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/neighborip:
+
+      .. rst-class:: ansible-option-title
+
+      **neighborIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/neighborIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4/IPv6 address of the neighbor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/pathPrepend"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/pathprepend:
+
+      .. rst-class:: ansible-option-title
+
+      **pathPrepend**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/pathPrepend" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Prepends the AS\_PATH BGP Attribute associated with routes received from the remote peer. Configurable value of ASNs to prepend. Length of the array may not exceed 10, and each ASN in the array must be an integer between 1 and 4294967295. AS\_PATH is 4th in the decision tree when identical routes from multiple peers exist.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/remoteAsNumber"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/remoteasnumber:
+
+      .. rst-class:: ansible-option-title
+
+      **remoteAsNumber**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/remoteAsNumber" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Remote ASN of the neighbor. The remote ASN must be an integer between 1 and 4294967295.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/sourceIp"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/sourceip:
+
+      .. rst-class:: ansible-option-title
+
+      **sourceIp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/sourceIp" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Source IP of eBGP neighbor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/weight"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ebgpneighbor/weight:
+
+      .. rst-class:: ansible-option-title
+
+      **weight**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/weight" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configures the local metric associated with routes received from the remote peer. Routes from peers with lower metrics are will be preferred. Must be an integer between 0 and 4294967295. MED is 6th in the decision tree when identical routes from multiple peers exist.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/group"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/group:
+
+      .. rst-class:: ansible-option-title
+
+      **group**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/group" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Contains the mapping between primary tunnel and backup tunnels.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/group/activeActiveTunnel"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/group/activeactivetunnel:
+
+      .. rst-class:: ansible-option-title
+
+      **activeActiveTunnel**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/group/activeActiveTunnel" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Both primary and backup tunnels are active.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/group/failover"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/group/failover:
+
+      .. rst-class:: ansible-option-title
+
+      **failover**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/group/failover" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Contains the failover configuration for the group.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/group/failover/directToInternet"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/group/failover/directtointernet:
+
+      .. rst-class:: ansible-option-title
+
+      **directToInternet**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/group/failover/directToInternet" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional When both primary and backup tunnels are down, direct traffic to the internet. Traffic will be routed via the WAN.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/group/number"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/group/number:
+
+      .. rst-class:: ansible-option-title
+
+      **number**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/group/number" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Represents the ordering of primary and backup tunnels group. Primary and backup tunnels are grouped by this number. If you submit a request with the numbers 1, 9, 999, these numbers will be automatically adjusted to a sequential order starting from 1. So, they will be changed to 1, 2, 3 to reflect their positions in the sequence.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ikeVersion"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/ikeversion:
@@ -1376,6 +1905,48 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/isRouteBased"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/isroutebased:
+
+      .. rst-class:: ansible-option-title
+
+      **isRouteBased**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/isRouteBased" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional If true, the VPN peer is route-based. If not included, the default is false. Supported only for MX 19.1 and above.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/localId"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/localid:
@@ -1444,6 +2015,75 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/network"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/network:
+
+      .. rst-class:: ansible-option-title
+
+      **network**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/network" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional A list of network Names and IDs that will connect with this peer. Supported only for MX 19.1 and above.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/network/ids"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/network/ids:
+
+      .. rst-class:: ansible-option-title
+
+      **ids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/network/ids" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional A list of network IDs.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/networkTags"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/networktags:
@@ -1469,6 +2109,74 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       A list of network tags that will connect with this peer. Use 'all' for all networks. Use 'none' for no networks. If not included, the default is 'all'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/peerId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/peerid:
+
+      .. rst-class:: ansible-option-title
+
+      **peerId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/peerId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the IPsec peer.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/priorityInGroup"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/priorityingroup:
+
+      .. rst-class:: ansible-option-title
+
+      **priorityInGroup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/priorityInGroup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Represents the order of peer inside a group. If you submit a request with the numbers 1, 9, 999, these numbers will be automatically adjusted to a sequential order starting from 1. So, they will be changed to 1, 2, 3 to reflect their positions in the sequence.
 
 
       .. raw:: html
@@ -1645,6 +2353,75 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/slaPolicy"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/slapolicy:
+
+      .. rst-class:: ansible-option-title
+
+      **slaPolicy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/slaPolicy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Optional Information about the SLA policy to be applied to the peer.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/slaPolicy/id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module__parameter-peers/slapolicy/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/slaPolicy/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The ID of the SLA policy.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 
 .. Attributes
@@ -1707,7 +2484,24 @@ Examples
         state: present
         organizationId: string
         peers:
-          - ikeVersion: '2'
+          - ebgpNeighbor:
+              ebgpHoldTimer: 180
+              ebgpMultihop: 2
+              ipVersion: 4
+              multiExitDiscriminator: 1
+              neighborIp: 10.10.10.22
+              pathPrepend:
+                - 1
+                - 2
+              remoteAsNumber: 64343
+              sourceIp: 10.10.10.22
+              weight: 10
+            group:
+              activeActiveTunnel: true
+              failover:
+                directToInternet: true
+              number: 1
+            ikeVersion: '2'
             ipsecPolicies:
               childAuthAlgo:
                 - sha1
@@ -1726,10 +2520,18 @@ Examples
               ikePrfAlgo:
                 - prfsha1
             ipsecPoliciesPreset: default
+            isRouteBased: true
             localId: myMXId@meraki.com
             name: Peer Name
+            network:
+              ids:
+                - N_1
+                - L_2
+                - N_3
             networkTags:
               - none
+            peerId: '1234'
+            priorityInGroup: 1
             privateSubnets:
               - 192.168.1.0/24
               - 192.168.128.0/24
@@ -1737,6 +2539,8 @@ Examples
             publicIp: 123.123.123.1
             remoteId: miles@meraki.com
             secret: Sample Password
+            slaPolicy:
+              id: '1234'
 
 
 
@@ -1797,7 +2601,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"ikeVersion\\": \\"string\\",\\n    \\"ipsecPolicies\\": {\\n      \\"childAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childLifetime\\": 0,\\n      \\"childPfsGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeDiffieHellmanGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeLifetime\\": 0,\\n      \\"ikePrfAlgo\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"ipsecPoliciesPreset\\": \\"string\\",\\n    \\"localId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"networkTags\\": [\\n      \\"string\\"\\n    ],\\n    \\"privateSubnets\\": [\\n      \\"string\\"\\n    ],\\n    \\"publicIp\\": \\"string\\",\\n    \\"remoteId\\": \\"string\\",\\n    \\"secret\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"peerId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"remoteId\\": \\"string\\",\\n    \\"localId\\": \\"string\\",\\n    \\"secret\\": \\"string\\",\\n    \\"privateSubnets\\": [\\n      \\"string\\"\\n    ],\\n    \\"ipsecPolicies\\": {\\n      \\"ikeCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikePrfAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeDiffieHellmanGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeLifetime\\": 0,\\n      \\"childCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childPfsGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"childLifetime\\": 0\\n    },\\n    \\"slaPolicy\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"ipsecPoliciesPreset\\": \\"string\\",\\n    \\"ikeVersion\\": \\"string\\",\\n    \\"networkTags\\": [\\n      \\"string\\"\\n    ],\\n    \\"network\\": {\\n      \\"names\\": [\\n        \\"string\\"\\n      ],\\n      \\"ids\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"isRouteBased\\": true,\\n    \\"ebgpNeighbor\\": {\\n      \\"neighborId\\": 0,\\n      \\"neighborIp\\": \\"string\\",\\n      \\"ipVersion\\": 0,\\n      \\"remoteAsNumber\\": 0,\\n      \\"ebgpHoldTimer\\": 0,\\n      \\"ebgpMultihop\\": 0,\\n      \\"sourceIp\\": \\"string\\",\\n      \\"pathPrepend\\": [\\n        0\\n      ],\\n      \\"multiExitDiscriminator\\": 0,\\n      \\"weight\\": 0\\n    },\\n    \\"priorityInGroup\\": 0,\\n    \\"group\\": {\\n      \\"number\\": 0,\\n      \\"failover\\": {\\n        \\"directToInternet\\": true\\n      },\\n      \\"activeActiveTunnel\\": true\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

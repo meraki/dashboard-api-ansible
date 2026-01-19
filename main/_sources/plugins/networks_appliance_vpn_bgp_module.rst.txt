@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_vpn_bgp module -- Resource module for networks \
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1325,6 +1325,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-neighbors/multiExitDiscriminator"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vpn_bgp_module__parameter-neighbors/multiexitdiscriminator:
+
+      .. rst-class:: ansible-option-title
+
+      **multiExitDiscriminator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-neighbors/multiExitDiscriminator" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configures the local metric associated with routes received from the remote peer. Routes from peers with lower metrics are will be preferred. Must be an integer between 0 and 4294967295. MED is 6th in the decision tree when identical routes from multiple peers exist.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-neighbors/nextHopIp"></div>
 
       .. _ansible_collections.cisco.meraki.networks_appliance_vpn_bgp_module__parameter-neighbors/nexthopip:
@@ -1350,6 +1384,40 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       The IPv4 address of the remote BGP peer that will establish a TCP session with the local MX.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-neighbors/pathPrepend"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vpn_bgp_module__parameter-neighbors/pathprepend:
+
+      .. rst-class:: ansible-option-title
+
+      **pathPrepend**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-neighbors/pathPrepend" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Prepends the AS\_PATH BGP Attribute associated with routes received from the remote peer. Configurable value of ASNs to prepend. Length of the array may not exceed 10, and each ASN in the array must be an integer between 1 and 4294967295. AS\_PATH is 4th in the decision tree when identical routes from multiple peers exist.
 
 
       .. raw:: html
@@ -1535,6 +1603,40 @@ Parameters
         </div>
 
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-neighbors/weight"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vpn_bgp_module__parameter-neighbors/weight:
+
+      .. rst-class:: ansible-option-title
+
+      **weight**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-neighbors/weight" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sets the local weight for routes received from the remote peer. Routes from peers with higher weights will be preferred. Must be an integer between 0 and 49.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -1641,12 +1743,17 @@ Examples
             ip: 10.10.10.22
             ipv6:
               address: 2002::1234:abcd:ffff:c0a8:101
+            multiExitDiscriminator: 2
             nextHopIp: 1.2.3.4
+            pathPrepend:
+              - 1
+              - 2
             receiveLimit: 120
             remoteAsNumber: 64343
             sourceInterface: wan1
             ttlSecurity:
               enabled: false
+            weight: 10
         networkId: string
 
 
@@ -1708,7 +1815,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"asNumber": 0, "enabled": true, "ibgpHoldTimer": 0, "neighbors": [{"allowTransit": true, "authentication": {"password": "string"}, "ebgpHoldTimer": 0, "ebgpMultihop": 0, "ip": "string", "ipv6": {"address": "string"}, "nextHopIp": "string", "receiveLimit": 0, "remoteAsNumber": 0, "sourceInterface": "string", "ttlSecurity": {"enabled": true}}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"asNumber": 0, "enabled": true, "ibgpHoldTimer": 0, "neighbors": [{"allowTransit": true, "authentication": {"password": "string"}, "ebgpHoldTimer": 0, "ebgpMultihop": 0, "ip": "string", "ipv6": {"address": "string"}, "multiExitDiscriminator": 0, "nextHopIp": "string", "pathPrepend": [0], "receiveLimit": 0, "remoteAsNumber": 0, "sourceInterface": "string", "ttlSecurity": {"enabled": true}, "weight": 0}]}`
 
 
       .. raw:: html

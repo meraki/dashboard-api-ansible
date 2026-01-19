@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_camera_custom_analytics_artifacts_info module -- Information module for organizations \_camera \_custom \_analytics \_artifacts
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_camera_custom_analytics_artifacts_info module -- Information module for organizations \_camera \_customanalytics \_artifacts
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_camera \_custom \_analytics \_artifacts.
-- Get organizations \_camera \_custom \_analytics \_artifacts by id.
+- Information module for Organizations Camera Customanalytics Artifacts Info.
+- Get all organizations \_camera \_customanalytics \_artifacts.
+- Get organizations \_camera \_customanalytics \_artifacts by id.
 - Get Custom Analytics Artifact.
 - List Custom Analytics Artifacts.
 
@@ -136,6 +137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Camera Customanalytics Artifacts Info.
 
       ArtifactId path parameter. Artifact ID.
 
@@ -993,6 +996,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Camera Customanalytics Artifacts Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1036,7 +1041,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _camera _custom _analytics _artifacts
+    - name: Get all organizations _camera _customanalytics _artifacts
       cisco.meraki.organizations_camera_custom_analytics_artifacts_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1061,7 +1066,7 @@ Examples
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         organizationId: string
       register: result
-    - name: Get organizations _camera _custom _analytics _artifacts by id
+    - name: Get organizations _camera _customanalytics _artifacts by id
       cisco.meraki.organizations_camera_custom_analytics_artifacts_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

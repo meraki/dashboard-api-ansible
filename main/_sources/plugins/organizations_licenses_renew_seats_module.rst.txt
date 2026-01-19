@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_licenses_renew_seats module -- Resource module for organizations \_licenses \_renew \_seats
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_licenses_renew_seats module -- Resource module for organizations \_licenses \_renewseats
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource organizations \_licenses \_renew \_seats. - \> Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license.
+- Manage operation create of the resource organizations \_licenses \_renewseats.
+- Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license.
+
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

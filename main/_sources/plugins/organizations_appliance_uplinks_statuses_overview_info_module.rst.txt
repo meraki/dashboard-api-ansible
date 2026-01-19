@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_uplinks_statuses_overview_info module -- In
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Appliance Uplinks Statuses Overview Info.
 - Get all organizations \_appliance \_uplinks \_statuses \_overview.
 - Returns an overview of uplink statuses.
 
@@ -933,6 +934,43 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkIds"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_statuses_overview_info_module__parameter-networkids:
+
+      .. rst-class:: ansible-option-title
+
+      **networkIds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkIds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Uplinks Statuses Overview Info.
+
+      NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include these networks.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-organizationId"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_statuses_overview_info_module__parameter-organizationid:
@@ -956,6 +994,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Uplinks Statuses Overview Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1021,6 +1061,7 @@ Examples
         meraki_caller: "{{ meraki_caller }}"
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        networkIds: []
         organizationId: string
       register: result
 

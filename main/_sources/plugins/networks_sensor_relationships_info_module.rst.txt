@@ -42,7 +42,7 @@ cisco.meraki.networks_sensor_relationships_info module -- Information module for
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Networks Sensor Relationships Info.
 - Get all networks \_sensor \_relationships.
 - List the sensor roles for devices in a given network.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Sensor Relationships Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"device\\": {\\n      \\"name\\": \\"string\\",\\n      \\"productType\\": \\"string\\",\\n      \\"serial\\": \\"string\\"\\n    },\\n    \\"relationships\\": {\\n      \\"livestream\\": {\\n        \\"relatedDevices\\": [\\n          {\\n            \\"productType\\": \\"string\\",\\n            \\"serial\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"device\\": {\\n      \\"name\\": \\"string\\",\\n      \\"serial\\": \\"string\\",\\n      \\"productType\\": \\"string\\"\\n    },\\n    \\"relationships\\": {\\n      \\"livestream\\": {\\n        \\"relatedDevices\\": [\\n          {\\n            \\"serial\\": \\"string\\",\\n            \\"productType\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_camera_wireless_profiles_info module -- Information module for networks \_camera \_wireless \_profiles
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_camera_wireless_profiles_info module -- Information module for networks \_camera \_wirelessprofiles
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Get all networks \_camera \_wireless \_profiles.
-- Get networks \_camera \_wireless \_profiles by id.
+- Information module for Networks Camera Wirelessprofiles Info.
+- Get all networks \_camera \_wirelessprofiles.
+- Get networks \_camera \_wirelessprofiles by id.
 - List the camera wireless profiles for this network.
 - Retrieve a single camera wireless profile.
 
@@ -959,6 +960,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Camera Wirelessprofiles Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -992,6 +995,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Networks Camera Wirelessprofiles Info.
 
       WirelessProfileId path parameter. Wireless profile ID.
 
@@ -1036,7 +1041,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _camera _wireless _profiles
+    - name: Get all networks _camera _wirelessprofiles
       cisco.meraki.networks_camera_wireless_profiles_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1061,7 +1066,7 @@ Examples
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         networkId: string
       register: result
-    - name: Get networks _camera _wireless _profiles by id
+    - name: Get networks _camera _wirelessprofiles by id
       cisco.meraki.networks_camera_wireless_profiles_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

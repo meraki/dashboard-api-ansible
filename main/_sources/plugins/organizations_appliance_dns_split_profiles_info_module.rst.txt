@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_dns_split_profiles_info module -- Informati
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Appliance Dns Split Profiles Info.
 - Get all organizations \_appliance \_dns \_split \_profiles.
 - Fetch the split DNS profiles used in the organization.
 
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Appliance Dns Split Profiles Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -990,6 +993,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Appliance Dns Split Profiles Info.
 
       ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
 
@@ -1118,7 +1123,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"hostnames\\": [\\n      \\"string\\"\\n    ],\\n    \\"name\\": \\"string\\",\\n    \\"nameservers\\": {\\n      \\"addresses\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"profileId\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"profileId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"hostnames\\": [\\n      \\"string\\"\\n    ],\\n    \\"nameservers\\": {\\n      \\"addresses\\": [\\n        \\"string\\"\\n      ]\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

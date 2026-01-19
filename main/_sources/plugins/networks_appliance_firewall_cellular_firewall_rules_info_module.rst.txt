@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_firewall_cellular_firewall_rules_info module -- Information module for networks \_appliance \_firewall \_cellular \_firewall \_rules
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_firewall_cellular_firewall_rules_info module -- Information module for networks \_appliance \_firewall \_cellularfirewallrules
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all networks \_appliance \_firewall \_cellular \_firewall \_rules.
+- Information module for Networks Appliance Firewall Cellularfirewallrules Info.
+- Get all networks \_appliance \_firewall \_cellularfirewallrules.
 - Return the cellular firewall rules for an MX network.
 
 .. note::
@@ -957,6 +958,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Networks Appliance Firewall Cellularfirewallrules Info.
+
       NetworkId path parameter. Network ID.
 
 
@@ -998,7 +1001,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all networks _appliance _firewall _cellular _firewall _rules
+    - name: Get all networks _appliance _firewall _cellularfirewallrules
       cisco.meraki.networks_appliance_firewall_cellular_firewall_rules_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1063,7 +1066,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1083,7 +1086,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"comment\\": \\"string\\",\\n    \\"destCidr\\": \\"string\\",\\n    \\"destPort\\": \\"string\\",\\n    \\"policy\\": \\"string\\",\\n    \\"protocol\\": \\"string\\",\\n    \\"srcCidr\\": \\"string\\",\\n    \\"srcPort\\": \\"string\\",\\n    \\"syslogEnabled\\": true\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`[{}]`
 
 
       .. raw:: html

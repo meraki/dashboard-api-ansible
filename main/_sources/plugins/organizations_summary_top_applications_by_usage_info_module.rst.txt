@@ -42,7 +42,7 @@ cisco.meraki.organizations_summary_top_applications_by_usage_info module -- Info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.21.9).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.22.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,6 +68,7 @@ Synopsis
 
 .. Description
 
+- Information module for Organizations Summary Top Applications By Usage Info.
 - Get all organizations \_summary \_top \_applications \_by \_usage.
 - Return the top applications sorted by data usage over given time range. Default unit is megabytes.
 
@@ -134,6 +135,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Summary Top Applications By Usage Info.
 
       Device query parameter. Match result to an exact device tag.
 
@@ -991,6 +994,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Summary Top Applications By Usage Info.
+
       NetworkId query parameter. Match result to an exact network id.
 
 
@@ -1024,6 +1029,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Summary Top Applications By Usage Info.
 
       NetworkTag query parameter. Match result to an exact network tag.
 
@@ -1059,6 +1066,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Summary Top Applications By Usage Info.
+
       OrganizationId path parameter. Organization ID.
 
 
@@ -1093,7 +1102,9 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Quantity query parameter. Set number of desired results to return. Default is 10.
+      Information module for Organizations Summary Top Applications By Usage Info.
+
+      Quantity query parameter. Set number of desired results to return. Default is 10. Maximum is 50.
 
 
       .. raw:: html
@@ -1126,6 +1137,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Summary Top Applications By Usage Info.
 
       SsidName query parameter. Filter results by ssid name.
 
@@ -1161,6 +1174,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Summary Top Applications By Usage Info.
+
       T0 query parameter. The beginning of the timespan for the data.
 
 
@@ -1194,6 +1209,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Summary Top Applications By Usage Info.
 
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
 
@@ -1229,6 +1246,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
+      Information module for Organizations Summary Top Applications By Usage Info.
+
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be greater than or equal to 25 minutes and be less than or equal to 186 days. The default is 1 day.
           
 
@@ -1263,6 +1282,8 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
+
+      Information module for Organizations Summary Top Applications By Usage Info.
 
       UsageUplink query parameter. Filter results by usage uplink.
 
@@ -1399,7 +1420,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"application\\": \\"string\\",\\n    \\"downstream\\": 0,\\n    \\"percentage\\": 0,\\n    \\"total\\": 0,\\n    \\"upstream\\": 0\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"application\\": \\"string\\",\\n    \\"total\\": 0,\\n    \\"downstream\\": 0,\\n    \\"upstream\\": 0,\\n    \\"percentage\\": 0\\n  }\\n]\\n"`
 
 
       .. raw:: html
