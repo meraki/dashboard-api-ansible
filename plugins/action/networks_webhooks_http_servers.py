@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -33,9 +32,9 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
-    payloadTemplate=dict(type="dict"),
-    sharedSecret=dict(type="str"),
     url=dict(type="str"),
+    sharedSecret=dict(type="str"),
+    payloadTemplate=dict(type="dict"),
     networkId=dict(type="str"),
     httpServerId=dict(type="str"),
 ))
@@ -54,76 +53,91 @@ class NetworksWebhooksHttpServers(object):
         self.meraki = meraki
         self.new_object = dict(
             name=params.get("name"),
-            payloadTemplate=params.get("payloadTemplate"),
-            sharedSecret=params.get("sharedSecret"),
             url=params.get("url"),
+            sharedSecret=params.get("sharedSecret"),
+            payloadTemplate=params.get("payloadTemplate"),
             networkId=params.get("networkId"),
             httpServerId=params.get("httpServerId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('httpServerId') is not None or self.new_object.get('http_server_id') is not None:
-            new_object_params['httpServerId'] = self.new_object.get('httpServerId') or \
-                self.new_object.get('http_server_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('httpServerId') is not None or self.new_object.get(
+                'http_server_id') is not None:
+            new_object_params['httpServerId'] = self.new_object.get(
+                'httpServerId') or self.new_object.get('http_server_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('payloadTemplate') is not None or self.new_object.get('payload_template') is not None:
-            new_object_params['payloadTemplate'] = self.new_object.get('payloadTemplate') or \
-                self.new_object.get('payload_template')
-        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
-            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
-                self.new_object.get('shared_secret')
-        if self.new_object.get('url') is not None or self.new_object.get('url') is not None:
+        if self.new_object.get(
+                'url') is not None or self.new_object.get('url') is not None:
             new_object_params['url'] = self.new_object.get('url') or \
                 self.new_object.get('url')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('sharedSecret') is not None or self.new_object.get(
+                'shared_secret') is not None:
+            new_object_params['sharedSecret'] = self.new_object.get(
+                'sharedSecret') or self.new_object.get('shared_secret')
+        if self.new_object.get('payloadTemplate') is not None or self.new_object.get(
+                'payload_template') is not None:
+            new_object_params['payloadTemplate'] = self.new_object.get(
+                'payloadTemplate') or self.new_object.get('payload_template')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('httpServerId') is not None or self.new_object.get('http_server_id') is not None:
-            new_object_params['httpServerId'] = self.new_object.get('httpServerId') or \
-                self.new_object.get('http_server_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('httpServerId') is not None or self.new_object.get(
+                'http_server_id') is not None:
+            new_object_params['httpServerId'] = self.new_object.get(
+                'httpServerId') or self.new_object.get('http_server_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('payloadTemplate') is not None or self.new_object.get('payload_template') is not None:
-            new_object_params['payloadTemplate'] = self.new_object.get('payloadTemplate') or \
-                self.new_object.get('payload_template')
-        if self.new_object.get('sharedSecret') is not None or self.new_object.get('shared_secret') is not None:
-            new_object_params['sharedSecret'] = self.new_object.get('sharedSecret') or \
-                self.new_object.get('shared_secret')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('httpServerId') is not None or self.new_object.get('http_server_id') is not None:
-            new_object_params['httpServerId'] = self.new_object.get('httpServerId') or \
-                self.new_object.get('http_server_id')
+        if self.new_object.get('sharedSecret') is not None or self.new_object.get(
+                'shared_secret') is not None:
+            new_object_params['sharedSecret'] = self.new_object.get(
+                'sharedSecret') or self.new_object.get('shared_secret')
+        if self.new_object.get('payloadTemplate') is not None or self.new_object.get(
+                'payload_template') is not None:
+            new_object_params['payloadTemplate'] = self.new_object.get(
+                'payloadTemplate') or self.new_object.get('payload_template')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('httpServerId') is not None or self.new_object.get(
+                'http_server_id') is not None:
+            new_object_params['httpServerId'] = self.new_object.get(
+                'httpServerId') or self.new_object.get('http_server_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -196,17 +210,20 @@ class NetworksWebhooksHttpServers(object):
 
         obj_params = [
             ("name", "name"),
-            ("payloadTemplate", "payloadTemplate"),
-            ("sharedSecret", "sharedSecret"),
             ("url", "url"),
+            ("sharedSecret", "sharedSecret"),
+            ("payloadTemplate", "payloadTemplate"),
             ("networkId", "networkId"),
             ("httpServerId", "httpServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_licenses_assign_seats
-short_description: Resource module for organizations _licenses _assign _seats
+short_description: Resource module for organizations _licenses _assignseats
 description:
-  - Manage operation create of the resource organizations _licenses _assign _seats.
-  - Assign SM seats to a network. This will increase the managed SM device limit of the network.
+  - Manage operation create of the resource organizations _licenses _assignseats.
+  - Assign SM seats to a network. This will increase the managed SM device limit of
+    the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -25,7 +26,8 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   seatCount:
-    description: The number of seats to assign to the SM network. Must be less than or equal to the total number of seats of the license.
+    description: The number of seats to assign to the SM network. Must be less than
+      or equal to the total number of seats of the license.
     type: int
 requirements:
   - meraki >= 2.4.9
@@ -79,29 +81,29 @@ meraki_response:
     {
       "resultingLicenses": [
         {
-          "activationDate": "string",
-          "claimDate": "string",
-          "deviceSerial": "string",
-          "durationInDays": 0,
-          "expirationDate": "string",
-          "headLicenseId": "string",
           "id": "string",
-          "licenseKey": "string",
           "licenseType": "string",
-          "networkId": "string",
+          "licenseKey": "string",
           "orderNumber": "string",
+          "deviceSerial": "string",
+          "networkId": "string",
+          "state": "string",
+          "seatCount": 0,
+          "totalDurationInDays": 0,
+          "durationInDays": 0,
           "permanentlyQueuedLicenses": [
             {
-              "durationInDays": 0,
               "id": "string",
-              "licenseKey": "string",
               "licenseType": "string",
-              "orderNumber": "string"
+              "licenseKey": "string",
+              "orderNumber": "string",
+              "durationInDays": 0
             }
           ],
-          "seatCount": 0,
-          "state": "string",
-          "totalDurationInDays": 0
+          "claimDate": "string",
+          "activationDate": "string",
+          "expirationDate": "string",
+          "headLicenseId": "string"
         }
       ]
     }

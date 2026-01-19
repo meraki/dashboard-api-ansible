@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_connectivity_monitoring_destinations_info
-short_description: Information module for networks _appliance _connectivity _monitoring _destinations
+short_description: Information module for networks _appliance _connectivitymonitoringdestinations
 description:
-  - Get all networks _appliance _connectivity _monitoring _destinations.
+  - Information module for Networks Appliance Connectivitymonitoringdestinations Info.
+  - Get all networks _appliance _connectivitymonitoringdestinations.
   - Return the connectivity testing destinations for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Connectivitymonitoringdestinations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceConnectivityMonitoringDestinations
-    description: Complete reference of the getNetworkApplianceConnectivityMonitoringDestinations API.
+    description: Complete reference of the getNetworkApplianceConnectivityMonitoringDestinations
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-connectivity-monitoring-destinations
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _connectivity _monitoring _destinations
+- name: Get all networks _appliance _connectivitymonitoringdestinations
   cisco.meraki.networks_appliance_connectivity_monitoring_destinations_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,9 +75,9 @@ meraki_response:
   sample: >
     [
       {
-        "default": true,
+        "ip": "string",
         "description": "string",
-        "ip": "string"
+        "default": true
       }
     ]
 """

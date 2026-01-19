@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_by_network_info
-short_description: Information module for organizations _assurance _alerts _overview _by _network
+short_description: Information module for organizations _assurance _alerts _overview
+  _by _network
 description:
+  - Information module for Organizations Assurance Alerts Overview By Network Info.
   - Get all organizations _assurance _alerts _overview _by _network.
   - Return a Summary of Alerts grouped by network and severity.
 version_added: '1.0.0'
@@ -21,96 +23,128 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   sortOrder:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - >
-        SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'ascending'.
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'ascending'.
     type: str
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts overview by network id.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network id.
     type: str
   severity:
     description:
-      - Severity query parameter. Optional parameter to filter alerts overview by severity type.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   types:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - TsStart query parameter. Optional parameter to filter by starting timestamp.
     type: str
   tsEnd:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp.
     type: str
   category:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   serials:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
   deviceTags:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - DeviceTags query parameter. Optional parameter to filter by device tags.
     elements: str
     type: list
   active:
     description:
-      - Active query parameter. Optional parameter to filter by active alerts defaults to true.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - Active query parameter. Optional parameter to filter by active alerts defaults
+        to true.
     type: bool
   dismissed:
     description:
-      - Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - Dismissed query parameter. Optional parameter to filter by dismissed alerts
+        defaults to false.
     type: bool
   resolved:
     description:
-      - Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
+      - Resolved query parameter. Optional parameter to filter by resolved alerts
+        defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
+      - Information module for Organizations Assurance Alerts Overview By Network Info.
       - >
-        SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that
-        device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch
-        and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
+        SuppressAlertsForOfflineNodes query parameter. When set to true the api will
+        only return connectivity alerts for a given device if that device is in an
+        offline state. This only applies to devices. This is ignored when resolved
+        is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only
+        the Unreachable alert will be returned. Defaults to false.
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewByNetwork
-    description: Complete reference of the getOrganizationAssuranceAlertsOverviewByNetwork API.
+    description: Complete reference of the getOrganizationAssuranceAlertsOverviewByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-by-network
 notes:
   - SDK Method used are
@@ -174,13 +208,13 @@ meraki_response:
     {
       "items": [
         {
-          "alertCount": 0,
           "networkId": "string",
           "networkName": "string",
+          "alertCount": 0,
           "severityCounts": [
             {
-              "count": 0,
-              "type": "string"
+              "type": "string",
+              "count": 0
             }
           ]
         }

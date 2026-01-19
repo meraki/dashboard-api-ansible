@@ -30,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations createOrganizationDevicesControllerMigration
-    description: Complete reference of the createOrganizationDevicesControllerMigration API.
+    description: Complete reference of the createOrganizationDevicesControllerMigration
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-devices-controller-migration
 notes:
   - SDK Method used are
@@ -77,10 +78,10 @@ meraki_response:
   sample: >
     [
       {
-        "createdAt": "string",
-        "migratedAt": "string",
         "serial": "string",
-        "target": "string"
+        "target": "string",
+        "createdAt": "string",
+        "migratedAt": {}
       }
     ]
 """

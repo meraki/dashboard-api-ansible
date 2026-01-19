@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_inventory_info
-short_description: Information module for organizations _cellular _gateway _esims _inventory
+short_description: Information module for organizations _cellular _gateway _esims
+  _inventory
 description:
+  - Information module for Organizations Cellular Gateway Esims Inventory Info.
   - Get all organizations _cellular _gateway _esims _inventory.
   - The eSIM inventory of a given organization.
 version_added: '1.0.0'
@@ -20,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   eids:
     description:
+      - Information module for Organizations Cellular Gateway Esims Inventory Info.
       - Eids query parameter. Optional parameter to filter the results by EID.
     elements: str
     type: list
@@ -32,7 +36,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayEsimsInventory
-    description: Complete reference of the getOrganizationCellularGatewayEsimsInventory API.
+    description: Complete reference of the getOrganizationCellularGatewayEsimsInventory
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-esims-inventory
 notes:
   - SDK Method used are
@@ -78,14 +83,14 @@ meraki_response:
     {
       "items": [
         {
-          "active": true,
           "device": {
-            "model": "string",
             "name": "string",
+            "model": "string",
             "serial": "string",
-            "status": "string",
-            "url": "string"
+            "url": "string",
+            "status": "string"
           },
+          "active": true,
           "eid": "string",
           "lastUpdatedAt": "string",
           "network": {
@@ -97,6 +102,7 @@ meraki_response:
                 "string"
               ],
               "iccid": "string",
+              "status": "string",
               "serviceProvider": {
                 "name": "string",
                 "plans": [
@@ -105,8 +111,7 @@ meraki_response:
                     "type": "string"
                   }
                 ]
-              },
-              "status": "string"
+              }
             }
           ]
         }
@@ -114,8 +119,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

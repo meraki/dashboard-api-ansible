@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_network_adapters_info
-short_description: Information module for networks _sm _devices _network _adapters
+short_description: Information module for networks _sm _devices _networkadapters
 description:
-  - Get all networks _sm _devices _network _adapters.
+  - Information module for Networks Sm Devices Networkadapters Info.
+  - Get all networks _sm _devices _networkadapters.
   - List the network adapters of a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Networkadapters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Networkadapters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -41,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _network _adapters
+- name: Get all networks _sm _devices _networkadapters
   cisco.meraki.networks_sm_devices_network_adapters_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

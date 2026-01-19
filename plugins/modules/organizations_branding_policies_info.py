@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_branding_policies_info
-short_description: Information module for organizations _branding _policies
+short_description: Information module for organizations _brandingpolicies
 description:
-  - Get all organizations _branding _policies.
-  - Get organizations _branding _policies by id.
+  - Information module for Organizations Brandingpolicies Info.
+  - Get all organizations _brandingpolicies.
+  - Get organizations _brandingpolicies by id.
   - List the branding policies of an organization.
   - Return a branding policy.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Brandingpolicies Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   brandingPolicyId:
     description:
+      - Information module for Organizations Brandingpolicies Info.
       - BrandingPolicyId path parameter. Branding policy ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _branding _policies
+- name: Get all organizations _brandingpolicies
   cisco.meraki.organizations_branding_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _branding _policies by id
+- name: Get organizations _brandingpolicies by id
   cisco.meraki.organizations_branding_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,39 +110,39 @@ meraki_response:
   type: dict
   sample: >
     {
+      "name": "string",
+      "enabled": true,
       "adminSettings": {
         "appliesTo": "string",
         "values": [
           "string"
         ]
       },
+      "helpSettings": {
+        "helpTab": "string",
+        "getHelpSubtab": "string",
+        "communitySubtab": "string",
+        "casesSubtab": "string",
+        "dataProtectionRequestsSubtab": "string",
+        "getHelpSubtabKnowledgeBaseSearch": "string",
+        "universalSearchKnowledgeBaseSearch": "string",
+        "ciscoMerakiProductDocumentation": "string",
+        "supportContactInfo": "string",
+        "newFeaturesSubtab": "string",
+        "firewallInfoSubtab": "string",
+        "apiDocsSubtab": "string",
+        "hardwareReplacementsSubtab": "string",
+        "smForums": "string",
+        "helpWidget": "string"
+      },
       "customLogo": {
         "enabled": true,
         "image": {
           "preview": {
-            "expiresAt": "string",
-            "url": "string"
+            "url": "string",
+            "expiresAt": "string"
           }
         }
-      },
-      "enabled": true,
-      "helpSettings": {
-        "apiDocsSubtab": "string",
-        "casesSubtab": "string",
-        "ciscoMerakiProductDocumentation": "string",
-        "communitySubtab": "string",
-        "dataProtectionRequestsSubtab": "string",
-        "firewallInfoSubtab": "string",
-        "getHelpSubtab": "string",
-        "getHelpSubtabKnowledgeBaseSearch": "string",
-        "hardwareReplacementsSubtab": "string",
-        "helpTab": "string",
-        "helpWidget": "string",
-        "newFeaturesSubtab": "string",
-        "smForums": "string",
-        "supportContactInfo": "string",
-        "universalSearchKnowledgeBaseSearch": "string"
-      },
-      "name": "string"
+      }
     }
 """

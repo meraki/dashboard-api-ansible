@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_billing_info
 short_description: Information module for networks _wireless _billing
 description:
+  - Information module for Networks Wireless Billing Info.
   - Get all networks _wireless _billing.
   - Return the billing settings of this network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Billing Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -73,12 +75,12 @@ meraki_response:
       "currency": "string",
       "plans": [
         {
-          "bandwidthLimits": {
-            "limitDown": 0,
-            "limitUp": 0
-          },
           "id": "string",
           "price": 0,
+          "bandwidthLimits": {
+            "limitUp": 0,
+            "limitDown": 0
+          },
           "timeLimit": "string"
         }
       ]

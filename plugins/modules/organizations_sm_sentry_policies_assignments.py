@@ -8,9 +8,12 @@ DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments
 short_description: Resource module for organizations _sm _sentry _policies _assignments
 description:
-  - Manage operation update of the resource organizations _sm _sentry _policies _assignments. - > Update an Organizations Sentry Policies using
-    the provided list. Sentry Policies are ordered in descending order of priority i.e. Highest priority at the bottom, this is opposite the Dashboard
-    UI. Policies not present in the request will be deleted.
+  - Manage operation update of the resource organizations _sm _sentry _policies _assignments.
+  - >
+    Update an Organizations Sentry Policies using the provided list. Sentry Policies
+    are ordered in descending order of priority i.e. Highest priority at the bottom,
+    this is opposite the Dashboard UI. Policies not present in the request will be
+    deleted.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -53,7 +56,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for sm updateOrganizationSmSentryPoliciesAssignments
-    description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments API.
+    description: Complete reference of the updateOrganizationSmSentryPoliciesAssignments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-sm-sentry-policies-assignments
 notes:
   - SDK Method used are
@@ -110,18 +114,18 @@ meraki_response:
           "networkId": "string",
           "policies": [
             {
-              "createdAt": "string",
-              "groupNumber": "string",
-              "groupPolicyId": "string",
-              "lastUpdatedAt": "string",
-              "networkId": "string",
               "policyId": "string",
-              "priority": "string",
-              "scope": "string",
+              "networkId": "string",
               "smNetworkId": "string",
               "tags": [
                 "string"
-              ]
+              ],
+              "scope": "string",
+              "groupNumber": "string",
+              "groupPolicyId": "string",
+              "priority": "string",
+              "createdAt": "string",
+              "lastUpdatedAt": "string"
             }
           ]
         }

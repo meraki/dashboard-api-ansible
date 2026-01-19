@@ -4,7 +4,6 @@ Method: getNetworkSwitchStackRoutingInterfaces
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_networks_switch_stacks_routing_interfaces_info_getNetworkSwitchStackRoutingInterfaces(

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_custom_analytics
-short_description: Resource module for devices _camera _custom _analytics
+short_description: Resource module for devices _camera _customanalytics
 description:
-  - Manage operation update of the resource devices _camera _custom _analytics.
+  - Manage operation update of the resource devices _camera _customanalytics.
   - Update custom analytics settings for a camera.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -88,8 +88,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "artifactId": "string",
       "enabled": true,
+      "artifactId": "string",
       "parameters": [
         {
           "name": "string",

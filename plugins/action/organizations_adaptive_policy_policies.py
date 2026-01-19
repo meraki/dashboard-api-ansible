@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    acls=dict(type="list"),
-    destinationGroup=dict(type="dict"),
-    lastEntryRule=dict(type="str"),
     sourceGroup=dict(type="dict"),
+    destinationGroup=dict(type="dict"),
+    acls=dict(type="list"),
+    lastEntryRule=dict(type="str"),
     organizationId=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -53,77 +52,93 @@ class OrganizationsAdaptivePolicyPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            acls=params.get("acls"),
-            destinationGroup=params.get("destinationGroup"),
-            lastEntryRule=params.get("lastEntryRule"),
             sourceGroup=params.get("sourceGroup"),
+            destinationGroup=params.get("destinationGroup"),
+            acls=params.get("acls"),
+            lastEntryRule=params.get("lastEntryRule"),
             organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('acls') is not None or self.new_object.get('acls') is not None:
+        if self.new_object.get('sourceGroup') is not None or self.new_object.get(
+                'source_group') is not None:
+            new_object_params['sourceGroup'] = self.new_object.get(
+                'sourceGroup') or self.new_object.get('source_group')
+        if self.new_object.get('destinationGroup') is not None or self.new_object.get(
+                'destination_group') is not None:
+            new_object_params['destinationGroup'] = self.new_object.get(
+                'destinationGroup') or self.new_object.get('destination_group')
+        if self.new_object.get('acls') is not None or self.new_object.get(
+                'acls') is not None:
             new_object_params['acls'] = self.new_object.get('acls') or \
                 self.new_object.get('acls')
-        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
-            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
-                self.new_object.get('destination_group')
-        if self.new_object.get('lastEntryRule') is not None or self.new_object.get('last_entry_rule') is not None:
-            new_object_params['lastEntryRule'] = self.new_object.get('lastEntryRule') or \
-                self.new_object.get('last_entry_rule')
-        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
-            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
-                self.new_object.get('source_group')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('lastEntryRule') is not None or self.new_object.get(
+                'last_entry_rule') is not None:
+            new_object_params['lastEntryRule'] = self.new_object.get(
+                'lastEntryRule') or self.new_object.get('last_entry_rule')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('acls') is not None or self.new_object.get('acls') is not None:
+        if self.new_object.get('sourceGroup') is not None or self.new_object.get(
+                'source_group') is not None:
+            new_object_params['sourceGroup'] = self.new_object.get(
+                'sourceGroup') or self.new_object.get('source_group')
+        if self.new_object.get('destinationGroup') is not None or self.new_object.get(
+                'destination_group') is not None:
+            new_object_params['destinationGroup'] = self.new_object.get(
+                'destinationGroup') or self.new_object.get('destination_group')
+        if self.new_object.get('acls') is not None or self.new_object.get(
+                'acls') is not None:
             new_object_params['acls'] = self.new_object.get('acls') or \
                 self.new_object.get('acls')
-        if self.new_object.get('destinationGroup') is not None or self.new_object.get('destination_group') is not None:
-            new_object_params['destinationGroup'] = self.new_object.get('destinationGroup') or \
-                self.new_object.get('destination_group')
-        if self.new_object.get('lastEntryRule') is not None or self.new_object.get('last_entry_rule') is not None:
-            new_object_params['lastEntryRule'] = self.new_object.get('lastEntryRule') or \
-                self.new_object.get('last_entry_rule')
-        if self.new_object.get('sourceGroup') is not None or self.new_object.get('source_group') is not None:
-            new_object_params['sourceGroup'] = self.new_object.get('sourceGroup') or \
-                self.new_object.get('source_group')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('lastEntryRule') is not None or self.new_object.get(
+                'last_entry_rule') is not None:
+            new_object_params['lastEntryRule'] = self.new_object.get(
+                'lastEntryRule') or self.new_object.get('last_entry_rule')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
@@ -193,18 +208,21 @@ class OrganizationsAdaptivePolicyPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("acls", "acls"),
-            ("destinationGroup", "destinationGroup"),
-            ("lastEntryRule", "lastEntryRule"),
             ("sourceGroup", "sourceGroup"),
+            ("destinationGroup", "destinationGroup"),
+            ("acls", "acls"),
+            ("lastEntryRule", "lastEntryRule"),
             ("organizationId", "organizationId"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

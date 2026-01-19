@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_wireless_profiles
-short_description: Resource module for devices _camera _wireless _profiles
+short_description: Resource module for devices _camera _wirelessprofiles
 description:
-  - Manage operation update of the resource devices _camera _wireless _profiles. - > Assign wireless profiles to the given camera. Incremental
-    updates are not supported, all profile assignment need to be supplied at once.
+  - Manage operation update of the resource devices _camera _wirelessprofiles.
+  - >
+    Assign wireless profiles to the given camera. Incremental updates are not supported,
+    all profile assignment need to be supplied at once.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

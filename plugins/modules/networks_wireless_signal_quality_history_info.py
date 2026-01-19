@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_signal_quality_history_info
-short_description: Information module for networks _wireless _signal _quality _history
+short_description: Information module for networks _wireless _signalqualityhistory
 description:
-  - Get all networks _wireless _signal _quality _history.
+  - Information module for Networks Wireless Signalqualityhistory Info.
+  - Get all networks _wireless _signalqualityhistory.
   - Return signal quality SNR/RSSI over time for a device or network client.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,52 +21,69 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Networks Wireless Signalqualityhistory Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - Information module for Networks Wireless Signalqualityhistory Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 7 days.
     type: float
   resolution:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - >
-        Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 300, 600, 1200, 3600, 14400, 86400.
-        The default is 86400.
+        Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
+        is 86400.
     type: int
   autoResolution:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - >
-        AutoResolution query parameter. Automatically select a data resolution based on the given timespan; this overrides the value specified
-        by the 'resolution' parameter. The default setting is false.
+        AutoResolution query parameter. Automatically select a data resolution based
+        on the given timespan; this overrides the value specified by the 'resolution'
+        parameter. The default setting is false.
     type: bool
   clientId:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - ClientId query parameter. Filter results by network client.
     type: str
   deviceSerial:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - DeviceSerial query parameter. Filter results by device.
     type: str
   apTag:
     description:
-      - ApTag query parameter. Filter results by AP tag; either clientId or deviceSerial must be jointly specified.
+      - Information module for Networks Wireless Signalqualityhistory Info.
+      - ApTag query parameter. Filter results by AP tag; either clientId or deviceSerial
+        must be jointly specified.
     type: str
   band:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - Band query parameter. Filter results by band (either '2.4', '5' or '6').
     type: str
   ssid:
     description:
+      - Information module for Networks Wireless Signalqualityhistory Info.
       - Ssid query parameter. Filter results by SSID number.
     type: int
 requirements:
@@ -73,7 +91,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessSignalQualityHistory
-    description: Complete reference of the getNetworkWirelessSignalQualityHistory API.
+    description: Complete reference of the getNetworkWirelessSignalQualityHistory
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-signal-quality-history
 notes:
   - SDK Method used are
@@ -83,7 +102,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _signal _quality _history
+- name: Get all networks _wireless _signalqualityhistory
   cisco.meraki.networks_wireless_signal_quality_history_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -128,10 +147,10 @@ meraki_response:
   sample: >
     [
       {
+        "startTs": "string",
         "endTs": "string",
-        "rssi": 0,
         "snr": 0,
-        "startTs": "string"
+        "rssi": 0
       }
     ]
 """

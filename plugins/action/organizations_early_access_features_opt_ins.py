@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +31,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    limitScopeToNetworks=dict(type="list"),
     shortName=dict(type="str"),
+    limitScopeToNetworks=dict(type="list"),
     organizationId=dict(type="str"),
     optInId=dict(type="str"),
 ))
@@ -51,61 +50,72 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            limitScopeToNetworks=params.get("limitScopeToNetworks"),
             shortName=params.get("shortName"),
+            limitScopeToNetworks=params.get("limitScopeToNetworks"),
             organizationId=params.get("organizationId"),
             optInId=params.get("optInId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('optInId') is not None or self.new_object.get('opt_in_id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('optInId') is not None or self.new_object.get(
+                'opt_in_id') is not None:
             new_object_params['optInId'] = self.new_object.get('optInId') or \
                 self.new_object.get('opt_in_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('limitScopeToNetworks') is not None or self.new_object.get('limit_scope_to_networks') is not None:
-            new_object_params['limitScopeToNetworks'] = self.new_object.get('limitScopeToNetworks') or \
-                self.new_object.get('limit_scope_to_networks')
-        if self.new_object.get('shortName') is not None or self.new_object.get('short_name') is not None:
-            new_object_params['shortName'] = self.new_object.get('shortName') or \
-                self.new_object.get('short_name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('shortName') is not None or self.new_object.get(
+                'short_name') is not None:
+            new_object_params['shortName'] = self.new_object.get(
+                'shortName') or self.new_object.get('short_name')
+        if self.new_object.get('limitScopeToNetworks') is not None or self.new_object.get(
+                'limit_scope_to_networks') is not None:
+            new_object_params['limitScopeToNetworks'] = self.new_object.get(
+                'limitScopeToNetworks') or self.new_object.get('limit_scope_to_networks')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('optInId') is not None or self.new_object.get('opt_in_id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('optInId') is not None or self.new_object.get(
+                'opt_in_id') is not None:
             new_object_params['optInId'] = self.new_object.get('optInId') or \
                 self.new_object.get('opt_in_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('limitScopeToNetworks') is not None or self.new_object.get('limit_scope_to_networks') is not None:
-            new_object_params['limitScopeToNetworks'] = self.new_object.get('limitScopeToNetworks') or \
-                self.new_object.get('limit_scope_to_networks')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('optInId') is not None or self.new_object.get('opt_in_id') is not None:
+        if self.new_object.get('limitScopeToNetworks') is not None or self.new_object.get(
+                'limit_scope_to_networks') is not None:
+            new_object_params['limitScopeToNetworks'] = self.new_object.get(
+                'limitScopeToNetworks') or self.new_object.get('limit_scope_to_networks')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('optInId') is not None or self.new_object.get(
+                'opt_in_id') is not None:
             new_object_params['optInId'] = self.new_object.get('optInId') or \
                 self.new_object.get('opt_in_id')
         return new_object_params
@@ -179,16 +189,19 @@ class OrganizationsEarlyAccessFeaturesOptIns(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("limitScopeToNetworks", "limitScopeToNetworks"),
             ("shortName", "shortName"),
+            ("limitScopeToNetworks", "limitScopeToNetworks"),
             ("organizationId", "organizationId"),
             ("optInId", "optInId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

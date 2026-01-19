@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_custom_analytics_info
-short_description: Information module for devices _camera _custom _analytics
+short_description: Information module for devices _camera _customanalytics
 description:
-  - Get all devices _camera _custom _analytics.
+  - Information module for Devices Camera Customanalytics Info.
+  - Get all devices _camera _customanalytics.
   - Return custom analytics settings for a camera.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Camera Customanalytics Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _custom _analytics
+- name: Get all devices _camera _customanalytics
   cisco.meraki.devices_camera_custom_analytics_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,8 +72,8 @@ meraki_response:
   type: dict
   sample: >
     {
-      "artifactId": "string",
       "enabled": true,
+      "artifactId": "string",
       "parameters": [
         {
           "name": "string",

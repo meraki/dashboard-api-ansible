@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_split_profiles_assignments_bulk_create
-short_description: Resource module for organizations _appliance _dns _split _profiles _assignments _bulk _create
+short_description: Resource module for organizations _appliance _dns _split _profiles
+  _assignments _bulk _create
 description:
-  - Manage operation create of the resource organizations _appliance _dns _split _profiles _assignments _bulk _create.
+  - Manage operation create of the resource organizations _appliance _dns _split _profiles
+    _assignments _bulk _create.
   - Assign the split DNS profile to networks in the organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -42,7 +44,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance createOrganizationApplianceDnsSplitProfilesAssignmentsBulkCreate
-    description: Complete reference of the createOrganizationApplianceDnsSplitProfilesAssignmentsBulkCreate API.
+    description: Complete reference of the createOrganizationApplianceDnsSplitProfilesAssignmentsBulkCreate
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-appliance-dns-split-profiles-assignments-bulk-create
 notes:
   - SDK Method used are

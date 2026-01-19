@@ -16,17 +16,20 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   alerts:
-    description: Alert-specific configuration for each type. Only alerts that pertain to the network can be updated.
+    description: Alert-specific configuration for each type. Only alerts that pertain
+      to the network can be updated.
     elements: dict
     suboptions:
       alertDestinations:
         description: A hash of destinations for this specific alert.
         suboptions:
           allAdmins:
-            description: If true, then all network admins will receive emails for this alert.
+            description: If true, then all network admins will receive emails for
+              this alert.
             type: bool
           emails:
-            description: A list of emails that will receive information about the alert.
+            description: A list of emails that will receive information about the
+              alert.
             elements: str
             type: list
           httpServerIds:
@@ -34,18 +37,21 @@ options:
             elements: str
             type: list
           smsNumbers:
-            description: A list of phone numbers that will receive text messages about the alert. Only available for sensors status alerts.
+            description: A list of phone numbers that will receive text messages about
+              the alert. Only available for sensors status alerts.
             elements: str
             type: list
           snmp:
-            description: If true, then an SNMP trap will be sent for this alert if there is an SNMP trap server configured for this network.
+            description: If true, then an SNMP trap will be sent for this alert if
+              there is an SNMP trap server configured for this network.
             type: bool
         type: dict
       enabled:
         description: A boolean depicting if the alert is turned on or off.
         type: bool
       filters:
-        description: A hash of specific configuration data for the alert. Only filters specific to the alert will be updated.
+        description: A hash of specific configuration data for the alert. Only filters
+          specific to the alert will be updated.
         suboptions:
           conditions:
             description: Conditions.
@@ -127,7 +133,8 @@ options:
         elements: str
         type: list
       snmp:
-        description: If true, then an SNMP trap will be sent if there is an SNMP trap server configured for this network.
+        description: If true, then an SNMP trap will be sent if there is an SNMP trap
+          server configured for this network.
         type: bool
     type: dict
   muting:
@@ -137,7 +144,8 @@ options:
         description: Mute wireless unreachable alerts based on switch port schedules.
         suboptions:
           enabled:
-            description: If true, then wireless unreachable alerts will be muted when caused by a port schedule.
+            description: If true, then wireless unreachable alerts will be muted when
+              caused by a port schedule.
             type: bool
         type: dict
     type: dict
@@ -237,30 +245,41 @@ meraki_response:
   type: dict
   sample: >
     {
+      "defaultDestinations": {
+        "emails": [
+          "string"
+        ],
+        "allAdmins": true,
+        "snmp": true,
+        "httpServerIds": [
+          "string"
+        ]
+      },
       "alerts": [
         {
+          "type": "string",
+          "enabled": true,
           "alertDestinations": {
-            "allAdmins": true,
             "emails": [
-              "string"
-            ],
-            "httpServerIds": [
               "string"
             ],
             "smsNumbers": [
               "string"
             ],
-            "snmp": true
+            "allAdmins": true,
+            "snmp": true,
+            "httpServerIds": [
+              "string"
+            ]
           },
-          "enabled": true,
           "filters": {
             "conditions": [
               {
-                "direction": "string",
-                "duration": 0,
-                "threshold": 0,
                 "type": "string",
-                "unit": "string"
+                "unit": "string",
+                "duration": 0,
+                "direction": "string",
+                "threshold": 0
               }
             ],
             "failureType": "string",
@@ -278,20 +297,9 @@ meraki_response:
             "tag": "string",
             "threshold": 0,
             "timeout": 0
-          },
-          "type": "string"
+          }
         }
       ],
-      "defaultDestinations": {
-        "allAdmins": true,
-        "emails": [
-          "string"
-        ],
-        "httpServerIds": [
-          "string"
-        ],
-        "snmp": true
-      },
       "muting": {
         "byPortSchedules": {
           "enabled": true

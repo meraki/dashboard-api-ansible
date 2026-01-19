@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_uplink
-short_description: Resource module for networks _cellular _gateway _uplink
+short_description: Resource module for networks _cellulargateway _uplink
 description:
-  - Manage operation update of the resource networks _cellular _gateway _uplink.
+  - Manage operation update of the resource networks _cellulargateway _uplink.
   - Updates the uplink settings for your MG network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,10 +19,12 @@ options:
     description: The bandwidth settings for the 'cellular' uplink.
     suboptions:
       limitDown:
-        description: The maximum download limit (integer, in Kbps). Null indicates no limit.
+        description: The maximum download limit (integer, in Kbps). Null indicates
+          no limit.
         type: int
       limitUp:
-        description: The maximum upload limit (integer, in Kbps). Null indicates no limit.
+        description: The maximum upload limit (integer, in Kbps). Null indicates no
+          limit.
         type: int
     type: dict
   networkId:
@@ -79,7 +81,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "limitDown": 0,
-      "limitUp": 0
+      "limitUp": 0,
+      "limitDown": 0
     }
 """

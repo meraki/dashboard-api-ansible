@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sensor_alerts_profiles_info
 short_description: Information module for networks _sensor _alerts _profiles
 description:
+  - Information module for Networks Sensor Alerts Profiles Info.
   - Get all networks _sensor _alerts _profiles.
   - Get networks _sensor _alerts _profiles by id.
   - Lists all sensor alert profiles for a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sensor Alerts Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   id:
     description:
+      - Information module for Networks Sensor Alerts Profiles Info.
       - Id path parameter.
     type: str
 requirements:
@@ -107,35 +110,42 @@ meraki_response:
   type: dict
   sample: >
     {
+      "profileId": "string",
+      "name": "string",
+      "schedule": {
+        "id": "string",
+        "name": "string"
+      },
       "conditions": [
         {
-          "direction": "string",
-          "duration": 0,
           "metric": "string",
           "threshold": {
-            "apparentPower": {
-              "draw": 0
+            "temperature": {
+              "celsius": 0,
+              "fahrenheit": 0,
+              "quality": "string"
+            },
+            "humidity": {
+              "relativePercentage": 0,
+              "quality": "string"
+            },
+            "water": {
+              "present": true
+            },
+            "door": {
+              "open": true
+            },
+            "tvoc": {
+              "concentration": 0,
+              "quality": "string"
             },
             "co2": {
               "concentration": 0,
               "quality": "string"
             },
-            "current": {
-              "draw": 0
-            },
-            "door": {
-              "open": true
-            },
-            "frequency": {
-              "level": 0
-            },
-            "humidity": {
-              "quality": "string",
-              "relativePercentage": 0
-            },
-            "indoorAirQuality": {
-              "quality": "string",
-              "score": 0
+            "pm25": {
+              "concentration": 0,
+              "quality": "string"
             },
             "noise": {
               "ambient": {
@@ -143,58 +153,51 @@ meraki_response:
                 "quality": "string"
               }
             },
-            "pm25": {
-              "concentration": 0,
+            "indoorAirQuality": {
+              "score": 0,
               "quality": "string"
-            },
-            "powerFactor": {
-              "percentage": 0
             },
             "realPower": {
               "draw": 0
             },
-            "temperature": {
-              "celsius": 0,
-              "fahrenheit": 0,
-              "quality": "string"
+            "apparentPower": {
+              "draw": 0
             },
-            "tvoc": {
-              "concentration": 0,
-              "quality": "string"
+            "powerFactor": {
+              "percentage": 0
             },
-            "upstreamPower": {
-              "outageDetected": true
+            "current": {
+              "draw": 0
             },
             "voltage": {
               "level": 0
             },
-            "water": {
-              "present": true
+            "frequency": {
+              "level": 0
+            },
+            "upstreamPower": {
+              "outageDetected": true
             }
-          }
+          },
+          "direction": "string",
+          "duration": 0
         }
       ],
-      "includeSensorUrl": true,
-      "message": "string",
-      "name": "string",
-      "profileId": "string",
       "recipients": {
         "emails": [
           "string"
         ],
-        "httpServerIds": [
+        "smsNumbers": [
           "string"
         ],
-        "smsNumbers": [
+        "httpServerIds": [
           "string"
         ]
       },
-      "schedule": {
-        "id": "string",
-        "name": "string"
-      },
       "serials": [
         "string"
-      ]
+      ],
+      "includeSensorUrl": true,
+      "message": "string"
     }
 """

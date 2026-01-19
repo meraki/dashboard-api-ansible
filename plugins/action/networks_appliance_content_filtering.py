@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -33,8 +32,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     allowedUrlPatterns=dict(type="list"),
-    blockedUrlCategories=dict(type="list"),
     blockedUrlPatterns=dict(type="list"),
+    blockedUrlCategories=dict(type="list"),
     urlCategoryListSize=dict(type="str"),
     networkId=dict(type="str"),
 ))
@@ -52,36 +51,42 @@ class NetworksApplianceContentFiltering(object):
         self.meraki = meraki
         self.new_object = dict(
             allowedUrlPatterns=params.get("allowedUrlPatterns"),
-            blockedUrlCategories=params.get("blockedUrlCategories"),
             blockedUrlPatterns=params.get("blockedUrlPatterns"),
+            blockedUrlCategories=params.get("blockedUrlCategories"),
             urlCategoryListSize=params.get("urlCategoryListSize"),
             network_id=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('allowedUrlPatterns') is not None or self.new_object.get('allowed_url_patterns') is not None:
-            new_object_params['allowedUrlPatterns'] = self.new_object.get('allowedUrlPatterns') or \
-                self.new_object.get('allowed_url_patterns')
-        if self.new_object.get('blockedUrlCategories') is not None or self.new_object.get('blocked_url_categories') is not None:
-            new_object_params['blockedUrlCategories'] = self.new_object.get('blockedUrlCategories') or \
-                self.new_object.get('blocked_url_categories')
-        if self.new_object.get('blockedUrlPatterns') is not None or self.new_object.get('blocked_url_patterns') is not None:
-            new_object_params['blockedUrlPatterns'] = self.new_object.get('blockedUrlPatterns') or \
-                self.new_object.get('blocked_url_patterns')
-        if self.new_object.get('urlCategoryListSize') is not None or self.new_object.get('url_category_list_size') is not None:
-            new_object_params['urlCategoryListSize'] = self.new_object.get('urlCategoryListSize') or \
-                self.new_object.get('url_category_list_size')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('allowedUrlPatterns') is not None or self.new_object.get(
+                'allowed_url_patterns') is not None:
+            new_object_params['allowedUrlPatterns'] = self.new_object.get(
+                'allowedUrlPatterns') or self.new_object.get('allowed_url_patterns')
+        if self.new_object.get('blockedUrlPatterns') is not None or self.new_object.get(
+                'blocked_url_patterns') is not None:
+            new_object_params['blockedUrlPatterns'] = self.new_object.get(
+                'blockedUrlPatterns') or self.new_object.get('blocked_url_patterns')
+        if self.new_object.get('blockedUrlCategories') is not None or self.new_object.get(
+                'blocked_url_categories') is not None:
+            new_object_params['blockedUrlCategories'] = self.new_object.get(
+                'blockedUrlCategories') or self.new_object.get('blocked_url_categories')
+        if self.new_object.get('urlCategoryListSize') is not None or self.new_object.get(
+                'url_category_list_size') is not None:
+            new_object_params['urlCategoryListSize'] = self.new_object.get(
+                'urlCategoryListSize') or self.new_object.get('url_category_list_size')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -137,22 +142,19 @@ class NetworksApplianceContentFiltering(object):
 
         obj_params = [
             ("allowedUrlPatterns", "allowedUrlPatterns"),
-            ("blockedUrlCategories", "blockedUrlCategories"),
             ("blockedUrlPatterns", "blockedUrlPatterns"),
+            ("blockedUrlCategories", "blockedUrlCategories"),
             ("urlCategoryListSize", "urlCategoryListSize"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-
-        new_blocked_url_categories = []
-        for category in current_obj.get("blockedUrlCategories"):
-            new_blocked_url_categories.append(category.get("id"))
-
-        current_obj["blockedUrlCategories"] = new_blocked_url_categories
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

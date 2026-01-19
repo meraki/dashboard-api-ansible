@@ -16,14 +16,17 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   authMode:
-    description: The association control method for the SSID ('open', 'psk', '8021x-meraki' or '8021x-radius').
+    description: The association control method for the SSID ('open', 'psk', '8021x-meraki'
+      or '8021x-radius').
     type: str
   defaultVlanId:
-    description: The VLAN ID of the VLAN associated to this SSID. This parameter is only valid if the network is in routed mode.
+    description: The VLAN ID of the VLAN associated to this SSID. This parameter is
+      only valid if the network is in routed mode.
     type: int
   dhcpEnforcedDeauthentication:
-    description: DHCP Enforced Deauthentication enables the disassociation of wireless clients in addition to Mandatory DHCP. This param is only
-      valid on firmware versions >= MX 17.0 where the associated LAN has Mandatory DHCP Enabled.
+    description: DHCP Enforced Deauthentication enables the disassociation of wireless
+      clients in addition to Mandatory DHCP. This param is only valid on firmware
+      versions >= MX 17.0 where the associated LAN has Mandatory DHCP Enabled.
     suboptions:
       enabled:
         description: Enable DCHP Enforced Deauthentication on the SSID.
@@ -43,7 +46,8 @@ options:
     description: Whether or not the SSID is enabled.
     type: bool
   encryptionMode:
-    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param is only valid if the authMode is 'psk'.
+    description: The psk encryption mode for the SSID ('wep' or 'wpa'). This param
+      is only valid if the authMode is 'psk'.
     type: str
   name:
     description: The name of the SSID.
@@ -55,10 +59,12 @@ options:
     description: Number path parameter.
     type: str
   psk:
-    description: The passkey for the SSID. This param is only valid if the authMode is 'psk'.
+    description: The passkey for the SSID. This param is only valid if the authMode
+      is 'psk'.
     type: str
   radiusServers:
-    description: The RADIUS 802.1x servers to be used for authentication. This param is only valid if the authMode is '8021x-radius'.
+    description: The RADIUS 802.1x servers to be used for authentication. This param
+      is only valid if the authMode is '8021x-radius'.
     elements: dict
     suboptions:
       host:
@@ -75,8 +81,10 @@ options:
     description: Boolean indicating whether the MX should advertise or hide this SSID.
     type: bool
   wpaEncryptionMode:
-    description: The types of WPA encryption. ('WPA1 and WPA2', 'WPA2 only', 'WPA3 Transition Mode' or 'WPA3 only'). This param is only valid
-      if (1) the authMode is 'psk' & the encryptionMode is 'wpa' OR (2) the authMode is '8021x-meraki' OR (3) the authMode is '8021x-radius'.
+    description: The types of WPA encryption. ('WPA1 and WPA2', 'WPA2 only', 'WPA3
+      Transition Mode' or 'WPA3 only'). This param is only valid if (1) the authMode
+      is 'psk' & the encryptionMode is 'wpa' OR (2) the authMode is '8021x-meraki'
+      OR (3) the authMode is '8021x-radius'.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -144,19 +152,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "authMode": "string",
-      "defaultVlanId": 0,
-      "enabled": true,
-      "encryptionMode": "string",
-      "name": "string",
       "number": 0,
+      "name": "string",
+      "enabled": true,
+      "defaultVlanId": 0,
+      "authMode": "string",
       "radiusServers": [
         {
           "host": "string",
           "port": 0
         }
       ],
-      "visible": true,
-      "wpaEncryptionMode": "string"
+      "encryptionMode": "string",
+      "wpaEncryptionMode": "string",
+      "visible": true
     }
 """

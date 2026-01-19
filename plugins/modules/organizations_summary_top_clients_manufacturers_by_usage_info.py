@@ -6,10 +6,13 @@
 
 DOCUMENTATION = r"""
 module: organizations_summary_top_clients_manufacturers_by_usage_info
-short_description: Information module for organizations _summary _top _clients _manufacturers _by _usage
+short_description: Information module for organizations _summary _top _clients _manufacturers
+  _byusage
 description:
-  - Get all organizations _summary _top _clients _manufacturers _by _usage.
-  - Return metrics for organization's top clients by data usage in mb over given time range, grouped by manufacturer.
+  - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
+  - Get all organizations _summary _top _clients _manufacturers _byusage.
+  - Return metrics for organization's top clients by data usage in mb over given time
+    range, grouped by manufacturer.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,48 +23,61 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   deviceTag:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   quantity:
     description:
-      - Quantity query parameter. Set number of desired results to return. Default is 10.
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
+      - Quantity query parameter. Set number of desired results to return. Default
+        is 10. Maximum is 50.
     type: int
   ssidName:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 186 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Organizations Summary Top Clients Manufacturers Byusage Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 186 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 186 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationSummaryTopClientsManufacturersByUsage
-    description: Complete reference of the getOrganizationSummaryTopClientsManufacturersByUsage API.
+    description: Complete reference of the getOrganizationSummaryTopClientsManufacturersByUsage
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-summary-top-clients-manufacturers-by-usage
 notes:
   - SDK Method used are
@@ -71,7 +87,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _summary _top _clients _manufacturers _by _usage
+- name: Get all organizations _summary _top _clients _manufacturers _byusage
   cisco.meraki.organizations_summary_top_clients_manufacturers_by_usage_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -114,16 +130,16 @@ meraki_response:
   sample: >
     [
       {
+        "name": "string",
         "clients": {
           "counts": {
             "total": 0
           }
         },
-        "name": "string",
         "usage": {
-          "downstream": 0,
           "total": 0,
-          "upstream": 0
+          "upstream": 0,
+          "downstream": 0
         }
       }
     ]

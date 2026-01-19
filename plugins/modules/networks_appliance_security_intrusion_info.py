@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_appliance_security_intrusion_info
 short_description: Information module for networks _appliance _security _intrusion
 description:
+  - Information module for Networks Appliance Security Intrusion Info.
   - Get all networks _appliance _security _intrusion.
   - Returns all supported intrusion settings for an MX network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Security Intrusion Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,16 +72,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "idsRulesets": "string",
       "mode": "string",
+      "idsRulesets": "string",
       "protectedNetworks": {
-        "excludedCidr": [
-          "string"
-        ],
+        "useDefault": true,
         "includedCidr": [
           "string"
         ],
-        "useDefault": true
+        "excludedCidr": [
+          "string"
+        ]
       }
     }
 """

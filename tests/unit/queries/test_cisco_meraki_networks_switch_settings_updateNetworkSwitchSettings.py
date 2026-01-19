@@ -4,7 +4,6 @@ Method: updateNetworkSwitchSettings
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_networks_switch_settings_updateNetworkSwitchSettings(

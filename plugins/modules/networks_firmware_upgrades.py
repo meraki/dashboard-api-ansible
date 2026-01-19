@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades
-short_description: Resource module for networks _firmware _upgrades
+short_description: Resource module for networks _firmwareupgrades
 description:
-  - Manage operation update of the resource networks _firmware _upgrades.
+  - Manage operation update of the resource networks _firmwareupgrades.
   - Update firmware upgrade information for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -287,7 +287,7 @@ EXAMPLES = r"""
         nextUpgrade:
           time: '2019-03-17T17:22:52Z'
           toVersion:
-            id: '1007'
+            id: '1008'
         participateInNextBetaRelease: false
       sensor:
         nextUpgrade:
@@ -331,380 +331,388 @@ meraki_response:
   type: dict
   sample: >
     {
-      "products": {
-        "appliance": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "camera": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "cellularGateway": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "secureConnect": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "sensor": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "switch": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "wireless": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        },
-        "wirelessController": {
-          "availableVersions": [
-            {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          ],
-          "currentVersion": {
-            "firmware": "string",
-            "id": "string",
-            "releaseDate": "string",
-            "releaseType": "string",
-            "shortName": "string"
-          },
-          "lastUpgrade": {
-            "fromVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            },
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "nextUpgrade": {
-            "time": "string",
-            "toVersion": {
-              "firmware": "string",
-              "id": "string",
-              "releaseDate": "string",
-              "releaseType": "string",
-              "shortName": "string"
-            }
-          },
-          "participateInNextBetaRelease": true
-        }
-      },
-      "timezone": "string",
       "upgradeWindow": {
         "dayOfWeek": "string",
         "hourOfDay": "string"
+      },
+      "timezone": "string",
+      "products": {
+        "wireless": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "appliance": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "switch": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "camera": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "cellularGateway": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "sensor": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "wirelessController": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "secureConnect": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        }
       }
     }
 """

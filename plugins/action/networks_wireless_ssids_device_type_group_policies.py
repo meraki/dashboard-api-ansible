@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +31,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    deviceTypePolicies=dict(type="list"),
     enabled=dict(type="bool"),
+    deviceTypePolicies=dict(type="list"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -50,32 +49,38 @@ class NetworksWirelessSsidsDeviceTypeGroupPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            deviceTypePolicies=params.get("deviceTypePolicies"),
             enabled=params.get("enabled"),
+            deviceTypePolicies=params.get("deviceTypePolicies"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('deviceTypePolicies') is not None or self.new_object.get('device_type_policies') is not None:
-            new_object_params['deviceTypePolicies'] = self.new_object.get('deviceTypePolicies') or \
-                self.new_object.get('device_type_policies')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('deviceTypePolicies') is not None or self.new_object.get(
+                'device_type_policies') is not None:
+            new_object_params['deviceTypePolicies'] = self.new_object.get(
+                'deviceTypePolicies') or self.new_object.get('device_type_policies')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -132,16 +137,19 @@ class NetworksWirelessSsidsDeviceTypeGroupPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("deviceTypePolicies", "deviceTypePolicies"),
             ("enabled", "enabled"),
+            ("deviceTypePolicies", "deviceTypePolicies"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

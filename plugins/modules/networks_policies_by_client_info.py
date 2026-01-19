@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_policies_by_client_info
-short_description: Information module for networks _policies _by _client
+short_description: Information module for networks _policies _byclient
 description:
-  - Get all networks _policies _by _client.
+  - Information module for Networks Policies Byclient Info.
+  - Get all networks _policies _byclient.
   - Get policies for all clients with policies.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,35 +22,48 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Policies Byclient Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - Information module for Networks Policies Byclient Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Policies Byclient Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Policies Byclient Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Networks Policies Byclient Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
+      - Information module for Networks Policies Byclient Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0.
-        The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameter t0. The value must be in
+        seconds and be less than or equal to 31 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
@@ -66,7 +80,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _policies _by _client
+- name: Get all networks _policies _byclient
   cisco.meraki.networks_policies_by_client_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -108,20 +122,20 @@ meraki_response:
   sample: >
     [
       {
+        "name": "string",
+        "clientId": "string",
         "assigned": [
           {
-            "groupPolicyId": "string",
             "name": "string",
+            "type": "string",
+            "groupPolicyId": "string",
             "ssid": [
               {
                 "ssidNumber": 0
               }
-            ],
-            "type": "string"
+            ]
           }
-        ],
-        "clientId": "string",
-        "name": "string"
+        ]
       }
     ]
 """

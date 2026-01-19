@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_performance_history_info
-short_description: Information module for networks _sm _devices _performance _history
+short_description: Information module for networks _sm _devices _performancehistory
 description:
-  - Get all networks _sm _devices _performance _history.
-  - Return historical records of various Systems Manager client metrics for desktop devices.
+  - Information module for Networks Sm Devices Performancehistory Info.
+  - Get all networks _sm _devices _performancehistory.
+  - Return historical records of various Systems Manager client metrics for desktop
+    devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,29 +23,39 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Performancehistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Performancehistory Info.
       - DeviceId path parameter. Device ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Networks Sm Devices Performancehistory Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Sm Devices Performancehistory Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Sm Devices Performancehistory Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -60,7 +72,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _performance _history
+- name: Get all networks _sm _devices _performancehistory
   cisco.meraki.networks_sm_devices_performance_history_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -102,19 +114,19 @@ meraki_response:
     [
       {
         "cpuPercentUsed": 0,
+        "memFree": 0,
+        "memWired": 0,
+        "memActive": 0,
+        "memInactive": 0,
+        "networkSent": 0,
+        "networkReceived": 0,
+        "swapUsed": 0,
         "diskUsage": {
           "c": {
-            "space": 0,
-            "used": 0
+            "used": 0,
+            "space": 0
           }
         },
-        "memActive": 0,
-        "memFree": 0,
-        "memInactive": 0,
-        "memWired": 0,
-        "networkReceived": 0,
-        "networkSent": 0,
-        "swapUsed": 0,
         "ts": "string"
       }
     ]

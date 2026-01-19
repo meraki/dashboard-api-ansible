@@ -22,7 +22,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   pin:
-    description: The pin number (a six digit value) for wiping a macOS device. Required only for macOS devices.
+    description: The pin number (a six digit value) for wiping a macOS device. Required
+      only for macOS devices.
     type: int
   serial:
     description: The serial of the device to be wiped.

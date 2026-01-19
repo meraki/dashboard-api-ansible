@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_port_schedules_info
-short_description: Information module for networks _switch _port _schedules
+short_description: Information module for networks _switch _portschedules
 description:
-  - Get all networks _switch _port _schedules.
+  - Information module for Networks Switch Portschedules Info.
+  - Get all networks _switch _portschedules.
   - List switch port schedules.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Portschedules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _port _schedules
+- name: Get all networks _switch _portschedules
   cisco.meraki.networks_switch_port_schedules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,30 +75,10 @@ meraki_response:
     [
       {
         "id": "string",
-        "name": "string",
         "networkId": "string",
+        "name": "string",
         "portSchedule": {
-          "friday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
           "monday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "saturday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "sunday": {
-            "active": true,
-            "from": "string",
-            "to": "string"
-          },
-          "thursday": {
             "active": true,
             "from": "string",
             "to": "string"
@@ -107,6 +89,26 @@ meraki_response:
             "to": "string"
           },
           "wednesday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "thursday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "friday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "saturday": {
+            "active": true,
+            "from": "string",
+            "to": "string"
+          },
+          "sunday": {
             "active": true,
             "from": "string",
             "to": "string"

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_vlan_profiles_assignments_reassign
-short_description: Resource module for networks _vlan _profiles _assignments _reassign
+short_description: Resource module for networks _vlanprofiles _assignments _reassign
 description:
-  - Manage operation create of the resource networks _vlan _profiles _assignments _reassign.
+  - Manage operation create of the resource networks _vlanprofiles _assignments _reassign.
   - Update the assigned VLAN Profile for devices in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -38,7 +38,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks reassignNetworkVlanProfilesAssignments
-    description: Complete reference of the reassignNetworkVlanProfilesAssignments API.
+    description: Complete reference of the reassignNetworkVlanProfilesAssignments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!reassign-network-vlan-profiles-assignments
 notes:
   - SDK Method used are
@@ -86,15 +87,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "vlanProfile": {
+        "iname": "string",
+        "name": "string"
+      },
       "serials": [
         "string"
       ],
       "stackIds": [
         "string"
-      ],
-      "vlanProfile": {
-        "iname": "string",
-        "name": "string"
-      }
+      ]
     }
 """

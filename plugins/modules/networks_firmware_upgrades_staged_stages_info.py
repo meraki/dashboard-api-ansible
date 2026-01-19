@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_stages_info
-short_description: Information module for networks _firmware _upgrades _staged _stages
+short_description: Information module for networks _firmwareupgrades _staged _stages
 description:
-  - Get all networks _firmware _upgrades _staged _stages.
+  - Information module for Networks Firmwareupgrades Staged Stages Info.
+  - Get all networks _firmwareupgrades _staged _stages.
   - Order of Staged Upgrade Groups in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Firmwareupgrades Staged Stages Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedStages
-    description: Complete reference of the getNetworkFirmwareUpgradesStagedStages API.
+    description: Complete reference of the getNetworkFirmwareUpgradesStagedStages
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-stages
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmware _upgrades _staged _stages
+- name: Get all networks _firmwareupgrades _staged _stages
   cisco.meraki.networks_firmware_upgrades_staged_stages_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,9 +76,9 @@ meraki_response:
     [
       {
         "group": {
-          "description": "string",
           "id": "string",
-          "name": "string"
+          "name": "string",
+          "description": "string"
         }
       }
     ]

@@ -26,7 +26,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalSettings
-    description: Complete reference of the updateNetworkWirelessAirMarshalSettings API.
+    description: Complete reference of the updateNetworkWirelessAirMarshalSettings
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-settings
 notes:
   - SDK Method used are
@@ -69,7 +70,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "defaultPolicy": "string",
-      "networkId": "string"
+      "networkId": "string",
+      "defaultPolicy": "string"
     }
 """

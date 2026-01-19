@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_mqtt_brokers
-short_description: Resource module for networks _mqtt _brokers
+short_description: Resource module for networks _mqttbrokers
 description:
-  - Manage operation create of the resource networks _mqtt _brokers.
+  - Manage operation create of the resource networks _mqttbrokers.
   - Add an MQTT broker.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -50,7 +50,8 @@ options:
             description: CA Certificate of the MQTT broker.
             type: str
           verifyHostnames:
-            description: Whether the TLS hostname verification is enabled for the MQTT broker.
+            description: Whether the TLS hostname verification is enabled for the
+              MQTT broker.
             type: bool
         type: dict
     type: dict
@@ -112,12 +113,9 @@ meraki_response:
   type: dict
   sample: >
     {
-      "authentication": {
-        "username": "string"
-      },
-      "host": "string",
       "id": "string",
       "name": "string",
+      "host": "string",
       "port": 0,
       "security": {
         "mode": "string",
@@ -125,6 +123,9 @@ meraki_response:
           "hasCaCertificate": true,
           "verifyHostnames": true
         }
+      },
+      "authentication": {
+        "username": "string"
       }
     }
 """

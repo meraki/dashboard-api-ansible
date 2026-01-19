@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_compliance_statuses_info
-short_description: Information module for administered _licensing _subscription _subscriptions _compliance _statuses
+short_description: Information module for administered _licensing _subscription _subscriptions
+  _compliance _statuses
 description:
+  - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
   - Get all administered _licensing _subscription _subscriptions _compliance _statuses.
   - Get compliance status for requested subscriptions.
 version_added: '1.0.0'
@@ -20,11 +22,14 @@ options:
     type: dict
   organizationIds:
     description:
-      - OrganizationIds query parameter. Organizations to get subscription compliance information for.
+      - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
+      - OrganizationIds query parameter. Organizations to get subscription compliance
+        information for.
     elements: str
     type: list
   subscriptionIds:
     description:
+      - Information module for Administered Licensing Subscription Subscriptions Compliance Statuses Info.
       - SubscriptionIds query parameter. Subscription ids.
     elements: str
     type: list
@@ -33,7 +38,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
-    description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses API.
+    description: Complete reference of the getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-subscriptions-compliance-statuses
 notes:
   - SDK Method used are
@@ -87,16 +93,16 @@ meraki_response:
         "violations": {
           "byProductClass": [
             {
+              "productClass": "string",
               "gracePeriodEndsAt": "string",
               "missing": {
                 "entitlements": [
                   {
-                    "quantity": 0,
-                    "sku": "string"
+                    "sku": "string",
+                    "quantity": 0
                   }
                 ]
-              },
-              "productClass": "string"
+              }
             }
           ]
         }

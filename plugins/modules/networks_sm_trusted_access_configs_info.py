@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_trusted_access_configs_info
-short_description: Information module for networks _sm _trusted _access _configs
+short_description: Information module for networks _sm _trustedaccessconfigs
 description:
-  - Get all networks _sm _trusted _access _configs.
+  - Information module for Networks Sm Trustedaccessconfigs Info.
+  - Get all networks _sm _trustedaccessconfigs.
   - List Trusted Access Configs.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,25 +22,34 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Trustedaccessconfigs Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - Information module for Networks Sm Trustedaccessconfigs Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Sm Trustedaccessconfigs Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Sm Trustedaccessconfigs Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -56,7 +66,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _trusted _access _configs
+- name: Get all networks _sm _trustedaccessconfigs
   cisco.meraki.networks_sm_trusted_access_configs_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -96,19 +106,19 @@ meraki_response:
   sample: >
     [
       {
-        "accessEndAt": "string",
-        "accessStartAt": "string",
-        "additionalEmailText": "string",
         "id": "string",
-        "name": "string",
-        "notifyTimeBeforeAccessEnds": 0,
-        "scope": "string",
-        "sendExpirationEmails": true,
         "ssidName": "string",
+        "name": "string",
+        "scope": "string",
         "tags": [
           "string"
         ],
-        "timeboundType": "string"
+        "timeboundType": "string",
+        "sendExpirationEmails": true,
+        "notifyTimeBeforeAccessEnds": 0,
+        "additionalEmailText": "string",
+        "accessStartAt": "string",
+        "accessEndAt": "string"
       }
     ]
 """

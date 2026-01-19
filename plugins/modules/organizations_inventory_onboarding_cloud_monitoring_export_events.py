@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_export_events
-short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _export _events
+short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring
+  _exportevents
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _export _events.
+  - Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring
+    _exportevents.
   - Imports event logs related to the onboarding app into elastisearch.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,13 +18,15 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   logEvent:
-    description: The type of log event this is recording, e.g. Download or opening a banner.
+    description: The type of log event this is recording, e.g. Download or opening
+      a banner.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   request:
-    description: Used to describe if this event was the result of a redirect. E.g. A query param if an info banner is being used.
+    description: Used to describe if this event was the result of a redirect. E.g.
+      A query param if an info banner is being used.
     type: str
   targetOS:
     description: The name of the onboarding distro being downloaded.
@@ -35,7 +39,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringExportEvent
-    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent API.
+    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringExportEvent
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-export-event
 notes:
   - SDK Method used are

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_info
-short_description: Information module for organizations _config _templates _switch _profiles
+short_description: Information module for organizations _configtemplates _switch _profiles
 description:
-  - Get all organizations _config _templates _switch _profiles.
+  - Information module for Organizations Configtemplates Switch Profiles Info.
+  - Get all organizations _configtemplates _switch _profiles.
   - List the switch templates for your switch template configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfiles
-    description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles API.
+    description: Complete reference of the getOrganizationConfigTemplateSwitchProfiles
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profiles
 notes:
   - SDK Method used are
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _config _templates _switch _profiles
+- name: Get all organizations _configtemplates _switch _profiles
   cisco.meraki.organizations_config_templates_switch_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -77,9 +81,9 @@ meraki_response:
   sample: >
     [
       {
-        "model": "string",
+        "switchProfileId": "string",
         "name": "string",
-        "switchProfileId": "string"
+        "model": "string"
       }
     ]
 """

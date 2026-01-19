@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_latency_stats_info
-short_description: Information module for networks _wireless _latency _stats
+short_description: Information module for networks _wireless _latencystats
 description:
-  - Get all networks _wireless _latency _stats.
+  - Information module for Networks Wireless Latencystats Info.
+  - Get all networks _wireless _latencystats.
   - Aggregated latency info for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,45 +21,58 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - >
-        T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
+      - Information module for Networks Wireless Latencystats Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 180 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
+      - Information module for Networks Wireless Latencystats Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 7 days.
     type: float
   band:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - >
-        Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
+        Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note
+        that data prior to February 2020 will not have band information.
     type: str
   ssid:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - Ssid query parameter. Filter results by SSID.
-    type: int
-  vlan:
-    description:
-      - Vlan query parameter. Filter results by VLAN.
     type: int
   apTag:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - ApTag query parameter. Filter results by AP Tag.
     type: str
+  vlan:
+    description:
+      - Information module for Networks Wireless Latencystats Info.
+      - Vlan query parameter. Filter results by VLAN.
+    type: int
   fields:
     description:
+      - Information module for Networks Wireless Latencystats Info.
       - >
-        Fields query parameter. Partial selection If present, this call will return only the selected fields of "rawDistribution", "avg". All
-        fields will be returned by default. Selected fields must be entered as a comma separated string.
+        Fields query parameter. Partial selection If present, this call will return
+        only the selected fields of "rawDistribution", "avg". All fields will be returned
+        by default. Selected fields must be entered as a comma separated string.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -75,7 +89,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _latency _stats
+- name: Get all networks _wireless _latencystats
   cisco.meraki.networks_wireless_latency_stats_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -103,8 +117,8 @@ EXAMPLES = r"""
     timespan: 0
     band: string
     ssid: 0
-    vlan: 0
     apTag: string
+    vlan: 0
     fields: string
     networkId: string
   register: result
@@ -114,28 +128,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "backgroundTraffic": {
-        "avg": 0,
-        "rawDistribution": {
-          "0": 0,
-          "1": 0,
-          "1024": 0,
-          "128": 0,
-          "16": 0,
-          "2": 0,
-          "2048": 0,
-          "256": 0,
-          "32": 0,
-          "4": 0,
-          "512": 0,
-          "64": 0,
-          "8": 0
-        }
-      },
-      "bestEffortTraffic": "string",
-      "videoTraffic": "string",
-      "voiceTraffic": "string"
-    }
+  sample:
+  - {}
 """

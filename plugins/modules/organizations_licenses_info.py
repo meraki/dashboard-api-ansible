@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_licenses_info
 short_description: Information module for organizations _licenses
 description:
+  - Information module for Organizations Licenses Info.
   - Get organizations _licenses by id.
   - Display a license.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Licenses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   licenseId:
     description:
+      - Information module for Organizations Licenses Info.
       - LicenseId path parameter. License ID.
     type: str
 requirements:
@@ -75,28 +78,28 @@ meraki_response:
   type: dict
   sample: >
     {
-      "activationDate": "string",
-      "claimDate": "string",
-      "deviceSerial": "string",
-      "durationInDays": 0,
-      "expirationDate": "string",
-      "headLicenseId": "string",
       "id": "string",
-      "licenseKey": "string",
       "licenseType": "string",
-      "networkId": "string",
+      "licenseKey": "string",
       "orderNumber": "string",
+      "deviceSerial": "string",
+      "networkId": "string",
+      "state": "string",
+      "seatCount": 0,
+      "totalDurationInDays": 0,
+      "durationInDays": 0,
       "permanentlyQueuedLicenses": [
         {
-          "durationInDays": 0,
           "id": "string",
-          "licenseKey": "string",
           "licenseType": "string",
-          "orderNumber": "string"
+          "licenseKey": "string",
+          "orderNumber": "string",
+          "durationInDays": 0
         }
       ],
-      "seatCount": 0,
-      "state": "string",
-      "totalDurationInDays": 0
+      "claimDate": "string",
+      "activationDate": "string",
+      "expirationDate": "string",
+      "headLicenseId": "string"
     }
 """

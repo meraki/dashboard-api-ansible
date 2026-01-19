@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_mesh_statuses_info
-short_description: Information module for networks _wireless _mesh _statuses
+short_description: Information module for networks _wireless _meshstatuses
 description:
-  - Get all networks _wireless _mesh _statuses.
+  - Information module for Networks Wireless Meshstatuses Info.
+  - Get all networks _wireless _meshstatuses.
   - List wireless mesh statuses for repeaters.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,25 +22,34 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Meshstatuses Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
+      - Information module for Networks Wireless Meshstatuses Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 500. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Wireless Meshstatuses Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Wireless Meshstatuses Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -56,7 +66,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _mesh _statuses
+- name: Get all networks _wireless _meshstatuses
   cisco.meraki.networks_wireless_mesh_statuses_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -96,15 +106,15 @@ meraki_response:
   sample: >
     [
       {
+        "serial": "string",
+        "meshRoute": [
+          "string"
+        ],
         "latestMeshPerformance": {
           "mbps": 0,
           "metric": 0,
           "usagePercentage": "string"
-        },
-        "meshRoute": [
-          "string"
-        ],
-        "serial": "string"
+        }
       }
     ]
 """

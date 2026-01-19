@@ -6,24 +6,27 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_generate_snapshot
-short_description: Resource module for devices _camera _generate _snapshot
+short_description: Resource module for devices _camera _generatesnapshot
 description:
-  - Manage operation create of the resource devices _camera _generate _snapshot.
-  - Generate a snapshot of what the camera sees at the specified time and return a link to that image.
+  - Manage operation create of the resource devices _camera _generatesnapshot.
+  - Generate a snapshot of what the camera sees at the specified time and return a
+    link to that image.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   fullframe:
-    description: Optional If set to "true" the snapshot will be taken at full sensor resolution. This will error if used with timestamp.
+    description: Optional If set to "true" the snapshot will be taken at full sensor
+      resolution. This will error if used with timestamp.
     type: bool
   serial:
     description: Serial path parameter.
     type: str
   timestamp:
-    description: Optional The snapshot will be taken from this time on the camera. The timestamp is expected to be in ISO 8601 format. If no timestamp
-      is specified, we will assume current time.
+    description: Optional The snapshot will be taken from this time on the camera.
+      The timestamp is expected to be in ISO 8601 format. If no timestamp is specified,
+      we will assume current time.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -74,7 +77,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "expiry": "string",
-      "url": "string"
+      "url": "string",
+      "expiry": "string"
     }
 """

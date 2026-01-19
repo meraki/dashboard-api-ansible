@@ -16,22 +16,26 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   accessPolicyNumber:
-    description: The number of a custom access policy to configure on the switch port. Only applicable when 'accessPolicyType' is 'Custom access
-      policy'.
+    description: The number of a custom access policy to configure on the switch port.
+      Only applicable when 'accessPolicyType' is 'Custom access policy'.
     type: int
   accessPolicyType:
-    description: The type of the access policy of the switch port. Only applicable to access ports. Can be one of 'Open', 'Custom access policy',
-      'MAC allow list' or 'Sticky MAC allow list'.
+    description: The type of the access policy of the switch port. Only applicable
+      to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list'
+      or 'Sticky MAC allow list'.
     type: str
   adaptivePolicyGroupId:
-    description: The adaptive policy group ID that will be used to tag traffic through this switch port. This ID must pre-exist during the configuration,
-      else needs to be created using adaptivePolicy/groups API. Cannot be applied to a port on a switch bound to profile.
+    description: The adaptive policy group ID that will be used to tag traffic through
+      this switch port. This ID must pre-exist during the configuration, else needs
+      to be created using adaptivePolicy/groups API. Cannot be applied to a port on
+      a switch bound to profile.
     type: str
   allowedVlans:
     description: The VLANs allowed on the switch port. Only applicable to trunk ports.
     type: str
   daiTrusted:
-    description: If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic.
+    description: If true, ARP packets for this port will be considered trusted, and
+      Dynamic ARP Inspection will allow the traffic.
     type: bool
   dot3az:
     description: Dot3az settings for the port.
@@ -44,8 +48,16 @@ options:
     description: The status of the switch port.
     type: bool
   flexibleStackingEnabled:
-    description: For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled.
+    description: For supported switches (e.g. MS420/MS425), whether or not the port
+      has flexible stacking enabled.
     type: bool
+  highSpeed:
+    description: High speed port enablement settings for C9500-32QC.
+    suboptions:
+      enabled:
+        description: For C9500-32QC, whether or not the port is enabled for high speed.
+        type: bool
+    type: dict
   isolationEnabled:
     description: The isolation status of the switch port.
     type: bool
@@ -53,16 +65,23 @@ options:
     description: The link speed for the switch port.
     type: str
   macAllowList:
-    description: Only devices with MAC addresses specified in this list will have access to this port. Up to 20 MAC addresses can be defined.
-      Only applicable when 'accessPolicyType' is 'MAC allow list'.
+    description: Only devices with MAC addresses specified in this list will have
+      access to this port. Up to 20 MAC addresses can be defined. Only applicable
+      when 'accessPolicyType' is 'MAC allow list'.
     elements: str
     type: list
+  macWhitelistLimit:
+    description: The maximum number of MAC addresses for regular MAC allow list. Only
+      applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported
+      on verions greater than ms18 only for classic switches.
+    type: int
   name:
     description: The name of the switch port.
     type: str
   peerSgtCapable:
-    description: If true, Peer SGT is enabled for traffic through this switch port. Applicable to trunk port only, not access port. Cannot be
-      applied to a port on a switch bound to profile.
+    description: If true, Peer SGT is enabled for traffic through this switch port.
+      Applicable to trunk port only, not access port. Cannot be applied to a port
+      on a switch bound to profile.
     type: bool
   poeEnabled:
     description: The PoE status of the switch port.
@@ -71,16 +90,19 @@ options:
     description: PortId path parameter. Port ID.
     type: str
   portScheduleId:
-    description: The ID of the port schedule. A value of null will clear the port schedule.
+    description: The ID of the port schedule. A value of null will clear the port
+      schedule.
     type: str
   profile:
     description: Profile attributes.
     suboptions:
       enabled:
-        description: When enabled, override this port's configuration with a port profile.
+        description: When enabled, override this port's configuration with a port
+          profile.
         type: bool
       id:
-        description: When enabled, the ID of the port profile used to override the port's configuration.
+        description: When enabled, the ID of the port profile used to override the
+          port's configuration.
         type: str
       iname:
         description: When enabled, the IName of the profile.
@@ -93,30 +115,39 @@ options:
     description: Serial path parameter.
     type: str
   stickyMacAllowList:
-    description: The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The initial list of MAC addresses for sticky Mac allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     elements: str
     type: list
   stickyMacAllowListLimit:
-    description: The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The maximum number of MAC addresses for sticky MAC allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     type: int
   stormControlEnabled:
     description: The storm control status of the switch port.
     type: bool
   stpGuard:
-    description: The state of the STP guard ('disabled', 'root guard', 'bpdu guard' or 'loop guard').
+    description: The state of the STP guard ('disabled', 'root guard', 'bpdu guard'
+      or 'loop guard').
     type: str
+  stpPortFastTrunk:
+    description: The state of STP PortFast Trunk on the switch port.
+    type: bool
   tags:
     description: The list of tags of the switch port.
     elements: str
     type: list
   type:
-    description: The type of the switch port ('trunk', 'access', 'stack' or 'routed').
+    description: The type of the switch port ('access', 'trunk', 'stack', 'routed',
+      'svl' or 'dad').
     type: str
   udld:
-    description: The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only.
+    description: The action to take when Unidirectional Link is detected (Alert only,
+      Enforce). Default configuration is Alert only.
     type: str
   vlan:
-    description: The VLAN of the switch port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk ports.
+    description: The VLAN of the switch port. For a trunk port, this is the native
+      VLAN. A null value will clear the value set for trunk ports.
     type: int
   voiceVlan:
     description: The voice VLAN of the switch port. Only applicable to access ports.
@@ -169,11 +200,14 @@ EXAMPLES = r"""
       enabled: false
     enabled: true
     flexibleStackingEnabled: true
+    highSpeed:
+      enabled: false
     isolationEnabled: false
     linkNegotiation: Auto negotiate
     macAllowList:
       - 34:56:fe:ce:8e:a0
       - 34:56:fe:ce:8e:a1
+    macWhitelistLimit: 10
     name: My switch port
     peerSgtCapable: false
     poeEnabled: true
@@ -191,6 +225,7 @@ EXAMPLES = r"""
     stickyMacAllowListLimit: 5
     stormControlEnabled: true
     stpGuard: disabled
+    stpPortFastTrunk: false
     tags:
       - tag1
       - tag2
@@ -206,65 +241,68 @@ meraki_response:
   type: dict
   sample: >
     {
-      "accessPolicyNumber": 0,
-      "accessPolicyType": "string",
-      "adaptivePolicyGroup": {
-        "id": "string",
-        "name": "string"
-      },
-      "adaptivePolicyGroupId": "string",
-      "allowedVlans": "string",
-      "daiTrusted": true,
-      "dot3az": {
-        "enabled": true
-      },
+      "portId": "string",
+      "name": "string",
+      "tags": [
+        "string"
+      ],
       "enabled": true,
-      "flexibleStackingEnabled": true,
+      "poeEnabled": true,
+      "type": "string",
+      "vlan": 0,
+      "voiceVlan": 0,
+      "allowedVlans": "string",
       "isolationEnabled": true,
+      "rstpEnabled": true,
+      "stpGuard": "string",
+      "stpPortFastTrunk": true,
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "macAllowList": [
-        "string"
-      ],
-      "mirror": {
-        "mode": "string"
-      },
-      "module": {
-        "model": "string"
-      },
-      "name": "string",
-      "peerSgtCapable": true,
-      "poeEnabled": true,
-      "portId": "string",
       "portScheduleId": "string",
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      },
-      "rstpEnabled": true,
       "schedule": {
         "id": "string",
         "name": "string"
       },
-      "stackwiseVirtual": {
-        "isDualActiveDetector": true,
-        "isStackWiseVirtualLink": true
-      },
+      "udld": "string",
+      "accessPolicyType": "string",
+      "accessPolicyNumber": 0,
+      "macAllowList": [
+        "string"
+      ],
+      "macWhitelistLimit": 0,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "stpGuard": "string",
-      "tags": [
-        "string"
-      ],
-      "type": "string",
-      "udld": "string",
-      "vlan": 0,
-      "voiceVlan": 0
+      "adaptivePolicyGroupId": "string",
+      "adaptivePolicyGroup": {
+        "id": "string",
+        "name": "string"
+      },
+      "peerSgtCapable": true,
+      "flexibleStackingEnabled": true,
+      "daiTrusted": true,
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "module": {
+        "model": "string",
+        "serial": "string",
+        "slot": 0
+      },
+      "mirror": {
+        "mode": "string"
+      },
+      "dot3az": {
+        "enabled": true
+      },
+      "highSpeed": {
+        "enabled": true
+      }
     }
 """

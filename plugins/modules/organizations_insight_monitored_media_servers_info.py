@@ -6,12 +6,15 @@
 
 DOCUMENTATION = r"""
 module: organizations_insight_monitored_media_servers_info
-short_description: Information module for organizations _insight _monitored _media _servers
+short_description: Information module for organizations _insight _monitoredmediaservers
 description:
-  - Get all organizations _insight _monitored _media _servers.
-  - Get organizations _insight _monitored _media _servers by id.
-  - List the monitored media servers for this organization. Only valid for organizations with Meraki Insight.
-  - Return a monitored media server for this organization. Only valid for organizations with Meraki Insight.
+  - Information module for Organizations Insight Monitoredmediaservers Info.
+  - Get all organizations _insight _monitoredmediaservers.
+  - Get organizations _insight _monitoredmediaservers by id.
+  - List the monitored media servers for this organization. Only valid for organizations
+    with Meraki Insight.
+  - Return a monitored media server for this organization. Only valid for organizations
+    with Meraki Insight.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -22,10 +25,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Insight Monitoredmediaservers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   monitoredMediaServerId:
     description:
+      - Information module for Organizations Insight Monitoredmediaservers Info.
       - MonitoredMediaServerId path parameter. Monitored media server ID.
     type: str
 requirements:
@@ -33,10 +38,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServer
-    description: Complete reference of the getOrganizationInsightMonitoredMediaServer API.
+    description: Complete reference of the getOrganizationInsightMonitoredMediaServer
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-server
   - name: Cisco Meraki documentation for insight getOrganizationInsightMonitoredMediaServers
-    description: Complete reference of the getOrganizationInsightMonitoredMediaServers API.
+    description: Complete reference of the getOrganizationInsightMonitoredMediaServers
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-servers
 notes:
   - SDK Method used are
@@ -48,7 +55,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _insight _monitored _media _servers
+- name: Get all organizations _insight _monitoredmediaservers
   cisco.meraki.organizations_insight_monitored_media_servers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +80,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _insight _monitored _media _servers by id
+- name: Get organizations _insight _monitoredmediaservers by id
   cisco.meraki.organizations_insight_monitored_media_servers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,9 +114,9 @@ meraki_response:
   type: dict
   sample: >
     {
-      "address": "string",
-      "bestEffortMonitoringEnabled": true,
       "id": "string",
-      "name": "string"
+      "name": "string",
+      "address": "string",
+      "bestEffortMonitoringEnabled": true
     }
 """

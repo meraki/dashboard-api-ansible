@@ -6,10 +6,14 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_ethernet_statuses_info
-short_description: Information module for organizations _wireless _devices _ethernet _statuses
+short_description: Information module for organizations _wireless _devices _ethernet
+  _statuses
 description:
-  - Get all organizations _wireless _devices _ethernet _statuses. - > List the most recent Ethernet link speed, duplex, aggregation and power
-    mode and status information for wireless devices.
+  - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+  - Get all organizations _wireless _devices _ethernet _statuses.
+  - >
+    List the most recent Ethernet link speed, duplex, aggregation and power mode and
+    status information for wireless devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,30 +25,41 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Wireless Devices Ethernet Statuses Info.
       - >
-        NetworkIds query parameter. A list of Meraki network IDs to filter results to contain only specified networks.
+        NetworkIds query parameter. A list of Meraki network IDs to filter results
+        to contain only specified networks. E.g. NetworkIds=N_12345678&networkIds=L_3456.
     elements: str
     type: list
 requirements:
@@ -52,7 +67,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesEthernetStatuses
-    description: Complete reference of the getOrganizationWirelessDevicesEthernetStatuses API.
+    description: Complete reference of the getOrganizationWirelessDevicesEthernetStatuses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-ethernet-statuses
 notes:
   - SDK Method used are
@@ -103,36 +119,36 @@ meraki_response:
   sample: >
     [
       {
-        "aggregation": {
-          "enabled": true,
-          "speed": 0
-        },
+        "serial": "string",
         "name": "string",
         "network": {
           "id": "string"
         },
-        "ports": [
-          {
-            "linkNegotiation": {
-              "duplex": "string",
-              "speed": 0
-            },
-            "name": "string",
-            "poe": {
-              "standard": "string"
-            }
-          }
-        ],
         "power": {
+          "mode": "string",
           "ac": {
             "isConnected": true
           },
-          "mode": "string",
           "poe": {
             "isConnected": true
           }
         },
-        "serial": "string"
+        "ports": [
+          {
+            "name": "string",
+            "poe": {
+              "standard": "string"
+            },
+            "linkNegotiation": {
+              "duplex": "string",
+              "speed": 0
+            }
+          }
+        ],
+        "aggregation": {
+          "enabled": true,
+          "speed": 0
+        }
       }
     ]
 """

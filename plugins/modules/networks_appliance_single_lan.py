@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_single_lan
-short_description: Resource module for networks _appliance _single _lan
+short_description: Resource module for networks _appliance _singlelan
 description:
-  - Manage operation update of the resource networks _appliance _single _lan.
+  - Manage operation update of the resource networks _appliance _singlelan.
   - Update single LAN configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -31,6 +31,9 @@ options:
           autonomous:
             description: Auto assign a /64 prefix from the origin to the VLAN.
             type: bool
+          disabled:
+            description: Disable the prefix assignment.
+            type: bool
           origin:
             description: The origin of the prefix.
             suboptions:
@@ -51,8 +54,10 @@ options:
         type: list
     type: dict
   mandatoryDhcp:
-    description: Mandatory DHCP will enforce that clients connecting to this LAN must use the IP address assigned by the DHCP server. Clients
-      who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above.
+    description: Mandatory DHCP will enforce that clients connecting to this LAN must
+      use the IP address assigned by the DHCP server. Clients who use a static IP
+      address won't be able to associate. Only available on firmware versions 17.0
+      and above.
     suboptions:
       enabled:
         description: Enable Mandatory DHCP on LAN.
@@ -108,6 +113,7 @@ EXAMPLES = r"""
       enabled: true
       prefixAssignments:
         - autonomous: true
+          disabled: true
           origin:
             interfaces:
               - string
@@ -126,26 +132,26 @@ meraki_response:
   type: dict
   sample: >
     {
+      "subnet": "string",
       "applianceIp": "string",
+      "mandatoryDhcp": {
+        "enabled": true
+      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
           {
             "autonomous": true,
+            "staticPrefix": "string",
+            "staticApplianceIp6": "string",
             "origin": {
+              "type": "string",
               "interfaces": [
                 "string"
-              ],
-              "type": "string"
-            },
-            "staticApplianceIp6": "string",
-            "staticPrefix": "string"
+              ]
+            }
           }
         ]
-      },
-      "mandatoryDhcp": {
-        "enabled": true
-      },
-      "subnet": "string"
+      }
     }
 """

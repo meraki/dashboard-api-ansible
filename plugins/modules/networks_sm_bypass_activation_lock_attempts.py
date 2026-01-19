@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_bypass_activation_lock_attempts
-short_description: Resource module for networks _sm _bypass _activation _lock _attempts
+short_description: Resource module for networks _sm _bypassactivationlockattempts
 description:
-  - Manage operation create of the resource networks _sm _bypass _activation _lock _attempts.
+  - Manage operation create of the resource networks _sm _bypassactivationlockattempts.
   - Bypass activation lock attempt.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -27,7 +27,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for sm createNetworkSmBypassActivationLockAttempt
-    description: Complete reference of the createNetworkSmBypassActivationLockAttempt API.
+    description: Complete reference of the createNetworkSmBypassActivationLockAttempt
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-sm-bypass-activation-lock-attempt
 notes:
   - SDK Method used are

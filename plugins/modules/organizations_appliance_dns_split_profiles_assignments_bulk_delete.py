@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_split_profiles_assignments_bulk_delete
-short_description: Resource module for organizations _appliance _dns _split _profiles _assignments _bulk _delete
+short_description: Resource module for organizations _appliance _dns _split _profiles
+  _assignments _bulk _delete
 description:
-  - Manage operation create of the resource organizations _appliance _dns _split _profiles _assignments _bulk _delete.
+  - Manage operation create of the resource organizations _appliance _dns _split _profiles
+    _assignments _bulk _delete.
   - Unassign the split DNS profile to networks in the organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -31,7 +33,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance createOrganizationApplianceDnsSplitProfilesAssignmentsBulkDelete
-    description: Complete reference of the createOrganizationApplianceDnsSplitProfilesAssignmentsBulkDelete API.
+    description: Complete reference of the createOrganizationApplianceDnsSplitProfilesAssignmentsBulkDelete
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-appliance-dns-split-profiles-assignments-bulk-delete
 notes:
   - SDK Method used are

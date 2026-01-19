@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_groups
-short_description: Resource module for networks _firmware _upgrades _staged _groups
+short_description: Resource module for networks _firmwareupgrades _staged _groups
 description:
-  - Manage operations create, update and delete of the resource networks _firmware _upgrades _staged _groups.
+  - Manage operations create, update and delete of the resource networks _firmwareupgrades
+    _staged _groups.
   - Create a Staged Upgrade Group for a network.
   - Delete a Staged Upgrade Group.
   - Update a Staged Upgrade Group for a network.
@@ -44,13 +45,15 @@ options:
         type: list
     type: dict
   description:
-    description: Description of the Staged Upgrade Group. Length must be 1 to 255 characters.
+    description: Description of the Staged Upgrade Group. Length must be 1 to 255
+      characters.
     type: str
   groupId:
     description: GroupId path parameter. Group ID.
     type: str
   isDefault:
-    description: Boolean indicating the default Group. Any device that does not have a group explicitly assigned will upgrade with this group.
+    description: Boolean indicating the default Group. Any device that does not have
+      a group explicitly assigned will upgrade with this group.
     type: bool
   name:
     description: Name of the Staged Upgrade Group. Length must be 1 to 255 characters.
@@ -63,13 +66,16 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedGroup
-    description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup API.
+    description: Complete reference of the createNetworkFirmwareUpgradesStagedGroup
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-group
   - name: Cisco Meraki documentation for networks deleteNetworkFirmwareUpgradesStagedGroup
-    description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup API.
+    description: Complete reference of the deleteNetworkFirmwareUpgradesStagedGroup
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-network-firmware-upgrades-staged-group
   - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedGroup
-    description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup API.
+    description: Complete reference of the updateNetworkFirmwareUpgradesStagedGroup
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-group
 notes:
   - SDK Method used are
@@ -78,7 +84,8 @@ notes:
     networks.Networks.update_network_firmware_upgrades_staged_group,
   - Paths used are
     post /networks/{networkId}/firmwareUpgrades/staged/groups,
-    delete /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
+    delete
+    /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
     put /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId},
 """
 
@@ -118,32 +125,6 @@ EXAMPLES = r"""
     isDefault: false
     name: My Staged Upgrade Group
     networkId: string
-- name: Delete by id
-  cisco.meraki.networks_firmware_upgrades_staged_groups:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    groupId: string
-    networkId: string
 - name: Update by id
   cisco.meraki.networks_firmware_upgrades_staged_groups:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -180,6 +161,32 @@ EXAMPLES = r"""
     isDefault: false
     name: My Staged Upgrade Group
     networkId: string
+- name: Delete by id
+  cisco.meraki.networks_firmware_upgrades_staged_groups:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    groupId: string
+    networkId: string
 """
 RETURN = r"""
 meraki_response:
@@ -188,11 +195,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "groupId": "string",
+      "name": "string",
+      "description": "string",
+      "isDefault": true,
       "assignedDevices": {
         "devices": [
           {
-            "name": "string",
-            "serial": "string"
+            "serial": "string",
+            "name": "string"
           }
         ],
         "switchStacks": [
@@ -201,10 +212,6 @@ meraki_response:
             "name": "string"
           }
         ]
-      },
-      "description": "string",
-      "groupId": "string",
-      "isDefault": true,
-      "name": "string"
+      }
     }
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_lldp_cdp_info
-short_description: Information module for devices _lldp _cdp
+short_description: Information module for devices _lldpcdp
 description:
-  - Get all devices _lldp _cdp.
+  - Information module for Devices Lldpcdp Info.
+  - Get all devices _lldpcdp.
   - List LLDP and CDP information for a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Lldpcdp Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _lldp _cdp
+- name: Get all devices _lldpcdp
   cisco.meraki.devices_lldp_cdp_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,7 +72,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "ports": {},
-      "sourceMac": "string"
+      "sourceMac": "string",
+      "ports": {}
     }
 """

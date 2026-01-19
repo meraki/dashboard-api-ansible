@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_info
 short_description: Information module for organizations _assurance _alerts _overview
 description:
+  - Information module for Organizations Assurance Alerts Overview Info.
   - Get all organizations _assurance _alerts _overview.
   - Return overview of active health alerts for an organization.
 version_added: '1.0.0'
@@ -20,73 +21,95 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
+      - Information module for Organizations Assurance Alerts Overview Info.
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network ids.
     type: str
   severity:
     description:
-      - Severity query parameter. Optional parameter to filter alerts overview by severity type.
+      - Information module for Organizations Assurance Alerts Overview Info.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   types:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - TsStart query parameter. Optional parameter to filter by starting timestamp.
     type: str
   tsEnd:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp.
     type: str
   category:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   serials:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
   deviceTags:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - DeviceTags query parameter. Optional parameter to filter by device tags.
     elements: str
     type: list
   active:
     description:
-      - Active query parameter. Optional parameter to filter by active alerts defaults to true.
+      - Information module for Organizations Assurance Alerts Overview Info.
+      - Active query parameter. Optional parameter to filter by active alerts defaults
+        to true.
     type: bool
   dismissed:
     description:
-      - Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Overview Info.
+      - Dismissed query parameter. Optional parameter to filter by dismissed alerts
+        defaults to false.
     type: bool
   resolved:
     description:
-      - Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Overview Info.
+      - Resolved query parameter. Optional parameter to filter by resolved alerts
+        defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
+      - Information module for Organizations Assurance Alerts Overview Info.
       - >
-        SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that
-        device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch
-        and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
+        SuppressAlertsForOfflineNodes query parameter. When set to true the api will
+        only return connectivity alerts for a given device if that device is in an
+        offline state. This only applies to devices. This is ignored when resolved
+        is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only
+        the Unreachable alert will be returned. Defaults to false.
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverview
-    description: Complete reference of the getOrganizationAssuranceAlertsOverview API.
+    description: Complete reference of the getOrganizationAssuranceAlertsOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview
 notes:
   - SDK Method used are
@@ -142,12 +165,12 @@ meraki_response:
   type: dict
   sample: >
     {
+      "total": 0,
       "bySeverity": [
         {
-          "count": 0,
-          "type": "string"
+          "type": "string",
+          "count": 0
         }
-      ],
-      "total": 0
+      ]
     }
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_insight_applications_health_by_time_info
-short_description: Information module for networks _insight _applications _health _by _time
+short_description: Information module for networks _insight _applications _healthbytime
 description:
-  - Get all networks _insight _applications _health _by _time.
+  - Information module for Networks Insight Applications Healthbytime Info.
+  - Get all networks _insight _applications _healthbytime.
   - Get application health by time.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,38 +21,48 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Insight Applications Healthbytime Info.
       - NetworkId path parameter. Network ID.
     type: str
   applicationId:
     description:
+      - Information module for Networks Insight Applications Healthbytime Info.
       - ApplicationId path parameter. Application ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
+      - Information module for Networks Insight Applications Healthbytime Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 7 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
+      - Information module for Networks Insight Applications Healthbytime Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Networks Insight Applications Healthbytime Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 7 days. The default is 2 hours.
     type: float
   resolution:
     description:
+      - Information module for Networks Insight Applications Healthbytime Info.
       - >
-        Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 60, 300, 3600, 86400. The default
-        is 300.
+        Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 60, 300, 3600, 86400. The default is 300.
     type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for insight getNetworkInsightApplicationHealthByTime
-    description: Complete reference of the getNetworkInsightApplicationHealthByTime API.
+    description: Complete reference of the getNetworkInsightApplicationHealthByTime
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-insight-application-health-by-time
 notes:
   - SDK Method used are
@@ -61,7 +72,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _insight _applications _health _by _time
+- name: Get all networks _insight _applications _healthbytime
   cisco.meraki.networks_insight_applications_health_by_time_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -101,18 +112,18 @@ meraki_response:
   sample: >
     [
       {
+        "startTs": "string",
         "endTs": "string",
+        "wanGoodput": 0,
         "lanGoodput": 0,
+        "wanLatencyMs": 0,
         "lanLatencyMs": 0,
+        "wanLossPercent": 0,
         "lanLossPercent": 0,
-        "numClients": 0,
-        "recv": 0,
         "responseDuration": 0,
         "sent": 0,
-        "startTs": "string",
-        "wanGoodput": 0,
-        "wanLatencyMs": 0,
-        "wanLossPercent": 0
+        "recv": 0,
+        "numClients": 0
       }
     ]
 """

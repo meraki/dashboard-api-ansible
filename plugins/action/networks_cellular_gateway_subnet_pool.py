@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +31,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    cidr=dict(type="str"),
     mask=dict(type="int"),
+    cidr=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -49,29 +48,33 @@ class NetworksCellularGatewaySubnetPool(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            cidr=params.get("cidr"),
             mask=params.get("mask"),
+            cidr=params.get("cidr"),
             network_id=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
-            new_object_params['cidr'] = self.new_object.get('cidr') or \
-                self.new_object.get('cidr')
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
+        if self.new_object.get('mask') is not None or self.new_object.get(
+                'mask') is not None:
             new_object_params['mask'] = self.new_object.get('mask') or \
                 self.new_object.get('mask')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('cidr') is not None or self.new_object.get(
+                'cidr') is not None:
+            new_object_params['cidr'] = self.new_object.get('cidr') or \
+                self.new_object.get('cidr')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -126,15 +129,18 @@ class NetworksCellularGatewaySubnetPool(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("cidr", "cidr"),
             ("mask", "mask"),
+            ("cidr", "cidr"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

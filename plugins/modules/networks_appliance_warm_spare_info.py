@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_warm_spare_info
-short_description: Information module for networks _appliance _warm _spare
+short_description: Information module for networks _appliance _warmspare
 description:
-  - Get all networks _appliance _warm _spare.
+  - Information module for Networks Appliance Warmspare Info.
+  - Get all networks _appliance _warmspare.
   - Return MX warm spare settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Warmspare Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _warm _spare
+- name: Get all networks _appliance _warmspare
   cisco.meraki.networks_appliance_warm_spare_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

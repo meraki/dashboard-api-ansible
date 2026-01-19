@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,14 +31,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    center=dict(type="dict"),
     bottomLeftCorner=dict(type="dict"),
     bottomRightCorner=dict(type="dict"),
-    center=dict(type="dict"),
-    floorNumber=dict(type="float"),
-    imageContents=dict(type="str"),
-    name=dict(type="str"),
     topLeftCorner=dict(type="dict"),
     topRightCorner=dict(type="dict"),
+    floorNumber=dict(type="float"),
+    imageContents=dict(type="str"),
     networkId=dict(type="str"),
     floorPlanId=dict(type="str"),
 ))
@@ -57,108 +56,132 @@ class NetworksFloorPlans(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            name=params.get("name"),
+            center=params.get("center"),
             bottomLeftCorner=params.get("bottomLeftCorner"),
             bottomRightCorner=params.get("bottomRightCorner"),
-            center=params.get("center"),
-            floorNumber=params.get("floorNumber"),
-            imageContents=params.get("imageContents"),
-            name=params.get("name"),
             topLeftCorner=params.get("topLeftCorner"),
             topRightCorner=params.get("topRightCorner"),
+            floorNumber=params.get("floorNumber"),
+            imageContents=params.get("imageContents"),
             networkId=params.get("networkId"),
             floorPlanId=params.get("floorPlanId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
-            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
-                self.new_object.get('floor_plan_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('floorPlanId') is not None or self.new_object.get(
+                'floor_plan_id') is not None:
+            new_object_params['floorPlanId'] = self.new_object.get(
+                'floorPlanId') or self.new_object.get('floor_plan_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('bottomLeftCorner') is not None or self.new_object.get('bottom_left_corner') is not None:
-            new_object_params['bottomLeftCorner'] = self.new_object.get('bottomLeftCorner') or \
-                self.new_object.get('bottom_left_corner')
-        if self.new_object.get('bottomRightCorner') is not None or self.new_object.get('bottom_right_corner') is not None:
-            new_object_params['bottomRightCorner'] = self.new_object.get('bottomRightCorner') or \
-                self.new_object.get('bottom_right_corner')
-        if self.new_object.get('center') is not None or self.new_object.get('center') is not None:
-            new_object_params['center'] = self.new_object.get('center') or \
-                self.new_object.get('center')
-        if self.new_object.get('floorNumber') is not None or self.new_object.get('floor_number') is not None:
-            new_object_params['floorNumber'] = self.new_object.get('floorNumber') or \
-                self.new_object.get('floor_number')
-        if self.new_object.get('imageContents') is not None or self.new_object.get('image_contents') is not None:
-            new_object_params['imageContents'] = self.new_object.get('imageContents') or \
-                self.new_object.get('image_contents')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('topLeftCorner') is not None or self.new_object.get('top_left_corner') is not None:
-            new_object_params['topLeftCorner'] = self.new_object.get('topLeftCorner') or \
-                self.new_object.get('top_left_corner')
-        if self.new_object.get('topRightCorner') is not None or self.new_object.get('top_right_corner') is not None:
-            new_object_params['topRightCorner'] = self.new_object.get('topRightCorner') or \
-                self.new_object.get('top_right_corner')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('center') is not None or self.new_object.get(
+                'center') is not None:
+            new_object_params['center'] = self.new_object.get('center') or \
+                self.new_object.get('center')
+        if self.new_object.get('bottomLeftCorner') is not None or self.new_object.get(
+                'bottom_left_corner') is not None:
+            new_object_params['bottomLeftCorner'] = self.new_object.get(
+                'bottomLeftCorner') or self.new_object.get('bottom_left_corner')
+        if self.new_object.get('bottomRightCorner') is not None or self.new_object.get(
+                'bottom_right_corner') is not None:
+            new_object_params['bottomRightCorner'] = self.new_object.get(
+                'bottomRightCorner') or self.new_object.get('bottom_right_corner')
+        if self.new_object.get('topLeftCorner') is not None or self.new_object.get(
+                'top_left_corner') is not None:
+            new_object_params['topLeftCorner'] = self.new_object.get(
+                'topLeftCorner') or self.new_object.get('top_left_corner')
+        if self.new_object.get('topRightCorner') is not None or self.new_object.get(
+                'top_right_corner') is not None:
+            new_object_params['topRightCorner'] = self.new_object.get(
+                'topRightCorner') or self.new_object.get('top_right_corner')
+        if self.new_object.get('floorNumber') is not None or self.new_object.get(
+                'floor_number') is not None:
+            new_object_params['floorNumber'] = self.new_object.get(
+                'floorNumber') or self.new_object.get('floor_number')
+        if self.new_object.get('imageContents') is not None or self.new_object.get(
+                'image_contents') is not None:
+            new_object_params['imageContents'] = self.new_object.get(
+                'imageContents') or self.new_object.get('image_contents')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
-            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
-                self.new_object.get('floor_plan_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('floorPlanId') is not None or self.new_object.get(
+                'floor_plan_id') is not None:
+            new_object_params['floorPlanId'] = self.new_object.get(
+                'floorPlanId') or self.new_object.get('floor_plan_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('bottomLeftCorner') is not None or self.new_object.get('bottom_left_corner') is not None:
-            new_object_params['bottomLeftCorner'] = self.new_object.get('bottomLeftCorner') or \
-                self.new_object.get('bottom_left_corner')
-        if self.new_object.get('bottomRightCorner') is not None or self.new_object.get('bottom_right_corner') is not None:
-            new_object_params['bottomRightCorner'] = self.new_object.get('bottomRightCorner') or \
-                self.new_object.get('bottom_right_corner')
-        if self.new_object.get('center') is not None or self.new_object.get('center') is not None:
-            new_object_params['center'] = self.new_object.get('center') or \
-                self.new_object.get('center')
-        if self.new_object.get('floorNumber') is not None or self.new_object.get('floor_number') is not None:
-            new_object_params['floorNumber'] = self.new_object.get('floorNumber') or \
-                self.new_object.get('floor_number')
-        if self.new_object.get('imageContents') is not None or self.new_object.get('image_contents') is not None:
-            new_object_params['imageContents'] = self.new_object.get('imageContents') or \
-                self.new_object.get('image_contents')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('topLeftCorner') is not None or self.new_object.get('top_left_corner') is not None:
-            new_object_params['topLeftCorner'] = self.new_object.get('topLeftCorner') or \
-                self.new_object.get('top_left_corner')
-        if self.new_object.get('topRightCorner') is not None or self.new_object.get('top_right_corner') is not None:
-            new_object_params['topRightCorner'] = self.new_object.get('topRightCorner') or \
-                self.new_object.get('top_right_corner')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
-            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
-                self.new_object.get('floor_plan_id')
+        if self.new_object.get('center') is not None or self.new_object.get(
+                'center') is not None:
+            new_object_params['center'] = self.new_object.get('center') or \
+                self.new_object.get('center')
+        if self.new_object.get('bottomLeftCorner') is not None or self.new_object.get(
+                'bottom_left_corner') is not None:
+            new_object_params['bottomLeftCorner'] = self.new_object.get(
+                'bottomLeftCorner') or self.new_object.get('bottom_left_corner')
+        if self.new_object.get('bottomRightCorner') is not None or self.new_object.get(
+                'bottom_right_corner') is not None:
+            new_object_params['bottomRightCorner'] = self.new_object.get(
+                'bottomRightCorner') or self.new_object.get('bottom_right_corner')
+        if self.new_object.get('topLeftCorner') is not None or self.new_object.get(
+                'top_left_corner') is not None:
+            new_object_params['topLeftCorner'] = self.new_object.get(
+                'topLeftCorner') or self.new_object.get('top_left_corner')
+        if self.new_object.get('topRightCorner') is not None or self.new_object.get(
+                'top_right_corner') is not None:
+            new_object_params['topRightCorner'] = self.new_object.get(
+                'topRightCorner') or self.new_object.get('top_right_corner')
+        if self.new_object.get('floorNumber') is not None or self.new_object.get(
+                'floor_number') is not None:
+            new_object_params['floorNumber'] = self.new_object.get(
+                'floorNumber') or self.new_object.get('floor_number')
+        if self.new_object.get('imageContents') is not None or self.new_object.get(
+                'image_contents') is not None:
+            new_object_params['imageContents'] = self.new_object.get(
+                'imageContents') or self.new_object.get('image_contents')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('floorPlanId') is not None or self.new_object.get(
+                'floor_plan_id') is not None:
+            new_object_params['floorPlanId'] = self.new_object.get(
+                'floorPlanId') or self.new_object.get('floor_plan_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -230,22 +253,25 @@ class NetworksFloorPlans(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
+            ("center", "center"),
             ("bottomLeftCorner", "bottomLeftCorner"),
             ("bottomRightCorner", "bottomRightCorner"),
-            ("center", "center"),
-            ("floorNumber", "floorNumber"),
-            ("imageContents", "imageContents"),
-            ("name", "name"),
             ("topLeftCorner", "topLeftCorner"),
             ("topRightCorner", "topRightCorner"),
+            ("floorNumber", "floorNumber"),
+            ("imageContents", "imageContents"),
             ("networkId", "networkId"),
             ("floorPlanId", "floorPlanId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

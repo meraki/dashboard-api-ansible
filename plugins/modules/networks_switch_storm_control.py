@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_storm_control
-short_description: Resource module for networks _switch _storm _control
+short_description: Resource module for networks _switch _stormcontrol
 description:
-  - Manage operation update of the resource networks _switch _storm _control.
+  - Manage operation update of the resource networks _switch _stormcontrol.
   - Update the storm control configuration for a switch network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,12 +16,12 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   broadcastThreshold:
-    description: Percentage (1 to 99) of total available port bandwidth for broadcast traffic type. Default value 100 percent rate is to clear
-      the configuration.
+    description: Percentage (1 to 99) of total available port bandwidth for broadcast
+      traffic type. Default value 100 percent rate is to clear the configuration.
     type: int
   multicastThreshold:
-    description: Percentage (1 to 99) of total available port bandwidth for multicast traffic type. Default value 100 percent rate is to clear
-      the configuration.
+    description: Percentage (1 to 99) of total available port bandwidth for multicast
+      traffic type. Default value 100 percent rate is to clear the configuration.
     type: int
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -31,8 +31,9 @@ options:
     elements: str
     type: list
   unknownUnicastThreshold:
-    description: Percentage (1 to 99) of total available port bandwidth for unknown unicast (dlf-destination lookup failure) traffic type. Default
-      value 100 percent rate is to clear the configuration.
+    description: Percentage (1 to 99) of total available port bandwidth for unknown
+      unicast (dlf-destination lookup failure) traffic type. Default value 100 percent
+      rate is to clear the configuration.
     type: int
 requirements:
   - meraki >= 2.4.9
@@ -90,9 +91,9 @@ meraki_response:
     {
       "broadcastThreshold": 0,
       "multicastThreshold": 0,
+      "unknownUnicastThreshold": 0,
       "treatTheseTrafficTypesAsOneThreshold": [
         "string"
-      ],
-      "unknownUnicastThreshold": 0
+      ]
     }
 """

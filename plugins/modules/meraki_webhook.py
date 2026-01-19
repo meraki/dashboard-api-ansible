@@ -44,8 +44,7 @@ options:
     type: str
   payload_template_id:
     description:
-      - The ID of the payload template. Overrides payload_template_name if passed
-        too.
+      - The ID of the payload template. Overrides payload_template_name if passed too.
     type: str
   payload_template_name:
     description:

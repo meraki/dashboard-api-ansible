@@ -8,11 +8,17 @@ DOCUMENTATION = r"""
 module: organizations_switch_ports_overview_info
 short_description: Information module for organizations _switch _ports _overview
 description:
-  - Get all organizations _switch _ports _overview. - > Returns the counts of all active ports for the requested timespan, grouped by speed. An
-    active port is a port that at any point during the timeframe is observed to be connected to a responsive device and isn't configured to be
-    disabled. For a port that is observed at multiple speeds during the timeframe, it will be counted at the highest speed observed. The number
-    of inactive ports, and the total number of ports are also provided. Only ports on switches online during the timeframe will be represented
-    and a port is only guaranteed to be present if its switch was online for at least 6 hours of the timeframe.
+  - Information module for Organizations Switch Ports Overview Info.
+  - Get all organizations _switch _ports _overview.
+  - >
+    Returns the counts of all active ports for the requested timespan, grouped by
+    speed. An active port is a port that at any point during the timeframe is observed
+    to be connected to a responsive device and isn't configured to be disabled. For
+    a port that is observed at multiple speeds during the timeframe, it will be counted
+    at the highest speed observed. The number of inactive ports, and the total number
+    of ports are also provided. Only ports on switches online during the timeframe
+    will be represented and a port is only guaranteed to be present if its switch
+    was online for at least 6 hours of the timeframe.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,22 +29,28 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Switch Ports Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
+      - Information module for Organizations Switch Ports Overview Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 186 days after t0.
+      - Information module for Organizations Switch Ports Overview Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 186 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Organizations Switch Ports Overview Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be greater than or equal to 12 hours and be less than or equal to 186 days. The default is 1
-        day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be greater than or equal to 12 hours and be less than or
+        equal to 186 days. The default is 1 day.
     type: float
 requirements:
   - meraki >= 2.4.9
@@ -91,33 +103,35 @@ meraki_response:
   type: dict
   sample: >
     {
+      "total": 0,
       "byStatus": {
         "active": {
+          "total": 0,
           "byMediaAndLinkSpeed": {
             "rj45": {
+              "total": 0,
               "10": 0,
               "100": 0,
               "1000": 0,
-              "10000": 0,
               "2500": 0,
               "5000": 0,
-              "total": 0
+              "10000": 0
             },
             "sfp": {
+              "total": 0,
               "100": 0,
               "1000": 0,
               "10000": 0,
-              "100000": 0,
               "20000": 0,
               "25000": 0,
               "40000": 0,
               "50000": 0,
-              "total": 0
+              "100000": 0
             }
-          },
-          "total": 0
+          }
         },
         "inactive": {
+          "total": 0,
           "byMedia": {
             "rj45": {
               "total": 0
@@ -125,10 +139,8 @@ meraki_response:
             "sfp": {
               "total": 0
             }
-          },
-          "total": 0
+          }
         }
-      },
-      "total": 0
+      }
     }
 """

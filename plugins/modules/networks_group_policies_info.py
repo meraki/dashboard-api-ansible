@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_group_policies_info
-short_description: Information module for networks _group _policies
+short_description: Information module for networks _grouppolicies
 description:
-  - Get all networks _group _policies.
-  - Get networks _group _policies by id.
+  - Information module for Networks Grouppolicies Info.
+  - Get all networks _grouppolicies.
+  - Get networks _grouppolicies by id.
   - Display a group policy.
   - List the group policies in a network.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Grouppolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupPolicyId:
     description:
+      - Information module for Networks Grouppolicies Info.
       - GroupPolicyId path parameter. Group policy ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _group _policies
+- name: Get all networks _grouppolicies
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _group _policies by id
+- name: Get networks _grouppolicies by id
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,108 +110,10 @@ meraki_response:
   type: dict
   sample: >
     {
-      "bandwidth": {
-        "bandwidthLimits": {
-          "limitDown": 0,
-          "limitUp": 0
-        },
-        "settings": "string"
-      },
-      "bonjourForwarding": {
-        "rules": [
-          {
-            "description": "string",
-            "services": [
-              "string"
-            ],
-            "vlanId": "string"
-          }
-        ],
-        "settings": "string"
-      },
-      "contentFiltering": {
-        "allowedUrlPatterns": {
-          "patterns": [
-            "string"
-          ],
-          "settings": "string"
-        },
-        "blockedUrlCategories": {
-          "categories": [
-            "string"
-          ],
-          "settings": "string"
-        },
-        "blockedUrlPatterns": {
-          "patterns": [
-            "string"
-          ],
-          "settings": "string"
-        }
-      },
-      "firewallAndTrafficShaping": {
-        "l3FirewallRules": [
-          {
-            "comment": "string",
-            "destCidr": "string",
-            "destPort": "string",
-            "policy": "string",
-            "protocol": "string"
-          }
-        ],
-        "l7FirewallRules": [
-          {
-            "policy": "string",
-            "type": "string",
-            "value": "string"
-          }
-        ],
-        "settings": "string",
-        "trafficShapingRules": [
-          {
-            "definitions": [
-              {
-                "type": "string",
-                "value": "string"
-              }
-            ],
-            "dscpTagValue": 0,
-            "pcpTagValue": 0,
-            "perClientBandwidthLimits": {
-              "bandwidthLimits": {
-                "limitDown": 0,
-                "limitUp": 0
-              },
-              "settings": "string"
-            },
-            "priority": "string"
-          }
-        ]
-      },
       "groupPolicyId": "string",
       "scheduling": {
         "enabled": true,
-        "friday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
         "monday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "saturday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "sunday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "thursday": {
           "active": true,
           "from": "string",
           "to": "string"
@@ -222,12 +127,110 @@ meraki_response:
           "active": true,
           "from": "string",
           "to": "string"
+        },
+        "thursday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "friday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "saturday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "sunday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        }
+      },
+      "bandwidth": {
+        "settings": "string",
+        "bandwidthLimits": {
+          "limitUp": 0,
+          "limitDown": 0
+        }
+      },
+      "firewallAndTrafficShaping": {
+        "settings": "string",
+        "trafficShapingRules": [
+          {
+            "definitions": [
+              {
+                "type": "string",
+                "value": "string"
+              }
+            ],
+            "perClientBandwidthLimits": {
+              "settings": "string",
+              "bandwidthLimits": {
+                "limitUp": 0,
+                "limitDown": 0
+              }
+            },
+            "dscpTagValue": 0,
+            "pcpTagValue": 0,
+            "priority": "string"
+          }
+        ],
+        "l3FirewallRules": [
+          {
+            "comment": "string",
+            "policy": "string",
+            "protocol": "string",
+            "destPort": "string",
+            "destCidr": "string"
+          }
+        ],
+        "l7FirewallRules": [
+          {
+            "policy": "string",
+            "type": "string",
+            "value": "string"
+          }
+        ]
+      },
+      "contentFiltering": {
+        "allowedUrlPatterns": {
+          "settings": "string",
+          "patterns": [
+            "string"
+          ]
+        },
+        "blockedUrlPatterns": {
+          "settings": "string",
+          "patterns": [
+            "string"
+          ]
+        },
+        "blockedUrlCategories": {
+          "settings": "string",
+          "categories": [
+            "string"
+          ]
         }
       },
       "splashAuthSettings": "string",
       "vlanTagging": {
         "settings": "string",
         "vlanId": "string"
+      },
+      "bonjourForwarding": {
+        "settings": "string",
+        "rules": [
+          {
+            "description": "string",
+            "vlanId": "string",
+            "services": [
+              "string"
+            ]
+          }
+        ]
       }
     }
 """

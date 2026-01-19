@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_snmp_info
 short_description: Information module for organizations _snmp
 description:
+  - Information module for Organizations Snmp Info.
   - Get all organizations _snmp.
   - Return the SNMP settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Snmp Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -70,16 +72,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "hostname": "string",
+      "v2cEnabled": true,
+      "v2CommunityString": "string",
+      "v3Enabled": true,
+      "v3User": "string",
+      "v3AuthMode": "string",
+      "v3PrivMode": "string",
       "peerIps": [
         "string"
       ],
-      "port": 0,
-      "v2CommunityString": "string",
-      "v2cEnabled": true,
-      "v3AuthMode": "string",
-      "v3Enabled": true,
-      "v3PrivMode": "string",
-      "v3User": "string"
+      "hostname": "string",
+      "port": 0
     }
 """

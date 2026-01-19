@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -26,9 +26,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     logEvent=dict(type="str"),
-    request=dict(type="str"),
-    targetOS=dict(type="str"),
     timestamp=dict(type="int"),
+    targetOS=dict(type="str"),
+    request=dict(type="str"),
     organizationId=dict(type="str"),
 ))
 
@@ -69,10 +69,10 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             logEvent=params.get("logEvent"),
-            request=params.get("request"),
-            targetOS=params.get("targetOS"),
             timestamp=params.get("timestamp"),
-            organizationId=params.get("organizationId"),
+            targetOS=params.get("targetOS"),
+            request=params.get("request"),
+            organization_id=params.get("organizationId"),
         )
         return new_object
 
@@ -88,7 +88,8 @@ class ActionModule(ActionBase):
             family="organizations",
             function='createOrganizationInventoryOnboardingCloudMonitoringExportEvent',
             op_modifies=True,
-            params=self.get_object(self._task.args),
+            params=self.get_object(
+                self._task.args),
         )
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

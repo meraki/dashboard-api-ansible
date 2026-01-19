@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l3_firewall_rules
-short_description: Resource module for networks _wireless _ssids _firewall l3 _firewall _rules
+short_description: Resource module for networks _wireless _ssids _firewall l3firewallrules
 description:
-  - Manage operation update of the resource networks _wireless _ssids _firewall l3 _firewall _rules.
+  - Manage operation update of the resource networks _wireless _ssids _firewall l3firewallrules.
   - Update the L3 firewall rules of an SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   allowLanAccess:
-    description: Allow wireless client access to local LAN (boolean value - true allows access and false denies access) (optional).
+    description: Allow wireless client access to local LAN (boolean value - true allows
+      access and false denies access) (optional).
     type: bool
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -25,23 +26,30 @@ options:
     description: Number path parameter.
     type: str
   rules:
-    description: An ordered array of the firewall rules for this SSID (not including the local LAN access rule or the default rule).
+    description: An ordered array of the firewall rules for this SSID.
     elements: dict
     suboptions:
       comment:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR notation), fully-qualified domain names (FQDN) or 'any'.
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation), fully-qualified domain names (FQDN) or 'any'.
         type: str
       destPort:
-        description: Comma-separated list of destination port(s) (integer in the range 1-65535), or 'any'.
+        description: Comma-separated list of destination port(s) (integer in the range
+          1-65535), or 'any'.
+        type: str
+      ipVer:
+        description: IP version to which this rule applies (must be one of 'both',
+          'ipv4' or 'ipv6'). Defaults to 'both' if not specified.
         type: str
       policy:
         description: '''allow'' or ''deny'' traffic specified by this rule.'
         type: str
       protocol:
-        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or 'any').
+        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or
+          'any').
         type: str
     type: list
 requirements:
@@ -49,7 +57,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL3FirewallRules
-    description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules API.
+    description: Complete reference of the updateNetworkWirelessSsidFirewallL3FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l3-firewall-rules
 notes:
   - SDK Method used are
@@ -90,6 +99,7 @@ EXAMPLES = r"""
       - comment: Allow TCP traffic to subnet with HTTP servers.
         destCidr: 192.168.1.0/24
         destPort: '443'
+        ipVer: both
         policy: allow
         protocol: tcp
 """
@@ -100,15 +110,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "allowLanAccess": true,
       "rules": [
         {
           "comment": "string",
-          "destCidr": "string",
-          "destPort": "string",
           "policy": "string",
-          "protocol": "string"
+          "ipVer": "string",
+          "protocol": "string",
+          "destPort": "string",
+          "destCidr": "string"
         }
-      ]
+      ],
+      "allowLanAccess": true
     }
 """

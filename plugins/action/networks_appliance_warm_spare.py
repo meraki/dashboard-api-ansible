@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -62,30 +61,37 @@ class NetworksApplianceWarmSpare(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('spareSerial') is not None or self.new_object.get('spare_serial') is not None:
-            new_object_params['spareSerial'] = self.new_object.get('spareSerial') or \
-                self.new_object.get('spare_serial')
-        if self.new_object.get('uplinkMode') is not None or self.new_object.get('uplink_mode') is not None:
-            new_object_params['uplinkMode'] = self.new_object.get('uplinkMode') or \
-                self.new_object.get('uplink_mode')
-        if self.new_object.get('virtualIp1') is not None or self.new_object.get('virtual_ip1') is not None:
-            new_object_params['virtualIp1'] = self.new_object.get('virtualIp1') or \
-                self.new_object.get('virtual_ip1')
-        if self.new_object.get('virtualIp2') is not None or self.new_object.get('virtual_ip2') is not None:
-            new_object_params['virtualIp2'] = self.new_object.get('virtualIp2') or \
-                self.new_object.get('virtual_ip2')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('spareSerial') is not None or self.new_object.get(
+                'spare_serial') is not None:
+            new_object_params['spareSerial'] = self.new_object.get(
+                'spareSerial') or self.new_object.get('spare_serial')
+        if self.new_object.get('uplinkMode') is not None or self.new_object.get(
+                'uplink_mode') is not None:
+            new_object_params['uplinkMode'] = self.new_object.get(
+                'uplinkMode') or self.new_object.get('uplink_mode')
+        if self.new_object.get('virtualIp1') is not None or self.new_object.get(
+                'virtual_ip1') is not None:
+            new_object_params['virtualIp1'] = self.new_object.get(
+                'virtualIp1') or self.new_object.get('virtual_ip1')
+        if self.new_object.get('virtualIp2') is not None or self.new_object.get(
+                'virtual_ip2') is not None:
+            new_object_params['virtualIp2'] = self.new_object.get(
+                'virtualIp2') or self.new_object.get('virtual_ip2')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -149,9 +155,12 @@ class NetworksApplianceWarmSpare(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

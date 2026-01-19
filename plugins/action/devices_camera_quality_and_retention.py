@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,13 +31,13 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    audioRecordingEnabled=dict(type="bool"),
-    motionBasedRetentionEnabled=dict(type="bool"),
-    motionDetectorVersion=dict(type="int"),
     profileId=dict(type="str"),
+    motionBasedRetentionEnabled=dict(type="bool"),
+    audioRecordingEnabled=dict(type="bool"),
+    restrictedBandwidthModeEnabled=dict(type="bool"),
     quality=dict(type="str"),
     resolution=dict(type="str"),
-    restrictedBandwidthModeEnabled=dict(type="bool"),
+    motionDetectorVersion=dict(type="int"),
     serial=dict(type="str"),
 ))
 
@@ -54,48 +53,55 @@ class DevicesCameraQualityAndRetention(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            audioRecordingEnabled=params.get("audioRecordingEnabled"),
-            motionBasedRetentionEnabled=params.get(
-                "motionBasedRetentionEnabled"),
-            motionDetectorVersion=params.get("motionDetectorVersion"),
             profileId=params.get("profileId"),
+            motionBasedRetentionEnabled=params.get("motionBasedRetentionEnabled"),
+            audioRecordingEnabled=params.get("audioRecordingEnabled"),
+            restrictedBandwidthModeEnabled=params.get("restrictedBandwidthModeEnabled"),
             quality=params.get("quality"),
             resolution=params.get("resolution"),
-            restrictedBandwidthModeEnabled=params.get(
-                "restrictedBandwidthModeEnabled"),
+            motionDetectorVersion=params.get("motionDetectorVersion"),
             serial=params.get("serial"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get('audio_recording_enabled') is not None:
-            new_object_params['audioRecordingEnabled'] = self.new_object.get(
-                'audioRecordingEnabled')
-        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get('motion_based_retention_enabled') is not None:
+        if self.new_object.get('profileId') is not None or self.new_object.get(
+                'profile_id') is not None:
+            new_object_params['profileId'] = self.new_object.get(
+                'profileId') or self.new_object.get('profile_id')
+        if self.new_object.get('motionBasedRetentionEnabled') is not None or self.new_object.get(
+                'motion_based_retention_enabled') is not None:
             new_object_params['motionBasedRetentionEnabled'] = self.new_object.get(
                 'motionBasedRetentionEnabled')
-        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get('motion_detector_version') is not None:
-            new_object_params['motionDetectorVersion'] = self.new_object.get('motionDetectorVersion') or \
-                self.new_object.get('motion_detector_version')
-        if self.new_object.get('profileId') is not None or self.new_object.get('profile_id') is not None:
-            new_object_params['profileId'] = self.new_object.get('profileId') or \
-                self.new_object.get('profile_id')
-        if self.new_object.get('quality') is not None or self.new_object.get('quality') is not None:
-            new_object_params['quality'] = self.new_object.get('quality') or \
-                self.new_object.get('quality')
-        if self.new_object.get('resolution') is not None or self.new_object.get('resolution') is not None:
-            new_object_params['resolution'] = self.new_object.get('resolution') or \
-                self.new_object.get('resolution')
-        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get('restricted_bandwidth_mode_enabled') is not None:
+        if self.new_object.get('audioRecordingEnabled') is not None or self.new_object.get(
+                'audio_recording_enabled') is not None:
+            new_object_params['audioRecordingEnabled'] = self.new_object.get(
+                'audioRecordingEnabled')
+        if self.new_object.get('restrictedBandwidthModeEnabled') is not None or self.new_object.get(
+                'restricted_bandwidth_mode_enabled') is not None:
             new_object_params['restrictedBandwidthModeEnabled'] = self.new_object.get(
                 'restrictedBandwidthModeEnabled')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('quality') is not None or self.new_object.get(
+                'quality') is not None:
+            new_object_params['quality'] = self.new_object.get('quality') or \
+                self.new_object.get('quality')
+        if self.new_object.get('resolution') is not None or self.new_object.get(
+                'resolution') is not None:
+            new_object_params['resolution'] = self.new_object.get(
+                'resolution') or self.new_object.get('resolution')
+        if self.new_object.get('motionDetectorVersion') is not None or self.new_object.get(
+                'motion_detector_version') is not None:
+            new_object_params['motionDetectorVersion'] = self.new_object.get(
+                'motionDetectorVersion') or self.new_object.get('motion_detector_version')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -151,20 +157,23 @@ class DevicesCameraQualityAndRetention(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("audioRecordingEnabled", "audioRecordingEnabled"),
-            ("motionBasedRetentionEnabled", "motionBasedRetentionEnabled"),
-            ("motionDetectorVersion", "motionDetectorVersion"),
             ("profileId", "profileId"),
+            ("motionBasedRetentionEnabled", "motionBasedRetentionEnabled"),
+            ("audioRecordingEnabled", "audioRecordingEnabled"),
+            ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
             ("quality", "quality"),
             ("resolution", "resolution"),
-            ("restrictedBandwidthModeEnabled", "restrictedBandwidthModeEnabled"),
+            ("motionDetectorVersion", "motionDetectorVersion"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

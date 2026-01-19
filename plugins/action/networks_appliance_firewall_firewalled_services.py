@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -57,25 +56,31 @@ class NetworksApplianceFirewallFirewalledServices(object):
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('service') is not None or self.new_object.get('service') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('service') is not None or self.new_object.get(
+                'service') is not None:
             new_object_params['service'] = self.new_object.get('service')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('access') is not None or self.new_object.get('access') is not None:
+        if self.new_object.get('access') is not None or self.new_object.get(
+                'access') is not None:
             new_object_params['access'] = self.new_object.get('access') or \
                 self.new_object.get('access')
-        if self.new_object.get('allowedIps') is not None or self.new_object.get('allowed_ips') is not None:
-            new_object_params['allowedIps'] = self.new_object.get('allowedIps') or \
-                self.new_object.get('allowed_ips')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('service') is not None or self.new_object.get('service') is not None:
+        if self.new_object.get('allowedIps') is not None or self.new_object.get(
+                'allowed_ips') is not None:
+            new_object_params['allowedIps'] = self.new_object.get(
+                'allowedIps') or self.new_object.get('allowed_ips')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('service') is not None or self.new_object.get(
+                'service') is not None:
             new_object_params['service'] = self.new_object.get('service') or \
                 self.new_object.get('service')
         return new_object_params
@@ -142,9 +147,12 @@ class NetworksApplianceFirewallFirewalledServices(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

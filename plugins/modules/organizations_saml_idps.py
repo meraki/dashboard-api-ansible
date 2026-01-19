@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: organizations_saml_idps
 short_description: Resource module for organizations _saml _idps
 description:
-  - Manage operations create, update and delete of the resource organizations _saml _idps.
+  - Manage operations create, update and delete of the resource organizations _saml
+    _idps.
   - Create a SAML IdP for your organization.
   - Remove a SAML IdP in your organization.
   - Update a SAML IdP in your organization.
@@ -26,8 +27,13 @@ options:
   sloLogoutUrl:
     description: Dashboard will redirect users to this URL when they sign out.
     type: str
+  ssoLoginUrl:
+    description: Dashboard will redirect users to this URL to log in again when their
+      sessions expire.
+    type: str
   x509certSha1Fingerprint:
-    description: Fingerprint (SHA1) of the SAML certificate provided by your Identity Provider (IdP). This will be used for encryption / validation.
+    description: Fingerprint (SHA1) of the SAML certificate provided by your Identity
+      Provider (IdP). This will be used for encryption / validation.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -79,7 +85,37 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     organizationId: string
-    sloLogoutUrl: https://somewhere.com
+    sloLogoutUrl: https://onelogin.com/trust/saml2/http-redirect/slo/4155000
+    ssoLoginUrl: https://onelogin.com/trust/saml2/http-post/sso/3de5f942-e7b8-4cb9-94e3-85828111158b
+    x509certSha1Fingerprint: 00:11:22:33:44:55:66:77:88:99:00:11:22:33:44:55:66:77:88:99
+- name: Update by id
+  cisco.meraki.organizations_saml_idps:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
+    idpId: string
+    organizationId: string
+    sloLogoutUrl: https://onelogin.com/trust/saml2/http-redirect/slo/4155000
+    ssoLoginUrl: https://onelogin.com/trust/saml2/http-post/sso/3de5f942-e7b8-4cb9-94e3-85828111158b
     x509certSha1Fingerprint: 00:11:22:33:44:55:66:77:88:99:00:11:22:33:44:55:66:77:88:99
 - name: Delete by id
   cisco.meraki.organizations_saml_idps:
@@ -107,34 +143,6 @@ EXAMPLES = r"""
     state: absent
     idpId: string
     organizationId: string
-- name: Update by id
-  cisco.meraki.organizations_saml_idps:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: present
-    idpId: string
-    organizationId: string
-    sloLogoutUrl: https://somewhere.com
-    x509certSha1Fingerprint: 00:11:22:33:44:55:66:77:88:99:00:11:22:33:44:55:66:77:88:99
 """
 RETURN = r"""
 meraki_response:
@@ -144,10 +152,12 @@ meraki_response:
   sample: >
     [
       {
-        "consumerUrl": "string",
         "idpId": "string",
-        "sloLogoutUrl": "string",
-        "x509certSha1Fingerprint": "string"
+        "consumerUrl": "string",
+        "visionConsumerUrl": "string",
+        "x509certSha1Fingerprint": "string",
+        "ssoLoginUrl": "string",
+        "sloLogoutUrl": "string"
       }
     ]
 """

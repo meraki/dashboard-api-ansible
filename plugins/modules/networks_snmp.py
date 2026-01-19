@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   access:
-    description: The type of SNMP access. Can be one of 'none' (disabled), 'community' (V1/V2c), or 'users' (V3).
+    description: The type of SNMP access. Can be one of 'none' (disabled), 'community'
+      (V1/V2c), or 'users' (V3).
     type: str
   communityString:
     description: The SNMP community string. Only relevant if 'access' is set to 'community'.
@@ -92,8 +93,8 @@ meraki_response:
       "communityString": "string",
       "users": [
         {
-          "passphrase": "string",
-          "username": "string"
+          "username": "string",
+          "passphrase": "string"
         }
       ]
     }

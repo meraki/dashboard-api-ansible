@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_cellular_gateway_lan
-short_description: Resource module for devices _cellular _gateway _lan
+short_description: Resource module for devices _cellulargateway _lan
 description:
-  - Manage operation update of the resource devices _cellular _gateway _lan.
+  - Manage operation update of the resource devices _cellulargateway _lan.
   - Update the LAN Settings for a single MG.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,7 +23,8 @@ options:
         description: The IP address you want to assign to a specific server or device.
         type: str
       mac:
-        description: The MAC address of the server or device that hosts the internal resource that you wish to receive the specified IP address.
+        description: The MAC address of the server or device that hosts the internal
+          resource that you wish to receive the specified IP address.
         type: str
       name:
         description: A descriptive name of the assignment.
@@ -102,21 +103,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "deviceLanIp": "string",
       "deviceName": "string",
+      "deviceLanIp": "string",
       "deviceSubnet": "string",
       "fixedIpAssignments": [
         {
+          "name": "string",
           "ip": "string",
-          "mac": "string",
-          "name": "string"
+          "mac": "string"
         }
       ],
       "reservedIpRanges": [
         {
-          "comment": "string",
+          "start": "string",
           "end": "string",
-          "start": "string"
+          "comment": "string"
         }
       ]
     }

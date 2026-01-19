@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_selection
-short_description: Resource module for networks _appliance _traffic _shaping _uplink _selection
+short_description: Resource module for networks _appliance _trafficshaping _uplinkselection
 description:
-  - Manage operation update of the resource networks _appliance _traffic _shaping _uplink _selection.
+  - Manage operation update of the resource networks _appliance _trafficshaping _uplinkselection.
   - Update uplink selection settings for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,16 +19,18 @@ options:
     description: Toggle for enabling or disabling active-active AutoVPN.
     type: bool
   defaultUplink:
-    description: The default uplink. Must be one of 'wan1' or 'wan2'.
+    description: The default uplink. Must be a WAN interface 'wanX'.
     type: str
   failoverAndFailback:
     description: WAN failover and failback behavior.
     suboptions:
       immediate:
-        description: Immediate WAN transition terminates all flows (new and existing) on current WAN when it is deemed unreliable.
+        description: Immediate WAN transition terminates all flows (new and existing)
+          on current WAN when it is deemed unreliable.
         suboptions:
           enabled:
-            description: Toggle for enabling or disabling immediate WAN failover and failback.
+            description: Toggle for enabling or disabling immediate WAN failover and
+              failback.
             type: bool
         type: dict
     type: dict
@@ -43,31 +45,37 @@ options:
     elements: dict
     suboptions:
       failOverCriterion:
-        description: Fail over criterion for this uplink preference rule. Must be one of 'poorPerformance' or 'uplinkDown'.
+        description: Fail over criterion for this uplink preference rule. Must be
+          one of 'poorPerformance' or 'uplinkDown'.
         type: str
       performanceClass:
         description: Performance class setting for this uplink preference rule.
         suboptions:
           builtinPerformanceClassName:
-            description: Name of builtin performance class, must be present when performanceClass type is 'builtin', and value must be one of
-              'VoIP'.
+            description: Name of builtin performance class, must be present when performanceClass
+              type is 'builtin', and value must be one of 'VoIP'.
             type: str
           customPerformanceClassId:
-            description: ID of created custom performance class, must be present when performanceClass type is 'custom'.
+            description: ID of created custom performance class, must be present when
+              performanceClass type is 'custom'.
             type: str
           type:
-            description: Type of this performance class. Must be one of 'builtin' or 'custom'.
+            description: Type of this performance class. Must be one of 'builtin'
+              or 'custom'.
             type: str
         type: dict
       preferredUplink:
-        description: Preferred uplink for this uplink preference rule. Must be one of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
+        description: Preferred uplink for this uplink preference rule. Must be one
+          of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink', or
+          any other valid uplink(wanX) if it applies to the network.
         type: str
       trafficFilters:
         description: Array of traffic filters for this uplink preference rule.
         elements: dict
         suboptions:
           type:
-            description: Type of this traffic filter. Must be one of 'applicationCategory', 'application' or 'custom'.
+            description: Type of this traffic filter. Must be one of 'applicationCategory',
+              'application' or 'custom'.
             type: str
           value:
             description: Value object of this traffic filter.
@@ -76,53 +84,66 @@ options:
                 description: Destination of this custom type traffic filter.
                 suboptions:
                   cidr:
-                    description: CIDR format address, or "any". E.g. "192.168.10.0/24", "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0"
-                      (same as "any").
+                    description: CIDR format address, or "any". E.g. "192.168.10.0/24",
+                      "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same
+                      as "any").
                     type: str
                   fqdn:
-                    description: FQDN format address. Currently only availabe in 'destination' of 'vpnTrafficUplinkPreference' object. E.g. 'www.google.com'.
+                    description: FQDN format address. Currently only availabe in 'destination'
+                      of 'vpnTrafficUplinkPreference' object. E.g. 'www.google.com'.
                     type: str
                   host:
-                    description: Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only
-                      available under a template network.
+                    description: Host ID in the VLAN, should be used along with 'vlan',
+                      and not exceed the vlan subnet capacity. Currently only available
+                      under a template network.
                     type: int
                   network:
-                    description: Meraki network ID. Currently only available under a template network, and the value should be ID of either same
-                      template network, or another template network currently. E.g. "L_12345678".
+                    description: Meraki network ID. Currently only available under
+                      a template network, and the value should be ID of either same
+                      template network, or another template network currently. E.g.
+                      "L_12345678".
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                   vlan:
-                    description: VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+                    description: VLAN ID of the configured VLAN in the Meraki network.
+                      Currently only available under a template network.
                     type: int
                 type: dict
               id:
-                description: ID of this applicationCategory or application type traffic filter. E.g. "meraki layer7/category/1", "meraki layer7/application/4".
+                description: ID of this applicationCategory or application type traffic
+                  filter. E.g. "meraki layer7/category/1", "meraki layer7/application/4".
                 type: str
               protocol:
-                description: Protocol of this custom type traffic filter. Must be one of 'tcp', 'udp', 'icmp', 'icmp6' or 'any'.
+                description: Protocol of this custom type traffic filter. Must be
+                  one of 'tcp', 'udp', 'icmp', 'icmp6' or 'any'.
                 type: str
               source:
                 description: Source of this custom type traffic filter.
                 suboptions:
                   cidr:
-                    description: CIDR format address, or "any". E.g. "192.168.10.0/24", "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0"
-                      (same as "any").
+                    description: CIDR format address, or "any". E.g. "192.168.10.0/24",
+                      "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same
+                      as "any").
                     type: str
                   host:
-                    description: Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only
-                      available under a template network.
+                    description: Host ID in the VLAN, should be used along with 'vlan',
+                      and not exceed the vlan subnet capacity. Currently only available
+                      under a template network.
                     type: int
                   network:
-                    description: Meraki network ID. Currently only available under a template network, and the value should be ID of either same
-                      template network, or another template network currently. E.g. "L_12345678".
+                    description: Meraki network ID. Currently only available under
+                      a template network, and the value should be ID of either same
+                      template network, or another template network currently. E.g.
+                      "L_12345678".
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                   vlan:
-                    description: VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+                    description: VLAN ID of the configured VLAN in the Meraki network.
+                      Currently only available under a template network.
                     type: int
                 type: dict
             type: dict
@@ -133,7 +154,9 @@ options:
     elements: dict
     suboptions:
       preferredUplink:
-        description: Preferred uplink for this uplink preference rule. Must be one of 'wan1' or 'wan2'.
+        description: Preferred uplink for this uplink preference rule. Must be one
+          of 'wan1' or 'wan2', or any other valid uplink(wanX) if it applies to the
+          network.
         type: str
       trafficFilters:
         description: Array of traffic filters for this uplink preference rule.
@@ -149,32 +172,37 @@ options:
                 description: Destination of this custom type traffic filter.
                 suboptions:
                   cidr:
-                    description: CIDR format address, or "any". E.g. "192.168.10.0/24", "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0"
-                      (same as "any").
+                    description: CIDR format address, or "any". E.g. "192.168.10.0/24",
+                      "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same
+                      as "any").
                     type: str
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                 type: dict
               protocol:
-                description: Protocol of this custom type traffic filter. Must be one of 'tcp', 'udp', 'icmp6' or 'any'.
+                description: Protocol of this custom type traffic filter. Must be
+                  one of 'tcp', 'udp', 'icmp6' or 'any'.
                 type: str
               source:
                 description: Source of this custom type traffic filter.
                 suboptions:
                   cidr:
-                    description: CIDR format address, or "any". E.g. "192.168.10.0/24", "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0"
-                      (same as "any").
+                    description: CIDR format address, or "any". E.g. "192.168.10.0/24",
+                      "192.168.10.1" (same as "192.168.10.1/32"), "0.0.0.0/0" (same
+                      as "any").
                     type: str
                   host:
-                    description: Host ID in the VLAN, should be used along with 'vlan', and not exceed the vlan subnet capacity. Currently only
-                      available under a template network.
+                    description: Host ID in the VLAN, should be used along with 'vlan',
+                      and not exceed the vlan subnet capacity. Currently only available
+                      under a template network.
                     type: int
                   port:
                     description: E.g. "any", "0" (also means "any"), "8080", "1-1024".
                     type: str
                   vlan:
-                    description: VLAN ID of the configured VLAN in the Meraki network. Currently only available under a template network.
+                    description: VLAN ID of the configured VLAN in the Meraki network.
+                      Currently only available under a template network.
                     type: int
                 type: dict
             type: dict
@@ -185,7 +213,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkSelection
-    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection API.
+    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkSelection
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-selection
 notes:
   - SDK Method used are
@@ -275,75 +304,75 @@ meraki_response:
     {
       "activeActiveAutoVpnEnabled": true,
       "defaultUplink": "string",
+      "loadBalancingEnabled": true,
       "failoverAndFailback": {
         "immediate": {
           "enabled": true
         }
       },
-      "loadBalancingEnabled": true,
-      "vpnTrafficUplinkPreferences": [
-        {
-          "failOverCriterion": "string",
-          "performanceClass": {
-            "builtinPerformanceClassName": "string",
-            "customPerformanceClassId": "string",
-            "type": "string"
-          },
-          "preferredUplink": "string",
-          "trafficFilters": [
-            {
-              "type": "string",
-              "value": {
-                "destination": {
-                  "cidr": "string",
-                  "fqdn": "string",
-                  "host": 0,
-                  "network": "string",
-                  "port": "string",
-                  "vlan": 0
-                },
-                "id": "string",
-                "protocol": "string",
-                "source": {
-                  "cidr": "string",
-                  "host": 0,
-                  "network": "string",
-                  "port": "string",
-                  "vlan": 0
-                }
-              }
-            }
-          ]
-        }
-      ],
       "wanTrafficUplinkPreferences": [
         {
-          "preferredUplink": "string",
           "trafficFilters": [
             {
               "type": "string",
               "value": {
+                "protocol": "string",
+                "source": {
+                  "port": "string",
+                  "cidr": "string",
+                  "vlan": 0,
+                  "host": 0
+                },
                 "destination": {
+                  "port": "string",
+                  "cidr": "string",
                   "applications": [
                     {
                       "id": "string",
                       "name": "string",
                       "type": "string"
                     }
-                  ],
-                  "cidr": "string",
-                  "port": "string"
-                },
-                "protocol": "string",
-                "source": {
-                  "cidr": "string",
-                  "host": 0,
-                  "port": "string",
-                  "vlan": 0
+                  ]
                 }
               }
             }
-          ]
+          ],
+          "preferredUplink": "string"
+        }
+      ],
+      "vpnTrafficUplinkPreferences": [
+        {
+          "trafficFilters": [
+            {
+              "type": "string",
+              "value": {
+                "id": "string",
+                "protocol": "string",
+                "source": {
+                  "port": "string",
+                  "cidr": "string",
+                  "network": "string",
+                  "vlan": 0,
+                  "host": 0
+                },
+                "destination": {
+                  "port": "string",
+                  "cidr": "string",
+                  "network": "string",
+                  "vlan": 0,
+                  "host": 0,
+                  "fqdn": "string"
+                }
+              }
+            }
+          ],
+          "preferredUplink": "string",
+          "failOverCriterion": "string",
+          "performanceClass": {
+            "type": "string",
+            "builtinPerformanceClassName": "string",
+            "customPerformanceClassId": "string"
+          }
         }
       ]
     }

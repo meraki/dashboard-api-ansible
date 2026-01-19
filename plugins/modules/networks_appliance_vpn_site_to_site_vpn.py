@@ -6,24 +6,27 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_vpn_site_to_site_vpn
-short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
+short_description: Resource module for networks _appliance _vpn _sitetositevpn
 description:
-  - Manage operation update of the resource networks _appliance _vpn _site _to _site _vpn.
-  - Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.
+  - Manage operation update of the resource networks _appliance _vpn _sitetositevpn.
+  - Update the site-to-site VPN settings of a network. Only valid for MX networks
+    in NAT mode.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   hubs:
-    description: The list of VPN hubs, in order of preference. In spoke mode, at least 1 hub is required.
+    description: The list of VPN hubs, in order of preference. In spoke mode, at least
+      1 hub is required.
     elements: dict
     suboptions:
       hubId:
         description: The network ID of the hub.
         type: str
       useDefaultRoute:
-        description: Only valid in 'spoke' mode. Indicates whether default route traffic should be sent to this hub.
+        description: Only valid in 'spoke' mode. Indicates whether default route traffic
+          should be sent to this hub.
         type: bool
     type: list
   mode:
@@ -39,8 +42,9 @@ options:
         description: Configuration of NAT for subnets.
         suboptions:
           isAllowed:
-            description: If enabled, VPN subnet translation can be used to translate any local subnets that are allowed to use the VPN into a
-              new subnet with the same number of addresses.
+            description: If enabled, VPN subnet translation can be used to translate
+              any local subnets that are allowed to use the VPN into a new subnet
+              with the same number of addresses.
             type: bool
         type: dict
     type: dict
@@ -55,7 +59,8 @@ options:
         description: Configuration of NAT for the subnet.
         suboptions:
           enabled:
-            description: Whether or not VPN subnet translation is enabled for the subnet.
+            description: Whether or not VPN subnet translation is enabled for the
+              subnet.
             type: bool
           remoteSubnet:
             description: The translated subnet to be used in the VPN.
@@ -70,7 +75,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceVpnSiteToSiteVpn
-    description: Complete reference of the updateNetworkApplianceVpnSiteToSiteVpn API.
+    description: Complete reference of the updateNetworkApplianceVpnSiteToSiteVpn
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-vpn-site-to-site-vpn
 notes:
   - SDK Method used are
@@ -126,27 +132,27 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mode": "string",
       "hubs": [
         {
           "hubId": "string",
           "useDefaultRoute": true
         }
       ],
-      "mode": "string",
+      "subnets": [
+        {
+          "localSubnet": "string",
+          "useVpn": true,
+          "nat": {
+            "enabled": true,
+            "remoteSubnet": "string"
+          }
+        }
+      ],
       "subnet": {
         "nat": {
           "isAllowed": true
         }
-      },
-      "subnets": [
-        {
-          "localSubnet": "string",
-          "nat": {
-            "enabled": true,
-            "remoteSubnet": "string"
-          },
-          "useVpn": true
-        }
-      ]
+      }
     }
 """

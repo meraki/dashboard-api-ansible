@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -55,25 +54,30 @@ class OrganizationsLicenses(object):
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('licenseId') is not None or self.new_object.get('license_id') is not None:
-            new_object_params['licenseId'] = self.new_object.get('licenseId') or \
-                self.new_object.get('license_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('licenseId') is not None or self.new_object.get(
+                'license_id') is not None:
+            new_object_params['licenseId'] = self.new_object.get(
+                'licenseId') or self.new_object.get('license_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('deviceSerial') is not None or self.new_object.get('device_serial') is not None:
-            new_object_params['deviceSerial'] = self.new_object.get('deviceSerial') or \
-                self.new_object.get('device_serial')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('licenseId') is not None or self.new_object.get('license_id') is not None:
-            new_object_params['licenseId'] = self.new_object.get('licenseId') or \
-                self.new_object.get('license_id')
+        if self.new_object.get('deviceSerial') is not None or self.new_object.get(
+                'device_serial') is not None:
+            new_object_params['deviceSerial'] = self.new_object.get(
+                'deviceSerial') or self.new_object.get('device_serial')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('licenseId') is not None or self.new_object.get(
+                'license_id') is not None:
+            new_object_params['licenseId'] = self.new_object.get(
+                'licenseId') or self.new_object.get('license_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -136,9 +140,12 @@ class OrganizationsLicenses(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

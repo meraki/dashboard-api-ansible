@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_desktop_logs_info
-short_description: Information module for networks _sm _devices _desktop _logs
+short_description: Information module for networks _sm _devices _desktoplogs
 description:
-  - Get all networks _sm _devices _desktop _logs.
-  - Return historical records of various Systems Manager network connection details for desktop devices.
+  - Information module for Networks Sm Devices Desktoplogs Info.
+  - Get all networks _sm _devices _desktoplogs.
+  - Return historical records of various Systems Manager network connection details
+    for desktop devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,29 +23,39 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Desktoplogs Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Desktoplogs Info.
       - DeviceId path parameter. Device ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Networks Sm Devices Desktoplogs Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Sm Devices Desktoplogs Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Sm Devices Desktoplogs Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -60,7 +72,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _desktop _logs
+- name: Get all networks _sm _devices _desktoplogs
   cisco.meraki.networks_sm_devices_desktop_logs_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -101,24 +113,24 @@ meraki_response:
   sample: >
     [
       {
-        "dhcpServer": "string",
-        "dnsServer": "string",
-        "gateway": "string",
-        "ip": "string",
         "measuredAt": "string",
+        "user": "string",
         "networkDevice": "string",
         "networkDriver": "string",
-        "networkMTU": "string",
-        "publicIP": "string",
-        "subnet": "string",
-        "ts": "string",
-        "user": "string",
+        "wifiChannel": "string",
         "wifiAuth": "string",
         "wifiBssid": "string",
-        "wifiChannel": "string",
-        "wifiNoise": "string",
+        "wifiSsid": "string",
         "wifiRssi": "string",
-        "wifiSsid": "string"
+        "wifiNoise": "string",
+        "dhcpServer": "string",
+        "ip": "string",
+        "networkMTU": "string",
+        "subnet": "string",
+        "gateway": "string",
+        "publicIP": "string",
+        "dnsServer": "string",
+        "ts": "string"
       }
     ]
 """

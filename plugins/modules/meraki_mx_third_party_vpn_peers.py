@@ -222,7 +222,6 @@ EXAMPLES = r"""
 """
 
 RETURN = r"""
-
 response:
   description: Information about the organization which was created or modified
   returned: success

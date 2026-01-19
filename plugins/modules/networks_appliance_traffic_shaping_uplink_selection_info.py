@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_selection_info
-short_description: Information module for networks _appliance _traffic _shaping _uplink _selection
+short_description: Information module for networks _appliance _trafficshaping _uplinkselection
 description:
-  - Get all networks _appliance _traffic _shaping _uplink _selection.
+  - Information module for Networks Appliance Trafficshaping Uplinkselection Info.
+  - Get all networks _appliance _trafficshaping _uplinkselection.
   - Show uplink selection settings for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Trafficshaping Uplinkselection Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkSelection
-    description: Complete reference of the getNetworkApplianceTrafficShapingUplinkSelection API.
+    description: Complete reference of the getNetworkApplianceTrafficShapingUplinkSelection
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-selection
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _traffic _shaping _uplink _selection
+- name: Get all networks _appliance _trafficshaping _uplinkselection
   cisco.meraki.networks_appliance_traffic_shaping_uplink_selection_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,75 +75,75 @@ meraki_response:
     {
       "activeActiveAutoVpnEnabled": true,
       "defaultUplink": "string",
+      "loadBalancingEnabled": true,
       "failoverAndFailback": {
         "immediate": {
           "enabled": true
         }
       },
-      "loadBalancingEnabled": true,
-      "vpnTrafficUplinkPreferences": [
-        {
-          "failOverCriterion": "string",
-          "performanceClass": {
-            "builtinPerformanceClassName": "string",
-            "customPerformanceClassId": "string",
-            "type": "string"
-          },
-          "preferredUplink": "string",
-          "trafficFilters": [
-            {
-              "type": "string",
-              "value": {
-                "destination": {
-                  "cidr": "string",
-                  "fqdn": "string",
-                  "host": 0,
-                  "network": "string",
-                  "port": "string",
-                  "vlan": 0
-                },
-                "id": "string",
-                "protocol": "string",
-                "source": {
-                  "cidr": "string",
-                  "host": 0,
-                  "network": "string",
-                  "port": "string",
-                  "vlan": 0
-                }
-              }
-            }
-          ]
-        }
-      ],
       "wanTrafficUplinkPreferences": [
         {
-          "preferredUplink": "string",
           "trafficFilters": [
             {
               "type": "string",
               "value": {
+                "protocol": "string",
+                "source": {
+                  "port": "string",
+                  "cidr": "string",
+                  "vlan": 0,
+                  "host": 0
+                },
                 "destination": {
+                  "port": "string",
+                  "cidr": "string",
                   "applications": [
                     {
                       "id": "string",
                       "name": "string",
                       "type": "string"
                     }
-                  ],
-                  "cidr": "string",
-                  "port": "string"
-                },
-                "protocol": "string",
-                "source": {
-                  "cidr": "string",
-                  "host": 0,
-                  "port": "string",
-                  "vlan": 0
+                  ]
                 }
               }
             }
-          ]
+          ],
+          "preferredUplink": "string"
+        }
+      ],
+      "vpnTrafficUplinkPreferences": [
+        {
+          "trafficFilters": [
+            {
+              "type": "string",
+              "value": {
+                "id": "string",
+                "protocol": "string",
+                "source": {
+                  "port": "string",
+                  "cidr": "string",
+                  "network": "string",
+                  "vlan": 0,
+                  "host": 0
+                },
+                "destination": {
+                  "port": "string",
+                  "cidr": "string",
+                  "network": "string",
+                  "vlan": 0,
+                  "host": 0,
+                  "fqdn": "string"
+                }
+              }
+            }
+          ],
+          "preferredUplink": "string",
+          "failOverCriterion": "string",
+          "performanceClass": {
+            "type": "string",
+            "builtinPerformanceClassName": "string",
+            "customPerformanceClassId": "string"
+          }
         }
       ]
     }

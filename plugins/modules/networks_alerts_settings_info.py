@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_alerts_settings_info
 short_description: Information module for networks _alerts _settings
 description:
+  - Information module for Networks Alerts Settings Info.
   - Get all networks _alerts _settings.
   - Return the alert configuration for this network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Alerts Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,30 +72,41 @@ meraki_response:
   type: dict
   sample: >
     {
+      "defaultDestinations": {
+        "emails": [
+          "string"
+        ],
+        "allAdmins": true,
+        "snmp": true,
+        "httpServerIds": [
+          "string"
+        ]
+      },
       "alerts": [
         {
+          "type": "string",
+          "enabled": true,
           "alertDestinations": {
-            "allAdmins": true,
             "emails": [
-              "string"
-            ],
-            "httpServerIds": [
               "string"
             ],
             "smsNumbers": [
               "string"
             ],
-            "snmp": true
+            "allAdmins": true,
+            "snmp": true,
+            "httpServerIds": [
+              "string"
+            ]
           },
-          "enabled": true,
           "filters": {
             "conditions": [
               {
-                "direction": "string",
-                "duration": 0,
-                "threshold": 0,
                 "type": "string",
-                "unit": "string"
+                "unit": "string",
+                "duration": 0,
+                "direction": "string",
+                "threshold": 0
               }
             ],
             "failureType": "string",
@@ -111,20 +124,9 @@ meraki_response:
             "tag": "string",
             "threshold": 0,
             "timeout": 0
-          },
-          "type": "string"
+          }
         }
       ],
-      "defaultDestinations": {
-        "allAdmins": true,
-        "emails": [
-          "string"
-        ],
-        "httpServerIds": [
-          "string"
-        ],
-        "snmp": true
-      },
       "muting": {
         "byPortSchedules": {
           "enabled": true

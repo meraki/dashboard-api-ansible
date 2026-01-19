@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_settings
-short_description: Resource module for organizations _adaptive _policy _settings
+short_description: Resource module for organizations _adaptivepolicy _settings
 description:
-  - Manage operation update of the resource organizations _adaptive _policy _settings.
+  - Manage operation update of the resource organizations _adaptivepolicy _settings.
   - Update global adaptive policy settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -27,7 +27,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations updateOrganizationAdaptivePolicySettings
-    description: Complete reference of the updateOrganizationAdaptivePolicySettings API.
+    description: Complete reference of the updateOrganizationAdaptivePolicySettings
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-adaptive-policy-settings
 notes:
   - SDK Method used are

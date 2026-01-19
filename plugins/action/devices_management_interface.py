@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -56,26 +55,31 @@ class DevicesManagementInterface(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('wan1') is not None or self.new_object.get('wan1') is not None:
+        if self.new_object.get('wan1') is not None or self.new_object.get(
+                'wan1') is not None:
             new_object_params['wan1'] = self.new_object.get('wan1') or \
                 self.new_object.get('wan1')
-        if self.new_object.get('wan2') is not None or self.new_object.get('wan2') is not None:
+        if self.new_object.get('wan2') is not None or self.new_object.get(
+                'wan2') is not None:
             new_object_params['wan2'] = self.new_object.get('wan2') or \
                 self.new_object.get('wan2')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -137,9 +141,12 @@ class DevicesManagementInterface(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

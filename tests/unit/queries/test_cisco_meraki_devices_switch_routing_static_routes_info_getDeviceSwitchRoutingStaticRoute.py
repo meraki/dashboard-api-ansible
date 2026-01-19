@@ -4,7 +4,6 @@ Method: getDeviceSwitchRoutingStaticRoute
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_devices_switch_routing_static_routes_info_getDeviceSwitchRoutingStaticRoute(

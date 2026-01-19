@@ -6,10 +6,14 @@
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_prepare
-short_description: Resource module for organizations _inventory _onboarding _cloud _monitoring _prepare
+short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring
+  _prepare
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloud _monitoring _prepare. - > Initiates or updates an import
-    session. An import ID will be generated and used when you are ready to commit the import.
+  - Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring
+    _prepare.
+  - >
+    Initiates or updates an import session. An import ID will be generated and used
+    when you are ready to commit the import.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -29,10 +33,12 @@ options:
             description: Name of the configured TLS certificate.
             type: str
           localInterface:
-            description: Number of the vlan expected to be used to connect to the cloud.
+            description: Number of the vlan expected to be used to connect to the
+              cloud.
             type: int
           loopbackNumber:
-            description: Number of the configured Loopback Interface used for TLS overlay.
+            description: Number of the configured Loopback Interface used for TLS
+              overlay.
             type: int
           name:
             description: Name of the configured TLS tunnel.
@@ -114,7 +120,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations createOrganizationInventoryOnboardingCloudMonitoringPrepare
-    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare API.
+    description: Complete reference of the createOrganizationInventoryOnboardingCloudMonitoringPrepare
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-inventory-onboarding-cloud-monitoring-prepare
 notes:
   - SDK Method used are
@@ -148,19 +155,24 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     devices:
-      - sudi: '-----BEGIN CERTIFICATE----- MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
-          gYcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhT YW4gSm9zZTEcMBoGA1UECgwTQ2lzY28gU3lzdGVtcywgSW5jLjESMBAGA1UECwwJ
-          RE5BU3BhY2VzMR4wHAYDVQQDDBVjaXNjby5vcGVucm9hbWluZy5vcmcwHhcNMjAx MTA1MjEzMzM1WhcNMjExMTA1MjIzMzM1WjCBpDEcMBoGCgmSJomT8ixkAQETDGRu
-          YXNwYWNlczpVUzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQ4wDAYDVQQKEwVD aXNjbzEcMBoGA1UECxMTV0JBOldSSVggRW5kLUVudGl0eTE8MDoGA1UEAxMzNjQ3
-          MDcwNDM4NDQ5NjQxMjAwMDAuMTg4MzQuaHMuY2lzY28ub3BlbnJvYW1pbmcub3Jn MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoqjP9QgRGyUO3p7SH9QK
-          uTq6UYK7nAyjImgS4yQxeBkyZ5f2EUkX8m/AOcewpPxxPBhjPKRwxGeX3S50ksiA ayFomUeslR0S0Z7RN9rzJa+CFyi9MwWIHMbLgXpB8tsSpgTAqwrzoTzOGq9fgC6u
-          pZhdZrBkg3FeJgD88goCi9mZDsY2YAoeGRLFJ2fR8iICqIVQy+Htq9pE22WBLpnS KjL3+mR9FArHNFtWlhKF2YHMUqyHHrnZnF/Ns7QNoMMF7/CK18iAKgnb+2wuGKM2
-          aEMddOeOTtz+i/rgjkp/RGMt011EdCsso0/cTo9qqX/bxOOCE4/Mne/ChMkQPnNU CwIDAQABo3IwcDAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFIG+4l5yiB01gP0sw4ML
-          USopqYcuMB0GA1UdDgQWBBSby1T9leYVOVVdOZXiHCSaDDEMiDAOBgNVHQ8BAf8E BAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEyE
-          1mjSUyY6uNp6W4l20w7SskALSJDRKkOeZxAgF3VMxlsCuEl70s9oEfntwIpyQtSa jON/9yJHbwm/Az824bmk8Dc7AXIPhay+dftXb8j529gPuYB9AKoPNg0NctkyYCQh
-          a/3YQVdDWX7XgmEiXkL57M7G6+IdcPDONLArfjOcT9qHdkVVq1AIjlMSx3OQQmm/ uoLb/G9q/97QA2/l8shG/Na8HjVqGLcl5TNZdbNhs2w9ogxr/GNzqdvym6RQ8vT/
-          UR2n+uwH4n1MUxmHYYeyot5dnIV1IJ6hQ54JAncM9HvCLFk1WHz6RKshQUCuPBiJ wTw70BVktzJnb0VLeDg=
-          -----END CERTIFICATE-----'
+      - sudi: "-----BEGIN CERTIFICATE-----\n        MIIDyTCCArGgAwIBAgIKBBNXOVCGU1YztjANBgkqhkiG9w0BAQsFADAnMQ4wDAYD\n
+          \       VQQKEwVDaXNjbzEVMBMGA1UEAxMMQUNUMiBTVURJIENBMB4XDTIxMDUzMTEzNTUx\n
+          \       NVoXDTI5MDUxNDIwMjU0MVowbTEpMCcGA1UEBRMgUElEOkM5MjAwTC0yNFAtNEcg\n
+          \       U046SkFFMjUyMjBSMksxDjAMBgNVBAoTBUNpc2NvMRgwFgYDVQQLEw9BQ1QtMiBM\n
+          \       aXRlIFNVREkxFjAUBgNVBAMTDUM5MjAwTC0yNFAtNEcwggEiMA0GCSqGSIb3DQEB\n
+          \       AQUAA4IBDwAwggEKAoIBAQDaUPxW76g...         TR1TuP36bHh13X3vtGiDsCD88Ci2TZIqd/EDkkc7v9ipUUYVVH+YDrPt2Aukb1PH\n
+          \       D6K0R+KhgEzRo5x54TlU6oWvjUpwNZUwwdhMWIQaUVkMyZBYNy0jGPLO8jwZhyBg\n
+          \       1Fneybr9pwedGbLrAaz+gdEikB8B4a/fvPjVfL5Ngb4QRjFqWuE+X3nLc0kHedep\n
+          \       6nfgpUNXMlStVm5nIXKP6OjmzfCHPYh9L2Ehs1TrSk1ser9Ofx0ZMVL/jBZR2EIj\n
+          \       OZ8tH6KlX2/B2pbSPIO6kD5c4UA8Cf1...         VR0PAQH/BAQDAgXgMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUSNjx8cJw1Vu7\n
+          \       fHMJk6+4uDAD+H8wTQYDVR0RBEYwRKBCBgkrBgEEAQkVAgOgNRMzQ2hpcElEPVVV\n
+          \       VUNNaElGcUVFMklFUUVBQWNBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE9MB0GA1Ud\n
+          \       DgQWBBRdhMkFD/z5hokaQeLbaRsp4hkvbzANBgkqhkiG9w0BAQsFAAOCAQEAMtuh\n
+          \       YpBz4xEZ7YdJsLpw67Q0TTJGnTBRpzA...         OwmH/iZ+tDfYQ3W3ElWTW93871DkuW4WQIfbnoHg/F7bF0DKYVkD3rpZjyz3NhzH\n
+          \       d7cjTdJXQ85bTAOXDuxKH3qewrXxxOGXgh3I6NUq0UwMTWh84lND7Jl+ZAQkYNS2\n
+          \       iHanTZFQBk3ML0NUb7fKDYGRTZRqwQ/upIO4S6LV1cxH/6V0qbMy3sCSHZoMLrW3\n
+          \       0m3M6yKpe5+VZzHZwmWdUf3Ot+zKjhveK5/YNsMIASdvtvymxUizq2Hr1hvR/kPc\n
+          \       p1vuyWxipU8JfzOh/A==\n        -----END CERTIFICATE-----\n        "
         tunnel:
           certificateName: DeviceSUDI
           localInterface: 1
@@ -195,30 +207,30 @@ meraki_response:
   sample: >
     [
       {
+        "message": "string",
+        "udi": "string",
+        "deviceId": "string",
+        "status": "string",
         "configParams": {
-          "cloudStaticIp": "string",
           "tunnel": {
-            "host": "string",
             "mode": "string",
-            "name": "string",
             "port": "string",
+            "host": "string",
+            "name": "string",
             "rootCertificate": {
               "content": "string",
               "name": "string"
             }
           },
+          "cloudStaticIp": "string",
           "user": {
             "publicKey": "string",
+            "username": "string",
             "secret": {
               "hash": "string"
-            },
-            "username": "string"
+            }
           }
-        },
-        "deviceId": "string",
-        "message": "string",
-        "status": "string",
-        "udi": "string"
+        }
       }
     ]
 """

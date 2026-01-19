@@ -6,10 +6,15 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_radio_auto_rf_channels_recalculate
-short_description: Resource module for organizations _wireless _radio _auto _rf _channels _recalculate
+short_description: Resource module for organizations _wireless _radio _auto _rf _channels
+  _recalculate
 description:
-  - Manage operation create of the resource organizations _wireless _radio _auto _rf _channels _recalculate. - > Recalculates automatically assigned
-    channels for every AP within specified the specified networks. Note This could cause a brief loss in connectivity for wireless clients.
+  - Manage operation create of the resource organizations _wireless _radio _auto _rf
+    _channels _recalculate.
+  - >
+    Recalculates automatically assigned channels for every AP within specified the
+    specified networks. Note This could cause a brief loss in connectivity for wireless
+    clients.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,7 +32,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless recalculateOrganizationWirelessRadioAutoRfChannels
-    description: Complete reference of the recalculateOrganizationWirelessRadioAutoRfChannels API.
+    description: Complete reference of the recalculateOrganizationWirelessRadioAutoRfChannels
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!recalculate-organization-wireless-radio-auto-rf-channels
 notes:
   - SDK Method used are

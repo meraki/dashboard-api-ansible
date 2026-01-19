@@ -6,39 +6,46 @@
 
 DOCUMENTATION = r"""
 module: devices_live_tools_throughput_test
-short_description: Resource module for devices _live _tools _throughput _test
+short_description: Resource module for devices _livetools _throughputtest
 description:
-  - Manage operation create of the resource devices _live _tools _throughput _test. - > Enqueue a job to test a device throughput, the test will
-    run for 10 secs to test throughput. This endpoint has a rate limit of one request every five seconds per device.
+  - Manage operation create of the resource devices _livetools _throughputtest.
+  - >
+    Enqueue a job to test a device throughput, the test will run for 10 secs to test
+    throughput. This endpoint has a rate limit of one request every five seconds per
+    device.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   callback:
-    description: Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+    description: Details for the callback. Please include either an httpServerId OR
+      url and sharedSecret.
     suboptions:
       httpServer:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields
-              blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
         description: The payload template of the webhook used for the callback.
         suboptions:
           id:
-            description: The ID of the payload template. Defaults to 'wpt_00005' for the Callback (included) template.
+            description: The ID of the payload template. Defaults to 'wpt_00005' for
+              the Callback (included) template.
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request
-          was sent by Meraki. If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   serial:
@@ -99,22 +106,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
-      },
-      "error": "string",
-      "request": {
-        "serial": "string"
-      },
+      "throughputTestId": "string",
+      "url": "string",
+      "status": "string",
       "result": {
         "speeds": {
           "downstream": 0
         }
       },
-      "status": "string",
-      "throughputTestId": "string",
-      "url": "string"
+      "request": {
+        "serial": "string"
+      },
+      "error": "string",
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

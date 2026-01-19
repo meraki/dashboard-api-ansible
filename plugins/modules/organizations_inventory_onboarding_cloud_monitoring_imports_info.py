@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_imports_info
-short_description: Information module for organizations _inventory _onboarding _cloud _monitoring _imports
+short_description: Information module for organizations _inventory _onboarding _cloudmonitoring
+  _imports
 description:
-  - Get all organizations _inventory _onboarding _cloud _monitoring _imports.
+  - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
+  - Get all organizations _inventory _onboarding _cloudmonitoring _imports.
   - Check the status of a committed Import operation.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +22,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   importIds:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - ImportIds query parameter. Import ids from an imports.
     elements: str
     type: list
@@ -32,7 +36,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringImports
-    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringImports API.
+    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringImports
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-imports
 notes:
   - SDK Method used are
@@ -42,7 +47,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _inventory _onboarding _cloud _monitoring _imports
+- name: Get all organizations _inventory _onboarding _cloudmonitoring _imports
   cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_imports_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,12 +83,12 @@ meraki_response:
   sample: >
     [
       {
+        "importId": "string",
         "device": {
+          "url": "string",
           "created": true,
-          "status": "string",
-          "url": "string"
-        },
-        "importId": "string"
+          "status": "string"
+        }
       }
     ]
 """

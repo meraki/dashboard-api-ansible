@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events
-short_description: Resource module for networks _firmware _upgrades _staged _events
+short_description: Resource module for networks _firmwareupgrades _staged _events
 description:
-  - Manage operations create and update of the resource networks _firmware _upgrades _staged _events.
+  - Manage operations create and update of the resource networks _firmwareupgrades
+    _staged _events.
   - Create a Staged Upgrade Event for a network.
   - Update the Staged Upgrade Event for a network.
 version_added: '1.0.0'
@@ -68,7 +69,8 @@ options:
         description: The Staged Upgrade Milestones for the specific stage.
         suboptions:
           scheduledFor:
-            description: The start time of the staged upgrade stage. (In ISO-8601 format, in the time zone of the network.).
+            description: The start time of the staged upgrade stage. (In ISO-8601
+              format, in the time zone of the network.).
             type: str
         type: dict
     type: list
@@ -77,10 +79,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks createNetworkFirmwareUpgradesStagedEvent
-    description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent API.
+    description: Complete reference of the createNetworkFirmwareUpgradesStagedEvent
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-firmware-upgrades-staged-event
   - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents API.
+    description: Complete reference of the updateNetworkFirmwareUpgradesStagedEvents
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
@@ -88,7 +92,8 @@ notes:
     networks.Networks.update_network_firmware_upgrades_staged_events,
   - Paths used are
     post /networks/{networkId}/firmwareUpgrades/staged/events,
-    put /networks/{networkId}/firmwareUpgrades/staged/events,
+    put
+    /networks/{networkId}/firmwareUpgrades/staged/events,
 """
 
 EXAMPLES = r"""
@@ -179,26 +184,26 @@ meraki_response:
           }
         }
       },
+      "stages": [
+        {
+          "group": {
+            "id": "string",
+            "name": "string",
+            "description": "string"
+          },
+          "milestones": {
+            "scheduledFor": "string",
+            "startedAt": "string",
+            "completedAt": "string",
+            "canceledAt": "string"
+          },
+          "status": "string"
+        }
+      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
-        }
-      ],
-      "stages": [
-        {
-          "group": {
-            "description": "string",
-            "id": "string",
-            "name": "string"
-          },
-          "milestones": {
-            "canceledAt": "string",
-            "completedAt": "string",
-            "scheduledFor": "string",
-            "startedAt": "string"
-          },
-          "status": "string"
         }
       ]
     }

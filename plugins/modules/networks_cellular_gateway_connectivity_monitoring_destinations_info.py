@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_connectivity_monitoring_destinations_info
-short_description: Information module for networks _cellular _gateway _connectivity _monitoring _destinations
+short_description: Information module for networks _cellulargateway _connectivitymonitoringdestinations
 description:
-  - Get all networks _cellular _gateway _connectivity _monitoring _destinations.
+  - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
+  - Get all networks _cellulargateway _connectivitymonitoringdestinations.
   - Return the connectivity testing destinations for an MG network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getNetworkCellularGatewayConnectivityMonitoringDestinations
-    description: Complete reference of the getNetworkCellularGatewayConnectivityMonitoringDestinations API.
+    description: Complete reference of the getNetworkCellularGatewayConnectivityMonitoringDestinations
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-cellular-gateway-connectivity-monitoring-destinations
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellular _gateway _connectivity _monitoring _destinations
+- name: Get all networks _cellulargateway _connectivitymonitoringdestinations
   cisco.meraki.networks_cellular_gateway_connectivity_monitoring_destinations_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,9 +75,9 @@ meraki_response:
   sample: >
     [
       {
-        "default": true,
+        "ip": "string",
         "description": "string",
-        "ip": "string"
+        "default": true
       }
     ]
 """

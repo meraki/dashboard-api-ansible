@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_dhcp_server_policy
-short_description: Resource module for networks _switch _dhcp _server _policy
+short_description: Resource module for networks _switch _dhcpserverpolicy
 description:
-  - Manage operation update of the resource networks _switch _dhcp _server _policy. - > Update the DHCP server settings. Blocked/allowed servers
-    are only applied when default policy is allow/block, respectively.
+  - Manage operation update of the resource networks _switch _dhcpserverpolicy.
+  - >
+    Update the DHCP server settings. Blocked/allowed servers are only applied when
+    default policy is allow/block, respectively.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -22,25 +24,27 @@ options:
         description: Email alert settings for DHCP servers.
         suboptions:
           enabled:
-            description: When enabled, send an email if a new DHCP server is seen. Default value is false.
+            description: When enabled, send an email if a new DHCP server is seen.
+              Default value is false.
             type: bool
         type: dict
     type: dict
   allowedServers:
-    description: List the MAC addresses of DHCP servers to permit on the network when defaultPolicy is set to block. An empty array will clear
-      the entries.
+    description: List the MAC addresses of DHCP servers to permit on the network when
+      defaultPolicy is set to block. An empty array will clear the entries.
     elements: str
     type: list
   arpInspection:
     description: Dynamic ARP Inspection settings.
     suboptions:
       enabled:
-        description: Enable or disable Dynamic ARP Inspection on the network. Default value is false.
+        description: Enable or disable Dynamic ARP Inspection on the network. Default
+          value is false.
         type: bool
     type: dict
   blockedServers:
-    description: List the MAC addresses of DHCP servers to block on the network when defaultPolicy is set to allow. An empty array will clear
-      the entries.
+    description: List the MAC addresses of DHCP servers to block on the network when
+      defaultPolicy is set to allow. An empty array will clear the entries.
     elements: str
     type: list
   defaultPolicy:
@@ -114,6 +118,10 @@ meraki_response:
           "enabled": true
         }
       },
+      "defaultPolicy": "string",
+      "blockedServers": [
+        "string"
+      ],
       "allowedServers": [
         "string"
       ],
@@ -122,10 +130,6 @@ meraki_response:
         "unsupportedModels": [
           "string"
         ]
-      },
-      "blockedServers": [
-        "string"
-      ],
-      "defaultPolicy": "string"
+      }
     }
 """

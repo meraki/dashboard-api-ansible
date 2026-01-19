@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_groups_info
-short_description: Information module for networks _firmware _upgrades _staged _groups
+short_description: Information module for networks _firmwareupgrades _staged _groups
 description:
-  - Get all networks _firmware _upgrades _staged _groups.
-  - Get networks _firmware _upgrades _staged _groups by id.
+  - Information module for Networks Firmwareupgrades Staged Groups Info.
+  - Get all networks _firmwareupgrades _staged _groups.
+  - Get networks _firmwareupgrades _staged _groups by id.
   - Get a Staged Upgrade Group from a network.
   - List of Staged Upgrade Groups in a network.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Firmwareupgrades Staged Groups Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupId:
     description:
+      - Information module for Networks Firmwareupgrades Staged Groups Info.
       - GroupId path parameter. Group ID.
     type: str
 requirements:
@@ -36,7 +39,8 @@ seealso:
     description: Complete reference of the getNetworkFirmwareUpgradesStagedGroup API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-group
   - name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedGroups
-    description: Complete reference of the getNetworkFirmwareUpgradesStagedGroups API.
+    description: Complete reference of the getNetworkFirmwareUpgradesStagedGroups
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-groups
 notes:
   - SDK Method used are
@@ -48,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmware _upgrades _staged _groups
+- name: Get all networks _firmwareupgrades _staged _groups
   cisco.meraki.networks_firmware_upgrades_staged_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _firmware _upgrades _staged _groups by id
+- name: Get networks _firmwareupgrades _staged _groups by id
   cisco.meraki.networks_firmware_upgrades_staged_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,11 +111,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "groupId": "string",
+      "name": "string",
+      "description": "string",
+      "isDefault": true,
       "assignedDevices": {
         "devices": [
           {
-            "name": "string",
-            "serial": "string"
+            "serial": "string",
+            "name": "string"
           }
         ],
         "switchStacks": [
@@ -120,10 +128,6 @@ meraki_response:
             "name": "string"
           }
         ]
-      },
-      "description": "string",
-      "groupId": "string",
-      "isDefault": true,
-      "name": "string"
+      }
     }
 """

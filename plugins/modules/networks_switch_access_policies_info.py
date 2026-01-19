@@ -6,11 +6,14 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_access_policies_info
-short_description: Information module for networks _switch _access _policies
+short_description: Information module for networks _switch _accesspolicies
 description:
-  - Get all networks _switch _access _policies.
-  - Get networks _switch _access _policies by id. - > List the access policies for a switch network. Only returns access policies with 'my RADIUS
-    server' as authentication method.
+  - Information module for Networks Switch Accesspolicies Info.
+  - Get all networks _switch _accesspolicies.
+  - Get networks _switch _accesspolicies by id.
+  - >
+    List the access policies for a switch network. Only returns access policies with
+    'my RADIUS server' as authentication method.
   - Return a specific access policy for a switch network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,10 +25,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Accesspolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   accessPolicyNumber:
     description:
+      - Information module for Networks Switch Accesspolicies Info.
       - AccessPolicyNumber path parameter. Access policy number.
     type: str
 requirements:
@@ -48,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _access _policies
+- name: Get all networks _switch _accesspolicies
   cisco.meraki.networks_switch_access_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +78,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _switch _access _policies by id
+- name: Get networks _switch _accesspolicies by id
   cisco.meraki.networks_switch_access_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,57 +112,71 @@ meraki_response:
   type: dict
   sample: >
     {
+      "accessPolicyNumber": "string",
+      "name": "string",
+      "radiusServers": [
+        {
+          "serverId": "string",
+          "organizationRadiusServerId": "string",
+          "host": "string",
+          "port": 0
+        }
+      ],
+      "radius": {
+        "criticalAuth": {
+          "dataVlanId": 0,
+          "voiceVlanId": 0,
+          "suspendPortBounce": true,
+          "dataGroupPolicyId": "string",
+          "voiceGroupPolicyId": "string",
+          "dataSgtId": 0,
+          "voiceSgtId": 0
+        },
+        "failedAuthVlanId": 0,
+        "failedAuthGroupPolicyId": "string",
+        "failedAuthSgtId": 0,
+        "reAuthenticationInterval": 0,
+        "cache": {
+          "enabled": true,
+          "timeout": 0
+        },
+        "authentication": {
+          "mode": "string"
+        },
+        "preAuthenticationGroupPolicyId": "string"
+      },
+      "enforceRadiusMonitoring": true,
+      "guestPortBouncing": true,
+      "radiusTestingEnabled": true,
+      "radiusCoaSupportEnabled": true,
+      "radiusAccountingEnabled": true,
+      "radiusAccountingServers": [
+        {
+          "serverId": "string",
+          "organizationRadiusServerId": "string",
+          "host": "string",
+          "port": 0
+        }
+      ],
+      "radiusGroupAttribute": "string",
+      "hostMode": "string",
       "accessPolicyType": "string",
+      "increaseAccessSpeed": true,
+      "guestVlanId": {},
+      "dot1x": {
+        "controlDirection": "string"
+      },
+      "voiceVlanClients": true,
+      "urlRedirectWalledGardenEnabled": true,
+      "urlRedirectWalledGardenRanges": [
+        "string"
+      ],
       "counts": {
         "ports": {
           "withThisPolicy": 0
         }
       },
-      "dot1x": {
-        "controlDirection": "string"
-      },
-      "guestPortBouncing": true,
-      "guestVlanId": 0,
-      "hostMode": "string",
-      "increaseAccessSpeed": true,
-      "name": "string",
-      "radius": {
-        "cache": {
-          "enabled": true,
-          "timeout": 0
-        },
-        "criticalAuth": {
-          "dataVlanId": 0,
-          "suspendPortBounce": true,
-          "voiceVlanId": 0
-        },
-        "failedAuthVlanId": 0,
-        "reAuthenticationInterval": 0
-      },
-      "radiusAccountingEnabled": true,
-      "radiusAccountingServers": [
-        {
-          "host": "string",
-          "organizationRadiusServerId": "string",
-          "port": 0,
-          "serverId": "string"
-        }
-      ],
-      "radiusCoaSupportEnabled": true,
-      "radiusGroupAttribute": "string",
-      "radiusServers": [
-        {
-          "host": "string",
-          "organizationRadiusServerId": "string",
-          "port": 0,
-          "serverId": "string"
-        }
-      ],
-      "radiusTestingEnabled": true,
-      "urlRedirectWalledGardenEnabled": true,
-      "urlRedirectWalledGardenRanges": [
-        "string"
-      ],
-      "voiceVlanClients": true
+      "guestGroupPolicyId": "string",
+      "guestSgtId": 0
     }
 """

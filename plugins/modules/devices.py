@@ -19,7 +19,8 @@ options:
     description: The address of a device.
     type: str
   floorPlanId:
-    description: The floor plan to associate to this device. Null disassociates the device from the floorplan.
+    description: The floor plan to associate to this device. Null disassociates the
+      device from the floorplan.
     type: str
   lat:
     description: The latitude of a device.
@@ -28,8 +29,8 @@ options:
     description: The longitude of a device.
     type: float
   moveMapMarker:
-    description: Whether or not to set the latitude and longitude of a device based on the new address. Only applies when lat and lng are not
-      specified.
+    description: Whether or not to set the latitude and longitude of a device based
+      on the new address. Only applies when lat and lng are not specified.
     type: bool
   name:
     description: The name of a device.
@@ -41,9 +42,11 @@ options:
     description: Serial path parameter.
     type: str
   switchProfileId:
-    description: The ID of a switch template to bind to the device (for available switch templates, see the 'Switch Templates' endpoint). Use
-      null to unbind the switch device from the current profile. For a device to be bindable to a switch template, it must (1) be a switch, and
-      (2) belong to a network that is bound to a configuration template.
+    description: The ID of a switch template to bind to the device (for available
+      switch templates, see the 'Switch Templates' endpoint). Use null to unbind the
+      switch device from the current profile. For a device to be bindable to a switch
+      template, it must (1) be a switch, and (2) belong to a network that is bound
+      to a configuration template.
     type: str
   tags:
     description: The list of tags of a device.
@@ -107,31 +110,31 @@ meraki_response:
   type: dict
   sample: >
     {
+      "name": "string",
+      "lat": 0,
+      "lng": 0,
       "address": "string",
-      "beaconIdParams": {
-        "major": 0,
-        "minor": 0,
-        "uuid": "string"
-      },
+      "notes": "string",
+      "tags": [
+        "string"
+      ],
+      "networkId": "string",
+      "serial": "string",
+      "model": "string",
+      "mac": "string",
+      "lanIp": "string",
+      "firmware": "string",
+      "floorPlanId": "string",
       "details": [
         {
           "name": "string",
           "value": "string"
         }
       ],
-      "firmware": "string",
-      "floorPlanId": "string",
-      "lanIp": "string",
-      "lat": 0,
-      "lng": 0,
-      "mac": "string",
-      "model": "string",
-      "name": "string",
-      "networkId": "string",
-      "notes": "string",
-      "serial": "string",
-      "tags": [
-        "string"
-      ]
+      "beaconIdParams": {
+        "uuid": "string",
+        "major": 0,
+        "minor": 0
+      }
     }
 """

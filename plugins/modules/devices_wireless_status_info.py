@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_wireless_status_info
 short_description: Information module for devices _wireless _status
 description:
+  - Information module for Devices Wireless Status Info.
   - Get all devices _wireless _status.
   - Return the SSID statuses of an access point.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Wireless Status Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -72,16 +74,16 @@ meraki_response:
   sample: >
     [
       {
+        "ssidName": "string",
+        "ssidNumber": 0,
+        "enabled": true,
         "band": "string",
-        "broadcasting": true,
         "bssid": "string",
         "channel": 0,
         "channelWidth": "string",
-        "enabled": true,
         "power": "string",
-        "ssidName": "string",
-        "ssidNumber": 0,
-        "visible": true
+        "visible": true,
+        "broadcasting": true
       }
     ]
 """

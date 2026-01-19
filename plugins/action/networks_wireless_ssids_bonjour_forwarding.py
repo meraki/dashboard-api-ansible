@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -33,8 +32,8 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     enabled=dict(type="bool"),
-    exception=dict(type="dict"),
     rules=dict(type="list"),
+    exception=dict(type="dict"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -52,35 +51,42 @@ class NetworksWirelessSsidsBonjourForwarding(object):
         self.meraki = meraki
         self.new_object = dict(
             enabled=params.get("enabled"),
-            exception=params.get("exception"),
             rules=params.get("rules"),
+            exception=params.get("exception"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('exception') is not None or self.new_object.get('exception') is not None:
-            new_object_params['exception'] = self.new_object.get('exception') or \
-                self.new_object.get('exception')
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
+        if self.new_object.get('rules') is not None or self.new_object.get(
+                'rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('exception') is not None or self.new_object.get(
+                'exception') is not None:
+            new_object_params['exception'] = self.new_object.get(
+                'exception') or self.new_object.get('exception')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -138,16 +144,19 @@ class NetworksWirelessSsidsBonjourForwarding(object):
 
         obj_params = [
             ("enabled", "enabled"),
-            ("exception", "exception"),
             ("rules", "rules"),
+            ("exception", "exception"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_licensing_coterm_licenses_move
-short_description: Resource module for organizations _licensing _coterm _licenses _move
+short_description: Resource module for organizations _licensing _coterm _licenses
+  _move
 description:
-  - Manage operation create of the resource organizations _licensing _coterm _licenses _move.
+  - Manage operation create of the resource organizations _licensing _coterm _licenses
+    _move.
   - Moves a license to a different organization coterm only .
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -52,7 +54,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing moveOrganizationLicensingCotermLicenses
-    description: Complete reference of the moveOrganizationLicensingCotermLicenses API.
+    description: Complete reference of the moveOrganizationLicensingCotermLicenses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!move-organization-licensing-coterm-licenses
 notes:
   - SDK Method used are
@@ -102,54 +105,54 @@ meraki_response:
   type: dict
   sample: >
     {
-      "movedLicenses": [
-        {
-          "claimedAt": "string",
-          "counts": [
-            {
-              "count": 0,
-              "model": "string"
-            }
-          ],
-          "duration": 0,
-          "editions": [
-            {
-              "edition": "string",
-              "productType": "string"
-            }
-          ],
-          "expired": true,
-          "invalidated": true,
-          "invalidatedAt": "string",
-          "key": "string",
-          "mode": "string",
-          "organizationId": "string",
-          "startedAt": "string"
-        }
-      ],
       "remainderLicenses": [
         {
-          "claimedAt": "string",
-          "counts": [
-            {
-              "count": 0,
-              "model": "string"
-            }
-          ],
+          "key": "string",
+          "organizationId": "string",
           "duration": 0,
+          "mode": "string",
+          "startedAt": "string",
+          "claimedAt": "string",
+          "invalidated": true,
+          "invalidatedAt": "string",
+          "expired": true,
           "editions": [
             {
               "edition": "string",
               "productType": "string"
             }
           ],
-          "expired": true,
+          "counts": [
+            {
+              "model": "string",
+              "count": 0
+            }
+          ]
+        }
+      ],
+      "movedLicenses": [
+        {
+          "key": "string",
+          "organizationId": "string",
+          "duration": 0,
+          "mode": "string",
+          "startedAt": "string",
+          "claimedAt": "string",
           "invalidated": true,
           "invalidatedAt": "string",
-          "key": "string",
-          "mode": "string",
-          "organizationId": "string",
-          "startedAt": "string"
+          "expired": true,
+          "editions": [
+            {
+              "edition": "string",
+              "productType": "string"
+            }
+          ],
+          "counts": [
+            {
+              "model": "string",
+              "count": 0
+            }
+          ]
         }
       ]
     }

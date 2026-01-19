@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_ports
-short_description: Resource module for organizations _config _templates _switch _profiles _ports
+short_description: Resource module for organizations _configtemplates _switch _profiles
+  _ports
 description:
-  - Manage operation update of the resource organizations _config _templates _switch _profiles _ports.
+  - Manage operation update of the resource organizations _configtemplates _switch
+    _profiles _ports.
   - Update a switch template port.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,21 +18,24 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   accessPolicyNumber:
-    description: The number of a custom access policy to configure on the switch template port. Only applicable when 'accessPolicyType' is 'Custom
-      access policy'.
+    description: The number of a custom access policy to configure on the switch template
+      port. Only applicable when 'accessPolicyType' is 'Custom access policy'.
     type: int
   accessPolicyType:
-    description: The type of the access policy of the switch template port. Only applicable to access ports. Can be one of 'Open', 'Custom access
-      policy', 'MAC allow list' or 'Sticky MAC allow list'.
+    description: The type of the access policy of the switch template port. Only applicable
+      to access ports. Can be one of 'Open', 'Custom access policy', 'MAC allow list'
+      or 'Sticky MAC allow list'.
     type: str
   allowedVlans:
-    description: The VLANs allowed on the switch template port. Only applicable to trunk ports.
+    description: The VLANs allowed on the switch template port. Only applicable to
+      trunk ports.
     type: str
   configTemplateId:
     description: ConfigTemplateId path parameter. Config template ID.
     type: str
   daiTrusted:
-    description: If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic.
+    description: If true, ARP packets for this port will be considered trusted, and
+      Dynamic ARP Inspection will allow the traffic.
     type: bool
   dot3az:
     description: Dot3az settings for the port.
@@ -43,8 +48,16 @@ options:
     description: The status of the switch template port.
     type: bool
   flexibleStackingEnabled:
-    description: For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled.
+    description: For supported switches (e.g. MS420/MS425), whether or not the port
+      has flexible stacking enabled.
     type: bool
+  highSpeed:
+    description: High speed port enablement settings for C9500-32QC.
+    suboptions:
+      enabled:
+        description: For C9500-32QC, whether or not the port is enabled for high speed.
+        type: bool
+    type: dict
   isolationEnabled:
     description: The isolation status of the switch template port.
     type: bool
@@ -52,10 +65,16 @@ options:
     description: The link speed for the switch template port.
     type: str
   macAllowList:
-    description: Only devices with MAC addresses specified in this list will have access to this port. Up to 20 MAC addresses can be defined.
-      Only applicable when 'accessPolicyType' is 'MAC allow list'.
+    description: Only devices with MAC addresses specified in this list will have
+      access to this port. Up to 20 MAC addresses can be defined. Only applicable
+      when 'accessPolicyType' is 'MAC allow list'.
     elements: str
     type: list
+  macWhitelistLimit:
+    description: The maximum number of MAC addresses for regular MAC allow list. Only
+      applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported
+      on verions greater than ms18 only for classic switches.
+    type: int
   name:
     description: The name of the switch template port.
     type: str
@@ -69,16 +88,19 @@ options:
     description: PortId path parameter. Port ID.
     type: str
   portScheduleId:
-    description: The ID of the port schedule. A value of null will clear the port schedule.
+    description: The ID of the port schedule. A value of null will clear the port
+      schedule.
     type: str
   profile:
     description: Profile attributes.
     suboptions:
       enabled:
-        description: When enabled, override this port's configuration with a port profile.
+        description: When enabled, override this port's configuration with a port
+          profile.
         type: bool
       id:
-        description: When enabled, the ID of the port profile used to override the port's configuration.
+        description: When enabled, the ID of the port profile used to override the
+          port's configuration.
         type: str
       iname:
         description: When enabled, the IName of the profile.
@@ -91,41 +113,51 @@ options:
     description: The rapid spanning tree protocol status.
     type: bool
   stickyMacAllowList:
-    description: The initial list of MAC addresses for sticky Mac allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The initial list of MAC addresses for sticky Mac allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     elements: str
     type: list
   stickyMacAllowListLimit:
-    description: The maximum number of MAC addresses for sticky MAC allow list. Only applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
+    description: The maximum number of MAC addresses for sticky MAC allow list. Only
+      applicable when 'accessPolicyType' is 'Sticky MAC allow list'.
     type: int
   stormControlEnabled:
     description: The storm control status of the switch template port.
     type: bool
   stpGuard:
-    description: The state of the STP guard ('disabled', 'root guard', 'bpdu guard' or 'loop guard').
+    description: The state of the STP guard ('disabled', 'root guard', 'bpdu guard'
+      or 'loop guard').
     type: str
+  stpPortFastTrunk:
+    description: The state of STP PortFast Trunk on the switch template port.
+    type: bool
   tags:
     description: The list of tags of the switch template port.
     elements: str
     type: list
   type:
-    description: The type of the switch template port ('trunk', 'access', 'stack' or 'routed').
+    description: The type of the switch template port ('access', 'trunk', 'stack',
+      'routed', 'svl' or 'dad').
     type: str
   udld:
-    description: The action to take when Unidirectional Link is detected (Alert only, Enforce). Default configuration is Alert only.
+    description: The action to take when Unidirectional Link is detected (Alert only,
+      Enforce). Default configuration is Alert only.
     type: str
   vlan:
-    description: The VLAN of the switch template port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk
-      ports.
+    description: The VLAN of the switch template port. For a trunk port, this is the
+      native VLAN. A null value will clear the value set for trunk ports.
     type: int
   voiceVlan:
-    description: The voice VLAN of the switch template port. Only applicable to access ports.
+    description: The voice VLAN of the switch template port. Only applicable to access
+      ports.
     type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch updateOrganizationConfigTemplateSwitchProfilePort
-    description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort API.
+    description: Complete reference of the updateOrganizationConfigTemplateSwitchProfilePort
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-config-template-switch-profile-port
 notes:
   - SDK Method used are
@@ -168,11 +200,14 @@ EXAMPLES = r"""
       enabled: false
     enabled: true
     flexibleStackingEnabled: true
+    highSpeed:
+      enabled: false
     isolationEnabled: false
     linkNegotiation: Auto negotiate
     macAllowList:
       - 34:56:fe:ce:8e:a0
       - 34:56:fe:ce:8e:a1
+    macWhitelistLimit: 10
     name: My switch port
     organizationId: string
     poeEnabled: true
@@ -190,6 +225,7 @@ EXAMPLES = r"""
     stickyMacAllowListLimit: 5
     stormControlEnabled: true
     stpGuard: disabled
+    stpPortFastTrunk: false
     tags:
       - tag1
       - tag2
@@ -205,59 +241,62 @@ meraki_response:
   type: dict
   sample: >
     {
-      "accessPolicyNumber": 0,
-      "accessPolicyType": "string",
-      "allowedVlans": "string",
-      "daiTrusted": true,
-      "dot3az": {
-        "enabled": true
-      },
+      "portId": "string",
+      "name": "string",
+      "tags": [
+        "string"
+      ],
       "enabled": true,
-      "flexibleStackingEnabled": true,
+      "poeEnabled": true,
+      "type": "string",
+      "vlan": 0,
+      "voiceVlan": 0,
+      "allowedVlans": "string",
       "isolationEnabled": true,
+      "rstpEnabled": true,
+      "stpGuard": "string",
+      "stpPortFastTrunk": true,
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "macAllowList": [
-        "string"
-      ],
-      "mirror": {
-        "mode": "string"
-      },
-      "module": {
-        "model": "string"
-      },
-      "name": "string",
-      "poeEnabled": true,
-      "portId": "string",
       "portScheduleId": "string",
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      },
-      "rstpEnabled": true,
       "schedule": {
         "id": "string",
         "name": "string"
       },
-      "stackwiseVirtual": {
-        "isDualActiveDetector": true,
-        "isStackWiseVirtualLink": true
-      },
+      "udld": "string",
+      "accessPolicyType": "string",
+      "accessPolicyNumber": 0,
+      "macAllowList": [
+        "string"
+      ],
+      "macWhitelistLimit": 0,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "stpGuard": "string",
-      "tags": [
-        "string"
-      ],
-      "type": "string",
-      "udld": "string",
-      "vlan": 0,
-      "voiceVlan": 0
+      "flexibleStackingEnabled": true,
+      "daiTrusted": true,
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "module": {
+        "model": "string",
+        "serial": "string",
+        "slot": 0
+      },
+      "mirror": {
+        "mode": "string"
+      },
+      "dot3az": {
+        "enabled": true
+      },
+      "highSpeed": {
+        "enabled": true
+      }
     }
 """

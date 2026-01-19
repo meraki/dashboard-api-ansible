@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: networks_floor_plans_devices_batch_update
 short_description: Resource module for networks _floor _plans _devices _batch _update
 description:
-  - Manage operation create of the resource networks _floor _plans _devices _batch _update.
+  - Manage operation create of the resource networks _floor _plans _devices _batch
+    _update.
   - Update floorplan assignments for a batch of devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,14 +17,16 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   assignments:
-    description: List of floorplan assignments to update. Up to 100 floor plan assignments can be provided in a request.
+    description: List of floorplan assignments to update. Up to 100 floor plan assignments
+      can be provided in a request.
     elements: dict
     suboptions:
       floorPlan:
         description: Floorplan to be assigned or unassigned.
         suboptions:
           id:
-            description: The ID of the floor plan to assign the device to, or null to unassign the device from its floor plan.
+            description: The ID of the floor plan to assign the device to, or null
+              to unassign the device from its floor plan.
             type: str
         type: dict
       serial:

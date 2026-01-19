@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_rf_profiles_info
-short_description: Information module for networks _appliance _rf _profiles
+short_description: Information module for networks _appliance _rfprofiles
 description:
-  - Get all networks _appliance _rf _profiles.
+  - Information module for Networks Appliance Rfprofiles Info.
+  - Get all networks _appliance _rfprofiles.
   - List the RF profiles for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Rfprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _rf _profiles
+- name: Get all networks _appliance _rfprofiles
   cisco.meraki.networks_appliance_rf_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,13 +74,17 @@ meraki_response:
   sample: >
     [
       {
-        "fiveGhzSettings": {
-          "axEnabled": true,
-          "minBitrate": 0
-        },
         "id": "string",
-        "name": "string",
         "networkId": "string",
+        "name": "string",
+        "twoFourGhzSettings": {
+          "minBitrate": 0,
+          "axEnabled": true
+        },
+        "fiveGhzSettings": {
+          "minBitrate": 0,
+          "axEnabled": true
+        },
         "perSsidSettings": {
           "1": {
             "bandOperationMode": "string",
@@ -96,10 +102,6 @@ meraki_response:
             "bandOperationMode": "string",
             "bandSteeringEnabled": true
           }
-        },
-        "twoFourGhzSettings": {
-          "axEnabled": true,
-          "minBitrate": 0
         }
       }
     ]

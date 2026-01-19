@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_live_tools_ping_info
-short_description: Information module for devices _live _tools _ping
+short_description: Information module for devices _livetools _ping
 description:
-  - Get devices _live _tools _ping by id.
+  - Information module for Devices Livetools Ping Info.
+  - Get devices _livetools _ping by id.
   - Return a ping job. Latency unit in response is in milliseconds. Size is in bytes.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Livetools Ping Info.
       - Serial path parameter.
     type: str
   id:
     description:
+      - Information module for Devices Livetools Ping Info.
       - Id path parameter.
     type: str
 requirements:
@@ -41,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get devices _live _tools _ping by id
+- name: Get devices _livetools _ping by id
   cisco.meraki.devices_live_tools_ping_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -76,31 +79,31 @@ meraki_response:
   sample: >
     {
       "pingId": "string",
+      "url": "string",
       "request": {
-        "count": 0,
         "serial": "string",
-        "target": "string"
+        "target": "string",
+        "count": 0
       },
+      "status": "string",
       "results": {
-        "latencies": {
-          "average": 0,
-          "maximum": 0,
-          "minimum": 0
-        },
+        "sent": 0,
+        "received": 0,
         "loss": {
           "percentage": 0
         },
-        "received": 0,
+        "latencies": {
+          "minimum": 0,
+          "average": 0,
+          "maximum": 0
+        },
         "replies": [
           {
-            "latency": 0,
             "sequenceId": 0,
-            "size": 0
+            "size": 0,
+            "latency": 0
           }
-        ],
-        "sent": 0
-      },
-      "status": "string",
-      "url": "string"
+        ]
+      }
     }
 """

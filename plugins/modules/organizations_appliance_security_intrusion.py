@@ -20,11 +20,13 @@ options:
     elements: dict
     suboptions:
       message:
-        description: Message is optional and is ignored on a PUT call. It is allowed in order for PUT to be compatible with GET.
+        description: Message is optional and is ignored on a PUT call. It is allowed
+          in order for PUT to be compatible with GET.
         type: str
       ruleId:
-        description: A rule identifier of the format meraki intrusion/snort/GID/<gid>/SID/<sid>. Gid and sid can be obtained from either https
-          //www.snort.org/rule-docs or as ruleIds from the security events in /organization/orgId/securityEvents.
+        description: A rule identifier of the format meraki intrusion/snort/GID/<gid>/SID/<sid>.
+          Gid and sid can be obtained from either https //www.snort.org/rule-docs
+          or as ruleIds from the security events in /organization/orgId/securityEvents.
         type: str
     type: list
   organizationId:
@@ -35,7 +37,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateOrganizationApplianceSecurityIntrusion
-    description: Complete reference of the updateOrganizationApplianceSecurityIntrusion API.
+    description: Complete reference of the updateOrganizationApplianceSecurityIntrusion
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-security-intrusion
 notes:
   - SDK Method used are
@@ -72,7 +75,8 @@ EXAMPLES = r"""
     allowedRules:
       - message: SQL sa login failed
         ruleId: meraki:intrusion/snort/GID/01/SID/688
-      - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines
+      - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch
+          engines
         ruleId: meraki:intrusion/snort/GID/01/SID/5805
     organizationId: string
 """

@@ -1,0 +1,275 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+DOCUMENTATION = r"""
+module: organizations_devices_packet_capture_captures_info
+short_description: Information module for organizations _devices _packet _capture
+  _captures
+description:
+  - Information module for Organizations Devices Packet Capture Captures Info.
+  - Get all organizations _devices _packet _capture _captures.
+  - >
+    List Packet Captures. The current license level allows storage of up to 10 capture
+    files in the cloud. When this limit is reached and a new capture is taken, the
+    oldest capture will be automatically deleted to ensure sufficient space. Additional
+    storage for switches will be available with an advantage license at a future date.
+    These future capabilities will be consistent with what is available today via
+    advantage licensing for access points.
+version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.meraki.module_info
+  - cisco.meraki.module_info_pagination
+author: Francisco Munoz (@fmunoz)
+options:
+  headers:
+    description: Additional headers.
+    type: dict
+  organizationId:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - OrganizationId path parameter. Organization ID.
+    type: str
+  captureIds:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - CaptureIds query parameter. Return the packet captures of the specified capture
+        ids.
+    elements: str
+    type: list
+  networkIds:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - NetworkIds query parameter. Return the packet captures of the specified network(s).
+    elements: str
+    type: list
+  serials:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - Serials query parameter. Return the packet captures of the specified device(s).
+    elements: str
+    type: list
+  process:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - Process query parameter. Return the packet captures of the specified process.
+    elements: str
+    type: list
+  captureStatus:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - CaptureStatus query parameter. Return the packet captures of the specified
+        capture status.
+    elements: str
+    type: list
+  name:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - Name query parameter. Return the packet captures matching the specified name.
+    elements: str
+    type: list
+  clientMac:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - ClientMac query parameter. Return the packet captures matching the specified
+        client macs.
+    elements: str
+    type: list
+  notes:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - Notes query parameter. Return the packet captures matching the specified notes.
+    type: str
+  deviceName:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - DeviceName query parameter. Return the packet captures matching the specified
+        device name.
+    type: str
+  adminName:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - AdminName query parameter. Return the packet captures matching the admin name.
+    type: str
+  t0:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 365 days from today.
+    type: str
+  t1:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 365 days after t0.
+    type: str
+  timespan:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - >
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 365 days. The default is 365 days.
+    type: float
+  perPage:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100. Default is 10.
+    type: int
+  startingAfter:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - >
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+    type: str
+  endingBefore:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - >
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
+    type: str
+  sortOrder:
+    description:
+      - Information module for Organizations Devices Packet Capture Captures Info.
+      - >
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'descending'.
+    type: str
+requirements:
+  - meraki >= 2.4.9
+  - python >= 3.5
+seealso:
+  - name: Cisco Meraki documentation for organizations getOrganizationDevicesPacketCaptureCaptures
+    description: Complete reference of the getOrganizationDevicesPacketCaptureCaptures
+      API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-packet-capture-captures
+notes:
+  - SDK Method used are
+    organizations.Organizations.get_organization_devices_packet_capture_captures,
+  - Paths used are
+    get /organizations/{organizationId}/devices/packetCapture/captures,
+"""
+
+EXAMPLES = r"""
+- name: Get all organizations _devices _packet _capture _captures
+  cisco.meraki.organizations_devices_packet_capture_captures_info:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    captureIds: []
+    networkIds: []
+    serials: []
+    process: []
+    captureStatus: []
+    name: []
+    clientMac: []
+    notes: string
+    deviceName: string
+    adminName: string
+    t0: string
+    t1: string
+    timespan: 0
+    perPage: 0
+    startingAfter: string
+    endingBefore: string
+    sortOrder: string
+    organizationId: string
+    total_pages: -1
+    direction: next
+  register: result
+"""
+RETURN = r"""
+meraki_response:
+  description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
+  returned: always
+  type: dict
+  sample: >
+    {
+      "items": [
+        {
+          "captureId": "string",
+          "network": {
+            "id": "string",
+            "name": "string"
+          },
+          "devices": [
+            {}
+          ],
+          "device": {
+            "name": "string",
+            "serial": "string"
+          },
+          "admin": {
+            "id": "string",
+            "name": "string"
+          },
+          "client": {
+            "id": "string",
+            "mac": "string"
+          },
+          "details": [
+            {
+              "name": "string",
+              "value": "string",
+              "productType": "string"
+            }
+          ],
+          "name": "string",
+          "startTs": "string",
+          "ports": "string",
+          "status": "string",
+          "errorMessage": "string",
+          "destination": "string",
+          "process": "string",
+          "file": {
+            "size": 0
+          },
+          "duration": 0,
+          "filterExpression": "string",
+          "counts": {
+            "packets": {
+              "total": 0
+            }
+          },
+          "interface": "string"
+        }
+      ],
+      "meta": {
+        "counts": {
+          "items": {
+            "total": 0,
+            "remaining": 0
+          }
+        }
+      }
+    }
+"""

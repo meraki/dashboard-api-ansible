@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_device_type_group_policies_info
-short_description: Information module for networks _wireless _ssids _device _type _group _policies
+short_description: Information module for networks _wireless _ssids _devicetypegrouppolicies
 description:
-  - Get all networks _wireless _ssids _device _type _group _policies.
+  - Information module for Networks Wireless Ssids Devicetypegrouppolicies Info.
+  - Get all networks _wireless _ssids _devicetypegrouppolicies.
   - List the device type group policies for the SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Devicetypegrouppolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Devicetypegrouppolicies Info.
       - Number path parameter.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidDeviceTypeGroupPolicies
-    description: Complete reference of the getNetworkWirelessSsidDeviceTypeGroupPolicies API.
+    description: Complete reference of the getNetworkWirelessSsidDeviceTypeGroupPolicies
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-device-type-group-policies
 notes:
   - SDK Method used are
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _device _type _group _policies
+- name: Get all networks _wireless _ssids _devicetypegrouppolicies
   cisco.meraki.networks_wireless_ssids_device_type_group_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,14 +77,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "deviceTypePolicies": [
-        {
-          "devicePolicy": "string",
-          "deviceType": "string"
-        }
-      ],
-      "enabled": true
-    }
+  sample:
+  - {}
 """

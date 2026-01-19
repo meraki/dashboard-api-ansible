@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_info
-short_description: Information module for networks _appliance _traffic _shaping
+short_description: Information module for networks _appliance _trafficshaping
 description:
-  - Get all networks _appliance _traffic _shaping.
+  - Information module for Networks Appliance Trafficshaping Info.
+  - Get all networks _appliance _trafficshaping.
   - Display the traffic shaping settings for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Trafficshaping Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _traffic _shaping
+- name: Get all networks _appliance _trafficshaping
   cisco.meraki.networks_appliance_traffic_shaping_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -68,9 +70,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "limitDown": 0,
-      "limitUp": 0
-    }
+  sample:
+  - {}
 """

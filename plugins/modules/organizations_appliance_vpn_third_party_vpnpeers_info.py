@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_vpn_third_party_vpnpeers_info
-short_description: Information module for organizations _appliance _vpn _third _party _vpnpeers
+short_description: Information module for organizations _appliance _vpn _thirdpartyvpnpeers
 description:
-  - Get all organizations _appliance _vpn _third _party _vpnpeers.
+  - Information module for Organizations Appliance Vpn Thirdpartyvpnpeers Info.
+  - Get all organizations _appliance _vpn _thirdpartyvpnpeers.
   - Return the third party VPN peers for an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Vpn Thirdpartyvpnpeers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnThirdPartyVPNPeers
-    description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers API.
+    description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-third-party-vpn-peers
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _vpn _third _party _vpnpeers
+- name: Get all organizations _appliance _vpn _thirdpartyvpnpeers
   cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,44 +75,79 @@ meraki_response:
   sample: >
     [
       {
-        "ikeVersion": "string",
+        "peerId": "string",
+        "name": "string",
+        "publicIp": "string",
+        "remoteId": "string",
+        "localId": "string",
+        "secret": "string",
+        "privateSubnets": [
+          "string"
+        ],
         "ipsecPolicies": {
-          "childAuthAlgo": [
-            "string"
-          ],
-          "childCipherAlgo": [
-            "string"
-          ],
-          "childLifetime": 0,
-          "childPfsGroup": [
+          "ikeCipherAlgo": [
             "string"
           ],
           "ikeAuthAlgo": [
             "string"
           ],
-          "ikeCipherAlgo": [
+          "ikePrfAlgo": [
             "string"
           ],
           "ikeDiffieHellmanGroup": [
             "string"
           ],
           "ikeLifetime": 0,
-          "ikePrfAlgo": [
+          "childCipherAlgo": [
             "string"
-          ]
+          ],
+          "childAuthAlgo": [
+            "string"
+          ],
+          "childPfsGroup": [
+            "string"
+          ],
+          "childLifetime": 0
+        },
+        "slaPolicy": {
+          "id": "string"
         },
         "ipsecPoliciesPreset": "string",
-        "localId": "string",
-        "name": "string",
+        "ikeVersion": "string",
         "networkTags": [
           "string"
         ],
-        "privateSubnets": [
-          "string"
-        ],
-        "publicIp": "string",
-        "remoteId": "string",
-        "secret": "string"
+        "network": {
+          "names": [
+            "string"
+          ],
+          "ids": [
+            "string"
+          ]
+        },
+        "isRouteBased": true,
+        "ebgpNeighbor": {
+          "neighborId": 0,
+          "neighborIp": "string",
+          "ipVersion": 0,
+          "remoteAsNumber": 0,
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
+          "sourceIp": "string",
+          "pathPrepend": [
+            0
+          ],
+          "multiExitDiscriminator": 0,
+          "weight": 0
+        },
+        "priorityInGroup": 0,
+        "group": {
+          "number": 0,
+          "failover": {
+            "directToInternet": true
+          },
+          "activeActiveTunnel": true
+        }
       }
     ]
 """

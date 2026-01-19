@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_l7_firewall_rules
-short_description: Resource module for networks _appliance _firewall l7 _firewall _rules
+short_description: Resource module for networks _appliance _firewall l7firewallrules
 description:
-  - Manage operation update of the resource networks _appliance _firewall l7 _firewall _rules.
+  - Manage operation update of the resource networks _appliance _firewall l7firewallrules.
   - Update the MX L7 firewall rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -26,12 +26,14 @@ options:
         description: '''Deny'' traffic specified by this rule.'
         type: str
       type:
-        description: Type of the L7 rule. One of 'application', 'applicationCategory', 'host', 'port', 'ipRange'.
+        description: Type of the L7 rule. One of 'application', 'applicationCategory',
+          'host', 'port', 'ipRange'.
         type: str
       value:
-        description: The 'value' of what you want to block. Format of 'value' varies depending on type of the rule. The application categories
-          and application ids can be retrieved from the the 'MX L7 application categories' endpoint. The countries follow the two-letter ISO 3166-1
-          alpha-2 format.
+        description: The 'value' of what you want to block. Format of 'value' varies
+          depending on type of the rule. The application categories and application
+          ids can be retrieved from the the 'MX L7 application categories' endpoint.
+          The countries follow the two-letter ISO 3166-1 alpha-2 format.
         type: str
     type: list
 requirements:
@@ -39,7 +41,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL7FirewallRules
-    description: Complete reference of the updateNetworkApplianceFirewallL7FirewallRules API.
+    description: Complete reference of the updateNetworkApplianceFirewallL7FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l7-firewall-rules
 notes:
   - SDK Method used are

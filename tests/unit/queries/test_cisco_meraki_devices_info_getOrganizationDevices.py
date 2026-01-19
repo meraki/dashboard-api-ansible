@@ -4,7 +4,6 @@ Method: getOrganizationDevices
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_devices_info_getOrganizationDevices(query_data, load_fixture):

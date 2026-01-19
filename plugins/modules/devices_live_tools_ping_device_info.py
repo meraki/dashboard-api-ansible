@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: devices_live_tools_ping_device_info
-short_description: Information module for devices _live _tools _ping _device
+short_description: Information module for devices _livetools _pingdevice
 description:
-  - Get devices _live _tools _ping _device by id.
-  - Return a ping device job. Latency unit in response is in milliseconds. Size is in bytes.
+  - Information module for Devices Livetools Pingdevice Info.
+  - Get devices _livetools _pingdevice by id.
+  - Return a ping device job. Latency unit in response is in milliseconds. Size is
+    in bytes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,10 +22,12 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Livetools Pingdevice Info.
       - Serial path parameter.
     type: str
   id:
     description:
+      - Information module for Devices Livetools Pingdevice Info.
       - Id path parameter.
     type: str
 requirements:
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get devices _live _tools _ping _device by id
+- name: Get devices _livetools _pingdevice by id
   cisco.meraki.devices_live_tools_ping_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -75,36 +79,36 @@ meraki_response:
   type: dict
   sample: >
     {
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
-      },
       "pingId": "string",
+      "url": "string",
       "request": {
-        "count": 0,
-        "serial": "string"
+        "serial": "string",
+        "count": 0
       },
+      "status": "string",
       "results": {
-        "latencies": {
-          "average": 0,
-          "maximum": 0,
-          "minimum": 0
-        },
+        "sent": 0,
+        "received": 0,
         "loss": {
           "percentage": 0
         },
-        "received": 0,
+        "latencies": {
+          "minimum": 0,
+          "average": 0,
+          "maximum": 0
+        },
         "replies": [
           {
-            "latency": 0,
             "sequenceId": 0,
-            "size": 0
+            "size": 0,
+            "latency": 0
           }
-        ],
-        "sent": 0
+        ]
       },
-      "status": "string",
-      "url": "string"
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

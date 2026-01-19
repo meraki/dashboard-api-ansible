@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_ssids_statuses_by_device_info
-short_description: Information module for organizations _wireless _ssids _statuses _by _device
+short_description: Information module for organizations _wireless _ssids _statuses
+  _by _device
 description:
+  - Information module for Organizations Wireless Ssids Statuses By Device Info.
   - Get all organizations _wireless _ssids _statuses _by _device.
   - List status information of all BSSIDs in your organization.
 version_added: '1.0.0'
@@ -21,52 +23,70 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - NetworkIds query parameter. Optional parameter to filter the result set by
+        the included set of network IDs.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
-        Serials query parameter. A list of serial numbers. The returned devices will be filtered to only include these serials.
+        Serials query parameter. A list of serial numbers. The returned devices will
+        be filtered to only include these serials.
     elements: str
     type: list
   bssids:
     description:
-      - Bssids query parameter. A list of BSSIDs. The returned devices will be filtered to only include these BSSIDs.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - Bssids query parameter. A list of BSSIDs. The returned devices will be filtered
+        to only include these BSSIDs.
     elements: str
     type: list
   hideDisabled:
     description:
-      - HideDisabled query parameter. If true, the returned devices will not include disabled SSIDs. (default true).
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - HideDisabled query parameter. If true, the returned devices will not include
+        disabled SSIDs. (default true).
     type: bool
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 500. Default is 100.
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 500. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Ssids Statuses By Device Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessSsidsStatusesByDevice
-    description: Complete reference of the getOrganizationWirelessSsidsStatusesByDevice API.
+    description: Complete reference of the getOrganizationWirelessSsidsStatusesByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-ssids-statuses-by-device
 notes:
   - SDK Method used are
@@ -120,38 +140,38 @@ meraki_response:
     {
       "items": [
         {
-          "basicServiceSets": [
-            {
-              "bssid": "string",
-              "radio": {
-                "band": "string",
-                "channel": 0,
-                "channelWidth": 0,
-                "index": "string",
-                "isBroadcasting": true,
-                "power": 0
-              },
-              "ssid": {
-                "advertised": true,
-                "enabled": true,
-                "name": "string",
-                "number": 0
-              }
-            }
-          ],
+          "serial": "string",
           "name": "string",
           "network": {
             "id": "string",
             "name": "string"
           },
-          "serial": "string"
+          "basicServiceSets": [
+            {
+              "bssid": "string",
+              "ssid": {
+                "name": "string",
+                "number": 0,
+                "enabled": true,
+                "advertised": true
+              },
+              "radio": {
+                "band": "string",
+                "channel": 0,
+                "channelWidth": 0,
+                "power": 0,
+                "isBroadcasting": true,
+                "index": "string"
+              }
+            }
+          ]
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

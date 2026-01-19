@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_devices_statuses_overview_info
 short_description: Information module for organizations _devices _statuses _overview
 description:
+  - Information module for Organizations Devices Statuses Overview Info.
   - Get all organizations _devices _statuses _overview.
   - Return an overview of current device statuses.
 version_added: '1.0.0'
@@ -20,18 +21,23 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Devices Statuses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   productTypes:
     description:
+      - Information module for Organizations Devices Statuses Overview Info.
       - >
-        ProductTypes query parameter. An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch,
-        systemsManager, camera, cellularGateway, sensor, wirelessController, and secureConnect.
+        ProductTypes query parameter. An optional parameter to filter device statuses
+        by product type. Valid types are wireless, appliance, switch, systemsManager,
+        camera, cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
     elements: str
     type: list
   networkIds:
     description:
-      - NetworkIds query parameter. An optional parameter to filter device statuses by network.
+      - Information module for Organizations Devices Statuses Overview Info.
+      - NetworkIds query parameter. An optional parameter to filter device statuses
+        by network.
     elements: str
     type: list
 requirements:
@@ -39,7 +45,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationDevicesStatusesOverview
-    description: Complete reference of the getOrganizationDevicesStatusesOverview API.
+    description: Complete reference of the getOrganizationDevicesStatusesOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-statuses-overview
 notes:
   - SDK Method used are
@@ -85,10 +92,10 @@ meraki_response:
   sample: >
     {
       "byStatus": {
+        "online": 0,
         "alerting": 0,
-        "dormant": 0,
         "offline": 0,
-        "online": 0
+        "dormant": 0
       }
     }
 """

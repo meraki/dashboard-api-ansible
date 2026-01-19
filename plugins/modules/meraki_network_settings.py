@@ -47,9 +47,7 @@ options:
   local_status_page_enabled:
     description: '- Enables the local device status pages (U[my.meraki.com](my.meraki.com),
       U[ap.meraki.com](ap.meraki.com), U[switch.meraki.com](switch.meraki.com), U[wired.meraki.com](wired.meraki.com)).
-      - Only can be specified on its own or with C(remote_status_page_enabled).
-
-      '
+      - Only can be specified on its own or with C(remote_status_page_enabled). '
     type: bool
   net_id:
     description:

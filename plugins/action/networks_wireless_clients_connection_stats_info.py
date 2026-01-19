@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +32,8 @@ argument_spec.update(dict(
     timespan=dict(type="float"),
     band=dict(type="str"),
     ssid=dict(type="int"),
-    vlan=dict(type="int"),
     apTag=dict(type="str"),
+    vlan=dict(type="int"),
 ))
 
 required_if = []
@@ -72,6 +72,9 @@ class ActionModule(ActionBase):
 
     def get_all(self, params):
         new_object = {}
+        if params.get("vlan") is not None:
+            new_object["vlan"] = params.get(
+                "vlan")
         if params.get("networkId") is not None:
             new_object["networkId"] = params.get(
                 "networkId")
@@ -93,9 +96,6 @@ class ActionModule(ActionBase):
         if params.get("ssid") is not None:
             new_object["ssid"] = params.get(
                 "ssid")
-        if params.get("vlan") is not None:
-            new_object["vlan"] = params.get(
-                "vlan")
         if params.get("apTag") is not None:
             new_object["apTag"] = params.get(
                 "apTag")

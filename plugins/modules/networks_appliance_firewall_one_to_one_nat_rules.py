@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_one_to_one_nat_rules
-short_description: Resource module for networks _appliance _firewall _one _to _one _nat _rules
+short_description: Resource module for networks _appliance _firewall _onetoonenatrules
 description:
-  - Manage operation update of the resource networks _appliance _firewall _one _to _one _nat _rules.
+  - Manage operation update of the resource networks _appliance _firewall _onetoonenatrules.
   - Set the 1 1 NAT mapping rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,16 +23,18 @@ options:
     elements: dict
     suboptions:
       allowedInbound:
-        description: The ports this mapping will provide access on, and the remote IPs that will be allowed access to the resource.
+        description: The ports this mapping will provide access on, and the remote
+          IPs that will be allowed access to the resource.
         elements: dict
         suboptions:
           allowedIps:
-            description: An array of ranges of WAN IP addresses that are allowed to make inbound connections on the specified ports or port ranges,
-              or 'any'.
+            description: An array of ranges of WAN IP addresses that are allowed to
+              make inbound connections on the specified ports or port ranges, or 'any'.
             elements: str
             type: list
           destinationPorts:
-            description: An array of ports or port ranges that will be forwarded to the host on the LAN.
+            description: An array of ports or port ranges that will be forwarded to
+              the host on the LAN.
             elements: str
             type: list
           protocol:
@@ -40,17 +42,20 @@ options:
             type: str
         type: list
       lanIp:
-        description: The IP address of the server or device that hosts the internal resource that you wish to make available on the WAN.
+        description: The IP address of the server or device that hosts the internal
+          resource that you wish to make available on the WAN.
         type: str
       name:
         description: A descriptive name for the rule.
         type: str
       publicIp:
-        description: The IP address that will be used to access the internal resource from the WAN.
+        description: The IP address that will be used to access the internal resource
+          from the WAN.
         type: str
       uplink:
-        description: The physical WAN interface on which the traffic will arrive, formatted as 'internetN' where N is an integer representing
-          a valid uplink for the network's appliance.
+        description: The physical WAN interface on which the traffic will arrive,
+          formatted as 'internetN' where N is an integer representing a valid uplink
+          for the network's appliance.
         type: str
     type: list
 requirements:
@@ -58,7 +63,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallOneToOneNatRules
-    description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules API.
+    description: Complete reference of the updateNetworkApplianceFirewallOneToOneNatRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-one-to-one-nat-rules
 notes:
   - SDK Method used are

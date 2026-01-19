@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_saml_roles
-short_description: Resource module for organizations _saml _roles
+short_description: Resource module for organizations _samlroles
 description:
-  - Manage operations create, update and delete of the resource organizations _saml _roles.
+  - Manage operations create, update and delete of the resource organizations _samlroles.
   - Create a SAML role.
   - Remove a SAML role.
   - Update a SAML role.
@@ -22,15 +22,18 @@ options:
     elements: dict
     suboptions:
       access:
-        description: The privilege of the SAML administrator on the network. Can be one of 'full', 'read-only', 'guest-ambassador', 'monitor-only',
-          'ssid-admin' or 'port-tags'.
+        description: The privilege of the SAML administrator on the network. Can be
+          one of 'full', 'read-only', 'guest-ambassador', 'monitor-only', 'ssid-admin'
+          or 'port-tags' or a custom role in the format custom-role ID.
         type: str
       id:
         description: The network ID.
         type: str
     type: list
   orgAccess:
-    description: The privilege of the SAML administrator on the organization. Can be one of 'none', 'read-only', 'full' or 'enterprise'.
+    description: The privilege of the SAML administrator on the organization. Can
+      be one of 'none', 'read-only', 'full' or 'enterprise' or a custom role in the
+      format custom-role ID NAME.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
@@ -46,7 +49,9 @@ options:
     elements: dict
     suboptions:
       access:
-        description: The privilege of the SAML administrator on the tag. Can be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
+        description: The privilege of the SAML administrator on the tag. Can be one
+          of 'full', 'read-only', 'guest-ambassador' or 'monitor-only' or a custom
+          role in the format custom-role ID.
         type: str
       tag:
         description: The name of the tag.
@@ -110,32 +115,6 @@ EXAMPLES = r"""
     tags:
       - access: read-only
         tag: west
-- name: Delete by id
-  cisco.meraki.organizations_saml_roles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    organizationId: string
-    samlRoleId: string
 - name: Update by id
   cisco.meraki.organizations_saml_roles:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -170,6 +149,32 @@ EXAMPLES = r"""
     tags:
       - access: read-only
         tag: west
+- name: Delete by id
+  cisco.meraki.organizations_saml_roles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    organizationId: string
+    samlRoleId: string
 """
 RETURN = r"""
 meraki_response:
@@ -178,25 +183,25 @@ meraki_response:
   type: dict
   sample: >
     {
-      "camera": [
-        {
-          "access": "string",
-          "orgWide": true
-        }
-      ],
       "id": "string",
+      "role": "string",
+      "orgAccess": "string",
       "networks": [
         {
-          "access": "string",
-          "id": "string"
+          "id": "string",
+          "access": "string"
         }
       ],
-      "orgAccess": "string",
-      "role": "string",
       "tags": [
         {
-          "access": "string",
-          "tag": "string"
+          "tag": "string",
+          "access": "string"
+        }
+      ],
+      "camera": [
+        {
+          "orgWide": true,
+          "access": "string"
         }
       ]
     }

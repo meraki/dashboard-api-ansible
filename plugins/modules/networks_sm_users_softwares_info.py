@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sm_users_softwares_info
 short_description: Information module for networks _sm _users _softwares
 description:
+  - Information module for Networks Sm Users Softwares Info.
   - Get all networks _sm _users _softwares.
   - Get a list of softwares associated with a user.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Users Softwares Info.
       - NetworkId path parameter. Network ID.
     type: str
   userId:
     description:
+      - Information module for Networks Sm Users Softwares Info.
       - UserId path parameter. User ID.
     type: str
 requirements:
@@ -85,6 +88,7 @@ meraki_response:
         "id": "string",
         "identifier": "string",
         "installedAt": "string",
+        "toInstall": true,
         "iosRedemptionCode": true,
         "isManaged": true,
         "itunesId": "string",
@@ -94,7 +98,6 @@ meraki_response:
         "redemptionCode": 0,
         "shortVersion": "string",
         "status": "string",
-        "toInstall": true,
         "toUninstall": true,
         "uninstalledAt": "string",
         "updatedAt": "string",

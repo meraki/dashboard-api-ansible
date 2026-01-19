@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: administered_licensing_subscription_entitlements_info
 short_description: Information module for administered _licensing _subscription _entitlements
 description:
+  - Information module for Administered Licensing Subscription Entitlements Info.
   - Get all administered _licensing _subscription _entitlements.
   - Retrieve the list of purchasable entitlements.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   skus:
     description:
+      - Information module for Administered Licensing Subscription Entitlements Info.
       - Skus query parameter. Filter to entitlements with the specified SKUs.
     elements: str
     type: list
@@ -28,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing getAdministeredLicensingSubscriptionEntitlements
-    description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements API.
+    description: Complete reference of the getAdministeredLicensingSubscriptionEntitlements
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-administered-licensing-subscription-entitlements
 notes:
   - SDK Method used are
@@ -71,11 +74,12 @@ meraki_response:
   type: dict
   sample: >
     {
+      "sku": "string",
+      "name": "string",
+      "productType": "string",
+      "productClass": "string",
       "featureTier": "string",
       "isAddOn": true,
-      "name": "string",
-      "productClass": "string",
-      "productType": "string",
-      "sku": "string"
+      "isFree": true
     }
 """

@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: devices_switch_routing_static_routes_info
-short_description: Information module for devices _switch _routing _static _routes
+short_description: Information module for devices _switch _routing _staticroutes
 description:
-  - Get all devices _switch _routing _static _routes.
-  - Get devices _switch _routing _static _routes by id.
+  - Information module for Devices Switch Routing Staticroutes Info.
+  - Get all devices _switch _routing _staticroutes.
+  - Get devices _switch _routing _staticroutes by id.
   - List layer 3 static routes for a switch.
   - Return a layer 3 static route for a switch.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Switch Routing Staticroutes Info.
       - Serial path parameter.
     type: str
   staticRouteId:
     description:
+      - Information module for Devices Switch Routing Staticroutes Info.
       - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _switch _routing _static _routes
+- name: Get all devices _switch _routing _staticroutes
   cisco.meraki.devices_switch_routing_static_routes_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     serial: string
   register: result
-- name: Get devices _switch _routing _static _routes by id
+- name: Get devices _switch _routing _staticroutes by id
   cisco.meraki.devices_switch_routing_static_routes_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,12 +110,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "advertiseViaOspfEnabled": true,
-      "managementNextHop": "string",
-      "name": "string",
-      "nextHopIp": "string",
-      "preferOverOspfRoutesEnabled": true,
       "staticRouteId": "string",
-      "subnet": "string"
+      "name": "string",
+      "subnet": "string",
+      "nextHopIp": "string",
+      "managementNextHop": {},
+      "vrf": {
+        "name": "string",
+        "leakRouteToDefaultVrf": true
+      },
+      "advertiseViaOspfEnabled": true,
+      "preferOverOspfRoutesEnabled": true
     }
 """

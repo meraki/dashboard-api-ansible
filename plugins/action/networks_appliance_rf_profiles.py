@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    fiveGhzSettings=dict(type="dict"),
     name=dict(type="str"),
-    perSsidSettings=dict(type="dict"),
     twoFourGhzSettings=dict(type="dict"),
+    fiveGhzSettings=dict(type="dict"),
+    perSsidSettings=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -52,37 +51,43 @@ class NetworksApplianceRfProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            fiveGhzSettings=params.get("fiveGhzSettings"),
             name=params.get("name"),
-            perSsidSettings=params.get("perSsidSettings"),
             twoFourGhzSettings=params.get("twoFourGhzSettings"),
+            fiveGhzSettings=params.get("fiveGhzSettings"),
+            perSsidSettings=params.get("perSsidSettings"),
             networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
-            new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
-                self.new_object.get('five_ghz_settings')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('perSsidSettings') is not None or self.new_object.get('per_ssid_settings') is not None:
-            new_object_params['perSsidSettings'] = self.new_object.get('perSsidSettings') or \
-                self.new_object.get('per_ssid_settings')
-        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
-            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
-                self.new_object.get('two_four_ghz_settings')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get(
+                'two_four_ghz_settings') is not None:
+            new_object_params['twoFourGhzSettings'] = self.new_object.get(
+                'twoFourGhzSettings') or self.new_object.get('two_four_ghz_settings')
+        if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get(
+                'five_ghz_settings') is not None:
+            new_object_params['fiveGhzSettings'] = self.new_object.get(
+                'fiveGhzSettings') or self.new_object.get('five_ghz_settings')
+        if self.new_object.get('perSsidSettings') is not None or self.new_object.get(
+                'per_ssid_settings') is not None:
+            new_object_params['perSsidSettings'] = self.new_object.get(
+                'perSsidSettings') or self.new_object.get('per_ssid_settings')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -149,17 +154,20 @@ class NetworksApplianceRfProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("fiveGhzSettings", "fiveGhzSettings"),
             ("name", "name"),
-            ("perSsidSettings", "perSsidSettings"),
             ("twoFourGhzSettings", "twoFourGhzSettings"),
+            ("fiveGhzSettings", "fiveGhzSettings"),
+            ("perSsidSettings", "perSsidSettings"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

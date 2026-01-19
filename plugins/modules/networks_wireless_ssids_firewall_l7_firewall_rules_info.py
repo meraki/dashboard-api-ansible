@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l7_firewall_rules_info
-short_description: Information module for networks _wireless _ssids _firewall l7 _firewall _rules
+short_description: Information module for networks _wireless _ssids _firewall l7firewallrules
 description:
-  - Get all networks _wireless _ssids _firewall l7 _firewall _rules.
+  - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
+  - Get all networks _wireless _ssids _firewall l7firewallrules.
   - Return the L7 firewall rules for an SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
       - Number path parameter.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidFirewallL7FirewallRules
-    description: Complete reference of the getNetworkWirelessSsidFirewallL7FirewallRules API.
+    description: Complete reference of the getNetworkWirelessSsidFirewallL7FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-firewall-l7-firewall-rules
 notes:
   - SDK Method used are
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _firewall l7 _firewall _rules
+- name: Get all networks _wireless _ssids _firewall l7firewallrules
   cisco.meraki.networks_wireless_ssids_firewall_l7_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

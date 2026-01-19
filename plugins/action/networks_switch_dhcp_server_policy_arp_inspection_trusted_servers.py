@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,9 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    ipv4=dict(type="dict"),
     mac=dict(type="str"),
     vlan=dict(type="int"),
+    ipv4=dict(type="dict"),
     networkId=dict(type="str"),
     trustedServerId=dict(type="str"),
 ))
@@ -52,73 +51,88 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            ipv4=params.get("ipv4"),
             mac=params.get("mac"),
             vlan=params.get("vlan"),
+            ipv4=params.get("ipv4"),
             networkId=params.get("networkId"),
             trustedServerId=params.get("trustedServerId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')
         new_object_params['total_pages'] = -1
-        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
-            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
-                self.new_object.get('starting_after')
-        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
-            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
-                self.new_object.get('ending_before')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
-            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
-                self.new_object.get('ipv4')
-        if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
+        if self.new_object.get(
+                'mac') is not None or self.new_object.get('mac') is not None:
             new_object_params['mac'] = self.new_object.get('mac') or \
                 self.new_object.get('mac')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('ipv4') is not None or self.new_object.get(
+                'ipv4') is not None:
+            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
+                self.new_object.get('ipv4')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('trustedServerId') is not None or self.new_object.get('trusted_server_id') is not None:
-            new_object_params['trustedServerId'] = self.new_object.get('trustedServerId') or \
-                self.new_object.get('trusted_server_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('trustedServerId') is not None or self.new_object.get(
+                'trusted_server_id') is not None:
+            new_object_params['trustedServerId'] = self.new_object.get(
+                'trustedServerId') or self.new_object.get('trusted_server_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('ipv4') is not None or self.new_object.get('ipv4') is not None:
-            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
-                self.new_object.get('ipv4')
-        if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
+        if self.new_object.get(
+                'mac') is not None or self.new_object.get('mac') is not None:
             new_object_params['mac'] = self.new_object.get('mac') or \
                 self.new_object.get('mac')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('trustedServerId') is not None or self.new_object.get('trusted_server_id') is not None:
-            new_object_params['trustedServerId'] = self.new_object.get('trustedServerId') or \
-                self.new_object.get('trusted_server_id')
+        if self.new_object.get('ipv4') is not None or self.new_object.get(
+                'ipv4') is not None:
+            new_object_params['ipv4'] = self.new_object.get('ipv4') or \
+                self.new_object.get('ipv4')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('trustedServerId') is not None or self.new_object.get(
+                'trusted_server_id') is not None:
+            new_object_params['trustedServerId'] = self.new_object.get(
+                'trustedServerId') or self.new_object.get('trusted_server_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -128,7 +142,8 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
             items = self.meraki.exec_meraki(
                 family="switch",
                 function="getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers",
-                params=self.get_all_params(name=name),
+                params=self.get_all_params(
+                    name=name),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -148,7 +163,8 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
             items = self.meraki.exec_meraki(
                 family="switch",
                 function="getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers",
-                params=self.get_all_params(id=id),
+                params=self.get_all_params(
+                    id=id),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -189,17 +205,20 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("ipv4", "ipv4"),
             ("mac", "mac"),
             ("vlan", "vlan"),
+            ("ipv4", "ipv4"),
             ("networkId", "networkId"),
             ("trustedServerId", "trustedServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

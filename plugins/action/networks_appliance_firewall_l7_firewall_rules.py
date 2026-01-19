@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -21,6 +20,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
+    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -53,19 +53,22 @@ class NetworksApplianceFirewallL7FirewallRules(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
+        if self.new_object.get('rules') is not None or self.new_object.get(
+                'rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -78,8 +81,11 @@ class NetworksApplianceFirewallL7FirewallRules(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'rules' in items:
-                    result = items
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'name', name)
+            if result is None:
+                result = items
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -110,7 +116,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
-        it_exists = prev_obj is not None
+        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
@@ -119,14 +125,18 @@ class NetworksApplianceFirewallL7FirewallRules(object):
             return True
         if len(requested_obj) == 0:
             return True
+
         obj_params = [
             ("rules", "rules"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

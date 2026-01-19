@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_cellular_gateway_port_forwarding_rules_info
-short_description: Information module for devices _cellular _gateway _port _forwarding _rules
+short_description: Information module for devices _cellulargateway _portforwardingrules
 description:
-  - Get all devices _cellular _gateway _port _forwarding _rules.
+  - Information module for Devices Cellulargateway Portforwardingrules Info.
+  - Get all devices _cellulargateway _portforwardingrules.
   - Returns the port forwarding rules for a single MG.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Cellulargateway Portforwardingrules Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getDeviceCellularGatewayPortForwardingRules
-    description: Complete reference of the getDeviceCellularGatewayPortForwardingRules API.
+    description: Complete reference of the getDeviceCellularGatewayPortForwardingRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-device-cellular-gateway-port-forwarding-rules
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _cellular _gateway _port _forwarding _rules
+- name: Get all devices _cellulargateway _portforwardingrules
   cisco.meraki.devices_cellular_gateway_port_forwarding_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,15 +75,15 @@ meraki_response:
   sample: >
     [
       {
-        "access": "string",
+        "name": "string",
+        "lanIp": "string",
+        "publicPort": "string",
+        "localPort": "string",
         "allowedIps": [
           "string"
         ],
-        "lanIp": "string",
-        "localPort": "string",
-        "name": "string",
         "protocol": "string",
-        "publicPort": "string"
+        "access": "string"
       }
     ]
 """

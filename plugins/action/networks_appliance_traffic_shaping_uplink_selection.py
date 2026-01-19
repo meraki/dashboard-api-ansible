@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -34,10 +33,10 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     activeActiveAutoVpnEnabled=dict(type="bool"),
     defaultUplink=dict(type="str"),
-    failoverAndFailback=dict(type="dict"),
     loadBalancingEnabled=dict(type="bool"),
-    vpnTrafficUplinkPreferences=dict(type="list"),
+    failoverAndFailback=dict(type="dict"),
     wanTrafficUplinkPreferences=dict(type="list"),
+    vpnTrafficUplinkPreferences=dict(type="list"),
     networkId=dict(type="str"),
 ))
 
@@ -53,48 +52,53 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            activeActiveAutoVpnEnabled=params.get(
-                "activeActiveAutoVpnEnabled"),
+            activeActiveAutoVpnEnabled=params.get("activeActiveAutoVpnEnabled"),
             defaultUplink=params.get("defaultUplink"),
-            failoverAndFailback=params.get("failoverAndFailback"),
             loadBalancingEnabled=params.get("loadBalancingEnabled"),
-            vpnTrafficUplinkPreferences=params.get(
-                "vpnTrafficUplinkPreferences"),
-            wanTrafficUplinkPreferences=params.get(
-                "wanTrafficUplinkPreferences"),
+            failoverAndFailback=params.get("failoverAndFailback"),
+            wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
+            vpnTrafficUplinkPreferences=params.get("vpnTrafficUplinkPreferences"),
             network_id=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('activeActiveAutoVpnEnabled') is not None or self.new_object.get('active_active_auto_vpn_enabled') is not None:
+        if self.new_object.get('activeActiveAutoVpnEnabled') is not None or self.new_object.get(
+                'active_active_auto_vpn_enabled') is not None:
             new_object_params['activeActiveAutoVpnEnabled'] = self.new_object.get(
                 'activeActiveAutoVpnEnabled')
-        if self.new_object.get('defaultUplink') is not None or self.new_object.get('default_uplink') is not None:
-            new_object_params['defaultUplink'] = self.new_object.get('defaultUplink') or \
-                self.new_object.get('default_uplink')
-        if self.new_object.get('failoverAndFailback') is not None or self.new_object.get('failover_and_failback') is not None:
-            new_object_params['failoverAndFailback'] = self.new_object.get('failoverAndFailback') or \
-                self.new_object.get('failover_and_failback')
-        if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get('load_balancing_enabled') is not None:
+        if self.new_object.get('defaultUplink') is not None or self.new_object.get(
+                'default_uplink') is not None:
+            new_object_params['defaultUplink'] = self.new_object.get(
+                'defaultUplink') or self.new_object.get('default_uplink')
+        if self.new_object.get('loadBalancingEnabled') is not None or self.new_object.get(
+                'load_balancing_enabled') is not None:
             new_object_params['loadBalancingEnabled'] = self.new_object.get(
                 'loadBalancingEnabled')
-        if self.new_object.get('vpnTrafficUplinkPreferences') is not None or self.new_object.get('vpn_traffic_uplink_preferences') is not None:
-            new_object_params['vpnTrafficUplinkPreferences'] = self.new_object.get('vpnTrafficUplinkPreferences') or \
-                self.new_object.get('vpn_traffic_uplink_preferences')
-        if self.new_object.get('wanTrafficUplinkPreferences') is not None or self.new_object.get('wan_traffic_uplink_preferences') is not None:
-            new_object_params['wanTrafficUplinkPreferences'] = self.new_object.get('wanTrafficUplinkPreferences') or \
-                self.new_object.get('wan_traffic_uplink_preferences')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('failoverAndFailback') is not None or self.new_object.get(
+                'failover_and_failback') is not None:
+            new_object_params['failoverAndFailback'] = self.new_object.get(
+                'failoverAndFailback') or self.new_object.get('failover_and_failback')
+        if self.new_object.get('wanTrafficUplinkPreferences') is not None or self.new_object.get(
+                'wan_traffic_uplink_preferences') is not None:
+            new_object_params['wanTrafficUplinkPreferences'] = self.new_object.get(
+                'wanTrafficUplinkPreferences') or self.new_object.get('wan_traffic_uplink_preferences')
+        if self.new_object.get('vpnTrafficUplinkPreferences') is not None or self.new_object.get(
+                'vpn_traffic_uplink_preferences') is not None:
+            new_object_params['vpnTrafficUplinkPreferences'] = self.new_object.get(
+                'vpnTrafficUplinkPreferences') or self.new_object.get('vpn_traffic_uplink_preferences')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -151,17 +155,20 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
         obj_params = [
             ("activeActiveAutoVpnEnabled", "activeActiveAutoVpnEnabled"),
             ("defaultUplink", "defaultUplink"),
-            ("failoverAndFailback", "failoverAndFailback"),
             ("loadBalancingEnabled", "loadBalancingEnabled"),
-            ("vpnTrafficUplinkPreferences", "vpnTrafficUplinkPreferences"),
+            ("failoverAndFailback", "failoverAndFailback"),
             ("wanTrafficUplinkPreferences", "wanTrafficUplinkPreferences"),
+            ("vpnTrafficUplinkPreferences", "vpnTrafficUplinkPreferences"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

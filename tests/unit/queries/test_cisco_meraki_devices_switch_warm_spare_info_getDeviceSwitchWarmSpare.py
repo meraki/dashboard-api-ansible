@@ -4,7 +4,6 @@ Method: getDeviceSwitchWarmSpare
 """
 
 import jq
-import pytest
 
 
 def test_cisco_meraki_devices_switch_warm_spare_info_getDeviceSwitchWarmSpare(

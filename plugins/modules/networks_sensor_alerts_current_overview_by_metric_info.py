@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_sensor_alerts_current_overview_by_metric_info
-short_description: Information module for networks _sensor _alerts _current _overview _by _metric
+short_description: Information module for networks _sensor _alerts _current _overview
+  _bymetric
 description:
-  - Get all networks _sensor _alerts _current _overview _by _metric.
+  - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
+  - Get all networks _sensor _alerts _current _overview _bymetric.
   - Return an overview of currently alerting sensors by metric.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +22,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sensor Alerts Current Overview Bymetric Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for sensor getNetworkSensorAlertsCurrentOverviewByMetric
-    description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric API.
+    description: Complete reference of the getNetworkSensorAlertsCurrentOverviewByMetric
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-sensor-alerts-current-overview-by-metric
 notes:
   - SDK Method used are
@@ -37,7 +41,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sensor _alerts _current _overview _by _metric
+- name: Get all networks _sensor _alerts _current _overview _bymetric
   cisco.meraki.networks_sensor_alerts_current_overview_by_metric_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,6 +74,9 @@ meraki_response:
   type: dict
   sample: >
     {
+      "supportedMetrics": [
+        "string"
+      ],
       "counts": {
         "apparentPower": 0,
         "co2": 0,
@@ -89,9 +96,6 @@ meraki_response:
         "upstreamPower": 0,
         "voltage": 0,
         "water": 0
-      },
-      "supportedMetrics": [
-        "string"
-      ]
+      }
     }
 """

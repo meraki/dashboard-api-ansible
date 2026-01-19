@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_cellular_gateway_lan_info
-short_description: Information module for devices _cellular _gateway _lan
+short_description: Information module for devices _cellulargateway _lan
 description:
-  - Get all devices _cellular _gateway _lan.
+  - Information module for Devices Cellulargateway Lan Info.
+  - Get all devices _cellulargateway _lan.
   - Show the LAN Settings of a MG.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Cellulargateway Lan Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _cellular _gateway _lan
+- name: Get all devices _cellulargateway _lan
   cisco.meraki.devices_cellular_gateway_lan_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,21 +72,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "deviceLanIp": "string",
       "deviceName": "string",
+      "deviceLanIp": "string",
       "deviceSubnet": "string",
       "fixedIpAssignments": [
         {
+          "name": "string",
           "ip": "string",
-          "mac": "string",
-          "name": "string"
+          "mac": "string"
         }
       ],
       "reservedIpRanges": [
         {
-          "comment": "string",
+          "start": "string",
           "end": "string",
-          "start": "string"
+          "comment": "string"
         }
       ]
     }

@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_ssids_firewall_isolation_allowlist_entries_info
-short_description: Information module for organizations _wireless _ssids _firewall _isolation _allowlist _entries
+short_description: Information module for organizations _wireless _ssids _firewall
+  _isolation _allowlist _entries
 description:
+  - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
   - Get all organizations _wireless _ssids _firewall _isolation _allowlist _entries.
   - List the L2 isolation allow list MAC entry in an organization.
 version_added: '1.0.0'
@@ -21,33 +23,44 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - NetworkIds query parameter. NetworkIds array to filter out results.
     elements: str
     type: list
   ssids:
     description:
+      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - Ssids query parameter. Ssids number array to filter out results.
     elements: int
     type: list
@@ -56,7 +69,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessSsidsFirewallIsolationAllowlistEntries
-    description: Complete reference of the getOrganizationWirelessSsidsFirewallIsolationAllowlistEntries API.
+    description: Complete reference of the getOrganizationWirelessSsidsFirewallIsolationAllowlistEntries
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-ssids-firewall-isolation-allowlist-entries
 notes:
   - SDK Method used are
@@ -108,29 +122,29 @@ meraki_response:
     {
       "items": [
         {
+          "entryId": "string",
+          "createdAt": "string",
+          "lastUpdatedAt": "string",
+          "description": "string",
           "client": {
             "mac": "string"
-          },
-          "createdAt": "string",
-          "description": "string",
-          "entryId": "string",
-          "lastUpdatedAt": "string",
-          "network": {
-            "id": "string",
-            "name": "string"
           },
           "ssid": {
             "id": "string",
             "name": "string",
             "number": 0
+          },
+          "network": {
+            "id": "string",
+            "name": "string"
           }
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

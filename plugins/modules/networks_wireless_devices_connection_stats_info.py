@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_devices_connection_stats_info
-short_description: Information module for networks _wireless _devices _connection _stats
+short_description: Information module for networks _wireless _devices _connectionstats
 description:
-  - Get all networks _wireless _devices _connection _stats.
+  - Information module for Networks Wireless Devices Connectionstats Info.
+  - Get all networks _wireless _devices _connectionstats.
   - Aggregated connectivity info for this network, grouped by node.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,38 +21,44 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Devices Connectionstats Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - >
-        T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
+      - Information module for Networks Wireless Devices Connectionstats Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 180 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 7 days after t0.
+      - Information module for Networks Wireless Devices Connectionstats Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 7 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Networks Wireless Devices Connectionstats Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 7 days.
     type: float
   band:
     description:
+      - Information module for Networks Wireless Devices Connectionstats Info.
       - >
-        Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note that data prior to February 2020 will not have band information.
+        Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note
+        that data prior to February 2020 will not have band information.
     type: str
   ssid:
     description:
+      - Information module for Networks Wireless Devices Connectionstats Info.
       - Ssid query parameter. Filter results by SSID.
-    type: int
-  vlan:
-    description:
-      - Vlan query parameter. Filter results by VLAN.
     type: int
   apTag:
     description:
+      - Information module for Networks Wireless Devices Connectionstats Info.
       - ApTag query parameter. Filter results by AP Tag.
     type: str
 requirements:
@@ -59,7 +66,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessDevicesConnectionStats
-    description: Complete reference of the getNetworkWirelessDevicesConnectionStats API.
+    description: Complete reference of the getNetworkWirelessDevicesConnectionStats
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-devices-connection-stats
 notes:
   - SDK Method used are
@@ -69,7 +77,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _devices _connection _stats
+- name: Get all networks _wireless _devices _connectionstats
   cisco.meraki.networks_wireless_devices_connection_stats_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -97,7 +105,6 @@ EXAMPLES = r"""
     timespan: 0
     band: string
     ssid: 0
-    vlan: 0
     apTag: string
     networkId: string
   register: result
@@ -111,14 +118,14 @@ meraki_response:
   sample: >
     [
       {
+        "serial": "string",
         "connectionStats": {
           "assoc": 0,
           "auth": 0,
           "dhcp": 0,
           "dns": 0,
           "success": 0
-        },
-        "serial": "string"
+        }
       }
     ]
 """

@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles
 short_description: Resource module for networks _wireless _ethernet _ports _profiles
 description:
-  - Manage operations update and delete of the resource networks _wireless _ethernet _ports _profiles.
+  - Manage operations update and delete of the resource networks _wireless _ethernet
+    _ports _profiles.
   - Delete an AP port profile.
   - Update the AP port profile by ID for this network.
 version_added: '1.0.0'
@@ -61,10 +62,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless deleteNetworkWirelessEthernetPortsProfile
-    description: Complete reference of the deleteNetworkWirelessEthernetPortsProfile API.
+    description: Complete reference of the deleteNetworkWirelessEthernetPortsProfile
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-ethernet-ports-profile
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessEthernetPortsProfile
-    description: Complete reference of the updateNetworkWirelessEthernetPortsProfile API.
+    description: Complete reference of the updateNetworkWirelessEthernetPortsProfile
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ethernet-ports-profile
 notes:
   - SDK Method used are
@@ -76,32 +79,6 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Delete by id
-  cisco.meraki.networks_wireless_ethernet_ports_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    networkId: string
-    profileId: string
 - name: Update by id
   cisco.meraki.networks_wireless_ethernet_ports_profiles:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -138,6 +115,32 @@ EXAMPLES = r"""
       - enabled: true
         name: string
         ssid: 0
+- name: Delete by id
+  cisco.meraki.networks_wireless_ethernet_ports_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    networkId: string
+    profileId: string
 """
 RETURN = r"""
 meraki_response:
@@ -146,22 +149,22 @@ meraki_response:
   type: dict
   sample: >
     {
-      "isDefault": true,
+      "profileId": "string",
       "name": "string",
+      "isDefault": true,
       "ports": [
         {
-          "enabled": true,
           "name": "string",
           "number": 0,
-          "pskGroupId": "string",
-          "ssid": 0
+          "enabled": true,
+          "ssid": 0,
+          "pskGroupId": "string"
         }
       ],
-      "profileId": "string",
       "usbPorts": [
         {
-          "enabled": true,
           "name": "string",
+          "enabled": true,
           "ssid": 0
         }
       ]

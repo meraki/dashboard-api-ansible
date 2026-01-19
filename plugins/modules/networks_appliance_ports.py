@@ -16,16 +16,18 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   accessPolicy:
-    description: The name of the policy. Only applicable to Access ports. Valid values are 'open', '8021x-radius', 'mac-radius', 'hybris-radius'
-      for MX64 or Z3 or any MX supporting the per port authentication feature. Otherwise, 'open' is the only valid value and 'open' is the default
-      value if the field is missing.
+    description: The name of the policy. Only applicable to Access ports. Valid values
+      are 'open', '8021x-radius', 'mac-radius', 'hybris-radius' for MX64 or Z3 or
+      any MX supporting the per port authentication feature. Otherwise, 'open' is
+      the only valid value and 'open' is the default value if the field is missing.
     type: str
   allowedVlans:
-    description: Comma-delimited list of the VLAN ID's allowed on the port, or 'all' to permit all VLAN's on the port.
+    description: Comma-delimited list of the VLAN ID's allowed on the port, or 'all'
+      to permit all VLAN's on the port.
     type: str
   dropUntaggedTraffic:
-    description: Trunk port can Drop all Untagged traffic. When true, no VLAN is required. Access ports cannot have dropUntaggedTraffic set to
-      true.
+    description: Trunk port can Drop all Untagged traffic. When true, no VLAN is required.
+      Access ports cannot have dropUntaggedTraffic set to true.
     type: bool
   enabled:
     description: The status of the port.
@@ -40,7 +42,8 @@ options:
     description: The type of the port 'access' or 'trunk'.
     type: str
   vlan:
-    description: Native VLAN when the port is in Trunk mode. Access VLAN when the port is in Access mode.
+    description: Native VLAN when the port is in Trunk mode. Access VLAN when the
+      port is in Access mode.
     type: int
 requirements:
   - meraki >= 2.4.9
@@ -97,12 +100,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "accessPolicy": "string",
-      "allowedVlans": "string",
-      "dropUntaggedTraffic": true,
-      "enabled": true,
       "number": 0,
+      "enabled": true,
       "type": "string",
-      "vlan": 0
+      "dropUntaggedTraffic": true,
+      "vlan": 0,
+      "allowedVlans": "string",
+      "accessPolicy": "string"
     }
 """

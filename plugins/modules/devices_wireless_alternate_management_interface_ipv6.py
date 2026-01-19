@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: devices_wireless_alternate_management_interface_ipv6
-short_description: Resource module for devices _wireless _alternate _management _interface _ipv6
+short_description: Resource module for devices _wireless _alternatemanagementinterface
+  _ipv6
 description:
-  - Manage operation update of the resource devices _wireless _alternate _management _interface _ipv6.
+  - Manage operation update of the resource devices _wireless _alternatemanagementinterface
+    _ipv6.
   - Update alternate management interface IPv6 address.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -32,12 +34,14 @@ options:
         description: The DNS servers settings for this address.
         suboptions:
           addresses:
-            description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+            description: Up to 2 nameserver addresses to use, ordered in priority
+              from highest to lowest priority.
             elements: str
             type: list
         type: dict
       prefix:
-        description: The IPv6 prefix length of the IPv6 interface. Required if IPv6 object is included.
+        description: The IPv6 prefix length of the IPv6 interface. Required if IPv6
+          object is included.
         type: str
       protocol:
         description: The IP protocol used for the address.
@@ -51,7 +55,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateDeviceWirelessAlternateManagementInterfaceIpv6
-    description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6 API.
+    description: Complete reference of the updateDeviceWirelessAlternateManagementInterfaceIpv6
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-alternate-management-interface-ipv6
 notes:
   - SDK Method used are
@@ -105,16 +110,16 @@ meraki_response:
     {
       "addresses": [
         {
-          "address": "string",
+          "protocol": "string",
           "assignmentMode": "string",
+          "address": "string",
           "gateway": "string",
+          "prefix": "string",
           "nameservers": {
             "addresses": [
               "string"
             ]
-          },
-          "prefix": "string",
-          "protocol": "string"
+          }
         }
       ]
     }

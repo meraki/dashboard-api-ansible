@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,8 +31,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    fixedIpAssignments=dict(type="list"),
     reservedIpRanges=dict(type="list"),
+    fixedIpAssignments=dict(type="list"),
     serial=dict(type="str"),
 ))
 
@@ -49,26 +48,30 @@ class DevicesCellularGatewayLan(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            fixedIpAssignments=params.get("fixedIpAssignments"),
             reservedIpRanges=params.get("reservedIpRanges"),
+            fixedIpAssignments=params.get("fixedIpAssignments"),
             serial=params.get("serial"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get('fixed_ip_assignments') is not None:
-            new_object_params['fixedIpAssignments'] = self.new_object.get('fixedIpAssignments') or \
-                self.new_object.get('fixed_ip_assignments')
-        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get('reserved_ip_ranges') is not None:
-            new_object_params['reservedIpRanges'] = self.new_object.get('reservedIpRanges') or \
-                self.new_object.get('reserved_ip_ranges')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get(
+                'reserved_ip_ranges') is not None:
+            new_object_params['reservedIpRanges'] = self.new_object.get(
+                'reservedIpRanges') or self.new_object.get('reserved_ip_ranges')
+        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get(
+                'fixed_ip_assignments') is not None:
+            new_object_params['fixedIpAssignments'] = self.new_object.get(
+                'fixedIpAssignments') or self.new_object.get('fixed_ip_assignments')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -124,15 +127,18 @@ class DevicesCellularGatewayLan(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),
+            ("fixedIpAssignments", "fixedIpAssignments"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

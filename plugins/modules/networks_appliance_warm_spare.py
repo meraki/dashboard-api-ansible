@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_warm_spare
-short_description: Resource module for networks _appliance _warm _spare
+short_description: Resource module for networks _appliance _warmspare
 description:
-  - Manage operation update of the resource networks _appliance _warm _spare.
+  - Manage operation update of the resource networks _appliance _warmspare.
   - Update MX warm spare settings.
 version_added: '1.0.0'
 extends_documentation_fragment:

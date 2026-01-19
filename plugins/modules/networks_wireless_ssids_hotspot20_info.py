@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_hotspot20_info
 short_description: Information module for networks _wireless _ssids _hotspot20
 description:
+  - Information module for Networks Wireless Ssids Hotspot20 Info.
   - Get all networks _wireless _ssids _hotspot20.
   - Return the Hotspot 2.0 settings for an SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Hotspot20 Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Hotspot20 Info.
       - Number path parameter.
     type: str
 requirements:
@@ -75,10 +78,21 @@ meraki_response:
   type: dict
   sample: >
     {
+      "enabled": true,
+      "operator": {
+        "name": "string"
+      },
+      "venue": {
+        "name": "string",
+        "type": "string"
+      },
+      "networkAccessType": "string",
       "domains": [
         "string"
       ],
-      "enabled": true,
+      "roamConsortOis": [
+        "string"
+      ],
       "mccMncs": [
         {
           "mcc": "string",
@@ -88,38 +102,27 @@ meraki_response:
       "naiRealms": [
         {
           "format": "string",
+          "name": "string",
           "methods": [
             {
+              "id": "string",
               "authenticationTypes": {
-                "credentials": [
+                "nonEapInnerAuthentication": [
                   "string"
                 ],
                 "eapInnerAuthentication": [
                   "string"
                 ],
-                "nonEapInnerAuthentication": [
+                "credentials": [
                   "string"
                 ],
                 "tunneledEapMethodCredentials": [
                   "string"
                 ]
-              },
-              "id": "string"
+              }
             }
-          ],
-          "name": "string"
+          ]
         }
-      ],
-      "networkAccessType": "string",
-      "operator": {
-        "name": "string"
-      },
-      "roamConsortOis": [
-        "string"
-      ],
-      "venue": {
-        "name": "string",
-        "type": "string"
-      }
+      ]
     }
 """

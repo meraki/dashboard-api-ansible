@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_content_filtering_info
-short_description: Information module for networks _appliance _content _filtering
+short_description: Information module for networks _appliance _contentfiltering
 description:
-  - Get all networks _appliance _content _filtering.
+  - Information module for Networks Appliance Contentfiltering Info.
+  - Get all networks _appliance _contentfiltering.
   - Return the content filtering settings for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Contentfiltering Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _content _filtering
+- name: Get all networks _appliance _contentfiltering
   cisco.meraki.networks_appliance_content_filtering_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,14 +75,14 @@ meraki_response:
       "allowedUrlPatterns": [
         "string"
       ],
+      "blockedUrlPatterns": [
+        "string"
+      ],
       "blockedUrlCategories": [
         {
           "id": "string",
           "name": "string"
         }
-      ],
-      "blockedUrlPatterns": [
-        "string"
       ],
       "urlCategoryListSize": "string"
     }

@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_policies_info
-short_description: Information module for organizations _adaptive _policy _policies
+short_description: Information module for organizations _adaptivepolicy _policies
 description:
-  - Get all organizations _adaptive _policy _policies.
-  - Get organizations _adaptive _policy _policies by id.
+  - Information module for Organizations Adaptivepolicy Policies Info.
+  - Get all organizations _adaptivepolicy _policies.
+  - Get organizations _adaptivepolicy _policies by id.
   - List adaptive policies in an organization.
   - Return an adaptive policy.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Adaptivepolicy Policies Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   id:
     description:
+      - Information module for Organizations Adaptivepolicy Policies Info.
       - Id path parameter.
     type: str
 requirements:
@@ -44,11 +47,12 @@ notes:
     organizations.Organizations.get_organization_adaptive_policy_policy,
   - Paths used are
     get /organizations/{organizationId}/adaptivePolicy/policies,
-    get /organizations/{organizationId}/adaptivePolicy/policies/{id},
+    get
+    /organizations/{organizationId}/adaptivePolicy/policies/{id},
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptive _policy _policies
+- name: Get all organizations _adaptivepolicy _policies
   cisco.meraki.organizations_adaptive_policy_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _adaptive _policy _policies by id
+- name: Get organizations _adaptivepolicy _policies by id
   cisco.meraki.organizations_adaptive_policy_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,25 +111,25 @@ meraki_response:
   type: dict
   sample: >
     {
+      "adaptivePolicyId": "string",
+      "sourceGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
+      "destinationGroup": {
+        "id": "string",
+        "name": "string",
+        "sgt": 0
+      },
       "acls": [
         {
           "id": "string",
           "name": "string"
         }
       ],
-      "adaptivePolicyId": "string",
-      "createdAt": "string",
-      "destinationGroup": {
-        "id": "string",
-        "name": "string",
-        "sgt": 0
-      },
       "lastEntryRule": "string",
-      "sourceGroup": {
-        "id": "string",
-        "name": "string",
-        "sgt": 0
-      },
+      "createdAt": "string",
       "updatedAt": "string"
     }
 """

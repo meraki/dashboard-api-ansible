@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_content_filtering_categories_info
-short_description: Information module for networks _appliance _content _filtering _categories
+short_description: Information module for networks _appliance _contentfiltering _categories
 description:
-  - Get all networks _appliance _content _filtering _categories.
+  - Information module for Networks Appliance Contentfiltering Categories Info.
+  - Get all networks _appliance _contentfiltering _categories.
   - List all available content filtering categories for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Contentfiltering Categories Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceContentFilteringCategories
-    description: Complete reference of the getNetworkApplianceContentFilteringCategories API.
+    description: Complete reference of the getNetworkApplianceContentFilteringCategories
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-content-filtering-categories
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _content _filtering _categories
+- name: Get all networks _appliance _contentfiltering _categories
   cisco.meraki.networks_appliance_content_filtering_categories_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -67,13 +70,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "id": "string",
-        "name": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

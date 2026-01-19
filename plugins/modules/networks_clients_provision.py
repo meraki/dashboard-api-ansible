@@ -9,7 +9,8 @@ module: networks_clients_provision
 short_description: Resource module for networks _clients _provision
 description:
   - Manage operation create of the resource networks _clients _provision.
-  - Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.
+  - Provisions a client with a name and policy. Clients can be provisioned before
+    they associate to the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -27,190 +28,224 @@ options:
         type: str
     type: list
   devicePolicy:
-    description: The policy to apply to the specified client. Can be 'Group policy', 'Allowed', 'Blocked', 'Per connection' or 'Normal'. Required.
+    description: The policy to apply to the specified client. Can be 'Group policy',
+      'Allowed', 'Blocked', 'Per connection' or 'Normal'. Required.
     type: str
   groupPolicyId:
-    description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise this
-      is ignored.
+    description: The ID of the desired group policy to apply to the client. Required
+      if 'devicePolicy' is set to "Group policy". Otherwise this is ignored.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   policiesBySecurityAppliance:
-    description: An object, describing what the policy-connection association is for the security appliance. (Only relevant if the security appliance
-      is actually within the network).
+    description: An object, describing what the policy-connection association is for
+      the security appliance. (Only relevant if the security appliance is actually
+      within the network).
     suboptions:
       devicePolicy:
-        description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked' or 'Normal'. Required.
+        description: The policy to apply to the specified client. Can be 'Allowed',
+          'Blocked' or 'Normal'. Required.
         type: str
     type: dict
   policiesBySsid:
-    description: An object, describing the policy-connection associations for each active SSID within the network. Keys should be the number of
-      enabled SSIDs, mapping to an object describing the client's policy.
+    description: An object, describing the policy-connection associations for each
+      active SSID within the network. Keys should be the number of enabled SSIDs,
+      mapping to an object describing the client's policy.
     suboptions:
       '0':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '1':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '10':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '11':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '12':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '13':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '14':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '2':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '3':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '4':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '5':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '6':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '7':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '8':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
       '9':
         description: The number for the SSID.
         suboptions:
           devicePolicy:
-            description: The policy to apply to the specified client. Can be 'Allowed', 'Blocked', 'Normal' or 'Group policy'. Required.
+            description: The policy to apply to the specified client. Can be 'Allowed',
+              'Blocked', 'Normal' or 'Group policy'. Required.
             type: str
           groupPolicyId:
-            description: The ID of the desired group policy to apply to the client. Required if 'devicePolicy' is set to "Group policy". Otherwise
-              this is ignored.
+            description: The ID of the desired group policy to apply to the client.
+              Required if 'devicePolicy' is set to "Group policy". Otherwise this
+              is ignored.
             type: str
         type: dict
     type: dict
@@ -316,10 +351,10 @@ meraki_response:
     {
       "clients": [
         {
-          "clientId": "string",
           "mac": "string",
-          "message": "string",
-          "name": "string"
+          "clientId": "string",
+          "name": "string",
+          "message": "string"
         }
       ],
       "devicePolicy": "string",

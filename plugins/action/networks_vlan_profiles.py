@@ -32,10 +32,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    iname=dict(type="str"),
     name=dict(type="str"),
-    vlanGroups=dict(type="list"),
     vlanNames=dict(type="list"),
+    vlanGroups=dict(type="list"),
+    iname=dict(type="str"),
     networkId=dict(type="str"),
 ))
 
@@ -52,64 +52,77 @@ class NetworksVlanProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            iname=params.get("iname"),
             name=params.get("name"),
-            vlanGroups=params.get("vlanGroups"),
             vlanNames=params.get("vlanNames"),
+            vlanGroups=params.get("vlanGroups"),
+            iname=params.get("iname"),
             networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('iname') is not None or self.new_object.get('iname') is not None:
-            new_object_params['iname'] = self.new_object.get('iname') or \
-                self.new_object.get('iname')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('vlanGroups') is not None or self.new_object.get('vlan_groups') is not None:
-            new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
-                self.new_object.get('vlan_groups')
-        if self.new_object.get('vlanNames') is not None or self.new_object.get('vlan_names') is not None:
+        if self.new_object.get('vlanNames') is not None or self.new_object.get(
+                'vlan_names') is not None:
             new_object_params['vlanNames'] = self.new_object.get('vlanNames') or \
                 self.new_object.get('vlan_names')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+        if self.new_object.get('vlanGroups') is not None or self.new_object.get(
+                'vlan_groups') is not None:
+            new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
+                self.new_object.get('vlan_groups')
+        if self.new_object.get('iname') is not None or self.new_object.get(
+                'iname') is not None:
+            new_object_params['iname'] = self.new_object.get('iname') or \
+                self.new_object.get('iname')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_name_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
-        if self.new_object.get('iname') is not None or self.new_object.get('iname') is not None:
+        if self.new_object.get('iname') is not None or self.new_object.get(
+                'iname') is not None:
             new_object_params['iname'] = self.new_object.get('iname') or \
                 self.new_object.get('iname')
         return new_object_params
 
     def update_by_name_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('vlanGroups') is not None or self.new_object.get('vlan_groups') is not None:
-            new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
-                self.new_object.get('vlan_groups')
-        if self.new_object.get('vlanNames') is not None or self.new_object.get('vlan_names') is not None:
+        if self.new_object.get('vlanNames') is not None or self.new_object.get(
+                'vlan_names') is not None:
             new_object_params['vlanNames'] = self.new_object.get('vlanNames') or \
                 self.new_object.get('vlan_names')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
+        if self.new_object.get('vlanGroups') is not None or self.new_object.get(
+                'vlan_groups') is not None:
+            new_object_params['vlanGroups'] = self.new_object.get('vlanGroups') or \
+                self.new_object.get('vlan_groups')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get('networkId') or \
                 self.new_object.get('network_id')
-        if self.new_object.get('iname') is not None or self.new_object.get('iname') is not None:
+        if self.new_object.get('iname') is not None or self.new_object.get(
+                'iname') is not None:
             new_object_params['iname'] = self.new_object.get('iname') or \
                 self.new_object.get('iname')
         return new_object_params
@@ -180,10 +193,10 @@ class NetworksVlanProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("iname", "iname"),
             ("name", "name"),
-            ("vlanGroups", "vlanGroups"),
             ("vlanNames", "vlanNames"),
+            ("vlanGroups", "vlanGroups"),
+            ("iname", "iname"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params

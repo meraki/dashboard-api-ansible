@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_security_intrusion_info
 short_description: Information module for organizations _appliance _security _intrusion
 description:
+  - Information module for Organizations Appliance Security Intrusion Info.
   - Get all organizations _appliance _security _intrusion.
   - Returns all supported intrusion settings for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Security Intrusion Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceSecurityIntrusion
-    description: Complete reference of the getOrganizationApplianceSecurityIntrusion API.
+    description: Complete reference of the getOrganizationApplianceSecurityIntrusion
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-intrusion
 notes:
   - SDK Method used are
@@ -67,13 +70,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "message": "string",
-        "ruleId": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

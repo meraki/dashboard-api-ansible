@@ -19,7 +19,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   size:
-    description: The size of the vMX you claim. It can be one of small, medium, large, xlarge, 100.
+    description: The size of the vMX you claim. It can be one of small, medium, large,
+      xlarge, 100.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -69,27 +70,27 @@ meraki_response:
   type: dict
   sample: >
     {
+      "name": "string",
+      "lat": 0,
+      "lng": 0,
       "address": "string",
+      "notes": "string",
+      "tags": [
+        "string"
+      ],
+      "networkId": "string",
+      "serial": "string",
+      "model": "string",
+      "imei": "string",
+      "mac": "string",
+      "lanIp": "string",
+      "firmware": "string",
+      "productType": "string",
       "details": [
         {
           "name": "string",
           "value": "string"
         }
-      ],
-      "firmware": "string",
-      "imei": "string",
-      "lanIp": "string",
-      "lat": 0,
-      "lng": 0,
-      "mac": "string",
-      "model": "string",
-      "name": "string",
-      "networkId": "string",
-      "notes": "string",
-      "productType": "string",
-      "serial": "string",
-      "tags": [
-        "string"
       ]
     }
 """

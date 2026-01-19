@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_admins_info
 short_description: Information module for organizations _admins
 description:
+  - Information module for Organizations Admins Info.
   - Get all organizations _admins.
   - List the dashboard administrators in this organization.
 version_added: '1.0.0'
@@ -20,11 +21,14 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Admins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the result set by the included set of network IDs.
+      - Information module for Organizations Admins Info.
+      - NetworkIds query parameter. Optional parameter to filter the result set by
+        the included set of network IDs.
     elements: str
     type: list
 requirements:
@@ -78,27 +82,27 @@ meraki_response:
   sample: >
     [
       {
-        "accountStatus": "string",
-        "authenticationMethod": "string",
-        "email": "string",
-        "hasApiKey": true,
         "id": "string",
-        "lastActive": "string",
         "name": "string",
-        "networks": [
-          {
-            "access": "string",
-            "id": "string"
-          }
-        ],
+        "email": "string",
         "orgAccess": "string",
+        "accountStatus": "string",
+        "twoFactorAuthEnabled": true,
+        "hasApiKey": true,
+        "lastActive": "string",
         "tags": [
           {
-            "access": "string",
-            "tag": "string"
+            "tag": "string",
+            "access": "string"
           }
         ],
-        "twoFactorAuthEnabled": true
+        "networks": [
+          {
+            "id": "string",
+            "access": "string"
+          }
+        ],
+        "authenticationMethod": "string"
       }
     ]
 """

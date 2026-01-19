@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_traffic_analysis_info
-short_description: Information module for networks _traffic _analysis
+short_description: Information module for networks _trafficanalysis
 description:
-  - Get all networks _traffic _analysis.
+  - Information module for Networks Trafficanalysis Info.
+  - Get all networks _trafficanalysis.
   - Return the traffic analysis settings for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Trafficanalysis Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _traffic _analysis
+- name: Get all networks _trafficanalysis
   cisco.meraki.networks_traffic_analysis_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,13 +72,13 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mode": "string",
       "customPieChartItems": [
         {
           "name": "string",
           "type": "string",
           "value": "string"
         }
-      ],
-      "mode": "string"
+      ]
     }
 """

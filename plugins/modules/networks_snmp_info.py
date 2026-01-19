@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_snmp_info
 short_description: Information module for networks _snmp
 description:
+  - Information module for Networks Snmp Info.
   - Get all networks _snmp.
   - Return the SNMP settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Snmp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -74,8 +76,8 @@ meraki_response:
       "communityString": "string",
       "users": [
         {
-          "passphrase": "string",
-          "username": "string"
+          "username": "string",
+          "passphrase": "string"
         }
       ]
     }

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_switch_ports_by_switch_info
-short_description: Information module for organizations _switch _ports _by _switch
+short_description: Information module for organizations _switch _ports _byswitch
 description:
-  - Get all organizations _switch _ports _by _switch.
+  - Information module for Organizations Switch Ports Byswitch Info.
+  - Get all organizations _switch _ports _byswitch.
   - List the switchports in an organization by switch.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,68 +22,90 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
+      - Information module for Organizations Switch Ports Byswitch Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 50. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   configurationUpdatedAfter:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        ConfigurationUpdatedAfter query parameter. Optional parameter to filter items to switches where the configuration has been updated after
-        the given timestamp.
+        ConfigurationUpdatedAfter query parameter. Optional parameter to filter items
+        to switches where the configuration has been updated after the given timestamp.
     type: str
   mac:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        Mac query parameter. Optional parameter to filter items to switches with MAC addresses that contain the search term or are an exact match.
+        Mac query parameter. Optional parameter to filter items to switches with MAC
+        addresses that contain the search term or are an exact match.
     type: str
   macs:
     description:
-      - Macs query parameter. Optional parameter to filter items to switches that have one of the provided MAC addresses.
+      - Information module for Organizations Switch Ports Byswitch Info.
+      - Macs query parameter. Optional parameter to filter items to switches that
+        have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        Name query parameter. Optional parameter to filter items to switches with names that contain the search term or are an exact match.
+        Name query parameter. Optional parameter to filter items to switches with
+        names that contain the search term or are an exact match.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter items to switches in one of the provided networks.
+      - Information module for Organizations Switch Ports Byswitch Info.
+      - NetworkIds query parameter. Optional parameter to filter items to switches
+        in one of the provided networks.
     elements: str
     type: list
   portProfileIds:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        PortProfileIds query parameter. Optional parameter to filter items to switches that contain switchports belonging to one of the specified
-        port profiles.
+        PortProfileIds query parameter. Optional parameter to filter items to switches
+        that contain switchports belonging to one of the specified port profiles.
     elements: str
     type: list
   serial:
     description:
+      - Information module for Organizations Switch Ports Byswitch Info.
       - >
-        Serial query parameter. Optional parameter to filter items to switches with serial number that contains the search term or are an exact
-        match.
+        Serial query parameter. Optional parameter to filter items to switches with
+        serial number that contains the search term or are an exact match.
     type: str
   serials:
     description:
-      - Serials query parameter. Optional parameter to filter items to switches that have one of the provided serials.
+      - Information module for Organizations Switch Ports Byswitch Info.
+      - Serials query parameter. Optional parameter to filter items to switches that
+        have one of the provided serials.
     elements: str
     type: list
 requirements:
@@ -100,7 +123,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _switch _ports _by _switch
+- name: Get all organizations _switch _ports _byswitch
   cisco.meraki.organizations_switch_ports_by_switch_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -146,36 +169,36 @@ meraki_response:
   type: dict
   sample: >
     {
-      "mac": "string",
-      "model": "string",
       "name": "string",
+      "serial": "string",
+      "mac": "string",
       "network": {
-        "id": "string",
-        "name": "string"
+        "name": "string",
+        "id": "string"
       },
+      "model": "string",
       "ports": [
         {
-          "accessPolicyType": "string",
-          "allowedVlans": "string",
-          "enabled": true,
-          "linkNegotiation": "string",
-          "name": "string",
-          "poeEnabled": true,
           "portId": "string",
-          "rstpEnabled": true,
-          "stickyMacAllowList": [
-            "string"
-          ],
-          "stickyMacAllowListLimit": 0,
-          "stpGuard": "string",
+          "name": "string",
           "tags": [
             "string"
           ],
+          "enabled": true,
+          "poeEnabled": true,
           "type": "string",
           "vlan": 0,
-          "voiceVlan": 0
+          "voiceVlan": 0,
+          "allowedVlans": "string",
+          "rstpEnabled": true,
+          "stpGuard": "string",
+          "linkNegotiation": "string",
+          "accessPolicyType": "string",
+          "stickyMacAllowList": [
+            "string"
+          ],
+          "stickyMacAllowListLimit": 0
         }
-      ],
-      "serial": "string"
+      ]
     }
 """

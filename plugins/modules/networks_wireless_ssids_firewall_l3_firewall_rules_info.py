@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l3_firewall_rules_info
-short_description: Information module for networks _wireless _ssids _firewall l3 _firewall _rules
+short_description: Information module for networks _wireless _ssids _firewall l3firewallrules
 description:
-  - Get all networks _wireless _ssids _firewall l3 _firewall _rules.
+  - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
+  - Get all networks _wireless _ssids _firewall l3firewallrules.
   - Return the L3 firewall rules for an SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Firewall L3Firewallrules Info.
       - Number path parameter.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidFirewallL3FirewallRules
-    description: Complete reference of the getNetworkWirelessSsidFirewallL3FirewallRules API.
+    description: Complete reference of the getNetworkWirelessSsidFirewallL3FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-firewall-l3-firewall-rules
 notes:
   - SDK Method used are
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _firewall l3 _firewall _rules
+- name: Get all networks _wireless _ssids _firewall l3firewallrules
   cisco.meraki.networks_wireless_ssids_firewall_l3_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -75,15 +79,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "allowLanAccess": true,
       "rules": [
         {
           "comment": "string",
-          "destCidr": "string",
-          "destPort": "string",
           "policy": "string",
-          "protocol": "string"
+          "ipVer": "string",
+          "protocol": "string",
+          "destPort": "string",
+          "destCidr": "string"
         }
-      ]
+      ],
+      "allowLanAccess": true
     }
 """

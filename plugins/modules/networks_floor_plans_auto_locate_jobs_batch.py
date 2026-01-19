@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_floor_plans_auto_locate_jobs_batch
-short_description: Resource module for networks _floor _plans _auto _locate _jobs _batch
+short_description: Resource module for networks _floor _plans _auto _locate _jobs
+  _batch
 description:
-  - Manage operation create of the resource networks _floor _plans _auto _locate _jobs _batch.
+  - Manage operation create of the resource networks _floor _plans _auto _locate _jobs
+    _batch.
   - Schedule auto locate jobs for one or more floor plans in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,20 +18,22 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   jobs:
-    description: The list of auto locate jobs to be scheduled. Up to 100 jobs can be provided in a request.
+    description: The list of auto locate jobs to be scheduled. Up to 100 jobs can
+      be provided in a request.
     elements: dict
     suboptions:
       floorPlanId:
         description: The ID of the floor plan to run auto locate for.
         type: str
       refresh:
-        description: The types of location data that should be refreshed for this job. The list must either contain both 'gnss' and 'ranging'
-          or be empty, as we currently only support refreshing both 'gnss' and 'ranging', or neither.
+        description: The types of location data that should be refreshed for this
+          job. The list must either contain both 'gnss' and 'ranging' or be empty,
+          as we currently only support refreshing both 'gnss' and 'ranging', or neither.
         elements: str
         type: list
       scheduledAt:
-        description: Timestamp in ISO8601 format which indicates when the auto locate job should be run. If omitted, the auto locate job will
-          start immediately.
+        description: Timestamp in ISO8601 format which indicates when the auto locate
+          job should be run. If omitted, the auto locate job will start immediately.
         type: str
     type: list
   networkId:
@@ -90,32 +94,32 @@ meraki_response:
     {
       "jobs": [
         {
+          "id": "string",
+          "networkId": "string",
+          "floorPlanId": "string",
+          "status": "string",
+          "scheduledAt": "string",
           "completed": {
             "percentage": 0
+          },
+          "ranging": {
+            "status": "string",
+            "completed": {
+              "percentage": 0
+            }
+          },
+          "gnss": {
+            "status": "string",
+            "completed": {
+              "percentage": 0
+            }
           },
           "errors": [
             {
               "source": "string",
               "type": "string"
             }
-          ],
-          "floorPlanId": "string",
-          "gnss": {
-            "completed": {
-              "percentage": 0
-            },
-            "status": "string"
-          },
-          "id": "string",
-          "networkId": "string",
-          "ranging": {
-            "completed": {
-              "percentage": 0
-            },
-            "status": "string"
-          },
-          "scheduledAt": "string",
-          "status": "string"
+          ]
         }
       ]
     }

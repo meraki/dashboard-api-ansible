@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_local_profiles_assignments_bulk_delete
-short_description: Resource module for organizations _appliance _dns _local _profiles _assignments _bulk _delete
+short_description: Resource module for organizations _appliance _dns _local _profiles
+  _assignments _bulk _delete
 description:
-  - Manage operation create of the resource organizations _appliance _dns _local _profiles _assignments _bulk _delete.
+  - Manage operation create of the resource organizations _appliance _dns _local _profiles
+    _assignments _bulk _delete.
   - Unassign the local DNS profile to networks in the organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -31,7 +33,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance createOrganizationApplianceDnsLocalProfilesAssignmentsBulkDelete
-    description: Complete reference of the createOrganizationApplianceDnsLocalProfilesAssignmentsBulkDelete API.
+    description: Complete reference of the createOrganizationApplianceDnsLocalProfilesAssignmentsBulkDelete
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-appliance-dns-local-profiles-assignments-bulk-delete
 notes:
   - SDK Method used are

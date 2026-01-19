@@ -8,9 +8,13 @@ DOCUMENTATION = r"""
 module: organizations_inventory_claim
 short_description: Resource module for organizations _inventory _claim
 description:
-  - Manage operation create of the resource organizations _inventory _claim. - > Claim a list of devices, licenses, and/or orders into an organization
-    inventory. When claiming by order, all devices and licenses in the order will be claimed; licenses will be added to the organization and devices
-    will be placed in the organization's inventory. This operation can be used up to ten times within a single five minute window.
+  - Manage operation create of the resource organizations _inventory _claim.
+  - >
+    Claim a list of devices, licenses, and/or orders into an organization inventory.
+    When claiming by order, all devices and licenses in the order will be claimed;
+    licenses will be added to the organization and devices will be placed in the organization's
+    inventory. This operation can be used up to ten times within a single five minute
+    window.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -24,9 +28,11 @@ options:
         description: The key of the license.
         type: str
       mode:
-        description: Co-term licensing only either 'renew' or 'addDevices'. 'addDevices' will increase the license limit, while 'renew' will extend
-          the amount of time until expiration. Defaults to 'addDevices'. All licenses must be claimed with the same mode, and at most one renewal
-          can be claimed at a time. Does not apply to organizations using per-device licensing model.
+        description: Co-term licensing only either 'renew' or 'addDevices'. 'addDevices'
+          will increase the license limit, while 'renew' will extend the amount of
+          time until expiration. Defaults to 'addDevices'. All licenses must be claimed
+          with the same mode, and at most one renewal can be claimed at a time. Does
+          not apply to organizations using per-device licensing model.
         type: str
     type: list
   orders:
@@ -94,17 +100,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "licenses": [
-        {
-          "key": "string",
-          "mode": "string"
-        }
-      ],
       "orders": [
         "string"
       ],
       "serials": [
         "string"
+      ],
+      "licenses": [
+        {
+          "key": "string",
+          "mode": "string"
+        }
       ]
     }
 """

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,18 +31,17 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    maxJitter=dict(type="int"),
-    maxLatency=dict(type="int"),
-    maxLossPercentage=dict(type="int"),
     name=dict(type="str"),
+    maxLatency=dict(type="int"),
+    maxJitter=dict(type="int"),
+    maxLossPercentage=dict(type="int"),
     networkId=dict(type="str"),
     customPerformanceClassId=dict(type="str"),
 ))
 
 required_if = [
     ("state", "present", [
-     "customPerformanceClassId", "name", "networkId"], True),
-]
+        "customPerformanceClassId", "name", "networkId"], True), ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
@@ -53,48 +51,56 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            maxJitter=params.get("maxJitter"),
-            maxLatency=params.get("maxLatency"),
-            maxLossPercentage=params.get("maxLossPercentage"),
             name=params.get("name"),
+            maxLatency=params.get("maxLatency"),
+            maxJitter=params.get("maxJitter"),
+            maxLossPercentage=params.get("maxLossPercentage"),
             network_id=params.get("networkId"),
             custom_performance_class_id=params.get("customPerformanceClassId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('customPerformanceClassId') is not None or self.new_object.get('custom_performance_class_id') is not None:
-            new_object_params['customPerformanceClassId'] = self.new_object.get('customPerformanceClassId') or \
-                self.new_object.get('custom_performance_class_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('customPerformanceClassId') is not None or self.new_object.get(
+                'custom_performance_class_id') is not None:
+            new_object_params['customPerformanceClassId'] = self.new_object.get(
+                'customPerformanceClassId') or self.new_object.get('custom_performance_class_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('maxJitter') is not None or self.new_object.get('max_jitter') is not None:
-            new_object_params['maxJitter'] = self.new_object.get('maxJitter') or \
-                self.new_object.get('max_jitter')
-        if self.new_object.get('maxLatency') is not None or self.new_object.get('max_latency') is not None:
-            new_object_params['maxLatency'] = self.new_object.get('maxLatency') or \
-                self.new_object.get('max_latency')
-        if self.new_object.get('maxLossPercentage') is not None or self.new_object.get('max_loss_percentage') is not None:
-            new_object_params['maxLossPercentage'] = self.new_object.get('maxLossPercentage') or \
-                self.new_object.get('max_loss_percentage')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('maxLatency') is not None or self.new_object.get(
+                'max_latency') is not None:
+            new_object_params['maxLatency'] = self.new_object.get(
+                'maxLatency') or self.new_object.get('max_latency')
+        if self.new_object.get('maxJitter') is not None or self.new_object.get(
+                'max_jitter') is not None:
+            new_object_params['maxJitter'] = self.new_object.get(
+                'maxJitter') or self.new_object.get('max_jitter')
+        if self.new_object.get('maxLossPercentage') is not None or self.new_object.get(
+                'max_loss_percentage') is not None:
+            new_object_params['maxLossPercentage'] = self.new_object.get(
+                'maxLossPercentage') or self.new_object.get('max_loss_percentage')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -104,7 +110,8 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
             items = self.meraki.exec_meraki(
                 family="appliance",
                 function="getNetworkApplianceTrafficShapingCustomPerformanceClasses",
-                params=self.get_all_params(name=name),
+                params=self.get_all_params(
+                    name=name),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -123,8 +130,7 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
             items = self.meraki.exec_meraki(
                 family="appliance",
                 function="getNetworkApplianceTrafficShapingCustomPerformanceClass",
-                params=self.get_params_by_id()
-            )
+                params=self.get_params_by_id())
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
@@ -167,18 +173,21 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("maxJitter", "maxJitter"),
-            ("maxLatency", "maxLatency"),
-            ("maxLossPercentage", "maxLossPercentage"),
             ("name", "name"),
+            ("maxLatency", "maxLatency"),
+            ("maxJitter", "maxJitter"),
+            ("maxLossPercentage", "maxLossPercentage"),
             ("networkId", "networkId"),
             ("customPerformanceClassId", "customPerformanceClassId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

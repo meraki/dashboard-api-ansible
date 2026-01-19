@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_alternate_management_interface_info
-short_description: Information module for networks _switch _alternate _management _interface
+short_description: Information module for networks _switch _alternatemanagementinterface
 description:
-  - Get all networks _switch _alternate _management _interface.
+  - Information module for Networks Switch Alternatemanagementinterface Info.
+  - Get all networks _switch _alternatemanagementinterface.
   - Return the switch alternate management interface for the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Alternatemanagementinterface Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch getNetworkSwitchAlternateManagementInterface
-    description: Complete reference of the getNetworkSwitchAlternateManagementInterface API.
+    description: Complete reference of the getNetworkSwitchAlternateManagementInterface
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-alternate-management-interface
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _alternate _management _interface
+- name: Get all networks _switch _alternatemanagementinterface
   cisco.meraki.networks_switch_alternate_management_interface_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -71,17 +74,17 @@ meraki_response:
   sample: >
     {
       "enabled": true,
+      "vlanId": 0,
       "protocols": [
         "string"
       ],
       "switches": [
         {
-          "alternateManagementIp": "string",
-          "gateway": "string",
           "serial": "string",
-          "subnetMask": "string"
+          "alternateManagementIp": "string",
+          "subnetMask": "string",
+          "gateway": "string"
         }
-      ],
-      "vlanId": 0
+      ]
     }
 """

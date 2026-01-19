@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_acls_info
-short_description: Information module for organizations _adaptive _policy _acls
+short_description: Information module for organizations _adaptivepolicy _acls
 description:
-  - Get all organizations _adaptive _policy _acls.
-  - Get organizations _adaptive _policy _acls by id.
+  - Information module for Organizations Adaptivepolicy Acls Info.
+  - Get all organizations _adaptivepolicy _acls.
+  - Get organizations _adaptivepolicy _acls by id.
   - List adaptive policy ACLs in a organization.
   - Returns the adaptive policy ACL information.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Adaptivepolicy Acls Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   aclId:
     description:
+      - Information module for Organizations Adaptivepolicy Acls Info.
       - AclId path parameter. Acl ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptive _policy _acls
+- name: Get all organizations _adaptivepolicy _acls
   cisco.meraki.organizations_adaptive_policy_acls_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _adaptive _policy _acls by id
+- name: Get organizations _adaptivepolicy _acls by id
   cisco.meraki.organizations_adaptive_policy_acls_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -108,20 +111,20 @@ meraki_response:
   sample: >
     {
       "aclId": "string",
-      "createdAt": "string",
+      "name": "string",
       "description": "string",
       "ipVersion": "string",
-      "name": "string",
       "rules": [
         {
-          "dstPort": "string",
-          "log": true,
           "policy": "string",
           "protocol": "string",
           "srcPort": "string",
+          "dstPort": "string",
+          "log": true,
           "tcpEstablished": true
         }
       ],
+      "createdAt": "string",
       "updatedAt": "string"
     }
 """

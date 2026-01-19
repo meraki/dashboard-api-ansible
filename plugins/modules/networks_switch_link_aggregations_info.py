@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_link_aggregations_info
-short_description: Information module for networks _switch _link _aggregations
+short_description: Information module for networks _switch _linkaggregations
 description:
-  - Get all networks _switch _link _aggregations.
+  - Information module for Networks Switch Linkaggregations Info.
+  - Get all networks _switch _linkaggregations.
   - List link aggregation groups.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Linkaggregations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _link _aggregations
+- name: Get all networks _switch _linkaggregations
   cisco.meraki.networks_switch_link_aggregations_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -75,8 +77,8 @@ meraki_response:
         "id": "string",
         "switchPorts": [
           {
-            "portId": "string",
-            "serial": "string"
+            "serial": "string",
+            "portId": "string"
           }
         ]
       }

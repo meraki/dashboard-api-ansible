@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_assurance_alerts_overview_historical_info
-short_description: Information module for organizations _assurance _alerts _overview _historical
+short_description: Information module for organizations _assurance _alerts _overview
+  _historical
 description:
+  - Information module for Organizations Assurance Alerts Overview Historical Info.
   - Get all organizations _assurance _alerts _overview _historical.
   - Returns historical health alert overviews.
 version_added: '1.0.0'
@@ -20,44 +22,59 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   segmentDuration:
     description:
-      - SegmentDuration query parameter. Amount of time in seconds for each segment in the returned dataset.
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
+      - SegmentDuration query parameter. Amount of time in seconds for each segment
+        in the returned dataset.
     type: int
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
+      - NetworkId query parameter. Optional parameter to filter alerts overview by
+        network ids.
     type: str
   severity:
     description:
-      - Severity query parameter. Optional parameter to filter alerts overview by severity type.
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
+      - Severity query parameter. Optional parameter to filter alerts overview by
+        severity type.
     type: str
   types:
     description:
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
-      - TsStart query parameter. Parameter to define starting timestamp of historical totals.
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
+      - TsStart query parameter. Parameter to define starting timestamp of historical
+        totals.
     type: str
   tsEnd:
     description:
-      - TsEnd query parameter. Optional parameter to filter by end timestamp defaults to the current time.
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
+      - TsEnd query parameter. Optional parameter to filter by end timestamp defaults
+        to the current time.
     type: str
   category:
     description:
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   serials:
     description:
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
+      - Information module for Organizations Assurance Alerts Overview Historical Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
@@ -66,7 +83,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlertsOverviewHistorical
-    description: Complete reference of the getOrganizationAssuranceAlertsOverviewHistorical API.
+    description: Complete reference of the getOrganizationAssuranceAlertsOverviewHistorical
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts-overview-historical
 notes:
   - SDK Method used are
@@ -120,20 +138,20 @@ meraki_response:
     {
       "items": [
         {
-          "byAlertType": [
-            {
-              "critical": 0,
-              "informational": 0,
-              "type": "string",
-              "warning": 0
-            }
-          ],
           "segmentStart": "string",
           "totals": {
-            "critical": 0,
             "informational": 0,
-            "warning": 0
-          }
+            "warning": 0,
+            "critical": 0
+          },
+          "byAlertType": [
+            {
+              "type": "string",
+              "informational": 0,
+              "warning": 0,
+              "critical": 0
+            }
+          ]
         }
       ],
       "meta": {

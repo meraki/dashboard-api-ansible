@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_management_interface_info
-short_description: Information module for devices _management _interface
+short_description: Information module for devices _managementinterface
 description:
-  - Get all devices _management _interface.
+  - Information module for Devices Managementinterface Info.
+  - Get all devices _managementinterface.
   - Return the management interface settings for a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Managementinterface Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _management _interface
+- name: Get all devices _managementinterface
   cisco.meraki.devices_management_interface_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -76,26 +78,32 @@ meraki_response:
         "ddnsHostnameWan2": "string"
       },
       "wan1": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
         "staticDns": [
           "string"
         ],
-        "staticGatewayIp": "string",
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "usingStaticIp": true,
         "vlan": 0,
-        "wanEnabled": "string"
+        "vrf": {
+          "name": "string"
+        }
       },
       "wan2": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
         "staticDns": [
           "string"
         ],
-        "staticGatewayIp": "string",
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "usingStaticIp": true,
         "vlan": 0,
-        "wanEnabled": "string"
+        "vrf": {
+          "name": "string"
+        }
       }
     }
 """

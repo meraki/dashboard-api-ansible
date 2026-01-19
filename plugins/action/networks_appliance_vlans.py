@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,29 +31,29 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    applianceIp=dict(type="str"),
-    cidr=dict(type="str"),
-    dhcpBootOptionsEnabled=dict(type="bool"),
-    dhcpHandling=dict(type="str"),
-    dhcpLeaseTime=dict(type="str"),
-    dhcpOptions=dict(type="list"),
-    groupPolicyId=dict(type="str"),
     id=dict(type="str"),
-    ipv6=dict(type="dict"),
-    mandatoryDhcp=dict(type="dict"),
-    mask=dict(type="int"),
     name=dict(type="str"),
     subnet=dict(type="str"),
+    applianceIp=dict(type="str"),
+    groupPolicyId=dict(type="str"),
     templateVlanType=dict(type="str"),
+    cidr=dict(type="str"),
+    mask=dict(type="int"),
+    ipv6=dict(type="dict"),
+    dhcpHandling=dict(type="str"),
+    dhcpRelayServerIps=dict(type="list"),
+    dhcpLeaseTime=dict(type="str"),
+    mandatoryDhcp=dict(type="dict"),
+    dhcpBootOptionsEnabled=dict(type="bool"),
+    dhcpBootNextServer=dict(type="str"),
+    dhcpBootFilename=dict(type="str"),
+    dhcpOptions=dict(type="list"),
     networkId=dict(type="str"),
     vlanId=dict(type="str"),
-    dhcpBootFilename=dict(type="str"),
-    dhcpBootNextServer=dict(type="str"),
-    dhcpRelayServerIps=dict(type="list"),
-    dnsNameservers=dict(type="str"),
+    vpnNatSubnet=dict(type="str"),
     fixedIpAssignments=dict(type="dict"),
     reservedIpRanges=dict(type="list"),
-    vpnNatSubnet=dict(type="str"),
+    dnsNameservers=dict(type="str"),
 ))
 
 required_if = [
@@ -70,178 +69,229 @@ class NetworksApplianceVlans(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            applianceIp=params.get("applianceIp"),
-            cidr=params.get("cidr"),
-            dhcpBootOptionsEnabled=params.get("dhcpBootOptionsEnabled"),
-            dhcpHandling=params.get("dhcpHandling"),
-            dhcpLeaseTime=params.get("dhcpLeaseTime"),
-            dhcpOptions=params.get("dhcpOptions"),
-            groupPolicyId=params.get("groupPolicyId"),
             id=params.get("id"),
-            ipv6=params.get("ipv6"),
-            mandatoryDhcp=params.get("mandatoryDhcp"),
-            mask=params.get("mask"),
             name=params.get("name"),
             subnet=params.get("subnet"),
+            applianceIp=params.get("applianceIp"),
+            groupPolicyId=params.get("groupPolicyId"),
             templateVlanType=params.get("templateVlanType"),
+            cidr=params.get("cidr"),
+            mask=params.get("mask"),
+            ipv6=params.get("ipv6"),
+            dhcpHandling=params.get("dhcpHandling"),
+            dhcpRelayServerIps=params.get("dhcpRelayServerIps"),
+            dhcpLeaseTime=params.get("dhcpLeaseTime"),
+            mandatoryDhcp=params.get("mandatoryDhcp"),
+            dhcpBootOptionsEnabled=params.get("dhcpBootOptionsEnabled"),
+            dhcpBootNextServer=params.get("dhcpBootNextServer"),
+            dhcpBootFilename=params.get("dhcpBootFilename"),
+            dhcpOptions=params.get("dhcpOptions"),
             networkId=params.get("networkId"),
             vlanId=params.get("vlanId"),
-            dhcpBootFilename=params.get("dhcpBootFilename"),
-            dhcpBootNextServer=params.get("dhcpBootNextServer"),
-            dhcpRelayServerIps=params.get("dhcpRelayServerIps"),
-            dnsNameservers=params.get("dnsNameservers"),
+            vpnNatSubnet=params.get("vpnNatSubnet"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
             reservedIpRanges=params.get("reservedIpRanges"),
-            vpnNatSubnet=params.get("vpnNatSubnet"),
+            dnsNameservers=params.get("dnsNameservers"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
-                self.new_object.get('id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('id') or \
-                self.new_object.get('id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get(
+                'vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('applianceIp') is not None or self.new_object.get('appliance_ip') is not None:
-            new_object_params['applianceIp'] = self.new_object.get('applianceIp') or \
-                self.new_object.get('appliance_ip')
-        if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
-            new_object_params['cidr'] = self.new_object.get('cidr') or \
-                self.new_object.get('cidr')
-        if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
-                'dhcpBootOptionsEnabled')
-        if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
-            new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
-                self.new_object.get('dhcp_handling')
-        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
-            new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
-                self.new_object.get('dhcp_lease_time')
-        if self.new_object.get('dhcpOptions') is not None or self.new_object.get('dhcp_options') is not None:
-            new_object_params['dhcpOptions'] = self.new_object.get('dhcpOptions') or \
-                self.new_object.get('dhcp_options')
-        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
-            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
-                self.new_object.get('group_policy_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
-        if self.new_object.get('ipv6') is not None or self.new_object.get('ipv6') is not None:
-            new_object_params['ipv6'] = self.new_object.get('ipv6') or \
-                self.new_object.get('ipv6')
-        if self.new_object.get('mandatoryDhcp') is not None or self.new_object.get('mandatory_dhcp') is not None:
-            new_object_params['mandatoryDhcp'] = self.new_object.get('mandatoryDhcp') or \
-                self.new_object.get('mandatory_dhcp')
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
-            new_object_params['mask'] = self.new_object.get('mask') or \
-                self.new_object.get('mask')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+        if self.new_object.get('subnet') is not None or self.new_object.get(
+                'subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')
-        if self.new_object.get('templateVlanType') is not None or self.new_object.get('template_vlan_type') is not None:
-            new_object_params['templateVlanType'] = self.new_object.get('templateVlanType') or \
-                self.new_object.get('template_vlan_type')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('applianceIp') is not None or self.new_object.get(
+                'appliance_ip') is not None:
+            new_object_params['applianceIp'] = self.new_object.get(
+                'applianceIp') or self.new_object.get('appliance_ip')
+        if self.new_object.get('groupPolicyId') is not None or self.new_object.get(
+                'group_policy_id') is not None:
+            new_object_params['groupPolicyId'] = self.new_object.get(
+                'groupPolicyId') or self.new_object.get('group_policy_id')
+        if self.new_object.get('templateVlanType') is not None or self.new_object.get(
+                'template_vlan_type') is not None:
+            new_object_params['templateVlanType'] = self.new_object.get(
+                'templateVlanType') or self.new_object.get('template_vlan_type')
+        if self.new_object.get('cidr') is not None or self.new_object.get(
+                'cidr') is not None:
+            new_object_params['cidr'] = self.new_object.get('cidr') or \
+                self.new_object.get('cidr')
+        if self.new_object.get('mask') is not None or self.new_object.get(
+                'mask') is not None:
+            new_object_params['mask'] = self.new_object.get('mask') or \
+                self.new_object.get('mask')
+        if self.new_object.get('ipv6') is not None or self.new_object.get(
+                'ipv6') is not None:
+            new_object_params['ipv6'] = self.new_object.get('ipv6') or \
+                self.new_object.get('ipv6')
+        if self.new_object.get('dhcpHandling') is not None or self.new_object.get(
+                'dhcp_handling') is not None:
+            new_object_params['dhcpHandling'] = self.new_object.get(
+                'dhcpHandling') or self.new_object.get('dhcp_handling')
+        if self.new_object.get('dhcpRelayServerIps') is not None or self.new_object.get(
+                'dhcp_relay_server_ips') is not None:
+            new_object_params['dhcpRelayServerIps'] = self.new_object.get(
+                'dhcpRelayServerIps') or self.new_object.get('dhcp_relay_server_ips')
+        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get(
+                'dhcp_lease_time') is not None:
+            new_object_params['dhcpLeaseTime'] = self.new_object.get(
+                'dhcpLeaseTime') or self.new_object.get('dhcp_lease_time')
+        if self.new_object.get('mandatoryDhcp') is not None or self.new_object.get(
+                'mandatory_dhcp') is not None:
+            new_object_params['mandatoryDhcp'] = self.new_object.get(
+                'mandatoryDhcp') or self.new_object.get('mandatory_dhcp')
+        if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get(
+                'dhcp_boot_options_enabled') is not None:
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
+                'dhcpBootOptionsEnabled')
+        if self.new_object.get('dhcpBootNextServer') is not None or self.new_object.get(
+                'dhcp_boot_next_server') is not None:
+            new_object_params['dhcpBootNextServer'] = self.new_object.get(
+                'dhcpBootNextServer') or self.new_object.get('dhcp_boot_next_server')
+        if self.new_object.get('dhcpBootFilename') is not None or self.new_object.get(
+                'dhcp_boot_filename') is not None:
+            new_object_params['dhcpBootFilename'] = self.new_object.get(
+                'dhcpBootFilename') or self.new_object.get('dhcp_boot_filename')
+        if self.new_object.get('dhcpOptions') is not None or self.new_object.get(
+                'dhcp_options') is not None:
+            new_object_params['dhcpOptions'] = self.new_object.get(
+                'dhcpOptions') or self.new_object.get('dhcp_options')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
-                self.new_object.get('id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('id') or \
-                self.new_object.get('id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get(
+                'vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('applianceIp') is not None or self.new_object.get('appliance_ip') is not None:
-            new_object_params['applianceIp'] = self.new_object.get('applianceIp') or \
-                self.new_object.get('appliance_ip')
-        if self.new_object.get('cidr') is not None or self.new_object.get('cidr') is not None:
-            new_object_params['cidr'] = self.new_object.get('cidr') or \
-                self.new_object.get('cidr')
-        if self.new_object.get('dhcpBootFilename') is not None or self.new_object.get('dhcp_boot_filename') is not None:
-            new_object_params['dhcpBootFilename'] = self.new_object.get('dhcpBootFilename') or \
-                self.new_object.get('dhcp_boot_filename')
-        if self.new_object.get('dhcpBootNextServer') is not None or self.new_object.get('dhcp_boot_next_server') is not None:
-            new_object_params['dhcpBootNextServer'] = self.new_object.get('dhcpBootNextServer') or \
-                self.new_object.get('dhcp_boot_next_server')
-        if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get('dhcp_boot_options_enabled') is not None:
-            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
-                'dhcpBootOptionsEnabled')
-        if self.new_object.get('dhcpHandling') is not None or self.new_object.get('dhcp_handling') is not None:
-            new_object_params['dhcpHandling'] = self.new_object.get('dhcpHandling') or \
-                self.new_object.get('dhcp_handling')
-        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get('dhcp_lease_time') is not None:
-            new_object_params['dhcpLeaseTime'] = self.new_object.get('dhcpLeaseTime') or \
-                self.new_object.get('dhcp_lease_time')
-        if self.new_object.get('dhcpOptions') is not None or self.new_object.get('dhcp_options') is not None:
-            new_object_params['dhcpOptions'] = self.new_object.get('dhcpOptions') or \
-                self.new_object.get('dhcp_options')
-        if self.new_object.get('dhcpRelayServerIps') is not None or self.new_object.get('dhcp_relay_server_ips') is not None:
-            new_object_params['dhcpRelayServerIps'] = self.new_object.get('dhcpRelayServerIps') or \
-                self.new_object.get('dhcp_relay_server_ips')
-        if self.new_object.get('dnsNameservers') is not None or self.new_object.get('dns_nameservers') is not None:
-            new_object_params['dnsNameservers'] = self.new_object.get('dnsNameservers') or \
-                self.new_object.get('dns_nameservers')
-        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get('fixed_ip_assignments') is not None:
-            new_object_params['fixedIpAssignments'] = self.new_object.get('fixedIpAssignments') or \
-                self.new_object.get('fixed_ip_assignments')
-        if self.new_object.get('groupPolicyId') is not None or self.new_object.get('group_policy_id') is not None:
-            new_object_params['groupPolicyId'] = self.new_object.get('groupPolicyId') or \
-                self.new_object.get('group_policy_id')
-        if self.new_object.get('ipv6') is not None or self.new_object.get('ipv6') is not None:
-            new_object_params['ipv6'] = self.new_object.get('ipv6') or \
-                self.new_object.get('ipv6')
-        if self.new_object.get('mandatoryDhcp') is not None or self.new_object.get('mandatory_dhcp') is not None:
-            new_object_params['mandatoryDhcp'] = self.new_object.get('mandatoryDhcp') or \
-                self.new_object.get('mandatory_dhcp')
-        if self.new_object.get('mask') is not None or self.new_object.get('mask') is not None:
-            new_object_params['mask'] = self.new_object.get('mask') or \
-                self.new_object.get('mask')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get('reserved_ip_ranges') is not None:
-            new_object_params['reservedIpRanges'] = self.new_object.get('reservedIpRanges') or \
-                self.new_object.get('reserved_ip_ranges')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+        if self.new_object.get('subnet') is not None or self.new_object.get(
+                'subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')
-        if self.new_object.get('templateVlanType') is not None or self.new_object.get('template_vlan_type') is not None:
-            new_object_params['templateVlanType'] = self.new_object.get('templateVlanType') or \
-                self.new_object.get('template_vlan_type')
-        if self.new_object.get('vpnNatSubnet') is not None or self.new_object.get('vpn_nat_subnet') is not None:
-            new_object_params['vpnNatSubnet'] = self.new_object.get('vpnNatSubnet') or \
-                self.new_object.get('vpn_nat_subnet')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None or \
-                self.new_object.get('id') is not None:
-            new_object_params['vlanId'] = self.new_object.get('id') or \
-                self.new_object.get('id')
+        if self.new_object.get('applianceIp') is not None or self.new_object.get(
+                'appliance_ip') is not None:
+            new_object_params['applianceIp'] = self.new_object.get(
+                'applianceIp') or self.new_object.get('appliance_ip')
+        if self.new_object.get('groupPolicyId') is not None or self.new_object.get(
+                'group_policy_id') is not None:
+            new_object_params['groupPolicyId'] = self.new_object.get(
+                'groupPolicyId') or self.new_object.get('group_policy_id')
+        if self.new_object.get('vpnNatSubnet') is not None or self.new_object.get(
+                'vpn_nat_subnet') is not None:
+            new_object_params['vpnNatSubnet'] = self.new_object.get(
+                'vpnNatSubnet') or self.new_object.get('vpn_nat_subnet')
+        if self.new_object.get('dhcpHandling') is not None or self.new_object.get(
+                'dhcp_handling') is not None:
+            new_object_params['dhcpHandling'] = self.new_object.get(
+                'dhcpHandling') or self.new_object.get('dhcp_handling')
+        if self.new_object.get('dhcpRelayServerIps') is not None or self.new_object.get(
+                'dhcp_relay_server_ips') is not None:
+            new_object_params['dhcpRelayServerIps'] = self.new_object.get(
+                'dhcpRelayServerIps') or self.new_object.get('dhcp_relay_server_ips')
+        if self.new_object.get('dhcpLeaseTime') is not None or self.new_object.get(
+                'dhcp_lease_time') is not None:
+            new_object_params['dhcpLeaseTime'] = self.new_object.get(
+                'dhcpLeaseTime') or self.new_object.get('dhcp_lease_time')
+        if self.new_object.get('dhcpBootOptionsEnabled') is not None or self.new_object.get(
+                'dhcp_boot_options_enabled') is not None:
+            new_object_params['dhcpBootOptionsEnabled'] = self.new_object.get(
+                'dhcpBootOptionsEnabled')
+        if self.new_object.get('dhcpBootNextServer') is not None or self.new_object.get(
+                'dhcp_boot_next_server') is not None:
+            new_object_params['dhcpBootNextServer'] = self.new_object.get(
+                'dhcpBootNextServer') or self.new_object.get('dhcp_boot_next_server')
+        if self.new_object.get('dhcpBootFilename') is not None or self.new_object.get(
+                'dhcp_boot_filename') is not None:
+            new_object_params['dhcpBootFilename'] = self.new_object.get(
+                'dhcpBootFilename') or self.new_object.get('dhcp_boot_filename')
+        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get(
+                'fixed_ip_assignments') is not None:
+            new_object_params['fixedIpAssignments'] = self.new_object.get(
+                'fixedIpAssignments') or self.new_object.get('fixed_ip_assignments')
+        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get(
+                'reserved_ip_ranges') is not None:
+            new_object_params['reservedIpRanges'] = self.new_object.get(
+                'reservedIpRanges') or self.new_object.get('reserved_ip_ranges')
+        if self.new_object.get('dnsNameservers') is not None or self.new_object.get(
+                'dns_nameservers') is not None:
+            new_object_params['dnsNameservers'] = self.new_object.get(
+                'dnsNameservers') or self.new_object.get('dns_nameservers')
+        if self.new_object.get('dhcpOptions') is not None or self.new_object.get(
+                'dhcp_options') is not None:
+            new_object_params['dhcpOptions'] = self.new_object.get(
+                'dhcpOptions') or self.new_object.get('dhcp_options')
+        if self.new_object.get('templateVlanType') is not None or self.new_object.get(
+                'template_vlan_type') is not None:
+            new_object_params['templateVlanType'] = self.new_object.get(
+                'templateVlanType') or self.new_object.get('template_vlan_type')
+        if self.new_object.get('cidr') is not None or self.new_object.get(
+                'cidr') is not None:
+            new_object_params['cidr'] = self.new_object.get('cidr') or \
+                self.new_object.get('cidr')
+        if self.new_object.get('mask') is not None or self.new_object.get(
+                'mask') is not None:
+            new_object_params['mask'] = self.new_object.get('mask') or \
+                self.new_object.get('mask')
+        if self.new_object.get('ipv6') is not None or self.new_object.get(
+                'ipv6') is not None:
+            new_object_params['ipv6'] = self.new_object.get('ipv6') or \
+                self.new_object.get('ipv6')
+        if self.new_object.get('mandatoryDhcp') is not None or self.new_object.get(
+                'mandatory_dhcp') is not None:
+            new_object_params['mandatoryDhcp'] = self.new_object.get(
+                'mandatoryDhcp') or self.new_object.get('mandatory_dhcp')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('vlanId') is not None or self.new_object.get(
+                'vlan_id') is not None:
+            new_object_params['vlanId'] = self.new_object.get('vlanId') or \
+                self.new_object.get('vlan_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -288,7 +338,7 @@ class NetworksApplianceVlans(object):
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "vlan_id") or self.new_object.get("vlanId")
-        name = None
+        name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -313,35 +363,38 @@ class NetworksApplianceVlans(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("applianceIp", "applianceIp"),
-            ("cidr", "cidr"),
-            ("dhcpBootOptionsEnabled", "dhcpBootOptionsEnabled"),
-            ("dhcpHandling", "dhcpHandling"),
-            ("dhcpLeaseTime", "dhcpLeaseTime"),
-            ("dhcpOptions", "dhcpOptions"),
-            ("groupPolicyId", "groupPolicyId"),
             ("id", "id"),
-            ("ipv6", "ipv6"),
-            ("mandatoryDhcp", "mandatoryDhcp"),
-            ("mask", "mask"),
             ("name", "name"),
             ("subnet", "subnet"),
+            ("applianceIp", "applianceIp"),
+            ("groupPolicyId", "groupPolicyId"),
             ("templateVlanType", "templateVlanType"),
+            ("cidr", "cidr"),
+            ("mask", "mask"),
+            ("ipv6", "ipv6"),
+            ("dhcpHandling", "dhcpHandling"),
+            ("dhcpRelayServerIps", "dhcpRelayServerIps"),
+            ("dhcpLeaseTime", "dhcpLeaseTime"),
+            ("mandatoryDhcp", "mandatoryDhcp"),
+            ("dhcpBootOptionsEnabled", "dhcpBootOptionsEnabled"),
+            ("dhcpBootNextServer", "dhcpBootNextServer"),
+            ("dhcpBootFilename", "dhcpBootFilename"),
+            ("dhcpOptions", "dhcpOptions"),
             ("networkId", "networkId"),
             ("vlanId", "vlanId"),
-            ("dhcpBootFilename", "dhcpBootFilename"),
-            ("dhcpBootNextServer", "dhcpBootNextServer"),
-            ("dhcpRelayServerIps", "dhcpRelayServerIps"),
-            ("dnsNameservers", "dnsNameservers"),
+            ("vpnNatSubnet", "vpnNatSubnet"),
             ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),
-            ("vpnNatSubnet", "vpnNatSubnet"),
+            ("dnsNameservers", "dnsNameservers"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -56,18 +55,22 @@ class DevicesSwitchWarmSpare(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('spareSerial') is not None or self.new_object.get('spare_serial') is not None:
-            new_object_params['spareSerial'] = self.new_object.get('spareSerial') or \
-                self.new_object.get('spare_serial')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('spareSerial') is not None or self.new_object.get(
+                'spare_serial') is not None:
+            new_object_params['spareSerial'] = self.new_object.get(
+                'spareSerial') or self.new_object.get('spare_serial')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -129,9 +132,12 @@ class DevicesSwitchWarmSpare(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

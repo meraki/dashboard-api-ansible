@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info
-short_description: Information module for organizations _appliance _traffic _shaping _vpn _exclusions _by _network
+short_description: Information module for organizations _appliance _trafficshaping
+  _vpnexclusions _bynetwork
 description:
-  - Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network.
+  - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
+  - Get all organizations _appliance _trafficshaping _vpnexclusions _bynetwork.
   - Display VPN exclusion rules for MX networks.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,29 +23,40 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the results by network IDs.
+      - Information module for Organizations Appliance Trafficshaping Vpnexclusions Bynetwork Info.
+      - NetworkIds query parameter. Optional parameter to filter the results by network
+        IDs.
     elements: str
     type: list
 requirements:
@@ -51,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork
-    description: Complete reference of the getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork API.
+    description: Complete reference of the getOrganizationApplianceTrafficShapingVpnExclusionsByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-traffic-shaping-vpn-exclusions-by-network
 notes:
   - SDK Method used are
@@ -61,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _traffic _shaping _vpn _exclusions _by _network
+- name: Get all organizations _appliance _trafficshaping _vpnexclusions _bynetwork
   cisco.meraki.organizations_appliance_traffic_shaping_vpn_exclusions_by_network_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -102,11 +116,13 @@ meraki_response:
   sample: >
     [
       {
+        "networkId": "string",
+        "networkName": "string",
         "custom": [
           {
+            "protocol": "string",
             "destination": "string",
-            "port": "string",
-            "protocol": "string"
+            "port": "string"
           }
         ],
         "majorApplications": [
@@ -114,9 +130,7 @@ meraki_response:
             "id": "string",
             "name": "string"
           }
-        ],
-        "networkId": "string",
-        "networkName": "string"
+        ]
       }
     ]
 """

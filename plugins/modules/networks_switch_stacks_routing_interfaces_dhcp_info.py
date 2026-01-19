@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces_dhcp_info
-short_description: Information module for networks _switch _stacks _routing _interfaces _dhcp
+short_description: Information module for networks _switch _stacks _routing _interfaces
+  _dhcp
 description:
+  - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
   - Get all networks _switch _stacks _routing _interfaces _dhcp.
   - Return a layer 3 interface DHCP configuration for a switch stack.
 version_added: '1.0.0'
@@ -20,14 +22,17 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - SwitchStackId path parameter. Switch stack ID.
     type: str
   interfaceId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Dhcp Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:
@@ -35,7 +40,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterfaceDhcp
-    description: Complete reference of the getNetworkSwitchStackRoutingInterfaceDhcp API.
+    description: Complete reference of the getNetworkSwitchStackRoutingInterfaceDhcp
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interface-dhcp
 notes:
   - SDK Method used are
@@ -80,11 +86,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "bootFileName": "string",
-      "bootNextServer": "string",
-      "bootOptionsEnabled": true,
-      "dhcpLeaseTime": "string",
       "dhcpMode": "string",
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dhcpLeaseTime": "string",
+      "dnsNameserversOption": "string",
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "bootOptionsEnabled": true,
+      "bootNextServer": "string",
+      "bootFileName": "string",
       "dhcpOptions": [
         {
           "code": "string",
@@ -92,25 +105,18 @@ meraki_response:
           "value": "string"
         }
       ],
-      "dhcpRelayServerIps": [
-        "string"
-      ],
-      "dnsCustomNameservers": [
-        "string"
-      ],
-      "dnsNameserversOption": "string",
-      "fixedIpAssignments": [
-        {
-          "ip": "string",
-          "mac": "string",
-          "name": "string"
-        }
-      ],
       "reservedIpRanges": [
         {
-          "comment": "string",
+          "start": "string",
           "end": "string",
-          "start": "string"
+          "comment": "string"
+        }
+      ],
+      "fixedIpAssignments": [
+        {
+          "name": "string",
+          "mac": "string",
+          "ip": "string"
         }
       ]
     }

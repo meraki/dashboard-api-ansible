@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_defer
-short_description: Resource module for networks _firmware _upgrades _staged _events _defer
+short_description: Resource module for networks _firmwareupgrades _staged _events
+  _defer
 description:
-  - Manage operation create of the resource networks _firmware _upgrades _staged _events _defer.
+  - Manage operation create of the resource networks _firmwareupgrades _staged _events
+    _defer.
   - Postpone by 1 week all pending staged upgrade stages for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,7 +25,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks deferNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents API.
+    description: Complete reference of the deferNetworkFirmwareUpgradesStagedEvents
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!defer-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
@@ -75,26 +78,26 @@ meraki_response:
           }
         }
       },
+      "stages": [
+        {
+          "group": {
+            "id": "string",
+            "name": "string",
+            "description": "string"
+          },
+          "milestones": {
+            "scheduledFor": "string",
+            "startedAt": "string",
+            "completedAt": "string",
+            "canceledAt": "string"
+          },
+          "status": "string"
+        }
+      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
-        }
-      ],
-      "stages": [
-        {
-          "group": {
-            "description": "string",
-            "id": "string",
-            "name": "string"
-          },
-          "milestones": {
-            "canceledAt": "string",
-            "completedAt": "string",
-            "scheduledFor": "string",
-            "startedAt": "string"
-          },
-          "status": "string"
         }
       ]
     }

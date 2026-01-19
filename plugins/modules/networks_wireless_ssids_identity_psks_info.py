@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_identity_psks_info
-short_description: Information module for networks _wireless _ssids _identity _psks
+short_description: Information module for networks _wireless _ssids _identitypsks
 description:
-  - Get all networks _wireless _ssids _identity _psks.
-  - Get networks _wireless _ssids _identity _psks by id.
+  - Information module for Networks Wireless Ssids Identitypsks Info.
+  - Get all networks _wireless _ssids _identitypsks.
+  - Get networks _wireless _ssids _identitypsks by id.
   - List all Identity PSKs in a wireless network.
   - Return an Identity PSK.
 version_added: '1.0.0'
@@ -22,14 +23,17 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - Number path parameter.
     type: str
   identityPskId:
     description:
+      - Information module for Networks Wireless Ssids Identitypsks Info.
       - IdentityPskId path parameter. Identity psk ID.
     type: str
 requirements:
@@ -52,7 +56,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _identity _psks
+- name: Get all networks _wireless _ssids _identitypsks
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,7 +82,7 @@ EXAMPLES = r"""
     networkId: string
     number: string
   register: result
-- name: Get networks _wireless _ssids _identity _psks by id
+- name: Get networks _wireless _ssids _identitypsks by id
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -113,12 +117,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "email": "string",
-      "expiresAt": "string",
-      "groupPolicyId": "string",
-      "id": "string",
       "name": "string",
+      "id": "string",
+      "groupPolicyId": "string",
       "passphrase": "string",
-      "wifiPersonalNetworkId": "string"
+      "wifiPersonalNetworkId": "string",
+      "email": "string",
+      "expiresAt": {}
     }
 """

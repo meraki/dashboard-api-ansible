@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_storm_control_info
-short_description: Information module for networks _switch _storm _control
+short_description: Information module for networks _switch _stormcontrol
 description:
-  - Get all networks _switch _storm _control.
+  - Information module for Networks Switch Stormcontrol Info.
+  - Get all networks _switch _stormcontrol.
   - Return the storm control configuration for a switch network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Stormcontrol Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _storm _control
+- name: Get all networks _switch _stormcontrol
   cisco.meraki.networks_switch_storm_control_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,9 +74,9 @@ meraki_response:
     {
       "broadcastThreshold": 0,
       "multicastThreshold": 0,
+      "unknownUnicastThreshold": 0,
       "treatTheseTrafficTypesAsOneThreshold": [
         "string"
-      ],
-      "unknownUnicastThreshold": 0
+      ]
     }
 """

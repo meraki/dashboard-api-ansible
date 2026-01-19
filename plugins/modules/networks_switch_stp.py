@@ -22,7 +22,8 @@ options:
     description: The spanning tree protocol status in network.
     type: bool
   stpBridgePriority:
-    description: STP bridge priority for switches/stacks or switch templates. An empty array will clear the STP bridge priority settings.
+    description: STP bridge priority for switches/stacks or switch templates. An empty
+      array will clear the STP bridge priority settings.
     elements: dict
     suboptions:
       stacks:
@@ -107,16 +108,16 @@ meraki_response:
       "rstpEnabled": true,
       "stpBridgePriority": [
         {
+          "switches": [
+            "string"
+          ],
           "stacks": [
             "string"
           ],
-          "stpPriority": 0,
           "switchProfiles": [
             "string"
           ],
-          "switches": [
-            "string"
-          ]
+          "stpPriority": 0
         }
       ]
     }

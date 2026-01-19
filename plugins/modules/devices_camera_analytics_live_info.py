@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_camera_analytics_live_info
 short_description: Information module for devices _camera _analytics _live
 description:
+  - Information module for Devices Camera Analytics Live Info.
   - Get all devices _camera _analytics _live.
   - Returns live state from camera analytics zones.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Camera Analytics Live Info.
       - Serial path parameter.
     type: str
 requirements:

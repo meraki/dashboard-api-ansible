@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_info
 short_description: Information module for networks _sm _devices
 description:
+  - Information module for Networks Sm Devices Info.
   - Get all networks _sm _devices.
   - List the devices enrolled in an SM network with various specified fields and filters.
 version_added: '1.0.0'
@@ -21,68 +22,89 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Info.
       - NetworkId path parameter. Network ID.
     type: str
   fields:
     description:
+      - Information module for Networks Sm Devices Info.
       - >
-        Fields query parameter. Additional fields that will be displayed for each device. The default fields are id, name, tags, ssid, wifiMac,
-        osName, systemModel, uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity, kioskAppName, biosVersion,
-        lastConnected, missingAppsCount, userSuppliedAddress, location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber, diskInfoJson,
-        deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt,
-        batteryEstCharge, quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled,
-        autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled, hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion,
+        Fields query parameter. Additional fields that will be displayed for each
+        device. The default fields are id, name, tags, ssid, wifiMac, osName, systemModel,
+        uuid, and serialNumber. The additional fields are ip, systemType, availableDeviceCapacity,
+        kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress,
+        location, lastUser, ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber,
+        diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei,
+        iccid, simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge,
+        quarantined, avName, avRunning, asName, fwName, isRooted, loginRequired, screenLockEnabled,
+        screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled,
+        hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion,
         cellular, and url.
     elements: str
     type: list
   wifiMacs:
     description:
+      - Information module for Networks Sm Devices Info.
       - WifiMacs query parameter. Filter devices by wifi mac(s).
     elements: str
     type: list
   serials:
     description:
+      - Information module for Networks Sm Devices Info.
       - Serials query parameter. Filter devices by serial(s).
     elements: str
     type: list
   ids:
     description:
+      - Information module for Networks Sm Devices Info.
       - Ids query parameter. Filter devices by id(s).
     elements: str
     type: list
   uuids:
     description:
+      - Information module for Networks Sm Devices Info.
       - Uuids query parameter. Filter devices by uuid(s).
     elements: str
     type: list
   systemTypes:
     description:
+      - Information module for Networks Sm Devices Info.
       - SystemTypes query parameter. Filter devices by system type(s).
     elements: str
     type: list
   scope:
     description:
+      - Information module for Networks Sm Devices Info.
       - >
-        Scope query parameter. Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
+        Scope query parameter. Specify a scope (one of all, none, withAny, withAll,
+        withoutAny, or withoutAll) and a set of tags.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Networks Sm Devices Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Sm Devices Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Sm Devices Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -147,19 +169,19 @@ meraki_response:
     [
       {
         "id": "string",
-        "ip": "string",
         "name": "string",
-        "notes": "string",
-        "osName": "string",
-        "serial": "string",
-        "serialNumber": "string",
-        "ssid": "string",
-        "systemModel": "string",
         "tags": [
           "string"
         ],
+        "ssid": "string",
+        "wifiMac": "string",
+        "osName": "string",
+        "systemModel": "string",
         "uuid": "string",
-        "wifiMac": "string"
+        "serialNumber": "string",
+        "serial": "string",
+        "ip": "string",
+        "notes": "string"
       }
     ]
 """

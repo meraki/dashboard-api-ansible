@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_modify_tags
-short_description: Resource module for networks _sm _devices _modify _tags
+short_description: Resource module for networks _sm _devices _modifytags
 description:
-  - Manage operation create of the resource networks _sm _devices _modify _tags.
+  - Manage operation create of the resource networks _sm _devices _modifytags.
   - Add, delete, or update the tags of a set of devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,7 +23,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the devices to be modified.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the devices to be modified.
     elements: str
     type: list
   serials:
@@ -35,7 +36,8 @@ options:
     elements: str
     type: list
   updateAction:
-    description: One of add, delete, or update. Only devices that have been modified will be returned.
+    description: One of add, delete, or update. Only devices that have been modified
+      will be returned.
     type: str
   wifiMacs:
     description: The wifiMacs of the devices to be modified.
@@ -105,11 +107,11 @@ meraki_response:
     [
       {
         "id": "string",
-        "serial": "string",
         "tags": [
           "string"
         ],
-        "wifiMac": "string"
+        "wifiMac": "string",
+        "serial": "string"
       }
     ]
 """

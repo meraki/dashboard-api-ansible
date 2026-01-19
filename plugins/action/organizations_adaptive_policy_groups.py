@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    description=dict(type="str"),
     name=dict(type="str"),
-    policyObjects=dict(type="list"),
     sgt=dict(type="int"),
+    description=dict(type="str"),
+    policyObjects=dict(type="list"),
     organizationId=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -53,77 +52,93 @@ class OrganizationsAdaptivePolicyGroups(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            description=params.get("description"),
             name=params.get("name"),
-            policyObjects=params.get("policyObjects"),
             sgt=params.get("sgt"),
+            description=params.get("description"),
+            policyObjects=params.get("policyObjects"),
             organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('policyObjects') is not None or self.new_object.get('policy_objects') is not None:
-            new_object_params['policyObjects'] = self.new_object.get('policyObjects') or \
-                self.new_object.get('policy_objects')
-        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
+        if self.new_object.get(
+                'sgt') is not None or self.new_object.get('sgt') is not None:
             new_object_params['sgt'] = self.new_object.get('sgt') or \
                 self.new_object.get('sgt')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('policyObjects') is not None or self.new_object.get(
+                'policy_objects') is not None:
+            new_object_params['policyObjects'] = self.new_object.get(
+                'policyObjects') or self.new_object.get('policy_objects')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('policyObjects') is not None or self.new_object.get('policy_objects') is not None:
-            new_object_params['policyObjects'] = self.new_object.get('policyObjects') or \
-                self.new_object.get('policy_objects')
-        if self.new_object.get('sgt') is not None or self.new_object.get('sgt') is not None:
+        if self.new_object.get(
+                'sgt') is not None or self.new_object.get('sgt') is not None:
             new_object_params['sgt'] = self.new_object.get('sgt') or \
                 self.new_object.get('sgt')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('policyObjects') is not None or self.new_object.get(
+                'policy_objects') is not None:
+            new_object_params['policyObjects'] = self.new_object.get(
+                'policyObjects') or self.new_object.get('policy_objects')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id') or \
                 self.new_object.get('id')
         return new_object_params
@@ -193,18 +208,21 @@ class OrganizationsAdaptivePolicyGroups(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("description", "description"),
             ("name", "name"),
-            ("policyObjects", "policyObjects"),
             ("sgt", "sgt"),
+            ("description", "description"),
+            ("policyObjects", "policyObjects"),
             ("organizationId", "organizationId"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

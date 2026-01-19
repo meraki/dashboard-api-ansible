@@ -6,40 +6,47 @@
 
 DOCUMENTATION = r"""
 module: devices_live_tools_arp_table
-short_description: Resource module for devices _live _tools _arp _table
+short_description: Resource module for devices _livetools _arptable
 description:
-  - Manage operation create of the resource devices _live _tools _arp _table. - > Enqueue a job to perform a ARP table request for the device.
-    This endpoint currently supports switches. This endpoint has a sustained rate limit of one request every five seconds per device, with an
-    allowed burst of five requests.
+  - Manage operation create of the resource devices _livetools _arptable.
+  - >
+    Enqueue a job to perform a ARP table request for the device. This endpoint currently
+    supports switches, wireless access points, and catalyst routers. This endpoint
+    has a sustained rate limit of one request every five seconds per device, with
+    an allowed burst of five requests.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   callback:
-    description: Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+    description: Details for the callback. Please include either an httpServerId OR
+      url and sharedSecret.
     suboptions:
       httpServer:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields
-              blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
         description: The payload template of the webhook used for the callback.
         suboptions:
           id:
-            description: The ID of the payload template. Defaults to 'wpt_00005' for the Callback (included) template.
+            description: The ID of the payload template. Defaults to 'wpt_00005' for
+              the Callback (included) template.
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request
-          was sent by Meraki. If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   serial:
@@ -101,15 +108,15 @@ meraki_response:
   sample: >
     {
       "arpTableId": "string",
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
-      },
+      "url": "string",
       "request": {
         "serial": "string"
       },
       "status": "string",
-      "url": "string"
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

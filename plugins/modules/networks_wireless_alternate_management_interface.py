@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_alternate_management_interface
-short_description: Resource module for networks _wireless _alternate _management _interface
+short_description: Resource module for networks _wireless _alternatemanagementinterface
 description:
-  - Manage operation update of the resource networks _wireless _alternate _management _interface.
+  - Manage operation update of the resource networks _wireless _alternatemanagementinterface.
   - Update alternate management interface and device static IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,13 +16,15 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   accessPoints:
-    description: Array of access point serial number and IP assignment. Note accessPoints IP assignment is not applicable for template networks,
-      in other words, do not put 'accessPoints' in the body when updating template networks. Also, an empty 'accessPoints' array will remove all
-      previous static IP assignments.
+    description: Array of access point serial number and IP assignment. Note accessPoints
+      IP assignment is not applicable for template networks, in other words, do not
+      put 'accessPoints' in the body when updating template networks. Also, an empty
+      'accessPoints' array will remove all previous static IP assignments.
     elements: dict
     suboptions:
       alternateManagementIp:
-        description: Wireless alternate management interface device IP. Provide an empty string to remove alternate management IP assignment.
+        description: Wireless alternate management interface device IP. Provide an
+          empty string to remove alternate management IP assignment.
         type: str
       dns1:
         description: Primary DNS must be in IP format.
@@ -34,7 +36,8 @@ options:
         description: Gateway must be in IP format.
         type: str
       serial:
-        description: Serial number of access point to be configured with alternate management IP.
+        description: Serial number of access point to be configured with alternate
+          management IP.
         type: str
       subnetMask:
         description: Subnet mask must be in IP format.
@@ -47,7 +50,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   protocols:
-    description: Can be one or more of the following values 'radius', 'snmp', 'syslog' or 'ldap'.
+    description: Can be one or more of the following values 'radius', 'snmp', 'syslog'
+      or 'ldap'.
     elements: str
     type: list
   vlanId:
@@ -58,7 +62,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessAlternateManagementInterface
-    description: Complete reference of the updateNetworkWirelessAlternateManagementInterface API.
+    description: Complete reference of the updateNetworkWirelessAlternateManagementInterface
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-alternate-management-interface
 notes:
   - SDK Method used are

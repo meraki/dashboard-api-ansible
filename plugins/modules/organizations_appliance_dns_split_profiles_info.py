@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_dns_split_profiles_info
 short_description: Information module for organizations _appliance _dns _split _profiles
 description:
+  - Information module for Organizations Appliance Dns Split Profiles Info.
   - Get all organizations _appliance _dns _split _profiles.
   - Fetch the split DNS profiles used in the organization.
 version_added: '1.0.0'
@@ -20,11 +21,14 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Dns Split Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - Information module for Organizations Appliance Dns Split Profiles Info.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
 requirements:
@@ -32,7 +36,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsSplitProfiles
-    description: Complete reference of the getOrganizationApplianceDnsSplitProfiles API.
+    description: Complete reference of the getOrganizationApplianceDnsSplitProfiles
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-split-profiles
 notes:
   - SDK Method used are
@@ -78,16 +83,16 @@ meraki_response:
   sample: >
     [
       {
+        "profileId": "string",
+        "name": "string",
         "hostnames": [
           "string"
         ],
-        "name": "string",
         "nameservers": {
           "addresses": [
             "string"
           ]
-        },
-        "profileId": "string"
+        }
       }
     ]
 """

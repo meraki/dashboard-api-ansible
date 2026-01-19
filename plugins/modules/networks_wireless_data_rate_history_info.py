@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_data_rate_history_info
-short_description: Information module for networks _wireless _data _rate _history
+short_description: Information module for networks _wireless _dataratehistory
 description:
-  - Get all networks _wireless _data _rate _history.
+  - Information module for Networks Wireless Dataratehistory Info.
+  - Get all networks _wireless _dataratehistory.
   - Return PHY data rates over time for a network, device, or network client.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,52 +21,68 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Networks Wireless Dataratehistory Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - Information module for Networks Wireless Dataratehistory Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 7 days.
     type: float
   resolution:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
-        Resolution query parameter. The time resolution in seconds for returned data. The valid resolutions are 300, 600, 1200, 3600, 14400, 86400.
-        The default is 86400.
+        Resolution query parameter. The time resolution in seconds for returned data.
+        The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
+        is 86400.
     type: int
   autoResolution:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - >
-        AutoResolution query parameter. Automatically select a data resolution based on the given timespan; this overrides the value specified
-        by the 'resolution' parameter. The default setting is false.
+        AutoResolution query parameter. Automatically select a data resolution based
+        on the given timespan; this overrides the value specified by the 'resolution'
+        parameter. The default setting is false.
     type: bool
   clientId:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - ClientId query parameter. Filter results by network client.
     type: str
   deviceSerial:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - DeviceSerial query parameter. Filter results by device.
     type: str
   apTag:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - ApTag query parameter. Filter results by AP tag.
     type: str
   band:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - Band query parameter. Filter results by band (either '2.4', '5' or '6').
     type: str
   ssid:
     description:
+      - Information module for Networks Wireless Dataratehistory Info.
       - Ssid query parameter. Filter results by SSID number.
     type: int
 requirements:
@@ -83,7 +100,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _data _rate _history
+- name: Get all networks _wireless _dataratehistory
   cisco.meraki.networks_wireless_data_rate_history_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -128,10 +145,10 @@ meraki_response:
   sample: >
     [
       {
+        "startTs": "string",
+        "endTs": "string",
         "averageKbps": 0,
         "downloadKbps": 0,
-        "endTs": "string",
-        "startTs": "string",
         "uploadKbps": 0
       }
     ]

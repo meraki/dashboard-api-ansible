@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,9 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    fiveGhzSettings=dict(type="dict"),
     rfProfileId=dict(type="str"),
     twoFourGhzSettings=dict(type="dict"),
+    fiveGhzSettings=dict(type="dict"),
     serial=dict(type="str"),
 ))
 
@@ -50,30 +49,35 @@ class DevicesApplianceRadioSettings(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            fiveGhzSettings=params.get("fiveGhzSettings"),
             rfProfileId=params.get("rfProfileId"),
             twoFourGhzSettings=params.get("twoFourGhzSettings"),
+            fiveGhzSettings=params.get("fiveGhzSettings"),
             serial=params.get("serial"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get('five_ghz_settings') is not None:
-            new_object_params['fiveGhzSettings'] = self.new_object.get('fiveGhzSettings') or \
-                self.new_object.get('five_ghz_settings')
-        if self.new_object.get('rfProfileId') is not None or self.new_object.get('rf_profile_id') is not None:
-            new_object_params['rfProfileId'] = self.new_object.get('rfProfileId') or \
-                self.new_object.get('rf_profile_id')
-        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get('two_four_ghz_settings') is not None:
-            new_object_params['twoFourGhzSettings'] = self.new_object.get('twoFourGhzSettings') or \
-                self.new_object.get('two_four_ghz_settings')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('rfProfileId') is not None or self.new_object.get(
+                'rf_profile_id') is not None:
+            new_object_params['rfProfileId'] = self.new_object.get(
+                'rfProfileId') or self.new_object.get('rf_profile_id')
+        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get(
+                'two_four_ghz_settings') is not None:
+            new_object_params['twoFourGhzSettings'] = self.new_object.get(
+                'twoFourGhzSettings') or self.new_object.get('two_four_ghz_settings')
+        if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get(
+                'five_ghz_settings') is not None:
+            new_object_params['fiveGhzSettings'] = self.new_object.get(
+                'fiveGhzSettings') or self.new_object.get('five_ghz_settings')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -129,16 +133,19 @@ class DevicesApplianceRadioSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("fiveGhzSettings", "fiveGhzSettings"),
             ("rfProfileId", "rfProfileId"),
             ("twoFourGhzSettings", "twoFourGhzSettings"),
+            ("fiveGhzSettings", "fiveGhzSettings"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

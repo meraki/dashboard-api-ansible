@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_custom_performance_classes
-short_description: Resource module for networks _appliance _traffic _shaping _custom _performance _classes
+short_description: Resource module for networks _appliance _trafficshaping _customperformanceclasses
 description:
-  - Manage operation create of the resource networks _appliance _traffic _shaping _custom _performance _classes.
+  - Manage operation create of the resource networks _appliance _trafficshaping _customperformanceclasses.
   - Add a custom performance class for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -35,7 +35,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance createNetworkApplianceTrafficShapingCustomPerformanceClass
-    description: Complete reference of the createNetworkApplianceTrafficShapingCustomPerformanceClass API.
+    description: Complete reference of the createNetworkApplianceTrafficShapingCustomPerformanceClass
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-traffic-shaping-custom-performance-class
 notes:
   - SDK Method used are
@@ -82,10 +83,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "name": "string",
       "customPerformanceClassId": "string",
-      "maxJitter": 0,
       "maxLatency": 0,
-      "maxLossPercentage": 0,
-      "name": "string"
+      "maxJitter": 0,
+      "maxLossPercentage": 0
     }
 """

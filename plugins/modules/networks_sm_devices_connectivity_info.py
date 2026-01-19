@@ -8,8 +8,10 @@ DOCUMENTATION = r"""
 module: networks_sm_devices_connectivity_info
 short_description: Information module for networks _sm _devices _connectivity
 description:
+  - Information module for Networks Sm Devices Connectivity Info.
   - Get all networks _sm _devices _connectivity.
-  - Returns historical connectivity data whether a device is regularly checking in to Dashboard .
+  - Returns historical connectivity data whether a device is regularly checking in
+    to Dashboard .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,29 +23,39 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Connectivity Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Connectivity Info.
       - DeviceId path parameter. Device ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Networks Sm Devices Connectivity Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Sm Devices Connectivity Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Sm Devices Connectivity Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9

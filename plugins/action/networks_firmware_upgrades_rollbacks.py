@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -26,8 +26,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     product=dict(type="str"),
-    reasons=dict(type="list"),
     time=dict(type="str"),
+    reasons=dict(type="list"),
     toVersion=dict(type="dict"),
     networkId=dict(type="str"),
 ))
@@ -69,8 +69,8 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             product=params.get("product"),
-            reasons=params.get("reasons"),
             time=params.get("time"),
+            reasons=params.get("reasons"),
             toVersion=params.get("toVersion"),
             networkId=params.get("networkId"),
         )

@@ -8,8 +8,11 @@ DOCUMENTATION = r"""
 module: networks_wireless_air_marshal_rules
 short_description: Resource module for networks _wireless _air _marshal _rules
 description:
-  - Manage operation create of the resource networks _wireless _air _marshal _rules.
+  - Manage operations create, update and delete of the resource networks _wireless
+    _air _marshal _rules.
   - Creates a new rule.
+  - Delete an Air Marshal rule.
+  - Update a rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -28,6 +31,9 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  ruleId:
+    description: RuleId path parameter. Rule ID.
+    type: str
   type:
     description: Indicates if this rule will allow, block, or alert.
     type: str
@@ -38,11 +44,21 @@ seealso:
   - name: Cisco Meraki documentation for wireless createNetworkWirelessAirMarshalRule
     description: Complete reference of the createNetworkWirelessAirMarshalRule API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-air-marshal-rule
+  - name: Cisco Meraki documentation for wireless deleteNetworkWirelessAirMarshalRule
+    description: Complete reference of the deleteNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-wireless-air-marshal-rule
+  - name: Cisco Meraki documentation for wireless updateNetworkWirelessAirMarshalRule
+    description: Complete reference of the updateNetworkWirelessAirMarshalRule API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-air-marshal-rule
 notes:
   - SDK Method used are
     wireless.Wireless.create_network_wireless_air_marshal_rule,
+    wireless.Wireless.delete_network_wireless_air_marshal_rule,
+    wireless.Wireless.update_network_wireless_air_marshal_rule,
   - Paths used are
     post /networks/{networkId}/wireless/airMarshal/rules,
+    delete /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
+    put /networks/{networkId}/wireless/airMarshal/rules/{ruleId},
 """
 
 EXAMPLES = r"""
@@ -69,11 +85,68 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
     match:
       string: 00:11:22:33:44:55
       type: bssid
     networkId: string
     type: allow
+- name: Update by id
+  cisco.meraki.networks_wireless_air_marshal_rules:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
+    match:
+      string: 00:11:22:33:44:55
+      type: bssid
+    networkId: string
+    ruleId: string
+    type: allow
+- name: Delete by id
+  cisco.meraki.networks_wireless_air_marshal_rules:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    networkId: string
+    ruleId: string
 """
 RETURN = r"""
 meraki_response:
@@ -82,17 +155,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "createdAt": "string",
-      "match": {
-        "string": "string",
-        "type": "string"
-      },
       "network": {
         "id": "string",
         "name": "string"
       },
       "ruleId": "string",
       "type": "string",
-      "updatedAt": "string"
+      "updatedAt": "string",
+      "createdAt": "string",
+      "match": {
+        "string": "string",
+        "type": "string"
+      }
     }
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_api_requests_overview_info
-short_description: Information module for organizations _api _requests _overview
+short_description: Information module for organizations _apirequests _overview
 description:
-  - Get all organizations _api _requests _overview.
+  - Information module for Organizations Apirequests Overview Info.
+  - Get all organizations _apirequests _overview.
   - Return an aggregated overview of API requests data.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,21 +21,28 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Apirequests Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Organizations Apirequests Overview Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - Information module for Organizations Apirequests Overview Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Organizations Apirequests Overview Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 31 days.
     type: float
 requirements:
   - meraki >= 2.4.9
@@ -51,7 +59,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _api _requests _overview
+- name: Get all organizations _apirequests _overview
   cisco.meraki.organizations_api_requests_overview_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_settings_info
 short_description: Information module for networks _wireless _settings
 description:
+  - Information module for Networks Wireless Settings Info.
   - Get all networks _wireless _settings.
   - Return the wireless settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,21 +72,21 @@ meraki_response:
   type: dict
   sample: >
     {
-      "ipv6BridgeEnabled": true,
-      "ledLightsOn": true,
-      "locationAnalyticsEnabled": true,
       "meshingEnabled": true,
+      "ipv6BridgeEnabled": true,
+      "locationAnalyticsEnabled": true,
+      "upgradeStrategy": "string",
+      "ledLightsOn": true,
       "namedVlans": {
         "poolDhcpMonitoring": {
-          "duration": 0,
-          "enabled": true
+          "enabled": true,
+          "duration": 0
         }
       },
       "regulatoryDomain": {
-        "countryCode": "string",
         "name": "string",
+        "countryCode": "string",
         "permits6e": true
-      },
-      "upgradeStrategy": "string"
+      }
     }
 """

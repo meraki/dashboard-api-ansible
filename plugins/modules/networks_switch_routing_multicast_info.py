@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_routing_multicast_info
 short_description: Information module for networks _switch _routing _multicast
 description:
+  - Information module for Networks Switch Routing Multicast Info.
   - Get all networks _switch _routing _multicast.
   - Return multicast settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Routing Multicast Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -71,22 +73,22 @@ meraki_response:
   sample: >
     {
       "defaultSettings": {
-        "floodUnknownMulticastTrafficEnabled": true,
-        "igmpSnoopingEnabled": true
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
       },
       "overrides": [
         {
-          "floodUnknownMulticastTrafficEnabled": true,
-          "igmpSnoopingEnabled": true,
+          "switches": [
+            "string"
+          ],
           "stacks": [
             "string"
           ],
           "switchProfiles": [
             "string"
           ],
-          "switches": [
-            "string"
-          ]
+          "igmpSnoopingEnabled": true,
+          "floodUnknownMulticastTrafficEnabled": true
         }
       ]
     }

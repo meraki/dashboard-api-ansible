@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_cellular_sims_info
 short_description: Information module for devices _cellular _sims
 description:
+  - Information module for Devices Cellular Sims Info.
   - Get all devices _cellular _sims.
   - Return the SIM and APN configurations for a cellular device.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Cellular Sims Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -70,31 +72,35 @@ meraki_response:
   type: dict
   sample: >
     {
-      "simFailover": {
-        "enabled": true,
-        "timeout": 0
-      },
-      "simOrdering": [
-        "string"
-      ],
       "sims": [
         {
+          "slot": "string",
+          "iccid": "string",
+          "imsi": "string",
+          "msisdn": "string",
+          "isPrimary": true,
+          "status": "string",
           "apns": [
             {
+              "name": "string",
               "allowedIpTypes": [
                 "string"
               ],
               "authentication": {
-                "password": "string",
                 "type": "string",
-                "username": "string"
-              },
-              "name": "string"
+                "username": "string",
+                "password": "string"
+              }
             }
-          ],
-          "isPrimary": true,
-          "slot": "string"
+          ]
         }
-      ]
+      ],
+      "simOrdering": [
+        "string"
+      ],
+      "simFailover": {
+        "enabled": true,
+        "timeout": 0
+      }
     }
 """

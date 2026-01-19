@@ -6,11 +6,15 @@
 
 DOCUMENTATION = r"""
 module: networks_webhooks_payload_templates
-short_description: Resource module for networks _webhooks _payload _templates
+short_description: Resource module for networks _webhooks _payloadtemplates
 description:
-  - Manage operations create, update and delete of the resource networks _webhooks _payload _templates.
-  - Create a webhook payload template for a network. - > Destroy a webhook payload template for a network. Does not work for included templates
-    'wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005' or 'wpt_00006' .
+  - Manage operations create, update and delete of the resource networks _webhooks
+    _payloadtemplates.
+  - Create a webhook payload template for a network.
+  - >
+    Destroy a webhook payload template for a network. Does not work for included templates
+    'wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006',
+    'wpt_00007' or 'wpt_00008' .
   - Update a webhook payload template for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -18,11 +22,12 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   body:
-    description: The liquid template used for the body of the webhook message. Either `body` or `bodyFile` must be specified.
+    description: The liquid template used for the body of the webhook message. Either
+      `body` or `bodyFile` must be specified.
     type: str
   bodyFile:
-    description: A Base64 encoded file containing liquid template used for the body of the webhook message. Either `body` or `bodyFile` must be
-      specified.
+    description: A Base64 encoded file containing liquid template used for the body
+      of the webhook message. Either `body` or `bodyFile` must be specified.
     type: str
   headers:
     description: The liquid template used with the webhook headers.
@@ -36,7 +41,8 @@ options:
         type: str
     type: list
   headersFile:
-    description: A Base64 encoded file containing the liquid template used with the webhook headers.
+    description: A Base64 encoded file containing the liquid template used with the
+      webhook headers.
     type: str
   name:
     description: The name of the new template.
@@ -171,20 +177,20 @@ meraki_response:
   type: dict
   sample: >
     {
-      "body": "string",
+      "payloadTemplateId": "string",
+      "type": "string",
+      "name": "string",
       "headers": [
         {
           "name": "string",
           "template": "string"
         }
       ],
-      "name": "string",
-      "payloadTemplateId": "string",
+      "body": "string",
       "sharing": {
         "byNetwork": {
           "adminsCanModify": true
         }
-      },
-      "type": "string"
+      }
     }
 """

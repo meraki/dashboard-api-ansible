@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_traffic_analysis
-short_description: Resource module for networks _traffic _analysis
+short_description: Resource module for networks _trafficanalysis
 description:
-  - Manage operation update of the resource networks _traffic _analysis.
+  - Manage operation update of the resource networks _trafficanalysis.
   - Update the traffic analysis settings for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,16 +23,19 @@ options:
         description: The name of the custom pie chart item.
         type: str
       type:
-        description: The signature type for the custom pie chart item. Can be one of 'host', 'port' or 'ipRange'.
+        description: The signature type for the custom pie chart item. Can be one
+          of 'host', 'port' or 'ipRange'.
         type: str
       value:
-        description: The value of the custom pie chart item. Valid syntax depends on the signature type of the chart item (see sample request/response
-          for more details).
+        description: The value of the custom pie chart item. Valid syntax depends
+          on the signature type of the chart item (see sample request/response for
+          more details).
         type: str
     type: list
   mode:
-    description: The traffic analysis mode for the network. Can be one of 'disabled' (do not collect traffic types), 'basic' (collect generic
-      traffic categories), or 'detailed' (collect destination hostnames).
+    description: The traffic analysis mode for the network. Can be one of 'disabled'
+      (do not collect traffic types), 'basic' (collect generic traffic categories),
+      or 'detailed' (collect destination hostnames).
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -90,13 +93,13 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mode": "string",
       "customPieChartItems": [
         {
           "name": "string",
           "type": "string",
           "value": "string"
         }
-      ],
-      "mode": "string"
+      ]
     }
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_overview_info
-short_description: Information module for organizations _adaptive _policy _overview
+short_description: Information module for organizations _adaptivepolicy _overview
 description:
-  - Get all organizations _adaptive _policy _overview.
+  - Information module for Organizations Adaptivepolicy Overview Info.
+  - Get all organizations _adaptivepolicy _overview.
   - Returns adaptive policy aggregate statistics for an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Adaptivepolicy Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _adaptive _policy _overview
+- name: Get all organizations _adaptivepolicy _overview
   cisco.meraki.organizations_adaptive_policy_overview_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -71,19 +73,19 @@ meraki_response:
   sample: >
     {
       "counts": {
-        "allowPolicies": 0,
-        "customAcls": 0,
-        "customGroups": 0,
-        "denyPolicies": 0,
         "groups": 0,
+        "customGroups": 0,
+        "customAcls": 0,
         "policies": 0,
+        "denyPolicies": 0,
+        "allowPolicies": 0,
         "policyObjects": 0
       },
       "limits": {
-        "aclsInAPolicy": 0,
         "customGroups": 0,
-        "policyObjects": 0,
-        "rulesInAnAcl": 0
+        "rulesInAnAcl": 0,
+        "aclsInAPolicy": 0,
+        "policyObjects": 0
       }
     }
 """

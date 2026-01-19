@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_vpn_exclusions
-short_description: Resource module for networks _appliance _traffic _shaping _vpn _exclusions
+short_description: Resource module for networks _appliance _trafficshaping _vpnexclusions
 description:
-  - Manage operation update of the resource networks _appliance _traffic _shaping _vpn _exclusions.
+  - Manage operation update of the resource networks _appliance _trafficshaping _vpnexclusions.
   - Update VPN exclusion rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   custom:
-    description: Custom VPN exclusion rules. Pass an empty array to clear existing rules.
+    description: Custom VPN exclusion rules. Pass an empty array to clear existing
+      rules.
     elements: dict
     suboptions:
       destination:
@@ -30,7 +31,8 @@ options:
         type: str
     type: list
   majorApplications:
-    description: Major Application based VPN exclusion rules. Pass an empty array to clear existing rules.
+    description: Major Application based VPN exclusion rules. Pass an empty array
+      to clear existing rules.
     elements: dict
     suboptions:
       id:
@@ -48,7 +50,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingVpnExclusions
-    description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions API.
+    description: Complete reference of the updateNetworkApplianceTrafficShapingVpnExclusions
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-vpn-exclusions
 notes:
   - SDK Method used are
@@ -97,11 +100,13 @@ meraki_response:
   type: dict
   sample: >
     {
+      "networkId": "string",
+      "networkName": "string",
       "custom": [
         {
+          "protocol": "string",
           "destination": "string",
-          "port": "string",
-          "protocol": "string"
+          "port": "string"
         }
       ],
       "majorApplications": [
@@ -109,8 +114,6 @@ meraki_response:
           "id": "string",
           "name": "string"
         }
-      ],
-      "networkId": "string",
-      "networkName": "string"
+      ]
     }
 """

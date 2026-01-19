@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -31,15 +30,17 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present"]),
-    hostnames=dict(type="list"),
+    state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
+    hostnames=dict(type="list"),
     nameservers=dict(type="dict"),
     organizationId=dict(type="str"),
+    profileId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["name", "organizationId"], True),
+    ("state", "present", ["name", "organizationId", "profileId"], True),
+    ("state", "absent", ["name", "organizationId", "profileId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -50,41 +51,84 @@ class OrganizationsApplianceDnsSplitProfiles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            hostnames=params.get("hostnames"),
             name=params.get("name"),
+            hostnames=params.get("hostnames"),
             nameservers=params.get("nameservers"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
+            profileId=params.get("profileId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('profileIds') is not None or self.new_object.get('profile_ids') is not None:
-            new_object_params['profileIds'] = self.new_object.get('profileIds') or \
-                self.new_object.get('profile_ids')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('profileIds') is not None or self.new_object.get(
+                'profile_ids') is not None:
+            new_object_params['profileIds'] = self.new_object.get(
+                'profileIds') or self.new_object.get('profile_ids')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('hostnames') is not None or self.new_object.get('hostnames') is not None:
-            new_object_params['hostnames'] = self.new_object.get('hostnames') or \
-                self.new_object.get('hostnames')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('nameservers') is not None or self.new_object.get('nameservers') is not None:
-            new_object_params['nameservers'] = self.new_object.get('nameservers') or \
-                self.new_object.get('nameservers')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('hostnames') is not None or self.new_object.get(
+                'hostnames') is not None:
+            new_object_params['hostnames'] = self.new_object.get(
+                'hostnames') or self.new_object.get('hostnames')
+        if self.new_object.get('nameservers') is not None or self.new_object.get(
+                'nameservers') is not None:
+            new_object_params['nameservers'] = self.new_object.get(
+                'nameservers') or self.new_object.get('nameservers')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        return new_object_params
+
+    def delete_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('profileId') is not None or self.new_object.get(
+                'profile_id') is not None:
+            new_object_params['profileId'] = self.new_object.get(
+                'profileId') or self.new_object.get('profile_id')
+        return new_object_params
+
+    def update_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('hostnames') is not None or self.new_object.get(
+                'hostnames') is not None:
+            new_object_params['hostnames'] = self.new_object.get(
+                'hostnames') or self.new_object.get('hostnames')
+        if self.new_object.get('nameservers') is not None or self.new_object.get(
+                'nameservers') is not None:
+            new_object_params['nameservers'] = self.new_object.get(
+                'nameservers') or self.new_object.get('nameservers')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('profileId') is not None or self.new_object.get(
+                'profile_id') is not None:
+            new_object_params['profileId'] = self.new_object.get(
+                'profileId') or self.new_object.get('profile_id')
         return new_object_params
 
     def get_object_by_name(self, name):
         result = None
-        # NOTE: Does not have a get by name method, using get all
+        # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
                 family="appliance",
@@ -105,27 +149,44 @@ class OrganizationsApplianceDnsSplitProfiles(object):
     def get_object_by_id(self, id):
         result = None
         # NOTE: Does not have a get by id method or it is in another action
+        try:
+            items = self.meraki.exec_meraki(
+                family="appliance",
+                function="getOrganizationApplianceDnsSplitProfiles",
+                params=self.get_all_params(id=id),
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'id', id)
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
+        o_id = o_id or self.new_object.get(
+            "profile_id") or self.new_object.get("profileId")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_name(o_id)
+            prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("profileId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(profileId=_id))
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -133,16 +194,20 @@ class OrganizationsApplianceDnsSplitProfiles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("hostnames", "hostnames"),
             ("name", "name"),
+            ("hostnames", "hostnames"),
             ("nameservers", "nameservers"),
             ("organizationId", "organizationId"),
+            ("profileId", "profileId"),
         ]
-        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(
@@ -150,6 +215,47 @@ class OrganizationsApplianceDnsSplitProfiles(object):
             function="createOrganizationApplianceDnsSplitProfile",
             params=self.create_params(),
             op_modifies=True,
+        )
+        return result
+
+    def update(self):
+        id = self.new_object.get("id")
+        id = id or self.new_object.get("profileId")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("profileId")
+            if id_:
+                self.new_object.update(dict(profileId=id_))
+        result = self.meraki.exec_meraki(
+            family="appliance",
+            function="updateOrganizationApplianceDnsSplitProfile",
+            params=self.update_by_id_params(),
+            op_modifies=True,
+        )
+        return result
+
+    def delete(self):
+        id = self.new_object.get("id")
+        id = id or self.new_object.get("profileId")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("profileId")
+            if id_:
+                self.new_object.update(dict(profileId=id_))
+        result = self.meraki.exec_meraki(
+            family="appliance",
+            function="deleteOrganizationApplianceDnsSplitProfile",
+            params=self.delete_by_id_params(),
         )
         return result
 
@@ -194,18 +300,27 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
+
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = prev_obj
-                    meraki.object_present_and_different()
+                    response = obj.update()
+                    meraki.object_updated()
                 else:
                     response = prev_obj
                     meraki.object_already_present()
             else:
                 response = obj.create()
                 meraki.object_created()
+
+        elif state == "absent":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                response = obj.delete()
+                meraki.object_deleted()
+            else:
+                meraki.object_already_absent()
 
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

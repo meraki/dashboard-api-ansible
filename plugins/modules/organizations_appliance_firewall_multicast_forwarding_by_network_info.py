@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_firewall_multicast_forwarding_by_network_info
-short_description: Information module for organizations _appliance _firewall _multicast _forwarding _by _network
+short_description: Information module for organizations _appliance _firewall _multicast
+  _forwarding _by _network
 description:
+  - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
   - Get all organizations _appliance _firewall _multicast _forwarding _by _network.
   - List Static Multicasting forwarding settings for MX networks.
 version_added: '1.0.0'
@@ -21,29 +23,40 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the results by network IDs.
+      - Information module for Organizations Appliance Firewall Multicast Forwarding By Network Info.
+      - NetworkIds query parameter. Optional parameter to filter the results by network
+        IDs.
     elements: str
     type: list
 requirements:
@@ -51,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceFirewallMulticastForwardingByNetwork
-    description: Complete reference of the getOrganizationApplianceFirewallMulticastForwardingByNetwork API.
+    description: Complete reference of the getOrganizationApplianceFirewallMulticastForwardingByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-firewall-multicast-forwarding-by-network
 notes:
   - SDK Method used are
@@ -108,8 +122,8 @@ meraki_response:
           },
           "rules": [
             {
-              "address": "string",
               "description": "string",
+              "address": "string",
               "vlanIds": [
                 "string"
               ]
@@ -120,8 +134,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

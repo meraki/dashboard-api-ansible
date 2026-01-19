@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_licenses_overview_info
 short_description: Information module for organizations _licenses _overview
 description:
+  - Information module for Organizations Licenses Overview Info.
   - Get all organizations _licenses _overview.
   - Return an overview of the license state for an organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Licenses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -70,17 +72,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "status": "string",
       "expirationDate": "string",
-      "licenseCount": 0,
-      "licenseTypes": [
-        {
-          "counts": {
-            "unassigned": 0
-          },
-          "licenseType": "string"
-        }
-      ],
       "licensedDeviceCounts": {},
+      "licenseCount": 0,
       "states": {
         "active": {
           "count": 0
@@ -91,12 +86,12 @@ meraki_response:
         "expiring": {
           "count": 0,
           "critical": {
-            "expiringCount": 0,
-            "thresholdInDays": 0
+            "thresholdInDays": 0,
+            "expiringCount": 0
           },
           "warning": {
-            "expiringCount": 0,
-            "thresholdInDays": 0
+            "thresholdInDays": 0,
+            "expiringCount": 0
           }
         },
         "recentlyQueued": {
@@ -117,13 +112,20 @@ meraki_response:
           }
         }
       },
-      "status": "string",
+      "licenseTypes": [
+        {
+          "licenseType": "string",
+          "counts": {
+            "unassigned": 0
+          }
+        }
+      ],
       "systemsManager": {
         "counts": {
-          "activeSeats": 0,
-          "orgwideEnrolledDevices": 0,
           "totalSeats": 0,
-          "unassignedSeats": 0
+          "activeSeats": 0,
+          "unassignedSeats": 0,
+          "orgwideEnrolledDevices": 0
         }
       }
     }

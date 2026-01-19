@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_wireless_controllers_by_device_info
-short_description: Information module for organizations _wireless _devices _wireless _controllers _by _device
+short_description: Information module for organizations _wireless _devices _wireless
+  _controllers _by _device
 description:
+  - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
   - Get all organizations _wireless _devices _wireless _controllers _by _device.
   - List of Catalyst access points information.
 version_added: '1.0.0'
@@ -21,51 +23,66 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
-        NetworkIds query parameter. Optional parameter to filter access points by network ID. This filter uses multiple exact matches.
+        NetworkIds query parameter. Optional parameter to filter access points by
+        network ID. This filter uses multiple exact matches.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
-        Serials query parameter. Optional parameter to filter access points by its cloud ID. This filter uses multiple exact matches.
+        Serials query parameter. Optional parameter to filter access points by its
+        cloud ID. This filter uses multiple exact matches.
     elements: str
     type: list
   controllerSerials:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
-        ControllerSerials query parameter. Optional parameter to filter access points by its wireless LAN controller cloud ID. This filter uses
-        multiple exact matches.
+        ControllerSerials query parameter. Optional parameter to filter access points
+        by its wireless LAN controller cloud ID. This filter uses multiple exact matches.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesWirelessControllersByDevice
-    description: Complete reference of the getOrganizationWirelessDevicesWirelessControllersByDevice API.
+    description: Complete reference of the getOrganizationWirelessDevicesWirelessControllersByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-wireless-controllers-by-device
 notes:
   - SDK Method used are
@@ -118,28 +135,28 @@ meraki_response:
     {
       "items": [
         {
+          "network": {
+            "id": "string"
+          },
+          "serial": "string",
           "controller": {
             "serial": "string"
           },
+          "joinedAt": "string",
+          "model": "string",
+          "tags": [
+            {
+              "policy": "string",
+              "site": "string",
+              "rf": "string"
+            }
+          ],
+          "mode": "string",
           "countryCode": "string",
           "details": [
             {
               "name": "string",
               "value": "string"
-            }
-          ],
-          "joinedAt": "string",
-          "mode": "string",
-          "model": "string",
-          "network": {
-            "id": "string"
-          },
-          "serial": "string",
-          "tags": [
-            {
-              "policy": "string",
-              "rf": "string",
-              "site": "string"
             }
           ]
         }
@@ -147,8 +164,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

@@ -69,19 +69,19 @@ meraki_response:
   type: dict
   sample: >
     {
-      "enrollmentString": "string",
       "id": "string",
-      "isBoundToConfigTemplate": true,
-      "name": "string",
-      "notes": "string",
       "organizationId": "string",
+      "name": "string",
       "productTypes": [
         "string"
       ],
+      "timeZone": "string",
       "tags": [
         "string"
       ],
-      "timeZone": "string",
-      "url": "string"
+      "enrollmentString": "string",
+      "url": "string",
+      "notes": "string",
+      "isBoundToConfigTemplate": true
     }
 """

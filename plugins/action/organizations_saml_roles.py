@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    networks=dict(type="list"),
-    orgAccess=dict(type="str"),
     role=dict(type="str"),
+    orgAccess=dict(type="str"),
     tags=dict(type="list"),
+    networks=dict(type="list"),
     organizationId=dict(type="str"),
     samlRoleId=dict(type="str"),
 ))
@@ -53,80 +52,96 @@ class OrganizationsSamlRoles(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            networks=params.get("networks"),
-            orgAccess=params.get("orgAccess"),
             role=params.get("role"),
+            orgAccess=params.get("orgAccess"),
             tags=params.get("tags"),
+            networks=params.get("networks"),
             organizationId=params.get("organizationId"),
             samlRoleId=params.get("samlRoleId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('samlRoleId') is not None or self.new_object.get('saml_role_id') is not None:
-            new_object_params['samlRoleId'] = self.new_object.get('samlRoleId') or \
-                self.new_object.get('saml_role_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('samlRoleId') is not None or self.new_object.get(
+                'saml_role_id') is not None:
+            new_object_params['samlRoleId'] = self.new_object.get(
+                'samlRoleId') or self.new_object.get('saml_role_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
-            new_object_params['networks'] = self.new_object.get('networks') or \
-                self.new_object.get('networks')
-        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
-            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
-                self.new_object.get('org_access')
-        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
+        if self.new_object.get('role') is not None or self.new_object.get(
+                'role') is not None:
             new_object_params['role'] = self.new_object.get('role') or \
                 self.new_object.get('role')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+        if self.new_object.get('orgAccess') is not None or self.new_object.get(
+                'org_access') is not None:
+            new_object_params['orgAccess'] = self.new_object.get(
+                'orgAccess') or self.new_object.get('org_access')
+        if self.new_object.get('tags') is not None or self.new_object.get(
+                'tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('networks') is not None or self.new_object.get(
+                'networks') is not None:
+            new_object_params['networks'] = self.new_object.get(
+                'networks') or self.new_object.get('networks')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('samlRoleId') is not None or self.new_object.get('saml_role_id') is not None:
-            new_object_params['samlRoleId'] = self.new_object.get('samlRoleId') or \
-                self.new_object.get('saml_role_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('samlRoleId') is not None or self.new_object.get(
+                'saml_role_id') is not None:
+            new_object_params['samlRoleId'] = self.new_object.get(
+                'samlRoleId') or self.new_object.get('saml_role_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networks') is not None or self.new_object.get('networks') is not None:
-            new_object_params['networks'] = self.new_object.get('networks') or \
-                self.new_object.get('networks')
-        if self.new_object.get('orgAccess') is not None or self.new_object.get('org_access') is not None:
-            new_object_params['orgAccess'] = self.new_object.get('orgAccess') or \
-                self.new_object.get('org_access')
-        if self.new_object.get('role') is not None or self.new_object.get('role') is not None:
+        if self.new_object.get('role') is not None or self.new_object.get(
+                'role') is not None:
             new_object_params['role'] = self.new_object.get('role') or \
                 self.new_object.get('role')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+        if self.new_object.get('orgAccess') is not None or self.new_object.get(
+                'org_access') is not None:
+            new_object_params['orgAccess'] = self.new_object.get(
+                'orgAccess') or self.new_object.get('org_access')
+        if self.new_object.get('tags') is not None or self.new_object.get(
+                'tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('samlRoleId') is not None or self.new_object.get('saml_role_id') is not None:
-            new_object_params['samlRoleId'] = self.new_object.get('samlRoleId') or \
-                self.new_object.get('saml_role_id')
+        if self.new_object.get('networks') is not None or self.new_object.get(
+                'networks') is not None:
+            new_object_params['networks'] = self.new_object.get(
+                'networks') or self.new_object.get('networks')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('samlRoleId') is not None or self.new_object.get(
+                'saml_role_id') is not None:
+            new_object_params['samlRoleId'] = self.new_object.get(
+                'samlRoleId') or self.new_object.get('saml_role_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -198,18 +213,21 @@ class OrganizationsSamlRoles(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("networks", "networks"),
-            ("orgAccess", "orgAccess"),
             ("role", "role"),
+            ("orgAccess", "orgAccess"),
             ("tags", "tags"),
+            ("networks", "networks"),
             ("organizationId", "organizationId"),
             ("samlRoleId", "samlRoleId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

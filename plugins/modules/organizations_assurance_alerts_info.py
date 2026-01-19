@@ -8,7 +8,10 @@ DOCUMENTATION = r"""
 module: organizations_assurance_alerts_info
 short_description: Information module for organizations _assurance _alerts
 description:
+  - Information module for Organizations Assurance Alerts Info.
   - Get all organizations _assurance _alerts.
+  - Get organizations _assurance _alerts by id.
+  - Return a singular Health Alert by its id.
   - Return all health alerts for an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,106 +24,147 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 4 - 300. Default is 30.
+      - Information module for Organizations Assurance Alerts Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 4 - 300. Default is 30.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   sortOrder:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - >
-        SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'ascending'.
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'ascending'.
     type: str
   networkId:
     description:
-      - NetworkId query parameter. Optional parameter to filter alerts by network ids.
+      - Information module for Organizations Assurance Alerts Info.
+      - NetworkId query parameter. Optional parameter to filter alerts by network
+        ids.
     type: str
   severity:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - Severity query parameter. Optional parameter to filter by severity type.
     type: str
   types:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - Types query parameter. Optional parameter to filter by alert type.
     elements: str
     type: list
   tsStart:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - TsStart query parameter. Optional parameter to filter by starting timestamp.
     type: str
   tsEnd:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - TsEnd query parameter. Optional parameter to filter by end timestamp.
     type: str
   category:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - Category query parameter. Optional parameter to filter by category.
     type: str
   sortBy:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - SortBy query parameter. Optional parameter to set column to sort by.
     type: str
   serials:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - Serials query parameter. Optional parameter to filter by primary device serial.
     elements: str
     type: list
   deviceTypes:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - DeviceTypes query parameter. Optional parameter to filter by device types.
     elements: str
     type: list
   deviceTags:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - DeviceTags query parameter. Optional parameter to filter by device tags.
     elements: str
     type: list
   active:
     description:
-      - Active query parameter. Optional parameter to filter by active alerts defaults to true.
+      - Information module for Organizations Assurance Alerts Info.
+      - Active query parameter. Optional parameter to filter by active alerts defaults
+        to true.
     type: bool
   dismissed:
     description:
-      - Dismissed query parameter. Optional parameter to filter by dismissed alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Info.
+      - Dismissed query parameter. Optional parameter to filter by dismissed alerts
+        defaults to false.
     type: bool
   resolved:
     description:
-      - Resolved query parameter. Optional parameter to filter by resolved alerts defaults to false.
+      - Information module for Organizations Assurance Alerts Info.
+      - Resolved query parameter. Optional parameter to filter by resolved alerts
+        defaults to false.
     type: bool
   suppressAlertsForOfflineNodes:
     description:
+      - Information module for Organizations Assurance Alerts Info.
       - >
-        SuppressAlertsForOfflineNodes query parameter. When set to true the api will only return connectivity alerts for a given device if that
-        device is in an offline state. This only applies to devices. This is ignored when resolved is true. Example If a Switch has a VLan Mismatch
-        and is Unreachable. Only the Unreachable alert will be returned. Defaults to false.
+        SuppressAlertsForOfflineNodes query parameter. When set to true the api will
+        only return connectivity alerts for a given device if that device is in an
+        offline state. This only applies to devices. This is ignored when resolved
+        is true. Example If a Switch has a VLan Mismatch and is Unreachable. Only
+        the Unreachable alert will be returned. Defaults to false.
     type: bool
+  id:
+    description:
+      - Information module for Organizations Assurance Alerts Info.
+      - Id path parameter.
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
+  - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlert
+    description: Complete reference of the getOrganizationAssuranceAlert API.
+    link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alert
   - name: Cisco Meraki documentation for organizations getOrganizationAssuranceAlerts
     description: Complete reference of the getOrganizationAssuranceAlerts API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-assurance-alerts
 notes:
   - SDK Method used are
+    organizations.Organizations.get_organization_assurance_alert,
     organizations.Organizations.get_organization_assurance_alerts,
   - Paths used are
     get /organizations/{organizationId}/assurance/alerts,
+    get /organizations/{organizationId}/assurance/alerts/{id},
 """
 
 EXAMPLES = r"""
@@ -169,52 +213,78 @@ EXAMPLES = r"""
     total_pages: -1
     direction: next
   register: result
+- name: Get organizations _assurance _alerts by id
+  cisco.meraki.organizations_assurance_alerts_info:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    organizationId: string
+    id: string
+  register: result
 """
 RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "categoryType": "string",
-        "description": "string",
-        "deviceType": "string",
-        "dismissedAt": "string",
-        "id": "string",
-        "network": {
-          "id": "string",
-          "name": "string"
-        },
-        "resolvedAt": "string",
-        "scope": {
-          "applications": [
-            {}
-          ],
-          "devices": [
-            {
-              "imei": "string",
-              "lldp": {
-                "port": "string"
-              },
-              "mac": "string",
-              "name": "string",
-              "order": 0,
-              "productType": "string",
-              "serial": "string",
-              "url": "string"
+    {
+      "id": "string",
+      "categoryType": "string",
+      "network": {
+        "name": "string",
+        "id": "string"
+      },
+      "startedAt": "string",
+      "resolvedAt": {},
+      "dismissedAt": {},
+      "deviceType": {},
+      "type": "string",
+      "title": "string",
+      "description": {},
+      "severity": "string",
+      "scope": {
+        "devices": [
+          {
+            "url": "string",
+            "name": "string",
+            "order": 0,
+            "productType": "string",
+            "serial": "string",
+            "mac": "string",
+            "imei": "string",
+            "lldp": {
+              "port": "string"
             }
-          ],
-          "peers": [
-            {}
-          ]
-        },
-        "severity": "string",
-        "startedAt": "string",
-        "title": "string",
-        "type": "string"
+          }
+        ],
+        "applications": [
+          {}
+        ],
+        "peers": [
+          {}
+        ],
+        "others": [
+          {}
+        ]
       }
-    ]
+    }
 """

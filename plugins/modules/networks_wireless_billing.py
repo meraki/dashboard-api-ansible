@@ -22,17 +22,20 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   plans:
-    description: Array of billing plans in the node group. (Can configure a maximum of 5).
+    description: Array of billing plans in the node group. (Can configure a maximum
+      of 5).
     elements: dict
     suboptions:
       bandwidthLimits:
         description: The uplink bandwidth settings for the pricing plan.
         suboptions:
           limitDown:
-            description: The maximum download limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum download limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
           limitUp:
-            description: The maximum upload limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum upload limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
         type: dict
       id:
@@ -42,7 +45,8 @@ options:
         description: The price of the billing plan.
         type: float
       timeLimit:
-        description: The time limit of the pricing plan in minutes. Can be '1 hour', '1 day', '1 week', or '30 days'.
+        description: The time limit of the pricing plan in minutes. Can be '1 hour',
+          '1 day', '1 week', or '30 days'.
         type: str
     type: list
 requirements:
@@ -104,12 +108,12 @@ meraki_response:
       "currency": "string",
       "plans": [
         {
-          "bandwidthLimits": {
-            "limitDown": 0,
-            "limitUp": 0
-          },
           "id": "string",
           "price": 0,
+          "bandwidthLimits": {
+            "limitUp": 0,
+            "limitDown": 0
+          },
           "timeLimit": "string"
         }
       ]

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    assignedDevices=dict(type="dict"),
+    name=dict(type="str"),
     description=dict(type="str"),
     isDefault=dict(type="bool"),
-    name=dict(type="str"),
+    assignedDevices=dict(type="dict"),
     networkId=dict(type="str"),
     groupId=dict(type="str"),
 ))
@@ -53,76 +52,92 @@ class NetworksFirmwareUpgradesStagedGroups(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            assignedDevices=params.get("assignedDevices"),
+            name=params.get("name"),
             description=params.get("description"),
             isDefault=params.get("isDefault"),
-            name=params.get("name"),
+            assignedDevices=params.get("assignedDevices"),
             networkId=params.get("networkId"),
             groupId=params.get("groupId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('groupId') is not None or self.new_object.get('group_id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('groupId') is not None or self.new_object.get(
+                'group_id') is not None:
             new_object_params['groupId'] = self.new_object.get('groupId') or \
                 self.new_object.get('group_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
-            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
-                self.new_object.get('assigned_devices')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
-            new_object_params['isDefault'] = self.new_object.get('isDefault')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('isDefault') is not None or self.new_object.get(
+                'is_default') is not None:
+            new_object_params['isDefault'] = self.new_object.get('isDefault')
+        if self.new_object.get('assignedDevices') is not None or self.new_object.get(
+                'assigned_devices') is not None:
+            new_object_params['assignedDevices'] = self.new_object.get(
+                'assignedDevices') or self.new_object.get('assigned_devices')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('groupId') is not None or self.new_object.get('group_id') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('groupId') is not None or self.new_object.get(
+                'group_id') is not None:
             new_object_params['groupId'] = self.new_object.get('groupId') or \
                 self.new_object.get('group_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('assignedDevices') is not None or self.new_object.get('assigned_devices') is not None:
-            new_object_params['assignedDevices'] = self.new_object.get('assignedDevices') or \
-                self.new_object.get('assigned_devices')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('isDefault') is not None or self.new_object.get('is_default') is not None:
-            new_object_params['isDefault'] = self.new_object.get('isDefault')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('groupId') is not None or self.new_object.get('group_id') is not None:
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('isDefault') is not None or self.new_object.get(
+                'is_default') is not None:
+            new_object_params['isDefault'] = self.new_object.get('isDefault')
+        if self.new_object.get('assignedDevices') is not None or self.new_object.get(
+                'assigned_devices') is not None:
+            new_object_params['assignedDevices'] = self.new_object.get(
+                'assignedDevices') or self.new_object.get('assigned_devices')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('groupId') is not None or self.new_object.get(
+                'group_id') is not None:
             new_object_params['groupId'] = self.new_object.get('groupId') or \
                 self.new_object.get('group_id')
         return new_object_params
@@ -196,18 +211,21 @@ class NetworksFirmwareUpgradesStagedGroups(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("assignedDevices", "assignedDevices"),
+            ("name", "name"),
             ("description", "description"),
             ("isDefault", "isDefault"),
-            ("name", "name"),
+            ("assignedDevices", "assignedDevices"),
             ("networkId", "networkId"),
             ("groupId", "groupId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

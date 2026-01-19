@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_ports_info
-short_description: Information module for organizations _config _templates _switch _profiles _ports
+short_description: Information module for organizations _configtemplates _switch _profiles
+  _ports
 description:
-  - Get all organizations _config _templates _switch _profiles _ports.
-  - Get organizations _config _templates _switch _profiles _ports by id.
+  - Information module for Organizations Configtemplates Switch Profiles Ports Info.
+  - Get all organizations _configtemplates _switch _profiles _ports.
+  - Get organizations _configtemplates _switch _profiles _ports by id.
   - Return a switch template port.
   - Return all the ports of a switch template.
 version_added: '1.0.0'
@@ -22,18 +24,22 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
   profileId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - ProfileId path parameter. Profile ID.
     type: str
   portId:
     description:
+      - Information module for Organizations Configtemplates Switch Profiles Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:
@@ -41,10 +47,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePort
-    description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePort API.
+    description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePort
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-port
   - name: Cisco Meraki documentation for switch getOrganizationConfigTemplateSwitchProfilePorts
-    description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePorts API.
+    description: Complete reference of the getOrganizationConfigTemplateSwitchProfilePorts
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-ports
 notes:
   - SDK Method used are
@@ -56,7 +64,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _config _templates _switch _profiles _ports
+- name: Get all organizations _configtemplates _switch _profiles _ports
   cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -83,7 +91,7 @@ EXAMPLES = r"""
     configTemplateId: string
     profileId: string
   register: result
-- name: Get organizations _config _templates _switch _profiles _ports by id
+- name: Get organizations _configtemplates _switch _profiles _ports by id
   cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -119,59 +127,62 @@ meraki_response:
   type: dict
   sample: >
     {
-      "accessPolicyNumber": 0,
-      "accessPolicyType": "string",
-      "allowedVlans": "string",
-      "daiTrusted": true,
-      "dot3az": {
-        "enabled": true
-      },
+      "portId": "string",
+      "name": "string",
+      "tags": [
+        "string"
+      ],
       "enabled": true,
-      "flexibleStackingEnabled": true,
+      "poeEnabled": true,
+      "type": "string",
+      "vlan": 0,
+      "voiceVlan": 0,
+      "allowedVlans": "string",
       "isolationEnabled": true,
+      "rstpEnabled": true,
+      "stpGuard": "string",
+      "stpPortFastTrunk": true,
       "linkNegotiation": "string",
       "linkNegotiationCapabilities": [
         "string"
       ],
-      "macAllowList": [
-        "string"
-      ],
-      "mirror": {
-        "mode": "string"
-      },
-      "module": {
-        "model": "string"
-      },
-      "name": "string",
-      "poeEnabled": true,
-      "portId": "string",
       "portScheduleId": "string",
-      "profile": {
-        "enabled": true,
-        "id": "string",
-        "iname": "string"
-      },
-      "rstpEnabled": true,
       "schedule": {
         "id": "string",
         "name": "string"
       },
-      "stackwiseVirtual": {
-        "isDualActiveDetector": true,
-        "isStackWiseVirtualLink": true
-      },
+      "udld": "string",
+      "accessPolicyType": "string",
+      "accessPolicyNumber": 0,
+      "macAllowList": [
+        "string"
+      ],
+      "macWhitelistLimit": 0,
       "stickyMacAllowList": [
         "string"
       ],
       "stickyMacAllowListLimit": 0,
       "stormControlEnabled": true,
-      "stpGuard": "string",
-      "tags": [
-        "string"
-      ],
-      "type": "string",
-      "udld": "string",
-      "vlan": 0,
-      "voiceVlan": 0
+      "flexibleStackingEnabled": true,
+      "daiTrusted": true,
+      "profile": {
+        "enabled": true,
+        "id": "string",
+        "iname": "string"
+      },
+      "module": {
+        "model": "string",
+        "serial": "string",
+        "slot": 0
+      },
+      "mirror": {
+        "mode": "string"
+      },
+      "dot3az": {
+        "enabled": true
+      },
+      "highSpeed": {
+        "enabled": true
+      }
     }
 """

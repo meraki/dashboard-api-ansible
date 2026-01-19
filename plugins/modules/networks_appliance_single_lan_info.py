@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_single_lan_info
-short_description: Information module for networks _appliance _single _lan
+short_description: Information module for networks _appliance _singlelan
 description:
-  - Get all networks _appliance _single _lan.
+  - Information module for Networks Appliance Singlelan Info.
+  - Get all networks _appliance _singlelan.
   - Return single LAN configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Singlelan Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _single _lan
+- name: Get all networks _appliance _singlelan
   cisco.meraki.networks_appliance_single_lan_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,26 +72,26 @@ meraki_response:
   type: dict
   sample: >
     {
+      "subnet": "string",
       "applianceIp": "string",
+      "mandatoryDhcp": {
+        "enabled": true
+      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
           {
             "autonomous": true,
+            "staticPrefix": "string",
+            "staticApplianceIp6": "string",
             "origin": {
+              "type": "string",
               "interfaces": [
                 "string"
-              ],
-              "type": "string"
-            },
-            "staticApplianceIp6": "string",
-            "staticPrefix": "string"
+              ]
+            }
           }
         ]
-      },
-      "mandatoryDhcp": {
-        "enabled": true
-      },
-      "subnet": "string"
+      }
     }
 """

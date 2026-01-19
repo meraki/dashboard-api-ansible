@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_alerts_history_info
 short_description: Information module for networks _alerts _history
 description:
+  - Information module for Networks Alerts History Info.
   - Get all networks _alerts _history.
   - Return the alert history for this network.
 version_added: '1.0.0'
@@ -21,25 +22,34 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Alerts History Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - Information module for Networks Alerts History Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Alerts History Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Alerts History Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -96,9 +106,12 @@ meraki_response:
   sample: >
     [
       {
-        "alertData": {},
-        "alertType": "string",
+        "occurredAt": "string",
         "alertTypeId": "string",
+        "alertType": "string",
+        "device": {
+          "serial": "string"
+        },
         "destinations": {
           "email": {
             "sentAt": "string"
@@ -113,10 +126,7 @@ meraki_response:
             "sentAt": "string"
           }
         },
-        "device": {
-          "serial": "string"
-        },
-        "occurredAt": "string"
+        "alertData": {}
       }
     ]
 """

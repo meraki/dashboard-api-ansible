@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_uninstall_apps
-short_description: Resource module for networks _sm _devices _uninstall _apps
+short_description: Resource module for networks _sm _devices _uninstallapps
 description:
-  - Manage operation create of the resource networks _sm _devices _uninstall _apps.
+  - Manage operation create of the resource networks _sm _devices _uninstallapps.
   - Uninstall applications on a device.
 version_added: '1.0.0'
 extends_documentation_fragment:

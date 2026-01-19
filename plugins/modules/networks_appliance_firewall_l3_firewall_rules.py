@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_l3_firewall_rules
-short_description: Resource module for networks _appliance _firewall l3 _firewall _rules
+short_description: Resource module for networks _appliance _firewall l3firewallrules
 description:
-  - Manage operation update of the resource networks _appliance _firewall l3 _firewall _rules.
+  - Manage operation update of the resource networks _appliance _firewall l3firewallrules.
   - Update the L3 firewall rules of an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,43 +19,52 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: An ordered array of the firewall rules (not including the default rule).
+    description: An ordered array of the firewall rules (not including the default
+      rule).
     elements: dict
     suboptions:
       comment:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR notation), fully-qualified domain names (FQDN) or 'any'.
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation), fully-qualified domain names (FQDN) or 'any'.
         type: str
       destPort:
-        description: Comma-separated list of destination port(s) (integer in the range 1-65535), or 'any'.
+        description: Comma-separated list of destination port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       policy:
         description: '''allow'' or ''deny'' traffic specified by this rule.'
         type: str
       protocol:
-        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or 'any').
+        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or
+          'any').
         type: str
       srcCidr:
-        description: Comma-separated list of source IP address(es) (in IP or CIDR notation), or 'any' (note FQDN not supported for source addresses).
+        description: Comma-separated list of source IP address(es) (in IP or CIDR
+          notation), or 'any' (note FQDN not supported for source addresses).
         type: str
       srcPort:
-        description: Comma-separated list of source port(s) (integer in the range 1-65535), or 'any'.
+        description: Comma-separated list of source port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       syslogEnabled:
-        description: Log this rule to syslog (true or false, boolean value) - only applicable if a syslog has been configured (optional).
+        description: Log this rule to syslog (true or false, boolean value) - only
+          applicable if a syslog has been configured (optional).
         type: bool
     type: list
   syslogDefaultRule:
-    description: Log the special default rule (boolean value - enable only if you've configured a syslog server) (optional).
+    description: Log the special default rule (boolean value - enable only if you've
+      configured a syslog server) (optional).
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallL3FirewallRules
-    description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules API.
+    description: Complete reference of the updateNetworkApplianceFirewallL3FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-l3-firewall-rules
 notes:
   - SDK Method used are

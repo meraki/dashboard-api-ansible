@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_uplink_statuses_info
-short_description: Information module for organizations _cellular _gateway _uplink _statuses
+short_description: Information module for organizations _cellulargateway _uplink _statuses
 description:
-  - Get all organizations _cellular _gateway _uplink _statuses.
+  - Information module for Organizations Cellulargateway Uplink Statuses Info.
+  - Get all organizations _cellulargateway _uplink _statuses.
   - List the uplink status of every Meraki MG cellular gateway in the organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,41 +22,56 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
-        NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include these networks.
+        NetworkIds query parameter. A list of network IDs. The returned devices will
+        be filtered to only include these networks.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
       - >
-        Serials query parameter. A list of serial numbers. The returned devices will be filtered to only include these serials.
+        Serials query parameter. A list of serial numbers. The returned devices will
+        be filtered to only include these serials.
     elements: str
     type: list
   iccids:
     description:
-      - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
+      - Information module for Organizations Cellulargateway Uplink Statuses Info.
+      - Iccids query parameter. A list of ICCIDs. The returned devices will be filtered
+        to only include these ICCIDs.
     elements: str
     type: list
 requirements:
@@ -63,7 +79,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway getOrganizationCellularGatewayUplinkStatuses
-    description: Complete reference of the getOrganizationCellularGatewayUplinkStatuses API.
+    description: Complete reference of the getOrganizationCellularGatewayUplinkStatuses
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-cellular-gateway-uplink-statuses
 notes:
   - SDK Method used are
@@ -73,7 +90,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _cellular _gateway _uplink _statuses
+- name: Get all organizations _cellulargateway _uplink _statuses
   cisco.meraki.organizations_cellular_gateway_uplink_statuses_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -116,37 +133,37 @@ meraki_response:
   sample: >
     [
       {
-        "lastReportedAt": "string",
-        "model": "string",
         "networkId": "string",
         "serial": "string",
+        "model": "string",
+        "lastReportedAt": "string",
         "uplinks": [
           {
-            "apn": "string",
-            "connectionType": "string",
-            "dns1": "string",
-            "dns2": "string",
-            "gateway": "string",
-            "iccid": "string",
-            "imsi": "string",
             "interface": "string",
+            "status": "string",
             "ip": "string",
-            "mcc": "string",
-            "mnc": "string",
-            "model": "string",
-            "msisdn": "string",
-            "mtu": 0,
             "provider": "string",
             "publicIp": "string",
-            "roaming": {
-              "status": "string"
-            },
+            "model": "string",
             "signalStat": {
               "rsrp": "string",
               "rsrq": "string"
             },
+            "mcc": "string",
+            "mnc": "string",
+            "roaming": {
+              "status": "string"
+            },
+            "connectionType": "string",
+            "apn": "string",
+            "gateway": "string",
+            "dns1": "string",
+            "dns2": "string",
             "signalType": "string",
-            "status": "string"
+            "mtu": 0,
+            "iccid": "string",
+            "imsi": "string",
+            "msisdn": "string"
           }
         ]
       }

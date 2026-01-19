@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_appliance_uplinks_settings_info
 short_description: Information module for devices _appliance _uplinks _settings
 description:
+  - Information module for Devices Appliance Uplinks Settings Info.
   - Get all devices _appliance _uplinks _settings.
   - Return the uplink settings for an MX appliance.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Appliance Uplinks Settings Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -72,17 +74,14 @@ meraki_response:
     {
       "wan1": {
         "enabled": true,
-        "pppoe": {
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          },
-          "enabled": true
+        "vlanTagging": {
+          "enabled": true,
+          "vlanId": 0
         },
         "svis": {
           "ipv4": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -91,8 +90,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -101,24 +100,24 @@ meraki_response:
             }
           }
         },
-        "vlanTagging": {
+        "pppoe": {
           "enabled": true,
-          "vlanId": 0
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          }
         }
       },
       "wan2": {
         "enabled": true,
-        "pppoe": {
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          },
-          "enabled": true
+        "vlanTagging": {
+          "enabled": true,
+          "vlanId": 0
         },
         "svis": {
           "ipv4": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -127,8 +126,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -137,9 +136,12 @@ meraki_response:
             }
           }
         },
-        "vlanTagging": {
+        "pppoe": {
           "enabled": true,
-          "vlanId": 0
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          }
         }
       }
     }

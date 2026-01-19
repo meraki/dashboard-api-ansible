@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: organizations_devices_uplinks_loss_and_latency_info
-short_description: Information module for organizations _devices _uplinks _loss _and _latency
+short_description: Information module for organizations _devices _uplinkslossandlatency
 description:
-  - Get all organizations _devices _uplinks _loss _and _latency.
-  - Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago.
+  - Information module for Organizations Devices Uplinkslossandlatency Info.
+  - Get all organizations _devices _uplinkslossandlatency.
+  - Return the uplink loss and latency for every MX in the organization from at latest
+    2 minutes ago.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,40 +22,51 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 60 days from today.
     type: str
   t1:
     description:
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
       - >
-        T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 5 minutes after t0. The latest possible time that t1
-        can be is 2 minutes into the past.
+        T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes
+        into the past.
     type: str
   timespan:
     description:
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
     type: float
   uplink:
     description:
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
       - >
-        Uplink query parameter. Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all
-        uplinks.
+        Uplink query parameter. Optional filter for a specific WAN uplink. Valid uplinks
+        are wan1, wan2, wan3, cellular. Default will return all uplinks.
     type: str
   ip:
     description:
-      - Ip query parameter. Optional filter for a specific destination IP. Default will return all destination IPs.
+      - Information module for Organizations Devices Uplinkslossandlatency Info.
+      - Ip query parameter. Optional filter for a specific destination IP. Default
+        will return all destination IPs.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksLossAndLatency
-    description: Complete reference of the getOrganizationDevicesUplinksLossAndLatency API.
+    description: Complete reference of the getOrganizationDevicesUplinksLossAndLatency
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-loss-and-latency
 notes:
   - SDK Method used are
@@ -63,7 +76,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _uplinks _loss _and _latency
+- name: Get all organizations _devices _uplinkslossandlatency
   cisco.meraki.organizations_devices_uplinks_loss_and_latency_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -103,17 +116,17 @@ meraki_response:
   sample: >
     [
       {
-        "ip": "string",
         "networkId": "string",
         "serial": "string",
+        "uplink": "string",
+        "ip": "string",
         "timeSeries": [
           {
-            "latencyMs": 0,
+            "ts": "string",
             "lossPercent": 0,
-            "ts": "string"
+            "latencyMs": 0
           }
-        ],
-        "uplink": "string"
+        ]
       }
     ]
 """

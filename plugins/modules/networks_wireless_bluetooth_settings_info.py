@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_bluetooth_settings_info
 short_description: Information module for networks _wireless _bluetooth _settings
 description:
+  - Information module for Networks Wireless Bluetooth Settings Info.
   - Get all networks _wireless _bluetooth _settings.
   - Return the Bluetooth settings for a network. Bluetooth.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Bluetooth Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,12 +72,12 @@ meraki_response:
   type: dict
   sample: >
     {
-      "advertisingEnabled": true,
-      "eslEnabled": true,
-      "major": 0,
-      "majorMinorAssignmentMode": "string",
-      "minor": 0,
       "scanningEnabled": true,
-      "uuid": "string"
+      "advertisingEnabled": true,
+      "uuid": "string",
+      "majorMinorAssignmentMode": "string",
+      "major": 0,
+      "minor": 0,
+      "eslEnabled": true
     }
 """

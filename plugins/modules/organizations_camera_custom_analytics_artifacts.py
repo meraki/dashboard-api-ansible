@@ -6,10 +6,14 @@
 
 DOCUMENTATION = r"""
 module: organizations_camera_custom_analytics_artifacts
-short_description: Resource module for organizations _camera _custom _analytics _artifacts
+short_description: Resource module for organizations _camera _customanalytics _artifacts
 description:
-  - Manage operations create and delete of the resource organizations _camera _custom _analytics _artifacts. - > Create custom analytics artifact.
-    Returns an artifact upload URL with expiry time. Upload the artifact file with a put request to the returned upload URL before its expiry.
+  - Manage operations create and delete of the resource organizations _camera _customanalytics
+    _artifacts.
+  - >
+    Create custom analytics artifact. Returns an artifact upload URL with expiry time.
+    Upload the artifact file with a put request to the returned upload URL before
+    its expiry.
   - Delete Custom Analytics Artifact.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -30,10 +34,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for camera createOrganizationCameraCustomAnalyticsArtifact
-    description: Complete reference of the createOrganizationCameraCustomAnalyticsArtifact API.
+    description: Complete reference of the createOrganizationCameraCustomAnalyticsArtifact
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-custom-analytics-artifact
   - name: Cisco Meraki documentation for camera deleteOrganizationCameraCustomAnalyticsArtifact
-    description: Complete reference of the deleteOrganizationCameraCustomAnalyticsArtifact API.
+    description: Complete reference of the deleteOrganizationCameraCustomAnalyticsArtifact
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-camera-custom-analytics-artifact
 notes:
   - SDK Method used are
@@ -106,11 +112,11 @@ meraki_response:
   sample: >
     {
       "artifactId": "string",
-      "name": "string",
       "organizationId": "string",
+      "name": "string",
       "status": {
-        "message": "string",
-        "type": "string"
+        "type": "string",
+        "message": "string"
       },
       "uploadId": "string",
       "uploadUrl": "string",

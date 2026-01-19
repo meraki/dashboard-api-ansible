@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_webhooks_callbacks_statuses_info
 short_description: Information module for organizations _webhooks _callbacks _statuses
 description:
+  - Information module for Organizations Webhooks Callbacks Statuses Info.
   - Get organizations _webhooks _callbacks _statuses by id.
   - Return the status of an API callback.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Webhooks Callbacks Statuses Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   callbackId:
     description:
+      - Information module for Organizations Webhooks Callbacks Statuses Info.
       - CallbackId path parameter. Callback ID.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationWebhooksCallbacksStatus
-    description: Complete reference of the getOrganizationWebhooksCallbacksStatus API.
+    description: Complete reference of the getOrganizationWebhooksCallbacksStatus
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-webhooks-callbacks-status
 notes:
   - SDK Method used are
@@ -76,22 +80,22 @@ meraki_response:
   sample: >
     {
       "callbackId": "string",
-      "createdBy": {
-        "adminId": "string"
-      },
+      "status": "string",
       "errors": [
         "string"
       ],
-      "status": "string",
+      "createdBy": {
+        "adminId": "string"
+      },
       "webhook": {
+        "url": "string",
         "httpServer": {
           "id": "string"
         },
         "payloadTemplate": {
           "id": "string"
         },
-        "sentAt": "string",
-        "url": "string"
+        "sentAt": "string"
       }
     }
 """

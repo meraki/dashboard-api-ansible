@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sm_profiles_info
 short_description: Information module for networks _sm _profiles
 description:
+  - Information module for Networks Sm Profiles Info.
   - Get all networks _sm _profiles.
   - List all profiles in a network.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Profiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   payloadTypes:
     description:
+      - Information module for Networks Sm Profiles Info.
       - PayloadTypes query parameter. Filter by payload types.
     elements: str
     type: list
@@ -78,14 +81,14 @@ meraki_response:
   sample: >
     [
       {
-        "description": "string",
         "id": "string",
         "name": "string",
-        "payloadTypes": [
-          "string"
-        ],
+        "description": "string",
         "scope": "string",
         "tags": [
+          "string"
+        ],
+        "payloadTypes": [
           "string"
         ]
       }

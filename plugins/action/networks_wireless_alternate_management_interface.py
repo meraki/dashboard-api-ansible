@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    accessPoints=dict(type="list"),
     enabled=dict(type="bool"),
-    protocols=dict(type="list"),
     vlanId=dict(type="int"),
+    protocols=dict(type="list"),
+    accessPoints=dict(type="list"),
     networkId=dict(type="str"),
 ))
 
@@ -51,36 +50,42 @@ class NetworksWirelessAlternateManagementInterface(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            accessPoints=params.get("accessPoints"),
             enabled=params.get("enabled"),
-            protocols=params.get("protocols"),
             vlanId=params.get("vlanId"),
-            network_id=params.get("networkId"),
+            protocols=params.get("protocols"),
+            accessPoints=params.get("accessPoints"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('accessPoints') is not None or self.new_object.get('access_points') is not None:
-            new_object_params['accessPoints'] = self.new_object.get('accessPoints') or \
-                self.new_object.get('access_points')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('protocols') is not None or self.new_object.get('protocols') is not None:
-            new_object_params['protocols'] = self.new_object.get('protocols') or \
-                self.new_object.get('protocols')
-        if self.new_object.get('vlanId') is not None or self.new_object.get('vlan_id') is not None:
+        if self.new_object.get('vlanId') is not None or self.new_object.get(
+                'vlan_id') is not None:
             new_object_params['vlanId'] = self.new_object.get('vlanId') or \
                 self.new_object.get('vlan_id')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('protocols') is not None or self.new_object.get(
+                'protocols') is not None:
+            new_object_params['protocols'] = self.new_object.get(
+                'protocols') or self.new_object.get('protocols')
+        if self.new_object.get('accessPoints') is not None or self.new_object.get(
+                'access_points') is not None:
+            new_object_params['accessPoints'] = self.new_object.get(
+                'accessPoints') or self.new_object.get('access_points')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -135,17 +140,20 @@ class NetworksWirelessAlternateManagementInterface(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("accessPoints", "accessPoints"),
             ("enabled", "enabled"),
-            ("protocols", "protocols"),
             ("vlanId", "vlanId"),
+            ("protocols", "protocols"),
+            ("accessPoints", "accessPoints"),
             ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

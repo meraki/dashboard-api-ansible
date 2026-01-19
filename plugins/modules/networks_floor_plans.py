@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_floor_plans
-short_description: Resource module for networks _floor _plans
+short_description: Resource module for networks _floorplans
 description:
-  - Manage operations create, update and delete of the resource networks _floor _plans.
+  - Manage operations create, update and delete of the resource networks _floorplans.
   - Upload a floor plan.
   - Destroy a floor plan.
   - Update a floor plan's geolocation and other meta data.
@@ -18,7 +18,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   bottomLeftCorner:
-    description: The longitude and latitude of the bottom left corner of your floor plan.
+    description: The longitude and latitude of the bottom left corner of your floor
+      plan.
     suboptions:
       lat:
         description: Latitude.
@@ -28,7 +29,8 @@ options:
         type: float
     type: dict
   bottomRightCorner:
-    description: The longitude and latitude of the bottom right corner of your floor plan.
+    description: The longitude and latitude of the bottom right corner of your floor
+      plan.
     suboptions:
       lat:
         description: Latitude.
@@ -38,11 +40,15 @@ options:
         type: float
     type: dict
   center:
-    description: The longitude and latitude of the center of your floor plan. The 'center' or two adjacent corners (e.g. 'topLeftCorner' and 'bottomLeftCorner')
-      must be specified. If 'center' is specified, the floor plan is placed over that point with no rotation. If two adjacent corners are specified,
-      the floor plan is rotated to line up with the two specified points. The aspect ratio of the floor plan's image is preserved regardless of
-      which corners/center are specified. (This means if that more than two corners are specified, only two corners may be used to preserve the
-      floor plan's aspect ratio.). No two points can have the same latitude, longitude pair.
+    description: The longitude and latitude of the center of your floor plan. The
+      'center' or two adjacent corners (e.g. 'topLeftCorner' and 'bottomLeftCorner')
+      must be specified. If 'center' is specified, the floor plan is placed over that
+      point with no rotation. If two adjacent corners are specified, the floor plan
+      is rotated to line up with the two specified points. The aspect ratio of the
+      floor plan's image is preserved regardless of which corners/center are specified.
+      (This means if that more than two corners are specified, only two corners may
+      be used to preserve the floor plan's aspect ratio.). No two points can have
+      the same latitude, longitude pair.
     suboptions:
       lat:
         description: Latitude.
@@ -58,8 +64,9 @@ options:
     description: FloorPlanId path parameter. Floor plan ID.
     type: str
   imageContents:
-    description: The file contents (a base 64 encoded string) of your image. Supported formats are PNG, GIF, and JPG. Note that all images are
-      saved as PNG files, regardless of the format they are uploaded in.
+    description: The file contents (a base 64 encoded string) of your image. Supported
+      formats are PNG, GIF, and JPG. Note that all images are saved as PNG files,
+      regardless of the format they are uploaded in.
     type: str
   name:
     description: The name of your floor plan.
@@ -78,7 +85,8 @@ options:
         type: float
     type: dict
   topRightCorner:
-    description: The longitude and latitude of the top right corner of your floor plan.
+    description: The longitude and latitude of the top right corner of your floor
+      plan.
     suboptions:
       lat:
         description: Latitude.
@@ -155,32 +163,6 @@ EXAMPLES = r"""
     topRightCorner:
       lat: 37.770040510499996
       lng: -122.38714009525
-- name: Delete by id
-  cisco.meraki.networks_floor_plans:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    floorPlanId: string
-    networkId: string
 - name: Update by id
   cisco.meraki.networks_floor_plans:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -225,6 +207,32 @@ EXAMPLES = r"""
     topRightCorner:
       lat: 37.770040510499996
       lng: -122.38714009525
+- name: Delete by id
+  cisco.meraki.networks_floor_plans:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    floorPlanId: string
+    networkId: string
 """
 RETURN = r"""
 meraki_response:
@@ -233,6 +241,44 @@ meraki_response:
   type: dict
   sample: >
     {
+      "floorPlanId": "string",
+      "imageUrl": "string",
+      "imageUrlExpiresAt": "string",
+      "imageExtension": "string",
+      "imageMd5": "string",
+      "name": "string",
+      "devices": [
+        {
+          "name": "string",
+          "lat": 0,
+          "lng": 0,
+          "address": "string",
+          "notes": "string",
+          "tags": [
+            "string"
+          ],
+          "networkId": "string",
+          "serial": "string",
+          "model": "string",
+          "imei": "string",
+          "mac": "string",
+          "lanIp": "string",
+          "firmware": "string",
+          "productType": "string",
+          "details": [
+            {
+              "name": "string",
+              "value": "string"
+            }
+          ]
+        }
+      ],
+      "width": 0,
+      "height": 0,
+      "center": {
+        "lat": 0,
+        "lng": 0
+      },
       "bottomLeftCorner": {
         "lat": 0,
         "lng": 0
@@ -241,44 +287,6 @@ meraki_response:
         "lat": 0,
         "lng": 0
       },
-      "center": {
-        "lat": 0,
-        "lng": 0
-      },
-      "devices": [
-        {
-          "address": "string",
-          "details": [
-            {
-              "name": "string",
-              "value": "string"
-            }
-          ],
-          "firmware": "string",
-          "imei": "string",
-          "lanIp": "string",
-          "lat": 0,
-          "lng": 0,
-          "mac": "string",
-          "model": "string",
-          "name": "string",
-          "networkId": "string",
-          "notes": "string",
-          "productType": "string",
-          "serial": "string",
-          "tags": [
-            "string"
-          ]
-        }
-      ],
-      "floorNumber": 0,
-      "floorPlanId": "string",
-      "height": 0,
-      "imageExtension": "string",
-      "imageMd5": "string",
-      "imageUrl": "string",
-      "imageUrlExpiresAt": "string",
-      "name": "string",
       "topLeftCorner": {
         "lat": 0,
         "lng": 0
@@ -287,6 +295,6 @@ meraki_response:
         "lat": 0,
         "lng": 0
       },
-      "width": 0
+      "floorNumber": 0
     }
 """

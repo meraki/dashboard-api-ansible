@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -54,22 +53,26 @@ class OrganizationsInventoryOnboardingCloudMonitoringImports(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('importIds') is not None or self.new_object.get('import_ids') is not None:
-            new_object_params['importIds'] = self.new_object.get('importIds') or \
-                self.new_object.get('import_ids')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('importIds') is not None or self.new_object.get(
+                'import_ids') is not None:
+            new_object_params['importIds'] = self.new_object.get(
+                'importIds') or self.new_object.get('import_ids')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('devices') is not None or self.new_object.get('devices') is not None:
+        if self.new_object.get('devices') is not None or self.new_object.get(
+                'devices') is not None:
             new_object_params['devices'] = self.new_object.get('devices') or \
                 self.new_object.get('devices')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -79,7 +82,8 @@ class OrganizationsInventoryOnboardingCloudMonitoringImports(object):
             items = self.meraki.exec_meraki(
                 family="organizations",
                 function="getOrganizationInventoryOnboardingCloudMonitoringImports",
-                params=self.get_all_params(name=name),
+                params=self.get_all_params(
+                    name=name),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -128,9 +132,12 @@ class OrganizationsInventoryOnboardingCloudMonitoringImports(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

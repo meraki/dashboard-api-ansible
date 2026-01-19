@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_policy_objects_groups_info
-short_description: Information module for organizations _policy _objects _groups
+short_description: Information module for organizations _policyobjects _groups
 description:
-  - Get all organizations _policy _objects _groups.
-  - Get organizations _policy _objects _groups by id.
+  - Information module for Organizations Policyobjects Groups Info.
+  - Get all organizations _policyobjects _groups.
+  - Get organizations _policyobjects _groups by id.
   - Lists Policy Object Groups belonging to the organization.
   - Shows details of a Policy Object Group.
 version_added: '1.0.0'
@@ -23,28 +24,38 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Policyobjects Groups Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
+      - Information module for Organizations Policyobjects Groups Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 10 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Policyobjects Groups Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Policyobjects Groups Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   policyObjectGroupId:
     description:
+      - Information module for Organizations Policyobjects Groups Info.
       - PolicyObjectGroupId path parameter. Policy object group ID.
     type: str
 requirements:
@@ -67,7 +78,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _policy _objects _groups
+- name: Get all organizations _policyobjects _groups
   cisco.meraki.organizations_policy_objects_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -97,7 +108,7 @@ EXAMPLES = r"""
     total_pages: -1
     direction: next
   register: result
-- name: Get organizations _policy _objects _groups by id
+- name: Get organizations _policyobjects _groups by id
   cisco.meraki.organizations_policy_objects_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -131,16 +142,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "category": "string",
-      "createdAt": "string",
       "id": "string",
       "name": "string",
-      "networkIds": [
-        "string"
-      ],
+      "category": "string",
+      "createdAt": "string",
+      "updatedAt": "string",
       "objectIds": [
         0
       ],
-      "updatedAt": "string"
+      "networkIds": [
+        "string"
+      ]
     }
 """

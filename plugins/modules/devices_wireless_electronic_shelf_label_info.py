@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_wireless_electronic_shelf_label_info
 short_description: Information module for devices _wireless _electronic _shelf _label
 description:
+  - Information module for Devices Wireless Electronic Shelf Label Info.
   - Get all devices _wireless _electronic _shelf _label.
   - Return the ESL settings of a device.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Wireless Electronic Shelf Label Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -71,11 +73,11 @@ meraki_response:
   sample: >
     {
       "apEslId": 0,
+      "serial": "string",
       "channel": "string",
       "enabled": true,
-      "hostname": "string",
       "networkId": "string",
-      "provider": "string",
-      "serial": "string"
+      "hostname": "string",
+      "provider": "string"
     }
 """

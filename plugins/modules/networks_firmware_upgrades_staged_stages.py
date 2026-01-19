@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_stages
-short_description: Resource module for networks _firmware _upgrades _staged _stages
+short_description: Resource module for networks _firmwareupgrades _staged _stages
 description:
-  - Manage operation update of the resource networks _firmware _upgrades _staged _stages.
+  - Manage operation update of the resource networks _firmwareupgrades _staged _stages.
   - Assign Staged Upgrade Group order in the sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -35,7 +35,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks updateNetworkFirmwareUpgradesStagedStages
-    description: Complete reference of the updateNetworkFirmwareUpgradesStagedStages API.
+    description: Complete reference of the updateNetworkFirmwareUpgradesStagedStages
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-firmware-upgrades-staged-stages
 notes:
   - SDK Method used are
@@ -83,9 +84,9 @@ meraki_response:
     [
       {
         "group": {
-          "description": "string",
           "id": "string",
-          "name": "string"
+          "name": "string",
+          "description": "string"
         }
       }
     ]

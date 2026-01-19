@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_routing_multicast_rendezvous_points
-short_description: Resource module for networks _switch _routing _multicast _rendezvous _points
+short_description: Resource module for networks _switch _routing _multicast _rendezvouspoints
 description:
-  - Manage operations create, update and delete of the resource networks _switch _routing _multicast _rendezvous _points.
+  - Manage operations create, update and delete of the resource networks _switch _routing
+    _multicast _rendezvouspoints.
   - Create a multicast rendezvous point.
   - Delete a multicast rendezvous point.
   - Update a multicast rendezvous point.
@@ -29,18 +30,28 @@ options:
   rendezvousPointId:
     description: RendezvousPointId path parameter. Rendezvous point ID.
     type: str
+  vrf:
+    description: The VRF with PIM enabled L3 interface.
+    suboptions:
+      name:
+        description: The name of the VRF.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch createNetworkSwitchRoutingMulticastRendezvousPoint
-    description: Complete reference of the createNetworkSwitchRoutingMulticastRendezvousPoint API.
+    description: Complete reference of the createNetworkSwitchRoutingMulticastRendezvousPoint
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-switch-routing-multicast-rendezvous-point
   - name: Cisco Meraki documentation for switch deleteNetworkSwitchRoutingMulticastRendezvousPoint
-    description: Complete reference of the deleteNetworkSwitchRoutingMulticastRendezvousPoint API.
+    description: Complete reference of the deleteNetworkSwitchRoutingMulticastRendezvousPoint
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-network-switch-routing-multicast-rendezvous-point
   - name: Cisco Meraki documentation for switch updateNetworkSwitchRoutingMulticastRendezvousPoint
-    description: Complete reference of the updateNetworkSwitchRoutingMulticastRendezvousPoint API.
+    description: Complete reference of the updateNetworkSwitchRoutingMulticastRendezvousPoint
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-routing-multicast-rendezvous-point
 notes:
   - SDK Method used are
@@ -81,6 +92,8 @@ EXAMPLES = r"""
     interfaceIp: 192.168.1.2
     multicastGroup: Any
     networkId: string
+    vrf:
+      name: Blue
 - name: Delete by id
   cisco.meraki.networks_switch_routing_multicast_rendezvous_points:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -135,6 +148,8 @@ EXAMPLES = r"""
     multicastGroup: Any
     networkId: string
     rendezvousPointId: string
+    vrf:
+      name: Blue
 """
 RETURN = r"""
 meraki_response:
@@ -143,10 +158,10 @@ meraki_response:
   type: dict
   sample: >
     {
-      "interfaceIp": "string",
-      "interfaceName": "string",
-      "multicastGroup": "string",
       "rendezvousPointId": "string",
-      "serial": "string"
+      "serial": "string",
+      "interfaceName": "string",
+      "interfaceIp": "string",
+      "multicastGroup": "string"
     }
 """

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_policy_objects
-short_description: Resource module for organizations _policy _objects
+short_description: Resource module for organizations _policyobjects
 description:
-  - Manage operations create, update and delete of the resource organizations _policy _objects.
+  - Manage operations create, update and delete of the resource organizations _policyobjects.
   - Creates a new Policy Object.
   - Deletes a Policy Object.
   - Updates a Policy Object.
@@ -37,7 +37,8 @@ options:
     description: Mask of a policy object (e.g. "255.255.0.0").
     type: str
   name:
-    description: Name of a policy object, unique within the organization (alphanumeric, space, dash, or underscore characters only).
+    description: Name of a policy object, unique within the organization (alphanumeric,
+      space, dash, or underscore characters only).
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
@@ -46,7 +47,8 @@ options:
     description: PolicyObjectId path parameter. Policy object ID.
     type: str
   type:
-    description: Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn, ipAndMask).
+    description: Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn,
+      ipAndMask).
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -107,32 +109,6 @@ EXAMPLES = r"""
     name: Web Servers - Datacenter 10
     organizationId: string
     type: cidr
-- name: Delete by id
-  cisco.meraki.organizations_policy_objects:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    organizationId: string
-    policyObjectId: string
 - name: Update by id
   cisco.meraki.organizations_policy_objects:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -166,6 +142,32 @@ EXAMPLES = r"""
     name: Web Servers - Datacenter 10
     organizationId: string
     policyObjectId: string
+- name: Delete by id
+  cisco.meraki.organizations_policy_objects:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    organizationId: string
+    policyObjectId: string
 """
 RETURN = r"""
 meraki_response:
@@ -174,18 +176,18 @@ meraki_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "name": "string",
       "category": "string",
+      "type": "string",
       "cidr": "string",
       "createdAt": "string",
+      "updatedAt": "string",
       "groupIds": [
         "string"
       ],
-      "id": "string",
-      "name": "string",
       "networkIds": [
         "string"
-      ],
-      "type": "string",
-      "updatedAt": "string"
+      ]
     }
 """

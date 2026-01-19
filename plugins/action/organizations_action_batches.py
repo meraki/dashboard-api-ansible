@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    actions=dict(type="list"),
-    callback=dict(type="dict"),
     confirmed=dict(type="bool"),
     synchronous=dict(type="bool"),
+    actions=dict(type="list"),
+    callback=dict(type="dict"),
     organizationId=dict(type="str"),
     actionBatchId=dict(type="str"),
 ))
@@ -53,74 +52,89 @@ class OrganizationsActionBatches(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            actions=params.get("actions"),
-            callback=params.get("callback"),
             confirmed=params.get("confirmed"),
             synchronous=params.get("synchronous"),
+            actions=params.get("actions"),
+            callback=params.get("callback"),
             organizationId=params.get("organizationId"),
             actionBatchId=params.get("actionBatchId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('status') is not None or self.new_object.get('status') is not None:
+        if self.new_object.get('status') is not None or self.new_object.get(
+                'status') is not None:
             new_object_params['status'] = self.new_object.get('status')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('actionBatchId') is not None or self.new_object.get('action_batch_id') is not None:
-            new_object_params['actionBatchId'] = self.new_object.get('actionBatchId') or \
-                self.new_object.get('action_batch_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('actionBatchId') is not None or self.new_object.get(
+                'action_batch_id') is not None:
+            new_object_params['actionBatchId'] = self.new_object.get(
+                'actionBatchId') or self.new_object.get('action_batch_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('actions') is not None or self.new_object.get('actions') is not None:
-            new_object_params['actions'] = self.new_object.get('actions') or \
-                self.new_object.get('actions')
-        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
-            new_object_params['callback'] = self.new_object.get('callback') or \
-                self.new_object.get('callback')
-        if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
+        if self.new_object.get('confirmed') is not None or self.new_object.get(
+                'confirmed') is not None:
             new_object_params['confirmed'] = self.new_object.get('confirmed')
-        if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
+        if self.new_object.get('synchronous') is not None or self.new_object.get(
+                'synchronous') is not None:
             new_object_params['synchronous'] = self.new_object.get(
                 'synchronous')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('actions') is not None or self.new_object.get(
+                'actions') is not None:
+            new_object_params['actions'] = self.new_object.get('actions') or \
+                self.new_object.get('actions')
+        if self.new_object.get('callback') is not None or self.new_object.get(
+                'callback') is not None:
+            new_object_params['callback'] = self.new_object.get(
+                'callback') or self.new_object.get('callback')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('actionBatchId') is not None or self.new_object.get('action_batch_id') is not None:
-            new_object_params['actionBatchId'] = self.new_object.get('actionBatchId') or \
-                self.new_object.get('action_batch_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('actionBatchId') is not None or self.new_object.get(
+                'action_batch_id') is not None:
+            new_object_params['actionBatchId'] = self.new_object.get(
+                'actionBatchId') or self.new_object.get('action_batch_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('confirmed') is not None or self.new_object.get('confirmed') is not None:
+        if self.new_object.get('confirmed') is not None or self.new_object.get(
+                'confirmed') is not None:
             new_object_params['confirmed'] = self.new_object.get('confirmed')
-        if self.new_object.get('synchronous') is not None or self.new_object.get('synchronous') is not None:
+        if self.new_object.get('synchronous') is not None or self.new_object.get(
+                'synchronous') is not None:
             new_object_params['synchronous'] = self.new_object.get(
                 'synchronous')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('actionBatchId') is not None or self.new_object.get('action_batch_id') is not None:
-            new_object_params['actionBatchId'] = self.new_object.get('actionBatchId') or \
-                self.new_object.get('action_batch_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('actionBatchId') is not None or self.new_object.get(
+                'action_batch_id') is not None:
+            new_object_params['actionBatchId'] = self.new_object.get(
+                'actionBatchId') or self.new_object.get('action_batch_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -192,18 +206,21 @@ class OrganizationsActionBatches(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("actions", "actions"),
-            ("callback", "callback"),
             ("confirmed", "confirmed"),
             ("synchronous", "synchronous"),
+            ("actions", "actions"),
+            ("callback", "callback"),
             ("organizationId", "organizationId"),
             ("actionBatchId", "actionBatchId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

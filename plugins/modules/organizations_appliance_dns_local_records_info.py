@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_dns_local_records_info
 short_description: Information module for organizations _appliance _dns _local _records
 description:
+  - Information module for Organizations Appliance Dns Local Records Info.
   - Get all organizations _appliance _dns _local _records.
   - Fetch the DNS records used in local DNS profiles.
 version_added: '1.0.0'
@@ -20,11 +21,14 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Dns Local Records Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - Information module for Organizations Appliance Dns Local Records Info.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
 requirements:
@@ -32,7 +36,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsLocalRecords
-    description: Complete reference of the getOrganizationApplianceDnsLocalRecords API.
+    description: Complete reference of the getOrganizationApplianceDnsLocalRecords
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-local-records
 notes:
   - SDK Method used are
@@ -78,12 +83,12 @@ meraki_response:
   sample: >
     [
       {
-        "address": "string",
+        "recordId": "string",
         "hostname": "string",
+        "address": "string",
         "profile": {
           "id": "string"
-        },
-        "recordId": "string"
+        }
       }
     ]
 """

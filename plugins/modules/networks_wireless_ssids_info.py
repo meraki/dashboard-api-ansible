@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_info
 short_description: Information module for networks _wireless _ssids
 description:
+  - Information module for Networks Wireless Ssids Info.
   - Get all networks _wireless _ssids.
   - Get networks _wireless _ssids by id.
   - List the MR SSIDs in a network.
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Info.
       - Number path parameter.
     type: str
 requirements:
@@ -107,54 +110,54 @@ meraki_response:
   type: dict
   sample: >
     {
-      "adminSplashUrl": "string",
-      "authMode": "string",
-      "availabilityTags": [
-        "string"
-      ],
-      "availableOnAllAps": true,
-      "bandSelection": "string",
-      "enabled": true,
-      "encryptionMode": "string",
-      "ipAssignmentMode": "string",
-      "localAuth": true,
-      "mandatoryDhcpEnabled": true,
-      "minBitrate": 0,
-      "name": "string",
       "number": 0,
-      "perClientBandwidthLimitDown": 0,
-      "perClientBandwidthLimitUp": 0,
-      "perSsidBandwidthLimitDown": 0,
-      "perSsidBandwidthLimitUp": 0,
-      "radiusAccountingEnabled": true,
-      "radiusAccountingServers": [
-        {
-          "caCertificate": "string",
-          "host": "string",
-          "openRoamingCertificateId": 0,
-          "port": 0
-        }
-      ],
-      "radiusAttributeForGroupPolicies": "string",
-      "radiusEnabled": true,
-      "radiusFailoverPolicy": "string",
-      "radiusLoadBalancingPolicy": "string",
+      "name": "string",
+      "enabled": true,
+      "splashPage": "string",
+      "ssidAdminAccessible": true,
+      "localAuth": true,
+      "authMode": "string",
+      "encryptionMode": "string",
+      "wpaEncryptionMode": "string",
       "radiusServers": [
         {
-          "caCertificate": "string",
           "host": "string",
+          "port": 0,
           "openRoamingCertificateId": 0,
-          "port": 0
+          "caCertificate": "string"
         }
       ],
-      "splashPage": "string",
+      "radiusAccountingServers": [
+        {
+          "host": "string",
+          "port": 0,
+          "openRoamingCertificateId": 0,
+          "caCertificate": "string"
+        }
+      ],
+      "radiusAccountingEnabled": true,
+      "radiusEnabled": true,
+      "radiusAttributeForGroupPolicies": "string",
+      "radiusFailoverPolicy": "string",
+      "radiusLoadBalancingPolicy": "string",
+      "ipAssignmentMode": "string",
+      "adminSplashUrl": "string",
       "splashTimeout": "string",
-      "ssidAdminAccessible": true,
-      "visible": true,
       "walledGardenEnabled": true,
       "walledGardenRanges": [
         "string"
       ],
-      "wpaEncryptionMode": "string"
+      "minBitrate": 0,
+      "bandSelection": "string",
+      "perClientBandwidthLimitUp": 0,
+      "perClientBandwidthLimitDown": 0,
+      "visible": true,
+      "availableOnAllAps": true,
+      "availabilityTags": [
+        "string"
+      ],
+      "perSsidBandwidthLimitUp": 0,
+      "perSsidBandwidthLimitDown": 0,
+      "mandatoryDhcpEnabled": true
     }
 """

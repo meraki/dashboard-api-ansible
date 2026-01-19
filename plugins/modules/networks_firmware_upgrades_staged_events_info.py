@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_info
-short_description: Information module for networks _firmware _upgrades _staged _events
+short_description: Information module for networks _firmwareupgrades _staged _events
 description:
-  - Get all networks _firmware _upgrades _staged _events.
+  - Information module for Networks Firmwareupgrades Staged Events Info.
+  - Get all networks _firmwareupgrades _staged _events.
   - Get the Staged Upgrade Event from a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Firmwareupgrades Staged Events Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks getNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents API.
+    description: Complete reference of the getNetworkFirmwareUpgradesStagedEvents
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmware _upgrades _staged _events
+- name: Get all networks _firmwareupgrades _staged _events
   cisco.meraki.networks_firmware_upgrades_staged_events_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -80,26 +83,26 @@ meraki_response:
           }
         }
       },
+      "stages": [
+        {
+          "group": {
+            "id": "string",
+            "name": "string",
+            "description": "string"
+          },
+          "milestones": {
+            "scheduledFor": "string",
+            "startedAt": "string",
+            "completedAt": "string",
+            "canceledAt": "string"
+          },
+          "status": "string"
+        }
+      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
-        }
-      ],
-      "stages": [
-        {
-          "group": {
-            "description": "string",
-            "id": "string",
-            "name": "string"
-          },
-          "milestones": {
-            "canceledAt": "string",
-            "completedAt": "string",
-            "scheduledFor": "string",
-            "startedAt": "string"
-          },
-          "status": "string"
         }
       ]
     }

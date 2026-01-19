@@ -23,7 +23,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the devices to be checked-in.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the devices to be checked-in.
     elements: str
     type: list
   serials:

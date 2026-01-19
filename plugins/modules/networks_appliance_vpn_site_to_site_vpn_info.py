@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_vpn_site_to_site_vpn_info
-short_description: Information module for networks _appliance _vpn _site _to _site _vpn
+short_description: Information module for networks _appliance _vpn _sitetositevpn
 description:
-  - Get all networks _appliance _vpn _site _to _site _vpn.
+  - Information module for Networks Appliance Vpn Sitetositevpn Info.
+  - Get all networks _appliance _vpn _sitetositevpn.
   - Return the site-to-site VPN settings of a network. Only valid for MX networks.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Vpn Sitetositevpn Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _vpn _site _to _site _vpn
+- name: Get all networks _appliance _vpn _sitetositevpn
   cisco.meraki.networks_appliance_vpn_site_to_site_vpn_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,27 +72,27 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mode": "string",
       "hubs": [
         {
           "hubId": "string",
           "useDefaultRoute": true
         }
       ],
-      "mode": "string",
+      "subnets": [
+        {
+          "localSubnet": "string",
+          "useVpn": true,
+          "nat": {
+            "enabled": true,
+            "remoteSubnet": "string"
+          }
+        }
+      ],
       "subnet": {
         "nat": {
           "isAllowed": true
         }
-      },
-      "subnets": [
-        {
-          "localSubnet": "string",
-          "nat": {
-            "enabled": true,
-            "remoteSubnet": "string"
-          },
-          "useVpn": true
-        }
-      ]
+      }
     }
 """

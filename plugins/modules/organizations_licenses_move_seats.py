@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_licenses_move_seats
-short_description: Resource module for organizations _licenses _move _seats
+short_description: Resource module for organizations _licenses _moveseats
 description:
-  - Manage operation create of the resource organizations _licenses _move _seats.
+  - Manage operation create of the resource organizations _licenses _moveseats.
   - Move SM seats to another organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -25,7 +25,8 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   seatCount:
-    description: The number of seats to move to the new organization. Must be less than or equal to the total number of seats of the license.
+    description: The number of seats to move to the new organization. Must be less
+      than or equal to the total number of seats of the license.
     type: int
 requirements:
   - meraki >= 2.4.9

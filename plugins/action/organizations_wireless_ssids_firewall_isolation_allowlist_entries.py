@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,10 +31,10 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    client=dict(type="dict"),
     description=dict(type="str"),
-    network=dict(type="dict"),
+    client=dict(type="dict"),
     ssid=dict(type="dict"),
+    network=dict(type="dict"),
     organizationId=dict(type="str"),
     entryId=dict(type="str"),
 ))
@@ -53,77 +52,94 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            client=params.get("client"),
             description=params.get("description"),
-            network=params.get("network"),
+            client=params.get("client"),
             ssid=params.get("ssid"),
+            network=params.get("network"),
             organizationId=params.get("organizationId"),
             entryId=params.get("entryId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')
         new_object_params['total_pages'] = -1
-        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
-            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
-                self.new_object.get('starting_after')
-        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
-            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
-                self.new_object.get('ending_before')
-        if self.new_object.get('networkIds') is not None or self.new_object.get('network_ids') is not None:
-            new_object_params['networkIds'] = self.new_object.get('networkIds') or \
-                self.new_object.get('network_ids')
-        if self.new_object.get('ssids') is not None or self.new_object.get('ssids') is not None:
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('networkIds') is not None or self.new_object.get(
+                'network_ids') is not None:
+            new_object_params['networkIds'] = self.new_object.get(
+                'networkIds') or self.new_object.get('network_ids')
+        if self.new_object.get('ssids') is not None or self.new_object.get(
+                'ssids') is not None:
             new_object_params['ssids'] = self.new_object.get('ssids')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('client') is not None or self.new_object.get('client') is not None:
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('client') is not None or self.new_object.get(
+                'client') is not None:
             new_object_params['client'] = self.new_object.get('client') or \
                 self.new_object.get('client')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('network') is not None or self.new_object.get('network') is not None:
-            new_object_params['network'] = self.new_object.get('network') or \
-                self.new_object.get('network')
-        if self.new_object.get('ssid') is not None or self.new_object.get('ssid') is not None:
+        if self.new_object.get('ssid') is not None or self.new_object.get(
+                'ssid') is not None:
             new_object_params['ssid'] = self.new_object.get('ssid') or \
                 self.new_object.get('ssid')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('network') is not None or self.new_object.get(
+                'network') is not None:
+            new_object_params['network'] = self.new_object.get('network') or \
+                self.new_object.get('network')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('entryId') is not None or self.new_object.get('entry_id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('entryId') is not None or self.new_object.get(
+                'entry_id') is not None:
             new_object_params['entryId'] = self.new_object.get('entryId') or \
                 self.new_object.get('entry_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('client') is not None or self.new_object.get('client') is not None:
+        if self.new_object.get('description') is not None or self.new_object.get(
+                'description') is not None:
+            new_object_params['description'] = self.new_object.get(
+                'description') or self.new_object.get('description')
+        if self.new_object.get('client') is not None or self.new_object.get(
+                'client') is not None:
             new_object_params['client'] = self.new_object.get('client') or \
                 self.new_object.get('client')
-        if self.new_object.get('description') is not None or self.new_object.get('description') is not None:
-            new_object_params['description'] = self.new_object.get('description') or \
-                self.new_object.get('description')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('entryId') is not None or self.new_object.get('entry_id') is not None:
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('entryId') is not None or self.new_object.get(
+                'entry_id') is not None:
             new_object_params['entryId'] = self.new_object.get('entryId') or \
                 self.new_object.get('entry_id')
         return new_object_params
@@ -135,7 +151,8 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             items = self.meraki.exec_meraki(
                 family="wireless",
                 function="getOrganizationWirelessSsidsFirewallIsolationAllowlistEntries",
-                params=self.get_all_params(name=name),
+                params=self.get_all_params(
+                    name=name),
             )
             if isinstance(items, dict):
                 if 'items' in items:
@@ -155,7 +172,8 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             items = self.meraki.exec_meraki(
                 family="wireless",
                 function="getOrganizationWirelessSsidsFirewallIsolationAllowlistEntries",
-                params=self.get_all_params(id=id),
+                params=self.get_all_params(
+                    id=id),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -196,18 +214,21 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("client", "client"),
             ("description", "description"),
-            ("network", "network"),
+            ("client", "client"),
             ("ssid", "ssid"),
+            ("network", "network"),
             ("organizationId", "organizationId"),
             ("entryId", "entryId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

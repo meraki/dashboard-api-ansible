@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_security_centers_info
-short_description: Information module for networks _sm _devices _security _centers
+short_description: Information module for networks _sm _devices _securitycenters
 description:
-  - Get all networks _sm _devices _security _centers.
+  - Information module for Networks Sm Devices Securitycenters Info.
+  - Get all networks _sm _devices _securitycenters.
   - Get a list of softwares associated with a device.
   - List the security centers on a device.
 version_added: '1.0.0'
@@ -21,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Securitycenters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Securitycenters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -46,7 +49,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _security _centers
+- name: Get all networks _sm _devices _securitycenters
   cisco.meraki.networks_sm_devices_security_centers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -90,6 +93,7 @@ meraki_response:
         "id": "string",
         "identifier": "string",
         "installedAt": "string",
+        "toInstall": true,
         "iosRedemptionCode": true,
         "isManaged": true,
         "itunesId": "string",
@@ -99,7 +103,6 @@ meraki_response:
         "redemptionCode": 0,
         "shortVersion": "string",
         "status": "string",
-        "toInstall": true,
         "toUninstall": true,
         "uninstalledAt": "string",
         "updatedAt": "string",

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_clients_search_info
 short_description: Information module for organizations _clients _search
 description:
+  - Information module for Organizations Clients Search Info.
   - Get all organizations _clients _search.
   - Return the client details in an organization.
 version_added: '1.0.0'
@@ -21,28 +22,38 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Clients Search Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
+      - Information module for Organizations Clients Search Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 5. Default is 5.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Clients Search Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Clients Search Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   mac:
     description:
+      - Information module for Organizations Clients Search Info.
       - Mac query parameter. The MAC address of the client. Required.
     type: str
 requirements:
@@ -104,53 +115,53 @@ meraki_response:
       "manufacturer": "string",
       "records": [
         {
-          "cdp": [
-            [
+          "network": {
+            "id": "string",
+            "organizationId": "string",
+            "name": "string",
+            "productTypes": [
               "string"
-            ]
-          ],
-          "clientVpnConnections": [
-            {
-              "connectedAt": 0,
-              "disconnectedAt": 0,
-              "remoteIp": "string"
-            }
-          ],
-          "description": "string",
-          "firstSeen": 0,
+            ],
+            "timeZone": "string",
+            "tags": [
+              "string"
+            ],
+            "enrollmentString": "string",
+            "url": "string",
+            "notes": "string",
+            "isBoundToConfigTemplate": true
+          },
           "ip": "string",
           "ip6": "string",
+          "description": "string",
+          "firstSeen": 0,
           "lastSeen": 0,
+          "os": "string",
+          "user": "string",
+          "vlan": "string",
+          "ssid": "string",
+          "switchport": "string",
+          "wirelessCapabilities": "string",
+          "smInstalled": true,
+          "recentDeviceMac": "string",
+          "clientVpnConnections": [
+            {
+              "remoteIp": "string",
+              "connectedAt": 0,
+              "disconnectedAt": 0
+            }
+          ],
           "lldp": [
             [
               "string"
             ]
           ],
-          "network": {
-            "enrollmentString": "string",
-            "id": "string",
-            "isBoundToConfigTemplate": true,
-            "name": "string",
-            "notes": "string",
-            "organizationId": "string",
-            "productTypes": [
+          "cdp": [
+            [
               "string"
-            ],
-            "tags": [
-              "string"
-            ],
-            "timeZone": "string",
-            "url": "string"
-          },
-          "os": "string",
-          "recentDeviceMac": "string",
-          "smInstalled": true,
-          "ssid": "string",
-          "status": "string",
-          "switchport": "string",
-          "user": "string",
-          "vlan": "string",
-          "wirelessCapabilities": "string"
+            ]
+          ],
+          "status": "string"
         }
       ]
     }

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_wireless_ssids_splash_settings_info
 short_description: Information module for networks _wireless _ssids _splash _settings
 description:
+  - Information module for Networks Wireless Ssids Splash Settings Info.
   - Get all networks _wireless _ssids _splash _settings.
   - Display the splash page settings for the given SSID.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Splash Settings Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Splash Settings Info.
       - Number path parameter.
     type: str
 requirements:
@@ -75,54 +78,54 @@ meraki_response:
   type: dict
   sample: >
     {
-      "allowSimultaneousLogins": true,
-      "billing": {
-        "freeAccess": {
-          "durationInMinutes": 0,
-          "enabled": true
-        },
-        "prepaidAccessFastLoginEnabled": true,
-        "replyToEmailAddress": "string"
+      "ssidNumber": 0,
+      "splashPage": "string",
+      "useSplashUrl": true,
+      "splashUrl": "string",
+      "splashTimeout": 0,
+      "redirectUrl": "string",
+      "useRedirectUrl": true,
+      "welcomeMessage": "string",
+      "themeId": "string",
+      "splashLogo": {
+        "md5": "string",
+        "extension": "string"
       },
-      "blockAllTrafficBeforeSignOn": true,
-      "controllerDisconnectionBehavior": "string",
+      "splashImage": {
+        "md5": "string",
+        "extension": "string"
+      },
+      "splashPrepaidFront": {
+        "md5": "string",
+        "extension": "string"
+      },
       "guestSponsorship": {
         "durationInMinutes": 0,
         "guestCanRequestTimeframe": true
       },
-      "redirectUrl": "string",
-      "selfRegistration": {
-        "authorizationType": "string",
-        "enabled": true
+      "blockAllTrafficBeforeSignOn": true,
+      "controllerDisconnectionBehavior": "string",
+      "allowSimultaneousLogins": true,
+      "billing": {
+        "freeAccess": {
+          "enabled": true,
+          "durationInMinutes": 0
+        },
+        "prepaidAccessFastLoginEnabled": true,
+        "replyToEmailAddress": "string"
       },
       "sentryEnrollment": {
-        "enforcedSystems": [
-          "string"
-        ],
-        "strength": "string",
         "systemsManagerNetwork": {
           "id": "string"
-        }
+        },
+        "strength": "string",
+        "enforcedSystems": [
+          "string"
+        ]
       },
-      "splashImage": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashLogo": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashPage": "string",
-      "splashPrepaidFront": {
-        "extension": "string",
-        "md5": "string"
-      },
-      "splashTimeout": 0,
-      "splashUrl": "string",
-      "ssidNumber": 0,
-      "themeId": "string",
-      "useRedirectUrl": true,
-      "useSplashUrl": true,
-      "welcomeMessage": "string"
+      "selfRegistration": {
+        "enabled": true,
+        "authorizationType": "string"
+      }
     }
 """

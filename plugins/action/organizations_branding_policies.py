@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,11 +31,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    adminSettings=dict(type="dict"),
-    customLogo=dict(type="dict"),
-    enabled=dict(type="bool"),
-    helpSettings=dict(type="dict"),
     name=dict(type="str"),
+    enabled=dict(type="bool"),
+    adminSettings=dict(type="dict"),
+    helpSettings=dict(type="dict"),
+    customLogo=dict(type="dict"),
     organizationId=dict(type="str"),
     brandingPolicyId=dict(type="str"),
 ))
@@ -54,85 +53,103 @@ class OrganizationsBrandingPolicies(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            adminSettings=params.get("adminSettings"),
-            customLogo=params.get("customLogo"),
-            enabled=params.get("enabled"),
-            helpSettings=params.get("helpSettings"),
             name=params.get("name"),
+            enabled=params.get("enabled"),
+            adminSettings=params.get("adminSettings"),
+            helpSettings=params.get("helpSettings"),
+            customLogo=params.get("customLogo"),
             organizationId=params.get("organizationId"),
             brandingPolicyId=params.get("brandingPolicyId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get('branding_policy_id') is not None:
-            new_object_params['brandingPolicyId'] = self.new_object.get('brandingPolicyId') or \
-                self.new_object.get('branding_policy_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get(
+                'branding_policy_id') is not None:
+            new_object_params['brandingPolicyId'] = self.new_object.get(
+                'brandingPolicyId') or self.new_object.get('branding_policy_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
-            new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
-                self.new_object.get('admin_settings')
-        if self.new_object.get('customLogo') is not None or self.new_object.get('custom_logo') is not None:
-            new_object_params['customLogo'] = self.new_object.get('customLogo') or \
-                self.new_object.get('custom_logo')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
-            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
-                self.new_object.get('help_settings')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('adminSettings') is not None or self.new_object.get(
+                'admin_settings') is not None:
+            new_object_params['adminSettings'] = self.new_object.get(
+                'adminSettings') or self.new_object.get('admin_settings')
+        if self.new_object.get('helpSettings') is not None or self.new_object.get(
+                'help_settings') is not None:
+            new_object_params['helpSettings'] = self.new_object.get(
+                'helpSettings') or self.new_object.get('help_settings')
+        if self.new_object.get('customLogo') is not None or self.new_object.get(
+                'custom_logo') is not None:
+            new_object_params['customLogo'] = self.new_object.get(
+                'customLogo') or self.new_object.get('custom_logo')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get('branding_policy_id') is not None:
-            new_object_params['brandingPolicyId'] = self.new_object.get('brandingPolicyId') or \
-                self.new_object.get('branding_policy_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get(
+                'branding_policy_id') is not None:
+            new_object_params['brandingPolicyId'] = self.new_object.get(
+                'brandingPolicyId') or self.new_object.get('branding_policy_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('adminSettings') is not None or self.new_object.get('admin_settings') is not None:
-            new_object_params['adminSettings'] = self.new_object.get('adminSettings') or \
-                self.new_object.get('admin_settings')
-        if self.new_object.get('customLogo') is not None or self.new_object.get('custom_logo') is not None:
-            new_object_params['customLogo'] = self.new_object.get('customLogo') or \
-                self.new_object.get('custom_logo')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
-            new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('helpSettings') is not None or self.new_object.get('help_settings') is not None:
-            new_object_params['helpSettings'] = self.new_object.get('helpSettings') or \
-                self.new_object.get('help_settings')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get('branding_policy_id') is not None:
-            new_object_params['brandingPolicyId'] = self.new_object.get('brandingPolicyId') or \
-                self.new_object.get('branding_policy_id')
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('adminSettings') is not None or self.new_object.get(
+                'admin_settings') is not None:
+            new_object_params['adminSettings'] = self.new_object.get(
+                'adminSettings') or self.new_object.get('admin_settings')
+        if self.new_object.get('helpSettings') is not None or self.new_object.get(
+                'help_settings') is not None:
+            new_object_params['helpSettings'] = self.new_object.get(
+                'helpSettings') or self.new_object.get('help_settings')
+        if self.new_object.get('customLogo') is not None or self.new_object.get(
+                'custom_logo') is not None:
+            new_object_params['customLogo'] = self.new_object.get(
+                'customLogo') or self.new_object.get('custom_logo')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('brandingPolicyId') is not None or self.new_object.get(
+                'branding_policy_id') is not None:
+            new_object_params['brandingPolicyId'] = self.new_object.get(
+                'brandingPolicyId') or self.new_object.get('branding_policy_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -204,19 +221,22 @@ class OrganizationsBrandingPolicies(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("adminSettings", "adminSettings"),
-            ("customLogo", "customLogo"),
-            ("enabled", "enabled"),
-            ("helpSettings", "helpSettings"),
             ("name", "name"),
+            ("enabled", "enabled"),
+            ("adminSettings", "adminSettings"),
+            ("helpSettings", "helpSettings"),
+            ("customLogo", "customLogo"),
             ("organizationId", "organizationId"),
             ("brandingPolicyId", "brandingPolicyId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

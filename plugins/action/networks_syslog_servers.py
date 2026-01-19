@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -53,19 +52,22 @@ class NetworksSyslogServers(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('servers') is not None or self.new_object.get('servers') is not None:
+        if self.new_object.get('servers') is not None or self.new_object.get(
+                'servers') is not None:
             new_object_params['servers'] = self.new_object.get('servers') or \
                 self.new_object.get('servers')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -91,20 +93,6 @@ class NetworksSyslogServers(object):
     def get_object_by_id(self, id):
         result = None
         # NOTE: Does not have a get by id method or it is in another action
-        return result
-
-    def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        par = self.update_all_params()
-        par["servers"] = []
-        result = self.meraki.exec_meraki(
-            family="networks",
-            function="updateNetworkSyslogServers",
-            params=par,
-            op_modifies=True,
-        )
         return result
 
     def exists(self):
@@ -135,13 +123,16 @@ class NetworksSyslogServers(object):
 
         obj_params = [
             ("servers", "servers"),
-            # ("networkId", "networkId"),
+            ("networkId", "networkId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
@@ -206,15 +197,8 @@ class ActionModule(ActionBase):
                     response = prev_obj
                     meraki.object_already_present()
             else:
-                response = obj.update()
-                meraki.object_created()
-        elif state == "absent":
-            (obj_exists, prev_obj) = obj.exists()
-            if obj_exists and len(prev_obj["servers"]) > 0:
-                response = obj.delete()
-                meraki.object_deleted()
-            else:
-                meraki.object_already_absent()
+                meraki.fail_json(
+                    "Object does not exists, plugin only has update")
 
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

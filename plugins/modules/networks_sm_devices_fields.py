@@ -93,9 +93,9 @@ meraki_response:
       {
         "id": "string",
         "name": "string",
-        "notes": "string",
+        "wifiMac": "string",
         "serial": "string",
-        "wifiMac": "string"
+        "notes": "string"
       }
     ]
 """

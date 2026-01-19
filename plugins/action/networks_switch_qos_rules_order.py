@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -23,20 +22,22 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_compare_equality2,
     get_dict_result,
 )
-
+from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
+    InconsistentParameters,
+)
 
 # Get common arguments specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    dscp=dict(type="int"),
-    dstPort=dict(type="int"),
-    dstPortRange=dict(type="str"),
+    vlan=dict(type="int"),
     protocol=dict(type="str"),
     srcPort=dict(type="int"),
     srcPortRange=dict(type="str"),
-    vlan=dict(type="int"),
+    dstPort=dict(type="int"),
+    dstPortRange=dict(type="str"),
+    dscp=dict(type="int"),
     networkId=dict(type="str"),
     qosRuleId=dict(type="str"),
 ))
@@ -54,101 +55,123 @@ class NetworksSwitchQosRulesOrder(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            dscp=params.get("dscp"),
-            dstPort=params.get("dstPort"),
-            dstPortRange=params.get("dstPortRange"),
+            vlan=params.get("vlan"),
             protocol=params.get("protocol"),
             srcPort=params.get("srcPort"),
             srcPortRange=params.get("srcPortRange"),
-            vlan=params.get("vlan"),
+            dstPort=params.get("dstPort"),
+            dstPortRange=params.get("dstPortRange"),
+            dscp=params.get("dscp"),
             networkId=params.get("networkId"),
             qosRuleId=params.get("qosRuleId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('qosRuleId') is not None or self.new_object.get('qos_rule_id') is not None:
-            new_object_params['qosRuleId'] = self.new_object.get('qosRuleId') or \
-                self.new_object.get('qos_rule_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('qosRuleId') is not None or self.new_object.get(
+                'qos_rule_id') is not None:
+            new_object_params['qosRuleId'] = self.new_object.get(
+                'qosRuleId') or self.new_object.get('qos_rule_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
-            new_object_params['dscp'] = self.new_object.get('dscp') or \
-                self.new_object.get('dscp')
-        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
-            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
-                self.new_object.get('dst_port')
-        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
-            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
-                self.new_object.get('dst_port_range')
-        if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
-            new_object_params['protocol'] = self.new_object.get('protocol') or \
-                self.new_object.get('protocol')
-        if self.new_object.get('srcPort') is not None or self.new_object.get('src_port') is not None:
-            new_object_params['srcPort'] = self.new_object.get('srcPort') or \
-                self.new_object.get('src_port')
-        if self.new_object.get('srcPortRange') is not None or self.new_object.get('src_port_range') is not None:
-            new_object_params['srcPortRange'] = self.new_object.get('srcPortRange') or \
-                self.new_object.get('src_port_range')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('protocol') is not None or self.new_object.get(
+                'protocol') is not None:
+            new_object_params['protocol'] = self.new_object.get(
+                'protocol') or self.new_object.get('protocol')
+        if self.new_object.get('srcPort') is not None or self.new_object.get(
+                'src_port') is not None:
+            new_object_params['srcPort'] = self.new_object.get('srcPort') or \
+                self.new_object.get('src_port')
+        if self.new_object.get('srcPortRange') is not None or self.new_object.get(
+                'src_port_range') is not None:
+            new_object_params['srcPortRange'] = self.new_object.get(
+                'srcPortRange') or self.new_object.get('src_port_range')
+        if self.new_object.get('dstPort') is not None or self.new_object.get(
+                'dst_port') is not None:
+            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
+                self.new_object.get('dst_port')
+        if self.new_object.get('dstPortRange') is not None or self.new_object.get(
+                'dst_port_range') is not None:
+            new_object_params['dstPortRange'] = self.new_object.get(
+                'dstPortRange') or self.new_object.get('dst_port_range')
+        if self.new_object.get('dscp') is not None or self.new_object.get(
+                'dscp') is not None:
+            new_object_params['dscp'] = self.new_object.get('dscp') or \
+                self.new_object.get('dscp')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('qosRuleId') is not None or self.new_object.get('qos_rule_id') is not None:
-            new_object_params['qosRuleId'] = self.new_object.get('qosRuleId') or \
-                self.new_object.get('qos_rule_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('qosRuleId') is not None or self.new_object.get(
+                'qos_rule_id') is not None:
+            new_object_params['qosRuleId'] = self.new_object.get(
+                'qosRuleId') or self.new_object.get('qos_rule_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('dscp') is not None or self.new_object.get('dscp') is not None:
-            new_object_params['dscp'] = self.new_object.get('dscp') or \
-                self.new_object.get('dscp')
-        if self.new_object.get('dstPort') is not None or self.new_object.get('dst_port') is not None:
-            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
-                self.new_object.get('dst_port')
-        if self.new_object.get('dstPortRange') is not None or self.new_object.get('dst_port_range') is not None:
-            new_object_params['dstPortRange'] = self.new_object.get('dstPortRange') or \
-                self.new_object.get('dst_port_range')
-        if self.new_object.get('protocol') is not None or self.new_object.get('protocol') is not None:
-            new_object_params['protocol'] = self.new_object.get('protocol') or \
-                self.new_object.get('protocol')
-        if self.new_object.get('srcPort') is not None or self.new_object.get('src_port') is not None:
-            new_object_params['srcPort'] = self.new_object.get('srcPort') or \
-                self.new_object.get('src_port')
-        if self.new_object.get('srcPortRange') is not None or self.new_object.get('src_port_range') is not None:
-            new_object_params['srcPortRange'] = self.new_object.get('srcPortRange') or \
-                self.new_object.get('src_port_range')
-        if self.new_object.get('vlan') is not None or self.new_object.get('vlan') is not None:
+        if self.new_object.get('vlan') is not None or self.new_object.get(
+                'vlan') is not None:
             new_object_params['vlan'] = self.new_object.get('vlan') or \
                 self.new_object.get('vlan')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('qosRuleId') is not None or self.new_object.get('qos_rule_id') is not None:
-            new_object_params['qosRuleId'] = self.new_object.get('qosRuleId') or \
-                self.new_object.get('qos_rule_id')
+        if self.new_object.get('protocol') is not None or self.new_object.get(
+                'protocol') is not None:
+            new_object_params['protocol'] = self.new_object.get(
+                'protocol') or self.new_object.get('protocol')
+        if self.new_object.get('srcPort') is not None or self.new_object.get(
+                'src_port') is not None:
+            new_object_params['srcPort'] = self.new_object.get('srcPort') or \
+                self.new_object.get('src_port')
+        if self.new_object.get('srcPortRange') is not None or self.new_object.get(
+                'src_port_range') is not None:
+            new_object_params['srcPortRange'] = self.new_object.get(
+                'srcPortRange') or self.new_object.get('src_port_range')
+        if self.new_object.get('dstPort') is not None or self.new_object.get(
+                'dst_port') is not None:
+            new_object_params['dstPort'] = self.new_object.get('dstPort') or \
+                self.new_object.get('dst_port')
+        if self.new_object.get('dstPortRange') is not None or self.new_object.get(
+                'dst_port_range') is not None:
+            new_object_params['dstPortRange'] = self.new_object.get(
+                'dstPortRange') or self.new_object.get('dst_port_range')
+        if self.new_object.get('dscp') is not None or self.new_object.get(
+                'dscp') is not None:
+            new_object_params['dscp'] = self.new_object.get('dscp') or \
+                self.new_object.get('dscp')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('qosRuleId') is not None or self.new_object.get(
+                'qos_rule_id') is not None:
+            new_object_params['qosRuleId'] = self.new_object.get(
+                'qosRuleId') or self.new_object.get('qos_rule_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -188,12 +211,7 @@ class NetworksSwitchQosRulesOrder(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            if id is not None:
-                print("Is NOT NONE")
-                result = get_dict_result(items, 'qosRuleId', id)
-            else:
-                # Validate if this
-                print("Is NONE")
+            result = get_dict_result(items, 'qosRuleId', id)
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -203,48 +221,59 @@ class NetworksSwitchQosRulesOrder(object):
         id_exists = False
         name_exists = False
         prev_obj = None
-        o_id = self.new_object.get("qosRuleId") or self.new_object.get("id")
+        o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "qos_rule_id") or self.new_object.get("qosRuleId")
-        name = self.new_object.get("name") or self.new_object.get("id")
+        name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
-        else:
-            print("Is NONE")
+            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if name_exists:
+            _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("qosRuleId")
+            if id_exists and name_exists and o_id != _id:
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object")
+            if _id:
+                self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(qosRuleId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
         current_obj["networkId"] = requested_obj.get("networkId") or None
+
         obj_params = [
-            ("dscp", "dscp"),
-            ("dstPort", "dstPort"),
-            ("dstPortRange", "dstPortRange"),
+            ("vlan", "vlan"),
             ("protocol", "protocol"),
             ("srcPort", "srcPort"),
             ("srcPortRange", "srcPortRange"),
-            ("vlan", "vlan"),
+            ("dstPort", "dstPort"),
+            ("dstPortRange", "dstPortRange"),
+            ("dscp", "dscp"),
             ("networkId", "networkId"),
             ("qosRuleId", "qosRuleId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
-        print("creating object.....")
-        params = self.create_params()
-        if params.get("vlan") is None:
-            params["vlan"] = None
-        print(params)
         result = self.meraki.exec_meraki(
             family="switch",
             function="createNetworkSwitchQosRule",
-            params=params,
+            params=self.create_params(),
             op_modifies=True,
         )
         return result

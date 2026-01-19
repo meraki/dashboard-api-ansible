@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   channel:
-    description: Desired ESL channel for the device, or 'Auto' (case insensitive) to use the recommended channel.
+    description: Desired ESL channel for the device, or 'Auto' (case insensitive)
+      to use the recommended channel.
     type: str
   enabled:
     description: Turn ESL features on and off for this device.
@@ -29,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateDeviceWirelessElectronicShelfLabel
-    description: Complete reference of the updateDeviceWirelessElectronicShelfLabel API.
+    description: Complete reference of the updateDeviceWirelessElectronicShelfLabel
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-wireless-electronic-shelf-label
 notes:
   - SDK Method used are
@@ -75,11 +77,11 @@ meraki_response:
   sample: >
     {
       "apEslId": 0,
+      "serial": "string",
       "channel": "string",
       "enabled": true,
-      "hostname": "string",
       "networkId": "string",
-      "provider": "string",
-      "serial": "string"
+      "hostname": "string",
+      "provider": "string"
     }
 """

@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_integrations_xdr_networks_enable
-short_description: Resource module for organizations _integrations _xdr _networks _enable
+short_description: Resource module for organizations _integrations _xdr _networks
+  _enable
 description:
-  - Manage operation create of the resource organizations _integrations _xdr _networks _enable.
+  - Manage operation create of the resource organizations _integrations _xdr _networks
+    _enable.
   - Enable XDR on networks.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +18,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   networks:
-    description: List containing the network ID and the product type to enable XDR on.
+    description: List containing the network ID and the product type to enable XDR
+      on.
     elements: dict
     suboptions:
       networkId:
@@ -35,7 +38,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations enableOrganizationIntegrationsXdrNetworks
-    description: Complete reference of the enableOrganizationIntegrationsXdrNetworks API.
+    description: Complete reference of the enableOrganizationIntegrationsXdrNetworks
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!enable-organization-integrations-xdr-networks
 notes:
   - SDK Method used are
@@ -83,13 +87,13 @@ meraki_response:
     {
       "networks": [
         {
-          "enabled": true,
-          "isEligible": true,
-          "name": "string",
           "networkId": "string",
           "productTypes": [
             "string"
-          ]
+          ],
+          "name": "string",
+          "enabled": true,
+          "isEligible": true
         }
       ]
     }

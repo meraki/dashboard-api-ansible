@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_warm_spare_swap
-short_description: Resource module for networks _appliance _warm _spare _swap
+short_description: Resource module for networks _appliance _warmspare _swap
 description:
-  - Manage operation create of the resource networks _appliance _warm _spare _swap.
+  - Manage operation create of the resource networks _appliance _warmspare _swap.
   - Swap MX primary and warm spare appliances.
 version_added: '1.0.0'
 extends_documentation_fragment:

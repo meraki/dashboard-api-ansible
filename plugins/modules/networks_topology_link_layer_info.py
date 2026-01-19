@@ -6,10 +6,14 @@
 
 DOCUMENTATION = r"""
 module: networks_topology_link_layer_info
-short_description: Information module for networks _topology _link _layer
+short_description: Information module for networks _topology _linklayer
 description:
-  - Get all networks _topology _link _layer. - > List the LLDP and CDP information for all discovered devices and connections in a network. At
-    least one MX or MS device must be in the network in order to build the topology.
+  - Information module for Networks Topology Linklayer Info.
+  - Get all networks _topology _linklayer.
+  - >
+    List the LLDP and CDP information for all discovered devices and connections in
+    a network. At least one MX or MS device must be in the network in order to build
+    the topology.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,6 +24,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Topology Linklayer Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +42,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _topology _link _layer
+- name: Get all networks _topology _linklayer
   cisco.meraki.networks_topology_link_layer_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,55 +75,93 @@ meraki_response:
   type: dict
   sample: >
     {
-      "errors": [
-        "string"
+      "nodes": [
+        {
+          "derivedId": "string",
+          "mac": "string",
+          "type": "string",
+          "root": true,
+          "device": {
+            "serial": "string",
+            "name": "string",
+            "model": "string",
+            "productType": "string",
+            "status": "string",
+            "lastReportedAt": "string",
+            "clients": {
+              "counts": {
+                "total": 0
+              }
+            },
+            "uplinks": [
+              {
+                "vlanId": 0
+              }
+            ]
+          },
+          "discovered": {
+            "lldp": {
+              "chassisId": "string",
+              "systemName": "string",
+              "systemDescription": "string",
+              "systemCapabilities": [
+                "string"
+              ],
+              "managementAddress": "string"
+            },
+            "cdp": {
+              "platform": "string",
+              "deviceId": "string",
+              "address": "string",
+              "capabilities": [
+                "string"
+              ],
+              "managementAddress": "string"
+            }
+          },
+          "stack": {
+            "id": 0,
+            "name": "string",
+            "members": [
+              {}
+            ],
+            "clients": {
+              "counts": {
+                "total": 0
+              }
+            }
+          }
+        }
       ],
       "links": [
         {
           "ends": [
             {
-              "device": {
-                "name": "string",
-                "serial": "string"
-              },
-              "discovered": {
-                "cdp": {
-                  "nativeVlan": 0,
-                  "portId": "string"
-                },
-                "lldp": {
-                  "portDescription": "string",
-                  "portId": "string"
-                }
-              },
               "node": {
                 "derivedId": "string",
                 "type": "string"
+              },
+              "device": {
+                "serial": "string",
+                "name": "string"
+              },
+              "discovered": {
+                "lldp": {
+                  "portId": "string",
+                  "portDescription": "string"
+                },
+                "cdp": {
+                  "portId": "string",
+                  "nativeVlan": 0
+                }
               }
             }
           ],
           "lastReportedAt": "string"
         }
       ],
-      "nodes": [
-        {
-          "derivedId": "string",
-          "discovered": {
-            "cdp": "string",
-            "lldp": {
-              "chassisId": "string",
-              "managementAddress": "string",
-              "systemCapabilities": [
-                "string"
-              ],
-              "systemDescription": "string",
-              "systemName": "string"
-            }
-          },
-          "mac": "string",
-          "root": true,
-          "type": "string"
-        }
+      "errors": [
+        "string"
       ]
     }
 """

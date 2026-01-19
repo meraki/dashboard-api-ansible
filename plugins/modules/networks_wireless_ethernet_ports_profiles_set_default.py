@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles_set_default
-short_description: Resource module for networks _wireless _ethernet _ports _profiles _set _default
+short_description: Resource module for networks _wireless _ethernet _ports _profiles
+  _setdefault
 description:
-  - Manage operation create of the resource networks _wireless _ethernet _ports _profiles _set _default.
+  - Manage operation create of the resource networks _wireless _ethernet _ports _profiles
+    _setdefault.
   - Set the AP port profile to be default for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -26,7 +28,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless setNetworkWirelessEthernetPortsProfilesDefault
-    description: Complete reference of the setNetworkWirelessEthernetPortsProfilesDefault API.
+    description: Complete reference of the setNetworkWirelessEthernetPortsProfilesDefault
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!set-network-wireless-ethernet-ports-profiles-default
 notes:
   - SDK Method used are

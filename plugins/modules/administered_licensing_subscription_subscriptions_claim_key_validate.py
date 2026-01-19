@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_claim_key_validate
-short_description: Resource module for administered _licensing _subscription _subscriptions _claim _key _validate
+short_description: Resource module for administered _licensing _subscription _subscriptions
+  _claimkey _validate
 description:
-  - Manage operation create of the resource administered _licensing _subscription _subscriptions _claim _key _validate.
+  - Manage operation create of the resource administered _licensing _subscription
+    _subscriptions _claimkey _validate.
   - Find a subscription by claim key. Returns 400 if the key has already been claimed.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,7 +25,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for licensing validateAdministeredLicensingSubscriptionSubscriptionsClaimKey
-    description: Complete reference of the validateAdministeredLicensingSubscriptionSubscriptionsClaimKey API.
+    description: Complete reference of the validateAdministeredLicensingSubscriptionSubscriptionsClaimKey
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!validate-administered-licensing-subscription-subscriptions-claim-key
 notes:
   - SDK Method used are
@@ -65,51 +68,50 @@ meraki_response:
   type: dict
   sample: >
     {
-      "counts": {
-        "networks": 0,
-        "organizations": 0,
-        "seats": {
-          "assigned": 0,
-          "available": 0,
-          "limit": 0
+      "subscriptionId": "string",
+      "name": "string",
+      "description": "string",
+      "status": "string",
+      "startDate": "string",
+      "endDate": "string",
+      "lastUpdatedAt": "string",
+      "webOrderId": "string",
+      "type": "string",
+      "smartAccount": {
+        "status": "string",
+        "account": {
+          "id": "string",
+          "name": "string",
+          "domain": "string"
         }
       },
-      "description": "string",
-      "endDate": "string",
-      "enterpriseAgreement": {
-        "suites": [
-          "string"
-        ]
-      },
+      "renewalRequested": true,
+      "productTypes": [
+        "string"
+      ],
       "entitlements": [
         {
+          "sku": "string",
           "seats": {
             "assigned": 0,
             "available": 0,
             "limit": 0
-          },
-          "sku": "string",
-          "webOrderLineId": "string"
+          }
         }
       ],
-      "lastUpdatedAt": "string",
-      "name": "string",
-      "productTypes": [
-        "string"
-      ],
-      "renewalRequested": true,
-      "smartAccount": {
-        "account": {
-          "domain": "string",
-          "id": "string",
-          "name": "string"
+      "counts": {
+        "seats": {
+          "assigned": 0,
+          "available": 0,
+          "limit": 0
         },
-        "status": "string"
+        "networks": 0,
+        "organizations": 0
       },
-      "startDate": "string",
-      "status": "string",
-      "subscriptionId": "string",
-      "type": "string",
-      "webOrderId": "string"
+      "enterpriseAgreement": {
+        "suites": [
+          "string"
+        ]
+      }
     }
 """

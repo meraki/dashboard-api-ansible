@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_access_control_lists
-short_description: Resource module for networks _switch _access _control _lists
+short_description: Resource module for networks _switch _accesscontrollists
 description:
-  - Manage operation update of the resource networks _switch _access _control _lists.
+  - Manage operation update of the resource networks _switch _accesscontrollists.
   - Update the access control lists for a MS network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,7 +19,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: An ordered array of the access control list rules (not including the default rule). An empty array will clear the rules.
+    description: An ordered array of the access control list rules (not including
+      the default rule). An empty array will clear the rules.
     elements: dict
     suboptions:
       comment:
@@ -29,10 +30,12 @@ options:
         description: Destination IP address (in IP or CIDR notation) or 'any'.
         type: str
       dstPort:
-        description: Destination port. Must be in the range of 1-65535 or 'any'. Default is 'any'.
+        description: Destination port. Must be in the range of 1-65535 or 'any'. Default
+          is 'any'.
         type: str
       ipVersion:
-        description: IP address version (must be 'any', 'ipv4' or 'ipv6'). Applicable only if network supports IPv6. Default value is 'ipv4'.
+        description: IP address version (must be 'any', 'ipv4' or 'ipv6'). Applicable
+          only if network supports IPv6. Default value is 'ipv4'.
         type: str
       policy:
         description: '''allow'' or ''deny'' traffic specified by this rule.'
@@ -44,10 +47,12 @@ options:
         description: Source IP address (in IP or CIDR notation) or 'any'.
         type: str
       srcPort:
-        description: Source port. Must be in the range of 1-65535 or 'any'. Default is 'any'.
+        description: Source port. Must be in the range of 1-65535 or 'any'. Default
+          is 'any'.
         type: str
       vlan:
-        description: Incoming traffic VLAN. Must be in the range of 1-4095 or 'any'. Default is 'any'.
+        description: Incoming traffic VLAN. Must be in the range of 1-4095 or 'any'.
+          Default is 'any'.
         type: str
     type: list
 requirements:
@@ -110,13 +115,13 @@ meraki_response:
     [
       {
         "comment": "string",
-        "dstCidr": "string",
-        "dstPort": "string",
-        "ipVersion": "string",
         "policy": "string",
+        "ipVersion": "string",
         "protocol": "string",
         "srcCidr": "string",
         "srcPort": "string",
+        "dstCidr": "string",
+        "dstPort": "string",
         "vlan": "string"
       }
     ]

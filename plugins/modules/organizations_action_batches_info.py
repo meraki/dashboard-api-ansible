@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_action_batches_info
-short_description: Information module for organizations _action _batches
+short_description: Information module for organizations _actionbatches
 description:
-  - Get all organizations _action _batches.
-  - Get organizations _action _batches by id.
+  - Information module for Organizations Actionbatches Info.
+  - Get all organizations _actionbatches.
+  - Get organizations _actionbatches by id.
   - Return an action batch.
   - Return the list of action batches in the organization.
 version_added: '1.0.0'
@@ -22,14 +23,18 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Actionbatches Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   status:
     description:
-      - Status query parameter. Filter batches by status. Valid types are pending, completed, and failed.
+      - Information module for Organizations Actionbatches Info.
+      - Status query parameter. Filter batches by status. Valid types are pending,
+        completed, and failed.
     type: str
   actionBatchId:
     description:
+      - Information module for Organizations Actionbatches Info.
       - ActionBatchId path parameter. Action batch ID.
     type: str
 requirements:
@@ -52,7 +57,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _action _batches
+- name: Get all organizations _actionbatches
   cisco.meraki.organizations_action_batches_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,7 +83,7 @@ EXAMPLES = r"""
     status: string
     organizationId: string
   register: result
-- name: Get organizations _action _batches by id
+- name: Get organizations _actionbatches by id
   cisco.meraki.organizations_action_batches_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -112,34 +117,34 @@ meraki_response:
   type: dict
   sample: >
     {
-      "actions": [
-        {
-          "body": {},
-          "operation": "string",
-          "resource": "string"
-        }
-      ],
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
-      },
-      "confirmed": true,
       "id": "string",
       "organizationId": "string",
+      "confirmed": true,
+      "synchronous": true,
       "status": {
         "completed": true,
+        "failed": true,
+        "errors": [
+          "string"
+        ],
         "createdResources": [
           {
             "id": "string",
             "uri": "string"
           }
-        ],
-        "errors": [
-          "string"
-        ],
-        "failed": true
+        ]
       },
-      "synchronous": true
+      "actions": [
+        {
+          "resource": "string",
+          "operation": "string",
+          "body": {}
+        }
+      ],
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

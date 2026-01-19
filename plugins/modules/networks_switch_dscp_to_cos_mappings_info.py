@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_dscp_to_cos_mappings_info
-short_description: Information module for networks _switch _dscp _to _cos _mappings
+short_description: Information module for networks _switch _dscptocosmappings
 description:
-  - Get all networks _switch _dscp _to _cos _mappings.
+  - Information module for Networks Switch Dscptocosmappings Info.
+  - Get all networks _switch _dscptocosmappings.
   - Return the DSCP to CoS mappings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Dscptocosmappings Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dscp _to _cos _mappings
+- name: Get all networks _switch _dscptocosmappings
   cisco.meraki.networks_switch_dscp_to_cos_mappings_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -72,8 +74,8 @@ meraki_response:
   sample: >
     [
       {
-        "cos": 0,
         "dscp": 0,
+        "cos": 0,
         "title": "string"
       }
     ]

@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_appliance_vpn_bgp_info
 short_description: Information module for networks _appliance _vpn _bgp
 description:
+  - Information module for Networks Appliance Vpn Bgp Info.
   - Get all networks _appliance _vpn _bgp.
   - Return a Hub BGP Configuration.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Vpn Bgp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,28 +72,33 @@ meraki_response:
   type: dict
   sample: >
     {
-      "asNumber": 0,
       "enabled": true,
+      "asNumber": 0,
       "ibgpHoldTimer": 0,
       "neighbors": [
         {
-          "allowTransit": true,
-          "authentication": {
-            "password": "string"
-          },
-          "ebgpHoldTimer": 0,
-          "ebgpMultihop": 0,
           "ip": "string",
           "ipv6": {
             "address": "string"
           },
-          "nextHopIp": "string",
-          "receiveLimit": 0,
           "remoteAsNumber": 0,
+          "receiveLimit": 0,
+          "allowTransit": true,
+          "ebgpHoldTimer": 0,
+          "ebgpMultihop": 0,
           "sourceInterface": "string",
+          "nextHopIp": "string",
           "ttlSecurity": {
             "enabled": true
-          }
+          },
+          "authentication": {
+            "password": "string"
+          },
+          "multiExitDiscriminator": 0,
+          "pathPrepend": [
+            0
+          ],
+          "weight": 0
         }
       ]
     }

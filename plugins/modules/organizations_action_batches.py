@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_action_batches
-short_description: Resource module for organizations _action _batches
+short_description: Resource module for organizations _actionbatches
 description:
-  - Manage operations create, update and delete of the resource organizations _action _batches.
+  - Manage operations create, update and delete of the resource organizations _actionbatches.
   - Create an action batch.
   - Delete an action batch.
   - Update an action batch.
@@ -21,7 +21,8 @@ options:
     description: ActionBatchId path parameter. Action batch ID.
     type: str
   actions:
-    description: A set of changes to make as part of this action (<a href='https //developer.cisco.com/meraki/api/#... details</a>).
+    description: A set of changes to make as part of this action (<a href='https //developer.cisco.com/meraki/api/#...
+      details</a>).
     elements: dict
     suboptions:
       body:
@@ -35,40 +36,46 @@ options:
         type: str
     type: list
   callback:
-    description: Details for the callback. Please include either an httpServerId OR url and sharedSecret.
+    description: Details for the callback. Please include either an httpServerId OR
+      url and sharedSecret.
     suboptions:
       httpServer:
         description: The webhook receiver used for the callback webhook.
         suboptions:
           id:
-            description: The webhook receiver ID that will receive information. If specifying this, please leave the url and sharedSecret fields
-              blank.
+            description: The webhook receiver ID that will receive information. If
+              specifying this, please leave the url and sharedSecret fields blank.
             type: str
         type: dict
       payloadTemplate:
         description: The payload template of the webhook used for the callback.
         suboptions:
           id:
-            description: The ID of the payload template. Defaults to 'wpt_00005' for the Callback (included) template.
+            description: The ID of the payload template. Defaults to 'wpt_00005' for
+              the Callback (included) template.
             type: str
         type: dict
       sharedSecret:
-        description: A shared secret that will be included in the requests sent to the callback URL. It can be used to verify that the request
-          was sent by Meraki. If using this field, please also specify an url.
+        description: A shared secret that will be included in the requests sent to
+          the callback URL. It can be used to verify that the request was sent by
+          Meraki. If using this field, please also specify an url.
         type: str
       url:
-        description: The callback URL for the webhook target. If using this field, please also specify a sharedSecret.
+        description: The callback URL for the webhook target. If using this field,
+          please also specify a sharedSecret.
         type: str
     type: dict
   confirmed:
-    description: Set to true for immediate execution. Set to false if the action should be previewed before executing. This property cannot be
-      unset once it is true. Defaults to false.
+    description: Set to true for immediate execution. Set to false if the action should
+      be previewed before executing. This property cannot be unset once it is true.
+      Defaults to false.
     type: bool
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   synchronous:
-    description: Set to true to force the batch to run synchronous. There can be at most 20 actions in synchronous batch. Defaults to false.
+    description: Set to true to force the batch to run synchronous. There can be at
+      most 20 actions in synchronous batch. Defaults to false.
     type: bool
 requirements:
   - meraki >= 2.4.9
@@ -91,8 +98,7 @@ notes:
   - Paths used are
     post /organizations/{organizationId}/actionBatches,
     delete /organizations/{organizationId}/actionBatches/{actionBatchId},
-    put
-    /organizations/{organizationId}/actionBatches/{actionBatchId},
+    put /organizations/{organizationId}/actionBatches/{actionBatchId},
 """
 
 EXAMPLES = r"""
@@ -195,34 +201,34 @@ meraki_response:
   type: dict
   sample: >
     {
-      "actions": [
-        {
-          "body": {},
-          "operation": "string",
-          "resource": "string"
-        }
-      ],
-      "callback": {
-        "id": "string",
-        "status": "string",
-        "url": "string"
-      },
-      "confirmed": true,
       "id": "string",
       "organizationId": "string",
+      "confirmed": true,
+      "synchronous": true,
       "status": {
         "completed": true,
+        "failed": true,
+        "errors": [
+          "string"
+        ],
         "createdResources": [
           {
             "id": "string",
             "uri": "string"
           }
-        ],
-        "errors": [
-          "string"
-        ],
-        "failed": true
+        ]
       },
-      "synchronous": true
+      "actions": [
+        {
+          "resource": "string",
+          "operation": "string",
+          "body": {}
+        }
+      ],
+      "callback": {
+        "id": "string",
+        "url": "string",
+        "status": "string"
+      }
     }
 """

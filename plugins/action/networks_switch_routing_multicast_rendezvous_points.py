@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -34,6 +33,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     interfaceIp=dict(type="str"),
     multicastGroup=dict(type="str"),
+    vrf=dict(type="dict"),
     networkId=dict(type="str"),
     rendezvousPointId=dict(type="str"),
 ))
@@ -53,64 +53,85 @@ class NetworksSwitchRoutingMulticastRendezvousPoints(object):
         self.new_object = dict(
             interfaceIp=params.get("interfaceIp"),
             multicastGroup=params.get("multicastGroup"),
+            vrf=params.get("vrf"),
             networkId=params.get("networkId"),
             rendezvousPointId=params.get("rendezvousPointId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get('rendezvous_point_id') is not None:
-            new_object_params['rendezvousPointId'] = self.new_object.get('rendezvousPointId') or \
-                self.new_object.get('rendezvous_point_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get(
+                'rendezvous_point_id') is not None:
+            new_object_params['rendezvousPointId'] = self.new_object.get(
+                'rendezvousPointId') or self.new_object.get('rendezvous_point_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
-            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
-                self.new_object.get('interface_ip')
-        if self.new_object.get('multicastGroup') is not None or self.new_object.get('multicast_group') is not None:
-            new_object_params['multicastGroup'] = self.new_object.get('multicastGroup') or \
-                self.new_object.get('multicast_group')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('interfaceIp') is not None or self.new_object.get(
+                'interface_ip') is not None:
+            new_object_params['interfaceIp'] = self.new_object.get(
+                'interfaceIp') or self.new_object.get('interface_ip')
+        if self.new_object.get('multicastGroup') is not None or self.new_object.get(
+                'multicast_group') is not None:
+            new_object_params['multicastGroup'] = self.new_object.get(
+                'multicastGroup') or self.new_object.get('multicast_group')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get('rendezvous_point_id') is not None:
-            new_object_params['rendezvousPointId'] = self.new_object.get('rendezvousPointId') or \
-                self.new_object.get('rendezvous_point_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get(
+                'rendezvous_point_id') is not None:
+            new_object_params['rendezvousPointId'] = self.new_object.get(
+                'rendezvousPointId') or self.new_object.get('rendezvous_point_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('interfaceIp') is not None or self.new_object.get('interface_ip') is not None:
-            new_object_params['interfaceIp'] = self.new_object.get('interfaceIp') or \
-                self.new_object.get('interface_ip')
-        if self.new_object.get('multicastGroup') is not None or self.new_object.get('multicast_group') is not None:
-            new_object_params['multicastGroup'] = self.new_object.get('multicastGroup') or \
-                self.new_object.get('multicast_group')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get('rendezvous_point_id') is not None:
-            new_object_params['rendezvousPointId'] = self.new_object.get('rendezvousPointId') or \
-                self.new_object.get('rendezvous_point_id')
+        if self.new_object.get('interfaceIp') is not None or self.new_object.get(
+                'interface_ip') is not None:
+            new_object_params['interfaceIp'] = self.new_object.get(
+                'interfaceIp') or self.new_object.get('interface_ip')
+        if self.new_object.get('multicastGroup') is not None or self.new_object.get(
+                'multicast_group') is not None:
+            new_object_params['multicastGroup'] = self.new_object.get(
+                'multicastGroup') or self.new_object.get('multicast_group')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rendezvousPointId') is not None or self.new_object.get(
+                'rendezvous_point_id') is not None:
+            new_object_params['rendezvousPointId'] = self.new_object.get(
+                'rendezvousPointId') or self.new_object.get('rendezvous_point_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -184,14 +205,18 @@ class NetworksSwitchRoutingMulticastRendezvousPoints(object):
         obj_params = [
             ("interfaceIp", "interfaceIp"),
             ("multicastGroup", "multicastGroup"),
+            ("vrf", "vrf"),
             ("networkId", "networkId"),
             ("rendezvousPointId", "rendezvousPointId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

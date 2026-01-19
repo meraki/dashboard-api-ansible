@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_firewalled_services_info
-short_description: Information module for networks _appliance _firewall _firewalled _services
+short_description: Information module for networks _appliance _firewall _firewalledservices
 description:
-  - Get networks _appliance _firewall _firewalled _services by id.
-  - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP' .
+  - Information module for Networks Appliance Firewall Firewalledservices Info.
+  - Get networks _appliance _firewall _firewalledservices by id.
+  - Return the accessibility settings of the given service 'ICMP', 'web', or 'SNMP'
+    .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Firewall Firewalledservices Info.
       - NetworkId path parameter. Network ID.
     type: str
   service:
     description:
+      - Information module for Networks Appliance Firewall Firewalledservices Info.
       - Service path parameter.
     type: str
 requirements:
@@ -31,7 +35,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallFirewalledService
-    description: Complete reference of the getNetworkApplianceFirewallFirewalledService API.
+    description: Complete reference of the getNetworkApplianceFirewallFirewalledService
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-service
 notes:
   - SDK Method used are
@@ -41,7 +46,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get networks _appliance _firewall _firewalled _services by id
+- name: Get networks _appliance _firewall _firewalledservices by id
   cisco.meraki.networks_appliance_firewall_firewalled_services_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -75,10 +80,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "service": "string",
       "access": "string",
       "allowedIps": [
         "string"
-      ],
-      "service": "string"
+      ]
     }
 """

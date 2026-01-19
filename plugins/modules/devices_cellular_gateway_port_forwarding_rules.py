@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_cellular_gateway_port_forwarding_rules
-short_description: Resource module for devices _cellular _gateway _port _forwarding _rules
+short_description: Resource module for devices _cellulargateway _portforwardingrules
 description:
-  - Manage operation update of the resource devices _cellular _gateway _port _forwarding _rules.
+  - Manage operation update of the resource devices _cellulargateway _portforwardingrules.
   - Updates the port forwarding rules for a single MG.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,18 +20,22 @@ options:
     elements: dict
     suboptions:
       access:
-        description: '`any` or `restricted`. Specify the right to make inbound connections on the specified ports or port ranges. If `restricted`,
-          a list of allowed IPs is mandatory.'
+        description: '`any` or `restricted`. Specify the right to make inbound connections
+          on the specified ports or port ranges. If `restricted`, a list of allowed
+          IPs is mandatory.'
         type: str
       allowedIps:
-        description: An array of ranges of WAN IP addresses that are allowed to make inbound connections on the specified ports or port ranges.
+        description: An array of ranges of WAN IP addresses that are allowed to make
+          inbound connections on the specified ports or port ranges.
         elements: str
         type: list
       lanIp:
-        description: The IP address of the server or device that hosts the internal resource that you wish to make available on the WAN.
+        description: The IP address of the server or device that hosts the internal
+          resource that you wish to make available on the WAN.
         type: str
       localPort:
-        description: A port or port ranges that will receive the forwarded traffic from the WAN.
+        description: A port or port ranges that will receive the forwarded traffic
+          from the WAN.
         type: str
       name:
         description: A descriptive name for the rule.
@@ -40,7 +44,8 @@ options:
         description: TCP or UDP.
         type: str
       publicPort:
-        description: A port or port ranges that will be forwarded to the host on the LAN.
+        description: A port or port ranges that will be forwarded to the host on the
+          LAN.
         type: str
     type: list
   serial:
@@ -51,7 +56,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway updateDeviceCellularGatewayPortForwardingRules
-    description: Complete reference of the updateDeviceCellularGatewayPortForwardingRules API.
+    description: Complete reference of the updateDeviceCellularGatewayPortForwardingRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-device-cellular-gateway-port-forwarding-rules
 notes:
   - SDK Method used are
@@ -105,15 +111,15 @@ meraki_response:
   sample: >
     [
       {
-        "access": "string",
+        "name": "string",
+        "lanIp": "string",
+        "publicPort": "string",
+        "localPort": "string",
         "allowedIps": [
           "string"
         ],
-        "lanIp": "string",
-        "localPort": "string",
-        "name": "string",
         "protocol": "string",
-        "publicPort": "string"
+        "access": "string"
       }
     ]
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_quality_and_retention_info
-short_description: Information module for devices _camera _quality _and _retention
+short_description: Information module for devices _camera _qualityandretention
 description:
-  - Get all devices _camera _quality _and _retention.
+  - Information module for Devices Camera Qualityandretention Info.
+  - Get all devices _camera _qualityandretention.
   - Returns quality and retention settings for the given camera.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Camera Qualityandretention Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _quality _and _retention
+- name: Get all devices _camera _qualityandretention
   cisco.meraki.devices_camera_quality_and_retention_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -68,14 +70,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "audioRecordingEnabled": true,
-      "motionBasedRetentionEnabled": true,
-      "motionDetectorVersion": 0,
-      "profileId": "string",
-      "quality": "string",
-      "resolution": "string",
-      "restrictedBandwidthModeEnabled": true
-    }
+  sample:
+  - {}
 """

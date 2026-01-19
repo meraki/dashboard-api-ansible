@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces_dhcp
-short_description: Resource module for networks _switch _stacks _routing _interfaces _dhcp
+short_description: Resource module for networks _switch _stacks _routing _interfaces
+  _dhcp
 description:
-  - Manage operation update of the resource networks _switch _stacks _routing _interfaces _dhcp.
+  - Manage operation update of the resource networks _switch _stacks _routing _interfaces
+    _dhcp.
   - Update a layer 3 interface DHCP configuration for a switch stack.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,37 +18,45 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   bootFileName:
-    description: The PXE boot server file name for the DHCP server running on the switch stack interface.
+    description: The PXE boot server file name for the DHCP server running on the
+      switch stack interface.
     type: str
   bootNextServer:
-    description: The PXE boot server IP for the DHCP server running on the switch stack interface.
+    description: The PXE boot server IP for the DHCP server running on the switch
+      stack interface.
     type: str
   bootOptionsEnabled:
-    description: Enable DHCP boot options to provide PXE boot options configs for the dhcp server running on the switch stack interface.
+    description: Enable DHCP boot options to provide PXE boot options configs for
+      the dhcp server running on the switch stack interface.
     type: bool
   dhcpLeaseTime:
-    description: The DHCP lease time config for the dhcp server running on switch stack interface ('30 minutes', '1 hour', '4 hours', '12 hours',
-      '1 day' or '1 week').
+    description: The DHCP lease time config for the dhcp server running on switch
+      stack interface ('30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1
+      week').
     type: str
   dhcpMode:
-    description: The DHCP mode options for the switch stack interface ('dhcpDisabled', 'dhcpRelay' or 'dhcpServer').
+    description: The DHCP mode options for the switch stack interface ('dhcpDisabled',
+      'dhcpRelay' or 'dhcpServer').
     type: str
   dhcpOptions:
-    description: Array of DHCP options consisting of code, type and value for the DHCP server running on the switch stack interface.
+    description: Array of DHCP options consisting of code, type and value for the
+      DHCP server running on the switch stack interface.
     elements: dict
     suboptions:
       code:
         description: The code for DHCP option which should be from 2 to 254.
         type: str
       type:
-        description: The type of the DHCP option which should be one of ('text', 'ip', 'integer' or 'hex').
+        description: The type of the DHCP option which should be one of ('text', 'ip',
+          'integer' or 'hex').
         type: str
       value:
         description: The value of the DHCP option.
         type: str
     type: list
   dhcpRelayServerIps:
-    description: The DHCP relay server IPs to which DHCP packets would get relayed for the switch stack interface.
+    description: The DHCP relay server IPs to which DHCP packets would get relayed
+      for the switch stack interface.
     elements: str
     type: list
   dnsCustomNameservers:
@@ -54,14 +64,17 @@ options:
     elements: str
     type: list
   dnsNameserversOption:
-    description: The DHCP name server option for the dhcp server running on the switch stack interface ('googlePublicDns', 'openDns' or 'custom').
+    description: The DHCP name server option for the dhcp server running on the switch
+      stack interface ('googlePublicDns', 'openDns' or 'custom').
     type: str
   fixedIpAssignments:
-    description: Array of DHCP fixed IP assignments for the DHCP server running on the switch stack interface.
+    description: Array of DHCP fixed IP assignments for the DHCP server running on
+      the switch stack interface.
     elements: dict
     suboptions:
       ip:
-        description: The IP address of the client which has fixed IP address assigned to it.
+        description: The IP address of the client which has fixed IP address assigned
+          to it.
         type: str
       mac:
         description: The MAC address of the client which has fixed IP address.
@@ -77,7 +90,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   reservedIpRanges:
-    description: Array of DHCP reserved IP assignments for the DHCP server running on the switch stack interface.
+    description: Array of DHCP reserved IP assignments for the DHCP server running
+      on the switch stack interface.
     elements: dict
     suboptions:
       comment:
@@ -98,7 +112,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch updateNetworkSwitchStackRoutingInterfaceDhcp
-    description: Complete reference of the updateNetworkSwitchStackRoutingInterfaceDhcp API.
+    description: Complete reference of the updateNetworkSwitchStackRoutingInterfaceDhcp
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-stack-routing-interface-dhcp
 notes:
   - SDK Method used are
@@ -165,11 +180,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "bootFileName": "string",
-      "bootNextServer": "string",
-      "bootOptionsEnabled": true,
-      "dhcpLeaseTime": "string",
       "dhcpMode": "string",
+      "dhcpRelayServerIps": [
+        "string"
+      ],
+      "dhcpLeaseTime": "string",
+      "dnsNameserversOption": "string",
+      "dnsCustomNameservers": [
+        "string"
+      ],
+      "bootOptionsEnabled": true,
+      "bootNextServer": "string",
+      "bootFileName": "string",
       "dhcpOptions": [
         {
           "code": "string",
@@ -177,25 +199,18 @@ meraki_response:
           "value": "string"
         }
       ],
-      "dhcpRelayServerIps": [
-        "string"
-      ],
-      "dnsCustomNameservers": [
-        "string"
-      ],
-      "dnsNameserversOption": "string",
-      "fixedIpAssignments": [
-        {
-          "ip": "string",
-          "mac": "string",
-          "name": "string"
-        }
-      ],
       "reservedIpRanges": [
         {
-          "comment": "string",
+          "start": "string",
           "end": "string",
-          "start": "string"
+          "comment": "string"
+        }
+      ],
+      "fixedIpAssignments": [
+        {
+          "name": "string",
+          "mac": "string",
+          "ip": "string"
         }
       ]
     }

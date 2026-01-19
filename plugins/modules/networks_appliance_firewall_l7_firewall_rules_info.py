@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_l7_firewall_rules_info
-short_description: Information module for networks _appliance _firewall l7 _firewall _rules
+short_description: Information module for networks _appliance _firewall l7firewallrules
 description:
-  - Get all networks _appliance _firewall l7 _firewall _rules.
+  - Information module for Networks Appliance Firewall L7Firewallrules Info.
+  - Get all networks _appliance _firewall l7firewallrules.
   - List the MX L7 firewall rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Firewall L7Firewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallL7FirewallRules
-    description: Complete reference of the getNetworkApplianceFirewallL7FirewallRules API.
+    description: Complete reference of the getNetworkApplianceFirewallL7FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-l7-firewall-rules
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _firewall l7 _firewall _rules
+- name: Get all networks _appliance _firewall l7firewallrules
   cisco.meraki.networks_appliance_firewall_l7_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -67,14 +70,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "policy": "string",
-        "type": "string",
-        "value": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

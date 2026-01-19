@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_traffic_shaping_application_categories_info
-short_description: Information module for networks _traffic _shaping _application _categories
+short_description: Information module for networks _trafficshaping _applicationcategories
 description:
-  - Get all networks _traffic _shaping _application _categories.
-  - Returns the application categories for traffic shaping rules. Only applicable on networks with a security applicance.
+  - Information module for Networks Trafficshaping Applicationcategories Info.
+  - Get all networks _trafficshaping _applicationcategories.
+  - Returns the application categories for traffic shaping rules. Only applicable
+    on networks with a security applicance.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,6 +22,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Trafficshaping Applicationcategories Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks getNetworkTrafficShapingApplicationCategories
-    description: Complete reference of the getNetworkTrafficShapingApplicationCategories API.
+    description: Complete reference of the getNetworkTrafficShapingApplicationCategories
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-traffic-shaping-application-categories
 notes:
   - SDK Method used are
@@ -37,7 +41,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _traffic _shaping _application _categories
+- name: Get all networks _trafficshaping _applicationcategories
   cisco.meraki.networks_traffic_shaping_application_categories_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -67,19 +71,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "applications": [
-          {
-            "id": "string",
-            "name": "string"
-          }
-        ],
-        "id": "string",
-        "name": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

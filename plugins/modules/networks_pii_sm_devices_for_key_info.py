@@ -6,11 +6,15 @@
 
 DOCUMENTATION = r"""
 module: networks_pii_sm_devices_for_key_info
-short_description: Information module for networks _pii _sm _devices _for _key
+short_description: Information module for networks _pii _smdevicesforkey
 description:
-  - Get all networks _pii _sm _devices _for _key. - > Given a piece of Personally Identifiable Information PII , return the Systems Manager device
-    IDs associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly
-    one identifier will be accepted.
+  - Information module for Networks Pii Smdevicesforkey Info.
+  - Get all networks _pii _smdevicesforkey.
+  - >
+    Given a piece of Personally Identifiable Information PII , return the Systems
+    Manager device IDs associated with that identifier. These device IDs can be used
+    with the Systems Manager API endpoints to retrieve device details. Exactly one
+    identifier will be accepted.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,30 +25,39 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Pii Smdevicesforkey Info.
       - NetworkId path parameter. Network ID.
     type: str
   username:
     description:
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Username query parameter. The username of a Systems Manager user.
     type: str
   email:
     description:
-      - Email query parameter. The email of a network user account or a Systems Manager device.
+      - Information module for Networks Pii Smdevicesforkey Info.
+      - Email query parameter. The email of a network user account or a Systems Manager
+        device.
     type: str
   mac:
     description:
-      - Mac query parameter. The MAC of a network client device or a Systems Manager device.
+      - Information module for Networks Pii Smdevicesforkey Info.
+      - Mac query parameter. The MAC of a network client device or a Systems Manager
+        device.
     type: str
   serial:
     description:
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Serial query parameter. The serial of a Systems Manager device.
     type: str
   imei:
     description:
+      - Information module for Networks Pii Smdevicesforkey Info.
       - Imei query parameter. The IMEI of a Systems Manager device.
     type: str
   bluetoothMac:
     description:
+      - Information module for Networks Pii Smdevicesforkey Info.
       - BluetoothMac query parameter. The MAC of a Bluetooth client.
     type: str
 requirements:
@@ -62,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _pii _sm _devices _for _key
+- name: Get all networks _pii _smdevicesforkey
   cisco.meraki.networks_pii_sm_devices_for_key_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -98,10 +111,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: str
-  sample: >
-    [
-      "string"
-    ]
+  type: dict
+  sample:
+  - {}
 """

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_user_access_devices_delete
-short_description: Resource module for networks _sm _user _access _devices _delete
+short_description: Resource module for networks _sm _useraccessdevices _delete
 description:
-  - Manage operation delete of the resource networks _sm _user _access _devices _delete.
+  - Manage operation delete of the resource networks _sm _useraccessdevices _delete.
   - Delete a User Access Device.
 version_added: '1.0.0'
 extends_documentation_fragment:

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_webhooks_http_servers
-short_description: Resource module for networks _webhooks _http _servers
+short_description: Resource module for networks _webhooks _httpservers
 description:
-  - Manage operations create, update and delete of the resource networks _webhooks _http _servers.
+  - Manage operations create, update and delete of the resource networks _webhooks
+    _httpservers.
   - Add an HTTP server to a network.
   - Delete an HTTP server from a network.
   - Update an HTTP server. To change a URL, create a new HTTP server.
@@ -33,14 +34,17 @@ options:
         description: The name of the payload template.
         type: str
       payloadTemplateId:
-        description: The ID of the payload template. Defaults to 'wpt_00001' for the Meraki template. For Meraki-included templates for the Webex
-          (included) template use 'wpt_00002'; for the Slack (included) template use 'wpt_00003'; for the Microsoft Teams (included) template
-          use 'wpt_00004'; for the ServiceNow (included) template use 'wpt_00006'.
+        description: The ID of the payload template. Defaults to 'wpt_00001' for the
+          Meraki template. For Meraki-included templates for the Webex (included)
+          template use 'wpt_00002'; for the Slack (included) template use 'wpt_00003';
+          for the Microsoft Teams (included) template use 'wpt_00004'; for the ServiceNow
+          (included) template use 'wpt_00006'; for the PagerDuty (included) template
+          use 'wpt_00007'.
         type: str
     type: dict
   sharedSecret:
-    description: A shared secret that will be included in POSTs sent to the HTTP server. This secret can be used to verify that the request was
-      sent by Meraki.
+    description: A shared secret that will be included in POSTs sent to the HTTP server.
+      This secret can be used to verify that the request was sent by Meraki.
     type: str
   url:
     description: The URL of the HTTP server. Once set, cannot be updated.
@@ -101,32 +105,6 @@ EXAMPLES = r"""
       payloadTemplateId: wpt_00001
     sharedSecret: shhh
     url: https://example.com
-- name: Delete by id
-  cisco.meraki.networks_webhooks_http_servers:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    httpServerId: string
-    networkId: string
 - name: Update by id
   cisco.meraki.networks_webhooks_http_servers:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -157,6 +135,32 @@ EXAMPLES = r"""
     payloadTemplate:
       payloadTemplateId: wpt_00001
     sharedSecret: shhh
+- name: Delete by id
+  cisco.meraki.networks_webhooks_http_servers:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    httpServerId: string
+    networkId: string
 """
 RETURN = r"""
 meraki_response:
@@ -167,11 +171,11 @@ meraki_response:
     {
       "id": "string",
       "name": "string",
+      "url": "string",
       "networkId": "string",
       "payloadTemplate": {
-        "name": "string",
-        "payloadTemplateId": "string"
-      },
-      "url": "string"
+        "payloadTemplateId": "string",
+        "name": "string"
+      }
     }
 """

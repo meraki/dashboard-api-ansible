@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -37,6 +37,7 @@ argument_spec.update(dict(
     firmwareUpgradeBatchIds=dict(type="list"),
     upgradeStatuses=dict(type="list"),
     currentUpgradesOnly=dict(type="bool"),
+    limitPerDevice=dict(type="int"),
 ))
 
 required_if = []
@@ -109,6 +110,9 @@ class ActionModule(ActionBase):
         if params.get("currentUpgradesOnly") is not None:
             new_object["currentUpgradesOnly"] = params.get(
                 "currentUpgradesOnly")
+        if params.get("limitPerDevice") is not None:
+            new_object["limitPerDevice"] = params.get(
+                "limitPerDevice")
 
         return new_object
 

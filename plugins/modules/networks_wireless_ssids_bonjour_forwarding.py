@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_bonjour_forwarding
-short_description: Resource module for networks _wireless _ssids _bonjour _forwarding
+short_description: Resource module for networks _wireless _ssids _bonjourforwarding
 description:
-  - Manage operation update of the resource networks _wireless _ssids _bonjour _forwarding.
+  - Manage operation update of the resource networks _wireless _ssids _bonjourforwarding.
   - Update the bonjour forwarding setting and rules for the SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,8 +22,9 @@ options:
     description: Bonjour forwarding exception.
     suboptions:
       enabled:
-        description: If true, Bonjour forwarding exception is enabled on this SSID. Exception is required to enable L2 isolation and Bonjour forwarding
-          to work together.
+        description: If true, Bonjour forwarding exception is enabled on this SSID.
+          Exception is required to enable L2 isolation and Bonjour forwarding to work
+          together.
         type: bool
     type: dict
   networkId:
@@ -40,8 +41,10 @@ options:
         description: A description for your Bonjour forwarding rule. Optional.
         type: str
       services:
-        description: A list of Bonjour services. At least one service must be specified. Available services are 'All Services', 'AFP', 'AirPlay',
-          'Apple screen share', 'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers', 'Samba', 'Scanners', 'Spotify' and 'SSH'.
+        description: A list of Bonjour services. At least one service must be specified.
+          Available services are 'All Services', 'AFP', 'AirPlay', 'Apple screen share',
+          'BitTorrent', 'Chromecast', 'FTP', 'iChat', 'iTunes', 'Printers', 'Samba',
+          'Scanners', 'Spotify' and 'SSH'.
         elements: str
         type: list
       vlanId:
@@ -53,7 +56,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidBonjourForwarding
-    description: Complete reference of the updateNetworkWirelessSsidBonjourForwarding API.
+    description: Complete reference of the updateNetworkWirelessSsidBonjourForwarding
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-bonjour-forwarding
 notes:
   - SDK Method used are
@@ -112,10 +116,10 @@ meraki_response:
       "rules": [
         {
           "description": "string",
+          "vlanId": "string",
           "services": [
             "string"
-          ],
-          "vlanId": "string"
+          ]
         }
       ]
     }

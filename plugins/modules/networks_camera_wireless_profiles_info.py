@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_camera_wireless_profiles_info
-short_description: Information module for networks _camera _wireless _profiles
+short_description: Information module for networks _camera _wirelessprofiles
 description:
-  - Get all networks _camera _wireless _profiles.
-  - Get networks _camera _wireless _profiles by id.
+  - Information module for Networks Camera Wirelessprofiles Info.
+  - Get all networks _camera _wirelessprofiles.
+  - Get networks _camera _wirelessprofiles by id.
   - List the camera wireless profiles for this network.
   - Retrieve a single camera wireless profile.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Camera Wirelessprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   wirelessProfileId:
     description:
+      - Information module for Networks Camera Wirelessprofiles Info.
       - WirelessProfileId path parameter. Wireless profile ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _wireless _profiles
+- name: Get all networks _camera _wirelessprofiles
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _camera _wireless _profiles by id
+- name: Get networks _camera _wirelessprofiles by id
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,18 +110,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "appliedDeviceCount": 0,
       "id": "string",
-      "identity": {
-        "password": "string",
-        "username": "string"
-      },
       "name": "string",
+      "appliedDeviceCount": 0,
       "ssid": {
+        "name": "string",
         "authMode": "string",
         "encryptionMode": "string",
-        "name": "string",
         "psk": "string"
+      },
+      "identity": {
+        "username": "string",
+        "password": "string"
       }
     }
 """

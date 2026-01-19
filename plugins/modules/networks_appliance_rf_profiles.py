@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_rf_profiles
-short_description: Resource module for networks _appliance _rf _profiles
+short_description: Resource module for networks _appliance _rfprofiles
 description:
-  - Manage operations create, update and delete of the resource networks _appliance _rf _profiles.
+  - Manage operations create, update and delete of the resource networks _appliance
+    _rfprofiles.
   - Creates new RF profile for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,15 +20,18 @@ options:
     description: Settings related to 5Ghz band.
     suboptions:
       axEnabled:
-        description: Determines whether ax radio on 5Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling
-          band steering. Defaults to true.
+        description: Determines whether ax radio on 5Ghz band is on or off. Can be
+          either true or false. If false, we highly recommend disabling band steering.
+          Defaults to true.
         type: bool
       minBitrate:
-        description: Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9', '12', '18', '24', '36', '48' or '54'. Defaults to 12.
+        description: Sets min bitrate (Mbps) of 5Ghz band. Can be one of '6', '9',
+          '12', '18', '24', '36', '48' or '54'. Defaults to 12.
         type: int
     type: dict
   name:
-    description: The name of the new profile. Must be unique. This param is required on creation.
+    description: The name of the new profile. Must be unique. This param is required
+      on creation.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -42,7 +46,8 @@ options:
             description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
-            description: Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false.
+            description: Steers client to most open band between 2.4 GHz and 5 GHz.
+              Can be either true or false.
             type: bool
         type: dict
       '2':
@@ -52,7 +57,8 @@ options:
             description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
-            description: Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false.
+            description: Steers client to most open band between 2.4 GHz and 5 GHz.
+              Can be either true or false.
             type: bool
         type: dict
       '3':
@@ -62,7 +68,8 @@ options:
             description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
-            description: Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false.
+            description: Steers client to most open band between 2.4 GHz and 5 GHz.
+              Can be either true or false.
             type: bool
         type: dict
       '4':
@@ -72,7 +79,8 @@ options:
             description: Choice between 'dual', '2.4ghz', '5ghz', '6ghz' or 'multi'.
             type: str
           bandSteeringEnabled:
-            description: Steers client to most open band between 2.4 GHz and 5 GHz. Can be either true or false.
+            description: Steers client to most open band between 2.4 GHz and 5 GHz.
+              Can be either true or false.
             type: bool
         type: dict
     type: dict
@@ -80,12 +88,14 @@ options:
     description: Settings related to 2.4Ghz band.
     suboptions:
       axEnabled:
-        description: Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling
-          band steering. Defaults to true.
+        description: Determines whether ax radio on 2.4Ghz band is on or off. Can
+          be either true or false. If false, we highly recommend disabling band steering.
+          Defaults to true.
         type: bool
       minBitrate:
-        description: Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2', '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'.
-          Defaults to 11.
+        description: Sets min bitrate (Mbps) of 2.4Ghz band. Can be one of '1', '2',
+          '5.5', '6', '9', '11', '12', '18', '24', '36', '48' or '54'. Defaults to
+          11.
         type: float
     type: dict
 requirements:
@@ -156,13 +166,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "fiveGhzSettings": {
-        "axEnabled": true,
-        "minBitrate": 0
-      },
       "id": "string",
-      "name": "string",
       "networkId": "string",
+      "name": "string",
+      "twoFourGhzSettings": {
+        "minBitrate": 0,
+        "axEnabled": true
+      },
+      "fiveGhzSettings": {
+        "minBitrate": 0,
+        "axEnabled": true
+      },
       "perSsidSettings": {
         "1": {
           "bandOperationMode": "string",
@@ -180,10 +194,6 @@ meraki_response:
           "bandOperationMode": "string",
           "bandSteeringEnabled": true
         }
-      },
-      "twoFourGhzSettings": {
-        "axEnabled": true,
-        "minBitrate": 0
       }
     }
 """

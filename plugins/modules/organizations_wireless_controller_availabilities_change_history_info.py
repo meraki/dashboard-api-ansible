@@ -6,10 +6,14 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_controller_availabilities_change_history_info
-short_description: Information module for organizations _wireless _controller _availabilities _change _history
+short_description: Information module for organizations _wireless _controller _availabilities
+  _change _history
 description:
-  - Get all organizations _wireless _controller _availabilities _change _history. - > List connectivity data of wireless LAN controllers in an
-    organization. If it is HA setup, then only returns active WLC data start from switchover.
+  - Information module for Organizations Wireless Controller Availabilities Change History Info.
+  - Get all organizations _wireless _controller _availabilities _change _history.
+  - >
+    List connectivity data of wireless LAN controllers in an organization. If it is
+    HA setup, then only returns active WLC data start from switchover.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,52 +25,70 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
       - >
-        Serials query parameter. Optional parameter to filter wireless LAN controller by its cloud ID. This filter uses multiple exact matches.
+        Serials query parameter. Optional parameter to filter wireless LAN controller
+        by its cloud ID. This filter uses multiple exact matches.
     elements: str
     type: list
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 7 days.
     type: float
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Controller Availabilities Change History Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wirelessController getOrganizationWirelessControllerAvailabilitiesChangeHistory
-    description: Complete reference of the getOrganizationWirelessControllerAvailabilitiesChangeHistory API.
+    description: Complete reference of the getOrganizationWirelessControllerAvailabilitiesChangeHistory
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-controller-availabilities-change-history
 notes:
   - SDK Method used are
@@ -120,21 +142,21 @@ meraki_response:
     {
       "items": [
         {
+          "serial": "string",
           "changes": [
             {
-              "endTs": "string",
               "startTs": "string",
+              "endTs": "string",
               "status": "string"
             }
-          ],
-          "serial": "string"
+          ]
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

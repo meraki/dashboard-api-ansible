@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_rollbacks
-short_description: Resource module for networks _firmware _upgrades _rollbacks
+short_description: Resource module for networks _firmwareupgrades _rollbacks
 description:
-  - Manage operation create of the resource networks _firmware _upgrades _rollbacks.
+  - Manage operation create of the resource networks _firmwareupgrades _rollbacks.
   - Rollback a Firmware Upgrade For A Network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -97,21 +97,21 @@ meraki_response:
   sample: >
     {
       "product": "string",
+      "status": "string",
+      "upgradeBatchId": "string",
+      "time": "string",
+      "toVersion": {
+        "id": "string",
+        "firmware": "string",
+        "shortName": "string",
+        "releaseType": "string",
+        "releaseDate": "string"
+      },
       "reasons": [
         {
           "category": "string",
           "comment": "string"
         }
-      ],
-      "status": "string",
-      "time": "string",
-      "toVersion": {
-        "firmware": "string",
-        "id": "string",
-        "releaseDate": "string",
-        "releaseType": "string",
-        "shortName": "string"
-      },
-      "upgradeBatchId": "string"
+      ]
     }
 """

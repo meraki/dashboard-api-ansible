@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_refresh_details
-short_description: Resource module for networks _sm _devices _refresh _details
+short_description: Resource module for networks _sm _devices _refreshdetails
 description:
-  - Manage operation create of the resource networks _sm _devices _refresh _details.
+  - Manage operation create of the resource networks _sm _devices _refreshdetails.
   - Refresh the details of a device.
 version_added: '1.0.0'
 extends_documentation_fragment:

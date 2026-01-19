@@ -6,11 +6,13 @@
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_acls
-short_description: Resource module for organizations _adaptive _policy _acls
+short_description: Resource module for organizations _adaptivepolicy _acls
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptive _policy _acls.
+  - Manage operations create, update and delete of the resource organizations _adaptivepolicy
+    _acls.
   - Creates new adaptive policy ACL.
-  - Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.
+  - Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will
+    also be removed from policies using it.
   - Updates an adaptive policy ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -37,11 +39,13 @@ options:
     elements: dict
     suboptions:
       dstPort:
-        description: Destination port. Must be in the format of single port '1', port list '1,2' or port range '1-10', and in the range of 1-65535,
-          or 'any'. Default is 'any'.
+        description: Destination port. Must be in the format of single port '1', port
+          list '1,2' or port range '1-10', and in the range of 1-65535, or 'any'.
+          Default is 'any'.
         type: str
       log:
-        description: If enabled, when this rule is hit an entry will be logged to the event log.
+        description: If enabled, when this rule is hit an entry will be logged to
+          the event log.
         type: bool
       policy:
         description: '''allow'' or ''deny'' traffic specified by this rule.'
@@ -50,8 +54,9 @@ options:
         description: The type of protocol (must be 'tcp', 'udp', 'icmp' or 'any').
         type: str
       srcPort:
-        description: Source port. Must be in the format of single port '1', port list '1,2' or port range '1-10', and in the range of 1-65535,
-          or 'any'. Default is 'any'.
+        description: Source port. Must be in the format of single port '1', port list
+          '1,2' or port range '1-10', and in the range of 1-65535, or 'any'. Default
+          is 'any'.
         type: str
       tcpEstablished:
         description: If enabled, means TCP connection with this node must be established.
@@ -77,7 +82,8 @@ notes:
     organizations.Organizations.update_organization_adaptive_policy_acl,
   - Paths used are
     post /organizations/{organizationId}/adaptivePolicy/acls,
-    delete /organizations/{organizationId}/adaptivePolicy/acls/{aclId},
+    delete
+    /organizations/{organizationId}/adaptivePolicy/acls/{aclId},
     put /organizations/{organizationId}/adaptivePolicy/acls/{aclId},
 """
 
@@ -117,32 +123,6 @@ EXAMPLES = r"""
         protocol: tcp
         srcPort: 1,33
         tcpEstablished: true
-- name: Delete by id
-  cisco.meraki.organizations_adaptive_policy_acls:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    aclId: string
-    organizationId: string
 - name: Update by id
   cisco.meraki.organizations_adaptive_policy_acls:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -179,6 +159,32 @@ EXAMPLES = r"""
         protocol: tcp
         srcPort: 1,33
         tcpEstablished: true
+- name: Delete by id
+  cisco.meraki.organizations_adaptive_policy_acls:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    aclId: string
+    organizationId: string
 """
 RETURN = r"""
 meraki_response:
@@ -188,20 +194,20 @@ meraki_response:
   sample: >
     {
       "aclId": "string",
-      "createdAt": "string",
+      "name": "string",
       "description": "string",
       "ipVersion": "string",
-      "name": "string",
       "rules": [
         {
-          "dstPort": "string",
-          "log": true,
           "policy": "string",
           "protocol": "string",
           "srcPort": "string",
+          "dstPort": "string",
+          "log": true,
           "tcpEstablished": true
         }
       ],
+      "createdAt": "string",
       "updatedAt": "string"
     }
 """

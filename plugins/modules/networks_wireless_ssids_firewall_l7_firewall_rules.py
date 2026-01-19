@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l7_firewall_rules
-short_description: Resource module for networks _wireless _ssids _firewall l7 _firewall _rules
+short_description: Resource module for networks _wireless _ssids _firewall l7firewallrules
 description:
-  - Manage operation update of the resource networks _wireless _ssids _firewall l7 _firewall _rules.
+  - Manage operation update of the resource networks _wireless _ssids _firewall l7firewallrules.
   - Update the L7 firewall rules of an SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,18 +22,21 @@ options:
     description: Number path parameter.
     type: str
   rules:
-    description: An array of L7 firewall rules for this SSID. Rules will get applied in the same order user has specified in request. Empty array
-      will clear the L7 firewall rule configuration.
+    description: An array of L7 firewall rules for this SSID. Rules will get applied
+      in the same order user has specified in request. Empty array will clear the
+      L7 firewall rule configuration.
     elements: dict
     suboptions:
       policy:
         description: '''Deny'' traffic specified by this rule.'
         type: str
       type:
-        description: Type of the L7 firewall rule. One of 'application', 'applicationCategory', 'host', 'port', 'ipRange'.
+        description: Type of the L7 firewall rule. One of 'application', 'applicationCategory',
+          'host', 'port', 'ipRange'.
         type: str
       value:
-        description: The value of what needs to get blocked. Format of the value varies depending on type of the firewall rule selected.
+        description: The value of what needs to get blocked. Format of the value varies
+          depending on type of the firewall rule selected.
         type: str
     type: list
 requirements:
@@ -41,7 +44,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidFirewallL7FirewallRules
-    description: Complete reference of the updateNetworkWirelessSsidFirewallL7FirewallRules API.
+    description: Complete reference of the updateNetworkWirelessSsidFirewallL7FirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-firewall-l7-firewall-rules
 notes:
   - SDK Method used are

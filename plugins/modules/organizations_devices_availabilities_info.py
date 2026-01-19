@@ -8,8 +8,11 @@ DOCUMENTATION = r"""
 module: organizations_devices_availabilities_info
 short_description: Information module for organizations _devices _availabilities
 description:
-  - Get all organizations _devices _availabilities. - > List the availability information for devices in an organization. The data returned by
-    this endpoint is updated every 5 minutes.
+  - Information module for Organizations Devices Availabilities Info.
+  - Get all organizations _devices _availabilities.
+  - >
+    List the availability information for devices in an organization. The data returned
+    by this endpoint is updated every 5 minutes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,63 +24,84 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Devices Availabilities Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        NetworkIds query parameter. Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
+        NetworkIds query parameter. Optional parameter to filter device availabilities
+        by network ID. This filter uses multiple exact matches.
     elements: str
     type: list
   productTypes:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        ProductTypes query parameter. Optional parameter to filter device availabilities by device product types. This filter uses multiple exact
-        matches. Valid types are wireless, appliance, switch, camera, cellularGateway, sensor, wirelessController, and campusGateway.
+        ProductTypes query parameter. Optional parameter to filter device availabilities
+        by device product types. This filter uses multiple exact matches. Valid types
+        are wireless, appliance, switch, camera, cellularGateway, sensor, wirelessController,
+        and campusGateway.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        Serials query parameter. Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact
-        matches.
+        Serials query parameter. Optional parameter to filter device availabilities
+        by device serial numbers. This filter uses multiple exact matches.
     elements: str
     type: list
   tags:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        Tags query parameter. An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType'
-        should also be included (see below). This filter uses multiple exact matches.
+        Tags query parameter. An optional parameter to filter devices by tags. The
+        filtering is case-sensitive. If tags are included, 'tagsFilterType' should
+        also be included (see below). This filter uses multiple exact matches.
     elements: str
     type: list
   tagsFilterType:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return devices which
-        contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
+        TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
+        or 'withAllTags' to indicate whether to return devices which contain ANY or
+        ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
     type: str
   statuses:
     description:
+      - Information module for Organizations Devices Availabilities Info.
       - >
-        Statuses query parameter. Optional parameter to filter device availabilities by device status. This filter uses multiple exact matches.
+        Statuses query parameter. Optional parameter to filter device availabilities
+        by device status. This filter uses multiple exact matches.
     elements: str
     type: list
 requirements:

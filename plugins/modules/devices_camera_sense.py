@@ -19,17 +19,20 @@ options:
     description: The details of the audio detection config.
     suboptions:
       enabled:
-        description: Boolean indicating if audio detection is enabled(true) or disabled(false) on the camera.
+        description: Boolean indicating if audio detection is enabled(true) or disabled(false)
+          on the camera.
         type: bool
     type: dict
   detectionModelId:
     description: The ID of the object detection model.
     type: str
   mqttBrokerId:
-    description: The ID of the MQTT broker to be enabled on the camera. A value of null will disable MQTT on the camera.
+    description: The ID of the MQTT broker to be enabled on the camera. A value of
+      null will disable MQTT on the camera.
     type: str
   senseEnabled:
-    description: Boolean indicating if sense(license) is enabled(true) or disabled(false) on the camera.
+    description: Boolean indicating if sense(license) is enabled(true) or disabled(false)
+      on the camera.
     type: bool
   serial:
     description: Serial path parameter.

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_device_type_group_policies
-short_description: Resource module for networks _wireless _ssids _device _type _group _policies
+short_description: Resource module for networks _wireless _ssids _devicetypegrouppolicies
 description:
-  - Manage operation update of the resource networks _wireless _ssids _device _type _group _policies.
+  - Manage operation update of the resource networks _wireless _ssids _devicetypegrouppolicies.
   - Update the device type group policies for the SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,11 +20,13 @@ options:
     elements: dict
     suboptions:
       devicePolicy:
-        description: The device policy. Can be one of 'Allowed', 'Blocked' or 'Group policy'.
+        description: The device policy. Can be one of 'Allowed', 'Blocked' or 'Group
+          policy'.
         type: str
       deviceType:
-        description: The device type. Can be one of 'Android', 'BlackBerry', 'Chrome OS', 'iPad', 'iPhone', 'iPod', 'Mac OS X', 'Windows', 'Windows
-          Phone', 'B&N Nook' or 'Other OS'.
+        description: The device type. Can be one of 'Android', 'BlackBerry', 'Chrome
+          OS', 'iPad', 'iPhone', 'iPod', 'Mac OS X', 'Windows', 'Windows Phone', 'B&N
+          Nook' or 'Other OS'.
         type: str
       groupPolicyId:
         description: ID of the group policy object.
@@ -44,7 +46,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless updateNetworkWirelessSsidDeviceTypeGroupPolicies
-    description: Complete reference of the updateNetworkWirelessSsidDeviceTypeGroupPolicies API.
+    description: Complete reference of the updateNetworkWirelessSsidDeviceTypeGroupPolicies
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-wireless-ssid-device-type-group-policies
 notes:
   - SDK Method used are

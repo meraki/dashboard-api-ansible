@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_camera_permissions_info
 short_description: Information module for organizations _camera _permissions
 description:
+  - Information module for Organizations Camera Permissions Info.
   - Get organizations _camera _permissions by id.
   - Retrieve a single permission scope.
 version_added: '1.0.0'
@@ -20,10 +21,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Camera Permissions Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   permissionScopeId:
     description:
+      - Information module for Organizations Camera Permissions Info.
       - PermissionScopeId path parameter. Permission scope ID.
     type: str
 requirements:
@@ -76,7 +79,7 @@ meraki_response:
   sample: >
     {
       "id": "string",
-      "level": "string",
-      "name": "string"
+      "name": "string",
+      "level": "string"
     }
 """

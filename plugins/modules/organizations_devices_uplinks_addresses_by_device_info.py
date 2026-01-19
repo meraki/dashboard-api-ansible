@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_devices_uplinks_addresses_by_device_info
-short_description: Information module for organizations _devices _uplinks _addresses _by _device
+short_description: Information module for organizations _devices _uplinks _addresses
+  _bydevice
 description:
-  - Get all organizations _devices _uplinks _addresses _by _device.
+  - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
+  - Get all organizations _devices _uplinks _addresses _bydevice.
   - List the current uplink addresses for devices in an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,64 +23,83 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        NetworkIds query parameter. Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
+        NetworkIds query parameter. Optional parameter to filter device uplinks by
+        network ID. This filter uses multiple exact matches.
     elements: str
     type: list
   productTypes:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        ProductTypes query parameter. Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
+        ProductTypes query parameter. Optional parameter to filter device uplinks
+        by device product types. This filter uses multiple exact matches.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        Serials query parameter. Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact
-        matches.
+        Serials query parameter. Optional parameter to filter device availabilities
+        by device serial numbers. This filter uses multiple exact matches.
     elements: str
     type: list
   tags:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        Tags query parameter. An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType'
-        should also be included (see below). This filter uses multiple exact matches.
+        Tags query parameter. An optional parameter to filter devices by tags. The
+        filtering is case-sensitive. If tags are included, 'tagsFilterType' should
+        also be included (see below). This filter uses multiple exact matches.
     elements: str
     type: list
   tagsFilterType:
     description:
+      - Information module for Organizations Devices Uplinks Addresses Bydevice Info.
       - >
-        TagsFilterType query parameter. An optional parameter of value 'withAnyTags' or 'withAllTags' to indicate whether to return devices which
-        contain ANY or ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
+        TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
+        or 'withAllTags' to indicate whether to return devices which contain ANY or
+        ALL of the included tags. If no type is included, 'withAnyTags' will be selected.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationDevicesUplinksAddressesByDevice
-    description: Complete reference of the getOrganizationDevicesUplinksAddressesByDevice API.
+    description: Complete reference of the getOrganizationDevicesUplinksAddressesByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-uplinks-addresses-by-device
 notes:
   - SDK Method used are
@@ -88,7 +109,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _devices _uplinks _addresses _by _device
+- name: Get all organizations _devices _uplinks _addresses _bydevice
   cisco.meraki.organizations_devices_uplinks_addresses_by_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -145,17 +166,18 @@ meraki_response:
         ],
         "uplinks": [
           {
+            "interface": "string",
             "addresses": [
               {
-                "address": "string",
+                "protocol": "string",
                 "assignmentMode": "string",
+                "address": "string",
                 "gateway": "string",
                 "nameservers": {
                   "addresses": [
                     "string"
                   ]
                 },
-                "protocol": "string",
                 "public": {
                   "address": "string"
                 },
@@ -163,8 +185,7 @@ meraki_response:
                   "id": "string"
                 }
               }
-            ],
-            "interface": "string"
+            ]
           }
         ]
       }

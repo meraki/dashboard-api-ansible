@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_sm_apns_cert_info
-short_description: Information module for organizations _sm _apns _cert
+short_description: Information module for organizations _sm _apnscert
 description:
-  - Get all organizations _sm _apns _cert.
+  - Information module for Organizations Sm Apnscert Info.
+  - Get all organizations _sm _apnscert.
   - Get the organization's APNS certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Sm Apnscert Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _apns _cert
+- name: Get all organizations _sm _apnscert
   cisco.meraki.organizations_sm_apns_cert_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

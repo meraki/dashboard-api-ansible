@@ -29,13 +29,15 @@ options:
         type: int
     type: dict
   simOrdering:
-    description: Specifies the ordering of all SIMs for an MG primary, secondary, and not-in-use (when applicable). It's required for devices
-      with 3 or more SIMs and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM, use 'sim3'. Sim failover will occur
-      only between primary and secondary sim slots.
+    description: Specifies the ordering of all SIMs for an MG primary, secondary,
+      and not-in-use (when applicable). It's required for devices with 3 or more SIMs
+      and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM,
+      use 'sim3'. Sim failover will occur only between primary and secondary sim slots.
     elements: str
     type: list
   sims:
-    description: List of SIMs. If a SIM was previously configured and not specified in this request, it will remain unchanged.
+    description: List of SIMs. If a SIM was previously configured and not specified
+      in this request, it will remain unchanged.
     elements: dict
     suboptions:
       apns:
@@ -43,14 +45,16 @@ options:
         elements: dict
         suboptions:
           allowedIpTypes:
-            description: IP versions to support (permitted values include 'ipv4', 'ipv6').
+            description: IP versions to support (permitted values include 'ipv4',
+              'ipv6').
             elements: str
             type: list
           authentication:
             description: APN authentication configurations.
             suboptions:
               password:
-                description: APN password, if type is set (if APN password is not supplied, the password is left unchanged).
+                description: APN password, if type is set (if APN password is not
+                  supplied, the password is left unchanged).
                 type: str
               type:
                 description: APN auth type.
@@ -64,15 +68,17 @@ options:
             type: str
         type: list
       isPrimary:
-        description: If true, this SIM is activated on platform bootup. It must be true on single-SIM devices and is a required field for dual-SIM
-          MGs unless it is being configured using 'simOrdering'.
+        description: If true, this SIM is activated on platform bootup. It must be
+          true on single-SIM devices and is a required field for dual-SIM MGs unless
+          it is being configured using 'simOrdering'.
         type: bool
       simOrder:
-        description: Priority of SIM slot being configured. Use a value between 1 and total number of SIMs available. The value must be unique
-          for each SIM.
+        description: Priority of SIM slot being configured. Use a value between 1
+          and total number of SIMs available. The value must be unique for each SIM.
         type: int
       slot:
-        description: SIM slot being configured. Must be 'sim1' on single-sim devices. Use 'sim3' for eSIM.
+        description: SIM slot being configured. Must be 'sim1' on single-sim devices.
+          Use 'sim3' for eSIM.
         type: str
     type: list
 requirements:
@@ -143,31 +149,35 @@ meraki_response:
   type: dict
   sample: >
     {
-      "simFailover": {
-        "enabled": true,
-        "timeout": 0
-      },
-      "simOrdering": [
-        "string"
-      ],
       "sims": [
         {
+          "slot": "string",
+          "iccid": "string",
+          "imsi": "string",
+          "msisdn": "string",
+          "isPrimary": true,
+          "status": "string",
           "apns": [
             {
+              "name": "string",
               "allowedIpTypes": [
                 "string"
               ],
               "authentication": {
-                "password": "string",
                 "type": "string",
-                "username": "string"
-              },
-              "name": "string"
+                "username": "string",
+                "password": "string"
+              }
             }
-          ],
-          "isPrimary": true,
-          "slot": "string"
+          ]
         }
-      ]
+      ],
+      "simOrdering": [
+        "string"
+      ],
+      "simFailover": {
+        "enabled": true,
+        "timeout": 0
+      }
     }
 """

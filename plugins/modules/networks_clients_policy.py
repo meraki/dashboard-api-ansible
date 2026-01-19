@@ -8,8 +8,11 @@ DOCUMENTATION = r"""
 module: networks_clients_policy
 short_description: Resource module for networks _clients _policy
 description:
-  - Manage operation update of the resource networks _clients _policy. - > Update the policy assigned to a client on the network. Clients can
-    be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+  - Manage operation update of the resource networks _clients _policy.
+  - >
+    Update the policy assigned to a client on the network. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -19,10 +22,12 @@ options:
     description: ClientId path parameter. Client ID.
     type: str
   devicePolicy:
-    description: The policy to assign. Can be 'Whitelisted', 'Blocked', 'Normal' or 'Group policy'. Required.
+    description: The policy to assign. Can be 'Whitelisted', 'Blocked', 'Normal' or
+      'Group policy'. Required.
     type: str
   groupPolicyId:
-    description: Optional If 'devicePolicy' is set to 'Group policy' this param is used to specify the group policy ID.
+    description: Optional If 'devicePolicy' is set to 'Group policy' this param is
+      used to specify the group policy ID.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -67,7 +72,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     clientId: string
-    devicePolicy: Group policy
+    devicePolicy: Different policies by SSID
     groupPolicyId: '101'
     networkId: string
 """
@@ -78,8 +83,15 @@ meraki_response:
   type: dict
   sample: >
     {
+      "mac": "string",
       "devicePolicy": "string",
       "groupPolicyId": "string",
-      "mac": "string"
+      "policiesBySsid": [
+        {
+          "ssidNumber": 0,
+          "devicePolicy": "string",
+          "groupPolicyId": "string"
+        }
+      ]
     }
 """

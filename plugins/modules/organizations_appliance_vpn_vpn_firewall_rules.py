@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_vpn_vpn_firewall_rules
-short_description: Resource module for organizations _appliance _vpn _vpn _firewall _rules
+short_description: Resource module for organizations _appliance _vpn _vpnfirewallrules
 description:
-  - Manage operation update of the resource organizations _appliance _vpn _vpn _firewall _rules.
+  - Manage operation update of the resource organizations _appliance _vpn _vpnfirewallrules.
   - Update the firewall rules of an organization's site-to-site VPN.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,43 +19,52 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   rules:
-    description: An ordered array of the firewall rules (not including the default rule).
+    description: An ordered array of the firewall rules (not including the default
+      rule).
     elements: dict
     suboptions:
       comment:
         description: Description of the rule (optional).
         type: str
       destCidr:
-        description: Comma-separated list of destination IP address(es) (in IP or CIDR notation) or 'any' (FQDN not supported).
+        description: Comma-separated list of destination IP address(es) (in IP or
+          CIDR notation) or 'any' (FQDN not supported).
         type: str
       destPort:
-        description: Comma-separated list of destination port(s) (integer in the range 1-65535), or 'any'.
+        description: Comma-separated list of destination port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       policy:
         description: '''allow'' or ''deny'' traffic specified by this rule.'
         type: str
       protocol:
-        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or 'any').
+        description: The type of protocol (must be 'tcp', 'udp', 'icmp', 'icmp6' or
+          'any').
         type: str
       srcCidr:
-        description: Comma-separated list of source IP address(es) (in IP or CIDR notation), or 'any' (FQDN not supported).
+        description: Comma-separated list of source IP address(es) (in IP or CIDR
+          notation), or 'any' (FQDN not supported).
         type: str
       srcPort:
-        description: Comma-separated list of source port(s) (integer in the range 1-65535), or 'any'.
+        description: Comma-separated list of source port(s) (integer in the range
+          1-65535), or 'any'.
         type: str
       syslogEnabled:
-        description: Log this rule to syslog (true or false, boolean value) - only applicable if a syslog has been configured (optional).
+        description: Log this rule to syslog (true or false, boolean value) - only
+          applicable if a syslog has been configured (optional).
         type: bool
     type: list
   syslogDefaultRule:
-    description: Log the special default rule (boolean value - enable only if you've configured a syslog server) (optional).
+    description: Log the special default rule (boolean value - enable only if you've
+      configured a syslog server) (optional).
     type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnVpnFirewallRules
-    description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules API.
+    description: Complete reference of the updateOrganizationApplianceVpnVpnFirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-vpn-firewall-rules
 notes:
   - SDK Method used are
@@ -110,12 +119,12 @@ meraki_response:
     [
       {
         "comment": "string",
-        "destCidr": "string",
-        "destPort": "string",
         "policy": "string",
         "protocol": "string",
-        "srcCidr": "string",
         "srcPort": "string",
+        "srcCidr": "string",
+        "destPort": "string",
+        "destCidr": "string",
         "syslogEnabled": true
       }
     ]

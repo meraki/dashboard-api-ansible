@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,9 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
+    trafficShapingEnabled=dict(type="bool"),
     defaultRulesEnabled=dict(type="bool"),
     rules=dict(type="list"),
-    trafficShapingEnabled=dict(type="bool"),
     networkId=dict(type="str"),
     number=dict(type="str"),
 ))
@@ -51,37 +50,44 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            trafficShapingEnabled=params.get("trafficShapingEnabled"),
             defaultRulesEnabled=params.get("defaultRulesEnabled"),
             rules=params.get("rules"),
-            trafficShapingEnabled=params.get("trafficShapingEnabled"),
             network_id=params.get("networkId"),
             number=params.get("number"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('defaultRulesEnabled') is not None or self.new_object.get('default_rules_enabled') is not None:
-            new_object_params['defaultRulesEnabled'] = self.new_object.get(
-                'defaultRulesEnabled')
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
-            new_object_params['rules'] = self.new_object.get('rules') or \
-                self.new_object.get('rules')
-        if self.new_object.get('trafficShapingEnabled') is not None or self.new_object.get('traffic_shaping_enabled') is not None:
+        if self.new_object.get('trafficShapingEnabled') is not None or self.new_object.get(
+                'traffic_shaping_enabled') is not None:
             new_object_params['trafficShapingEnabled'] = self.new_object.get(
                 'trafficShapingEnabled')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('number') is not None or self.new_object.get('number') is not None:
+        if self.new_object.get('defaultRulesEnabled') is not None or self.new_object.get(
+                'default_rules_enabled') is not None:
+            new_object_params['defaultRulesEnabled'] = self.new_object.get(
+                'defaultRulesEnabled')
+        if self.new_object.get('rules') is not None or self.new_object.get(
+                'rules') is not None:
+            new_object_params['rules'] = self.new_object.get('rules') or \
+                self.new_object.get('rules')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('number') is not None or self.new_object.get(
+                'number') is not None:
             new_object_params['number'] = self.new_object.get('number') or \
                 self.new_object.get('number')
         return new_object_params
@@ -138,17 +144,20 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("trafficShapingEnabled", "trafficShapingEnabled"),
             ("defaultRulesEnabled", "defaultRulesEnabled"),
             ("rules", "rules"),
-            ("trafficShapingEnabled", "trafficShapingEnabled"),
             ("networkId", "networkId"),
             ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

@@ -29,7 +29,8 @@ options:
     description: The SNMP version 3 authentication mode. Can be either 'MD5' or 'SHA'.
     type: str
   v3AuthPass:
-    description: The SNMP version 3 authentication password. Must be at least 8 characters if specified.
+    description: The SNMP version 3 authentication password. Must be at least 8 characters
+      if specified.
     type: str
   v3Enabled:
     description: Boolean indicating whether SNMP version 3 is enabled for the organization.
@@ -38,7 +39,8 @@ options:
     description: The SNMP version 3 privacy mode. Can be either 'DES' or 'AES128'.
     type: str
   v3PrivPass:
-    description: The SNMP version 3 privacy password. Must be at least 8 characters if specified.
+    description: The SNMP version 3 privacy password. Must be at least 8 characters
+      if specified.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -96,16 +98,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "hostname": "string",
+      "v2cEnabled": true,
+      "v2CommunityString": "string",
+      "v3Enabled": true,
+      "v3User": "string",
+      "v3AuthMode": "string",
+      "v3PrivMode": "string",
       "peerIps": [
         "string"
       ],
-      "port": 0,
-      "v2CommunityString": "string",
-      "v2cEnabled": true,
-      "v3AuthMode": "string",
-      "v3Enabled": true,
-      "v3PrivMode": "string",
-      "v3User": "string"
+      "hostname": "string",
+      "port": 0
     }
 """

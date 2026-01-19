@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_api_requests_info
-short_description: Information module for organizations _api _requests
+short_description: Information module for organizations _apirequests
 description:
-  - Get all organizations _api _requests.
+  - Information module for Organizations Apirequests Info.
+  - Get all organizations _apirequests.
   - List the API requests made by an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,72 +22,102 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Apirequests Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Organizations Apirequests Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
+      - Information module for Organizations Apirequests Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 31 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Organizations Apirequests Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 31 days. The default is 31 days.
     type: float
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - Information module for Organizations Apirequests Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Apirequests Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Apirequests Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   adminId:
     description:
-      - AdminId query parameter. Filter the results by the ID of the admin who made the API requests.
+      - Information module for Organizations Apirequests Info.
+      - AdminId query parameter. Filter the results by the ID of the admin who made
+        the API requests.
     type: str
   path:
     description:
+      - Information module for Organizations Apirequests Info.
       - Path query parameter. Filter the results by the path of the API requests.
     type: str
   method:
     description:
+      - Information module for Organizations Apirequests Info.
       - >
-        Method query parameter. Filter the results by the method of the API requests (must be 'GET', 'PUT', 'POST' or 'DELETE').
+        Method query parameter. Filter the results by the method of the API requests
+        (must be 'GET', 'PUT', 'POST' or 'DELETE').
     type: str
   responseCode:
     description:
-      - ResponseCode query parameter. Filter the results by the response code of the API requests.
+      - Information module for Organizations Apirequests Info.
+      - ResponseCode query parameter. Filter the results by the response code of the
+        API requests.
     type: int
   sourceIp:
     description:
-      - SourceIp query parameter. Filter the results by the IP address of the originating API request.
+      - Information module for Organizations Apirequests Info.
+      - SourceIp query parameter. Filter the results by the IP address of the originating
+        API request.
     type: str
   userAgent:
     description:
-      - UserAgent query parameter. Filter the results by the user agent string of the API request.
+      - Information module for Organizations Apirequests Info.
+      - UserAgent query parameter. Filter the results by the user agent string of
+        the API request.
     type: str
   version:
     description:
-      - Version query parameter. Filter the results by the API version of the API request.
+      - Information module for Organizations Apirequests Info.
+      - Version query parameter. Filter the results by the API version of the API
+        request.
     type: int
   operationIds:
     description:
-      - OperationIds query parameter. Filter the results by one or more operation IDs for the API request.
+      - Information module for Organizations Apirequests Info.
+      - OperationIds query parameter. Filter the results by one or more operation
+        IDs for the API request.
     elements: str
     type: list
 requirements:
@@ -104,7 +135,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _api _requests
+- name: Get all organizations _apirequests
   cisco.meraki.organizations_api_requests_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -156,20 +187,20 @@ meraki_response:
     [
       {
         "adminId": "string",
+        "method": "string",
+        "host": "string",
+        "path": "string",
+        "queryString": "string",
+        "userAgent": "string",
+        "ts": "string",
+        "responseCode": 0,
+        "sourceIp": "string",
+        "version": 0,
+        "operationId": "string",
         "client": {
           "id": "string",
           "type": "string"
-        },
-        "host": "string",
-        "method": "string",
-        "operationId": "string",
-        "path": "string",
-        "queryString": "string",
-        "responseCode": 0,
-        "sourceIp": "string",
-        "ts": "string",
-        "userAgent": "string",
-        "version": 0
+        }
       }
     ]
 """

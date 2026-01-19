@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,15 +31,15 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    address=dict(type="str"),
-    floorPlanId=dict(type="str"),
+    name=dict(type="str"),
+    tags=dict(type="list"),
     lat=dict(type="float"),
     lng=dict(type="float"),
-    moveMapMarker=dict(type="bool"),
-    name=dict(type="str"),
+    address=dict(type="str"),
     notes=dict(type="str"),
+    moveMapMarker=dict(type="bool"),
     switchProfileId=dict(type="str"),
-    tags=dict(type="list"),
+    floorPlanId=dict(type="str"),
     serial=dict(type="str"),
     organizationId=dict(type="str"),
 ))
@@ -57,105 +56,133 @@ class Devices(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            address=params.get("address"),
-            floorPlanId=params.get("floorPlanId"),
+            name=params.get("name"),
+            tags=params.get("tags"),
             lat=params.get("lat"),
             lng=params.get("lng"),
-            moveMapMarker=params.get("moveMapMarker"),
-            name=params.get("name"),
+            address=params.get("address"),
             notes=params.get("notes"),
+            moveMapMarker=params.get("moveMapMarker"),
             switchProfileId=params.get("switchProfileId"),
-            tags=params.get("tags"),
+            floorPlanId=params.get("floorPlanId"),
             serial=params.get("serial"),
             organization_id=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')
         new_object_params['total_pages'] = -1
-        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
-            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
-                self.new_object.get('starting_after')
-        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
-            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
-                self.new_object.get('ending_before')
-        if self.new_object.get('configurationUpdatedAfter') is not None or self.new_object.get('configuration_updated_after') is not None:
-            new_object_params['configurationUpdatedAfter'] = self.new_object.get('configurationUpdatedAfter') or \
-                self.new_object.get('configuration_updated_after')
-        if self.new_object.get('networkIds') is not None or self.new_object.get('network_ids') is not None:
-            new_object_params['networkIds'] = self.new_object.get('networkIds') or \
-                self.new_object.get('network_ids')
-        if self.new_object.get('productTypes') is not None or self.new_object.get('product_types') is not None:
-            new_object_params['productTypes'] = self.new_object.get('productTypes') or \
-                self.new_object.get('product_types')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('configurationUpdatedAfter') is not None or self.new_object.get(
+                'configuration_updated_after') is not None:
+            new_object_params['configurationUpdatedAfter'] = self.new_object.get(
+                'configurationUpdatedAfter') or self.new_object.get('configuration_updated_after')
+        if self.new_object.get('networkIds') is not None or self.new_object.get(
+                'network_ids') is not None:
+            new_object_params['networkIds'] = self.new_object.get(
+                'networkIds') or self.new_object.get('network_ids')
+        if self.new_object.get('productTypes') is not None or self.new_object.get(
+                'product_types') is not None:
+            new_object_params['productTypes'] = self.new_object.get(
+                'productTypes') or self.new_object.get('product_types')
+        if self.new_object.get('tags') is not None or self.new_object.get(
+                'tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags')
-        if self.new_object.get('tagsFilterType') is not None or self.new_object.get('tags_filter_type') is not None:
-            new_object_params['tagsFilterType'] = self.new_object.get('tagsFilterType') or \
-                self.new_object.get('tags_filter_type')
+        if self.new_object.get('tagsFilterType') is not None or self.new_object.get(
+                'tags_filter_type') is not None:
+            new_object_params['tagsFilterType'] = self.new_object.get(
+                'tagsFilterType') or self.new_object.get('tags_filter_type')
         new_object_params['name'] = name or self.new_object.get('name')
-        if self.new_object.get('mac') is not None or self.new_object.get('mac') is not None:
+        if self.new_object.get(
+                'mac') is not None or self.new_object.get('mac') is not None:
             new_object_params['mac'] = self.new_object.get('mac')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
-        if self.new_object.get('model') is not None or self.new_object.get('model') is not None:
+        if self.new_object.get('model') is not None or self.new_object.get(
+                'model') is not None:
             new_object_params['model'] = self.new_object.get('model')
-        if self.new_object.get('macs') is not None or self.new_object.get('macs') is not None:
+        if self.new_object.get('macs') is not None or self.new_object.get(
+                'macs') is not None:
             new_object_params['macs'] = self.new_object.get('macs')
-        if self.new_object.get('serials') is not None or self.new_object.get('serials') is not None:
+        if self.new_object.get('serials') is not None or self.new_object.get(
+                'serials') is not None:
             new_object_params['serials'] = self.new_object.get('serials')
-        if self.new_object.get('sensorMetrics') is not None or self.new_object.get('sensor_metrics') is not None:
-            new_object_params['sensorMetrics'] = self.new_object.get('sensorMetrics') or \
-                self.new_object.get('sensor_metrics')
-        if self.new_object.get('sensorAlertProfileIds') is not None or self.new_object.get('sensor_alert_profile_ids') is not None:
-            new_object_params['sensorAlertProfileIds'] = self.new_object.get('sensorAlertProfileIds') or \
-                self.new_object.get('sensor_alert_profile_ids')
-        if self.new_object.get('models') is not None or self.new_object.get('models') is not None:
+        if self.new_object.get('sensorMetrics') is not None or self.new_object.get(
+                'sensor_metrics') is not None:
+            new_object_params['sensorMetrics'] = self.new_object.get(
+                'sensorMetrics') or self.new_object.get('sensor_metrics')
+        if self.new_object.get('sensorAlertProfileIds') is not None or self.new_object.get(
+                'sensor_alert_profile_ids') is not None:
+            new_object_params['sensorAlertProfileIds'] = self.new_object.get(
+                'sensorAlertProfileIds') or self.new_object.get('sensor_alert_profile_ids')
+        if self.new_object.get('models') is not None or self.new_object.get(
+                'models') is not None:
             new_object_params['models'] = self.new_object.get('models')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
-            new_object_params['address'] = self.new_object.get('address') or \
-                self.new_object.get('address')
-        if self.new_object.get('floorPlanId') is not None or self.new_object.get('floor_plan_id') is not None:
-            new_object_params['floorPlanId'] = self.new_object.get('floorPlanId') or \
-                self.new_object.get('floor_plan_id')
-        if self.new_object.get('lat') is not None or self.new_object.get('lat') is not None:
-            new_object_params['lat'] = self.new_object.get('lat') or \
-                self.new_object.get('lat')
-        if self.new_object.get('lng') is not None or self.new_object.get('lng') is not None:
-            new_object_params['lng'] = self.new_object.get('lng') or \
-                self.new_object.get('lng')
-        if self.new_object.get('moveMapMarker') is not None or self.new_object.get('move_map_marker') is not None:
-            new_object_params['moveMapMarker'] = self.new_object.get(
-                'moveMapMarker')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('notes') is not None or self.new_object.get('notes') is not None:
-            new_object_params['notes'] = self.new_object.get('notes') or \
-                self.new_object.get('notes')
-        if self.new_object.get('switchProfileId') is not None or self.new_object.get('switch_profile_id') is not None:
-            new_object_params['switchProfileId'] = self.new_object.get('switchProfileId') or \
-                self.new_object.get('switch_profile_id')
-        if self.new_object.get('tags') is not None or self.new_object.get('tags') is not None:
+        if self.new_object.get('tags') is not None or self.new_object.get(
+                'tags') is not None:
             new_object_params['tags'] = self.new_object.get('tags') or \
                 self.new_object.get('tags')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get(
+                'lat') is not None or self.new_object.get('lat') is not None:
+            new_object_params['lat'] = self.new_object.get('lat') or \
+                self.new_object.get('lat')
+        if self.new_object.get(
+                'lng') is not None or self.new_object.get('lng') is not None:
+            new_object_params['lng'] = self.new_object.get('lng') or \
+                self.new_object.get('lng')
+        if self.new_object.get('address') is not None or self.new_object.get(
+                'address') is not None:
+            new_object_params['address'] = self.new_object.get('address') or \
+                self.new_object.get('address')
+        if self.new_object.get('notes') is not None or self.new_object.get(
+                'notes') is not None:
+            new_object_params['notes'] = self.new_object.get('notes') or \
+                self.new_object.get('notes')
+        if self.new_object.get('moveMapMarker') is not None or self.new_object.get(
+                'move_map_marker') is not None:
+            new_object_params['moveMapMarker'] = self.new_object.get(
+                'moveMapMarker')
+        if self.new_object.get('switchProfileId') is not None or self.new_object.get(
+                'switch_profile_id') is not None:
+            new_object_params['switchProfileId'] = self.new_object.get(
+                'switchProfileId') or self.new_object.get('switch_profile_id')
+        if self.new_object.get('floorPlanId') is not None or self.new_object.get(
+                'floor_plan_id') is not None:
+            new_object_params['floorPlanId'] = self.new_object.get(
+                'floorPlanId') or self.new_object.get('floor_plan_id')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -233,23 +260,26 @@ class Devices(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("address", "address"),
-            ("floorPlanId", "floorPlanId"),
+            ("name", "name"),
+            ("tags", "tags"),
             ("lat", "lat"),
             ("lng", "lng"),
-            ("moveMapMarker", "moveMapMarker"),
-            ("name", "name"),
+            ("address", "address"),
             ("notes", "notes"),
+            ("moveMapMarker", "moveMapMarker"),
             ("switchProfileId", "switchProfileId"),
-            ("tags", "tags"),
+            ("floorPlanId", "floorPlanId"),
             ("serial", "serial"),
             ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

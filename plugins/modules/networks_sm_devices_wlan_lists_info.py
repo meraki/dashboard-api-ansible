@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_wlan_lists_info
-short_description: Information module for networks _sm _devices _wlan _lists
+short_description: Information module for networks _sm _devices _wlanlists
 description:
-  - Get all networks _sm _devices _wlan _lists.
+  - Information module for Networks Sm Devices Wlanlists Info.
+  - Get all networks _sm _devices _wlanlists.
   - List the saved SSID names on a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Wlanlists Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Wlanlists Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -41,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _wlan _lists
+- name: Get all networks _sm _devices _wlanlists
   cisco.meraki.networks_sm_devices_wlan_lists_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

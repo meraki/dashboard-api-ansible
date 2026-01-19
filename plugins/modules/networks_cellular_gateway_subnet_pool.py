@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_subnet_pool
-short_description: Resource module for networks _cellular _gateway _subnet _pool
+short_description: Resource module for networks _cellulargateway _subnetpool
 description:
-  - Manage operation update of the resource networks _cellular _gateway _subnet _pool.
+  - Manage operation update of the resource networks _cellulargateway _subnetpool.
   - Update the subnet pool and mask configuration for MGs in the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   cidr:
-    description: CIDR of the pool of subnets. Each MG in this network will automatically pick a subnet from this pool.
+    description: CIDR of the pool of subnets. Each MG in this network will automatically
+      pick a subnet from this pool.
     type: str
   mask:
     description: Mask used for the subnet of all MGs in this network.
@@ -29,7 +30,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway updateNetworkCellularGatewaySubnetPool
-    description: Complete reference of the updateNetworkCellularGatewaySubnetPool API.
+    description: Complete reference of the updateNetworkCellularGatewaySubnetPool
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-cellular-gateway-subnet-pool
 notes:
   - SDK Method used are
@@ -74,14 +76,14 @@ meraki_response:
   type: dict
   sample: >
     {
-      "cidr": "string",
       "deploymentMode": "string",
+      "cidr": "string",
       "mask": 0,
       "subnets": [
         {
-          "applianceIp": "string",
-          "name": "string",
           "serial": "string",
+          "name": "string",
+          "applianceIp": "string",
           "subnet": "string"
         }
       ]

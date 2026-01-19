@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_openapi_spec_info
-short_description: Information module for organizations _openapi _spec
+short_description: Information module for organizations _openapispec
 description:
-  - Get all organizations _openapi _spec.
+  - Information module for Organizations Openapispec Info.
+  - Get all organizations _openapispec.
   - Return the OpenAPI Specification of the organization's API documentation in JSON.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,11 +21,14 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Openapispec Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   version:
     description:
-      - Version query parameter. OpenAPI Specification version to return. Default is 2.
+      - Information module for Organizations Openapispec Info.
+      - Version query parameter. OpenAPI Specification version to return. Default
+        is 2.
     type: int
 requirements:
   - meraki >= 2.4.9
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _openapi _spec
+- name: Get all organizations _openapispec
   cisco.meraki.organizations_openapi_spec_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,34 +77,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "info": {
-        "description": "string",
-        "title": "string",
-        "version": "string"
-      },
-      "openapi": "string",
-      "paths": {
-        "/organizations": {
-          "get": {
-            "description": "string",
-            "operationId": "string",
-            "responses": {
-              "200": {
-                "description": "string",
-                "examples": {
-                  "application/json": [
-                    {
-                      "id": "string",
-                      "name": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  sample:
+  - {}
 """

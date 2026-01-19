@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -19,21 +19,144 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
+    meraki_compare_equality,
+)
+from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
+    InconsistentParameters,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    callback=dict(type="dict"),
+    state=dict(type="str", default="present", choices=["present"]),
     duration=dict(type="int"),
+    callback=dict(type="dict"),
     serial=dict(type="str"),
+    ledsBlinkId=dict(type="str"),
 ))
 
-required_if = []
+required_if = [
+    ("state", "present", ["ledsBlinkId", "serial"], True),
+]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
+
+
+class DevicesLiveToolsLedsBlink(object):
+    def __init__(self, params, meraki):
+        self.meraki = meraki
+        self.new_object = dict(
+            duration=params.get("duration"),
+            callback=params.get("callback"),
+            serial=params.get("serial"),
+            leds_blink_id=params.get("ledsBlinkId"),
+        )
+
+    def get_params_by_id(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial')
+        if self.new_object.get('ledsBlinkId') is not None or self.new_object.get(
+                'leds_blink_id') is not None:
+            new_object_params['ledsBlinkId'] = self.new_object.get(
+                'ledsBlinkId') or self.new_object.get('leds_blink_id')
+        return new_object_params
+
+    def create_params(self):
+        new_object_params = {}
+        if self.new_object.get('duration') is not None or self.new_object.get(
+                'duration') is not None:
+            new_object_params['duration'] = self.new_object.get(
+                'duration') or self.new_object.get('duration')
+        if self.new_object.get('callback') is not None or self.new_object.get(
+                'callback') is not None:
+            new_object_params['callback'] = self.new_object.get(
+                'callback') or self.new_object.get('callback')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial') or \
+                self.new_object.get('serial')
+        return new_object_params
+
+    def get_object_by_name(self, name):
+        result = None
+        # NOTE: Does not have a get by name and get all
+        return result
+
+    def get_object_by_id(self, id):
+        result = None
+        try:
+            items = self.meraki.exec_meraki(
+                family="devices",
+                function="getDeviceLiveToolsLedsBlink",
+                params=self.get_params_by_id()
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = items
+        except Exception as e:
+            print("Error: ", e)
+            result = None
+        return result
+
+    def exists(self):
+        prev_obj = None
+        id_exists = False
+        name_exists = False
+        o_id = self.new_object.get("serial")
+        o_id = o_id or self.new_object.get(
+            "leds_blink_id") or self.new_object.get("ledsBlinkId")
+        name = self.new_object.get("name")
+        if o_id:
+            prev_obj = self.get_object_by_id(o_id)
+            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if not id_exists and name:
+            prev_obj = self.get_object_by_name(name)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if name_exists:
+            _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("ledsBlinkId")
+            if id_exists and name_exists and o_id != _id:
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object")
+            if _id:
+                self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(ledsBlinkId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
+        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        return (it_exists, prev_obj)
+
+    def requires_update(self, current_obj):
+        requested_obj = self.new_object
+
+        obj_params = [
+            ("duration", "duration"),
+            ("callback", "callback"),
+            ("serial", "serial"),
+            ("ledsBlinkId", "ledsBlinkId"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
+
+    def create(self):
+        result = self.meraki.exec_meraki(
+            family="devices",
+            function="createDeviceLiveToolsLedsBlink",
+            params=self.create_params(),
+            op_modifies=True,
+        )
+        return result
 
 
 class ActionModule(ActionBase):
@@ -64,28 +187,31 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(self, params):
-        new_object = dict(
-            callback=params.get("callback"),
-            duration=params.get("duration"),
-            serial=params.get("serial"),
-        )
-        return new_object
-
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
         self._result["changed"] = False
         self._check_argspec()
 
-        meraki = MERAKI(params=self._task.args)
+        meraki = MERAKI(self._task.args)
+        obj = DevicesLiveToolsLedsBlink(self._task.args, meraki)
 
-        response = meraki.exec_meraki(
-            family="devices",
-            function='createDeviceLiveToolsLedsBlink',
-            op_modifies=True,
-            params=self.get_object(self._task.args),
-        )
+        state = self._task.args.get("state")
+
+        response = None
+        if state == "present":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                if obj.requires_update(prev_obj):
+                    response = prev_obj
+                    meraki.object_present_and_different()
+                else:
+                    response = prev_obj
+                    meraki.object_already_present()
+            else:
+                response = obj.create()
+                meraki.object_created()
+
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())
         return self._result

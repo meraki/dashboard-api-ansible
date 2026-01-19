@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_dns_split_profiles_assignments_info
-short_description: Information module for organizations _appliance _dns _split _profiles _assignments
+short_description: Information module for organizations _appliance _dns _split _profiles
+  _assignments
 description:
+  - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
   - Get all organizations _appliance _dns _split _profiles _assignments.
   - Fetch the split DNS profile assignments in the organization.
 version_added: '1.0.0'
@@ -20,16 +22,21 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter the results by network IDs.
+      - Information module for Organizations Appliance Dns Split Profiles Assignments Info.
+      - NetworkIds query parameter. Optional parameter to filter the results by network
+        IDs.
     elements: str
     type: list
 requirements:
@@ -37,7 +44,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsSplitProfilesAssignments
-    description: Complete reference of the getOrganizationApplianceDnsSplitProfilesAssignments API.
+    description: Complete reference of the getOrganizationApplianceDnsSplitProfilesAssignments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-split-profiles-assignments
 notes:
   - SDK Method used are
@@ -96,8 +104,8 @@ meraki_response:
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

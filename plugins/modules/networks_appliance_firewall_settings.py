@@ -34,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallSettings
-    description: Complete reference of the updateNetworkApplianceFirewallSettings API.
+    description: Complete reference of the updateNetworkApplianceFirewallSettings
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-settings
 notes:
   - SDK Method used are

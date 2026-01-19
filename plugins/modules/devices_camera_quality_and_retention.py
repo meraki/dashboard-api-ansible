@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_camera_quality_and_retention
-short_description: Resource module for devices _camera _quality _and _retention
+short_description: Resource module for devices _camera _qualityandretention
 description:
-  - Manage operation update of the resource devices _camera _quality _and _retention.
+  - Manage operation update of the resource devices _camera _qualityandretention.
   - Update quality and retention settings for the given camera.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,29 +16,35 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   audioRecordingEnabled:
-    description: Boolean indicating if audio recording is enabled(true) or disabled(false) on the camera.
+    description: Boolean indicating if audio recording is enabled(true) or disabled(false)
+      on the camera.
     type: bool
   motionBasedRetentionEnabled:
-    description: Boolean indicating if motion-based retention is enabled(true) or disabled(false) on the camera.
+    description: Boolean indicating if motion-based retention is enabled(true) or
+      disabled(false) on the camera.
     type: bool
   motionDetectorVersion:
-    description: The version of the motion detector that will be used by the camera. Only applies to Gen 2 cameras. Defaults to v2.
+    description: The version of the motion detector that will be used by the camera.
+      Only applies to Gen 2 cameras. Defaults to v2.
     type: int
   profileId:
-    description: The ID of a quality and retention profile to assign to the camera. The profile's settings will override all of the per-camera
-      quality and retention settings. If the value of this parameter is null, any existing profile will be unassigned from the camera.
+    description: The ID of a quality and retention profile to assign to the camera.
+      The profile's settings will override all of the per-camera quality and retention
+      settings. If the value of this parameter is null, any existing profile will
+      be unassigned from the camera.
     type: str
   quality:
-    description: Quality of the camera. Can be one of 'Standard', 'High', 'Enhanced' or 'Ultra'. Not all qualities are supported by every camera
-      model.
+    description: Quality of the camera. Can be one of 'Standard', 'High', 'Enhanced'
+      or 'Ultra'. Not all qualities are supported by every camera model.
     type: str
   resolution:
-    description: Resolution of the camera. Can be one of '1280x720', '1920x1080', '1080x1080', '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not
-      all resolutions are supported by every camera model.
+    description: Resolution of the camera. Can be one of '1280x720', '1920x1080',
+      '1080x1080', '2112x2112', '2880x2880', '2688x1512' or '3840x2160'.Not all resolutions
+      are supported by every camera model.
     type: str
   restrictedBandwidthModeEnabled:
-    description: Boolean indicating if restricted bandwidth is enabled(true) or disabled(false) on the camera. This setting does not apply to
-      MV2 cameras.
+    description: Boolean indicating if restricted bandwidth is enabled(true) or disabled(false)
+      on the camera. This setting does not apply to MV2 cameras.
     type: bool
   serial:
     description: Serial path parameter.

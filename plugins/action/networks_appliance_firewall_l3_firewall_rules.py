@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -57,22 +56,26 @@ class NetworksApplianceFirewallL3FirewallRules(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('rules') is not None or self.new_object.get('rules') is not None:
+        if self.new_object.get('rules') is not None or self.new_object.get(
+                'rules') is not None:
             new_object_params['rules'] = self.new_object.get('rules') or \
                 self.new_object.get('rules')
-        if self.new_object.get('syslogDefaultRule') is not None or self.new_object.get('syslog_default_rule') is not None:
+        if self.new_object.get('syslogDefaultRule') is not None or self.new_object.get(
+                'syslog_default_rule') is not None:
             new_object_params['syslogDefaultRule'] = self.new_object.get(
                 'syslogDefaultRule')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -84,6 +87,9 @@ class NetworksApplianceFirewallL3FirewallRules(object):
                 function="getNetworkApplianceFirewallL3FirewallRules",
                 params=self.get_all_params(name=name),
             )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
@@ -130,9 +136,12 @@ class NetworksApplianceFirewallL3FirewallRules(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")

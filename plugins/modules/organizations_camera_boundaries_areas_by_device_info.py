@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_camera_boundaries_areas_by_device_info
-short_description: Information module for organizations _camera _boundaries _areas _by _device
+short_description: Information module for organizations _camera _boundaries _areas
+  _bydevice
 description:
-  - Get all organizations _camera _boundaries _areas _by _device.
+  - Information module for Organizations Camera Boundaries Areas Bydevice Info.
+  - Get all organizations _camera _boundaries _areas _bydevice.
   - Returns all configured area boundaries of cameras.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,12 +22,15 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Camera Boundaries Areas Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
+      - Information module for Organizations Camera Boundaries Areas Bydevice Info.
       - >
-        Serials query parameter. A list of serial numbers. The returned cameras will be filtered to only include these serials.
+        Serials query parameter. A list of serial numbers. The returned cameras will
+        be filtered to only include these serials.
     elements: str
     type: list
 requirements:
@@ -33,7 +38,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for camera getOrganizationCameraBoundariesAreasByDevice
-    description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice API.
+    description: Complete reference of the getOrganizationCameraBoundariesAreasByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-camera-boundaries-areas-by-device
 notes:
   - SDK Method used are
@@ -43,7 +49,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _boundaries _areas _by _device
+- name: Get all organizations _camera _boundaries _areas _bydevice
   cisco.meraki.organizations_camera_boundaries_areas_by_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -79,19 +85,19 @@ meraki_response:
   sample: >
     [
       {
+        "networkId": "string",
+        "serial": "string",
         "boundaries": {
           "id": "string",
-          "name": "string",
           "type": "string",
+          "name": "string",
           "vertices": [
             {
               "x": 0,
               "y": 0
             }
           ]
-        },
-        "networkId": "string",
-        "serial": "string"
+        }
       }
     ]
 """

@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_switch_ports_statuses_by_switch_info
-short_description: Information module for organizations _switch _ports _statuses _by _switch
+short_description: Information module for organizations _switch _ports _statuses _by
+  _switch
 description:
+  - Information module for Organizations Switch Ports Statuses By Switch Info.
   - Get all organizations _switch _ports _statuses _by _switch.
   - List the switchports in an organization.
 version_added: '1.0.0'
@@ -21,68 +23,90 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 20. Default is 10.
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 20. Default is 10.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   configurationUpdatedAfter:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        ConfigurationUpdatedAfter query parameter. Optional parameter to filter items to switches where the configuration has been updated after
-        the given timestamp.
+        ConfigurationUpdatedAfter query parameter. Optional parameter to filter items
+        to switches where the configuration has been updated after the given timestamp.
     type: str
   mac:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        Mac query parameter. Optional parameter to filter items to switches with MAC addresses that contain the search term or are an exact match.
+        Mac query parameter. Optional parameter to filter items to switches with MAC
+        addresses that contain the search term or are an exact match.
     type: str
   macs:
     description:
-      - Macs query parameter. Optional parameter to filter items to switches that have one of the provided MAC addresses.
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
+      - Macs query parameter. Optional parameter to filter items to switches that
+        have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        Name query parameter. Optional parameter to filter items to switches with names that contain the search term or are an exact match.
+        Name query parameter. Optional parameter to filter items to switches with
+        names that contain the search term or are an exact match.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter items to switches in one of the provided networks.
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
+      - NetworkIds query parameter. Optional parameter to filter items to switches
+        in one of the provided networks.
     elements: str
     type: list
   portProfileIds:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        PortProfileIds query parameter. Optional parameter to filter items to switches that contain switchports belonging to one of the specified
-        port profiles.
+        PortProfileIds query parameter. Optional parameter to filter items to switches
+        that contain switchports belonging to one of the specified port profiles.
     elements: str
     type: list
   serial:
     description:
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
       - >
-        Serial query parameter. Optional parameter to filter items to switches with serial number that contains the search term or are an exact
-        match.
+        Serial query parameter. Optional parameter to filter items to switches with
+        serial number that contains the search term or are an exact match.
     type: str
   serials:
     description:
-      - Serials query parameter. Optional parameter to filter items to switches that have one of the provided serials.
+      - Information module for Organizations Switch Ports Statuses By Switch Info.
+      - Serials query parameter. Optional parameter to filter items to switches that
+        have one of the provided serials.
     elements: str
     type: list
 requirements:
@@ -90,7 +114,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch getOrganizationSwitchPortsStatusesBySwitch
-    description: Complete reference of the getOrganizationSwitchPortsStatusesBySwitch API.
+    description: Complete reference of the getOrganizationSwitchPortsStatusesBySwitch
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-switch-ports-statuses-by-switch
 notes:
   - SDK Method used are
@@ -148,49 +173,49 @@ meraki_response:
     {
       "items": [
         {
-          "mac": "string",
-          "model": "string",
           "name": "string",
+          "serial": "string",
+          "mac": "string",
           "network": {
-            "id": "string",
-            "name": "string"
+            "name": "string",
+            "id": "string"
           },
+          "model": "string",
           "ports": [
             {
-              "duplex": "string",
+              "portId": "string",
               "enabled": true,
+              "status": "string",
+              "isUplink": true,
               "errors": [
                 "string"
               ],
-              "isUplink": true,
-              "poe": {
-                "isAllocated": true
-              },
-              "portId": "string",
-              "securePort": {
-                "active": true,
-                "authenticationStatus": "string"
-              },
+              "warnings": [
+                "string"
+              ],
+              "speed": "string",
+              "duplex": "string",
               "spanningTree": {
                 "statuses": [
                   "string"
                 ]
               },
-              "speed": "string",
-              "status": "string",
-              "warnings": [
-                "string"
-              ]
+              "poe": {
+                "isAllocated": true
+              },
+              "securePort": {
+                "active": true,
+                "authenticationStatus": "string"
+              }
             }
-          ],
-          "serial": "string"
+          ]
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

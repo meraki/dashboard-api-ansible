@@ -69,20 +69,22 @@ meraki_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "name": "string",
+      "url": "string",
       "api": {
         "enabled": true
       },
-      "cloud": {
-        "region": {
-          "host": {
-            "name": "string"
-          },
-          "name": "string"
-        }
-      },
-      "id": "string",
       "licensing": {
         "model": "string"
+      },
+      "cloud": {
+        "region": {
+          "name": "string",
+          "host": {
+            "name": "string"
+          }
+        }
       },
       "management": {
         "details": [
@@ -91,8 +93,6 @@ meraki_response:
             "value": "string"
           }
         ]
-      },
-      "name": "string",
-      "url": "string"
+      }
     }
 """

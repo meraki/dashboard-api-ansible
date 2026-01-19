@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_target_groups_info
-short_description: Information module for networks _sm _target _groups
+short_description: Information module for networks _sm _targetgroups
 description:
-  - Get all networks _sm _target _groups.
-  - Get networks _sm _target _groups by id.
+  - Information module for Networks Sm Targetgroups Info.
+  - Get all networks _sm _targetgroups.
+  - Get networks _sm _targetgroups by id.
   - List the target groups in this network.
   - Return a target group.
 version_added: '1.0.0'
@@ -22,16 +23,19 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Targetgroups Info.
       - NetworkId path parameter. Network ID.
     type: str
   withDetails:
     description:
+      - Information module for Networks Sm Targetgroups Info.
       - >
-        WithDetails query parameter. Boolean indicating if the the ids of the devices or users scoped by the target group should be included in
-        the response.
+        WithDetails query parameter. Boolean indicating if the the ids of the devices
+        or users scoped by the target group should be included in the response.
     type: bool
   targetGroupId:
     description:
+      - Information module for Networks Sm Targetgroups Info.
       - TargetGroupId path parameter. Target group ID.
     type: str
 requirements:
@@ -54,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _target _groups
+- name: Get all networks _sm _targetgroups
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -80,7 +84,7 @@ EXAMPLES = r"""
     withDetails: true
     networkId: string
   register: result
-- name: Get networks _sm _target _groups by id
+- name: Get networks _sm _targetgroups by id
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

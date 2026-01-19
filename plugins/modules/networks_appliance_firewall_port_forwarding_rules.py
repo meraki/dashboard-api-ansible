@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_port_forwarding_rules
-short_description: Resource module for networks _appliance _firewall _port _forwarding _rules
+short_description: Resource module for networks _appliance _firewall _portforwardingrules
 description:
-  - Manage operation update of the resource networks _appliance _firewall _port _forwarding _rules.
+  - Manage operation update of the resource networks _appliance _firewall _portforwardingrules.
   - Update the port forwarding rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,15 +23,17 @@ options:
     elements: dict
     suboptions:
       allowedIps:
-        description: An array of ranges of WAN IP addresses that are allowed to make inbound connections on the specified ports or port ranges
-          (or any).
+        description: An array of ranges of WAN IP addresses that are allowed to make
+          inbound connections on the specified ports or port ranges (or any).
         elements: str
         type: list
       lanIp:
-        description: The IP address of the server or device that hosts the internal resource that you wish to make available on the WAN.
+        description: The IP address of the server or device that hosts the internal
+          resource that you wish to make available on the WAN.
         type: str
       localPort:
-        description: A port or port ranges that will receive the forwarded traffic from the WAN.
+        description: A port or port ranges that will receive the forwarded traffic
+          from the WAN.
         type: str
       name:
         description: A descriptive name for the rule.
@@ -40,10 +42,12 @@ options:
         description: TCP or UDP.
         type: str
       publicPort:
-        description: A port or port ranges that will be forwarded to the host on the LAN.
+        description: A port or port ranges that will be forwarded to the host on the
+          LAN.
         type: str
       uplink:
-        description: The physical WAN interface on which the traffic will arrive ('internet1' or, if available, 'internet2' or 'both').
+        description: The physical WAN interface on which the traffic will arrive ('internet1'
+          or, if available, 'internet2' or 'both').
         type: str
     type: list
 requirements:
@@ -51,7 +55,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceFirewallPortForwardingRules
-    description: Complete reference of the updateNetworkApplianceFirewallPortForwardingRules API.
+    description: Complete reference of the updateNetworkApplianceFirewallPortForwardingRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-firewall-port-forwarding-rules
 notes:
   - SDK Method used are
@@ -104,14 +109,14 @@ meraki_response:
   sample: >
     [
       {
+        "lanIp": "string",
         "allowedIps": [
           "string"
         ],
-        "lanIp": "string",
-        "localPort": "string",
         "name": "string",
         "protocol": "string",
         "publicPort": "string",
+        "localPort": "string",
         "uplink": "string"
       }
     ]

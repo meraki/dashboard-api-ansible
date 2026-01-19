@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_alternate_management_interface
-short_description: Resource module for networks _switch _alternate _management _interface
+short_description: Resource module for networks _switch _alternatemanagementinterface
 description:
-  - Manage operation update of the resource networks _switch _alternate _management _interface.
+  - Manage operation update of the resource networks _switch _alternatemanagementinterface.
   - Update the switch alternate management interface for the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   enabled:
-    description: Boolean value to enable or disable AMI configuration. If enabled, VLAN and protocols must be set.
+    description: Boolean value to enable or disable AMI configuration. If enabled,
+      VLAN and protocols must be set.
     type: bool
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -26,22 +27,27 @@ options:
     elements: str
     type: list
   switches:
-    description: Array of switch serial number and IP assignment. If parameter is present, it cannot have empty body. Note switches parameter
-      is not applicable for template networks, in other words, do not put 'switches' in the body when updating template networks. Also, an empty
-      'switches' array will remove all previous assignments.
+    description: Array of switch serial number and IP assignment. If parameter is
+      present, it cannot have empty body. Note switches parameter is not applicable
+      for template networks, in other words, do not put 'switches' in the body when
+      updating template networks. Also, an empty 'switches' array will remove all
+      previous assignments.
     elements: dict
     suboptions:
       alternateManagementIp:
-        description: Switch alternative management IP. To remove a prior IP setting, provide an empty string.
+        description: Switch alternative management IP. To remove a prior IP setting,
+          provide an empty string.
         type: str
       gateway:
-        description: Switch gateway must be in IP format. Only and must be specified for Polaris switches.
+        description: Switch gateway must be in IP format. Only and must be specified
+          for Polaris switches.
         type: str
       serial:
         description: Switch serial number.
         type: str
       subnetMask:
-        description: Switch subnet mask must be in IP format. Only and must be specified for Polaris switches.
+        description: Switch subnet mask must be in IP format. Only and must be specified
+          for Polaris switches.
         type: str
     type: list
   vlanId:
@@ -52,7 +58,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for switch updateNetworkSwitchAlternateManagementInterface
-    description: Complete reference of the updateNetworkSwitchAlternateManagementInterface API.
+    description: Complete reference of the updateNetworkSwitchAlternateManagementInterface
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-switch-alternate-management-interface
 notes:
   - SDK Method used are
@@ -107,17 +114,17 @@ meraki_response:
   sample: >
     {
       "enabled": true,
+      "vlanId": 0,
       "protocols": [
         "string"
       ],
       "switches": [
         {
-          "alternateManagementIp": "string",
-          "gateway": "string",
           "serial": "string",
-          "subnetMask": "string"
+          "alternateManagementIp": "string",
+          "subnetMask": "string",
+          "gateway": "string"
         }
-      ],
-      "vlanId": 0
+      ]
     }
 """

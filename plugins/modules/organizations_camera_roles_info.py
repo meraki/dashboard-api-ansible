@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_camera_roles_info
 short_description: Information module for organizations _camera _roles
 description:
+  - Information module for Organizations Camera Roles Info.
   - Get all organizations _camera _roles.
   - List all the roles in this organization.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Camera Roles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -72,33 +74,33 @@ meraki_response:
   sample: >
     [
       {
+        "name": "string",
         "appliedOnDevices": [
           {
+            "tag": "string",
             "id": "string",
-            "permissionLevel": "string",
-            "permissionScope": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
         ],
         "appliedOnNetworks": [
           {
+            "tag": "string",
             "id": "string",
-            "permissionLevel": "string",
-            "permissionScope": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
         ],
         "appliedOrgWide": [
           {
-            "permissionLevel": "string",
-            "permissionScope": "string",
+            "tag": "string",
             "permissionScopeId": "string",
-            "tag": "string"
+            "permissionScope": "string",
+            "permissionLevel": "string"
           }
-        ],
-        "name": "string"
+        ]
       }
     ]
 """

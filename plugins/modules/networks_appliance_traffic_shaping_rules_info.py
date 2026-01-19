@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_rules_info
-short_description: Information module for networks _appliance _traffic _shaping _rules
+short_description: Information module for networks _appliance _trafficshaping _rules
 description:
-  - Get all networks _appliance _traffic _shaping _rules.
+  - Information module for Networks Appliance Trafficshaping Rules Info.
+  - Get all networks _appliance _trafficshaping _rules.
   - Display the traffic shaping settings rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Trafficshaping Rules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingRules
-    description: Complete reference of the getNetworkApplianceTrafficShapingRules API.
+    description: Complete reference of the getNetworkApplianceTrafficShapingRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-rules
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _traffic _shaping _rules
+- name: Get all networks _appliance _trafficshaping _rules
   cisco.meraki.networks_appliance_traffic_shaping_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -68,27 +71,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "defaultRulesEnabled": true,
-      "rules": [
-        {
-          "definitions": [
-            {
-              "type": "string",
-              "value": "string"
-            }
-          ],
-          "dscpTagValue": 0,
-          "perClientBandwidthLimits": {
-            "bandwidthLimits": {
-              "limitDown": 0,
-              "limitUp": 0
-            },
-            "settings": "string"
-          },
-          "priority": "string"
-        }
-      ]
-    }
+  sample:
+  - {}
 """

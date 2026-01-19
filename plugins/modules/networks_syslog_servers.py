@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_syslog_servers
-short_description: Resource module for networks _syslog _servers
+short_description: Resource module for networks _syslogservers
 description:
-  - Manage operation update of the resource networks _syslog _servers.
+  - Manage operation update of the resource networks _syslogservers.
   - Update the syslog servers for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -29,8 +29,9 @@ options:
         description: The port of the syslog server.
         type: int
       roles:
-        description: A list of roles for the syslog server. Options (case-insensitive) 'Wireless event log', 'Appliance event log', 'Switch event
-          log', 'Air Marshal events', 'Flows', 'URLs', 'IDS alerts', 'Security events'.
+        description: A list of roles for the syslog server. Options (case-insensitive)
+          'Wireless event log', 'Appliance event log', 'Switch event log', 'Air Marshal
+          events', 'Flows', 'URLs', 'IDS alerts', 'Security events'.
         elements: str
         type: list
     type: list

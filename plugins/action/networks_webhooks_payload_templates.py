@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,11 +31,11 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    body=dict(type="str"),
-    bodyFile=dict(type="str"),
-    headers=dict(type="list"),
-    headersFile=dict(type="str"),
     name=dict(type="str"),
+    body=dict(type="str"),
+    headers=dict(type="list"),
+    bodyFile=dict(type="str"),
+    headersFile=dict(type="str"),
     networkId=dict(type="str"),
     payloadTemplateId=dict(type="str"),
 ))
@@ -54,87 +53,105 @@ class NetworksWebhooksPayloadTemplates(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            body=params.get("body"),
-            bodyFile=params.get("bodyFile"),
-            headers=params.get("headers"),
-            headersFile=params.get("headersFile"),
             name=params.get("name"),
+            body=params.get("body"),
+            headers=params.get("headers"),
+            bodyFile=params.get("bodyFile"),
+            headersFile=params.get("headersFile"),
             networkId=params.get("networkId"),
             payloadTemplateId=params.get("payloadTemplateId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get('payload_template_id') is not None:
-            new_object_params['payloadTemplateId'] = self.new_object.get('payloadTemplateId') or \
-                self.new_object.get('payload_template_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get(
+                'payload_template_id') is not None:
+            new_object_params['payloadTemplateId'] = self.new_object.get(
+                'payloadTemplateId') or self.new_object.get('payload_template_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('body') is not None or self.new_object.get('body') is not None:
-            new_object_params['body'] = self.new_object.get('body') or \
-                self.new_object.get('body')
-        if self.new_object.get('bodyFile') is not None or self.new_object.get('body_file') is not None:
-            new_object_params['bodyFile'] = self.new_object.get('bodyFile') or \
-                self.new_object.get('body_file')
-        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
-            new_object_params['headers'] = self.new_object.get('headers') or \
-                self.new_object.get('headers')
-        if self.new_object.get('headersFile') is not None or self.new_object.get('headers_file') is not None:
-            new_object_params['headersFile'] = self.new_object.get('headersFile') or \
-                self.new_object.get('headers_file')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('body') is not None or self.new_object.get(
+                'body') is not None:
+            new_object_params['body'] = self.new_object.get('body') or \
+                self.new_object.get('body')
+        if self.new_object.get('headers') is not None or self.new_object.get(
+                'headers') is not None:
+            new_object_params['headers'] = self.new_object.get('headers') or \
+                self.new_object.get('headers')
+        if self.new_object.get('bodyFile') is not None or self.new_object.get(
+                'body_file') is not None:
+            new_object_params['bodyFile'] = self.new_object.get(
+                'bodyFile') or self.new_object.get('body_file')
+        if self.new_object.get('headersFile') is not None or self.new_object.get(
+                'headers_file') is not None:
+            new_object_params['headersFile'] = self.new_object.get(
+                'headersFile') or self.new_object.get('headers_file')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get('payload_template_id') is not None:
-            new_object_params['payloadTemplateId'] = self.new_object.get('payloadTemplateId') or \
-                self.new_object.get('payload_template_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get(
+                'payload_template_id') is not None:
+            new_object_params['payloadTemplateId'] = self.new_object.get(
+                'payloadTemplateId') or self.new_object.get('payload_template_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('body') is not None or self.new_object.get('body') is not None:
-            new_object_params['body'] = self.new_object.get('body') or \
-                self.new_object.get('body')
-        if self.new_object.get('bodyFile') is not None or self.new_object.get('body_file') is not None:
-            new_object_params['bodyFile'] = self.new_object.get('bodyFile') or \
-                self.new_object.get('body_file')
-        if self.new_object.get('headers') is not None or self.new_object.get('headers') is not None:
-            new_object_params['headers'] = self.new_object.get('headers') or \
-                self.new_object.get('headers')
-        if self.new_object.get('headersFile') is not None or self.new_object.get('headers_file') is not None:
-            new_object_params['headersFile'] = self.new_object.get('headersFile') or \
-                self.new_object.get('headers_file')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get('payload_template_id') is not None:
-            new_object_params['payloadTemplateId'] = self.new_object.get('payloadTemplateId') or \
-                self.new_object.get('payload_template_id')
+        if self.new_object.get('body') is not None or self.new_object.get(
+                'body') is not None:
+            new_object_params['body'] = self.new_object.get('body') or \
+                self.new_object.get('body')
+        if self.new_object.get('headers') is not None or self.new_object.get(
+                'headers') is not None:
+            new_object_params['headers'] = self.new_object.get('headers') or \
+                self.new_object.get('headers')
+        if self.new_object.get('bodyFile') is not None or self.new_object.get(
+                'body_file') is not None:
+            new_object_params['bodyFile'] = self.new_object.get(
+                'bodyFile') or self.new_object.get('body_file')
+        if self.new_object.get('headersFile') is not None or self.new_object.get(
+                'headers_file') is not None:
+            new_object_params['headersFile'] = self.new_object.get(
+                'headersFile') or self.new_object.get('headers_file')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('payloadTemplateId') is not None or self.new_object.get(
+                'payload_template_id') is not None:
+            new_object_params['payloadTemplateId'] = self.new_object.get(
+                'payloadTemplateId') or self.new_object.get('payload_template_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -206,19 +223,22 @@ class NetworksWebhooksPayloadTemplates(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("body", "body"),
-            ("bodyFile", "bodyFile"),
-            ("headers", "headers"),
-            ("headersFile", "headersFile"),
             ("name", "name"),
+            ("body", "body"),
+            ("headers", "headers"),
+            ("bodyFile", "bodyFile"),
+            ("headersFile", "headersFile"),
             ("networkId", "networkId"),
             ("payloadTemplateId", "payloadTemplateId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

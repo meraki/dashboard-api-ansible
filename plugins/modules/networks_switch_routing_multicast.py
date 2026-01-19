@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   defaultSettings:
-    description: Default multicast setting for entire network. IGMP snooping and Flood unknown multicast traffic settings are enabled by default.
+    description: Default multicast setting for entire network. IGMP snooping and Flood
+      unknown multicast traffic settings are enabled by default.
     suboptions:
       floodUnknownMulticastTrafficEnabled:
         description: Flood unknown multicast traffic setting for entire network.
@@ -29,11 +30,13 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   overrides:
-    description: Array of paired switches/stacks/profiles and corresponding multicast settings. An empty array will clear the multicast settings.
+    description: Array of paired switches/stacks/profiles and corresponding multicast
+      settings. An empty array will clear the multicast settings.
     elements: dict
     suboptions:
       floodUnknownMulticastTrafficEnabled:
-        description: Flood unknown multicast traffic setting for switches, switch stacks or switch templates.
+        description: Flood unknown multicast traffic setting for switches, switch
+          stacks or switch templates.
         type: bool
       igmpSnoopingEnabled:
         description: IGMP snooping setting for switches, switch stacks or switch templates.
@@ -117,22 +120,22 @@ meraki_response:
   sample: >
     {
       "defaultSettings": {
-        "floodUnknownMulticastTrafficEnabled": true,
-        "igmpSnoopingEnabled": true
+        "igmpSnoopingEnabled": true,
+        "floodUnknownMulticastTrafficEnabled": true
       },
       "overrides": [
         {
-          "floodUnknownMulticastTrafficEnabled": true,
-          "igmpSnoopingEnabled": true,
+          "switches": [
+            "string"
+          ],
           "stacks": [
             "string"
           ],
           "switchProfiles": [
             "string"
           ],
-          "switches": [
-            "string"
-          ]
+          "igmpSnoopingEnabled": true,
+          "floodUnknownMulticastTrafficEnabled": true
         }
       ]
     }

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_connectivity_monitoring_destinations
-short_description: Resource module for networks _appliance _connectivity _monitoring _destinations
+short_description: Resource module for networks _appliance _connectivitymonitoringdestinations
 description:
-  - Manage operation update of the resource networks _appliance _connectivity _monitoring _destinations.
+  - Manage operation update of the resource networks _appliance _connectivitymonitoringdestinations.
   - Update the connectivity testing destinations for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,11 +20,12 @@ options:
     elements: dict
     suboptions:
       default:
-        description: Boolean indicating whether this is the default testing destination (true) or not (false). Defaults to false. Only one default
-          is allowed.
+        description: Boolean indicating whether this is the default testing destination
+          (true) or not (false). Defaults to false. Only one default is allowed.
         type: bool
       description:
-        description: Description of the testing destination. Optional, defaults to null.
+        description: Description of the testing destination. Optional, defaults to
+          null.
         type: str
       ip:
         description: The IP address to test connectivity with.
@@ -38,7 +39,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceConnectivityMonitoringDestinations
-    description: Complete reference of the updateNetworkApplianceConnectivityMonitoringDestinations API.
+    description: Complete reference of the updateNetworkApplianceConnectivityMonitoringDestinations
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-connectivity-monitoring-destinations
 notes:
   - SDK Method used are
@@ -86,9 +88,9 @@ meraki_response:
   sample: >
     [
       {
-        "default": true,
+        "ip": "string",
         "description": "string",
-        "ip": "string"
+        "default": true
       }
     ]
 """

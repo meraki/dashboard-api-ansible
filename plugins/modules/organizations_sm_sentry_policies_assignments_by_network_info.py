@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments_by_network_info
-short_description: Information module for organizations _sm _sentry _policies _assignments _by _network
+short_description: Information module for organizations _sm _sentry _policies _assignments
+  _bynetwork
 description:
-  - Get all organizations _sm _sentry _policies _assignments _by _network.
+  - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
+  - Get all organizations _sm _sentry _policies _assignments _bynetwork.
   - List the Sentry Policies for an organization ordered in ascending order of priority.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,29 +23,40 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
+      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
-      - NetworkIds query parameter. Optional parameter to filter Sentry Policies by Network Id.
+      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
+      - NetworkIds query parameter. Optional parameter to filter Sentry Policies by
+        Network Id.
     elements: str
     type: list
 requirements:
@@ -51,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for sm getOrganizationSmSentryPoliciesAssignmentsByNetwork
-    description: Complete reference of the getOrganizationSmSentryPoliciesAssignmentsByNetwork API.
+    description: Complete reference of the getOrganizationSmSentryPoliciesAssignmentsByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-sentry-policies-assignments-by-network
 notes:
   - SDK Method used are
@@ -61,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _sentry _policies _assignments _by _network
+- name: Get all organizations _sm _sentry _policies _assignments _bynetwork
   cisco.meraki.organizations_sm_sentry_policies_assignments_by_network_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,18 +121,18 @@ meraki_response:
             "networkId": "string",
             "policies": [
               {
-                "createdAt": "string",
-                "groupNumber": "string",
-                "groupPolicyId": "string",
-                "lastUpdatedAt": "string",
-                "networkId": "string",
                 "policyId": "string",
-                "priority": "string",
-                "scope": "string",
+                "networkId": "string",
                 "smNetworkId": "string",
                 "tags": [
                   "string"
-                ]
+                ],
+                "scope": "string",
+                "groupNumber": "string",
+                "groupPolicyId": "string",
+                "priority": "string",
+                "createdAt": "string",
+                "lastUpdatedAt": "string"
               }
             ]
           }
@@ -126,8 +140,8 @@ meraki_response:
         "meta": {
           "counts": {
             "items": {
-              "remaining": 0,
-              "total": 0
+              "total": 0,
+              "remaining": 0
             }
           }
         }

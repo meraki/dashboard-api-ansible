@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles_info
-short_description: Information module for networks _camera _quality _retention _profiles
+short_description: Information module for networks _camera _qualityretentionprofiles
 description:
-  - Get all networks _camera _quality _retention _profiles.
-  - Get networks _camera _quality _retention _profiles by id.
+  - Information module for Networks Camera Qualityretentionprofiles Info.
+  - Get all networks _camera _qualityretentionprofiles.
+  - Get networks _camera _qualityretentionprofiles by id.
   - List the quality retention profiles for this network.
   - Retrieve a single quality retention profile.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Camera Qualityretentionprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   qualityRetentionProfileId:
     description:
+      - Information module for Networks Camera Qualityretentionprofiles Info.
       - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:
@@ -33,10 +36,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfile
-    description: Complete reference of the getNetworkCameraQualityRetentionProfile API.
+    description: Complete reference of the getNetworkCameraQualityRetentionProfile
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profile
   - name: Cisco Meraki documentation for camera getNetworkCameraQualityRetentionProfiles
-    description: Complete reference of the getNetworkCameraQualityRetentionProfiles API.
+    description: Complete reference of the getNetworkCameraQualityRetentionProfiles
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles
 notes:
   - SDK Method used are
@@ -44,11 +49,12 @@ notes:
     camera.Camera.get_network_camera_quality_retention_profiles,
   - Paths used are
     get /networks/{networkId}/camera/qualityRetentionProfiles,
-    get /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
+    get
+    /networks/{networkId}/camera/qualityRetentionProfiles/{qualityRetentionProfileId},
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _quality _retention _profiles
+- name: Get all networks _camera _qualityretentionprofiles
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +79,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _camera _quality _retention _profiles by id
+- name: Get networks _camera _qualityretentionprofiles by id
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,36 +113,19 @@ meraki_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "networkId": "string",
+      "name": "string",
+      "restrictedBandwidthModeEnabled": true,
+      "motionBasedRetentionEnabled": true,
       "audioRecordingEnabled": true,
       "cloudArchiveEnabled": true,
-      "id": "string",
       "maxRetentionDays": 0,
-      "motionBasedRetentionEnabled": true,
+      "scheduleId": {},
       "motionDetectorVersion": 0,
-      "name": "string",
-      "networkId": "string",
-      "restrictedBandwidthModeEnabled": true,
-      "scheduleId": "string",
       "smartRetention": {
         "enabled": true
       },
-      "videoSettings": {
-        "MV12/MV22/MV72": {
-          "quality": "string",
-          "resolution": "string"
-        },
-        "MV12WE": {
-          "quality": "string",
-          "resolution": "string"
-        },
-        "MV21/MV71": {
-          "quality": "string",
-          "resolution": "string"
-        },
-        "MV32": {
-          "quality": "string",
-          "resolution": "string"
-        }
-      }
+      "videoSettings": {}
     }
 """

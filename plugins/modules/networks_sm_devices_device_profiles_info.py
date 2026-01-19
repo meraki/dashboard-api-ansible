@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_device_profiles_info
-short_description: Information module for networks _sm _devices _device _profiles
+short_description: Information module for networks _sm _devices _deviceprofiles
 description:
-  - Get all networks _sm _devices _device _profiles.
+  - Information module for Networks Sm Devices Deviceprofiles Info.
+  - Get all networks _sm _devices _deviceprofiles.
   - Get the installed profiles associated with a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Devices Deviceprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
+      - Information module for Networks Sm Devices Deviceprofiles Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -41,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _device _profiles
+- name: Get all networks _sm _devices _deviceprofiles
   cisco.meraki.networks_sm_devices_device_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -81,9 +84,9 @@ meraki_response:
         "id": "string",
         "isEncrypted": true,
         "isManaged": true,
-        "name": "string",
         "profileData": "string",
         "profileIdentifier": "string",
+        "name": "string",
         "version": "string"
       }
     ]

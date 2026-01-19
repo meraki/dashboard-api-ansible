@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_switch_stacks_routing_interfaces_info
 short_description: Information module for networks _switch _stacks _routing _interfaces
 description:
+  - Information module for Networks Switch Stacks Routing Interfaces Info.
   - Get all networks _switch _stacks _routing _interfaces.
   - Get networks _switch _stacks _routing _interfaces by id.
   - List layer 3 interfaces for a switch stack.
@@ -22,18 +23,27 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Info.
       - NetworkId path parameter. Network ID.
     type: str
   switchStackId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Info.
       - SwitchStackId path parameter. Switch stack ID.
+    type: str
+  mode:
+    description:
+      - Information module for Networks Switch Stacks Routing Interfaces Info.
+      - Mode query parameter. Optional parameter to filter L3 interfaces by mode.
     type: str
   protocol:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Info.
       - Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
     type: str
   interfaceId:
     description:
+      - Information module for Networks Switch Stacks Routing Interfaces Info.
       - InterfaceId path parameter. Interface ID.
     type: str
 requirements:
@@ -44,7 +54,8 @@ seealso:
     description: Complete reference of the getNetworkSwitchStackRoutingInterface API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interface
   - name: Cisco Meraki documentation for switch getNetworkSwitchStackRoutingInterfaces
-    description: Complete reference of the getNetworkSwitchStackRoutingInterfaces API.
+    description: Complete reference of the getNetworkSwitchStackRoutingInterfaces
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interfaces
 notes:
   - SDK Method used are
@@ -79,6 +90,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    mode: string
     protocol: string
     networkId: string
     switchStackId: string
@@ -118,30 +130,39 @@ meraki_response:
   type: dict
   sample: >
     {
-      "defaultGateway": "string",
       "interfaceId": "string",
-      "interfaceIp": "string",
-      "ipv6": {
-        "address": "string",
-        "assignmentMode": "string",
-        "gateway": "string",
-        "prefix": "string"
-      },
-      "multicastRouting": "string",
       "name": "string",
+      "mode": "string",
+      "subnet": "string",
+      "interfaceIp": "string",
+      "serial": "string",
+      "switchPortId": "string",
+      "multicastRouting": "string",
+      "vlanId": 0,
+      "uplinkV4": true,
+      "uplinkV6": true,
       "ospfSettings": {
         "area": "string",
         "cost": 0,
-        "isPassiveEnabled": true
+        "isPassiveEnabled": true,
+        "networkType": "string"
       },
       "ospfV3": {
         "area": "string",
         "cost": 0,
-        "isPassiveEnabled": true
+        "isPassiveEnabled": true,
+        "networkType": "string"
       },
-      "subnet": "string",
-      "uplinkV4": true,
-      "uplinkV6": true,
-      "vlanId": 0
+      "ipv6": {
+        "assignmentMode": "string",
+        "address": "string",
+        "prefix": "string",
+        "gateway": "string"
+      },
+      "vrf": {
+        "name": "string"
+      },
+      "loopback": {},
+      "defaultGateway": "string"
     }
 """

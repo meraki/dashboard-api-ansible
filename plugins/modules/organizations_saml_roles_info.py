@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_saml_roles_info
-short_description: Information module for organizations _saml _roles
+short_description: Information module for organizations _samlroles
 description:
-  - Get all organizations _saml _roles.
-  - Get organizations _saml _roles by id.
+  - Information module for Organizations Samlroles Info.
+  - Get all organizations _samlroles.
+  - Get organizations _samlroles by id.
   - List the SAML roles for this organization.
   - Return a SAML role.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Samlroles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   samlRoleId:
     description:
+      - Information module for Organizations Samlroles Info.
       - SamlRoleId path parameter. Saml role ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _saml _roles
+- name: Get all organizations _samlroles
   cisco.meraki.organizations_saml_roles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _saml _roles by id
+- name: Get organizations _samlroles by id
   cisco.meraki.organizations_saml_roles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,25 +110,25 @@ meraki_response:
   type: dict
   sample: >
     {
-      "camera": [
-        {
-          "access": "string",
-          "orgWide": true
-        }
-      ],
       "id": "string",
+      "role": "string",
+      "orgAccess": "string",
       "networks": [
         {
-          "access": "string",
-          "id": "string"
+          "id": "string",
+          "access": "string"
         }
       ],
-      "orgAccess": "string",
-      "role": "string",
       "tags": [
         {
-          "access": "string",
-          "tag": "string"
+          "tag": "string",
+          "access": "string"
+        }
+      ],
+      "camera": [
+        {
+          "orgWide": true,
+          "access": "string"
         }
       ]
     }

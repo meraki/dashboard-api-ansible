@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_alternate_management_interface_info
-short_description: Information module for networks _wireless _alternate _management _interface
+short_description: Information module for networks _wireless _alternatemanagementinterface
 description:
-  - Get all networks _wireless _alternate _management _interface.
+  - Information module for Networks Wireless Alternatemanagementinterface Info.
+  - Get all networks _wireless _alternatemanagementinterface.
   - Return alternate management interface and devices with IP assigned.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Alternatemanagementinterface Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessAlternateManagementInterface
-    description: Complete reference of the getNetworkWirelessAlternateManagementInterface API.
+    description: Complete reference of the getNetworkWirelessAlternateManagementInterface
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-alternate-management-interface
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _alternate _management _interface
+- name: Get all networks _wireless _alternatemanagementinterface
   cisco.meraki.networks_wireless_alternate_management_interface_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -68,22 +71,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "accessPoints": [
-        {
-          "alternateManagementIp": "string",
-          "dns1": "string",
-          "dns2": "string",
-          "gateway": "string",
-          "serial": "string",
-          "subnetMask": "string"
-        }
-      ],
-      "enabled": true,
-      "protocols": [
-        "string"
-      ],
-      "vlanId": 0
-    }
+  sample:
+  - {}
 """

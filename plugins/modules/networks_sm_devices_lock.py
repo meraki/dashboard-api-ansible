@@ -23,10 +23,12 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   pin:
-    description: The pin number for locking macOS devices (a six digit number). Required only for macOS devices.
+    description: The pin number for locking macOS devices (a six digit number). Required
+      only for macOS devices.
     type: int
   scope:
-    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags of the devices to be locked.
+    description: The scope (one of all, none, withAny, withAll, withoutAny, or withoutAll)
+      and a set of tags of the devices to be locked.
     elements: str
     type: list
   serials:

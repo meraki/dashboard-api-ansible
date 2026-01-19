@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_subnet_pool_info
-short_description: Information module for networks _cellular _gateway _subnet _pool
+short_description: Information module for networks _cellulargateway _subnetpool
 description:
-  - Get all networks _cellular _gateway _subnet _pool.
+  - Information module for Networks Cellulargateway Subnetpool Info.
+  - Get all networks _cellulargateway _subnetpool.
   - Return the subnet pool and mask configured for MGs in the network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Cellulargateway Subnetpool Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellular _gateway _subnet _pool
+- name: Get all networks _cellulargateway _subnetpool
   cisco.meraki.networks_cellular_gateway_subnet_pool_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,14 +72,14 @@ meraki_response:
   type: dict
   sample: >
     {
-      "cidr": "string",
       "deploymentMode": "string",
+      "cidr": "string",
       "mask": 0,
       "subnets": [
         {
-          "applianceIp": "string",
-          "name": "string",
           "serial": "string",
+          "name": "string",
+          "applianceIp": "string",
           "subnet": "string"
         }
       ]

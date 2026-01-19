@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,9 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    copyFromNetworkId=dict(type="str"),
     name=dict(type="str"),
     timeZone=dict(type="str"),
+    copyFromNetworkId=dict(type="str"),
     organizationId=dict(type="str"),
     configTemplateId=dict(type="str"),
 ))
@@ -52,70 +51,83 @@ class OrganizationsConfigTemplates(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            copyFromNetworkId=params.get("copyFromNetworkId"),
             name=params.get("name"),
             timeZone=params.get("timeZone"),
+            copyFromNetworkId=params.get("copyFromNetworkId"),
             organizationId=params.get("organizationId"),
             configTemplateId=params.get("configTemplateId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('configTemplateId') is not None or self.new_object.get('config_template_id') is not None:
-            new_object_params['configTemplateId'] = self.new_object.get('configTemplateId') or \
-                self.new_object.get('config_template_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('configTemplateId') is not None or self.new_object.get(
+                'config_template_id') is not None:
+            new_object_params['configTemplateId'] = self.new_object.get(
+                'configTemplateId') or self.new_object.get('config_template_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('copyFromNetworkId') is not None or self.new_object.get('copy_from_network_id') is not None:
-            new_object_params['copyFromNetworkId'] = self.new_object.get('copyFromNetworkId') or \
-                self.new_object.get('copy_from_network_id')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
-            new_object_params['timeZone'] = self.new_object.get('timeZone') or \
-                self.new_object.get('time_zone')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('timeZone') is not None or self.new_object.get(
+                'time_zone') is not None:
+            new_object_params['timeZone'] = self.new_object.get(
+                'timeZone') or self.new_object.get('time_zone')
+        if self.new_object.get('copyFromNetworkId') is not None or self.new_object.get(
+                'copy_from_network_id') is not None:
+            new_object_params['copyFromNetworkId'] = self.new_object.get(
+                'copyFromNetworkId') or self.new_object.get('copy_from_network_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('configTemplateId') is not None or self.new_object.get('config_template_id') is not None:
-            new_object_params['configTemplateId'] = self.new_object.get('configTemplateId') or \
-                self.new_object.get('config_template_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('configTemplateId') is not None or self.new_object.get(
+                'config_template_id') is not None:
+            new_object_params['configTemplateId'] = self.new_object.get(
+                'configTemplateId') or self.new_object.get('config_template_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('timeZone') is not None or self.new_object.get('time_zone') is not None:
-            new_object_params['timeZone'] = self.new_object.get('timeZone') or \
-                self.new_object.get('time_zone')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('configTemplateId') is not None or self.new_object.get('config_template_id') is not None:
-            new_object_params['configTemplateId'] = self.new_object.get('configTemplateId') or \
-                self.new_object.get('config_template_id')
+        if self.new_object.get('timeZone') is not None or self.new_object.get(
+                'time_zone') is not None:
+            new_object_params['timeZone'] = self.new_object.get(
+                'timeZone') or self.new_object.get('time_zone')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('configTemplateId') is not None or self.new_object.get(
+                'config_template_id') is not None:
+            new_object_params['configTemplateId'] = self.new_object.get(
+                'configTemplateId') or self.new_object.get('config_template_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -187,17 +199,20 @@ class OrganizationsConfigTemplates(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("copyFromNetworkId", "copyFromNetworkId"),
             ("name", "name"),
             ("timeZone", "timeZone"),
+            ("copyFromNetworkId", "copyFromNetworkId"),
             ("organizationId", "organizationId"),
             ("configTemplateId", "configTemplateId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

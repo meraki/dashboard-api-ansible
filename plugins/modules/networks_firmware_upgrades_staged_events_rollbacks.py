@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_rollbacks
-short_description: Resource module for networks _firmware _upgrades _staged _events _rollbacks
+short_description: Resource module for networks _firmwareupgrades _staged _events
+  _rollbacks
 description:
-  - Manage operation create of the resource networks _firmware _upgrades _staged _events _rollbacks.
+  - Manage operation create of the resource networks _firmwareupgrades _staged _events
+    _rollbacks.
   - Rollback a Staged Upgrade Event for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -30,7 +32,8 @@ options:
         type: str
     type: list
   stages:
-    description: All completed or in-progress stages in the network with their new start times. All pending stages will be canceled.
+    description: All completed or in-progress stages in the network with their new
+      start times. All pending stages will be canceled.
     elements: dict
     suboptions:
       group:
@@ -44,7 +47,8 @@ options:
         description: The Staged Upgrade Milestones for the specific stage.
         suboptions:
           scheduledFor:
-            description: The start time of the staged upgrade stage. (In ISO-8601 format, in the time zone of the network.).
+            description: The start time of the staged upgrade stage. (In ISO-8601
+              format, in the time zone of the network.).
             type: str
         type: dict
     type: list
@@ -53,7 +57,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for networks rollbacksNetworkFirmwareUpgradesStagedEvents
-    description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents API.
+    description: Complete reference of the rollbacksNetworkFirmwareUpgradesStagedEvents
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!rollbacks-network-firmware-upgrades-staged-events
 notes:
   - SDK Method used are
@@ -113,26 +118,26 @@ meraki_response:
           }
         }
       },
+      "stages": [
+        {
+          "group": {
+            "id": "string",
+            "name": "string",
+            "description": "string"
+          },
+          "milestones": {
+            "scheduledFor": "string",
+            "startedAt": "string",
+            "completedAt": "string",
+            "canceledAt": "string"
+          },
+          "status": "string"
+        }
+      ],
       "reasons": [
         {
           "category": "string",
           "comment": "string"
-        }
-      ],
-      "stages": [
-        {
-          "group": {
-            "description": "string",
-            "id": "string",
-            "name": "string"
-          },
-          "milestones": {
-            "canceledAt": "string",
-            "completedAt": "string",
-            "scheduledFor": "string",
-            "startedAt": "string"
-          },
-          "status": "string"
         }
       ]
     }

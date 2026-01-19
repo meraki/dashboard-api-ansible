@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_appliance_vpn_vpn_firewall_rules_info
-short_description: Information module for organizations _appliance _vpn _vpn _firewall _rules
+short_description: Information module for organizations _appliance _vpn _vpnfirewallrules
 description:
-  - Get all organizations _appliance _vpn _vpn _firewall _rules.
+  - Information module for Organizations Appliance Vpn Vpnfirewallrules Info.
+  - Get all organizations _appliance _vpn _vpnfirewallrules.
   - Return the firewall rules for an organization's site-to-site VPN.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Vpn Vpnfirewallrules Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnVpnFirewallRules
-    description: Complete reference of the getOrganizationApplianceVpnVpnFirewallRules API.
+    description: Complete reference of the getOrganizationApplianceVpnVpnFirewallRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-vpn-firewall-rules
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _vpn _vpn _firewall _rules
+- name: Get all organizations _appliance _vpn _vpnfirewallrules
   cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,12 +76,12 @@ meraki_response:
     [
       {
         "comment": "string",
-        "destCidr": "string",
-        "destPort": "string",
         "policy": "string",
         "protocol": "string",
-        "srcCidr": "string",
         "srcPort": "string",
+        "srcCidr": "string",
+        "destPort": "string",
+        "destCidr": "string",
         "syslogEnabled": true
       }
     ]

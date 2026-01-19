@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_camera_wireless_profiles
-short_description: Resource module for networks _camera _wireless _profiles
+short_description: Resource module for networks _camera _wirelessprofiles
 description:
-  - Manage operations create, update and delete of the resource networks _camera _wireless _profiles.
+  - Manage operations create, update and delete of the resource networks _camera _wirelessprofiles.
   - Creates a new camera wireless profile for this network.
   - Delete an existing camera wireless profile for this network.
   - Update an existing camera wireless profile in this network.
@@ -18,7 +18,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   identity:
-    description: The identity of the wireless profile. Required for creating wireless profiles in 8021x-radius auth mode.
+    description: The identity of the wireless profile. Required for creating wireless
+      profiles in 8021x-radius auth mode.
     suboptions:
       password:
         description: The password of the identity.
@@ -40,8 +41,9 @@ options:
         description: The auth mode of the SSID. It can be set to ('psk', '8021x-radius').
         type: str
       encryptionMode:
-        description: The encryption mode of the SSID. It can be set to ('wpa', 'wpa-eap'). With 'wpa' mode, the authMode should be 'psk' and with
-          'wpa-eap' the authMode should be '8021x-radius'.
+        description: The encryption mode of the SSID. It can be set to ('wpa', 'wpa-eap').
+          With 'wpa' mode, the authMode should be 'psk' and with 'wpa-eap' the authMode
+          should be '8021x-radius'.
         type: str
       name:
         description: The name of the SSID.
@@ -112,32 +114,6 @@ EXAMPLES = r"""
       encryptionMode: wpa-eap
       name: ssid test
       psk: sampleKey
-- name: Delete by id
-  cisco.meraki.networks_camera_wireless_profiles:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    networkId: string
-    wirelessProfileId: string
 - name: Update by id
   cisco.meraki.networks_camera_wireless_profiles:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -173,6 +149,32 @@ EXAMPLES = r"""
       name: ssid test
       psk: sampleKey
     wirelessProfileId: string
+- name: Delete by id
+  cisco.meraki.networks_camera_wireless_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    networkId: string
+    wirelessProfileId: string
 """
 RETURN = r"""
 meraki_response:
@@ -181,18 +183,18 @@ meraki_response:
   type: dict
   sample: >
     {
-      "appliedDeviceCount": 0,
       "id": "string",
-      "identity": {
-        "password": "string",
-        "username": "string"
-      },
       "name": "string",
+      "appliedDeviceCount": 0,
       "ssid": {
+        "name": "string",
         "authMode": "string",
         "encryptionMode": "string",
-        "name": "string",
         "psk": "string"
+      },
+      "identity": {
+        "username": "string",
+        "password": "string"
       }
     }
 """

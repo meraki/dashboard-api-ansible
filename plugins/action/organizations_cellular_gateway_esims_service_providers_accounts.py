@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -41,7 +40,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["organizationId"], True),
+    ("state", "present", ["accountId", "organizationId"], True),
+    ("state", "absent", ["accountId", "organizationId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -57,39 +57,79 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             serviceProvider=params.get("serviceProvider"),
             title=params.get("title"),
             username=params.get("username"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('accountIds') is not None or self.new_object.get('account_ids') is not None:
-            new_object_params['accountIds'] = self.new_object.get('accountIds') or \
-                self.new_object.get('account_ids')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('accountIds') is not None or self.new_object.get(
+                'account_ids') is not None:
+            new_object_params['accountIds'] = self.new_object.get(
+                'accountIds') or self.new_object.get('account_ids')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('accountId') is not None or self.new_object.get('account_id') is not None:
-            new_object_params['accountId'] = self.new_object.get('accountId') or \
-                self.new_object.get('account_id')
-        if self.new_object.get('apiKey') is not None or self.new_object.get('api_key') is not None:
+        if self.new_object.get('accountId') is not None or self.new_object.get(
+                'account_id') is not None:
+            new_object_params['accountId'] = self.new_object.get(
+                'accountId') or self.new_object.get('account_id')
+        if self.new_object.get('apiKey') is not None or self.new_object.get(
+                'api_key') is not None:
             new_object_params['apiKey'] = self.new_object.get('apiKey') or \
                 self.new_object.get('api_key')
-        if self.new_object.get('serviceProvider') is not None or self.new_object.get('service_provider') is not None:
-            new_object_params['serviceProvider'] = self.new_object.get('serviceProvider') or \
-                self.new_object.get('service_provider')
-        if self.new_object.get('title') is not None or self.new_object.get('title') is not None:
+        if self.new_object.get('serviceProvider') is not None or self.new_object.get(
+                'service_provider') is not None:
+            new_object_params['serviceProvider'] = self.new_object.get(
+                'serviceProvider') or self.new_object.get('service_provider')
+        if self.new_object.get('title') is not None or self.new_object.get(
+                'title') is not None:
             new_object_params['title'] = self.new_object.get('title') or \
                 self.new_object.get('title')
-        if self.new_object.get('username') is not None or self.new_object.get('username') is not None:
-            new_object_params['username'] = self.new_object.get('username') or \
-                self.new_object.get('username')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('username') is not None or self.new_object.get(
+                'username') is not None:
+            new_object_params['username'] = self.new_object.get(
+                'username') or self.new_object.get('username')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        return new_object_params
+
+    def delete_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('accountId') is not None or self.new_object.get(
+                'account_id') is not None:
+            new_object_params['accountId'] = self.new_object.get(
+                'accountId') or self.new_object.get('account_id')
+        return new_object_params
+
+    def update_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('title') is not None or self.new_object.get(
+                'title') is not None:
+            new_object_params['title'] = self.new_object.get('title') or \
+                self.new_object.get('title')
+        if self.new_object.get('apiKey') is not None or self.new_object.get(
+                'api_key') is not None:
+            new_object_params['apiKey'] = self.new_object.get('apiKey') or \
+                self.new_object.get('api_key')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('accountId') is not None or self.new_object.get(
+                'account_id') is not None:
+            new_object_params['accountId'] = self.new_object.get(
+                'accountId') or self.new_object.get('account_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -99,7 +139,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             items = self.meraki.exec_meraki(
                 family="cellulargateway",
                 function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
-                params=self.get_all_params(name=name),
+                params=self.get_all_params(
+                    name=name),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -119,7 +160,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             items = self.meraki.exec_meraki(
                 family="cellulargateway",
                 function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
-                params=self.get_all_params(id=id),
+                params=self.get_all_params(
+                    id=id),
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -135,6 +177,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
+        o_id = o_id or self.new_object.get(
+            "account_id") or self.new_object.get("accountId")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
@@ -167,9 +211,12 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

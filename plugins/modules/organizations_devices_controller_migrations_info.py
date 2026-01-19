@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_devices_controller_migrations_info
 short_description: Information module for organizations _devices _controller _migrations
 description:
+  - Information module for Organizations Devices Controller Migrations Info.
   - Get all organizations _devices _controller _migrations.
   - Retrieve device migration statuses in an organization.
 version_added: '1.0.0'
@@ -21,46 +22,59 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - Serials query parameter. A list of Meraki Serials for which to retrieve migrations.
     elements: str
     type: list
   networkIds:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - NetworkIds query parameter. Filter device migrations by network IDs.
     elements: str
     type: list
   target:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - Target query parameter. Filter device migrations by target destination.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
+      - Information module for Organizations Devices Controller Migrations Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Devices Controller Migrations Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationDevicesControllerMigrations
-    description: Complete reference of the getOrganizationDevicesControllerMigrations API.
+    description: Complete reference of the getOrganizationDevicesControllerMigrations
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-devices-controller-migrations
 notes:
   - SDK Method used are
@@ -113,17 +127,17 @@ meraki_response:
     {
       "items": [
         {
-          "createdAt": "string",
-          "migratedAt": "string",
           "serial": "string",
-          "target": "string"
+          "target": "string",
+          "createdAt": "string",
+          "migratedAt": "string"
         }
       ],
       "meta": {
         "counts": {
           "items": {
-            "remaining": 0,
-            "total": 0
+            "total": 0,
+            "remaining": 0
           }
         }
       }

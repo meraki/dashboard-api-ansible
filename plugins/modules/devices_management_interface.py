@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: devices_management_interface
-short_description: Resource module for devices _management _interface
+short_description: Resource module for devices _managementinterface
 description:
-  - Manage operations create and update of the resource devices _management _interface.
-  - Reboot a device. This endpoint has a sustained rate limit of one request every 60 seconds.
+  - Manage operations create and update of the resource devices _managementinterface.
+  - Reboot a device. This endpoint has a sustained rate limit of one request every
+    60 seconds.
   - Update the management interface settings for a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -39,10 +40,12 @@ options:
         description: Configure the interface to have static IP settings or use DHCP.
         type: bool
       vlan:
-        description: The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+        description: The VLAN that management traffic should be tagged with. Applies
+          whether usingStaticIp is true or false.
         type: int
       wanEnabled:
-        description: Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'.
+        description: Enable or disable the interface (only for MX devices). Valid
+          values are 'enabled', 'disabled', and 'not configured'.
         type: str
     type: dict
   wan2:
@@ -65,10 +68,12 @@ options:
         description: Configure the interface to have static IP settings or use DHCP.
         type: bool
       vlan:
-        description: The VLAN that management traffic should be tagged with. Applies whether usingStaticIp is true or false.
+        description: The VLAN that management traffic should be tagged with. Applies
+          whether usingStaticIp is true or false.
         type: int
       wanEnabled:
-        description: Enable or disable the interface (only for MX devices). Valid values are 'enabled', 'disabled', and 'not configured'.
+        description: Enable or disable the interface (only for MX devices). Valid
+          values are 'enabled', 'disabled', and 'not configured'.
         type: str
     type: dict
 requirements:
@@ -175,26 +180,32 @@ meraki_response:
         "ddnsHostnameWan2": "string"
       },
       "wan1": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
         "staticDns": [
           "string"
         ],
-        "staticGatewayIp": "string",
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "usingStaticIp": true,
         "vlan": 0,
-        "wanEnabled": "string"
+        "vrf": {
+          "name": "string"
+        }
       },
       "wan2": {
+        "wanEnabled": "string",
+        "usingStaticIp": true,
+        "staticIp": "string",
+        "staticSubnetMask": "string",
+        "staticGatewayIp": "string",
         "staticDns": [
           "string"
         ],
-        "staticGatewayIp": "string",
-        "staticIp": "string",
-        "staticSubnetMask": "string",
-        "usingStaticIp": true,
         "vlan": 0,
-        "wanEnabled": "string"
+        "vrf": {
+          "name": "string"
+        }
       }
     }
 """

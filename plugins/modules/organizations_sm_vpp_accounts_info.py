@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_sm_vpp_accounts_info
-short_description: Information module for organizations _sm _vpp _accounts
+short_description: Information module for organizations _sm _vppaccounts
 description:
-  - Get all organizations _sm _vpp _accounts.
-  - Get organizations _sm _vpp _accounts by id.
+  - Information module for Organizations Sm Vppaccounts Info.
+  - Get all organizations _sm _vppaccounts.
+  - Get organizations _sm _vppaccounts by id.
   - Get a hash containing the unparsed token of the VPP account with the given ID.
   - List the VPP accounts in the organization.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Sm Vppaccounts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   vppAccountId:
     description:
+      - Information module for Organizations Sm Vppaccounts Info.
       - VppAccountId path parameter. Vpp account ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _vpp _accounts
+- name: Get all organizations _sm _vppaccounts
   cisco.meraki.organizations_sm_vpp_accounts_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _sm _vpp _accounts by id
+- name: Get organizations _sm _vppaccounts by id
   cisco.meraki.organizations_sm_vpp_accounts_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,26 +110,26 @@ meraki_response:
   type: dict
   sample: >
     {
+      "vppAccountId": "string",
+      "contentToken": "string",
+      "email": "string",
+      "name": "string",
       "allowedAdmins": "string",
+      "networkIdAdmins": "string",
+      "assignableNetworks": "string",
       "assignableNetworkIds": [
         "string"
       ],
-      "assignableNetworks": "string",
-      "contentToken": "string",
-      "email": "string",
-      "id": "string",
-      "lastForceSyncedAt": "string",
-      "lastSyncedAt": "string",
-      "name": "string",
-      "networkIdAdmins": "string",
-      "parsedToken": {
-        "expiresAt": "string",
-        "hashedToken": "string",
-        "orgName": "string"
-      },
-      "vppAccountId": "string",
       "vppLocationId": "string",
       "vppLocationName": "string",
+      "lastSyncedAt": "string",
+      "lastForceSyncedAt": "string",
+      "parsedToken": {
+        "orgName": "string",
+        "hashedToken": "string",
+        "expiresAt": "string"
+      },
+      "id": "string",
       "vppServiceToken": "string"
     }
 """

@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -31,8 +30,8 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    callback=dict(type="dict"),
     ports=dict(type="list"),
+    callback=dict(type="dict"),
     serial=dict(type="str"),
 ))
 
@@ -48,20 +47,23 @@ class DevicesLiveToolsCableTest(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            callback=params.get("callback"),
             ports=params.get("ports"),
+            callback=params.get("callback"),
             serial=params.get("serial"),
         )
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
-            new_object_params['callback'] = self.new_object.get('callback') or \
-                self.new_object.get('callback')
-        if self.new_object.get('ports') is not None or self.new_object.get('ports') is not None:
+        if self.new_object.get('ports') is not None or self.new_object.get(
+                'ports') is not None:
             new_object_params['ports'] = self.new_object.get('ports') or \
                 self.new_object.get('ports')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('callback') is not None or self.new_object.get(
+                'callback') is not None:
+            new_object_params['callback'] = self.new_object.get(
+                'callback') or self.new_object.get('callback')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -102,15 +104,18 @@ class DevicesLiveToolsCableTest(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("callback", "callback"),
             ("ports", "ports"),
+            ("callback", "callback"),
             ("serial", "serial"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

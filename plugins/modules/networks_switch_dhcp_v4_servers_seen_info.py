@@ -8,8 +8,10 @@ DOCUMENTATION = r"""
 module: networks_switch_dhcp_v4_servers_seen_info
 short_description: Information module for networks _switch _dhcp v4 _servers _seen
 description:
+  - Information module for Networks Switch Dhcp V4 Servers Seen Info.
   - Get all networks _switch _dhcp v4 _servers _seen.
-  - Return the network's DHCPv4 servers seen within the selected timeframe default 1 day .
+  - Return the network's DHCPv4 servers seen within the selected timeframe default
+    1 day .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,35 +23,48 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 31 days from today.
     type: str
   timespan:
     description:
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0.
-        The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameter t0. The value must be in
+        seconds and be less than or equal to 31 days. The default is 1 day.
     type: float
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Networks Switch Dhcp V4 Servers Seen Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -108,98 +123,98 @@ meraki_response:
   sample: >
     [
       {
+        "mac": "string",
+        "vlan": 0,
         "clientId": "string",
+        "isAllowed": true,
+        "lastSeenAt": "string",
+        "seenBy": [
+          {
+            "serial": "string",
+            "name": "string",
+            "url": "string"
+          }
+        ],
+        "type": "string",
         "device": {
+          "serial": "string",
+          "name": "string",
+          "url": "string",
           "interface": {
             "name": "string",
             "url": "string"
-          },
-          "name": "string",
-          "serial": "string",
-          "url": "string"
+          }
         },
         "ipv4": {
           "address": "string",
-          "gateway": "string",
-          "subnet": "string"
+          "subnet": "string",
+          "gateway": "string"
         },
-        "isAllowed": true,
         "isConfigured": true,
         "lastAck": {
+          "ts": "string",
           "ipv4": {
             "address": "string"
-          },
-          "ts": "string"
+          }
         },
         "lastPacket": {
-          "destination": {
+          "source": {
+            "mac": "string",
             "ipv4": {
               "address": "string"
             },
-            "mac": "string",
             "port": 0
           },
+          "destination": {
+            "mac": "string",
+            "ipv4": {
+              "address": "string"
+            },
+            "port": 0
+          },
+          "type": "string",
           "ethernet": {
             "type": "string"
           },
+          "ip": {
+            "id": "string",
+            "version": 0,
+            "length": 0,
+            "headerLength": 0,
+            "protocol": 0,
+            "ttl": 0,
+            "dscp": {
+              "tag": 0,
+              "ecn": 0
+            }
+          },
+          "udp": {
+            "length": 0,
+            "checksum": "string"
+          },
           "fields": {
-            "chaddr": "string",
-            "ciaddr": "string",
-            "flags": "string",
-            "giaddr": "string",
+            "op": 0,
+            "htype": 0,
             "hlen": 0,
             "hops": 0,
-            "htype": 0,
+            "xid": "string",
+            "secs": 0,
+            "flags": "string",
+            "ciaddr": "string",
+            "yiaddr": "string",
+            "siaddr": "string",
+            "giaddr": "string",
+            "chaddr": "string",
+            "sname": "string",
             "magicCookie": "string",
-            "op": 0,
             "options": [
               {
                 "name": "string",
                 "value": "string"
               }
-            ],
-            "secs": 0,
-            "siaddr": "string",
-            "sname": "string",
-            "xid": "string",
-            "yiaddr": "string"
-          },
-          "ip": {
-            "dscp": {
-              "ecn": 0,
-              "tag": 0
-            },
-            "headerLength": 0,
-            "id": "string",
-            "length": 0,
-            "protocol": 0,
-            "ttl": 0,
-            "version": 0
-          },
-          "source": {
-            "ipv4": {
-              "address": "string"
-            },
-            "mac": "string",
-            "port": 0
-          },
-          "type": "string",
-          "udp": {
-            "checksum": "string",
-            "length": 0
+            ]
           }
-        },
-        "lastSeenAt": "string",
-        "mac": "string",
-        "seenBy": [
-          {
-            "name": "string",
-            "serial": "string",
-            "url": "string"
-          }
-        ],
-        "type": "string",
-        "vlan": 0
+        }
       }
     ]
 """

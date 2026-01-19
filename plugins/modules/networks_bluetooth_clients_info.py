@@ -6,10 +6,12 @@
 
 DOCUMENTATION = r"""
 module: networks_bluetooth_clients_info
-short_description: Information module for networks _bluetooth _clients
+short_description: Information module for networks _bluetoothclients
 description:
-  - Get networks _bluetooth _clients by id.
-  - Return a Bluetooth client. Bluetooth clients can be identified by their ID or their MAC.
+  - Information module for Networks Bluetoothclients Info.
+  - Get networks _bluetoothclients by id.
+  - Return a Bluetooth client. Bluetooth clients can be identified by their ID or
+    their MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -20,21 +22,26 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Bluetoothclients Info.
       - NetworkId path parameter. Network ID.
     type: str
   bluetoothClientId:
     description:
+      - Information module for Networks Bluetoothclients Info.
       - BluetoothClientId path parameter. Bluetooth client ID.
     type: str
   includeConnectivityHistory:
     description:
-      - IncludeConnectivityHistory query parameter. Include the connectivity history for this client.
+      - Information module for Networks Bluetoothclients Info.
+      - IncludeConnectivityHistory query parameter. Include the connectivity history
+        for this client.
     type: bool
   connectivityHistoryTimespan:
     description:
+      - Information module for Networks Bluetoothclients Info.
       - >
-        ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for the connectivityHistory data. By default 1 day, 86400, will
-        be used.
+        ConnectivityHistoryTimespan query parameter. The timespan, in seconds, for
+        the connectivityHistory data. By default 1 day, 86400, will be used.
     type: int
 requirements:
   - meraki >= 2.4.9
@@ -51,7 +58,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get networks _bluetooth _clients by id
+- name: Get networks _bluetoothclients by id
   cisco.meraki.networks_bluetooth_clients_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -87,16 +94,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "deviceName": "string",
       "id": "string",
-      "inSightAlert": true,
-      "lastSeen": 0,
       "mac": "string",
-      "manufacturer": "string",
-      "name": "string",
       "networkId": "string",
-      "outOfSightAlert": true,
+      "name": "string",
+      "deviceName": "string",
+      "manufacturer": "string",
+      "lastSeen": 0,
       "seenByDeviceMac": "string",
+      "inSightAlert": true,
+      "outOfSightAlert": true,
       "tags": [
         "string"
       ]

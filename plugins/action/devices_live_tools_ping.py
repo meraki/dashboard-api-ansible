@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -31,9 +30,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    callback=dict(type="dict"),
-    count=dict(type="int"),
     target=dict(type="str"),
+    count=dict(type="int"),
+    callback=dict(type="dict"),
     serial=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -50,33 +49,39 @@ class DevicesLiveToolsPing(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            callback=params.get("callback"),
-            count=params.get("count"),
             target=params.get("target"),
+            count=params.get("count"),
+            callback=params.get("callback"),
             serial=params.get("serial"),
             id=params.get("id"),
         )
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
-        if self.new_object.get('id') is not None or self.new_object.get('id') is not None:
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
             new_object_params['id'] = self.new_object.get('id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('callback') is not None or self.new_object.get('callback') is not None:
-            new_object_params['callback'] = self.new_object.get('callback') or \
-                self.new_object.get('callback')
-        if self.new_object.get('count') is not None or self.new_object.get('count') is not None:
-            new_object_params['count'] = self.new_object.get('count') or \
-                self.new_object.get('count')
-        if self.new_object.get('target') is not None or self.new_object.get('target') is not None:
+        if self.new_object.get('target') is not None or self.new_object.get(
+                'target') is not None:
             new_object_params['target'] = self.new_object.get('target') or \
                 self.new_object.get('target')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('count') is not None or self.new_object.get(
+                'count') is not None:
+            new_object_params['count'] = self.new_object.get('count') or \
+                self.new_object.get('count')
+        if self.new_object.get('callback') is not None or self.new_object.get(
+                'callback') is not None:
+            new_object_params['callback'] = self.new_object.get(
+                'callback') or self.new_object.get('callback')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -131,17 +136,20 @@ class DevicesLiveToolsPing(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("callback", "callback"),
-            ("count", "count"),
             ("target", "target"),
+            ("count", "count"),
+            ("callback", "callback"),
             ("serial", "serial"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

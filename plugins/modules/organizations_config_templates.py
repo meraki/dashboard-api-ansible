@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_config_templates
-short_description: Resource module for organizations _config _templates
+short_description: Resource module for organizations _configtemplates
 description:
-  - Manage operations create, update and delete of the resource organizations _config _templates.
+  - Manage operations create, update and delete of the resource organizations _configtemplates.
   - Create a new configuration template.
   - Remove a configuration template.
   - Update a configuration template.
@@ -30,8 +30,10 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   timeZone:
-    description: The timezone of the configuration template. For a list of allowed timezones, please see the 'TZ' column in the table in <a target='_blank'
-      href='https //en.wikipedia.org/wiki/List_of_tz_... article</a>. Not applicable if copying from existing network or template.
+    description: The timezone of the configuration template. For a list of allowed
+      timezones, please see the 'TZ' column in the table in <a target='_blank' href='https
+      //en.wikipedia.org/wiki/List_of_tz_... article</a>. Not applicable if copying
+      from existing network or template.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -86,32 +88,6 @@ EXAMPLES = r"""
     name: My config template
     organizationId: string
     timeZone: America/Los_Angeles
-- name: Delete by id
-  cisco.meraki.organizations_config_templates:
-    meraki_api_key: "{{ meraki_api_key }}"
-    meraki_base_url: "{{ meraki_base_url }}"
-    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
-    meraki_certificate_path: "{{ meraki_certificate_path }}"
-    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
-    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
-    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
-    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
-    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
-    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
-    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
-    meraki_output_log: "{{ meraki_output_log }}"
-    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
-    meraki_log_path: "{{ meraki_log_path }}"
-    meraki_print_console: "{{ meraki_print_console }}"
-    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
-    meraki_simulate: "{{ meraki_simulate }}"
-    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
-    meraki_caller: "{{ meraki_caller }}"
-    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
-    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    state: absent
-    configTemplateId: string
-    organizationId: string
 - name: Update by id
   cisco.meraki.organizations_config_templates:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -140,6 +116,32 @@ EXAMPLES = r"""
     name: My config template
     organizationId: string
     timeZone: America/Los_Angeles
+- name: Delete by id
+  cisco.meraki.organizations_config_templates:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    configTemplateId: string
+    organizationId: string
 """
 RETURN = r"""
 meraki_response:

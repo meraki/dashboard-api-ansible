@@ -6,41 +6,52 @@
 
 DOCUMENTATION = r"""
 module: networks_meraki_auth_users
-short_description: Resource module for networks _meraki _auth _users
+short_description: Resource module for networks _merakiauthusers
 description:
-  - Manage operations create, update and delete of the resource networks _meraki _auth _users. - > Authorize a user configured with Meraki Authentication
-    for a network currently supports 802.1X, splash guest, and client VPN users, and currently, organizations have a 50,000 user cap .
-  - Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest or client VPN user. - > Update a user configured with Meraki
-    Authentication currently, 802.1X RADIUS, splash guest, and client VPN users can be updated .
+  - Manage operations create, update and delete of the resource networks _merakiauthusers.
+  - >
+    Authorize a user configured with Meraki Authentication for a network currently
+    supports 802.1X, splash guest, and client VPN users, and currently, organizations
+    have a 50,000 user cap .
+  - Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest
+    or client VPN user.
+  - >
+    Update a user configured with Meraki Authentication currently, 802.1X RADIUS,
+    splash guest, and client VPN users can be updated .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   accountType:
-    description: Authorization type for user. Can be 'Guest' or '802.1X' for wireless networks, or 'Client VPN' for MX networks. Defaults to '802.1X'.
+    description: Authorization type for user. Can be 'Guest' or '802.1X' for wireless
+      networks, or 'Client VPN' for MX networks. Defaults to '802.1X'.
     type: str
   authorizations:
     description: Authorization zones and expiration dates for the user.
     elements: dict
     suboptions:
       expiresAt:
-        description: Date for authorization to expire. Set to 'Never' for the authorization to not expire, which is the default.
+        description: Date for authorization to expire. Set to 'Never' for the authorization
+          to not expire, which is the default.
         type: str
       ssidNumber:
-        description: Required for wireless networks. The SSID for which the user is being authorized, which must be configured for the user's
-          given accountType.
+        description: Required for wireless networks. The SSID for which the user is
+          being authorized, which must be configured for the user's given accountType.
         type: int
     type: list
   delete:
-    description: Delete query parameter. If the ID supplied is for a splash guest or client VPN user, and that user is not authorized for any
-      other networks in the organization, then also delete the user. 802.1X RADIUS users are always deleted regardless of this optional attribute.
+    description: Delete query parameter. If the ID supplied is for a splash guest
+      or client VPN user, and that user is not authorized for any other networks in
+      the organization, then also delete the user. 802.1X RADIUS users are always
+      deleted regardless of this optional attribute.
     type: bool
   email:
     description: Email address of the user.
     type: str
   emailPasswordToUser:
-    description: Whether or not Meraki should email the password to user. Default is false.
+    description: Whether or not Meraki should email the password to user. Default
+      is false.
     type: bool
   isAdmin:
     description: Whether or not the user is a Dashboard administrator.
@@ -55,7 +66,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   password:
-    description: The password for this user account. Only required If the user is not a Dashboard administrator.
+    description: The password for this user account. Only required If the user is
+      not a Dashboard administrator.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -183,20 +195,20 @@ meraki_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "email": "string",
+      "name": "string",
+      "createdAt": "string",
       "accountType": "string",
+      "isAdmin": true,
       "authorizations": [
         {
-          "authorizedByEmail": "string",
-          "authorizedByName": "string",
+          "ssidNumber": 0,
           "authorizedZone": "string",
           "expiresAt": "string",
-          "ssidNumber": 0
+          "authorizedByName": "string",
+          "authorizedByEmail": "string"
         }
-      ],
-      "createdAt": "string",
-      "email": "string",
-      "id": "string",
-      "isAdmin": true,
-      "name": "string"
+      ]
     }
 """

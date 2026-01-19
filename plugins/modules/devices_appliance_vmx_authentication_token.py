@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_appliance_vmx_authentication_token
-short_description: Resource module for devices _appliance _vmx _authentication _token
+short_description: Resource module for devices _appliance _vmx _authenticationtoken
 description:
-  - Manage operation create of the resource devices _appliance _vmx _authentication _token.
+  - Manage operation create of the resource devices _appliance _vmx _authenticationtoken.
   - Generate a new vMX authentication token.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,7 +23,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance createDeviceApplianceVmxAuthenticationToken
-    description: Complete reference of the createDeviceApplianceVmxAuthenticationToken API.
+    description: Complete reference of the createDeviceApplianceVmxAuthenticationToken
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-device-appliance-vmx-authentication-token
 notes:
   - SDK Method used are
@@ -65,7 +66,7 @@ meraki_response:
   type: dict
   sample: >
     {
-      "expiresAt": "string",
-      "token": "string"
+      "token": "string",
+      "expiresAt": "string"
     }
 """

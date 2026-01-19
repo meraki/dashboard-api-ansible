@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -32,18 +31,16 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
     address=dict(type="str"),
     bestEffortMonitoringEnabled=dict(type="bool"),
-    name=dict(type="str"),
     organizationId=dict(type="str"),
     monitoredMediaServerId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["monitoredMediaServerId",
-     "name", "organizationId"], True),
-    ("state", "absent", ["monitoredMediaServerId",
-     "name", "organizationId"], True),
+    ("state", "present", ["monitoredMediaServerId", "name", "organizationId"], True),
+    ("state", "absent", ["monitoredMediaServerId", "name", "organizationId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -54,74 +51,87 @@ class OrganizationsInsightMonitoredMediaServers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            address=params.get("address"),
-            bestEffortMonitoringEnabled=params.get(
-                "bestEffortMonitoringEnabled"),
             name=params.get("name"),
+            address=params.get("address"),
+            bestEffortMonitoringEnabled=params.get("bestEffortMonitoringEnabled"),
             organizationId=params.get("organizationId"),
             monitoredMediaServerId=params.get("monitoredMediaServerId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get('monitored_media_server_id') is not None:
-            new_object_params['monitoredMediaServerId'] = self.new_object.get('monitoredMediaServerId') or \
-                self.new_object.get('monitored_media_server_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get(
+                'monitored_media_server_id') is not None:
+            new_object_params['monitoredMediaServerId'] = self.new_object.get(
+                'monitoredMediaServerId') or self.new_object.get('monitored_media_server_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
-            new_object_params['address'] = self.new_object.get('address') or \
-                self.new_object.get('address')
-        if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
-                'bestEffortMonitoringEnabled')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
+        if self.new_object.get('address') is not None or self.new_object.get(
+                'address') is not None:
+            new_object_params['address'] = self.new_object.get('address') or \
+                self.new_object.get('address')
+        if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get(
+                'best_effort_monitoring_enabled') is not None:
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
+                'bestEffortMonitoringEnabled')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get('monitored_media_server_id') is not None:
-            new_object_params['monitoredMediaServerId'] = self.new_object.get('monitoredMediaServerId') or \
-                self.new_object.get('monitored_media_server_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get(
+                'monitored_media_server_id') is not None:
+            new_object_params['monitoredMediaServerId'] = self.new_object.get(
+                'monitoredMediaServerId') or self.new_object.get('monitored_media_server_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('address') is not None or self.new_object.get('address') is not None:
-            new_object_params['address'] = self.new_object.get('address') or \
-                self.new_object.get('address')
-        if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get('best_effort_monitoring_enabled') is not None:
-            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
-                'bestEffortMonitoringEnabled')
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('organizationId') is not None or self.new_object.get('organization_id') is not None:
-            new_object_params['organizationId'] = self.new_object.get('organizationId') or \
-                self.new_object.get('organization_id')
-        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get('monitored_media_server_id') is not None:
-            new_object_params['monitoredMediaServerId'] = self.new_object.get('monitoredMediaServerId') or \
-                self.new_object.get('monitored_media_server_id')
+        if self.new_object.get('address') is not None or self.new_object.get(
+                'address') is not None:
+            new_object_params['address'] = self.new_object.get('address') or \
+                self.new_object.get('address')
+        if self.new_object.get('bestEffortMonitoringEnabled') is not None or self.new_object.get(
+                'best_effort_monitoring_enabled') is not None:
+            new_object_params['bestEffortMonitoringEnabled'] = self.new_object.get(
+                'bestEffortMonitoringEnabled')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('monitoredMediaServerId') is not None or self.new_object.get(
+                'monitored_media_server_id') is not None:
+            new_object_params['monitoredMediaServerId'] = self.new_object.get(
+                'monitoredMediaServerId') or self.new_object.get('monitored_media_server_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -193,17 +203,20 @@ class OrganizationsInsightMonitoredMediaServers(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
             ("address", "address"),
             ("bestEffortMonitoringEnabled", "bestEffortMonitoringEnabled"),
-            ("name", "name"),
             ("organizationId", "organizationId"),
             ("monitoredMediaServerId", "monitoredMediaServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

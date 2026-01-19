@@ -6,11 +6,15 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_bandwidth_info
-short_description: Information module for networks _appliance _traffic _shaping _uplink _bandwidth
+short_description: Information module for networks _appliance _trafficshaping _uplinkbandwidth
 description:
-  - Get all networks _appliance _traffic _shaping _uplink _bandwidth. - > Returns the uplink bandwidth limits for your MX network. This may not
-    reflect the affected device's hardware capabilities. For more information on your device's hardware capabilities, please consult our MX Family
-    Datasheet - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file .
+  - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
+  - Get all networks _appliance _trafficshaping _uplinkbandwidth.
+  - >
+    Returns the uplink bandwidth limits for your MX network. This may not reflect
+    the affected device's hardware capabilities. For more information on your device's
+    hardware capabilities, please consult our MX Family Datasheet - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file
+    .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -21,6 +25,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -28,7 +33,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceTrafficShapingUplinkBandwidth
-    description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth API.
+    description: Complete reference of the getNetworkApplianceTrafficShapingUplinkBandwidth
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-uplink-bandwidth
 notes:
   - SDK Method used are
@@ -38,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _traffic _shaping _uplink _bandwidth
+- name: Get all networks _appliance _trafficshaping _uplinkbandwidth
   cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -71,17 +77,17 @@ meraki_response:
   type: dict
   sample: >
     {
-      "cellular": {
-        "limitDown": 0,
-        "limitUp": 0
-      },
       "wan1": {
-        "limitDown": 0,
-        "limitUp": 0
+        "limitUp": 0,
+        "limitDown": 0
       },
       "wan2": {
-        "limitDown": 0,
-        "limitUp": 0
+        "limitUp": 0,
+        "limitDown": 0
+      },
+      "cellular": {
+        "limitUp": 0,
+        "limitDown": 0
       }
     }
 """

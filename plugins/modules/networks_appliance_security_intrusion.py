@@ -16,30 +16,35 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   idsRulesets:
-    description: Set the detection ruleset 'connectivity'/'balanced'/'security' (optional - omitting will leave current config unchanged). Default
-      value is 'balanced' if none currently saved.
+    description: Set the detection ruleset 'connectivity'/'balanced'/'security' (optional
+      - omitting will leave current config unchanged). Default value is 'balanced'
+      if none currently saved.
     type: str
   mode:
-    description: Set mode to 'disabled'/'detection'/'prevention' (optional - omitting will leave current config unchanged).
+    description: Set mode to 'disabled'/'detection'/'prevention' (optional - omitting
+      will leave current config unchanged).
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
   protectedNetworks:
-    description: Set the included/excluded networks from the intrusion engine (optional - omitting will leave current config unchanged). This
-      is available only in 'passthrough' mode.
+    description: Set the included/excluded networks from the intrusion engine (optional
+      - omitting will leave current config unchanged). This is available only in 'passthrough'
+      mode.
     suboptions:
       excludedCidr:
-        description: List of IP addresses or subnets being excluded from protection (required if 'useDefault' is false).
+        description: List of IP addresses or subnets being excluded from protection
+          (required if 'useDefault' is false).
         elements: str
         type: list
       includedCidr:
-        description: List of IP addresses or subnets being protected (required if 'useDefault' is false).
+        description: List of IP addresses or subnets being protected (required if
+          'useDefault' is false).
         elements: str
         type: list
       useDefault:
-        description: true/false whether to use special IPv4 addresses https //tools.ietf.org/html/rfc5735 (required). Default value is true if
-          none currently saved.
+        description: True/false whether to use special IPv4 addresses https //tools.ietf.org/html/rfc5735
+          (required). Default value is true if none currently saved.
         type: bool
     type: dict
 requirements:
@@ -47,7 +52,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceSecurityIntrusion
-    description: Complete reference of the updateNetworkApplianceSecurityIntrusion API.
+    description: Complete reference of the updateNetworkApplianceSecurityIntrusion
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-security-intrusion
 notes:
   - SDK Method used are
@@ -102,16 +108,16 @@ meraki_response:
   type: dict
   sample: >
     {
-      "idsRulesets": "string",
       "mode": "string",
+      "idsRulesets": "string",
       "protectedNetworks": {
-        "excludedCidr": [
-          "string"
-        ],
+        "useDefault": true,
         "includedCidr": [
           "string"
         ],
-        "useDefault": true
+        "excludedCidr": [
+          "string"
+        ]
       }
     }
 """

@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_port_schedules
-short_description: Resource module for networks _switch _port _schedules
+short_description: Resource module for networks _switch _portschedules
 description:
-  - Manage operations create, update and delete of the resource networks _switch _port _schedules.
+  - Manage operations create, update and delete of the resource networks _switch _portschedules.
   - Add a switch port schedule.
   - Delete a switch port schedule.
   - Update a switch port schedule.
@@ -24,119 +24,135 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   portSchedule:
-    description: The schedule for switch port scheduling. Schedules are applied to days of the week. When it's empty, default schedule with all
-      days of a week are configured. Any unspecified day in the schedule is added as a default schedule configuration of the day.
+    description: The schedule for switch port scheduling. Schedules are applied to
+      days of the week. When it's empty, default schedule with all days of a week
+      are configured. Any unspecified day in the schedule is added as a default schedule
+      configuration of the day.
     suboptions:
       friday:
         description: The schedule object for Friday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       monday:
         description: The schedule object for Monday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       saturday:
         description: The schedule object for Saturday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       sunday:
         description: The schedule object for Sunday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       thursday:
         description: The schedule object for Thursday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       tuesday:
         description: The schedule object for Tuesday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
       wednesday:
         description: The schedule object for Wednesday.
         suboptions:
           active:
-            description: Whether the schedule is active (true) or inactive (false) during the time specified between 'from' and 'to'. Defaults
-              to true.
+            description: Whether the schedule is active (true) or inactive (false)
+              during the time specified between 'from' and 'to'. Defaults to true.
             type: bool
           from:
-            description: The time, from '00 00' to '24 00'. Must be less than the time specified in 'to'. Defaults to '00 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be less than the
+              time specified in 'to'. Defaults to '00 00'. Only 30 minute increments
+              are allowed.
             type: str
           to:
-            description: The time, from '00 00' to '24 00'. Must be greater than the time specified in 'from'. Defaults to '24 00'. Only 30 minute
-              increments are allowed.
+            description: The time, from '00 00' to '24 00'. Must be greater than the
+              time specified in 'from'. Defaults to '24 00'. Only 30 minute increments
+              are allowed.
             type: str
         type: dict
     type: dict
@@ -314,30 +330,10 @@ meraki_response:
   sample: >
     {
       "id": "string",
-      "name": "string",
       "networkId": "string",
+      "name": "string",
       "portSchedule": {
-        "friday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
         "monday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "saturday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "sunday": {
-          "active": true,
-          "from": "string",
-          "to": "string"
-        },
-        "thursday": {
           "active": true,
           "from": "string",
           "to": "string"
@@ -348,6 +344,26 @@ meraki_response:
           "to": "string"
         },
         "wednesday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "thursday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "friday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "saturday": {
+          "active": true,
+          "from": "string",
+          "to": "string"
+        },
+        "sunday": {
           "active": true,
           "from": "string",
           "to": "string"

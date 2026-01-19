@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -59,48 +58,58 @@ class NetworksSwitchPortSchedules(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('portSchedule') is not None or self.new_object.get('port_schedule') is not None:
-            new_object_params['portSchedule'] = self.new_object.get('portSchedule') or \
-                self.new_object.get('port_schedule')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('portSchedule') is not None or self.new_object.get(
+                'port_schedule') is not None:
+            new_object_params['portSchedule'] = self.new_object.get(
+                'portSchedule') or self.new_object.get('port_schedule')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('portScheduleId') is not None or self.new_object.get('port_schedule_id') is not None:
-            new_object_params['portScheduleId'] = self.new_object.get('portScheduleId') or \
-                self.new_object.get('port_schedule_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('portScheduleId') is not None or self.new_object.get(
+                'port_schedule_id') is not None:
+            new_object_params['portScheduleId'] = self.new_object.get(
+                'portScheduleId') or self.new_object.get('port_schedule_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('portSchedule') is not None or self.new_object.get('port_schedule') is not None:
-            new_object_params['portSchedule'] = self.new_object.get('portSchedule') or \
-                self.new_object.get('port_schedule')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('portScheduleId') is not None or self.new_object.get('port_schedule_id') is not None:
-            new_object_params['portScheduleId'] = self.new_object.get('portScheduleId') or \
-                self.new_object.get('port_schedule_id')
+        if self.new_object.get('portSchedule') is not None or self.new_object.get(
+                'port_schedule') is not None:
+            new_object_params['portSchedule'] = self.new_object.get(
+                'portSchedule') or self.new_object.get('port_schedule')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('portScheduleId') is not None or self.new_object.get(
+                'port_schedule_id') is not None:
+            new_object_params['portScheduleId'] = self.new_object.get(
+                'portScheduleId') or self.new_object.get('port_schedule_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -178,9 +187,12 @@ class NetworksSwitchPortSchedules(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

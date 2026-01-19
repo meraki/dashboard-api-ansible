@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: administered_identities_me_info
 short_description: Information module for administered _identities _me
 description:
+  - Information module for Administered Identities Me Info.
   - Get all administered _identities _me.
   - Returns the identity of the current user.
 version_added: '1.0.0'
@@ -65,22 +66,22 @@ meraki_response:
   type: dict
   sample: >
     {
+      "name": "string",
+      "email": "string",
+      "lastUsedDashboardAt": "string",
       "authentication": {
+        "mode": "string",
         "api": {
           "key": {
             "created": true
           }
         },
-        "mode": "string",
-        "saml": {
-          "enabled": true
-        },
         "twoFactor": {
           "enabled": true
+        },
+        "saml": {
+          "enabled": true
         }
-      },
-      "email": "string",
-      "lastUsedDashboardAt": "string",
-      "name": "string"
+      }
     }
 """

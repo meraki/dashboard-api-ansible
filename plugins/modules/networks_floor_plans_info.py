@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_floor_plans_info
-short_description: Information module for networks _floor _plans
+short_description: Information module for networks _floorplans
 description:
-  - Get all networks _floor _plans.
-  - Get networks _floor _plans by id.
+  - Information module for Networks Floorplans Info.
+  - Get all networks _floorplans.
+  - Get networks _floorplans by id.
   - Find a floor plan by ID.
   - List the floor plans that belong to your network.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Floorplans Info.
       - NetworkId path parameter. Network ID.
     type: str
   floorPlanId:
     description:
+      - Information module for Networks Floorplans Info.
       - FloorPlanId path parameter. Floor plan ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _floor _plans
+- name: Get all networks _floorplans
   cisco.meraki.networks_floor_plans_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _floor _plans by id
+- name: Get networks _floorplans by id
   cisco.meraki.networks_floor_plans_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,6 +110,44 @@ meraki_response:
   type: dict
   sample: >
     {
+      "floorPlanId": "string",
+      "imageUrl": "string",
+      "imageUrlExpiresAt": "string",
+      "imageExtension": "string",
+      "imageMd5": "string",
+      "name": "string",
+      "devices": [
+        {
+          "name": "string",
+          "lat": 0,
+          "lng": 0,
+          "address": "string",
+          "notes": "string",
+          "tags": [
+            "string"
+          ],
+          "networkId": "string",
+          "serial": "string",
+          "model": "string",
+          "imei": "string",
+          "mac": "string",
+          "lanIp": "string",
+          "firmware": "string",
+          "productType": "string",
+          "details": [
+            {
+              "name": "string",
+              "value": "string"
+            }
+          ]
+        }
+      ],
+      "width": 0,
+      "height": 0,
+      "center": {
+        "lat": 0,
+        "lng": 0
+      },
       "bottomLeftCorner": {
         "lat": 0,
         "lng": 0
@@ -115,44 +156,6 @@ meraki_response:
         "lat": 0,
         "lng": 0
       },
-      "center": {
-        "lat": 0,
-        "lng": 0
-      },
-      "devices": [
-        {
-          "address": "string",
-          "details": [
-            {
-              "name": "string",
-              "value": "string"
-            }
-          ],
-          "firmware": "string",
-          "imei": "string",
-          "lanIp": "string",
-          "lat": 0,
-          "lng": 0,
-          "mac": "string",
-          "model": "string",
-          "name": "string",
-          "networkId": "string",
-          "notes": "string",
-          "productType": "string",
-          "serial": "string",
-          "tags": [
-            "string"
-          ]
-        }
-      ],
-      "floorNumber": 0,
-      "floorPlanId": "string",
-      "height": 0,
-      "imageExtension": "string",
-      "imageMd5": "string",
-      "imageUrl": "string",
-      "imageUrlExpiresAt": "string",
-      "name": "string",
       "topLeftCorner": {
         "lat": 0,
         "lng": 0
@@ -161,6 +164,6 @@ meraki_response:
         "lat": 0,
         "lng": 0
       },
-      "width": 0
+      "floorNumber": 0
     }
 """

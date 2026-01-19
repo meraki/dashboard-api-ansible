@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: devices_blink_leds
-short_description: Resource module for devices _blink _leds
+short_description: Resource module for devices _blinkleds
 description:
-  - Manage operation create of the resource devices _blink _leds.
+  - Manage operation create of the resource devices _blinkleds.
   - Blink the LEDs on a device. This endpoint is deprecrated in favor of "/devices/{serial}/liveTools/leds/blink".
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,13 +16,16 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   duration:
-    description: The duration in seconds. Must be between 5 and 120. Default is 20 seconds.
+    description: The duration in seconds. Must be between 5 and 120. Default is 20
+      seconds.
     type: int
   duty:
-    description: The duty cycle as the percent active. Must be between 10 and 90. Default is 50.
+    description: The duty cycle as the percent active. Must be between 10 and 90.
+      Default is 50.
     type: int
   period:
-    description: The period in milliseconds. Must be between 100 and 1000. Default is 160 milliseconds.
+    description: The period in milliseconds. Must be between 100 and 1000. Default
+      is 160 milliseconds.
     type: int
   serial:
     description: Serial path parameter.
@@ -78,7 +81,7 @@ meraki_response:
   sample: >
     {
       "duration": 0,
-      "duty": 0,
-      "period": 0
+      "period": 0,
+      "duty": 0
     }
 """

@@ -6,24 +6,27 @@
 
 DOCUMENTATION = r"""
 module: organizations_licenses_renew_seats
-short_description: Resource module for organizations _licenses _renew _seats
+short_description: Resource module for organizations _licenses _renewseats
 description:
-  - Manage operation create of the resource organizations _licenses _renew _seats. - > Renew SM seats of a license. This will extend the license
-    expiration date of managed SM devices covered by this license.
+  - Manage operation create of the resource organizations _licenses _renewseats.
+  - >
+    Renew SM seats of a license. This will extend the license expiration date of managed
+    SM devices covered by this license.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
   licenseIdToRenew:
-    description: The ID of the SM license to renew. This license must already be assigned to an SM network.
+    description: The ID of the SM license to renew. This license must already be assigned
+      to an SM network.
     type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
   unusedLicenseId:
-    description: The SM license to use to renew the seats on 'licenseIdToRenew'. This license must have at least as many seats available as there
-      are seats on 'licenseIdToRenew'.
+    description: The SM license to use to renew the seats on 'licenseIdToRenew'. This
+      license must have at least as many seats available as there are seats on 'licenseIdToRenew'.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -76,29 +79,29 @@ meraki_response:
     {
       "resultingLicenses": [
         {
-          "activationDate": "string",
-          "claimDate": "string",
-          "deviceSerial": "string",
-          "durationInDays": 0,
-          "expirationDate": "string",
-          "headLicenseId": "string",
           "id": "string",
-          "licenseKey": "string",
           "licenseType": "string",
-          "networkId": "string",
+          "licenseKey": "string",
           "orderNumber": "string",
+          "deviceSerial": "string",
+          "networkId": "string",
+          "state": "string",
+          "seatCount": 0,
+          "totalDurationInDays": 0,
+          "durationInDays": 0,
           "permanentlyQueuedLicenses": [
             {
-              "durationInDays": 0,
               "id": "string",
-              "licenseKey": "string",
               "licenseType": "string",
-              "orderNumber": "string"
+              "licenseKey": "string",
+              "orderNumber": "string",
+              "durationInDays": 0
             }
           ],
-          "seatCount": 0,
-          "state": "string",
-          "totalDurationInDays": 0
+          "claimDate": "string",
+          "activationDate": "string",
+          "expirationDate": "string",
+          "headLicenseId": "string"
         }
       ]
     }

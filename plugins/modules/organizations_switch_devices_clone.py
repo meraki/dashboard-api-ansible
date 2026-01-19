@@ -8,9 +8,11 @@ DOCUMENTATION = r"""
 module: organizations_switch_devices_clone
 short_description: Resource module for organizations _switch _devices _clone
 description:
-  - Manage operation create of the resource organizations _switch _devices _clone. - > Clone port-level and some switch-level configuration settings
-    from a source switch to one or more target switches. Cloned settings include Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration,
-    STP Bridge priority, Port Mirroring.
+  - Manage operation create of the resource organizations _switch _devices _clone.
+  - >
+    Clone port-level and some switch-level configuration settings from a source switch
+    to one or more target switches. Cloned settings include Aggregation Groups, Power
+    Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -20,10 +22,12 @@ options:
     description: OrganizationId path parameter. Organization ID.
     type: str
   sourceSerial:
-    description: Serial number of the source switch (must be on a network not bound to a template).
+    description: Serial number of the source switch (must be on a network not bound
+      to a template).
     type: str
   targetSerials:
-    description: Array of serial numbers of one or more target switches (must be on a network not bound to a template).
+    description: Array of serial numbers of one or more target switches (must be on
+      a network not bound to a template).
     elements: str
     type: list
 requirements:

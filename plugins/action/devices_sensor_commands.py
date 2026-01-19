@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -56,46 +55,59 @@ class DevicesSensorCommands(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('operations') is not None or self.new_object.get('operations') is not None:
+        if self.new_object.get('operations') is not None or self.new_object.get(
+                'operations') is not None:
             new_object_params['operations'] = self.new_object.get('operations')
-        if self.new_object.get('perPage') is not None or self.new_object.get('per_page') is not None:
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
             new_object_params['perPage'] = self.new_object.get('perPage') or \
                 self.new_object.get('per_page')
         new_object_params['total_pages'] = -1
-        if self.new_object.get('startingAfter') is not None or self.new_object.get('starting_after') is not None:
-            new_object_params['startingAfter'] = self.new_object.get('startingAfter') or \
-                self.new_object.get('starting_after')
-        if self.new_object.get('endingBefore') is not None or self.new_object.get('ending_before') is not None:
-            new_object_params['endingBefore'] = self.new_object.get('endingBefore') or \
-                self.new_object.get('ending_before')
-        if self.new_object.get('sortOrder') is not None or self.new_object.get('sort_order') is not None:
-            new_object_params['sortOrder'] = self.new_object.get('sortOrder') or \
-                self.new_object.get('sort_order')
-        if self.new_object.get('t0') is not None or self.new_object.get('t0') is not None:
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('sortOrder') is not None or self.new_object.get(
+                'sort_order') is not None:
+            new_object_params['sortOrder'] = self.new_object.get(
+                'sortOrder') or self.new_object.get('sort_order')
+        if self.new_object.get(
+                't0') is not None or self.new_object.get('t0') is not None:
             new_object_params['t0'] = self.new_object.get('t0')
-        if self.new_object.get('t1') is not None or self.new_object.get('t1') is not None:
+        if self.new_object.get(
+                't1') is not None or self.new_object.get('t1') is not None:
             new_object_params['t1'] = self.new_object.get('t1')
-        if self.new_object.get('timespan') is not None or self.new_object.get('timespan') is not None:
+        if self.new_object.get('timespan') is not None or self.new_object.get(
+                'timespan') is not None:
             new_object_params['timespan'] = self.new_object.get('timespan')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial')
-        if self.new_object.get('commandId') is not None or self.new_object.get('command_id') is not None:
-            new_object_params['commandId'] = self.new_object.get('commandId') or \
-                self.new_object.get('command_id')
+        if self.new_object.get('commandId') is not None or self.new_object.get(
+                'command_id') is not None:
+            new_object_params['commandId'] = self.new_object.get(
+                'commandId') or self.new_object.get('command_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('operation') is not None or self.new_object.get('operation') is not None:
-            new_object_params['operation'] = self.new_object.get('operation') or \
-                self.new_object.get('operation')
-        if self.new_object.get('serial') is not None or self.new_object.get('serial') is not None:
+        if self.new_object.get('operation') is not None or self.new_object.get(
+                'operation') is not None:
+            new_object_params['operation'] = self.new_object.get(
+                'operation') or self.new_object.get('operation')
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
             new_object_params['serial'] = self.new_object.get('serial') or \
                 self.new_object.get('serial')
         return new_object_params
@@ -175,9 +187,12 @@ class DevicesSensorCommands(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality2(current_obj.get(meraki_param),
-                                                requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality2(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(

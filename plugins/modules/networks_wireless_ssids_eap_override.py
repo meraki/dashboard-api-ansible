@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_eap_override
-short_description: Resource module for networks _wireless _ssids _eap _override
+short_description: Resource module for networks _wireless _ssids _eapoverride
 description:
-  - Manage operation update of the resource networks _wireless _ssids _eap _override.
+  - Manage operation update of the resource networks _wireless _ssids _eapoverride.
   - Update the EAP overridden parameters for an SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -104,15 +104,15 @@ meraki_response:
   type: dict
   sample: >
     {
-      "eapolKey": {
-        "retries": 0,
-        "timeoutInMs": 0
-      },
+      "timeout": 0,
+      "maxRetries": 0,
       "identity": {
         "retries": 0,
         "timeout": 0
       },
-      "maxRetries": 0,
-      "timeout": 0
+      "eapolKey": {
+        "retries": 0,
+        "timeoutInMs": 0
+      }
     }
 """

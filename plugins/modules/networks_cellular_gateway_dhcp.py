@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_dhcp
-short_description: Resource module for networks _cellular _gateway _dhcp
+short_description: Resource module for networks _cellulargateway _dhcp
 description:
-  - Manage operation update of the resource networks _cellular _gateway _dhcp.
+  - Manage operation update of the resource networks _cellulargateway _dhcp.
   - Update common DHCP settings of MGs.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,14 +16,17 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   dhcpLeaseTime:
-    description: DHCP Lease time for all MG of the network. Possible values are '30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week'.
+    description: DHCP Lease time for all MG of the network. Possible values are '30
+      minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week'.
     type: str
   dnsCustomNameservers:
-    description: List of fixed IPs representing the the DNS Name servers when the mode is 'custom'.
+    description: List of fixed IPs representing the the DNS Name servers when the
+      mode is 'custom'.
     elements: str
     type: list
   dnsNameservers:
-    description: DNS name servers mode for all MG of the network. Possible values are 'upstream_dns', 'google_dns', 'opendns', 'custom'.
+    description: DNS name servers mode for all MG of the network. Possible values
+      are 'upstream_dns', 'google_dns', 'opendns', 'custom'.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
@@ -82,9 +85,9 @@ meraki_response:
   sample: >
     {
       "dhcpLeaseTime": "string",
+      "dnsNameservers": "string",
       "dnsCustomNameservers": [
         "string"
-      ],
-      "dnsNameservers": "string"
+      ]
     }
 """

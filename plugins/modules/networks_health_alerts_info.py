@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_health_alerts_info
 short_description: Information module for networks _health _alerts
 description:
+  - Information module for Networks Health Alerts Info.
   - Get all networks _health _alerts.
   - Return all global alerts on this network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Health Alerts Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -72,44 +74,44 @@ meraki_response:
   sample: >
     [
       {
-        "category": "string",
         "id": "string",
+        "category": "string",
+        "type": "string",
+        "severity": "string",
         "scope": {
-          "applications": [
-            {
-              "name": "string",
-              "url": "string"
-            }
-          ],
           "devices": [
             {
+              "url": "string",
+              "name": "string",
+              "productType": "string",
+              "serial": "string",
+              "mac": "string",
+              "lldp": {
+                "portId": "string"
+              },
               "clients": [
                 {
                   "mac": "string"
                 }
-              ],
-              "lldp": {
-                "portId": "string"
-              },
-              "mac": "string",
-              "name": "string",
-              "productType": "string",
-              "serial": "string",
-              "url": "string"
+              ]
+            }
+          ],
+          "applications": [
+            {
+              "url": "string",
+              "name": "string"
             }
           ],
           "peers": [
             {
+              "url": "string",
               "network": {
-                "id": "string",
-                "name": "string"
-              },
-              "url": "string"
+                "name": "string",
+                "id": "string"
+              }
             }
           ]
-        },
-        "severity": "string",
-        "type": "string"
+        }
       }
     ]
 """

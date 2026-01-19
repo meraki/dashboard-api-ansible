@@ -34,7 +34,8 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter is not returned.
+                    description: Password for PPPoE authentication. This parameter
+                      is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -54,7 +55,8 @@ options:
                     description: IP address and subnet mask when in static mode.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when
+                      PPPoE is disabled.
                     type: str
                   gateway:
                     description: Gateway IP address when in static mode.
@@ -63,7 +65,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -72,19 +75,23 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received by SLAAC.
+                    description: Static address that will override the one(s) received
+                      by SLAAC.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when
+                      PPPoE is disabled.
                     type: str
                   gateway:
-                    description: Static gateway that will override the one received by autoconf.
+                    description: Static gateway that will override the one received
+                      by autoconf.
                     type: str
                   nameservers:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -117,7 +124,8 @@ options:
                     description: Whether PPPoE authentication is enabled.
                     type: bool
                   password:
-                    description: Password for PPPoE authentication. This parameter is not returned.
+                    description: Password for PPPoE authentication. This parameter
+                      is not returned.
                     type: str
                   username:
                     description: Username for PPPoE authentication.
@@ -137,7 +145,8 @@ options:
                     description: IP address and subnet mask when in static mode.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when
+                      PPPoE is disabled.
                     type: str
                   gateway:
                     description: Gateway IP address when in static mode.
@@ -146,7 +155,8 @@ options:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -155,19 +165,23 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received by SLAAC.
+                    description: Static address that will override the one(s) received
+                      by SLAAC.
                     type: str
                   assignmentMode:
-                    description: The assignment mode for this SVI. Applies only when PPPoE is disabled.
+                    description: The assignment mode for this SVI. Applies only when
+                      PPPoE is disabled.
                     type: str
                   gateway:
-                    description: Static gateway that will override the one received by autoconf.
+                    description: Static gateway that will override the one received
+                      by autoconf.
                     type: str
                   nameservers:
                     description: The nameserver settings for this SVI.
                     suboptions:
                       addresses:
-                        description: Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+                        description: Up to 2 nameserver addresses to use, ordered
+                          in priority from highest to lowest priority.
                         elements: str
                         type: list
                     type: dict
@@ -293,17 +307,14 @@ meraki_response:
     {
       "wan1": {
         "enabled": true,
-        "pppoe": {
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          },
-          "enabled": true
+        "vlanTagging": {
+          "enabled": true,
+          "vlanId": 0
         },
         "svis": {
           "ipv4": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -312,8 +323,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -322,24 +333,24 @@ meraki_response:
             }
           }
         },
-        "vlanTagging": {
+        "pppoe": {
           "enabled": true,
-          "vlanId": 0
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          }
         }
       },
       "wan2": {
         "enabled": true,
-        "pppoe": {
-          "authentication": {
-            "enabled": true,
-            "username": "string"
-          },
-          "enabled": true
+        "vlanTagging": {
+          "enabled": true,
+          "vlanId": 0
         },
         "svis": {
           "ipv4": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -348,8 +359,8 @@ meraki_response:
             }
           },
           "ipv6": {
-            "address": "string",
             "assignmentMode": "string",
+            "address": "string",
             "gateway": "string",
             "nameservers": {
               "addresses": [
@@ -358,9 +369,12 @@ meraki_response:
             }
           }
         },
-        "vlanTagging": {
+        "pppoe": {
           "enabled": true,
-          "vlanId": 0
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          }
         }
       }
     }

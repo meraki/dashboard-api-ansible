@@ -8,7 +8,8 @@ DOCUMENTATION = r"""
 module: organizations_camera_roles
 short_description: Resource module for organizations _camera _roles
 description:
-  - Manage operations create, update and delete of the resource organizations _camera _roles.
+  - Manage operations create, update and delete of the resource organizations _camera
+    _roles.
   - Creates new role for this organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -123,5 +124,33 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "name": "string",
+      "appliedOnDevices": [
+        {
+          "tag": "string",
+          "id": "string",
+          "permissionScopeId": "string",
+          "permissionScope": "string",
+          "permissionLevel": "string"
+        }
+      ],
+      "appliedOnNetworks": [
+        {
+          "tag": "string",
+          "id": "string",
+          "permissionScopeId": "string",
+          "permissionScope": "string",
+          "permissionLevel": "string"
+        }
+      ],
+      "appliedOrgWide": [
+        {
+          "tag": "string",
+          "permissionScopeId": "string",
+          "permissionScope": "string",
+          "permissionLevel": "string"
+        }
+      ]
+    }
 """

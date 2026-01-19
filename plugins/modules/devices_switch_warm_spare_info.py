@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: devices_switch_warm_spare_info
-short_description: Information module for devices _switch _warm _spare
+short_description: Information module for devices _switch _warmspare
 description:
-  - Get all devices _switch _warm _spare.
+  - Information module for Devices Switch Warmspare Info.
+  - Get all devices _switch _warmspare.
   - Return warm spare configuration for a switch.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Switch Warmspare Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _switch _warm _spare
+- name: Get all devices _switch _warmspare
   cisco.meraki.devices_switch_warm_spare_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

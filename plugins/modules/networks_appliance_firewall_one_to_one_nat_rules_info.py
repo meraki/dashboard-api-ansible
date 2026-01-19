@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_one_to_one_nat_rules_info
-short_description: Information module for networks _appliance _firewall _one _to _one _nat _rules
+short_description: Information module for networks _appliance _firewall _onetoonenatrules
 description:
-  - Get all networks _appliance _firewall _one _to _one _nat _rules.
+  - Information module for Networks Appliance Firewall Onetoonenatrules Info.
+  - Get all networks _appliance _firewall _onetoonenatrules.
   - Return the 1 1 NAT mapping rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Appliance Firewall Onetoonenatrules Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -27,7 +29,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceFirewallOneToOneNatRules
-    description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules API.
+    description: Complete reference of the getNetworkApplianceFirewallOneToOneNatRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-one-to-one-nat-rules
 notes:
   - SDK Method used are
@@ -37,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _firewall _one _to _one _nat _rules
+- name: Get all networks _appliance _firewall _onetoonenatrules
   cisco.meraki.networks_appliance_firewall_one_to_one_nat_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -67,26 +70,7 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "allowedInbound": [
-          {
-            "allowedIps": [
-              "string"
-            ],
-            "destinationPorts": [
-              "string"
-            ],
-            "protocol": "string"
-          }
-        ],
-        "lanIp": "string",
-        "name": "string",
-        "publicIp": "string",
-        "uplink": "string"
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

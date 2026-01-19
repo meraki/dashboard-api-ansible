@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_dscp_to_cos_mappings
-short_description: Resource module for networks _switch _dscp _to _cos _mappings
+short_description: Resource module for networks _switch _dscptocosmappings
 description:
-  - Manage operation update of the resource networks _switch _dscp _to _cos _mappings.
+  - Manage operation update of the resource networks _switch _dscptocosmappings.
   - Update the DSCP to CoS mappings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,16 +16,19 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   mappings:
-    description: An array of DSCP to CoS mappings. An empty array will reset the mappings to default.
+    description: An array of DSCP to CoS mappings. An empty array will reset the mappings
+      to default.
     elements: dict
     suboptions:
       cos:
-        description: The actual layer-2 CoS queue the DSCP value is mapped to. These are not bits set on outgoing frames. Value can be in the
-          range of 0 to 5 inclusive.
+        description: The actual layer-2 CoS queue the DSCP value is mapped to. These
+          are not bits set on outgoing frames. Value can be in the range of 0 to 5
+          inclusive.
         type: int
       dscp:
-        description: The Differentiated Services Code Point (DSCP) tag in the IP header that will be mapped to a particular Class-of-Service (CoS)
-          queue. Value can be in the range of 0 to 63 inclusive.
+        description: The Differentiated Services Code Point (DSCP) tag in the IP header
+          that will be mapped to a particular Class-of-Service (CoS) queue. Value
+          can be in the range of 0 to 63 inclusive.
         type: int
       title:
         description: Label for the mapping (optional).
@@ -87,8 +90,8 @@ meraki_response:
   sample: >
     [
       {
-        "cos": 0,
         "dscp": 0,
+        "cos": 0,
         "title": "string"
       }
     ]

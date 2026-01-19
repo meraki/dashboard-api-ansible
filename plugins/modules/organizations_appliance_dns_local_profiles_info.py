@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: organizations_appliance_dns_local_profiles_info
 short_description: Information module for organizations _appliance _dns _local _profiles
 description:
+  - Information module for Organizations Appliance Dns Local Profiles Info.
   - Get all organizations _appliance _dns _local _profiles.
   - Fetch the local DNS profiles used in the organization.
 version_added: '1.0.0'
@@ -20,11 +21,14 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Appliance Dns Local Profiles Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   profileIds:
     description:
-      - ProfileIds query parameter. Optional parameter to filter the results by profile IDs.
+      - Information module for Organizations Appliance Dns Local Profiles Info.
+      - ProfileIds query parameter. Optional parameter to filter the results by profile
+        IDs.
     elements: str
     type: list
 requirements:
@@ -32,7 +36,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceDnsLocalProfiles
-    description: Complete reference of the getOrganizationApplianceDnsLocalProfiles API.
+    description: Complete reference of the getOrganizationApplianceDnsLocalProfiles
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-dns-local-profiles
 notes:
   - SDK Method used are
@@ -78,8 +83,8 @@ meraki_response:
   sample: >
     [
       {
-        "name": "string",
-        "profileId": "string"
+        "profileId": "string",
+        "name": "string"
       }
     ]
 """

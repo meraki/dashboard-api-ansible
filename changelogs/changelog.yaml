@@ -1316,3 +1316,8 @@ releases:
         - "meraki.py plugin utils - Added type checking in has_diff_elem2 function to prevent errors when comparing lists
           of non-dictionary elements"
     release_date: "2025-11-26"
+  2.22.0:
+    changes:
+      minor_changes:
+        - "Updated with v1.66.0 dashboard API, adding new plugins and fixing bugs."
+    release_date: "2026-01-19"

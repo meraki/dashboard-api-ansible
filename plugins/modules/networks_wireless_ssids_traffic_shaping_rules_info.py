@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_traffic_shaping_rules_info
-short_description: Information module for networks _wireless _ssids _traffic _shaping _rules
+short_description: Information module for networks _wireless _ssids _trafficshaping
+  _rules
 description:
-  - Get all networks _wireless _ssids _traffic _shaping _rules.
+  - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
+  - Get all networks _wireless _ssids _trafficshaping _rules.
   - Display the traffic shaping settings for a SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +22,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
+      - Information module for Networks Wireless Ssids Trafficshaping Rules Info.
       - Number path parameter.
     type: str
 requirements:
@@ -31,7 +35,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getNetworkWirelessSsidTrafficShapingRules
-    description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules API.
+    description: Complete reference of the getNetworkWirelessSsidTrafficShapingRules
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-traffic-shaping-rules
 notes:
   - SDK Method used are
@@ -41,7 +46,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _traffic _shaping _rules
+- name: Get all networks _wireless _ssids _trafficshaping _rules
   cisco.meraki.networks_wireless_ssids_traffic_shaping_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -75,6 +80,7 @@ meraki_response:
   type: dict
   sample: >
     {
+      "trafficShapingEnabled": true,
       "defaultRulesEnabled": true,
       "rules": [
         {
@@ -84,17 +90,16 @@ meraki_response:
               "value": "string"
             }
           ],
-          "dscpTagValue": 0,
-          "pcpTagValue": 0,
           "perClientBandwidthLimits": {
+            "settings": "string",
             "bandwidthLimits": {
-              "limitDown": 0,
-              "limitUp": 0
-            },
-            "settings": "string"
-          }
+              "limitUp": 0,
+              "limitDown": 0
+            }
+          },
+          "dscpTagValue": 0,
+          "pcpTagValue": 0
         }
-      ],
-      "trafficShapingEnabled": true
+      ]
     }
 """

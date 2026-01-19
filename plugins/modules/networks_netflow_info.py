@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_netflow_info
 short_description: Information module for networks _netflow
 description:
+  - Information module for Networks Netflow Info.
   - Get all networks _netflow.
   - Return the NetFlow traffic reporting settings for a network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Netflow Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -70,10 +72,10 @@ meraki_response:
   type: dict
   sample: >
     {
+      "reportingEnabled": true,
       "collectorIp": "string",
       "collectorPort": 0,
-      "etaDstPort": 0,
       "etaEnabled": true,
-      "reportingEnabled": true
+      "etaDstPort": 0
     }
 """

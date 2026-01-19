@@ -6,9 +6,9 @@
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_bandwidth
-short_description: Resource module for networks _appliance _traffic _shaping _uplink _bandwidth
+short_description: Resource module for networks _appliance _trafficshaping _uplinkbandwidth
 description:
-  - Manage operation update of the resource networks _appliance _traffic _shaping _uplink _bandwidth.
+  - Manage operation update of the resource networks _appliance _trafficshaping _uplinkbandwidth.
   - Updates the uplink bandwidth settings for your MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -16,36 +16,43 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   bandwidthLimits:
-    description: A mapping of uplinks to their bandwidth settings (be sure to check which uplinks are supported for your network).
+    description: A mapping of uplinks to their bandwidth settings (be sure to check
+      which uplinks are supported for your network).
     suboptions:
       cellular:
         description: The bandwidth settings for the 'cellular' uplink.
         suboptions:
           limitDown:
-            description: The maximum download limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum download limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
           limitUp:
-            description: The maximum upload limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum upload limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
         type: dict
       wan1:
         description: The bandwidth settings for the 'wan1' uplink.
         suboptions:
           limitDown:
-            description: The maximum download limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum download limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
           limitUp:
-            description: The maximum upload limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum upload limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
         type: dict
       wan2:
         description: The bandwidth settings for the 'wan2' uplink.
         suboptions:
           limitDown:
-            description: The maximum download limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum download limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
           limitUp:
-            description: The maximum upload limit (integer, in Kbps). Null indicates no limit.
+            description: The maximum upload limit (integer, in Kbps). Null indicates
+              no limit.
             type: int
         type: dict
     type: dict
@@ -57,7 +64,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateNetworkApplianceTrafficShapingUplinkBandwidth
-    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth API.
+    description: Complete reference of the updateNetworkApplianceTrafficShapingUplinkBandwidth
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-traffic-shaping-uplink-bandwidth
 notes:
   - SDK Method used are

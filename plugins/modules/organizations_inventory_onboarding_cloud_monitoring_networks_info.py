@@ -6,9 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_networks_info
-short_description: Information module for organizations _inventory _onboarding _cloud _monitoring _networks
+short_description: Information module for organizations _inventory _onboarding _cloudmonitoring
+  _networks
 description:
-  - Get all organizations _inventory _onboarding _cloud _monitoring _networks.
+  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+  - Get all organizations _inventory _onboarding _cloudmonitoring _networks.
   - Returns list of networks eligible for adding cloud monitored device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,40 +23,52 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   deviceType:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - DeviceType query parameter. Device Type switch or wireless controller.
     type: str
   search:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - Search query parameter. Optional parameter to search on network name.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 100000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationInventoryOnboardingCloudMonitoringNetworks
-    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks API.
+    description: Complete reference of the getOrganizationInventoryOnboardingCloudMonitoringNetworks
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-onboarding-cloud-monitoring-networks
 notes:
   - SDK Method used are
@@ -64,7 +78,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _inventory _onboarding _cloud _monitoring _networks
+- name: Get all organizations _inventory _onboarding _cloudmonitoring _networks
   cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_networks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -106,20 +120,20 @@ meraki_response:
   sample: >
     [
       {
-        "enrollmentString": "string",
         "id": "string",
-        "isBoundToConfigTemplate": true,
-        "name": "string",
-        "notes": "string",
         "organizationId": "string",
+        "name": "string",
         "productTypes": [
           "string"
         ],
+        "timeZone": "string",
         "tags": [
           "string"
         ],
-        "timeZone": "string",
-        "url": "string"
+        "enrollmentString": "string",
+        "url": "string",
+        "notes": "string",
+        "isBoundToConfigTemplate": true
       }
     ]
 """

@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_sm_bypass_activation_lock_attempts_info
-short_description: Information module for networks _sm _bypass _activation _lock _attempts
+short_description: Information module for networks _sm _bypassactivationlockattempts
 description:
-  - Get networks _sm _bypass _activation _lock _attempts by id.
+  - Information module for Networks Sm Bypassactivationlockattempts Info.
+  - Get networks _sm _bypassactivationlockattempts by id.
   - Bypass activation lock attempt status.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,10 +21,12 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sm Bypassactivationlockattempts Info.
       - NetworkId path parameter. Network ID.
     type: str
   attemptId:
     description:
+      - Information module for Networks Sm Bypassactivationlockattempts Info.
       - AttemptId path parameter. Attempt ID.
     type: str
 requirements:
@@ -31,7 +34,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for sm getNetworkSmBypassActivationLockAttempt
-    description: Complete reference of the getNetworkSmBypassActivationLockAttempt API.
+    description: Complete reference of the getNetworkSmBypassActivationLockAttempt
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-network-sm-bypass-activation-lock-attempt
 notes:
   - SDK Method used are
@@ -41,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get networks _sm _bypass _activation _lock _attempts by id
+- name: Get networks _sm _bypassactivationlockattempts by id
   cisco.meraki.networks_sm_bypass_activation_lock_attempts_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,20 +77,6 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample: >
-    {
-      "data": {
-        "2090938209": {
-          "errors": [
-            "string"
-          ],
-          "success": true
-        },
-        "38290139892": {
-          "success": true
-        }
-      },
-      "id": "string",
-      "status": "string"
-    }
+  sample:
+  - {}
 """

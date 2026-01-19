@@ -6,8 +6,10 @@
 
 DOCUMENTATION = r"""
 module: organizations_wireless_rf_profiles_assignments_by_device_info
-short_description: Information module for organizations _wireless _rf _profiles _assignments _by _device
+short_description: Information module for organizations _wireless _rf _profiles _assignments
+  _by _device
 description:
+  - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
   - Get all organizations _wireless _rf _profiles _assignments _by _device.
   - List the RF profiles of an organization by device.
 version_added: '1.0.0'
@@ -21,81 +23,107 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   networkIds:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - NetworkIds query parameter. Optional parameter to filter devices by network.
     elements: str
     type: list
   productTypes:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        ProductTypes query parameter. Optional parameter to filter devices by product type. Valid types are wireless, appliance, switch, systemsManager,
-        camera, cellularGateway, sensor, wirelessController, and secureConnect.
+        ProductTypes query parameter. Optional parameter to filter devices by product
+        type. Valid types are wireless, appliance, switch, systemsManager, camera,
+        cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
     elements: str
     type: list
   name:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Name query parameter. Optional parameter to filter RF profiles by device name. All returned devices will have a name that contains the
-        search term or is an exact match.
+        Name query parameter. Optional parameter to filter RF profiles by device name.
+        All returned devices will have a name that contains the search term or is
+        an exact match.
     type: str
   mac:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Mac query parameter. Optional parameter to filter RF profiles by device MAC address. All returned devices will have a MAC address that
-        contains the search term or is an exact match.
+        Mac query parameter. Optional parameter to filter RF profiles by device MAC
+        address. All returned devices will have a MAC address that contains the search
+        term or is an exact match.
     type: str
   serial:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Serial query parameter. Optional parameter to filter RF profiles by device serial number. All returned devices will have a serial number
-        that contains the search term or is an exact match.
+        Serial query parameter. Optional parameter to filter RF profiles by device
+        serial number. All returned devices will have a serial number that contains
+        the search term or is an exact match.
     type: str
   model:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Model query parameter. Optional parameter to filter RF profiles by device model. All returned devices will have a model that contains
-        the search term or is an exact match.
+        Model query parameter. Optional parameter to filter RF profiles by device
+        model. All returned devices will have a model that contains the search term
+        or is an exact match.
     type: str
   macs:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Macs query parameter. Optional parameter to filter RF profiles by one or more device MAC addresses. All returned devices will have a MAC
-        address that is an exact match.
+        Macs query parameter. Optional parameter to filter RF profiles by one or more
+        device MAC addresses. All returned devices will have a MAC address that is
+        an exact match.
     elements: str
     type: list
   serials:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Serials query parameter. Optional parameter to filter RF profiles by one or more device serial numbers. All returned devices will have
-        a serial number that is an exact match.
+        Serials query parameter. Optional parameter to filter RF profiles by one or
+        more device serial numbers. All returned devices will have a serial number
+        that is an exact match.
     elements: str
     type: list
   models:
     description:
+      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
-        Models query parameter. Optional parameter to filter RF profiles by one or more device models. All returned devices will have a model
-        that is an exact match.
+        Models query parameter. Optional parameter to filter RF profiles by one or
+        more device models. All returned devices will have a model that is an exact
+        match.
     elements: str
     type: list
 requirements:
@@ -103,7 +131,8 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessRfProfilesAssignmentsByDevice
-    description: Complete reference of the getOrganizationWirelessRfProfilesAssignmentsByDevice API.
+    description: Complete reference of the getOrganizationWirelessRfProfilesAssignmentsByDevice
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-rf-profiles-assignments-by-device
 notes:
   - SDK Method used are
@@ -164,25 +193,25 @@ meraki_response:
       {
         "items": [
           {
-            "model": "string",
-            "name": "string",
             "network": {
               "id": "string"
             },
+            "name": "string",
+            "serial": "string",
+            "model": "string",
             "rfProfile": {
               "id": "string",
+              "name": "string",
               "isIndoorDefault": true,
-              "isOutdoorDefault": true,
-              "name": "string"
-            },
-            "serial": "string"
+              "isOutdoorDefault": true
+            }
           }
         ],
         "meta": {
           "counts": {
             "items": {
-              "remaining": 0,
-              "total": 0
+              "total": 0,
+              "remaining": 0
             }
           }
         }

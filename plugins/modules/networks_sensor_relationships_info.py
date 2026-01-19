@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: networks_sensor_relationships_info
 short_description: Information module for networks _sensor _relationships
 description:
+  - Information module for Networks Sensor Relationships Info.
   - Get all networks _sensor _relationships.
   - List the sensor roles for devices in a given network.
 version_added: '1.0.0'
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Sensor Relationships Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -74,15 +76,15 @@ meraki_response:
       {
         "device": {
           "name": "string",
-          "productType": "string",
-          "serial": "string"
+          "serial": "string",
+          "productType": "string"
         },
         "relationships": {
           "livestream": {
             "relatedDevices": [
               {
-                "productType": "string",
-                "serial": "string"
+                "serial": "string",
+                "productType": "string"
               }
             ]
           }

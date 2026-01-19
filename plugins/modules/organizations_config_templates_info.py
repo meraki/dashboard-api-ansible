@@ -6,10 +6,11 @@
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_info
-short_description: Information module for organizations _config _templates
+short_description: Information module for organizations _configtemplates
 description:
-  - Get all organizations _config _templates.
-  - Get organizations _config _templates by id.
+  - Information module for Organizations Configtemplates Info.
+  - Get all organizations _configtemplates.
+  - Get organizations _configtemplates by id.
   - List the configuration templates for this organization.
   - Return a single configuration template.
 version_added: '1.0.0'
@@ -22,10 +23,12 @@ options:
     type: dict
   organizationId:
     description:
+      - Information module for Organizations Configtemplates Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   configTemplateId:
     description:
+      - Information module for Organizations Configtemplates Info.
       - ConfigTemplateId path parameter. Config template ID.
     type: str
 requirements:
@@ -48,7 +51,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _config _templates
+- name: Get all organizations _configtemplates
   cisco.meraki.organizations_config_templates_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,7 +76,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _config _templates by id
+- name: Get organizations _configtemplates by id
   cisco.meraki.organizations_config_templates_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

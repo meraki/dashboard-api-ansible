@@ -8,6 +8,7 @@ DOCUMENTATION = r"""
 module: devices_sensor_commands_info
 short_description: Information module for devices _sensor _commands
 description:
+  - Information module for Devices Sensor Commands Info.
   - Get all devices _sensor _commands.
   - Get devices _sensor _commands by id.
   - Returns a historical log of all commands.
@@ -23,54 +24,74 @@ options:
     type: dict
   serial:
     description:
+      - Information module for Devices Sensor Commands Info.
       - Serial path parameter.
     type: str
   operations:
     description:
+      - Information module for Devices Sensor Commands Info.
       - >
-        Operations query parameter. Optional parameter to filter commands by operation. Allowed values are disableDownstreamPower, enableDownstreamPower,
-        cycleDownstreamPower, and refreshData.
+        Operations query parameter. Optional parameter to filter commands by operation.
+        Allowed values are disableDownstreamPower, enableDownstreamPower, cycleDownstreamPower,
+        and refreshData.
     elements: str
     type: list
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+      - Information module for Devices Sensor Commands Info.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 10.
     type: int
   startingAfter:
     description:
+      - Information module for Devices Sensor Commands Info.
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it
-        is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page
-        in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
+      - Information module for Devices Sensor Commands Info.
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is
-        not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in
-        the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   sortOrder:
     description:
+      - Information module for Devices Sensor Commands Info.
       - >
-        SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'descending'.
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'descending'.
     type: str
   t0:
     description:
-      - T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
+      - Information module for Devices Sensor Commands Info.
+      - T0 query parameter. The beginning of the timespan for the data. The maximum
+        lookback period is 30 days from today.
     type: str
   t1:
     description:
-      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 30 days after t0.
+      - Information module for Devices Sensor Commands Info.
+      - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
+        of 30 days after t0.
     type: str
   timespan:
     description:
+      - Information module for Devices Sensor Commands Info.
       - >
-        Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0
-        and t1. The value must be in seconds and be less than or equal to 30 days. The default is 30 days.
+        Timespan query parameter. The timespan for which the information will be fetched.
+        If specifying timespan, do not specify parameters t0 and t1. The value must
+        be in seconds and be less than or equal to 30 days. The default is 30 days.
     type: float
   commandId:
     description:
+      - Information module for Devices Sensor Commands Info.
       - CommandId path parameter. Command ID.
     type: str
 requirements:
@@ -163,17 +184,17 @@ meraki_response:
   sample: >
     {
       "commandId": "string",
-      "completedAt": "string",
       "createdAt": "string",
+      "completedAt": "string",
       "createdBy": {
         "adminId": "string",
-        "email": "string",
-        "name": "string"
+        "name": "string",
+        "email": "string"
       },
+      "operation": "string",
+      "status": "string",
       "errors": [
         "string"
-      ],
-      "operation": "string",
-      "status": "string"
+      ]
     }
 """

@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -34,6 +34,7 @@ argument_spec.update(dict(
     organizationIds=dict(type="list"),
     statuses=dict(type="list"),
     productTypes=dict(type="list"),
+    skus=dict(type="list"),
     name=dict(type="str"),
     startDate=dict(type="str"),
     endDate=dict(type="str"),
@@ -100,6 +101,9 @@ class ActionModule(ActionBase):
         if params.get("productTypes") is not None:
             new_object["productTypes"] = params.get(
                 "productTypes")
+        if params.get("skus") is not None:
+            new_object["skus"] = params.get(
+                "skus")
         if params.get("name") is not None:
             new_object["name"] = params.get(
                 "name")

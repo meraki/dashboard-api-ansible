@@ -6,9 +6,10 @@
 
 DOCUMENTATION = r"""
 module: networks_switch_access_control_lists_info
-short_description: Information module for networks _switch _access _control _lists
+short_description: Information module for networks _switch _accesscontrollists
 description:
-  - Get all networks _switch _access _control _lists.
+  - Information module for Networks Switch Accesscontrollists Info.
+  - Get all networks _switch _accesscontrollists.
   - Return the access control lists for a MS network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,6 +21,7 @@ options:
     type: dict
   networkId:
     description:
+      - Information module for Networks Switch Accesscontrollists Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -37,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _access _control _lists
+- name: Get all networks _switch _accesscontrollists
   cisco.meraki.networks_switch_access_control_lists_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -73,13 +75,13 @@ meraki_response:
     [
       {
         "comment": "string",
-        "dstCidr": "string",
-        "dstPort": "string",
-        "ipVersion": "string",
         "policy": "string",
+        "ipVersion": "string",
         "protocol": "string",
         "srcCidr": "string",
         "srcPort": "string",
+        "dstCidr": "string",
+        "dstPort": "string",
         "vlan": "string"
       }
     ]
