@@ -155,9 +155,9 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
                     name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
-            result = get_dict_result(items, 'name', name)
+                if 'items' in items:
+                    items = items.get('items')
+            result = get_dict_result(items, 'description', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -191,7 +191,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
             "entry_id") or self.new_object.get("entryId")
-        name = self.new_object.get("name")
+        name = self.new_object.get("description")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)

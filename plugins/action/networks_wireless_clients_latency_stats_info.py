@@ -35,6 +35,7 @@ argument_spec.update(dict(
     apTag=dict(type="str"),
     vlan=dict(type="int"),
     fields=dict(type="str"),
+    vlan=dict(type="int"),
 ))
 
 required_if = []
@@ -73,6 +74,9 @@ class ActionModule(ActionBase):
 
     def get_all(self, params):
         new_object = {}
+        if params.get("vlan") is not None:
+            new_object["vlan"] = params.get(
+                "vlan")
         if params.get("networkId") is not None:
             new_object["networkId"] = params.get(
                 "networkId")

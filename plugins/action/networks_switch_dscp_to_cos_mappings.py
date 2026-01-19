@@ -80,10 +80,6 @@ class NetworksSwitchDscpToCosMappings(object):
                 function="getNetworkSwitchDscpToCosMappings",
                 params=self.get_all_params(name=name),
             )
-            if isinstance(items, dict):
-                if 'mappings' in items:
-                    items = items.get('mappings')
-            result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:

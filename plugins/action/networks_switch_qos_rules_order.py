@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -186,9 +186,23 @@ class NetworksSwitchQosRulesOrder(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'name', name)
-            if result is None:
-                result = items
+            for item in items:
+                if (item.get("vlan") == self.new_object.get("vlan") and
+                        item.get("protocol") == self.new_object.get("protocol") and
+                        item.get("srcPort") == self.new_object.get("srcPort") and
+                        item.get("dstPort") == self.new_object.get("dstPort") and
+                        item.get("srcPortRange") == self.new_object.get("srcPortRange") and
+                        item.get("dstPortRange") == self.new_object.get("dstPortRange")):
+                    result = item
+                    break
+        except Exception as e:
+            print("Error: ", e)
+            if id is not None:
+                print("Is NOT NONE")
+                result = get_dict_result(items, 'qosRuleId', id)
+            else:
+                # Validate if this
+                print("Is NONE")
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -241,6 +255,7 @@ class NetworksSwitchQosRulesOrder(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
+        current_obj["networkId"] = requested_obj.get("networkId") or None
 
         obj_params = [
             ("vlan", "vlan"),
@@ -256,7 +271,7 @@ class NetworksSwitchQosRulesOrder(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality(
+            not meraki_compare_equality2(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

@@ -65,8 +65,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            network_id=params.get("networkId"),
-            device_id=params.get("deviceId"),
+            networkId=params.get("networkId"),
+            deviceId=params.get("deviceId"),
         )
         return new_object
 

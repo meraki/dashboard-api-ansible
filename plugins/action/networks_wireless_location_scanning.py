@@ -28,6 +28,7 @@ argument_spec.update(dict(
     enabled=dict(type="bool"),
     api=dict(type="dict"),
     networkId=dict(type="str"),
+    ruleId=dict(type="str"),
 ))
 
 required_if = []
@@ -69,6 +70,7 @@ class ActionModule(ActionBase):
             enabled=params.get("enabled"),
             api=params.get("api"),
             network_id=params.get("networkId"),
+            ruleId=params.get("ruleId"),
         )
         return new_object
 

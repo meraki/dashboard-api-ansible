@@ -80,7 +80,7 @@ class ActionModule(ActionBase):
             notifyUser=params.get("notifyUser"),
             rebuildKernelCache=params.get("rebuildKernelCache"),
             requestRequiresNetworkTether=params.get("requestRequiresNetworkTether"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

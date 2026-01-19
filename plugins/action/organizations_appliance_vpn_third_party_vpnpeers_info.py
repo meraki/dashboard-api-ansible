@@ -82,7 +82,7 @@ class ActionModule(ActionBase):
 
         response = meraki.exec_meraki(
             family="appliance",
-            function='getOrganizationApplianceVpnThirdPartyVpnpeers',
+            function='getOrganizationApplianceVpnThirdPartyVPNPeers',
             params=self.get_all(self._task.args),
         )
         self._result.update(dict(meraki_response=response))

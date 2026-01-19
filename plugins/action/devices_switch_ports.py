@@ -264,7 +264,7 @@ class DevicesSwitchPorts(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'name', name)
+            result = get_dict_result(items, 'portId', name)
             if result is None:
                 result = items
         except Exception as e:

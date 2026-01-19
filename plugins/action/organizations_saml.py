@@ -86,8 +86,8 @@ class OrganizationsSaml(object):
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
+                if 'enabled' in items:
+                    items = items.get('enabled')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items

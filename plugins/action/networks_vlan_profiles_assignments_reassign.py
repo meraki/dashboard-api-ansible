@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             vlanProfile=params.get("vlanProfile"),
             serials=params.get("serials"),
             stackIds=params.get("stackIds"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

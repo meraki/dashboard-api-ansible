@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality,
+    meraki_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -218,7 +218,7 @@ class OrganizationsLoginSecurity(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality(
+            not meraki_compare_equality2(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             licenseId=params.get("licenseId"),
             networkId=params.get("networkId"),
             seatCount=params.get("seatCount"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
         return new_object
 
