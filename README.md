@@ -75,6 +75,12 @@ Other versions of this collection have support for previous Cisco Meraki version
 1. The "Python `meraki` SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
 2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
 
+## Support
+
+This section should include information about what is supported and how to get support for the collection. This can include supported versions of the collection, how to submit a support request, and any other information about how to get additional assistance. We recommend the following text for certified content only:
+
+As Red Hat Ansible Certified Content, this collection is entitled to support through the Ansible Automation Platform (AAP) using the **Create issue** button on the top right corner. If a support case cannot be opened with Red Hat and the collection has been obtained either from Galaxy or GitHub, there may community help available on the [Ansible Forum](https://forum.ansible.com/).
+
 ## Requirements
 - Ansible >= 2.9
 - [Python Meraki SDK](https://github.com/meraki/dashboard-api-python) v1.33.0 or newer
@@ -112,11 +118,12 @@ This collection follows the Ansible project's
 [Code of Conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html).
 Please read and familiarize yourself with this document.
 
-## Releasing, Versioning and Deprecation
+## Releasing, Versioning and Deprecation - [Changelog](CHANGELOG.rst)
 
 This collection follows [Semantic Versioning](https://semver.org/). More details on versioning can be found [in the Ansible docs](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html#collection-versions).
 
 New minor and major releases as well as deprecations will follow new releases and deprecations of the Cisco Meraki product, its REST API and the corresponding Python SDK, which this project relies on. 
+
 
 
 ## New collection modules
@@ -132,7 +139,7 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
       state: present
       org_name: YourOrg
       net_name: YourNet
-      name: Test_Hook
+      name: Test_Hookx
       url: https://webhook.url/
       shared_secret: shhhdonttellanyone
       payload_template_name: 'Slack (included)'
