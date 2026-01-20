@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.22.0
+=======
+
+Minor Changes
+-------------
+
+- Updated with v1.66.0 dashboard API, adding new plugins and fixing bugs.
+
 v2.21.9
 =======
 
