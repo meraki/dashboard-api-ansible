@@ -4,6 +4,14 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.22.1
+=======
+
+Bugfixes
+--------
+
+- Fix parameter naming in organizations_inventory_claim.py to use camelCase for consistency with existing code.
+
 v2.22.0
 =======
 
