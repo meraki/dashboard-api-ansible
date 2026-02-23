@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             orders=params.get("orders"),
             serials=params.get("serials"),
             licenses=params.get("licenses"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
         return new_object
 

@@ -1321,3 +1321,8 @@ releases:
       minor_changes:
         - "Updated with v1.66.0 dashboard API, adding new plugins and fixing bugs."
     release_date: "2026-01-19"
+  2.22.1:
+    changes:
+      bugfixes:
+        - "Fix parameter naming in organizations_inventory_claim.py to use camelCase for consistency with existing code."
+    release_date: "2026-02-23"
