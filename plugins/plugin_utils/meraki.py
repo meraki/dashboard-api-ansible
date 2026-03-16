@@ -138,7 +138,7 @@ def compare_list(list1, list2):
 
 
 def fn_comp_key(k, dict1, dict2):
-    return meraki_compare_equality(dict1.get(k), dict2.get(k))
+    return meraki_compare_equality2(dict1.get(k), dict2.get(k))
 
 
 def meraki_compare_equality(current_value, requested_value):
@@ -146,9 +146,15 @@ def meraki_compare_equality(current_value, requested_value):
     if requested_value is None:
         return True
     if current_value is None:
-        if requested_value is not None:
+        # Treat missing API fields as empty versions of the requested type
+        if isinstance(requested_value, str):
+            return "" == requested_value
+        elif isinstance(requested_value, list):
+            return compare_list([], requested_value)
+        elif isinstance(requested_value, dict):
+            return len(requested_value) == 0
+        else:
             return False
-        return True
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
             list(requested_value.keys())
@@ -168,8 +174,15 @@ def meraki_compare_equality2(current_value, requested_value):
         # print("requested_value is None", True)
         return True
     if current_value is None:
-        # print("current_value", True)
-        return True
+        # Treat missing API fields as empty versions of the requested type
+        if isinstance(requested_value, str):
+            return "" == requested_value
+        elif isinstance(requested_value, list):
+            return compare_list([], requested_value)
+        elif isinstance(requested_value, dict):
+            return len(requested_value) == 0
+        else:
+            return False
     if isinstance(current_value, dict) and isinstance(requested_value, dict):
         all_dict_params = list(current_value.keys()) + \
             list(requested_value.keys())
