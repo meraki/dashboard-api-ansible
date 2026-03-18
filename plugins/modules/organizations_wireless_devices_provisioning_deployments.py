@@ -202,43 +202,43 @@ EXAMPLES = r"""
     state: present
 
     items:
-    - completedAt: '2018-02-11T00:00:00.090210Z'
-      createdAt: '2018-02-11T00:00:00.090210Z'
-      deploymentId: '1284392014819'
-      devices:
-        new:
-          mac: 00:11:22:33:44:55
-          model: CW9166I
-          name: My AP
-          rfProfile:
-            id: '1284392014819'
-            name: RF Profile Name
-          serial: Q234-ABCD-5678
-          tags:
-          - tag1
-          - tag2
-        old:
-          afterAction: unclaim
-          mac: 00:11:22:33:44:55
-          model: MR34
-          name: My AP
-          rfProfile:
-            id: '1284392014819'
-            name: RF Profile Name
-          serial: Q234-ABCD-5678
-          tags:
-          - tag1
-          - tag2
-      errors:
-      - error message1
-      - error message2
-      lastUpdatedAt: '2018-02-11T00:00:00.090210Z'
-      network:
-        id: N_24329156
-        name: Main Office
-      requestedAt: '2018-02-11T00:00:00.090210Z'
-      status: ready
-      type: replace
+      - completedAt: "2018-02-11T00:00:00.090210Z"
+        createdAt: "2018-02-11T00:00:00.090210Z"
+        deploymentId: "1284392014819"
+        devices:
+          new:
+            mac: 00:11:22:33:44:55
+            model: CW9166I
+            name: My AP
+            rfProfile:
+              id: "1284392014819"
+              name: RF Profile Name
+            serial: Q234-ABCD-5678
+            tags:
+              - tag1
+              - tag2
+          old:
+            afterAction: unclaim
+            mac: 00:11:22:33:44:55
+            model: MR34
+            name: My AP
+            rfProfile:
+              id: "1284392014819"
+              name: RF Profile Name
+            serial: Q234-ABCD-5678
+            tags:
+              - tag1
+              - tag2
+        errors:
+          - error message1
+          - error message2
+        lastUpdatedAt: "2018-02-11T00:00:00.090210Z"
+        network:
+          id: N_24329156
+          name: Main Office
+        requestedAt: "2018-02-11T00:00:00.090210Z"
+        status: ready
+        type: replace
     meta:
       counts:
         items:
@@ -272,43 +272,43 @@ EXAMPLES = r"""
     state: present
 
     items:
-    - completedAt: '2018-02-11T00:00:00.090210Z'
-      createdAt: '2018-02-11T00:00:00.090210Z'
-      deploymentId: '1284392014819'
-      devices:
-        new:
-          mac: 00:11:22:33:44:55
-          model: CW9166I
-          name: My AP
-          rfProfile:
-            id: '1284392014819'
-            name: RF Profile Name
-          serial: Q234-ABCD-5678
-          tags:
-          - tag1
-          - tag2
-        old:
-          afterAction: unclaim
-          mac: 00:11:22:33:44:55
-          model: MR34
-          name: My AP
-          rfProfile:
-            id: '1284392014819'
-            name: RF Profile Name
-          serial: Q234-ABCD-5678
-          tags:
-          - tag1
-          - tag2
-      errors:
-      - error message1
-      - error message2
-      lastUpdatedAt: '2018-02-11T00:00:00.090210Z'
-      network:
-        id: N_24329156
-        name: Main Office
-      requestedAt: '2018-02-11T00:00:00.090210Z'
-      status: ready
-      type: replace
+      - completedAt: "2018-02-11T00:00:00.090210Z"
+        createdAt: "2018-02-11T00:00:00.090210Z"
+        deploymentId: "1284392014819"
+        devices:
+          new:
+            mac: 00:11:22:33:44:55
+            model: CW9166I
+            name: My AP
+            rfProfile:
+              id: "1284392014819"
+              name: RF Profile Name
+            serial: Q234-ABCD-5678
+            tags:
+              - tag1
+              - tag2
+          old:
+            afterAction: unclaim
+            mac: 00:11:22:33:44:55
+            model: MR34
+            name: My AP
+            rfProfile:
+              id: "1284392014819"
+              name: RF Profile Name
+            serial: Q234-ABCD-5678
+            tags:
+              - tag1
+              - tag2
+        errors:
+          - error message1
+          - error message2
+        lastUpdatedAt: "2018-02-11T00:00:00.090210Z"
+        network:
+          id: N_24329156
+          name: Main Office
+        requestedAt: "2018-02-11T00:00:00.090210Z"
+        status: ready
+        type: replace
     meta:
       counts:
         items:
@@ -343,7 +343,6 @@ EXAMPLES = r"""
 
     deploymentId: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

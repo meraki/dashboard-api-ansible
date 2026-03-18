@@ -132,7 +132,6 @@ EXAMPLES = r"""
     fra:
       enabled: false
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

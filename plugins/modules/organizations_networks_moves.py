@@ -90,7 +90,6 @@ EXAMPLES = r"""
       target:
         id: '146308'
     simulate: false
-
 """
 RETURN = r"""
 meraki_response:

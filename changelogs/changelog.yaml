@@ -1329,8 +1329,7 @@ releases:
   2.23.0:
     changes:
       minor_changes:
-        - "Added new modules and action plugins for Cisco Umbrella account connect/disconnect, Wireless AutoRF (RRM) settings, third-party VPN peers, 
-          organization integrations, inventory EoX overview, network moves, SASE eligible networks, and wireless device provisioning deployments."
+        - "Added new modules and action plugins for Cisco Umbrella account connect/disconnect, Wireless AutoRF (RRM) settings, third-party VPN peers, organization integrations, inventory EoX overview, network moves, SASE eligible networks, and wireless device provisioning deployments."
         - "networks_wireless_settings: added multicast-to-unicast conversion support."
         - "organizations_inventory_devices_info: added eoxStatuses filtering and included EoX fields in returned inventory device data."
     release_date: "2026-03-18"

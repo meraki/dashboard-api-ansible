@@ -285,72 +285,71 @@ EXAMPLES = r"""
 
     organizationId: string
     peers:
-    - ebgpNeighbor:
-        ebgpHoldTimer: 180
-        ebgpMultihop: 2
-        ipVersion: 4
-        multiExitDiscriminator: 1
-        neighborIp: 10.10.10.22
-        pathPrepend:
-        - 1
-        - 2
-        remoteAsNumber: 64343
-        sourceIp: 10.10.10.22
-        weight: 10
-      ecmpUplinkConfigs:
       - ebgpNeighbor:
-          neighborIp: 169.254.10.2
-          sourceIp: 169.254.10.1
-        id: '7890'
+          ebgpHoldTimer: 180
+          ebgpMultihop: 2
+          ipVersion: 4
+          multiExitDiscriminator: 1
+          neighborIp: 10.10.10.22
+          pathPrepend:
+            - 1
+            - 2
+          remoteAsNumber: 64343
+          sourceIp: 10.10.10.22
+          weight: 10
+        ecmpUplinkConfigs:
+          - ebgpNeighbor:
+              neighborIp: 169.254.10.2
+              sourceIp: 169.254.10.1
+            id: "7890"
+            privateSubnets:
+              - 169.254.10.0/30
+            wan: WAN 1
+        group:
+          activeActiveTunnel: true
+          failover:
+            directToInternet: true
+          number: 1
+        ikeVersion: "2"
+        ipsecPolicies:
+          childAuthAlgo:
+            - sha1
+          childCipherAlgo:
+            - aes128
+          childLifetime: 28800
+          childPfsGroup:
+            - disabled
+          ikeAuthAlgo:
+            - sha1
+          ikeCipherAlgo:
+            - tripledes
+          ikeDiffieHellmanGroup:
+            - group2
+          ikeLifetime: 28800
+          ikePrfAlgo:
+            - prfsha1
+        ipsecPoliciesPreset: default
+        isRouteBased: true
+        localId: myMXId@meraki.com
+        name: Peer Name
+        network:
+          ids:
+            - N_1
+            - L_2
+            - N_3
+        networkTags:
+          - none
+        peerId: "1234"
+        priorityInGroup: 1
         privateSubnets:
-        - 169.254.10.0/30
-        wan: WAN 1
-      group:
-        activeActiveTunnel: true
-        failover:
-          directToInternet: true
-        number: 1
-      ikeVersion: '2'
-      ipsecPolicies:
-        childAuthAlgo:
-        - sha1
-        childCipherAlgo:
-        - aes128
-        childLifetime: 28800
-        childPfsGroup:
-        - disabled
-        ikeAuthAlgo:
-        - sha1
-        ikeCipherAlgo:
-        - tripledes
-        ikeDiffieHellmanGroup:
-        - group2
-        ikeLifetime: 28800
-        ikePrfAlgo:
-        - prfsha1
-      ipsecPoliciesPreset: default
-      isRouteBased: true
-      localId: myMXId@meraki.com
-      name: Peer Name
-      network:
-        ids:
-        - N_1
-        - L_2
-        - N_3
-      networkTags:
-      - none
-      peerId: '1234'
-      priorityInGroup: 1
-      privateSubnets:
-      - 192.168.1.0/24
-      - 192.168.128.0/24
-      publicHostname: example.com
-      publicIp: 123.123.123.1
-      remoteId: miles@meraki.com
-      secret: Sample Password
-      slaPolicy:
-        id: '1234'
-
+          - 192.168.1.0/24
+          - 192.168.128.0/24
+        publicHostname: example.com
+        publicIp: 123.123.123.1
+        remoteId: miles@meraki.com
+        secret: Sample Password
+        slaPolicy:
+          id: "1234"
 """
 RETURN = r"""
 meraki_response:

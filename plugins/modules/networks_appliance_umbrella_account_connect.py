@@ -72,7 +72,6 @@ EXAMPLES = r"""
       key: str
       secret: str
     networkId: string
-
 """
 RETURN = r"""
 meraki_response:

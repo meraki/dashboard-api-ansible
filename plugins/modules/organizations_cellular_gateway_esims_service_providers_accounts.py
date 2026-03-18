@@ -155,7 +155,6 @@ EXAMPLES = r"""
 
     accountId: string
     organizationId: string
-
 """
 RETURN = r"""
 meraki_response:

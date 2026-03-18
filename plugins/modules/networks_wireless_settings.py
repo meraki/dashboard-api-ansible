@@ -114,7 +114,6 @@ EXAMPLES = r"""
         enabled: true
     networkId: string
     upgradeStrategy: minimizeUpgradeTime
-
 """
 RETURN = r"""
 meraki_response:
