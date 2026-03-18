@@ -6,11 +6,9 @@
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts
-short_description: Resource module for organizations _cellular _gateway _esims _service
-  _providers _accounts
+short_description: Resource module for organizations _cellular _gateway _esims _service _providers _accounts
 description:
-  - Manage operations create, update and delete of the resource organizations _cellular
-    _gateway _esims _service _providers _accounts.
+  - Manage operations create, update and delete of the resource organizations _cellular _gateway _esims _service _providers _accounts.
   - Add a service provider account.
   - Remove a service provider account's integration with the Dashboard.
   - Edit service provider account info stored in Meraki's database.
@@ -46,22 +44,20 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for cellularGateway createOrganizationCellularGatewayEsimsServiceProvidersAccount
-    description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount
-      API.
+    description: Complete reference of the createOrganizationCellularGatewayEsimsServiceProvidersAccount API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-cellular-gateway-esims-service-providers-account
   - name: Cisco Meraki documentation for cellularGateway deleteOrganizationCellularGatewayEsimsServiceProvidersAccount
-    description: Complete reference of the deleteOrganizationCellularGatewayEsimsServiceProvidersAccount
-      API.
+    description: Complete reference of the deleteOrganizationCellularGatewayEsimsServiceProvidersAccount API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-cellular-gateway-esims-service-providers-account
   - name: Cisco Meraki documentation for cellularGateway updateOrganizationCellularGatewayEsimsServiceProvidersAccount
-    description: Complete reference of the updateOrganizationCellularGatewayEsimsServiceProvidersAccount
-      API.
+    description: Complete reference of the updateOrganizationCellularGatewayEsimsServiceProvidersAccount API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-cellular-gateway-esims-service-providers-account
 notes:
   - SDK Method used are
     cellular_gateway.CellularGateway.create_organization_cellular_gateway_esims_service_providers_account,
     cellular_gateway.CellularGateway.delete_organization_cellular_gateway_esims_service_providers_account,
     cellular_gateway.CellularGateway.update_organization_cellular_gateway_esims_service_providers_account,
+
   - Paths used are
     post /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts,
     delete /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts/{accountId},
@@ -93,6 +89,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+
     accountId: 0987654321
     apiKey: foobarfoobarfoobarfoobarfoobarfoobar
     organizationId: string
@@ -100,6 +97,7 @@ EXAMPLES = r"""
       name: ATT
     title: My AT&T account
     username: MerakiUser
+
 - name: Update by id
   cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -124,10 +122,12 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+
     accountId: string
     apiKey: foobarfoobarfoobarfoobarfoobarfoobar
     organizationId: string
     title: My AT&T account
+
 - name: Delete by id
   cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -152,8 +152,10 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: absent
+
     accountId: string
     organizationId: string
+
 """
 RETURN = r"""
 meraki_response:

@@ -31,80 +31,44 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    meshingEnabled=dict(type="bool"),
-    ipv6BridgeEnabled=dict(type="bool"),
-    locationAnalyticsEnabled=dict(type="bool"),
-    upgradeStrategy=dict(type="str"),
-    ledLightsOn=dict(type="bool"),
-    multicastToUnicastConversion=dict(type="dict"),
-    namedVlans=dict(type="dict"),
-    networkId=dict(type="str"),
+    peers=dict(type="list"),
+    organizationId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["networkId"], True),
+    ("state", "present", ["organizationId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class NetworksWirelessSettings(object):
+class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            meshingEnabled=params.get("meshingEnabled"),
-            ipv6BridgeEnabled=params.get("ipv6BridgeEnabled"),
-            locationAnalyticsEnabled=params.get("locationAnalyticsEnabled"),
-            upgradeStrategy=params.get("upgradeStrategy"),
-            ledLightsOn=params.get("ledLightsOn"),
-            multicastToUnicastConversion=params.get("multicastToUnicastConversion"),
-            namedVlans=params.get("namedVlans"),
-            network_id=params.get("networkId"),
+            peers=params.get("peers"),
+            organization_id=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get(
-                'network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get(
-                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('meshingEnabled') is not None or self.new_object.get(
-                'meshing_enabled') is not None:
-            new_object_params['meshingEnabled'] = self.new_object.get(
-                'meshingEnabled')
-        if self.new_object.get('ipv6BridgeEnabled') is not None or self.new_object.get(
-                'ipv6_bridge_enabled') is not None:
-            new_object_params['ipv6BridgeEnabled'] = self.new_object.get(
-                'ipv6BridgeEnabled')
-        if self.new_object.get('locationAnalyticsEnabled') is not None or self.new_object.get(
-                'location_analytics_enabled') is not None:
-            new_object_params['locationAnalyticsEnabled'] = self.new_object.get(
-                'locationAnalyticsEnabled')
-        if self.new_object.get('upgradeStrategy') is not None or self.new_object.get(
-                'upgrade_strategy') is not None:
-            new_object_params['upgradeStrategy'] = self.new_object.get(
-                'upgradeStrategy') or self.new_object.get('upgrade_strategy')
-        if self.new_object.get('ledLightsOn') is not None or self.new_object.get(
-                'led_lights_on') is not None:
-            new_object_params['ledLightsOn'] = self.new_object.get(
-                'ledLightsOn')
-        if self.new_object.get('multicastToUnicastConversion') is not None or self.new_object.get(
-                'multicast_to_unicast_conversion') is not None:
-            new_object_params['multicastToUnicastConversion'] = self.new_object.get(
-                'multicastToUnicastConversion') or self.new_object.get('multicast_to_unicast_conversion')
-        if self.new_object.get('namedVlans') is not None or self.new_object.get(
-                'named_vlans') is not None:
-            new_object_params['namedVlans'] = self.new_object.get(
-                'namedVlans') or self.new_object.get('named_vlans')
-        if self.new_object.get('networkId') is not None or self.new_object.get(
-                'network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get(
-                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('peers') is not None or self.new_object.get(
+                'peers') is not None:
+            new_object_params['peers'] = self.new_object.get('peers') or \
+                self.new_object.get('peers')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -112,13 +76,13 @@ class NetworksWirelessSettings(object):
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(
-                family="wireless",
-                function="getNetworkWirelessSettings",
+                family="appliance",
+                function="getOrganizationApplianceVpnThirdPartyVpnpeers",
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
+                if 'peers' in items:
+                    items = items.get('peers')
             result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
@@ -136,8 +100,7 @@ class NetworksWirelessSettings(object):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get(
-            "networkId") or self.new_object.get("network_id")
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -159,14 +122,8 @@ class NetworksWirelessSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("meshingEnabled", "meshingEnabled"),
-            ("ipv6BridgeEnabled", "ipv6BridgeEnabled"),
-            ("locationAnalyticsEnabled", "locationAnalyticsEnabled"),
-            ("upgradeStrategy", "upgradeStrategy"),
-            ("ledLightsOn", "ledLightsOn"),
-            ("multicastToUnicastConversion", "multicastToUnicastConversion"),
-            ("namedVlans", "namedVlans"),
-            ("networkId", "networkId"),
+            ("peers", "peers"),
+            ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -182,8 +139,8 @@ class NetworksWirelessSettings(object):
         name = self.new_object.get("name")
         result = None
         result = self.meraki.exec_meraki(
-            family="wireless",
-            function="updateNetworkWirelessSettings",
+            family="appliance",
+            function="updateOrganizationApplianceVpnThirdPartyVpnpeers",
             params=self.update_all_params(),
             op_modifies=True,
         )
@@ -225,7 +182,8 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = NetworksWirelessSettings(self._task.args, meraki)
+        obj = OrganizationsApplianceVpnThirdPartyVpnpeers(
+            self._task.args, meraki)
 
         state = self._task.args.get("state")
 

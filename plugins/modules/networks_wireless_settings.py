@@ -16,8 +16,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   ipv6BridgeEnabled:
-    description: Toggle for enabling or disabling IPv6 bridging in a network (Note
-      if enabled, SSIDs must also be configured to use bridge mode).
+    description: Toggle for enabling or disabling IPv6 bridging in a network (Note if
+      enabled, SSIDs must also be configured to use bridge mode).
     type: bool
   ledLightsOn:
     description: Toggle for enabling or disabling LED lights on all APs in the network
@@ -29,6 +29,14 @@ options:
   meshingEnabled:
     description: Toggle for enabling or disabling meshing in a network.
     type: bool
+  multicastToUnicastConversion:
+    description: Multicast-to-unicast conversion settings across the network.
+    suboptions:
+      enabled:
+        description: Toggle for enabling or disabling multicast-to-unicast conversion
+          across the network.
+        type: bool
+    type: dict
   namedVlans:
     description: Named VLAN settings for wireless networks.
     suboptions:
@@ -50,8 +58,8 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   upgradeStrategy:
-    description: The default strategy that network devices will use to perform an
-      upgrade. Requires firmware version MR 26.8 or higher.
+    description: The default strategy that network devices will use to perform an upgrade.
+      Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -63,6 +71,7 @@ seealso:
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_settings,
+
   - Paths used are
     put /networks/{networkId}/wireless/settings,
 """
@@ -92,16 +101,20 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+
     ipv6BridgeEnabled: false
     ledLightsOn: false
     locationAnalyticsEnabled: false
     meshingEnabled: true
+    multicastToUnicastConversion:
+      enabled: true
     namedVlans:
       poolDhcpMonitoring:
         duration: 5
         enabled: true
     networkId: string
     upgradeStrategy: minimizeUpgradeTime
+
 """
 RETURN = r"""
 meraki_response:
@@ -115,6 +128,9 @@ meraki_response:
       "locationAnalyticsEnabled": true,
       "upgradeStrategy": "string",
       "ledLightsOn": true,
+      "multicastToUnicastConversion": {
+        "enabled": true
+      },
       "namedVlans": {
         "poolDhcpMonitoring": {
           "enabled": true,
