@@ -5,7 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_appliance_vpn_third_party_vpnpeers
+module: organizations_appliance_vpn_third_party_vpn_peers
 short_description: Resource module for organizations _appliance _vpn _third _party _vpn _peers
 description:
   - Manage operation update of the resource organizations _appliance _vpn _third _party _vpn _peers.
@@ -251,7 +251,7 @@ seealso:
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-third-party-vpn-peers
 notes:
   - SDK Method used are
-    appliance.Appliance.update_organization_appliance_vpn_third_party_vpnpeers,
+    appliance.Appliance.update_organization_appliance_vpn_third_party_vpn_peers,
 
   - Paths used are
     put /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
@@ -259,7 +259,7 @@ notes:
 
 EXAMPLES = r"""
 - name: Update all
-  cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
+  cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
