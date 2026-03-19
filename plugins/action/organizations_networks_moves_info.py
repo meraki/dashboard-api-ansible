@@ -31,18 +31,7 @@ argument_spec.update(dict(
     direction=dict(type="str"),
     startingAfter=dict(type="str"),
     endingBefore=dict(type="str"),
-    usedState=dict(type="str"),
-    search=dict(type="str"),
-    macs=dict(type="list"),
-    networkIds=dict(type="list"),
-    serials=dict(type="list"),
-    models=dict(type="list"),
-    orderNumbers=dict(type="list"),
-    tags=dict(type="list"),
-    tagsFilterType=dict(type="str"),
-    productTypes=dict(type="list"),
-    eoxStatuses=dict(type="list"),
-    serial=dict(type="str"),
+    moveIds=dict(type="list"),
 ))
 
 required_if = []
@@ -79,16 +68,6 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(self, params):
-        new_object = {}
-        if params.get("organizationId") is not None:
-            new_object["organizationId"] = params.get(
-                "organizationId")
-        if params.get("serial") is not None:
-            new_object["serial"] = params.get(
-                "serial")
-        return new_object
-
     def get_all(self, params):
         new_object = {}
         if params.get("organizationId") is not None:
@@ -107,39 +86,9 @@ class ActionModule(ActionBase):
         if params.get("endingBefore") is not None:
             new_object["endingBefore"] = params.get(
                 "endingBefore")
-        if params.get("usedState") is not None:
-            new_object["usedState"] = params.get(
-                "usedState")
-        if params.get("search") is not None:
-            new_object["search"] = params.get(
-                "search")
-        if params.get("macs") is not None:
-            new_object["macs"] = params.get(
-                "macs")
-        if params.get("networkIds") is not None:
-            new_object["networkIds"] = params.get(
-                "networkIds")
-        if params.get("serials") is not None:
-            new_object["serials"] = params.get(
-                "serials")
-        if params.get("models") is not None:
-            new_object["models"] = params.get(
-                "models")
-        if params.get("orderNumbers") is not None:
-            new_object["orderNumbers"] = params.get(
-                "orderNumbers")
-        if params.get("tags") is not None:
-            new_object["tags"] = params.get(
-                "tags")
-        if params.get("tagsFilterType") is not None:
-            new_object["tagsFilterType"] = params.get(
-                "tagsFilterType")
-        if params.get("productTypes") is not None:
-            new_object["productTypes"] = params.get(
-                "productTypes")
-        if params.get("eoxStatuses") is not None:
-            new_object["eoxStatuses"] = params.get(
-                "eoxStatuses")
+        if params.get("moveIds") is not None:
+            new_object["moveIds"] = params.get(
+                "moveIds")
 
         return new_object
 
@@ -153,22 +102,11 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        id = self._task.args.get("serial")
-        if id:
-            response = meraki.exec_meraki(
-                family="organizations",
-                function='getOrganizationInventoryDevice',
-                params=self.get_object(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
-        if not id:
-            response = meraki.exec_meraki(
-                family="organizations",
-                function='getOrganizationInventoryDevices',
-                params=self.get_all(self._task.args),
-            )
-            self._result.update(dict(meraki_response=response))
-            self._result.update(meraki.exit_json())
-            return self._result
+        response = meraki.exec_meraki(
+            family="organizations",
+            function='getNetworkMoves',
+            params=self.get_all(self._task.args),
+        )
+        self._result.update(dict(meraki_response=response))
+        self._result.update(meraki.exit_json())
+        return self._result

@@ -31,41 +31,61 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    accountId=dict(type="str"),
-    apiKey=dict(type="str"),
-    serviceProvider=dict(type="dict"),
-    title=dict(type="str"),
-    username=dict(type="str"),
+    items=dict(type="list"),
+    meta=dict(type="dict"),
     organizationId=dict(type="str"),
+    deploymentId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["accountId", "organizationId"], True),
-    ("state", "absent", ["accountId", "organizationId"], True),
+    ("state", "present", ["deploymentId", "organizationId"], True),
+    ("state", "absent", ["deploymentId", "organizationId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
+class OrganizationsWirelessDevicesProvisioningDeployments(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            accountId=params.get("accountId"),
-            apiKey=params.get("apiKey"),
-            serviceProvider=params.get("serviceProvider"),
-            title=params.get("title"),
-            username=params.get("username"),
+            items=params.get("items"),
+            meta=params.get("meta"),
             organizationId=params.get("organizationId"),
+            deploymentId=params.get("deploymentId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('accountIds') is not None or self.new_object.get(
-                'account_ids') is not None:
-            new_object_params['accountIds'] = self.new_object.get(
-                'accountIds') or self.new_object.get('account_ids')
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
+            new_object_params['perPage'] = self.new_object.get('perPage') or \
+                self.new_object.get('per_page')
+        new_object_params['total_pages'] = -1
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('search') is not None or self.new_object.get(
+                'search') is not None:
+            new_object_params['search'] = self.new_object.get('search')
+        if self.new_object.get('sortBy') is not None or self.new_object.get(
+                'sort_by') is not None:
+            new_object_params['sortBy'] = self.new_object.get('sortBy') or \
+                self.new_object.get('sort_by')
+        if self.new_object.get('sortOrder') is not None or self.new_object.get(
+                'sort_order') is not None:
+            new_object_params['sortOrder'] = self.new_object.get(
+                'sortOrder') or self.new_object.get('sort_order')
+        if self.new_object.get('deploymentType') is not None or self.new_object.get(
+                'deployment_type') is not None:
+            new_object_params['deploymentType'] = self.new_object.get(
+                'deploymentType') or self.new_object.get('deployment_type')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
@@ -74,26 +94,14 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('accountId') is not None or self.new_object.get(
-                'account_id') is not None:
-            new_object_params['accountId'] = self.new_object.get(
-                'accountId') or self.new_object.get('account_id')
-        if self.new_object.get('apiKey') is not None or self.new_object.get(
-                'api_key') is not None:
-            new_object_params['apiKey'] = self.new_object.get('apiKey') or \
-                self.new_object.get('api_key')
-        if self.new_object.get('serviceProvider') is not None or self.new_object.get(
-                'service_provider') is not None:
-            new_object_params['serviceProvider'] = self.new_object.get(
-                'serviceProvider') or self.new_object.get('service_provider')
-        if self.new_object.get('title') is not None or self.new_object.get(
-                'title') is not None:
-            new_object_params['title'] = self.new_object.get('title') or \
-                self.new_object.get('title')
-        if self.new_object.get('username') is not None or self.new_object.get(
-                'username') is not None:
-            new_object_params['username'] = self.new_object.get(
-                'username') or self.new_object.get('username')
+        if self.new_object.get('items') is not None or self.new_object.get(
+                'items') is not None:
+            new_object_params['items'] = self.new_object.get('items') or \
+                self.new_object.get('items')
+        if self.new_object.get('meta') is not None or self.new_object.get(
+                'meta') is not None:
+            new_object_params['meta'] = self.new_object.get('meta') or \
+                self.new_object.get('meta')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
@@ -106,30 +114,26 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
                 'organizationId') or self.new_object.get('organization_id')
-        if self.new_object.get('accountId') is not None or self.new_object.get(
-                'account_id') is not None:
-            new_object_params['accountId'] = self.new_object.get(
-                'accountId') or self.new_object.get('account_id')
+        if self.new_object.get('deploymentId') is not None or self.new_object.get(
+                'deployment_id') is not None:
+            new_object_params['deploymentId'] = self.new_object.get(
+                'deploymentId') or self.new_object.get('deployment_id')
         return new_object_params
 
-    def update_by_id_params(self):
+    def update_all_params(self):
         new_object_params = {}
-        if self.new_object.get('title') is not None or self.new_object.get(
-                'title') is not None:
-            new_object_params['title'] = self.new_object.get('title') or \
-                self.new_object.get('title')
-        if self.new_object.get('apiKey') is not None or self.new_object.get(
-                'api_key') is not None:
-            new_object_params['apiKey'] = self.new_object.get('apiKey') or \
-                self.new_object.get('api_key')
+        if self.new_object.get('items') is not None or self.new_object.get(
+                'items') is not None:
+            new_object_params['items'] = self.new_object.get('items') or \
+                self.new_object.get('items')
+        if self.new_object.get('meta') is not None or self.new_object.get(
+                'meta') is not None:
+            new_object_params['meta'] = self.new_object.get('meta') or \
+                self.new_object.get('meta')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
                 'organizationId') or self.new_object.get('organization_id')
-        if self.new_object.get('accountId') is not None or self.new_object.get(
-                'account_id') is not None:
-            new_object_params['accountId'] = self.new_object.get(
-                'accountId') or self.new_object.get('account_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -137,8 +141,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
-                function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
+                family="wireless",
+                function="getOrganizationWirelessDevicesProvisioningDeployments",
                 params=self.get_all_params(
                     name=name),
             )
@@ -158,8 +162,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         # NOTE: Does not have a get by id method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
-                function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
+                family="wireless",
+                function="getOrganizationWirelessDevicesProvisioningDeployments",
                 params=self.get_all_params(
                     id=id),
             )
@@ -178,7 +182,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         prev_obj = None
         o_id = self.new_object.get("id")
         o_id = o_id or self.new_object.get(
-            "account_id") or self.new_object.get("accountId")
+            "deployment_id") or self.new_object.get("deploymentId")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
@@ -188,13 +192,13 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
-            _id = _id or prev_obj.get("accountId")
+            _id = _id or prev_obj.get("deploymentId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
-                self.new_object.update(dict(accountId=_id))
+                self.new_object.update(dict(deploymentId=_id))
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -202,13 +206,10 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("accountId", "accountId"),
-            ("apiKey", "apiKey"),
-            ("serviceProvider", "serviceProvider"),
-            ("title", "title"),
-            ("username", "username"),
+            ("items", "items"),
+            ("meta", "meta"),
             ("organizationId", "organizationId"),
-            ("accountId", "accountId"),
+            ("deploymentId", "deploymentId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
@@ -221,8 +222,8 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
 
     def create(self):
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
-            function="createOrganizationCellularGatewayEsimsServiceProvidersAccount",
+            family="wireless",
+            function="createOrganizationWirelessDevicesProvisioningDeployment",
             params=self.create_params(),
             op_modifies=True,
         )
@@ -230,28 +231,19 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
 
     def update(self):
         id = self.new_object.get("id")
-        id = id or self.new_object.get("accountId")
         name = self.new_object.get("name")
         result = None
-        if not id:
-            prev_obj_name = self.get_object_by_name(name)
-            id_ = None
-            if prev_obj_name:
-                id_ = prev_obj_name.get("id")
-                id_ = id_ or prev_obj_name.get("accountId")
-            if id_:
-                self.new_object.update(dict(accountId=id_))
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
-            function="updateOrganizationCellularGatewayEsimsServiceProvidersAccount",
-            params=self.update_by_id_params(),
+            family="wireless",
+            function="updateOrganizationWirelessDevicesProvisioningDeployments",
+            params=self.update_all_params(),
             op_modifies=True,
         )
         return result
 
     def delete(self):
         id = self.new_object.get("id")
-        id = id or self.new_object.get("accountId")
+        id = id or self.new_object.get("deploymentId")
         name = self.new_object.get("name")
         result = None
         if not id:
@@ -259,12 +251,12 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             id_ = None
             if prev_obj_name:
                 id_ = prev_obj_name.get("id")
-                id_ = id_ or prev_obj_name.get("accountId")
+                id_ = id_ or prev_obj_name.get("deploymentId")
             if id_:
-                self.new_object.update(dict(accountId=id_))
+                self.new_object.update(dict(deploymentId=id_))
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
-            function="deleteOrganizationCellularGatewayEsimsServiceProvidersAccount",
+            family="wireless",
+            function="deleteOrganizationWirelessDevicesProvisioningDeployment",
             params=self.delete_by_id_params(),
         )
         return result
@@ -305,7 +297,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsCellularGatewayEsimsServiceProvidersAccounts(
+        obj = OrganizationsWirelessDevicesProvisioningDeployments(
             self._task.args, meraki)
 
         state = self._task.args.get("state")
