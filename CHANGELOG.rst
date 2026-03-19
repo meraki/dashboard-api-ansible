@@ -3,6 +3,15 @@ Cisco.Meraki Release Notes
 ==========================
 
 .. contents:: Topics
+v2.23.0
+=======
+
+Minor Changes
+-------------
+
+- Added new modules and action plugins for Cisco Umbrella account connect/disconnect, Wireless AutoRF (RRM) settings, third-party VPN peers, organization integrations, inventory EoX overview, network moves, SASE eligible networks, and wireless device provisioning deployments.
+- networks_wireless_settings: added multicast-to-unicast conversion support.
+- organizations_inventory_devices_info: added eoxStatuses filtering and included EoX fields in returned inventory device data.
 
 v2.22.1
 =======
