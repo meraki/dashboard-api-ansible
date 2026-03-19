@@ -1200,6 +1200,7 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
+
         accountId: 0987654321
         apiKey: foobarfoobarfoobarfoobarfoobarfoobar
         organizationId: string
@@ -1207,6 +1208,7 @@ Examples
           name: ATT
         title: My AT&T account
         username: MerakiUser
+
     - name: Update by id
       cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -1231,10 +1233,12 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
+
         accountId: string
         apiKey: foobarfoobarfoobarfoobarfoobarfoobar
         organizationId: string
         title: My AT&T account
+
     - name: Delete by id
       cisco.meraki.organizations_cellular_gateway_esims_service_providers_accounts:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -1259,6 +1263,7 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: absent
+
         accountId: string
         organizationId: string
 

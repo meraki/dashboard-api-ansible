@@ -237,6 +237,8 @@ Modules
 * :ref:`networks_appliance_traffic_shaping_uplink_selection module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_uplink_selection_module>` -- Resource module for networks \_appliance \_trafficshaping \_uplinkselection
 * :ref:`networks_appliance_traffic_shaping_uplink_selection_info module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_uplink_selection_info_module>` -- Information module for networks \_appliance \_trafficshaping \_uplinkselection
 * :ref:`networks_appliance_traffic_shaping_vpn_exclusions module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_vpn_exclusions_module>` -- Resource module for networks \_appliance \_trafficshaping \_vpnexclusions
+* :ref:`networks_appliance_umbrella_account_connect module <ansible_collections.cisco.meraki.networks_appliance_umbrella_account_connect_module>` -- Resource module for networks \_appliance \_umbrella \_account \_connect
+* :ref:`networks_appliance_umbrella_account_disconnect module <ansible_collections.cisco.meraki.networks_appliance_umbrella_account_disconnect_module>` -- Resource module for networks \_appliance \_umbrella \_account \_disconnect
 * :ref:`networks_appliance_vlans module <ansible_collections.cisco.meraki.networks_appliance_vlans_module>` -- Resource module for networks \_appliance \_vlans
 * :ref:`networks_appliance_vlans_info module <ansible_collections.cisco.meraki.networks_appliance_vlans_info_module>` -- Information module for networks \_appliance \_vlans
 * :ref:`networks_appliance_vlans_settings module <ansible_collections.cisco.meraki.networks_appliance_vlans_settings_module>` -- Resource module for networks \_appliance \_vlans \_settings
@@ -443,6 +445,7 @@ Modules
 * :ref:`networks_wireless_latency_stats_info module <ansible_collections.cisco.meraki.networks_wireless_latency_stats_info_module>` -- Information module for networks \_wireless \_latencystats
 * :ref:`networks_wireless_location_scanning module <ansible_collections.cisco.meraki.networks_wireless_location_scanning_module>` -- Resource module for networks \_wireless \_location \_scanning
 * :ref:`networks_wireless_mesh_statuses_info module <ansible_collections.cisco.meraki.networks_wireless_mesh_statuses_info_module>` -- Information module for networks \_wireless \_meshstatuses
+* :ref:`networks_wireless_radio_rrm module <ansible_collections.cisco.meraki.networks_wireless_radio_rrm_module>` -- Resource module for networks \_wireless \_radio \_rrm
 * :ref:`networks_wireless_rf_profiles module <ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module>` -- Resource module for networks \_wireless \_rfprofiles
 * :ref:`networks_wireless_rf_profiles_info module <ansible_collections.cisco.meraki.networks_wireless_rf_profiles_info_module>` -- Information module for networks \_wireless \_rfprofiles
 * :ref:`networks_wireless_settings module <ansible_collections.cisco.meraki.networks_wireless_settings_module>` -- Resource module for networks \_wireless \_settings
@@ -513,6 +516,8 @@ Modules
 * :ref:`organizations_appliance_uplinks_usage_by_network_info module <ansible_collections.cisco.meraki.organizations_appliance_uplinks_usage_by_network_info_module>` -- Information module for organizations \_appliance \_uplinks \_usage \_bynetwork
 * :ref:`organizations_appliance_vpn_site_to_site_ipsec_peers_slas module <ansible_collections.cisco.meraki.organizations_appliance_vpn_site_to_site_ipsec_peers_slas_module>` -- Resource module for organizations \_appliance \_vpn \_site \_to \_site \_ipsec \_peers \_slas
 * :ref:`organizations_appliance_vpn_site_to_site_ipsec_peers_slas_info module <ansible_collections.cisco.meraki.organizations_appliance_vpn_site_to_site_ipsec_peers_slas_info_module>` -- Information module for organizations \_appliance \_vpn \_site \_to \_site \_ipsec \_peers \_slas
+* :ref:`organizations_appliance_vpn_third_party_vpn_peers module <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module>` -- Resource module for organizations \_appliance \_vpn \_third \_party \_vpn \_peers
+* :ref:`organizations_appliance_vpn_third_party_vpn_peers_info module <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_info_module>` -- Information module for organizations \_appliance \_vpn \_third \_party \_vpn \_peers
 * :ref:`organizations_appliance_vpn_third_party_vpnpeers module <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_module>` -- Resource module for organizations \_appliance \_vpn \_thirdpartyvpnpeers
 * :ref:`organizations_appliance_vpn_third_party_vpnpeers_info module <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info_module>` -- Information module for organizations \_appliance \_vpn \_thirdpartyvpnpeers
 * :ref:`organizations_appliance_vpn_vpn_firewall_rules module <ansible_collections.cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules_module>` -- Resource module for organizations \_appliance \_vpn \_vpnfirewallrules
@@ -593,10 +598,13 @@ Modules
 * :ref:`organizations_insight_applications_info module <ansible_collections.cisco.meraki.organizations_insight_applications_info_module>` -- Information module for organizations \_insight \_applications
 * :ref:`organizations_insight_monitored_media_servers module <ansible_collections.cisco.meraki.organizations_insight_monitored_media_servers_module>` -- Resource module for organizations \_insight \_monitoredmediaservers
 * :ref:`organizations_insight_monitored_media_servers_info module <ansible_collections.cisco.meraki.organizations_insight_monitored_media_servers_info_module>` -- Information module for organizations \_insight \_monitoredmediaservers
+* :ref:`organizations_integrations_deployable_info module <ansible_collections.cisco.meraki.organizations_integrations_deployable_info_module>` -- Information module for organizations \_integrations \_deployable
+* :ref:`organizations_integrations_deployed_info module <ansible_collections.cisco.meraki.organizations_integrations_deployed_info_module>` -- Information module for organizations \_integrations \_deployed
 * :ref:`organizations_integrations_xdr_networks_disable module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_disable_module>` -- Resource module for organizations \_integrations \_xdr \_networks \_disable
 * :ref:`organizations_integrations_xdr_networks_enable module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_enable_module>` -- Resource module for organizations \_integrations \_xdr \_networks \_enable
 * :ref:`organizations_integrations_xdr_networks_info module <ansible_collections.cisco.meraki.organizations_integrations_xdr_networks_info_module>` -- Information module for organizations \_integrations \_xdr \_networks
 * :ref:`organizations_inventory_claim module <ansible_collections.cisco.meraki.organizations_inventory_claim_module>` -- Resource module for organizations \_inventory \_claim
+* :ref:`organizations_inventory_devices_eox_overview_info module <ansible_collections.cisco.meraki.organizations_inventory_devices_eox_overview_info_module>` -- Information module for organizations \_inventory \_devices \_eox \_overview
 * :ref:`organizations_inventory_devices_info module <ansible_collections.cisco.meraki.organizations_inventory_devices_info_module>` -- Information module for organizations \_inventory \_devices
 * :ref:`organizations_inventory_onboarding_cloud_monitoring_export_events module <ansible_collections.cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_export_events_module>` -- Resource module for organizations \_inventory \_onboarding \_cloudmonitoring \_exportevents
 * :ref:`organizations_inventory_onboarding_cloud_monitoring_imports module <ansible_collections.cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_imports_module>` -- Resource module for organizations \_inventory \_onboarding \_cloudmonitoring \_imports
@@ -619,6 +627,8 @@ Modules
 * :ref:`organizations_login_security_info module <ansible_collections.cisco.meraki.organizations_login_security_info_module>` -- Information module for organizations \_loginsecurity
 * :ref:`organizations_nac_certificates_authorities_crls module <ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module>` -- Resource module for organizations \_nac \_certificates \_authorities \_crls
 * :ref:`organizations_networks_combine module <ansible_collections.cisco.meraki.organizations_networks_combine_module>` -- Resource module for organizations \_networks \_combine
+* :ref:`organizations_networks_moves module <ansible_collections.cisco.meraki.organizations_networks_moves_module>` -- Resource module for organizations \_networks \_moves
+* :ref:`organizations_networks_moves_info module <ansible_collections.cisco.meraki.organizations_networks_moves_info_module>` -- Information module for organizations \_networks \_moves
 * :ref:`organizations_openapi_spec_info module <ansible_collections.cisco.meraki.organizations_openapi_spec_info_module>` -- Information module for organizations \_openapispec
 * :ref:`organizations_policies_assignments_by_client_info module <ansible_collections.cisco.meraki.organizations_policies_assignments_by_client_info_module>` -- Information module for organizations \_policies \_assignments \_by \_client
 * :ref:`organizations_policy_objects module <ansible_collections.cisco.meraki.organizations_policy_objects_module>` -- Resource module for organizations \_policyobjects
@@ -631,6 +641,7 @@ Modules
 * :ref:`organizations_saml_info module <ansible_collections.cisco.meraki.organizations_saml_info_module>` -- Information module for organizations \_saml
 * :ref:`organizations_saml_roles module <ansible_collections.cisco.meraki.organizations_saml_roles_module>` -- Resource module for organizations \_samlroles
 * :ref:`organizations_saml_roles_info module <ansible_collections.cisco.meraki.organizations_saml_roles_info_module>` -- Information module for organizations \_samlroles
+* :ref:`organizations_sase_networks_eligible_info module <ansible_collections.cisco.meraki.organizations_sase_networks_eligible_info_module>` -- Information module for organizations \_sase \_networks \_eligible
 * :ref:`organizations_sensor_gateways_connections_latest_info module <ansible_collections.cisco.meraki.organizations_sensor_gateways_connections_latest_info_module>` -- Information module for organizations \_sensor \_gateways \_connections \_latest
 * :ref:`organizations_sensor_readings_history_info module <ansible_collections.cisco.meraki.organizations_sensor_readings_history_info_module>` -- Information module for organizations \_sensor \_readings \_history
 * :ref:`organizations_sensor_readings_latest_info module <ansible_collections.cisco.meraki.organizations_sensor_readings_latest_info_module>` -- Information module for organizations \_sensor \_readings \_latest
@@ -696,6 +707,8 @@ Modules
 * :ref:`organizations_wireless_devices_packet_loss_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_packet_loss_by_device_info_module>` -- Information module for organizations \_wireless \_devices \_packetloss \_bydevice
 * :ref:`organizations_wireless_devices_packet_loss_by_network_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_packet_loss_by_network_info_module>` -- Information module for organizations \_wireless \_devices \_packetloss \_bynetwork
 * :ref:`organizations_wireless_devices_power_mode_history_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_power_mode_history_info_module>` -- Information module for organizations \_wireless \_devices \_power \_mode \_history
+* :ref:`organizations_wireless_devices_provisioning_deployments module <ansible_collections.cisco.meraki.organizations_wireless_devices_provisioning_deployments_module>` -- Resource module for organizations \_wireless \_devices \_provisioning \_deployments
+* :ref:`organizations_wireless_devices_provisioning_deployments_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_provisioning_deployments_info_module>` -- Information module for organizations \_wireless \_devices \_provisioning \_deployments
 * :ref:`organizations_wireless_devices_radsec_certificates_authorities module <ansible_collections.cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_module>` -- Resource module for organizations \_wireless \_devices \_radsec \_certificates \_authorities
 * :ref:`organizations_wireless_devices_radsec_certificates_authorities_crls_deltas_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_crls_deltas_info_module>` -- Information module for organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls \_deltas
 * :ref:`organizations_wireless_devices_radsec_certificates_authorities_crls_info module <ansible_collections.cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_crls_info_module>` -- Information module for organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls
@@ -708,6 +721,7 @@ Modules
 * :ref:`organizations_wireless_mqtt_settings module <ansible_collections.cisco.meraki.organizations_wireless_mqtt_settings_module>` -- Resource module for organizations \_wireless \_mqtt \_settings
 * :ref:`organizations_wireless_mqtt_settings_info module <ansible_collections.cisco.meraki.organizations_wireless_mqtt_settings_info_module>` -- Information module for organizations \_wireless \_mqtt \_settings
 * :ref:`organizations_wireless_radio_auto_rf_channels_recalculate module <ansible_collections.cisco.meraki.organizations_wireless_radio_auto_rf_channels_recalculate_module>` -- Resource module for organizations \_wireless \_radio \_auto \_rf \_channels \_recalculate
+* :ref:`organizations_wireless_radio_rrm_by_network_info module <ansible_collections.cisco.meraki.organizations_wireless_radio_rrm_by_network_info_module>` -- Information module for organizations \_wireless \_radio \_rrm \_by \_network
 * :ref:`organizations_wireless_rf_profiles_assignments_by_device_info module <ansible_collections.cisco.meraki.organizations_wireless_rf_profiles_assignments_by_device_info_module>` -- Information module for organizations \_wireless \_rf \_profiles \_assignments \_by \_device
 * :ref:`organizations_wireless_ssids_firewall_isolation_allowlist_entries module <ansible_collections.cisco.meraki.organizations_wireless_ssids_firewall_isolation_allowlist_entries_module>` -- Resource module for organizations \_wireless \_ssids \_firewall \_isolation \_allowlist \_entries
 * :ref:`organizations_wireless_ssids_firewall_isolation_allowlist_entries_info module <ansible_collections.cisco.meraki.organizations_wireless_ssids_firewall_isolation_allowlist_entries_info_module>` -- Information module for organizations \_wireless \_ssids \_firewall \_isolation \_allowlist \_entries
@@ -912,6 +926,8 @@ Modules
     networks_appliance_traffic_shaping_uplink_selection_module
     networks_appliance_traffic_shaping_uplink_selection_info_module
     networks_appliance_traffic_shaping_vpn_exclusions_module
+    networks_appliance_umbrella_account_connect_module
+    networks_appliance_umbrella_account_disconnect_module
     networks_appliance_vlans_module
     networks_appliance_vlans_info_module
     networks_appliance_vlans_settings_module
@@ -1118,6 +1134,7 @@ Modules
     networks_wireless_latency_stats_info_module
     networks_wireless_location_scanning_module
     networks_wireless_mesh_statuses_info_module
+    networks_wireless_radio_rrm_module
     networks_wireless_rf_profiles_module
     networks_wireless_rf_profiles_info_module
     networks_wireless_settings_module
@@ -1188,6 +1205,8 @@ Modules
     organizations_appliance_uplinks_usage_by_network_info_module
     organizations_appliance_vpn_site_to_site_ipsec_peers_slas_module
     organizations_appliance_vpn_site_to_site_ipsec_peers_slas_info_module
+    organizations_appliance_vpn_third_party_vpn_peers_module
+    organizations_appliance_vpn_third_party_vpn_peers_info_module
     organizations_appliance_vpn_third_party_vpnpeers_module
     organizations_appliance_vpn_third_party_vpnpeers_info_module
     organizations_appliance_vpn_vpn_firewall_rules_module
@@ -1268,10 +1287,13 @@ Modules
     organizations_insight_applications_info_module
     organizations_insight_monitored_media_servers_module
     organizations_insight_monitored_media_servers_info_module
+    organizations_integrations_deployable_info_module
+    organizations_integrations_deployed_info_module
     organizations_integrations_xdr_networks_disable_module
     organizations_integrations_xdr_networks_enable_module
     organizations_integrations_xdr_networks_info_module
     organizations_inventory_claim_module
+    organizations_inventory_devices_eox_overview_info_module
     organizations_inventory_devices_info_module
     organizations_inventory_onboarding_cloud_monitoring_export_events_module
     organizations_inventory_onboarding_cloud_monitoring_imports_module
@@ -1294,6 +1316,8 @@ Modules
     organizations_login_security_info_module
     organizations_nac_certificates_authorities_crls_module
     organizations_networks_combine_module
+    organizations_networks_moves_module
+    organizations_networks_moves_info_module
     organizations_openapi_spec_info_module
     organizations_policies_assignments_by_client_info_module
     organizations_policy_objects_module
@@ -1306,6 +1330,7 @@ Modules
     organizations_saml_info_module
     organizations_saml_roles_module
     organizations_saml_roles_info_module
+    organizations_sase_networks_eligible_info_module
     organizations_sensor_gateways_connections_latest_info_module
     organizations_sensor_readings_history_info_module
     organizations_sensor_readings_latest_info_module
@@ -1371,6 +1396,8 @@ Modules
     organizations_wireless_devices_packet_loss_by_device_info_module
     organizations_wireless_devices_packet_loss_by_network_info_module
     organizations_wireless_devices_power_mode_history_info_module
+    organizations_wireless_devices_provisioning_deployments_module
+    organizations_wireless_devices_provisioning_deployments_info_module
     organizations_wireless_devices_radsec_certificates_authorities_module
     organizations_wireless_devices_radsec_certificates_authorities_crls_deltas_info_module
     organizations_wireless_devices_radsec_certificates_authorities_crls_info_module
@@ -1383,6 +1410,7 @@ Modules
     organizations_wireless_mqtt_settings_module
     organizations_wireless_mqtt_settings_info_module
     organizations_wireless_radio_auto_rf_channels_recalculate_module
+    organizations_wireless_radio_rrm_by_network_info_module
     organizations_wireless_rf_profiles_assignments_by_device_info_module
     organizations_wireless_ssids_firewall_isolation_allowlist_entries_module
     organizations_wireless_ssids_firewall_isolation_allowlist_entries_info_module

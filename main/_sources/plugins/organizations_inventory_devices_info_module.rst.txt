@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Inventory Devices Info.
 - Get all organizations \_inventory \_devices.
 - Get organizations \_inventory \_devices by id.
 - Return a single device from the inventory of an organization.
@@ -176,9 +175,42 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eoxStatuses"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_inventory_devices_info_module__parameter-eoxstatuses:
+
+      .. rst-class:: ansible-option-title
+
+      **eoxStatuses**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eoxStatuses" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EoxStatuses query parameter. Filter devices by EoX status. Accepted values are 'endOfSale', 'endOfSupport', 'nearEndOfSupport', or 'null'. Use 'null' to filter for devices with no EOX data. Supports multiple values for multi-select filtering.
           
 
 
@@ -246,8 +278,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       Macs query parameter. Search for devices in inventory based on mac addresses.
 
@@ -1071,8 +1101,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       Models query parameter. Search for devices in inventory based on model.
 
 
@@ -1106,8 +1134,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null' value to get available devices only.
           
@@ -1144,8 +1170,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       OrderNumbers query parameter. Search for devices in inventory based on order numbers.
 
 
@@ -1179,8 +1203,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1216,8 +1238,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1251,8 +1271,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       ProductTypes query parameter. Filter devices by product type. Accepted values are appliance, camera, campusGateway, cellularGateway, secureConnect, sensor, switch, systemsManager, wireless, and wirelessController.
           
@@ -1289,8 +1307,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       Search query parameter. Search for devices in inventory based on serial number, mac address, or model.
 
 
@@ -1324,8 +1340,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       Serial path parameter.
 
@@ -1361,8 +1375,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       Serials query parameter. Search for devices in inventory based on serials.
 
 
@@ -1396,8 +1408,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1434,8 +1444,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Inventory Devices Info.
-
       Tags query parameter. Filter devices by tags. The filtering is case-sensitive. If tags are included, 'tagsFilterType' should also be included (see below).
           
 
@@ -1470,8 +1478,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       TagsFilterType query parameter. To use with 'tags' parameter, to filter devices which contain ANY or ALL given tags. Accepted values are 'withAnyTags' or 'withAllTags', default is 'withAnyTags'.
           
@@ -1541,8 +1547,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Inventory Devices Info.
 
       UsedState query parameter. Filter results by used or unused inventory. Accepted values are 'used' or 'unused'.
 
@@ -1623,10 +1627,12 @@ Examples
         tags: []
         tagsFilterType: string
         productTypes: []
+        eoxStatuses: []
         organizationId: string
         total_pages: -1
         direction: next
       register: result
+
     - name: Get organizations _inventory _devices by id
       cisco.meraki.organizations_inventory_devices_info:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -1713,7 +1719,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimedAt": "string", "countryCode": "string", "details": [{"name": "string", "value": "string"}], "licenseExpirationDate": "string", "mac": "string", "model": "string", "name": "string", "networkId": "string", "orderNumber": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimedAt": "string", "countryCode": "string", "details": [{"name": "string", "value": "string"}], "eox": {"endOfSaleAt": "string", "endOfSupportAt": "string", "status": "string"}, "licenseExpirationDate": "string", "mac": "string", "model": "string", "name": "string", "networkId": "string", "orderNumber": "string", "productType": "string", "serial": "string", "tags": ["string"]}`
 
 
       .. raw:: html
