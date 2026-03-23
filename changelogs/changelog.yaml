@@ -1337,3 +1337,9 @@ releases:
         - "networks_wireless_settings: added multicast-to-unicast conversion support."
         - "organizations_inventory_devices_info: added eoxStatuses filtering and included EoX fields in returned inventory device data."
     release_date: "2026-03-18"
+  2.23.1:
+    changes:
+      bugfixes:
+        - "Fixing problem of naming in organizations_appliance_vpn_third_party_vpnpeers_info."
+        - Restructuring README.md file.
+    release_date: "2026-03-23"

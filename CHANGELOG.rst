@@ -3,6 +3,16 @@ Cisco.Meraki Release Notes
 ==========================
 
 .. contents:: Topics
+
+v2.23.1
+=======
+
+Bugfixes
+--------
+
+- Fixing problem of naming in organizations_appliance_vpn_third_party_vpnpeers_info.
+- Restructuring README.md file.
+
 v2.23.0
 =======
 
