@@ -146,9 +146,9 @@ EXAMPLES = r"""
     name: My route
     networkId: string
     reservedIpRanges:
-    - comment: A reserved IP range
-      end: 192.168.1.1
-      start: 192.168.1.0
+      - comment: A reserved IP range
+        end: 192.168.1.1
+        start: 192.168.1.0
     staticRouteId: string
     subnet: 192.168.1.0/24
 
