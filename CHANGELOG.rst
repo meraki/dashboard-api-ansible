@@ -4,6 +4,17 @@ Cisco.Meraki Release Notes
 
 .. contents:: Topics
 
+v2.23.2
+=======
+
+Bugfixes
+--------
+
+- devices_switch_ports - Fixed AttributeError crash in ``update()`` caused by ``get_object_by_name`` returning the full port list instead of ``None`` when no port matched by name. Added ``isinstance(prev_obj_name, dict)`` guard to prevent calling ``.get()`` on a list.
+- devices_switch_ports - Fixed idempotency regression where the module always reported ``changed`` due to ``serial`` (a path parameter absent from the API response) and ``portId`` (int/string type mismatch) being incorrectly included in the ``requires_update`` comparison.
+- networks_appliance_static_routes - Added new plugin.
+- networks_appliance_static_routes_info - Added new plugin.
+
 v2.23.1
 =======
 

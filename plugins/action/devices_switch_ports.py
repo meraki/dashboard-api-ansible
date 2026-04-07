@@ -265,8 +265,6 @@ class DevicesSwitchPorts(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'portId', name)
-            if result is None:
-                result = items
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -350,8 +348,6 @@ class DevicesSwitchPorts(object):
             ("profile", "profile"),
             ("dot3az", "dot3az"),
             ("highSpeed", "highSpeed"),
-            ("serial", "serial"),
-            ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -370,7 +366,7 @@ class DevicesSwitchPorts(object):
         if not id:
             prev_obj_name = self.get_object_by_name(name)
             id_ = None
-            if prev_obj_name:
+            if prev_obj_name and isinstance(prev_obj_name, dict):
                 id_ = prev_obj_name.get("id")
                 id_ = id_ or prev_obj_name.get("portId")
             if id_:
