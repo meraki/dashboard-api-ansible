@@ -6,7 +6,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.23.1
+Collection version 2.23.2
 
 .. contents::
    :local:
@@ -226,6 +226,8 @@ Modules
 * :ref:`networks_appliance_single_lan_info module <ansible_collections.cisco.meraki.networks_appliance_single_lan_info_module>` -- Information module for networks \_appliance \_singlelan
 * :ref:`networks_appliance_ssids module <ansible_collections.cisco.meraki.networks_appliance_ssids_module>` -- Resource module for networks \_appliance \_ssids
 * :ref:`networks_appliance_ssids_info module <ansible_collections.cisco.meraki.networks_appliance_ssids_info_module>` -- Information module for networks \_appliance \_ssids
+* :ref:`networks_appliance_static_routes module <ansible_collections.cisco.meraki.networks_appliance_static_routes_module>` -- Resource module for networks \_appliance \_static \_routes
+* :ref:`networks_appliance_static_routes_info module <ansible_collections.cisco.meraki.networks_appliance_static_routes_info_module>` -- Information module for networks \_appliance \_static \_routes
 * :ref:`networks_appliance_traffic_shaping module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_module>` -- Resource module for networks \_appliance \_trafficshaping
 * :ref:`networks_appliance_traffic_shaping_custom_performance_classes module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_module>` -- Resource module for networks \_appliance \_trafficshaping \_customperformanceclasses
 * :ref:`networks_appliance_traffic_shaping_custom_performance_classes_info module <ansible_collections.cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info_module>` -- Information module for networks \_appliance \_trafficshaping \_customperformanceclasses
@@ -915,6 +917,8 @@ Modules
     networks_appliance_single_lan_info_module
     networks_appliance_ssids_module
     networks_appliance_ssids_info_module
+    networks_appliance_static_routes_module
+    networks_appliance_static_routes_info_module
     networks_appliance_traffic_shaping_module
     networks_appliance_traffic_shaping_custom_performance_classes_module
     networks_appliance_traffic_shaping_custom_performance_classes_info_module
