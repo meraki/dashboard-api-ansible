@@ -106,7 +106,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-        AQUI ['gatewayIp: 1.2.3.5', "gatewayVlanId: '100'", 'name: My route', 'networkId: string', 'subnet: 192.168.1.0/24']
     gatewayIp: 1.2.3.5
     gatewayVlanId: '100'
     name: My route
@@ -137,7 +136,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-        AQUI ['enabled: true', 'fixedIpAssignments:', '  22:33:44:55:66:77:', '    ip: 1.2.3.4', '    name: Some client name', 'gatewayIp: 1.2.3.5', "gatewayVlanId: '100'", 'name: My route', 'networkId: string', 'reservedIpRanges:', '- comment: A reserved IP range', '  end: 192.168.1.1', '  start: 192.168.1.0', 'staticRouteId: string', 'subnet: 192.168.1.0/24']
     enabled: true
     fixedIpAssignments:
       22:33:44:55:66:77:
@@ -178,10 +176,8 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: absent
-        AQUI ['networkId: string', 'staticRouteId: string']
     networkId: string
     staticRouteId: string
-
 """
 RETURN = r"""
 meraki_response:

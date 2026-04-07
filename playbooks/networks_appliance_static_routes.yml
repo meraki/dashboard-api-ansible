@@ -1,4 +1,4 @@
-- name: networks_appliance_static_routes tests
+- name: Networks appliance static routes tests
   hosts: localhost
   gather_facts: false
   vars:

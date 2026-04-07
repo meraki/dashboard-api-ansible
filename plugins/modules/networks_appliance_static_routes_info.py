@@ -102,7 +102,6 @@ EXAMPLES = r"""
     networkId: string
     staticRouteId: string
   register: result
-
 """
 RETURN = r"""
 meraki_response:
