@@ -15,3 +15,14 @@
           - appliance
           - switch
         timeZone: America/Los_Angeles
+    # -------------------------------------------------------------------------
+    # Network Info
+    # -------------------------------------------------------------------------
+    - name: Get network info
+      cisco.meraki.networks_info:
+        meraki_suppress_logging: false
+        organizationId: "{{ org_id }}"
+      register: network_info
+    - name: Show network info
+      ansible.builtin.debug:
+        msg: "{{ network_info }}"

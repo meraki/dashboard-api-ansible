@@ -1,0 +1,88 @@
+- name: Networks appliance static routes tests
+  hosts: localhost
+  gather_facts: false
+  vars:
+    network_id: "L_828099381482779330"
+    # route_subnet must be a REMOTE subnet (not assigned to any local VLAN on this MX)
+    # route_gateway must be a next-hop IP reachable via a local VLAN (e.g. a LAN interface IP)
+    route_subnet: "10.254.254.0/24"
+    route_gateway: "192.168.128.1"
+  tasks:
+
+    # -------------------------------------------------------------------------
+    # CREATE
+    # -------------------------------------------------------------------------
+    - name: Create static route
+      cisco.meraki.networks_appliance_static_routes:
+        meraki_suppress_logging: false
+        state: present
+        networkId: "{{ network_id }}"
+        name: "Test static route"
+        subnet: "{{ route_subnet }}"
+        gatewayIp: "{{ route_gateway }}"
+      register: route_created
+
+    - name: Show created route
+      ansible.builtin.debug:
+        msg: "{{ route_created }}"
+
+    # -------------------------------------------------------------------------
+    # GET ALL routes
+    # -------------------------------------------------------------------------
+    - name: Get all static routes
+      cisco.meraki.networks_appliance_static_routes_info:
+        meraki_suppress_logging: false
+        networkId: "{{ network_id }}"
+      register: all_routes
+
+    - name: Show all routes
+      ansible.builtin.debug:
+        msg: "{{ all_routes }}"
+
+    # -------------------------------------------------------------------------
+    # GET by ID
+    # -------------------------------------------------------------------------
+    - name: Get static route by id
+      cisco.meraki.networks_appliance_static_routes_info:
+        meraki_suppress_logging: false
+        networkId: "{{ network_id }}"
+        staticRouteId: "{{ route_created.meraki_response.id }}"
+      register: route_info
+
+    - name: Show route by id
+      ansible.builtin.debug:
+        msg: "{{ route_info }}"
+
+    # -------------------------------------------------------------------------
+    # UPDATE (idempotency check — run twice, second should show changed=false)
+    # -------------------------------------------------------------------------
+    - name: Update static route
+      cisco.meraki.networks_appliance_static_routes:
+        meraki_suppress_logging: false
+        state: present
+        networkId: "{{ network_id }}"
+        staticRouteId: "{{ route_created.meraki_response.id }}"
+        name: "Test static route"
+        subnet: "{{ route_subnet }}"
+        gatewayIp: "{{ route_gateway }}"
+        enabled: true
+      register: route_updated
+
+    - name: Show updated route
+      ansible.builtin.debug:
+        msg: "{{ route_updated }}"
+
+    # -------------------------------------------------------------------------
+    # DELETE
+    # -------------------------------------------------------------------------
+    - name: Delete static route
+      cisco.meraki.networks_appliance_static_routes:
+        meraki_suppress_logging: false
+        state: absent
+        networkId: "{{ network_id }}"
+        staticRouteId: "{{ route_created.meraki_response.id }}"
+      register: route_deleted
+
+    - name: Show delete result
+      ansible.builtin.debug:
+        msg: "{{ route_deleted }}"
