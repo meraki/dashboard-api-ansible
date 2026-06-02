@@ -120,7 +120,7 @@ EXAMPLES = r"""
     t1: string
     timespan: 0
     resolution: 0
-    autoResolution: True
+    autoResolution: true
     clientId: string
     deviceSerial: string
     apTag: string

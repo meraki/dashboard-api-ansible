@@ -105,7 +105,7 @@ EXAMPLES = r"""
     startingAfter: string
     endingBefore: string
     networkIds: []
-    isEnrolled: True
+    isEnrolled: true
     search: string
     organizationId: string
     total_pages: -1

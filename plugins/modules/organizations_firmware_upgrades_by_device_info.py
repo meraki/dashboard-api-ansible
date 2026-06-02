@@ -138,7 +138,7 @@ EXAMPLES = r"""
     macs: []
     firmwareUpgradeBatchIds: []
     upgradeStatuses: []
-    currentUpgradesOnly: True
+    currentUpgradesOnly: true
     limitPerDevice: 0
     organizationId: string
     total_pages: -1

@@ -25,9 +25,7 @@ notes:
   - Paths used are
 """
 
-EXAMPLES = r"""
-
-"""
+EXAMPLES = r""""""
 RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK

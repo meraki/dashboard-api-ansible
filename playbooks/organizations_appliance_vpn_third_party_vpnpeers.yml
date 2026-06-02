@@ -5,7 +5,7 @@
   tasks:
 
     - name: Set Third Party VPN
-      cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
+      cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
         state: present
         meraki_suppress_logging: false
         organizationId: "828099381482762270"
