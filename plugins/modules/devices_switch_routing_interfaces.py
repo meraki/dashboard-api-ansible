@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_switch_routing_interfaces
@@ -29,7 +30,9 @@ options:
   interfaceIp:
     description: The IP address that will be used for Layer 3 routing on this VLAN
       or subnet. This cannot be the same as the device management IP.
-    type: str
+    type:
+      - string
+      - 'null'
   ipv6:
     description: The IPv6 settings of the interface.
     suboptions:
@@ -89,13 +92,19 @@ options:
     type: str
   subnet:
     description: The network that this L3 interface is on, in CIDR notation (ex. 10.1.1.0/24).
-    type: str
+    type:
+      - string
+      - 'null'
   switchPortId:
     description: Switch Port ID when in Routed mode (CS 17.18 or higher required).
-    type: str
+    type:
+      - string
+      - 'null'
   vlanId:
     description: The VLAN this L3 interface is on. VLAN must be between 1 and 4094.
-    type: int
+    type:
+      - integer
+      - 'null'
   vrf:
     description: The VRF settings of the interface. Requires IOS XE 17.18 or higher.
     suboptions:

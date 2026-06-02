@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_content_filtering_categories_info
-short_description: Information module for networks _appliance _contentfiltering _categories
+short_description: Information module for networks _appliance _content _filtering
+  _categories
 description:
-  - Information module for Networks Appliance Contentfiltering Categories Info.
-  - Get all networks _appliance _contentfiltering _categories.
+  - Get all networks _appliance _content _filtering _categories.
   - List all available content filtering categories for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +22,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Contentfiltering Categories Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _contentfiltering _categories
+- name: Get all networks _appliance _content _filtering _categories
   cisco.meraki.networks_appliance_content_filtering_categories_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

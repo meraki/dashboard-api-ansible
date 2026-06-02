@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_licenses_overview_info
 short_description: Information module for organizations _licenses _overview
 description:
-  - Information module for Organizations Licenses Overview Info.
   - Get all organizations _licenses _overview.
   - Return an overview of the license state for an organization.
 version_added: '1.0.0'
@@ -21,7 +21,6 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Licenses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

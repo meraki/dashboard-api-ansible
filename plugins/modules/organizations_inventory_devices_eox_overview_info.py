@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_devices_eox_overview_info
 short_description: Information module for organizations _inventory _devices _eox _overview
 description:
-  - Get all organizations _inventory _devices _eox _overview.
-  - >
-     Fetch the EOX summary for an organization, including counts of devices that are end-of-sale, end-of-support,
-     and end-of-support-soon.
+  - Get all organizations _inventory _devices _eox _overview. - > Fetch the EOX summary
+    for an organization, including counts of devices that are end-of-sale, end-of-support,
+    and end-of-support-soon.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -29,12 +29,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for organizations getOrganizationInventoryDevicesEoxOverview
-    description: Complete reference of the getOrganizationInventoryDevicesEoxOverview API.
+    description: Complete reference of the getOrganizationInventoryDevicesEoxOverview
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-inventory-devices-eox-overview
 notes:
   - SDK Method used are
     organizations.Organizations.get_organization_inventory_devices_eox_overview,
-
   - Paths used are
     get /organizations/{organizationId}/inventory/devices/eox/overview,
 """

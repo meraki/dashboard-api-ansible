@@ -2,9 +2,12 @@
 # -*- coding: utf-8 -*-
 
 # Copyright: (c) 2019, Kevin Breit (@kbreit) <kevin.breit@kevinbreit.net>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see COPYING or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible.module_utils.basic import AnsibleModule, json
 __metaclass__ = type
 
 ANSIBLE_METADATA = {
@@ -139,9 +142,6 @@ data:
         sample: 192.0.1.0
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-
 
 def main():
 
@@ -172,8 +172,10 @@ def main():
     meraki = MerakiModule(module, function='firewalled_services')
     module.params['follow_redirects'] = 'all'
 
-    net_services_urls = {'firewalled_services': '/networks/{net_id}/appliance/firewall/firewalledServices'}
-    services_urls = {'firewalled_services': '/networks/{net_id}/appliance/firewall/firewalledServices/{service}'}
+    net_services_urls = {
+        'firewalled_services': '/networks/{net_id}/appliance/firewall/firewalledServices'}
+    services_urls = {
+        'firewalled_services': '/networks/{net_id}/appliance/firewall/firewalledServices/{service}'}
 
     meraki.url_catalog['network_services'] = net_services_urls
     meraki.url_catalog['service'] = services_urls
@@ -187,11 +189,13 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(org_id, meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            org_id, meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'present':
         if meraki.params['access'] != 'restricted' and meraki.params['allowed_ips'] is not None:
-            meraki.fail_json(msg="allowed_ips is only allowed when access is restricted.")
+            meraki.fail_json(
+                msg="allowed_ips is only allowed when access is restricted.")
         payload = {'access': meraki.params['access']}
         if meraki.params['access'] == 'restricted':
             payload['allowedIps'] = meraki.params['allowed_ips']
@@ -203,24 +207,33 @@ def main():
             meraki.result['data'] = response
             meraki.exit_json(**meraki.result)
         else:
-            path = meraki.construct_path('service', net_id=net_id, custom={'service': meraki.params['service']})
+            path = meraki.construct_path(
+                'service', net_id=net_id, custom={
+                    'service': meraki.params['service']})
             response = meraki.request(path, method='GET')
             meraki.result['data'] = response
             meraki.exit_json(**meraki.result)
     elif meraki.params['state'] == 'present':
-        path = meraki.construct_path('service', net_id=net_id, custom={'service': meraki.params['service']})
+        path = meraki.construct_path(
+            'service', net_id=net_id, custom={
+                'service': meraki.params['service']})
         original = meraki.request(path, method='GET')
-        if meraki.is_update_required(original, payload, optional_ignore=['service']):
+        if meraki.is_update_required(
+                original, payload, optional_ignore=['service']):
             if meraki.check_mode is True:
-                diff_payload = {'service': meraki.params['service']}  # Need to add service as it's not in payload
+                # Need to add service as it's not in payload
+                diff_payload = {'service': meraki.params['service']}
                 diff_payload.update(payload)
                 meraki.generate_diff(original, diff_payload)
                 original.update(payload)
                 meraki.result['data'] = original
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path('service', net_id=net_id, custom={'service': meraki.params['service']})
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            path = meraki.construct_path(
+                'service', net_id=net_id, custom={
+                    'service': meraki.params['service']})
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.generate_diff(original, response)
                 meraki.result['data'] = response

@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_camera_sense_info
 short_description: Information module for devices _camera _sense
 description:
-  - Information module for Devices Camera Sense Info.
   - Get all devices _camera _sense.
   - Returns sense settings for a given camera.
 version_added: '1.0.0'
@@ -21,7 +21,6 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Camera Sense Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -70,6 +69,16 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "senseEnabled": true,
+      "mqttBrokerId": {},
+      "mqttTopics": [
+        "string"
+      ],
+      "audioDetection": {
+        "enabled": true
+      },
+      "detectionModelId": {}
+    }
 """

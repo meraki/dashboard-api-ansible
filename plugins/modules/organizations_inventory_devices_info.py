@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_devices_info
@@ -27,29 +28,36 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this
-        is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-        applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is
-        a timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-        applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   usedState:
     description:
-      - UsedState query parameter. Filter results by used or unused inventory. Accepted values are 'used' or 'unused'.
+      - UsedState query parameter. Filter results by used or unused inventory. Accepted
+        values are 'used' or 'unused'.
     type: str
   search:
     description:
-      - Search query parameter. Search for devices in inventory based on serial number, mac address, or model.
+      - Search query parameter. Search for devices in inventory based on serial number,
+        mac address, or model.
     type: str
   macs:
     description:
@@ -59,8 +67,8 @@ options:
   networkIds:
     description:
       - >
-        NetworkIds query parameter. Search for devices in inventory based on network ids. Use explicit 'null'
-        value to get available devices only.
+        NetworkIds query parameter. Search for devices in inventory based on network
+        ids. Use explicit 'null' value to get available devices only.
     elements: str
     type: list
   serials:
@@ -75,36 +83,39 @@ options:
     type: list
   orderNumbers:
     description:
-      - OrderNumbers query parameter. Search for devices in inventory based on order numbers.
+      - OrderNumbers query parameter. Search for devices in inventory based on order
+        numbers.
     elements: str
     type: list
   tags:
     description:
       - >
-        Tags query parameter. Filter devices by tags. The filtering is case-sensitive. If tags are included,
-        'tagsFilterType' should also be included (see below).
+        Tags query parameter. Filter devices by tags. The filtering is case-sensitive.
+        If tags are included, 'tagsFilterType' should also be included (see below).
     elements: str
     type: list
   tagsFilterType:
     description:
       - >
-        TagsFilterType query parameter. To use with 'tags' parameter, to filter devices which contain ANY or ALL
-        given tags. Accepted values are 'withAnyTags' or 'withAllTags', default is 'withAnyTags'.
+        TagsFilterType query parameter. To use with 'tags' parameter, to filter devices
+        which contain ANY or ALL given tags. Accepted values are 'withAnyTags' or
+        'withAllTags', default is 'withAnyTags'.
     type: str
   productTypes:
     description:
       - >
-        ProductTypes query parameter. Filter devices by product type. Accepted values are appliance, camera,
-        campusGateway, cellularGateway, secureConnect, sensor, switch, systemsManager, wireless, and
-        wirelessController.
+        ProductTypes query parameter. Filter devices by product type. Accepted values
+        are appliance, camera, campusGateway, cellularGateway, secureConnect, sensor,
+        switch, systemsManager, wireless, and wirelessController.
     elements: str
     type: list
   eoxStatuses:
     description:
       - >
-        EoxStatuses query parameter. Filter devices by EoX status. Accepted values are 'endOfSale',
-        'endOfSupport', 'nearEndOfSupport', or 'null'. Use 'null' to filter for devices with no EOX data.
-        Supports multiple values for multi-select filtering.
+        EoxStatuses query parameter. Filter devices by EoX status. Accepted values
+        are 'endOfSale', 'endOfSupport', 'nearEndOfSupport', or 'null'. Use 'null'
+        to filter for devices with no EOX data. Supports multiple values for multi-select
+        filtering.
     elements: str
     type: list
   serial:
@@ -125,7 +136,6 @@ notes:
   - SDK Method used are
     organizations.Organizations.get_organization_inventory_device,
     organizations.Organizations.get_organization_inventory_devices,
-
   - Paths used are
     get /organizations/{organizationId}/inventory/devices,
     get /organizations/{organizationId}/inventory/devices/{serial},
@@ -173,7 +183,6 @@ EXAMPLES = r"""
     total_pages: -1
     direction: next
   register: result
-
 - name: Get organizations _inventory _devices by id
   cisco.meraki.organizations_inventory_devices_info:
     meraki_api_key: "{{ meraki_api_key }}"

@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles_info
-short_description: Information module for networks _camera _qualityretentionprofiles
+short_description: Information module for networks _camera _quality _retention _profiles
 description:
-  - Information module for Networks Camera Qualityretentionprofiles Info.
-  - Get all networks _camera _qualityretentionprofiles.
-  - Get networks _camera _qualityretentionprofiles by id.
+  - Get all networks _camera _quality _retention _profiles.
+  - Get networks _camera _quality _retention _profiles by id.
   - List the quality retention profiles for this network.
   - Retrieve a single quality retention profile.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Camera Qualityretentionprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   qualityRetentionProfileId:
     description:
-      - Information module for Networks Camera Qualityretentionprofiles Info.
       - QualityRetentionProfileId path parameter. Quality retention profile ID.
     type: str
 requirements:
@@ -54,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _qualityretentionprofiles
+- name: Get all networks _camera _quality _retention _profiles
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -79,7 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _camera _qualityretentionprofiles by id
+- name: Get networks _camera _quality _retention _profiles by id
   cisco.meraki.networks_camera_quality_retention_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

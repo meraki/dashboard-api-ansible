@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_leds_blink_info
 short_description: Information module for devices _live _tools _leds _blink
 description:
-  - Information module for Devices Live Tools Leds Blink Info.
   - Get devices _live _tools _leds _blink by id.
   - Return a blink LEDs job.
 version_added: '1.0.0'
@@ -21,12 +21,10 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Live Tools Leds Blink Info.
       - Serial path parameter.
     type: str
   ledsBlinkId:
     description:
-      - Information module for Devices Live Tools Leds Blink Info.
       - LedsBlinkId path parameter. Leds blink ID.
     type: str
 requirements:

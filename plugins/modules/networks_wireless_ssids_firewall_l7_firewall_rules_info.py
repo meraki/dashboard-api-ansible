@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_firewall_l7_firewall_rules_info
-short_description: Information module for networks _wireless _ssids _firewall l7firewallrules
+short_description: Information module for networks _wireless _ssids _firewall l7 _firewall
+  _rules
 description:
-  - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
-  - Get all networks _wireless _ssids _firewall l7firewallrules.
+  - Get all networks _wireless _ssids _firewall l7 _firewall _rules.
   - Return the L7 firewall rules for an SSID on an MR network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,12 +22,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-      - Information module for Networks Wireless Ssids Firewall L7Firewallrules Info.
       - Number path parameter.
     type: str
 requirements:
@@ -45,7 +44,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _firewall l7firewallrules
+- name: Get all networks _wireless _ssids _firewall l7 _firewall _rules
   cisco.meraki.networks_wireless_ssids_firewall_l7_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -52,7 +52,7 @@ class NetworksAlertsSettings(object):
             defaultDestinations=params.get("defaultDestinations"),
             alerts=params.get("alerts"),
             muting=params.get("muting"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

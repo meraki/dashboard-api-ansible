@@ -69,7 +69,7 @@ class NetworksApplianceSsids(object):
             visible=params.get("visible"),
             dhcpEnforcedDeauthentication=params.get("dhcpEnforcedDeauthentication"),
             dot11w=params.get("dot11w"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

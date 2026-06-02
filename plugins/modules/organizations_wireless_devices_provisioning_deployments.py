@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_provisioning_deployments
-short_description: Resource module for organizations _wireless _devices _provisioning _deployments
+short_description: Resource module for organizations _wireless _devices _provisioning
+  _deployments
 description:
-  - Manage operations create, update and delete of the resource organizations _wireless _devices _provisioning _deployments.
+  - Manage operations create, update and delete of the resource organizations _wireless
+    _devices _provisioning _deployments.
   - Create a zero touch deployment for a wireless access point.
   - Delete a zero touch deployment.
   - Update a zero touch deployment.
@@ -105,7 +108,8 @@ options:
         elements: str
         type: list
       lastUpdatedAt:
-        description: Timestamp of when the zero touch deployment request was last updated.
+        description: Timestamp of when the zero touch deployment request was last
+          updated.
         type: str
       network:
         description: Network information.
@@ -121,8 +125,8 @@ options:
         description: Timestamp of when the zero touch deployment request was created.
         type: str
       status:
-        description: Status of the zero touch deployment request. Enum = ready, in progress,
-          completed, failed.
+        description: Status of the zero touch deployment request. Enum = ready, in
+          progress, completed, failed.
         type: str
       type:
         description: Type of the zero touch deployment request. Enum = deploy, replace.
@@ -138,8 +142,8 @@ options:
             description: Counts relating to the paginated items.
             suboptions:
               remaining:
-                description: The number of items in the dataset that are available on
-                  subsequent pages.
+                description: The number of items in the dataset that are available
+                  on subsequent pages.
                 type: int
               total:
                 description: The total number of items in the dataset.
@@ -155,20 +159,22 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless createOrganizationWirelessDevicesProvisioningDeployment
-    description: Complete reference of the createOrganizationWirelessDevicesProvisioningDeployment API.
+    description: Complete reference of the createOrganizationWirelessDevicesProvisioningDeployment
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-wireless-devices-provisioning-deployment
   - name: Cisco Meraki documentation for wireless deleteOrganizationWirelessDevicesProvisioningDeployment
-    description: Complete reference of the deleteOrganizationWirelessDevicesProvisioningDeployment API.
+    description: Complete reference of the deleteOrganizationWirelessDevicesProvisioningDeployment
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-wireless-devices-provisioning-deployment
   - name: Cisco Meraki documentation for wireless updateOrganizationWirelessDevicesProvisioningDeployments
-    description: Complete reference of the updateOrganizationWirelessDevicesProvisioningDeployments API.
+    description: Complete reference of the updateOrganizationWirelessDevicesProvisioningDeployments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-wireless-devices-provisioning-deployments
 notes:
   - SDK Method used are
     wireless.Wireless.create_organization_wireless_devices_provisioning_deployment,
     wireless.Wireless.delete_organization_wireless_devices_provisioning_deployment,
     wireless.Wireless.update_organization_wireless_devices_provisioning_deployments,
-
   - Paths used are
     post /organizations/{organizationId}/wireless/devices/provisioning/deployments,
     delete /organizations/{organizationId}/wireless/devices/provisioning/deployments/{deploymentId},
@@ -200,18 +206,17 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-
     items:
-      - completedAt: "2018-02-11T00:00:00.090210Z"
-        createdAt: "2018-02-11T00:00:00.090210Z"
-        deploymentId: "1284392014819"
+      - completedAt: '2018-02-11T00:00:00.090210Z'
+        createdAt: '2018-02-11T00:00:00.090210Z'
+        deploymentId: '1284392014819'
         devices:
           new:
             mac: 00:11:22:33:44:55
             model: CW9166I
             name: My AP
             rfProfile:
-              id: "1284392014819"
+              id: '1284392014819'
               name: RF Profile Name
             serial: Q234-ABCD-5678
             tags:
@@ -223,7 +228,7 @@ EXAMPLES = r"""
             model: MR34
             name: My AP
             rfProfile:
-              id: "1284392014819"
+              id: '1284392014819'
               name: RF Profile Name
             serial: Q234-ABCD-5678
             tags:
@@ -232,11 +237,11 @@ EXAMPLES = r"""
         errors:
           - error message1
           - error message2
-        lastUpdatedAt: "2018-02-11T00:00:00.090210Z"
+        lastUpdatedAt: '2018-02-11T00:00:00.090210Z'
         network:
           id: N_24329156
           name: Main Office
-        requestedAt: "2018-02-11T00:00:00.090210Z"
+        requestedAt: '2018-02-11T00:00:00.090210Z'
         status: ready
         type: replace
     meta:
@@ -245,7 +250,6 @@ EXAMPLES = r"""
           remaining: 0
           total: 20
     organizationId: string
-
 - name: Update all
   cisco.meraki.organizations_wireless_devices_provisioning_deployments:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -270,18 +274,17 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-
     items:
-      - completedAt: "2018-02-11T00:00:00.090210Z"
-        createdAt: "2018-02-11T00:00:00.090210Z"
-        deploymentId: "1284392014819"
+      - completedAt: '2018-02-11T00:00:00.090210Z'
+        createdAt: '2018-02-11T00:00:00.090210Z'
+        deploymentId: '1284392014819'
         devices:
           new:
             mac: 00:11:22:33:44:55
             model: CW9166I
             name: My AP
             rfProfile:
-              id: "1284392014819"
+              id: '1284392014819'
               name: RF Profile Name
             serial: Q234-ABCD-5678
             tags:
@@ -293,7 +296,7 @@ EXAMPLES = r"""
             model: MR34
             name: My AP
             rfProfile:
-              id: "1284392014819"
+              id: '1284392014819'
               name: RF Profile Name
             serial: Q234-ABCD-5678
             tags:
@@ -302,11 +305,11 @@ EXAMPLES = r"""
         errors:
           - error message1
           - error message2
-        lastUpdatedAt: "2018-02-11T00:00:00.090210Z"
+        lastUpdatedAt: '2018-02-11T00:00:00.090210Z'
         network:
           id: N_24329156
           name: Main Office
-        requestedAt: "2018-02-11T00:00:00.090210Z"
+        requestedAt: '2018-02-11T00:00:00.090210Z'
         status: ready
         type: replace
     meta:
@@ -315,7 +318,6 @@ EXAMPLES = r"""
           remaining: 0
           total: 20
     organizationId: string
-
 - name: Delete by id
   cisco.meraki.organizations_wireless_devices_provisioning_deployments:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -340,7 +342,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: absent
-
     deploymentId: string
     organizationId: string
 """

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_prefixes_delegated_statics_info
 short_description: Information module for networks _appliance _prefixes _delegated
   _statics
 description:
-  - Information module for Networks Appliance Prefixes Delegated Statics Info.
   - Get all networks _appliance _prefixes _delegated _statics.
   - Get networks _appliance _prefixes _delegated _statics by id.
   - List static delegated prefixes for a network.
@@ -24,12 +24,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Prefixes Delegated Statics Info.
       - NetworkId path parameter. Network ID.
     type: str
   staticDelegatedPrefixId:
     description:
-      - Information module for Networks Appliance Prefixes Delegated Statics Info.
       - StaticDelegatedPrefixId path parameter. Static delegated prefix ID.
     type: str
 requirements:

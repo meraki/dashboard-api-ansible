@@ -70,7 +70,7 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             dhcpOptions=params.get("dhcpOptions"),
             reservedIpRanges=params.get("reservedIpRanges"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             switch_stack_id=params.get("switchStackId"),
             interface_id=params.get("interfaceId"),
         )

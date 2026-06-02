@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_wireless_bluetooth_settings
@@ -18,18 +19,24 @@ options:
   major:
     description: Desired major value of the beacon. If the value is set to null it
       will reset to Dashboard's automatically generated value.
-    type: int
+    type:
+      - integer
+      - 'null'
   minor:
     description: Desired minor value of the beacon. If the value is set to null it
       will reset to Dashboard's automatically generated value.
-    type: int
+    type:
+      - integer
+      - 'null'
   serial:
     description: Serial path parameter.
     type: str
   uuid:
     description: Desired UUID of the beacon. If the value is set to null it will reset
       to Dashboard's automatically generated value.
-    type: str
+    type:
+      - string
+      - 'null'
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

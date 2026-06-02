@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: administered_identities_me_api_keys_revoke
 short_description: Resource module for administered _identities _me _api _keys _revoke
 description:
   - Manage operation create of the resource administered _identities _me _api _keys
-    _revoke.
-  - >
-    Revokes an identity's API key, using the last four characters of the key. For
-    users who have access to more than one organization, the change will take up to
-    five minutes to propagate. If one of the organizations is currently under maintenance,
-    the change may not propagate fully until after the maintenance has been completed.
+    _revoke. - > Revokes an identity's API key, using the last four characters of
+    the key. For users who have access to more than one organization, the change will
+    take up to five minutes to propagate. If one of the organizations is currently
+    under maintenance, the change may not propagate fully until after the maintenance
+    has been completed.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

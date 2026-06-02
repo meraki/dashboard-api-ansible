@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades
-short_description: Resource module for networks _firmwareupgrades
+short_description: Resource module for networks _firmware _upgrades
 description:
-  - Manage operation update of the resource networks _firmwareupgrades.
+  - Manage operation update of the resource networks _firmware _upgrades.
   - Update firmware upgrade information for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -174,6 +175,14 @@ options:
           nextUpgrade:
             description: The pending firmware upgrade if it exists.
             suboptions:
+              predownload:
+                description: Predownload settings for the firmware upgrade.
+                suboptions:
+                  enabled:
+                    description: Whether or not the network devices will predownload
+                      the firmware image in advance of the actual upgrade.
+                    type: bool
+                type: dict
               time:
                 description: The time of the last successful upgrade.
                 type: str
@@ -309,6 +318,8 @@ EXAMPLES = r"""
         participateInNextBetaRelease: false
       wireless:
         nextUpgrade:
+          predownload:
+            enabled: false
           time: '2019-03-17T17:22:52Z'
           toVersion:
             id: '1000'
@@ -364,6 +375,9 @@ meraki_response:
           },
           "nextUpgrade": {
             "time": "string",
+            "predownload": {
+              "enabled": true
+            },
             "toVersion": {
               "id": "string",
               "firmware": "string",

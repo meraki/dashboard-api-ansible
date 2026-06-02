@@ -52,7 +52,7 @@ class NetworksFirmwareUpgrades(object):
             upgradeWindow=params.get("upgradeWindow"),
             timezone=params.get("timezone"),
             products=params.get("products"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

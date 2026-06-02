@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_hotspot20_info
 short_description: Information module for networks _wireless _ssids _hotspot20
 description:
-  - Information module for Networks Wireless Ssids Hotspot20 Info.
   - Get all networks _wireless _ssids _hotspot20.
   - Return the Hotspot 2.0 settings for an SSID.
 version_added: '1.0.0'
@@ -21,12 +21,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Ssids Hotspot20 Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-      - Information module for Networks Wireless Ssids Hotspot20 Info.
       - Number path parameter.
     type: str
 requirements:

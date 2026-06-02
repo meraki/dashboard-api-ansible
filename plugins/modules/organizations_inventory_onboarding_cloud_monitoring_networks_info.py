@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_networks_info
-short_description: Information module for organizations _inventory _onboarding _cloudmonitoring
-  _networks
+short_description: Information module for organizations _inventory _onboarding _cloud
+  _monitoring _networks
 description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
-  - Get all organizations _inventory _onboarding _cloudmonitoring _networks.
+  - Get all organizations _inventory _onboarding _cloud _monitoring _networks.
   - Returns list of networks eligible for adding cloud monitored device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,28 +23,23 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   deviceType:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - DeviceType query parameter. Device Type switch or wireless controller.
     type: str
   search:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - Search query parameter. Optional parameter to search on network name.
     type: str
   perPage:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 100000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -54,7 +49,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Networks Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -78,7 +72,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _inventory _onboarding _cloudmonitoring _networks
+- name: Get all organizations _inventory _onboarding _cloud _monitoring _networks
   cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_networks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

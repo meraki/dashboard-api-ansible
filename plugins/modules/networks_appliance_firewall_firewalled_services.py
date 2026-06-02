@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_firewalled_services
-short_description: Resource module for networks _appliance _firewall _firewalledservices
+short_description: Resource module for networks _appliance _firewall _firewalled _services
 description:
-  - Manage operation update of the resource networks _appliance _firewall _firewalledservices.
+  - Manage operation update of the resource networks _appliance _firewall _firewalled
+    _services.
   - Updates the accessibility settings for the given service 'ICMP', 'web', or 'SNMP'
     .
 version_added: '1.0.0'

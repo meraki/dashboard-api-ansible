@@ -2,22 +2,20 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_meraki_auth_users
-short_description: Resource module for networks _merakiauthusers
+short_description: Resource module for networks _meraki _auth _users
 description:
-  - Manage operations create, update and delete of the resource networks _merakiauthusers.
-  - >
-    Authorize a user configured with Meraki Authentication for a network currently
-    supports 802.1X, splash guest, and client VPN users, and currently, organizations
-    have a 50,000 user cap .
+  - Manage operations create, update and delete of the resource networks _meraki _auth
+    _users. - > Authorize a user configured with Meraki Authentication for a network
+    currently supports 802.1X, splash guest, and client VPN users, and currently,
+    organizations have a 50,000 user cap .
   - Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest
-    or client VPN user.
-  - >
-    Update a user configured with Meraki Authentication currently, 802.1X RADIUS,
-    splash guest, and client VPN users can be updated .
+    or client VPN user. - > Update a user configured with Meraki Authentication currently,
+    802.1X RADIUS, splash guest, and client VPN users can be updated .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

@@ -52,7 +52,7 @@ class NetworksSwitchStacks(object):
         self.new_object = dict(
             name=params.get("name"),
             serials=params.get("serials"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             switch_stack_id=params.get("switchStackId"),
         )
 

@@ -2,20 +2,19 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_switch_access_policies
-short_description: Resource module for networks _switch _accesspolicies
+short_description: Resource module for networks _switch _access _policies
 description:
-  - Manage operations create, update and delete of the resource networks _switch _accesspolicies.
-  - >
-    Create an access policy for a switch network. If you would like to enable Meraki
-    Authentication, set radiusServers to empty array.
-  - Delete an access policy for a switch network.
-  - >
-    Update an access policy for a switch network. If you would like to enable Meraki
-    Authentication, set radiusServers to empty array.
+  - Manage operations create, update and delete of the resource networks _switch _access
+    _policies. - > Create an access policy for a switch network. If you would like
+    to enable Meraki Authentication, set radiusServers to empty array.
+  - Delete an access policy for a switch network. - > Update an access policy for
+    a switch network. If you would like to enable Meraki Authentication, set radiusServers
+    to empty array.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -39,18 +38,24 @@ options:
     type: dict
   guestGroupPolicyId:
     description: Group policy Number for guest group policy.
-    type: str
+    type:
+      - string
+      - 'null'
   guestPortBouncing:
     description: If enabled, Meraki devices will periodically send access-request
       messages to these RADIUS servers.
     type: bool
   guestSgtId:
     description: Security Group Tag ID for guest group policy.
-    type: int
+    type:
+      - integer
+      - 'null'
   guestVlanId:
     description: ID for the guest VLAN allow unauthorized devices access to limited
       network resources.
-    type: int
+    type:
+      - integer
+      - 'null'
   hostMode:
     description: Choose the Host Mode for the access policy.
     type: str

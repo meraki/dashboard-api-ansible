@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_users_info
 short_description: Information module for networks _sm _users
 description:
-  - Information module for Networks Sm Users Info.
   - Get all networks _sm _users.
   - List the owners in an SM network with various specified fields and filters.
 version_added: '1.0.0'
@@ -21,30 +21,25 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sm Users Info.
       - NetworkId path parameter. Network ID.
     type: str
   ids:
     description:
-      - Information module for Networks Sm Users Info.
       - Ids query parameter. Filter users by id(s).
     elements: str
     type: list
   usernames:
     description:
-      - Information module for Networks Sm Users Info.
       - Usernames query parameter. Filter users by username(s).
     elements: str
     type: list
   emails:
     description:
-      - Information module for Networks Sm Users Info.
       - Emails query parameter. Filter users by email(s).
     elements: str
     type: list
   scope:
     description:
-      - Information module for Networks Sm Users Info.
       - >
         Scope query parameter. Specifiy a scope (one of all, none, withAny, withAll,
         withoutAny, withoutAll) and a set of tags.

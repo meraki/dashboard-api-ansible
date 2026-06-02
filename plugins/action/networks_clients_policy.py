@@ -51,7 +51,7 @@ class NetworksClientsPolicy(object):
         self.new_object = dict(
             devicePolicy=params.get("devicePolicy"),
             groupPolicyId=params.get("groupPolicyId"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             client_id=params.get("clientId"),
         )
 

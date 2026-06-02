@@ -53,7 +53,7 @@ class NetworksWirelessSsidsSchedules(object):
             enabled=params.get("enabled"),
             ranges=params.get("ranges"),
             rangesInSeconds=params.get("rangesInSeconds"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

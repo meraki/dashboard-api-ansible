@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_radio_rrm_by_network_info
-short_description: Information module for organizations _wireless _radio _rrm _by _network
+short_description: Information module for organizations _wireless _radio _rrm _by
+  _network
 description:
   - Get all organizations _wireless _radio _rrm _by _network.
   - List the AutoRF settings of an organization by network.
@@ -49,12 +51,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessRadioRrmByNetwork
-    description: Complete reference of the getOrganizationWirelessRadioRrmByNetwork API.
+    description: Complete reference of the getOrganizationWirelessRadioRrmByNetwork
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-radio-rrm-by-network
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_radio_rrm_by_network,
-
   - Paths used are
     get /organizations/{organizationId}/wireless/radio/rrm/byNetwork,
 """

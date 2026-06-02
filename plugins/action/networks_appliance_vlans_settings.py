@@ -48,7 +48,7 @@ class NetworksApplianceVlansSettings(object):
         self.meraki = meraki
         self.new_object = dict(
             vlansEnabled=params.get("vlansEnabled"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

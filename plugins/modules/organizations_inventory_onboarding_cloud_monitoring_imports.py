@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_imports
-short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring
-  _imports
+short_description: Resource module for organizations _inventory _onboarding _cloud
+  _monitoring _imports
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring
-    _imports.
+  - Manage operation create of the resource organizations _inventory _onboarding _cloud
+    _monitoring _imports.
   - Commits the import operation to complete the onboarding of a device into Dashboard
     for monitoring.
 version_added: '1.0.0'

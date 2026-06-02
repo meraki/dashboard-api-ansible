@@ -29,6 +29,7 @@ argument_spec.update(dict(
     time=dict(type="str"),
     reasons=dict(type="list"),
     toVersion=dict(type="dict"),
+    predownload=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -72,6 +73,7 @@ class ActionModule(ActionBase):
             time=params.get("time"),
             reasons=params.get("reasons"),
             toVersion=params.get("toVersion"),
+            predownload=params.get("predownload"),
             networkId=params.get("networkId"),
         )
         return new_object

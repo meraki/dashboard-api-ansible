@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_camera_video_link_info
-short_description: Information module for devices _camera _videolink
+short_description: Information module for devices _camera _video _link
 description:
-  - Information module for Devices Camera Videolink Info.
-  - Get all devices _camera _videolink.
+  - Get all devices _camera _video _link.
   - Returns video link to the specified camera. If a timestamp is supplied, it links
     to that timestamp.
 version_added: '1.0.0'
@@ -22,12 +22,10 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Camera Videolink Info.
       - Serial path parameter.
     type: str
   timestamp:
     description:
-      - Information module for Devices Camera Videolink Info.
       - >
         Timestamp query parameter. Optional The video link will start at this time.
         The timestamp should be a string in ISO8601 format. If no timestamp is specified,
@@ -48,7 +46,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _videolink
+- name: Get all devices _camera _video _link
   cisco.meraki.devices_camera_video_link_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -80,6 +78,9 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "url": "string",
+      "visionUrl": "string"
+    }
 """

@@ -35,6 +35,7 @@ argument_spec.update(dict(
     enabled=dict(type="bool"),
     authMode=dict(type="str"),
     enterpriseAdminAccess=dict(type="str"),
+    ssidAdminAccessible=dict(type="bool"),
     encryptionMode=dict(type="str"),
     psk=dict(type="str"),
     wpaEncryptionMode=dict(type="str"),
@@ -114,6 +115,7 @@ class NetworksWirelessSsids(object):
             enabled=params.get("enabled"),
             authMode=params.get("authMode"),
             enterpriseAdminAccess=params.get("enterpriseAdminAccess"),
+            ssidAdminAccessible=params.get("ssidAdminAccessible"),
             encryptionMode=params.get("encryptionMode"),
             psk=params.get("psk"),
             wpaEncryptionMode=params.get("wpaEncryptionMode"),
@@ -173,7 +175,7 @@ class NetworksWirelessSsids(object):
             namedVlans=params.get("namedVlans"),
             localAuthFallback=params.get("localAuthFallback"),
             radiusAccountingStartDelay=params.get("radiusAccountingStartDelay"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 
@@ -213,6 +215,10 @@ class NetworksWirelessSsids(object):
                 'enterprise_admin_access') is not None:
             new_object_params['enterpriseAdminAccess'] = self.new_object.get(
                 'enterpriseAdminAccess') or self.new_object.get('enterprise_admin_access')
+        if self.new_object.get('ssidAdminAccessible') is not None or self.new_object.get(
+                'ssid_admin_accessible') is not None:
+            new_object_params['ssidAdminAccessible'] = self.new_object.get(
+                'ssidAdminAccessible')
         if self.new_object.get('encryptionMode') is not None or self.new_object.get(
                 'encryption_mode') is not None:
             new_object_params['encryptionMode'] = self.new_object.get(
@@ -532,6 +538,7 @@ class NetworksWirelessSsids(object):
             ("enabled", "enabled"),
             ("authMode", "authMode"),
             ("enterpriseAdminAccess", "enterpriseAdminAccess"),
+            ("ssidAdminAccessible", "ssidAdminAccessible"),
             ("encryptionMode", "encryptionMode"),
             ("psk", "psk"),
             ("wpaEncryptionMode", "wpaEncryptionMode"),
@@ -599,10 +606,10 @@ class NetworksWirelessSsids(object):
         current_obj["number"] = str(current_obj.get("number"))
         return any(
             not meraki_compare_equality2(
-                current_obj.get(meraki_param), requested_obj.get(ansible_param)
-            )
-            for (meraki_param, ansible_param) in obj_params
-        )
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
@@ -630,8 +637,7 @@ class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

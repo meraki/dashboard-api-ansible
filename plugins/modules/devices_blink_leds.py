@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_blink_leds
-short_description: Resource module for devices _blinkleds
+short_description: Resource module for devices _blink _leds
 description:
-  - Manage operation create of the resource devices _blinkleds.
+  - Manage operation create of the resource devices _blink _leds.
   - Blink the LEDs on a device. This endpoint is deprecrated in favor of "/devices/{serial}/liveTools/leds/blink".
 version_added: '1.0.0'
 extends_documentation_fragment:

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_wireless_controllers_by_device_info
 short_description: Information module for organizations _wireless _devices _wireless
   _controllers _by _device
 description:
-  - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
   - Get all organizations _wireless _devices _wireless _controllers _by _device.
   - List of Catalyst access points information.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkIds:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
         NetworkIds query parameter. Optional parameter to filter access points by
         network ID. This filter uses multiple exact matches.
@@ -36,7 +34,6 @@ options:
     type: list
   serials:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
         Serials query parameter. Optional parameter to filter access points by its
         cloud ID. This filter uses multiple exact matches.
@@ -44,7 +41,6 @@ options:
     type: list
   controllerSerials:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
         ControllerSerials query parameter. Optional parameter to filter access points
         by its wireless LAN controller cloud ID. This filter uses multiple exact matches.
@@ -52,13 +48,11 @@ options:
     type: list
   perPage:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 100.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -68,7 +62,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Wireless Devices Wireless Controllers By Device Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

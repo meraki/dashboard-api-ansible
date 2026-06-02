@@ -52,7 +52,7 @@ class OrganizationsSplashThemes(object):
         self.new_object = dict(
             name=params.get("name"),
             baseTheme=params.get("baseTheme"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 

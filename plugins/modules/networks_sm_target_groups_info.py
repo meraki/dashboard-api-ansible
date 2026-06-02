@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_target_groups_info
-short_description: Information module for networks _sm _targetgroups
+short_description: Information module for networks _sm _target _groups
 description:
-  - Information module for Networks Sm Targetgroups Info.
-  - Get all networks _sm _targetgroups.
-  - Get networks _sm _targetgroups by id.
+  - Get all networks _sm _target _groups.
+  - Get networks _sm _target _groups by id.
   - List the target groups in this network.
   - Return a target group.
 version_added: '1.0.0'
@@ -23,19 +23,16 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sm Targetgroups Info.
       - NetworkId path parameter. Network ID.
     type: str
   withDetails:
     description:
-      - Information module for Networks Sm Targetgroups Info.
       - >
         WithDetails query parameter. Boolean indicating if the the ids of the devices
         or users scoped by the target group should be included in the response.
     type: bool
   targetGroupId:
     description:
-      - Information module for Networks Sm Targetgroups Info.
       - TargetGroupId path parameter. Target group ID.
     type: str
 requirements:
@@ -58,7 +55,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _targetgroups
+- name: Get all networks _sm _target _groups
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -81,10 +78,10 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    withDetails: true
+    withDetails: True
     networkId: string
   register: result
-- name: Get networks _sm _targetgroups by id
+- name: Get networks _sm _target _groups by id
   cisco.meraki.networks_sm_target_groups_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -107,7 +104,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    withDetails: true
+    withDetails: True
     networkId: string
     targetGroupId: string
   register: result

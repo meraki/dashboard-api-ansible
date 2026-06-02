@@ -81,7 +81,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             billing=params.get("billing"),
             sentryEnrollment=params.get("sentryEnrollment"),
             selfRegistration=params.get("selfRegistration"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

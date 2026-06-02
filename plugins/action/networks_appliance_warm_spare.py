@@ -56,7 +56,7 @@ class NetworksApplianceWarmSpare(object):
             uplinkMode=params.get("uplinkMode"),
             virtualIp1=params.get("virtualIp1"),
             virtualIp2=params.get("virtualIp2"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

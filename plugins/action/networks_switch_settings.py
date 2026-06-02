@@ -58,7 +58,7 @@ class NetworksSwitchSettings(object):
             uplinkClientSampling=params.get("uplinkClientSampling"),
             macBlocklist=params.get("macBlocklist"),
             uplinkSelection=params.get("uplinkSelection"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

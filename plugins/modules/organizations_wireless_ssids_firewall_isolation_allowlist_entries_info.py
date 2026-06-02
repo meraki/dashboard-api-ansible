@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_ssids_firewall_isolation_allowlist_entries_info
 short_description: Information module for organizations _wireless _ssids _firewall
   _isolation _allowlist _entries
 description:
-  - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
   - Get all organizations _wireless _ssids _firewall _isolation _allowlist _entries.
   - List the L2 isolation allow list MAC entry in an organization.
 version_added: '1.0.0'
@@ -23,18 +23,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,7 +41,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -54,13 +50,11 @@ options:
     type: str
   networkIds:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - NetworkIds query parameter. NetworkIds array to filter out results.
     elements: str
     type: list
   ssids:
     description:
-      - Information module for Organizations Wireless Ssids Firewall Isolation Allowlist Entries Info.
       - Ssids query parameter. Ssids number array to filter out results.
     elements: int
     type: list

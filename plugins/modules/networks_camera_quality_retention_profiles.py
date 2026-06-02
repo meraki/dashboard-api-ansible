@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles
-short_description: Resource module for networks _camera _qualityretentionprofiles
+short_description: Resource module for networks _camera _quality _retention _profiles
 description:
-  - Manage operations create, update and delete of the resource networks _camera _qualityretentionprofiles.
+  - Manage operations create, update and delete of the resource networks _camera _quality
+    _retention _profiles.
   - Creates new quality retention profile for this network.
   - Delete an existing quality retention profile for this network.
   - Update an existing quality retention profile for this network.
@@ -29,7 +31,9 @@ options:
     description: The maximum number of days for which the data will be stored, or
       'null' to keep data until storage space runs out. If the former, it can be in
       the range of one to ninety days.
-    type: int
+    type:
+      - integer
+      - 'null'
   motionBasedRetentionEnabled:
     description: Deletes footage older than 3 days in which no motion was detected.
       Can be either true or false. Defaults to false. This setting does not apply
@@ -57,7 +61,9 @@ options:
   scheduleId:
     description: Schedule for which this camera will record video, or 'null' to always
       record.
-    type: str
+    type:
+      - string
+      - 'null'
   smartRetention:
     description: Smart Retention records footage in two qualities and intelligently
       retains higher quality when motion, people or vehicles are detected.

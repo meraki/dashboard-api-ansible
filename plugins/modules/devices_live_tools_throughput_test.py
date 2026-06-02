@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_throughput_test
-short_description: Resource module for devices _livetools _throughputtest
+short_description: Resource module for devices _live _tools _throughput _test
 description:
-  - Manage operation create of the resource devices _livetools _throughputtest.
-  - >
-    Enqueue a job to test a device throughput, the test will run for 10 secs to test
-    throughput. This endpoint has a rate limit of one request every five seconds per
-    device.
+  - Manage operation create of the resource devices _live _tools _throughput _test.
+    - > Enqueue a job to test a device throughput, the test will run for 10 secs to
+    test throughput. This endpoint has a rate limit of one request every five seconds
+    per device.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

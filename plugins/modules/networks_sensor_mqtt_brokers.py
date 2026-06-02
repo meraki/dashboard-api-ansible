@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sensor_mqtt_brokers
-short_description: Resource module for networks _sensor _mqttbrokers
+short_description: Resource module for networks _sensor _mqtt _brokers
 description:
-  - Manage operation update of the resource networks _sensor _mqttbrokers.
-  - >
-    Update the sensor settings of an MQTT broker. To update the broker itself, use
-    /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
+  - Manage operation update of the resource networks _sensor _mqtt _brokers. - > Update
+    the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

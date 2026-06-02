@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_switch_access_control_lists
-short_description: Resource module for networks _switch _accesscontrollists
+short_description: Resource module for networks _switch _access _control _lists
 description:
-  - Manage operation update of the resource networks _switch _accesscontrollists.
+  - Manage operation update of the resource networks _switch _access _control _lists.
   - Update the access control lists for a MS network.
 version_added: '1.0.0'
 extends_documentation_fragment:

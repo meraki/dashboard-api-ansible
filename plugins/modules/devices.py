@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices
@@ -17,11 +18,15 @@ author: Francisco Munoz (@fmunoz)
 options:
   address:
     description: The address of a device.
-    type: str
+    type:
+      - string
+      - 'null'
   floorPlanId:
     description: The floor plan to associate to this device. Null disassociates the
       device from the floorplan.
-    type: str
+    type:
+      - string
+      - 'null'
   lat:
     description: The latitude of a device.
     type: float
@@ -34,10 +39,14 @@ options:
     type: bool
   name:
     description: The name of a device.
-    type: str
+    type:
+      - string
+      - 'null'
   notes:
     description: The notes for the device. String. Limited to 255 characters.
-    type: str
+    type:
+      - string
+      - 'null'
   serial:
     description: Serial path parameter.
     type: str
@@ -47,7 +56,9 @@ options:
       switch device from the current profile. For a device to be bindable to a switch
       template, it must (1) be a switch, and (2) belong to a network that is bound
       to a configuration template.
-    type: str
+    type:
+      - string
+      - 'null'
   tags:
     description: The list of tags of a device.
     elements: str

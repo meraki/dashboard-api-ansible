@@ -51,7 +51,7 @@ class NetworksWirelessAirMarshalRules(object):
         self.new_object = dict(
             type=params.get("type"),
             match=params.get("match"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             rule_id=params.get("ruleId"),
         )
 

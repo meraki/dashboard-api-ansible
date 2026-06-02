@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_ports
-short_description: Resource module for organizations _configtemplates _switch _profiles
+short_description: Resource module for organizations _config _templates _switch _profiles
   _ports
 description:
-  - Manage operation update of the resource organizations _configtemplates _switch
+  - Manage operation update of the resource organizations _config _templates _switch
     _profiles _ports.
   - Update a switch template port.
 version_added: '1.0.0'
@@ -74,10 +75,14 @@ options:
     description: The maximum number of MAC addresses for regular MAC allow list. Only
       applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported
       on verions greater than ms18 only for classic switches.
-    type: int
+    type:
+      - integer
+      - 'null'
   name:
     description: The name of the switch template port.
-    type: str
+    type:
+      - string
+      - 'null'
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
@@ -90,7 +95,9 @@ options:
   portScheduleId:
     description: The ID of the port schedule. A value of null will clear the port
       schedule.
-    type: str
+    type:
+      - string
+      - 'null'
   profile:
     description: Profile attributes.
     suboptions:
@@ -146,11 +153,15 @@ options:
   vlan:
     description: The VLAN of the switch template port. For a trunk port, this is the
       native VLAN. A null value will clear the value set for trunk ports.
-    type: int
+    type:
+      - integer
+      - 'null'
   voiceVlan:
     description: The voice VLAN of the switch template port. Only applicable to access
       ports.
-    type: int
+    type:
+      - integer
+      - 'null'
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

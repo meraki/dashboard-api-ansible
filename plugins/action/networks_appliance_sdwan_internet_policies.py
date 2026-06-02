@@ -64,11 +64,8 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail(errors)
 
     def get_object(self, params):
-        new_object = dict(
-            wanTrafficUplinkPreferences=params.get(
-                "wanTrafficUplinkPreferences"),
-            networkId=params.get("networkId"),
-        )
+        new_object = dict(wanTrafficUplinkPreferences=params.get(
+            "wanTrafficUplinkPreferences"), networkId=params.get("networkId"), )
         return new_object
 
     def run(self, tmp=None, task_vars=None):

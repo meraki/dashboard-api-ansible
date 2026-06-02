@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_settings
@@ -16,8 +17,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   ipv6BridgeEnabled:
-    description: Toggle for enabling or disabling IPv6 bridging in a network (Note if
-      enabled, SSIDs must also be configured to use bridge mode).
+    description: Toggle for enabling or disabling IPv6 bridging in a network (Note
+      if enabled, SSIDs must also be configured to use bridge mode).
     type: bool
   ledLightsOn:
     description: Toggle for enabling or disabling LED lights on all APs in the network
@@ -57,9 +58,21 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  upgrade:
+    description: Upgrade settings for the network.
+    suboptions:
+      predownload:
+        description: Predownload settings for firmware upgrades.
+        suboptions:
+          enabled:
+            description: The default setting for upgrade firmware predownload. Only
+              applies to devices running MR 32 or higher.
+            type: bool
+        type: dict
+    type: dict
   upgradeStrategy:
-    description: The default strategy that network devices will use to perform an upgrade.
-      Requires firmware version MR 26.8 or higher.
+    description: The default strategy that network devices will use to perform an
+      upgrade. Requires firmware version MR 26.8 or higher.
     type: str
 requirements:
   - meraki >= 2.4.9
@@ -71,7 +84,6 @@ seealso:
 notes:
   - SDK Method used are
     wireless.Wireless.update_network_wireless_settings,
-
   - Paths used are
     put /networks/{networkId}/wireless/settings,
 """
@@ -101,7 +113,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-
     ipv6BridgeEnabled: false
     ledLightsOn: false
     locationAnalyticsEnabled: false
@@ -113,6 +124,9 @@ EXAMPLES = r"""
         duration: 5
         enabled: true
     networkId: string
+    upgrade:
+      predownload:
+        enabled: false
     upgradeStrategy: minimizeUpgradeTime
 """
 RETURN = r"""
@@ -126,6 +140,11 @@ meraki_response:
       "ipv6BridgeEnabled": true,
       "locationAnalyticsEnabled": true,
       "upgradeStrategy": "string",
+      "upgrade": {
+        "predownload": {
+          "enabled": true
+        }
+      },
       "ledLightsOn": true,
       "multicastToUnicastConversion": {
         "enabled": true

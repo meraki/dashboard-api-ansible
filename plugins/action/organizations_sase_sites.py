@@ -20,6 +20,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
     meraki_compare_equality2,
+    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -30,40 +31,70 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    peers=dict(type="list"),
+    siteId=dict(type="str"),
+    routing=dict(type="dict"),
     organizationId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["organizationId"], True),
+    ("state", "present", ["organizationId", "siteId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
+class OrganizationsSaseSites(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            peers=params.get("peers"),
-            organization_id=params.get("organizationId"),
+            siteId=params.get("siteId"),
+            routing=params.get("routing"),
+            organizationId=params.get("organizationId"),
+            siteId=params.get("siteId"),
         )
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
+            new_object_params['perPage'] = self.new_object.get('perPage') or \
+                self.new_object.get('per_page')
+        new_object_params['total_pages'] = -1
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('search') is not None or self.new_object.get(
+                'search') is not None:
+            new_object_params['search'] = self.new_object.get('search')
+        if self.new_object.get('status') is not None or self.new_object.get(
+                'status') is not None:
+            new_object_params['status'] = self.new_object.get('status')
+        if self.new_object.get('siteId') is not None or self.new_object.get(
+                'site_id') is not None:
+            new_object_params['siteId'] = self.new_object.get('siteId') or \
+                self.new_object.get('site_id')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
                 'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
-    def update_all_params(self):
+    def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('peers') is not None or self.new_object.get(
-                'peers') is not None:
-            new_object_params['peers'] = self.new_object.get('peers') or \
-                self.new_object.get('peers')
+        if self.new_object.get('siteId') is not None or self.new_object.get(
+                'site_id') is not None:
+            new_object_params['siteId'] = self.new_object.get('siteId') or \
+                self.new_object.get('site_id')
+        if self.new_object.get('routing') is not None or self.new_object.get(
+                'routing') is not None:
+            new_object_params['routing'] = self.new_object.get('routing') or \
+                self.new_object.get('routing')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
@@ -75,10 +106,14 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(
-                family="appliance",
-                function="getOrganizationApplianceVpnThirdPartyVpnpeers",
+                family="organizations",
+                function="getOrganizationSaseSites",
                 params=self.get_all_params(name=name),
             )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'name', name)
             if result is None:
                 result = items
         except Exception as e:
@@ -96,17 +131,24 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
+        o_id = o_id or self.new_object.get(
+            "site_id") or self.new_object.get("siteId")
         name = self.new_object.get("name")
+        if o_id:
+            prev_obj = self.get_object_by_name(o_id)
+            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("siteId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(siteId=_id))
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -114,8 +156,10 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("peers", "peers"),
+            ("siteId", "siteId"),
+            ("routing", "routing"),
             ("organizationId", "organizationId"),
+            ("siteId", "siteId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -128,12 +172,21 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
 
     def update(self):
         id = self.new_object.get("id")
+        id = id or self.new_object.get("siteId")
         name = self.new_object.get("name")
         result = None
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("siteId")
+            if id_:
+                self.new_object.update(dict(siteid=id_))
         result = self.meraki.exec_meraki(
-            family="appliance",
-            function="updateOrganizationApplianceVpnThirdPartyVPNPeers",
-            params=self.update_all_params(),
+            family="organizations",
+            function="updateOrganizationSaseSite",
+            params=self.update_by_id_params(),
             op_modifies=True,
         )
         return result
@@ -174,8 +227,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsApplianceVpnThirdPartyVpnpeers(
-            self._task.args, meraki)
+        obj = OrganizationsSaseSites(self._task.args, meraki)
 
         state = self._task.args.get("state")
 

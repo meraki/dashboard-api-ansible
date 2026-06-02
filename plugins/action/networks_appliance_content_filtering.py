@@ -54,7 +54,7 @@ class NetworksApplianceContentFiltering(object):
             blockedUrlPatterns=params.get("blockedUrlPatterns"),
             blockedUrlCategories=params.get("blockedUrlCategories"),
             urlCategoryListSize=params.get("urlCategoryListSize"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

@@ -48,7 +48,7 @@ class NetworksCellularGatewayUplink(object):
         self.meraki = meraki
         self.new_object = dict(
             bandwidthLimits=params.get("bandwidthLimits"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

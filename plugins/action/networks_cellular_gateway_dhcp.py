@@ -52,7 +52,7 @@ class NetworksCellularGatewayDhcp(object):
             dhcpLeaseTime=params.get("dhcpLeaseTime"),
             dnsNameservers=params.get("dnsNameservers"),
             dnsCustomNameservers=params.get("dnsCustomNameservers"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

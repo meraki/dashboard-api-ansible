@@ -35,6 +35,7 @@ argument_spec.update(dict(
     ipv6BridgeEnabled=dict(type="bool"),
     locationAnalyticsEnabled=dict(type="bool"),
     upgradeStrategy=dict(type="str"),
+    upgrade=dict(type="dict"),
     ledLightsOn=dict(type="bool"),
     multicastToUnicastConversion=dict(type="dict"),
     namedVlans=dict(type="dict"),
@@ -57,10 +58,11 @@ class NetworksWirelessSettings(object):
             ipv6BridgeEnabled=params.get("ipv6BridgeEnabled"),
             locationAnalyticsEnabled=params.get("locationAnalyticsEnabled"),
             upgradeStrategy=params.get("upgradeStrategy"),
+            upgrade=params.get("upgrade"),
             ledLightsOn=params.get("ledLightsOn"),
             multicastToUnicastConversion=params.get("multicastToUnicastConversion"),
             namedVlans=params.get("namedVlans"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -89,6 +91,10 @@ class NetworksWirelessSettings(object):
                 'upgrade_strategy') is not None:
             new_object_params['upgradeStrategy'] = self.new_object.get(
                 'upgradeStrategy') or self.new_object.get('upgrade_strategy')
+        if self.new_object.get('upgrade') is not None or self.new_object.get(
+                'upgrade') is not None:
+            new_object_params['upgrade'] = self.new_object.get('upgrade') or \
+                self.new_object.get('upgrade')
         if self.new_object.get('ledLightsOn') is not None or self.new_object.get(
                 'led_lights_on') is not None:
             new_object_params['ledLightsOn'] = self.new_object.get(
@@ -163,6 +169,7 @@ class NetworksWirelessSettings(object):
             ("ipv6BridgeEnabled", "ipv6BridgeEnabled"),
             ("locationAnalyticsEnabled", "locationAnalyticsEnabled"),
             ("upgradeStrategy", "upgradeStrategy"),
+            ("upgrade", "upgrade"),
             ("ledLightsOn", "ledLightsOn"),
             ("multicastToUnicastConversion", "multicastToUnicastConversion"),
             ("namedVlans", "namedVlans"),

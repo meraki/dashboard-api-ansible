@@ -52,7 +52,7 @@ class NetworksApplianceSettings(object):
             clientTrackingMethod=params.get("clientTrackingMethod"),
             deploymentMode=params.get("deploymentMode"),
             dynamicDns=params.get("dynamicDns"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

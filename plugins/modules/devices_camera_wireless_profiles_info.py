@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_camera_wireless_profiles_info
-short_description: Information module for devices _camera _wirelessprofiles
+short_description: Information module for devices _camera _wireless _profiles
 description:
-  - Information module for Devices Camera Wirelessprofiles Info.
-  - Get all devices _camera _wirelessprofiles.
+  - Get all devices _camera _wireless _profiles.
   - Returns wireless profile assigned to the given camera.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +21,6 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Camera Wirelessprofiles Info.
       - Serial path parameter.
     type: str
 requirements:
@@ -39,7 +38,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all devices _camera _wirelessprofiles
+- name: Get all devices _camera _wireless _profiles
   cisco.meraki.devices_camera_wireless_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -70,6 +69,10 @@ meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "primary": "string",
+      "secondary": "string",
+      "backup": "string"
+    }
 """

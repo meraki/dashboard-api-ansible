@@ -50,7 +50,7 @@ class NetworksCellularGatewaySubnetPool(object):
         self.new_object = dict(
             mask=params.get("mask"),
             cidr=params.get("cidr"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: administered_licensing_subscription_subscriptions_claim_key_validate
 short_description: Resource module for administered _licensing _subscription _subscriptions
-  _claimkey _validate
+  _claim _key _validate
 description:
   - Manage operation create of the resource administered _licensing _subscription
-    _subscriptions _claimkey _validate.
+    _subscriptions _claim _key _validate.
   - Find a subscription by claim key. Returns 400 if the key has already been claimed.
 version_added: '1.0.0'
 extends_documentation_fragment:

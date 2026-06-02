@@ -58,7 +58,7 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
             failoverAndFailback=params.get("failoverAndFailback"),
             wanTrafficUplinkPreferences=params.get("wanTrafficUplinkPreferences"),
             vpnTrafficUplinkPreferences=params.get("vpnTrafficUplinkPreferences"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

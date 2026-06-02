@@ -50,7 +50,7 @@ class NetworksFirmwareUpgradesStagedEvents(object):
         self.new_object = dict(
             products=params.get("products"),
             stages=params.get("stages"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

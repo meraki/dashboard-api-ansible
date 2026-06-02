@@ -52,7 +52,7 @@ class NetworksWirelessElectronicShelfLabel(object):
             hostname=params.get("hostname"),
             enabled=params.get("enabled"),
             mode=params.get("mode"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

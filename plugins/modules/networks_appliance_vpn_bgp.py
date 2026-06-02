@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_vpn_bgp
@@ -49,6 +50,11 @@ options:
             description: Password to configure MD5 authentication between BGP peers.
             type: str
         type: dict
+      communityOut:
+        description: List of BGP communities tagged to the routes advertised to an
+          eBGP neighbor.
+        elements: str
+        type: list
       ebgpHoldTimer:
         description: The eBGP hold timer in seconds for each neighbor. The eBGP hold
           timer must be an integer between 12 and 240.
@@ -57,6 +63,11 @@ options:
         description: Configure this if the neighbor is not adjacent. The eBGP multi-hop
           must be an integer between 1 and 255.
         type: int
+      filterIn:
+        description: Filters routes received from an eBGP neighbor. Each entry must
+          be an IPv4 CIDR string (e.g., '10.0.0.0/8' or '10.0.0.5/32').
+        elements: str
+        type: list
       ip:
         description: The IPv4 address of the neighbor.
         type: str
@@ -97,7 +108,8 @@ options:
         type: int
       sourceInterface:
         description: The output interface for peering with the remote BGP peer. Valid
-          values are 'wan{NUMBER}' (e.g. 'wan3') or 'vlan{VLAN ID}' (e.g. 'vlan123').
+          values are 'wan{NUMBER}' (e.g. 'wan3') or 'vlan{VLAN ID}' (e.g. 'vlan123')
+          for MX; 'l3lan{ID}' (e.g. 'l3lan123') for Secure Router L3 interfaces.
         type: str
       ttlSecurity:
         description: Settings for BGP TTL security to protect BGP peering sessions
@@ -116,6 +128,11 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  routerId:
+    description: The router ID of the appliance.
+    type:
+      - string
+      - 'null'
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -162,8 +179,14 @@ EXAMPLES = r"""
       - allowTransit: true
         authentication:
           password: abc123
+        communityOut:
+          - 64515:100
+          - NO_EXPORT
         ebgpHoldTimer: 180
         ebgpMultihop: 2
+        filterIn:
+          - 10.0.0.0/8
+          - 172.16.0.0/12
         ip: 10.10.10.22
         ipv6:
           address: 2002::1234:abcd:ffff:c0a8:101
@@ -179,6 +202,7 @@ EXAMPLES = r"""
           enabled: false
         weight: 10
     networkId: string
+    routerId: 10.15.10.2
 """
 RETURN = r"""
 meraki_response:
@@ -190,6 +214,7 @@ meraki_response:
       "enabled": true,
       "asNumber": 0,
       "ibgpHoldTimer": 0,
+      "routerId": "string",
       "neighbors": [
         {
           "ip": "string",
@@ -213,7 +238,13 @@ meraki_response:
           "pathPrepend": [
             0
           ],
-          "weight": 0
+          "weight": 0,
+          "filterIn": [
+            "string"
+          ],
+          "communityOut": [
+            "string"
+          ]
         }
       ]
     }

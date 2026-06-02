@@ -102,7 +102,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             profile=params.get("profile"),
             dot3az=params.get("dot3az"),
             highSpeed=params.get("highSpeed"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             config_template_id=params.get("configTemplateId"),
             profile_id=params.get("profileId"),
             port_id=params.get("portId"),

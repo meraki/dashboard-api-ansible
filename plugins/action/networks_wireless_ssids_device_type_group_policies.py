@@ -51,7 +51,7 @@ class NetworksWirelessSsidsDeviceTypeGroupPolicies(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             deviceTypePolicies=params.get("deviceTypePolicies"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

@@ -50,7 +50,7 @@ class OrganizationsSaml(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             spInitiated=params.get("spInitiated"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):

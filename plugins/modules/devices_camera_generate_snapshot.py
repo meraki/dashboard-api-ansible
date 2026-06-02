@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_camera_generate_snapshot
-short_description: Resource module for devices _camera _generatesnapshot
+short_description: Resource module for devices _camera _generate _snapshot
 description:
-  - Manage operation create of the resource devices _camera _generatesnapshot.
+  - Manage operation create of the resource devices _camera _generate _snapshot.
   - Generate a snapshot of what the camera sees at the specified time and return a
     link to that image.
 version_added: '1.0.0'

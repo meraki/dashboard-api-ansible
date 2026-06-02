@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_connectivity_monitoring_destinations_info
-short_description: Information module for networks _cellulargateway _connectivitymonitoringdestinations
+short_description: Information module for networks _cellular _gateway _connectivity
+  _monitoring _destinations
 description:
-  - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
-  - Get all networks _cellulargateway _connectivitymonitoringdestinations.
+  - Get all networks _cellular _gateway _connectivity _monitoring _destinations.
   - Return the connectivity testing destinations for an MG network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +22,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Cellulargateway Connectivitymonitoringdestinations Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellulargateway _connectivitymonitoringdestinations
+- name: Get all networks _cellular _gateway _connectivity _monitoring _destinations
   cisco.meraki.networks_cellular_gateway_connectivity_monitoring_destinations_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

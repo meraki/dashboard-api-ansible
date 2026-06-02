@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_radio_auto_rf_channels_recalculate
@@ -10,11 +11,9 @@ short_description: Resource module for organizations _wireless _radio _auto _rf 
   _recalculate
 description:
   - Manage operation create of the resource organizations _wireless _radio _auto _rf
-    _channels _recalculate.
-  - >
-    Recalculates automatically assigned channels for every AP within specified the
-    specified networks. Note This could cause a brief loss in connectivity for wireless
-    clients.
+    _channels _recalculate. - > Recalculates automatically assigned channels for every
+    AP within specified the specified networks. Note This could cause a brief loss
+    in connectivity for wireless clients.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

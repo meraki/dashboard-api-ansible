@@ -2,23 +2,22 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_switch_ports_overview_info
 short_description: Information module for organizations _switch _ports _overview
 description:
-  - Information module for Organizations Switch Ports Overview Info.
-  - Get all organizations _switch _ports _overview.
-  - >
-    Returns the counts of all active ports for the requested timespan, grouped by
-    speed. An active port is a port that at any point during the timeframe is observed
-    to be connected to a responsive device and isn't configured to be disabled. For
-    a port that is observed at multiple speeds during the timeframe, it will be counted
-    at the highest speed observed. The number of inactive ports, and the total number
-    of ports are also provided. Only ports on switches online during the timeframe
-    will be represented and a port is only guaranteed to be present if its switch
-    was online for at least 6 hours of the timeframe.
+  - Get all organizations _switch _ports _overview. - > Returns the counts of all
+    active ports for the requested timespan, grouped by speed. An active port is a
+    port that at any point during the timeframe is observed to be connected to a responsive
+    device and isn't configured to be disabled. For a port that is observed at multiple
+    speeds during the timeframe, it will be counted at the highest speed observed.
+    The number of inactive ports, and the total number of ports are also provided.
+    Only ports on switches online during the timeframe will be represented and a port
+    is only guaranteed to be present if its switch was online for at least 6 hours
+    of the timeframe.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -29,23 +28,19 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Switch Ports Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - Information module for Organizations Switch Ports Overview Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-      - Information module for Organizations Switch Ports Overview Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Organizations Switch Ports Overview Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

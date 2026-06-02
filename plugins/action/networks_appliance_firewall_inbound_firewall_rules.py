@@ -50,7 +50,7 @@ class NetworksApplianceFirewallInboundFirewallRules(object):
         self.new_object = dict(
             rules=params.get("rules"),
             syslogDefaultRule=params.get("syslogDefaultRule"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

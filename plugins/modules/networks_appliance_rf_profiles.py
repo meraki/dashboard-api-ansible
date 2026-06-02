@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_rf_profiles
-short_description: Resource module for networks _appliance _rfprofiles
+short_description: Resource module for networks _appliance _rf _profiles
 description:
   - Manage operations create, update and delete of the resource networks _appliance
-    _rfprofiles.
+    _rf _profiles.
   - Creates new RF profile for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,7 +21,7 @@ options:
     description: Settings related to 5Ghz band.
     suboptions:
       axEnabled:
-        description: Determines whether ax radio on 5Ghz band is on or off. Can be
+        description: Determines whether ax radio on 5GHz band is on or off. Can be
           either true or false. If false, we highly recommend disabling band steering.
           Defaults to true.
         type: bool

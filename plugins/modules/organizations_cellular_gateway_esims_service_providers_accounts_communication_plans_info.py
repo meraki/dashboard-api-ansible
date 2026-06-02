@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_accounts_communication_plans_info
 short_description: Information module for organizations _cellular _gateway _esims
   _service _providers _accounts _communication _plans
 description:
-  - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Communication Plans Info.
   - Get all organizations _cellular _gateway _esims _service _providers _accounts
     _communication _plans.
   - The communication plans available for a given provider.
@@ -23,12 +23,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Communication Plans Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   accountIds:
     description:
-      - Information module for Organizations Cellular Gateway Esims Service Providers Accounts Communication Plans Info.
       - AccountIds query parameter. Account IDs that communication plans will be fetched
         for.
     elements: str

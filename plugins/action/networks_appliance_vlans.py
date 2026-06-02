@@ -48,6 +48,7 @@ argument_spec.update(dict(
     dhcpBootNextServer=dict(type="str"),
     dhcpBootFilename=dict(type="str"),
     dhcpOptions=dict(type="list"),
+    uplinks=dict(type="list"),
     networkId=dict(type="str"),
     vlanId=dict(type="str"),
     vpnNatSubnet=dict(type="str"),
@@ -86,6 +87,7 @@ class NetworksApplianceVlans(object):
             dhcpBootNextServer=params.get("dhcpBootNextServer"),
             dhcpBootFilename=params.get("dhcpBootFilename"),
             dhcpOptions=params.get("dhcpOptions"),
+            uplinks=params.get("uplinks"),
             networkId=params.get("networkId"),
             vlanId=params.get("vlanId"),
             vpnNatSubnet=params.get("vpnNatSubnet"),
@@ -184,6 +186,10 @@ class NetworksApplianceVlans(object):
                 'dhcp_options') is not None:
             new_object_params['dhcpOptions'] = self.new_object.get(
                 'dhcpOptions') or self.new_object.get('dhcp_options')
+        if self.new_object.get('uplinks') is not None or self.new_object.get(
+                'uplinks') is not None:
+            new_object_params['uplinks'] = self.new_object.get('uplinks') or \
+                self.new_object.get('uplinks')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -284,6 +290,10 @@ class NetworksApplianceVlans(object):
                 'mandatory_dhcp') is not None:
             new_object_params['mandatoryDhcp'] = self.new_object.get(
                 'mandatoryDhcp') or self.new_object.get('mandatory_dhcp')
+        if self.new_object.get('uplinks') is not None or self.new_object.get(
+                'uplinks') is not None:
+            new_object_params['uplinks'] = self.new_object.get('uplinks') or \
+                self.new_object.get('uplinks')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -380,6 +390,7 @@ class NetworksApplianceVlans(object):
             ("dhcpBootNextServer", "dhcpBootNextServer"),
             ("dhcpBootFilename", "dhcpBootFilename"),
             ("dhcpOptions", "dhcpOptions"),
+            ("uplinks", "uplinks"),
             ("networkId", "networkId"),
             ("vlanId", "vlanId"),
             ("vpnNatSubnet", "vpnNatSubnet"),

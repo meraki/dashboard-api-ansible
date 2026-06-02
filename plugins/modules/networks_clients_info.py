@@ -2,21 +2,19 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_clients_info
 short_description: Information module for networks _clients
 description:
-  - Information module for Networks Clients Info.
   - Get all networks _clients.
   - Get networks _clients by id.
   - List the clients that have used this network in the timespan. The data is updated
-    at most once every five minutes.
-  - >
-    Return the client associated with the given identifier. Clients can be identified
-    by a client key or either the MAC or IP depending on whether the network uses
-    Track-by-IP.
+    at most once every five minutes. - > Return the client associated with the given
+    identifier. Clients can be identified by a client key or either the MAC or IP
+    depending on whether the network uses Track-by-IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -28,18 +26,15 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Clients Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - Information module for Networks Clients Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-      - Information module for Networks Clients Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in
@@ -47,13 +42,11 @@ options:
     type: float
   perPage:
     description:
-      - Information module for Networks Clients Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 5000. Default is 10.
     type: int
   startingAfter:
     description:
-      - Information module for Networks Clients Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -63,7 +56,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Networks Clients Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -73,68 +65,57 @@ options:
     type: str
   statuses:
     description:
-      - Information module for Networks Clients Info.
       - Statuses query parameter. Filters clients based on status. Can be one of 'Online'
         or 'Offline'.
     elements: str
     type: list
   ip:
     description:
-      - Information module for Networks Clients Info.
       - Ip query parameter. Filters clients based on a partial or full match for the
         ip address field.
     type: str
   ip6:
     description:
-      - Information module for Networks Clients Info.
       - Ip6 query parameter. Filters clients based on a partial or full match for
         the ip6 address field.
     type: str
   ip6Local:
     description:
-      - Information module for Networks Clients Info.
       - Ip6Local query parameter. Filters clients based on a partial or full match
         for the ip6Local address field.
     type: str
   mac:
     description:
-      - Information module for Networks Clients Info.
       - Mac query parameter. Filters clients based on a partial or full match for
         the mac address field.
     type: str
   os:
     description:
-      - Information module for Networks Clients Info.
       - Os query parameter. Filters clients based on a partial or full match for the
         os (operating system) field.
     type: str
   pskGroup:
     description:
-      - Information module for Networks Clients Info.
       - PskGroup query parameter. Filters clients based on partial or full match for
         the iPSK name field.
     type: str
   description:
     description:
-      - Information module for Networks Clients Info.
       - Description query parameter. Filters clients based on a partial or full match
         for the description field.
     type: str
   vlan:
     description:
-      - Information module for Networks Clients Info.
       - Vlan query parameter. Filters clients based on the full match for the VLAN
         field.
     type: str
   namedVlan:
     description:
-      - Information module for Networks Clients Info.
       - NamedVlan query parameter. Filters clients based on the partial or full match
         for the named VLAN field.
     type: str
   recentDeviceConnections:
     description:
-      - Information module for Networks Clients Info.
       - >
         RecentDeviceConnections query parameter. Filters clients based on recent connection
         type. Can be one of 'Wired' or 'Wireless'.
@@ -142,7 +123,6 @@ options:
     type: list
   clientId:
     description:
-      - Information module for Networks Clients Info.
       - ClientId path parameter. Client ID.
     type: str
 requirements:
@@ -251,6 +231,7 @@ meraki_response:
       "firstSeen": 0,
       "lastSeen": 0,
       "manufacturer": "string",
+      "model": "string",
       "os": "string",
       "user": "string",
       "vlan": "string",

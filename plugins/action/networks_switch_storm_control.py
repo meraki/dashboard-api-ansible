@@ -54,7 +54,7 @@ class NetworksSwitchStormControl(object):
             multicastThreshold=params.get("multicastThreshold"),
             unknownUnicastThreshold=params.get("unknownUnicastThreshold"),
             treatTheseTrafficTypesAsOneThreshold=params.get("treatTheseTrafficTypesAsOneThreshold"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

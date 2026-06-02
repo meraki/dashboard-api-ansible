@@ -50,7 +50,7 @@ class NetworksApplianceFirewallFirewalledServices(object):
         self.new_object = dict(
             access=params.get("access"),
             allowedIps=params.get("allowedIps"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             service=params.get("service"),
         )
 

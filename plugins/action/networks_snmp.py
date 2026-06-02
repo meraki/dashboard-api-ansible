@@ -52,7 +52,7 @@ class NetworksSnmp(object):
             access=params.get("access"),
             communityString=params.get("communityString"),
             users=params.get("users"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

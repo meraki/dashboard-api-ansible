@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_camera_detections_history_by_boundary_by_interval_info
 short_description: Information module for organizations _camera _detections _history
-  _byboundary _byinterval
+  _by _boundary _by _interval
 description:
-  - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
-  - Get all organizations _camera _detections _history _byboundary _byinterval.
+  - Get all organizations _camera _detections _history _by _boundary _by _interval.
   - Returns analytics data for timespans.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,12 +23,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   boundaryIds:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - >
         BoundaryIds query parameter. A list of boundary ids. The returned cameras
         will be filtered to only include these ids.
@@ -36,13 +34,11 @@ options:
     type: list
   ranges:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - Ranges query parameter. A list of time ranges with intervals.
     elements: dict
     type: list
   duration:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - >
         Duration query parameter. The minimum time, in seconds, that the person or
         car remains in the area to be counted. Defaults to boundary configuration
@@ -50,13 +46,11 @@ options:
     type: int
   perPage:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 1 - 1000. Defaults to 1000.
     type: int
   boundaryTypes:
     description:
-      - Information module for Organizations Camera Detections History Byboundary Byinterval Info.
       - BoundaryTypes query parameter. The detection types. Defaults to 'person'.
     elements: str
     type: list
@@ -76,7 +70,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _detections _history _byboundary _byinterval
+- name: Get all organizations _camera _detections _history _by _boundary _by _interval
   cisco.meraki.organizations_camera_detections_history_by_boundary_by_interval_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

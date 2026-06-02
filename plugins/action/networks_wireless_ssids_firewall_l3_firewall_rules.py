@@ -51,7 +51,7 @@ class NetworksWirelessSsidsFirewallL3FirewallRules(object):
         self.new_object = dict(
             rules=params.get("rules"),
             allowLanAccess=params.get("allowLanAccess"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_umbrella_account_connect
 short_description: Resource module for networks _appliance _umbrella _account _connect
 description:
-  - Manage operation create of the resource networks _appliance _umbrella _account _connect.
+  - Manage operation create of the resource networks _appliance _umbrella _account
+    _connect.
   - Connect a Cisco Umbrella account to this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -33,12 +35,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance connectNetworkApplianceUmbrellaAccount
-    description: Complete reference of the connectNetworkApplianceUmbrellaAccount API.
+    description: Complete reference of the connectNetworkApplianceUmbrellaAccount
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!connect-network-appliance-umbrella-account
 notes:
   - SDK Method used are
     appliance.Appliance.connect_network_appliance_umbrella_account,
-
   - Paths used are
     post /networks/{networkId}/appliance/umbrella/account/connect,
 """
@@ -67,7 +69,6 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-
     api:
       key: str
       secret: str

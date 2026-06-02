@@ -53,7 +53,7 @@ class NetworksWirelessSsidsTrafficShapingRules(object):
             trafficShapingEnabled=params.get("trafficShapingEnabled"),
             defaultRulesEnabled=params.get("defaultRulesEnabled"),
             rules=params.get("rules"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

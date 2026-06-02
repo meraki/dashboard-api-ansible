@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_appliance_radio_settings
@@ -38,7 +39,9 @@ options:
       this parameter is null, the appropriate basic RF profile (indoor or outdoor)
       will be assigned to the device. Assigning an RF profile will clear ALL manually
       configured overrides on the device (channel width, channel, power).
-    type: str
+    type:
+      - string
+      - 'null'
   serial:
     description: Serial path parameter.
     type: str

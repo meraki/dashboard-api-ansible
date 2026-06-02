@@ -53,7 +53,7 @@ class NetworksWirelessSsidsVpn(object):
             concentrator=params.get("concentrator"),
             splitTunnel=params.get("splitTunnel"),
             failover=params.get("failover"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

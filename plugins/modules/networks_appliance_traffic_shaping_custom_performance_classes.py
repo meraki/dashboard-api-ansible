@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_custom_performance_classes
-short_description: Resource module for networks _appliance _trafficshaping _customperformanceclasses
+short_description: Resource module for networks _appliance _traffic _shaping _custom
+  _performance _classes
 description:
-  - Manage operation create of the resource networks _appliance _trafficshaping _customperformanceclasses.
+  - Manage operation create of the resource networks _appliance _traffic _shaping
+    _custom _performance _classes.
   - Add a custom performance class for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,13 +20,19 @@ author: Francisco Munoz (@fmunoz)
 options:
   maxJitter:
     description: Maximum jitter in milliseconds.
-    type: int
+    type:
+      - integer
+      - 'null'
   maxLatency:
     description: Maximum latency in milliseconds.
-    type: int
+    type:
+      - integer
+      - 'null'
   maxLossPercentage:
     description: Maximum percentage of packet loss.
-    type: int
+    type:
+      - integer
+      - 'null'
   name:
     description: Name of the custom performance class.
     type: str

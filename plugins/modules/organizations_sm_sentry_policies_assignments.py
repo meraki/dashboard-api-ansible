@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments
 short_description: Resource module for organizations _sm _sentry _policies _assignments
 description:
   - Manage operation update of the resource organizations _sm _sentry _policies _assignments.
-  - >
-    Update an Organizations Sentry Policies using the provided list. Sentry Policies
+    - > Update an Organizations Sentry Policies using the provided list. Sentry Policies
     are ordered in descending order of priority i.e. Highest priority at the bottom,
     this is opposite the Dashboard UI. Policies not present in the request will be
     deleted.

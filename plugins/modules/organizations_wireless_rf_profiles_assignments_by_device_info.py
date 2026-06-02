@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_rf_profiles_assignments_by_device_info
 short_description: Information module for organizations _wireless _rf _profiles _assignments
   _by _device
 description:
-  - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
   - Get all organizations _wireless _rf _profiles _assignments _by _device.
   - List the RF profiles of an organization by device.
 version_added: '1.0.0'
@@ -23,18 +23,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,7 +41,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -54,13 +50,11 @@ options:
     type: str
   networkIds:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - NetworkIds query parameter. Optional parameter to filter devices by network.
     elements: str
     type: list
   productTypes:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         ProductTypes query parameter. Optional parameter to filter devices by product
         type. Valid types are wireless, appliance, switch, systemsManager, camera,
@@ -69,7 +63,6 @@ options:
     type: list
   name:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Name query parameter. Optional parameter to filter RF profiles by device name.
         All returned devices will have a name that contains the search term or is
@@ -77,7 +70,6 @@ options:
     type: str
   mac:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Mac query parameter. Optional parameter to filter RF profiles by device MAC
         address. All returned devices will have a MAC address that contains the search
@@ -85,7 +77,6 @@ options:
     type: str
   serial:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Serial query parameter. Optional parameter to filter RF profiles by device
         serial number. All returned devices will have a serial number that contains
@@ -93,7 +84,6 @@ options:
     type: str
   model:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Model query parameter. Optional parameter to filter RF profiles by device
         model. All returned devices will have a model that contains the search term
@@ -101,7 +91,6 @@ options:
     type: str
   macs:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Macs query parameter. Optional parameter to filter RF profiles by one or more
         device MAC addresses. All returned devices will have a MAC address that is
@@ -110,7 +99,6 @@ options:
     type: list
   serials:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Serials query parameter. Optional parameter to filter RF profiles by one or
         more device serial numbers. All returned devices will have a serial number
@@ -119,7 +107,6 @@ options:
     type: list
   models:
     description:
-      - Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
       - >
         Models query parameter. Optional parameter to filter RF profiles by one or
         more device models. All returned devices will have a model that is an exact

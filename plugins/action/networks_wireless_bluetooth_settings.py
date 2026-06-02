@@ -58,7 +58,7 @@ class NetworksWirelessBluetoothSettings(object):
             majorMinorAssignmentMode=params.get("majorMinorAssignmentMode"),
             major=params.get("major"),
             minor=params.get("minor"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

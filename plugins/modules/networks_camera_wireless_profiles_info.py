@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_camera_wireless_profiles_info
-short_description: Information module for networks _camera _wirelessprofiles
+short_description: Information module for networks _camera _wireless _profiles
 description:
-  - Information module for Networks Camera Wirelessprofiles Info.
-  - Get all networks _camera _wirelessprofiles.
-  - Get networks _camera _wirelessprofiles by id.
+  - Get all networks _camera _wireless _profiles.
+  - Get networks _camera _wireless _profiles by id.
   - List the camera wireless profiles for this network.
   - Retrieve a single camera wireless profile.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Camera Wirelessprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   wirelessProfileId:
     description:
-      - Information module for Networks Camera Wirelessprofiles Info.
       - WirelessProfileId path parameter. Wireless profile ID.
     type: str
 requirements:
@@ -51,7 +49,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _camera _wirelessprofiles
+- name: Get all networks _camera _wireless _profiles
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -76,7 +74,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _camera _wirelessprofiles by id
+- name: Get networks _camera _wireless _profiles by id
   cisco.meraki.networks_camera_wireless_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

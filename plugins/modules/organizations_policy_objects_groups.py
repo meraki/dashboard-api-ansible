@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_policy_objects_groups
-short_description: Resource module for organizations _policyobjects _groups
+short_description: Resource module for organizations _policy _objects _groups
 description:
-  - Manage operations create, update and delete of the resource organizations _policyobjects
-    _groups.
+  - Manage operations create, update and delete of the resource organizations _policy
+    _objects _groups.
   - Creates a new Policy Object Group.
   - Deletes a Policy Object Group.
   - Updates a Policy Object Group.
@@ -30,7 +31,7 @@ options:
     description: A list of Policy Object ID's that this NetworkObjectGroup should
       be associated to (note these ID's will replace the existing associated Policy
       Objects).
-    elements: int
+    elements: str
     type: list
   organizationId:
     description: OrganizationId path parameter. Organization ID.
@@ -92,7 +93,7 @@ EXAMPLES = r"""
     category: NetworkObjectGroup
     name: Web Servers - Datacenter 10
     objectIds:
-      - 100
+      - '100'
     organizationId: string
 - name: Update by id
   cisco.meraki.organizations_policy_objects_groups:
@@ -120,7 +121,7 @@ EXAMPLES = r"""
     state: present
     name: Web Servers - Datacenter 10
     objectIds:
-      - 100
+      - '100'
     organizationId: string
     policyObjectGroupId: string
 - name: Delete by id

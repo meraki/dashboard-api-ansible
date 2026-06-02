@@ -2,18 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_prepare
-short_description: Resource module for organizations _inventory _onboarding _cloudmonitoring
-  _prepare
+short_description: Resource module for organizations _inventory _onboarding _cloud
+  _monitoring _prepare
 description:
-  - Manage operation create of the resource organizations _inventory _onboarding _cloudmonitoring
-    _prepare.
-  - >
-    Initiates or updates an import session. An import ID will be generated and used
-    when you are ready to commit the import.
+  - Manage operation create of the resource organizations _inventory _onboarding _cloud
+    _monitoring _prepare. - > Initiates or updates an import session. An import ID
+    will be generated and used when you are ready to commit the import.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

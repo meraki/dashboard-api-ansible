@@ -50,7 +50,7 @@ class OrganizationsCameraCustomAnalyticsArtifacts(object):
         self.meraki = meraki
         self.new_object = dict(
             name=params.get("name"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             artifact_id=params.get("artifactId"),
         )
 

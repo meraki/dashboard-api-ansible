@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_networks_moves
 short_description: Resource module for organizations _networks _moves
 description:
-  - Manage operation create of the resource organizations _networks _moves.
-  - >
-     Move networks from one organization to another. For more information and caveats around network move
-     limitations see the Network Portability documentation.
+  - Manage operation create of the resource organizations _networks _moves. - > Move
+    networks from one organization to another. For more information and caveats around
+    network move limitations see the Network Portability documentation.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -52,7 +52,6 @@ seealso:
 notes:
   - SDK Method used are
     organizations.Organizations.create_network_move,
-
   - Paths used are
     post /organizations/{organizationId}/networks/moves,
 """
@@ -82,7 +81,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-
     network:
       id: N_569142402909112097
     organizationId: string

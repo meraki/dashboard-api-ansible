@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_licenses
@@ -19,7 +20,9 @@ options:
     description: The serial number of the device to assign this license to. Set this
       to null to unassign the license. If a different license is already active on
       the device, this parameter will control queueing/dequeuing this license.
-    type: str
+    type:
+      - string
+      - 'null'
   licenseId:
     description: LicenseId path parameter. License ID.
     type: str

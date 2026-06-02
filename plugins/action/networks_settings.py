@@ -56,7 +56,7 @@ class NetworksSettings(object):
             localStatusPage=params.get("localStatusPage"),
             securePort=params.get("securePort"),
             namedVlans=params.get("namedVlans"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

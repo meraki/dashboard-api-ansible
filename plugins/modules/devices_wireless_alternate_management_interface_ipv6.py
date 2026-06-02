@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_wireless_alternate_management_interface_ipv6
-short_description: Resource module for devices _wireless _alternatemanagementinterface
+short_description: Resource module for devices _wireless _alternate _management _interface
   _ipv6
 description:
-  - Manage operation update of the resource devices _wireless _alternatemanagementinterface
-    _ipv6.
+  - Manage operation update of the resource devices _wireless _alternate _management
+    _interface _ipv6.
   - Update alternate management interface IPv6 address.
 version_added: '1.0.0'
 extends_documentation_fragment:

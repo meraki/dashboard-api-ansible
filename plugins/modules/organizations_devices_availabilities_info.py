@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_devices_availabilities_info
 short_description: Information module for organizations _devices _availabilities
 description:
-  - Information module for Organizations Devices Availabilities Info.
-  - Get all organizations _devices _availabilities.
-  - >
-    List the availability information for devices in an organization. The data returned
-    by this endpoint is updated every 5 minutes.
+  - Get all organizations _devices _availabilities. - > List the availability information
+    for devices in an organization. The data returned by this endpoint is updated
+    every 5 minutes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -24,18 +23,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -45,7 +41,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -55,7 +50,6 @@ options:
     type: str
   networkIds:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         NetworkIds query parameter. Optional parameter to filter device availabilities
         by network ID. This filter uses multiple exact matches.
@@ -63,7 +57,6 @@ options:
     type: list
   productTypes:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         ProductTypes query parameter. Optional parameter to filter device availabilities
         by device product types. This filter uses multiple exact matches. Valid types
@@ -73,7 +66,6 @@ options:
     type: list
   serials:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         Serials query parameter. Optional parameter to filter device availabilities
         by device serial numbers. This filter uses multiple exact matches.
@@ -81,7 +73,6 @@ options:
     type: list
   tags:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         Tags query parameter. An optional parameter to filter devices by tags. The
         filtering is case-sensitive. If tags are included, 'tagsFilterType' should
@@ -90,7 +81,6 @@ options:
     type: list
   tagsFilterType:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         TagsFilterType query parameter. An optional parameter of value 'withAnyTags'
         or 'withAllTags' to indicate whether to return devices which contain ANY or
@@ -98,7 +88,6 @@ options:
     type: str
   statuses:
     description:
-      - Information module for Organizations Devices Availabilities Info.
       - >
         Statuses query parameter. Optional parameter to filter device availabilities
         by device status. This filter uses multiple exact matches.

@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_switch_qos_rules_order_info
-short_description: Information module for networks _switch _qosrules _order
+short_description: Information module for networks _switch _qos _rules _order
 description:
-  - Information module for Networks Switch Qosrules Order Info.
-  - Get all networks _switch _qosrules _order.
-  - Get networks _switch _qosrules _order by id.
+  - Get all networks _switch _qos _rules _order.
+  - Get networks _switch _qos _rules _order by id.
   - List quality of service rules.
   - Return a quality of service rule.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Switch Qosrules Order Info.
       - NetworkId path parameter. Network ID.
     type: str
   qosRuleId:
     description:
-      - Information module for Networks Switch Qosrules Order Info.
       - QosRuleId path parameter. Qos rule ID.
     type: str
 requirements:
@@ -51,7 +49,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _qosrules _order
+- name: Get all networks _switch _qos _rules _order
   cisco.meraki.networks_switch_qos_rules_order_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -76,7 +74,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _switch _qosrules _order by id
+- name: Get networks _switch _qos _rules _order by id
   cisco.meraki.networks_switch_qos_rules_order_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

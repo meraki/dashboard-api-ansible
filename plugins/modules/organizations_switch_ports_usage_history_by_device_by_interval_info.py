@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_switch_ports_usage_history_by_device_by_interval_info
 short_description: Information module for organizations _switch _ports _usage _history
   _by _device _by _interval
 description:
-  - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
   - Get all organizations _switch _ports _usage _history _by _device _by _interval.
   - List the historical usage and traffic data of switchports in an organization.
 version_added: '1.0.0'
@@ -23,24 +23,20 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -49,7 +45,6 @@ options:
     type: float
   interval:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         Interval query parameter. The time interval in seconds for returned data.
         The valid intervals are 300, 1200, 14400, 86400. The default is 1200. Interval
@@ -57,13 +52,11 @@ options:
     type: int
   perPage:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 50. Default is 10.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -73,7 +66,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -83,42 +75,36 @@ options:
     type: str
   configurationUpdatedAfter:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         ConfigurationUpdatedAfter query parameter. Optional parameter to filter items
         to switches where the configuration has been updated after the given timestamp.
     type: str
   mac:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         Mac query parameter. Optional parameter to filter items to switches with MAC
         addresses that contain the search term or are an exact match.
     type: str
   macs:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - Macs query parameter. Optional parameter to filter items to switches that
         have one of the provided MAC addresses.
     elements: str
     type: list
   name:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         Name query parameter. Optional parameter to filter items to switches with
         names that contain the search term or are an exact match.
     type: str
   networkIds:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - NetworkIds query parameter. Optional parameter to filter items to switches
         in one of the provided networks.
     elements: str
     type: list
   portProfileIds:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         PortProfileIds query parameter. Optional parameter to filter items to switches
         that contain switchports belonging to one of the specified port profiles.
@@ -126,14 +112,12 @@ options:
     type: list
   serial:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - >
         Serial query parameter. Optional parameter to filter items to switches with
         serial number that contains the search term or are an exact match.
     type: str
   serials:
     description:
-      - Information module for Organizations Switch Ports Usage History By Device By Interval Info.
       - Serials query parameter. Optional parameter to filter items to switches that
         have one of the provided serials.
     elements: str

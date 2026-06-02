@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ethernet_ports_profiles_assign
@@ -22,7 +23,9 @@ options:
     type: str
   profileId:
     description: AP profile ID.
-    type: str
+    type:
+      - string
+      - 'null'
   serials:
     description: List of AP serials.
     elements: str

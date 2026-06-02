@@ -2,18 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_devices_packet_capture_captures
 short_description: Resource module for organizations _devices _packet _capture _captures
 description:
   - Manage operations create and delete of the resource organizations _devices _packet
-    _capture _captures.
-  - >
-    Perform a packet capture on a device and store in Meraki Cloud. Only a single
-    switch may be chosen per request, while multiple access points are allowed at
-    once.
+    _capture _captures. - > Perform a packet capture on a device and store in Meraki
+    Cloud. Only a single switch may be chosen per request, while multiple access points
+    are allowed at once.
   - Delete a single packet capture from cloud using captureId.
 version_added: '1.0.0'
 extends_documentation_fragment:

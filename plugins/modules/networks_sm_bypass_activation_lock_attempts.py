@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_bypass_activation_lock_attempts
-short_description: Resource module for networks _sm _bypassactivationlockattempts
+short_description: Resource module for networks _sm _bypass _activation _lock _attempts
 description:
-  - Manage operation create of the resource networks _sm _bypassactivationlockattempts.
+  - Manage operation create of the resource networks _sm _bypass _activation _lock
+    _attempts.
   - Bypass activation lock attempt.
 version_added: '1.0.0'
 extends_documentation_fragment:

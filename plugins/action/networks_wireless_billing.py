@@ -50,7 +50,7 @@ class NetworksWirelessBilling(object):
         self.new_object = dict(
             currency=params.get("currency"),
             plans=params.get("plans"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

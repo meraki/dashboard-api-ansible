@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_policy_objects
-short_description: Resource module for organizations _policyobjects
+short_description: Resource module for organizations _policy _objects
 description:
-  - Manage operations create, update and delete of the resource organizations _policyobjects.
+  - Manage operations create, update and delete of the resource organizations _policy
+    _objects.
   - Creates a new Policy Object.
   - Deletes a Policy Object.
   - Updates a Policy Object.

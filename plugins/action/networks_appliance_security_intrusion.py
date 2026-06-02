@@ -52,7 +52,7 @@ class NetworksApplianceSecurityIntrusion(object):
             mode=params.get("mode"),
             idsRulesets=params.get("idsRulesets"),
             protectedNetworks=params.get("protectedNetworks"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

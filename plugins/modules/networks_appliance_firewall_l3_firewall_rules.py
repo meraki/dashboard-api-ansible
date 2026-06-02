@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_l3_firewall_rules
-short_description: Resource module for networks _appliance _firewall l3firewallrules
+short_description: Resource module for networks _appliance _firewall l3 _firewall
+  _rules
 description:
-  - Manage operation update of the resource networks _appliance _firewall l3firewallrules.
+  - Manage operation update of the resource networks _appliance _firewall l3 _firewall
+    _rules.
   - Update the L3 firewall rules of an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:

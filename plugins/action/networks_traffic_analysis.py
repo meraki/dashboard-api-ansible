@@ -50,7 +50,7 @@ class NetworksTrafficAnalysis(object):
         self.new_object = dict(
             mode=params.get("mode"),
             customPieChartItems=params.get("customPieChartItems"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

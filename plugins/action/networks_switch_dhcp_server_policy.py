@@ -56,7 +56,7 @@ class NetworksSwitchDhcpServerPolicy(object):
             allowedServers=params.get("allowedServers"),
             blockedServers=params.get("blockedServers"),
             arpInspection=params.get("arpInspection"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

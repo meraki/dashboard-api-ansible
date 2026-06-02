@@ -2,17 +2,18 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_switch_devices_clone
 short_description: Resource module for organizations _switch _devices _clone
 description:
   - Manage operation create of the resource organizations _switch _devices _clone.
-  - >
-    Clone port-level and some switch-level configuration settings from a source switch
-    to one or more target switches. Cloned settings include Aggregation Groups, Power
-    Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring.
+    - > Clone port-level and some switch-level configuration settings from a source
+    switch to one or more target switches. Cloned settings include Aggregation Groups,
+    Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port
+    Mirroring.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

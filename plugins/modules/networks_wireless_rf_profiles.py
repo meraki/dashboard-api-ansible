@@ -2,19 +2,18 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_rf_profiles
-short_description: Resource module for networks _wireless _rfprofiles
+short_description: Resource module for networks _wireless _rf _profiles
 description:
   - Manage operations create, update and delete of the resource networks _wireless
-    _rfprofiles.
+    _rf _profiles.
   - Creates new RF profile for this network.
-  - Delete a RF Profile.
-  - >
-    Updates specified RF profile for this network. Note built-in RF profiles can only
-    be assigned as a default, and its attributes are immutable.
+  - Delete a RF Profile. - > Updates specified RF profile for this network. Note built-in
+    RF profiles can only be assigned as a default, and its attributes are immutable.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -77,7 +76,7 @@ options:
         description: Sets valid auto channels for 5Ghz band. Can be one of '36', '40',
           '44', '48', '52', '56', '60', '64', '100', '104', '108', '112', '116', '120',
           '124', '128', '132', '136', '140', '144', '149', '153', '157', '161' or
-          '165'.Defaults to 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116,
+          '165'. Defaults to 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116,
           120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165.
         elements: int
         type: list
@@ -477,8 +476,8 @@ options:
       capable APs.
     suboptions:
       channelWidth:
-        description: Sets channel width (MHz) for 6Ghz band. Can be one of '0', '20',
-          '40', '80' or '160'. Defaults to 0.
+        description: Sets channel width (MHz) for 6Ghz band. Can be one of 'auto',
+          '20', '40', '80' or '160'. Defaults to auto.
         type: str
       maxPower:
         description: Sets max power (dBm) of 6Ghz band. Can be integer between 2 and
@@ -504,11 +503,11 @@ options:
           '61', '65', '69', '73', '77', '81', '85', '89', '93', '97', '101', '105',
           '109', '113', '117', '121', '125', '129', '133', '137', '141', '145', '149',
           '153', '157', '161', '165', '169', '173', '177', '181', '185', '189', '193',
-          '197', '201', '205', '209', '213', '217', '221', '225', '229' or '233'.Defaults
-          to 1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69,
-          73, 77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125, 129, 133,
-          137, 141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189, 193,
-          197, 201, 205, 209, 213, 217, 221, 225, 229, 233.
+          '197', '201', '205', '209', '213', '217', '221', '225', '229' or '233'.
+          Defaults to 1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61,
+          65, 69, 73, 77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125, 129,
+          133, 137, 141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189,
+          193, 197, 201, 205, 209, 213, 217, 221, 225, 229, 233.
         elements: int
         type: list
     type: dict

@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_sdwan_internet_policies
@@ -43,7 +44,7 @@ options:
         type: dict
       preferredUplink:
         description: Preferred uplink for uplink preference rule. Must be one of 'wan1',
-          'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'.
+          'wan2', 'bestForVoIP', 'loadBalancing', 'defaultUplink' or 'cellular'.
         type: str
       trafficFilters:
         description: Traffic filters.

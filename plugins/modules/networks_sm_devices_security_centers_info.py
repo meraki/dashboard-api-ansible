@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_security_centers_info
-short_description: Information module for networks _sm _devices _securitycenters
+short_description: Information module for networks _sm _devices _security _centers
 description:
-  - Information module for Networks Sm Devices Securitycenters Info.
-  - Get all networks _sm _devices _securitycenters.
+  - Get all networks _sm _devices _security _centers.
   - Get a list of softwares associated with a device.
   - List the security centers on a device.
 version_added: '1.0.0'
@@ -22,12 +22,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sm Devices Securitycenters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-      - Information module for Networks Sm Devices Securitycenters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -49,7 +47,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _securitycenters
+- name: Get all networks _sm _devices _security _centers
   cisco.meraki.networks_sm_devices_security_centers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

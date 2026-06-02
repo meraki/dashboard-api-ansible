@@ -2,14 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_ports
 short_description: Resource module for networks _appliance _ports
 description:
   - Manage operation update of the resource networks _appliance _ports.
-  - Update the per-port VLAN settings for a single MX port.
+  - Update the per-port VLAN settings for a single secure router or security appliance
+    port.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -22,8 +24,9 @@ options:
       the only valid value and 'open' is the default value if the field is missing.
     type: str
   allowedVlans:
-    description: Comma-delimited list of the VLAN ID's allowed on the port, or 'all'
-      to permit all VLAN's on the port.
+    description: Comma-delimited list of VLAN IDs (e.g. '2,15') for all devices. Secure
+      Routers also support VLAN ranges (e.g. '2-10,15'). Use 'all' to permit all VLANs
+      on the port.
     type: str
   dropUntaggedTraffic:
     description: Trunk port can Drop all Untagged traffic. When true, no VLAN is required.

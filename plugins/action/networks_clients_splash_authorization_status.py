@@ -49,7 +49,7 @@ class NetworksClientsSplashAuthorizationStatus(object):
         self.meraki = meraki
         self.new_object = dict(
             ssids=params.get("ssids"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             client_id=params.get("clientId"),
         )
 

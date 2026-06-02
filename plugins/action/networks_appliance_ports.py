@@ -59,7 +59,7 @@ class NetworksAppliancePorts(object):
             vlan=params.get("vlan"),
             allowedVlans=params.get("allowedVlans"),
             accessPolicy=params.get("accessPolicy"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             port_id=params.get("portId"),
         )
 

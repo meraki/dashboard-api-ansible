@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_switch_qos_rules_order
-short_description: Resource module for networks _switch _qosrules _order
+short_description: Resource module for networks _switch _qos _rules _order
 description:
-  - Manage operations create, update and delete of the resource networks _switch _qosrules
-    _order.
+  - Manage operations create, update and delete of the resource networks _switch _qos
+    _rules _order.
   - Add a quality of service rule.
   - Delete a quality of service rule.
   - Update a quality of service rule.
@@ -25,7 +26,9 @@ options:
   dstPort:
     description: The destination port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type: int
+    type:
+      - integer
+      - 'null'
   dstPortRange:
     description: The destination port range of the incoming packet. Applicable only
       if protocol is set to TCP or UDP.
@@ -42,14 +45,18 @@ options:
   srcPort:
     description: The source port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type: int
+    type:
+      - integer
+      - 'null'
   srcPortRange:
     description: The source port range of the incoming packet. Applicable only if
       protocol is set to TCP or UDP.
     type: str
   vlan:
     description: The VLAN of the incoming packet. A null value will match any VLAN.
-    type: int
+    type:
+      - integer
+      - 'null'
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

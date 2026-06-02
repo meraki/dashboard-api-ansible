@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_health_alerts_info
 short_description: Information module for networks _health _alerts
 description:
-  - Information module for Networks Health Alerts Info.
   - Get all networks _health _alerts.
   - Return all global alerts on this network.
 version_added: '1.0.0'
@@ -21,7 +21,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Health Alerts Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:

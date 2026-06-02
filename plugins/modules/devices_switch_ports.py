@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_switch_ports
@@ -29,7 +30,9 @@ options:
       this switch port. This ID must pre-exist during the configuration, else needs
       to be created using adaptivePolicy/groups API. Cannot be applied to a port on
       a switch bound to profile.
-    type: str
+    type:
+      - string
+      - 'null'
   allowedVlans:
     description: The VLANs allowed on the switch port. Only applicable to trunk ports.
     type: str
@@ -74,10 +77,14 @@ options:
     description: The maximum number of MAC addresses for regular MAC allow list. Only
       applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported
       on verions greater than ms18 only for classic switches.
-    type: int
+    type:
+      - integer
+      - 'null'
   name:
     description: The name of the switch port.
-    type: str
+    type:
+      - string
+      - 'null'
   peerSgtCapable:
     description: If true, Peer SGT is enabled for traffic through this switch port.
       Applicable to trunk port only, not access port. Cannot be applied to a port
@@ -92,7 +99,9 @@ options:
   portScheduleId:
     description: The ID of the port schedule. A value of null will clear the port
       schedule.
-    type: str
+    type:
+      - string
+      - 'null'
   profile:
     description: Profile attributes.
     suboptions:
@@ -148,10 +157,14 @@ options:
   vlan:
     description: The VLAN of the switch port. For a trunk port, this is the native
       VLAN. A null value will clear the value set for trunk ports.
-    type: int
+    type:
+      - integer
+      - 'null'
   voiceVlan:
     description: The voice VLAN of the switch port. Only applicable to access ports.
-    type: int
+    type:
+      - integer
+      - 'null'
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

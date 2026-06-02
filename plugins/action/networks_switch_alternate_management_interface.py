@@ -54,7 +54,7 @@ class NetworksSwitchAlternateManagementInterface(object):
             vlanId=params.get("vlanId"),
             protocols=params.get("protocols"),
             switches=params.get("switches"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

@@ -50,7 +50,7 @@ class NetworksSwitchRoutingMulticast(object):
         self.new_object = dict(
             defaultSettings=params.get("defaultSettings"),
             overrides=params.get("overrides"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

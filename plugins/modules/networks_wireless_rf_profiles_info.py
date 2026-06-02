@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_rf_profiles_info
-short_description: Information module for networks _wireless _rfprofiles
+short_description: Information module for networks _wireless _rf _profiles
 description:
-  - Information module for Networks Wireless Rfprofiles Info.
-  - Get all networks _wireless _rfprofiles.
-  - Get networks _wireless _rfprofiles by id.
+  - Get all networks _wireless _rf _profiles.
+  - Get networks _wireless _rf _profiles by id.
   - List RF profiles for this network.
   - Return a RF profile.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Rfprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   includeTemplateProfiles:
     description:
-      - Information module for Networks Wireless Rfprofiles Info.
       - >
         IncludeTemplateProfiles query parameter. If the network is bound to a template,
         this parameter controls whether or not the non-basic RF profiles defined on
@@ -37,7 +35,6 @@ options:
     type: bool
   rfProfileId:
     description:
-      - Information module for Networks Wireless Rfprofiles Info.
       - RfProfileId path parameter. Rf profile ID.
     type: str
 requirements:
@@ -60,7 +57,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _rfprofiles
+- name: Get all networks _wireless _rf _profiles
   cisco.meraki.networks_wireless_rf_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -83,10 +80,10 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    includeTemplateProfiles: true
+    includeTemplateProfiles: True
     networkId: string
   register: result
-- name: Get networks _wireless _rfprofiles by id
+- name: Get networks _wireless _rf _profiles by id
   cisco.meraki.networks_wireless_rf_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -53,7 +53,7 @@ class NetworksWirelessSsidsBonjourForwarding(object):
             enabled=params.get("enabled"),
             rules=params.get("rules"),
             exception=params.get("exception"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

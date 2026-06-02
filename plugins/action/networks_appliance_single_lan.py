@@ -54,7 +54,7 @@ class NetworksApplianceSingleLan(object):
             applianceIp=params.get("applianceIp"),
             ipv6=params.get("ipv6"),
             mandatoryDhcp=params.get("mandatoryDhcp"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

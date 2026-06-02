@@ -55,7 +55,7 @@ class NetworksWirelessSsidsEapOverride(object):
             identity=params.get("identity"),
             maxRetries=params.get("maxRetries"),
             eapolKey=params.get("eapolKey"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

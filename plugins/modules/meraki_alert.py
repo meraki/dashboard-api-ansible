@@ -2,9 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright: (c) 2018, 2019 Kevin Breit (@kbreit) <kevin.breit@kevinbreit.net>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see COPYING or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
+    MerakiModule, meraki_argument_spec, )
+from ansible.module_utils.basic import AnsibleModule, json
 
 __metaclass__ = type
 
@@ -231,12 +235,6 @@ data:
                             returned: success
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
-
 
 def get_alert_by_type(type, meraki):
     for alert in meraki.params["alerts"]:
@@ -255,21 +253,25 @@ def construct_payload(meraki, current):
             payload["defaultDestinations"]["snmp"] = meraki.params["default_destinations"]["snmp"]
         if meraki.params["default_destinations"]["emails"] is not None:
             payload["defaultDestinations"]["emails"] = meraki.params["default_destinations"]["emails"]
-            if len(payload["defaultDestinations"]["emails"]) > 0 and payload["defaultDestinations"]["emails"][0] == "None":
+            if len(payload["defaultDestinations"]["emails"]
+                   ) > 0 and payload["defaultDestinations"]["emails"][0] == "None":
                 # Ansible is setting the first item to be "None" so we need to clear this
                 # This happens when an empty list is provided to clear emails
                 del payload["defaultDestinations"]["emails"][0]
         if meraki.params["default_destinations"]["http_server_ids"] is not None:
             payload["defaultDestinations"]["httpServerIds"] = meraki.params["default_destinations"]["http_server_ids"]
-            if len(payload["defaultDestinations"]["httpServerIds"]) > 0 and payload["defaultDestinations"]["httpServerIds"][0] == "None":
+            if len(payload["defaultDestinations"]["httpServerIds"]
+                   ) > 0 and payload["defaultDestinations"]["httpServerIds"][0] == "None":
                 # Ansible is setting the first item to be "None" so we need to clear this
-                # This happens when an empty list is provided to clear server IDs
+                # This happens when an empty list is provided to clear server
+                # IDs
                 del payload["defaultDestinations"]["httpServerIds"][0]
     if meraki.params["alerts"] is not None:
         payload["alerts"] = []
         # All data should be resubmitted, otherwise it will clear the alert
         # Also, the order matters so it should go in the same order as current
-        modified_types = [type["alert_type"] for type in meraki.params["alerts"]]
+        modified_types = [type["alert_type"]
+                          for type in meraki.params["alerts"]]
 
         # for alert in meraki.params["alerts"]:
         for current_alert in current["alerts"]:
@@ -292,15 +294,19 @@ def construct_payload(meraki, current):
                         alert_temp["alertDestinations"]["snmp"] = alert["alert_destinations"]["snmp"]
                     if alert["alert_destinations"]["emails"] is not None:
                         alert_temp["alertDestinations"]["emails"] = alert["alert_destinations"]["emails"]
-                        if len(alert_temp["alertDestinations"]["emails"]) > 0 and alert_temp["alertDestinations"]["emails"][0] == "None":
+                        if len(alert_temp["alertDestinations"]["emails"]
+                               ) > 0 and alert_temp["alertDestinations"]["emails"][0] == "None":
                             # Ansible is setting the first item to be "None" so we need to clear this
-                            # This happens when an empty list is provided to clear emails
+                            # This happens when an empty list is provided to
+                            # clear emails
                             del alert_temp["defaultDestinations"]["emails"][0]
                     if alert["alert_destinations"]["http_server_ids"] is not None:
                         alert_temp["alertDestinations"]["httpServerIds"] = alert["alert_destinations"]["http_server_ids"]
-                        if len(alert_temp["alertDestinations"]["httpServerIds"]) > 0 and alert_temp["alertDestinations"]["httpServerIds"][0] == "None":
+                        if len(alert_temp["alertDestinations"]["httpServerIds"]
+                               ) > 0 and alert_temp["alertDestinations"]["httpServerIds"][0] == "None":
                             # Ansible is setting the first item to be "None" so we need to clear this
-                            # This happens when an empty list is provided to clear server IDs
+                            # This happens when an empty list is provided to
+                            # clear server IDs
                             del alert_temp["defaultDestinations"]["httpServerIds"][0]
                 payload["alerts"].append(alert_temp)
     return payload
@@ -364,7 +370,8 @@ def main():
     net_id = meraki.params["net_id"]
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params["net_name"], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params["net_name"], data=nets)
 
     if meraki.params["state"] == "query":
         path = meraki.construct_path("get_all", net_id=net_id)
@@ -383,7 +390,8 @@ def main():
                 meraki.result["changed"] = True
                 meraki.exit_json(**meraki.result)
             path = meraki.construct_path("update", net_id=net_id)
-            response = meraki.request(path, method="PUT", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="PUT", payload=json.dumps(payload))
             if meraki.status == 200:
                 meraki.generate_diff(original, payload)
                 meraki.result["data"] = response

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_latency_history_info
-short_description: Information module for networks _wireless _latencyhistory
+short_description: Information module for networks _wireless _latency _history
 description:
-  - Information module for Networks Wireless Latencyhistory Info.
-  - Get all networks _wireless _latencyhistory.
+  - Get all networks _wireless _latency _history.
   - Return average wireless latency over time for a network, device, or network client.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,24 +21,20 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   t1:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -46,7 +42,6 @@ options:
     type: float
   resolution:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - >
         Resolution query parameter. The time resolution in seconds for returned data.
         The valid resolutions are 300, 600, 1200, 3600, 14400, 86400. The default
@@ -54,7 +49,6 @@ options:
     type: int
   autoResolution:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - >
         AutoResolution query parameter. Automatically select a data resolution based
         on the given timespan; this overrides the value specified by the 'resolution'
@@ -62,32 +56,26 @@ options:
     type: bool
   clientId:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - ClientId query parameter. Filter results by network client.
     type: str
   deviceSerial:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - DeviceSerial query parameter. Filter results by device.
     type: str
   apTag:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - ApTag query parameter. Filter results by AP tag.
     type: str
   band:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - Band query parameter. Filter results by band (either '2.4', '5' or '6').
     type: str
   ssid:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - Ssid query parameter. Filter results by SSID number.
     type: int
   accessCategory:
     description:
-      - Information module for Networks Wireless Latencyhistory Info.
       - AccessCategory query parameter. Filter by access category.
     type: str
 requirements:
@@ -105,7 +93,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _latencyhistory
+- name: Get all networks _wireless _latency _history
   cisco.meraki.networks_wireless_latency_history_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -132,7 +120,7 @@ EXAMPLES = r"""
     t1: string
     timespan: 0
     resolution: 0
-    autoResolution: true
+    autoResolution: True
     clientId: string
     deviceSerial: string
     apTag: string

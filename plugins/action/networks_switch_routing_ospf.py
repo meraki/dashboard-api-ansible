@@ -61,7 +61,7 @@ class NetworksSwitchRoutingOspf(object):
             v3=params.get("v3"),
             md5AuthenticationEnabled=params.get("md5AuthenticationEnabled"),
             md5AuthenticationKey=params.get("md5AuthenticationKey"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             vrf=params.get("vrf"),
         )
 

@@ -44,7 +44,8 @@ options:
     type: str
   payload_template_id:
     description:
-      - The ID of the payload template. Overrides payload_template_name if passed too.
+      - The ID of the payload template. Overrides payload_template_name if passed
+        too.
     type: str
   payload_template_name:
     description:
@@ -61,7 +62,9 @@ options:
       - query
     default: query
     description:
-      - Specifies whether object should be queried, created/modified, or removed.
+      - Specifies whether object should be queried,
+    created/modified,
+    or removed.
     type: str
   test:
     choices:

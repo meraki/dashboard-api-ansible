@@ -63,7 +63,7 @@ class NetworksWirelessSsidsHotspot20(object):
             roamConsortOis=params.get("roamConsortOis"),
             mccMncs=params.get("mccMncs"),
             naiRealms=params.get("naiRealms"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 

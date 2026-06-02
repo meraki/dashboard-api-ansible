@@ -26,6 +26,14 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     organizationId=dict(type="str"),
+    search=dict(type="str"),
+    vlanIds=dict(type="list"),
+    interfaceIds=dict(type="list"),
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
 ))
 
 required_if = []
@@ -67,6 +75,28 @@ class ActionModule(ActionBase):
         if params.get("organizationId") is not None:
             new_object["organizationId"] = params.get(
                 "organizationId")
+        if params.get("search") is not None:
+            new_object["search"] = params.get(
+                "search")
+        if params.get("vlanIds") is not None:
+            new_object["vlanIds"] = params.get(
+                "vlanIds")
+        if params.get("interfaceIds") is not None:
+            new_object["interfaceIds"] = params.get(
+                "interfaceIds")
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
 
         return new_object
 
@@ -82,8 +112,9 @@ class ActionModule(ActionBase):
 
         response = meraki.exec_meraki(
             family="appliance",
-            function='getOrganizationApplianceVpnThirdPartyVPNPeers',
-            params=self.get_all(self._task.args),
+            function='getOrganizationPoliciesGlobalGroupPoliciesApplianceVlansAssignmentsByVlan',
+            params=self.get_all(
+                self._task.args),
         )
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

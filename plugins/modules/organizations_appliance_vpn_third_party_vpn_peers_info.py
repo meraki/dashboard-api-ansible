@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_appliance_vpn_third_party_vpn_peers_info
-short_description: Information module for organizations _appliance _vpn _third _party _vpn _peers
+module: organizations_appliance_vpn_third_party_vpnpeers_info
+short_description: Information module for organizations _appliance _vpn _third _party
+  _vpn _peers
 description:
   - Get all organizations _appliance _vpn _third _party _vpn _peers.
   - Return the third party VPN peers for an organization.
@@ -27,19 +29,19 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getOrganizationApplianceVpnThirdPartyVPNPeers
-    description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers API.
+    description: Complete reference of the getOrganizationApplianceVpnThirdPartyVPNPeers
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-vpn-third-party-vpn-peers
 notes:
   - SDK Method used are
-    appliance.Appliance.get_organization_appliance_vpn_third_party_vpn_peers,
-
+    appliance.Appliance.get_organization_appliance_vpn_third_party_vpnpeers,
   - Paths used are
     get /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
 """
 
 EXAMPLES = r"""
 - name: Get all organizations _appliance _vpn _third _party _vpn _peers
-  cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_info:
+  cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"

@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_webhooks_payload_templates
-short_description: Resource module for networks _webhooks _payloadtemplates
+short_description: Resource module for networks _webhooks _payload _templates
 description:
   - Manage operations create, update and delete of the resource networks _webhooks
-    _payloadtemplates.
-  - Create a webhook payload template for a network.
-  - >
-    Destroy a webhook payload template for a network. Does not work for included templates
-    'wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006',
-    'wpt_00007' or 'wpt_00008' .
+    _payload _templates.
+  - Create a webhook payload template for a network. - > Destroy a webhook payload
+    template for a network. Does not work for included templates 'wpt_00001', 'wpt_00002',
+    'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008'
+    .
   - Update a webhook payload template for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:

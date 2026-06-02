@@ -50,7 +50,7 @@ class NetworksSwitchStp(object):
         self.new_object = dict(
             rstpEnabled=params.get("rstpEnabled"),
             stpBridgePriority=params.get("stpBridgePriority"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

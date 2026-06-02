@@ -60,7 +60,7 @@ class OrganizationsSnmp(object):
             v3PrivMode=params.get("v3PrivMode"),
             v3PrivPass=params.get("v3PrivPass"),
             peerIps=params.get("peerIps"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):

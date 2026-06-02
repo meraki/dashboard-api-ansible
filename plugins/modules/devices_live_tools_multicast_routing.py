@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_multicast_routing
 short_description: Resource module for devices _live _tools _multicast _routing
 description:
   - Manage operation create of the resource devices _live _tools _multicast _routing.
-  - >
-    Enqueue a job to perform a Multicast routing request for the device. This endpoint
-    currently supports switches. This endpoint has a sustained rate limit of one request
-    every five seconds per device, with an allowed burst of five requests.
+    - > Enqueue a job to perform a Multicast routing request for the device. This
+    endpoint currently supports switches. This endpoint has a sustained rate limit
+    of one request every five seconds per device, with an allowed burst of five requests.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

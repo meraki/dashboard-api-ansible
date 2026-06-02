@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_appliance_vpn_vpn_firewall_rules_info
-short_description: Information module for organizations _appliance _vpn _vpnfirewallrules
+short_description: Information module for organizations _appliance _vpn _vpn _firewall
+  _rules
 description:
-  - Information module for Organizations Appliance Vpn Vpnfirewallrules Info.
-  - Get all organizations _appliance _vpn _vpnfirewallrules.
+  - Get all organizations _appliance _vpn _vpn _firewall _rules.
   - Return the firewall rules for an organization's site-to-site VPN.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +22,6 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Appliance Vpn Vpnfirewallrules Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _appliance _vpn _vpnfirewallrules
+- name: Get all organizations _appliance _vpn _vpn _firewall _rules
   cisco.meraki.organizations_appliance_vpn_vpn_firewall_rules_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

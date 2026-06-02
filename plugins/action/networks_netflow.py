@@ -56,7 +56,7 @@ class NetworksNetflow(object):
             collectorPort=params.get("collectorPort"),
             etaEnabled=params.get("etaEnabled"),
             etaDstPort=params.get("etaDstPort"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

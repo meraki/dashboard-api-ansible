@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_modify_tags
-short_description: Resource module for networks _sm _devices _modifytags
+short_description: Resource module for networks _sm _devices _modify _tags
 description:
-  - Manage operation create of the resource networks _sm _devices _modifytags.
+  - Manage operation create of the resource networks _sm _devices _modify _tags.
   - Add, delete, or update the tags of a set of devices.
 version_added: '1.0.0'
 extends_documentation_fragment:

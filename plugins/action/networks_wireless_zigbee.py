@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
             iotController=params.get("iotController"),
             lockManagement=params.get("lockManagement"),
             defaults=params.get("defaults"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

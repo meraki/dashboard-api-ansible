@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_alerts_profiles
@@ -31,7 +32,7 @@ options:
         type: int
       interface:
         description: The uplink observed for the alert. Interface must be one of the
-          following wan1, wan2, wan3, cellular.
+          following wan1, wan2, wan3, cellular, wan4.
         type: str
       jitter_ms:
         description: The threshold the metric must cross to be valid for alerting.

@@ -74,7 +74,7 @@ class OrganizationsLoginSecurity(object):
             enforceLoginIpRanges=params.get("enforceLoginIpRanges"),
             loginIpRanges=params.get("loginIpRanges"),
             apiAuthentication=params.get("apiAuthentication"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
