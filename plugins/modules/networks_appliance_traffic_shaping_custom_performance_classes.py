@@ -20,19 +20,13 @@ author: Francisco Munoz (@fmunoz)
 options:
   maxJitter:
     description: Maximum jitter in milliseconds.
-    type:
-      - integer
-      - 'null'
+    type: int
   maxLatency:
     description: Maximum latency in milliseconds.
-    type:
-      - integer
-      - 'null'
+    type: int
   maxLossPercentage:
     description: Maximum percentage of packet loss.
-    type:
-      - integer
-      - 'null'
+    type: int
   name:
     description: Name of the custom performance class.
     type: str

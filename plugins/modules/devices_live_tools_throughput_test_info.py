@@ -8,7 +8,8 @@
 DOCUMENTATION = r"""
 module: devices_live_tools_throughput_test_info
 short_description: Information module for devices _live _tools _throughput _test
-description:
+description: >
+  Devices Live Tools Throughput Test Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

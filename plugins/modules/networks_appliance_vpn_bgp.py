@@ -130,9 +130,7 @@ options:
     type: str
   routerId:
     description: The router ID of the appliance.
-    type:
-      - string
-      - 'null'
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

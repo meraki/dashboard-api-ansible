@@ -23,9 +23,7 @@ options:
     type: str
   profileId:
     description: AP profile ID.
-    type:
-      - string
-      - 'null'
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

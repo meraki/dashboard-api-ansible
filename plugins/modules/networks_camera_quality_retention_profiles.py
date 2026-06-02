@@ -31,9 +31,7 @@ options:
     description: The maximum number of days for which the data will be stored, or
       'null' to keep data until storage space runs out. If the former, it can be in
       the range of one to ninety days.
-    type:
-      - integer
-      - 'null'
+    type: int
   motionBasedRetentionEnabled:
     description: Deletes footage older than 3 days in which no motion was detected.
       Can be either true or false. Defaults to false. This setting does not apply
@@ -61,9 +59,7 @@ options:
   scheduleId:
     description: Schedule for which this camera will record video, or 'null' to always
       record.
-    type:
-      - string
-      - 'null'
+    type: str
   smartRetention:
     description: Smart Retention records footage in two qualities and intelligently
       retains higher quality when motion, people or vehicles are detected.

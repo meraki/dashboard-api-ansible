@@ -26,9 +26,7 @@ options:
   dstPort:
     description: The destination port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type:
-      - integer
-      - 'null'
+    type: int
   dstPortRange:
     description: The destination port range of the incoming packet. Applicable only
       if protocol is set to TCP or UDP.
@@ -45,18 +43,14 @@ options:
   srcPort:
     description: The source port of the incoming packet. Applicable only if protocol
       is TCP or UDP.
-    type:
-      - integer
-      - 'null'
+    type: int
   srcPortRange:
     description: The source port range of the incoming packet. Applicable only if
       protocol is set to TCP or UDP.
     type: str
   vlan:
     description: The VLAN of the incoming packet. A null value will match any VLAN.
-    type:
-      - integer
-      - 'null'
+    type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

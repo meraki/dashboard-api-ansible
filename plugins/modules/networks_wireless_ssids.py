@@ -649,7 +649,7 @@ EXAMPLES = r"""
         distinguishedName: cn=user,dc=example,dc=com
         password: password
       serverCaCertificate:
-        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw'
       servers:
         - host: 127.0.0.1
           port: 389
@@ -657,12 +657,12 @@ EXAMPLES = r"""
       cacheTimeout: 6500
       enabled: true
       serverCaCertificate:
-        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw'
     localRadius:
       cacheTimeout: 60
       certificateAuthentication:
         clientRootCaCertificate:
-          contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+          contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw'
             CERTIFICATE-----'
         enabled: true
         ocspResponderUrl: http://ocsp-server.example.com
@@ -699,7 +699,7 @@ EXAMPLES = r"""
     radiusAccountingEnabled: true
     radiusAccountingInterimInterval: 5
     radiusAccountingServers:
-      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw'
         host: 0.0.0.0
         port: 3000
         radsecEnabled: true
@@ -722,7 +722,7 @@ EXAMPLES = r"""
     radiusServerAttemptsLimit: 5
     radiusServerTimeout: 5
     radiusServers:
-      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw'
         host: 0.0.0.0
         openRoamingCertificateId: 2
         port: 3000

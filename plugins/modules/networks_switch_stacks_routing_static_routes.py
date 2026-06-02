@@ -24,9 +24,7 @@ options:
     type: bool
   managementNextHop:
     description: Optional fallback IP address for management traffic.
-    type:
-      - string
-      - 'null'
+    type: str
   name:
     description: Name or description for layer 3 static route.
     type: str

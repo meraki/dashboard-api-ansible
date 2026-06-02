@@ -33,9 +33,7 @@ options:
       The profile's settings will override all of the per-camera quality and retention
       settings. If the value of this parameter is null, any existing profile will
       be unassigned from the camera.
-    type:
-      - string
-      - 'null'
+    type: str
   quality:
     description: Quality of the camera. Can be one of 'Standard', 'High', 'Enhanced'
       or 'Ultra'. Not all qualities are supported by every camera model.

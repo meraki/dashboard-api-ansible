@@ -6,7 +6,7 @@
 # https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_appliance_vpn_third_party_vpnpeers_info
+module: organizations_appliance_vpn_third_party_vpn_peers_info
 short_description: Information module for organizations _appliance _vpn _third _party
   _vpn _peers
 description:

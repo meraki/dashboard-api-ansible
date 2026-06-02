@@ -75,14 +75,10 @@ options:
     description: The maximum number of MAC addresses for regular MAC allow list. Only
       applicable when 'accessPolicyType' is 'MAC allow list'. Note Config only supported
       on verions greater than ms18 only for classic switches.
-    type:
-      - integer
-      - 'null'
+    type: int
   name:
     description: The name of the switch template port.
-    type:
-      - string
-      - 'null'
+    type: str
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
@@ -95,9 +91,7 @@ options:
   portScheduleId:
     description: The ID of the port schedule. A value of null will clear the port
       schedule.
-    type:
-      - string
-      - 'null'
+    type: str
   profile:
     description: Profile attributes.
     suboptions:
@@ -153,15 +147,11 @@ options:
   vlan:
     description: The VLAN of the switch template port. For a trunk port, this is the
       native VLAN. A null value will clear the value set for trunk ports.
-    type:
-      - integer
-      - 'null'
+    type: int
   voiceVlan:
     description: The voice VLAN of the switch template port. Only applicable to access
       ports.
-    type:
-      - integer
-      - 'null'
+    type: int
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5

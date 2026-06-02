@@ -209,9 +209,7 @@ options:
     type: bool
   message:
     description: A custom message that will appear in email and text message alerts.
-    type:
-      - string
-      - 'null'
+    type: str
   name:
     description: Name of the sensor alert profile.
     type: str
