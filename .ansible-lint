@@ -5,3 +5,4 @@ exclude_paths:
   - workflows/
   - .github/
   - .ansible-lint
+  - .ansible/
