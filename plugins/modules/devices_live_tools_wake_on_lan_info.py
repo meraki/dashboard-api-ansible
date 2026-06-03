@@ -25,7 +25,13 @@ notes:
   - Paths used are
 """
 
-EXAMPLES = r""""""
+EXAMPLES = r"""
+- name: Get devices_live_tools_wake_on_lan_info info
+  cisco.meraki.devices_live_tools_wake_on_lan_info:
+    meraki_api_key: "{{ansible_meraki_api_key}}"
+    state: query
+  register: result
+"""
 RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
