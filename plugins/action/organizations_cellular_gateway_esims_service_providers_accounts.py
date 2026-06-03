@@ -58,7 +58,6 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             title=params.get("title"),
             username=params.get("username"),
             organizationId=params.get("organizationId"),
-            accountId=params.get("accountId"),
         )
 
     def get_all_params(self, name=None, id=None):

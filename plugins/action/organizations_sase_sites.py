@@ -51,7 +51,6 @@ class OrganizationsSaseSites(object):
             siteId=params.get("siteId"),
             routing=params.get("routing"),
             organizationId=params.get("organizationId"),
-            siteId=params.get("siteId"),
         )
 
     def get_all_params(self, name=None, id=None):
