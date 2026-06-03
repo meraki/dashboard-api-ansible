@@ -206,8 +206,8 @@ response:
     returned: info
 '''
 
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from ansible.module_utils.basic import AnsibleModule, json
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec  # noqa: E402
+from ansible.module_utils.basic import AnsibleModule, json  # noqa: E402
 
 
 def is_device_valid(meraki, serial, data):

@@ -261,9 +261,9 @@ data:
                 sample: 2
 '''
 
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible.module_utils.basic import AnsibleModule, json
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec  # noqa: E402
+from ansible.module_utils.common.dict_transformations import recursive_diff  # noqa: E402
+from ansible.module_utils.basic import AnsibleModule, json  # noqa: E402
 
 
 def main():

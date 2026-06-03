@@ -6,7 +6,6 @@
 # https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
-    MerakiModule, meraki_argument_spec, )
 
 __metaclass__ = type
 
@@ -233,8 +232,9 @@ data:
                             returned: success
 """
 
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-from ansible.module_utils.basic import AnsibleModule, json
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (  # noqa: E402
+    MerakiModule, meraki_argument_spec, )
+from ansible.module_utils.basic import AnsibleModule, json  # noqa: E402
 
 
 def get_alert_by_type(type, meraki):
