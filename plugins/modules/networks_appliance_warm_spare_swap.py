@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_warm_spare_swap
-short_description: Resource module for networks _appliance _warmspare _swap
+short_description: Resource module for networks _appliance _warm _spare _swap
 description:
-  - Manage operation create of the resource networks _appliance _warmspare _swap.
+  - Manage operation create of the resource networks _appliance _warm _spare _swap.
   - Swap MX primary and warm spare appliances.
 version_added: '1.0.0'
 extends_documentation_fragment:

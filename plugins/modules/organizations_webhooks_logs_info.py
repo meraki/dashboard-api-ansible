@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_webhooks_logs_info
 short_description: Information module for organizations _webhooks _logs
 description:
-  - Information module for Organizations Webhooks Logs Info.
   - Get all organizations _webhooks _logs.
   - Return the log of webhook POSTs sent.
 version_added: '1.0.0'
@@ -22,24 +22,20 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 90 days from today.
     type: str
   t1:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -47,13 +43,11 @@ options:
     type: float
   perPage:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -63,7 +57,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -73,7 +66,6 @@ options:
     type: str
   url:
     description:
-      - Information module for Organizations Webhooks Logs Info.
       - Url query parameter. The URL the webhook was sent to.
     type: str
 requirements:

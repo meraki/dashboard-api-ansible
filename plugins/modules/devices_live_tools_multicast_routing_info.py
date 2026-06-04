@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_multicast_routing_info
 short_description: Information module for devices _live _tools _multicast _routing
 description:
-  - Information module for Devices Live Tools Multicast Routing Info.
   - Get devices _live _tools _multicast _routing by id.
   - Return a Multicast routing live tool job.
 version_added: '1.0.0'
@@ -21,12 +21,10 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Live Tools Multicast Routing Info.
       - Serial path parameter.
     type: str
   multicastRoutingId:
     description:
-      - Information module for Devices Live Tools Multicast Routing Info.
       - MulticastRoutingId path parameter. Multicast routing ID.
     type: str
 requirements:
@@ -88,6 +86,9 @@ meraki_response:
         {
           "ip": "string",
           "name": "string",
+          "vrf": "string",
+          "vrfType": "string",
+          "ipVersion": "string",
           "subnet": "string",
           "flags": [
             "string"
@@ -101,6 +102,8 @@ meraki_response:
         {
           "source": "string",
           "group": "string",
+          "vrf": "string",
+          "ipVersion": "string",
           "rendezvousPoint": "string",
           "incomingInterfaceName": "string",
           "outgoingInterfaceNames": [

@@ -51,7 +51,7 @@ class NetworksWirelessAirMarshalRules(object):
         self.new_object = dict(
             type=params.get("type"),
             match=params.get("match"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             rule_id=params.get("ruleId"),
         )
 
@@ -145,9 +145,7 @@ class NetworksWirelessAirMarshalRules(object):
 
         obj_params = [
             ("type", "type"),
-            ("match", "match"),
-            ("networkId", "networkId"),
-            ("ruleId", "ruleId"),
+            ("match", "match"), ("ruleId", "ruleId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

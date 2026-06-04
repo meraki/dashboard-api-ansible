@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info
-short_description: Information module for networks _switch _dhcpserverpolicy _arpinspection
-  _trustedservers
+short_description: Information module for networks _switch _dhcp _server _policy _arp
+  _inspection _trusted _servers
 description:
-  - Information module for Networks Switch Dhcpserverpolicy Arpinspection Trustedservers Info.
-  - Get all networks _switch _dhcpserverpolicy _arpinspection _trustedservers.
-  - >
-    Return the list of servers trusted by Dynamic ARP Inspection on this network.
+  - Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers.
+    - > Return the list of servers trusted by Dynamic ARP Inspection on this network.
     These are also known as allow listed snoop entries.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -25,18 +24,15 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Switch Dhcpserverpolicy Arpinspection Trustedservers Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - Information module for Networks Switch Dhcpserverpolicy Arpinspection Trustedservers Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Networks Switch Dhcpserverpolicy Arpinspection Trustedservers Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -46,7 +42,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Networks Switch Dhcpserverpolicy Arpinspection Trustedservers Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -70,7 +65,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _switch _dhcpserverpolicy _arpinspection _trustedservers
+- name: Get all networks _switch _dhcp _server _policy _arp _inspection _trusted _servers
   cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

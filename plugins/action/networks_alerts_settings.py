@@ -52,7 +52,7 @@ class NetworksAlertsSettings(object):
             defaultDestinations=params.get("defaultDestinations"),
             alerts=params.get("alerts"),
             muting=params.get("muting"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -137,9 +137,7 @@ class NetworksAlertsSettings(object):
         obj_params = [
             ("defaultDestinations", "defaultDestinations"),
             ("alerts", "alerts"),
-            ("muting", "muting"),
-            ("networkId", "networkId"),
-        ]
+            ("muting", "muting"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

@@ -190,8 +190,13 @@ def meraki_compare_equality2(current_value, requested_value):
     elif isinstance(current_value, list) and isinstance(requested_value, list):
         return compare_list(current_value, requested_value)
     else:
-        # print("current_value == requested_value", current_value == requested_value)
-        return current_value == requested_value
+        if current_value == requested_value:
+            return True
+        # Tolerate string/int mismatches: Meraki API often returns port numbers
+        # and similar numeric fields as strings even when sent as integers.
+        if not isinstance(current_value, type(requested_value)) or not isinstance(requested_value, type(current_value)):
+            return str(current_value) == str(requested_value)
+        return False
 
 
 def simple_cmp(obj1, obj2):
@@ -277,7 +282,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller="MerakiAnsibleCollection/2.23.2 Cisco",
+                caller="MerakiAnsibleCollection/2.24.0 Cisco",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(

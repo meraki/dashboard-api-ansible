@@ -48,7 +48,7 @@ class OrganizationsInventoryOnboardingCloudMonitoringImports(object):
         self.meraki = meraki
         self.new_object = dict(
             devices=params.get("devices"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):

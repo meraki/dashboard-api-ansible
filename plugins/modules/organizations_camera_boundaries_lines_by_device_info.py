@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_camera_boundaries_lines_by_device_info
 short_description: Information module for organizations _camera _boundaries _lines
-  _bydevice
+  _by _device
 description:
-  - Information module for Organizations Camera Boundaries Lines Bydevice Info.
-  - Get all organizations _camera _boundaries _lines _bydevice.
+  - Get all organizations _camera _boundaries _lines _by _device.
   - Returns all configured crossingline boundaries of cameras.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,12 +22,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Camera Boundaries Lines Bydevice Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
-      - Information module for Organizations Camera Boundaries Lines Bydevice Info.
       - >
         Serials query parameter. A list of serial numbers. The returned cameras will
         be filtered to only include these serials.
@@ -49,7 +47,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _boundaries _lines _bydevice
+- name: Get all organizations _camera _boundaries _lines _by _device
   cisco.meraki.organizations_camera_boundaries_lines_by_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

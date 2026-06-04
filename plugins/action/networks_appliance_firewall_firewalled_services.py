@@ -50,7 +50,7 @@ class NetworksApplianceFirewallFirewalledServices(object):
         self.new_object = dict(
             access=params.get("access"),
             allowedIps=params.get("allowedIps"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             service=params.get("service"),
         )
 
@@ -141,9 +141,7 @@ class NetworksApplianceFirewallFirewalledServices(object):
 
         obj_params = [
             ("access", "access"),
-            ("allowedIps", "allowedIps"),
-            ("networkId", "networkId"),
-            ("service", "service"),
+            ("allowedIps", "allowedIps"), ("service", "service"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_arp_table_info
-short_description: Information module for devices _livetools _arptable
-description:
-  - Information module for Devices Livetools Arptable Info.
-  - Information module for devices liveTools arpTable.
+short_description: Information module for devices _live _tools _arp _table
+description: >
+  Devices Live Tools Arp Table Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -26,6 +26,11 @@ notes:
 """
 
 EXAMPLES = r"""
+- name: Get devices_live_tools_arp_table_info info
+  cisco.meraki.devices_live_tools_arp_table_info:
+    meraki_api_key: "{{ansible_meraki_api_key}}"
+    state: query
+  register: result
 """
 RETURN = r"""
 meraki_response:

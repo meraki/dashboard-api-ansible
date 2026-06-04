@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_policies_assignments_by_client_info
 short_description: Information module for organizations _policies _assignments _by
   _client
 description:
-  - Information module for Organizations Policies Assignments By Client Info.
   - Get all organizations _policies _assignments _by _client.
   - Get policies for all clients with policies.
 version_added: '1.0.0'
@@ -23,18 +23,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,7 +41,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -54,13 +50,11 @@ options:
     type: str
   t0:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in
@@ -68,14 +62,12 @@ options:
     type: float
   includeUndetectedClients:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - >
         IncludeUndetectedClients query parameter. Include provisioned clients that
         have not associated to the network. Default false.
     type: bool
   networkIds:
     description:
-      - Information module for Organizations Policies Assignments By Client Info.
       - NetworkIds query parameter. Network Ids (minimum 1, maximum 30).
     elements: str
     type: list

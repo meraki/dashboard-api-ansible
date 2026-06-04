@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_zigbee_by_network_info
 short_description: Information module for organizations _wireless _zigbee _by _network
 description:
-  - Information module for Organizations Wireless Zigbee By Network Info.
   - Get all organizations _wireless _zigbee _by _network.
   - Return list of Zigbee configs.
 version_added: '1.0.0'
@@ -22,18 +22,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Wireless Zigbee By Network Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Wireless Zigbee By Network Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Wireless Zigbee By Network Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +40,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Wireless Zigbee By Network Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,7 +49,6 @@ options:
     type: str
   networkIds:
     description:
-      - Information module for Organizations Wireless Zigbee By Network Info.
       - NetworkIds query parameter. Filter by specified Network IDs.
     elements: str
     type: list

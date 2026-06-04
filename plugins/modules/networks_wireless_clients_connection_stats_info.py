@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_clients_connection_stats_info
-short_description: Information module for networks _wireless _clients _connectionstats
+short_description: Information module for networks _wireless _clients _connection
+  _stats
 description:
-  - Information module for Networks Wireless Clients Connectionstats Info.
-  - Get all networks _wireless _clients _connectionstats.
+  - Get all networks _wireless _clients _connection _stats.
   - Aggregated connectivity info for a given client on this network. Clients are identified
     by their MAC.
 version_added: '1.0.0'
@@ -22,29 +23,25 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - NetworkId path parameter. Network ID.
     type: str
   clientId:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - ClientId path parameter. Client ID.
     type: str
   t0:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
-      - T0 query parameter. The beginning of the timespan for the data. The maximum
+      - >
+        T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 180 days from today.
     type: str
   t1:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 7 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -52,19 +49,16 @@ options:
     type: float
   band:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - >
         Band query parameter. Filter results by band (either '2.4', '5' or '6'). Note
         that data prior to February 2020 will not have band information.
     type: str
   ssid:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - Ssid query parameter. Filter results by SSID.
     type: int
   apTag:
     description:
-      - Information module for Networks Wireless Clients Connectionstats Info.
       - ApTag query parameter. Filter results by AP Tag.
     type: str
 requirements:
@@ -83,7 +77,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _clients _connectionstats
+- name: Get all networks _wireless _clients _connection _stats
   cisco.meraki.networks_wireless_clients_connection_stats_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

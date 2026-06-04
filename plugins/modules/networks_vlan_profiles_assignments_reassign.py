@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_vlan_profiles_assignments_reassign
-short_description: Resource module for networks _vlanprofiles _assignments _reassign
+short_description: Resource module for networks _vlan _profiles _assignments _reassign
 description:
-  - Manage operation create of the resource networks _vlanprofiles _assignments _reassign.
+  - Manage operation create of the resource networks _vlan _profiles _assignments
+    _reassign.
   - Update the assigned VLAN Profile for devices in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:

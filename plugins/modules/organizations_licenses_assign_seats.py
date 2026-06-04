@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_licenses_assign_seats
-short_description: Resource module for organizations _licenses _assignseats
+short_description: Resource module for organizations _licenses _assign _seats
 description:
-  - Manage operation create of the resource organizations _licenses _assignseats.
+  - Manage operation create of the resource organizations _licenses _assign _seats.
   - Assign SM seats to a network. This will increase the managed SM device limit of
     the network.
 version_added: '1.0.0'

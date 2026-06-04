@@ -59,7 +59,7 @@ class NetworksAppliancePorts(object):
             vlan=params.get("vlan"),
             allowedVlans=params.get("allowedVlans"),
             accessPolicy=params.get("accessPolicy"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             port_id=params.get("portId"),
         )
 
@@ -193,9 +193,7 @@ class NetworksAppliancePorts(object):
             ("type", "type"),
             ("vlan", "vlan"),
             ("allowedVlans", "allowedVlans"),
-            ("accessPolicy", "accessPolicy"),
-            ("networkId", "networkId"),
-            ("portId", "portId"),
+            ("accessPolicy", "accessPolicy"), ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

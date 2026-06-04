@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_early_access_features_opt_ins_info
-short_description: Information module for organizations _earlyaccess _features _optins
+short_description: Information module for organizations _early _access _features _opt
+  _ins
 description:
-  - Information module for Organizations Earlyaccess Features Optins Info.
-  - Get all organizations _earlyaccess _features _optins.
-  - Get organizations _earlyaccess _features _optins by id.
+  - Get all organizations _early _access _features _opt _ins.
+  - Get organizations _early _access _features _opt _ins by id.
   - List the early access feature opt-ins for an organization.
   - Show an early access feature opt-in for an organization.
 version_added: '1.0.0'
@@ -23,12 +24,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Earlyaccess Features Optins Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   optInId:
     description:
-      - Information module for Organizations Earlyaccess Features Optins Info.
       - OptInId path parameter. Opt in ID.
     type: str
 requirements:
@@ -53,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _earlyaccess _features _optins
+- name: Get all organizations _early _access _features _opt _ins
   cisco.meraki.organizations_early_access_features_opt_ins_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,7 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _earlyaccess _features _optins by id
+- name: Get organizations _early _access _features _opt _ins by id
   cisco.meraki.organizations_early_access_features_opt_ins_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

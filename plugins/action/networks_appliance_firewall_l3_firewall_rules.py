@@ -51,7 +51,7 @@ class NetworksApplianceFirewallL3FirewallRules(object):
         self.new_object = dict(
             rules=params.get("rules"),
             syslogDefaultRule=params.get("syslogDefaultRule"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -131,9 +131,7 @@ class NetworksApplianceFirewallL3FirewallRules(object):
         current_obj["rules"] = delete_default_rule(current_obj["rules"])
         obj_params = [
             ("rules", "rules"),
-            ("syslogDefaultRule", "syslogDefaultRule"),
-            ("networkId", "networkId"),
-        ]
+            ("syslogDefaultRule", "syslogDefaultRule"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

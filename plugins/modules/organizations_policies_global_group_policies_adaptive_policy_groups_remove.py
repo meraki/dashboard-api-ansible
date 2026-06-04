@@ -2,51 +2,58 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
-module: organizations_nac_certificates_authorities_crls
-short_description: Resource module for organizations _nac _certificates _authorities
-  _crls
+module: organizations_policies_global_group_policies_adaptive_policy_groups_remove
+short_description: Resource module for organizations _policies _global _group _policies
+  _adaptive _policy _groups _remove
 description:
-  - Manage operation create of the resource organizations _nac _certificates _authorities
-    _crls.
-  - Create a new CRL either base or delta for an existing CA.
+  - Manage operation create of the resource organizations _policies _global _group
+    _policies _adaptive _policy _groups _remove.
+  - Remove adaptive policy groups from a policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
-  caId:
-    description: ID of the CRL issuer.
-    type: str
-  content:
-    description: CRL content in PEM format.
-    type: str
-  isDelta:
-    description: Whether it's a delta CRL or not.
-    type: bool
+  adaptivePolicyGroups:
+    description: Adaptive policy groups to remove.
+    elements: dict
+    suboptions:
+      id:
+        description: Adaptive policy group ID.
+        type: str
+    type: list
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
+  policy:
+    description: Policy to remove adaptive policy groups from.
+    suboptions:
+      id:
+        description: Policy ID.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
 seealso:
-  - name: Cisco Meraki documentation for nac createOrganizationNacCertificatesAuthoritiesCrl
-    description: Complete reference of the createOrganizationNacCertificatesAuthoritiesCrl
+  - name: Cisco Meraki documentation for organizations removeOrganizationPoliciesGlobalGroupPoliciesAdaptivePolicyGroups
+    description: Complete reference of the removeOrganizationPoliciesGlobalGroupPoliciesAdaptivePolicyGroups
       API.
-    link: https://developer.cisco.com/meraki/api-v1/#!create-organization-nac-certificates-authorities-crl
+    link: https://developer.cisco.com/meraki/api-v1/#!remove-organization-policies-global-group-policies-adaptive-policy-groups
 notes:
   - SDK Method used are
-    nac.Nac.create_organization_nac_certificates_authorities_crl,
+    organizations.Organizations.remove_organization_policies_global_group_policies_adaptive_policy_groups,
   - Paths used are
-    post /organizations/{organizationId}/nac/certificates/authorities/crls,
+    post /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups/remove,
 """
 
 EXAMPLES = r"""
 - name: Create
-  cisco.meraki.organizations_nac_certificates_authorities_crls:
+  cisco.meraki.organizations_policies_global_group_policies_adaptive_policy_groups_remove:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -68,11 +75,11 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    caId: '12345'
-    content: '-----BEGIN X509 CRL----- MIIDFDCCAfwCAQEwDQYJKoZIhvcNAQEFBQAwXzEjMCEGA1UEChMaU2FtcGxlIFNpZ25lciBPcmdhbml6YXRpb24xGzAZBgNVBAsTElNhbXBsZS...
-      -----END X509 CRL-----'
-    isDelta: false
+    adaptivePolicyGroups:
+      - id: '1234'
     organizationId: string
+    policy:
+      id: '123'
 """
 RETURN = r"""
 meraki_response:
@@ -81,17 +88,6 @@ meraki_response:
   type: dict
   sample: >
     {
-      "crlId": "string",
-      "data": [
-        {
-          "serial": "string",
-          "revocationDate": "string",
-          "reason": "string"
-        }
-      ],
-      "isDelta": true,
-      "caId": "string",
-      "createdAt": "string",
-      "lastUpdatedAt": "string"
+      "success": true
     }
 """

@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: networks_appliance_static_routes_info
 short_description: Information module for networks _appliance _static _routes
 description:
-- Get all networks _appliance _static _routes.
-- Get networks _appliance _static _routes by id.
-- List the static routes for an MX or teleworker network.
-- Return a static route for an MX or teleworker network.
+  - Get all networks _appliance _static _routes.
+  - Get networks _appliance _static _routes by id.
+  - List the static routes for an MX or teleworker network.
+  - Return a static route for an MX or teleworker network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,15 +23,15 @@ options:
     type: dict
   networkId:
     description:
-    - NetworkId path parameter. Network ID.
+      - NetworkId path parameter. Network ID.
     type: str
   staticRouteId:
     description:
-    - StaticRouteId path parameter. Static route ID.
+      - StaticRouteId path parameter. Static route ID.
     type: str
 requirements:
-- meraki >= 2.4.9
-- python >= 3.5
+  - meraki >= 2.4.9
+  - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance getNetworkApplianceStaticRoute
     description: Complete reference of the getNetworkApplianceStaticRoute API.
@@ -43,7 +43,6 @@ notes:
   - SDK Method used are
     appliance.Appliance.get_network_appliance_static_route,
     appliance.Appliance.get_network_appliance_static_routes,
-
   - Paths used are
     get /networks/{networkId}/appliance/staticRoutes,
     get /networks/{networkId}/appliance/staticRoutes/{staticRouteId},
@@ -75,7 +74,6 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-
 - name: Get networks _appliance _static _routes by id
   cisco.meraki.networks_appliance_static_routes_info:
     meraki_api_key: "{{ meraki_api_key }}"

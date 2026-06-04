@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_clients_overview_info
 short_description: Information module for organizations _clients _overview
 description:
-  - Information module for Organizations Clients Overview Info.
   - Get all organizations _clients _overview.
   - Return summary information around client data usage in kb across the given organization.
 version_added: '1.0.0'
@@ -21,23 +21,19 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Clients Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   t0:
     description:
-      - Information module for Organizations Clients Overview Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-      - Information module for Organizations Clients Overview Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 31 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Organizations Clients Overview Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must

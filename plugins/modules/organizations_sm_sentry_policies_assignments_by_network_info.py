@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_sm_sentry_policies_assignments_by_network_info
 short_description: Information module for organizations _sm _sentry _policies _assignments
-  _bynetwork
+  _by _network
 description:
-  - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
-  - Get all organizations _sm _sentry _policies _assignments _bynetwork.
+  - Get all organizations _sm _sentry _policies _assignments _by _network.
   - List the Sentry Policies for an organization ordered in ascending order of priority.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,18 +23,15 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   perPage:
     description:
-      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -44,7 +41,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -54,7 +50,6 @@ options:
     type: str
   networkIds:
     description:
-      - Information module for Organizations Sm Sentry Policies Assignments Bynetwork Info.
       - NetworkIds query parameter. Optional parameter to filter Sentry Policies by
         Network Id.
     elements: str
@@ -75,7 +70,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _sm _sentry _policies _assignments _bynetwork
+- name: Get all organizations _sm _sentry _policies _assignments _by _network
   cisco.meraki.organizations_sm_sentry_policies_assignments_by_network_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_devices_claim
 short_description: Resource module for networks _devices _claim
 description:
-  - Manage operation create of the resource networks _devices _claim.
-  - >
-    Claim devices into a network. Note for recently claimed devices, it may take a
-    few minutes for API requests against that device to succeed. This operation can
-    be used up to ten times within a single five minute window.
+  - Manage operation create of the resource networks _devices _claim. - > Claim devices
+    into a network. Note for recently claimed devices, it may take a few minutes for
+    API requests against that device to succeed. This operation can be used up to
+    ten times within a single five minute window.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

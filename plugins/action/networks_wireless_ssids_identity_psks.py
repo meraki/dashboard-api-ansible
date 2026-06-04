@@ -236,9 +236,7 @@ class NetworksWirelessSsidsIdentityPsks(object):
             ("name", "name"),
             ("passphrase", "passphrase"),
             ("groupPolicyId", "groupPolicyId"),
-            ("expiresAt", "expiresAt"),
-            ("networkId", "networkId"),
-            ("number", "number"),
+            ("expiresAt", "expiresAt"), ("number", "number"),
             ("identityPskId", "identityPskId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params

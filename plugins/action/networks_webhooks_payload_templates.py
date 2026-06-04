@@ -33,7 +33,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     body=dict(type="str"),
-    headers=dict(type="list"),
+    headers=dict(type="['array', 'null']"),
     bodyFile=dict(type="str"),
     headersFile=dict(type="str"),
     networkId=dict(type="str"),
@@ -227,9 +227,7 @@ class NetworksWebhooksPayloadTemplates(object):
             ("body", "body"),
             ("headers", "headers"),
             ("bodyFile", "bodyFile"),
-            ("headersFile", "headersFile"),
-            ("networkId", "networkId"),
-            ("payloadTemplateId", "payloadTemplateId"),
+            ("headersFile", "headersFile"), ("payloadTemplateId", "payloadTemplateId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

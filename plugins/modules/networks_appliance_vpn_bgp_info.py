@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_vpn_bgp_info
 short_description: Information module for networks _appliance _vpn _bgp
 description:
-  - Information module for Networks Appliance Vpn Bgp Info.
   - Get all networks _appliance _vpn _bgp.
   - Return a Hub BGP Configuration.
 version_added: '1.0.0'
@@ -21,7 +21,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Vpn Bgp Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -75,6 +74,7 @@ meraki_response:
       "enabled": true,
       "asNumber": 0,
       "ibgpHoldTimer": 0,
+      "routerId": "string",
       "neighbors": [
         {
           "ip": "string",
@@ -98,7 +98,13 @@ meraki_response:
           "pathPrepend": [
             0
           ],
-          "weight": 0
+          "weight": 0,
+          "filterIn": [
+            "string"
+          ],
+          "communityOut": [
+            "string"
+          ]
         }
       ]
     }

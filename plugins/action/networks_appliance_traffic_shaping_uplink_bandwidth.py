@@ -48,7 +48,7 @@ class NetworksApplianceTrafficShapingUplinkBandwidth(object):
         self.meraki = meraki
         self.new_object = dict(
             bandwidthLimits=params.get("bandwidthLimits"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -123,9 +123,7 @@ class NetworksApplianceTrafficShapingUplinkBandwidth(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("bandwidthLimits", "bandwidthLimits"),
-            ("networkId", "networkId"),
-        ]
+            ("bandwidthLimits", "bandwidthLimits"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

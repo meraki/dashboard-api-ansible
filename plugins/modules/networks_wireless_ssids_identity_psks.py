@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_identity_psks
-short_description: Resource module for networks _wireless _ssids _identitypsks
+short_description: Resource module for networks _wireless _ssids _identity _psks
 description:
   - Manage operations create, update and delete of the resource networks _wireless
-    _ssids _identitypsks.
+    _ssids _identity _psks.
   - Create an Identity PSK.
   - Delete an Identity PSK.
   - Update an Identity PSK.

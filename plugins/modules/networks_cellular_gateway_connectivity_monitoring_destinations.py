@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_connectivity_monitoring_destinations
-short_description: Resource module for networks _cellulargateway _connectivitymonitoringdestinations
+short_description: Resource module for networks _cellular _gateway _connectivity _monitoring
+  _destinations
 description:
-  - Manage operation update of the resource networks _cellulargateway _connectivitymonitoringdestinations.
+  - Manage operation update of the resource networks _cellular _gateway _connectivity
+    _monitoring _destinations.
   - Update the connectivity testing destinations for an MG network.
 version_added: '1.0.0'
 extends_documentation_fragment:

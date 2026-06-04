@@ -51,7 +51,7 @@ class NetworksWirelessSsidsDeviceTypeGroupPolicies(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             deviceTypePolicies=params.get("deviceTypePolicies"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 
@@ -138,9 +138,7 @@ class NetworksWirelessSsidsDeviceTypeGroupPolicies(object):
 
         obj_params = [
             ("enabled", "enabled"),
-            ("deviceTypePolicies", "deviceTypePolicies"),
-            ("networkId", "networkId"),
-            ("number", "number"),
+            ("deviceTypePolicies", "deviceTypePolicies"), ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

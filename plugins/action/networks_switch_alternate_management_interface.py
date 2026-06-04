@@ -54,7 +54,7 @@ class NetworksSwitchAlternateManagementInterface(object):
             vlanId=params.get("vlanId"),
             protocols=params.get("protocols"),
             switches=params.get("switches"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -143,9 +143,7 @@ class NetworksSwitchAlternateManagementInterface(object):
             ("enabled", "enabled"),
             ("vlanId", "vlanId"),
             ("protocols", "protocols"),
-            ("switches", "switches"),
-            ("networkId", "networkId"),
-        ]
+            ("switches", "switches"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

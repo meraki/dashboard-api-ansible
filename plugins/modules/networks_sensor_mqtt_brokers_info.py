@@ -2,20 +2,18 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sensor_mqtt_brokers_info
-short_description: Information module for networks _sensor _mqttbrokers
+short_description: Information module for networks _sensor _mqtt _brokers
 description:
-  - Information module for Networks Sensor Mqttbrokers Info.
-  - Get all networks _sensor _mqttbrokers.
-  - Get networks _sensor _mqttbrokers by id.
-  - >
-    List the sensor settings of all MQTT brokers for this network. To get the brokers
-    themselves, use /networks/{networkId}/mqttBrokers.
-  - >
-    Return the sensor settings of an MQTT broker. To get the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
+  - Get all networks _sensor _mqtt _brokers.
+  - Get networks _sensor _mqtt _brokers by id. - > List the sensor settings of all
+    MQTT brokers for this network. To get the brokers themselves, use /networks/{networkId}/mqttBrokers.
+    - > Return the sensor settings of an MQTT broker. To get the broker itself, use
+    /networks/{networkId}/mqttBrokers/{mqttBrokerId}.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -26,12 +24,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sensor Mqttbrokers Info.
       - NetworkId path parameter. Network ID.
     type: str
   mqttBrokerId:
     description:
-      - Information module for Networks Sensor Mqttbrokers Info.
       - MqttBrokerId path parameter. Mqtt broker ID.
     type: str
 requirements:
@@ -54,7 +50,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sensor _mqttbrokers
+- name: Get all networks _sensor _mqtt _brokers
   cisco.meraki.networks_sensor_mqtt_brokers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -79,7 +75,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _sensor _mqttbrokers by id
+- name: Get networks _sensor _mqtt _brokers by id
   cisco.meraki.networks_sensor_mqtt_brokers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_cable_test
-short_description: Resource module for devices _livetools _cabletest
+short_description: Resource module for devices _live _tools _cable _test
 description:
-  - Manage operation create of the resource devices _livetools _cabletest.
-  - >
+  - Manage operation create of the resource devices _live _tools _cable _test. - >
     Enqueue a job to perform a cable test for the device on the specified ports. This
     endpoint has a sustained rate limit of one request every five seconds per device,
     with an allowed burst of five requests.

@@ -201,9 +201,7 @@ class DevicesSwitchRoutingInterfacesDhcp(object):
             ("bootFileName", "bootFileName"),
             ("dhcpOptions", "dhcpOptions"),
             ("reservedIpRanges", "reservedIpRanges"),
-            ("fixedIpAssignments", "fixedIpAssignments"),
-            ("serial", "serial"),
-            ("interfaceId", "interfaceId"),
+            ("fixedIpAssignments", "fixedIpAssignments"), ("interfaceId", "interfaceId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

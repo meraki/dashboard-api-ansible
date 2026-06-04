@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_camera_custom_analytics_artifacts_info
-short_description: Information module for organizations _camera _customanalytics _artifacts
+short_description: Information module for organizations _camera _custom _analytics
+  _artifacts
 description:
-  - Information module for Organizations Camera Customanalytics Artifacts Info.
-  - Get all organizations _camera _customanalytics _artifacts.
-  - Get organizations _camera _customanalytics _artifacts by id.
+  - Get all organizations _camera _custom _analytics _artifacts.
+  - Get organizations _camera _custom _analytics _artifacts by id.
   - Get Custom Analytics Artifact.
   - List Custom Analytics Artifacts.
 version_added: '1.0.0'
@@ -23,12 +24,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Camera Customanalytics Artifacts Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   artifactId:
     description:
-      - Information module for Organizations Camera Customanalytics Artifacts Info.
       - ArtifactId path parameter. Artifact ID.
     type: str
 requirements:
@@ -53,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _camera _customanalytics _artifacts
+- name: Get all organizations _camera _custom _analytics _artifacts
   cisco.meraki.organizations_camera_custom_analytics_artifacts_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,7 +77,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _camera _customanalytics _artifacts by id
+- name: Get organizations _camera _custom _analytics _artifacts by id
   cisco.meraki.organizations_camera_custom_analytics_artifacts_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

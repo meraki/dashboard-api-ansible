@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_vlans
@@ -157,6 +158,22 @@ options:
   templateVlanType:
     description: Type of subnetting of the VLAN. Applicable only for template network.
     type: str
+  uplinks:
+    description: Per-uplink NAT exception override configuration on the VLAN. Applicable
+      only for networks that support NAT exceptions.
+    elements: dict
+    suboptions:
+      interface:
+        description: Interface name of the uplink.
+        type: str
+      nat:
+        description: NAT settings of the uplink.
+        suboptions:
+          enabled:
+            description: Whether NAT is enabled on the uplink.
+            type: bool
+        type: dict
+    type: list
   vlanId:
     description: VlanId path parameter. Vlan ID.
     type: str
@@ -247,6 +264,10 @@ EXAMPLES = r"""
     networkId: string
     subnet: 192.168.1.0/24
     templateVlanType: same
+    uplinks:
+      - interface: wan1
+        nat:
+          enabled: true
 - name: Update by id
   cisco.meraki.networks_appliance_vlans:
     meraki_api_key: "{{ meraki_api_key }}"

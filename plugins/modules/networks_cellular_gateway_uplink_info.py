@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_cellular_gateway_uplink_info
-short_description: Information module for networks _cellulargateway _uplink
+short_description: Information module for networks _cellular _gateway _uplink
 description:
-  - Information module for Networks Cellulargateway Uplink Info.
-  - Get all networks _cellulargateway _uplink.
+  - Get all networks _cellular _gateway _uplink.
   - Returns the uplink settings for your MG network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +21,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Cellulargateway Uplink Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -39,7 +38,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _cellulargateway _uplink
+- name: Get all networks _cellular _gateway _uplink
   cisco.meraki.networks_cellular_gateway_uplink_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

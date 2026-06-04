@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_early_access_features_info
-short_description: Information module for organizations _earlyaccess _features
+short_description: Information module for organizations _early _access _features
 description:
-  - Information module for Organizations Earlyaccess Features Info.
-  - Get all organizations _earlyaccess _features.
+  - Get all organizations _early _access _features.
   - List the available early access features for organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +21,6 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Earlyaccess Features Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -39,7 +38,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _earlyaccess _features
+- name: Get all organizations _early _access _features
   cisco.meraki.organizations_early_access_features_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

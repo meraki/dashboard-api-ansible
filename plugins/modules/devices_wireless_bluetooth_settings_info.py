@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_wireless_bluetooth_settings_info
 short_description: Information module for devices _wireless _bluetooth _settings
 description:
-  - Information module for Devices Wireless Bluetooth Settings Info.
   - Get all devices _wireless _bluetooth _settings.
   - Return the bluetooth settings for a wireless device.
 version_added: '1.0.0'
@@ -21,7 +21,6 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Wireless Bluetooth Settings Info.
       - Serial path parameter.
     type: str
 requirements:

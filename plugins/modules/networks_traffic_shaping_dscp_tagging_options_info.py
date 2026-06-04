@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_traffic_shaping_dscp_tagging_options_info
-short_description: Information module for networks _trafficshaping _dscptaggingoptions
+short_description: Information module for networks _traffic _shaping _dscp _tagging
+  _options
 description:
-  - Information module for Networks Trafficshaping Dscptaggingoptions Info.
-  - Get all networks _trafficshaping _dscptaggingoptions.
+  - Get all networks _traffic _shaping _dscp _tagging _options.
   - Returns the available DSCP tagging options for your traffic shaping rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +22,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Trafficshaping Dscptaggingoptions Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _trafficshaping _dscptaggingoptions
+- name: Get all networks _traffic _shaping _dscp _tagging _options
   cisco.meraki.networks_traffic_shaping_dscp_tagging_options_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

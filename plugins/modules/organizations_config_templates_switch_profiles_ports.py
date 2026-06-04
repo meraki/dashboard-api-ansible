@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_config_templates_switch_profiles_ports
-short_description: Resource module for organizations _configtemplates _switch _profiles
+short_description: Resource module for organizations _config _templates _switch _profiles
   _ports
 description:
-  - Manage operation update of the resource organizations _configtemplates _switch
+  - Manage operation update of the resource organizations _config _templates _switch
     _profiles _ports.
   - Update a switch template port.
 version_added: '1.0.0'

@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_claim
 short_description: Resource module for organizations _inventory _claim
 description:
-  - Manage operation create of the resource organizations _inventory _claim.
-  - >
-    Claim a list of devices, licenses, and/or orders into an organization inventory.
-    When claiming by order, all devices and licenses in the order will be claimed;
-    licenses will be added to the organization and devices will be placed in the organization's
+  - Manage operation create of the resource organizations _inventory _claim. - > Claim
+    a list of devices, licenses, and/or orders into an organization inventory. When
+    claiming by order, all devices and licenses in the order will be claimed; licenses
+    will be added to the organization and devices will be placed in the organization's
     inventory. This operation can be used up to ten times within a single five minute
     window.
 version_added: '1.0.0'

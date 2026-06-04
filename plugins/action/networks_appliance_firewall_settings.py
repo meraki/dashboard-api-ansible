@@ -48,7 +48,7 @@ class NetworksApplianceFirewallSettings(object):
         self.meraki = meraki
         self.new_object = dict(
             spoofingProtection=params.get("spoofingProtection"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -123,9 +123,7 @@ class NetworksApplianceFirewallSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("spoofingProtection", "spoofingProtection"),
-            ("networkId", "networkId"),
-        ]
+            ("spoofingProtection", "spoofingProtection"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

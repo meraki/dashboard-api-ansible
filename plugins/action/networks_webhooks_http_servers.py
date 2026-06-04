@@ -212,9 +212,7 @@ class NetworksWebhooksHttpServers(object):
             ("name", "name"),
             ("url", "url"),
             ("sharedSecret", "sharedSecret"),
-            ("payloadTemplate", "payloadTemplate"),
-            ("networkId", "networkId"),
-            ("httpServerId", "httpServerId"),
+            ("payloadTemplate", "payloadTemplate"), ("httpServerId", "httpServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

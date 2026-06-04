@@ -68,7 +68,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             claimId=params.get("claimId"),
             subscriptions=params.get("subscriptions"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
         return new_object
 

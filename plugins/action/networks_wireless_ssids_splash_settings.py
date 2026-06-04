@@ -81,7 +81,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             billing=params.get("billing"),
             sentryEnrollment=params.get("sentryEnrollment"),
             selfRegistration=params.get("selfRegistration"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 
@@ -244,9 +244,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             ("guestSponsorship", "guestSponsorship"),
             ("billing", "billing"),
             ("sentryEnrollment", "sentryEnrollment"),
-            ("selfRegistration", "selfRegistration"),
-            ("networkId", "networkId"),
-            ("number", "number"),
+            ("selfRegistration", "selfRegistration"), ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

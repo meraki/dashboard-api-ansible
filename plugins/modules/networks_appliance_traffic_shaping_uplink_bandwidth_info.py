@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_bandwidth_info
-short_description: Information module for networks _appliance _trafficshaping _uplinkbandwidth
+short_description: Information module for networks _appliance _traffic _shaping _uplink
+  _bandwidth
 description:
-  - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
-  - Get all networks _appliance _trafficshaping _uplinkbandwidth.
-  - >
-    Returns the uplink bandwidth limits for your MX network. This may not reflect
-    the affected device's hardware capabilities. For more information on your device's
-    hardware capabilities, please consult our MX Family Datasheet - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file
+  - Get all networks _appliance _traffic _shaping _uplink _bandwidth. - > Returns
+    the uplink bandwidth limits for your MX network. This may not reflect the affected
+    device's hardware capabilities. For more information on your device's hardware
+    capabilities, please consult our MX Family Datasheet - https //meraki.cisco.com/product-collateral/mx-family-datasheet/?file
     .
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -25,7 +25,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Trafficshaping Uplinkbandwidth Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -44,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _trafficshaping _uplinkbandwidth
+- name: Get all networks _appliance _traffic _shaping _uplink _bandwidth
   cisco.meraki.networks_appliance_traffic_shaping_uplink_bandwidth_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sensor_alerts_overview_by_metric_info
-short_description: Information module for networks _sensor _alerts _overview _bymetric
+short_description: Information module for networks _sensor _alerts _overview _by _metric
 description:
-  - Information module for Networks Sensor Alerts Overview Bymetric Info.
-  - Get all networks _sensor _alerts _overview _bymetric.
+  - Get all networks _sensor _alerts _overview _by _metric.
   - Return an overview of alert occurrences over a timespan, by metric.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,24 +21,21 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - NetworkId path parameter. Network ID.
     type: str
   t0:
     description:
-      - Information module for Networks Sensor Alerts Overview Bymetric Info.
-      - T0 query parameter. The beginning of the timespan for the data. The maximum
+      - >
+        T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 731 days from today.
     type: str
   t1:
     description:
-      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 366 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -47,10 +44,9 @@ options:
     type: float
   interval:
     description:
-      - Information module for Networks Sensor Alerts Overview Bymetric Info.
       - >
         Interval query parameter. The time interval in seconds for returned data.
-        The valid intervals are 900, 3600, 86400, 604800, 2592000. The default is
+        The valid intervals are 900, 3600, 86400, 604800, 2629746. The default is
         604800. Interval is calculated if time params are provided.
     type: int
 requirements:
@@ -69,7 +65,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sensor _alerts _overview _bymetric
+- name: Get all networks _sensor _alerts _overview _by _metric
   cisco.meraki.networks_sensor_alerts_overview_by_metric_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

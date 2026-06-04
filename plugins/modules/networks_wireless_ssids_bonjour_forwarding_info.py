@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_bonjour_forwarding_info
-short_description: Information module for networks _wireless _ssids _bonjourforwarding
+short_description: Information module for networks _wireless _ssids _bonjour _forwarding
 description:
-  - Information module for Networks Wireless Ssids Bonjourforwarding Info.
-  - Get all networks _wireless _ssids _bonjourforwarding.
+  - Get all networks _wireless _ssids _bonjour _forwarding.
   - List the Bonjour forwarding setting and rules for the SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,12 +21,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Ssids Bonjourforwarding Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-      - Information module for Networks Wireless Ssids Bonjourforwarding Info.
       - Number path parameter.
     type: str
 requirements:
@@ -45,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _bonjourforwarding
+- name: Get all networks _wireless _ssids _bonjour _forwarding
   cisco.meraki.networks_wireless_ssids_bonjour_forwarding_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

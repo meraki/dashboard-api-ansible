@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_events_rollbacks
-short_description: Resource module for networks _firmwareupgrades _staged _events
+short_description: Resource module for networks _firmware _upgrades _staged _events
   _rollbacks
 description:
-  - Manage operation create of the resource networks _firmwareupgrades _staged _events
+  - Manage operation create of the resource networks _firmware _upgrades _staged _events
     _rollbacks.
   - Rollback a Staged Upgrade Event for a network.
 version_added: '1.0.0'

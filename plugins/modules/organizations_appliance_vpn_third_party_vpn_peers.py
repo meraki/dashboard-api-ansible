@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_appliance_vpn_third_party_vpn_peers
-short_description: Resource module for organizations _appliance _vpn _third _party _vpn _peers
+short_description: Resource module for organizations _appliance _vpn _third _party
+  _vpn _peers
 description:
-  - Manage operation update of the resource organizations _appliance _vpn _third _party _vpn _peers.
+  - Manage operation update of the resource organizations _appliance _vpn _third _party
+    _vpn _peers.
   - Update the third party VPN peers for an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -31,27 +34,27 @@ options:
               hold timer must be an integer between 12 and 240.
             type: int
           ebgpMultihop:
-            description: Configure this if the neighbor is not adjacent. The eBGP multi-hop
-              must be an integer between 1 and 255.
+            description: Configure this if the neighbor is not adjacent. The eBGP
+              multi-hop must be an integer between 1 and 255.
             type: int
           ipVersion:
             description: The IP version of the neighbor.
             type: int
           multiExitDiscriminator:
             description: Configures the local metric associated with routes received
-              from the remote peer. Routes from peers with lower metrics are will be
-              preferred. Must be an integer between 0 and 4294967295. MED is 6th in
-              the decision tree when identical routes from multiple peers exist.
+              from the remote peer. Routes from peers with lower metrics are will
+              be preferred. Must be an integer between 0 and 4294967295. MED is 6th
+              in the decision tree when identical routes from multiple peers exist.
             type: int
           neighborIp:
             description: IPv4/IPv6 address of the neighbor.
             type: str
           pathPrepend:
-            description: Prepends the AS_PATH BGP Attribute associated with routes received
-              from the remote peer. Configurable value of ASNs to prepend. Length of
-              the array may not exceed 10, and each ASN in the array must be an integer
-              between 1 and 4294967295. AS_PATH is 4th in the decision tree when identical
-              routes from multiple peers exist.
+            description: Prepends the AS_PATH BGP Attribute associated with routes
+              received from the remote peer. Configurable value of ASNs to prepend.
+              Length of the array may not exceed 10, and each ASN in the array must
+              be an integer between 1 and 4294967295. AS_PATH is 4th in the decision
+              tree when identical routes from multiple peers exist.
             elements: int
             type: list
           remoteAsNumber:
@@ -63,19 +66,19 @@ options:
             type: str
           weight:
             description: Configures the local metric associated with routes received
-              from the remote peer. Routes from peers with lower metrics are will be
-              preferred. Must be an integer between 0 and 4294967295. MED is 6th in
-              the decision tree when identical routes from multiple peers exist.
+              from the remote peer. Routes from peers with lower metrics are will
+              be preferred. Must be an integer between 0 and 4294967295. MED is 6th
+              in the decision tree when identical routes from multiple peers exist.
             type: int
         type: dict
       ecmpUplinkConfigs:
-        description: Optional The ECMP per-uplink BGP-over-IPsec configuration for the
-          VPN peer.
+        description: Optional The ECMP per-uplink BGP-over-IPsec configuration for
+          the VPN peer.
         elements: dict
         suboptions:
           ebgpNeighbor:
-            description: Optional The BGP neighbor configuration for the VPN peer. Supported
-              only for MX 19.1 and above.
+            description: Optional The BGP neighbor configuration for the VPN peer.
+              Supported only for MX 19.1 and above.
             suboptions:
               neighborIp:
                 description: IPv4/IPv6 address of the neighbor.
@@ -112,8 +115,8 @@ options:
             type: dict
           number:
             description: Optional Represents the ordering of primary and backup tunnels
-              group. Primary and backup tunnels are grouped by this number. If you submit
-              a request with the numbers 1, 9, 999, these numbers will be automatically
+              group. Primary and backup tunnels are grouped by this number. If you
+              submit a request with the numbers 1, 9, 999, these numbers will be automatically
               adjusted to a sequential order starting from 1. So, they will be changed
               to 1, 2, 3 to reflect their positions in the sequence.
             type: int
@@ -123,19 +126,20 @@ options:
           Defaults to '1' when omitted.
         type: str
       ipsecPolicies:
-        description: Custom IPSec policies for the VPN peer. If not included and a preset
-          has not been chosen, the default preset for IPSec policies will be used.
+        description: Custom IPSec policies for the VPN peer. If not included and a
+          preset has not been chosen, the default preset for IPSec policies will be
+          used.
         suboptions:
           childAuthAlgo:
-            description: This is the authentication algorithms to be used in Phase 2.
-              The value should be an array with one of the following algorithms 'sha256',
-              'sha1', 'md5'.
+            description: This is the authentication algorithms to be used in Phase
+              2. The value should be an array with one of the following algorithms
+              'sha256', 'sha1', 'md5'.
             elements: str
             type: list
           childCipherAlgo:
-            description: This is the cipher algorithms to be used in Phase 2. The value
-              should be an array with one or more of the following algorithms 'aes256',
-              'aes192', 'aes128', 'tripledes', 'des', 'null'.
+            description: This is the cipher algorithms to be used in Phase 2. The
+              value should be an array with one or more of the following algorithms
+              'aes256', 'aes192', 'aes128', 'tripledes', 'des', 'null'.
             elements: str
             type: list
           childLifetime:
@@ -148,9 +152,9 @@ options:
             elements: str
             type: list
           ikeAuthAlgo:
-            description: This is the authentication algorithm to be used in Phase 1.
-              The value should be an array with one of the following algorithms 'sha256',
-              'sha1', 'md5'.
+            description: This is the authentication algorithm to be used in Phase
+              1. The value should be an array with one of the following algorithms
+              'sha256', 'sha1', 'md5'.
             elements: str
             type: list
           ikeCipherAlgo:
@@ -169,10 +173,10 @@ options:
             description: The lifetime of the Phase 1 SA in seconds.
             type: int
           ikePrfAlgo:
-            description: Optional This is the pseudo-random function to be used in IKE_SA.
-              The value should be an array with one of the following algorithms 'prfsha256',
-              'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default
-              to the Authentication algorithm.
+            description: Optional This is the pseudo-random function to be used in
+              IKE_SA. The value should be an array with one of the following algorithms
+              'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can
+              be used to default to the Authentication algorithm.
             elements: str
             type: list
         type: dict
@@ -186,8 +190,8 @@ options:
           the default is false. Supported only for MX 19.1 and above.
         type: bool
       localId:
-        description: Optional The local ID is used to identify the MX to the peer. This
-          will apply to all MXs this peer applies to.
+        description: Optional The local ID is used to identify the MX to the peer.
+          This will apply to all MXs this peer applies to.
         type: str
       name:
         description: The name of the VPN peer.
@@ -202,19 +206,19 @@ options:
             type: list
         type: dict
       networkTags:
-        description: A list of network tags that will connect with this peer. Use 'all'
-          for all networks. Use 'none' for no networks. If not included, the default
-          is 'all'.
+        description: A list of network tags that will connect with this peer. Use
+          'all' for all networks. Use 'none' for no networks. If not included, the
+          default is 'all'.
         elements: str
         type: list
       peerId:
         description: The ID of the IPsec peer.
         type: str
       priorityInGroup:
-        description: Optional Represents the order of peer inside a group. If you submit
-          a request with the numbers 1, 9, 999, these numbers will be automatically
-          adjusted to a sequential order starting from 1. So, they will be changed to
-          1, 2, 3 to reflect their positions in the sequence.
+        description: Optional Represents the order of peer inside a group. If you
+          submit a request with the numbers 1, 9, 999, these numbers will be automatically
+          adjusted to a sequential order starting from 1. So, they will be changed
+          to 1, 2, 3 to reflect their positions in the sequence.
         type: int
       privateSubnets:
         description: The list of the private subnets of the VPN peer.
@@ -227,8 +231,8 @@ options:
         description: Optional The public IP of the VPN peer.
         type: str
       remoteId:
-        description: Optional The remote ID is used to identify the connecting VPN peer.
-          This can either be a valid IPv4 Address, FQDN or User FQDN.
+        description: Optional The remote ID is used to identify the connecting VPN
+          peer. This can either be a valid IPv4 Address, FQDN or User FQDN.
         type: str
       secret:
         description: The shared secret with the VPN peer.
@@ -247,19 +251,19 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for appliance updateOrganizationApplianceVpnThirdPartyVPNPeers
-    description: Complete reference of the updateOrganizationApplianceVpnThirdPartyVPNPeers API.
+    description: Complete reference of the updateOrganizationApplianceVpnThirdPartyVPNPeers
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-organization-appliance-vpn-third-party-vpn-peers
 notes:
   - SDK Method used are
-    appliance.Appliance.update_organization_appliance_vpn_third_party_vpn_peers,
-
+    appliance.Appliance.update_organization_appliance_vpn_third_party_vpnpeers,
   - Paths used are
     put /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
 """
 
 EXAMPLES = r"""
 - name: Update all
-  cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
+  cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -282,7 +286,6 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-
     organizationId: string
     peers:
       - ebgpNeighbor:
@@ -301,7 +304,7 @@ EXAMPLES = r"""
           - ebgpNeighbor:
               neighborIp: 169.254.10.2
               sourceIp: 169.254.10.1
-            id: "7890"
+            id: '7890'
             privateSubnets:
               - 169.254.10.0/30
             wan: WAN 1
@@ -310,7 +313,7 @@ EXAMPLES = r"""
           failover:
             directToInternet: true
           number: 1
-        ikeVersion: "2"
+        ikeVersion: '2'
         ipsecPolicies:
           childAuthAlgo:
             - sha1
@@ -339,7 +342,7 @@ EXAMPLES = r"""
             - N_3
         networkTags:
           - none
-        peerId: "1234"
+        peerId: '1234'
         priorityInGroup: 1
         privateSubnets:
           - 192.168.1.0/24
@@ -349,7 +352,7 @@ EXAMPLES = r"""
         remoteId: miles@meraki.com
         secret: Sample Password
         slaPolicy:
-          id: "1234"
+          id: '1234'
 """
 RETURN = r"""
 meraki_response:

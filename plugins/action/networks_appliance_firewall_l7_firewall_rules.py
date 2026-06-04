@@ -48,7 +48,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
         self.meraki = meraki
         self.new_object = dict(
             rules=params.get("rules"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):

@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_group_policies_info
-short_description: Information module for networks _grouppolicies
+short_description: Information module for networks _group _policies
 description:
-  - Information module for Networks Grouppolicies Info.
-  - Get all networks _grouppolicies.
-  - Get networks _grouppolicies by id.
+  - Get all networks _group _policies.
+  - Get networks _group _policies by id.
   - Display a group policy.
   - List the group policies in a network.
 version_added: '1.0.0'
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Grouppolicies Info.
       - NetworkId path parameter. Network ID.
     type: str
   groupPolicyId:
     description:
-      - Information module for Networks Grouppolicies Info.
       - GroupPolicyId path parameter. Group policy ID.
     type: str
 requirements:
@@ -51,7 +49,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _grouppolicies
+- name: Get all networks _group _policies
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -76,7 +74,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _grouppolicies by id
+- name: Get networks _group _policies by id
   cisco.meraki.networks_group_policies_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

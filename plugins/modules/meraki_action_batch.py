@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright: (c) 2021, Kevin Breit (@kbreit) <kevin.breit@kevinbreit.net>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see COPYING or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
 
@@ -86,9 +87,7 @@ options:
       - absent
     default: present
     description:
-      - Specifies whether to lookup,
-                create,
-                or delete an Action Batch job.
+      - Specifies whether to lookup, create, or delete an Action Batch job.
     type: str
   synchronous:
     default: true
@@ -211,11 +210,9 @@ data:
             type: dict
 """
 
-from ansible.module_utils.basic import AnsibleModule, json
 from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import (
-    MerakiModule,
-    meraki_argument_spec,
-)
+    MerakiModule, meraki_argument_spec, )
+from ansible.module_utils.basic import AnsibleModule, json
 
 
 def _construct_payload(meraki):
@@ -294,15 +291,12 @@ def main():
 
     query_urls = {"action_batch": "/organizations/{org_id}/actionBatches"}
     query_one_urls = {
-        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"
-    }
+        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"}
     create_urls = {"action_batch": "/organizations/{org_id}/actionBatches"}
     update_urls = {
-        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"
-    }
+        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"}
     delete_urls = {
-        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"
-    }
+        "action_batch": "/organizations/{org_id}/actionBatches/{action_batch_id}"}
 
     meraki.url_catalog["get_all"].update(query_urls)
     meraki.url_catalog["get_one"].update(query_one_urls)
@@ -340,7 +334,8 @@ def main():
         if meraki.params["action_batch_id"] is None:  # Create a new Action Batch job
             payload = _construct_payload(meraki)
             path = meraki.construct_path("create", org_id=org_id)
-            response = meraki.request(path, method="POST", payload=json.dumps(payload))
+            response = meraki.request(
+                path, method="POST", payload=json.dumps(payload))
             if meraki.status == 201:
                 meraki.result["data"] = response
                 meraki.result["changed"] = True
@@ -361,10 +356,8 @@ def main():
                 meraki.is_update_required(current, payload) is True
             ):  # Job needs to be modified
                 path = meraki.construct_path(
-                    "update",
-                    org_id=org_id,
-                    custom={"action_batch_id": meraki.params["action_batch_id"]},
-                )
+                    "update", org_id=org_id, custom={
+                        "action_batch_id": meraki.params["action_batch_id"]}, )
                 response = meraki.request(
                     path, method="PUT", payload=json.dumps(payload)
                 )

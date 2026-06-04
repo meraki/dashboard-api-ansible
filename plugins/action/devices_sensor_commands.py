@@ -181,9 +181,7 @@ class DevicesSensorCommands(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("operation", "operation"),
-            ("serial", "serial"),
-            ("commandId", "commandId"),
+            ("operation", "operation"), ("commandId", "commandId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

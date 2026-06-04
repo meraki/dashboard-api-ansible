@@ -52,7 +52,7 @@ class NetworksApplianceSettings(object):
             clientTrackingMethod=params.get("clientTrackingMethod"),
             deploymentMode=params.get("deploymentMode"),
             dynamicDns=params.get("dynamicDns"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -137,9 +137,7 @@ class NetworksApplianceSettings(object):
         obj_params = [
             ("clientTrackingMethod", "clientTrackingMethod"),
             ("deploymentMode", "deploymentMode"),
-            ("dynamicDns", "dynamicDns"),
-            ("networkId", "networkId"),
-        ]
+            ("dynamicDns", "dynamicDns"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

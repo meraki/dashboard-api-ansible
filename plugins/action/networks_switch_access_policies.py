@@ -381,9 +381,7 @@ class NetworksSwitchAccessPolicies(object):
             ("urlRedirectWalledGardenEnabled", "urlRedirectWalledGardenEnabled"),
             ("urlRedirectWalledGardenRanges", "urlRedirectWalledGardenRanges"),
             ("guestGroupPolicyId", "guestGroupPolicyId"),
-            ("guestSgtId", "guestSgtId"),
-            ("networkId", "networkId"),
-            ("accessPolicyNumber", "accessPolicyNumber"),
+            ("guestSgtId", "guestSgtId"), ("accessPolicyNumber", "accessPolicyNumber"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

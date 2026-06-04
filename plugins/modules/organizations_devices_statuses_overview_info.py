@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_devices_statuses_overview_info
 short_description: Information module for organizations _devices _statuses _overview
 description:
-  - Information module for Organizations Devices Statuses Overview Info.
   - Get all organizations _devices _statuses _overview.
   - Return an overview of current device statuses.
 version_added: '1.0.0'
@@ -21,12 +21,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Devices Statuses Overview Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   productTypes:
     description:
-      - Information module for Organizations Devices Statuses Overview Info.
       - >
         ProductTypes query parameter. An optional parameter to filter device statuses
         by product type. Valid types are wireless, appliance, switch, systemsManager,
@@ -35,7 +33,6 @@ options:
     type: list
   networkIds:
     description:
-      - Information module for Organizations Devices Statuses Overview Info.
       - NetworkIds query parameter. An optional parameter to filter device statuses
         by network.
     elements: str

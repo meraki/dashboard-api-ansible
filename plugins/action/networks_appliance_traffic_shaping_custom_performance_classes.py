@@ -55,7 +55,7 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
             maxLatency=params.get("maxLatency"),
             maxJitter=params.get("maxJitter"),
             maxLossPercentage=params.get("maxLossPercentage"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             custom_performance_class_id=params.get("customPerformanceClassId"),
         )
 
@@ -173,12 +173,16 @@ class NetworksApplianceTrafficShapingCustomPerformanceClasses(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("maxLatency", "maxLatency"),
-            ("maxJitter", "maxJitter"),
-            ("maxLossPercentage", "maxLossPercentage"),
-            ("networkId", "networkId"),
-            ("customPerformanceClassId", "customPerformanceClassId"),
+            ("name",
+             "name"),
+            ("maxLatency",
+             "maxLatency"),
+            ("maxJitter",
+             "maxJitter"),
+            ("maxLossPercentage",
+             "maxLossPercentage"),
+            ("customPerformanceClassId",
+             "customPerformanceClassId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

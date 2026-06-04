@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_ping_device_info
-short_description: Information module for devices _livetools _pingdevice
+short_description: Information module for devices _live _tools _ping _device
 description:
-  - Information module for Devices Livetools Pingdevice Info.
-  - Get devices _livetools _pingdevice by id.
+  - Get devices _live _tools _ping _device by id.
   - Return a ping device job. Latency unit in response is in milliseconds. Size is
     in bytes.
 version_added: '1.0.0'
@@ -22,12 +22,10 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Livetools Pingdevice Info.
       - Serial path parameter.
     type: str
   id:
     description:
-      - Information module for Devices Livetools Pingdevice Info.
       - Id path parameter.
     type: str
 requirements:
@@ -45,7 +43,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get devices _livetools _pingdevice by id
+- name: Get devices _live _tools _ping _device by id
   cisco.meraki.devices_live_tools_ping_device_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

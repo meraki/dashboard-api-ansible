@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_stages_info
-short_description: Information module for networks _firmwareupgrades _staged _stages
+short_description: Information module for networks _firmware _upgrades _staged _stages
 description:
-  - Information module for Networks Firmwareupgrades Staged Stages Info.
-  - Get all networks _firmwareupgrades _staged _stages.
+  - Get all networks _firmware _upgrades _staged _stages.
   - Order of Staged Upgrade Groups in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,7 +21,6 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Firmwareupgrades Staged Stages Info.
       - NetworkId path parameter. Network ID.
     type: str
 requirements:
@@ -40,7 +39,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _firmwareupgrades _staged _stages
+- name: Get all networks _firmware _upgrades _staged _stages
   cisco.meraki.networks_firmware_upgrades_staged_stages_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

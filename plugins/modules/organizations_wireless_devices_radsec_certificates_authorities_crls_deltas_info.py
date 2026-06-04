@@ -2,19 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_radsec_certificates_authorities_crls_deltas_info
 short_description: Information module for organizations _wireless _devices _radsec
   _certificates _authorities _crls _deltas
 description:
-  - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
   - Get all organizations _wireless _devices _radsec _certificates _authorities _crls
-    _deltas.
-  - >
-    Query for all delta certificate revocation list CRL for the organization's RADSEC
-    device Certificate Authority CA with the given id.
+    _deltas. - > Query for all delta certificate revocation list CRL for the organization's
+    RADSEC device Certificate Authority CA with the given id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -25,12 +23,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   certificateAuthorityIds:
     description:
-      - Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
       - >
         CertificateAuthorityIds query parameter. Parameter to filter CAs by one or
         more CA IDs. All returned CAs will have an ID that is an exact match.

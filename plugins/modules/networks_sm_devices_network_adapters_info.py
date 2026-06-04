@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_network_adapters_info
-short_description: Information module for networks _sm _devices _networkadapters
+short_description: Information module for networks _sm _devices _network _adapters
 description:
-  - Information module for Networks Sm Devices Networkadapters Info.
-  - Get all networks _sm _devices _networkadapters.
+  - Get all networks _sm _devices _network _adapters.
   - List the network adapters of a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,12 +21,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sm Devices Networkadapters Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-      - Information module for Networks Sm Devices Networkadapters Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -44,7 +42,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _networkadapters
+- name: Get all networks _sm _devices _network _adapters
   cisco.meraki.networks_sm_devices_network_adapters_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

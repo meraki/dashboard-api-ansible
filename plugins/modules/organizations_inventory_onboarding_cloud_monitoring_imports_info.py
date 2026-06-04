@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_inventory_onboarding_cloud_monitoring_imports_info
-short_description: Information module for organizations _inventory _onboarding _cloudmonitoring
-  _imports
+short_description: Information module for organizations _inventory _onboarding _cloud
+  _monitoring _imports
 description:
-  - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
-  - Get all organizations _inventory _onboarding _cloudmonitoring _imports.
+  - Get all organizations _inventory _onboarding _cloud _monitoring _imports.
   - Check the status of a committed Import operation.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,12 +22,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   importIds:
     description:
-      - Information module for Organizations Inventory Onboarding Cloudmonitoring Imports Info.
       - ImportIds query parameter. Import ids from an imports.
     elements: str
     type: list
@@ -47,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _inventory _onboarding _cloudmonitoring _imports
+- name: Get all organizations _inventory _onboarding _cloud _monitoring _imports
   cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_imports_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

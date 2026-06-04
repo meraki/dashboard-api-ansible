@@ -51,7 +51,7 @@ class NetworksClientsPolicy(object):
         self.new_object = dict(
             devicePolicy=params.get("devicePolicy"),
             groupPolicyId=params.get("groupPolicyId"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             client_id=params.get("clientId"),
         )
 
@@ -140,9 +140,7 @@ class NetworksClientsPolicy(object):
 
         obj_params = [
             ("devicePolicy", "devicePolicy"),
-            ("groupPolicyId", "groupPolicyId"),
-            ("networkId", "networkId"),
-            ("clientId", "clientId"),
+            ("groupPolicyId", "groupPolicyId"), ("clientId", "clientId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

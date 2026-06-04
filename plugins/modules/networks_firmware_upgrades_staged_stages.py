@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_firmware_upgrades_staged_stages
-short_description: Resource module for networks _firmwareupgrades _staged _stages
+short_description: Resource module for networks _firmware _upgrades _staged _stages
 description:
-  - Manage operation update of the resource networks _firmwareupgrades _staged _stages.
+  - Manage operation update of the resource networks _firmware _upgrades _staged _stages.
   - Assign Staged Upgrade Group order in the sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:

@@ -2,17 +2,18 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_ports_info
 short_description: Information module for networks _appliance _ports
 description:
-  - Information module for Networks Appliance Ports Info.
   - Get all networks _appliance _ports.
   - Get networks _appliance _ports by id.
-  - List per-port VLAN settings for all ports of a MX.
-  - Return per-port VLAN settings for a single MX port.
+  - List per-port VLAN settings for all ports of a secure router or security appliance.
+  - Return per-port VLAN settings for a single secure router or security appliance
+    port.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,12 +24,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Ports Info.
       - NetworkId path parameter. Network ID.
     type: str
   portId:
     description:
-      - Information module for Networks Appliance Ports Info.
       - PortId path parameter. Port ID.
     type: str
 requirements:

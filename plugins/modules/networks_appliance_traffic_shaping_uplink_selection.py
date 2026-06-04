@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_uplink_selection
-short_description: Resource module for networks _appliance _trafficshaping _uplinkselection
+short_description: Resource module for networks _appliance _traffic _shaping _uplink
+  _selection
 description:
-  - Manage operation update of the resource networks _appliance _trafficshaping _uplinkselection.
+  - Manage operation update of the resource networks _appliance _traffic _shaping
+    _uplink _selection.
   - Update uplink selection settings for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -66,8 +69,8 @@ options:
         type: dict
       preferredUplink:
         description: Preferred uplink for this uplink preference rule. Must be one
-          of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink', or
-          any other valid uplink(wanX) if it applies to the network.
+          of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing', 'defaultUplink' or 'cellular',
+          or any other valid uplink(wanX) if it applies to the network.
         type: str
       trafficFilters:
         description: Array of traffic filters for this uplink preference rule.

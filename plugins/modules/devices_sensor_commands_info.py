@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_sensor_commands_info
 short_description: Information module for devices _sensor _commands
 description:
-  - Information module for Devices Sensor Commands Info.
   - Get all devices _sensor _commands.
   - Get devices _sensor _commands by id.
   - Returns a historical log of all commands.
@@ -24,12 +24,10 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Sensor Commands Info.
       - Serial path parameter.
     type: str
   operations:
     description:
-      - Information module for Devices Sensor Commands Info.
       - >
         Operations query parameter. Optional parameter to filter commands by operation.
         Allowed values are disableDownstreamPower, enableDownstreamPower, cycleDownstreamPower,
@@ -38,13 +36,11 @@ options:
     type: list
   perPage:
     description:
-      - Information module for Devices Sensor Commands Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 10.
     type: int
   startingAfter:
     description:
-      - Information module for Devices Sensor Commands Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -54,7 +50,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Devices Sensor Commands Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -64,26 +59,22 @@ options:
     type: str
   sortOrder:
     description:
-      - Information module for Devices Sensor Commands Info.
       - >
         SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
         and 'descending'. Default is 'descending'.
     type: str
   t0:
     description:
-      - Information module for Devices Sensor Commands Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 30 days from today.
     type: str
   t1:
     description:
-      - Information module for Devices Sensor Commands Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 30 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Devices Sensor Commands Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -91,7 +82,6 @@ options:
     type: float
   commandId:
     description:
-      - Information module for Devices Sensor Commands Info.
       - CommandId path parameter. Command ID.
     type: str
 requirements:

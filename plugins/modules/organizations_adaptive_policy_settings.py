@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_settings
-short_description: Resource module for organizations _adaptivepolicy _settings
+short_description: Resource module for organizations _adaptive _policy _settings
 description:
-  - Manage operation update of the resource organizations _adaptivepolicy _settings.
+  - Manage operation update of the resource organizations _adaptive _policy _settings.
   - Update global adaptive policy settings.
 version_added: '1.0.0'
 extends_documentation_fragment:

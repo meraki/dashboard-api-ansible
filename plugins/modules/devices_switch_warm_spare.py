@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_switch_warm_spare
-short_description: Resource module for devices _switch _warmspare
+short_description: Resource module for devices _switch _warm _spare
 description:
-  - Manage operation update of the resource devices _switch _warmspare.
-  - >
-    Update warm spare configuration for a switch. The spare will use the same L3 configuration
+  - Manage operation update of the resource devices _switch _warm _spare. - > Update
+    warm spare configuration for a switch. The spare will use the same L3 configuration
     as the primary. Note that this will irreversibly destroy any existing L3 configuration
     on the spare.
 version_added: '1.0.0'

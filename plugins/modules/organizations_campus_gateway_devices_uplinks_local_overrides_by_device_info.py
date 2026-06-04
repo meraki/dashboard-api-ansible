@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_campus_gateway_devices_uplinks_local_overrides_by_device_info
 short_description: Information module for organizations _campus _gateway _devices
   _uplinks _local _overrides _by _device
 description:
-  - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
   - Get all organizations _campus _gateway _devices _uplinks _local _overrides _by
     _device.
   - Uplink overrides configured locally on Campus Gateway devices in an organization.
@@ -24,12 +24,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   serials:
     description:
-      - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
       - >
         Serials query parameter. A list of serial numbers. The returned devices will
         be filtered to only include these serials.
@@ -37,13 +35,11 @@ options:
     type: list
   perPage:
     description:
-      - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 1000.
     type: int
   startingAfter:
     description:
-      - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -53,7 +49,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Organizations Campus Gateway Devices Uplinks Local Overrides By Device Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.

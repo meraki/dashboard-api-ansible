@@ -52,7 +52,7 @@ class OrganizationsNetworksMoves(object):
             network=params.get("network"),
             organizations=params.get("organizations"),
             simulate=params.get("simulate"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):

@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_firewall_one_to_many_nat_rules
-short_description: Resource module for networks _appliance _firewall _onetomanynatrules
+short_description: Resource module for networks _appliance _firewall _one _to _many
+  _nat _rules
 description:
-  - Manage operation update of the resource networks _appliance _firewall _onetomanynatrules.
+  - Manage operation update of the resource networks _appliance _firewall _one _to
+    _many _nat _rules.
   - Set the 1 Many NAT mapping rules for an MX network.
 version_added: '1.0.0'
 extends_documentation_fragment:

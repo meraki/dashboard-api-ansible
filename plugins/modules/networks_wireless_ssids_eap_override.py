@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_eap_override
-short_description: Resource module for networks _wireless _ssids _eapoverride
+short_description: Resource module for networks _wireless _ssids _eap _override
 description:
-  - Manage operation update of the resource networks _wireless _ssids _eapoverride.
+  - Manage operation update of the resource networks _wireless _ssids _eap _override.
   - Update the EAP overridden parameters for an SSID.
 version_added: '1.0.0'
 extends_documentation_fragment:

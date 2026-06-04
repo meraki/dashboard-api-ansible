@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_policies
-short_description: Resource module for organizations _adaptivepolicy _policies
+short_description: Resource module for organizations _adaptive _policy _policies
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptivepolicy
-    _policies.
+  - Manage operations create, update and delete of the resource organizations _adaptive
+    _policy _policies.
   - Add an Adaptive Policy.
   - Delete an Adaptive Policy.
   - Update an Adaptive Policy.

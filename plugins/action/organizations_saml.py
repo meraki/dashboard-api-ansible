@@ -50,7 +50,7 @@ class OrganizationsSaml(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             spInitiated=params.get("spInitiated"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -128,9 +128,7 @@ class OrganizationsSaml(object):
 
         obj_params = [
             ("enabled", "enabled"),
-            ("spInitiated", "spInitiated"),
-            ("organizationId", "organizationId"),
-        ]
+            ("spInitiated", "spInitiated"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

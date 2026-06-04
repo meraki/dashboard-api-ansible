@@ -56,7 +56,7 @@ class NetworksSwitchDhcpServerPolicy(object):
             allowedServers=params.get("allowedServers"),
             blockedServers=params.get("blockedServers"),
             arpInspection=params.get("arpInspection"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -151,9 +151,7 @@ class NetworksSwitchDhcpServerPolicy(object):
             ("defaultPolicy", "defaultPolicy"),
             ("allowedServers", "allowedServers"),
             ("blockedServers", "blockedServers"),
-            ("arpInspection", "arpInspection"),
-            ("networkId", "networkId"),
-        ]
+            ("arpInspection", "arpInspection"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

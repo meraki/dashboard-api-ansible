@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: administered_identities_me_info
 short_description: Information module for administered _identities _me
 description:
-  - Information module for Administered Identities Me Info.
   - Get all administered _identities _me.
   - Returns the identity of the current user.
 version_added: '1.0.0'

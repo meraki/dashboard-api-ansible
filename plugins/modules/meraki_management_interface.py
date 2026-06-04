@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright: (c) 2019, Kevin Breit (@kbreit) <kevin.breit@kevinbreit.net>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see COPYING or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
@@ -260,23 +261,25 @@ data:
                 sample: 2
 '''
 
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible.module_utils.common.dict_transformations import recursive_diff
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec  # noqa: E402
+from ansible.module_utils.common.dict_transformations import recursive_diff  # noqa: E402
+from ansible.module_utils.basic import AnsibleModule, json  # noqa: E402
 
 
 def main():
     # define the available arguments/parameters that a user can pass to
     # the module
 
-    int_arg_spec = dict(wan_enabled=dict(type='str', choices=['enabled', 'disabled', 'not configured']),
-                        using_static_ip=dict(type='bool'),
-                        static_ip=dict(type='str'),
-                        static_gateway_ip=dict(type='str'),
-                        static_subnet_mask=dict(type='str'),
-                        static_dns=dict(type='list', elements='str'),
-                        vlan=dict(type='int'),
-                        )
+    int_arg_spec = dict(
+        wan_enabled=dict(
+            type='str', choices=[
+                'enabled', 'disabled', 'not configured']), using_static_ip=dict(
+            type='bool'), static_ip=dict(
+                    type='str'), static_gateway_ip=dict(
+                        type='str'), static_subnet_mask=dict(
+                            type='str'), static_dns=dict(
+                                type='list', elements='str'), vlan=dict(
+                                    type='int'), )
 
     argument_spec = meraki_argument_spec()
     argument_spec.update(state=dict(type='str', choices=['absent', 'query', 'present'], default='query'),
@@ -297,7 +300,8 @@ def main():
     meraki = MerakiModule(module, function='management_interface')
     meraki.params['follow_redirects'] = 'all'
 
-    query_urls = {'management_interface': '/devices/{serial}/managementInterface'}
+    query_urls = {
+        'management_interface': '/devices/{serial}/managementInterface'}
 
     meraki.url_catalog['get_one'].update(query_urls)
 
@@ -309,7 +313,8 @@ def main():
             if meraki.params[interface] is not None:
                 if meraki.params[interface]['using_static_ip'] is True:
                     if len(meraki.params[interface]['static_dns']) > 2:
-                        meraki.fail_json("Maximum number of static DNS addresses is 2.")
+                        meraki.fail_json(
+                            "Maximum number of static DNS addresses is 2.")
 
     payload = dict()
 
@@ -339,27 +344,34 @@ def main():
     net_id = meraki.params['net_id']
     if net_id is None:
         nets = meraki.get_nets(org_id=org_id)
-        net_id = meraki.get_net_id(net_name=meraki.params['net_name'], data=nets)
+        net_id = meraki.get_net_id(
+            net_name=meraki.params['net_name'], data=nets)
 
     if meraki.params['state'] == 'query':
-        path = meraki.construct_path('get_one', net_id=net_id, custom={'serial': meraki.params['serial']})
+        path = meraki.construct_path(
+            'get_one', net_id=net_id, custom={
+                'serial': meraki.params['serial']})
         response = meraki.request(path, method='GET')
         if meraki.status == 200:
             meraki.result['data'] = response
     elif meraki.params['state'] == 'present':
-        path = meraki.construct_path('get_one', custom={'serial': meraki.params['serial']})
+        path = meraki.construct_path(
+            'get_one', custom={
+                'serial': meraki.params['serial']})
         original = meraki.request(path, method='GET')
         update_required = False
         if 'wan1' in original:
             if 'wanEnabled' in original['wan1']:
                 update_required = meraki.is_update_required(original, payload)
             else:
-                update_required = meraki.is_update_required(original, payload, optional_ignore=['wanEnabled'])
+                update_required = meraki.is_update_required(
+                    original, payload, optional_ignore=['wanEnabled'])
         if 'wan2' in original and update_required is False:
             if 'wanEnabled' in original['wan2']:
                 update_required = meraki.is_update_required(original, payload)
             else:
-                update_required = meraki.is_update_required(original, payload, optional_ignore=['wanEnabled'])
+                update_required = meraki.is_update_required(
+                    original, payload, optional_ignore=['wanEnabled'])
         if update_required is True:
             if meraki.check_mode is True:
                 diff = recursive_diff(original, payload)
@@ -369,7 +381,8 @@ def main():
                 meraki.result['data'] = original
                 meraki.result['changed'] = True
                 meraki.exit_json(**meraki.result)
-            response = meraki.request(path, method='PUT', payload=json.dumps(payload))
+            response = meraki.request(
+                path, method='PUT', payload=json.dumps(payload))
             if meraki.status == 200:
                 diff = recursive_diff(original, response)
                 meraki.result['diff'] = {'before': diff[0],

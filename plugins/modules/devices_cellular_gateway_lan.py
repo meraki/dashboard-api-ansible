@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_cellular_gateway_lan
-short_description: Resource module for devices _cellulargateway _lan
+short_description: Resource module for devices _cellular _gateway _lan
 description:
-  - Manage operation update of the resource devices _cellulargateway _lan.
+  - Manage operation update of the resource devices _cellular _gateway _lan.
   - Update the LAN Settings for a single MG.
 version_added: '1.0.0'
 extends_documentation_fragment:

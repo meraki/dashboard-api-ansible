@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_vlans_info
 short_description: Information module for networks _appliance _vlans
 description:
-  - Information module for Networks Appliance Vlans Info.
   - Get all networks _appliance _vlans.
   - Get networks _appliance _vlans by id.
-  - List the VLANs for a Cisco Secure Router network.
+  - List the VLANs for a Security Appliance network.
   - Return a VLAN.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -23,12 +23,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Vlans Info.
       - NetworkId path parameter. Network ID.
     type: str
   vlanId:
     description:
-      - Information module for Networks Appliance Vlans Info.
       - VlanId path parameter. Vlan ID.
     type: str
 requirements:

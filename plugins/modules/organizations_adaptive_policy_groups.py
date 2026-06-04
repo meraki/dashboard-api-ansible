@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_adaptive_policy_groups
-short_description: Resource module for organizations _adaptivepolicy _groups
+short_description: Resource module for organizations _adaptive _policy _groups
 description:
-  - Manage operations create, update and delete of the resource organizations _adaptivepolicy
-    _groups.
+  - Manage operations create, update and delete of the resource organizations _adaptive
+    _policy _groups.
   - Creates a new adaptive policy group.
   - Deletes the specified adaptive policy group and any associated policies and references.
   - Updates an adaptive policy group. If updating "Infrastructure", only the SGT is

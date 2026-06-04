@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_switch_ports_statuses_info
 short_description: Information module for devices _switch _ports _statuses
 description:
-  - Information module for Devices Switch Ports Statuses Info.
   - Get all devices _switch _ports _statuses.
   - Return the status for all the ports of a switch.
 version_added: '1.0.0'
@@ -21,18 +21,15 @@ options:
     type: dict
   serial:
     description:
-      - Information module for Devices Switch Ports Statuses Info.
       - Serial path parameter.
     type: str
   t0:
     description:
-      - Information module for Devices Switch Ports Statuses Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-      - Information module for Devices Switch Ports Statuses Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in

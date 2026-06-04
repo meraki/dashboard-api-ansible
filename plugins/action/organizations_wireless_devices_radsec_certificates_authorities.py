@@ -48,7 +48,7 @@ class OrganizationsWirelessDevicesRadsecCertificatesAuthorities(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             status=params.get("status"),
             certificateAuthorityId=params.get("certificateAuthorityId"),
         )

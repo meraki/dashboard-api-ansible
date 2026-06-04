@@ -265,6 +265,8 @@ class DevicesSwitchPorts(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'portId', name)
+            if result is None:
+                result = items
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -347,7 +349,7 @@ class DevicesSwitchPorts(object):
             ("daiTrusted", "daiTrusted"),
             ("profile", "profile"),
             ("dot3az", "dot3az"),
-            ("highSpeed", "highSpeed"),
+            ("highSpeed", "highSpeed"), ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_camera_sense
@@ -78,6 +79,7 @@ EXAMPLES = r"""
     state: present
     audioDetection:
       enabled: false
+    detectionModelId: '1234'
     mqttBrokerId: '1234'
     senseEnabled: true
     serial: string
@@ -88,5 +90,15 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "senseEnabled": true,
+      "mqttBrokerId": {},
+      "mqttTopics": [
+        "string"
+      ],
+      "audioDetection": {
+        "enabled": true
+      },
+      "detectionModelId": {}
+    }
 """

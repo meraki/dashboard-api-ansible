@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_insight_monitored_media_servers_info
-short_description: Information module for organizations _insight _monitoredmediaservers
+short_description: Information module for organizations _insight _monitored _media
+  _servers
 description:
-  - Information module for Organizations Insight Monitoredmediaservers Info.
-  - Get all organizations _insight _monitoredmediaservers.
-  - Get organizations _insight _monitoredmediaservers by id.
+  - Get all organizations _insight _monitored _media _servers.
+  - Get organizations _insight _monitored _media _servers by id.
   - List the monitored media servers for this organization. Only valid for organizations
     with Meraki Insight.
   - Return a monitored media server for this organization. Only valid for organizations
@@ -25,12 +26,10 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Insight Monitoredmediaservers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   monitoredMediaServerId:
     description:
-      - Information module for Organizations Insight Monitoredmediaservers Info.
       - MonitoredMediaServerId path parameter. Monitored media server ID.
     type: str
 requirements:
@@ -55,7 +54,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _insight _monitoredmediaservers
+- name: Get all organizations _insight _monitored _media _servers
   cisco.meraki.organizations_insight_monitored_media_servers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -80,7 +79,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     organizationId: string
   register: result
-- name: Get organizations _insight _monitoredmediaservers by id
+- name: Get organizations _insight _monitored _media _servers by id
   cisco.meraki.organizations_insight_monitored_media_servers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

@@ -2,15 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_traffic_shaping_custom_performance_classes_info
-short_description: Information module for networks _appliance _trafficshaping _customperformanceclasses
+short_description: Information module for networks _appliance _traffic _shaping _custom
+  _performance _classes
 description:
-  - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
-  - Get all networks _appliance _trafficshaping _customperformanceclasses.
-  - Get networks _appliance _trafficshaping _customperformanceclasses by id.
+  - Get all networks _appliance _traffic _shaping _custom _performance _classes.
+  - Get networks _appliance _traffic _shaping _custom _performance _classes by id.
   - List all custom performance classes for an MX network.
   - Return a custom performance class for an MX network.
 version_added: '1.0.0'
@@ -23,12 +24,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - NetworkId path parameter. Network ID.
     type: str
   customPerformanceClassId:
     description:
-      - Information module for Networks Appliance Trafficshaping Customperformanceclasses Info.
       - CustomPerformanceClassId path parameter. Custom performance class ID.
     type: str
 requirements:
@@ -53,7 +52,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _appliance _trafficshaping _customperformanceclasses
+- name: Get all networks _appliance _traffic _shaping _custom _performance _classes
   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -78,7 +77,8 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     networkId: string
   register: result
-- name: Get networks _appliance _trafficshaping _customperformanceclasses by id
+- name: Get networks _appliance _traffic _shaping _custom _performance _classes by
+    id
   cisco.meraki.networks_appliance_traffic_shaping_custom_performance_classes_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

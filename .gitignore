@@ -23,3 +23,4 @@ playbooks/credentials.yml
 PLAYBOOKS_EXECUTION_README.md
 run_playbooks_advanced.sh
 run_all_playbooks.py
+run_playbooks.py

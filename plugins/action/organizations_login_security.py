@@ -74,7 +74,7 @@ class OrganizationsLoginSecurity(object):
             enforceLoginIpRanges=params.get("enforceLoginIpRanges"),
             loginIpRanges=params.get("loginIpRanges"),
             apiAuthentication=params.get("apiAuthentication"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -212,9 +212,7 @@ class OrganizationsLoginSecurity(object):
             ("enforceTwoFactorAuth", "enforceTwoFactorAuth"),
             ("enforceLoginIpRanges", "enforceLoginIpRanges"),
             ("loginIpRanges", "loginIpRanges"),
-            ("apiAuthentication", "apiAuthentication"),
-            ("organizationId", "organizationId"),
-        ]
+            ("apiAuthentication", "apiAuthentication"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

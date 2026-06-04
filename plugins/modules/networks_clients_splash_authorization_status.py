@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_clients_splash_authorization_status
-short_description: Resource module for networks _clients _splashauthorizationstatus
+short_description: Resource module for networks _clients _splash _authorization _status
 description:
-  - Manage operation update of the resource networks _clients _splashauthorizationstatus.
-  - >
-    Update a client's splash authorization. Clients can be identified by a client
-    key or either the MAC or IP depending on whether the network uses Track-by-IP.
+  - Manage operation update of the resource networks _clients _splash _authorization
+    _status. - > Update a client's splash authorization. Clients can be identified
+    by a client key or either the MAC or IP depending on whether the network uses
+    Track-by-IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -180,8 +181,34 @@ EXAMPLES = r"""
     ssids:
       '0':
         isAuthorized: true
+      '1':
+        isAuthorized: true
+      '10':
+        isAuthorized: true
+      '11':
+        isAuthorized: true
+      '12':
+        isAuthorized: true
+      '13':
+        isAuthorized: true
+      '14':
+        isAuthorized: true
       '2':
-        isAuthorized: false
+        isAuthorized: true
+      '3':
+        isAuthorized: true
+      '4':
+        isAuthorized: true
+      '5':
+        isAuthorized: true
+      '6':
+        isAuthorized: true
+      '7':
+        isAuthorized: true
+      '8':
+        isAuthorized: true
+      '9':
+        isAuthorized: true
 """
 RETURN = r"""
 meraki_response:
@@ -189,5 +216,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "0": {
+        "isAuthorized": true,
+        "authorizedAt": "string",
+        "expiresAt": "string"
+      }
+    }
 """

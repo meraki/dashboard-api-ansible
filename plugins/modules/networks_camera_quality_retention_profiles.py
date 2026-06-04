@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_camera_quality_retention_profiles
-short_description: Resource module for networks _camera _qualityretentionprofiles
+short_description: Resource module for networks _camera _quality _retention _profiles
 description:
-  - Manage operations create, update and delete of the resource networks _camera _qualityretentionprofiles.
+  - Manage operations create, update and delete of the resource networks _camera _quality
+    _retention _profiles.
   - Creates new quality retention profile for this network.
   - Delete an existing quality retention profile for this network.
   - Update an existing quality retention profile for this network.

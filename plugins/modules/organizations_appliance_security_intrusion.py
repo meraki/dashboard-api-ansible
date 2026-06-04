@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_appliance_security_intrusion
@@ -75,9 +76,6 @@ EXAMPLES = r"""
     allowedRules:
       - message: SQL sa login failed
         ruleId: meraki:intrusion/snort/GID/01/SID/688
-      - message: MALWARE-OTHER Trackware myway speedbar runtime detection - switch
-          engines
-        ruleId: meraki:intrusion/snort/GID/01/SID/5805
     organizationId: string
 """
 RETURN = r"""
@@ -86,5 +84,10 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "ruleId": "string",
+        "message": "string"
+      }
+    ]
 """

@@ -52,7 +52,7 @@ class NetworksFirmwareUpgrades(object):
             upgradeWindow=params.get("upgradeWindow"),
             timezone=params.get("timezone"),
             products=params.get("products"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -137,9 +137,7 @@ class NetworksFirmwareUpgrades(object):
         obj_params = [
             ("upgradeWindow", "upgradeWindow"),
             ("timezone", "timezone"),
-            ("products", "products"),
-            ("networkId", "networkId"),
-        ]
+            ("products", "products"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

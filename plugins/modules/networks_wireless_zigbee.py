@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_zigbee
@@ -39,7 +40,7 @@ options:
     description: Login Credentials of on-premises lock management.
     suboptions:
       address:
-        description: Host Address.
+        description: Valid hostname or IP address.
         type: str
       password:
         description: Password.

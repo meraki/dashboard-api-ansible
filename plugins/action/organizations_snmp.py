@@ -60,7 +60,7 @@ class OrganizationsSnmp(object):
             v3PrivMode=params.get("v3PrivMode"),
             v3PrivPass=params.get("v3PrivPass"),
             peerIps=params.get("peerIps"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -163,9 +163,7 @@ class OrganizationsSnmp(object):
             ("v3AuthPass", "v3AuthPass"),
             ("v3PrivMode", "v3PrivMode"),
             ("v3PrivPass", "v3PrivPass"),
-            ("peerIps", "peerIps"),
-            ("organizationId", "organizationId"),
-        ]
+            ("peerIps", "peerIps"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

@@ -52,7 +52,7 @@ class NetworksCellularGatewayDhcp(object):
             dhcpLeaseTime=params.get("dhcpLeaseTime"),
             dnsNameservers=params.get("dnsNameservers"),
             dnsCustomNameservers=params.get("dnsCustomNameservers"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -137,9 +137,7 @@ class NetworksCellularGatewayDhcp(object):
         obj_params = [
             ("dhcpLeaseTime", "dhcpLeaseTime"),
             ("dnsNameservers", "dnsNameservers"),
-            ("dnsCustomNameservers", "dnsCustomNameservers"),
-            ("networkId", "networkId"),
-        ]
+            ("dnsCustomNameservers", "dnsCustomNameservers"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

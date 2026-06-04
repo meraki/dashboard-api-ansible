@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_sm_devices_device_profiles_info
-short_description: Information module for networks _sm _devices _deviceprofiles
+short_description: Information module for networks _sm _devices _device _profiles
 description:
-  - Information module for Networks Sm Devices Deviceprofiles Info.
-  - Get all networks _sm _devices _deviceprofiles.
+  - Get all networks _sm _devices _device _profiles.
   - Get the installed profiles associated with a device.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -21,12 +21,10 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Sm Devices Deviceprofiles Info.
       - NetworkId path parameter. Network ID.
     type: str
   deviceId:
     description:
-      - Information module for Networks Sm Devices Deviceprofiles Info.
       - DeviceId path parameter. Device ID.
     type: str
 requirements:
@@ -44,7 +42,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _sm _devices _deviceprofiles
+- name: Get all networks _sm _devices _device _profiles
   cisco.meraki.networks_sm_devices_device_profiles_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

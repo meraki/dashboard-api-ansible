@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
             channel=params.get("channel"),
             fra=params.get("fra"),
             ai=params.get("ai"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
         return new_object
 

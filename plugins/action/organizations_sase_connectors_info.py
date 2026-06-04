@@ -21,13 +21,10 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_argument_spec,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    caId=dict(type="str"),
-    content=dict(type="str"),
-    isDelta=dict(type="bool"),
     organizationId=dict(type="str"),
 ))
 
@@ -44,7 +41,7 @@ class ActionModule(ActionBase):
                 "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = False
+        self._supports_check_mode = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -65,13 +62,12 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(self, params):
-        new_object = dict(
-            caId=params.get("caId"),
-            content=params.get("content"),
-            isDelta=params.get("isDelta"),
-            organization_id=params.get("organizationId"),
-        )
+    def get_all(self, params):
+        new_object = {}
+        if params.get("organizationId") is not None:
+            new_object["organizationId"] = params.get(
+                "organizationId")
+
         return new_object
 
     def run(self, tmp=None, task_vars=None):
@@ -80,13 +76,14 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
+        self._result.update(dict(meraki_response={}))
+
         meraki = MERAKI(params=self._task.args)
 
         response = meraki.exec_meraki(
-            family="nac",
-            function='createOrganizationNacCertificatesAuthoritiesCrl',
-            op_modifies=True,
-            params=self.get_object(self._task.args),
+            family="organizations",
+            function='getOrganizationSaseConnectors',
+            params=self.get_all(self._task.args),
         )
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())

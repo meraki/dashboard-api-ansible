@@ -10,8 +10,7 @@ __metaclass__ = type
 from ansible.plugins.action import ActionBase
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
-        AnsibleArgSpecValidator,
-    )
+        AnsibleArgSpecValidator, )
 except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
@@ -69,78 +68,97 @@ class NetworksApplianceStaticRoutes(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('staticRouteId') is not None or self.new_object.get('static_route_id') is not None:
-            new_object_params['staticRouteId'] = self.new_object.get('staticRouteId') or \
-                self.new_object.get('static_route_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('staticRouteId') is not None or self.new_object.get(
+                'static_route_id') is not None:
+            new_object_params['staticRouteId'] = self.new_object.get(
+                'staticRouteId') or self.new_object.get('static_route_id')
         return new_object_params
 
     def create_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+        if self.new_object.get('subnet') is not None or self.new_object.get(
+                'subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')
-        if self.new_object.get('gatewayIp') is not None or self.new_object.get('gateway_ip') is not None:
-            new_object_params['gatewayIp'] = self.new_object.get('gatewayIp') or \
-                self.new_object.get('gateway_ip')
-        if self.new_object.get('gatewayVlanId') is not None or self.new_object.get('gateway_vlan_id') is not None:
-            new_object_params['gatewayVlanId'] = self.new_object.get('gatewayVlanId') or \
-                self.new_object.get('gateway_vlan_id')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
+        if self.new_object.get('gatewayIp') is not None or self.new_object.get(
+                'gateway_ip') is not None:
+            new_object_params['gatewayIp'] = self.new_object.get(
+                'gatewayIp') or self.new_object.get('gateway_ip')
+        if self.new_object.get('gatewayVlanId') is not None or self.new_object.get(
+                'gateway_vlan_id') is not None:
+            new_object_params['gatewayVlanId'] = self.new_object.get(
+                'gatewayVlanId') or self.new_object.get('gateway_vlan_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
         return new_object_params
 
     def delete_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('staticRouteId') is not None or self.new_object.get('static_route_id') is not None:
-            new_object_params['staticRouteId'] = self.new_object.get('staticRouteId') or \
-                self.new_object.get('static_route_id')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('staticRouteId') is not None or self.new_object.get(
+                'static_route_id') is not None:
+            new_object_params['staticRouteId'] = self.new_object.get(
+                'staticRouteId') or self.new_object.get('static_route_id')
         return new_object_params
 
     def update_by_id_params(self):
         new_object_params = {}
-        if self.new_object.get('name') is not None or self.new_object.get('name') is not None:
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
             new_object_params['name'] = self.new_object.get('name') or \
                 self.new_object.get('name')
-        if self.new_object.get('subnet') is not None or self.new_object.get('subnet') is not None:
+        if self.new_object.get('subnet') is not None or self.new_object.get(
+                'subnet') is not None:
             new_object_params['subnet'] = self.new_object.get('subnet') or \
                 self.new_object.get('subnet')
-        if self.new_object.get('gatewayIp') is not None or self.new_object.get('gateway_ip') is not None:
-            new_object_params['gatewayIp'] = self.new_object.get('gatewayIp') or \
-                self.new_object.get('gateway_ip')
-        if self.new_object.get('gatewayVlanId') is not None or self.new_object.get('gateway_vlan_id') is not None:
-            new_object_params['gatewayVlanId'] = self.new_object.get('gatewayVlanId') or \
-                self.new_object.get('gateway_vlan_id')
-        if self.new_object.get('enabled') is not None or self.new_object.get('enabled') is not None:
+        if self.new_object.get('gatewayIp') is not None or self.new_object.get(
+                'gateway_ip') is not None:
+            new_object_params['gatewayIp'] = self.new_object.get(
+                'gatewayIp') or self.new_object.get('gateway_ip')
+        if self.new_object.get('gatewayVlanId') is not None or self.new_object.get(
+                'gateway_vlan_id') is not None:
+            new_object_params['gatewayVlanId'] = self.new_object.get(
+                'gatewayVlanId') or self.new_object.get('gateway_vlan_id')
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
-        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get('fixed_ip_assignments') is not None:
-            new_object_params['fixedIpAssignments'] = self.new_object.get('fixedIpAssignments') or \
-                self.new_object.get('fixed_ip_assignments')
-        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get('reserved_ip_ranges') is not None:
-            new_object_params['reservedIpRanges'] = self.new_object.get('reservedIpRanges') or \
-                self.new_object.get('reserved_ip_ranges')
-        if self.new_object.get('networkId') is not None or self.new_object.get('network_id') is not None:
-            new_object_params['networkId'] = self.new_object.get('networkId') or \
-                self.new_object.get('network_id')
-        if self.new_object.get('staticRouteId') is not None or self.new_object.get('static_route_id') is not None:
-            new_object_params['staticRouteId'] = self.new_object.get('staticRouteId') or \
-                self.new_object.get('static_route_id')
+        if self.new_object.get('fixedIpAssignments') is not None or self.new_object.get(
+                'fixed_ip_assignments') is not None:
+            new_object_params['fixedIpAssignments'] = self.new_object.get(
+                'fixedIpAssignments') or self.new_object.get('fixed_ip_assignments')
+        if self.new_object.get('reservedIpRanges') is not None or self.new_object.get(
+                'reserved_ip_ranges') is not None:
+            new_object_params['reservedIpRanges'] = self.new_object.get(
+                'reservedIpRanges') or self.new_object.get('reserved_ip_ranges')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('staticRouteId') is not None or self.new_object.get(
+                'static_route_id') is not None:
+            new_object_params['staticRouteId'] = self.new_object.get(
+                'staticRouteId') or self.new_object.get('static_route_id')
         return new_object_params
 
     def get_object_by_name(self, name):
@@ -156,6 +174,8 @@ class NetworksApplianceStaticRoutes(object):
                 if 'response' in items:
                     items = items.get('response')
             result = get_dict_result(items, 'name', name)
+            if result is None:
+                result = items
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -172,7 +192,7 @@ class NetworksApplianceStaticRoutes(object):
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = items
+            result = get_dict_result(items, 'staticRouteId', id)
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -213,16 +233,19 @@ class NetworksApplianceStaticRoutes(object):
             ("name", "name"),
             ("subnet", "subnet"),
             ("gatewayIp", "gatewayIp"),
-            ("gatewayVlanId", "gatewayVlanId"),
+            ("gatewayVlanId", "gatewayVlanId"), ("staticRouteId", "staticRouteId"),
             ("enabled", "enabled"),
             ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
-        return any(not meraki_compare_equality(current_obj.get(meraki_param),
-                                               requested_obj.get(ansible_param))
-                   for (meraki_param, ansible_param) in obj_params)
+        return any(
+            not meraki_compare_equality(
+                current_obj.get(meraki_param),
+                requested_obj.get(ansible_param)) for (
+                meraki_param,
+                ansible_param) in obj_params)
 
     def create(self):
         result = self.meraki.exec_meraki(
@@ -241,7 +264,7 @@ class NetworksApplianceStaticRoutes(object):
         if not id:
             prev_obj_name = self.get_object_by_name(name)
             id_ = None
-            if prev_obj_name and isinstance(prev_obj_name, dict):
+            if prev_obj_name:
                 id_ = prev_obj_name.get("id")
                 id_ = id_ or prev_obj_name.get("staticRouteId")
             if id_:
@@ -262,7 +285,7 @@ class NetworksApplianceStaticRoutes(object):
         if not id:
             prev_obj_name = self.get_object_by_name(name)
             id_ = None
-            if prev_obj_name and isinstance(prev_obj_name, dict):
+            if prev_obj_name:
                 id_ = prev_obj_name.get("id")
                 id_ = id_ or prev_obj_name.get("staticRouteId")
             if id_:

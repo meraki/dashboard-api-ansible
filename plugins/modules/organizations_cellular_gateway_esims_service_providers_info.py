@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_cellular_gateway_esims_service_providers_info
 short_description: Information module for organizations _cellular _gateway _esims
   _service _providers
 description:
-  - Information module for Organizations Cellular Gateway Esims Service Providers Info.
   - Get all organizations _cellular _gateway _esims _service _providers.
   - Service providers customers can add accounts for.
 version_added: '1.0.0'
@@ -22,7 +22,6 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Cellular Gateway Esims Service Providers Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:

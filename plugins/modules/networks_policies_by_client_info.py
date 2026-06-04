@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_policies_by_client_info
-short_description: Information module for networks _policies _byclient
+short_description: Information module for networks _policies _by _client
 description:
-  - Information module for Networks Policies Byclient Info.
-  - Get all networks _policies _byclient.
+  - Get all networks _policies _by _client.
   - Get policies for all clients with policies.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -22,18 +22,15 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Policies Byclient Info.
       - NetworkId path parameter. Network ID.
     type: str
   perPage:
     description:
-      - Information module for Networks Policies Byclient Info.
       - PerPage query parameter. The number of entries per page returned. Acceptable
         range is 3 - 1000. Default is 50.
     type: int
   startingAfter:
     description:
-      - Information module for Networks Policies Byclient Info.
       - >
         StartingAfter query parameter. A token used by the server to indicate the
         start of the page. Often this is a timestamp or an ID but it is not limited
@@ -43,7 +40,6 @@ options:
     type: str
   endingBefore:
     description:
-      - Information module for Networks Policies Byclient Info.
       - >
         EndingBefore query parameter. A token used by the server to indicate the end
         of the page. Often this is a timestamp or an ID but it is not limited to those.
@@ -53,13 +49,11 @@ options:
     type: str
   t0:
     description:
-      - Information module for Networks Policies Byclient Info.
       - T0 query parameter. The beginning of the timespan for the data. The maximum
         lookback period is 31 days from today.
     type: str
   timespan:
     description:
-      - Information module for Networks Policies Byclient Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameter t0. The value must be in
@@ -80,7 +74,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _policies _byclient
+- name: Get all networks _policies _by _client
   cisco.meraki.networks_policies_by_client_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

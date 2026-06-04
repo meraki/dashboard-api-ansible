@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_branding_policies_priorities_info
-short_description: Information module for organizations _brandingpolicies _priorities
+short_description: Information module for organizations _branding _policies _priorities
 description:
-  - Information module for Organizations Brandingpolicies Priorities Info.
-  - Get all organizations _brandingpolicies _priorities.
-  - >
-    Return the branding policy IDs of an organization in priority order. IDs are ordered
-    in ascending order of priority IDs later in the array have higher priority .
+  - Get all organizations _branding _policies _priorities. - > Return the branding
+    policy IDs of an organization in priority order. IDs are ordered in ascending
+    order of priority IDs later in the array have higher priority .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,7 +22,6 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Brandingpolicies Priorities Info.
       - OrganizationId path parameter. Organization ID.
     type: str
 requirements:
@@ -42,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _brandingpolicies _priorities
+- name: Get all organizations _branding _policies _priorities
   cisco.meraki.organizations_branding_policies_priorities_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

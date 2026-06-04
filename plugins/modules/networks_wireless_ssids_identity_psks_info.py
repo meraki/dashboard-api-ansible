@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_wireless_ssids_identity_psks_info
-short_description: Information module for networks _wireless _ssids _identitypsks
+short_description: Information module for networks _wireless _ssids _identity _psks
 description:
-  - Information module for Networks Wireless Ssids Identitypsks Info.
-  - Get all networks _wireless _ssids _identitypsks.
-  - Get networks _wireless _ssids _identitypsks by id.
+  - Get all networks _wireless _ssids _identity _psks.
+  - Get networks _wireless _ssids _identity _psks by id.
   - List all Identity PSKs in a wireless network.
   - Return an Identity PSK.
 version_added: '1.0.0'
@@ -23,17 +23,14 @@ options:
     type: dict
   networkId:
     description:
-      - Information module for Networks Wireless Ssids Identitypsks Info.
       - NetworkId path parameter. Network ID.
     type: str
   number:
     description:
-      - Information module for Networks Wireless Ssids Identitypsks Info.
       - Number path parameter.
     type: str
   identityPskId:
     description:
-      - Information module for Networks Wireless Ssids Identitypsks Info.
       - IdentityPskId path parameter. Identity psk ID.
     type: str
 requirements:
@@ -56,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all networks _wireless _ssids _identitypsks
+- name: Get all networks _wireless _ssids _identity _psks
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -82,7 +79,7 @@ EXAMPLES = r"""
     networkId: string
     number: string
   register: result
-- name: Get networks _wireless _ssids _identitypsks by id
+- name: Get networks _wireless _ssids _identity _psks by id
   cisco.meraki.networks_wireless_ssids_identity_psks_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

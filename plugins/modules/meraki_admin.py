@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright: (c) 2018, Kevin Breit (@kbreit) <kevin.breit@kevinbreit.net>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see COPYING or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
@@ -259,9 +260,9 @@ data:
 
 '''
 
-import os
-from ansible.module_utils.basic import AnsibleModule, json
-from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec
+from ansible_collections.cisco.meraki.plugins.module_utils.network.meraki.meraki import MerakiModule, meraki_argument_spec  # noqa: E402
+from ansible.module_utils.basic import AnsibleModule, json  # noqa: E402
+import os  # noqa: E402
 
 
 def get_admins(meraki, org_id):
@@ -283,7 +284,8 @@ def get_admin_id(meraki, data, name=None, email=None):
         if meraki.params['name'] is not None:
             if meraki.params['name'] == a['name']:
                 if admin_id is not None:
-                    meraki.fail_json(msg='There are multiple administrators with the same name')
+                    meraki.fail_json(
+                        msg='There are multiple administrators with the same name')
                 else:
                     admin_id = a['id']
         elif meraki.params['email']:
@@ -321,11 +323,13 @@ def network_factory(meraki, networks, nets):
     networks_new = []
     for n in networks:
         if 'network' in n and n['network'] is not None:
-            networks_new.append({'id': meraki.get_net_id(org_name=meraki.params['org_name'],
-                                                         net_name=n['network'],
-                                                         data=nets),
-                                 'access': n['access']
-                                 })
+            networks_new.append(
+                {
+                    'id': meraki.get_net_id(
+                        org_name=meraki.params['org_name'],
+                        net_name=n['network'],
+                        data=nets),
+                    'access': n['access']})
         elif 'id' in n:
             networks_new.append({'id': n['id'],
                                  'access': n['access']
@@ -374,7 +378,10 @@ def create_admin(meraki, org_id, name, email):
                 meraki.result['changed'] = True
                 meraki.result['data'] = payload
                 meraki.exit_json(**meraki.result)
-            path = meraki.construct_path('update', function='admin', org_id=org_id) + is_admin_existing['id']
+            path = meraki.construct_path(
+                'update',
+                function='admin',
+                org_id=org_id) + is_admin_existing['id']
             r = meraki.request(path,
                                method='PUT',
                                payload=json.dumps(payload)
@@ -404,15 +411,18 @@ def main():
                         )
 
     argument_spec = meraki_argument_spec()
-    argument_spec.update(state=dict(type='str', choices=['present', 'query', 'absent'], required=True),
-                         name=dict(type='str'),
-                         email=dict(type='str'),
-                         org_access=dict(type='str', aliases=['orgAccess'], choices=['full', 'read-only', 'none']),
-                         tags=dict(type='list', elements='dict', options=tag_arg_spec),
-                         networks=dict(type='list', elements='dict', options=network_arg_spec),
-                         org_name=dict(type='str', aliases=['organization']),
-                         org_id=dict(type='str'),
-                         )
+    argument_spec.update(
+        state=dict(
+            type='str', choices=[
+                'present', 'query', 'absent'], required=True), name=dict(
+            type='str'), email=dict(
+                    type='str'), org_access=dict(
+                        type='str', aliases=['orgAccess'], choices=[
+                            'full', 'read-only', 'none']), tags=dict(
+                                type='list', elements='dict', options=tag_arg_spec), networks=dict(
+                                    type='list', elements='dict', options=network_arg_spec), org_name=dict(
+                                        type='str', aliases=['organization']), org_id=dict(
+                                            type='str'), )
 
     # the AnsibleModule object will be our abstraction working with Ansible
     # this includes instantiation, a couple of common attr would be the
@@ -464,7 +474,8 @@ def main():
         org_id = meraki.get_org_id(meraki.params['org_name'])
     if meraki.params['state'] == 'query':
         admins = get_admins(meraki, org_id)
-        if not meraki.params['name'] and not meraki.params['email']:  # Return all admins for org
+        # Return all admins for org
+        if not meraki.params['name'] and not meraki.params['email']:
             meraki.result['data'] = admins
         if meraki.params['name'] is not None:  # Return a single admin for org
             admin_id = get_admin_id(meraki, admins, name=meraki.params['name'])
@@ -472,7 +483,8 @@ def main():
             admin = get_admin(meraki, admins, admin_id)
             meraki.result['data'] = admin
         elif meraki.params['email'] is not None:
-            admin_id = get_admin_id(meraki, admins, email=meraki.params['email'])
+            admin_id = get_admin_id(
+                meraki, admins, email=meraki.params['email'])
             meraki.result['data'] = admin_id
             admin = get_admin(meraki, admins, admin_id)
             meraki.result['data'] = admin

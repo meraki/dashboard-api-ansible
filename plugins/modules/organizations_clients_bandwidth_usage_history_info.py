@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_clients_bandwidth_usage_history_info
-short_description: Information module for organizations _clients _bandwidthusagehistory
+short_description: Information module for organizations _clients _bandwidth _usage
+  _history
 description:
-  - Information module for Organizations Clients Bandwidthusagehistory Info.
-  - Get all organizations _clients _bandwidthusagehistory.
-  - >
-    Return data usage in megabits per second over time for all clients in the given
-    organization within a given time range.
+  - Get all organizations _clients _bandwidth _usage _history. - > Return data usage
+    in megabits per second over time for all clients in the given organization within
+    a given time range.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -23,43 +23,35 @@ options:
     type: dict
   organizationId:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - OrganizationId path parameter. Organization ID.
     type: str
   networkTag:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - NetworkTag query parameter. Match result to an exact network tag.
     type: str
   deviceTag:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - DeviceTag query parameter. Match result to an exact device tag.
     type: str
   ssidName:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - SsidName query parameter. Filter results by ssid name.
     type: str
   usageUplink:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - UsageUplink query parameter. Filter results by usage uplink.
     type: str
   t0:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - T0 query parameter. The beginning of the timespan for the data.
     type: str
   t1:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - T1 query parameter. The end of the timespan for the data. T1 can be a maximum
         of 186 days after t0.
     type: str
   timespan:
     description:
-      - Information module for Organizations Clients Bandwidthusagehistory Info.
       - >
         Timespan query parameter. The timespan for which the information will be fetched.
         If specifying timespan, do not specify parameters t0 and t1. The value must
@@ -81,7 +73,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all organizations _clients _bandwidthusagehistory
+- name: Get all organizations _clients _bandwidth _usage _history
   cisco.meraki.organizations_clients_bandwidth_usage_history_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"

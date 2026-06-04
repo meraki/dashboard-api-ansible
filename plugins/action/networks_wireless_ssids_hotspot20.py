@@ -63,7 +63,7 @@ class NetworksWirelessSsidsHotspot20(object):
             roamConsortOis=params.get("roamConsortOis"),
             mccMncs=params.get("mccMncs"),
             naiRealms=params.get("naiRealms"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 
@@ -180,9 +180,7 @@ class NetworksWirelessSsidsHotspot20(object):
             ("domains", "domains"),
             ("roamConsortOis", "roamConsortOis"),
             ("mccMncs", "mccMncs"),
-            ("naiRealms", "naiRealms"),
-            ("networkId", "networkId"),
-            ("number", "number"),
+            ("naiRealms", "naiRealms"), ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

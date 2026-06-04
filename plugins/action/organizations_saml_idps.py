@@ -205,9 +205,7 @@ class OrganizationsSamlIdps(object):
         obj_params = [
             ("x509certSha1Fingerprint", "x509certSha1Fingerprint"),
             ("ssoLoginUrl", "ssoLoginUrl"),
-            ("sloLogoutUrl", "sloLogoutUrl"),
-            ("organizationId", "organizationId"),
-            ("idpId", "idpId"),
+            ("sloLogoutUrl", "sloLogoutUrl"), ("idpId", "idpId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

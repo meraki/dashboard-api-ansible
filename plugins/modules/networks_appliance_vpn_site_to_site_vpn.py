@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: networks_appliance_vpn_site_to_site_vpn
-short_description: Resource module for networks _appliance _vpn _sitetositevpn
+short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
 description:
-  - Manage operation update of the resource networks _appliance _vpn _sitetositevpn.
+  - Manage operation update of the resource networks _appliance _vpn _site _to _site
+    _vpn.
   - Update the site-to-site VPN settings of a network. Only valid for MX networks
     in NAT mode.
 version_added: '1.0.0'
@@ -16,6 +18,29 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  hostTranslations:
+    description: The list of VPN host translations. Host translations are supported
+      starting from MX firmware version 26.1.2.
+    elements: dict
+    suboptions:
+      local:
+        description: Configuration of the local address of the translated host.
+        suboptions:
+          address:
+            description: The local IP address of the translated host.
+            type: str
+        type: dict
+      name:
+        description: The name of the translated host.
+        type: str
+      remote:
+        description: Configuration of the remote address of the translated host.
+        suboptions:
+          address:
+            description: The remote IP address of the translated host.
+            type: str
+        type: dict
+    type: list
   hubs:
     description: The list of VPN hubs, in order of preference. In spoke mode, at least
       1 hub is required.
@@ -110,6 +135,12 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    hostTranslations:
+      - local:
+          address: 192.168.1.10
+        name: Host 1
+        remote:
+          address: 72.168.2.10
     hubs:
       - hubId: N_4901849
         useDefaultRoute: true
@@ -153,6 +184,17 @@ meraki_response:
         "nat": {
           "isAllowed": true
         }
-      }
+      },
+      "hostTranslations": [
+        {
+          "name": "string",
+          "local": {
+            "address": "string"
+          },
+          "remote": {
+            "address": "string"
+          }
+        }
+      ]
     }
 """

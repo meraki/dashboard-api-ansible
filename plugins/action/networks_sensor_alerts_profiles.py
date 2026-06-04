@@ -244,9 +244,7 @@ class NetworksSensorAlertsProfiles(object):
             ("recipients", "recipients"),
             ("serials", "serials"),
             ("includeSensorUrl", "includeSensorUrl"),
-            ("message", "message"),
-            ("networkId", "networkId"),
-            ("id", "id"),
+            ("message", "message"), ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

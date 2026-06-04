@@ -56,7 +56,7 @@ class NetworksSettings(object):
             localStatusPage=params.get("localStatusPage"),
             securePort=params.get("securePort"),
             namedVlans=params.get("namedVlans"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -151,9 +151,7 @@ class NetworksSettings(object):
             ("remoteStatusPageEnabled", "remoteStatusPageEnabled"),
             ("localStatusPage", "localStatusPage"),
             ("securePort", "securePort"),
-            ("namedVlans", "namedVlans"),
-            ("networkId", "networkId"),
-        ]
+            ("namedVlans", "namedVlans"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

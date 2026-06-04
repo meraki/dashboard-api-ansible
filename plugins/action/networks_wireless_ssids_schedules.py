@@ -53,7 +53,7 @@ class NetworksWirelessSsidsSchedules(object):
             enabled=params.get("enabled"),
             ranges=params.get("ranges"),
             rangesInSeconds=params.get("rangesInSeconds"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             number=params.get("number"),
         )
 
@@ -145,9 +145,7 @@ class NetworksWirelessSsidsSchedules(object):
         obj_params = [
             ("enabled", "enabled"),
             ("ranges", "ranges"),
-            ("rangesInSeconds", "rangesInSeconds"),
-            ("networkId", "networkId"),
-            ("number", "number"),
+            ("rangesInSeconds", "rangesInSeconds"), ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_saml_roles
-short_description: Resource module for organizations _samlroles
+short_description: Resource module for organizations _saml _roles
 description:
-  - Manage operations create, update and delete of the resource organizations _samlroles.
+  - Manage operations create, update and delete of the resource organizations _saml
+    _roles.
   - Create a SAML role.
   - Remove a SAML role.
   - Update a SAML role.

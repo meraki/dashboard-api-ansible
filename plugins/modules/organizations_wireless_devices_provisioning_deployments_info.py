@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_wireless_devices_provisioning_deployments_info
-short_description: Information module for organizations _wireless _devices _provisioning _deployments
+short_description: Information module for organizations _wireless _devices _provisioning
+  _deployments
 description:
   - Get all organizations _wireless _devices _provisioning _deployments.
   - List the zero touch deployments for wireless access points in an organization.
@@ -25,25 +27,31 @@ options:
     type: str
   perPage:
     description:
-      - PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 20.
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 20.
     type: int
   startingAfter:
     description:
       - >
-        StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this
-        is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-        applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
     type: str
   endingBefore:
     description:
       - >
-        EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is
-        a timestamp or an ID but it is not limited to those. This parameter should not be defined by client
-        applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   search:
     description:
-      - Search query parameter. Filter by MAC address, serial number, new device name, old device name, or model.
+      - Search query parameter. Filter by MAC address, serial number, new device name,
+        old device name, or model.
     type: str
   sortBy:
     description:
@@ -62,12 +70,12 @@ requirements:
   - python >= 3.5
 seealso:
   - name: Cisco Meraki documentation for wireless getOrganizationWirelessDevicesProvisioningDeployments
-    description: Complete reference of the getOrganizationWirelessDevicesProvisioningDeployments API.
+    description: Complete reference of the getOrganizationWirelessDevicesProvisioningDeployments
+      API.
     link: https://developer.cisco.com/meraki/api-v1/#!get-organization-wireless-devices-provisioning-deployments
 notes:
   - SDK Method used are
     wireless.Wireless.get_organization_wireless_devices_provisioning_deployments,
-
   - Paths used are
     get /organizations/{organizationId}/wireless/devices/provisioning/deployments,
 """

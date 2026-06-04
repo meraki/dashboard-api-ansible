@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: devices_live_tools_wake_on_lan
-short_description: Resource module for devices _livetools _wakeonlan
+short_description: Resource module for devices _live _tools _wake _on _lan
 description:
-  - Manage operation create of the resource devices _livetools _wakeonlan.
-  - >
-    Enqueue a job to send a Wake-on-LAN packet from the device. This endpoint has
+  - Manage operation create of the resource devices _live _tools _wake _on _lan. -
+    > Enqueue a job to send a Wake-on-LAN packet from the device. This endpoint has
     a sustained rate limit of one request every five seconds per device, with an allowed
     burst of five requests.
 version_added: '1.0.0'

@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# GNU General Public License v3.0+ (see LICENSE or
+# https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 module: organizations_insight_monitored_media_servers
-short_description: Resource module for organizations _insight _monitoredmediaservers
+short_description: Resource module for organizations _insight _monitored _media _servers
 description:
   - Manage operations create, update and delete of the resource organizations _insight
-    _monitoredmediaservers.
+    _monitored _media _servers.
   - Add a media server to be monitored for this organization. Only valid for organizations
     with Meraki Insight.
   - Delete a monitored media server from this organization. Only valid for organizations

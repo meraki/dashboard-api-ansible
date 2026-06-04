@@ -52,7 +52,7 @@ class OrganizationsSplashThemes(object):
         self.new_object = dict(
             name=params.get("name"),
             baseTheme=params.get("baseTheme"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
@@ -144,9 +144,7 @@ class OrganizationsSplashThemes(object):
 
         obj_params = [
             ("name", "name"),
-            ("baseTheme", "baseTheme"),
-            ("organizationId", "organizationId"),
-            ("id", "id"),
+            ("baseTheme", "baseTheme"), ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

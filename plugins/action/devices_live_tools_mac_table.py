@@ -129,9 +129,7 @@ class DevicesLiveToolsMacTable(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("callback", "callback"),
-            ("serial", "serial"),
-            ("macTableId", "macTableId"),
+            ("callback", "callback"), ("macTableId", "macTableId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
