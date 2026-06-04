@@ -150,9 +150,7 @@ class NetworksApplianceVpnBgp(object):
             ("asNumber", "asNumber"),
             ("ibgpHoldTimer", "ibgpHoldTimer"),
             ("routerId", "routerId"),
-            ("neighbors", "neighbors"),
-            ("networkId", "networkId"),
-        ]
+            ("neighbors", "neighbors"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

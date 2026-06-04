@@ -116,9 +116,7 @@ class DevicesApplianceUplinksSettings(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("interfaces", "interfaces"),
-            ("serial", "serial"),
-        ]
+            ("interfaces", "interfaces"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

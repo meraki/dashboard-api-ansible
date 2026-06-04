@@ -265,9 +265,7 @@ class NetworksGroupPolicies(object):
             ("contentFiltering", "contentFiltering"),
             ("splashAuthSettings", "splashAuthSettings"),
             ("vlanTagging", "vlanTagging"),
-            ("bonjourForwarding", "bonjourForwarding"),
-            ("networkId", "networkId"),
-            ("groupPolicyId", "groupPolicyId"),
+            ("bonjourForwarding", "bonjourForwarding"),            ("groupPolicyId", "groupPolicyId"),
             ("force", "force"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params

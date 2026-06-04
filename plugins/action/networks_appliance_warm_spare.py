@@ -150,9 +150,7 @@ class NetworksApplianceWarmSpare(object):
             ("spareSerial", "spareSerial"),
             ("uplinkMode", "uplinkMode"),
             ("virtualIp1", "virtualIp1"),
-            ("virtualIp2", "virtualIp2"),
-            ("networkId", "networkId"),
-        ]
+            ("virtualIp2", "virtualIp2"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

@@ -134,9 +134,7 @@ class DevicesManagementInterface(object):
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
-        obj_params = [
-            ("serial", "serial"),
-            ("wan1", "wan1"),
+        obj_params = [            ("wan1", "wan1"),
             ("wan2", "wan2"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

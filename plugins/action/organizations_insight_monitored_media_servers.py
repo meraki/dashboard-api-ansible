@@ -205,9 +205,7 @@ class OrganizationsInsightMonitoredMediaServers(object):
         obj_params = [
             ("name", "name"),
             ("address", "address"),
-            ("bestEffortMonitoringEnabled", "bestEffortMonitoringEnabled"),
-            ("organizationId", "organizationId"),
-            ("monitoredMediaServerId", "monitoredMediaServerId"),
+            ("bestEffortMonitoringEnabled", "bestEffortMonitoringEnabled"),            ("monitoredMediaServerId", "monitoredMediaServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

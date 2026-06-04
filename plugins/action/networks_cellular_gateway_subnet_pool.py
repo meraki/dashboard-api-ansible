@@ -130,9 +130,7 @@ class NetworksCellularGatewaySubnetPool(object):
 
         obj_params = [
             ("mask", "mask"),
-            ("cidr", "cidr"),
-            ("networkId", "networkId"),
-        ]
+            ("cidr", "cidr"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

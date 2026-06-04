@@ -207,9 +207,7 @@ class NetworksSwitchDhcpServerPolicyArpInspectionTrustedServers(object):
         obj_params = [
             ("mac", "mac"),
             ("vlan", "vlan"),
-            ("ipv4", "ipv4"),
-            ("networkId", "networkId"),
-            ("trustedServerId", "trustedServerId"),
+            ("ipv4", "ipv4"),            ("trustedServerId", "trustedServerId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

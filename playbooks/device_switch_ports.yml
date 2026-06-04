@@ -8,7 +8,7 @@
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: false
         state: present
-        serial: "QBSB-AX45-LY9A"
+        serial: "QBSB-VLHZ-JQCN"
         enabled: true
         name: testAPI23
         poeEnabled: false

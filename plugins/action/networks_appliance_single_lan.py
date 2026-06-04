@@ -144,9 +144,7 @@ class NetworksApplianceSingleLan(object):
             ("subnet", "subnet"),
             ("applianceIp", "applianceIp"),
             ("ipv6", "ipv6"),
-            ("mandatoryDhcp", "mandatoryDhcp"),
-            ("networkId", "networkId"),
-        ]
+            ("mandatoryDhcp", "mandatoryDhcp"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

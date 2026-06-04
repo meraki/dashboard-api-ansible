@@ -130,9 +130,7 @@ class NetworksWirelessBilling(object):
 
         obj_params = [
             ("currency", "currency"),
-            ("plans", "plans"),
-            ("networkId", "networkId"),
-        ]
+            ("plans", "plans"),        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
