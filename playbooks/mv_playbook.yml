@@ -9,14 +9,12 @@
         state: present
         serial: "{{ serial_number }}"
         name: My Device
-    - name: Update quality and retention settings
-      cisco.meraki.devices_camera_quality_and_retention:
-        state: present
+    - name: Get device info
+      cisco.meraki.devices_info:
+        meraki_suppress_logging: true
         serial: "{{ serial_number }}"
-        quality: High
-        resolution: 1280x720
-        motionDetectorVersion: 2
-        audioRecordingEnabled: false
-        motionBasedRetentionEnabled: false
-        restrictedBandwidthModeEnabled: false
-      ignore_errors: true
+      register: result
+
+    - name: Show device info
+      ansible.builtin.debug:
+        msg: "{{ result }}"

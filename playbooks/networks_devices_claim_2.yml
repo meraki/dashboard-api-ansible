@@ -5,11 +5,6 @@
     serial_number: QBSB-D5ZD-9CXT
   gather_facts: false
   tasks:
-    - name: Get network devices
-      cisco.meraki.networks_devices_info:
-        networkId: "{{ network_id }}"
-      register: result
-
     - name: Show devices
       ansible.builtin.debug:
         msg: "{{ result }}"
