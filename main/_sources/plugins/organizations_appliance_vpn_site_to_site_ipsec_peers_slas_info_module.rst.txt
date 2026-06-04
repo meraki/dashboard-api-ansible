@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_vpn_site_to_site_ipsec_peers_slas_info modu
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
 - Get all organizations \_appliance \_vpn \_site \_to \_site \_ipsec \_peers \_slas.
 - Get the list of available IPsec SLA policies for an organization.
 
@@ -957,8 +956,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Appliance Vpn Site To Site Ipsec Peers Slas Info.
 
       OrganizationId path parameter. Organization ID.
 

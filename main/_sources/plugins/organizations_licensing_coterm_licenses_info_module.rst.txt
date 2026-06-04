@@ -42,7 +42,7 @@ cisco.meraki.organizations_licensing_coterm_licenses_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Licensing Coterm Licenses Info.
 - Get all organizations \_licensing \_coterm \_licenses.
 - List the licenses in a coterm organization.
 
@@ -174,8 +173,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Licensing Coterm Licenses Info.
-
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -210,8 +207,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Licensing Coterm Licenses Info.
 
       Expired query parameter. Filter for licenses that are expired.
 
@@ -288,8 +283,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Licensing Coterm Licenses Info.
 
       Invalidated query parameter. Filter for licenses that are invalidated.
 
@@ -1121,8 +1114,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Licensing Coterm Licenses Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1157,8 +1148,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Licensing Coterm Licenses Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1192,8 +1181,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Licensing Coterm Licenses Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

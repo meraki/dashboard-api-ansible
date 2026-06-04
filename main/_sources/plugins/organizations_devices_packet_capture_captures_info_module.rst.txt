@@ -42,7 +42,7 @@ cisco.meraki.organizations_devices_packet_capture_captures_info module -- Inform
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,10 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Devices Packet Capture Captures Info.
-- Get all organizations \_devices \_packet \_capture \_captures.
-- List Packet Captures. The current license level allows storage of up to 10 capture files in the cloud. When this limit is reached and a new capture is taken, the oldest capture will be automatically deleted to ensure sufficient space. Additional storage for switches will be available with an advantage license at a future date. These future capabilities will be consistent with what is available today via advantage licensing for access points.
-
+- Get all organizations \_devices \_packet \_capture \_captures. - \> List Packet Captures. The current license level allows storage of up to 10 capture files in the cloud. When this limit is reached and a new capture is taken, the oldest capture will be automatically deleted to ensure sufficient space. Additional storage for switches will be available with an advantage license at a future date. These future capabilities will be consistent with what is available today via advantage licensing for access points.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -137,8 +134,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       AdminName query parameter. Return the packet captures matching the admin name.
 
 
@@ -172,8 +167,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       CaptureIds query parameter. Return the packet captures of the specified capture ids.
 
@@ -209,8 +202,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       CaptureStatus query parameter. Return the packet captures of the specified capture status.
 
 
@@ -245,8 +236,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       ClientMac query parameter. Return the packet captures matching the specified client macs.
 
 
@@ -280,8 +269,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       DeviceName query parameter. Return the packet captures matching the specified device name.
 
@@ -354,8 +341,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1214,8 +1199,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       Name query parameter. Return the packet captures matching the specified name.
 
 
@@ -1249,8 +1232,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       NetworkIds query parameter. Return the packet captures of the specified network(s).
 
@@ -1286,8 +1267,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       Notes query parameter. Return the packet captures matching the specified notes.
 
 
@@ -1321,8 +1300,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1358,8 +1335,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100. Default is 10.
 
 
@@ -1393,8 +1368,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       Process query parameter. Return the packet captures of the specified process.
 
@@ -1430,8 +1403,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       Serials query parameter. Return the packet captures of the specified device(s).
 
 
@@ -1465,8 +1436,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       SortOrder query parameter. Sorted order of entries. Order options are 'ascending' and 'descending'. Default is 'descending'.
           
@@ -1503,8 +1472,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1540,9 +1507,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Devices Packet Capture Captures Info.
-
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
+          
 
 
       .. raw:: html
@@ -1575,8 +1541,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 365 days after t0.
 
@@ -1611,8 +1575,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Devices Packet Capture Captures Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
           

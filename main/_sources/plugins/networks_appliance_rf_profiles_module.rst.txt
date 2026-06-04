@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_rf_profiles module -- Resource module for networks \_appliance \_rfprofiles
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_rf_profiles module -- Resource module for networks \_appliance \_rf \_profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_appliance \_rfprofiles.
+- Manage operations create, update and delete of the resource networks \_appliance \_rf \_profiles.
 - Creates new RF profile for this network.
 
 .. note::
@@ -169,7 +169,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Determines whether ax radio on 5Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true.
+      Determines whether ax radio on 5GHz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true.
 
 
       .. rst-class:: ansible-option-line

@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_crls
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,10 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
-- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls \_deltas.
-- Query for all delta certificate revocation list CRL for the organization's RADSEC device Certificate Authority CA with the given id.
-
+- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls \_deltas. - \> Query for all delta certificate revocation list CRL for the organization's RADSEC device Certificate Authority CA with the given id.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -136,8 +133,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
 
       CertificateAuthorityIds query parameter. Parameter to filter CAs by one or more CA IDs. All returned CAs will have an ID that is an exact match.
           
@@ -995,8 +990,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Radsec Certificates Authorities Crls Deltas Info.
 
       OrganizationId path parameter. Organization ID.
 

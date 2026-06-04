@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_ssids_open_roaming_by_network_info module --
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Ssids Open Roaming By Network Info.
 - Get all organizations \_wireless \_ssids \_open \_roaming \_by \_network.
 - Returns an array of objects, each containing SSID OpenRoaming configs for the corresponding network.
 
@@ -174,8 +173,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
-
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -244,8 +241,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
 
       IncludeDisabledSsids query parameter. Optional parameter to include OpenRoaming configuration for disabled ssids.
 
@@ -1077,8 +1072,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
-
       NetworkIds query parameter. Optional parameter to filter OpenRoaming configuration by Network Id.
 
 
@@ -1112,8 +1105,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1149,8 +1140,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1184,8 +1173,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Ssids Open Roaming By Network Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

@@ -42,7 +42,7 @@ cisco.meraki.devices_live_tools_multicast_routing_info module -- Information mod
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Devices Live Tools Multicast Routing Info.
 - Get devices \_live \_tools \_multicast \_routing by id.
 - Return a Multicast routing live tool job.
 
@@ -958,8 +957,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Devices Live Tools Multicast Routing Info.
-
       MulticastRoutingId path parameter. Multicast routing ID.
 
 
@@ -993,8 +990,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Devices Live Tools Multicast Routing Info.
 
       Serial path parameter.
 
@@ -1123,7 +1118,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"error": "string", "interfaces": [{"flags": ["string"], "ip": "string", "name": "string", "neighbors": ["string"], "subnet": "string"}], "multicastRoutingId": "string", "request": {"serial": "string"}, "routes": [{"flags": ["string"], "group": "string", "incomingInterfaceName": "string", "outgoingInterfaceNames": ["string"], "rendezvousPoint": "string", "source": "string"}], "status": "string", "url": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"error": "string", "interfaces": [{"flags": ["string"], "ip": "string", "ipVersion": "string", "name": "string", "neighbors": ["string"], "subnet": "string", "vrf": "string", "vrfType": "string"}], "multicastRoutingId": "string", "request": {"serial": "string"}, "routes": [{"flags": ["string"], "group": "string", "incomingInterfaceName": "string", "ipVersion": "string", "outgoingInterfaceNames": ["string"], "rendezvousPoint": "string", "source": "string", "vrf": "string"}], "status": "string", "url": "string"}`
 
 
       .. raw:: html

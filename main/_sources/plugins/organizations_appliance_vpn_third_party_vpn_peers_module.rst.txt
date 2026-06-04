@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers module -- Resourc
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -2673,7 +2673,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are appliance.Appliance.update\_organization\_appliance\_vpn\_third\_party\_vpn\_peers,
+   - SDK Method used are appliance.Appliance.update\_organization\_appliance\_vpn\_third\_party\_vpnpeers,
    - Paths used are put /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
@@ -2699,7 +2699,7 @@ Examples
 
     
     - name: Update all
-      cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
+      cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
         meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -2722,7 +2722,6 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
-
         organizationId: string
         peers:
           - ebgpNeighbor:
@@ -2741,7 +2740,7 @@ Examples
               - ebgpNeighbor:
                   neighborIp: 169.254.10.2
                   sourceIp: 169.254.10.1
-                id: "7890"
+                id: '7890'
                 privateSubnets:
                   - 169.254.10.0/30
                 wan: WAN 1
@@ -2750,7 +2749,7 @@ Examples
               failover:
                 directToInternet: true
               number: 1
-            ikeVersion: "2"
+            ikeVersion: '2'
             ipsecPolicies:
               childAuthAlgo:
                 - sha1
@@ -2779,7 +2778,7 @@ Examples
                 - N_3
             networkTags:
               - none
-            peerId: "1234"
+            peerId: '1234'
             priorityInGroup: 1
             privateSubnets:
               - 192.168.1.0/24
@@ -2789,7 +2788,7 @@ Examples
             remoteId: miles@meraki.com
             secret: Sample Password
             slaPolicy:
-              id: "1234"
+              id: '1234'
 
 
 

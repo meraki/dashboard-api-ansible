@@ -42,7 +42,7 @@ cisco.meraki.organizations_policies_assignments_by_client_info module -- Informa
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Policies Assignments By Client Info.
 - Get all organizations \_policies \_assignments \_by \_client.
 - Get policies for all clients with policies.
 
@@ -174,8 +173,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Policies Assignments By Client Info.
-
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -244,8 +241,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Policies Assignments By Client Info.
 
       IncludeUndetectedClients query parameter. Include provisioned clients that have not associated to the network. Default false.
           
@@ -1078,8 +1073,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Policies Assignments By Client Info.
-
       NetworkIds query parameter. Network Ids (minimum 1, maximum 30).
 
 
@@ -1113,8 +1106,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Policies Assignments By Client Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1150,8 +1141,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Policies Assignments By Client Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
 
 
@@ -1185,8 +1174,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Policies Assignments By Client Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1223,8 +1210,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Policies Assignments By Client Info.
-
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1258,8 +1243,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Policies Assignments By Client Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
           

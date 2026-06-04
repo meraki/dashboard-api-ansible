@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_webhooks_http_servers module -- Resource module for networks \_webhooks \_httpservers
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_webhooks_http_servers module -- Resource module for networks \_webhooks \_http \_servers
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_webhooks \_httpservers.
+- Manage operations create, update and delete of the resource networks \_webhooks \_http \_servers.
 - Add an HTTP server to a network.
 - Delete an HTTP server from a network.
 - Update an HTTP server. To change a URL, create a new HTTP server.

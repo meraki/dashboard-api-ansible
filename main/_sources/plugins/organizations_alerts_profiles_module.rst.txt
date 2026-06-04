@@ -42,7 +42,7 @@ cisco.meraki.organizations_alerts_profiles module -- Resource module for organiz
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -239,7 +239,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The uplink observed for the alert. Interface must be one of the following wan1, wan2, wan3, cellular.
+      The uplink observed for the alert. Interface must be one of the following wan1, wan2, wan3, cellular, wan4.
 
 
       .. raw:: html

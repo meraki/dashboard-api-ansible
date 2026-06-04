@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_switch_alternate_management_interface module -- Resource module for networks \_switch \_alternatemanagementinterface
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_switch_alternate_management_interface module -- Resource module for networks \_switch \_alternate \_management \_interface
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_switch \_alternatemanagementinterface.
+- Manage operation update of the resource networks \_switch \_alternate \_management \_interface.
 - Update the switch alternate management interface for the network.
 
 .. note::
@@ -1342,7 +1342,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enabled": true, "protocols": ["string"], "switches": [{"alternateManagementIp": "string", "gateway": "string", "serial": "string", "subnetMask": "string"}], "vlanId": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enabled": true, "protocols": ["string"], "switches": [{"alternateManagementIp": "string", "gateway": "string", "serial": "string", "subnetMask": "string"}], "useOobMgmt": true, "vlanId": 0}`
 
 
       .. raw:: html

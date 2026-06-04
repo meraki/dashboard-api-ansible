@@ -42,7 +42,7 @@ cisco.meraki.networks_wireless_settings module -- Resource module for networks \
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1324,6 +1324,118 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-upgrade"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-upgrade:
+
+      .. rst-class:: ansible-option-title
+
+      **upgrade**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-upgrade" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Upgrade settings for the network.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-upgrade/predownload"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-upgrade/predownload:
+
+      .. rst-class:: ansible-option-title
+
+      **predownload**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-upgrade/predownload" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Predownload settings for firmware upgrades.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-upgrade/predownload/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-upgrade/predownload/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-upgrade/predownload/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The default setting for upgrade firmware predownload. Only applies to devices running MR 32 or higher.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-upgradeStrategy"></div>
 
       .. _ansible_collections.cisco.meraki.networks_wireless_settings_module__parameter-upgradestrategy:
@@ -1414,7 +1526,6 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
-
         ipv6BridgeEnabled: false
         ledLightsOn: false
         locationAnalyticsEnabled: false
@@ -1426,6 +1537,9 @@ Examples
             duration: 5
             enabled: true
         networkId: string
+        upgrade:
+          predownload:
+            enabled: false
         upgradeStrategy: minimizeUpgradeTime
 
 
@@ -1487,7 +1601,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "multicastToUnicastConversion": {"enabled": true}, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "regulatoryDomain": {"countryCode": "string", "name": "string", "permits6e": true}, "upgradeStrategy": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"ipv6BridgeEnabled": true, "ledLightsOn": true, "locationAnalyticsEnabled": true, "meshingEnabled": true, "multicastToUnicastConversion": {"enabled": true}, "namedVlans": {"poolDhcpMonitoring": {"duration": 0, "enabled": true}}, "regulatoryDomain": {"countryCode": "string", "name": "string", "permits6e": true}, "upgrade": {"predownload": {"enabled": true}}, "upgradeStrategy": "string"}`
 
 
       .. raw:: html

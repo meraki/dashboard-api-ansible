@@ -42,7 +42,7 @@ cisco.meraki.administered_licensing_subscription_subscriptions_info module -- In
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Administered Licensing Subscription Subscriptions Info.
 - Get all administered \_licensing \_subscription \_subscriptions.
 - List available subscriptions.
 
@@ -174,8 +173,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       EndDate query parameter. Filter subscriptions by end date, ISO 8601 format. To filter with a range of dates, use 'endDate\<option\>=?' in the request. Accepted options include lt, gt, lte, gte.
           
 
@@ -210,8 +207,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Administered Licensing Subscription Subscriptions Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1070,8 +1065,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       Name query parameter. Search for subscription name.
 
 
@@ -1105,8 +1098,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Administered Licensing Subscription Subscriptions Info.
 
       OrganizationIds query parameter. Organizations to get associated subscriptions for.
 
@@ -1142,8 +1133,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1177,8 +1166,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Administered Licensing Subscription Subscriptions Info.
 
       ProductTypes query parameter. List of product types that returned subscriptions need to have entitlements for.
 
@@ -1214,8 +1201,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       Skus query parameter. List of SKUs that returned subscriptions need to have entitlements for.
 
 
@@ -1249,8 +1234,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Administered Licensing Subscription Subscriptions Info.
 
       StartDate query parameter. Filter subscriptions by start date, ISO 8601 format. To filter with a range of dates, use 'startDate\<option\>=?' in the request. Accepted options include lt, gt, lte, gte.
           
@@ -1287,8 +1270,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1324,8 +1305,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Administered Licensing Subscription Subscriptions Info.
-
       Statuses query parameter. List of statuses that returned subscriptions can have.
 
 
@@ -1359,8 +1338,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Administered Licensing Subscription Subscriptions Info.
 
       SubscriptionIds query parameter. List of subscription ids to fetch.
 

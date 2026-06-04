@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_clients_splash_authorization_status module -- Resource module for networks \_clients \_splashauthorizationstatus
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_clients_splash_authorization_status module -- Resource module for networks \_clients \_splash \_authorization \_status
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_clients \_splashauthorizationstatus.
-- Update a client's splash authorization. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
-
+- Manage operation update of the resource networks \_clients \_splash \_authorization \_status. - \> Update a client's splash authorization. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -2219,8 +2217,34 @@ Examples
         ssids:
           '0':
             isAuthorized: true
+          '1':
+            isAuthorized: true
+          '10':
+            isAuthorized: true
+          '11':
+            isAuthorized: true
+          '12':
+            isAuthorized: true
+          '13':
+            isAuthorized: true
+          '14':
+            isAuthorized: true
           '2':
-            isAuthorized: false
+            isAuthorized: true
+          '3':
+            isAuthorized: true
+          '4':
+            isAuthorized: true
+          '5':
+            isAuthorized: true
+          '6':
+            isAuthorized: true
+          '7':
+            isAuthorized: true
+          '8':
+            isAuthorized: true
+          '9':
+            isAuthorized: true
 
 
 
@@ -2281,7 +2305,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"0": {"authorizedAt": "string", "expiresAt": "string", "isAuthorized": true}}`
 
 
       .. raw:: html

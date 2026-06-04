@@ -42,7 +42,7 @@ cisco.meraki.networks_devices_claim module -- Resource module for networks \_dev
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource networks \_devices \_claim.
-- Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute window.
-
+- Manage operation create of the resource networks \_devices \_claim. - \> Claim devices into a network. Note for recently claimed devices, it may take a few minutes for API requests against that device to succeed. This operation can be used up to ten times within a single five minute window.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

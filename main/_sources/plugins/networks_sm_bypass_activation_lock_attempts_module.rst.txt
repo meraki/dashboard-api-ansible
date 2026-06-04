@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_sm_bypass_activation_lock_attempts module -- Resource module for networks \_sm \_bypassactivationlockattempts
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_sm_bypass_activation_lock_attempts module -- Resource module for networks \_sm \_bypass \_activation \_lock \_attempts
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource networks \_sm \_bypassactivationlockattempts.
+- Manage operation create of the resource networks \_sm \_bypass \_activation \_lock \_attempts.
 - Bypass activation lock attempt.
 
 .. note::

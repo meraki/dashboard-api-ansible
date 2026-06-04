@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_ports_info module -- Information module for netw
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,11 +68,10 @@ Synopsis
 
 .. Description
 
-- Information module for Networks Appliance Ports Info.
 - Get all networks \_appliance \_ports.
 - Get networks \_appliance \_ports by id.
-- List per-port VLAN settings for all ports of a MX.
-- Return per-port VLAN settings for a single MX port.
+- List per-port VLAN settings for all ports of a secure router or security appliance.
+- Return per-port VLAN settings for a single secure router or security appliance port.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -960,8 +959,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Networks Appliance Ports Info.
-
       NetworkId path parameter. Network ID.
 
 
@@ -995,8 +992,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Networks Appliance Ports Info.
 
       PortId path parameter. Port ID.
 

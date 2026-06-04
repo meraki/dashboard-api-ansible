@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,10 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
-- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities.
-- Query for details on the organization's RADSEC device Certificate Authority certificates CAs. The primary CA signs all the certificates that devices present when establishing a secure connection to RADIUS servers via RADSEC protocol. This API returns an array of the status of all of the CAs as well as their contents, if they've been generated. An organization will have at most one CA unless the CA is being rotated.
-
+- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities. - \> Query for details on the organization's RADSEC device Certificate Authority certificates CAs. The primary CA signs all the certificates that devices present when establishing a secure connection to RADIUS servers via RADSEC protocol. This API returns an array of the status of all of the CAs as well as their contents, if they've been generated. An organization will have at most one CA unless the CA is being rotated.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -136,8 +133,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
 
       CertificateAuthorityIds query parameter. Optional parameter to filter CAs by one or more CA IDs. All returned CAs will have an ID that is an exact match.
           
@@ -995,8 +990,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Radsec Certificates Authorities Info.
 
       OrganizationId path parameter. Organization ID.
 

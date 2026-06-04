@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_firmware_upgrades_rollbacks module -- Resource module for networks \_firmwareupgrades \_rollbacks
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_firmware_upgrades_rollbacks module -- Resource module for networks \_firmware \_upgrades \_rollbacks
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource networks \_firmwareupgrades \_rollbacks.
+- Manage operation create of the resource networks \_firmware \_upgrades \_rollbacks.
 - Rollback a Firmware Upgrade For A Network.
 
 .. note::
@@ -933,6 +933,83 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-predownload"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_firmware_upgrades_rollbacks_module__parameter-predownload:
+
+      .. rst-class:: ansible-option-title
+
+      **predownload**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-predownload" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Predownload settings for the firmware upgrade.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-predownload/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_firmware_upgrades_rollbacks_module__parameter-predownload/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-predownload/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether or not the network devices will predownload the firmware image in advance of the actual upgrade. Only applies to wireless devices running MR 32 or higher.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-product"></div>
 
       .. _ansible_collections.cisco.meraki.networks_firmware_upgrades_rollbacks_module__parameter-product:
@@ -1229,6 +1306,8 @@ Examples
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         networkId: string
+        predownload:
+          enabled: false
         product: switch
         reasons:
           - category: performance
@@ -1296,7 +1375,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"product": "string", "reasons": [{"category": "string", "comment": "string"}], "status": "string", "time": "string", "toVersion": {"firmware": "string", "id": "string", "releaseDate": "string", "releaseType": "string", "shortName": "string"}, "upgradeBatchId": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"predownload": {"enabled": true}, "product": "string", "reasons": [{"category": "string", "comment": "string"}], "status": "string", "time": "string", "toVersion": {"firmware": "string", "id": "string", "releaseDate": "string", "releaseType": "string", "shortName": "string"}, "upgradeBatchId": "string"}`
 
 
       .. raw:: html

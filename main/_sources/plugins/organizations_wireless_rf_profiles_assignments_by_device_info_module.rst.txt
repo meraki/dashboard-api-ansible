@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_rf_profiles_assignments_by_device_info modul
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 - Get all organizations \_wireless \_rf \_profiles \_assignments \_by \_device.
 - List the RF profiles of an organization by device.
 
@@ -174,8 +173,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -245,8 +242,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       Mac query parameter. Optional parameter to filter RF profiles by device MAC address. All returned devices will have a MAC address that contains the search term or is an exact match.
           
 
@@ -281,8 +276,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 
       Macs query parameter. Optional parameter to filter RF profiles by one or more device MAC addresses. All returned devices will have a MAC address that is an exact match.
           
@@ -1107,8 +1100,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       Model query parameter. Optional parameter to filter RF profiles by device model. All returned devices will have a model that contains the search term or is an exact match.
           
 
@@ -1143,8 +1134,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 
       Models query parameter. Optional parameter to filter RF profiles by one or more device models. All returned devices will have a model that is an exact match.
           
@@ -1181,8 +1170,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       Name query parameter. Optional parameter to filter RF profiles by device name. All returned devices will have a name that contains the search term or is an exact match.
           
 
@@ -1218,8 +1205,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       NetworkIds query parameter. Optional parameter to filter devices by network.
 
 
@@ -1253,8 +1238,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1290,8 +1273,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1325,8 +1306,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 
       ProductTypes query parameter. Optional parameter to filter devices by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController, campusGateway, and secureConnect.
           
@@ -1363,8 +1342,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       Serial query parameter. Optional parameter to filter RF profiles by device serial number. All returned devices will have a serial number that contains the search term or is an exact match.
           
 
@@ -1400,8 +1377,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
-
       Serials query parameter. Optional parameter to filter RF profiles by one or more device serial numbers. All returned devices will have a serial number that is an exact match.
           
 
@@ -1436,8 +1411,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Rf Profiles Assignments By Device Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

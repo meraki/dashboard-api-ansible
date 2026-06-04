@@ -26,7 +26,7 @@
 
 .. Anchors
 
-.. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module:
+.. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -36,19 +36,19 @@
 
 .. Title
 
-cisco.meraki.organizations_nac_certificates_authorities_crls module -- Resource module for organizations \_nac \_certificates \_authorities \_crls
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_appliance_uplinks_nat_by_network_info module -- Information module for organizations \_appliance \_uplinks \_nat \_by \_network
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
-    see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module_requirements>` for details.
+    see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module_requirements>` for details.
 
-    To use it in a playbook, specify: :code:`cisco.meraki.organizations_nac_certificates_authorities_crls`.
+    To use it in a playbook, specify: :code:`cisco.meraki.organizations_appliance_uplinks_nat_by_network_info`.
 
 .. version_added
 
@@ -68,8 +68,8 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource organizations \_nac \_certificates \_authorities \_crls.
-- Create a new CRL either base or delta for an existing CA.
+- Get all organizations \_appliance \_uplinks \_nat \_by \_network.
+- Fetch uplink NAT settings of each network in the organization.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -79,7 +79,7 @@ Synopsis
 
 .. Requirements
 
-.. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module_requirements:
+.. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module_requirements:
 
 Requirements
 ------------
@@ -111,17 +111,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-caId"></div>
+        <div class="ansibleOptionAnchor" id="parameter-direction"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-caid:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-direction:
 
       .. rst-class:: ansible-option-title
 
-      **caId**
+      **direction**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-caId" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-direction" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -135,83 +135,114 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ID of the CRL issuer.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-content"></div>
-
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-content:
-
-      .. rst-class:: ansible-option-title
-
-      **content**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-content" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      CRL content in PEM format.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-isDelta"></div>
-
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-isdelta:
-
-      .. rst-class:: ansible-option-title
-
-      **isDelta**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-isDelta" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Whether it's a delta CRL or not.
+      direction (string), direction to paginate, either "next" (default) or "prev" page
 
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-choices:`Choices:`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
 
-      - :ansible-option-choices-entry:`false`
-      - :ansible-option-choices-entry:`true`
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-endingBefore"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-endingbefore:
+
+      .. rst-class:: ansible-option-title
+
+      **endingBefore**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-endingBefore" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-headers"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-headers:
+
+      .. rst-class:: ansible-option-title
+
+      **headers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-headers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Additional headers.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-interfaces:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaces**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Interfaces query parameter. Optional parameter to filter the results by the included set of interfaces.
 
 
       .. raw:: html
@@ -223,7 +254,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_action_batch_retry_wait_time:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_action_batch_retry_wait_time:
 
       .. rst-class:: ansible-option-title
 
@@ -261,7 +292,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_api_key:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_api_key:
 
       .. rst-class:: ansible-option-title
 
@@ -295,7 +326,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_base_url:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_base_url:
 
       .. rst-class:: ansible-option-title
 
@@ -333,7 +364,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_be_geo_id:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_be_geo_id:
 
       .. rst-class:: ansible-option-title
 
@@ -371,7 +402,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_certificate_path:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_certificate_path:
 
       .. rst-class:: ansible-option-title
 
@@ -409,7 +440,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_inherit_logging_config:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_inherit_logging_config:
 
       .. rst-class:: ansible-option-title
 
@@ -451,7 +482,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_log_file_prefix:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_log_file_prefix:
 
       .. rst-class:: ansible-option-title
 
@@ -489,7 +520,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_log_path:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_log_path:
 
       .. rst-class:: ansible-option-title
 
@@ -527,7 +558,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_maximum_retries:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_maximum_retries:
 
       .. rst-class:: ansible-option-title
 
@@ -565,7 +596,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_nginx_429_retry_wait_time:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_nginx_429_retry_wait_time:
 
       .. rst-class:: ansible-option-title
 
@@ -603,7 +634,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_output_log:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_output_log:
 
       .. rst-class:: ansible-option-title
 
@@ -645,7 +676,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_print_console:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_print_console:
 
       .. rst-class:: ansible-option-title
 
@@ -687,7 +718,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_requests_proxy:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_requests_proxy:
 
       .. rst-class:: ansible-option-title
 
@@ -725,7 +756,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_retry_4xx_error:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_retry_4xx_error:
 
       .. rst-class:: ansible-option-title
 
@@ -767,7 +798,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_retry_4xx_error_wait_time:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_retry_4xx_error_wait_time:
 
       .. rst-class:: ansible-option-title
 
@@ -805,7 +836,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_simulate:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_simulate:
 
       .. rst-class:: ansible-option-title
 
@@ -847,7 +878,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_single_request_timeout:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_single_request_timeout:
 
       .. rst-class:: ansible-option-title
 
@@ -885,7 +916,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_suppress_logging:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_suppress_logging:
 
       .. rst-class:: ansible-option-title
 
@@ -927,7 +958,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_use_iterator_for_get_pages:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_use_iterator_for_get_pages:
 
       .. rst-class:: ansible-option-title
 
@@ -969,7 +1000,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-meraki_wait_on_rate_limit:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-meraki_wait_on_rate_limit:
 
       .. rst-class:: ansible-option-title
 
@@ -1009,9 +1040,43 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-networkIds"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-networkids:
+
+      .. rst-class:: ansible-option-title
+
+      **networkIds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-networkIds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      NetworkIds query parameter. Optional parameter to filter the results by the included set of network IDs.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-organizationId"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__parameter-organizationid:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-organizationid:
 
       .. rst-class:: ansible-option-title
 
@@ -1040,6 +1105,109 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-perPage"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-perpage:
+
+      .. rst-class:: ansible-option-title
+
+      **perPage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-perPage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-startingAfter"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-startingafter:
+
+      .. rst-class:: ansible-option-title
+
+      **startingAfter**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-startingAfter" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
+          
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-total_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__parameter-total_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **total_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-total_pages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      total\_pages(int), use with perPage to get total results up to total\_pages\*perPage; -1 for all pages
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -1050,12 +1218,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are nac.Nac.create\_organization\_nac\_certificates\_authorities\_crl,
-   - Paths used are post /organizations/{organizationId}/nac/certificates/authorities/crls,
-   - Does not support \ :literal:`check\_mode`\ 
-   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
-   - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - SDK Method used are appliance.Appliance.get\_organization\_appliance\_uplinks\_nat\_by\_network,
+   - Paths used are get /organizations/{organizationId}/appliance/uplinks/nat/byNetwork,
+   - Supports \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
+   - The parameters starting with meraki\_ are used by the Cisco meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -1064,8 +1231,8 @@ See Also
 
 .. seealso::
 
-   `Cisco Meraki documentation for nac createOrganizationNacCertificatesAuthoritiesCrl <https://developer.cisco.com/meraki/api-v1/#!create-organization-nac-certificates-authorities-crl>`_
-       Complete reference of the createOrganizationNacCertificatesAuthoritiesCrl API.
+   `Cisco Meraki documentation for appliance getOrganizationApplianceUplinksNatByNetwork <https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-uplinks-nat-by-network>`_
+       Complete reference of the getOrganizationApplianceUplinksNatByNetwork API.
 
 .. Examples
 
@@ -1075,8 +1242,8 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Create
-      cisco.meraki.organizations_nac_certificates_authorities_crls:
+    - name: Get all organizations _appliance _uplinks _nat _by _network
+      cisco.meraki.organizations_appliance_uplinks_nat_by_network_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
         meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -1098,11 +1265,15 @@ Examples
         meraki_caller: "{{ meraki_caller }}"
         meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-        caId: '12345'
-        content: '-----BEGIN X509 CRL----- MIIDFDCCAfwCAQEwDQYJKoZIhvcNAQEFBQAwXzEjMCEGA1UEChMaU2FtcGxlIFNpZ25lciBPcmdhbml6YXRpb24xGzAZBgNVBAsTElNhbXBsZS...
-          -----END X509 CRL-----'
-        isDelta: false
+        networkIds: []
+        interfaces: []
+        perPage: 0
+        startingAfter: string
+        endingBefore: string
         organizationId: string
+        total_pages: -1
+        direction: next
+      register: result
 
 
 
@@ -1131,7 +1302,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
 
-      .. _ansible_collections.cisco.meraki.organizations_nac_certificates_authorities_crls_module__return-meraki_response:
+      .. _ansible_collections.cisco.meraki.organizations_appliance_uplinks_nat_by_network_info_module__return-meraki_response:
 
       .. rst-class:: ansible-option-title
 
@@ -1143,7 +1314,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1163,7 +1334,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"caId": "string", "createdAt": "string", "crlId": "string", "data": [{"reason": "string", "revocationDate": "string", "serial": "string"}], "isDelta": true, "lastUpdatedAt": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"networkId\\": \\"string\\",\\n    \\"uplinks\\": [\\n      {\\n        \\"interface\\": \\"string\\",\\n        \\"nat\\": {\\n          \\"enabled\\": true\\n        }\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

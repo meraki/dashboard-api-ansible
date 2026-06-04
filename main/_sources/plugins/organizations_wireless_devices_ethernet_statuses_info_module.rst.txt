@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_devices_ethernet_statuses_info module -- Inf
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,10 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Devices Ethernet Statuses Info.
-- Get all organizations \_wireless \_devices \_ethernet \_statuses.
-- List the most recent Ethernet link speed, duplex, aggregation and power mode and status information for wireless devices.
-
+- Get all organizations \_wireless \_devices \_ethernet \_statuses. - \> List the most recent Ethernet link speed, duplex, aggregation and power mode and status information for wireless devices.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -174,8 +171,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Ethernet Statuses Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1034,8 +1029,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Devices Ethernet Statuses Info.
-
       NetworkIds query parameter. A list of Meraki network IDs to filter results to contain only specified networks. E.g. NetworkIds=N\_12345678&networkIds=L\_3456.
           
 
@@ -1071,8 +1064,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Devices Ethernet Statuses Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1107,8 +1098,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Devices Ethernet Statuses Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
 
 
@@ -1142,8 +1131,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Devices Ethernet Statuses Info.
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           

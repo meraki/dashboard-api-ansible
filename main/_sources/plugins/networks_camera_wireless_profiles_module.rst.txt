@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_camera_wireless_profiles module -- Resource module for networks \_camera \_wirelessprofiles
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_camera_wireless_profiles module -- Resource module for networks \_camera \_wireless \_profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_camera \_wirelessprofiles.
+- Manage operations create, update and delete of the resource networks \_camera \_wireless \_profiles.
 - Creates a new camera wireless profile for this network.
 - Delete an existing camera wireless profile for this network.
 - Update an existing camera wireless profile in this network.

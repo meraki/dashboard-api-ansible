@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_wireless_alternate_management_interface module -- Resource module for networks \_wireless \_alternatemanagementinterface
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_wireless_alternate_management_interface module -- Resource module for networks \_wireless \_alternate \_management \_interface
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_wireless \_alternatemanagementinterface.
+- Manage operation update of the resource networks \_wireless \_alternate \_management \_interface.
 - Update alternate management interface and device static IP.
 
 .. note::

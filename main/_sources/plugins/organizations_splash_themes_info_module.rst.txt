@@ -42,7 +42,7 @@ cisco.meraki.organizations_splash_themes_info module -- Information module for o
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Splash Themes Info.
 - Get all organizations \_splash \_themes.
 - List Splash Themes.
 
@@ -958,8 +957,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Splash Themes Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1086,7 +1083,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"themeAssets\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"isSystemTheme\\": true,\\n    \\"themeAssets\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

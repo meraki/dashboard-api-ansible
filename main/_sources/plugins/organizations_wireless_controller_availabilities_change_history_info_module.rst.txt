@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_controller_availabilities_change_history_inf
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,10 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Wireless Controller Availabilities Change History Info.
-- Get all organizations \_wireless \_controller \_availabilities \_change \_history.
-- List connectivity data of wireless LAN controllers in an organization. If it is HA setup, then only returns active WLC data start from switchover.
-
+- Get all organizations \_wireless \_controller \_availabilities \_change \_history. - \> List connectivity data of wireless LAN controllers in an organization. If it is HA setup, then only returns active WLC data start from switchover.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -174,8 +171,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
@@ -1034,8 +1029,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1070,8 +1063,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
-
       PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
 
 
@@ -1105,8 +1096,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
 
       Serials query parameter. Optional parameter to filter wireless LAN controller by its cloud ID. This filter uses multiple exact matches.
           
@@ -1143,8 +1132,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
-
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
           
 
@@ -1180,8 +1167,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
-
       T0 query parameter. The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
 
 
@@ -1216,8 +1201,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
-
       T1 query parameter. The end of the timespan for the data. T1 can be a maximum of 31 days after t0.
 
 
@@ -1251,8 +1234,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Wireless Controller Availabilities Change History Info.
 
       Timespan query parameter. The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
           

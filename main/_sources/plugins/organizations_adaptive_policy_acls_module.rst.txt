@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_adaptive_policy_acls module -- Resource module for organizations \_adaptivepolicy \_acls
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_adaptive_policy_acls module -- Resource module for organizations \_adaptive \_policy \_acls
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource organizations \_adaptivepolicy \_acls.
+- Manage operations create, update and delete of the resource organizations \_adaptive \_policy \_acls.
 - Creates new adaptive policy ACL.
 - Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.
 - Updates an adaptive policy ACL.
@@ -1307,7 +1307,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      If enabled, means TCP connection with this node must be established.
+      If enabled, means TCP connection with this node must be established. Can only be enabled when policy protocol is 'allow tcp'.
 
 
       .. rst-class:: ansible-option-line

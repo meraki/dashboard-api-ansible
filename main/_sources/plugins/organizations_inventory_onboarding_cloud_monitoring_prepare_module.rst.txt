@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_prepare module -- Resource module for organizations \_inventory \_onboarding \_cloudmonitoring \_prepare
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_inventory_onboarding_cloud_monitoring_prepare module -- Resource module for organizations \_inventory \_onboarding \_cloud \_monitoring \_prepare
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource organizations \_inventory \_onboarding \_cloudmonitoring \_prepare.
-- Initiates or updates an import session. An import ID will be generated and used when you are ready to commit the import.
-
+- Manage operation create of the resource organizations \_inventory \_onboarding \_cloud \_monitoring \_prepare. - \> Initiates or updates an import session. An import ID will be generated and used when you are ready to commit the import.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

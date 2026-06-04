@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_appliance_traffic_shaping_uplink_selection module -- Resource module for networks \_appliance \_trafficshaping \_uplinkselection
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_appliance_traffic_shaping_uplink_selection module -- Resource module for networks \_appliance \_traffic \_shaping \_uplink \_selection
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource networks \_appliance \_trafficshaping \_uplinkselection.
+- Manage operation update of the resource networks \_appliance \_traffic \_shaping \_uplink \_selection.
 - Update uplink selection settings for an MX network.
 
 .. note::
@@ -1392,7 +1392,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Preferred uplink for this uplink preference rule. Must be one of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink', or any other valid uplink(wanX) if it applies to the network.
+      Preferred uplink for this uplink preference rule. Must be one of 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing', 'defaultUplink' or 'cellular', or any other valid uplink(wanX) if it applies to the network.
 
 
       .. raw:: html

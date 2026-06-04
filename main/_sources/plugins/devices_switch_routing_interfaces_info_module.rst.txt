@@ -42,7 +42,7 @@ cisco.meraki.devices_switch_routing_interfaces_info module -- Information module
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Devices Switch Routing Interfaces Info.
 - Get all devices \_switch \_routing \_interfaces.
 - Get devices \_switch \_routing \_interfaces by id.
 - List layer 3 interfaces for a switch. Those for a stack may be found under switch stack routing.
@@ -171,8 +170,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Devices Switch Routing Interfaces Info.
 
       InterfaceId path parameter. Interface ID.
 
@@ -996,8 +993,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Devices Switch Routing Interfaces Info.
-
       Mode query parameter. Optional parameter to filter L3 interfaces by mode.
 
 
@@ -1032,8 +1027,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Devices Switch Routing Interfaces Info.
-
       Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
 
 
@@ -1067,8 +1060,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Devices Switch Routing Interfaces Info.
 
       Serial path parameter.
 

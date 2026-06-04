@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.networks_switch_stacks_routing_static_routes module -- Resource module for networks \_switch \_stacks \_routing \_staticroutes
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.networks_switch_stacks_routing_static_routes module -- Resource module for networks \_switch \_stacks \_routing \_static \_routes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_switch \_stacks \_routing \_staticroutes.
+- Manage operations create, update and delete of the resource networks \_switch \_stacks \_routing \_static \_routes.
 - Create a layer 3 static route for a switch stack.
 - Delete a layer 3 static route for a switch stack.
 - Update a layer 3 static route for a switch stack.

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_config_templates_switch_profiles_ports_info module -- Information module for organizations \_configtemplates \_switch \_profiles \_ports
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_config_templates_switch_profiles_ports_info module -- Information module for organizations \_config \_templates \_switch \_profiles \_ports
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,8 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Configtemplates Switch Profiles Ports Info.
-- Get all organizations \_configtemplates \_switch \_profiles \_ports.
-- Get organizations \_configtemplates \_switch \_profiles \_ports by id.
+- Get all organizations \_config \_templates \_switch \_profiles \_ports.
+- Get organizations \_config \_templates \_switch \_profiles \_ports by id.
 - Return a switch template port.
 - Return all the ports of a switch template.
 
@@ -137,8 +136,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Configtemplates Switch Profiles Ports Info.
 
       ConfigTemplateId path parameter. Config template ID.
 
@@ -996,8 +993,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Configtemplates Switch Profiles Ports Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1032,8 +1027,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Configtemplates Switch Profiles Ports Info.
-
       PortId path parameter. Port ID.
 
 
@@ -1067,8 +1060,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Configtemplates Switch Profiles Ports Info.
 
       ProfileId path parameter. Profile ID.
 
@@ -1113,7 +1104,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _configtemplates _switch _profiles _ports
+    - name: Get all organizations _config _templates _switch _profiles _ports
       cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
@@ -1140,7 +1131,7 @@ Examples
         configTemplateId: string
         profileId: string
       register: result
-    - name: Get organizations _configtemplates _switch _profiles _ports by id
+    - name: Get organizations _config _templates _switch _profiles _ports by id
       cisco.meraki.organizations_config_templates_switch_profiles_ports_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

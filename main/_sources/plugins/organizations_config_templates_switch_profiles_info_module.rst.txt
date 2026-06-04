@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.meraki.organizations_config_templates_switch_profiles_info module -- Information module for organizations \_configtemplates \_switch \_profiles
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.meraki.organizations_config_templates_switch_profiles_info module -- Information module for organizations \_config \_templates \_switch \_profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,7 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Configtemplates Switch Profiles Info.
-- Get all organizations \_configtemplates \_switch \_profiles.
+- Get all organizations \_config \_templates \_switch \_profiles.
 - List the switch templates for your switch template configuration.
 
 .. note::
@@ -135,8 +134,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Configtemplates Switch Profiles Info.
 
       ConfigTemplateId path parameter. Config template ID.
 
@@ -994,8 +991,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Configtemplates Switch Profiles Info.
-
       OrganizationId path parameter. Organization ID.
 
 
@@ -1037,7 +1032,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all organizations _configtemplates _switch _profiles
+    - name: Get all organizations _config _templates _switch _profiles
       cisco.meraki.organizations_config_templates_switch_profiles_info:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"

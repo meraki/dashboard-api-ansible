@@ -42,7 +42,7 @@ cisco.meraki.organizations_assurance_alerts_overview_historical_info module -- I
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Assurance Alerts Overview Historical Info.
 - Get all organizations \_assurance \_alerts \_overview \_historical.
 - Returns historical health alert overviews.
 
@@ -136,8 +135,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Assurance Alerts Overview Historical Info.
-
       Category query parameter. Optional parameter to filter by category.
 
 
@@ -171,8 +168,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Assurance Alerts Overview Historical Info.
 
       DeviceTypes query parameter. Optional parameter to filter by device types.
 
@@ -1030,8 +1025,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Assurance Alerts Overview Historical Info.
-
       NetworkId query parameter. Optional parameter to filter alerts overview by network ids.
 
 
@@ -1065,8 +1058,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Assurance Alerts Overview Historical Info.
 
       OrganizationId path parameter. Organization ID.
 
@@ -1102,8 +1093,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Assurance Alerts Overview Historical Info.
-
       SegmentDuration query parameter. Amount of time in seconds for each segment in the returned dataset.
 
 
@@ -1137,8 +1126,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Assurance Alerts Overview Historical Info.
 
       Serials query parameter. Optional parameter to filter by primary device serial.
 
@@ -1174,8 +1161,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Assurance Alerts Overview Historical Info.
-
       Severity query parameter. Optional parameter to filter alerts overview by severity type.
 
 
@@ -1209,8 +1194,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Assurance Alerts Overview Historical Info.
 
       TsEnd query parameter. Optional parameter to filter by end timestamp defaults to the current time.
 
@@ -1246,8 +1229,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Assurance Alerts Overview Historical Info.
-
       TsStart query parameter. Parameter to define starting timestamp of historical totals.
 
 
@@ -1281,8 +1262,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Assurance Alerts Overview Historical Info.
 
       Types query parameter. Optional parameter to filter by alert type.
 

@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_info module -- Informatio
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Networks Switch Stacks Routing Interfaces Info.
 - Get all networks \_switch \_stacks \_routing \_interfaces.
 - Get networks \_switch \_stacks \_routing \_interfaces by id.
 - List layer 3 interfaces for a switch stack.
@@ -171,8 +170,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Networks Switch Stacks Routing Interfaces Info.
 
       InterfaceId path parameter. Interface ID.
 
@@ -996,8 +993,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Networks Switch Stacks Routing Interfaces Info.
-
       Mode query parameter. Optional parameter to filter L3 interfaces by mode.
 
 
@@ -1031,8 +1026,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Networks Switch Stacks Routing Interfaces Info.
 
       NetworkId path parameter. Network ID.
 
@@ -1068,8 +1061,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Networks Switch Stacks Routing Interfaces Info.
-
       Protocol query parameter. Optional parameter to filter L3 interfaces by protocol.
 
 
@@ -1103,8 +1094,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Networks Switch Stacks Routing Interfaces Info.
 
       SwitchStackId path parameter. Switch stack ID.
 

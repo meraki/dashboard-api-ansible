@@ -42,7 +42,7 @@ cisco.meraki.organizations_appliance_uplinks_statuses_overview_info module -- In
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,6 @@ Synopsis
 
 .. Description
 
-- Information module for Organizations Appliance Uplinks Statuses Overview Info.
 - Get all organizations \_appliance \_uplinks \_statuses \_overview.
 - Returns an overview of uplink statuses.
 
@@ -958,8 +957,6 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Information module for Organizations Appliance Uplinks Statuses Overview Info.
-
       NetworkIds query parameter. A list of network IDs. The returned devices will be filtered to only include these networks.
           
 
@@ -994,8 +991,6 @@ Parameters
     - .. raw:: html
 
         <div class="ansible-option-cell">
-
-      Information module for Organizations Appliance Uplinks Statuses Overview Info.
 
       OrganizationId path parameter. Organization ID.
 

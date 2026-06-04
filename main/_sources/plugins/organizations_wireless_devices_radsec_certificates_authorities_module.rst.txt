@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities modu
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.23.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,11 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operations create and update of the resource organizations \_wireless \_devices \_radsec \_certificates \_authorities.
-- Create an organization's RADSEC device Certificate Authority CA. Call this endpoint when turning on RADSEC in the firmware for the first time. Calling this endpoint starts an asynchronous process to generate the CA; call GET afterwards to retrieve the contents of the CA. Note this CA is generated and controlled by Meraki. Subsequent calls will not generate a new CA.
-
-- Update an organization's RADSEC device Certificate Authority CA state. Note this CA is generated and controlled by Meraki. Call this endpoint to update the state to "trusted", at which point Meraki will generate device certificates. "trusted" means the CA is placed on your RADSEC servers and devices establishing a secure connection using certs signed by this CA will pass verification.
-
+- Manage operations create and update of the resource organizations \_wireless \_devices \_radsec \_certificates \_authorities. - \> Create an organization's RADSEC device Certificate Authority CA. Call this endpoint when turning on RADSEC in the firmware for the first time. Calling this endpoint starts an asynchronous process to generate the CA; call GET afterwards to retrieve the contents of the CA. Note this CA is generated and controlled by Meraki. Subsequent calls will not generate a new CA. - \> Update an organization's RADSEC device Certificate Authority CA state. Note this CA is generated and controlled by Meraki. Call this endpoint to update the state to "trusted", at which point Meraki will generate device certificates. "trusted" means the CA is placed on your RADSEC servers and devices establishing a secure connection using certs signed by this CA will pass verification.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
