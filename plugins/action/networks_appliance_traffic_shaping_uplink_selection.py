@@ -158,7 +158,7 @@ class NetworksApplianceTrafficShapingUplinkSelection(object):
             ("loadBalancingEnabled", "loadBalancingEnabled"),
             ("failoverAndFailback", "failoverAndFailback"),
             ("wanTrafficUplinkPreferences", "wanTrafficUplinkPreferences"),
-            ("vpnTrafficUplinkPreferences", "vpnTrafficUplinkPreferences"),        ]
+            ("vpnTrafficUplinkPreferences", "vpnTrafficUplinkPreferences"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

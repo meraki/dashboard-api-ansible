@@ -214,7 +214,7 @@ class OrganizationsPolicyObjectsGroups(object):
         obj_params = [
             ("name", "name"),
             ("category", "category"),
-            ("objectIds", "objectIds"),            ("policyObjectGroupId", "policyObjectGroupId"),
+            ("objectIds", "objectIds"), ("policyObjectGroupId", "policyObjectGroupId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

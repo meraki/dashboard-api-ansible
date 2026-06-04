@@ -227,7 +227,7 @@ class NetworksWebhooksPayloadTemplates(object):
             ("body", "body"),
             ("headers", "headers"),
             ("bodyFile", "bodyFile"),
-            ("headersFile", "headersFile"),            ("payloadTemplateId", "payloadTemplateId"),
+            ("headersFile", "headersFile"), ("payloadTemplateId", "payloadTemplateId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

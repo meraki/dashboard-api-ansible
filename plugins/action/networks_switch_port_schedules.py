@@ -181,7 +181,7 @@ class NetworksSwitchPortSchedules(object):
 
         obj_params = [
             ("name", "name"),
-            ("portSchedule", "portSchedule"),            ("portScheduleId", "portScheduleId"),
+            ("portSchedule", "portSchedule"), ("portScheduleId", "portScheduleId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

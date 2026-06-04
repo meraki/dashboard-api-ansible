@@ -157,7 +157,7 @@ class OrganizationsCameraRoles(object):
             ("name", "name"),
             ("appliedOnDevices", "appliedOnDevices"),
             ("appliedOnNetworks", "appliedOnNetworks"),
-            ("appliedOrgWide", "appliedOrgWide"),        ]
+            ("appliedOrgWide", "appliedOrgWide"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(

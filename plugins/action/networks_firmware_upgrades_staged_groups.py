@@ -214,7 +214,7 @@ class NetworksFirmwareUpgradesStagedGroups(object):
             ("name", "name"),
             ("description", "description"),
             ("isDefault", "isDefault"),
-            ("assignedDevices", "assignedDevices"),            ("groupId", "groupId"),
+            ("assignedDevices", "assignedDevices"), ("groupId", "groupId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

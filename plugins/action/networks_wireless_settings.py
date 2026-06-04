@@ -172,7 +172,7 @@ class NetworksWirelessSettings(object):
             ("upgrade", "upgrade"),
             ("ledLightsOn", "ledLightsOn"),
             ("multicastToUnicastConversion", "multicastToUnicastConversion"),
-            ("namedVlans", "namedVlans"),        ]
+            ("namedVlans", "namedVlans"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

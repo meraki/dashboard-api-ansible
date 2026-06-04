@@ -194,7 +194,7 @@ def meraki_compare_equality2(current_value, requested_value):
             return True
         # Tolerate string/int mismatches: Meraki API often returns port numbers
         # and similar numeric fields as strings even when sent as integers.
-        if type(current_value) != type(requested_value):
+        if not isinstance(current_value, type(requested_value)) or not isinstance(requested_value, type(current_value)):
             return str(current_value) == str(requested_value)
         return False
 

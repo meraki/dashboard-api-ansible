@@ -175,7 +175,7 @@ class NetworksSwitchStacks(object):
 
         obj_params = [
             ("name", "name"),
-            ("serials", "serials"),            ("switchStackId", "switchStackId"),
+            ("serials", "serials"), ("switchStackId", "switchStackId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

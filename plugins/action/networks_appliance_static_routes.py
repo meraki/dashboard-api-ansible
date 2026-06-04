@@ -233,7 +233,7 @@ class NetworksApplianceStaticRoutes(object):
             ("name", "name"),
             ("subnet", "subnet"),
             ("gatewayIp", "gatewayIp"),
-            ("gatewayVlanId", "gatewayVlanId"),            ("staticRouteId", "staticRouteId"),
+            ("gatewayVlanId", "gatewayVlanId"), ("staticRouteId", "staticRouteId"),
             ("enabled", "enabled"),
             ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),

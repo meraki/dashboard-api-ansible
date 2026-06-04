@@ -133,7 +133,7 @@ class NetworksClientsSplashAuthorizationStatus(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("ssids", "ssids"),            ("clientId", "clientId"),
+            ("ssids", "ssids"), ("clientId", "clientId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -266,7 +266,7 @@ class NetworksSwitchStacksRoutingStaticRoutes(object):
             ("nextHopIp", "nextHopIp"),
             ("advertiseViaOspfEnabled", "advertiseViaOspfEnabled"),
             ("preferOverOspfRoutesEnabled", "preferOverOspfRoutesEnabled"),
-            ("vrf", "vrf"),            ("switchStackId", "switchStackId"),
+            ("vrf", "vrf"), ("switchStackId", "switchStackId"),
             ("staticRouteId", "staticRouteId"),
             ("managementNextHop", "managementNextHop"),
         ]

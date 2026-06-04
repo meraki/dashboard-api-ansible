@@ -151,7 +151,7 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
             ("hubs", "hubs"),
             ("subnets", "subnets"),
             ("subnet", "subnet"),
-            ("hostTranslations", "hostTranslations"),        ]
+            ("hostTranslations", "hostTranslations"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

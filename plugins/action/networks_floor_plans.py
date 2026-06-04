@@ -260,7 +260,7 @@ class NetworksFloorPlans(object):
             ("topLeftCorner", "topLeftCorner"),
             ("topRightCorner", "topRightCorner"),
             ("floorNumber", "floorNumber"),
-            ("imageContents", "imageContents"),            ("floorPlanId", "floorPlanId"),
+            ("imageContents", "imageContents"), ("floorPlanId", "floorPlanId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

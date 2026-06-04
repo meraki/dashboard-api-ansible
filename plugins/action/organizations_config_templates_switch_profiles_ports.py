@@ -364,7 +364,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             ("daiTrusted", "daiTrusted"),
             ("profile", "profile"),
             ("dot3az", "dot3az"),
-            ("highSpeed", "highSpeed"),            ("profileId", "profileId"),
+            ("highSpeed", "highSpeed"), ("profileId", "profileId"),
             ("portId", "portId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

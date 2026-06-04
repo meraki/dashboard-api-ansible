@@ -143,7 +143,7 @@ class NetworksSwitchAlternateManagementInterface(object):
             ("enabled", "enabled"),
             ("vlanId", "vlanId"),
             ("protocols", "protocols"),
-            ("switches", "switches"),        ]
+            ("switches", "switches"),]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

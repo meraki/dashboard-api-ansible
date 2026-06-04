@@ -390,7 +390,7 @@ class NetworksApplianceVlans(object):
             ("dhcpBootNextServer", "dhcpBootNextServer"),
             ("dhcpBootFilename", "dhcpBootFilename"),
             ("dhcpOptions", "dhcpOptions"),
-            ("uplinks", "uplinks"),            ("vlanId", "vlanId"),
+            ("uplinks", "uplinks"), ("vlanId", "vlanId"),
             ("vpnNatSubnet", "vpnNatSubnet"),
             ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),

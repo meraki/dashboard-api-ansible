@@ -145,7 +145,7 @@ class NetworksWirelessSsidsBonjourForwarding(object):
         obj_params = [
             ("enabled", "enabled"),
             ("rules", "rules"),
-            ("exception", "exception"),            ("number", "number"),
+            ("exception", "exception"), ("number", "number"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

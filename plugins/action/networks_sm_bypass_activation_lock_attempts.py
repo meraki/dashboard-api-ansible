@@ -131,7 +131,7 @@ class NetworksSmBypassActivationLockAttempts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("ids", "ids"),            ("attemptId", "attemptId"),
+            ("ids", "ids"), ("attemptId", "attemptId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

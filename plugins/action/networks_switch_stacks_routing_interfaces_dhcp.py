@@ -213,7 +213,7 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             ("bootFileName", "bootFileName"),
             ("dhcpOptions", "dhcpOptions"),
             ("reservedIpRanges", "reservedIpRanges"),
-            ("fixedIpAssignments", "fixedIpAssignments"),            ("switchStackId", "switchStackId"),
+            ("fixedIpAssignments", "fixedIpAssignments"), ("switchStackId", "switchStackId"),
             ("interfaceId", "interfaceId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
