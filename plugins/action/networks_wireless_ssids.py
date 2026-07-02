@@ -393,20 +393,28 @@ class NetworksWirelessSsids(object):
                 'bandSelection') or self.new_object.get('band_selection')
         if self.new_object.get('perClientBandwidthLimitUp') is not None or self.new_object.get(
                 'per_client_bandwidth_limit_up') is not None:
-            new_object_params['perClientBandwidthLimitUp'] = self.new_object.get(
-                'perClientBandwidthLimitUp') or self.new_object.get('per_client_bandwidth_limit_up')
+            if (per_client_bandwidth_limit_up := self.new_object.get('per_client_bandwidth_limit_up')):
+                new_object_params['perClientBandwidthLimitUp'] = per_client_bandwidth_limit_up
+            else:
+                new_object_params['perClientBandwidthLimitUp'] = self.new_object.get('perClientBandwidthLimitUp')
         if self.new_object.get('perClientBandwidthLimitDown') is not None or self.new_object.get(
                 'per_client_bandwidth_limit_down') is not None:
-            new_object_params['perClientBandwidthLimitDown'] = self.new_object.get(
-                'perClientBandwidthLimitDown') or self.new_object.get('per_client_bandwidth_limit_down')
+            if (per_client_bandwidth_limit_down := self.new_object.get('per_client_bandwidth_limit_down')):
+                new_object_params['perClientBandwidthLimitDown'] = per_client_bandwidth_limit_down
+            else:
+                new_object_params['perClientBandwidthLimitDown'] = self.new_object.get('perClientBandwidthLimitDown')
         if self.new_object.get('perSsidBandwidthLimitUp') is not None or self.new_object.get(
                 'per_ssid_bandwidth_limit_up') is not None:
-            new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get(
-                'perSsidBandwidthLimitUp') or self.new_object.get('per_ssid_bandwidth_limit_up')
+            if (per_ssid_bandwidth_limit_up := self.new_object.get('per_ssid_bandwidth_limit_up')):
+                new_object_params['perSsidBandwidthLimitUp'] = per_ssid_bandwidth_limit_up
+            else:
+                new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get('perSsidBandwidthLimitUp')
         if self.new_object.get('perSsidBandwidthLimitDown') is not None or self.new_object.get(
                 'per_ssid_bandwidth_limit_down') is not None:
-            new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get(
-                'perSsidBandwidthLimitDown') or self.new_object.get('per_ssid_bandwidth_limit_down')
+            if (per_ssid_bandwidth_limit_down := self.new_object.get('per_ssid_bandwidth_limit_down')):
+                new_object_params['perSsidBandwidthLimitDown'] = per_ssid_bandwidth_limit_down
+            else:
+                new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get('perSsidBandwidthLimitDown')
         if self.new_object.get('lanIsolationEnabled') is not None or self.new_object.get(
                 'lan_isolation_enabled') is not None:
             new_object_params['lanIsolationEnabled'] = self.new_object.get(
