@@ -1388,3 +1388,8 @@ releases:
         - "organizations_sase_sites_detach - Added new plugin to detach networks from SASE sites."
         - "organizations_sase_sites_info - Added new plugin to retrieve SASE site information."
     release_date: "2026-05-10"
+  2.24.1:
+    changes:
+      minor_changes:
+        - "Fixed problem with networks_wireless_ssids module."
+    release_date: "2026-07-09"
