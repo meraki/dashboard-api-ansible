@@ -1,0 +1,31 @@
+# Prueba de regresion para el bug en plugins/action/networks_wireless_ssids.py:
+# los limites de ancho de banda en 0 significan "sin limite", pero el codigo
+# anterior trataba 0 como valor ausente y lo reemplazaba por None.
+#
+# Uso:
+#   ansible-playbook -i hosts test_networks_wireless_ssids_zero_bandwidth.yml \
+#     -e network_id=L_XXXXXXXXXXXXXXXXXX -e ssid_number=0
+- name: Prueba - limites de ancho de banda en 0
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - credentials.yml
+  vars:
+    ssid_number: 0
+  tasks:
+
+    - name: Poner los limites de ancho de banda en 0 (sin limite)
+      cisco.meraki.networks_wireless_ssids:
+        state: present
+        networkId: "L_828099381482771185"
+        number: 1
+        perClientBandwidthLimitUp: 0
+        perClientBandwidthLimitDown: 0
+        perSsidBandwidthLimitUp: 0
+        perSsidBandwidthLimitDown: 20
+      register: result
+
+    - name: Mostrar la respuesta de la API
+      ansible.builtin.debug:
+        var: result.meraki_response
+  
