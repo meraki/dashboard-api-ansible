@@ -159,7 +159,7 @@ This collection has been tested against the following environments:
 | 1.53.0                     | 2.20.8                 | 1.53.0              |
 | 1.57.0                     | 2.21.2                 | 1.57.0              |
 | 1.68.0                     | 2.23.0                 | 2.2.0               |
-| 1.69.0                     | 2.24.0                 | 3.0.0               |
+| 1.69.0                     | 2.24.1                 | 3.0.0               |
 
 *Notes*:
 

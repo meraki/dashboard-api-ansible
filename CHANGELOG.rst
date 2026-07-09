@@ -3,6 +3,13 @@ Cisco.Meraki Release Notes
 ==========================
 
 .. contents:: Topics
+v2.24.1
+=======
+
+Minor Changes
+-------------
+
+- Fixed problem with networks_wireless_ssids module.
 
 v2.24.0
 =======
