@@ -28,4 +28,3 @@
     - name: Mostrar la respuesta de la API
       ansible.builtin.debug:
         var: result.meraki_response
-  
