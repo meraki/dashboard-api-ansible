@@ -255,8 +255,11 @@ def meraki_argument_spec():
 
 
 class MERAKI(object):
+    _NO_LOG_PARAMS = frozenset(['meraki_api_key'])
+
     def __init__(self, params):
         self.result = dict(changed=False, result="")
+        self._params = params
         # self.validate_response_schema = params.get("validate_response_schema")
         if MERAKI_SDK_IS_INSTALLED:
             self.api = meraki.DashboardAPI(
@@ -373,6 +376,10 @@ class MERAKI(object):
         raise AnsibleActionFail(msg, kwargs)
 
     def exit_json(self):
+        module_args = {}
+        if self._params.get('serial'):
+            module_args['serial'] = self._params['serial']
+        self.result['invocation'] = {'module_args': module_args}
         return self.result
 
     def verify_array(self, verify_interface, **kwargs):
