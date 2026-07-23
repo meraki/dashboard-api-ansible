@@ -3,6 +3,15 @@ Cisco.Meraki Release Notes
 ==========================
 
 .. contents:: Topics
+
+v2.24.2
+=======
+
+Bugfixes
+--------
+
+- Invocation parameter added to the result.
+
 v2.24.1
 =======
 

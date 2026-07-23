@@ -1393,3 +1393,8 @@ releases:
       minor_changes:
         - "Fixed problem with networks_wireless_ssids module."
     release_date: "2026-07-09"
+  2.24.2:
+    changes:
+      bugfixes:
+        - "Invocation parameter added to the result."
+    release_date: "2026-07-23"
