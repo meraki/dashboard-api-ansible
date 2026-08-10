@@ -1423,8 +1423,10 @@ releases:
         - "networks_appliance_umbrella_protection - Added new plugin to manage Cisco Umbrella protection settings."
         - "networks_devices_syslog_servers - Added new plugin to update network device syslog server settings."
         - "organizations_appliance_devices_interfaces_l3_info - Added new plugin to retrieve layer 3 appliance interfaces across an organization."
-        - "organizations_appliance_devices_interfaces_ports_by_device_info - Added new plugin to retrieve appliance interface ports by device across an organization."
-        - "organizations_appliance_devices_ports_transceivers_readings_history_by_device_info - Added new plugin to retrieve appliance port transceiver reading history by device."
+        - "organizations_appliance_devices_interfaces_ports_by_device_info - Added new plugin to retrieve appliance interface ports by device across an
+          organization."
+        - "organizations_appliance_devices_ports_transceivers_readings_history_by_device_info - Added new plugin to retrieve appliance port transceiver reading
+          history by device."
         - "organizations_appliance_devices_redundancy_by_network_info - Added new plugin to retrieve appliance device redundancy status by network."
         - "organizations_appliance_interfaces_packets_overviews_by_device_info - Added new plugin to retrieve appliance interface packet overviews by device."
         - "organizations_appliance_routing_vrfs_settings - Added new plugin to manage appliance VRF routing settings."
@@ -1436,7 +1438,8 @@ releases:
         - "organizations_devices_cellular_data_profiles_assignments_info - Added new plugin to retrieve cellular data profile assignments."
         - "organizations_devices_cellular_data_profiles_info - Added new plugin to retrieve cellular data profiles."
         - "organizations_devices_cellular_data_usage_by_device_info - Added new plugin to retrieve current cellular data usage by device."
-        - "organizations_devices_cellular_data_usage_history_by_device_by_interval_info - Added new plugin to retrieve historical cellular data usage by device and interval."
+        - "organizations_devices_cellular_data_usage_history_by_device_by_interval_info - Added new plugin to retrieve historical cellular data usage by device
+          and interval."
         - "organizations_devices_cellular_geolocations_info - Added new plugin to retrieve the latest cellular geolocation for devices."
         - "organizations_devices_cellular_uplinks_bands_by_device_info - Added new plugin to retrieve cellular uplink bands by device."
         - "organizations_devices_cellular_uplinks_towers_by_device_info - Added new plugin to retrieve cellular uplink tower information by device."
@@ -1445,26 +1448,32 @@ releases:
         - "organizations_sase_integrations - Added new plugin to manage SASE integrations."
         - "organizations_sase_integrations_info - Added new plugin to retrieve SASE integrations."
         - "networks_wireless_ssids - Added support for the new `security` parameter, including WPA3 encryption settings (`akms` and `ciphers`)."
-        - "networks_wireless_ssids_info - Documented additional read-only SSID response fields, including `psk`, `dot11w`, `dot11r`, RADIUS server `id`/`radsecEnabled`, and the new `security` block."
-        - "networks_camera_quality_retention_profiles - Added quality and retention support for additional camera models (MV14, MV24, MV34, MV44X, MV54N, MV64, MV74, MV94) and documented the new `axisVideoQuality` response field."
+        - "networks_wireless_ssids_info - Documented additional read-only SSID response fields, including `psk`, `dot11w`, `dot11r`, RADIUS server
+          `id`/`radsecEnabled`, and the new `security` block."
+        - "networks_camera_quality_retention_profiles - Added quality and retention support for additional camera models (MV14, MV24, MV34, MV44X, MV54N, MV64,
+          MV74, MV94) and documented the new `axisVideoQuality` response field."
         - "networks_switch_stacks - Added support for the new `members` parameter to manage switch stack membership."
-        - "organizations_assurance_alerts_overview_by_type_info - Added the new `includeDeviceTags` and `includeNetworks` query parameters and documented the expanded alert overview response fields."
+        - "organizations_assurance_alerts_overview_by_type_info - Added the new `includeDeviceTags` and `includeNetworks` query parameters and documented the
+          expanded alert overview response fields."
         - "networks_snmp - Added support for the new `authentication` and `privacy` SNMPv3 parameters."
         - "networks_appliance_vlans - Added support for the new `sgt` (Security Group Tag) and `vrf` configuration options on VLANs."
         - "networks_appliance_ports - Added support for the new `sgt` (Security Group Tag) parameter."
         - "networks_wireless_ssids_splash_settings - Added support for the new `userConsent` parameter (consent message and required flag)."
         - "networks_appliance_prefixes_delegated_statics - Clarified that the `interfaces` suboption is required when the prefix origin type is `internet`."
-        - "networks_appliance_firewall_l7_firewall_rules - Documented the `rules.value` shape per rule type, including the new allowedCountries/blockedCountries values and their backward-compatible whitelistedCountries/blacklistedCountries aliases."
+        - "networks_appliance_firewall_l7_firewall_rules - Documented the `rules.value` shape per rule type, including the new allowedCountries/blockedCountries
+          values and their backward-compatible whitelistedCountries/blacklistedCountries aliases."
         - "organizations_policy_objects - Documented that the `ipAndMask` policy object type is deprecated in favor of `cidr`."
         - "networks_switch_stacks_routing_interfaces - Added support for the new `mtu` parameter on switch stack routing interfaces."
-        - "organizations_api_rest_provisioning_pipelines_jobs_overviews_by_pipeline_info - Documented the new `byJobOperation` breakdown in the pipeline jobs overview response."
+        - "organizations_api_rest_provisioning_pipelines_jobs_overviews_by_pipeline_info - Documented the new `byJobOperation` breakdown in the pipeline jobs
+          overview response."
         - "devices_switch_routing_interfaces - Added support for the new `mtu` parameter on switch routing interfaces."
         - "networks_appliance_vpn_site_to_site_vpn - Added support for the new `sgt` (Security Group Tag) parameter for site-to-site VPN peers."
         - "organizations_login_security - Added support for the new `enforceLockedIpSessions` parameter."
         - "networks_switch_settings - Added support for the new `portChannelFallback` parameter."
         - "networks_wireless_rf_profiles - Added support for the new 320 MHz channel width option on the 6 GHz radio band."
         - "organizations - Added support for the new `privacy` parameter."
-        - "organizations_appliance_vpn_third_party_vpn_peers - Added the new umbrella_short_lived and secure IPsec policy presets, and documented the new BGP `receiveLimit` field."
+        - "organizations_appliance_vpn_third_party_vpn_peers - Added the new umbrella_short_lived and secure IPsec policy presets, and documented the new BGP
+          `receiveLimit` field."
         - "networks_appliance_vpn_bgp - Clarified that the `asNumber` setting is only configurable for Auto VPN BGP networks."
         - "organizations_inventory_orders_preview - Documented the new `resolution` field in the inventory order preview response."
         - "devices_camera_clip_info - Clarified the `imagerId` parameter documentation for multi-imager cameras."
@@ -1477,50 +1486,71 @@ releases:
         - "organizations_assurance_alerts_dismiss - Clarified that missing or inaccessible alert IDs return a 404."
         - "organizations_assurance_alerts_restore - Clarified that missing or inaccessible alert IDs return a 404."
       bugfixes:
-        - "organizations_sase_sites - Fixed a duplicate `siteId` keyword argument in the request object that caused a Python syntax error and prevented the plugin from loading."
-        - "organizations_cellular_gateway_esims_service_providers_accounts - Fixed a duplicate `accountId` keyword argument that caused a Python syntax error and prevented the plugin from loading, and removed the redundant `id` entry from the update-comparison logic."
+        - "organizations_sase_sites - Fixed a duplicate `siteId` keyword argument in the request object that caused a Python syntax error and prevented the
+          plugin from loading."
+        - "organizations_cellular_gateway_esims_service_providers_accounts - Fixed a duplicate `accountId` keyword argument that caused a Python syntax error
+          and prevented the plugin from loading, and removed the redundant `id` entry from the update-comparison logic."
         - "networks_wireless_ssids - Corrected \"RADSEC\" casing to \"RadSec\" throughout the RADIUS accounting/authentication and RadSec tunnel documentation."
         - "organizations_wireless_devices_radsec_certificates_authorities - Corrected \"RADSEC\" casing to \"RadSec\" in the module description."
-        - "organizations_switch_ports_by_switch_info - Corrected the RETURN type from `dict` to `list` to accurately reflect that the API returns one entry per switch."
-        - "networks_switch_stacks - Fixed `update()` so switch stack updates are now actually sent via updateNetworkSwitchStack instead of silently returning the unmodified previous object, and corrected a lowercase `switchstackid` key typo in `delete()`."
+        - "organizations_switch_ports_by_switch_info - Corrected the RETURN type from `dict` to `list` to accurately reflect that the API returns one entry per
+          switch."
+        - "networks_switch_stacks - Fixed `update()` so switch stack updates are now actually sent via updateNetworkSwitchStack instead of silently returning
+          the unmodified previous object, and corrected a lowercase `switchstackid` key typo in `delete()`."
         - "networks_appliance_vlans - Removed `vlanId` from the update-comparison logic since it is the path identifier, not a body field to compare."
         - "networks_appliance_firewall_one_to_one_nat_rules_info - Corrected the RETURN type from `dict` to `list`."
         - "networks_appliance_firewall_one_to_many_nat_rules_info - Corrected the RETURN type from `dict` to `list`."
-        - "networks_appliance_ports - Fixed the internal `portId` parameter key mapping (previously stored as `port_id`) and removed it from the update-comparison logic since it is a path identifier."
+        - "networks_appliance_ports - Fixed the internal `portId` parameter key mapping (previously stored as `port_id`) and removed it from the
+          update-comparison logic since it is a path identifier."
         - "networks_traffic_shaping_application_categories_info - Corrected the RETURN type from `dict` to `list`."
         - "networks_appliance_firewall_l3_firewall_rules_info - Corrected the RETURN type from `dict` to `list`."
         - "networks_appliance_firewall_cellular_firewall_rules_info - Corrected the RETURN type from `dict` to `list`."
-        - "networks_appliance_traffic_shaping_custom_performance_classes - Fixed the internal `customPerformanceClassId` key mapping and removed it from the update-comparison logic since it is a path identifier."
-        - "networks_switch_stacks_routing_interfaces - Removed `switchStackId` and `interfaceId` from the update-comparison logic since they are path identifiers, not body fields."
+        - "networks_appliance_traffic_shaping_custom_performance_classes - Fixed the internal `customPerformanceClassId` key mapping and removed it from the
+          update-comparison logic since it is a path identifier."
+        - "networks_switch_stacks_routing_interfaces - Removed `switchStackId` and `interfaceId` from the update-comparison logic since they are path
+          identifiers, not body fields."
         - "networks_appliance_firewall_l7_firewall_rules_info - Corrected the RETURN type from `dict` to `list`."
         - "devices_switch_routing_interfaces - Removed the erroneous `interfaceId` entry from the update-comparison logic."
         - "networks_appliance_content_filtering_categories_info - Corrected the RETURN type from `dict` to `list`."
         - "organizations_insight_monitored_media_servers - Removed `monitoredMediaServerId` from the update-comparison logic since it is a path identifier."
-        - "organizations_config_templates_switch_profiles_ports - Fixed the internal `configTemplateId`/`profileId`/`portId` key mapping and removed `profileId`/`portId` from the update-comparison logic."
+        - "organizations_config_templates_switch_profiles_ports - Fixed the internal `configTemplateId`/`profileId`/`portId` key mapping and removed
+          `profileId`/`portId` from the update-comparison logic."
         - "organizations - Removed `organizationId` from the update-comparison logic since it is a path identifier."
         - "networks_switch_link_aggregations - Removed `linkAggregationId` from the update-comparison logic since it is a path identifier."
-        - "devices_cellular_sims - Corrected the eSIM documentation, replacing the fixed reference to `sim3` with guidance to use the device's actual raw eSIM slot (e.g., sim2 or sim3)."
-        - "networks_switch_stacks_routing_interfaces_dhcp - Fixed the internal `switchStackId`/`interfaceId` key mapping and removed them from the update-comparison logic."
-        - "devices_live_tools_multicast_routing - Fixed the internal `multicastRoutingId` key mapping (previously stored as `multicast_routing_id`) and removed it from the update-comparison logic."
+        - "devices_cellular_sims - Corrected the eSIM documentation, replacing the fixed reference to `sim3` with guidance to use the device's actual raw eSIM
+          slot (e.g., sim2 or sim3)."
+        - "networks_switch_stacks_routing_interfaces_dhcp - Fixed the internal `switchStackId`/`interfaceId` key mapping and removed them from the
+          update-comparison logic."
+        - "devices_live_tools_multicast_routing - Fixed the internal `multicastRoutingId` key mapping (previously stored as `multicast_routing_id`) and removed
+          it from the update-comparison logic."
         - "organizations_webhooks_logs_info - Corrected the documented maximum lookback/timespan window from 90/31 days to the actual 30-day limit."
-        - "networks_appliance_static_routes - Corrected the `gatewayVlanId` argument type from `str` to `int`, and removed the path-identifier `staticRouteId` field from the update-comparison logic."
-        - "organizations_wireless_zigbee_door_locks - Fixed the internal `organizationId`/`doorLockId` key mapping and removed them from the update-comparison logic."
-        - "organizations_wireless_zigbee_disenrollments - Fixed the internal `organizationId`/`disenrollmentId` key mapping and removed them from the update-comparison logic."
+        - "networks_appliance_static_routes - Corrected the `gatewayVlanId` argument type from `str` to `int`, and removed the path-identifier `staticRouteId`
+          field from the update-comparison logic."
+        - "organizations_wireless_zigbee_door_locks - Fixed the internal `organizationId`/`doorLockId` key mapping and removed them from the update-comparison
+          logic."
+        - "organizations_wireless_zigbee_disenrollments - Fixed the internal `organizationId`/`disenrollmentId` key mapping and removed them from the
+          update-comparison logic."
         - "organizations_licenses - Fixed the internal `organizationId`/`licenseId` key mapping and removed them from the update-comparison logic."
-        - "organizations_devices_packet_capture_captures - Fixed the internal `organizationId`/`captureId` key mapping and removed them from the update-comparison logic."
+        - "organizations_devices_packet_capture_captures - Fixed the internal `organizationId`/`captureId` key mapping and removed them from the
+          update-comparison logic."
         - "organizations_alerts_profiles - Fixed the internal `organizationId`/`alertConfigId` key mapping and removed them from the update-comparison logic."
-        - "networks_wireless_ethernet_ports_profiles - Fixed the internal `networkId`/`profileId` key mapping and removed `profileId` from the update-comparison logic."
-        - "networks_sm_bypass_activation_lock_attempts - Fixed the internal `networkId`/`attemptId` key mapping and removed `attemptId` from the update-comparison logic."
-        - "devices_wireless_zigbee_enrollments - Fixed the internal `enrollmentId` key mapping (previously stored as `enrollment_id`) and removed it from the update-comparison logic."
-        - "organizations_splash_assets - Fixed the internal `organizationId` key mapping and removed the erroneous `id` comparison from the update-comparison logic."
-        - "devices - Renamed `organization_id` to `organizationId` in the request object and dropped the `serial`/`organizationId` entries from the update-comparison logic."
+        - "networks_wireless_ethernet_ports_profiles - Fixed the internal `networkId`/`profileId` key mapping and removed `profileId` from the update-comparison
+          logic."
+        - "networks_sm_bypass_activation_lock_attempts - Fixed the internal `networkId`/`attemptId` key mapping and removed `attemptId` from the
+          update-comparison logic."
+        - "devices_wireless_zigbee_enrollments - Fixed the internal `enrollmentId` key mapping (previously stored as `enrollment_id`) and removed it from the
+          update-comparison logic."
+        - "organizations_splash_assets - Fixed the internal `organizationId` key mapping and removed the erroneous `id` comparison from the update-comparison
+          logic."
+        - "devices - Renamed `organization_id` to `organizationId` in the request object and dropped the `serial`/`organizationId` entries from the
+          update-comparison logic."
         - "devices_live_tools_leds_blink - Renamed `leds_blink_id` to `ledsBlinkId` and removed the `ledsBlinkId` entry from the update-comparison logic."
         - "devices_live_tools_mac_table - Renamed `mac_table_id` to `macTableId` and removed it from the update-comparison logic."
         - "devices_live_tools_ping - Removed the `id` entry from the update-comparison logic."
         - "devices_live_tools_ping_device - Removed the `id` entry from the update-comparison logic."
         - "devices_sensor_commands - Renamed `command_id` to `commandId` and removed the `commandId` entry from the update-comparison logic."
         - "devices_switch_ports - Renamed `port_id` to `portId` and removed the `portId` entry from the update-comparison logic."
-        - "devices_switch_routing_interfaces_dhcp - Renamed `interface_id` to `interfaceId` and removed the `interfaceId` entry from the update-comparison logic."
+        - "devices_switch_routing_interfaces_dhcp - Renamed `interface_id` to `interfaceId` and removed the `interfaceId` entry from the update-comparison
+          logic."
         - "devices_switch_routing_static_routes - Removed the `staticRouteId` entry from the update-comparison logic."
         - "networks_appliance_firewall_firewalled_services - Removed the `service` entry from the update-comparison logic."
         - "networks_appliance_prefixes_delegated_statics - Removed the `staticDelegatedPrefixId` entry from the update-comparison logic."
@@ -1539,13 +1569,15 @@ releases:
         - "networks_switch_access_policies - Removed the `accessPolicyNumber` entry from the update-comparison logic."
         - "networks_switch_dhcp_server_policy_arp_inspection_trusted_servers - Removed the `trustedServerId` entry from the update-comparison logic."
         - "networks_switch_port_schedules - Removed the `portScheduleId` entry from the update-comparison logic."
-        - "networks_switch_qos_rules_order - Removed the `qosRuleId` entry from the update-comparison logic and deleted the line that force-overwrote `current_obj[\"networkId\"]` before comparison."
+        - "networks_switch_qos_rules_order - Removed the `qosRuleId` entry from the update-comparison logic and deleted the line that force-overwrote
+          `current_obj[\"networkId\"]` before comparison."
         - "networks_switch_routing_multicast_rendezvous_points - Removed the `rendezvousPointId` entry from the update-comparison logic."
         - "networks_switch_stacks_add - Renamed `switch_stack_id` to `switchStackId` in the request object."
         - "networks_switch_stacks_remove - Renamed `switch_stack_id` to `switchStackId` in the request object."
         - "networks_switch_stacks_routing_static_routes - Removed the `switchStackId` and `staticRouteId` entries from the update-comparison logic."
         - "networks_webhooks_http_servers - Removed the `httpServerId` entry from the update-comparison logic."
-        - "networks_webhooks_payload_templates - Fixed an invalid `headers` argument type declaration (`\"['array', 'null']\"` corrected to `list`) and removed the `payloadTemplateId` entry from the update-comparison logic."
+        - "networks_webhooks_payload_templates - Fixed an invalid `headers` argument type declaration (`\"['array', 'null']\"` corrected to `list`) and removed
+          the `payloadTemplateId` entry from the update-comparison logic."
         - "networks_wireless_air_marshal_rules - Renamed `rule_id` to `ruleId` and removed the `ruleId` entry from the update-comparison logic."
         - "networks_wireless_location_scanning - Renamed `network_id` to `networkId` in the request object."
         - "networks_wireless_rf_profiles - Removed the `rfProfileId` entry from the update-comparison logic."
@@ -1568,12 +1600,15 @@ releases:
         - "organizations_appliance_dns_local_records - Removed the `organizationId` and `recordId` entries from the update-comparison logic."
         - "organizations_appliance_dns_split_profiles - Removed the `organizationId` and `profileId` entries from the update-comparison logic."
         - "organizations_appliance_security_intrusion - Removed the `organizationId` entry from the update-comparison logic."
-        - "organizations_appliance_vpn_site_to_site_ipsec_peers_slas - Renamed `organization_id` to `organizationId` and removed the `organizationId` entry from the update-comparison logic."
+        - "organizations_appliance_vpn_site_to_site_ipsec_peers_slas - Renamed `organization_id` to `organizationId` and removed the `organizationId` entry from
+          the update-comparison logic."
         - "organizations_appliance_vpn_third_party_vpn_peers - Removed the `organizationId` entry from the update-comparison logic."
         - "organizations_appliance_vpn_vpn_firewall_rules - Removed the `organizationId` entry from the update-comparison logic."
         - "organizations_branding_policies - Removed the `brandingPolicyId` entry from the update-comparison logic."
-        - "organizations_camera_custom_analytics_artifacts - Renamed `artifact_id` to `artifactId` and removed the `artifactId` entry from the update-comparison logic."
-        - "organizations_cellular_gateway_esims_inventory - Renamed `organization_id` to `organizationId` and removed the `id` entry from the update-comparison logic."
+        - "organizations_camera_custom_analytics_artifacts - Renamed `artifact_id` to `artifactId` and removed the `artifactId` entry from the update-comparison
+          logic."
+        - "organizations_cellular_gateway_esims_inventory - Renamed `organization_id` to `organizationId` and removed the `id` entry from the update-comparison
+          logic."
         - "organizations_devices_controller_migrations - Removed the `organizationId` entry from the update-comparison logic."
         - "organizations_devices_packet_capture_captures_download_url_generate - Renamed `capture_id` to `captureId` in the request object."
         - "organizations_devices_packet_capture_captures_stop - Renamed `capture_id` to `captureId` in the request object."
@@ -1584,7 +1619,8 @@ releases:
         - "organizations_policies_global_firewall_rulesets - Removed the `organizationId` and `rulesetId` entries from the update-comparison logic."
         - "organizations_policies_global_firewall_rulesets_rules - Removed the `organizationId` and `ruleId` entries from the update-comparison logic."
         - "organizations_policies_global_group_policies - Removed the `organizationId` and `policyId` entries from the update-comparison logic."
-        - "organizations_policies_global_group_policies_firewall_rulesets_assignments - Removed the `organizationId` and `assignmentId` entries from the update-comparison logic."
+        - "organizations_policies_global_group_policies_firewall_rulesets_assignments - Removed the `organizationId` and `assignmentId` entries from the
+          update-comparison logic."
         - "organizations_policy_objects - Removed the `policyObjectId` entry from the update-comparison logic."
         - "organizations_policy_objects_groups - Removed the `policyObjectGroupId` entry from the update-comparison logic."
         - "organizations_saml_idps - Removed the `idpId` entry from the update-comparison logic."
@@ -1595,9 +1631,12 @@ releases:
         - "organizations_wireless_devices_provisioning_deployments - Removed the `organizationId` and `deploymentId` entries from the update-comparison logic."
         - "organizations_wireless_devices_radsec_certificates_authorities - Removed the `organizationId` entry from the update-comparison logic."
         - "organizations_wireless_location_scanning_receivers - Removed the `organizationId` and `receiverId` entries from the update-comparison logic."
-        - "organizations_wireless_mqtt_settings - Renamed `organization_id` to `organizationId` and removed the `organizationId` entry from the update-comparison logic."
-        - "organizations_wireless_ssids_firewall_isolation_allowlist_entries - Removed the `organizationId` and `entryId` entries from the update-comparison logic."
-        - "organizations_wireless_zigbee_devices - Renamed `organization_id` to `organizationId` and removed the `organizationId` and `id` entries from the update-comparison logic."
+        - "organizations_wireless_mqtt_settings - Renamed `organization_id` to `organizationId` and removed the `organizationId` entry from the
+          update-comparison logic."
+        - "organizations_wireless_ssids_firewall_isolation_allowlist_entries - Removed the `organizationId` and `entryId` entries from the update-comparison
+          logic."
+        - "organizations_wireless_zigbee_devices - Renamed `organization_id` to `organizationId` and removed the `organizationId` and `id` entries from the
+          update-comparison logic."
         - "devices_wireless_bluetooth_settings - Fixed a malformed UUID in the module's EXAMPLES block."
         - "networks_wireless_bluetooth_settings - Fixed a malformed UUID in the module's EXAMPLES block."
     release_date: "2026-08-10"
