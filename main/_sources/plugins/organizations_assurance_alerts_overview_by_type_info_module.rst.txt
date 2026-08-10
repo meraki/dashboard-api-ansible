@@ -42,7 +42,7 @@ cisco.meraki.organizations_assurance_alerts_overview_by_type_info module -- Info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -395,6 +395,90 @@ Parameters
         <div class="ansible-option-cell">
 
       Additional headers.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-includeDeviceTags"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_assurance_alerts_overview_by_type_info_module__parameter-includedevicetags:
+
+      .. rst-class:: ansible-option-title
+
+      **includeDeviceTags**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-includeDeviceTags" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      IncludeDeviceTags query parameter. Include grouped device tags for each alert type in the response.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-includeNetworks"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_assurance_alerts_overview_by_type_info_module__parameter-includenetworks:
+
+      .. rst-class:: ansible-option-title
+
+      **includeNetworks**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-includeNetworks" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      IncludeNetworks query parameter. Include affected networks for each alert type in the response.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
 
       .. raw:: html
@@ -1758,6 +1842,8 @@ Examples
         active: true
         dismissed: true
         resolved: true
+        includeDeviceTags: true
+        includeNetworks: true
         suppressAlertsForOfflineNodes: true
         organizationId: string
         total_pages: -1
@@ -1823,7 +1909,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"items": [{"count": 0, "lastResolvedAt": "string", "type": "string"}], "meta": {"counts": {"items": 0}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"items": [{"categoryType": "string", "count": 0, "deviceTags": ["string"], "deviceTypes": ["string"], "lastAlertedAt": "string", "lastResolvedAt": "string", "networkCount": 0, "networks": [{"id": "string", "name": "string"}], "severity": "string", "type": "string"}], "meta": {"counts": {"items": 0}}}`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.meraki.networks_snmp module -- Resource module for networks \_snmp
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -141,6 +141,75 @@ Parameters
       .. raw:: html
 
         </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authentication"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_snmp_module__parameter-authentication:
+
+      .. rst-class:: ansible-option-title
+
+      **authentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SNMPv3 authentication settings. Only relevant if 'access' is set to 'users'.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authentication/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_snmp_module__parameter-authentication/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authentication/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The SNMPv3 authentication protocol.
+
+
+      .. raw:: html
+
+        </div>
+
 
   * - .. raw:: html
 
@@ -1001,6 +1070,75 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-privacy"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_snmp_module__parameter-privacy:
+
+      .. rst-class:: ansible-option-title
+
+      **privacy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-privacy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SNMPv3 privacy settings. Only relevant if 'access' is set to 'users'.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-privacy/protocol"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_snmp_module__parameter-privacy/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-privacy/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The SNMPv3 privacy protocol.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-users"></div>
 
       .. _ansible_collections.cisco.meraki.networks_snmp_module__parameter-users:
@@ -1161,8 +1299,12 @@ Examples
         meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
         state: present
         access: users
+        authentication:
+          protocol: SHA-1
         communityString: sample
         networkId: string
+        privacy:
+          protocol: AES-128
         users:
           - passphrase: hunter2
             username: AzureDiamond
@@ -1226,7 +1368,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"access": "string", "communityString": "string", "users": [{"passphrase": "string", "username": "string"}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"access": "string", "authentication": {"protocol": "string"}, "communityString": "string", "privacy": {"protocol": "string"}, "users": [{"passphrase": "string", "username": "string"}]}`
 
 
       .. raw:: html

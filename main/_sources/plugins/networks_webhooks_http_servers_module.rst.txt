@@ -42,7 +42,7 @@ cisco.meraki.networks_webhooks_http_servers module -- Resource module for networ
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1095,7 +1095,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The ID of the payload template. Defaults to 'wpt\_00001' for the Meraki template. For Meraki-included templates for the Webex (included) template use 'wpt\_00002'; for the Slack (included) template use 'wpt\_00003'; for the Microsoft Teams (included) template use 'wpt\_00004'; for the ServiceNow (included) template use 'wpt\_00006'; for the PagerDuty (included) template use 'wpt\_00007'.
+      The ID of the payload template. Defaults to 'wpt\_00001' for the Meraki template. For Meraki-included templates for the Webex (included) template use 'wpt\_00002'; for the Slack (included) template use 'wpt\_00003'; for the Microsoft Teams (included) template use 'wpt\_00004'; for the ServiceNow (included) template use 'wpt\_00006'; for the PagerDuty (included) template use 'wpt\_00007'; for the Push (included) template use 'wpt\_00008'.
 
 
       .. raw:: html

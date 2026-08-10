@@ -42,7 +42,7 @@ cisco.meraki.networks_alerts_settings module -- Resource module for networks \_a
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -2408,7 +2408,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"alerts": [{"alertDestinations": {"allAdmins": true, "emails": ["string"], "httpServerIds": ["string"], "smsNumbers": ["string"], "snmp": true}, "enabled": true, "filters": {"conditions": [{"direction": "string", "duration": 0, "threshold": 0, "type": "string", "unit": "string"}], "failureType": "string", "lookbackWindow": 0, "minDuration": 0, "name": "string", "period": 0, "priority": "string", "regex": "string", "selector": "string", "serials": ["string"], "ssidNum": 0, "tag": "string", "threshold": 0, "timeout": 0}, "type": "string"}], "defaultDestinations": {"allAdmins": true, "emails": ["string"], "httpServerIds": ["string"], "snmp": true}, "muting": {"byPortSchedules": {"enabled": true}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"alerts": [{"alertDestinations": {"allAdmins": true, "emails": ["string"], "httpServerIds": ["string"], "smsNumbers": ["string"], "snmp": true}, "enabled": true, "filters": {"conditions": [{"direction": "string", "duration": 0, "threshold": 0, "type": "string", "unit": {}}], "failureType": "string", "lookbackWindow": 0, "minDuration": 0, "name": "string", "period": 0, "priority": "string", "regex": "string", "selector": "string", "serials": ["string"], "ssidNum": 0, "tag": "string", "threshold": 0, "timeout": 0}, "type": "string"}], "defaultDestinations": {"allAdmins": true, "emails": ["string"], "httpServerIds": ["string"], "snmp": true}, "muting": {"byPortSchedules": {"enabled": true}}}`
 
 
       .. raw:: html

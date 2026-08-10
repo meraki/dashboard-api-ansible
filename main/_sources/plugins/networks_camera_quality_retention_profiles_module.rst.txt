@@ -42,7 +42,7 @@ cisco.meraki.networks_camera_quality_retention_profiles module -- Resource modul
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1796,6 +1796,109 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV14"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv14:
+
+      .. rst-class:: ansible-option-title
+
+      **MV14**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV14" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV14 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV14/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv14/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV14/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard', 'Enhanced' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV14/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv14/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV14/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1920x1080', '2560x1440' or '3840x2160'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV21/MV71"></div>
 
       .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv21/mv71:
@@ -2311,6 +2414,109 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV24"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv24:
+
+      .. rst-class:: ansible-option-title
+
+      **MV24**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV24" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV24 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV24/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv24/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV24/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard', 'Enhanced' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV24/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv24/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV24/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1920x1080', '2560x1440' or '3840x2160'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV32"></div>
 
       .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv32:
@@ -2620,6 +2826,212 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV34"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv34:
+
+      .. rst-class:: ansible-option-title
+
+      **MV34**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV34" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV34 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV34/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv34/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV34/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV34/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv34/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV34/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1768x1768' or '3556x3556'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV44X"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv44x:
+
+      .. rst-class:: ansible-option-title
+
+      **MV44X**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV44X" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV44X camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV44X/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv44x/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV44X/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard' or 'Enhanced'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV44X/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv44x/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV44X/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1440x1080' or '2560x1920'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV52"></div>
 
       .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv52:
@@ -2816,6 +3228,109 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Resolution of the camera. Can be one of '1920x1080', '2688x1512' or '3840x2160'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV54N"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv54n:
+
+      .. rst-class:: ansible-option-title
+
+      **MV54N**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV54N" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV54N camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV54N/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv54n/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV54N/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard', 'Enhanced' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV54N/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv54n/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV54N/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1920x1080', '2560x1440' or '3840x2160'.
 
 
       .. raw:: html
@@ -3135,6 +3650,109 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV64"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv64:
+
+      .. rst-class:: ansible-option-title
+
+      **MV64**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV64" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV64 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV64/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv64/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV64/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard', 'Enhanced' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV64/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv64/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV64/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1920x1080', '2560x1440' or '3840x2160'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV73"></div>
 
       .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv73:
@@ -3434,6 +4052,109 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Resolution of the camera. Can be one of '1920x1080', '2688x1512' or '3840x2160'.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV74"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv74:
+
+      .. rst-class:: ansible-option-title
+
+      **MV74**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV74" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV74 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV74/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv74/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV74/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard', 'Enhanced' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV74/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv74/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV74/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1920x1080', '2560x1440' or '3840x2160'.
 
 
       .. raw:: html
@@ -3853,6 +4574,109 @@ Parameters
         </div>
 
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV94"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv94:
+
+      .. rst-class:: ansible-option-title
+
+      **MV94**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV94" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality and resolution for MV94 camera models.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV94/quality"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv94/quality:
+
+      .. rst-class:: ansible-option-title
+
+      **quality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV94/quality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Quality of the camera. Can be one of 'Standard' or 'High'.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-videoSettings/MV94/resolution"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_camera_quality_retention_profiles_module__parameter-videosettings/mv94/resolution:
+
+      .. rst-class:: ansible-option-title
+
+      **resolution**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-videoSettings/MV94/resolution" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Resolution of the camera. Can be one of '1768x1768' or '3556x3556'.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 
 .. Attributes
@@ -3968,6 +4792,9 @@ Examples
           MV13M:
             quality: string
             resolution: string
+          MV14:
+            quality: string
+            resolution: string
           MV21/MV71:
             quality: string
             resolution: string
@@ -3983,6 +4810,9 @@ Examples
           MV23X:
             quality: string
             resolution: string
+          MV24:
+            quality: string
+            resolution: string
           MV32:
             quality: string
             resolution: string
@@ -3992,10 +4822,19 @@ Examples
           MV33M:
             quality: string
             resolution: string
+          MV34:
+            quality: string
+            resolution: string
+          MV44X:
+            quality: string
+            resolution: string
           MV52:
             quality: string
             resolution: string
           MV53X:
+            quality: string
+            resolution: string
+          MV54N:
             quality: string
             resolution: string
           MV63:
@@ -4007,6 +4846,9 @@ Examples
           MV63X:
             quality: string
             resolution: string
+          MV64:
+            quality: string
+            resolution: string
           MV73:
             quality: string
             resolution: string
@@ -4014,6 +4856,9 @@ Examples
             quality: string
             resolution: string
           MV73X:
+            quality: string
+            resolution: string
+          MV74:
             quality: string
             resolution: string
           MV84X:
@@ -4026,6 +4871,9 @@ Examples
             quality: string
             resolution: string
           MV93X:
+            quality: string
+            resolution: string
+          MV94:
             quality: string
             resolution: string
     - name: Delete by id
@@ -4114,7 +4962,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"audioRecordingEnabled": true, "cloudArchiveEnabled": true, "id": "string", "maxRetentionDays": 0, "motionBasedRetentionEnabled": true, "motionDetectorVersion": 0, "name": "string", "networkId": "string", "restrictedBandwidthModeEnabled": true, "scheduleId": {}, "smartRetention": {"enabled": true}, "videoSettings": {}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"audioRecordingEnabled": true, "axisVideoQuality": "string", "cloudArchiveEnabled": true, "id": "string", "maxRetentionDays": 0, "motionBasedRetentionEnabled": true, "motionDetectorVersion": 0, "name": "string", "networkId": "string", "restrictedBandwidthModeEnabled": true, "scheduleId": {}, "smartRetention": {"enabled": true}, "videoSettings": {}}`
 
 
       .. raw:: html

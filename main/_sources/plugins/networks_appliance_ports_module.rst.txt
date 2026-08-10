@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_ports module -- Resource module for networks \_a
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1119,6 +1119,117 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sgt"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ports_module__parameter-sgt:
+
+      .. rst-class:: ansible-option-title
+
+      **sgt**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sgt" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Security Group Tag settings for the port.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sgt/enabled"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ports_module__parameter-sgt/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sgt/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether or not Peer SGT is enabled for traffic through this port.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sgt/id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_ports_module__parameter-sgt/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sgt/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Adaptive policy group ID this port is assigned to.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-type"></div>
 
       .. _ansible_collections.cisco.meraki.networks_appliance_ports_module__parameter-type:
@@ -1249,6 +1360,9 @@ Examples
         enabled: true
         networkId: string
         portId: string
+        sgt:
+          enabled: true
+          id: 1234
         type: access
         vlan: 3
 
@@ -1311,7 +1425,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicy": "string", "allowedVlans": "string", "dropUntaggedTraffic": true, "enabled": true, "number": 0, "type": "string", "vlan": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicy": "string", "allowedVlans": "string", "dropUntaggedTraffic": true, "enabled": true, "number": 0, "sgt": {"enabled": true, "id": {}}, "type": "string", "vlan": 0}`
 
 
       .. raw:: html

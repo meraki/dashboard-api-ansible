@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_info module -- Informatio
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1253,7 +1253,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultGateway": "string", "interfaceId": "string", "interfaceIp": "string", "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "prefix": "string"}, "loopback": {}, "mode": "string", "multicastRouting": "string", "name": "string", "ospfSettings": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "ospfV3": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "serial": "string", "subnet": "string", "switchPortId": "string", "uplinkV4": true, "uplinkV6": true, "vlanId": 0, "vrf": {"name": "string"}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"defaultGateway": "string", "interfaceId": "string", "interfaceIp": "string", "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "prefix": "string"}, "loopback": {}, "mode": "string", "mtu": 0, "multicastRouting": "string", "name": "string", "ospfSettings": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "ospfV3": {"area": "string", "cost": 0, "isPassiveEnabled": true, "networkType": "string"}, "serial": "string", "subnet": "string", "switchPortId": "string", "uplinkV4": true, "uplinkV6": true, "vlanId": 0, "vrf": {"name": "string"}}`
 
 
       .. raw:: html

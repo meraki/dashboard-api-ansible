@@ -42,7 +42,7 @@ cisco.meraki.organizations_assurance_alerts_restore module -- Resource module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -135,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Array of alert IDs to restore.
+      Array of alert IDs in this organization to restore. Missing or inaccessible alert IDs return 404.
 
 
       .. raw:: html

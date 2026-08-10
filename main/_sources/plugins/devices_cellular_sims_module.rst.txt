@@ -42,7 +42,7 @@ cisco.meraki.devices_cellular_sims module -- Resource module for devices \_cellu
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1068,7 +1068,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specifies the ordering of all SIMs for an MG primary, secondary, and not-in-use (when applicable). It's required for devices with 3 or more SIMs and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM, use 'sim3'. Sim failover will occur only between primary and secondary sim slots.
+      Specifies the ordering of all SIMs for an MG primary, secondary, and not-in-use (when applicable). It's required for devices with 3 or more SIMs and can be used in place of 'isPrimary' for dual-SIM devices. Use the raw eSIM slot value for the device, such as 'sim2' or 'sim3'. Sim failover will occur only between primary and secondary sim slots.
 
 
       .. raw:: html
@@ -1452,7 +1452,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      SIM slot being configured. Must be 'sim1' on single-sim devices. Use 'sim3' for eSIM.
+      SIM slot being configured. Must be 'sim1' on single-sim devices. ESIM slots use the raw slot value for the device, such as 'sim2' or 'sim3'.
 
 
       .. raw:: html

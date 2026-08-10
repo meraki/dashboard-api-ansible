@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_firewall_l7_firewall_rules module -- Resource mo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -957,7 +957,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      An ordered array of the MX L7 firewall rules.
+      An ordered array of the MX L7 firewall rules. Each rule is an object with 'policy', 'type', and 'value'. The 'value' shape depends on 'type' object for application/applicationCategory, string for host/port/ipRange, and an array of 2-letter ISO 3166-1 alpha-2 country codes for allowedCountries/blockedCountries. For backward compatibility, request types also accept whitelistedCountries/blacklistedCountries.
 
 
       .. raw:: html
@@ -1025,7 +1025,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Type of the L7 rule. One of 'application', 'applicationCategory', 'host', 'port', 'ipRange'.
+      Type of the L7 rule. One of 'application', 'applicationCategory', 'host', 'port', 'ipRange' Country variants accepted 'allowedCountries'/'blockedCountries' (and backward-compatible 'whitelistedCountries'/'blacklistedCountries').
 
 
       .. raw:: html
@@ -1200,7 +1200,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"policy\\": \\"string\\",\\n    \\"type\\": \\"string\\",\\n    \\"value\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

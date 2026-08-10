@@ -42,7 +42,7 @@ cisco.meraki.organizations_switch_ports_by_switch_info module -- Information mod
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1529,7 +1529,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -1549,7 +1549,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"mac": "string", "model": "string", "name": "string", "network": {"id": "string", "name": "string"}, "ports": [{"accessPolicyType": "string", "allowedVlans": "string", "enabled": true, "linkNegotiation": "string", "name": "string", "poeEnabled": true, "portId": "string", "rstpEnabled": true, "stickyMacAllowList": ["string"], "stickyMacAllowListLimit": 0, "stpGuard": "string", "tags": ["string"], "type": "string", "vlan": 0, "voiceVlan": 0}], "serial": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"name\\": \\"string\\",\\n    \\"serial\\": \\"string\\",\\n    \\"mac\\": \\"string\\",\\n    \\"network\\": {\\n      \\"name\\": \\"string\\",\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"model\\": \\"string\\",\\n    \\"ports\\": [\\n      {\\n        \\"portId\\": \\"string\\",\\n        \\"name\\": {},\\n        \\"tags\\": [\\n          \\"string\\"\\n        ],\\n        \\"enabled\\": true,\\n        \\"poeEnabled\\": true,\\n        \\"type\\": \\"string\\",\\n        \\"vlan\\": {},\\n        \\"voiceVlan\\": {},\\n        \\"allowedVlans\\": \\"string\\",\\n        \\"rstpEnabled\\": true,\\n        \\"stpGuard\\": \\"string\\",\\n        \\"linkNegotiation\\": \\"string\\",\\n        \\"accessPolicyType\\": \\"string\\",\\n        \\"stickyMacAllowList\\": [\\n          \\"string\\"\\n        ],\\n        \\"stickyMacAllowListLimit\\": 0\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

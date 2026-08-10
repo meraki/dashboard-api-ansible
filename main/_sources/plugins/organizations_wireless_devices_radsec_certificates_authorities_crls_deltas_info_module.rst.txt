@@ -42,7 +42,7 @@ cisco.meraki.organizations_wireless_devices_radsec_certificates_authorities_crls
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls \_deltas. - \> Query for all delta certificate revocation list CRL for the organization's RADSEC device Certificate Authority CA with the given id.
+- Get all organizations \_wireless \_devices \_radsec \_certificates \_authorities \_crls \_deltas. - \> Query for all delta certificate revocation list CRL for the organization's RadSec device Certificate Authority CA with the given id.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.

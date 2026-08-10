@@ -42,7 +42,7 @@ cisco.meraki.networks_wireless_ssids module -- Resource module for networks \_wi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -4126,7 +4126,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Certificate used for authorization for the RADSEC Server.
+      Certificate used for authorization for the RadSec Server.
 
 
       .. raw:: html
@@ -4228,7 +4228,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Use RADSEC (TLS over TCP) to connect to this RADIUS accounting server. Requires radiusProxyEnabled.
+      Use RadSec (TLS over TCP) to connect to this RADIUS accounting server. Requires radiusProxyEnabled.
 
 
       .. rst-class:: ansible-option-line
@@ -4753,7 +4753,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The current settings for RADIUS RADSec.
+      The current settings for RADIUS RadSec.
 
 
       .. raw:: html
@@ -4787,7 +4787,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      RADSec TLS tunnel settings.
+      RadSec TLS tunnel settings.
 
 
       .. raw:: html
@@ -4821,7 +4821,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The interval (in seconds) to determines how long a TLS session can remain idle for a RADSec server before it is automatically terminated.
+      The interval (in seconds) to determines how long a TLS session can remain idle for a RadSec server before it is automatically terminated.
 
 
       .. raw:: html
@@ -4925,7 +4925,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Certificate used for authorization for the RADSEC Server.
+      Certificate used for authorization for the RadSec Server.
 
 
       .. raw:: html
@@ -5061,7 +5061,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Use RADSEC (TLS over TCP) to connect to this RADIUS server. Requires radiusProxyEnabled.
+      Use RadSec (TLS over TCP) to connect to this RADIUS server. Requires radiusProxyEnabled.
 
 
       .. rst-class:: ansible-option-line
@@ -5220,6 +5220,144 @@ Parameters
       .. raw:: html
 
         </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-security"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security:
+
+      .. rst-class:: ansible-option-title
+
+      **security**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-security" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Security settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-security/encryption"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption:
+
+      .. rst-class:: ansible-option-title
+
+      **encryption**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-security/encryption" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Encryption settings for WPA3 modes.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-security/encryption/akms"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption/akms:
+
+      .. rst-class:: ansible-option-title
+
+      **akms**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-security/encryption/akms" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication key management systems used by the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-security/encryption/ciphers"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption/ciphers:
+
+      .. rst-class:: ansible-option-title
+
+      **ciphers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-security/encryption/ciphers" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Encryption ciphers used by the SSID. CCMP 128 is required and cannot be removed.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
   * - .. raw:: html
 
@@ -5824,6 +5962,12 @@ Examples
             secret: secret-string
         radiusTestingEnabled: true
         secondaryConcentratorNetworkId: disabled
+        security:
+          encryption:
+            akms:
+              - SAE
+            ciphers:
+              - CCMP 128
         speedBurst:
           enabled: true
         splashGuestSponsorDomains:
@@ -5898,7 +6042,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"adminSplashUrl": "string", "authMode": "string", "availabilityTags": ["string"], "availableOnAllAps": true, "bandSelection": "string", "enabled": true, "encryptionMode": "string", "ipAssignmentMode": "string", "localAuth": true, "mandatoryDhcpEnabled": true, "minBitrate": 0, "name": "string", "number": 0, "perClientBandwidthLimitDown": 0, "perClientBandwidthLimitUp": 0, "perSsidBandwidthLimitDown": 0, "perSsidBandwidthLimitUp": 0, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"caCertificate": "string", "host": "string", "openRoamingCertificateId": 0, "port": 0}], "radiusAttributeForGroupPolicies": "string", "radiusEnabled": true, "radiusFailoverPolicy": "string", "radiusLoadBalancingPolicy": "string", "radiusServers": [{"caCertificate": "string", "host": "string", "openRoamingCertificateId": 0, "port": 0}], "splashPage": "string", "splashTimeout": "string", "ssidAdminAccessible": true, "visible": true, "walledGardenEnabled": true, "walledGardenRanges": ["string"], "wpaEncryptionMode": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"adaptivePolicyGroupId": "string", "adminSplashUrl": "string", "adultContentFilteringEnabled": true, "authMode": "string", "availabilityTags": ["string"], "availableOnAllAps": true, "bandSelection": "string", "defaultVlanId": 0, "dnsRewrite": {"dnsCustomNameservers": ["string"], "enabled": true}, "dot11r": {"adaptive": true, "enabled": true}, "dot11w": {"enabled": true, "required": true}, "enabled": true, "encryptionMode": "string", "enterpriseAdminAccess": "string", "gre": {"clientIsolation": true, "concentrator": {"host": "string"}, "key": 0}, "ipAssignmentMode": "string", "lanIsolationEnabled": true, "localAuth": true, "localAuthFallback": {"cacheTimeout": 0, "enabled": true, "serverCaCertificate": {"contents": {}}}, "mandatoryDhcpEnabled": true, "minBitrate": 0, "name": "string", "namedVlans": {"radius": {"guestVlan": {"enabled": true, "name": "string"}}, "tagging": {"byApTags": [{"tags": ["string"], "vlanName": "string"}], "defaultVlanName": "string", "enabled": true}}, "number": 0, "oauth": {"allowedDomains": ["string"]}, "perClientBandwidthLimitDown": 0, "perClientBandwidthLimitUp": 0, "perSsidBandwidthLimitDown": 0, "perSsidBandwidthLimitUp": 0, "psk": "string", "radiusAccountingEnabled": true, "radiusAccountingServers": [{"caCertificate": "string", "host": "string", "openRoamingCertificateId": 0, "port": 0}], "radiusAttributeForGroupPolicies": "string", "radiusAuthenticationNasId": "string", "radiusCalledStationId": "string", "radiusCoaEnabled": true, "radiusEnabled": true, "radiusFailoverPolicy": "string", "radiusFallbackEnabled": true, "radiusLoadBalancingPolicy": "string", "radiusOverride": true, "radiusProxyEnabled": true, "radiusServerAttemptsLimit": 0, "radiusServerTimeout": 0, "radiusServers": [{"caCertificate": "string", "host": "string", "id": "string", "openRoamingCertificateId": 0, "port": 0, "radsecEnabled": true}], "radiusTestingEnabled": true, "security": {"encryption": {"akms": ["string"], "ciphers": ["string"]}}, "speedBurst": {"enabled": true}, "splashPage": "string", "splashTimeout": "string", "ssidAdminAccessible": true, "useVlanTagging": true, "visible": true, "walledGardenEnabled": true, "walledGardenRanges": ["string"], "wifiPersonalNetworkEnabled": true, "wpaEncryptionMode": "string"}`
 
 
       .. raw:: html

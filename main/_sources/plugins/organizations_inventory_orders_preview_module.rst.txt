@@ -42,7 +42,7 @@ cisco.meraki.organizations_inventory_orders_preview module -- Resource module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1084,7 +1084,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimId": "string", "number": "string", "shipping": {"pending": {"devices": [{"description": "string", "quantity": 0, "sku": "string"}]}, "shipments": [{"devices": [{"description": "string", "quantity": 0, "sku": "string"}], "number": 0, "shippedAt": "string"}]}, "subscriptions": [{"counts": {"seats": {"limit": 0}}, "description": "string", "endDate": "string", "isClaimed": true, "name": "string", "startDate": "string", "subscriptionId": "string"}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"claimId": "string", "number": "string", "resolution": {"claimableShippedDeviceCount": 0, "submissionStrategy": "string", "supportsSubscriptionSelection": true}, "shipping": {"pending": {"devices": [{"description": "string", "quantity": 0, "sku": "string"}]}, "shipments": [{"devices": [{"description": "string", "quantity": 0, "sku": "string"}], "number": 0, "shippedAt": "string"}]}, "subscriptions": [{"counts": {"seats": {"limit": 0}}, "description": "string", "endDate": "string", "isClaimed": true, "name": "string", "startDate": "string", "subscriptionId": "string"}]}`
 
 
       .. raw:: html

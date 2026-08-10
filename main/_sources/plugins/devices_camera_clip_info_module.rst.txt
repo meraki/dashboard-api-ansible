@@ -42,7 +42,7 @@ cisco.meraki.devices_camera_clip_info module -- Information module for devices \
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -203,7 +203,8 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ImagerId query parameter. For multi-imager cameras, the imager ID to query. Defaults to '1' if omitted.
+      ImagerId query parameter. The imager ID to query. Required for multi-imager cameras (must be between 1 and the imager count). For single-imager cameras, must be omitted or set to 0.
+          
 
 
       .. raw:: html

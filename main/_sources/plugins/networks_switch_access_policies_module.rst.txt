@@ -42,7 +42,7 @@ cisco.meraki.networks_switch_access_policies module -- Resource module for netwo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -2879,7 +2879,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": "string", "accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": "string"}, "enforceRadiusMonitoring": true, "guestGroupPolicyId": "string", "guestPortBouncing": true, "guestSgtId": 0, "guestVlanId": {}, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"authentication": {"mode": "string"}, "cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataGroupPolicyId": "string", "dataSgtId": 0, "dataVlanId": 0, "suspendPortBounce": true, "voiceGroupPolicyId": "string", "voiceSgtId": 0, "voiceVlanId": 0}, "failedAuthGroupPolicyId": "string", "failedAuthSgtId": 0, "failedAuthVlanId": 0, "preAuthenticationGroupPolicyId": "string", "reAuthenticationInterval": 0}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": "string", "accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": {}}, "enforceRadiusMonitoring": true, "guestGroupPolicyId": "string", "guestPortBouncing": true, "guestSgtId": 0, "guestVlanId": {}, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"authentication": {"mode": "string"}, "cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataGroupPolicyId": "string", "dataSgtId": 0, "dataVlanId": {}, "suspendPortBounce": true, "voiceGroupPolicyId": "string", "voiceSgtId": 0, "voiceVlanId": {}}, "failedAuthGroupPolicyId": "string", "failedAuthSgtId": 0, "failedAuthVlanId": {}, "preAuthenticationGroupPolicyId": "string", "reAuthenticationInterval": {}}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.meraki.organizations_policy_objects module -- Resource module for organiza
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -69,9 +69,9 @@ Synopsis
 .. Description
 
 - Manage operations create, update and delete of the resource organizations \_policy \_objects.
-- Creates a new Policy Object.
+- Creates a new Policy Object. Note type \`ipAndMask\` is deprecated; use \`cidr\`.
 - Deletes a Policy Object.
-- Updates a Policy Object.
+- Updates a Policy Object. Note type \`ipAndMask\` is deprecated; use \`cidr\`.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -273,7 +273,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      IP Address of a policy object (e.g. "1.2.3.4").
+      IP Address of a policy object (e.g. "1.2.3.4"). Used only with deprecated \`type=ipAndMask\`.
 
 
       .. raw:: html
@@ -307,7 +307,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Mask of a policy object (e.g. "255.255.0.0").
+      Mask of a policy object (e.g. "255.255.0.0"). Used only with deprecated \`type=ipAndMask\`.
 
 
       .. raw:: html
@@ -1231,7 +1231,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn, ipAndMask).
+      Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn). DEPRECATED \`ipAndMask\` is deprecated and will be removed in a future release. Use \`cidr\` instead.
 
 
       .. raw:: html

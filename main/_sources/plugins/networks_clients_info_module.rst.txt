@@ -42,7 +42,7 @@ cisco.meraki.networks_clients_info module -- Information module for networks \_c
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1784,7 +1784,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"cdp": [["string"]], "clientVpnConnections": [{"connectedAt": 0, "disconnectedAt": 0, "remoteIp": "string"}], "description": "string", "deviceTypePrediction": "string", "firstSeen": 0, "id": "string", "ip": "string", "ip6": "string", "ip6Local": "string", "lastSeen": 0, "lldp": [["string"]], "mac": "string", "manufacturer": "string", "model": "string", "namedVlan": "string", "notes": "string", "os": "string", "recentDeviceConnection": "string", "recentDeviceMac": "string", "recentDeviceName": "string", "recentDeviceSerial": "string", "smInstalled": true, "ssid": "string", "status": "string", "switchport": "string", "user": "string", "vlan": "string", "wirelessCapabilities": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"cdp": [["string"]], "clientVpnConnections": [{"connectedAt": 0, "disconnectedAt": 0, "remoteIp": "string"}], "description": "string", "deviceTypePrediction": "string", "firstSeen": 0, "id": "string", "ip": "string", "ip6": "string", "ip6Local": "string", "lastSeen": 0, "lldp": [["string"]], "mac": "string", "manufacturer": "string", "model": "string", "namedVlan": "string", "notes": "string", "os": "string", "recentDeviceConnection": "string", "recentDeviceId": "string", "recentDeviceMac": "string", "recentDeviceName": "string", "recentDeviceSerial": "string", "smInstalled": true, "ssid": "string", "status": "string", "switchport": "string", "user": "string", "vlan": "string", "wirelessCapabilities": "string"}`
 
 
       .. raw:: html

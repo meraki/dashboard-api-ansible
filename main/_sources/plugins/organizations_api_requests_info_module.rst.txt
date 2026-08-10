@@ -42,7 +42,7 @@ cisco.meraki.organizations_api_requests_info module -- Information module for or
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -1651,7 +1651,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"adminId\\": \\"string\\",\\n    \\"method\\": \\"string\\",\\n    \\"host\\": \\"string\\",\\n    \\"path\\": \\"string\\",\\n    \\"queryString\\": \\"string\\",\\n    \\"userAgent\\": \\"string\\",\\n    \\"ts\\": \\"string\\",\\n    \\"responseCode\\": 0,\\n    \\"sourceIp\\": \\"string\\",\\n    \\"version\\": 0,\\n    \\"operationId\\": \\"string\\",\\n    \\"client\\": {\\n      \\"id\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"adminId\\": \\"string\\",\\n    \\"method\\": \\"string\\",\\n    \\"host\\": \\"string\\",\\n    \\"path\\": \\"string\\",\\n    \\"queryString\\": \\"string\\",\\n    \\"userAgent\\": \\"string\\",\\n    \\"ts\\": \\"string\\",\\n    \\"responseCode\\": 0,\\n    \\"sourceIp\\": \\"string\\",\\n    \\"version\\": 0,\\n    \\"operationId\\": \\"string\\",\\n    \\"client\\": {\\n      \\"id\\": {},\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

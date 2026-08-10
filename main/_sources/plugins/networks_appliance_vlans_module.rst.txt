@@ -42,7 +42,7 @@ cisco.meraki.networks_appliance_vlans module -- Resource module for networks \_a
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.24.2).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
@@ -2137,6 +2137,75 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sgt"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-sgt:
+
+      .. rst-class:: ansible-option-title
+
+      **sgt**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sgt" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Security Group Tag settings for the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sgt/id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-sgt/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sgt/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Adaptive policy group ID this VLAN is assigned to.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-subnet"></div>
 
       .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-subnet:
@@ -2416,6 +2485,75 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vrf"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-vrf:
+
+      .. rst-class:: ansible-option-title
+
+      **vrf**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vrf" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      VRF configuration on the VLAN.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vrf/id"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_appliance_vlans_module__parameter-vrf/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vrf/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VRF ID. Use "0" for the default VRF.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 .. Attributes
 
@@ -2511,12 +2649,16 @@ Examples
         mask: 28
         name: My VLAN
         networkId: string
+        sgt:
+          id: 1234
         subnet: 192.168.1.0/24
         templateVlanType: same
         uplinks:
           - interface: wan1
             nat:
               enabled: true
+        vrf:
+          id: '1000'
     - name: Update by id
       cisco.meraki.networks_appliance_vlans:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -2582,6 +2724,8 @@ Examples
           - comment: A reserved IP range
             end: 192.168.1.1
             start: 192.168.1.0
+        sgt:
+          id: 1234
         subnet: 192.168.1.0/24
         templateVlanType: same
         uplinks:
@@ -2679,7 +2823,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"applianceIp": "string", "cidr": "string", "groupPolicyId": "string", "id": "string", "interfaceId": "string", "ipv6": {"enabled": true, "prefixAssignments": [{"autonomous": true, "origin": {"interfaces": ["string"], "type": "string"}, "staticApplianceIp6": "string", "staticPrefix": "string"}]}, "mandatoryDhcp": {"enabled": true}, "mask": 0, "name": "string", "subnet": "string", "templateVlanType": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"applianceIp": "string", "cidr": "string", "groupPolicyId": "string", "id": "string", "interfaceId": "string", "ipv6": {"enabled": true, "prefixAssignments": [{"autonomous": true, "origin": {"interfaces": ["string"], "type": "string"}, "staticApplianceIp6": "string", "staticPrefix": "string"}]}, "mandatoryDhcp": {"enabled": true}, "mask": 0, "name": "string", "sgt": {"id": {}}, "subnet": "string", "templateVlanType": "string", "vrf": {"id": "string", "name": "string"}}`
 
 
       .. raw:: html
