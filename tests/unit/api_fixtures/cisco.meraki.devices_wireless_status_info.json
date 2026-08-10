@@ -1,0 +1,17 @@
+{
+  "invocation": {"serial": "Q234-ABCD-5678"},
+  "meraki_response": {
+    "basicServiceSets": [
+      {
+        "ssidName": "My SSID", "ssidNumber": 0, "enabled": true, "band": "2.4 GHz",
+        "bssid": "8A:15:04:00:00:00", "channel": 11, "channelWidth": "20 MHz",
+        "power": "18 dBm", "visible": true, "broadcasting": true
+      },
+      {
+        "ssidName": "My SSID", "ssidNumber": 0, "enabled": true, "band": "5 GHz",
+        "bssid": "8A:15:04:00:00:01", "channel": 149, "channelWidth": "80 MHz",
+        "power": "20 dBm", "visible": true, "broadcasting": true
+      }
+    ]
+  }
+}

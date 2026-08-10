@@ -1,0 +1,6 @@
+{
+  "enrollmentId": "1234",
+  "url": "/devices/Q234-ABCD-5678/wireless/zigbee/enrollments/1234",
+  "request": {"serial": "Q234-ABCD-5678"},
+  "status": "complete"
+}

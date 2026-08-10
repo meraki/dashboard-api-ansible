@@ -1,0 +1,9 @@
+{
+  "serial": "Q2JC-2MJM-FHRD",
+  "latencyStats": {
+    "backgroundTraffic": {"avg": 606.52},
+    "bestEffortTraffic": {"avg": 606.52},
+    "videoTraffic": {"avg": 606.52},
+    "voiceTraffic": {"avg": 606.52}
+  }
+}

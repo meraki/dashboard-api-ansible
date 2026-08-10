@@ -210,4 +210,52 @@ def test_mappings():
             "cisco.meraki.networks_switch_routing_multicast",
             "updateNetworkSwitchRoutingMulticast",
         ),
+        (
+            "cisco.meraki.devices_wireless_bluetooth_settings_info",
+            "getDeviceWirelessBluetoothSettings",
+        ),
+        (
+            "cisco.meraki.devices_wireless_bluetooth_settings",
+            "updateDeviceWirelessBluetoothSettings",
+        ),
+        (
+            "cisco.meraki.devices_wireless_connection_stats_info",
+            "getDeviceWirelessConnectionStats",
+        ),
+        (
+            "cisco.meraki.devices_wireless_electronic_shelf_label",
+            "updateDeviceWirelessElectronicShelfLabel",
+        ),
+        (
+            "cisco.meraki.devices_wireless_electronic_shelf_label_info",
+            "getDeviceWirelessElectronicShelfLabel",
+        ),
+        (
+            "cisco.meraki.devices_wireless_latency_stats_info",
+            "getDeviceWirelessLatencyStats",
+        ),
+        (
+            "cisco.meraki.devices_wireless_radio_settings",
+            "updateDeviceWirelessRadioSettings",
+        ),
+        (
+            "cisco.meraki.devices_wireless_radio_settings_info",
+            "getDeviceWirelessRadioSettings",
+        ),
+        (
+            "cisco.meraki.devices_wireless_status_info",
+            "getDeviceWirelessStatus",
+        ),
+        (
+            "cisco.meraki.devices_wireless_zigbee_enrollments",
+            "createDeviceWirelessZigbeeEnrollment",
+        ),
+        (
+            "cisco.meraki.devices_wireless_zigbee_enrollments_info",
+            "getDeviceWirelessZigbeeEnrollment",
+        ),
+        (
+            "cisco.meraki.devices_wireless_alternate_management_interface_ipv6",
+            "updateDeviceWirelessAlternateManagementInterfaceIpv6",
+        ),
     ]
