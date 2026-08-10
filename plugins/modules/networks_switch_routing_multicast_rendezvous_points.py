@@ -21,7 +21,7 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   interfaceIp:
-    description: The IP address of the interface where the RP needs to be created.
+    description: "The IP address of the interface where the RP needs to be created."
     type: str
   multicastGroup:
     description: '''Any'', or the IP address of a multicast group.'

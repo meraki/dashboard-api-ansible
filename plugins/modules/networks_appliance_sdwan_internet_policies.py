@@ -191,9 +191,9 @@ meraki_response:
           "preferredUplink": "string",
           "failOverCriterion": "string",
           "performanceClass": {
-            "type": "string",
-            "builtinPerformanceClassName": "string",
-            "customPerformanceClassId": "string"
+            "type": {},
+            "builtinPerformanceClassName": {},
+            "customPerformanceClassId": {}
           },
           "trafficFilters": [
             {
@@ -207,13 +207,13 @@ meraki_response:
                   "host": 0
                 },
                 "destination": {
-                  "port": "string",
-                  "cidr": "string",
+                  "port": {},
+                  "cidr": {},
                   "applications": [
                     {
-                      "id": "string",
-                      "name": "string",
-                      "type": "string"
+                      "id": {},
+                      "name": {},
+                      "type": {}
                     }
                   ]
                 }

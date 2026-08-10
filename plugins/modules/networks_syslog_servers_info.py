@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: networks_syslog_servers_info
 short_description: Information module for networks _syslog _servers
 description:
-  - Get all networks _syslog _servers.
-  - List the syslog servers for a network.
+  - Get all networks _syslog _servers. - > List the syslog servers for a network.
+    Use GET /organizations/{organizationId}/devices/syslog/servers/byNetwork instead.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

@@ -49,7 +49,7 @@ class DevicesLiveToolsMacTable(object):
         self.new_object = dict(
             callback=params.get("callback"),
             serial=params.get("serial"),
-            mac_table_id=params.get("macTableId"),
+            macTableId=params.get("macTableId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -129,7 +129,7 @@ class DevicesLiveToolsMacTable(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("callback", "callback"), ("macTableId", "macTableId"),
+            ("callback", "callback"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

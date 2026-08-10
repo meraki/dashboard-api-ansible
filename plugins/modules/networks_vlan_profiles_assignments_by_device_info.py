@@ -130,6 +130,7 @@ meraki_response:
         "serial": "string",
         "mac": "string",
         "productType": "string",
+        "configurationSource": "string",
         "vlanProfile": {
           "iname": "string",
           "name": "string",

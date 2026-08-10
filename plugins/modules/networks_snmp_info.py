@@ -78,6 +78,12 @@ meraki_response:
           "username": "string",
           "passphrase": "string"
         }
-      ]
+      ],
+      "authentication": {
+        "protocol": "string"
+      },
+      "privacy": {
+        "protocol": "string"
+      }
     }
 """

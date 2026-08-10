@@ -140,7 +140,7 @@ meraki_response:
           0
         ],
         "axEnabled": true,
-        "rxsop": 0
+        "rxsop": {}
       },
       "fiveGhzSettings": {
         "maxPower": 0,
@@ -150,7 +150,7 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": 0
+        "rxsop": {}
       },
       "sixGhzSettings": {
         "maxPower": 0,
@@ -160,7 +160,7 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": 0
+        "rxsop": {}
       },
       "transmission": {
         "enabled": true

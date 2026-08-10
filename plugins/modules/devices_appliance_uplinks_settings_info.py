@@ -10,7 +10,7 @@ module: devices_appliance_uplinks_settings_info
 short_description: Information module for devices _appliance _uplinks _settings
 description:
   - Get all devices _appliance _uplinks _settings.
-  - Return the uplink settings for an MX appliance.
+  - Return the uplink settings for a secure router or security appliance.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

@@ -219,8 +219,8 @@ meraki_response:
     {
       "0": {
         "isAuthorized": true,
-        "authorizedAt": "string",
-        "expiresAt": "string"
+        "authorizedAt": {},
+        "expiresAt": {}
       }
     }
 """

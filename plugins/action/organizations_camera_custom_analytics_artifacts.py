@@ -51,7 +51,7 @@ class OrganizationsCameraCustomAnalyticsArtifacts(object):
         self.new_object = dict(
             name=params.get("name"),
             organizationId=params.get("organizationId"),
-            artifact_id=params.get("artifactId"),
+            artifactId=params.get("artifactId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -167,7 +167,7 @@ class OrganizationsCameraCustomAnalyticsArtifacts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"), ("artifactId", "artifactId"),
+            ("name", "name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

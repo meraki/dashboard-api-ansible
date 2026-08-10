@@ -157,8 +157,6 @@ class OrganizationsSaseSites(object):
         obj_params = [
             ("siteId", "siteId"),
             ("routing", "routing"),
-            ("organizationId", "organizationId"),
-            ("siteId", "siteId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

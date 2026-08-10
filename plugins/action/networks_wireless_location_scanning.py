@@ -69,7 +69,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             enabled=params.get("enabled"),
             api=params.get("api"),
-            network_id=params.get("networkId"),
+            networkId=params.get("networkId"),
             ruleId=params.get("ruleId"),
         )
         return new_object

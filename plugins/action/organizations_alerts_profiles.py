@@ -58,9 +58,9 @@ class OrganizationsAlertsProfiles(object):
             recipients=params.get("recipients"),
             networkTags=params.get("networkTags"),
             description=params.get("description"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             enabled=params.get("enabled"),
-            alert_config_id=params.get("alertConfigId"),
+            alertConfigId=params.get("alertConfigId"),
         )
 
     def create_params(self):
@@ -183,9 +183,7 @@ class OrganizationsAlertsProfiles(object):
             ("recipients", "recipients"),
             ("networkTags", "networkTags"),
             ("description", "description"),
-            ("organizationId", "organizationId"),
             ("enabled", "enabled"),
-            ("alertConfigId", "alertConfigId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

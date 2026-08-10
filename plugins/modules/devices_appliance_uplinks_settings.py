@@ -10,7 +10,7 @@ module: devices_appliance_uplinks_settings
 short_description: Resource module for devices _appliance _uplinks _settings
 description:
   - Manage operation update of the resource devices _appliance _uplinks _settings.
-  - Update the uplink settings for an MX appliance.
+  - Update the uplink settings for a secure router or security appliance.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

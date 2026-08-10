@@ -93,6 +93,7 @@ argument_spec.update(dict(
     dnsRewrite=dict(type="dict"),
     speedBurst=dict(type="dict"),
     namedVlans=dict(type="dict"),
+    security=dict(type="dict"),
     localAuthFallback=dict(type="dict"),
     radiusAccountingStartDelay=dict(type="int"),
     networkId=dict(type="str"),
@@ -173,6 +174,7 @@ class NetworksWirelessSsids(object):
             dnsRewrite=params.get("dnsRewrite"),
             speedBurst=params.get("speedBurst"),
             namedVlans=params.get("namedVlans"),
+            security=params.get("security"),
             localAuthFallback=params.get("localAuthFallback"),
             radiusAccountingStartDelay=params.get("radiusAccountingStartDelay"),
             networkId=params.get("networkId"),
@@ -393,28 +395,20 @@ class NetworksWirelessSsids(object):
                 'bandSelection') or self.new_object.get('band_selection')
         if self.new_object.get('perClientBandwidthLimitUp') is not None or self.new_object.get(
                 'per_client_bandwidth_limit_up') is not None:
-            if (per_client_bandwidth_limit_up := self.new_object.get('per_client_bandwidth_limit_up')):
-                new_object_params['perClientBandwidthLimitUp'] = per_client_bandwidth_limit_up
-            else:
-                new_object_params['perClientBandwidthLimitUp'] = self.new_object.get('perClientBandwidthLimitUp')
+            new_object_params['perClientBandwidthLimitUp'] = self.new_object.get(
+                'perClientBandwidthLimitUp') or self.new_object.get('per_client_bandwidth_limit_up')
         if self.new_object.get('perClientBandwidthLimitDown') is not None or self.new_object.get(
                 'per_client_bandwidth_limit_down') is not None:
-            if (per_client_bandwidth_limit_down := self.new_object.get('per_client_bandwidth_limit_down')):
-                new_object_params['perClientBandwidthLimitDown'] = per_client_bandwidth_limit_down
-            else:
-                new_object_params['perClientBandwidthLimitDown'] = self.new_object.get('perClientBandwidthLimitDown')
+            new_object_params['perClientBandwidthLimitDown'] = self.new_object.get(
+                'perClientBandwidthLimitDown') or self.new_object.get('per_client_bandwidth_limit_down')
         if self.new_object.get('perSsidBandwidthLimitUp') is not None or self.new_object.get(
                 'per_ssid_bandwidth_limit_up') is not None:
-            if (per_ssid_bandwidth_limit_up := self.new_object.get('per_ssid_bandwidth_limit_up')):
-                new_object_params['perSsidBandwidthLimitUp'] = per_ssid_bandwidth_limit_up
-            else:
-                new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get('perSsidBandwidthLimitUp')
+            new_object_params['perSsidBandwidthLimitUp'] = self.new_object.get(
+                'perSsidBandwidthLimitUp') or self.new_object.get('per_ssid_bandwidth_limit_up')
         if self.new_object.get('perSsidBandwidthLimitDown') is not None or self.new_object.get(
                 'per_ssid_bandwidth_limit_down') is not None:
-            if (per_ssid_bandwidth_limit_down := self.new_object.get('per_ssid_bandwidth_limit_down')):
-                new_object_params['perSsidBandwidthLimitDown'] = per_ssid_bandwidth_limit_down
-            else:
-                new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get('perSsidBandwidthLimitDown')
+            new_object_params['perSsidBandwidthLimitDown'] = self.new_object.get(
+                'perSsidBandwidthLimitDown') or self.new_object.get('per_ssid_bandwidth_limit_down')
         if self.new_object.get('lanIsolationEnabled') is not None or self.new_object.get(
                 'lan_isolation_enabled') is not None:
             new_object_params['lanIsolationEnabled'] = self.new_object.get(
@@ -454,6 +448,10 @@ class NetworksWirelessSsids(object):
                 'named_vlans') is not None:
             new_object_params['namedVlans'] = self.new_object.get(
                 'namedVlans') or self.new_object.get('named_vlans')
+        if self.new_object.get('security') is not None or self.new_object.get(
+                'security') is not None:
+            new_object_params['security'] = self.new_object.get(
+                'security') or self.new_object.get('security')
         if self.new_object.get('localAuthFallback') is not None or self.new_object.get(
                 'local_auth_fallback') is not None:
             new_object_params['localAuthFallback'] = self.new_object.get(
@@ -604,8 +602,9 @@ class NetworksWirelessSsids(object):
             ("dnsRewrite", "dnsRewrite"),
             ("speedBurst", "speedBurst"),
             ("namedVlans", "namedVlans"),
+            ("security", "security"),
             ("localAuthFallback", "localAuthFallback"),
-            ("radiusAccountingStartDelay", "radiusAccountingStartDelay"), ("number", "number"),
+            ("radiusAccountingStartDelay", "radiusAccountingStartDelay"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

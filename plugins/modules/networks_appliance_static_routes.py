@@ -30,7 +30,7 @@ options:
     type: str
   gatewayVlanId:
     description: Gateway VLAN ID.
-    type: str
+    type: int
   name:
     description: Name of the route.
     type: str
@@ -107,7 +107,7 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     gatewayIp: 1.2.3.5
-    gatewayVlanId: '100'
+    gatewayVlanId: 100
     name: My route
     networkId: string
     subnet: 192.168.1.0/24
@@ -141,7 +141,7 @@ EXAMPLES = r"""
         ip: 1.2.3.4
         name: Some client name
     gatewayIp: 1.2.3.5
-    gatewayVlanId: '100'
+    gatewayVlanId: 100
     name: My route
     networkId: string
     reservedIpRanges:

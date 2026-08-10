@@ -381,7 +381,7 @@ options:
     elements: dict
     suboptions:
       caCertificate:
-        description: Certificate used for authorization for the RADSEC Server.
+        description: Certificate used for authorization for the RadSec Server.
         type: str
       host:
         description: IP address (or FQDN) to which the APs will send RADIUS accounting
@@ -391,7 +391,7 @@ options:
         description: Port on the RADIUS server that is listening for accounting messages.
         type: int
       radsecEnabled:
-        description: Use RADSEC (TLS over TCP) to connect to this RADIUS accounting
+        description: Use RadSec (TLS over TCP) to connect to this RADIUS accounting
           server. Requires radiusProxyEnabled.
         type: bool
       secret:
@@ -454,14 +454,14 @@ options:
       cloud to the configured RADIUS auth and accounting servers.
     type: bool
   radiusRadsec:
-    description: The current settings for RADIUS RADSec.
+    description: The current settings for RADIUS RadSec.
     suboptions:
       tlsTunnel:
-        description: RADSec TLS tunnel settings.
+        description: RadSec TLS tunnel settings.
         suboptions:
           timeout:
             description: The interval (in seconds) to determines how long a TLS session
-              can remain idle for a RADSec server before it is automatically terminated.
+              can remain idle for a RadSec server before it is automatically terminated.
             type: int
         type: dict
     type: dict
@@ -479,7 +479,7 @@ options:
     elements: dict
     suboptions:
       caCertificate:
-        description: Certificate used for authorization for the RADSEC Server.
+        description: Certificate used for authorization for the RadSec Server.
         type: str
       host:
         description: IP address (or FQDN) of your RADIUS server.
@@ -491,7 +491,7 @@ options:
         description: UDP port the RADIUS server listens on for Access-requests.
         type: int
       radsecEnabled:
-        description: Use RADSEC (TLS over TCP) to connect to this RADIUS server. Requires
+        description: Use RadSec (TLS over TCP) to connect to this RADIUS server. Requires
           radiusProxyEnabled.
         type: bool
       secret:
@@ -509,6 +509,23 @@ options:
       concentrator is unreachable. This param is optional. ('disabled' represents
       no secondary concentrator.).
     type: str
+  security:
+    description: Security settings for the SSID.
+    suboptions:
+      encryption:
+        description: Encryption settings for WPA3 modes.
+        suboptions:
+          akms:
+            description: Authentication key management systems used by the SSID.
+            elements: str
+            type: list
+          ciphers:
+            description: Encryption ciphers used by the SSID. CCMP 128 is required
+              and cannot be removed.
+            elements: str
+            type: list
+        type: dict
+    type: dict
   speedBurst:
     description: The SpeedBurst setting for this SSID'.
     suboptions:
@@ -729,6 +746,12 @@ EXAMPLES = r"""
         secret: secret-string
     radiusTestingEnabled: true
     secondaryConcentratorNetworkId: disabled
+    security:
+      encryption:
+        akms:
+          - SAE
+        ciphers:
+          - CCMP 128
     speedBurst:
       enabled: true
     splashGuestSponsorDomains:
@@ -758,12 +781,15 @@ meraki_response:
       "ssidAdminAccessible": true,
       "localAuth": true,
       "authMode": "string",
+      "psk": "string",
       "encryptionMode": "string",
       "wpaEncryptionMode": "string",
       "radiusServers": [
         {
+          "id": "string",
           "host": "string",
           "port": 0,
+          "radsecEnabled": true,
           "openRoamingCertificateId": 0,
           "caCertificate": "string"
         }
@@ -799,6 +825,88 @@ meraki_response:
       ],
       "perSsidBandwidthLimitUp": 0,
       "perSsidBandwidthLimitDown": 0,
-      "mandatoryDhcpEnabled": true
+      "adaptivePolicyGroupId": "string",
+      "mandatoryDhcpEnabled": true,
+      "dot11w": {
+        "enabled": true,
+        "required": true
+      },
+      "dot11r": {
+        "enabled": true,
+        "adaptive": true
+      },
+      "enterpriseAdminAccess": "string",
+      "radiusTestingEnabled": true,
+      "radiusCalledStationId": "string",
+      "radiusAuthenticationNasId": "string",
+      "radiusServerTimeout": 0,
+      "radiusServerAttemptsLimit": 0,
+      "radiusFallbackEnabled": true,
+      "radiusProxyEnabled": true,
+      "radiusCoaEnabled": true,
+      "radiusOverride": true,
+      "useVlanTagging": true,
+      "defaultVlanId": 0,
+      "adultContentFilteringEnabled": true,
+      "dnsRewrite": {
+        "enabled": true,
+        "dnsCustomNameservers": [
+          "string"
+        ]
+      },
+      "gre": {
+        "concentrator": {
+          "host": "string"
+        },
+        "key": 0,
+        "clientIsolation": true
+      },
+      "lanIsolationEnabled": true,
+      "oauth": {
+        "allowedDomains": [
+          "string"
+        ]
+      },
+      "localAuthFallback": {
+        "enabled": true,
+        "cacheTimeout": 0,
+        "serverCaCertificate": {
+          "contents": {}
+        }
+      },
+      "namedVlans": {
+        "tagging": {
+          "enabled": true,
+          "defaultVlanName": "string",
+          "byApTags": [
+            {
+              "tags": [
+                "string"
+              ],
+              "vlanName": "string"
+            }
+          ]
+        },
+        "radius": {
+          "guestVlan": {
+            "enabled": true,
+            "name": "string"
+          }
+        }
+      },
+      "speedBurst": {
+        "enabled": true
+      },
+      "wifiPersonalNetworkEnabled": true,
+      "security": {
+        "encryption": {
+          "ciphers": [
+            "string"
+          ],
+          "akms": [
+            "string"
+          ]
+        }
+      }
     }
 """

@@ -26,6 +26,9 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  portChannelFallback:
+    description: Port channel fallback.
+    type: bool
   powerExceptions:
     description: Exceptions on a per switch basis to "useCombinedPower".
     elements: dict
@@ -109,6 +112,7 @@ EXAMPLES = r"""
     macBlocklist:
       enabled: true
     networkId: string
+    portChannelFallback: true
     powerExceptions:
       - powerType: string
         serial: string
@@ -142,6 +146,7 @@ meraki_response:
       "macBlocklist": {
         "enabled": true
       },
+      "portChannelFallback": true,
       "uplinkSelection": {
         "failback": {
           "enabled": true

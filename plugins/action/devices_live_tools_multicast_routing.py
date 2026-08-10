@@ -49,7 +49,7 @@ class DevicesLiveToolsMulticastRouting(object):
         self.new_object = dict(
             callback=params.get("callback"),
             serial=params.get("serial"),
-            multicast_routing_id=params.get("multicastRoutingId"),
+            multicastRoutingId=params.get("multicastRoutingId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -128,8 +128,9 @@ class DevicesLiveToolsMulticastRouting(object):
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
-        obj_params = [("callback", "callback"),
-                      ("multicastRoutingId", "multicastRoutingId"), ]
+        obj_params = [
+            ("callback", "callback"),
+        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

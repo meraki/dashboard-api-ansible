@@ -37,6 +37,7 @@ argument_spec.update(dict(
     vlan=dict(type="int"),
     allowedVlans=dict(type="str"),
     accessPolicy=dict(type="str"),
+    sgt=dict(type="dict"),
     networkId=dict(type="str"),
     portId=dict(type="str"),
 ))
@@ -59,8 +60,9 @@ class NetworksAppliancePorts(object):
             vlan=params.get("vlan"),
             allowedVlans=params.get("allowedVlans"),
             accessPolicy=params.get("accessPolicy"),
+            sgt=params.get("sgt"),
             networkId=params.get("networkId"),
-            port_id=params.get("portId"),
+            portId=params.get("portId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -108,6 +110,10 @@ class NetworksAppliancePorts(object):
                 'access_policy') is not None:
             new_object_params['accessPolicy'] = self.new_object.get(
                 'accessPolicy') or self.new_object.get('access_policy')
+        if self.new_object.get(
+                'sgt') is not None or self.new_object.get('sgt') is not None:
+            new_object_params['sgt'] = self.new_object.get('sgt') or \
+                self.new_object.get('sgt')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -193,7 +199,8 @@ class NetworksAppliancePorts(object):
             ("type", "type"),
             ("vlan", "vlan"),
             ("allowedVlans", "allowedVlans"),
-            ("accessPolicy", "accessPolicy"), ("portId", "portId"),
+            ("accessPolicy", "accessPolicy"),
+            ("sgt", "sgt"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

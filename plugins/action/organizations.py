@@ -35,6 +35,7 @@ argument_spec.update(dict(
     management=dict(type="dict"),
     organizationId=dict(type="str"),
     api=dict(type="dict"),
+    privacy=dict(type="dict"),
 ))
 
 required_if = [
@@ -54,6 +55,7 @@ class Organizations(object):
             management=params.get("management"),
             organizationId=params.get("organizationId"),
             api=params.get("api"),
+            privacy=params.get("privacy"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -115,6 +117,10 @@ class Organizations(object):
                 'api') is not None or self.new_object.get('api') is not None:
             new_object_params['api'] = self.new_object.get('api') or \
                 self.new_object.get('api')
+        if self.new_object.get('privacy') is not None or self.new_object.get(
+                'privacy') is not None:
+            new_object_params['privacy'] = self.new_object.get('privacy') or \
+                self.new_object.get('privacy')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
@@ -192,8 +198,8 @@ class Organizations(object):
         obj_params = [
             ("name", "name"),
             ("management", "management"),
-            ("organizationId", "organizationId"),
             ("api", "api"),
+            ("privacy", "privacy"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

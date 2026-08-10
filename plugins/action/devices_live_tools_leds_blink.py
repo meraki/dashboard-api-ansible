@@ -51,7 +51,7 @@ class DevicesLiveToolsLedsBlink(object):
             duration=params.get("duration"),
             callback=params.get("callback"),
             serial=params.get("serial"),
-            leds_blink_id=params.get("ledsBlinkId"),
+            ledsBlinkId=params.get("ledsBlinkId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -136,7 +136,7 @@ class DevicesLiveToolsLedsBlink(object):
 
         obj_params = [
             ("duration", "duration"),
-            ("callback", "callback"), ("ledsBlinkId", "ledsBlinkId"),
+            ("callback", "callback"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

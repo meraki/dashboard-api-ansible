@@ -20,12 +20,27 @@ options:
     description: The type of SNMP access. Can be one of 'none' (disabled), 'community'
       (V1/V2c), or 'users' (V3).
     type: str
+  authentication:
+    description: SNMPv3 authentication settings. Only relevant if 'access' is set
+      to 'users'.
+    suboptions:
+      protocol:
+        description: The SNMPv3 authentication protocol.
+        type: str
+    type: dict
   communityString:
     description: The SNMP community string. Only relevant if 'access' is set to 'community'.
     type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  privacy:
+    description: SNMPv3 privacy settings. Only relevant if 'access' is set to 'users'.
+    suboptions:
+      protocol:
+        description: The SNMPv3 privacy protocol.
+        type: str
+    type: dict
   users:
     description: The list of SNMP users. Only relevant if 'access' is set to 'users'.
     elements: dict
@@ -77,8 +92,12 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     access: users
+    authentication:
+      protocol: SHA-1
     communityString: sample
     networkId: string
+    privacy:
+      protocol: AES-128
     users:
       - passphrase: hunter2
         username: AzureDiamond
@@ -97,6 +116,12 @@ meraki_response:
           "username": "string",
           "passphrase": "string"
         }
-      ]
+      ],
+      "authentication": {
+        "protocol": "string"
+      },
+      "privacy": {
+        "protocol": "string"
+      }
     }
 """

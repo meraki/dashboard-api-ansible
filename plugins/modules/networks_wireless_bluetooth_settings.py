@@ -86,7 +86,7 @@ EXAMPLES = r"""
     minor: 1
     networkId: string
     scanningEnabled: true
-    uuid: 00000000-0000-0000-000-000000000000
+    uuid: 00000000-0000-0000-0000-000000000000
 """
 RETURN = r"""
 meraki_response:

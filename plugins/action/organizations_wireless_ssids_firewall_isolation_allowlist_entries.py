@@ -218,8 +218,6 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             ("client", "client"),
             ("ssid", "ssid"),
             ("network", "network"),
-            ("organizationId", "organizationId"),
-            ("entryId", "entryId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

@@ -110,12 +110,12 @@ EXAMPLES = r"""
       - enabled: true
         name: string
         pskGroupId: string
-        ssid: 0
+        ssid: {}
     profileId: string
     usbPorts:
       - enabled: true
         name: string
-        ssid: 0
+        ssid: {}
 - name: Delete by id
   cisco.meraki.networks_wireless_ethernet_ports_profiles:
     meraki_api_key: "{{ meraki_api_key }}"

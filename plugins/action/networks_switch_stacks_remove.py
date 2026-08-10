@@ -68,7 +68,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             serial=params.get("serial"),
             networkId=params.get("networkId"),
-            switch_stack_id=params.get("switchStackId"),
+            switchStackId=params.get("switchStackId"),
         )
         return new_object
 

@@ -48,8 +48,8 @@ class NetworksSmBypassActivationLockAttempts(object):
         self.meraki = meraki
         self.new_object = dict(
             ids=params.get("ids"),
-            network_id=params.get("networkId"),
-            attempt_id=params.get("attemptId"),
+            networkId=params.get("networkId"),
+            attemptId=params.get("attemptId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -131,7 +131,7 @@ class NetworksSmBypassActivationLockAttempts(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("ids", "ids"), ("attemptId", "attemptId"),
+            ("ids", "ids"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

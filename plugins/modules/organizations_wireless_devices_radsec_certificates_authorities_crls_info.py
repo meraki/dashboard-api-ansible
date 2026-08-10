@@ -11,7 +11,7 @@ short_description: Information module for organizations _wireless _devices _rads
   _certificates _authorities _crls
 description:
   - Get all organizations _wireless _devices _radsec _certificates _authorities _crls.
-  - Query for certificate revocation list CRL for the organization's RADSEC device
+  - Query for certificate revocation list CRL for the organization's RadSec device
     Certificate Authorities CAs .
 version_added: '1.0.0'
 extends_documentation_fragment:

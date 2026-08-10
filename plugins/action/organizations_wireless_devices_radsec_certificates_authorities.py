@@ -141,7 +141,6 @@ class OrganizationsWirelessDevicesRadsecCertificatesAuthorities(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("organizationId", "organizationId"),
             ("status", "status"),
             ("certificateAuthorityId", "certificateAuthorityId"),
         ]

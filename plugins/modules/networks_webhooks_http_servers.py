@@ -40,7 +40,7 @@ options:
           template use 'wpt_00002'; for the Slack (included) template use 'wpt_00003';
           for the Microsoft Teams (included) template use 'wpt_00004'; for the ServiceNow
           (included) template use 'wpt_00006'; for the PagerDuty (included) template
-          use 'wpt_00007'.
+          use 'wpt_00007'; for the Push (included) template use 'wpt_00008'.
         type: str
     type: dict
   sharedSecret:

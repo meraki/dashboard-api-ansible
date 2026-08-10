@@ -58,6 +58,10 @@ options:
     description: L3 Interface mode, can be one of 'vlan', 'routed', 'loopback'. Default
       is 'vlan'. CS 17.18 or higher is required for 'routed' mode.
     type: str
+  mtu:
+    description: The interface MTU. Applies to native switch layer 3 interfaces, including
+      VLAN and routed modes.
+    type: int
   multicastRouting:
     description: Enable multicast support if, multicast routing between VLANs is required.
       Options are 'disabled', 'enabled' or 'IGMP snooping querier'. Default is 'disabled'.
@@ -167,6 +171,7 @@ EXAMPLES = r"""
       gateway: 2001:db8::2
       prefix: 2001:db8::/32
     mode: vlan
+    mtu: 1500
     multicastRouting: disabled
     name: L3 interface
     networkId: string
@@ -213,6 +218,7 @@ EXAMPLES = r"""
       assignmentMode: static
       gateway: 2001:db8::2
       prefix: 2001:db8::/32
+    mtu: 1500
     multicastRouting: disabled
     name: L3 interface
     networkId: string
@@ -267,6 +273,7 @@ meraki_response:
       "mode": "string",
       "subnet": "string",
       "interfaceIp": "string",
+      "mtu": 0,
       "serial": "string",
       "switchPortId": "string",
       "multicastRouting": "string",

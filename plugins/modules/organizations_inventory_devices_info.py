@@ -221,6 +221,7 @@ meraki_response:
       "serial": "string",
       "name": "string",
       "model": "string",
+      "sku": "string",
       "networkId": "string",
       "orderNumber": "string",
       "claimedAt": "string",
@@ -237,7 +238,7 @@ meraki_response:
         }
       ],
       "eox": {
-        "status": "string",
+        "status": {},
         "endOfSaleAt": "string",
         "endOfSupportAt": "string"
       }

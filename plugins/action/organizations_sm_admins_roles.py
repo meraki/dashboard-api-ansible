@@ -164,7 +164,6 @@ class OrganizationsSmAdminsRoles(object):
             ("name", "name"),
             ("scope", "scope"),
             ("tags", "tags"),
-            ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

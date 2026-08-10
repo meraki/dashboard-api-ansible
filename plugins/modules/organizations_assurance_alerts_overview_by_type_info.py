@@ -115,6 +115,16 @@ options:
       - Resolved query parameter. Optional parameter to filter by resolved alerts
         defaults to false.
     type: bool
+  includeDeviceTags:
+    description:
+      - IncludeDeviceTags query parameter. Include grouped device tags for each alert
+        type in the response.
+    type: bool
+  includeNetworks:
+    description:
+      - IncludeNetworks query parameter. Include affected networks for each alert
+        type in the response.
+    type: bool
   suppressAlertsForOfflineNodes:
     description:
       - >
@@ -180,6 +190,8 @@ EXAMPLES = r"""
     active: true
     dismissed: true
     resolved: true
+    includeDeviceTags: true
+    includeNetworks: true
     suppressAlertsForOfflineNodes: true
     organizationId: string
     total_pages: -1
@@ -196,8 +208,24 @@ meraki_response:
       "items": [
         {
           "type": "string",
+          "categoryType": "string",
+          "severity": "string",
+          "lastAlertedAt": "string",
           "lastResolvedAt": "string",
-          "count": 0
+          "count": 0,
+          "networkCount": 0,
+          "deviceTypes": [
+            "string"
+          ],
+          "deviceTags": [
+            "string"
+          ],
+          "networks": [
+            {
+              "id": "string",
+              "name": "string"
+            }
+          ]
         }
       ],
       "meta": {

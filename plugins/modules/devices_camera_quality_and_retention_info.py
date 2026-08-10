@@ -75,8 +75,8 @@ meraki_response:
       "motionBasedRetentionEnabled": true,
       "audioRecordingEnabled": true,
       "restrictedBandwidthModeEnabled": true,
-      "quality": "string",
-      "resolution": "string",
+      "quality": {},
+      "resolution": {},
       "motionDetectorVersion": 0
     }
 """

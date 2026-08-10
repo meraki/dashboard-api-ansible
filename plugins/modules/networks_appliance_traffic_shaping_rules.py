@@ -152,5 +152,26 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "defaultRulesEnabled": true,
+      "rules": [
+        {
+          "definitions": [
+            {
+              "type": "string",
+              "value": "string"
+            }
+          ],
+          "perClientBandwidthLimits": {
+            "settings": "string",
+            "bandwidthLimits": {
+              "limitUp": 0,
+              "limitDown": 0
+            }
+          },
+          "dscpTagValue": {},
+          "priority": "string"
+        }
+      ]
+    }
 """

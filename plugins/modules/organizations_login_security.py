@@ -51,6 +51,11 @@ options:
     description: Boolean indicating whether users will be logged out after being idle
       for the specified number of minutes.
     type: bool
+  enforceLockedIpSessions:
+    description: Boolean indicating whether Dashboard sessions are locked to the IP
+      address from which they were established. Only applicable to organizations that
+      support locked-IP sessions; otherwise the parameter is ignored.
+    type: bool
   enforceLoginIpRanges:
     description: Boolean indicating whether organization will restrict access to Dashboard
       (including the API) from certain IP addresses.
@@ -138,6 +143,7 @@ EXAMPLES = r"""
     enforceAccountLockout: true
     enforceDifferentPasswords: true
     enforceIdleTimeout: true
+    enforceLockedIpSessions: true
     enforceLoginIpRanges: true
     enforcePasswordExpiration: true
     enforceStrongPasswords: true
@@ -180,6 +186,7 @@ meraki_response:
             "string"
           ]
         }
-      }
+      },
+      "enforceLockedIpSessions": true
     }
 """

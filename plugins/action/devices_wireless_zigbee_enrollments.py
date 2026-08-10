@@ -47,7 +47,7 @@ class DevicesWirelessZigbeeEnrollments(object):
         self.meraki = meraki
         self.new_object = dict(
             serial=params.get("serial"),
-            enrollment_id=params.get("enrollmentId"),
+            enrollmentId=params.get("enrollmentId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -122,8 +122,8 @@ class DevicesWirelessZigbeeEnrollments(object):
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
-        obj_params = [("enrollmentId", "enrollmentId"),
-                      ]
+        obj_params = [
+        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

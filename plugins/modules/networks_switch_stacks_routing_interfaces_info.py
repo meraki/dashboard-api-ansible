@@ -130,6 +130,7 @@ meraki_response:
       "mode": "string",
       "subnet": "string",
       "interfaceIp": "string",
+      "mtu": 0,
       "serial": "string",
       "switchPortId": "string",
       "multicastRouting": "string",

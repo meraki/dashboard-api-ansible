@@ -17,7 +17,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   alertIds:
-    description: Array of alert IDs to dismiss.
+    description: Array of alert IDs in this organization to dismiss. Missing or inaccessible
+      alert IDs return 404.
     elements: str
     type: list
   organizationId:

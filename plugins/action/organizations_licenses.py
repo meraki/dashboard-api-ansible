@@ -48,8 +48,8 @@ class OrganizationsLicenses(object):
         self.meraki = meraki
         self.new_object = dict(
             deviceSerial=params.get("deviceSerial"),
-            organization_id=params.get("organizationId"),
-            license_id=params.get("licenseId"),
+            organizationId=params.get("organizationId"),
+            licenseId=params.get("licenseId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -135,8 +135,6 @@ class OrganizationsLicenses(object):
 
         obj_params = [
             ("deviceSerial", "deviceSerial"),
-            ("organizationId", "organizationId"),
-            ("licenseId", "licenseId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

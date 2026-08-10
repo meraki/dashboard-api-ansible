@@ -22,7 +22,11 @@ options:
     description: NetworkId path parameter. Network ID.
     type: str
   rules:
-    description: An ordered array of the MX L7 firewall rules.
+    description: An ordered array of the MX L7 firewall rules. Each rule is an object
+      with 'policy', 'type', and 'value'. The 'value' shape depends on 'type' object
+      for application/applicationCategory, string for host/port/ipRange, and an array
+      of 2-letter ISO 3166-1 alpha-2 country codes for allowedCountries/blockedCountries.
+      For backward compatibility, request types also accept whitelistedCountries/blacklistedCountries.
     elements: dict
     suboptions:
       policy:
@@ -30,7 +34,8 @@ options:
         type: str
       type:
         description: Type of the L7 rule. One of 'application', 'applicationCategory',
-          'host', 'port', 'ipRange'.
+          'host', 'port', 'ipRange' Country variants accepted 'allowedCountries'/'blockedCountries'
+          (and backward-compatible 'whitelistedCountries'/'blacklistedCountries').
         type: str
       value:
         description: The 'value' of what you want to block. Format of 'value' varies
@@ -100,5 +105,11 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "policy": "string",
+        "type": "string",
+        "value": "string"
+      }
+    ]
 """

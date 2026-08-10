@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             name=params.get("name"),
             content=params.get("content"),
             organizationId=params.get("organizationId"),
-            theme_identifier=params.get("themeIdentifier"),
+            themeIdentifier=params.get("themeIdentifier"),
         )
         return new_object
 

@@ -36,6 +36,7 @@ argument_spec.update(dict(
     powerExceptions=dict(type="list"),
     uplinkClientSampling=dict(type="dict"),
     macBlocklist=dict(type="dict"),
+    portChannelFallback=dict(type="bool"),
     uplinkSelection=dict(type="dict"),
     networkId=dict(type="str"),
 ))
@@ -57,6 +58,7 @@ class NetworksSwitchSettings(object):
             powerExceptions=params.get("powerExceptions"),
             uplinkClientSampling=params.get("uplinkClientSampling"),
             macBlocklist=params.get("macBlocklist"),
+            portChannelFallback=params.get("portChannelFallback"),
             uplinkSelection=params.get("uplinkSelection"),
             networkId=params.get("networkId"),
         )
@@ -91,6 +93,10 @@ class NetworksSwitchSettings(object):
                 'mac_blocklist') is not None:
             new_object_params['macBlocklist'] = self.new_object.get(
                 'macBlocklist') or self.new_object.get('mac_blocklist')
+        if self.new_object.get('portChannelFallback') is not None or self.new_object.get(
+                'port_channel_fallback') is not None:
+            new_object_params['portChannelFallback'] = self.new_object.get(
+                'portChannelFallback')
         if self.new_object.get('uplinkSelection') is not None or self.new_object.get(
                 'uplink_selection') is not None:
             new_object_params['uplinkSelection'] = self.new_object.get(
@@ -158,7 +164,9 @@ class NetworksSwitchSettings(object):
             ("powerExceptions", "powerExceptions"),
             ("uplinkClientSampling", "uplinkClientSampling"),
             ("macBlocklist", "macBlocklist"),
-            ("uplinkSelection", "uplinkSelection"),]
+            ("portChannelFallback", "portChannelFallback"),
+            ("uplinkSelection", "uplinkSelection"),
+        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

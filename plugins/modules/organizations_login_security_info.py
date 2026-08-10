@@ -93,6 +93,7 @@ meraki_response:
             "string"
           ]
         }
-      }
+      },
+      "enforceLockedIpSessions": true
     }
 """

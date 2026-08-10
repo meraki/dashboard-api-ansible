@@ -87,7 +87,7 @@ meraki_response:
         ],
         "vlan": 0,
         "vrf": {
-          "name": "string"
+          "name": {}
         }
       },
       "wan2": {
@@ -101,7 +101,7 @@ meraki_response:
         ],
         "vlan": 0,
         "vrf": {
-          "name": "string"
+          "name": {}
         }
       }
     }

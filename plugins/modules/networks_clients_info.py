@@ -241,6 +241,7 @@ meraki_response:
       "wirelessCapabilities": "string",
       "smInstalled": true,
       "recentDeviceMac": "string",
+      "recentDeviceId": "string",
       "recentDeviceName": "string",
       "recentDeviceSerial": "string",
       "recentDeviceConnection": "string",

@@ -123,7 +123,7 @@ meraki_response:
           "serial": "string",
           "target": "string",
           "createdAt": "string",
-          "migratedAt": "string"
+          "migratedAt": {}
         }
       ],
       "meta": {

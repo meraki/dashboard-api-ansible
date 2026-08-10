@@ -49,7 +49,7 @@ class OrganizationsCellularGatewayEsimsInventory(object):
         self.meraki = meraki
         self.new_object = dict(
             status=params.get("status"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
@@ -131,7 +131,7 @@ class OrganizationsCellularGatewayEsimsInventory(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("status", "status"), ("id", "id"),
+            ("status", "status"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

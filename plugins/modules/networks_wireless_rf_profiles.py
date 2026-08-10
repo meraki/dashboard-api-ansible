@@ -477,7 +477,7 @@ options:
     suboptions:
       channelWidth:
         description: Sets channel width (MHz) for 6Ghz band. Can be one of 'auto',
-          '20', '40', '80' or '160'. Defaults to auto.
+          '20', '40', '80', '160' or '320'. Defaults to auto.
         type: str
       maxPower:
         description: Sets max power (dBm) of 6Ghz band. Can be integer between 2 and
@@ -1181,7 +1181,7 @@ meraki_response:
           0
         ],
         "axEnabled": true,
-        "rxsop": 0
+        "rxsop": {}
       },
       "fiveGhzSettings": {
         "maxPower": 0,
@@ -1191,7 +1191,7 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": 0
+        "rxsop": {}
       },
       "sixGhzSettings": {
         "maxPower": 0,
@@ -1201,7 +1201,7 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": 0
+        "rxsop": {}
       },
       "transmission": {
         "enabled": true

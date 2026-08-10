@@ -183,7 +183,7 @@ meraki_response:
         "version": 0,
         "operationId": "string",
         "client": {
-          "id": "string",
+          "id": {},
           "type": "string"
         }
       }

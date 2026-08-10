@@ -48,8 +48,8 @@ class OrganizationsWirelessZigbeeDisenrollments(object):
         self.meraki = meraki
         self.new_object = dict(
             doorLockIds=params.get("doorLockIds"),
-            organization_id=params.get("organizationId"),
-            disenrollment_id=params.get("disenrollmentId"),
+            organizationId=params.get("organizationId"),
+            disenrollmentId=params.get("disenrollmentId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -131,8 +131,6 @@ class OrganizationsWirelessZigbeeDisenrollments(object):
 
         obj_params = [
             ("doorLockIds", "doorLockIds"),
-            ("organizationId", "organizationId"),
-            ("disenrollmentId", "disenrollmentId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

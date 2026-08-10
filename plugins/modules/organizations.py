@@ -46,6 +46,9 @@ options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
+  privacy:
+    description: Privacy-related settings for the organization.
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -190,6 +193,7 @@ meraki_response:
             "value": "string"
           }
         ]
-      }
+      },
+      "privacy": {}
     }
 """

@@ -51,7 +51,7 @@ class OrganizationsWirelessZigbeeDevices(object):
         self.new_object = dict(
             enrolled=params.get("enrolled"),
             channel=params.get("channel"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
@@ -159,8 +159,6 @@ class OrganizationsWirelessZigbeeDevices(object):
         obj_params = [
             ("enrolled", "enrolled"),
             ("channel", "channel"),
-            ("organizationId", "organizationId"),
-            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

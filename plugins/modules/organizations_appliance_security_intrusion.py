@@ -87,7 +87,7 @@ meraki_response:
     [
       {
         "ruleId": "string",
-        "message": "string"
+        "message": {}
       }
     ]
 """

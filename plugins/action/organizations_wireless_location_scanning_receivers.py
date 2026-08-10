@@ -224,8 +224,6 @@ class OrganizationsWirelessLocationScanningReceivers(object):
             ("version", "version"),
             ("radio", "radio"),
             ("sharedSecret", "sharedSecret"),
-            ("organizationId", "organizationId"),
-            ("receiverId", "receiverId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

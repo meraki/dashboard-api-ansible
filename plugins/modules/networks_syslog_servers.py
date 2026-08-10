@@ -10,7 +10,8 @@ module: networks_syslog_servers
 short_description: Resource module for networks _syslog _servers
 description:
   - Manage operation update of the resource networks _syslog _servers.
-  - Update the syslog servers for a network.
+  - Update the syslog servers for a network. Use PUT /networks/{networkId}/devices/syslog/servers
+    instead.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

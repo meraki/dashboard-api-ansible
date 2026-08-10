@@ -247,7 +247,6 @@ class NetworksSwitchQosRulesOrder(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-        current_obj["networkId"] = requested_obj.get("networkId") or None
 
         obj_params = [
             ("vlan", "vlan"),
@@ -256,7 +255,7 @@ class NetworksSwitchQosRulesOrder(object):
             ("srcPortRange", "srcPortRange"),
             ("dstPort", "dstPort"),
             ("dstPortRange", "dstPortRange"),
-            ("dscp", "dscp"), ("qosRuleId", "qosRuleId"),
+            ("dscp", "dscp"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

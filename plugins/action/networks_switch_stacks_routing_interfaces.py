@@ -36,6 +36,7 @@ argument_spec.update(dict(
     subnet=dict(type="str"),
     switchPortId=dict(type="str"),
     interfaceIp=dict(type="str"),
+    mtu=dict(type="int"),
     multicastRouting=dict(type="str"),
     vlanId=dict(type="int"),
     defaultGateway=dict(type="str"),
@@ -66,6 +67,7 @@ class NetworksSwitchStacksRoutingInterfaces(object):
             subnet=params.get("subnet"),
             switchPortId=params.get("switchPortId"),
             interfaceIp=params.get("interfaceIp"),
+            mtu=params.get("mtu"),
             multicastRouting=params.get("multicastRouting"),
             vlanId=params.get("vlanId"),
             defaultGateway=params.get("defaultGateway"),
@@ -134,6 +136,10 @@ class NetworksSwitchStacksRoutingInterfaces(object):
                 'interface_ip') is not None:
             new_object_params['interfaceIp'] = self.new_object.get(
                 'interfaceIp') or self.new_object.get('interface_ip')
+        if self.new_object.get(
+                'mtu') is not None or self.new_object.get('mtu') is not None:
+            new_object_params['mtu'] = self.new_object.get('mtu') or \
+                self.new_object.get('mtu')
         if self.new_object.get('multicastRouting') is not None or self.new_object.get(
                 'multicast_routing') is not None:
             new_object_params['multicastRouting'] = self.new_object.get(
@@ -206,6 +212,10 @@ class NetworksSwitchStacksRoutingInterfaces(object):
                 'interface_ip') is not None:
             new_object_params['interfaceIp'] = self.new_object.get(
                 'interfaceIp') or self.new_object.get('interface_ip')
+        if self.new_object.get(
+                'mtu') is not None or self.new_object.get('mtu') is not None:
+            new_object_params['mtu'] = self.new_object.get('mtu') or \
+                self.new_object.get('mtu')
         if self.new_object.get('multicastRouting') is not None or self.new_object.get(
                 'multicast_routing') is not None:
             new_object_params['multicastRouting'] = self.new_object.get(
@@ -322,14 +332,14 @@ class NetworksSwitchStacksRoutingInterfaces(object):
             ("subnet", "subnet"),
             ("switchPortId", "switchPortId"),
             ("interfaceIp", "interfaceIp"),
+            ("mtu", "mtu"),
             ("multicastRouting", "multicastRouting"),
             ("vlanId", "vlanId"),
             ("defaultGateway", "defaultGateway"),
             ("ospfSettings", "ospfSettings"),
             ("ipv6", "ipv6"),
             ("vrf", "vrf"),
-            ("loopback", "loopback"), ("switchStackId", "switchStackId"),
-            ("interfaceId", "interfaceId"),
+            ("loopback", "loopback"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

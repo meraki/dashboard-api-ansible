@@ -41,6 +41,16 @@ options:
   portId:
     description: PortId path parameter. Port ID.
     type: str
+  sgt:
+    description: Security Group Tag settings for the port.
+    suboptions:
+      enabled:
+        description: Whether or not Peer SGT is enabled for traffic through this port.
+        type: bool
+      id:
+        description: Adaptive policy group ID this port is assigned to.
+        type: int
+    type: dict
   type:
     description: The type of the port 'access' or 'trunk'.
     type: str
@@ -93,6 +103,9 @@ EXAMPLES = r"""
     enabled: true
     networkId: string
     portId: string
+    sgt:
+      enabled: true
+      id: 1234
     type: access
     vlan: 3
 """
@@ -109,6 +122,10 @@ meraki_response:
       "dropUntaggedTraffic": true,
       "vlan": 0,
       "allowedVlans": "string",
-      "accessPolicy": "string"
+      "accessPolicy": "string",
+      "sgt": {
+        "id": {},
+        "enabled": true
+      }
     }
 """

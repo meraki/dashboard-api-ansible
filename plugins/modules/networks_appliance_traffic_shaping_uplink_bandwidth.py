@@ -120,5 +120,18 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "wan1": {
+        "limitUp": {},
+        "limitDown": {}
+      },
+      "wan2": {
+        "limitUp": {},
+        "limitDown": {}
+      },
+      "cellular": {
+        "limitUp": {},
+        "limitDown": {}
+      }
+    }
 """

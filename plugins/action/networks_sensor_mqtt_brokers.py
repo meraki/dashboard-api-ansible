@@ -50,7 +50,7 @@ class NetworksSensorMqttBrokers(object):
         self.new_object = dict(
             enabled=params.get("enabled"),
             networkId=params.get("networkId"),
-            mqtt_broker_id=params.get("mqttBrokerId"),
+            mqttBrokerId=params.get("mqttBrokerId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -158,7 +158,7 @@ class NetworksSensorMqttBrokers(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("enabled", "enabled"), ("mqttBrokerId", "mqttBrokerId"),
+            ("enabled", "enabled"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -115,6 +115,10 @@ meraki_response:
       "dropUntaggedTraffic": true,
       "vlan": 0,
       "allowedVlans": "string",
-      "accessPolicy": "string"
+      "accessPolicy": "string",
+      "sgt": {
+        "id": {},
+        "enabled": true
+      }
     }
 """

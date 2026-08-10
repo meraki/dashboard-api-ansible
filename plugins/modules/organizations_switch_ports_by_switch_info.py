@@ -154,39 +154,42 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "name": "string",
-      "serial": "string",
-      "mac": "string",
-      "network": {
+    [
+      {
         "name": "string",
-        "id": "string"
-      },
-      "model": "string",
-      "ports": [
-        {
-          "portId": "string",
+        "serial": "string",
+        "mac": "string",
+        "network": {
           "name": "string",
-          "tags": [
-            "string"
-          ],
-          "enabled": true,
-          "poeEnabled": true,
-          "type": "string",
-          "vlan": 0,
-          "voiceVlan": 0,
-          "allowedVlans": "string",
-          "rstpEnabled": true,
-          "stpGuard": "string",
-          "linkNegotiation": "string",
-          "accessPolicyType": "string",
-          "stickyMacAllowList": [
-            "string"
-          ],
-          "stickyMacAllowListLimit": 0
-        }
-      ]
-    }
+          "id": "string"
+        },
+        "model": "string",
+        "ports": [
+          {
+            "portId": "string",
+            "name": {},
+            "tags": [
+              "string"
+            ],
+            "enabled": true,
+            "poeEnabled": true,
+            "type": "string",
+            "vlan": {},
+            "voiceVlan": {},
+            "allowedVlans": "string",
+            "rstpEnabled": true,
+            "stpGuard": "string",
+            "linkNegotiation": "string",
+            "accessPolicyType": "string",
+            "stickyMacAllowList": [
+              "string"
+            ],
+            "stickyMacAllowListLimit": 0
+          }
+        ]
+      }
+    ]
 """

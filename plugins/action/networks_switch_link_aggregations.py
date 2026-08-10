@@ -180,12 +180,8 @@ class NetworksSwitchLinkAggregations(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("switchPorts",
-             "switchPorts"),
-            ("switchProfilePorts",
-             "switchProfilePorts"),
-            ("linkAggregationId",
-             "linkAggregationId"),
+            ("switchPorts", "switchPorts"),
+            ("switchProfilePorts", "switchProfilePorts"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

@@ -103,9 +103,9 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             dot3az=params.get("dot3az"),
             highSpeed=params.get("highSpeed"),
             organizationId=params.get("organizationId"),
-            config_template_id=params.get("configTemplateId"),
-            profile_id=params.get("profileId"),
-            port_id=params.get("portId"),
+            configTemplateId=params.get("configTemplateId"),
+            profileId=params.get("profileId"),
+            portId=params.get("portId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -364,8 +364,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             ("daiTrusted", "daiTrusted"),
             ("profile", "profile"),
             ("dot3az", "dot3az"),
-            ("highSpeed", "highSpeed"), ("profileId", "profileId"),
-            ("portId", "portId"),
+            ("highSpeed", "highSpeed"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
