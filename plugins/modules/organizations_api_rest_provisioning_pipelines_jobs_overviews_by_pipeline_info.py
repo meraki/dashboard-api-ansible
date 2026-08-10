@@ -96,7 +96,18 @@ meraki_response:
                 "failed": 0,
                 "pending": 0
               }
-            }
+            },
+            "byJobOperation": [
+              {
+                "name": "string",
+                "total": 0,
+                "byStatus": {
+                  "completed": 0,
+                  "failed": 0,
+                  "pending": 0
+                }
+              }
+            ]
           }
         }
       ],

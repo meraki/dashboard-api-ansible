@@ -89,6 +89,9 @@ meraki_response:
           }
         }
       ],
+      "sgt": {
+        "enabled": true
+      },
       "subnet": {
         "nat": {
           "isAllowed": true

@@ -85,6 +85,7 @@ meraki_response:
       "macBlocklist": {
         "enabled": true
       },
+      "portChannelFallback": true,
       "uplinkSelection": {
         "failback": {
           "enabled": true

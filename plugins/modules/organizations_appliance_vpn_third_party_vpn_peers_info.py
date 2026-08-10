@@ -134,6 +134,7 @@ meraki_response:
           "ebgpHoldTimer": 0,
           "ebgpMultihop": 0,
           "sourceIp": "string",
+          "receiveLimit": 0,
           "pathPrepend": [
             0
           ],

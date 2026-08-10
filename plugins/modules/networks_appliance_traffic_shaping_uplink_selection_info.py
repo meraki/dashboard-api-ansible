@@ -99,9 +99,9 @@ meraki_response:
                   "cidr": "string",
                   "applications": [
                     {
-                      "id": "string",
-                      "name": "string",
-                      "type": "string"
+                      "id": {},
+                      "name": {},
+                      "type": {}
                     }
                   ]
                 }

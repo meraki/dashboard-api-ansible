@@ -125,7 +125,8 @@ meraki_response:
       "mac": "string",
       "lanIp": "string",
       "firmware": "string",
-      "floorPlanId": "string",
+      "floorPlanId": {},
+      "url": "string",
       "details": [
         {
           "name": "string",

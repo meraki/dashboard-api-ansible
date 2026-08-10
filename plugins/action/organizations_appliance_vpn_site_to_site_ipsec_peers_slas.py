@@ -48,7 +48,7 @@ class OrganizationsApplianceVpnSiteToSiteIpsecPeersSlas(object):
         self.meraki = meraki
         self.new_object = dict(
             items=params.get("items"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -123,7 +123,6 @@ class OrganizationsApplianceVpnSiteToSiteIpsecPeersSlas(object):
 
         obj_params = [
             ("items", "items"),
-            ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

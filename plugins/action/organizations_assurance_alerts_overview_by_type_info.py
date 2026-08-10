@@ -45,6 +45,8 @@ argument_spec.update(dict(
     active=dict(type="bool"),
     dismissed=dict(type="bool"),
     resolved=dict(type="bool"),
+    includeDeviceTags=dict(type="bool"),
+    includeNetworks=dict(type="bool"),
     suppressAlertsForOfflineNodes=dict(type="bool"),
 ))
 
@@ -142,6 +144,12 @@ class ActionModule(ActionBase):
         if params.get("resolved") is not None:
             new_object["resolved"] = params.get(
                 "resolved")
+        if params.get("includeDeviceTags") is not None:
+            new_object["includeDeviceTags"] = params.get(
+                "includeDeviceTags")
+        if params.get("includeNetworks") is not None:
+            new_object["includeNetworks"] = params.get(
+                "includeNetworks")
         if params.get("suppressAlertsForOfflineNodes") is not None:
             new_object["suppressAlertsForOfflineNodes"] = params.get(
                 "suppressAlertsForOfflineNodes")

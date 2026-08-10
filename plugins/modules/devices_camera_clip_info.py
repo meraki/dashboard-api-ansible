@@ -35,8 +35,10 @@ options:
     type: str
   imagerId:
     description:
-      - ImagerId query parameter. For multi-imager cameras, the imager ID to query.
-        Defaults to '1' if omitted.
+      - >
+        ImagerId query parameter. The imager ID to query. Required for multi-imager
+        cameras (must be between 1 and the imager count). For single-imager cameras,
+        must be omitted or set to 0.
     type: int
 requirements:
   - meraki >= 2.4.9

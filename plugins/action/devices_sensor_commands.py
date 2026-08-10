@@ -50,7 +50,7 @@ class DevicesSensorCommands(object):
         self.new_object = dict(
             operation=params.get("operation"),
             serial=params.get("serial"),
-            command_id=params.get("commandId"),
+            commandId=params.get("commandId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -181,7 +181,7 @@ class DevicesSensorCommands(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("operation", "operation"), ("commandId", "commandId"),
+            ("operation", "operation"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

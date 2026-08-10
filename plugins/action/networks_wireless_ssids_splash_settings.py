@@ -37,6 +37,7 @@ argument_spec.update(dict(
     redirectUrl=dict(type="str"),
     useRedirectUrl=dict(type="bool"),
     welcomeMessage=dict(type="str"),
+    userConsent=dict(type="dict"),
     themeId=dict(type="str"),
     splashLogo=dict(type="dict"),
     splashImage=dict(type="dict"),
@@ -70,6 +71,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             redirectUrl=params.get("redirectUrl"),
             useRedirectUrl=params.get("useRedirectUrl"),
             welcomeMessage=params.get("welcomeMessage"),
+            userConsent=params.get("userConsent"),
             themeId=params.get("themeId"),
             splashLogo=params.get("splashLogo"),
             splashImage=params.get("splashImage"),
@@ -122,6 +124,10 @@ class NetworksWirelessSsidsSplashSettings(object):
                 'welcome_message') is not None:
             new_object_params['welcomeMessage'] = self.new_object.get(
                 'welcomeMessage') or self.new_object.get('welcome_message')
+        if self.new_object.get('userConsent') is not None or self.new_object.get(
+                'user_consent') is not None:
+            new_object_params['userConsent'] = self.new_object.get(
+                'userConsent') or self.new_object.get('user_consent')
         if self.new_object.get('themeId') is not None or self.new_object.get(
                 'theme_id') is not None:
             new_object_params['themeId'] = self.new_object.get('themeId') or \
@@ -234,6 +240,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             ("redirectUrl", "redirectUrl"),
             ("useRedirectUrl", "useRedirectUrl"),
             ("welcomeMessage", "welcomeMessage"),
+            ("userConsent", "userConsent"),
             ("themeId", "themeId"),
             ("splashLogo", "splashLogo"),
             ("splashImage", "splashImage"),
@@ -244,7 +251,7 @@ class NetworksWirelessSsidsSplashSettings(object):
             ("guestSponsorship", "guestSponsorship"),
             ("billing", "billing"),
             ("sentryEnrollment", "sentryEnrollment"),
-            ("selfRegistration", "selfRegistration"), ("number", "number"),
+            ("selfRegistration", "selfRegistration"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

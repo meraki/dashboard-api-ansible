@@ -115,12 +115,15 @@ meraki_response:
       "ssidAdminAccessible": true,
       "localAuth": true,
       "authMode": "string",
+      "psk": "string",
       "encryptionMode": "string",
       "wpaEncryptionMode": "string",
       "radiusServers": [
         {
+          "id": "string",
           "host": "string",
           "port": 0,
+          "radsecEnabled": true,
           "openRoamingCertificateId": 0,
           "caCertificate": "string"
         }
@@ -156,6 +159,88 @@ meraki_response:
       ],
       "perSsidBandwidthLimitUp": 0,
       "perSsidBandwidthLimitDown": 0,
-      "mandatoryDhcpEnabled": true
+      "adaptivePolicyGroupId": "string",
+      "mandatoryDhcpEnabled": true,
+      "dot11w": {
+        "enabled": true,
+        "required": true
+      },
+      "dot11r": {
+        "enabled": true,
+        "adaptive": true
+      },
+      "enterpriseAdminAccess": "string",
+      "radiusTestingEnabled": true,
+      "radiusCalledStationId": "string",
+      "radiusAuthenticationNasId": "string",
+      "radiusServerTimeout": 0,
+      "radiusServerAttemptsLimit": 0,
+      "radiusFallbackEnabled": true,
+      "radiusProxyEnabled": true,
+      "radiusCoaEnabled": true,
+      "radiusOverride": true,
+      "useVlanTagging": true,
+      "defaultVlanId": 0,
+      "adultContentFilteringEnabled": true,
+      "dnsRewrite": {
+        "enabled": true,
+        "dnsCustomNameservers": [
+          "string"
+        ]
+      },
+      "gre": {
+        "concentrator": {
+          "host": "string"
+        },
+        "key": 0,
+        "clientIsolation": true
+      },
+      "lanIsolationEnabled": true,
+      "oauth": {
+        "allowedDomains": [
+          "string"
+        ]
+      },
+      "localAuthFallback": {
+        "enabled": true,
+        "cacheTimeout": 0,
+        "serverCaCertificate": {
+          "contents": {}
+        }
+      },
+      "namedVlans": {
+        "tagging": {
+          "enabled": true,
+          "defaultVlanName": "string",
+          "byApTags": [
+            {
+              "tags": [
+                "string"
+              ],
+              "vlanName": "string"
+            }
+          ]
+        },
+        "radius": {
+          "guestVlan": {
+            "enabled": true,
+            "name": "string"
+          }
+        }
+      },
+      "speedBurst": {
+        "enabled": true
+      },
+      "wifiPersonalNetworkEnabled": true,
+      "security": {
+        "encryption": {
+          "ciphers": [
+            "string"
+          ],
+          "akms": [
+            "string"
+          ]
+        }
+      }
     }
 """

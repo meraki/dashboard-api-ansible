@@ -44,6 +44,7 @@ argument_spec.update(dict(
     enforceTwoFactorAuth=dict(type="bool"),
     enforceLoginIpRanges=dict(type="bool"),
     loginIpRanges=dict(type="list"),
+    enforceLockedIpSessions=dict(type="bool"),
     apiAuthentication=dict(type="dict"),
     organizationId=dict(type="str"),
 ))
@@ -73,6 +74,7 @@ class OrganizationsLoginSecurity(object):
             enforceTwoFactorAuth=params.get("enforceTwoFactorAuth"),
             enforceLoginIpRanges=params.get("enforceLoginIpRanges"),
             loginIpRanges=params.get("loginIpRanges"),
+            enforceLockedIpSessions=params.get("enforceLockedIpSessions"),
             apiAuthentication=params.get("apiAuthentication"),
             organizationId=params.get("organizationId"),
         )
@@ -139,6 +141,10 @@ class OrganizationsLoginSecurity(object):
                 'login_ip_ranges') is not None:
             new_object_params['loginIpRanges'] = self.new_object.get(
                 'loginIpRanges') or self.new_object.get('login_ip_ranges')
+        if self.new_object.get('enforceLockedIpSessions') is not None or self.new_object.get(
+                'enforce_locked_ip_sessions') is not None:
+            new_object_params['enforceLockedIpSessions'] = self.new_object.get(
+                'enforceLockedIpSessions')
         if self.new_object.get('apiAuthentication') is not None or self.new_object.get(
                 'api_authentication') is not None:
             new_object_params['apiAuthentication'] = self.new_object.get(
@@ -212,7 +218,9 @@ class OrganizationsLoginSecurity(object):
             ("enforceTwoFactorAuth", "enforceTwoFactorAuth"),
             ("enforceLoginIpRanges", "enforceLoginIpRanges"),
             ("loginIpRanges", "loginIpRanges"),
-            ("apiAuthentication", "apiAuthentication"),]
+            ("enforceLockedIpSessions", "enforceLockedIpSessions"),
+            ("apiAuthentication", "apiAuthentication"),
+        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

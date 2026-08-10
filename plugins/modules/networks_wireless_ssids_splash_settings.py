@@ -193,6 +193,16 @@ options:
       that depending on your SSID's access control settings, it may not be possible
       to use the custom splash URL.
     type: bool
+  userConsent:
+    description: User consent settings.
+    suboptions:
+      message:
+        description: Consent message displayed to users.
+        type: str
+      required:
+        description: Whether users must provide consent.
+        type: bool
+    type: dict
   welcomeMessage:
     description: The welcome message for the users on the splash page.
     type: str
@@ -283,6 +293,9 @@ EXAMPLES = r"""
     themeId: c3ddcb4f16785ee747ab5ffc10867d6c8ea704be
     useRedirectUrl: true
     useSplashUrl: true
+    userConsent:
+      message: By continuing, you agree to our terms and conditions.
+      required: true
     welcomeMessage: Welcome!
 """
 RETURN = r"""
@@ -300,6 +313,10 @@ meraki_response:
       "redirectUrl": "string",
       "useRedirectUrl": true,
       "welcomeMessage": "string",
+      "userConsent": {
+        "required": true,
+        "message": "string"
+      },
       "themeId": "string",
       "splashLogo": {
         "md5": "string",

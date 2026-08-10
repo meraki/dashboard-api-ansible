@@ -121,18 +121,18 @@ meraki_response:
       ],
       "radius": {
         "criticalAuth": {
-          "dataVlanId": 0,
-          "voiceVlanId": 0,
+          "dataVlanId": {},
+          "voiceVlanId": {},
           "suspendPortBounce": true,
           "dataGroupPolicyId": "string",
           "voiceGroupPolicyId": "string",
           "dataSgtId": 0,
           "voiceSgtId": 0
         },
-        "failedAuthVlanId": 0,
+        "failedAuthVlanId": {},
         "failedAuthGroupPolicyId": "string",
         "failedAuthSgtId": 0,
-        "reAuthenticationInterval": 0,
+        "reAuthenticationInterval": {},
         "cache": {
           "enabled": true,
           "timeout": 0
@@ -161,7 +161,7 @@ meraki_response:
       "increaseAccessSpeed": true,
       "guestVlanId": {},
       "dot1x": {
-        "controlDirection": "string"
+        "controlDirection": {}
       },
       "voiceVlanClients": true,
       "urlRedirectWalledGardenEnabled": true,

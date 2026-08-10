@@ -71,8 +71,8 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             reservedIpRanges=params.get("reservedIpRanges"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
             networkId=params.get("networkId"),
-            switch_stack_id=params.get("switchStackId"),
-            interface_id=params.get("interfaceId"),
+            switchStackId=params.get("switchStackId"),
+            interfaceId=params.get("interfaceId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -213,8 +213,7 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             ("bootFileName", "bootFileName"),
             ("dhcpOptions", "dhcpOptions"),
             ("reservedIpRanges", "reservedIpRanges"),
-            ("fixedIpAssignments", "fixedIpAssignments"), ("switchStackId", "switchStackId"),
-            ("interfaceId", "interfaceId"),
+            ("fixedIpAssignments", "fixedIpAssignments"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

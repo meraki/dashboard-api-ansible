@@ -12,7 +12,7 @@ short_description: Information module for organizations _wireless _devices _rads
 description:
   - Get all organizations _wireless _devices _radsec _certificates _authorities _crls
     _deltas. - > Query for all delta certificate revocation list CRL for the organization's
-    RADSEC device Certificate Authority CA with the given id.
+    RadSec device Certificate Authority CA with the given id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

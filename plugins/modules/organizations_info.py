@@ -155,6 +155,7 @@ meraki_response:
             "value": "string"
           }
         ]
-      }
+      },
+      "privacy": {}
     }
 """

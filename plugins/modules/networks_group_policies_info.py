@@ -150,8 +150,8 @@ meraki_response:
       "bandwidth": {
         "settings": "string",
         "bandwidthLimits": {
-          "limitUp": 0,
-          "limitDown": 0
+          "limitUp": {},
+          "limitDown": {}
         }
       },
       "firewallAndTrafficShaping": {
@@ -171,8 +171,8 @@ meraki_response:
                 "limitDown": 0
               }
             },
-            "dscpTagValue": 0,
-            "pcpTagValue": 0,
+            "dscpTagValue": {},
+            "pcpTagValue": {},
             "priority": "string"
           }
         ],

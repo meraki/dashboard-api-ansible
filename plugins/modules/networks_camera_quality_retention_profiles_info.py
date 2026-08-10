@@ -124,6 +124,7 @@ meraki_response:
       "smartRetention": {
         "enabled": true
       },
+      "axisVideoQuality": "string",
       "videoSettings": {}
     }
 """

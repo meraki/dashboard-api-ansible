@@ -11,15 +11,15 @@ short_description: Resource module for organizations _wireless _devices _radsec 
   _authorities
 description:
   - Manage operations create and update of the resource organizations _wireless _devices
-    _radsec _certificates _authorities. - > Create an organization's RADSEC device
-    Certificate Authority CA. Call this endpoint when turning on RADSEC in the firmware
+    _radsec _certificates _authorities. - > Create an organization's RadSec device
+    Certificate Authority CA. Call this endpoint when turning on RadSec in the firmware
     for the first time. Calling this endpoint starts an asynchronous process to generate
     the CA; call GET afterwards to retrieve the contents of the CA. Note this CA is
     generated and controlled by Meraki. Subsequent calls will not generate a new CA.
-    - > Update an organization's RADSEC device Certificate Authority CA state. Note
+    - > Update an organization's RadSec device Certificate Authority CA state. Note
     this CA is generated and controlled by Meraki. Call this endpoint to update the
     state to "trusted", at which point Meraki will generate device certificates. "trusted"
-    means the CA is placed on your RADSEC servers and devices establishing a secure
+    means the CA is placed on your RadSec servers and devices establishing a secure
     connection using certs signed by this CA will pass verification.
 version_added: '1.0.0'
 extends_documentation_fragment:

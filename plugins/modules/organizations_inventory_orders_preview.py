@@ -71,6 +71,11 @@ meraki_response:
   sample: >
     {
       "claimId": "string",
+      "resolution": {
+        "submissionStrategy": "string",
+        "supportsSubscriptionSelection": true,
+        "claimableShippedDeviceCount": 0
+      },
       "number": "string",
       "shipping": {
         "shipments": [

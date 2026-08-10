@@ -10,8 +10,8 @@ module: devices_appliance_performance_info
 short_description: Information module for devices _appliance _performance
 description:
   - Get all devices _appliance _performance. - > Return the performance score for
-    a single MX. Only primary MX devices supported. If no data is available, a 204
-    error code is returned.
+    a single Secure Appliance or Secure Router. Only primary Secure Appliance devices
+    supported. If no data is available, a 204 error code is returned.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

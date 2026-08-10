@@ -50,7 +50,7 @@ class NetworksClientsSplashAuthorizationStatus(object):
         self.new_object = dict(
             ssids=params.get("ssids"),
             networkId=params.get("networkId"),
-            client_id=params.get("clientId"),
+            clientId=params.get("clientId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -133,7 +133,7 @@ class NetworksClientsSplashAuthorizationStatus(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("ssids", "ssids"), ("clientId", "clientId"),
+            ("ssids", "ssids"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

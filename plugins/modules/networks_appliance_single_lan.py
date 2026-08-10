@@ -119,8 +119,8 @@ EXAMPLES = r"""
             interfaces:
               - string
             type: string
-          staticApplianceIp6: string
-          staticPrefix: string
+          staticApplianceIp6: {}
+          staticPrefix: {}
     mandatoryDhcp:
       enabled: true
     networkId: string

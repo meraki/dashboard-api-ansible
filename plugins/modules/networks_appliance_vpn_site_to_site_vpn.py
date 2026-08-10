@@ -60,6 +60,13 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  sgt:
+    description: Security Group Tag settings for the VPN peer.
+    suboptions:
+      enabled:
+        description: Whether or not Peer SGT is enabled for traffic to this VPN peer.
+        type: bool
+    type: dict
   subnet:
     description: Configuration of subnet features.
     suboptions:
@@ -146,6 +153,8 @@ EXAMPLES = r"""
         useDefaultRoute: true
     mode: spoke
     networkId: string
+    sgt:
+      enabled: true
     subnet:
       nat:
         isAllowed: true
@@ -180,6 +189,9 @@ meraki_response:
           }
         }
       ],
+      "sgt": {
+        "enabled": true
+      },
       "subnet": {
         "nat": {
           "isAllowed": true

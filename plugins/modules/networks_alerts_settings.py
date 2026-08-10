@@ -277,7 +277,7 @@ meraki_response:
             "conditions": [
               {
                 "type": "string",
-                "unit": "string",
+                "unit": {},
                 "duration": 0,
                 "direction": "string",
                 "threshold": 0

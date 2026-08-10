@@ -182,8 +182,10 @@ options:
         type: dict
       ipsecPoliciesPreset:
         description: One of the following available presets 'default', 'aws', 'azure',
-          'umbrella', 'zscaler'. If this is provided, the 'ipsecPolicies' parameter
-          is ignored.
+          'umbrella', 'umbrella_short_lived', 'secure', 'zscaler'. If this is provided,
+          the 'ipsecPolicies' parameter is ignored. Note that 'umbrella_short_lived'
+          maps to the Dashboard UI label 'Umbrella', while 'umbrella' maps to the
+          Dashboard UI label 'Umbrella (Deprecated)'.
         type: str
       isRouteBased:
         description: Optional If true, the VPN peer is route-based. If not included,
@@ -421,6 +423,7 @@ meraki_response:
           "ebgpHoldTimer": 0,
           "ebgpMultihop": 0,
           "sourceIp": "string",
+          "receiveLimit": 0,
           "pathPrepend": [
             0
           ],

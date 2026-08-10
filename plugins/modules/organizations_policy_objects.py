@@ -11,9 +11,9 @@ short_description: Resource module for organizations _policy _objects
 description:
   - Manage operations create, update and delete of the resource organizations _policy
     _objects.
-  - Creates a new Policy Object.
+  - Creates a new Policy Object. Note type `ipAndMask` is deprecated; use `cidr`.
   - Deletes a Policy Object.
-  - Updates a Policy Object.
+  - Updates a Policy Object. Note type `ipAndMask` is deprecated; use `cidr`.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -33,10 +33,12 @@ options:
     elements: str
     type: list
   ip:
-    description: IP Address of a policy object (e.g. "1.2.3.4").
+    description: IP Address of a policy object (e.g. "1.2.3.4"). Used only with deprecated
+      `type=ipAndMask`.
     type: str
   mask:
-    description: Mask of a policy object (e.g. "255.255.0.0").
+    description: Mask of a policy object (e.g. "255.255.0.0"). Used only with deprecated
+      `type=ipAndMask`.
     type: str
   name:
     description: Name of a policy object, unique within the organization (alphanumeric,
@@ -49,8 +51,9 @@ options:
     description: PolicyObjectId path parameter. Policy object ID.
     type: str
   type:
-    description: Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn,
-      ipAndMask).
+    description: Type of a policy object (one of adaptivePolicyIpv4Cidr, cidr, fqdn).
+      DEPRECATED `ipAndMask` is deprecated and will be removed in a future release.
+      Use `cidr` instead.
     type: str
 requirements:
   - meraki >= 2.4.9

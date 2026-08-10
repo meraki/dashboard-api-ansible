@@ -145,6 +145,9 @@ meraki_response:
       "mandatoryDhcp": {
         "enabled": true
       },
+      "sgt": {
+        "id": {}
+      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
@@ -160,6 +163,10 @@ meraki_response:
             }
           }
         ]
+      },
+      "vrf": {
+        "id": "string",
+        "name": "string"
       }
     }
 """

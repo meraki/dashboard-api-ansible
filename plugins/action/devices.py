@@ -66,7 +66,7 @@ class Devices(object):
             switchProfileId=params.get("switchProfileId"),
             floorPlanId=params.get("floorPlanId"),
             serial=params.get("serial"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -269,8 +269,6 @@ class Devices(object):
             ("moveMapMarker", "moveMapMarker"),
             ("switchProfileId", "switchProfileId"),
             ("floorPlanId", "floorPlanId"),
-            ("serial", "serial"),
-            ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

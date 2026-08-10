@@ -106,7 +106,7 @@ class DevicesSwitchPorts(object):
             dot3az=params.get("dot3az"),
             highSpeed=params.get("highSpeed"),
             serial=params.get("serial"),
-            port_id=params.get("portId"),
+            portId=params.get("portId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -349,7 +349,7 @@ class DevicesSwitchPorts(object):
             ("daiTrusted", "daiTrusted"),
             ("profile", "profile"),
             ("dot3az", "dot3az"),
-            ("highSpeed", "highSpeed"), ("portId", "portId"),
+            ("highSpeed", "highSpeed"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

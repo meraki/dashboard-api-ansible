@@ -68,8 +68,8 @@ class OrganizationsDevicesPacketCaptureCaptures(object):
             filterExpression=params.get("filterExpression"),
             interface=params.get("interface"),
             advanced=params.get("advanced"),
-            organization_id=params.get("organizationId"),
-            capture_id=params.get("captureId"),
+            organizationId=params.get("organizationId"),
+            captureId=params.get("captureId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -265,8 +265,6 @@ class OrganizationsDevicesPacketCaptureCaptures(object):
             ("filterExpression", "filterExpression"),
             ("interface", "interface"),
             ("advanced", "advanced"),
-            ("organizationId", "organizationId"),
-            ("captureId", "captureId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -52,7 +52,7 @@ class NetworksClientsPolicy(object):
             devicePolicy=params.get("devicePolicy"),
             groupPolicyId=params.get("groupPolicyId"),
             networkId=params.get("networkId"),
-            client_id=params.get("clientId"),
+            clientId=params.get("clientId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -140,7 +140,7 @@ class NetworksClientsPolicy(object):
 
         obj_params = [
             ("devicePolicy", "devicePolicy"),
-            ("groupPolicyId", "groupPolicyId"), ("clientId", "clientId"),
+            ("groupPolicyId", "groupPolicyId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

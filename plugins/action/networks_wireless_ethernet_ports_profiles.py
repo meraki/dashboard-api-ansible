@@ -53,8 +53,8 @@ class NetworksWirelessEthernetPortsProfiles(object):
             name=params.get("name"),
             ports=params.get("ports"),
             usbPorts=params.get("usbPorts"),
-            network_id=params.get("networkId"),
-            profile_id=params.get("profileId"),
+            networkId=params.get("networkId"),
+            profileId=params.get("profileId"),
         )
 
     def get_params_by_id(self, name=None, id=None):
@@ -162,7 +162,7 @@ class NetworksWirelessEthernetPortsProfiles(object):
         obj_params = [
             ("name", "name"),
             ("ports", "ports"),
-            ("usbPorts", "usbPorts"), ("profileId", "profileId"),
+            ("usbPorts", "usbPorts"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

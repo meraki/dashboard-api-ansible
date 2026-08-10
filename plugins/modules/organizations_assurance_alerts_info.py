@@ -231,7 +231,8 @@ meraki_response:
       "categoryType": "string",
       "network": {
         "name": "string",
-        "id": "string"
+        "id": "string",
+        "url": "string"
       },
       "startedAt": "string",
       "resolvedAt": {},

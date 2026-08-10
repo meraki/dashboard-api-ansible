@@ -95,7 +95,7 @@ EXAMPLES = r"""
       transmitPowerLevel: 0
     enabled: true
     iotController:
-      serial: string
+      serial: {}
     lockManagement:
       address: string
       password: string

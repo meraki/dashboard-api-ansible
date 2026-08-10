@@ -54,7 +54,7 @@ class OrganizationsWirelessMqttSettings(object):
             mqtt=params.get("mqtt"),
             ble=params.get("ble"),
             wifi=params.get("wifi"),
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -161,7 +161,6 @@ class OrganizationsWirelessMqttSettings(object):
             ("mqtt", "mqtt"),
             ("ble", "ble"),
             ("wifi", "wifi"),
-            ("organizationId", "organizationId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

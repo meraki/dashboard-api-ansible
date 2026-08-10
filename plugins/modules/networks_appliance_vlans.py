@@ -152,6 +152,13 @@ options:
         description: The first IP in the reserved range.
         type: str
     type: list
+  sgt:
+    description: Security Group Tag settings for the VLAN.
+    suboptions:
+      id:
+        description: Adaptive policy group ID this VLAN is assigned to.
+        type: int
+    type: dict
   subnet:
     description: The subnet of the VLAN.
     type: str
@@ -181,6 +188,13 @@ options:
     description: The translated VPN subnet if VPN and VPN subnet translation are enabled
       on the VLAN.
     type: str
+  vrf:
+    description: VRF configuration on the VLAN.
+    suboptions:
+      id:
+        description: VRF ID. Use "0" for the default VRF.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -262,12 +276,16 @@ EXAMPLES = r"""
     mask: 28
     name: My VLAN
     networkId: string
+    sgt:
+      id: 1234
     subnet: 192.168.1.0/24
     templateVlanType: same
     uplinks:
       - interface: wan1
         nat:
           enabled: true
+    vrf:
+      id: '1000'
 - name: Update by id
   cisco.meraki.networks_appliance_vlans:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -333,6 +351,8 @@ EXAMPLES = r"""
       - comment: A reserved IP range
         end: 192.168.1.1
         start: 192.168.1.0
+    sgt:
+      id: 1234
     subnet: 192.168.1.0/24
     templateVlanType: same
     uplinks:
@@ -390,6 +410,9 @@ meraki_response:
       "mandatoryDhcp": {
         "enabled": true
       },
+      "sgt": {
+        "id": {}
+      },
       "ipv6": {
         "enabled": true,
         "prefixAssignments": [
@@ -405,6 +428,10 @@ meraki_response:
             }
           }
         ]
+      },
+      "vrf": {
+        "id": "string",
+        "name": "string"
       }
     }
 """

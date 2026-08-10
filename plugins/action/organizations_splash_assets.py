@@ -47,7 +47,7 @@ class OrganizationsSplashAssets(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
-            organization_id=params.get("organizationId"),
+            organizationId=params.get("organizationId"),
             id=params.get("id"),
         )
 
@@ -123,8 +123,7 @@ class OrganizationsSplashAssets(object):
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
-        obj_params = [("id", "id"),
-                      ]
+        obj_params = []
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

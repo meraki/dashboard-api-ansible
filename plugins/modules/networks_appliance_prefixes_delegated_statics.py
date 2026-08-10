@@ -29,7 +29,8 @@ options:
     description: The origin of the prefix.
     suboptions:
       interfaces:
-        description: Interfaces associated with the prefix.
+        description: Interfaces associated with the prefix. Required when origin type
+          is internet.
         elements: str
         type: list
       type:
@@ -166,5 +167,17 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "staticDelegatedPrefixId": "string",
+      "prefix": "string",
+      "origin": {
+        "type": "string",
+        "interfaces": [
+          "string"
+        ]
+      },
+      "description": {},
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
 """

@@ -197,8 +197,6 @@ class OrganizationsApplianceDnsLocalRecords(object):
             ("hostname", "hostname"),
             ("address", "address"),
             ("profile", "profile"),
-            ("organizationId", "organizationId"),
-            ("recordId", "recordId"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update

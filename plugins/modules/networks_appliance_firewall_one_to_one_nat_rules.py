@@ -127,5 +127,23 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    [
+      {
+        "name": "string",
+        "publicIp": "string",
+        "lanIp": "string",
+        "uplink": "string",
+        "allowedInbound": [
+          {
+            "protocol": "string",
+            "destinationPorts": [
+              "string"
+            ],
+            "allowedIps": [
+              "string"
+            ]
+          }
+        ]
+      }
+    ]
 """

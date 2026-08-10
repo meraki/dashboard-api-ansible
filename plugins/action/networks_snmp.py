@@ -34,6 +34,8 @@ argument_spec.update(dict(
     access=dict(type="str"),
     communityString=dict(type="str"),
     users=dict(type="list"),
+    authentication=dict(type="dict"),
+    privacy=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -52,6 +54,8 @@ class NetworksSnmp(object):
             access=params.get("access"),
             communityString=params.get("communityString"),
             users=params.get("users"),
+            authentication=params.get("authentication"),
+            privacy=params.get("privacy"),
             networkId=params.get("networkId"),
         )
 
@@ -77,6 +81,14 @@ class NetworksSnmp(object):
                 'users') is not None:
             new_object_params['users'] = self.new_object.get('users') or \
                 self.new_object.get('users')
+        if self.new_object.get('authentication') is not None or self.new_object.get(
+                'authentication') is not None:
+            new_object_params['authentication'] = self.new_object.get(
+                'authentication') or self.new_object.get('authentication')
+        if self.new_object.get('privacy') is not None or self.new_object.get(
+                'privacy') is not None:
+            new_object_params['privacy'] = self.new_object.get('privacy') or \
+                self.new_object.get('privacy')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -137,7 +149,10 @@ class NetworksSnmp(object):
         obj_params = [
             ("access", "access"),
             ("communityString", "communityString"),
-            ("users", "users"),]
+            ("users", "users"),
+            ("authentication", "authentication"),
+            ("privacy", "privacy"),
+        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(

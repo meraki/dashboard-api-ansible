@@ -35,6 +35,7 @@ argument_spec.update(dict(
     serials=dict(type="list"),
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
+    members=dict(type="list"),
 ))
 
 required_if = [
@@ -53,7 +54,8 @@ class NetworksSwitchStacks(object):
             name=params.get("name"),
             serials=params.get("serials"),
             networkId=params.get("networkId"),
-            switch_stack_id=params.get("switchStackId"),
+            switchStackId=params.get("switchStackId"),
+            members=params.get("members"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -104,9 +106,29 @@ class NetworksSwitchStacks(object):
                 'switchStackId') or self.new_object.get('switch_stack_id')
         return new_object_params
 
+    def update_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('members') is not None or self.new_object.get(
+                'members') is not None:
+            new_object_params['members'] = self.new_object.get('members') or \
+                self.new_object.get('members')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('switchStackId') is not None or self.new_object.get(
+                'switch_stack_id') is not None:
+            new_object_params['switchStackId'] = self.new_object.get(
+                'switchStackId') or self.new_object.get('switch_stack_id')
+        return new_object_params
+
     def get_object_by_name(self, name):
         result = None
-        # NOTE: Does not have a get by name method, using get all
+        # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
                 family="switch",
@@ -175,9 +197,10 @@ class NetworksSwitchStacks(object):
 
         obj_params = [
             ("name", "name"),
-            ("serials", "serials"), ("switchStackId", "switchStackId"),
+            ("serials", "serials"),
+            ("members", "members"),
         ]
-        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
             not meraki_compare_equality2(
@@ -195,6 +218,27 @@ class NetworksSwitchStacks(object):
         )
         return result
 
+    def update(self):
+        id = self.new_object.get("id")
+        id = id or self.new_object.get("switchStackId")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("switchStackId")
+            if id_:
+                self.new_object.update(dict(switchStackId=id_))
+        result = self.meraki.exec_meraki(
+            family="switch",
+            function="updateNetworkSwitchStack",
+            params=self.update_by_id_params(),
+            op_modifies=True,
+        )
+        return result
+
     def delete(self):
         id = self.new_object.get("id")
         id = id or self.new_object.get("switchStackId")
@@ -207,7 +251,7 @@ class NetworksSwitchStacks(object):
                 id_ = prev_obj_name.get("id")
                 id_ = id_ or prev_obj_name.get("switchStackId")
             if id_:
-                self.new_object.update(dict(switchstackid=id_))
+                self.new_object.update(dict(switchStackId=id_))
         result = self.meraki.exec_meraki(
             family="switch",
             function="deleteNetworkSwitchStack",
@@ -256,18 +300,20 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
+
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = prev_obj
-                    meraki.object_present_and_different()
+                    response = obj.update()
+                    meraki.object_updated()
                 else:
                     response = prev_obj
                     meraki.object_already_present()
             else:
                 response = obj.create()
                 meraki.object_created()
+
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:

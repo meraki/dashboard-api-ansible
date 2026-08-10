@@ -9,8 +9,9 @@ DOCUMENTATION = r"""
 module: devices_switch_ports_cycle
 short_description: Resource module for devices _switch _ports _cycle
 description:
-  - Manage operation create of the resource devices _switch _ports _cycle.
-  - Cycle a set of switch ports.
+  - Manage operation create of the resource devices _switch _ports _cycle. - > Cycle
+    a set of switch ports on non-Catalyst MS devices. For Catalyst support, use /devices/{serial}/liveTools/ports/cycle,
+    which supports all switch product families.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

@@ -119,7 +119,7 @@ meraki_response:
           "string"
         ]
       },
-      "description": "string",
+      "description": {},
       "createdAt": "string",
       "updatedAt": "string"
     }

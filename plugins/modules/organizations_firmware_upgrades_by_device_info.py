@@ -183,7 +183,7 @@ meraki_response:
           },
           "status": "string",
           "id": "string",
-          "upgradeBatchId": "string",
+          "upgradeBatchId": {},
           "staged": {
             "group": {
               "id": "string"

@@ -89,7 +89,7 @@ EXAMPLES = r"""
     state: present
     organizationId: string
     policyId: '789'
-    priority: 0
+    priority: 1
     rulesetId: '456'
 - name: Update by id
   cisco.meraki.organizations_policies_global_group_policies_firewall_rulesets_assignments:
@@ -118,7 +118,7 @@ EXAMPLES = r"""
     assignmentId: string
     organizationId: string
     policyId: '789'
-    priority: 0
+    priority: 1
     rulesetId: '456'
 - name: Delete by id
   cisco.meraki.organizations_policies_global_group_policies_firewall_rulesets_assignments:

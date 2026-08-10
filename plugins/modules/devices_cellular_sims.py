@@ -32,8 +32,9 @@ options:
   simOrdering:
     description: Specifies the ordering of all SIMs for an MG primary, secondary,
       and not-in-use (when applicable). It's required for devices with 3 or more SIMs
-      and can be used in place of 'isPrimary' for dual-SIM devices. To indicate eSIM,
-      use 'sim3'. Sim failover will occur only between primary and secondary sim slots.
+      and can be used in place of 'isPrimary' for dual-SIM devices. Use the raw eSIM
+      slot value for the device, such as 'sim2' or 'sim3'. Sim failover will occur
+      only between primary and secondary sim slots.
     elements: str
     type: list
   sims:
@@ -79,7 +80,7 @@ options:
         type: int
       slot:
         description: SIM slot being configured. Must be 'sim1' on single-sim devices.
-          Use 'sim3' for eSIM.
+          ESIM slots use the raw slot value for the device, such as 'sim2' or 'sim3'.
         type: str
     type: list
 requirements:

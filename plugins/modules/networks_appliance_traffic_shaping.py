@@ -79,5 +79,8 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "limitUp": 0,
+      "limitDown": 0
+    }
 """

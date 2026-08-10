@@ -84,6 +84,10 @@ meraki_response:
       "redirectUrl": "string",
       "useRedirectUrl": true,
       "welcomeMessage": "string",
+      "userConsent": {
+        "required": true,
+        "message": "string"
+      },
       "themeId": "string",
       "splashLogo": {
         "md5": "string",
