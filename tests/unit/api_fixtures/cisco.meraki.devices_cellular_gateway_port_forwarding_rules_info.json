@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": [{"name": "Rule 1", "lanIp": "192.168.128.1", "publicPort": "8080", "localPort": "80", "allowedIps": ["any"], "protocol": "tcp", "access": "any"}, {"name": "Rule 2", "lanIp": "192.168.128.2", "publicPort": "8443", "localPort": "443", "allowedIps": ["any"], "protocol": "tcp", "access": "any"}]}
