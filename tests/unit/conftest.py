@@ -307,11 +307,11 @@ def test_mappings():
             "updateDeviceCellularGatewayPortForwardingRules",
         ),
         (
-            "cisco.meraki.organizations_summary_top_appliances_by_utilization_info",
-            "getOrganizationSummaryTopAppliancesByUtilization",
+            "cisco.meraki.devices_cellular_geolocations",
+            "updateDeviceCellularGeolocations",
         ),
         (
-            "cisco.meraki.organizations_cellular_gateway_uplink_statuses_info",
-            "getOrganizationCellularGatewayUplinkStatuses",
+            "cisco.meraki.devices_cellular_uplinks_bands_masks_update",
+            "createDeviceCellularUplinksBandsMasksUpdate",
         ),
     ]

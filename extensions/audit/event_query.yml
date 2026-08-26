@@ -2091,45 +2091,48 @@ cisco.meraki.devices_cellular_gateway_port_forwarding_rules:
     else []
     end
 
-# getOrganizationSummaryTopAppliancesByUtilization
-cisco.meraki.organizations_summary_top_appliances_by_utilization_info:
+# updateDeviceCellularGeolocations
+cisco.meraki.devices_cellular_geolocations:
   query: >-
     if .meraki_response then
+      .invocation as $inv |
       .meraki_response |
-      map({
-        canonical_facts: {
-          ansible_product_serial: .serial
-        },
-        facts: {
-          device_type: "appliance",
-          model: .model,
-          mac: .mac,
-          network: {
-            id: .network.id,
-            name: .network.name
-          },
-          utilization_avg_percentage: .utilization.average.percentage
-        }
-      })
+      [({
+          facts: {
+            device_type: "cellular",
+            enabled: .enabled
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
     else []
     end
 
-# getOrganizationCellularGatewayUplinkStatuses
-cisco.meraki.organizations_cellular_gateway_uplink_statuses_info:
+# createDeviceCellularUplinksBandsMasksUpdate
+cisco.meraki.devices_cellular_uplinks_bands_masks_update:
   query: >-
     if .meraki_response then
+      .invocation as $inv |
       .meraki_response |
-      map({
-        canonical_facts: {
-          ansible_product_serial: .serial
-        },
-        facts: {
-          device_type: "cellular",
-          model: .model,
-          network_id: .networkId,
-          last_reported_at: .lastReportedAt,
-          uplinks: ((.uplinks // []) | map({interface: .interface, status: .status, ip: .ip, provider: .provider, public_ip: .publicIp, connection_type: .connectionType, apn: .apn, signal_type: .signalType, iccid: .iccid}))
-        }
-      })
+      [({
+          facts: {
+            device_type: "cellular",
+            by_slot: (.bySlot // []) | map({
+              slot: .slot,
+              by_signal_type: (.bySignalType // []) | map({
+                type: .type,
+                masked: (.masked // []),
+                enabled: (.enabled // []),
+                supported: (.supported // [])
+              })
+            })
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
     else []
     end

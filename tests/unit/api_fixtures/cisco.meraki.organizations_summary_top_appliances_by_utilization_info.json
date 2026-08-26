@@ -1,1 +1,0 @@
-[{"serial": "Q234-ABCD-0001", "name": "HQ MX", "mac": "00:11:22:33:44:55", "model": "MX68", "network": {"id": "N_123", "name": "HQ"}, "utilization": {"average": {"percentage": 15.3}}}, {"serial": "Q234-ABCD-0002", "name": "Branch MX", "mac": "00:11:22:33:44:66", "model": "MX67", "network": {"id": "N_456", "name": "Branch"}, "utilization": {"average": {"percentage": 8.1}}}]

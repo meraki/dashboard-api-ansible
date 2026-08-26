@@ -1,0 +1,20 @@
+{
+  "invocation": {"serial": "Q234-ABCD-5678"},
+  "meraki_response": {
+    "bySlot": [
+      {
+        "slot": "sim1",
+        "bySignalType": [
+          {"type": "lte", "masked": ["B2", "B4"], "enabled": ["B1", "B3"], "supported": ["B1", "B2", "B3", "B4"]},
+          {"type": "5gnr", "masked": [], "enabled": ["n77"], "supported": ["n77"]}
+        ]
+      },
+      {
+        "slot": "sim2",
+        "bySignalType": [
+          {"type": "lte", "masked": [], "enabled": ["B1", "B2"], "supported": ["B1", "B2"]}
+        ]
+      }
+    ]
+  }
+}
