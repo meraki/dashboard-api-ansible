@@ -1,0 +1,9 @@
+{
+  "invocation": {"serial": "Q234-ABCD-5678"},
+  "meraki_response": {
+    "relatedDevices": [
+      {"serial": "Q2GV-ABCD-1111", "productType": "camera"},
+      {"serial": "Q2GV-ABCD-2222", "productType": "camera"}
+    ]
+  }
+}

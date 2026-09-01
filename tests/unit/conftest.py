@@ -307,6 +307,22 @@ def test_mappings():
             "updateDeviceCellularGatewayPortForwardingRules",
         ),
         (
+            "cisco.meraki.devices_sensor_commands",
+            "createDeviceSensorCommand",
+        ),
+        (
+            "cisco.meraki.devices_sensor_commands_info",
+            "getDeviceSensorCommands",
+        ),
+        (
+            "cisco.meraki.devices_sensor_relationships",
+            "updateDeviceSensorRelationships",
+        ),
+        (
+            "cisco.meraki.devices_sensor_relationships_info",
+            "getDeviceSensorRelationships",
+        ),
+        (
             "cisco.meraki.devices_cellular_geolocations",
             "updateDeviceCellularGeolocations",
         ),

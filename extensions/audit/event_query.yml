@@ -2136,3 +2136,96 @@ cisco.meraki.devices_cellular_uplinks_bands_masks_update:
         end)]
     else []
     end
+
+# createDeviceSensorCommand
+cisco.meraki.devices_sensor_commands:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorCommands / getDeviceSensorCommand
+cisco.meraki.devices_sensor_commands_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      [{
+        facts: {
+          device_type: "sensor",
+          commands: ((.meraki_response | if type == "array" then . else [.] end) | map({
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
