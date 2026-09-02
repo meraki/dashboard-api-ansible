@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"enabled": true, "artifactId": "artifact-001", "parameters": [{"name": "threshold", "value": 0.5}]}}

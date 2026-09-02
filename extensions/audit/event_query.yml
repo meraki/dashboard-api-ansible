@@ -2229,3 +2229,303 @@ cisco.meraki.devices_sensor_relationships_info:
         end)]
     else []
     end
+
+# clipDeviceCamera
+cisco.meraki.devices_camera_clip_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraAnalyticsLive
+cisco.meraki.devices_camera_analytics_live_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            ts: .ts,
+            zones: (.zones // {})
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# generateDeviceCameraSnapshot
+cisco.meraki.devices_camera_generate_snapshot:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraSense
+cisco.meraki.devices_camera_sense:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: .audioDetection.enabled,
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraSense
+cisco.meraki.devices_camera_sense_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: .audioDetection.enabled,
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoLink
+cisco.meraki.devices_camera_video_link_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            vision_url: .visionUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
