@@ -1,0 +1,9 @@
+{
+  "apEslId": 16777216,
+  "serial": "Q234-ABCD-5678",
+  "channel": "1",
+  "enabled": true,
+  "networkId": "N_24329156",
+  "hostname": "localhost:700",
+  "provider": "imagotag"
+}

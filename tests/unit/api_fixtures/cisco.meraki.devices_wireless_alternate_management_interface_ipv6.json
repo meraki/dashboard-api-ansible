@@ -1,0 +1,19 @@
+{
+  "invocation": {"serial": "Q2FV-DJ6J-4QHD"},
+  "meraki_response": {
+    "addresses": [
+      {
+        "protocol": "ipv6", "assignmentMode": "static",
+        "address": "2001:db8:3c4d:15::1", "gateway": "fe80:db8:c15:c0:d0c::10ca:1d02",
+        "prefix": "2001:db8:3c4d:15::/64",
+        "nameservers": {"addresses": ["2001:db8:3c4d:15::1", "2001:db8:3c4d:15::1"]}
+      },
+      {
+        "protocol": "ipv6", "assignmentMode": "static",
+        "address": "2001:db8:3c4d:15::2", "gateway": "fe80:db8:c15:c0:d0c::10ca:1d02",
+        "prefix": "2001:db8:3c4d:15::/64",
+        "nameservers": {"addresses": ["2001:db8:3c4d:15::2", "2001:db8:3c4d:15::2"]}
+      }
+    ]
+  }
+}

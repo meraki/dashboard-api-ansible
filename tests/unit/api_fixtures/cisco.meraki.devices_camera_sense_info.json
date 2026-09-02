@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"senseEnabled": true, "mqttBrokerId": "broker-001", "mqttTopics": ["/merakimv/Q234/raw_detections"], "audioDetection": {"enabled": true}, "detectionModelId": "model-001"}}
