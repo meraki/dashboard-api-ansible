@@ -845,7 +845,7 @@
 <h1>cisco.meraki.devices_management_interface module -- Resource module for devices _management _interface<a class="headerlink" href="#cisco-meraki-devices-management-interface-module-resource-module-for-devices-management-interface" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.25.0).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.25.1).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-meraki-devices-management-interface-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -866,9 +866,9 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-device
 <section id="synopsis">
 <h2><a class="toc-backref" href="#id65" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Manage operations create and update of the resource devices _management _interface.</p></li>
-<li><p>Reboot a device. This endpoint has a sustained rate limit of one request every 60 seconds.</p></li>
+<li><p>Manage operations update of the resource devices _management _interface.</p></li>
 <li><p>Update the management interface settings for a device.</p></li>
+<li><p>A device's management interface always exists, so <code class="docutils literal notranslate"><span class="pre">state=present</span></code> always updates it; there is no create operation for this resource.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1220,8 +1220,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-device
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>SDK Method used are devices.Devices.reboot_device, devices.Devices.update_device_management_interface,</p></li>
-<li><p>Paths used are post /devices/{serial}/reboot, put /devices/{serial}/managementInterface,</p></li>
+<li><p>SDK Method used is devices.Devices.update_device_management_interface,</p></li>
+<li><p>Paths used are put /devices/{serial}/managementInterface,</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager</p></li>
 <li><p>from Cisco Dashboard API Python(SDK)</p></li>
@@ -1234,8 +1234,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-device
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://developer.cisco.com/meraki/api-v1/#!reboot-device">Cisco Meraki documentation for devices rebootDevice</a></dt><dd><p>Complete reference of the rebootDevice API.</p>
-</dd>
 <dt><a class="reference external" href="https://developer.cisco.com/meraki/api-v1/#!update-device-management-interface">Cisco Meraki documentation for devices updateDeviceManagementInterface</a></dt><dd><p>Complete reference of the updateDeviceManagementInterface API.</p>
 </dd>
 </dl>
@@ -1288,31 +1286,6 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-device
 <span class="w">      </span><span class="nt">usingStaticIp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">      </span><span class="nt">vlan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">      </span><span class="nt">wanEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create</span>
-<span class="w">  </span><span class="nt">cisco.meraki.devices_management_interface</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">meraki_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_api_key</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_base_url</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_single_request_timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_single_request_timeout</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_certificate_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_certificate_path</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_requests_proxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_requests_proxy</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_wait_on_rate_limit</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_wait_on_rate_limit</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_nginx_429_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_nginx_429_retry_wait_time</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_action_batch_retry_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_action_batch_retry_wait_time</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_retry_4xx_error</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_retry_4xx_error_wait_time</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_retry_4xx_error_wait_time</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_maximum_retries</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_maximum_retries</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_output_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_output_log</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_file_prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_log_file_prefix</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_log_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_log_path</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_print_console</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_print_console</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_suppress_logging</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_suppress_logging</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_simulate</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_simulate</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_be_geo_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_be_geo_id</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_caller</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_caller</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_use_iterator_for_get_pages</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_use_iterator_for_get_pages</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">meraki_inherit_logging_config</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">meraki_inherit_logging_config</span> <span class="cp">}}</span><span class="s">&quot;</span>
-<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
-<span class="w">    </span><span class="nt">serial</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </pre></div>
 </div>
 </section>
