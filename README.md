@@ -160,7 +160,7 @@ This collection has been tested against the following environments:
 | 1.57.0                     | 2.21.2                 | 1.57.0              |
 | 1.68.0                     | 2.23.0                 | 2.2.0               |
 | 1.69.0                     | 2.24.2                 | 3.0.0               |
-| 1.72.0                     | 2.25.0                 | 4.4.0               |
+| 1.72.0                     | 2.25.1                 | 4.4.0               |
 
 *Notes*:
 

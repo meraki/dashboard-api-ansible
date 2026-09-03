@@ -1640,3 +1640,13 @@ releases:
         - "devices_wireless_bluetooth_settings - Fixed a malformed UUID in the module's EXAMPLES block."
         - "networks_wireless_bluetooth_settings - Fixed a malformed UUID in the module's EXAMPLES block."
     release_date: "2026-08-10"
+    2.25.1:
+      features:
+      bugfixes:
+        - "devices_management_interface - Removed the erroneous mapping of the create operation to rebootDevice; state=present now always updates the management
+          interface, since it is a resource that always pre-exists and has no create operation."
+        - "devices_management_interface - Removed the bare exception handler in get_object_by_name() that swallowed API read failures (including the module's own
+          fail_json) and misreported them as the object not existing."
+        - "plugin_utils/meraki - exec_meraki() now fails the task when a write operation's API response explicitly reports \"success\": false (as rebootDevice and
+          similar fire-and-forget endpoints do on rejection), instead of letting the calling module report changed=true/failed=false. Responses without a \"success\"
+          key, and read operations, are unaffected."

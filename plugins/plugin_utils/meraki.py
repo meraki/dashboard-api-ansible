@@ -285,7 +285,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller="MerakiAnsibleCollection/2.25.0 Cisco",
+                caller="MerakiAnsibleCollection/2.25.1 Cisco",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(
@@ -334,6 +334,7 @@ class MERAKI(object):
         return os.path.basename(file_path)
 
     def exec_meraki(self, family, function, params=None, op_modifies=False, **kwargs):
+        family_name = family
         try:
             family = getattr(self.api, family)
             func = getattr(family, function)
@@ -368,6 +369,22 @@ class MERAKI(object):
                     "An error occurred when executing operation."
                     "The error was: {error}"
                 ).format(error=to_native(e))
+            )
+        # Some write operations (reboot, cycle ports, blink LEDs, unenroll,
+        # batch updates, ...) return 2xx with a body of the form
+        # {"success": false} instead of raising an APIError when the
+        # requested action is rejected. Without this check that response
+        # still looks like a normal successful result to the calling action
+        # plugin, which reports changed=True/failed=False even though
+        # nothing happened. A response with no "success" key (e.g. the
+        # updated object itself, as returned by most update* operations) is
+        # unaffected: only an explicit `False` is treated as a failure.
+        if op_modifies and isinstance(response, dict) and response.get("success") is False:
+            self.fail_json(
+                msg=(
+                    "{family}, {function} - the operation was not successful "
+                    "(the API response reported success: false). Response: {response}"
+                ).format(family=family_name, function=function, response=response)
             )
         return response
 
