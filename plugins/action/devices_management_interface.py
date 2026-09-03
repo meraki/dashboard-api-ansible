@@ -60,14 +60,6 @@ class DevicesManagementInterface(object):
             new_object_params['serial'] = self.new_object.get('serial')
         return new_object_params
 
-    def create_params(self):
-        new_object_params = {}
-        if self.new_object.get('serial') is not None or self.new_object.get(
-                'serial') is not None:
-            new_object_params['serial'] = self.new_object.get('serial') or \
-                self.new_object.get('serial')
-        return new_object_params
-
     def update_all_params(self):
         new_object_params = {}
         if self.new_object.get('wan1') is not None or self.new_object.get(
@@ -87,21 +79,20 @@ class DevicesManagementInterface(object):
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method, using get all
-        try:
-            items = self.meraki.exec_meraki(
-                family="devices",
-                function="getDeviceManagementInterface",
-                params=self.get_all_params(name=name),
-            )
-            if isinstance(items, dict):
-                if 'response' in items:
-                    items = items.get('response')
-            result = get_dict_result(items, 'name', name)
-            if result is None:
-                result = items
-        except Exception as e:
-            print("Error: ", e)
-            result = None
+        # exec_meraki() already raises AnsibleActionFail on an API error, so a
+        # failed read (bad serial, rate limit, etc.) fails the task instead of
+        # being mistaken for "the object does not exist".
+        items = self.meraki.exec_meraki(
+            family="devices",
+            function="getDeviceManagementInterface",
+            params=self.get_all_params(name=name),
+        )
+        if isinstance(items, dict):
+            if 'response' in items:
+                items = items.get('response')
+        result = get_dict_result(items, 'name', name)
+        if result is None:
+            result = items
         return result
 
     def get_object_by_id(self, id):
@@ -146,15 +137,6 @@ class DevicesManagementInterface(object):
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
                 ansible_param) in obj_params)
-
-    def create(self):
-        result = self.meraki.exec_meraki(
-            family="devices",
-            function="rebootDevice",
-            params=self.create_params(),
-            op_modifies=True,
-        )
-        return result
 
     def update(self):
         id = self.new_object.get("id")
@@ -210,17 +192,22 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
+            # A device's management interface always exists; there is no
+            # create operation for it (the only write is a PUT). Reaching
+            # this point with obj_exists False means the read returned an
+            # unexpected shape rather than failing outright, since a real
+            # failure already raised inside exists() -> get_object_by_name().
             (obj_exists, prev_obj) = obj.exists()
-            if obj_exists:
-                if obj.requires_update(prev_obj):
-                    response = obj.update()
-                    meraki.object_updated()
-                else:
-                    response = prev_obj
-                    meraki.object_already_present()
+            if not obj_exists:
+                raise AnsibleActionFail(
+                    "Unable to retrieve the current management interface for serial '{serial}'.".format(
+                        serial=self._task.args.get("serial")))
+            if obj.requires_update(prev_obj):
+                response = obj.update()
+                meraki.object_updated()
             else:
-                response = obj.create()
-                meraki.object_created()
+                response = prev_obj
+                meraki.object_already_present()
 
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())
