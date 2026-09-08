@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"sims": [{"slot": "sim1", "iccid": "1234567890", "isPrimary": true, "status": "ready"}, {"slot": "sim2", "iccid": "0987654321", "isPrimary": false, "status": "not connected"}], "simOrdering": ["sim1", "sim2"], "simFailover": {"enabled": true, "timeout": 60}}}

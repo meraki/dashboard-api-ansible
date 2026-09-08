@@ -1,0 +1,6 @@
+{
+  "serial": "Q234-ABCD-5678",
+  "rfProfileId": "1234",
+  "twoFourGhzSettings": {"channel": 11, "targetPower": 21},
+  "fiveGhzSettings": {"channel": 149, "channelWidth": 20, "targetPower": 15}
+}

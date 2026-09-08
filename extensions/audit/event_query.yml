@@ -1530,3 +1530,1002 @@ cisco.meraki.devices:
       })
     else []
     end
+
+# getDeviceWirelessBluetoothSettings
+cisco.meraki.devices_wireless_bluetooth_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "wireless",
+            uuid: .uuid,
+            major: .major,
+            minor: .minor
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceWirelessBluetoothSettings
+cisco.meraki.devices_wireless_bluetooth_settings:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "wireless",
+            uuid: .uuid,
+            major: .major,
+            minor: .minor
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+cisco.meraki.devices_wireless_alternate_management_interface_ipv6:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      (.meraki_response.addresses // []) |
+      map(
+        {
+          facts: {
+            device_type: "wireless",
+            protocol: .protocol,
+            assignment_mode: .assignmentMode,
+            address: .address,
+            gateway: .gateway,
+            prefix: .prefix,
+            nameservers: (.nameservers.addresses // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end
+      )
+    else []
+    end
+
+# getDeviceWirelessConnectionStats
+cisco.meraki.devices_wireless_connection_stats_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless",
+          connection_stats: {
+            assoc: .connectionStats.assoc,
+            auth: .connectionStats.auth,
+            dhcp: .connectionStats.dhcp,
+            dns: .connectionStats.dns,
+            success: .connectionStats.success
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceWirelessElectronicShelfLabel
+cisco.meraki.devices_wireless_electronic_shelf_label:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.hostname // "")
+        },
+        facts: {
+          device_type: "wireless",
+          ap_esl_id: .apEslId,
+          channel: .channel,
+          enabled: .enabled,
+          network_id: .networkId,
+          provider: .provider
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessElectronicShelfLabel
+cisco.meraki.devices_wireless_electronic_shelf_label_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.hostname // "")
+        },
+        facts: {
+          device_type: "wireless",
+          ap_esl_id: .apEslId,
+          channel: .channel,
+          enabled: .enabled,
+          network_id: .networkId,
+          provider: .provider
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessLatencyStats
+cisco.meraki.devices_wireless_latency_stats_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless",
+          latency_stats: {
+            background_traffic_avg: .latencyStats.backgroundTraffic.avg,
+            best_effort_traffic_avg: .latencyStats.bestEffortTraffic.avg,
+            video_traffic_avg: .latencyStats.videoTraffic.avg,
+            voice_traffic_avg: .latencyStats.voiceTraffic.avg
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceWirelessRadioSettings
+cisco.meraki.devices_wireless_radio_settings:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: .twoFourGhzSettings.channel,
+            target_power: .twoFourGhzSettings.targetPower
+          },
+          five_ghz_settings: {
+            channel: .fiveGhzSettings.channel,
+            channel_width: .fiveGhzSettings.channelWidth,
+            target_power: .fiveGhzSettings.targetPower
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessRadioSettings
+cisco.meraki.devices_wireless_radio_settings_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: .twoFourGhzSettings.channel,
+            target_power: .twoFourGhzSettings.targetPower
+          },
+          five_ghz_settings: {
+            channel: .fiveGhzSettings.channel,
+            channel_width: .fiveGhzSettings.channelWidth,
+            target_power: .fiveGhzSettings.targetPower
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessStatus
+cisco.meraki.devices_wireless_status_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      (.meraki_response.basicServiceSets // []) |
+      map(
+        {
+          name: .ssidName,
+          facts: {
+            device_type: "wireless",
+            ssid_number: .ssidNumber,
+            enabled: .enabled,
+            band: .band,
+            bssid: .bssid,
+            channel: .channel,
+            channel_width: .channelWidth,
+            power: .power,
+            visible: .visible,
+            broadcasting: .broadcasting
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end
+      )
+    else []
+    end
+
+# createDeviceWirelessZigbeeEnrollment
+cisco.meraki.devices_wireless_zigbee_enrollments:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .request.serial
+        },
+        facts: {
+          device_type: "wireless",
+          enrollment_id: .enrollmentId,
+          status: .status
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessZigbeeEnrollment - Gives serial from request and not gateway or door ID
+cisco.meraki.devices_wireless_zigbee_enrollments_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response as $parent |
+      [{
+        canonical_facts: {
+          ansible_product_serial: $parent.request.serial
+        },
+        facts: {
+          device_type: "wireless",
+          enrollment_id: $parent.enrollmentId,
+          enrollment_status: $parent.status,
+          door_locks: (($parent.doorLocks // []) | map({
+            door_lock_id: .doorLockId,
+            name: (.name // ("door-lock-" + .doorLockId)),
+            short_id: .shortId,
+            eui64: .eui64,
+            lqi: .lqi,
+            rssi: .rssi,
+            status: .status,
+            enrolled_at: .enrolledAt,
+            last_seen_at: .lastSeenAt,
+            network: {
+              id: (.network.id // ""),
+              name: (.network.name // "")
+            }
+          }))
+        }
+      }]
+    else []
+    end
+
+# getDeviceApplianceRadioSettings
+cisco.meraki.devices_appliance_radio_settings_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "appliance",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: .twoFourGhzSettings.channel,
+            target_power: .twoFourGhzSettings.targetPower
+          },
+          five_ghz_settings: {
+            channel: .fiveGhzSettings.channel,
+            channel_width: .fiveGhzSettings.channelWidth,
+            target_power: .fiveGhzSettings.targetPower
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceApplianceRadioSettings
+cisco.meraki.devices_appliance_radio_settings:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "appliance",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: .twoFourGhzSettings.channel,
+            target_power: .twoFourGhzSettings.targetPower
+          },
+          five_ghz_settings: {
+            channel: .fiveGhzSettings.channel,
+            channel_width: .fiveGhzSettings.channelWidth,
+            target_power: .fiveGhzSettings.targetPower
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceAppliancePerformance
+cisco.meraki.devices_appliance_performance_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "appliance",
+            perf_score: .perfScore
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceApplianceUplinksSettings
+cisco.meraki.devices_appliance_uplinks_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "appliance",
+            wan1: {
+              enabled: .wan1.enabled,
+              vlan_tagging_enabled: .wan1.vlanTagging.enabled,
+              vlan_id: .wan1.vlanTagging.vlanId
+            },
+            wan2: {
+              enabled: .wan2.enabled,
+              vlan_tagging_enabled: .wan2.vlanTagging.enabled,
+              vlan_id: .wan2.vlanTagging.vlanId
+            }
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceApplianceUplinksSettings
+cisco.meraki.devices_appliance_uplinks_settings:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "appliance",
+            wan1: {
+              enabled: .wan1.enabled,
+              vlan_tagging_enabled: .wan1.vlanTagging.enabled,
+              vlan_id: .wan1.vlanTagging.vlanId
+            },
+            wan2: {
+              enabled: .wan2.enabled,
+              vlan_tagging_enabled: .wan2.vlanTagging.enabled,
+              vlan_id: .wan2.vlanTagging.vlanId
+            }
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceApplianceVmxAuthenticationToken
+cisco.meraki.devices_appliance_vmx_authentication_token:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "appliance",
+            token: .token,
+            expires_at: .expiresAt
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCellularSims
+cisco.meraki.devices_cellular_sims_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            sims: ((.sims // []) | map({slot: .slot, iccid: .iccid, is_primary: .isPrimary, status: .status})),
+            sim_failover_enabled: .simFailover.enabled,
+            sim_ordering: (.simOrdering // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCellularSims
+cisco.meraki.devices_cellular_sims:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            sims: ((.sims // []) | map({slot: .slot, iccid: .iccid, is_primary: .isPrimary, status: .status})),
+            sim_failover_enabled: .simFailover.enabled,
+            sim_ordering: (.simOrdering // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCellularGatewayLan
+cisco.meraki.devices_cellular_gateway_lan_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            device_name: .deviceName,
+            device_lan_ip: .deviceLanIp,
+            device_subnet: .deviceSubnet,
+            fixed_ip_assignments: (.fixedIpAssignments // []),
+            reserved_ip_ranges: (.reservedIpRanges // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCellularGatewayLan
+cisco.meraki.devices_cellular_gateway_lan:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            device_name: .deviceName,
+            device_lan_ip: .deviceLanIp,
+            device_subnet: .deviceSubnet,
+            fixed_ip_assignments: (.fixedIpAssignments // []),
+            reserved_ip_ranges: (.reservedIpRanges // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCellularGatewayPortForwardingRules
+cisco.meraki.devices_cellular_gateway_port_forwarding_rules_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      [{
+        facts: {
+          device_type: "cellular",
+          rules: ((.meraki_response | if type == "array" then . else [.] end) | map({name: .name, lan_ip: .lanIp, public_port: .publicPort, local_port: .localPort, protocol: .protocol, access: .access, allowed_ips: (.allowedIps // [])}))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceCellularGatewayPortForwardingRules
+cisco.meraki.devices_cellular_gateway_port_forwarding_rules:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      [{
+        facts: {
+          device_type: "cellular",
+          rules: ((.meraki_response | if type == "array" then . else [.] end) | map({name: .name, lan_ip: .lanIp, public_port: .publicPort, local_port: .localPort, protocol: .protocol, access: .access, allowed_ips: (.allowedIps // [])}))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceCellularGeolocations
+cisco.meraki.devices_cellular_geolocations:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            enabled: .enabled
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceCellularUplinksBandsMasksUpdate
+cisco.meraki.devices_cellular_uplinks_bands_masks_update:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "cellular",
+            by_slot: (.bySlot // []) | map({
+              slot: .slot,
+              by_signal_type: (.bySignalType // []) | map({
+                type: .type,
+                masked: (.masked // []),
+                enabled: (.enabled // []),
+                supported: (.supported // [])
+              })
+            })
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceSensorCommand
+cisco.meraki.devices_sensor_commands:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorCommands / getDeviceSensorCommand
+cisco.meraki.devices_sensor_commands_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      [{
+        facts: {
+          device_type: "sensor",
+          commands: ((.meraki_response | if type == "array" then . else [.] end) | map({
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "sensor",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# clipDeviceCamera
+cisco.meraki.devices_camera_clip_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraAnalyticsLive
+cisco.meraki.devices_camera_analytics_live_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            ts: .ts,
+            zones: (.zones // {})
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# generateDeviceCameraSnapshot
+cisco.meraki.devices_camera_generate_snapshot:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraSense
+cisco.meraki.devices_camera_sense:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: .audioDetection.enabled,
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraSense
+cisco.meraki.devices_camera_sense_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: .audioDetection.enabled,
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoLink
+cisco.meraki.devices_camera_video_link_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            url: .url,
+            vision_url: .visionUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles_info:
+  query: >-
+    if .meraki_response then
+      .invocation as $inv |
+      .meraki_response |
+      [({
+          facts: {
+            device_type: "camera",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end

@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"externalRtspEnabled": true, "rtspUrl": "rtsp://10.0.0.1:9000/live"}}

@@ -1,0 +1,23 @@
+{
+  "invocation": {"serial": "Q234-ABCD-5678"},
+  "meraki_response": [
+    {
+      "commandId": "cmd-001",
+      "createdAt": "2026-08-18T10:00:00Z",
+      "completedAt": "2026-08-18T10:00:05Z",
+      "createdBy": {"adminId": "admin-1", "name": "Alice", "email": "alice@example.com"},
+      "operation": "refreshData",
+      "status": "completed",
+      "errors": []
+    },
+    {
+      "commandId": "cmd-002",
+      "createdAt": "2026-08-18T09:00:00Z",
+      "completedAt": null,
+      "createdBy": {"adminId": "admin-1", "name": "Alice", "email": "alice@example.com"},
+      "operation": "resetFactory",
+      "status": "pending",
+      "errors": []
+    }
+  ]
+}

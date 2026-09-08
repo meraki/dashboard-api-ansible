@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"wan1": {"enabled": true, "vlanTagging": {"enabled": false, "vlanId": 0}, "pppoe": {"enabled": false}}, "wan2": {"enabled": false, "vlanTagging": {"enabled": false, "vlanId": 0}, "pppoe": {"enabled": false}}}}

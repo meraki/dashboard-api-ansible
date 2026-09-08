@@ -1,0 +1,1 @@
+{"invocation": {"serial": "Q234-ABCD-5678"}, "meraki_response": {"deviceName": "My MG", "deviceLanIp": "192.168.0.1", "deviceSubnet": "192.168.0.0/24", "fixedIpAssignments": [{"name": "My Device", "ip": "192.168.0.10", "mac": "00:11:22:33:44:55"}], "reservedIpRanges": [{"start": "192.168.0.100", "end": "192.168.0.200", "comment": "Reserved"}]}}
