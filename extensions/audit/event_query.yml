@@ -17,6 +17,8 @@ cisco.meraki.networks_switch_mtu_info:
               ansible_product_serial: (. | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               mtu_size: $override.mtuSize,
               default_mtu_size: $parent.defaultMtuSize
@@ -41,7 +43,9 @@ cisco.meraki.devices_info:
           hostname: (.lanIp // "")
         },
         facts: {
-          device_type: .productType,
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          device_type: ((.productType // "unknown") | gsub("(?<c>[A-Z])"; "_" + (.c | ascii_downcase))),
           meraki_network_id: .networkId,
           ansible_hostname: (.lanIp // ""),
           ansible_product_name: .model,
@@ -63,6 +67,8 @@ cisco.meraki.devices_switch_ports_info:
           ansible_product_serial: .module.serial
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           port_id: .portId,
           vlan_id: .vlan,
@@ -86,6 +92,8 @@ cisco.meraki.networks_switch_stacks_info:
             ansible_product_serial: (. | tostring)
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -109,6 +117,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_info:
           hostname: .interfaceIp
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: .interfaceId,
           uplink: {
@@ -131,6 +141,8 @@ cisco.meraki.devices_switch_ports:
           ansible_product_serial: .module.serial
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           port_id: .portId,
           module: {
@@ -155,6 +167,8 @@ cisco.meraki.organizations_switch_ports_by_switch_info:
           hostname: (.mac // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           mac_address: .mac,
           model: .model,
@@ -179,6 +193,8 @@ cisco.meraki.devices_switch_ports_statuses_info:
           hostname: (.mac // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           mac_address: .mac,
           model: .model,
@@ -202,6 +218,8 @@ cisco.meraki.networks_switch_access_policies_info:
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           access_policy_number: .accessPolicyNumber,
           access_policy_type: .accessPolicyType,
@@ -225,6 +243,8 @@ cisco.meraki.networks_switch_settings_info:
               ansible_product_serial: .serial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               power_exception: {
                 power_type: .powerType
@@ -253,6 +273,8 @@ cisco.meraki.networks_switch_access_policies:
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           access_policy_number: .accessPolicyNumber,
           access_policy_type: .accessPolicyType,
@@ -273,6 +295,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces:
           hostname: .interfaceIp
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: .interfaceId,
           vlan_id: .vlanId,
@@ -301,6 +325,8 @@ cisco.meraki.networks_switch_stp_info:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 stp_priority: $priority_config.stpPriority,
                 rstp_enabled: $parent.rstpEnabled
@@ -325,6 +351,8 @@ cisco.meraki.networks_switch_qos_rules_order:
           ansible_machine_id: (.id | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           qos_rule: {
             id: (.id | tostring),
@@ -352,6 +380,8 @@ cisco.meraki.devices_switch_ports_cycle:
           ansible_machine_id: .
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           port_identifier: .
         }
@@ -374,6 +404,8 @@ cisco.meraki.networks_switch_access_control_lists_info:
           )
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           acl_rule: {
             comment: .value.comment,
@@ -407,6 +439,8 @@ cisco.meraki.networks_switch_stacks:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -432,6 +466,8 @@ cisco.meraki.networks_switch_settings:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             power_exception: {
               power_type: .powerType
@@ -462,6 +498,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp_info:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -490,6 +528,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -524,6 +564,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "blocked",
@@ -543,6 +585,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "allowed",
@@ -576,6 +620,8 @@ cisco.meraki.networks_switch_stp:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 stp_priority: $priority_config.stpPriority,
                 rstp_enabled: $parent.rstpEnabled
@@ -604,6 +650,8 @@ cisco.meraki.networks_switch_link_aggregations:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             link_aggregation: {
               aggregation_id: ($parent.id | tostring),
@@ -628,6 +676,8 @@ cisco.meraki.devices_switch_routing_interfaces_info:
           hostname: (.interfaceIp // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: (.interfaceId | tostring),
           vlan_id: .vlanId,
@@ -658,6 +708,8 @@ cisco.meraki.devices_switch_routing_interfaces:
           hostname: (.interfaceIp // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: (.interfaceId | tostring),
           vlan_id: .vlanId,
@@ -692,6 +744,8 @@ cisco.meraki.networks_switch_access_control_lists:
           )
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           acl_rule: {
             comment: .value.comment,
@@ -729,6 +783,8 @@ cisco.meraki.networks_switch_routing_multicast_info:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 multicast_settings: {
                   igmp_snooping_enabled: $override.igmpSnoopingEnabled,
@@ -764,6 +820,8 @@ cisco.meraki.networks_switch_routing_ospf_info:
               ansible_machine_id: (.areaId | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v2",
               ospf_area: {
@@ -798,6 +856,8 @@ cisco.meraki.networks_switch_routing_ospf_info:
               ansible_machine_id: ("v3-" + (.areaId | tostring))
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v3",
               ospf_area: {
@@ -842,6 +902,8 @@ cisco.meraki.networks_switch_alternate_management_interface_info:
             hostname: (.alternateManagementIp // "")
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             alternate_management_interface: {
               enabled: $parent.enabled,
@@ -868,6 +930,8 @@ cisco.meraki.organizations_config_templates_switch_profiles_info:
           ansible_machine_id: (.switchProfileId | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           switch_profile: {
             profile_id: (.switchProfileId | tostring),
@@ -895,6 +959,8 @@ cisco.meraki.networks_switch_routing_ospf:
               ansible_machine_id: (.areaId | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v2",
               ospf_area: {
@@ -929,6 +995,8 @@ cisco.meraki.networks_switch_routing_ospf:
               ansible_machine_id: ("v3-" + (.areaId | tostring))
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v3",
               ospf_area: {
@@ -969,6 +1037,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_i
           hostname: (.ipv4.address // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           trusted_server: {
             trusted_server_id: (.trustedServerId | tostring),
@@ -992,6 +1062,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_warnings_by_devic
           ansible_product_serial: .serial
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           arp_inspection_warning: {
             supports_inspection: .supportsInspection,
@@ -1020,6 +1092,8 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
                 ansible_product_serial: $dhcp_server.device.serial
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 dhcp_server_seen: {
                   mac_address: $dhcp_server.mac,
@@ -1046,6 +1120,8 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
               ansible_product_serial: .serial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_seen: {
                 mac_address: $dhcp_server.mac,
@@ -1080,6 +1156,8 @@ cisco.meraki.networks_switch_link_aggregations_info:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             link_aggregation: {
               aggregation_id: ($aggregation.id | tostring),
@@ -1103,6 +1181,8 @@ cisco.meraki.networks_switch_qos_rules_order_info:
           ansible_machine_id: (.id | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           qos_rule: {
             id: (.id | tostring),
@@ -1131,6 +1211,8 @@ cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info:
           hostname: (.interfaceIp // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           multicast_rendezvous_point: {
             rendezvous_point_id: (.rendezvousPointId | tostring),
@@ -1155,6 +1237,8 @@ cisco.meraki.devices_switch_routing_static_routes_info:
           ansible_machine_id: (.staticRouteId | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           static_route: {
             route_id: (.staticRouteId | tostring),
@@ -1195,6 +1279,8 @@ cisco.meraki.networks_switch_stacks_remove:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -1221,6 +1307,8 @@ cisco.meraki.devices_switch_warm_spare_info:
               ansible_product_serial: $parent.primarySerial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               warm_spare: {
                 enabled: $parent.enabled,
@@ -1236,6 +1324,8 @@ cisco.meraki.devices_switch_warm_spare_info:
               ansible_product_serial: $parent.spareSerial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               warm_spare: {
                 enabled: $parent.enabled,
@@ -1262,6 +1352,8 @@ cisco.meraki.organizations_summary_top_switches_by_energy_usage_info:
           ansible_machine_id: .mac
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           switch_info: {
             name: .name,
@@ -1301,6 +1393,8 @@ cisco.meraki.networks_switch_stacks_add:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -1328,6 +1422,8 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp_info:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -1362,6 +1458,8 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -1399,6 +1497,8 @@ cisco.meraki.networks_switch_routing_multicast:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 multicast_settings: {
                   igmp_snooping_enabled: $override.igmpSnoopingEnabled,
@@ -1434,6 +1534,8 @@ cisco.meraki.networks_switch_dhcp_server_policy:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "blocked",
@@ -1453,6 +1555,8 @@ cisco.meraki.networks_switch_dhcp_server_policy:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "allowed",
@@ -1478,6 +1582,8 @@ cisco.meraki.networks_info:
           ansible_machine_id: .id
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "network",
           meraki_organization_id: .organizationId
         }
@@ -1496,6 +1602,8 @@ cisco.meraki.networks:
           ansible_machine_id: .id
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           meraki_organization_id: .organizationId
         }
@@ -1515,6 +1623,8 @@ cisco.meraki.devices:
           hostname: (.lanIp // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: (if .model | startswith("MV") then "camera"
                     elif .model | startswith("MR") then "wireless"
                     elif .model | startswith("MS") then "switch"

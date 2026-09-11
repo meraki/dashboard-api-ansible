@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_warm_spare_info_getDeviceSwitchWarmSpare(
                 "name": "Q234-ABCD-0001",
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "warm_spare": {
                         "enabled": True,
@@ -46,6 +48,8 @@ def test_cisco_meraki_devices_switch_warm_spare_info_getDeviceSwitchWarmSpare(
                 "name": "Q234-ABCD-0002",
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "warm_spare": {
                         "enabled": True,

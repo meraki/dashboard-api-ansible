@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
                     "hostname": "192.168.1.2"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "multicast_rendezvous_point": {
                         "rendezvous_point_id": "1234",

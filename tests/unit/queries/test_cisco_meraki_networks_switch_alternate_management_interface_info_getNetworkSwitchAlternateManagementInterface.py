@@ -37,6 +37,8 @@ def test_cisco_meraki_networks_switch_alternate_management_interface_info_getNet
                     "hostname": "1.2.3.4",
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "alternate_management_interface": {
                         "enabled": True,

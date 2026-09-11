@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsSta
                     "hostname": "01:23:45:67:ab:cd"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "mac_address": "01:23:45:67:ab:cd",
                     "model": "MS120-8",

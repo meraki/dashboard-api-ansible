@@ -37,6 +37,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_trusted_
                     "hostname": "1.2.3.4"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "trusted_server": {
                         "trusted_server_id": "123",

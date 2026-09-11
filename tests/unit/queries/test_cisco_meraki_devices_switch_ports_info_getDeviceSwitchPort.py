@@ -33,6 +33,8 @@ def test_cisco_meraki_devices_switch_ports_info_getDeviceSwitchPort(query_data, 
                     "ansible_product_serial": "3_MA-MOD-4X10G"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "port_id": "1",
                     "vlan_id": 10

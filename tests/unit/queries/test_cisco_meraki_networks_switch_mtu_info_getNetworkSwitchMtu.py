@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                     "ansible_product_serial": "Q234-ABCD-0001"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578
@@ -44,6 +46,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                     "ansible_product_serial": "Q234-ABCD-0002"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578
@@ -55,6 +59,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                     "ansible_product_serial": "Q234-ABCD-0003"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578

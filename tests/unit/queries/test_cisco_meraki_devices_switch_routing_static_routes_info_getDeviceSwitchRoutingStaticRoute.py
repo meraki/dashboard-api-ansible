@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_routing_static_routes_info_getDeviceSwitchR
                 "name": "My route",
                 "canonical_facts": {"ansible_machine_id": "1234"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "static_route": {
                         "route_id": "1234",

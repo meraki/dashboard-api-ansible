@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_warnings
                 "name": "My switch",
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "arp_inspection_warning": {
                         "supports_inspection": False,

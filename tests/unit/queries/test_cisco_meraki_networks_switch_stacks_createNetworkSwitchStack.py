@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data
                     "ansible_product_serial": "QBZY-XWVU-TSRQ"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "stack_id": "8473",
                     "stack_name": "A cool stack",
@@ -45,6 +47,8 @@ def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data
                     "ansible_product_serial": "QBAB-CDEF-GHIJ"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "stack_id": "8473",
                     "stack_name": "A cool stack",

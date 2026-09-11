@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_routing_interfaces_createDeviceSwitchRoutin
                     "hostname": "192.168.1.2"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "interface_id": "1234",
                     "vlan_id": 100,

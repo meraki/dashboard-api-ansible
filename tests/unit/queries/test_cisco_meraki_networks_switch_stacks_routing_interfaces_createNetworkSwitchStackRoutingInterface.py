@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_createNetworkSwi
                     "hostname": "192.168.1.2"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "interface_id": "1234",
                     "vlan_id": 100,
