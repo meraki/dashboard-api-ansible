@@ -33,10 +33,10 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_trusted_
             {
                 "name": "trusted-server-123",
                 "canonical_facts": {
-                    "ansible_machine_id": "00:11:22:33:44:55",
-                    "hostname": "1.2.3.4"
+                    "ansible_machine_id": "00:11:22:33:44:55"
                 },
                 "facts": {
+                    "ansible_hostname": "1.2.3.4",
                     "infra_type": "private_cloud",
                     "infra_bucket": "networking",
                     "device_type": "switch",

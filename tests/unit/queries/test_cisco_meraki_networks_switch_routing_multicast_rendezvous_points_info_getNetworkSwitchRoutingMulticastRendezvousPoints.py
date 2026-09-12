@@ -31,10 +31,10 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
             {
                 "name": "rendezvous-point-1234",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5678",
-                    "hostname": "192.168.1.2"
+                    "ansible_product_serial": "Q234-ABCD-5678"
                 },
                 "facts": {
+                    "ansible_hostname": "192.168.1.2",
                     "infra_type": "private_cloud",
                     "infra_bucket": "networking",
                     "device_type": "switch",

@@ -11,6 +11,7 @@ cisco.meraki.networks_switch_mtu_info:
           . as $override |
           # Create entries for each switch serial
           ($override.switches // [])[] |
+          select(. != null) |
           {
             name: (. | tostring),
             canonical_facts: {
@@ -36,11 +37,10 @@ cisco.meraki.devices_info:
   query: >-
     if .meraki_response then
       .meraki_response | [.] | flatten |
-      map({
+      map(select(.serial != null) | {
         name: ((.name | select(. != "")) // (.productType + "-" + .serial)),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.lanIp // "")
+          ansible_product_serial: .serial
         },
         facts: {
           infra_type: "private_cloud",
@@ -61,7 +61,7 @@ cisco.meraki.devices_switch_ports_info:
   query: >-
     if .meraki_response then
       [.meraki_response] |
-      map({
+      map(select(.module.serial != null) | {
         name: (.name // ("port-" + (.portId | tostring))),
         canonical_facts: {
           ansible_product_serial: .module.serial
@@ -86,6 +86,7 @@ cisco.meraki.networks_switch_stacks_info:
       [
         # Create entries for each switch serial in the stack
         ($parent.serials // [])[] |
+        select(. != null) |
         {
           name: (. | tostring),
           canonical_facts: {
@@ -110,13 +111,13 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.serial != null) | {
+        name: (.name // .serial),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: .interfaceIp
+          ansible_product_serial: .serial
         },
         facts: {
+          ansible_hostname: .interfaceIp,
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -135,7 +136,7 @@ cisco.meraki.devices_switch_ports:
   query: >-
     if .meraki_response then
       [.meraki_response] |
-      map({
+      map(select(.module.serial != null) | {
         name: (.name // ("port-" + (.portId | tostring))),
         canonical_facts: {
           ansible_product_serial: .module.serial
@@ -160,13 +161,13 @@ cisco.meraki.organizations_switch_ports_by_switch_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.serial != null) | {
+        name: (.name // .serial),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.mac // "")
+          ansible_product_serial: .serial
         },
         facts: {
+          macaddress: (.mac // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -186,13 +187,13 @@ cisco.meraki.devices_switch_ports_statuses_info:
   query: >-
     if .meraki_response then
       (.meraki_response.items | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.serial != null) | {
+        name: (.name // .serial),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.mac // "")
+          ansible_product_serial: .serial
         },
         facts: {
+          macaddress: (.mac // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -212,8 +213,8 @@ cisco.meraki.networks_switch_access_policies_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.accessPolicyNumber != null) | {
+        name: (.name // ("access-policy-" + (.accessPolicyNumber | tostring))),
         canonical_facts: {
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
@@ -237,6 +238,7 @@ cisco.meraki.networks_switch_settings_info:
         . as $parent |
         [
           $parent.powerExceptions[] |
+          select(.serial != null) |
           {
             name: .serial,
             canonical_facts: {
@@ -267,8 +269,8 @@ cisco.meraki.networks_switch_access_policies:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.accessPolicyNumber != null) | {
+        name: (.name // ("access-policy-" + (.accessPolicyNumber | tostring))),
         canonical_facts: {
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
@@ -288,13 +290,13 @@ cisco.meraki.networks_switch_stacks_routing_interfaces:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
-        name: .name,
+      map(select(.serial != null) | {
+        name: (.name // .serial),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: .interfaceIp
+          ansible_product_serial: .serial
         },
         facts: {
+          ansible_hostname: .interfaceIp,
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -319,6 +321,7 @@ cisco.meraki.networks_switch_stp_info:
           (
             # Create entries for each switch serial
             ($priority_config.switches // [])[] |
+            select(. != null) |
             {
               name: (. | tostring),
               canonical_facts: {
@@ -345,7 +348,7 @@ cisco.meraki.networks_switch_qos_rules_order:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.id != null) | {
         name: ("qos-rule-" + (.id | tostring)),
         canonical_facts: {
           ansible_machine_id: (.id | tostring)
@@ -374,7 +377,7 @@ cisco.meraki.devices_switch_ports_cycle:
   query: >-
     if .meraki_response then
       (.meraki_response.ports // []) |
-      map({
+      map(select(. != null) | {
         name: ("port-" + .),
         canonical_facts: {
           ansible_machine_id: .
@@ -395,7 +398,7 @@ cisco.meraki.networks_switch_access_control_lists_info:
     if .meraki_response then
       (.meraki_response.rules // []) |
       to_entries |
-      map({
+      map(select(.key != null) | {
         name: (.value.comment // ("acl-rule-" + (.key | tostring))),
         canonical_facts: {
           ansible_machine_id: (
@@ -433,6 +436,7 @@ cisco.meraki.networks_switch_stacks:
       [
         # Create entries for each switch serial in the stack
         ($parent.serials // [])[] |
+        select(. != null) |
         {
           name: .,
           canonical_facts: {
@@ -460,6 +464,7 @@ cisco.meraki.networks_switch_settings:
       [
         # Create entries for each switch with power exceptions
         ($parent.powerExceptions // [])[] |
+        select(.serial != null) |
         {
           name: .serial,
           canonical_facts: {
@@ -491,13 +496,14 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp_info:
       [
         # Create entries for each device with fixed IP assignment
         ($parent.fixedIpAssignments // [])[] |
+        select(.mac != null) |
         {
           name: (.name // .mac),
           canonical_facts: {
-            hostname: .ip,
             ansible_machine_id: .mac
           },
           facts: {
+            ansible_hostname: .ip,
             infra_type: "private_cloud",
             infra_bucket: "networking",
             device_type: "switch",
@@ -521,13 +527,14 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp:
       [
         # Create entries for each device with fixed IP assignment
         ($parent.fixedIpAssignments // [])[] |
+        select(.mac != null) |
         {
           name: (.name // .mac),
           canonical_facts: {
-            hostname: .ip,
             ansible_machine_id: .mac
           },
           facts: {
+            ansible_hostname: .ip,
             infra_type: "private_cloud",
             infra_bucket: "networking",
             device_type: "switch",
@@ -558,6 +565,7 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
         (
           # Create entries for each blocked DHCP server
           ($parent.blockedServers // [])[] |
+          select(. != null) |
           {
             name: ("blocked-dhcp-server-" + .),
             canonical_facts: {
@@ -579,6 +587,7 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
         (
           # Create entries for each allowed DHCP server
           ($parent.allowedServers // [])[] |
+          select(. != null) |
           {
             name: ("allowed-dhcp-server-" + .),
             canonical_facts: {
@@ -614,6 +623,7 @@ cisco.meraki.networks_switch_stp:
           (
             # Create entries for each switch serial
             ($priority_config.switches // [])[] |
+            select(. != null) |
             {
               name: (. | tostring),
               canonical_facts: {
@@ -644,6 +654,7 @@ cisco.meraki.networks_switch_link_aggregations:
       [
         # Create entries for each port in the link aggregation
         ($parent.switchPorts // [])[] |
+        select(.serial != null) |
         {
           name: (.serial + "-port-" + (.portId | tostring)),
           canonical_facts: {
@@ -669,13 +680,13 @@ cisco.meraki.devices_switch_routing_interfaces_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.serial != null) | {
         name: (.name // ("interface-" + (.interfaceId | tostring))),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.interfaceIp // "")
+          ansible_product_serial: .serial
         },
         facts: {
+          ansible_hostname: (.interfaceIp // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -701,13 +712,13 @@ cisco.meraki.devices_switch_routing_interfaces:
   query: >-
     if .meraki_response then
       [.meraki_response] |
-      map({
+      map(select(.serial != null) | {
         name: (.name // ("interface-" + (.interfaceId | tostring))),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.interfaceIp // "")
+          ansible_product_serial: .serial
         },
         facts: {
+          ansible_hostname: (.interfaceIp // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -734,7 +745,7 @@ cisco.meraki.networks_switch_access_control_lists:
     if .meraki_response then
       (.meraki_response.rules // []) |
       to_entries |
-      map({
+      map(select(.key != null) | {
         name: (.value.comment // ("acl-rule-" + (.key | tostring))),
         canonical_facts: {
           ansible_machine_id: (
@@ -777,6 +788,7 @@ cisco.meraki.networks_switch_routing_multicast_info:
           (
             # Create entries for each switch serial
             ($override.switches // [])[] |
+            select(. != null) |
             {
               name: (. | tostring),
               canonical_facts: {
@@ -814,6 +826,7 @@ cisco.meraki.networks_switch_routing_ospf_info:
         (
           # Create entries for each OSPFv2 area
           ($parent.areas // [])[] |
+          select(.areaId != null) |
           {
             name: (.areaName // ("ospf-area-" + (.areaId | tostring))),
             canonical_facts: {
@@ -850,6 +863,7 @@ cisco.meraki.networks_switch_routing_ospf_info:
         (
           # Create entries for each OSPFv3 area
           (($parent.v3 // {}).areas // [])[] |
+          select(.areaId != null) |
           {
             name: (.areaName // ("ospfv3-area-" + (.areaId | tostring))),
             canonical_facts: {
@@ -895,13 +909,14 @@ cisco.meraki.networks_switch_alternate_management_interface_info:
       [
         # Create entries for each switch with alternate management interface
         ($parent.switches // [])[] |
+        select(.serial != null) |
         {
           name: .serial,
           canonical_facts: {
-            ansible_product_serial: .serial,
-            hostname: (.alternateManagementIp // "")
+            ansible_product_serial: .serial
           },
           facts: {
+            ansible_hostname: (.alternateManagementIp // ""),
             infra_type: "private_cloud",
             infra_bucket: "networking",
             device_type: "switch",
@@ -924,7 +939,7 @@ cisco.meraki.organizations_config_templates_switch_profiles_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.switchProfileId != null) | {
         name: (.name // ("switch-profile-" + (.switchProfileId | tostring))),
         canonical_facts: {
           ansible_machine_id: (.switchProfileId | tostring)
@@ -953,6 +968,7 @@ cisco.meraki.networks_switch_routing_ospf:
         (
           # Create entries for each OSPFv2 area
           ($parent.areas // [])[] |
+          select(.areaId != null) |
           {
             name: (.areaName // ("ospf-area-" + (.areaId | tostring))),
             canonical_facts: {
@@ -989,6 +1005,7 @@ cisco.meraki.networks_switch_routing_ospf:
         (
           # Create entries for each OSPFv3 area
           (($parent.v3 // {}).areas // [])[] |
+          select(.areaId != null) |
           {
             name: (.areaName // ("ospfv3-area-" + (.areaId | tostring))),
             canonical_facts: {
@@ -1030,13 +1047,13 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_i
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.mac != null) | {
         name: ("trusted-server-" + (.trustedServerId | tostring)),
         canonical_facts: {
-          ansible_machine_id: .mac,
-          hostname: (.ipv4.address // "")
+          ansible_machine_id: .mac
         },
         facts: {
+          ansible_hostname: (.ipv4.address // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -1056,7 +1073,7 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_warnings_by_devic
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.serial != null) | {
         name: (.name // .serial),
         canonical_facts: {
           ansible_product_serial: .serial
@@ -1114,6 +1131,7 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
         (
           # Create entries for each switch serial in seenBy
           ($dhcp_server.seenBy // [])[] |
+          select(.serial != null) |
           {
             name: .serial,
             canonical_facts: {
@@ -1150,6 +1168,7 @@ cisco.meraki.networks_switch_link_aggregations_info:
         .[] |
         . as $aggregation |
         ($aggregation.switchPorts // [])[] |
+        select(.serial != null) |
         {
           name: (.serial + "-port-" + (.portId | tostring)),
           canonical_facts: {
@@ -1175,7 +1194,7 @@ cisco.meraki.networks_switch_qos_rules_order_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.id != null) | {
         name: ("qos-rule-" + (.id | tostring)),
         canonical_facts: {
           ansible_machine_id: (.id | tostring)
@@ -1204,13 +1223,13 @@ cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.serial != null) | {
         name: ("rendezvous-point-" + (.rendezvousPointId | tostring)),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.interfaceIp // "")
+          ansible_product_serial: .serial
         },
         facts: {
+          ansible_hostname: (.interfaceIp // ""),
           infra_type: "private_cloud",
           infra_bucket: "networking",
           device_type: "switch",
@@ -1231,7 +1250,7 @@ cisco.meraki.devices_switch_routing_static_routes_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.staticRouteId != null) | {
         name: (.name // ("static-route-" + (.staticRouteId | tostring))),
         canonical_facts: {
           ansible_machine_id: (.staticRouteId | tostring)
@@ -1273,6 +1292,7 @@ cisco.meraki.networks_switch_stacks_remove:
       [
         # Create entries for each switch serial in the stack
         ($parent.serials // [])[] |
+        select(. != null) |
         {
           name: .,
           canonical_facts: {
@@ -1301,6 +1321,11 @@ cisco.meraki.devices_switch_warm_spare_info:
         . as $parent |
         [
           # Create entry for primary switch
+          # NOTE: `,` binds tighter than `|` in jq, so each element of this
+          # array has to be parenthesised or the guard would apply to the
+          # element that follows it.
+          (
+          select($parent.primarySerial != null) |
           {
             name: $parent.primarySerial,
             canonical_facts: {
@@ -1316,8 +1341,11 @@ cisco.meraki.devices_switch_warm_spare_info:
                 spare_serial: $parent.spareSerial
               }
             }
-          },
+          }
+          ),
           # Create entry for spare switch
+          (
+          select($parent.spareSerial != null) |
           {
             name: $parent.spareSerial,
             canonical_facts: {
@@ -1334,6 +1362,7 @@ cisco.meraki.devices_switch_warm_spare_info:
               }
             }
           }
+          )
         ]
       else
         []
@@ -1346,7 +1375,7 @@ cisco.meraki.organizations_summary_top_switches_by_energy_usage_info:
   query: >-
     if .meraki_response then
       (.meraki_response | if type == "array" then . else [.] end) |
-      map({
+      map(select(.mac != null) | {
         name: (.name // .mac),
         canonical_facts: {
           ansible_machine_id: .mac
@@ -1387,6 +1416,7 @@ cisco.meraki.networks_switch_stacks_add:
       [
         # Create entries for each switch serial in the stack
         ($parent.serials // [])[] |
+        select(. != null) |
         {
           name: .,
           canonical_facts: {
@@ -1415,13 +1445,14 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp_info:
       [
         # Create entries for each device with fixed IP assignment
         ($parent.fixedIpAssignments // [])[] |
+        select(.mac != null) |
         {
           name: (.name // .mac),
           canonical_facts: {
-            hostname: .ip,
             ansible_machine_id: .mac
           },
           facts: {
+            ansible_hostname: .ip,
             infra_type: "private_cloud",
             infra_bucket: "networking",
             device_type: "switch",
@@ -1451,13 +1482,14 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp:
       [
         # Create entries for each device with fixed IP assignment
         ($parent.fixedIpAssignments // [])[] |
+        select(.mac != null) |
         {
           name: (.name // .mac),
           canonical_facts: {
-            hostname: .ip,
             ansible_machine_id: .mac
           },
           facts: {
+            ansible_hostname: .ip,
             infra_type: "private_cloud",
             infra_bucket: "networking",
             device_type: "switch",
@@ -1491,6 +1523,7 @@ cisco.meraki.networks_switch_routing_multicast:
           (
             # Create entries for each switch serial
             ($override.switches // [])[] |
+            select(. != null) |
             {
               name: (. | tostring),
               canonical_facts: {
@@ -1528,6 +1561,7 @@ cisco.meraki.networks_switch_dhcp_server_policy:
         (
           # Create entries for each blocked DHCP server
           ($parent.blockedServers // [])[] |
+          select(. != null) |
           {
             name: ("blocked-dhcp-server-" + .),
             canonical_facts: {
@@ -1549,6 +1583,7 @@ cisco.meraki.networks_switch_dhcp_server_policy:
         (
           # Create entries for each allowed DHCP server
           ($parent.allowedServers // [])[] |
+          select(. != null) |
           {
             name: ("allowed-dhcp-server-" + .),
             canonical_facts: {
@@ -1576,8 +1611,8 @@ cisco.meraki.networks_info:
   query: >-
     if .meraki_response then
       .meraki_response | [.] | flatten |
-      map({
-        name: .name,
+      map(select(.id != null) | {
+        name: (.name // .id),
         canonical_facts: {
           ansible_machine_id: .id
         },
@@ -1596,8 +1631,8 @@ cisco.meraki.networks:
   query: >-
     if .meraki_response then
       [.meraki_response] |
-      map({
-        name: .name,
+      map(select(.id != null) | {
+        name: (.name // .id),
         canonical_facts: {
           ansible_machine_id: .id
         },
@@ -1616,11 +1651,10 @@ cisco.meraki.devices:
   query: >-
     if .meraki_response then
       .meraki_response | [.] | flatten |
-      map({
+      map(select(.serial != null) | {
         name: ((.name | select(. != "")) // (.model + "-" + .serial)),
         canonical_facts: {
-          ansible_product_serial: .serial,
-          hostname: (.lanIp // "")
+          ansible_product_serial: .serial
         },
         facts: {
           infra_type: "private_cloud",

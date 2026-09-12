@@ -30,10 +30,10 @@ def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsSta
             {
                 "name": "Example Switch",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q555-5555-5555",
-                    "hostname": "01:23:45:67:ab:cd"
+                    "ansible_product_serial": "Q555-5555-5555"
                 },
                 "facts": {
+                    "macaddress": "01:23:45:67:ab:cd",
                     "infra_type": "private_cloud",
                     "infra_bucket": "networking",
                     "device_type": "switch",

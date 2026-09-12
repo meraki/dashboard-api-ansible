@@ -33,31 +33,37 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_info_getNetworkS
             {
                 "name": "L3 interface",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5678",
-                    "hostname": "192.168.1.2",
+                    "ansible_product_serial": "Q234-ABCD-5678"
                 },
                 "facts": {
+                    "ansible_hostname": "192.168.1.2",
                     "infra_type": "private_cloud",
                     "infra_bucket": "networking",
                     "device_type": "switch",
                     "interface_id": "1234",
-                    "uplink": {"ipv4_enabled": False, "ipv6_enabled": False},
-                },
+                    "uplink": {
+                        "ipv4_enabled": False,
+                        "ipv6_enabled": False
+                    }
+                }
             },
             {
                 "name": "L3 interface1",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5611",
-                    "hostname": "192.168.2.2",
+                    "ansible_product_serial": "Q234-ABCD-5611"
                 },
                 "facts": {
+                    "ansible_hostname": "192.168.2.2",
                     "infra_type": "private_cloud",
                     "infra_bucket": "networking",
                     "device_type": "switch",
                     "interface_id": "9234",
-                    "uplink": {"ipv4_enabled": False, "ipv6_enabled": False},
-                },
-            },
+                    "uplink": {
+                        "ipv4_enabled": False,
+                        "ipv6_enabled": False
+                    }
+                }
+            }
         ]
     ]
 
