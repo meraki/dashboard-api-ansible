@@ -71,12 +71,17 @@ VOLATILE_KEYS = frozenset([
     "firmware",
 ])
 
-# Stable identifiers. A display `name` alongside one of these is redundant and
+# Stable identifiers. A display name alongside one of these is redundant and
 # mutable -- renaming the object produces a second audit row for one node.
 IDENTITY_KEYS = frozenset([
     "id", "moid", "serial", "serial_number", "object_guid", "guid", "uuid",
     "ansible_product_serial", "instance_id", "arn",
 ])
+
+# Human-facing labels. Not volatile enough to reject on their own -- for some
+# resources a name is the only identity there is -- but redundant and harmful
+# next to a stable identifier.
+DISPLAY_NAME_KEYS = frozenset(["name", "host_name", "hostname", "display_name"])
 
 
 def load_queries():
@@ -579,11 +584,12 @@ def test_canonical_facts_holds_identity_only(module):
     )
 
     identifiers = sorted(lowered & IDENTITY_KEYS)
-    assert not ("name" in lowered and identifiers), (
-        "%s: canonical_facts contains both `name` and the stable identifier(s) "
-        "%s. `name` is mutable, so renaming the object counts it as a second "
-        "node. Keep the identifier, move `name` to `facts`."
-        % (module, ", ".join(identifiers))
+    labels = sorted(lowered & DISPLAY_NAME_KEYS)
+    assert not (labels and identifiers), (
+        "%s: canonical_facts contains both the label(s) %s and the stable "
+        "identifier(s) %s. A label is mutable, so renaming the object counts it "
+        "as a second node. Keep the identifier, move the label to `facts`."
+        % (module, ", ".join(labels), ", ".join(identifiers))
     )
 
     module_name = module.split(".")[-1]
