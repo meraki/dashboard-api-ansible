@@ -33,23 +33,25 @@ def test_cisco_meraki_devices_switch_routing_interfaces_dhcp_updateDeviceSwitchR
             {
                 "name": "Cisco Meraki valued client",
                 "canonical_facts": {
-                    "hostname": "192.168.1.12",
-                    "ansible_machine_id": "22:33:44:55:66:77",
+                    "ansible_machine_id": "22:33:44:55:66:77"
                 },
                 "facts": {
+                    "ansible_hostname": "192.168.1.12",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "fixed_ip_assignment": {
                         "mac": "22:33:44:55:66:77",
                         "ip": "192.168.1.12",
-                        "name": "Cisco Meraki valued client",
+                        "name": "Cisco Meraki valued client"
                     },
                     "dhcp_config": {
                         "dhcp_mode": "dhcpServer",
                         "dhcp_lease_time": "1 day",
                         "dns_nameservers_option": "custom",
-                        "boot_options_enabled": True,
-                    },
-                },
+                        "boot_options_enabled": True
+                    }
+                }
             }
         ]
     ]

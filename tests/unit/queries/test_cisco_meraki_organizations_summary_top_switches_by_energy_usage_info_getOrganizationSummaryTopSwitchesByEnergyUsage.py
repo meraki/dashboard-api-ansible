@@ -34,6 +34,8 @@ def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_ge
                     "ansible_machine_id": "00:11:22:33:44:55"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "switch_info": {
                         "name": "My switch",

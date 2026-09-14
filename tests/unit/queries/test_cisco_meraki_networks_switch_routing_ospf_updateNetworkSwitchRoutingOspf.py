@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_routing_ospf_updateNetworkSwitchRoutingOsp
                 "name": "Backbone",
                 "canonical_facts": {"ansible_machine_id": "1284392014819"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "ospf_version": "v2",
                     "ospf_area": {
@@ -54,6 +56,8 @@ def test_cisco_meraki_networks_switch_routing_ospf_updateNetworkSwitchRoutingOsp
                 "name": "V3 Backbone",
                 "canonical_facts": {"ansible_machine_id": "v3-1284392014819"},
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "ospf_version": "v3",
                     "ospf_area": {

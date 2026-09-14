@@ -30,10 +30,12 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_dhcp_info_getNet
             {
                 "name": "Cisco Meraki valued client",
                 "canonical_facts": {
-                    "hostname": "192.168.1.12",
                     "ansible_machine_id": "22:33:44:55:66:77"
                 },
                 "facts": {
+                    "ansible_hostname": "192.168.1.12",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "fixed_ip_assignment": {
                         "mac": "22:33:44:55:66:77",

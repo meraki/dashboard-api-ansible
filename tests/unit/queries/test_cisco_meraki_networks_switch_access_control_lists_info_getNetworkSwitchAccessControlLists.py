@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_access_control_lists_info_getNetworkSwitch
                     "ansible_machine_id": "172.16.30/24-0"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "acl_rule": {
                         "comment": "Deny SSH",

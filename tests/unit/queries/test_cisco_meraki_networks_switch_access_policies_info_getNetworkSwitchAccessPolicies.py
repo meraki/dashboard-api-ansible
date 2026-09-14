@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_access_policies_info_getNetworkSwitchAcces
                     "ansible_machine_id": "1234"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "access_policy_number": "1234",
                     "access_policy_type": "Hybrid authentication"
@@ -44,6 +46,8 @@ def test_cisco_meraki_networks_switch_access_policies_info_getNetworkSwitchAcces
                     "ansible_machine_id": "9999"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "access_policy_number": "9999",
                     "access_policy_type": "Hybrid authentication"

@@ -1,0 +1,26 @@
+---
+bugfixes:
+  - "Event query - Guard the identity field of every query in ``extensions/audit/event_query.yml``
+    with ``select(... != null)``. A ``null`` anywhere inside ``canonical_facts`` makes the record
+    unhashable, and indirect node counting discards the whole node without failing the job, so a
+    switch the Meraki API returned without a serial was silently not counted."
+  - "Event query - Move ``hostname`` out of ``canonical_facts`` and into ``facts`` for the fifteen
+    modules that carried it. ``canonical_facts`` is the sole deduplication key, and the values used
+    (``lanIp``, ``mac``, ``interfaceIp``, ``ip``, ``alternateManagementIp``, ``ipv4.address``) all
+    change over a device's life, so one switch was counted again every time its address changed."
+  - "Event query - Emit a ``name`` that cannot be ``null``. Records with a null top-level ``name``
+    are discarded by the consumer, and nineteen queries passed through an optional API field
+    (``name``, ``serial``, ``spareSerial``) unguarded."
+  - "Event query - Guard the second record emitted by ``networks_switch_dhcp_server_policy``,
+    ``networks_switch_dhcp_server_policy_info``, ``networks_switch_routing_ospf``,
+    ``networks_switch_routing_ospf_info``, ``networks_switch_dhcp_v4_servers_seen_info`` and
+    ``devices_switch_warm_spare_info``, which each emit two records per response. In
+    ``devices_switch_warm_spare_info`` the two array elements are now parenthesised, because ``,``
+    binds tighter than ``|`` in jq and an unparenthesised guard would have applied to the following
+    element instead of its own."
+trivial:
+  - "Tests - Extend the ``event_query.yml`` contract tests to cover the deduplication key: that
+    ``canonical_facts`` is present, that no field in it can be null, and that it holds identity
+    only. They fail on 61 assertions against the previous query file."
+  - "Tests - Re-derive the ``expected`` literal in the fourteen query snapshot tests whose output
+    the fixes above deliberately change. The remaining thirty-three are untouched."

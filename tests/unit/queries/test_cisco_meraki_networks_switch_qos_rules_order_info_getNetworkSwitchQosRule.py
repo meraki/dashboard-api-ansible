@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_qos_rules_order_info_getNetworkSwitchQosRu
                     "ansible_machine_id": "1284392014819"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "qos_rule": {
                         "id": "1284392014819",

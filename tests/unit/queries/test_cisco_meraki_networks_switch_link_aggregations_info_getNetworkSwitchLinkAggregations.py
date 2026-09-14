@@ -33,6 +33,8 @@ def test_cisco_meraki_networks_switch_link_aggregations_info_getNetworkSwitchLin
                     "ansible_product_serial": "Q234-ABCD-0001"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "switch",
                     "link_aggregation": {
                         "aggregation_id": "NDU2N18yXzM=",

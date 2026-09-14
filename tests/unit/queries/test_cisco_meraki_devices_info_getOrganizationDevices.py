@@ -31,33 +31,35 @@ def test_cisco_meraki_devices_info_getOrganizationDevices(query_data, load_fixtu
             {
                 "name": "My AP",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5678",
-                    "hostname": "1.2.3.4",
+                    "ansible_product_serial": "Q234-ABCD-5678"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "wireless",
                     "meraki_network_id": "N_24329156",
                     "ansible_hostname": "1.2.3.4",
                     "ansible_product_name": "MR34",
                     "ansible_bios_version": "wireless-25-14",
-                    "macaddress": "00:11:22:33:44:55",
-                },
+                    "macaddress": "00:11:22:33:44:55"
+                }
             },
             {
                 "name": "My AP 2",
                 "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5679",
-                    "hostname": "1.2.3.4",
+                    "ansible_product_serial": "Q234-ABCD-5679"
                 },
                 "facts": {
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "device_type": "wireless",
                     "meraki_network_id": "N_24329157",
                     "ansible_hostname": "1.2.3.4",
                     "ansible_product_name": "MR34",
                     "ansible_bios_version": "wireless-25-14",
-                    "macaddress": "00:11:22:33:44:55",
-                },
-            },
+                    "macaddress": "00:11:22:33:44:55"
+                }
+            }
         ]
     ]
 
