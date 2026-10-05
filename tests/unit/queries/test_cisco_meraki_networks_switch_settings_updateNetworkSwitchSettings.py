@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_settings_updateNetworkSwitchSettings(
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "power_exception": {"power_type": "redundant"},
                     "network_settings": {"vlan": 100, "use_combined_power": False},
                 },

@@ -38,6 +38,8 @@ def test_cisco_meraki_devices_switch_routing_interfaces_dhcp_updateDeviceSwitchR
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "fixed_ip_assignment": {
                         "mac": "22:33:44:55:66:77",
                         "ip": "192.168.1.12",

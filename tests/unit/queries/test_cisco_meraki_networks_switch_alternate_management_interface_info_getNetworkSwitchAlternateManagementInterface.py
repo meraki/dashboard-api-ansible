@@ -38,6 +38,8 @@ def test_cisco_meraki_networks_switch_alternate_management_interface_info_getNet
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "alternate_management_interface": {
                         "enabled": True,
                         "vlan_id": 100,

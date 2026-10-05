@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_stacks_remove_removeNetworkSwitchStack(
                 "canonical_facts": {"ansible_product_serial": "QBZY-XWVU-TSRQ"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "stack_id": "8473",
                     "stack_name": "A cool stack",
                     "is_monitor_only": False,
@@ -46,6 +48,8 @@ def test_cisco_meraki_networks_switch_stacks_remove_removeNetworkSwitchStack(
                 "canonical_facts": {"ansible_product_serial": "QBAB-CDEF-GHIJ"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "stack_id": "8473",
                     "stack_name": "A cool stack",
                     "is_monitor_only": False,

@@ -36,6 +36,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "multicast_rendezvous_point": {
                         "rendezvous_point_id": "1234",
                         "serial": "Q234-ABCD-5678",

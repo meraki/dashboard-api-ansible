@@ -38,6 +38,8 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_info_getNetworkS
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "interface_id": "1234",
                     "uplink": {"ipv4_enabled": False, "ipv6_enabled": False},
                 },
@@ -50,6 +52,8 @@ def test_cisco_meraki_networks_switch_stacks_routing_interfaces_info_getNetworkS
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "interface_id": "9234",
                     "uplink": {"ipv4_enabled": False, "ipv6_enabled": False},
                 },

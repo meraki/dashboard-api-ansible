@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_ports_info_getDeviceSwitchPort(query_data, 
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "port_id": "1",
                     "vlan_id": 10
                 }

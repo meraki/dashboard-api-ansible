@@ -34,6 +34,8 @@ def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, lo
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "port_id": "1",
                     "module": {
                         "model": "MA-MOD-4X10G",

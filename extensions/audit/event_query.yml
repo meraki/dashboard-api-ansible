@@ -17,6 +17,8 @@ cisco.meraki.networks_switch_mtu_info:
               ansible_product_serial: (. | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               mtu_size: $override.mtuSize,
               default_mtu_size: $parent.defaultMtuSize
@@ -42,6 +44,13 @@ cisco.meraki.devices_info:
         },
         facts: {
           device_type: .productType,
+          infra_type: "private_cloud",
+          infra_bucket: (
+          if (.productType == "camera") or (.productType == "sensor")
+          then "monitoring"
+          else "networking"
+          end
+          ),
           meraki_network_id: .networkId,
           ansible_hostname: (.lanIp // ""),
           ansible_product_name: .model,
@@ -64,6 +73,8 @@ cisco.meraki.devices_switch_ports_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           port_id: .portId,
           vlan_id: .vlan,
         }
@@ -86,6 +97,8 @@ cisco.meraki.networks_switch_stacks_info:
             ansible_product_serial: (. | tostring)
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -109,6 +122,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_info:
           hostname: .interfaceIp
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: .interfaceId,
           uplink: {
@@ -132,6 +147,8 @@ cisco.meraki.devices_switch_ports:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           port_id: .portId,
           module: {
             model: .module.model,
@@ -156,6 +173,8 @@ cisco.meraki.organizations_switch_ports_by_switch_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           mac_address: .mac,
           model: .model,
           switch_info: {
@@ -180,6 +199,8 @@ cisco.meraki.devices_switch_ports_statuses_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           mac_address: .mac,
           model: .model,
           switch_info: {
@@ -202,6 +223,8 @@ cisco.meraki.networks_switch_access_policies_info:
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           access_policy_number: .accessPolicyNumber,
           access_policy_type: .accessPolicyType,
@@ -225,6 +248,8 @@ cisco.meraki.networks_switch_settings_info:
               ansible_product_serial: .serial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               power_exception: {
                 power_type: .powerType
@@ -253,6 +278,8 @@ cisco.meraki.networks_switch_access_policies:
           ansible_machine_id: (.accessPolicyNumber | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           access_policy_number: .accessPolicyNumber,
           access_policy_type: .accessPolicyType,
@@ -273,6 +300,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces:
           hostname: .interfaceIp
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           interface_id: .interfaceId,
           vlan_id: .vlanId,
@@ -301,6 +330,8 @@ cisco.meraki.networks_switch_stp_info:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 stp_priority: $priority_config.stpPriority,
                 rstp_enabled: $parent.rstpEnabled
@@ -325,6 +356,8 @@ cisco.meraki.networks_switch_qos_rules_order:
           ansible_machine_id: (.id | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           qos_rule: {
             id: (.id | tostring),
@@ -353,6 +386,8 @@ cisco.meraki.devices_switch_ports_cycle:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           port_identifier: .
         }
       })
@@ -374,6 +409,8 @@ cisco.meraki.networks_switch_access_control_lists_info:
           )
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           acl_rule: {
             comment: .value.comment,
@@ -407,6 +444,8 @@ cisco.meraki.networks_switch_stacks:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -432,6 +471,8 @@ cisco.meraki.networks_switch_settings:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             power_exception: {
               power_type: .powerType
@@ -462,6 +503,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp_info:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -490,6 +533,8 @@ cisco.meraki.networks_switch_stacks_routing_interfaces_dhcp:
             ansible_machine_id: .mac
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             fixed_ip_assignment: {
               mac: .mac,
@@ -524,6 +569,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "blocked",
@@ -543,6 +590,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_info:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "allowed",
@@ -576,6 +625,8 @@ cisco.meraki.networks_switch_stp:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 stp_priority: $priority_config.stpPriority,
                 rstp_enabled: $parent.rstpEnabled
@@ -604,6 +655,8 @@ cisco.meraki.networks_switch_link_aggregations:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             link_aggregation: {
               aggregation_id: ($parent.id | tostring),
@@ -629,6 +682,8 @@ cisco.meraki.devices_switch_routing_interfaces_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           interface_id: (.interfaceId | tostring),
           vlan_id: .vlanId,
           interface_ip: .interfaceIp,
@@ -659,6 +714,8 @@ cisco.meraki.devices_switch_routing_interfaces:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           interface_id: (.interfaceId | tostring),
           vlan_id: .vlanId,
           interface_ip: .interfaceIp,
@@ -692,6 +749,8 @@ cisco.meraki.networks_switch_access_control_lists:
           )
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           acl_rule: {
             comment: .value.comment,
@@ -729,6 +788,8 @@ cisco.meraki.networks_switch_routing_multicast_info:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 multicast_settings: {
                   igmp_snooping_enabled: $override.igmpSnoopingEnabled,
@@ -764,6 +825,8 @@ cisco.meraki.networks_switch_routing_ospf_info:
               ansible_machine_id: (.areaId | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v2",
               ospf_area: {
@@ -798,6 +861,8 @@ cisco.meraki.networks_switch_routing_ospf_info:
               ansible_machine_id: ("v3-" + (.areaId | tostring))
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v3",
               ospf_area: {
@@ -842,6 +907,8 @@ cisco.meraki.networks_switch_alternate_management_interface_info:
             hostname: (.alternateManagementIp // "")
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             alternate_management_interface: {
               enabled: $parent.enabled,
@@ -869,6 +936,8 @@ cisco.meraki.organizations_config_templates_switch_profiles_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           switch_profile: {
             profile_id: (.switchProfileId | tostring),
             name: .name,
@@ -895,6 +964,8 @@ cisco.meraki.networks_switch_routing_ospf:
               ansible_machine_id: (.areaId | tostring)
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v2",
               ospf_area: {
@@ -929,6 +1000,8 @@ cisco.meraki.networks_switch_routing_ospf:
               ansible_machine_id: ("v3-" + (.areaId | tostring))
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               ospf_version: "v3",
               ospf_area: {
@@ -969,6 +1042,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_i
           hostname: (.ipv4.address // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           trusted_server: {
             trusted_server_id: (.trustedServerId | tostring),
@@ -992,6 +1067,8 @@ cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_warnings_by_devic
           ansible_product_serial: .serial
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           arp_inspection_warning: {
             supports_inspection: .supportsInspection,
@@ -1020,6 +1097,8 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
                 ansible_product_serial: $dhcp_server.device.serial
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 dhcp_server_seen: {
                   mac_address: $dhcp_server.mac,
@@ -1046,6 +1125,8 @@ cisco.meraki.networks_switch_dhcp_v4_servers_seen_info:
               ansible_product_serial: .serial
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_seen: {
                 mac_address: $dhcp_server.mac,
@@ -1080,6 +1161,8 @@ cisco.meraki.networks_switch_link_aggregations_info:
             ansible_product_serial: .serial
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             link_aggregation: {
               aggregation_id: ($aggregation.id | tostring),
@@ -1103,6 +1186,8 @@ cisco.meraki.networks_switch_qos_rules_order_info:
           ansible_machine_id: (.id | tostring)
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           qos_rule: {
             id: (.id | tostring),
@@ -1131,6 +1216,8 @@ cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info:
           hostname: (.interfaceIp // "")
         },
         facts: {
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           device_type: "switch",
           multicast_rendezvous_point: {
             rendezvous_point_id: (.rendezvousPointId | tostring),
@@ -1156,6 +1243,8 @@ cisco.meraki.devices_switch_routing_static_routes_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           static_route: {
             route_id: (.staticRouteId | tostring),
             name: .name,
@@ -1195,6 +1284,8 @@ cisco.meraki.networks_switch_stacks_remove:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -1222,6 +1313,8 @@ cisco.meraki.devices_switch_warm_spare_info:
             },
             facts: {
               device_type: "switch",
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               warm_spare: {
                 enabled: $parent.enabled,
                 role: "primary",
@@ -1237,6 +1330,8 @@ cisco.meraki.devices_switch_warm_spare_info:
             },
             facts: {
               device_type: "switch",
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               warm_spare: {
                 enabled: $parent.enabled,
                 role: "spare",
@@ -1263,6 +1358,8 @@ cisco.meraki.organizations_summary_top_switches_by_energy_usage_info:
         },
         facts: {
           device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           switch_info: {
             name: .name,
             model: .model,
@@ -1301,6 +1398,8 @@ cisco.meraki.networks_switch_stacks_add:
             ansible_product_serial: .
           },
           facts: {
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             device_type: "switch",
             stack_id: ($parent.id | tostring),
             stack_name: $parent.name,
@@ -1329,6 +1428,8 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp_info:
           },
           facts: {
             device_type: "switch",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             fixed_ip_assignment: {
               mac: .mac,
               ip: .ip,
@@ -1363,6 +1464,8 @@ cisco.meraki.devices_switch_routing_interfaces_dhcp:
           },
           facts: {
             device_type: "switch",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
             fixed_ip_assignment: {
               mac: .mac,
               ip: .ip,
@@ -1399,6 +1502,8 @@ cisco.meraki.networks_switch_routing_multicast:
                 ansible_product_serial: (. | tostring)
               },
               facts: {
+                infra_type: "private_cloud",
+                infra_bucket: "networking",
                 device_type: "switch",
                 multicast_settings: {
                   igmp_snooping_enabled: $override.igmpSnoopingEnabled,
@@ -1434,6 +1539,8 @@ cisco.meraki.networks_switch_dhcp_server_policy:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "blocked",
@@ -1453,6 +1560,8 @@ cisco.meraki.networks_switch_dhcp_server_policy:
               ansible_machine_id: .
             },
             facts: {
+              infra_type: "private_cloud",
+              infra_bucket: "networking",
               device_type: "switch",
               dhcp_server_policy: {
                 status: "allowed",
@@ -1478,7 +1587,8 @@ cisco.meraki.networks_info:
           ansible_machine_id: .id
         },
         facts: {
-          device_type: "network",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           meraki_organization_id: .organizationId
         }
       })
@@ -1496,7 +1606,8 @@ cisco.meraki.networks:
           ansible_machine_id: .id
         },
         facts: {
-          device_type: "switch",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
           meraki_organization_id: .organizationId
         }
       })
@@ -1515,12 +1626,23 @@ cisco.meraki.devices:
           hostname: (.lanIp // "")
         },
         facts: {
-          device_type: (if .model | startswith("MV") then "camera"
-                    elif .model | startswith("MR") then "wireless"
-                    elif .model | startswith("MS") then "switch"
-                    elif .model | startswith("MX") then "appliance"
-                    else "unknown"
-                    end),
+          device_type: (
+          if   (.model | startswith("MS")) or (.model | startswith("C9")) then "switch"
+          elif (.model | startswith("MR")) or (.model | startswith("CW")) then "wireless_access_point"
+          elif (.model | startswith("MX")) or (.model | startswith("Z"))  then "sd_wan"
+          elif (.model | startswith("MV")) then "ip_camera"
+          elif (.model | startswith("MT")) then "iot_sensor"
+          elif (.model | startswith("MG")) then "gateway"
+          else "network_device"
+          end
+          ),
+          infra_type: "private_cloud",
+          infra_bucket: (
+          if (.model | startswith("MV")) or (.model | startswith("MT"))
+          then "monitoring"
+          else "networking"
+          end
+          ),
           meraki_network_id: .networkId,
           ansible_hostname: (.lanIp // ""),
           ansible_product_name: .model,
@@ -1528,5 +1650,1100 @@ cisco.meraki.devices:
           macaddress: .mac
         }
       })
+    else []
+    end
+
+# getDeviceWirelessBluetoothSettings
+cisco.meraki.devices_wireless_bluetooth_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("bluetooth-settings-" + $inv.serial),
+          facts: {
+            device_type: "wireless_access_point",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            uuid: .uuid,
+            major: .major,
+            minor: .minor
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceWirelessBluetoothSettings
+cisco.meraki.devices_wireless_bluetooth_settings:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("bluetooth-settings-" + $inv.serial),
+          facts: {
+            device_type: "wireless_access_point",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            uuid: .uuid,
+            major: .major,
+            minor: .minor
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+cisco.meraki.devices_wireless_alternate_management_interface_ipv6:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      [({
+        name: ("wireless-ipv6-" + $inv.serial),
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          addresses: ((.meraki_response.addresses // []) | map({
+            protocol: .protocol,
+            assignment_mode: .assignmentMode,
+            address: .address,
+            gateway: .gateway,
+            prefix: .prefix,
+            nameservers: (((.nameservers // {}).addresses) // [])
+          }))
+        }
+      } + if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end)]
+    else []
+    end
+
+# getDeviceWirelessConnectionStats
+cisco.meraki.devices_wireless_connection_stats_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("connection-stats-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          connection_stats: {
+            assoc: (((.connectionStats // {}).assoc) // null),
+            auth: (((.connectionStats // {}).auth) // null),
+            dhcp: (((.connectionStats // {}).dhcp) // null),
+            dns: (((.connectionStats // {}).dns) // null),
+            success: (((.connectionStats // {}).success) // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceWirelessElectronicShelfLabel
+cisco.meraki.devices_wireless_electronic_shelf_label:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: (.hostname // ("electronic-shelf-label-" + (.apEslId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.hostname // "")
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          ap_esl_id: .apEslId,
+          channel: .channel,
+          enabled: .enabled,
+          network_id: .networkId,
+          provider: .provider
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessElectronicShelfLabel
+cisco.meraki.devices_wireless_electronic_shelf_label_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: (.hostname // ("electronic-shelf-label-" + (.apEslId | tostring))),
+        canonical_facts: {
+          ansible_product_serial: .serial,
+          hostname: (.hostname // "")
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          ap_esl_id: .apEslId,
+          channel: .channel,
+          enabled: .enabled,
+          network_id: .networkId,
+          provider: .provider
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessLatencyStats
+cisco.meraki.devices_wireless_latency_stats_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("latency-stats-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          latency_stats: {
+            background_traffic_avg: (((.latencyStats // {}).backgroundTraffic // {}).avg // null),
+            best_effort_traffic_avg: (((.latencyStats // {}).bestEffortTraffic // {}).avg // null),
+            video_traffic_avg: (((.latencyStats // {}).videoTraffic // {}).avg // null),
+            voice_traffic_avg: (((.latencyStats // {}).voiceTraffic // {}).avg // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceWirelessRadioSettings
+cisco.meraki.devices_wireless_radio_settings:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("radio-settings-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: (((.twoFourGhzSettings // {}).channel) // null),
+            target_power: (((.twoFourGhzSettings // {}).targetPower) // null)
+          },
+          five_ghz_settings: {
+            channel: (((.fiveGhzSettings // {}).channel) // null),
+            channel_width: (((.fiveGhzSettings // {}).channelWidth) // null),
+            target_power: (((.fiveGhzSettings // {}).targetPower) // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessRadioSettings
+cisco.meraki.devices_wireless_radio_settings_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("radio-settings-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: (((.twoFourGhzSettings // {}).channel) // null),
+            target_power: (((.twoFourGhzSettings // {}).targetPower) // null)
+          },
+          five_ghz_settings: {
+            channel: (((.fiveGhzSettings // {}).channel) // null),
+            channel_width: (((.fiveGhzSettings // {}).channelWidth) // null),
+            target_power: (((.fiveGhzSettings // {}).targetPower) // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessStatus
+cisco.meraki.devices_wireless_status_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      [({
+        name: ("wireless-status-" + $inv.serial),
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          basic_service_sets: ((.meraki_response.basicServiceSets // []) | map({
+            ssid_number: .ssidNumber,
+            ssid_name: .ssidName,
+            enabled: .enabled,
+            band: .band,
+            bssid: .bssid,
+            channel: .channel,
+            channel_width: .channelWidth,
+            power: .power,
+            visible: .visible,
+            broadcasting: .broadcasting
+          }))
+        }
+      } + if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end)]
+    else []
+    end
+
+# createDeviceWirelessZigbeeEnrollment
+cisco.meraki.devices_wireless_zigbee_enrollments:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("zigbee-enrollment-" + (.enrollmentId | tostring)),
+        canonical_facts: {
+          ansible_product_serial: .request.serial,
+          enrollment_id: .enrollmentId
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          enrollment_id: .enrollmentId,
+          status: .status
+        }
+      }]
+    else []
+    end
+
+# getDeviceWirelessZigbeeEnrollment - Gives serial from request and not gateway or door ID
+cisco.meraki.devices_wireless_zigbee_enrollments_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response as $parent |
+      [{
+        name: ("zigbee-enrollment-" + ($parent.enrollmentId | tostring)),
+        canonical_facts: {
+          ansible_product_serial: $parent.request.serial,
+          enrollment_id: $parent.enrollmentId
+        },
+        facts: {
+          device_type: "wireless_access_point",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          enrollment_id: $parent.enrollmentId,
+          enrollment_status: $parent.status,
+          door_locks: (($parent.doorLocks // []) | map({
+            door_lock_id: .doorLockId,
+            name: (.name // ("door-lock-" + .doorLockId)),
+            short_id: .shortId,
+            eui64: .eui64,
+            lqi: .lqi,
+            rssi: .rssi,
+            status: .status,
+            enrolled_at: .enrolledAt,
+            last_seen_at: .lastSeenAt,
+            network: {
+              id: (((.network // {}).id) // ""),
+              name: (((.network // {}).name) // "")
+            }
+          }))
+        }
+      }]
+    else []
+    end
+
+# getDeviceApplianceRadioSettings
+cisco.meraki.devices_appliance_radio_settings_info:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("appliance-radio-settings-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "sd_wan",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: (((.twoFourGhzSettings // {}).channel) // null),
+            target_power: (((.twoFourGhzSettings // {}).targetPower) // null)
+          },
+          five_ghz_settings: {
+            channel: (((.fiveGhzSettings // {}).channel) // null),
+            channel_width: (((.fiveGhzSettings // {}).channelWidth) // null),
+            target_power: (((.fiveGhzSettings // {}).targetPower) // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# updateDeviceApplianceRadioSettings
+cisco.meraki.devices_appliance_radio_settings:
+  query: >-
+    if .meraki_response then
+      .meraki_response |
+      [{
+        name: ("appliance-radio-settings-" + .serial),
+        canonical_facts: {
+          ansible_product_serial: .serial
+        },
+        facts: {
+          device_type: "sd_wan",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rf_profile_id: .rfProfileId,
+          two_four_ghz_settings: {
+            channel: (((.twoFourGhzSettings // {}).channel) // null),
+            target_power: (((.twoFourGhzSettings // {}).targetPower) // null)
+          },
+          five_ghz_settings: {
+            channel: (((.fiveGhzSettings // {}).channel) // null),
+            channel_width: (((.fiveGhzSettings // {}).channelWidth) // null),
+            target_power: (((.fiveGhzSettings // {}).targetPower) // null)
+          }
+        }
+      }]
+    else []
+    end
+
+# getDeviceAppliancePerformance
+cisco.meraki.devices_appliance_performance_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("appliance-performance-" + $inv.serial),
+          facts: {
+            device_type: "sd_wan",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            perf_score: .perfScore
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceApplianceUplinksSettings
+cisco.meraki.devices_appliance_uplinks_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("appliance-uplinks-settings-" + $inv.serial),
+          facts: {
+            device_type: "sd_wan",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            wan1: {
+              enabled: (((.wan1 // {}).enabled) // false),
+              vlan_tagging_enabled: ((((.wan1 // {}).vlanTagging // {}).enabled) // false),
+              vlan_id: (((.wan1 // {}).vlanTagging // {}).vlanId // null)
+            },
+            wan2: {
+              enabled: (((.wan2 // {}).enabled) // false),
+              vlan_tagging_enabled: ((((.wan2 // {}).vlanTagging // {}).enabled) // false),
+              vlan_id: (((.wan2 // {}).vlanTagging // {}).vlanId // null)
+            }
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceApplianceUplinksSettings
+cisco.meraki.devices_appliance_uplinks_settings:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("appliance-uplinks-settings-" + $inv.serial),
+          facts: {
+            device_type: "sd_wan",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            wan1: {
+          enabled: (((.wan1 // {}).enabled) // false),
+          vlan_tagging_enabled: ((((.wan1 // {}).vlanTagging // {}).enabled) // false),
+          vlan_id: (((.wan1 // {}).vlanTagging // {}).vlanId // null)
+            },
+            wan2: {
+          enabled: (((.wan2 // {}).enabled) // false),
+          vlan_tagging_enabled: ((((.wan2 // {}).vlanTagging // {}).enabled) // false),
+          vlan_id: (((.wan2 // {}).vlanTagging // {}).vlanId // null)
+            }
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceApplianceVmxAuthenticationToken
+cisco.meraki.devices_appliance_vmx_authentication_token:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("vmx-authentication-token-" + $inv.serial),
+          facts: {
+            device_type: "sd_wan",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            expires_at: .expiresAt
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCellularSims
+cisco.meraki.devices_cellular_gateway_lan_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: (.deviceName // ("cellular-gateway-lan-" + $inv.serial)),
+          facts: {
+            device_type: "gateway",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            device_name: .deviceName,
+            device_lan_ip: .deviceLanIp,
+            device_subnet: .deviceSubnet,
+            fixed_ip_assignments: (.fixedIpAssignments // []),
+            reserved_ip_ranges: (.reservedIpRanges // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCellularGatewayLan
+cisco.meraki.devices_cellular_gateway_lan:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: (.deviceName // ("cellular-gateway-lan-" + $inv.serial)),
+          facts: {
+            device_type: "gateway",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            device_name: .deviceName,
+            device_lan_ip: .deviceLanIp,
+            device_subnet: .deviceSubnet,
+            fixed_ip_assignments: (.fixedIpAssignments // []),
+            reserved_ip_ranges: (.reservedIpRanges // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCellularGatewayPortForwardingRules
+cisco.meraki.devices_cellular_gateway_port_forwarding_rules_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      [{
+        name: ("cellular-port-forwarding-rules-" + $inv.serial),
+        facts: {
+          device_type: "gateway",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rules: ((.meraki_response | if type == "array" then . else [.] end) | map({name: .name, lan_ip: .lanIp, public_port: .publicPort, local_port: .localPort, protocol: .protocol, access: .access, allowed_ips: (.allowedIps // [])}))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceCellularGatewayPortForwardingRules
+cisco.meraki.devices_cellular_gateway_port_forwarding_rules:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      [{
+        name: ("cellular-port-forwarding-rules-" + $inv.serial),
+        facts: {
+          device_type: "gateway",
+          infra_type: "private_cloud",
+          infra_bucket: "networking",
+          rules: ((.meraki_response | if type == "array" then . else [.] end) | map({name: .name, lan_ip: .lanIp, public_port: .publicPort, local_port: .localPort, protocol: .protocol, access: .access, allowed_ips: (.allowedIps // [])}))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceCellularGeolocations
+cisco.meraki.devices_cellular_geolocations:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("cellular-geolocations-" + $inv.serial),
+          facts: {
+            device_type: "gateway",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            enabled: .enabled
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceCellularUplinksBandsMasksUpdate
+cisco.meraki.devices_cellular_uplinks_bands_masks_update:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("cellular-uplinks-bands-" + $inv.serial),
+          facts: {
+            device_type: "gateway",
+            infra_type: "private_cloud",
+            infra_bucket: "networking",
+            by_slot: (.bySlot // []) | map({
+              slot: .slot,
+              by_signal_type: (.bySignalType // []) | map({
+                type: .type,
+                masked: (.masked // []),
+                enabled: (.enabled // []),
+                supported: (.supported // [])
+              })
+            })
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# createDeviceSensorCommand
+cisco.meraki.devices_sensor_commands:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("sensor-command-" + (.commandId | tostring)),
+          facts: {
+            device_type: "iot_sensor",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {
+          ansible_product_serial: $inv.serial,
+          command_id: .commandId
+        }}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorCommands / getDeviceSensorCommand
+cisco.meraki.devices_sensor_commands_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      [{
+        name: ("sensor-commands-" + $inv.serial),
+        facts: {
+          device_type: "iot_sensor",
+          infra_type: "private_cloud",
+          infra_bucket: "monitoring",
+          commands: ((.meraki_response | if type == "array" then . else [.] end) | map({
+            command_id: .commandId,
+            operation: .operation,
+            status: .status,
+            created_at: .createdAt,
+            completed_at: .completedAt,
+            errors: (.errors // [])
+          }))
+        }
+      } +
+      if $inv.serial
+      then {canonical_facts: {ansible_product_serial: $inv.serial}}
+      else {}
+      end]
+    else []
+    end
+
+# updateDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("sensor-relationships-" + $inv.serial),
+          facts: {
+            device_type: "iot_sensor",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceSensorRelationships
+cisco.meraki.devices_sensor_relationships_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("sensor-relationships-" + $inv.serial),
+          facts: {
+            device_type: "iot_sensor",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            related_devices: ((.relatedDevices // []) | map({
+              serial: .serial,
+              product_type: .productType
+            }))
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# clipDeviceCamera
+cisco.meraki.devices_camera_clip_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-clip-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraAnalyticsLive
+cisco.meraki.devices_camera_analytics_live_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-analytics-live-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            ts: .ts,
+            zones: (.zones // {})
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-analytics-" + (.artifactId | tostring)),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {
+          ansible_product_serial: $inv.serial,
+          artifact_id: .artifactId
+        }}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraCustomAnalytics
+cisco.meraki.devices_camera_custom_analytics_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-analytics-" + (.artifactId | tostring)),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            enabled: .enabled,
+            artifact_id: .artifactId,
+            parameters: (.parameters // [])
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {
+          ansible_product_serial: $inv.serial,
+          artifact_id: .artifactId
+        }}
+        else {}
+        end)]
+    else []
+    end
+
+# generateDeviceCameraSnapshot
+cisco.meraki.devices_camera_generate_snapshot:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-snapshot-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            url: .url,
+            expiry: .expiry
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-quality-" + (.profileId | tostring)),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {
+          ansible_product_serial: $inv.serial,
+          profile_id: .profileId
+        }}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraQualityAndRetention
+cisco.meraki.devices_camera_quality_and_retention_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-quality-" + (.profileId | tostring)),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            profile_id: .profileId,
+            quality: .quality,
+            resolution: .resolution,
+            motion_based_retention_enabled: .motionBasedRetentionEnabled,
+            audio_recording_enabled: .audioRecordingEnabled,
+            restricted_bandwidth_mode_enabled: .restrictedBandwidthModeEnabled,
+            motion_detector_version: .motionDetectorVersion
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {
+          ansible_product_serial: $inv.serial,
+          profile_id: .profileId
+        }}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraSense
+cisco.meraki.devices_camera_sense:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-sense-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: (((.audioDetection // {}).enabled) // false),
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraSense
+cisco.meraki.devices_camera_sense_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-sense-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            sense_enabled: .senseEnabled,
+            mqtt_broker_id: .mqttBrokerId,
+            mqtt_topics: (.mqttTopics // []),
+            audio_detection_enabled: (((.audioDetection // {}).enabled) // false),
+            detection_model_id: .detectionModelId
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoLink
+cisco.meraki.devices_camera_video_link_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-video-link-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            url: .url,
+            vision_url: .visionUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-video-settings-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraVideoSettings
+cisco.meraki.devices_camera_video_settings_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-video-settings-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            external_rtsp_enabled: .externalRtspEnabled,
+            rtsp_url: .rtspUrl
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# updateDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-wireless-profiles-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
+    else []
+    end
+
+# getDeviceCameraWirelessProfiles
+cisco.meraki.devices_camera_wireless_profiles_info:
+  query: >-
+    if .meraki_response then
+      .invocation.module_args as $inv |
+      .meraki_response |
+      [({
+          name: ("camera-wireless-profiles-" + $inv.serial),
+          facts: {
+            device_type: "ip_camera",
+            infra_type: "private_cloud",
+            infra_bucket: "monitoring",
+            primary: .primary,
+            secondary: .secondary,
+            backup: .backup
+          }
+        } +
+        if $inv.serial
+        then {canonical_facts: {ansible_product_serial: $inv.serial}}
+        else {}
+        end)]
     else []
     end

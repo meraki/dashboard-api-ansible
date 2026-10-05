@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_dhcp_v4_servers_seen_info_getNetworkSwitch
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_seen": {
                         "mac_address": "00:11:22:33:44:55",
                         "vlan": 100,
@@ -53,6 +55,8 @@ def test_cisco_meraki_networks_switch_dhcp_v4_servers_seen_info_getNetworkSwitch
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_seen": {
                         "mac_address": "00:11:22:33:44:55",
                         "vlan": 100,

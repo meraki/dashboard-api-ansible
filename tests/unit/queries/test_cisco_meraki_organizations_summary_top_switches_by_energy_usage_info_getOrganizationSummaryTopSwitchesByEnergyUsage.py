@@ -35,6 +35,8 @@ def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_ge
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "switch_info": {
                         "name": "My switch",
                         "model": "MS",

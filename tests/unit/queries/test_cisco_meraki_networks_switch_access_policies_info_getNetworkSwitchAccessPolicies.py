@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_access_policies_info_getNetworkSwitchAcces
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "access_policy_number": "1234",
                     "access_policy_type": "Hybrid authentication"
                 }
@@ -45,6 +47,8 @@ def test_cisco_meraki_networks_switch_access_policies_info_getNetworkSwitchAcces
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "access_policy_number": "9999",
                     "access_policy_type": "Hybrid authentication"
                 }

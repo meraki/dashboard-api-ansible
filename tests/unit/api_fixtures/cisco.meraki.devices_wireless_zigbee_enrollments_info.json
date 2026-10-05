@@ -1,0 +1,23 @@
+{
+  "enrollmentId": "1234",
+  "url": "/devices/Q234-ABCD-5678/wireless/zigbee/enrollments/1234",
+  "request": {"serial": "Q234-ABCD-5678"},
+  "status": "complete",
+  "enrollmentStartedAt": "2023-08-14T19:57:00Z",
+  "doorLocks": [
+    {
+      "doorLockId": "1", "name": "Door Lock 123", "shortId": "ABE123",
+      "lqi": "1", "rssi": "1", "status": "online", "eui64": "DL403",
+      "enrolledAt": "2023-08-14T19:57:06Z", "lastSeenAt": "2023-08-14T19:59:01Z",
+      "network": {"id": "N_24329156", "name": "Main Office"},
+      "gateway": {"name": "My AP", "serial": "Q234-ABCD-5678"}
+    },
+    {
+      "doorLockId": "2", "name": "Door Lock 456", "shortId": "ABE456",
+      "lqi": "2", "rssi": "2", "status": "online", "eui64": "DL404",
+      "enrolledAt": "2023-08-15T10:00:00Z", "lastSeenAt": "2023-08-15T10:05:00Z",
+      "network": {"id": "N_24329156", "name": "Main Office"},
+      "gateway": {"name": "My AP", "serial": "Q234-ABCD-5678"}
+    }
+  ]
+}

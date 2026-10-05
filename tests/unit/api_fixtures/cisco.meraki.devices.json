@@ -1,0 +1,14 @@
+{
+  "meraki_response": [
+    {"name": "Switch", "serial": "Q2XX-0001", "model": "MS120", "networkId": "N_1", "lanIp": "10.0.0.1", "firmware": "1", "mac": "00:00:00:00:00:01"},
+    {"name": "Campus Switch", "serial": "Q2XX-0002", "model": "C9300", "networkId": "N_1", "lanIp": "10.0.0.2", "firmware": "1", "mac": "00:00:00:00:00:02"},
+    {"name": "AP", "serial": "Q2XX-0003", "model": "MR36", "networkId": "N_1", "lanIp": "10.0.0.3", "firmware": "1", "mac": "00:00:00:00:00:03"},
+    {"name": "Catalyst AP", "serial": "Q2XX-0004", "model": "CW9166", "networkId": "N_1", "lanIp": "10.0.0.4", "firmware": "1", "mac": "00:00:00:00:00:04"},
+    {"name": "SD-WAN", "serial": "Q2XX-0005", "model": "MX68", "networkId": "N_1", "lanIp": "10.0.0.5", "firmware": "1", "mac": "00:00:00:00:00:05"},
+    {"name": "Teleworker", "serial": "Q2XX-0006", "model": "Z3", "networkId": "N_1", "lanIp": "10.0.0.6", "firmware": "1", "mac": "00:00:00:00:00:06"},
+    {"name": "Camera", "serial": "Q2XX-0007", "model": "MV12", "networkId": "N_1", "lanIp": "10.0.0.7", "firmware": "1", "mac": "00:00:00:00:00:07"},
+    {"name": "Sensor", "serial": "Q2XX-0008", "model": "MT10", "networkId": "N_1", "lanIp": "10.0.0.8", "firmware": "1", "mac": "00:00:00:00:00:08"},
+    {"name": "Gateway", "serial": "Q2XX-0009", "model": "MG21", "networkId": "N_1", "lanIp": "10.0.0.9", "firmware": "1", "mac": "00:00:00:00:00:09"},
+    {"name": "Other", "serial": "Q2XX-0010", "model": "XX1", "networkId": "N_1", "lanIp": "10.0.0.10", "firmware": "1", "mac": "00:00:00:00:00:10"}
+  ]
+}

@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_stp_updateNetworkSwitchStp(
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "stp_priority": 4096,
                     "rstp_enabled": True,
                 },
@@ -44,6 +46,8 @@ def test_cisco_meraki_networks_switch_stp_updateNetworkSwitchStp(
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "stp_priority": 4096,
                     "rstp_enabled": True,
                 },
@@ -53,6 +57,8 @@ def test_cisco_meraki_networks_switch_stp_updateNetworkSwitchStp(
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0003"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "stp_priority": 4096,
                     "rstp_enabled": True,
                 },

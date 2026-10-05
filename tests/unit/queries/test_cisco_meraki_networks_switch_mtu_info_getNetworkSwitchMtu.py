@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578
                 }
@@ -45,6 +47,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578
                 }
@@ -56,6 +60,8 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "mtu_size": 1500,
                     "default_mtu_size": 9578
                 }

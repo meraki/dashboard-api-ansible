@@ -34,6 +34,8 @@ def test_cisco_meraki_organizations_config_templates_switch_profiles_info_getOrg
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "switch_profile": {
                         "profile_id": "1234",
                         "name": "A Simple Switch Template",

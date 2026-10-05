@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_access_control_lists_info_getNetworkSwitch
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "acl_rule": {
                         "comment": "Deny SSH",
                         "policy": "deny",

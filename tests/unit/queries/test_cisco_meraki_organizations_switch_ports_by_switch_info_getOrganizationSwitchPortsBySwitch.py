@@ -35,6 +35,8 @@ def test_cisco_meraki_organizations_switch_ports_by_switch_info_getOrganizationS
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "mac_address": "01:23:45:67:ab:cd",
                     "model": "MS120-8",
                     "switch_info": {

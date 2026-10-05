@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_info_getNetworkSwitchDh
                 "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:03"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_policy": {
                         "status": "blocked",
                         "mac_address": "00:50:56:00:00:03",
@@ -48,6 +50,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_info_getNetworkSwitchDh
                 "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:04"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_policy": {
                         "status": "blocked",
                         "mac_address": "00:50:56:00:00:04",
@@ -61,6 +65,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_info_getNetworkSwitchDh
                 "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:01"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_policy": {
                         "status": "allowed",
                         "mac_address": "00:50:56:00:00:01",
@@ -74,6 +80,8 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_info_getNetworkSwitchDh
                 "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:02"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "dhcp_server_policy": {
                         "status": "allowed",
                         "mac_address": "00:50:56:00:00:02",

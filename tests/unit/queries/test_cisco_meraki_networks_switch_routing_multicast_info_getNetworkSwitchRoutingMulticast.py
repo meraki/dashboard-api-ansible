@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_info_getNetworkSwitchRou
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "multicast_settings": {
                         "igmp_snooping_enabled": True,
                         "flood_unknown_multicast_traffic_enabled": True,
@@ -50,6 +52,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_info_getNetworkSwitchRou
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "multicast_settings": {
                         "igmp_snooping_enabled": True,
                         "flood_unknown_multicast_traffic_enabled": True,
@@ -65,6 +69,8 @@ def test_cisco_meraki_networks_switch_routing_multicast_info_getNetworkSwitchRou
                 "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0003"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "multicast_settings": {
                         "igmp_snooping_enabled": True,
                         "flood_unknown_multicast_traffic_enabled": True,

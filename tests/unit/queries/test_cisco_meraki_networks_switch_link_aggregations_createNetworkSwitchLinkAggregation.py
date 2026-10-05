@@ -34,6 +34,8 @@ def test_cisco_meraki_networks_switch_link_aggregations_createNetworkSwitchLinkA
                 },
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "link_aggregation": {
                         "aggregation_id": "NDU2N18yXzM=",
                         "port_id": "1",

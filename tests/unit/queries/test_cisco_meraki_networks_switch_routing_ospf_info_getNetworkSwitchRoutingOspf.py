@@ -35,6 +35,8 @@ def test_cisco_meraki_networks_switch_routing_ospf_info_getNetworkSwitchRoutingO
                 "canonical_facts": {"ansible_machine_id": "1284392014819"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "ospf_version": "v2",
                     "ospf_area": {
                         "area_id": "1284392014819",
@@ -55,6 +57,8 @@ def test_cisco_meraki_networks_switch_routing_ospf_info_getNetworkSwitchRoutingO
                 "canonical_facts": {"ansible_machine_id": "v3-1284392014819"},
                 "facts": {
                     "device_type": "switch",
+                    "infra_type": "private_cloud",
+                    "infra_bucket": "networking",
                     "ospf_version": "v3",
                     "ospf_area": {
                         "area_id": "1284392014819",
