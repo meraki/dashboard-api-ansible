@@ -29,60 +29,70 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_info_getNetworkSwitchDh
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
+        {
+            "name": "00:50:56:00:00:03",
+            "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:03"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "blocked",
+                    "mac_address": "00:50:56:00:00:03",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": True,
+                },
                 "name": "blocked-dhcp-server-00:50:56:00:00:03",
-                "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:03"},
-                "facts": {
-                    "device_type": "switch",
-                    "dhcp_server_policy": {
-                        "status": "blocked",
-                        "mac_address": "00:50:56:00:00:03",
-                        "default_policy": "block",
-                        "arp_inspection_enabled": True,
-                    },
-                },
             },
-            {
+        },
+        {
+            "name": "00:50:56:00:00:04",
+            "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:04"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "blocked",
+                    "mac_address": "00:50:56:00:00:04",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": True,
+                },
                 "name": "blocked-dhcp-server-00:50:56:00:00:04",
-                "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:04"},
-                "facts": {
-                    "device_type": "switch",
-                    "dhcp_server_policy": {
-                        "status": "blocked",
-                        "mac_address": "00:50:56:00:00:04",
-                        "default_policy": "block",
-                        "arp_inspection_enabled": True,
-                    },
-                },
             },
-            {
+        },
+        {
+            "name": "00:50:56:00:00:01",
+            "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:01"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "allowed",
+                    "mac_address": "00:50:56:00:00:01",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": True,
+                },
                 "name": "allowed-dhcp-server-00:50:56:00:00:01",
-                "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:01"},
-                "facts": {
-                    "device_type": "switch",
-                    "dhcp_server_policy": {
-                        "status": "allowed",
-                        "mac_address": "00:50:56:00:00:01",
-                        "default_policy": "block",
-                        "arp_inspection_enabled": True,
-                    },
-                },
             },
-            {
+        },
+        {
+            "name": "00:50:56:00:00:02",
+            "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:02"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "dhcp_server_policy": {
+                    "status": "allowed",
+                    "mac_address": "00:50:56:00:00:02",
+                    "default_policy": "block",
+                    "arp_inspection_enabled": True,
+                },
                 "name": "allowed-dhcp-server-00:50:56:00:00:02",
-                "canonical_facts": {"ansible_machine_id": "00:50:56:00:00:02"},
-                "facts": {
-                    "device_type": "switch",
-                    "dhcp_server_policy": {
-                        "status": "allowed",
-                        "mac_address": "00:50:56:00:00:02",
-                        "default_policy": "block",
-                        "arp_inspection_enabled": True,
-                    },
-                },
             },
-        ]
+        },
     ]
 
     # Assert results match expected output

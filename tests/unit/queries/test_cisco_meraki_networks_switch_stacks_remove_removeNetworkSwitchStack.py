@@ -29,30 +29,32 @@ def test_cisco_meraki_networks_switch_stacks_remove_removeNetworkSwitchStack(
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "QBZY-XWVU-TSRQ",
-                "canonical_facts": {"ansible_product_serial": "QBZY-XWVU-TSRQ"},
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "is_monitor_only": False,
-                    "virtual_mac": "00:18:0a:4f:21:19",
-                },
+        {
+            "name": "QBZY-XWVU-TSRQ",
+            "canonical_facts": {"ansible_product_serial": "QBZY-XWVU-TSRQ"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": False,
+                "virtual_mac": "00:18:0a:4f:21:19",
             },
-            {
-                "name": "QBAB-CDEF-GHIJ",
-                "canonical_facts": {"ansible_product_serial": "QBAB-CDEF-GHIJ"},
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "is_monitor_only": False,
-                    "virtual_mac": "00:18:0a:4f:21:19",
-                },
+        },
+        {
+            "name": "QBAB-CDEF-GHIJ",
+            "canonical_facts": {"ansible_product_serial": "QBAB-CDEF-GHIJ"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "is_monitor_only": False,
+                "virtual_mac": "00:18:0a:4f:21:19",
             },
-        ]
+        },
     ]
 
     # Assert results match expected output

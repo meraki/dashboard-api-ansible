@@ -3,12 +3,17 @@ Test for cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info u
     cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info.json
 Method: getNetworkSwitchRoutingMulticastRendezvousPoints
 """
+
 import jq
 
 
-def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_getNetworkSwitchRoutingMulticastRendezvousPoints(query_data, load_fixture):
+def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_getNetworkSwitchRoutingMulticastRendezvousPoints(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info (getNetworkSwitchRoutingMulticastRendezvousPoints)."""
-    module_fqcn = "cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info"
+    module_fqcn = (
+        "cisco.meraki.networks_switch_routing_multicast_rendezvous_points_info"
+    )
     method_name = "getNetworkSwitchRoutingMulticastRendezvousPoints"
 
     # Load fixture data
@@ -27,26 +32,27 @@ def test_cisco_meraki_networks_switch_routing_multicast_rendezvous_points_info_g
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "rendezvous-point-1234",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5678",
-                    "hostname": "192.168.1.2"
+        {
+            "name": "Q234-ABCD-5678",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-5678"},
+            "facts": {
+                "ansible_hostname": "192.168.1.2",
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "multicast_rendezvous_point": {
+                    "rendezvous_point_id": "1234",
+                    "serial": "Q234-ABCD-5678",
+                    "interface_name": "l3_interface_0",
+                    "interface_ip": "192.168.1.2",
+                    "multicast_group": "Any",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "multicast_rendezvous_point": {
-                        "rendezvous_point_id": "1234",
-                        "serial": "Q234-ABCD-5678",
-                        "interface_name": "l3_interface_0",
-                        "interface_ip": "192.168.1.2",
-                        "multicast_group": "Any"
-                    }
-                }
-            }
-        ]
+                "name": "rendezvous-point-1234",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

@@ -29,26 +29,24 @@ def test_cisco_meraki_networks_switch_alternate_management_interface_info_getNet
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "Q234-ABCD-5678",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-5678",
-                    "hostname": "1.2.3.4",
+        {
+            "name": "Q234-ABCD-5678",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-5678"},
+            "facts": {
+                "ansible_hostname": "1.2.3.4",
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "alternate_management_interface": {
+                    "enabled": True,
+                    "vlan_id": 100,
+                    "protocols": ["radius", "snmp", "syslog"],
+                    "alternate_management_ip": "1.2.3.4",
+                    "subnet_mask": "255.255.255.0",
+                    "gateway": "1.2.3.5",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "alternate_management_interface": {
-                        "enabled": True,
-                        "vlan_id": 100,
-                        "protocols": ["radius", "snmp", "syslog"],
-                        "alternate_management_ip": "1.2.3.4",
-                        "subnet_mask": "255.255.255.0",
-                        "gateway": "1.2.3.5",
-                    },
-                },
-            }
-        ]
+            },
+        }
     ]
 
     # Assert results match expected output

@@ -29,47 +29,47 @@ def test_cisco_meraki_networks_switch_routing_ospf_info_getNetworkSwitchRoutingO
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
+        {
+            "name": "1284392014819",
+            "canonical_facts": {"ansible_machine_id": "1284392014819"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "ospf_version": "v2",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "Backbone",
+                    "area_type": "normal",
+                },
+                "ospf_config": {
+                    "enabled": True,
+                    "hello_timer": 10,
+                    "dead_timer": 40,
+                    "md5_authentication_enabled": True,
+                },
+                "vrf": {"name": "Blue"},
                 "name": "Backbone",
-                "canonical_facts": {"ansible_machine_id": "1284392014819"},
-                "facts": {
-                    "device_type": "switch",
-                    "ospf_version": "v2",
-                    "ospf_area": {
-                        "area_id": "1284392014819",
-                        "area_name": "Backbone",
-                        "area_type": "normal",
-                    },
-                    "ospf_config": {
-                        "enabled": True,
-                        "hello_timer": 10,
-                        "dead_timer": 40,
-                        "md5_authentication_enabled": True,
-                    },
-                    "vrf": {"name": "Blue"},
-                },
             },
-            {
+        },
+        {
+            "name": "v3-1284392014819",
+            "canonical_facts": {"ansible_machine_id": "v3-1284392014819"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "ospf_version": "v3",
+                "ospf_area": {
+                    "area_id": "1284392014819",
+                    "area_name": "V3 Backbone",
+                    "area_type": "normal",
+                },
+                "ospf_config": {"enabled": True, "hello_timer": 10, "dead_timer": 40},
+                "vrf": {"name": "Blue"},
                 "name": "V3 Backbone",
-                "canonical_facts": {"ansible_machine_id": "v3-1284392014819"},
-                "facts": {
-                    "device_type": "switch",
-                    "ospf_version": "v3",
-                    "ospf_area": {
-                        "area_id": "1284392014819",
-                        "area_name": "V3 Backbone",
-                        "area_type": "normal",
-                    },
-                    "ospf_config": {
-                        "enabled": True,
-                        "hello_timer": 10,
-                        "dead_timer": 40,
-                    },
-                    "vrf": {"name": "Blue"},
-                },
             },
-        ]
+        },
     ]
 
     # Assert results match expected output

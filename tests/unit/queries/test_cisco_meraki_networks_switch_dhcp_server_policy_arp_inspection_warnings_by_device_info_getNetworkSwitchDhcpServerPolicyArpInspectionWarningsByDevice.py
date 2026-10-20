@@ -30,20 +30,21 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_warnings
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "My switch",
-                "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
-                "facts": {
-                    "device_type": "switch",
-                    "arp_inspection_warning": {
-                        "supports_inspection": False,
-                        "has_trusted_port": False,
-                        "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
-                    },
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "arp_inspection_warning": {
+                    "supports_inspection": False,
+                    "has_trusted_port": False,
+                    "url": "https://n1.meraki.com//n//manage/nodes/new_list/000000000000",
                 },
-            }
-        ]
+                "name": "My switch",
+            },
+        }
     ]
 
     # Assert results match expected output

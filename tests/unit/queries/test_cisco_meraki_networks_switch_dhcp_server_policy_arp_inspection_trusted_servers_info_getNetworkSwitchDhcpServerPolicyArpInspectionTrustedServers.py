@@ -3,11 +3,13 @@ Test for cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_
     cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info.json
 Method: getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers
 """
+
 import jq
 
 
 def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info_getNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(
-        query_data, load_fixture):
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info (getNetworkSwitchDhcpServerPolic
     yArpInspectionTrustedServers)."""
     module_fqcn = "cisco.meraki.networks_switch_dhcp_server_policy_arp_inspection_trusted_servers_info"
@@ -29,25 +31,26 @@ def test_cisco_meraki_networks_switch_dhcp_server_policy_arp_inspection_trusted_
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "trusted-server-123",
-                "canonical_facts": {
-                    "ansible_machine_id": "00:11:22:33:44:55",
-                    "hostname": "1.2.3.4"
+        {
+            "name": "00:11:22:33:44:55",
+            "canonical_facts": {"ansible_machine_id": "00:11:22:33:44:55"},
+            "facts": {
+                "ansible_hostname": "1.2.3.4",
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "trusted_server": {
+                    "trusted_server_id": "123",
+                    "mac_address": "00:11:22:33:44:55",
+                    "vlan": 100,
+                    "ipv4_address": "1.2.3.4",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "trusted_server": {
-                        "trusted_server_id": "123",
-                        "mac_address": "00:11:22:33:44:55",
-                        "vlan": 100,
-                        "ipv4_address": "1.2.3.4"
-                    }
-                }
-            }
-        ]
+                "name": "trusted-server-123",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

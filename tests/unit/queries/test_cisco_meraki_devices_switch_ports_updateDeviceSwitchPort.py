@@ -2,10 +2,13 @@
 Test for cisco.meraki.devices_switch_ports using fixture cisco.meraki.devices_switch_ports.json
 Method: updateDeviceSwitchPort
 """
+
 import jq
 
 
-def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, load_fixture):
+def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.devices_switch_ports (updateDeviceSwitchPort)."""
     module_fqcn = "cisco.meraki.devices_switch_ports"
     method_name = "updateDeviceSwitchPort"
@@ -26,24 +29,25 @@ def test_cisco_meraki_devices_switch_ports_updateDeviceSwitchPort(query_data, lo
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "My switch port",
-                "canonical_facts": {
-                    "ansible_product_serial": "3_MA-MOD-4X10G"
+        {
+            "name": "3_MA-MOD-4X10G",
+            "canonical_facts": {"ansible_product_serial": "3_MA-MOD-4X10G"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "port_id": "1",
+                "module": {
+                    "model": "MA-MOD-4X10G",
+                    "serial": "3_MA-MOD-4X10G",
+                    "slot": 1,
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "port_id": "1",
-                    "module": {
-                        "model": "MA-MOD-4X10G",
-                        "serial": "3_MA-MOD-4X10G",
-                        "slot": 1
-                    }
-                }
-            }
-        ]
+                "name": "My switch port",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

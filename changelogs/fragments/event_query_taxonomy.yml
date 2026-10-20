@@ -1,0 +1,14 @@
+---
+bugfixes:
+  - "Event query - Emit ``infra_type`` and ``infra_bucket`` alongside ``device_type`` for every
+    module in ``extensions/audit/event_query.yml``. Without them, indirect node counting in
+    Ansible Automation Platform records the node but cannot place it in any infrastructure
+    bucket, so Meraki devices are absent from consumption rollups."
+  - "Event query - Normalize ``device_type`` in ``devices_info``, which passed the Meraki API's
+    ``productType`` through unchanged. Camel-case product families such as ``cellularGateway``
+    and ``systemsManager`` produced taxonomy values that do not match the expected
+    ``lowercase_with_underscores`` form."
+trivial:
+  - "Tests - Add contract tests for ``extensions/audit/event_query.yml`` that assert the
+    requirements the indirect node counting consumer imposes, rather than comparing against
+    output recorded from a previous run."

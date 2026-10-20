@@ -1,0 +1,13 @@
+---
+bugfixes:
+  - event_query - removed the audit queries for ``cisco.meraki.networks`` and
+    ``cisco.meraki.networks_info``. A Meraki network is an administrative
+    container, not a device, so every network create, update or query was
+    reported as an indirect managed node. ``networks`` additionally labelled it
+    ``device_type: switch`` and ``networks_info`` used ``device_type: network``,
+    which is not a value in the Normalized Resource Taxonomy. The devices inside
+    a network are reported by the device-scoped modules, keyed on serial number.
+minor_changes:
+  - event_query - the contract test now compiles every expression with ``jq``.
+    Every other check in that file reads the query as text, so all of them pass
+    on an expression that cannot run.

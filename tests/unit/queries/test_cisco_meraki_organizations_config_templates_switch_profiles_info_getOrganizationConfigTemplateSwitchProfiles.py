@@ -2,10 +2,13 @@
 Test for cisco.meraki.organizations_config_templates_switch_profiles_info using fixture cisco.meraki.organizations_config_templates_switch_profiles_info.json
 Method: getOrganizationConfigTemplateSwitchProfiles
 """
+
 import jq
 
 
-def test_cisco_meraki_organizations_config_templates_switch_profiles_info_getOrganizationConfigTemplateSwitchProfiles(query_data, load_fixture):
+def test_cisco_meraki_organizations_config_templates_switch_profiles_info_getOrganizationConfigTemplateSwitchProfiles(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.organizations_config_templates_switch_profiles_info (getOrganizationConfigTemplateSwitchProfiles)."""
     module_fqcn = "cisco.meraki.organizations_config_templates_switch_profiles_info"
     method_name = "getOrganizationConfigTemplateSwitchProfiles"
@@ -26,23 +29,24 @@ def test_cisco_meraki_organizations_config_templates_switch_profiles_info_getOrg
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "A Simple Switch Template",
-                "canonical_facts": {
-                    "ansible_machine_id": "1234"
+        {
+            "name": "1234",
+            "canonical_facts": {"ansible_machine_id": "1234"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "switch_profile": {
+                    "profile_id": "1234",
+                    "name": "A Simple Switch Template",
+                    "model": "MS450-24",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "switch_profile": {
-                        "profile_id": "1234",
-                        "name": "A Simple Switch Template",
-                        "model": "MS450-24"
-                    }
-                }
-            }
-        ]
+                "name": "A Simple Switch Template",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

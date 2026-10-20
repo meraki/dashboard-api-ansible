@@ -3,10 +3,13 @@ Test for cisco.meraki.organizations_summary_top_switches_by_energy_usage_info us
     cisco.meraki.organizations_summary_top_switches_by_energy_usage_info.json
 Method: getOrganizationSummaryTopSwitchesByEnergyUsage
 """
+
 import jq
 
 
-def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_getOrganizationSummaryTopSwitchesByEnergyUsage(query_data, load_fixture):
+def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_getOrganizationSummaryTopSwitchesByEnergyUsage(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.organizations_summary_top_switches_by_energy_usage_info (getOrganizationSummaryTopSwitchesByEnergyUsage)."""
     module_fqcn = "cisco.meraki.organizations_summary_top_switches_by_energy_usage_info"
     method_name = "getOrganizationSummaryTopSwitchesByEnergyUsage"
@@ -27,30 +30,26 @@ def test_cisco_meraki_organizations_summary_top_switches_by_energy_usage_info_ge
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "My switch",
-                "canonical_facts": {
-                    "ansible_machine_id": "00:11:22:33:44:55"
+        {
+            "name": "00:11:22:33:44:55",
+            "canonical_facts": {"ansible_machine_id": "00:11:22:33:44:55"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "switch_info": {
+                    "name": "My switch",
+                    "model": "MS",
+                    "mac_address": "00:11:22:33:44:55",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "switch_info": {
-                        "name": "My switch",
-                        "model": "MS",
-                        "mac_address": "00:11:22:33:44:55"
-                    },
-                    "network": {
-                        "id": "N_24329156",
-                        "name": "Main Office"
-                    },
-                    "energy_usage": {
-                        "total": 800.021
-                    }
-                }
-            }
-        ]
+                "network": {"id": "N_24329156", "name": "Main Office"},
+                "energy_usage": {"total": 800.021},
+                "name": "My switch",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

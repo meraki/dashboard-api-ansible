@@ -1,0 +1,27 @@
+---
+bugfixes:
+  - "Event query - Emit a stream of records rather than a collected array. Every query in
+    ``extensions/audit/event_query.yml`` was shaped ``[ ... ]``, ``map(...)`` or ``... | flatten``,
+    so each one produced a single *list*. Indirect node counting iterates the query's outputs and
+    calls ``.get('canonical_facts')`` on each, which raises ``AttributeError`` on a list --
+    uncaught, because the consumer wraps only the jq call itself -- and every audit record for the
+    job is lost, not just this module's. The ``else []`` branch mattered most: it is the one taken
+    by every module whose result carries no ``meraki_response``, which is most tasks in most jobs.
+    It is now ``else empty``."
+  - "Event query - Emit an identifier as the top-level ``name`` for the thirty-five queries that
+    emitted a display name. ``name`` must be unique within a job: the audit record declares
+    ``unique_together = [('name', 'job')]`` and the consumer creates a job's records in one
+    transaction, so two devices that deduplicate apart but share a name raise ``IntegrityError``,
+    roll back every record for the job, and leave the job to be re-picked and to fail the same way
+    until it ages out -- with the job green throughout. Two staged switches both named ``switch``,
+    or two networks both named ``Branch``, were enough. Each query now reports its serial, id or
+    port identifier as ``name``, and the display name in ``facts.name``, which carries no
+    uniqueness constraint."
+trivial:
+  - "Tests - Extend the ``event_query.yml`` contract tests with the two rules above: that the
+    emitted record is neither collected into an array nor piped into a filter that reshapes it
+    (``flatten`` on an object returns an array of that object's values, so it fails exactly like
+    the array it looks like a fix for), and that ``name`` is at least as discriminating as
+    ``canonical_facts``."
+  - "Tests - Re-derive the ``expected`` literal in all forty-six query snapshot tests. Their
+    previous values recorded the list-of-records output, which is the defect."

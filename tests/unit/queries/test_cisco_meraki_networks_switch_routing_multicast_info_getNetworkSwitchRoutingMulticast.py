@@ -29,53 +29,57 @@ def test_cisco_meraki_networks_switch_routing_multicast_info_getNetworkSwitchRou
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "Q234-ABCD-0001",
-                "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
-                "facts": {
-                    "device_type": "switch",
-                    "multicast_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
-                    "default_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
                 },
             },
-            {
-                "name": "Q234-ABCD-0002",
-                "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
-                "facts": {
-                    "device_type": "switch",
-                    "multicast_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
-                    "default_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
                 },
             },
-            {
-                "name": "Q234-ABCD-0003",
-                "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0003"},
-                "facts": {
-                    "device_type": "switch",
-                    "multicast_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
-                    "default_settings": {
-                        "igmp_snooping_enabled": True,
-                        "flood_unknown_multicast_traffic_enabled": True,
-                    },
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0003"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "multicast_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
+                },
+                "default_settings": {
+                    "igmp_snooping_enabled": True,
+                    "flood_unknown_multicast_traffic_enabled": True,
                 },
             },
-        ]
+        },
     ]
 
     # Assert results match expected output

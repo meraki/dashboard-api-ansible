@@ -2,10 +2,13 @@
 Test for cisco.meraki.devices_switch_ports_statuses_info using fixture cisco.meraki.devices_switch_ports_statuses_info.json
 Method: getDeviceSwitchPortsStatuses
 """
+
 import jq
 
 
-def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsStatuses(query_data, load_fixture):
+def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsStatuses(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.devices_switch_ports_statuses_info (getDeviceSwitchPortsStatuses)."""
     module_fqcn = "cisco.meraki.devices_switch_ports_statuses_info"
     method_name = "getDeviceSwitchPortsStatuses"
@@ -26,25 +29,26 @@ def test_cisco_meraki_devices_switch_ports_statuses_info_getDeviceSwitchPortsSta
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "Example Switch",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q555-5555-5555",
-                    "hostname": "01:23:45:67:ab:cd"
+        {
+            "name": "Q555-5555-5555",
+            "canonical_facts": {"ansible_product_serial": "Q555-5555-5555"},
+            "facts": {
+                "macaddress": "01:23:45:67:ab:cd",
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "mac_address": "01:23:45:67:ab:cd",
+                "model": "MS120-8",
+                "switch_info": {
+                    "network_name": "Example Network",
+                    "network_id": "L_12345",
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "mac_address": "01:23:45:67:ab:cd",
-                    "model": "MS120-8",
-                    "switch_info": {
-                        "network_name": "Example Network",
-                        "network_id": "L_12345"
-                    }
-                }
-            }
-        ]
+                "name": "Example Switch",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

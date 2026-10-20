@@ -2,10 +2,13 @@
 Test for cisco.meraki.networks_switch_stacks using fixture cisco.meraki.networks_switch_stacks.json
 Method: createNetworkSwitchStack
 """
+
 import jq
 
 
-def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data, load_fixture):
+def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.networks_switch_stacks (createNetworkSwitchStack)."""
     module_fqcn = "cisco.meraki.networks_switch_stacks"
     method_name = "createNetworkSwitchStack"
@@ -26,33 +29,33 @@ def test_cisco_meraki_networks_switch_stacks_createNetworkSwitchStack(query_data
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "QBZY-XWVU-TSRQ",
-                "canonical_facts": {
-                    "ansible_product_serial": "QBZY-XWVU-TSRQ"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "workflow_id": "8473"
-                }
+        {
+            "name": "QBZY-XWVU-TSRQ",
+            "canonical_facts": {"ansible_product_serial": "QBZY-XWVU-TSRQ"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "workflow_id": "8473",
             },
-            {
-                "name": "QBAB-CDEF-GHIJ",
-                "canonical_facts": {
-                    "ansible_product_serial": "QBAB-CDEF-GHIJ"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "stack_id": "8473",
-                    "stack_name": "A cool stack",
-                    "workflow_id": "8473"
-                }
-            }
-        ]
+        },
+        {
+            "name": "QBAB-CDEF-GHIJ",
+            "canonical_facts": {"ansible_product_serial": "QBAB-CDEF-GHIJ"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "stack_id": "8473",
+                "stack_name": "A cool stack",
+                "workflow_id": "8473",
+            },
+        },
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

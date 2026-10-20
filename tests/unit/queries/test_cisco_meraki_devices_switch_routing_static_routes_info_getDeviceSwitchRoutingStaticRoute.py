@@ -29,25 +29,26 @@ def test_cisco_meraki_devices_switch_routing_static_routes_info_getDeviceSwitchR
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "My route",
-                "canonical_facts": {"ansible_machine_id": "1234"},
-                "facts": {
-                    "device_type": "switch",
-                    "static_route": {
-                        "route_id": "1234",
-                        "name": "My route",
-                        "subnet": "192.168.1.0/24",
-                        "next_hop_ip": "1.2.3.4",
-                        "management_next_hop": "1.2.3.5",
-                        "advertise_via_ospf_enabled": False,
-                        "prefer_over_ospf_routes_enabled": False,
-                        "vrf": {"name": "Blue", "leak_route_to_default_vrf": False},
-                    },
+        {
+            "name": "1234",
+            "canonical_facts": {"ansible_machine_id": "1234"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "static_route": {
+                    "route_id": "1234",
+                    "name": "My route",
+                    "subnet": "192.168.1.0/24",
+                    "next_hop_ip": "1.2.3.4",
+                    "management_next_hop": "1.2.3.5",
+                    "advertise_via_ospf_enabled": False,
+                    "prefer_over_ospf_routes_enabled": False,
+                    "vrf": {"name": "Blue", "leak_route_to_default_vrf": False},
                 },
-            }
-        ]
+                "name": "My route",
+            },
+        }
     ]
 
     # Assert results match expected output

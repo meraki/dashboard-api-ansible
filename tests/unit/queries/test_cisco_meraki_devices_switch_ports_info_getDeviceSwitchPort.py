@@ -2,10 +2,13 @@
 Test for cisco.meraki.devices_switch_ports_info using fixture cisco.meraki.devices_switch_ports_info.json
 Method: getDeviceSwitchPort
 """
+
 import jq
 
 
-def test_cisco_meraki_devices_switch_ports_info_getDeviceSwitchPort(query_data, load_fixture):
+def test_cisco_meraki_devices_switch_ports_info_getDeviceSwitchPort(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.devices_switch_ports_info (getDeviceSwitchPort)."""
     module_fqcn = "cisco.meraki.devices_switch_ports_info"
     method_name = "getDeviceSwitchPort"
@@ -26,20 +29,21 @@ def test_cisco_meraki_devices_switch_ports_info_getDeviceSwitchPort(query_data, 
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
+        {
+            "name": "3_MA-MOD-4X10G",
+            "canonical_facts": {"ansible_product_serial": "3_MA-MOD-4X10G"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "port_id": "1",
+                "vlan_id": 10,
                 "name": "My switch port",
-                "canonical_facts": {
-                    "ansible_product_serial": "3_MA-MOD-4X10G"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "port_id": "1",
-                    "vlan_id": 10
-                }
-            }
-        ]
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

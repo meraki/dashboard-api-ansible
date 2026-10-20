@@ -2,10 +2,13 @@
 Test for cisco.meraki.networks_switch_qos_rules_order using fixture cisco.meraki.networks_switch_qos_rules_order.json
 Method: createNetworkSwitchQosRule
 """
+
 import jq
 
 
-def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule(query_data, load_fixture):
+def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.networks_switch_qos_rules_order (createNetworkSwitchQosRule)."""
     module_fqcn = "cisco.meraki.networks_switch_qos_rules_order"
     method_name = "createNetworkSwitchQosRule"
@@ -26,28 +29,29 @@ def test_cisco_meraki_networks_switch_qos_rules_order_createNetworkSwitchQosRule
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "qos-rule-1284392014819",
-                "canonical_facts": {
-                    "ansible_machine_id": "1284392014819"
+        {
+            "name": "1284392014819",
+            "canonical_facts": {"ansible_machine_id": "1284392014819"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "qos_rule": {
+                    "id": "1284392014819",
+                    "vlan": 100,
+                    "protocol": "TCP",
+                    "src_port": 2000,
+                    "src_port_range": "70-80",
+                    "dst_port": 3000,
+                    "dst_port_range": "3000-3100",
+                    "dscp": 0,
                 },
-                "facts": {
-                    "device_type": "switch",
-                    "qos_rule": {
-                        "id": "1284392014819",
-                        "vlan": 100,
-                        "protocol": "TCP",
-                        "src_port": 2000,
-                        "src_port_range": "70-80",
-                        "dst_port": 3000,
-                        "dst_port_range": "3000-3100",
-                        "dscp": 0
-                    }
-                }
-            }
-        ]
+                "name": "qos-rule-1284392014819",
+            },
+        }
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"

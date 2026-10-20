@@ -2,10 +2,13 @@
 Test for cisco.meraki.networks_switch_mtu_info using fixture cisco.meraki.networks_switch_mtu_info.json
 Method: getNetworkSwitchMtu
 """
+
 import jq
 
 
-def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, load_fixture):
+def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(
+    query_data, load_fixture
+):
     """Test query execution for cisco.meraki.networks_switch_mtu_info (getNetworkSwitchMtu)."""
     module_fqcn = "cisco.meraki.networks_switch_mtu_info"
     method_name = "getNetworkSwitchMtu"
@@ -26,42 +29,42 @@ def test_cisco_meraki_networks_switch_mtu_info_getNetworkSwitchMtu(query_data, l
 
     # Expected output from query_run.log
     expected = [
-        [
-            {
-                "name": "Q234-ABCD-0001",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-0001"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "mtu_size": 1500,
-                    "default_mtu_size": 9578
-                }
+        {
+            "name": "Q234-ABCD-0001",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0001"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "mtu_size": 1500,
+                "default_mtu_size": 9578,
             },
-            {
-                "name": "Q234-ABCD-0002",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-0002"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "mtu_size": 1500,
-                    "default_mtu_size": 9578
-                }
+        },
+        {
+            "name": "Q234-ABCD-0002",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0002"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "mtu_size": 1500,
+                "default_mtu_size": 9578,
             },
-            {
-                "name": "Q234-ABCD-0003",
-                "canonical_facts": {
-                    "ansible_product_serial": "Q234-ABCD-0003"
-                },
-                "facts": {
-                    "device_type": "switch",
-                    "mtu_size": 1500,
-                    "default_mtu_size": 9578
-                }
-            }
-        ]
+        },
+        {
+            "name": "Q234-ABCD-0003",
+            "canonical_facts": {"ansible_product_serial": "Q234-ABCD-0003"},
+            "facts": {
+                "infra_type": "private_cloud",
+                "infra_bucket": "networking",
+                "device_type": "switch",
+                "mtu_size": 1500,
+                "default_mtu_size": 9578,
+            },
+        },
     ]
 
     # Assert results match expected output
-    assert results == expected, f"Query results do not match expected output for {method_name}"
+    assert (
+        results == expected
+    ), f"Query results do not match expected output for {method_name}"
