@@ -41,7 +41,8 @@ cisco.meraki.devices_info:
           hostname: (.lanIp // "")
         },
         facts: {
-          device_type: .productType,
+          device_type: "resource",
+          meraki_product_type: .productType,
           meraki_network_id: .networkId,
           ansible_hostname: (.lanIp // ""),
           ansible_product_name: .model,
@@ -1478,7 +1479,7 @@ cisco.meraki.networks_info:
           ansible_machine_id: .id
         },
         facts: {
-          device_type: "network",
+          device_type: "organizational_unit",
           meraki_organization_id: .organizationId
         }
       })
@@ -1515,7 +1516,8 @@ cisco.meraki.devices:
           hostname: (.lanIp // "")
         },
         facts: {
-          device_type: (if .model | startswith("MV") then "camera"
+          device_type: "resource",
+          meraki_product_type: (if .model | startswith("MV") then "camera"
                     elif .model | startswith("MR") then "wireless"
                     elif .model | startswith("MS") then "switch"
                     elif .model | startswith("MX") then "appliance"

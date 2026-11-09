@@ -70,9 +70,7 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
-    contents: '---BEGIN PRIVATE KEY--- #magic___^_^___line hello world #magic___^_^___line
-      ---END PRIVATE KEY--- #magic___^_^___line ---BEGIN CERTIFICATE--- #magic___^_^___line
-      hello world #magic___^_^___line ---END CERTIFICATE--- #magic___^_^___line '
+    contents: "-----BEGIN PRIVATE KEY-----\nhello world\n-----END PRIVATE KEY-----\n-----BEGIN CERTIFICATE-----\nhello world\n-----END CERTIFICATE-----\n"
     organizationId: string
     serials:
       - Q234-ABCD-0001

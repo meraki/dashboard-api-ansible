@@ -1,7 +1,7 @@
 - name: Play Name
   hosts: localhost
   vars_files:
-    - credentials.yml
+    - vars/credentials.yml
   gather_facts: false
   tasks:
     - name: Update by id

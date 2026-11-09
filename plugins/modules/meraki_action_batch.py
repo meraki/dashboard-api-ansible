@@ -74,13 +74,11 @@ options:
     type: bool
   net_id:
     description:
-      - ID of network,
-    if applicable.
+      - ID of network, if applicable.
     type: str
   net_name:
     description:
-      - Name of network,
-    if applicable.
+      - Name of network, if applicable.
     type: str
   state:
     choices:
@@ -89,9 +87,7 @@ options:
       - absent
     default: present
     description:
-      - Specifies whether to lookup,
-    create,
-    or delete an Action Batch job.
+      - Specifies whether to lookup, create, or delete an Action Batch job.
     type: str
   synchronous:
     default: true

@@ -35,7 +35,8 @@ def test_cisco_meraki_devices_info_getOrganizationDevices(query_data, load_fixtu
                     "hostname": "1.2.3.4",
                 },
                 "facts": {
-                    "device_type": "wireless",
+                    "device_type": "resource",
+                    "meraki_product_type": "wireless",
                     "meraki_network_id": "N_24329156",
                     "ansible_hostname": "1.2.3.4",
                     "ansible_product_name": "MR34",
@@ -50,7 +51,8 @@ def test_cisco_meraki_devices_info_getOrganizationDevices(query_data, load_fixtu
                     "hostname": "1.2.3.4",
                 },
                 "facts": {
-                    "device_type": "wireless",
+                    "device_type": "resource",
+                    "meraki_product_type": "wireless",
                     "meraki_network_id": "N_24329157",
                     "ansible_hostname": "1.2.3.4",
                     "ansible_product_name": "MR34",
