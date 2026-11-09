@@ -115,6 +115,8 @@ meraki_response:
           "mac": "string",
           "ip": "string"
         }
-      ]
+      ],
+      "dhcpDefaultRouterIps": "string",
+      "dhcpDomainName": {}
     }
 """

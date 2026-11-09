@@ -117,18 +117,6 @@ options:
               or '3840x2160'.
             type: str
         type: dict
-      MV14:
-        description: Quality and resolution for MV14 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
-              or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1920x1080', '2560x1440'
-              or '3840x2160'.
-            type: str
-        type: dict
       MV21/MV71:
         description: Quality and resolution for MV21/MV71 camera models.
         suboptions:
@@ -188,18 +176,6 @@ options:
               or '3840x2160'.
             type: str
         type: dict
-      MV24:
-        description: Quality and resolution for MV24 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
-              or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1920x1080', '2560x1440'
-              or '3840x2160'.
-            type: str
-        type: dict
       MV32:
         description: Quality and resolution for MV32 camera models.
         suboptions:
@@ -235,16 +211,6 @@ options:
               or '2880x2880'.
             type: str
         type: dict
-      MV34:
-        description: Quality and resolution for MV34 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard' or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1768x1768' or '3556x3556'.
-            type: str
-        type: dict
       MV44X:
         description: Quality and resolution for MV44X camera models.
         suboptions:
@@ -276,18 +242,6 @@ options:
             type: str
           resolution:
             description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
-              or '3840x2160'.
-            type: str
-        type: dict
-      MV54N:
-        description: Quality and resolution for MV54N camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
-              or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1920x1080', '2560x1440'
               or '3840x2160'.
             type: str
         type: dict
@@ -327,18 +281,6 @@ options:
               or '3840x2160'.
             type: str
         type: dict
-      MV64:
-        description: Quality and resolution for MV64 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
-              or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1920x1080', '2560x1440'
-              or '3840x2160'.
-            type: str
-        type: dict
       MV73:
         description: Quality and resolution for MV73 camera models.
         suboptions:
@@ -372,18 +314,6 @@ options:
             type: str
           resolution:
             description: Resolution of the camera. Can be one of '1920x1080', '2688x1512'
-              or '3840x2160'.
-            type: str
-        type: dict
-      MV74:
-        description: Quality and resolution for MV74 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard', 'Enhanced'
-              or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1920x1080', '2560x1440'
               or '3840x2160'.
             type: str
         type: dict
@@ -431,16 +361,6 @@ options:
           resolution:
             description: Resolution of the camera. Can be one of '1080x1080', '2112x2112'
               or '2880x2880'.
-            type: str
-        type: dict
-      MV94:
-        description: Quality and resolution for MV94 camera models.
-        suboptions:
-          quality:
-            description: Quality of the camera. Can be one of 'Standard' or 'High'.
-            type: str
-          resolution:
-            description: Resolution of the camera. Can be one of '1768x1768' or '3556x3556'.
             type: str
         type: dict
     type: dict
@@ -548,9 +468,6 @@ EXAMPLES = r"""
       MV13M:
         quality: string
         resolution: string
-      MV14:
-        quality: string
-        resolution: string
       MV21/MV71:
         quality: string
         resolution: string
@@ -566,9 +483,6 @@ EXAMPLES = r"""
       MV23X:
         quality: string
         resolution: string
-      MV24:
-        quality: string
-        resolution: string
       MV32:
         quality: string
         resolution: string
@@ -576,9 +490,6 @@ EXAMPLES = r"""
         quality: string
         resolution: string
       MV33M:
-        quality: string
-        resolution: string
-      MV34:
         quality: string
         resolution: string
       MV44X:
@@ -590,9 +501,6 @@ EXAMPLES = r"""
       MV53X:
         quality: string
         resolution: string
-      MV54N:
-        quality: string
-        resolution: string
       MV63:
         quality: string
         resolution: string
@@ -602,9 +510,6 @@ EXAMPLES = r"""
       MV63X:
         quality: string
         resolution: string
-      MV64:
-        quality: string
-        resolution: string
       MV73:
         quality: string
         resolution: string
@@ -612,9 +517,6 @@ EXAMPLES = r"""
         quality: string
         resolution: string
       MV73X:
-        quality: string
-        resolution: string
-      MV74:
         quality: string
         resolution: string
       MV84X:
@@ -627,9 +529,6 @@ EXAMPLES = r"""
         quality: string
         resolution: string
       MV93X:
-        quality: string
-        resolution: string
-      MV94:
         quality: string
         resolution: string
 - name: Delete by id

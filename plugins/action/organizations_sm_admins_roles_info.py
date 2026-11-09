@@ -31,6 +31,7 @@ argument_spec.update(dict(
     direction=dict(type="str"),
     startingAfter=dict(type="str"),
     endingBefore=dict(type="str"),
+    roleId=dict(type="str"),
 ))
 
 required_if = []
@@ -67,6 +68,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(self, params):
+        new_object = {}
+        if params.get("organizationId") is not None:
+            new_object["organizationId"] = params.get(
+                "organizationId")
+        if params.get("roleId") is not None:
+            new_object["roleId"] = params.get(
+                "roleId")
+        return new_object
+
     def get_all(self, params):
         new_object = {}
         if params.get("organizationId") is not None:
@@ -98,11 +109,22 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        response = meraki.exec_meraki(
-            family="sm",
-            function='getOrganizationSmAdminsRoles',
-            params=self.get_all(self._task.args),
-        )
-        self._result.update(dict(meraki_response=response))
-        self._result.update(meraki.exit_json())
-        return self._result
+        id = self._task.args.get("roleId")
+        if id:
+            response = meraki.exec_meraki(
+                family="sm",
+                function='getOrganizationSmAdminsRole',
+                params=self.get_object(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result
+        if not id:
+            response = meraki.exec_meraki(
+                family="sm",
+                function='getOrganizationSmAdminsRoles',
+                params=self.get_all(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result

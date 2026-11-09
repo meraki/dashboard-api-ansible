@@ -220,6 +220,7 @@ meraki_response:
       "mac": "string",
       "serial": "string",
       "name": "string",
+      "address": {},
       "model": "string",
       "sku": "string",
       "networkId": "string",

@@ -62,7 +62,9 @@ options:
       - query
     default: query
     description:
-      - Specifies whether object should be queried, created/modified, or removed.
+      - Specifies whether object should be queried,
+    created/modified,
+    or removed.
     type: str
   test:
     choices:

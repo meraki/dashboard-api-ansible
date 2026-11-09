@@ -13,8 +13,8 @@ description:
     _payload _templates.
   - Create a webhook payload template for a network. - > Destroy a webhook payload
     template for a network. Does not work for included templates 'wpt_00001', 'wpt_00002',
-    'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008'
-    .
+    'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007', 'wpt_00008' or
+    'wpt_00009' .
   - Update a webhook payload template for a network.
 version_added: '1.0.0'
 extends_documentation_fragment:

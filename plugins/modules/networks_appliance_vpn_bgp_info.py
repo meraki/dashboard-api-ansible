@@ -74,6 +74,16 @@ meraki_response:
       "enabled": true,
       "asNumber": 0,
       "ibgpHoldTimer": 0,
+      "ipv6": {
+        "singlePeering": {
+          "enabled": {}
+        }
+      },
+      "tunnelDownTermination": {
+        "enabled": {}
+      },
+      "localAsNumber": {},
+      "priorityRoute": {},
       "routerId": "string",
       "neighbors": [
         {
@@ -104,7 +114,19 @@ meraki_response:
           ],
           "communityOut": [
             "string"
-          ]
+          ],
+          "filter": {
+            "out": [
+              "string"
+            ]
+          },
+          "explicitOutboundRouteAdvertisement": {
+            "enabled": {}
+          },
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          }
         }
       ]
     }

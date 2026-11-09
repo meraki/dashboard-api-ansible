@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -41,6 +41,7 @@ argument_spec.update(dict(
     wpaEncryptionMode=dict(type="str"),
     dot11w=dict(type="dict"),
     dot11r=dict(type="dict"),
+    dot11k=dict(type="dict"),
     splashPage=dict(type="str"),
     splashGuestSponsorDomains=dict(type="list"),
     oauth=dict(type="dict"),
@@ -64,6 +65,7 @@ argument_spec.update(dict(
     radiusAccountingInterimInterval=dict(type="int"),
     radiusAttributeForGroupPolicies=dict(type="str"),
     ipAssignmentMode=dict(type="str"),
+    campusGateway=dict(type="dict"),
     useVlanTagging=dict(type="bool"),
     concentratorNetworkId=dict(type="str"),
     secondaryConcentratorNetworkId=dict(type="str"),
@@ -122,6 +124,7 @@ class NetworksWirelessSsids(object):
             wpaEncryptionMode=params.get("wpaEncryptionMode"),
             dot11w=params.get("dot11w"),
             dot11r=params.get("dot11r"),
+            dot11k=params.get("dot11k"),
             splashPage=params.get("splashPage"),
             splashGuestSponsorDomains=params.get("splashGuestSponsorDomains"),
             oauth=params.get("oauth"),
@@ -145,6 +148,7 @@ class NetworksWirelessSsids(object):
             radiusAccountingInterimInterval=params.get("radiusAccountingInterimInterval"),
             radiusAttributeForGroupPolicies=params.get("radiusAttributeForGroupPolicies"),
             ipAssignmentMode=params.get("ipAssignmentMode"),
+            campusGateway=params.get("campusGateway"),
             useVlanTagging=params.get("useVlanTagging"),
             concentratorNetworkId=params.get("concentratorNetworkId"),
             secondaryConcentratorNetworkId=params.get("secondaryConcentratorNetworkId"),
@@ -241,6 +245,10 @@ class NetworksWirelessSsids(object):
                 'dot11r') is not None:
             new_object_params['dot11r'] = self.new_object.get('dot11r') or \
                 self.new_object.get('dot11r')
+        if self.new_object.get('dot11k') is not None or self.new_object.get(
+                'dot11k') is not None:
+            new_object_params['dot11k'] = self.new_object.get('dot11k') or \
+                self.new_object.get('dot11k')
         if self.new_object.get('splashPage') is not None or self.new_object.get(
                 'splash_page') is not None:
             new_object_params['splashPage'] = self.new_object.get(
@@ -333,6 +341,10 @@ class NetworksWirelessSsids(object):
                 'ip_assignment_mode') is not None:
             new_object_params['ipAssignmentMode'] = self.new_object.get(
                 'ipAssignmentMode') or self.new_object.get('ip_assignment_mode')
+        if self.new_object.get('campusGateway') is not None or self.new_object.get(
+                'campus_gateway') is not None:
+            new_object_params['campusGateway'] = self.new_object.get(
+                'campusGateway') or self.new_object.get('campus_gateway')
         if self.new_object.get('useVlanTagging') is not None or self.new_object.get(
                 'use_vlan_tagging') is not None:
             new_object_params['useVlanTagging'] = self.new_object.get(
@@ -550,6 +562,7 @@ class NetworksWirelessSsids(object):
             ("wpaEncryptionMode", "wpaEncryptionMode"),
             ("dot11w", "dot11w"),
             ("dot11r", "dot11r"),
+            ("dot11k", "dot11k"),
             ("splashPage", "splashPage"),
             ("splashGuestSponsorDomains", "splashGuestSponsorDomains"),
             ("oauth", "oauth"),
@@ -573,6 +586,7 @@ class NetworksWirelessSsids(object):
             ("radiusAccountingInterimInterval", "radiusAccountingInterimInterval"),
             ("radiusAttributeForGroupPolicies", "radiusAttributeForGroupPolicies"),
             ("ipAssignmentMode", "ipAssignmentMode"),
+            ("campusGateway", "campusGateway"),
             ("useVlanTagging", "useVlanTagging"),
             ("concentratorNetworkId", "concentratorNetworkId"),
             ("secondaryConcentratorNetworkId", "secondaryConcentratorNetworkId"),
@@ -610,7 +624,7 @@ class NetworksWirelessSsids(object):
         # If any does not have eq params, it requires update
         current_obj["number"] = str(current_obj.get("number"))
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

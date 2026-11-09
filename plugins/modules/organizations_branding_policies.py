@@ -40,6 +40,13 @@ options:
         elements: str
         type: list
     type: dict
+  appearance:
+    description: Dashboard appearance settings.
+    suboptions:
+      dashboardMenuTheme:
+        description: Dashboard menu theme.
+        type: str
+    type: dict
   brandingPolicyId:
     description: BrandingPolicyId path parameter. Branding policy ID.
     type: str
@@ -211,6 +218,8 @@ EXAMPLES = r"""
       values:
         - N_1234
         - L_5678
+    appearance:
+      dashboardMenuTheme: light
     customLogo:
       enabled: true
       image:
@@ -264,6 +273,8 @@ EXAMPLES = r"""
       values:
         - N_1234
         - L_5678
+    appearance:
+      dashboardMenuTheme: light
     brandingPolicyId: string
     customLogo:
       enabled: true
@@ -325,6 +336,9 @@ meraki_response:
     {
       "name": "string",
       "enabled": true,
+      "appearance": {
+        "dashboardMenuTheme": "string"
+      },
       "adminSettings": {
         "appliesTo": "string",
         "values": [

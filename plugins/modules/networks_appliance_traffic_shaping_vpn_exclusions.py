@@ -18,6 +18,15 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  applicationCategoryMapping:
+    description: Options for mapping configured majorApplications to application categories.
+    suboptions:
+      enabled:
+        description: When true, map the configured majorApplications to application
+          categories and add the results to applications. Keep majorApplications unchanged.
+          Defaults to false.
+        type: bool
+    type: dict
   custom:
     description: Custom VPN exclusion rules. Pass an empty array to clear existing
       rules.
@@ -87,6 +96,8 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    applicationCategoryMapping:
+      enabled: false
     custom:
       - destination: 192.168.3.0/24
         port: '8000'

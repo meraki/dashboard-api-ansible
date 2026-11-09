@@ -87,6 +87,19 @@ options:
       indoor RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation
       with Band Steering').
     type: str
+  campusGateway:
+    description: Campus gateway settings.
+    suboptions:
+      cluster:
+        description: Cluster configuration.
+        suboptions:
+          id:
+            description: The campus gateway cluster ID to use when the ipAssignmentMode
+              is 'Campus Gateway'. This param is only valid when ipAssignmentMode
+              is 'Campus Gateway'.
+            type: str
+        type: dict
+    type: dict
   concentratorNetworkId:
     description: The concentrator to use when the ipAssignmentMode is 'Layer 3 roaming
       with a concentrator' or 'VPN'.
@@ -110,6 +123,13 @@ options:
       enabled:
         description: Boolean indicating whether or not DNS server rewrite is enabled.
           If disabled, upstream DNS will be used.
+        type: bool
+    type: dict
+  dot11k:
+    description: The current setting for 802.11k.
+    suboptions:
+      enabled:
+        description: Whether 802.11k is enabled or not.
         type: bool
     type: dict
   dot11r:
@@ -409,8 +429,9 @@ options:
       receive this attribute in the RADIUS Access-Accept message.
     type: str
   radiusAuthenticationNasId:
-    description: The template of the NAS identifier to be used for RADIUS authentication
-      (ex. $NODE_MAC$ $VAP_NUM$).
+    description: "The NAS identifier to use for RADIUS authentication. With 802.11r
+      enabled or adaptive, use $NODE_MAC$, $VAP_NUM$, $VAP_NAME$, and/or custom text.
+      The complete rendered NAS identifier must be 1–48 bytes."
     type: str
   radiusCalledStationId:
     description: The template of the called station identifier to be used for RADIUS
@@ -544,8 +565,8 @@ options:
       page', 'Billing', 'Password-protected with Meraki RADIUS', 'Password-protected
       with custom RADIUS', 'Password-protected with Active Directory', 'Password-protected
       with LDAP', 'SMS authentication', 'Systems Manager Sentry', 'Facebook Wi-Fi',
-      'Google OAuth', 'Microsoft Entra ID', 'Sponsored guest', 'Cisco ISE' or 'Google
-      Apps domain').This attribute is not supported for template children.
+      'Google OAuth', 'Microsoft Entra ID', 'Sponsored guest' or 'Cisco ISE').This
+      attribute is not supported for template children.
     type: str
   ssidAdminAccessible:
     description: SSID Administrator access status.
@@ -637,6 +658,9 @@ EXAMPLES = r"""
       - tag2
     availableOnAllAps: false
     bandSelection: 5 GHz band only
+    campusGateway:
+      cluster:
+        id: '10'
     concentratorNetworkId: N_24329156
     defaultVlanId: 1
     disassociateClientsOnVpnFailover: false
@@ -644,6 +668,8 @@ EXAMPLES = r"""
       dnsCustomNameservers:
         - 8.8.8.8
         - 8.8.4.4
+      enabled: true
+    dot11k:
       enabled: true
     dot11r:
       adaptive: true
@@ -666,7 +692,7 @@ EXAMPLES = r"""
         distinguishedName: cn=user,dc=example,dc=com
         password: password
       serverCaCertificate:
-        contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
       servers:
         - host: 127.0.0.1
           port: 389
@@ -674,12 +700,13 @@ EXAMPLES = r"""
       cacheTimeout: 6500
       enabled: true
       serverCaCertificate:
-        contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+        contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
     localRadius:
       cacheTimeout: 60
       certificateAuthentication:
         clientRootCaCertificate:
-          contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+          contents: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+            CERTIFICATE-----'
         enabled: true
         ocspResponderUrl: http://ocsp-server.example.com
         useLdap: false
@@ -715,7 +742,7 @@ EXAMPLES = r"""
     radiusAccountingEnabled: true
     radiusAccountingInterimInterval: 5
     radiusAccountingServers:
-      - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
         host: 0.0.0.0
         port: 3000
         radsecEnabled: true
@@ -738,7 +765,7 @@ EXAMPLES = r"""
     radiusServerAttemptsLimit: 5
     radiusServerTimeout: 5
     radiusServers:
-      - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+      - caCertificate: '-----BEGIN CERTIFICATE----- #magic___^_^___line MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
         host: 0.0.0.0
         openRoamingCertificateId: 2
         port: 3000
@@ -777,6 +804,7 @@ meraki_response:
       "number": 0,
       "name": "string",
       "enabled": true,
+      "wlanIdentifier": 0,
       "splashPage": "string",
       "ssidAdminAccessible": true,
       "localAuth": true,
@@ -835,6 +863,9 @@ meraki_response:
         "enabled": true,
         "adaptive": true
       },
+      "dot11k": {
+        "enabled": true
+      },
       "enterpriseAdminAccess": "string",
       "radiusTestingEnabled": true,
       "radiusCalledStationId": "string",
@@ -860,6 +891,11 @@ meraki_response:
         },
         "key": 0,
         "clientIsolation": true
+      },
+      "campusGateway": {
+        "cluster": {
+          "id": "string"
+        }
       },
       "lanIsolationEnabled": true,
       "oauth": {

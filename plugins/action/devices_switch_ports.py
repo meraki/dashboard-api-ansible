@@ -35,6 +35,8 @@ argument_spec.update(dict(
     tags=dict(type="list"),
     enabled=dict(type="bool"),
     poeEnabled=dict(type="bool"),
+    perpetualPoe=dict(type="dict"),
+    fastPoe=dict(type="dict"),
     type=dict(type="str"),
     vlan=dict(type="int"),
     voiceVlan=dict(type="int"),
@@ -80,6 +82,8 @@ class DevicesSwitchPorts(object):
             tags=params.get("tags"),
             enabled=params.get("enabled"),
             poeEnabled=params.get("poeEnabled"),
+            perpetualPoe=params.get("perpetualPoe"),
+            fastPoe=params.get("fastPoe"),
             type=params.get("type"),
             vlan=params.get("vlan"),
             voiceVlan=params.get("voiceVlan"),
@@ -143,6 +147,14 @@ class DevicesSwitchPorts(object):
         if self.new_object.get('poeEnabled') is not None or self.new_object.get(
                 'poe_enabled') is not None:
             new_object_params['poeEnabled'] = self.new_object.get('poeEnabled')
+        if self.new_object.get('perpetualPoe') is not None or self.new_object.get(
+                'perpetual_poe') is not None:
+            new_object_params['perpetualPoe'] = self.new_object.get(
+                'perpetualPoe') or self.new_object.get('perpetual_poe')
+        if self.new_object.get('fastPoe') is not None or self.new_object.get(
+                'fast_poe') is not None:
+            new_object_params['fastPoe'] = self.new_object.get('fastPoe') or \
+                self.new_object.get('fast_poe')
         if self.new_object.get('type') is not None or self.new_object.get(
                 'type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
@@ -252,6 +264,7 @@ class DevicesSwitchPorts(object):
                 self.new_object.get('port_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method, using get all
@@ -271,6 +284,7 @@ class DevicesSwitchPorts(object):
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None
@@ -325,6 +339,8 @@ class DevicesSwitchPorts(object):
             ("tags", "tags"),
             ("enabled", "enabled"),
             ("poeEnabled", "poeEnabled"),
+            ("perpetualPoe", "perpetualPoe"),
+            ("fastPoe", "fastPoe"),
             ("type", "type"),
             ("vlan", "vlan"),
             ("voiceVlan", "voiceVlan"),
@@ -360,6 +376,7 @@ class DevicesSwitchPorts(object):
                 meraki_param,
                 ansible_param) in obj_params)
 
+    # Begin manually added: update
     def update(self):
         id = self.new_object.get("id")
         id = id or self.new_object.get("portId")
@@ -380,6 +397,7 @@ class DevicesSwitchPorts(object):
             op_modifies=True,
         )
         return result
+    # End manually added: update
 
 
 class ActionModule(ActionBase):

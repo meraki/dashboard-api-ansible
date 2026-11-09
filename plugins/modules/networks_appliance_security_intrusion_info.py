@@ -73,6 +73,11 @@ meraki_response:
     {
       "mode": "string",
       "idsRulesets": "string",
+      "policy": {
+        "id": "string",
+        "name": "string",
+        "description": "string"
+      },
       "protectedNetworks": {
         "useDefault": true,
         "includedCidr": [

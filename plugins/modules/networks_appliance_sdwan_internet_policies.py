@@ -114,6 +114,14 @@ options:
                 type: dict
             type: dict
         type: list
+      vrf:
+        description: VRF settings for the policy. Omit this field to use the default
+          VRF for the policy.
+        suboptions:
+          id:
+            description: VRF ID for the policy. Use 0 for the default VRF.
+            type: str
+        type: dict
     type: list
 requirements:
   - meraki >= 2.4.9
@@ -178,6 +186,8 @@ EXAMPLES = r"""
                 host: 254
                 port: 1-1024
                 vlan: 10
+        vrf:
+          id: '12345'
 """
 RETURN = r"""
 meraki_response:
@@ -219,7 +229,11 @@ meraki_response:
                 }
               }
             }
-          ]
+          ],
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          }
         }
       ]
     }

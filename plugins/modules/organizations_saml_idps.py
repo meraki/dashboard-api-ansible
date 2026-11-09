@@ -149,16 +149,14 @@ RETURN = r"""
 meraki_response:
   description: A dictionary or list with the response returned by the Cisco Meraki Python SDK
   returned: always
-  type: list
+  type: dict
   sample: >
-    [
-      {
-        "idpId": "string",
-        "consumerUrl": "string",
-        "visionConsumerUrl": "string",
-        "x509certSha1Fingerprint": "string",
-        "ssoLoginUrl": "string",
-        "sloLogoutUrl": "string"
-      }
-    ]
+    {
+      "idpId": "string",
+      "consumerUrl": "string",
+      "visionConsumerUrl": "string",
+      "x509certSha1Fingerprint": "string",
+      "ssoLoginUrl": "string",
+      "sloLogoutUrl": "string"
+    }
 """

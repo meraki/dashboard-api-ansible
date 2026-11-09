@@ -134,20 +134,6 @@ meraki_response:
               "parent": "string"
             }
           ]
-        },
-        "loadBalancing": {
-          "enabled": true,
-          "vlanSelection": {
-            "mode": "string",
-            "byDevice": [
-              {
-                "serial": "string",
-                "vlanIds": [
-                  0
-                ]
-              }
-            ]
-          }
         }
       }
     }

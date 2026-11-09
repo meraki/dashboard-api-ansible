@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -62,6 +62,23 @@ class OrganizationsActionBatches(object):
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
+        if self.new_object.get('perPage') is not None or self.new_object.get(
+                'per_page') is not None:
+            new_object_params['perPage'] = self.new_object.get('perPage') or \
+                self.new_object.get('per_page')
+        new_object_params['total_pages'] = -1
+        if self.new_object.get('startingAfter') is not None or self.new_object.get(
+                'starting_after') is not None:
+            new_object_params['startingAfter'] = self.new_object.get(
+                'startingAfter') or self.new_object.get('starting_after')
+        if self.new_object.get('endingBefore') is not None or self.new_object.get(
+                'ending_before') is not None:
+            new_object_params['endingBefore'] = self.new_object.get(
+                'endingBefore') or self.new_object.get('ending_before')
+        if self.new_object.get('sortOrder') is not None or self.new_object.get(
+                'sort_order') is not None:
+            new_object_params['sortOrder'] = self.new_object.get(
+                'sortOrder') or self.new_object.get('sort_order')
         if self.new_object.get('status') is not None or self.new_object.get(
                 'status') is not None:
             new_object_params['status'] = self.new_object.get('status')
@@ -214,7 +231,7 @@ class OrganizationsActionBatches(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -269,6 +286,9 @@ class OrganizationsActionBatches(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

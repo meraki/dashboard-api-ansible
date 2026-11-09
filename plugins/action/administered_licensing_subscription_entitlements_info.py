@@ -26,6 +26,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     skus=dict(type="list"),
+    subscriptionType=dict(type="str"),
 ))
 
 required_if = []
@@ -67,6 +68,9 @@ class ActionModule(ActionBase):
         if params.get("skus") is not None:
             new_object["skus"] = params.get(
                 "skus")
+        if params.get("subscriptionType") is not None:
+            new_object["subscriptionType"] = params.get(
+                "subscriptionType")
 
         return new_object
 

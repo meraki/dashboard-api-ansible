@@ -10,14 +10,23 @@ module: networks_appliance_vpn_site_to_site_vpn
 short_description: Resource module for networks _appliance _vpn _site _to _site _vpn
 description:
   - Manage operation update of the resource networks _appliance _vpn _site _to _site
-    _vpn.
-  - Update the site-to-site VPN settings of a network. Only valid for MX networks
-    in NAT mode.
+    _vpn. - > Update the site-to-site VPN settings of an MX network or configuration
+    template in NAT mode. Unacknowledged warnings return 400 Bad Request with retry
+    guidance in errors and the warnings in confirmations. Review the warnings returned
+    in confirmations, then retry with confirmed true to accept them. Fatal errors
+    must be corrected before retrying.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  confirmed:
+    description: Whether to accept the confirmation warnings for these changes. Defaults
+      to true, which accepts confirmation warnings and preserves the existing update
+      behavior. Set to false to opt in to confirmation warnings. Review the warnings
+      returned in confirmations, then retry with confirmed true to accept them. Fatal
+      errors must be corrected before retrying.
+    type: bool
   hostTranslations:
     description: The list of VPN host translations. Host translations are supported
       starting from MX firmware version 26.1.2.
@@ -57,6 +66,20 @@ options:
   mode:
     description: The site-to-site VPN mode. Can be one of 'none', 'spoke' or 'hub'.
     type: str
+  natTraversal:
+    description: NAT traversal settings. Omit to leave the existing setting unchanged.
+    suboptions:
+      mode:
+        description: Whether NAT traversal is automatic or manually configured.
+        type: str
+      publicIp:
+        description: The public IP address used for manual NAT traversal.
+        type: str
+      publicPort:
+        description: The public port used for manual NAT traversal. Must be between
+          1024 and 65535.
+        type: int
+    type: dict
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -81,11 +104,15 @@ options:
         type: dict
     type: dict
   subnets:
-    description: The list of subnets and their VPN presence.
+    description: The list of local VPN subnets and their VPN presence. VLAN entries
+      include vlanId and subnetting where applicable. When the corresponding NFO is
+      enabled, NAT settings are returned for every VLAN; non-VLAN entries omit vlanId,
+      subnetting, and nat.legacy.
     elements: dict
     suboptions:
       localSubnet:
-        description: The CIDR notation subnet used within the VPN.
+        description: The CIDR notation subnet used within the VPN. Required for standalone
+          networks.
         type: str
       nat:
         description: Configuration of NAT for the subnet.
@@ -94,6 +121,11 @@ options:
             description: Whether or not VPN subnet translation is enabled for the
               subnet.
             type: bool
+          legacy:
+            description: DEPRECATED Legacy VPN NAT settings. For VLAN entries, when
+              the corresponding NFO is enabled, the related field is returned for
+              every VLAN, including false values.
+            type: dict
           remoteSubnet:
             description: The translated subnet to be used in the VPN.
             type: str
@@ -142,6 +174,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    confirmed: false
     hostTranslations:
       - local:
           address: 192.168.1.10
@@ -152,6 +185,10 @@ EXAMPLES = r"""
       - hubId: N_4901849
         useDefaultRoute: true
     mode: spoke
+    natTraversal:
+      mode: manual
+      publicIp: 203.0.113.8
+      publicPort: 4500
     networkId: string
     sgt:
       enabled: true
@@ -162,7 +199,7 @@ EXAMPLES = r"""
       - localSubnet: 192.168.1.0/24
         nat:
           enabled: true
-          remoteSubnet: 192.168.2.0/24
+          remoteSubnet: 198.51.100.3/32
         useVpn: true
 """
 RETURN = r"""
@@ -176,7 +213,13 @@ meraki_response:
       "hubs": [
         {
           "hubId": "string",
-          "useDefaultRoute": true
+          "useDefaultRoute": true,
+          "vrfs": [
+            {
+              "id": "string",
+              "name": "string"
+            }
+          ]
         }
       ],
       "subnets": [
@@ -185,7 +228,8 @@ meraki_response:
           "useVpn": true,
           "nat": {
             "enabled": true,
-            "remoteSubnet": "string"
+            "remoteSubnet": "string",
+            "legacy": {}
           }
         }
       ],
@@ -207,6 +251,11 @@ meraki_response:
             "address": "string"
           }
         }
-      ]
+      ],
+      "natTraversal": {
+        "mode": "string",
+        "publicIp": "string",
+        "publicPort": 0
+      }
     }
 """

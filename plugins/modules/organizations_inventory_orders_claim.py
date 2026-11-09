@@ -96,6 +96,7 @@ meraki_response:
       "subscriptions": [
         {
           "subscriptionId": "string",
+          "trialId": {},
           "name": "string",
           "description": "string",
           "startDate": "string",

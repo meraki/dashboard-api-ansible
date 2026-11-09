@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -35,6 +35,7 @@ argument_spec.update(dict(
     applianceIp=dict(type="str"),
     ipv6=dict(type="dict"),
     mandatoryDhcp=dict(type="dict"),
+    vrf=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -54,6 +55,7 @@ class NetworksApplianceSingleLan(object):
             applianceIp=params.get("applianceIp"),
             ipv6=params.get("ipv6"),
             mandatoryDhcp=params.get("mandatoryDhcp"),
+            vrf=params.get("vrf"),
             networkId=params.get("networkId"),
         )
 
@@ -83,6 +85,10 @@ class NetworksApplianceSingleLan(object):
                 'mandatory_dhcp') is not None:
             new_object_params['mandatoryDhcp'] = self.new_object.get(
                 'mandatoryDhcp') or self.new_object.get('mandatory_dhcp')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -145,11 +151,12 @@ class NetworksApplianceSingleLan(object):
             ("applianceIp", "applianceIp"),
             ("ipv6", "ipv6"),
             ("mandatoryDhcp", "mandatoryDhcp"),
+            ("vrf", "vrf"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

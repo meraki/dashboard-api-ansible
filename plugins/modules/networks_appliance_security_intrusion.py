@@ -28,6 +28,15 @@ options:
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  policy:
+    description: Set a custom intrusion policy by id (optional - omitting will leave
+      current config unchanged).
+    suboptions:
+      id:
+        description: The identifier of an existing custom intrusion policy in this
+          organization.
+        type: str
+    type: dict
   protectedNetworks:
     description: Set the included/excluded networks from the intrusion engine (optional
       - omitting will leave current config unchanged). This is available only in 'passthrough'
@@ -91,6 +100,8 @@ EXAMPLES = r"""
     idsRulesets: balanced
     mode: prevention
     networkId: string
+    policy:
+      id: '123'
     protectedNetworks:
       excludedCidr:
         - 10.0.0.0/8
@@ -111,6 +122,11 @@ meraki_response:
     {
       "mode": "string",
       "idsRulesets": "string",
+      "policy": {
+        "id": "string",
+        "name": "string",
+        "description": "string"
+      },
       "protectedNetworks": {
         "useDefault": true,
         "includedCidr": [

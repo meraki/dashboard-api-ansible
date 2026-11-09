@@ -27,6 +27,7 @@ argument_spec = meraki_argument_spec()
 argument_spec.update(dict(
     custom=dict(type="list"),
     majorApplications=dict(type="list"),
+    applicationCategoryMapping=dict(type="dict"),
     networkId=dict(type="str"),
 ))
 
@@ -68,6 +69,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             custom=params.get("custom"),
             majorApplications=params.get("majorApplications"),
+            applicationCategoryMapping=params.get("applicationCategoryMapping"),
             networkId=params.get("networkId"),
         )
         return new_object

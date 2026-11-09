@@ -16,6 +16,13 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  clientTracking:
+    description: Client tracking settings.
+    suboptions:
+      deviceConfigMode:
+        description: Device Config mode settings.
+        type: dict
+    type: dict
   macBlocklist:
     description: MAC blocklist.
     suboptions:
@@ -109,6 +116,8 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    clientTracking:
+      deviceConfigMode: {}
     macBlocklist:
       enabled: true
     networkId: string
@@ -145,6 +154,9 @@ meraki_response:
       },
       "macBlocklist": {
         "enabled": true
+      },
+      "clientTracking": {
+        "deviceConfigMode": {}
       },
       "portChannelFallback": true,
       "uplinkSelection": {

@@ -100,9 +100,9 @@ options:
             type: int
         type: dict
       slot:
-        description: The SIM slot that the rule is applied to. One of 'sim1', 'sim2',
-          or 'sim3'. Devices included in this group must have an active card/profile
-          with the defined SIM slot in order to use this rule.
+        description: The logical SIM identifier that the rule is applied to. One of
+          'sim1', 'sim2', or 'esim'. Devices included in this group must have an active
+          card/profile with the defined SIM slot in order to use this rule.
         type: str
       uplink:
         description: Configuration for the uplink governed by this rule.

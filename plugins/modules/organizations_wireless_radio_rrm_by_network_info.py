@@ -126,6 +126,11 @@ meraki_response:
           "channel": {
             "avoidance": {
               "enabled": true
+            },
+            "selection": {
+              "preferred": {
+                "mode": "string"
+              }
             }
           },
           "fra": {

@@ -157,6 +157,7 @@ meraki_response:
       "productTypes": [
         "string"
       ],
-      "timeZone": "string"
+      "timeZone": {},
+      "url": {}
     }
 """

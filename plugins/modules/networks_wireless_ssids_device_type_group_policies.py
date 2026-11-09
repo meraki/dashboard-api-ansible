@@ -100,5 +100,14 @@ meraki_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "enabled": true,
+      "deviceTypePolicies": [
+        {
+          "deviceType": "string",
+          "devicePolicy": "string",
+          "groupPolicyId": 0
+        }
+      ]
+    }
 """

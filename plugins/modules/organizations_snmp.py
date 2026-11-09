@@ -27,7 +27,9 @@ options:
     description: Boolean indicating whether SNMP version 2c is enabled for the organization.
     type: bool
   v3AuthMode:
-    description: The SNMP version 3 authentication mode. Can be either 'MD5' or 'SHA'.
+    description: The SNMP version 3 authentication mode. Can be one of 'SHA', 'MD5',
+      'SHA256', 'SHA384', or 'SHA512'. MD5 is not supported in the Cisco Meraki US
+      Government Region.
     type: str
   v3AuthPass:
     description: The SNMP version 3 authentication password. Must be at least 8 characters
@@ -103,8 +105,8 @@ meraki_response:
       "v2CommunityString": "string",
       "v3Enabled": true,
       "v3User": "string",
-      "v3AuthMode": "string",
-      "v3PrivMode": "string",
+      "v3AuthMode": {},
+      "v3PrivMode": {},
       "peerIps": [
         "string"
       ],

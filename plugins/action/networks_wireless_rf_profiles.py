@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -42,6 +42,7 @@ argument_spec.update(dict(
     transmission=dict(type="dict"),
     perSsidSettings=dict(type="dict"),
     flexRadios=dict(type="dict"),
+    dot11be=dict(type="dict"),
     networkId=dict(type="str"),
     rfProfileId=dict(type="str"),
     isIndoorDefault=dict(type="bool"),
@@ -72,6 +73,7 @@ class NetworksWirelessRfProfiles(object):
             transmission=params.get("transmission"),
             perSsidSettings=params.get("perSsidSettings"),
             flexRadios=params.get("flexRadios"),
+            dot11be=params.get("dot11be"),
             networkId=params.get("networkId"),
             rfProfileId=params.get("rfProfileId"),
             isIndoorDefault=params.get("isIndoorDefault"),
@@ -148,6 +150,10 @@ class NetworksWirelessRfProfiles(object):
                 'flex_radios') is not None:
             new_object_params['flexRadios'] = self.new_object.get(
                 'flexRadios') or self.new_object.get('flex_radios')
+        if self.new_object.get('dot11be') is not None or self.new_object.get(
+                'dot11be') is not None:
+            new_object_params['dot11be'] = self.new_object.get('dot11be') or \
+                self.new_object.get('dot11be')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -220,6 +226,10 @@ class NetworksWirelessRfProfiles(object):
                 'flex_radios') is not None:
             new_object_params['flexRadios'] = self.new_object.get(
                 'flexRadios') or self.new_object.get('flex_radios')
+        if self.new_object.get('dot11be') is not None or self.new_object.get(
+                'dot11be') is not None:
+            new_object_params['dot11be'] = self.new_object.get('dot11be') or \
+                self.new_object.get('dot11be')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -310,13 +320,14 @@ class NetworksWirelessRfProfiles(object):
             ("transmission", "transmission"),
             ("perSsidSettings", "perSsidSettings"),
             ("flexRadios", "flexRadios"),
+            ("dot11be", "dot11be"),
             ("isIndoorDefault", "isIndoorDefault"),
             ("isOutdoorDefault", "isOutdoorDefault"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -371,6 +382,9 @@ class NetworksWirelessRfProfiles(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

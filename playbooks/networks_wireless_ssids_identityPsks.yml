@@ -2,13 +2,29 @@
   hosts: localhost
   gather_facts: false
   vars:
-    network_id: L_828099381482770865
+    network_id: L_828099381482771185
+    # SSID 4 estaba sin configurar ("Unconfigured SSID 5"); se usa para no
+    # tocar los SSIDs en uso. Identity PSK requiere authMode ipsk-without-radius.
+    ssid_number: 4
+    # Group policy "BYOD" existente en la red; la API exige groupPolicyId.
+    group_policy_id: "100"
   tasks:
+    - name: Configure SSID for Identity PSK
+      cisco.meraki.networks_wireless_ssids:
+        meraki_suppress_logging: true
+        state: present
+        networkId: "{{ network_id }}"
+        number: "{{ ssid_number }}"
+        name: Ansible iPSK test
+        enabled: false
+        authMode: ipsk-without-radius
+
     - name: Create Identity PSK
       cisco.meraki.networks_wireless_ssids_identity_psks:
         meraki_suppress_logging: true
         state: present
         networkId: "{{ network_id }}"
-        number: 1
+        number: "{{ ssid_number }}"
         name: Sample Identity PSK
         passphrase: SamplePassphrase123
+        groupPolicyId: "{{ group_policy_id }}"

@@ -26,6 +26,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     networkId=dict(type="str"),
+    rfProfileId=dict(type="str"),
 ))
 
 required_if = []
@@ -62,6 +63,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(self, params):
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("rfProfileId") is not None:
+            new_object["rfProfileId"] = params.get(
+                "rfProfileId")
+        return new_object
+
     def get_all(self, params):
         new_object = {}
         if params.get("networkId") is not None:
@@ -80,11 +91,22 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        response = meraki.exec_meraki(
-            family="appliance",
-            function='getNetworkApplianceRfProfiles',
-            params=self.get_all(self._task.args),
-        )
-        self._result.update(dict(meraki_response=response))
-        self._result.update(meraki.exit_json())
-        return self._result
+        id = self._task.args.get("rfProfileId")
+        if id:
+            response = meraki.exec_meraki(
+                family="appliance",
+                function='getNetworkApplianceRfProfile',
+                params=self.get_object(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result
+        if not id:
+            response = meraki.exec_meraki(
+                family="appliance",
+                function='getNetworkApplianceRfProfiles',
+                params=self.get_all(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result

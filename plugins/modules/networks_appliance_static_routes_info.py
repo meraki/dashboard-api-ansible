@@ -123,6 +123,10 @@ meraki_response:
           "comment": "string"
         }
       ],
-      "gatewayVlanId": 0
+      "gatewayVlanId": 0,
+      "vrf": {
+        "id": "string",
+        "name": "string"
+      }
     }
 """

@@ -48,15 +48,23 @@ options:
   enabled:
     description: The status of the switch port.
     type: bool
+  fastPoe:
+    description: Fast PoE settings for the switch port.
+    suboptions:
+      enabled:
+        description: Whether Fast PoE is enabled on the switch port. Fast PoE requires
+          Perpetual PoE and can only be enabled on ports that support PoE HA.
+        type: bool
+    type: dict
   flexibleStackingEnabled:
     description: For supported switches (e.g. MS420/MS425), whether or not the port
       has flexible stacking enabled.
     type: bool
   highSpeed:
-    description: High speed port enablement settings for C9500-32QC.
+    description: High speed port enablement settings for a high-speed logical port.
     suboptions:
       enabled:
-        description: For C9500-32QC, whether or not the port is enabled for high speed.
+        description: Whether the high-speed logical port is enabled.
         type: bool
     type: dict
   isolationEnabled:
@@ -77,13 +85,23 @@ options:
       on verions greater than ms18 only for classic switches.
     type: int
   name:
-    description: The name of the switch port.
+    description: The name of the switch port. Dashboard displays this value as the
+      port description. For Cisco Catalyst switches running IOS XE, it corresponds
+      to the configured interface description.
     type: str
   peerSgtCapable:
     description: If true, Peer SGT is enabled for traffic through this switch port.
       Applicable to trunk port only, not access port. Cannot be applied to a port
       on a switch bound to profile.
     type: bool
+  perpetualPoe:
+    description: Perpetual PoE settings for the switch port.
+    suboptions:
+      enabled:
+        description: Whether Perpetual PoE is enabled on the switch port. Perpetual
+          PoE can only be enabled on ports that support PoE HA.
+        type: bool
+    type: dict
   poeEnabled:
     description: The PoE status of the switch port.
     type: bool
@@ -200,6 +218,8 @@ EXAMPLES = r"""
     dot3az:
       enabled: false
     enabled: true
+    fastPoe:
+      enabled: true
     flexibleStackingEnabled: true
     highSpeed:
       enabled: false
@@ -211,6 +231,8 @@ EXAMPLES = r"""
     macWhitelistLimit: 10
     name: My switch port
     peerSgtCapable: false
+    perpetualPoe:
+      enabled: true
     poeEnabled: true
     portId: string
     portScheduleId: '1234'
@@ -249,6 +271,12 @@ meraki_response:
       ],
       "enabled": true,
       "poeEnabled": true,
+      "perpetualPoe": {
+        "enabled": true
+      },
+      "fastPoe": {
+        "enabled": true
+      },
       "type": "string",
       "vlan": 0,
       "voiceVlan": 0,

@@ -95,6 +95,11 @@ meraki_response:
           "peer": {
             "id": "string"
           }
+        },
+        "vrf": {
+          "names": [
+            "string"
+          ]
         }
       },
       "status": "string",
@@ -106,6 +111,10 @@ meraki_response:
             {
               "number": 0,
               "address": "string",
+              "vlan": {
+                "id": "string",
+                "name": "string"
+              },
               "vpn": {
                 "peer": {
                   "id": "string",

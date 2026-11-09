@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -33,6 +33,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     enabled=dict(type="bool"),
+    appearance=dict(type="dict"),
     adminSettings=dict(type="dict"),
     helpSettings=dict(type="dict"),
     customLogo=dict(type="dict"),
@@ -55,6 +56,7 @@ class OrganizationsBrandingPolicies(object):
         self.new_object = dict(
             name=params.get("name"),
             enabled=params.get("enabled"),
+            appearance=params.get("appearance"),
             adminSettings=params.get("adminSettings"),
             helpSettings=params.get("helpSettings"),
             customLogo=params.get("customLogo"),
@@ -91,6 +93,10 @@ class OrganizationsBrandingPolicies(object):
         if self.new_object.get('enabled') is not None or self.new_object.get(
                 'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('appearance') is not None or self.new_object.get(
+                'appearance') is not None:
+            new_object_params['appearance'] = self.new_object.get(
+                'appearance') or self.new_object.get('appearance')
         if self.new_object.get('adminSettings') is not None or self.new_object.get(
                 'admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get(
@@ -130,6 +136,10 @@ class OrganizationsBrandingPolicies(object):
         if self.new_object.get('enabled') is not None or self.new_object.get(
                 'enabled') is not None:
             new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get('appearance') is not None or self.new_object.get(
+                'appearance') is not None:
+            new_object_params['appearance'] = self.new_object.get(
+                'appearance') or self.new_object.get('appearance')
         if self.new_object.get('adminSettings') is not None or self.new_object.get(
                 'admin_settings') is not None:
             new_object_params['adminSettings'] = self.new_object.get(
@@ -223,6 +233,7 @@ class OrganizationsBrandingPolicies(object):
         obj_params = [
             ("name", "name"),
             ("enabled", "enabled"),
+            ("appearance", "appearance"),
             ("adminSettings", "adminSettings"),
             ("helpSettings", "helpSettings"),
             ("customLogo", "customLogo"),
@@ -230,7 +241,7 @@ class OrganizationsBrandingPolicies(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -285,6 +296,9 @@ class OrganizationsBrandingPolicies(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

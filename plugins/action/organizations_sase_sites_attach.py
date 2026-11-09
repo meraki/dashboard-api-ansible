@@ -26,7 +26,6 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     items=dict(type="list"),
-    callback=dict(type="dict"),
     organizationId=dict(type="str"),
 ))
 
@@ -67,7 +66,6 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             items=params.get("items"),
-            callback=params.get("callback"),
             organizationId=params.get("organizationId"),
         )
         return new_object

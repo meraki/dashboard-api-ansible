@@ -32,6 +32,14 @@ options:
       criteria:
         description: Destination criteria values (not present if 'any' is in matchCriteria).
         suboptions:
+          adaptivePolicyGroups:
+            description: Adaptive policy groups.
+            elements: dict
+            suboptions:
+              id:
+                description: Adaptive policy group ID.
+                type: str
+            type: list
           addressRanges:
             description: Address ranges or addresses.
             elements: str
@@ -77,6 +85,18 @@ options:
                 description: Application name.
                 type: str
             type: list
+          countries:
+            description: Countries.
+            elements: dict
+            suboptions:
+              code:
+                description: Country code (ISO 3166-1 alpha-2).
+                type: str
+            type: list
+          fqdns:
+            description: Fully qualified domain names or wildcard patterns.
+            elements: str
+            type: list
           policyObjectGroups:
             description: Policy object groups.
             elements: dict
@@ -109,6 +129,37 @@ options:
                 description: Protocol (tcp, udp, etc).
                 type: str
             type: list
+          siteSpecificVlans:
+            description: Site-specific VLANs with address offset configuration.
+            elements: dict
+            suboptions:
+              address:
+                description: Address offsets added to the VLAN's base network address
+                  to form the target host address.
+                suboptions:
+                  offsets:
+                    description: IP address offsets. For IPv4, the offset is added
+                      to the base address (e.g., base 10.0.0.0/24 + offset 25 = 10.0.0.25).
+                      For IPv6, the offset forms the interface identifier suffix appended
+                      to the /64 prefix (e.g., prefix 2001 db8 /64 + offset 'ff fe01'
+                      = 2001 db8 ff fe01).
+                    suboptions:
+                      ipv4:
+                        description: IPv4 address offset. Added to the base network
+                          address to determine the host address within the subnet.
+                          Maximum value 16777215 (2^24-1, covering up to /8 subnets).
+                        type: int
+                      ipv6:
+                        description: IPv6 interface identifier offset in colon-separated
+                          hex format (e.g., '200 ff fe01 f'). Appended to the /64
+                          network prefix to form the complete IPv6 address.
+                        type: str
+                    type: dict
+                type: dict
+              id:
+                description: VLAN ID (1-4094).
+                type: int
+            type: list
         type: dict
       matchCriteria:
         description: Destination match criteria types.
@@ -118,6 +169,13 @@ options:
   enabled:
     description: Whether the rule is enabled.
     type: bool
+  logging:
+    description: Logging settings for the rule.
+    suboptions:
+      enabled:
+        description: Whether logging is enabled for traffic matching this rule.
+        type: bool
+    type: dict
   name:
     description: Name of the firewall rule.
     type: str
@@ -176,6 +234,37 @@ options:
           ports:
             description: Port numbers or ranges.
             elements: str
+            type: list
+          siteSpecificVlans:
+            description: Site-specific VLANs with address offset configuration.
+            elements: dict
+            suboptions:
+              address:
+                description: Address offsets added to the VLAN's base network address
+                  to form the target host address.
+                suboptions:
+                  offsets:
+                    description: IP address offsets. For IPv4, the offset is added
+                      to the base address (e.g., base 10.0.0.0/24 + offset 25 = 10.0.0.25).
+                      For IPv6, the offset forms the interface identifier suffix appended
+                      to the /64 prefix (e.g., prefix 2001 db8 /64 + offset 'ff fe01'
+                      = 2001 db8 ff fe01).
+                    suboptions:
+                      ipv4:
+                        description: IPv4 address offset. Added to the base network
+                          address to determine the host address within the subnet.
+                          Maximum value 16777215 (2^24-1, covering up to /8 subnets).
+                        type: int
+                      ipv6:
+                        description: IPv6 interface identifier offset in colon-separated
+                          hex format (e.g., '200 ff fe01 f'). Appended to the /64
+                          network prefix to form the complete IPv6 address.
+                        type: str
+                    type: dict
+                type: dict
+              id:
+                description: VLAN ID (1-4094).
+                type: int
             type: list
         type: dict
       matchCriteria:
@@ -238,6 +327,8 @@ EXAMPLES = r"""
     description: This is rule 1
     destinations:
       criteria:
+        adaptivePolicyGroups:
+          - id: '123'
         addressRanges:
           - 1.1.1.1
           - 2.2.2.2
@@ -252,6 +343,10 @@ EXAMPLES = r"""
         applications:
           - id: meraki:layer7/application/5
             name: Advertising.com
+        countries:
+          - code: US
+        fqdns:
+          - '*.example.com'
         policyObjectGroups:
           - id: '45'
         policyObjects:
@@ -264,6 +359,12 @@ EXAMPLES = r"""
               - '80'
               - '443'
             protocol: tcp
+        siteSpecificVlans:
+          - address:
+              offsets:
+                ipv4: 25
+                ipv6: 0:ff:fe01:0
+            id: 100
       matchCriteria:
         - addressRanges
         - services
@@ -273,6 +374,8 @@ EXAMPLES = r"""
         - policyObjectGroups
         - applianceVlans
     enabled: true
+    logging:
+      enabled: false
     name: Allow developers
     organizationId: string
     policy: deny
@@ -292,6 +395,12 @@ EXAMPLES = r"""
         ports:
           - '22'
           - 42-46
+        siteSpecificVlans:
+          - address:
+              offsets:
+                ipv4: 25
+                ipv6: 0:ff:fe01:0
+            id: 100
       matchCriteria:
         - addressRanges
         - ports
@@ -351,6 +460,8 @@ EXAMPLES = r"""
     description: This is rule 1
     destinations:
       criteria:
+        adaptivePolicyGroups:
+          - id: '123'
         addressRanges:
           - 1.1.1.1
           - 2.2.2.2
@@ -365,6 +476,10 @@ EXAMPLES = r"""
         applications:
           - id: meraki:layer7/application/5
             name: Advertising.com
+        countries:
+          - code: US
+        fqdns:
+          - '*.example.com'
         policyObjectGroups:
           - id: '45'
         policyObjects:
@@ -377,6 +492,12 @@ EXAMPLES = r"""
               - '80'
               - '443'
             protocol: tcp
+        siteSpecificVlans:
+          - address:
+              offsets:
+                ipv4: 25
+                ipv6: 0:ff:fe01:0
+            id: 100
       matchCriteria:
         - addressRanges
         - services
@@ -386,6 +507,8 @@ EXAMPLES = r"""
         - policyObjectGroups
         - applianceVlans
     enabled: true
+    logging:
+      enabled: false
     name: Allow developers
     organizationId: string
     policy: deny
@@ -406,6 +529,12 @@ EXAMPLES = r"""
         ports:
           - '22'
           - 42-46
+        siteSpecificVlans:
+          - address:
+              offsets:
+                ipv4: 25
+                ipv6: 0:ff:fe01:0
+            id: 100
       matchCriteria:
         - addressRanges
         - ports
@@ -427,6 +556,9 @@ meraki_response:
       "enabled": true,
       "priority": 0,
       "description": "string",
+      "logging": {
+        "enabled": true
+      },
       "sources": {
         "matchCriteria": [
           "string"
@@ -528,6 +660,11 @@ meraki_response:
                   "ipv6": "string"
                 }
               }
+            }
+          ],
+          "adaptivePolicyGroups": [
+            {
+              "id": "string"
             }
           ]
         }

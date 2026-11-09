@@ -79,7 +79,8 @@ meraki_response:
       "macTableId": "string",
       "url": "string",
       "request": {
-        "serial": "string"
+        "serial": "string",
+        "mac": "string"
       },
       "status": "string",
       "entries": [

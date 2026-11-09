@@ -34,6 +34,21 @@ options:
       between 12 and 240. When absent, this field is not updated. If no value exists
       then it defaults to 240.
     type: int
+  ipv6:
+    description: Settings for IPv6 configurations on the organization.
+    suboptions:
+      singlePeering:
+        description: Settings for IPv6 single peering.
+        suboptions:
+          enabled:
+            description: Whether a single IPv6 BGP peer is enabled.
+            type: bool
+        type: dict
+    type: dict
+  localAsNumber:
+    description: Network-specific local Autonomous System Number (ASN) to which the
+      appliance belongs. This field is only configurable for Independent BGP networks.
+    type: int
   neighbors:
     description: List of BGP neighbors. This list replaces the existing set of neighbors.
       When absent, this field is not updated.
@@ -64,6 +79,24 @@ options:
         description: Configure this if the neighbor is not adjacent. The eBGP multi-hop
           must be an integer between 1 and 255.
         type: int
+      explicitOutboundRouteAdvertisement:
+        description: Settings for explicit outbound route advertisement to an eBGP
+          neighbor.
+        suboptions:
+          enabled:
+            description: Whether explicit outbound routes are advertised to the eBGP
+              neighbor.
+            type: bool
+        type: dict
+      filter:
+        description: Filters routes received from an eBGP neighbor.
+        suboptions:
+          out:
+            description: Filters routes advertised to an eBGP neighbor. Each entry
+              must be an IPv4 CIDR string (e.g., '10.0.0.0/8' or '10.0.0.5/32').
+            elements: str
+            type: list
+        type: dict
       filterIn:
         description: Filters routes received from an eBGP neighbor. Each entry must
           be an IPv4 CIDR string (e.g., '10.0.0.0/8' or '10.0.0.5/32').
@@ -110,7 +143,9 @@ options:
       sourceInterface:
         description: The output interface for peering with the remote BGP peer. Valid
           values are 'wan{NUMBER}' (e.g. 'wan3') or 'vlan{VLAN ID}' (e.g. 'vlan123')
-          for MX; 'l3lan{ID}' (e.g. 'l3lan123') for Secure Router L3 interfaces.
+          for MX; 'l3lan{ID}' (e.g. 'l3lan123') or an eligible 'wan{NUMBER}' for Secure/Catalyst
+          Router. Secure/Catalyst Router WAN interfaces must be enabled, non-cellular
+          uplinks on supported AutoVPN hub networks. NAT and no-NAT uplinks are supported.
         type: str
       ttlSecurity:
         description: Settings for BGP TTL security to protect BGP peering sessions
@@ -123,15 +158,26 @@ options:
       weight:
         description: Sets the local weight for routes received from the remote peer.
           Routes from peers with higher weights will be preferred. Must be an integer
-          between 0 and 49.
+          between 0 and 49 for Secure Appliance or between 0 and 65535 for Secure
+          Router.
         type: int
     type: list
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
+  priorityRoute:
+    description: Sets the priority route between eBGP and Auto VPN.
+    type: str
   routerId:
     description: The router ID of the appliance.
     type: str
+  tunnelDownTermination:
+    description: Settings for tunnel down termination on the organization.
+    suboptions:
+      enabled:
+        description: Whether tunnel down termination is enabled.
+        type: bool
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -174,6 +220,10 @@ EXAMPLES = r"""
     asNumber: 64515
     enabled: true
     ibgpHoldTimer: 120
+    ipv6:
+      singlePeering:
+        enabled: true
+    localAsNumber: 64514
     neighbors:
       - allowTransit: true
         authentication:
@@ -183,6 +233,12 @@ EXAMPLES = r"""
           - NO_EXPORT
         ebgpHoldTimer: 180
         ebgpMultihop: 2
+        explicitOutboundRouteAdvertisement:
+          enabled: true
+        filter:
+          out:
+            - 10.0.0.0/8
+            - 172.16.0.0/12
         filterIn:
           - 10.0.0.0/8
           - 172.16.0.0/12
@@ -201,7 +257,10 @@ EXAMPLES = r"""
           enabled: false
         weight: 10
     networkId: string
+    priorityRoute: eBGP
     routerId: 10.15.10.2
+    tunnelDownTermination:
+      enabled: true
 """
 RETURN = r"""
 meraki_response:
@@ -213,6 +272,16 @@ meraki_response:
       "enabled": true,
       "asNumber": 0,
       "ibgpHoldTimer": 0,
+      "ipv6": {
+        "singlePeering": {
+          "enabled": {}
+        }
+      },
+      "tunnelDownTermination": {
+        "enabled": {}
+      },
+      "localAsNumber": {},
+      "priorityRoute": {},
       "routerId": "string",
       "neighbors": [
         {
@@ -243,7 +312,19 @@ meraki_response:
           ],
           "communityOut": [
             "string"
-          ]
+          ],
+          "filter": {
+            "out": [
+              "string"
+            ]
+          },
+          "explicitOutboundRouteAdvertisement": {
+            "enabled": {}
+          },
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          }
         }
       ]
     }

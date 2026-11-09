@@ -104,6 +104,11 @@ options:
           - meraki_be_geo_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE_GEO_ID
         type: str
         default: ''
+    meraki_caller:
+        description:
+          - meraki_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI_PYTHON_SDK_CALLER
+        type: str
+        default: ''
     meraki_use_iterator_for_get_pages:
         description:
           - meraki_use_iterator_for_get_pages (boolean), list* methods will return an iterator with each object instead of a complete list with all items
@@ -118,5 +123,5 @@ notes:
     - "Does not support C(check_mode)"
     - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager"
     - "from Cisco Dashboard API Python(SDK)"
-    - "The parameters starting with dnac_ are used by the Cisco DNAC Python SDK to establish the connection"
+    - "The parameters starting with meraki_ are used by the Cisco Meraki Python SDK to establish the connection"
 '''

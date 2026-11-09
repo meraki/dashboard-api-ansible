@@ -17,7 +17,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   channel:
-    description: Desired ESL channel for the device, or 'Auto' (case insensitive)
+    description: Desired ESL channel for the device. Only configurable for devices
+      assigned the High frequency ESL or sepioo IIoT role. Use 'Auto' (case insensitive)
       to use the recommended channel.
     type: str
   enabled:

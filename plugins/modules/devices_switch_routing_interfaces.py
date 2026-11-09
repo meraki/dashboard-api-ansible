@@ -19,6 +19,26 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  bidirectionalForwardingDetection:
+    description: BFD configuration for the L3 interface.
+    suboptions:
+      enabled:
+        description: Whether BFD is enabled on the L3 interface.
+        type: bool
+      intervalInterface:
+        description: BFD interval configuration for the L3 interface.
+        suboptions:
+          minRx:
+            description: Minimum BFD receive interval in milliseconds.
+            type: int
+          msecs:
+            description: BFD transmit interval in milliseconds.
+            type: int
+          multiplier:
+            description: BFD detection multiplier.
+            type: int
+        type: dict
+    type: dict
   defaultGateway:
     description: The next hop for any traffic that isn't going to a directly connected
       subnet or over a static route. This IP address must exist in a subnet with a
@@ -55,8 +75,10 @@ options:
     description: The loopback settings of the interface.
     type: dict
   mode:
-    description: L3 Interface mode, can be one of 'vlan', 'routed', 'loopback'. Default
-      is 'vlan'. CS 17.18 or higher is required for 'routed' mode.
+    description: L3 Interface mode, can be one of 'vlan', 'routed', 'loopback', or
+      'oob_management'. Default is 'vlan'. IOS XE firmware 17.18 or higher is required
+      for 'routed' mode; IOS XE firmware 26.1.2 or higher is required for 'oob_management'
+      mode.
     type: str
   mtu:
     description: The interface MTU. Applies to native switch layer 3 interfaces, including
@@ -96,7 +118,8 @@ options:
     description: The network that this L3 interface is on, in CIDR notation (ex. 10.1.1.0/24).
     type: str
   switchPortId:
-    description: Switch Port ID when in Routed mode (CS 17.18 or higher required).
+    description: Switch Port ID when in Routed mode (IOS XE firmware 17.18 or higher
+      required).
     type: str
   vlanId:
     description: The VLAN this L3 interface is on. VLAN must be between 1 and 4094.
@@ -157,6 +180,12 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    bidirectionalForwardingDetection:
+      enabled: true
+      intervalInterface:
+        minRx: 75
+        msecs: 100
+        multiplier: 5
     defaultGateway: 192.168.1.1
     interfaceIp: 192.168.1.2
     ipv6:
@@ -203,6 +232,12 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    bidirectionalForwardingDetection:
+      enabled: true
+      intervalInterface:
+        minRx: 75
+        msecs: 100
+        multiplier: 5
     defaultGateway: 192.168.1.1
     interfaceId: string
     interfaceIp: 192.168.1.2
@@ -293,6 +328,14 @@ meraki_response:
         "name": "string"
       },
       "loopback": {},
+      "bidirectionalForwardingDetection": {
+        "enabled": true,
+        "intervalInterface": {
+          "msecs": {},
+          "minRx": {},
+          "multiplier": {}
+        }
+      },
       "defaultGateway": "string"
     }
 """

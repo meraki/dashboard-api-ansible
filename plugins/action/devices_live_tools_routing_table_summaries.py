@@ -85,7 +85,7 @@ class DevicesLiveToolsRoutingTableSummaries(object):
             items = self.meraki.exec_meraki(
                 family="devices",
                 function="getDeviceLiveToolsRoutingTableSummary",
-                params={"id": id}
+                params=dict(self.get_params_by_id(), id=id)
             )
             if isinstance(items, dict):
                 if 'response' in items:

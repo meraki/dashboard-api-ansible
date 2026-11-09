@@ -2,11 +2,11 @@
   hosts: localhost
   gather_facts: false
   vars:
-    network_id: "L_828099381482779330"
+    network_id: "L_828099381482778041"
     # route_subnet must be a REMOTE subnet (not assigned to any local VLAN on this MX)
     # route_gateway must be a next-hop IP reachable via a local VLAN (e.g. a LAN interface IP)
     route_subnet: "10.254.254.0/24"
-    route_gateway: "192.168.128.1"
+    route_gateway: "192.168.128.254"
   tasks:
 
     # -------------------------------------------------------------------------

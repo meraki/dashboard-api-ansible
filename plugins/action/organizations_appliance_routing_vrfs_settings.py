@@ -100,6 +100,10 @@ class OrganizationsApplianceRoutingVrfsSettings(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
+        # Begin manually added: singleton resource, the organization is the identifier
+        o_id = o_id or self.new_object.get(
+            "organizationId") or self.new_object.get("organization_id")
+        # End manually added
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)

@@ -34,6 +34,7 @@ argument_spec.update(dict(
     destination=dict(type="dict"),
     nextHop=dict(type="dict"),
     vpn=dict(type="dict"),
+    vrf=dict(type="dict"),
     callback=dict(type="dict"),
     serial=dict(type="str"),
     id=dict(type="str"),
@@ -55,6 +56,7 @@ class DevicesLiveToolsRoutingTableLookups(object):
             destination=params.get("destination"),
             nextHop=params.get("nextHop"),
             vpn=params.get("vpn"),
+            vrf=params.get("vrf"),
             callback=params.get("callback"),
             serial=params.get("serial"),
             id=params.get("id"),
@@ -88,6 +90,10 @@ class DevicesLiveToolsRoutingTableLookups(object):
                 'vpn') is not None or self.new_object.get('vpn') is not None:
             new_object_params['vpn'] = self.new_object.get('vpn') or \
                 self.new_object.get('vpn')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
         if self.new_object.get('callback') is not None or self.new_object.get(
                 'callback') is not None:
             new_object_params['callback'] = self.new_object.get(
@@ -109,7 +115,7 @@ class DevicesLiveToolsRoutingTableLookups(object):
             items = self.meraki.exec_meraki(
                 family="devices",
                 function="getDeviceLiveToolsRoutingTableLookup",
-                params={"id": id}
+                params=dict(self.get_params_by_id(), id=id)
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -152,6 +158,7 @@ class DevicesLiveToolsRoutingTableLookups(object):
             ("destination", "destination"),
             ("nextHop", "nextHop"),
             ("vpn", "vpn"),
+            ("vrf", "vrf"),
             ("callback", "callback"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

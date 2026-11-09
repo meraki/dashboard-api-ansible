@@ -70,6 +70,14 @@ options:
   subnet:
     description: The subnet of the single LAN configuration.
     type: str
+  vrf:
+    description: VRF configuration on the Single LAN. Omit this field to preserve
+      the current VRF.
+    suboptions:
+      id:
+        description: VRF ID. Use 0 for the default VRF.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -109,7 +117,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
-    applianceIp: string
+    applianceIp: 192.168.1.2
     ipv6:
       enabled: true
       prefixAssignments:
@@ -117,14 +125,16 @@ EXAMPLES = r"""
           disabled: true
           origin:
             interfaces:
-              - string
-            type: string
-          staticApplianceIp6: {}
-          staticPrefix: {}
+              - wan0
+            type: internet
+          staticApplianceIp6: 2001:db8:3c4d:15::1
+          staticPrefix: 2001:db8:3c4d:15::/64
     mandatoryDhcp:
       enabled: true
     networkId: string
-    subnet: string
+    subnet: 192.168.1.0/24
+    vrf:
+      id: '1000'
 """
 RETURN = r"""
 meraki_response:
@@ -153,6 +163,10 @@ meraki_response:
             }
           }
         ]
+      },
+      "vrf": {
+        "id": "string",
+        "name": "string"
       }
     }
 """

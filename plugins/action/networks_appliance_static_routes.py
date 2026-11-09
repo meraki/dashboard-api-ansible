@@ -35,9 +35,10 @@ argument_spec.update(dict(
     subnet=dict(type="str"),
     gatewayIp=dict(type="str"),
     gatewayVlanId=dict(type="int"),
+    enabled=dict(type="bool"),
+    vrf=dict(type="dict"),
     networkId=dict(type="str"),
     staticRouteId=dict(type="str"),
-    enabled=dict(type="bool"),
     fixedIpAssignments=dict(type="dict"),
     reservedIpRanges=dict(type="list"),
 ))
@@ -59,9 +60,10 @@ class NetworksApplianceStaticRoutes(object):
             subnet=params.get("subnet"),
             gatewayIp=params.get("gatewayIp"),
             gatewayVlanId=params.get("gatewayVlanId"),
+            enabled=params.get("enabled"),
+            vrf=params.get("vrf"),
             networkId=params.get("networkId"),
             staticRouteId=params.get("staticRouteId"),
-            enabled=params.get("enabled"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
             reservedIpRanges=params.get("reservedIpRanges"),
         )
@@ -104,6 +106,13 @@ class NetworksApplianceStaticRoutes(object):
                 'gateway_vlan_id') is not None:
             new_object_params['gatewayVlanId'] = self.new_object.get(
                 'gatewayVlanId') or self.new_object.get('gateway_vlan_id')
+        if self.new_object.get('enabled') is not None or self.new_object.get(
+                'enabled') is not None:
+            new_object_params['enabled'] = self.new_object.get('enabled')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -151,6 +160,10 @@ class NetworksApplianceStaticRoutes(object):
                 'reserved_ip_ranges') is not None:
             new_object_params['reservedIpRanges'] = self.new_object.get(
                 'reservedIpRanges') or self.new_object.get('reserved_ip_ranges')
+        if self.new_object.get(
+                'vrf') is not None or self.new_object.get('vrf') is not None:
+            new_object_params['vrf'] = self.new_object.get('vrf') or \
+                self.new_object.get('vrf')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -235,6 +248,7 @@ class NetworksApplianceStaticRoutes(object):
             ("gatewayIp", "gatewayIp"),
             ("gatewayVlanId", "gatewayVlanId"),
             ("enabled", "enabled"),
+            ("vrf", "vrf"),
             ("fixedIpAssignments", "fixedIpAssignments"),
             ("reservedIpRanges", "reservedIpRanges"),
         ]
@@ -296,6 +310,9 @@ class NetworksApplianceStaticRoutes(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

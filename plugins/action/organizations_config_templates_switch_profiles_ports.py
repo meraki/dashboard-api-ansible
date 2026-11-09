@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -35,6 +35,8 @@ argument_spec.update(dict(
     tags=dict(type="list"),
     enabled=dict(type="bool"),
     poeEnabled=dict(type="bool"),
+    perpetualPoe=dict(type="dict"),
+    fastPoe=dict(type="dict"),
     type=dict(type="str"),
     vlan=dict(type="int"),
     voiceVlan=dict(type="int"),
@@ -79,6 +81,8 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             tags=params.get("tags"),
             enabled=params.get("enabled"),
             poeEnabled=params.get("poeEnabled"),
+            perpetualPoe=params.get("perpetualPoe"),
+            fastPoe=params.get("fastPoe"),
             type=params.get("type"),
             vlan=params.get("vlan"),
             voiceVlan=params.get("voiceVlan"),
@@ -160,6 +164,14 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
         if self.new_object.get('poeEnabled') is not None or self.new_object.get(
                 'poe_enabled') is not None:
             new_object_params['poeEnabled'] = self.new_object.get('poeEnabled')
+        if self.new_object.get('perpetualPoe') is not None or self.new_object.get(
+                'perpetual_poe') is not None:
+            new_object_params['perpetualPoe'] = self.new_object.get(
+                'perpetualPoe') or self.new_object.get('perpetual_poe')
+        if self.new_object.get('fastPoe') is not None or self.new_object.get(
+                'fast_poe') is not None:
+            new_object_params['fastPoe'] = self.new_object.get('fastPoe') or \
+                self.new_object.get('fast_poe')
         if self.new_object.get('type') is not None or self.new_object.get(
                 'type') is not None:
             new_object_params['type'] = self.new_object.get('type') or \
@@ -342,6 +354,8 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
             ("tags", "tags"),
             ("enabled", "enabled"),
             ("poeEnabled", "poeEnabled"),
+            ("perpetualPoe", "perpetualPoe"),
+            ("fastPoe", "fastPoe"),
             ("type", "type"),
             ("vlan", "vlan"),
             ("voiceVlan", "voiceVlan"),
@@ -369,7 +383,7 @@ class OrganizationsConfigTemplatesSwitchProfilesPorts(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

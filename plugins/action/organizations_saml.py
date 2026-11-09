@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -76,6 +76,7 @@ class OrganizationsSaml(object):
                 'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method, using get all
@@ -95,6 +96,7 @@ class OrganizationsSaml(object):
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None
@@ -106,6 +108,10 @@ class OrganizationsSaml(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
+        # Begin manually added: singleton resource, the organization is the identifier
+        o_id = o_id or self.new_object.get(
+            "organizationId") or self.new_object.get("organization_id")
+        # End manually added
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -133,7 +139,7 @@ class OrganizationsSaml(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

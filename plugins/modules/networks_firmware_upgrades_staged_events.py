@@ -162,6 +162,8 @@ EXAMPLES = r"""
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
     networkId: string
+    products:
+      switchCatalyst: {}
     stages:
       - group:
           id: '1234'
@@ -177,6 +179,14 @@ meraki_response:
     {
       "products": {
         "switch": {
+          "nextUpgrade": {
+            "toVersion": {
+              "id": "string",
+              "shortName": "string"
+            }
+          }
+        },
+        "switchCatalyst": {
           "nextUpgrade": {
             "toVersion": {
               "id": "string",

@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -44,6 +44,7 @@ argument_spec.update(dict(
     ipv6=dict(type="dict"),
     vrf=dict(type="dict"),
     loopback=dict(type="dict"),
+    bidirectionalForwardingDetection=dict(type="dict"),
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
     interfaceId=dict(type="str"),
@@ -75,6 +76,7 @@ class NetworksSwitchStacksRoutingInterfaces(object):
             ipv6=params.get("ipv6"),
             vrf=params.get("vrf"),
             loopback=params.get("loopback"),
+            bidirectionalForwardingDetection=params.get("bidirectionalForwardingDetection"),
             networkId=params.get("networkId"),
             switchStackId=params.get("switchStackId"),
             interfaceId=params.get("interfaceId"),
@@ -168,6 +170,10 @@ class NetworksSwitchStacksRoutingInterfaces(object):
                 'loopback') is not None:
             new_object_params['loopback'] = self.new_object.get(
                 'loopback') or self.new_object.get('loopback')
+        if self.new_object.get('bidirectionalForwardingDetection') is not None or self.new_object.get(
+                'bidirectional_forwarding_detection') is not None:
+            new_object_params['bidirectionalForwardingDetection'] = self.new_object.get(
+                'bidirectionalForwardingDetection') or self.new_object.get('bidirectional_forwarding_detection')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -244,6 +250,10 @@ class NetworksSwitchStacksRoutingInterfaces(object):
                 'loopback') is not None:
             new_object_params['loopback'] = self.new_object.get(
                 'loopback') or self.new_object.get('loopback')
+        if self.new_object.get('bidirectionalForwardingDetection') is not None or self.new_object.get(
+                'bidirectional_forwarding_detection') is not None:
+            new_object_params['bidirectionalForwardingDetection'] = self.new_object.get(
+                'bidirectionalForwardingDetection') or self.new_object.get('bidirectional_forwarding_detection')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -340,11 +350,12 @@ class NetworksSwitchStacksRoutingInterfaces(object):
             ("ipv6", "ipv6"),
             ("vrf", "vrf"),
             ("loopback", "loopback"),
+            ("bidirectionalForwardingDetection", "bidirectionalForwardingDetection"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -399,6 +410,9 @@ class NetworksSwitchStacksRoutingInterfaces(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

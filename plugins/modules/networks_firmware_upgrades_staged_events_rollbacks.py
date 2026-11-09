@@ -117,6 +117,14 @@ meraki_response:
               "shortName": "string"
             }
           }
+        },
+        "switchCatalyst": {
+          "nextUpgrade": {
+            "toVersion": {
+              "id": "string",
+              "shortName": "string"
+            }
+          }
         }
       },
       "stages": [

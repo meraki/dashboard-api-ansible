@@ -153,6 +153,14 @@ meraki_response:
         "name": "string"
       },
       "loopback": {},
+      "bidirectionalForwardingDetection": {
+        "enabled": true,
+        "intervalInterface": {
+          "msecs": {},
+          "minRx": {},
+          "multiplier": {}
+        }
+      },
       "defaultGateway": "string"
     }
 """

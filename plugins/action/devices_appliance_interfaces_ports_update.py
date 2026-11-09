@@ -30,6 +30,7 @@ argument_spec.update(dict(
     personality=dict(type="dict"),
     uplink=dict(type="dict"),
     downlink=dict(type="dict"),
+    profile=dict(type="dict"),
     serial=dict(type="str"),
 ))
 
@@ -74,6 +75,7 @@ class ActionModule(ActionBase):
             personality=params.get("personality"),
             uplink=params.get("uplink"),
             downlink=params.get("downlink"),
+            profile=params.get("profile"),
             serial=params.get("serial"),
         )
         return new_object

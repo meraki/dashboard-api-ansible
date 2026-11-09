@@ -1,0 +1,20 @@
+---
+# Keeps the Automation Hub token alive: it expires after 30 days without use.
+# Uses the AH_TOKEN secret of the "release" environment (see release.yml).
+name: Refresh the automation hub token
+
+permissions:
+  contents: read
+
+"on":
+  schedule:
+    - cron: "0 12 1,15 * *" # 12:00 UTC on the 1st and 15th of each month
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    uses: ansible/devtools/.github/workflows/ah_token_refresh.yml@e7604b7f0f487584a2264c09a0df1524fe2be49e # v26.4.0
+    with:
+      environment: release
+    secrets:
+      ah_token: ${{ secrets.AH_TOKEN }}

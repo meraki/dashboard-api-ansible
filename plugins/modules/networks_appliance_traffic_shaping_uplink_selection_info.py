@@ -108,7 +108,11 @@ meraki_response:
               }
             }
           ],
-          "preferredUplink": "string"
+          "preferredUplink": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          }
         }
       ],
       "vpnTrafficUplinkPreferences": [
@@ -138,6 +142,10 @@ meraki_response:
             }
           ],
           "preferredUplink": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          },
           "failOverCriterion": "string",
           "performanceClass": {
             "type": "string",

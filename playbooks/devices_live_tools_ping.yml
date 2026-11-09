@@ -7,5 +7,5 @@
         meraki_suppress_logging: true
         state: present
         count: 2
-        serial: QBSD-36C3-473D
+        serial: QBSA-D8CD-5LR6
         target: 75.75.75.75

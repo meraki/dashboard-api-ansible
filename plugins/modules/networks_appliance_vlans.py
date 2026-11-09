@@ -53,7 +53,7 @@ options:
     suboptions:
       code:
         description: The code for the DHCP option. This should be an integer between
-          2 and 254.
+          2 and 254, excluding reserved DHCP protocol options such as option 53.
         type: str
       type:
         description: The type for the DHCP option. One of 'text', 'ip', 'hex' or 'integer'.
@@ -97,7 +97,8 @@ options:
             description: Auto assign a /64 prefix from the origin to the VLAN.
             type: bool
           disabled:
-            description: Disable the prefix assignment.
+            description: Disable the prefix assignment. Required when IPv6 is enabled
+              on the VLAN.
             type: bool
           origin:
             description: The origin of the prefix.
@@ -346,6 +347,9 @@ EXAMPLES = r"""
       enabled: true
     mask: 28
     name: My VLAN
+    network:
+      id: N_24329156
+      name: Main Office
     networkId: string
     reservedIpRanges:
       - comment: A reserved IP range
@@ -360,6 +364,9 @@ EXAMPLES = r"""
         nat:
           enabled: true
     vlanId: string
+    vpn:
+      advertisement:
+        enabled: true
     vpnNatSubnet: 192.168.1.0/24
     vrf:
       id: '1000'

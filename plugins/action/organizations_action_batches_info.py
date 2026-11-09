@@ -26,6 +26,12 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     organizationId=dict(type="str"),
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
+    sortOrder=dict(type="str"),
     status=dict(type="str"),
     actionBatchId=dict(type="str"),
 ))
@@ -79,6 +85,22 @@ class ActionModule(ActionBase):
         if params.get("organizationId") is not None:
             new_object["organizationId"] = params.get(
                 "organizationId")
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
+        if params.get("sortOrder") is not None:
+            new_object["sortOrder"] = params.get(
+                "sortOrder")
         if params.get("status") is not None:
             new_object["status"] = params.get(
                 "status")

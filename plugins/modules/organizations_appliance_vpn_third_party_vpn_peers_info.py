@@ -11,7 +11,7 @@ short_description: Information module for organizations _appliance _vpn _third _
   _vpn _peers
 description:
   - Get all organizations _appliance _vpn _third _party _vpn _peers.
-  - Return the third party VPN peers for an organization.
+  - Return the configured third-party VPN peers for an organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -41,7 +41,7 @@ notes:
 
 EXAMPLES = r"""
 - name: Get all organizations _appliance _vpn _third _party _vpn _peers
-  cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers_info:
+  cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_info:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -134,7 +134,32 @@ meraki_response:
           "ebgpHoldTimer": 0,
           "ebgpMultihop": 0,
           "sourceIp": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          },
+          "ttlSecurity": {
+            "enabled": true
+          },
+          "authentication": {
+            "password": "string"
+          },
+          "allowTransit": true,
           "receiveLimit": 0,
+          "explicitOutboundRouteAdvertisement": {
+            "enabled": {}
+          },
+          "filter": {
+            "out": [
+              "string"
+            ]
+          },
+          "filterIn": [
+            "string"
+          ],
+          "communityOut": [
+            "string"
+          ],
           "pathPrepend": [
             0
           ],

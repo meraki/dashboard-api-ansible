@@ -74,9 +74,6 @@ meraki_response:
     {
       "hostname": "string",
       "enabled": true,
-      "mode": "string",
-      "sepioo": {
-        "hostname": "string"
-      }
+      "mode": "string"
     }
 """

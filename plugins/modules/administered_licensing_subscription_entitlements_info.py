@@ -24,6 +24,10 @@ options:
       - Skus query parameter. Filter to entitlements with the specified SKUs.
     elements: str
     type: list
+  subscriptionType:
+    description:
+      - SubscriptionType query parameter. Filter entitlements by subscription type.
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -64,6 +68,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     skus: []
+    subscriptionType: string
   register: result
 """
 RETURN = r"""

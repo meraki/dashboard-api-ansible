@@ -110,12 +110,6 @@ EXAMPLES = r"""
             destinationPorts:
               - '80'
             protocol: tcp
-          - allowedIps:
-              - 10.81.110.5
-              - 10.81.0.0/16
-            destinationPorts:
-              - '8080'
-            protocol: udp
         lanIp: 192.168.128.22
         name: Service behind NAT
         publicIp: 146.12.3.33

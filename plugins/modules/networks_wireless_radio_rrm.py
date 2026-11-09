@@ -65,6 +65,20 @@ options:
             description: Toggle for enabling or disabling channel avoidance in a network.
             type: bool
         type: dict
+      selection:
+        description: Channel selection settings.
+        suboptions:
+          preferred:
+            description: Preferred channel selection settings.
+            suboptions:
+              mode:
+                description: The preferred 6 GHz channel selection mode. 'automatic'
+                  lets RRM decide when non-PSC channels are used. 'enforced' restricts
+                  6 GHz channel selection to PSC channels. If omitted on update, the
+                  existing mode is preserved.
+                type: str
+            type: dict
+        type: dict
     type: dict
   fra:
     description: FRA settings.
@@ -128,6 +142,9 @@ EXAMPLES = r"""
     channel:
       avoidance:
         enabled: true
+      selection:
+        preferred:
+          mode: automatic
     fra:
       enabled: false
     networkId: string
@@ -161,6 +178,11 @@ meraki_response:
       "channel": {
         "avoidance": {
           "enabled": true
+        },
+        "selection": {
+          "preferred": {
+            "mode": "string"
+          }
         }
       },
       "fra": {

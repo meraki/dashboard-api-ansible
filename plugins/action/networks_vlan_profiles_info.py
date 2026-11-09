@@ -63,6 +63,26 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(self, params):
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("iname") is not None:
+            new_object["iname"] = params.get(
+                "iname")
+        return new_object
+
+    def get_object(self, params):
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("iname") is not None:
+            new_object["iname"] = params.get(
+                "iname")
+        return new_object
+
     def get_all(self, params):
         new_object = {}
         if params.get("networkId") is not None:

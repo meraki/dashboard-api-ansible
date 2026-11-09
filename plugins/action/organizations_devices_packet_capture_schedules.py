@@ -307,6 +307,9 @@ class OrganizationsDevicesPacketCaptureSchedules(object):
         )
         return result
 
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):

@@ -30,6 +30,7 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
+    mac=dict(type="str"),
     callback=dict(type="dict"),
     serial=dict(type="str"),
     macTableId=dict(type="str"),
@@ -47,6 +48,7 @@ class DevicesLiveToolsMacTable(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            mac=params.get("mac"),
             callback=params.get("callback"),
             serial=params.get("serial"),
             macTableId=params.get("macTableId"),
@@ -65,6 +67,10 @@ class DevicesLiveToolsMacTable(object):
 
     def create_params(self):
         new_object_params = {}
+        if self.new_object.get(
+                'mac') is not None or self.new_object.get('mac') is not None:
+            new_object_params['mac'] = self.new_object.get('mac') or \
+                self.new_object.get('mac')
         if self.new_object.get('callback') is not None or self.new_object.get(
                 'callback') is not None:
             new_object_params['callback'] = self.new_object.get(
@@ -129,6 +135,7 @@ class DevicesLiveToolsMacTable(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("mac", "mac"),
             ("callback", "callback"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

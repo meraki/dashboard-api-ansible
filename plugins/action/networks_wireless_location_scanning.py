@@ -28,7 +28,6 @@ argument_spec.update(dict(
     enabled=dict(type="bool"),
     api=dict(type="dict"),
     networkId=dict(type="str"),
-    ruleId=dict(type="str"),
 ))
 
 required_if = []
@@ -65,6 +64,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    # Begin manually added: get_object
     def get_object(self, params):
         new_object = dict(
             enabled=params.get("enabled"),
@@ -73,6 +73,7 @@ class ActionModule(ActionBase):
             ruleId=params.get("ruleId"),
         )
         return new_object
+    # End manually added: get_object
 
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False

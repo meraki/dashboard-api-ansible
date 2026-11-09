@@ -9,9 +9,10 @@ DOCUMENTATION = r"""
 module: networks_campus_gateway_clusters
 short_description: Resource module for networks _campus _gateway _clusters
 description:
-  - Manage operations create and update of the resource networks _campus _gateway
+  - Manage operations create, update and delete of the resource networks _campus _gateway
     _clusters.
   - Create a cluster and add campus gateways to it.
+  - Delete a cluster.
   - Update a cluster and add/remove campus gateways to/from it.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -169,15 +170,20 @@ seealso:
   - name: Cisco Meraki documentation for campusGateway createNetworkCampusGatewayCluster
     description: Complete reference of the createNetworkCampusGatewayCluster API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-campus-gateway-cluster
+  - name: Cisco Meraki documentation for campusGateway deleteNetworkCampusGatewayCluster
+    description: Complete reference of the deleteNetworkCampusGatewayCluster API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-campus-gateway-cluster
   - name: Cisco Meraki documentation for campusGateway updateNetworkCampusGatewayCluster
     description: Complete reference of the updateNetworkCampusGatewayCluster API.
     link: https://developer.cisco.com/meraki/api-v1/#!update-network-campus-gateway-cluster
 notes:
   - SDK Method used are
     campus_gateway.CampusGateway.create_network_campus_gateway_cluster,
+    campus_gateway.CampusGateway.delete_network_campus_gateway_cluster,
     campus_gateway.CampusGateway.update_network_campus_gateway_cluster,
   - Paths used are
     post /networks/{networkId}/campusGateway/clusters,
+    delete /networks/{networkId}/campusGateway/clusters/{clusterId},
     put /networks/{networkId}/campusGateway/clusters/{clusterId},
 """
 
@@ -311,6 +317,32 @@ EXAMPLES = r"""
             subnetMask: 255.255.255.0
         interface: man1
         vlan: 5
+- name: Delete by id
+  cisco.meraki.networks_campus_gateway_clusters:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    clusterId: string
+    networkId: string
 """
 RETURN = r"""
 meraki_response:

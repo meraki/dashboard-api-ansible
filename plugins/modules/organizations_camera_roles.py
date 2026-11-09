@@ -12,6 +12,8 @@ description:
   - Manage operations create, update and delete of the resource organizations _camera
     _roles.
   - Creates new role for this organization.
+  - Delete an existing role for this organization.
+  - Update an existing role in this organization.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -25,7 +27,7 @@ options:
         description: Device id.
         type: str
       inNetworksWithId:
-        description: Network id scope.
+        description: Network ID scope. Legacy numeric IDs are also accepted.
         type: str
       inNetworksWithTag:
         description: Network tag scope.
@@ -42,7 +44,7 @@ options:
     elements: dict
     suboptions:
       id:
-        description: Network id.
+        description: Network ID. Legacy numeric IDs are also accepted.
         type: str
       permissionScopeId:
         description: Permission scope id.
@@ -65,6 +67,9 @@ options:
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
+  roleId:
+    description: RoleId path parameter. Role ID.
+    type: str
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -72,11 +77,21 @@ seealso:
   - name: Cisco Meraki documentation for camera createOrganizationCameraRole
     description: Complete reference of the createOrganizationCameraRole API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-organization-camera-role
+  - name: Cisco Meraki documentation for camera deleteOrganizationCameraRole
+    description: Complete reference of the deleteOrganizationCameraRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-organization-camera-role
+  - name: Cisco Meraki documentation for camera updateOrganizationCameraRole
+    description: Complete reference of the updateOrganizationCameraRole API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-organization-camera-role
 notes:
   - SDK Method used are
     camera.Camera.create_organization_camera_role,
+    camera.Camera.delete_organization_camera_role,
+    camera.Camera.update_organization_camera_role,
   - Paths used are
     post /organizations/{organizationId}/camera/roles,
+    delete /organizations/{organizationId}/camera/roles/{roleId},
+    put /organizations/{organizationId}/camera/roles/{roleId},
 """
 
 EXAMPLES = r"""
@@ -106,18 +121,91 @@ EXAMPLES = r"""
     state: present
     appliedOnDevices:
       - id: ''
+        inNetworksWithId: L_2568
         permissionScopeId: '1'
         tag: reception-desk
     appliedOnNetworks:
       - id: ''
         permissionScopeId: '2'
         tag: building-a
+      - id: N_2568
+        permissionScopeId: '2'
+        tag: ''
     appliedOrgWide:
       - id: ''
         permissionScopeId: '2'
         tag: building-a
     name: Security_Guard
     organizationId: string
+- name: Delete by id
+  cisco.meraki.organizations_camera_roles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    organizationId: string
+    roleId: string
+- name: Update by id
+  cisco.meraki.organizations_camera_roles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
+    appliedOnDevices:
+      - id: ''
+        inNetworksWithId: L_2568
+        permissionScopeId: '1'
+        tag: reception-desk
+    appliedOnNetworks:
+      - id: ''
+        permissionScopeId: '2'
+        tag: building-a
+      - id: N_2568
+        permissionScopeId: '2'
+        tag: ''
+    appliedOrgWide:
+      - id: ''
+        permissionScopeId: '2'
+        tag: building-a
+    name: Security_Guard
+    organizationId: string
+    roleId: string
 """
 RETURN = r"""
 meraki_response:

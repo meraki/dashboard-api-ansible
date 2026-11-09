@@ -10,10 +10,11 @@ module: networks_sm_profiles_info
 short_description: Information module for networks _sm _profiles
 description:
   - Get all networks _sm _profiles.
-  - List all profiles in a network.
+  - List profiles in a network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
+  - cisco.meraki.module_info_pagination
 author: Francisco Munoz (@fmunoz)
 options:
   headers:
@@ -22,6 +23,29 @@ options:
   networkId:
     description:
       - NetworkId path parameter. Network ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 50. Default is 50.
+    type: int
+  startingAfter:
+    description:
+      - >
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+    type: str
+  endingBefore:
+    description:
+      - >
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
     type: str
   payloadTypes:
     description:
@@ -66,8 +90,13 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    perPage: 0
+    startingAfter: string
+    endingBefore: string
     payloadTypes: []
     networkId: string
+    total_pages: -1
+    direction: next
   register: result
 """
 RETURN = r"""

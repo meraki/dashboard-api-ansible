@@ -39,11 +39,21 @@ options:
     suboptions:
       access:
         description: The privilege of the dashboard administrator on the network.
-          Can be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'.
+          Can be one of 'full', 'read-only', 'guest-ambassador', 'monitor-only', 'switchport'
+          or 'switch-port-manager'.
         type: str
       id:
         description: The network ID.
         type: str
+      packetCaptureAllowed:
+        description: True if admin has access to the packet capture utility. Only
+          allowed if switch-port-manager or switchport is the access value.
+        type: bool
+      switchPortTags:
+        description: Switch port tags the admin will have access to. Only allowed
+          if switch-port-manager or switchport is the access value.
+        elements: str
+        type: list
     type: list
   orgAccess:
     description: The privilege of the dashboard administrator on the organization.
@@ -120,6 +130,10 @@ EXAMPLES = r"""
     networks:
       - access: full
         id: N_24329156
+        packetCaptureAllowed: true
+        switchPortTags:
+          - meraki-test
+          - cisco-test
     orgAccess: none
     organizationId: string
     tags:
@@ -154,6 +168,10 @@ EXAMPLES = r"""
     networks:
       - access: full
         id: N_24329156
+        packetCaptureAllowed: true
+        switchPortTags:
+          - meraki-test
+          - cisco-test
     orgAccess: none
     organizationId: string
     tags:

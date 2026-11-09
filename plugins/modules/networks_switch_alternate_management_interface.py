@@ -41,15 +41,15 @@ options:
           provide an empty string.
         type: str
       gateway:
-        description: Switch gateway must be in IP format. Only and must be specified
-          for Polaris switches.
+        description: Switch gateway in IP format. Required for some switch models
+          when configuring a static alternate management IP.
         type: str
       serial:
         description: Switch serial number.
         type: str
       subnetMask:
-        description: Switch subnet mask must be in IP format. Only and must be specified
-          for Polaris switches.
+        description: Switch subnet mask in IP format. Required for some switch models
+          when configuring a static alternate management IP.
         type: str
     type: list
   vlanId:

@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -32,10 +32,11 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     callback=dict(type="dict"),
     serial=dict(type="str"),
+    throughputTestId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["serial"], True),
+    ("state", "present", ["serial", "throughputTestId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -48,7 +49,19 @@ class DevicesLiveToolsThroughputTest(object):
         self.new_object = dict(
             callback=params.get("callback"),
             serial=params.get("serial"),
+            throughputTestId=params.get("throughputTestId"),
         )
+
+    def get_params_by_id(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial')
+        if self.new_object.get('throughputTestId') is not None or self.new_object.get(
+                'throughput_test_id') is not None:
+            new_object_params['throughputTestId'] = self.new_object.get(
+                'throughputTestId') or self.new_object.get('throughput_test_id')
+        return new_object_params
 
     def create_params(self):
         new_object_params = {}
@@ -69,7 +82,19 @@ class DevicesLiveToolsThroughputTest(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        try:
+            items = self.meraki.exec_meraki(
+                family="devices",
+                function="getDeviceLiveToolsThroughputTest",
+                params=self.get_params_by_id()
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = items
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def exists(self):
@@ -77,20 +102,26 @@ class DevicesLiveToolsThroughputTest(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("serial")
+        o_id = o_id or self.new_object.get(
+            "throughput_test_id") or self.new_object.get("throughputTestId")
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_name(o_id)
+            prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("throughputTestId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(throughputTestId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -103,7 +134,7 @@ class DevicesLiveToolsThroughputTest(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

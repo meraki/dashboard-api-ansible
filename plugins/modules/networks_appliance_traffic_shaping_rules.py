@@ -11,7 +11,8 @@ short_description: Resource module for networks _appliance _traffic _shaping _ru
 description:
   - Manage operation update of the resource networks _appliance _traffic _shaping
     _rules.
-  - Update the traffic shaping settings rules for an MX network.
+  - Update the traffic shaping settings rules for a Security Appliance or Secure Router
+    network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -38,17 +39,26 @@ options:
         suboptions:
           type:
             description: The type of definition. Can be one of 'application', 'applicationCategory',
-              'host', 'port', 'ipRange' or 'localNet'.
+              'host', 'port', 'ipRange', 'localNet', 'source', 'source_port', 'destination'
+              or 'destination_port'. Security Appliance networks support 'host', 'port',
+              'ipRange', 'localNet', 'application', and 'applicationCategory'. Secure
+              Router networks support 'source', 'source_port', 'destination', 'destination_port',
+              'application', and 'applicationCategory'.
             type: str
           value:
             description: If "type" is 'host', 'port', 'ipRange' or 'localNet', then
               "value" must be a string, matching either a hostname (e.g. "somesite.com"),
               a port (e.g. 8080), or an IP range ("192.1.0.0", "192.1.0.0/16", or
               "10.1.0.0/16 80"). 'localNet' also supports CIDR notation, excluding
-              custom ports. If "type" is 'application' or 'applicationCategory', then
-              "value" must be an object with the structure { "id" "meraki layer7/..."
-              }, where "id" is the application category or application ID (for a list
-              of IDs for your network, use the trafficShaping/applicationCategories
+              custom ports. If "type" is 'source', 'source_port', 'destination' or
+              'destination_port', then "value" must be a string for 'source' and 'destination',
+              the string must be an IPv4 address or CIDR with optional port information
+              (e.g. "192.1.0.0", "192.1.0.0/16", "10.1.0.0/16 80", "10.1.0.0/16 80-90");
+              for 'source_port' and 'destination_port', the string must be a single
+              port or port range (e.g. 8080, 8000-9000). If "type" is 'application'
+              or 'applicationCategory', then "value" must be an object with the structure
+              { "id" "meraki layer7/..." }, where "id" is the application category
+              or application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories
               endpoint).
             type: str
         type: list
@@ -74,12 +84,14 @@ options:
             type: dict
           settings:
             description: How bandwidth limits are applied by your rule. Can be one
-              of 'network default', 'ignore' or 'custom'.
+              of 'network default', 'ignore' or 'custom'. Secure Router networks support
+              only the 'ignore' setting.
             type: str
         type: dict
       priority:
         description: A string, indicating the priority level for packets bound to
-          your rule. Can be 'low', 'normal' or 'high'.
+          your rule. Can be 'low', 'normal' or 'high'. This field is supported for
+          Security Appliance networks.
         type: str
     type: list
 requirements:
@@ -128,16 +140,6 @@ EXAMPLES = r"""
       - definitions:
           - type: host
             value: google.com
-          - type: port
-            value: '9090'
-          - type: ipRange
-            value: 192.1.0.0
-          - type: ipRange
-            value: 192.1.0.0/16
-          - type: ipRange
-            value: 10.1.0.0/16:80
-          - type: localNet
-            value: 192.168.0.0/16
         dscpTagValue: 0
         perClientBandwidthLimits:
           bandwidthLimits:

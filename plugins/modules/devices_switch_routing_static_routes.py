@@ -186,7 +186,7 @@ meraki_response:
       "name": "string",
       "subnet": "string",
       "nextHopIp": "string",
-      "managementNextHop": "string",
+      "managementNextHop": {},
       "vrf": {
         "name": "string",
         "leakRouteToDefaultVrf": true

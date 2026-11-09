@@ -25,6 +25,7 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    items=dict(type="list"),
     organizationId=dict(type="str"),
 ))
 
@@ -64,6 +65,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            items=params.get("items"),
             organizationId=params.get("organizationId"),
         )
         return new_object
@@ -78,7 +80,8 @@ class ActionModule(ActionBase):
 
         response = meraki.exec_meraki(
             family="organizations",
-            function="detachOrganizationSaseSites",
+            function='detachOrganizationSaseSites',
+            op_modifies=True,
             params=self.get_object(self._task.args),
         )
         self._result.update(dict(meraki_response=response))

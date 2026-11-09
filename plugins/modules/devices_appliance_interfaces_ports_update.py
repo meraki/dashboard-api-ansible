@@ -53,7 +53,9 @@ options:
         suboptions:
           allowedVlans:
             description: The VLANs for which this port will accept and pass traffic
-              in 'trunk' mode. This must include the Native VLAN if one is set.
+              in 'trunk' mode. This must include the Native VLAN if one is set. For
+              Secure Router Layer 2 trunk ports, 'all' dynamically allows configured
+              VLANs that are not reserved by Layer 3 VLAN/subinterface ports.
             elements: str
             type: list
           nativeVlan:
@@ -99,6 +101,14 @@ options:
       mode:
         description: The type of interface, 'wan' or 'lan', the port is configured
           as.
+        type: str
+    type: dict
+  profile:
+    description: The optional LAN port's profile which it inherits from.
+    suboptions:
+      id:
+        description: The Org-Wide Port Profile ID which this LAN port inherits its
+          properties from.
         type: str
     type: dict
   serial:
@@ -176,6 +186,8 @@ EXAMPLES = r"""
       layer:
         mode: 3
       mode: wan
+    profile:
+      id: '99'
     serial: string
     uplink:
       type: ethernet
@@ -228,6 +240,9 @@ meraki_response:
             "enabled": true
           }
         }
+      },
+      "profile": {
+        "id": {}
       }
     }
 """

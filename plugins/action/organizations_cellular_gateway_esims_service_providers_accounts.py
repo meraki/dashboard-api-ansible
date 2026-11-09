@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -49,6 +49,7 @@ required_together = []
 
 
 class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
+    # Begin manually added: __init__
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
@@ -59,6 +60,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             username=params.get("username"),
             organizationId=params.get("organizationId"),
         )
+    # End manually added: __init__
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
@@ -137,7 +139,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         # NOTE: Does not have a get by name method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
+                family="cellularGateway",
                 function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
                 params=self.get_all_params(
                     name=name),
@@ -158,7 +160,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         # NOTE: Does not have a get by id method or it is in another action
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
+                family="cellularGateway",
                 function="getOrganizationCellularGatewayEsimsServiceProvidersAccounts",
                 params=self.get_all_params(
                     id=id),
@@ -211,7 +213,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -219,7 +221,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
 
     def create(self):
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
+            family="cellularGateway",
             function="createOrganizationCellularGatewayEsimsServiceProvidersAccount",
             params=self.create_params(),
             op_modifies=True,
@@ -240,7 +242,7 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             if id_:
                 self.new_object.update(dict(accountId=id_))
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
+            family="cellularGateway",
             function="updateOrganizationCellularGatewayEsimsServiceProvidersAccount",
             params=self.update_by_id_params(),
             op_modifies=True,
@@ -261,11 +263,14 @@ class OrganizationsCellularGatewayEsimsServiceProvidersAccounts(object):
             if id_:
                 self.new_object.update(dict(accountId=id_))
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
+            family="cellularGateway",
             function="deleteOrganizationCellularGatewayEsimsServiceProvidersAccount",
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

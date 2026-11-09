@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -76,7 +76,7 @@ class NetworksCellularGatewayUplink(object):
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
+                family="cellularGateway",
                 function="getNetworkCellularGatewayUplink",
                 params=self.get_all_params(name=name),
             )
@@ -128,7 +128,7 @@ class NetworksCellularGatewayUplink(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -139,7 +139,7 @@ class NetworksCellularGatewayUplink(object):
         name = self.new_object.get("name")
         result = None
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
+            family="cellularGateway",
             function="updateNetworkCellularGatewayUplink",
             params=self.update_all_params(),
             op_modifies=True,

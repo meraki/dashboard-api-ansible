@@ -105,6 +105,59 @@ meraki_response:
             "enabled": true,
             "username": "string"
           }
+        },
+        "transition": {
+          "enabled": true,
+          "mode": "string",
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "ipv4": {
+            "local": {
+              "address": {}
+            }
+          },
+          "ipv6": {
+            "borderRelay": {
+              "mode": "string",
+              "address": {}
+            },
+            "interfaceId": {}
+          },
+          "isp": {
+            "name": "string"
+          },
+          "map": {
+            "rules": {
+              "source": {},
+              "entries": [
+                {
+                  "ipv6": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "ipv4": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "borderRelay": {
+                    "address": {},
+                    "prefix": {}
+                  },
+                  "eaBitLength": 0,
+                  "psIdOffset": 0
+                }
+              ]
+            },
+            "draft": {
+              "enabled": {}
+            }
+          }
         }
       },
       "wan2": {
@@ -140,6 +193,59 @@ meraki_response:
           "authentication": {
             "enabled": true,
             "username": "string"
+          }
+        },
+        "transition": {
+          "enabled": true,
+          "mode": "string",
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "ipv4": {
+            "local": {
+              "address": {}
+            }
+          },
+          "ipv6": {
+            "borderRelay": {
+              "mode": "string",
+              "address": {}
+            },
+            "interfaceId": {}
+          },
+          "isp": {
+            "name": "string"
+          },
+          "map": {
+            "rules": {
+              "source": {},
+              "entries": [
+                {
+                  "ipv6": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "ipv4": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "borderRelay": {
+                    "address": {},
+                    "prefix": {}
+                  },
+                  "eaBitLength": 0,
+                  "psIdOffset": 0
+                }
+              ]
+            },
+            "draft": {
+              "enabled": {}
+            }
           }
         }
       }

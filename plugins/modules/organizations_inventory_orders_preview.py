@@ -71,6 +71,7 @@ meraki_response:
   sample: >
     {
       "claimId": "string",
+      "trialId": {},
       "resolution": {
         "submissionStrategy": "string",
         "supportsSubscriptionSelection": true,
@@ -104,6 +105,7 @@ meraki_response:
       "subscriptions": [
         {
           "subscriptionId": "string",
+          "trialId": {},
           "name": "string",
           "description": "string",
           "startDate": "string",

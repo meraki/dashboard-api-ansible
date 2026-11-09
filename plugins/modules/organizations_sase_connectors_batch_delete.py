@@ -77,32 +77,31 @@ meraki_response:
   type: dict
   sample: >
     {
-      "items": [
-        {
-          "pipelineId": "string",
-          "operation": {
-            "id": "string"
-          },
-          "status": "string",
-          "counts": {
-            "jobs": {
-              "total": 0,
-              "byStatus": {
-                "completed": 0,
-                "failed": 0,
-                "pending": 0
-              }
+      "pipelineId": "string",
+      "operation": {
+        "id": "string"
+      },
+      "status": "string",
+      "counts": {
+        "jobs": {
+          "total": 0,
+          "byStatus": {
+            "completed": 0,
+            "failed": 0,
+            "pending": 0
+          }
+        },
+        "byJobOperation": [
+          {
+            "name": "string",
+            "total": 0,
+            "byStatus": {
+              "completed": 0,
+              "failed": 0,
+              "pending": 0
             }
           }
-        }
-      ],
-      "meta": {
-        "counts": {
-          "items": {
-            "total": 0,
-            "remaining": 0
-          }
-        }
+        ]
       }
     }
 """

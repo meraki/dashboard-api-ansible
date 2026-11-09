@@ -140,6 +140,9 @@ meraki_response:
           0
         ],
         "axEnabled": true,
+        "dot11ax": {
+          "enabled": true
+        },
         "rxsop": {}
       },
       "fiveGhzSettings": {
@@ -150,7 +153,10 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": {}
+        "rxsop": {},
+        "dot11ax": {
+          "enabled": true
+        }
       },
       "sixGhzSettings": {
         "maxPower": 0,
@@ -333,6 +339,9 @@ meraki_response:
         }
       },
       "isIndoorDefault": true,
-      "isOutdoorDefault": true
+      "isOutdoorDefault": true,
+      "dot11be": {
+        "enabled": true
+      }
     }
 """

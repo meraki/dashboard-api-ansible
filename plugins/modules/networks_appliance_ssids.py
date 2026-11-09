@@ -17,8 +17,8 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   authMode:
-    description: The association control method for the SSID ('open', 'psk', '8021x-meraki'
-      or '8021x-radius').
+    description: The association control method for the SSID ('open', 'psk', '8021x-meraki',
+      '8021x-radius' or '8021x-nac').
     type: str
   defaultVlanId:
     description: The VLAN ID of the VLAN associated to this SSID. This parameter is
@@ -85,7 +85,7 @@ options:
     description: The types of WPA encryption. ('WPA1 and WPA2', 'WPA2 only', 'WPA3
       Transition Mode' or 'WPA3 only'). This param is only valid if (1) the authMode
       is 'psk' & the encryptionMode is 'wpa' OR (2) the authMode is '8021x-meraki'
-      OR (3) the authMode is '8021x-radius'.
+      OR (3) the authMode is '8021x-radius' OR (4) the authMode is '8021x-nac'.
     type: str
 requirements:
   - meraki >= 2.4.9

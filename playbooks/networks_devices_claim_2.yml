@@ -1,10 +1,28 @@
 - name: Play Name
   hosts: localhost
   vars:
+    org_id: "828099381482762270"
     network_id: L_828099381482771185
-    serial_number: QBSB-D5ZD-9CXT
+    serials:
+      - QBSB-VLHZ-JQCN
+      - QBSB-D5ZD-9CXT
   gather_facts: false
   tasks:
+    - name: Get inventory state of the switches
+      cisco.meraki.organizations_inventory_devices_info:
+        organizationId: "{{ org_id }}"
+        serials: "{{ serials }}"
+      register: inventory
+
+    - name: Claim only the switches that are not in a network yet
+      cisco.meraki.networks_devices_claim:
+        networkId: "{{ network_id }}"
+        serials: "{{ unassigned }}"
+      vars:
+        unassigned: "{{ inventory.meraki_response | selectattr('networkId', 'none') | map(attribute='serial') | list }}"
+      when: unassigned | length > 0
+      register: result
+
     - name: Show devices
       ansible.builtin.debug:
         msg: "{{ result }}"
