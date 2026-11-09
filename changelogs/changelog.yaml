@@ -1874,8 +1874,8 @@ releases:
         - "networks_wireless_failed_connections_info - Removed the `vlan` parameter, which is no longer supported by the Dashboard API."
         - "networks_wireless_location_scanning - Removed the `ruleId` parameter, which is no longer supported by the Dashboard API."
         - "organizations_sase_sites_attach - Removed the `callback` parameter, which is no longer supported by the Dashboard API."
-        - "organizations_inventory_onboarding_cloud_monitoring_prepare - Removed the module documentation; the cloud monitoring onboarding endpoints were
-          removed from the Dashboard API."
+        - "organizations_inventory_onboarding_cloud_monitoring_prepare - Removed the module; its endpoint
+          (createOrganizationInventoryOnboardingCloudMonitoringPrepare) was removed from the Dashboard API."
       bugfixes:
         - "cellular gateway, campus gateway and wireless controller modules - Fixed the SDK family names (`cellulargateway`, `cellular_gateway`,
           `campusgateway`, `campus_gateway`, `wireless_controller` to `cellularGateway`, `campusGateway`, `wirelessController`). Every
@@ -1912,6 +1912,6 @@ releases:
           them is installed."
         - "organizations_inventory_onboarding_cloud_monitoring_export_events, organizations_inventory_onboarding_cloud_monitoring_imports,
           organizations_inventory_onboarding_cloud_monitoring_imports_info, organizations_inventory_onboarding_cloud_monitoring_networks_info,
-          organizations_inventory_onboarding_cloud_monitoring_prepare, organizations_sase_connectors_batch_create - The corresponding endpoints were removed
-          from the Dashboard API (present in v1.69.0, absent since v1.72.0), so these modules can no longer succeed."
+          organizations_sase_connectors_batch_create - The corresponding endpoints were removed from the Dashboard API (present in v1.69.0, absent since
+          v1.72.0), so these modules can no longer succeed."
     release_date: "2026-11-09"

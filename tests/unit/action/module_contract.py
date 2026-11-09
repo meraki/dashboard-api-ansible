@@ -307,7 +307,7 @@ def check_plugin(name):
         if sdk_method(fam, fn) is None:
             report["missing_sdk"].append("%s.%s (line %d)" % (fam, fn, line))
             continue
-        required, _ = sdk_contract(fam, fn)
+        required, _accepted = sdk_contract(fam, fn)
         for r in sorted(required):
             if r not in spec:
                 report["required_not_in_argspec"].append("%s: %s" % (fn, r))
@@ -325,7 +325,7 @@ def check_plugin(name):
         for kind, fam, fn, extra in rec.violations:
             report["violations"].add((kind, fn, tuple(extra) if extra else ()))
     report["violations"] = sorted(report["violations"])
-    report["uncovered"] = sorted({"%s.%s" % (f, fn) for f, fn, _ in static_calls(name)
+    report["uncovered"] = sorted({"%s.%s" % (f, fn) for f, fn, _line in static_calls(name)
                                   if (f, fn) not in called and sdk_method(f, fn) is not None})
     return report
 
