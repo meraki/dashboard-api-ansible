@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   refresh:
-    uses: ansible/devtools/.github/workflows/ah_token_refresh.yml@e7604b7f0f487584a2264c09a0df1524fe2be49e # v26.4.0
+    uses: ansible/team-devtools/.github/workflows/ah_token_refresh.yml@e7604b7f0f487584a2264c09a0df1524fe2be49e # v26.4.0
     with:
       environment: release
     secrets:
