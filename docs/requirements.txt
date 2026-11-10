@@ -1,6 +1,5 @@
 PyYAML>=5.4.1 
 antsibull>=0.17.0
-ansible-base>=2.10.0rc2
+ansible-core
 sphinx-rtd-theme
-git+https://github.com/felixfontein/ansible-basic-sphinx-ext
 recommonmark
