@@ -58,32 +58,6 @@ options:
             description: Interface name (wan1, wan2, ...).
             type: str
         type: list
-      loadBalancing:
-        description: Load balancing configuration.
-        suboptions:
-          enabled:
-            description: Enable load balancing.
-            type: bool
-          vlanSelection:
-            description: VLAN selection strategy.
-            suboptions:
-              byDevice:
-                description: Per-device VLAN selection.
-                elements: dict
-                suboptions:
-                  serial:
-                    description: Device serial number.
-                    type: str
-                  vlanIds:
-                    description: VLAN IDs participating in sharing.
-                    elements: int
-                    type: list
-                type: list
-              mode:
-                description: Selection mode (auto|manual).
-                type: str
-            type: dict
-        type: dict
       mode:
         description: Uplink mode (public|virtual).
         type: str
@@ -160,15 +134,6 @@ EXAMPLES = r"""
             - address: 1.2.3.4
               subnet: 192.168.1.0/24
           name: wan1
-      loadBalancing:
-        enabled: true
-        vlanSelection:
-          byDevice:
-            - serial: Q234-ABCD-5678
-              vlanIds:
-                - 1
-                - 2
-          mode: auto
       mode: virtual
       sharing:
         byInterface:
@@ -216,20 +181,6 @@ meraki_response:
               "parent": "string"
             }
           ]
-        },
-        "loadBalancing": {
-          "enabled": true,
-          "vlanSelection": {
-            "mode": "string",
-            "byDevice": [
-              {
-                "serial": "string",
-                "vlanIds": [
-                  0
-                ]
-              }
-            ]
-          }
         }
       }
     }

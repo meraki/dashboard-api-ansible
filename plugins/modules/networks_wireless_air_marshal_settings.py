@@ -10,7 +10,8 @@ module: networks_wireless_air_marshal_settings
 short_description: Resource module for networks _wireless _air _marshal _settings
 description:
   - Manage operation update of the resource networks _wireless _air _marshal _settings.
-  - Updates Air Marshal settings.
+  - Updates Air Marshal settings. Omitting an optional setting leaves its saved value
+    unchanged.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

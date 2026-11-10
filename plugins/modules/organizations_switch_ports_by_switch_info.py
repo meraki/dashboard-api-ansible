@@ -176,6 +176,12 @@ meraki_response:
             ],
             "enabled": true,
             "poeEnabled": true,
+            "perpetualPoe": {
+              "enabled": true
+            },
+            "fastPoe": {
+              "enabled": true
+            },
             "type": "string",
             "vlan": {},
             "voiceVlan": {},

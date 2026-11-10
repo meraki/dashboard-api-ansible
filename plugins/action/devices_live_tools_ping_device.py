@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -91,7 +91,7 @@ class DevicesLiveToolsPingDevice(object):
             items = self.meraki.exec_meraki(
                 family="devices",
                 function="getDeviceLiveToolsPingDevice",
-                params={"id": id}
+                params=dict(self.get_params_by_id(), id=id)
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -136,7 +136,7 @@ class DevicesLiveToolsPingDevice(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

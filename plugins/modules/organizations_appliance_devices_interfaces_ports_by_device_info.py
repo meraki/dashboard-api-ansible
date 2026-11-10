@@ -137,6 +137,9 @@ meraki_response:
                   "enabled": true
                 }
               }
+            },
+            "profile": {
+              "id": {}
             }
           }
         ]

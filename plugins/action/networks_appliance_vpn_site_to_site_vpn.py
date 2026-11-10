@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -31,7 +31,9 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
+    confirmed=dict(type="bool"),
     mode=dict(type="str"),
+    natTraversal=dict(type="dict"),
     hubs=dict(type="list"),
     subnets=dict(type="list"),
     sgt=dict(type="dict"),
@@ -52,7 +54,9 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
+            confirmed=params.get("confirmed"),
             mode=params.get("mode"),
+            natTraversal=params.get("natTraversal"),
             hubs=params.get("hubs"),
             subnets=params.get("subnets"),
             sgt=params.get("sgt"),
@@ -71,10 +75,17 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
 
     def update_all_params(self):
         new_object_params = {}
+        if self.new_object.get('confirmed') is not None or self.new_object.get(
+                'confirmed') is not None:
+            new_object_params['confirmed'] = self.new_object.get('confirmed')
         if self.new_object.get('mode') is not None or self.new_object.get(
                 'mode') is not None:
             new_object_params['mode'] = self.new_object.get('mode') or \
                 self.new_object.get('mode')
+        if self.new_object.get('natTraversal') is not None or self.new_object.get(
+                'nat_traversal') is not None:
+            new_object_params['natTraversal'] = self.new_object.get(
+                'natTraversal') or self.new_object.get('nat_traversal')
         if self.new_object.get('hubs') is not None or self.new_object.get(
                 'hubs') is not None:
             new_object_params['hubs'] = self.new_object.get('hubs') or \
@@ -153,7 +164,9 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("confirmed", "confirmed"),
             ("mode", "mode"),
+            ("natTraversal", "natTraversal"),
             ("hubs", "hubs"),
             ("subnets", "subnets"),
             ("sgt", "sgt"),
@@ -163,7 +176,7 @@ class NetworksApplianceVpnSiteToSiteVpn(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

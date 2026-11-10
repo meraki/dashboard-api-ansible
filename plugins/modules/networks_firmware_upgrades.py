@@ -16,6 +16,26 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  featureLossAcknowledgements:
+    description: Acknowledges the target version has removed certain features that
+      the network is currently using.
+    elements: dict
+    suboptions:
+      networkId:
+        description: The network ID to acknowledge the failing check for. Must refer
+          to a node group.
+        type: str
+      productType:
+        description: The product type within the given network to acknowledge feature
+          loss for (if the network is a combined network). Valid types are wireless,
+          appliance, switch, systemsManager, camera, cellularGateway, sensor, wirelessController,
+          campusGateway, and secureConnect.
+        type: str
+      removedFeatureCheckNames:
+        description: The names of the removed feature checks to acknowledge.
+        elements: str
+        type: list
+    type: list
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str
@@ -49,6 +69,32 @@ options:
           nextUpgrade:
             description: The pending firmware upgrade if it exists.
             suboptions:
+              time:
+                description: The time of the last successful upgrade.
+                type: str
+              toVersion:
+                description: The version to be updated to.
+                suboptions:
+                  id:
+                    description: The version ID.
+                    type: str
+                type: dict
+            type: dict
+          participateInNextBetaRelease:
+            description: Whether or not the network wants beta firmware.
+            type: bool
+        type: dict
+      campusGateway:
+        description: The network device to be updated.
+        suboptions:
+          nextUpgrade:
+            description: The pending firmware upgrade if it exists.
+            suboptions:
+              strategy:
+                description: The strategy that network devices will use to perform
+                  the upgrade. If unspecified, the scheduled upgrade will use the
+                  default strategy for the network.
+                type: str
               time:
                 description: The time of the last successful upgrade.
                 type: str
@@ -183,6 +229,11 @@ options:
                       the firmware image in advance of the actual upgrade.
                     type: bool
                 type: dict
+              strategy:
+                description: The strategy that network devices will use to perform
+                  the upgrade. If unspecified, the scheduled upgrade will use the
+                  default strategy for the network.
+                type: str
               time:
                 description: The time of the last successful upgrade.
                 type: str
@@ -272,6 +323,11 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    featureLossAcknowledgements:
+      - networkId: N_1234
+        productType: wireless
+        removedFeatureCheckNames:
+          - snmp-auth-and-privacy-check
     networkId: string
     products:
       appliance:
@@ -285,6 +341,13 @@ EXAMPLES = r"""
           time: '2019-03-17T17:22:52Z'
           toVersion:
             id: '1003'
+        participateInNextBetaRelease: false
+      campusGateway:
+        nextUpgrade:
+          strategy: minimizeUpgradeTime
+          time: '2019-03-17T17:22:52Z'
+          toVersion:
+            id: '1007'
         participateInNextBetaRelease: false
       cellularGateway:
         nextUpgrade:
@@ -320,6 +383,7 @@ EXAMPLES = r"""
         nextUpgrade:
           predownload:
             enabled: false
+          strategy: minimizeUpgradeTime
           time: '2019-03-17T17:22:52Z'
           toVersion:
             id: '1000'
@@ -375,6 +439,7 @@ meraki_response:
           },
           "nextUpgrade": {
             "time": "string",
+            "strategy": "string",
             "predownload": {
               "enabled": true
             },
@@ -660,6 +725,54 @@ meraki_response:
           },
           "nextUpgrade": {
             "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "campusGateway": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "strategy": "string",
             "toVersion": {
               "id": "string",
               "firmware": "string",

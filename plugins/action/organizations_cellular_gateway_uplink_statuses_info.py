@@ -111,7 +111,7 @@ class ActionModule(ActionBase):
         meraki = MERAKI(params=self._task.args)
 
         response = meraki.exec_meraki(
-            family="cellular_gateway",
+            family="cellularGateway",
             function='getOrganizationCellularGatewayUplinkStatuses',
             params=self.get_all(self._task.args),
         )

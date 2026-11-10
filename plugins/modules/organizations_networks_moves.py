@@ -10,8 +10,9 @@ module: organizations_networks_moves
 short_description: Resource module for organizations _networks _moves
 description:
   - Manage operation create of the resource organizations _networks _moves. - > Move
-    networks from one organization to another. For more information and caveats around
-    network move limitations see the Network Portability documentation.
+    networks from one organization to another. Cross-shard moves must be enabled for
+    your organization. For more information and caveats around network move limitations
+    see the Network Portability documentation.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

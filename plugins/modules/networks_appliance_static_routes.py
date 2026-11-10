@@ -20,7 +20,7 @@ extends_documentation_fragment:
 author: Francisco Munoz (@fmunoz)
 options:
   enabled:
-    description: Whether the route should be enabled or not.
+    description: Enable/disable the static route.
     type: bool
   fixedIpAssignments:
     description: Fixed DHCP IP assignments on the route.
@@ -57,6 +57,13 @@ options:
   subnet:
     description: Subnet of the route.
     type: str
+  vrf:
+    description: VRF settings for the static route.
+    suboptions:
+      id:
+        description: VRF ID for the static route. Use "0" for the default VRF.
+        type: str
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -106,11 +113,14 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    enabled: true
     gatewayIp: 1.2.3.5
     gatewayVlanId: 100
     name: My route
     networkId: string
     subnet: 192.168.1.0/24
+    vrf:
+      id: '12345'
 - name: Update by id
   cisco.meraki.networks_appliance_static_routes:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -150,6 +160,8 @@ EXAMPLES = r"""
         start: 192.168.1.0
     staticRouteId: string
     subnet: 192.168.1.0/24
+    vrf:
+      id: '12345'
 - name: Delete by id
   cisco.meraki.networks_appliance_static_routes:
     meraki_api_key: "{{ meraki_api_key }}"
@@ -199,6 +211,10 @@ meraki_response:
           "comment": "string"
         }
       ],
-      "gatewayVlanId": 0
+      "gatewayVlanId": 0,
+      "vrf": {
+        "id": "string",
+        "name": "string"
+      }
     }
 """

@@ -1,0 +1,6 @@
+# Dispositivos usados por Bulk_change_DNS_from_file.yaml y Get_IP_MGNT_info_from_file.yaml
+# (devices_management_interface con wan1 aplica a appliances MX).
+mx_1:
+  serial_no: QBSA-D8CD-5LR6
+mx_2:
+  serial_no: QBSA-TFWJ-U4L9

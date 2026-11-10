@@ -111,6 +111,7 @@ meraki_response:
       "id": "string",
       "name": "string",
       "url": "string",
+      "enabled": true,
       "networkId": "string",
       "payloadTemplate": {
         "payloadTemplateId": "string",

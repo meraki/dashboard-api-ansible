@@ -85,7 +85,7 @@ class OrganizationsCellularGatewayEsimsInventory(object):
         # NOTE: Does not have a get by name method, using get all
         try:
             items = self.meraki.exec_meraki(
-                family="cellulargateway",
+                family="cellularGateway",
                 function="getOrganizationCellularGatewayEsimsInventory",
                 params=self.get_all_params(name=name),
             )
@@ -154,7 +154,7 @@ class OrganizationsCellularGatewayEsimsInventory(object):
             if id_:
                 self.new_object.update(dict(id=id_))
         result = self.meraki.exec_meraki(
-            family="cellulargateway",
+            family="cellularGateway",
             function="updateOrganizationCellularGatewayEsimsInventory",
             params=self.update_by_id_params(),
             op_modifies=True,

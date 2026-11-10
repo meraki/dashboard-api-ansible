@@ -26,8 +26,15 @@ argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     networkId=dict(type="str"),
-    bluetoothClientId=dict(type="str"),
+    t0=dict(type="str"),
+    timespan=dict(type="float"),
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
     includeConnectivityHistory=dict(type="bool"),
+    bluetoothClientId=dict(type="str"),
     connectivityHistoryTimespan=dict(type="int"),
 ))
 
@@ -81,6 +88,36 @@ class ActionModule(ActionBase):
                 "connectivityHistoryTimespan")
         return new_object
 
+    def get_all(self, params):
+        new_object = {}
+        if params.get("networkId") is not None:
+            new_object["networkId"] = params.get(
+                "networkId")
+        if params.get("t0") is not None:
+            new_object["t0"] = params.get(
+                "t0")
+        if params.get("timespan") is not None:
+            new_object["timespan"] = params.get(
+                "timespan")
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
+        if params.get("includeConnectivityHistory") is not None:
+            new_object["includeConnectivityHistory"] = params.get(
+                "includeConnectivityHistory")
+
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -102,11 +139,11 @@ class ActionModule(ActionBase):
             self._result.update(meraki.exit_json())
             return self._result
         if not id:
-            # NOTE: Does not have a get all method or it is in another action
-            response = None
-            meraki.object_modify_result(
-                changed=False,
-                result="Module does not have get all, check arguments of module")
+            response = meraki.exec_meraki(
+                family="networks",
+                function='getNetworkBluetoothClients',
+                params=self.get_all(self._task.args),
+            )
             self._result.update(dict(meraki_response=response))
             self._result.update(meraki.exit_json())
             return self._result

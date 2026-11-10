@@ -19,8 +19,8 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
     get_dict_result,
+    meraki_compare_equality2,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -71,6 +71,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
                 'networkId') or self.new_object.get('network_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method, using get all
@@ -90,6 +91,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None
@@ -119,6 +121,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
+    # Begin manually added: requires_update
     def requires_update(self, current_obj):
         requested_obj = self.new_object
         if len(current_obj) == 0:
@@ -137,6 +140,7 @@ class NetworksApplianceFirewallL7FirewallRules(object):
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
                 ansible_param) in obj_params)
+    # End manually added: requires_update
 
     def update(self):
         id = self.new_object.get("id")

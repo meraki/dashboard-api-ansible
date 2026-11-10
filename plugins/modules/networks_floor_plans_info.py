@@ -137,7 +137,8 @@ meraki_response:
               "name": "string",
               "value": "string"
             }
-          ]
+          ],
+          "configurationUpdatedAt": "string"
         }
       ],
       "width": 0,

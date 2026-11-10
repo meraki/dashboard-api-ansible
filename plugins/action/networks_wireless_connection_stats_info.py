@@ -32,7 +32,6 @@ argument_spec.update(dict(
     band=dict(type="str"),
     ssid=dict(type="int"),
     apTag=dict(type="str"),
-    vlan=dict(type="int"),
 ))
 
 required_if = []
@@ -69,6 +68,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    # Begin manually added: get_all
     def get_all(self, params):
         new_object = {}
         if params.get("vlan") is not None:
@@ -97,6 +97,7 @@ class ActionModule(ActionBase):
                 "apTag")
 
         return new_object
+    # End manually added: get_all
 
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False

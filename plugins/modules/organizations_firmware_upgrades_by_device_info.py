@@ -10,8 +10,8 @@ module: organizations_firmware_upgrades_by_device_info
 short_description: Information module for organizations _firmware _upgrades _by _device
 description:
   - Get all organizations _firmware _upgrades _by _device. - > Get firmware upgrade
-    status for the filtered devices. This endpoint currently only supports Meraki
-    switches and access points.
+    status for the filtered devices. This endpoint supports Meraki switches, access
+    points, and campus gateways.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

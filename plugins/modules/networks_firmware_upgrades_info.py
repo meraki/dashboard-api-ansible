@@ -104,6 +104,7 @@ meraki_response:
           },
           "nextUpgrade": {
             "time": "string",
+            "strategy": "string",
             "predownload": {
               "enabled": true
             },
@@ -389,6 +390,54 @@ meraki_response:
           },
           "nextUpgrade": {
             "time": "string",
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "isUpgradeAvailable": true,
+          "availableVersions": [
+            {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          ],
+          "participateInNextBetaRelease": true
+        },
+        "campusGateway": {
+          "currentVersion": {
+            "id": "string",
+            "firmware": "string",
+            "shortName": "string",
+            "releaseType": "string",
+            "releaseDate": "string"
+          },
+          "lastUpgrade": {
+            "time": "string",
+            "fromVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            },
+            "toVersion": {
+              "id": "string",
+              "firmware": "string",
+              "shortName": "string",
+              "releaseType": "string",
+              "releaseDate": "string"
+            }
+          },
+          "nextUpgrade": {
+            "time": "string",
+            "strategy": "string",
             "toVersion": {
               "id": "string",
               "firmware": "string",

@@ -48,6 +48,11 @@ options:
           please also specify a sharedSecret.
         type: str
     type: dict
+  mac:
+    description: Optional parameter to filter MAC table entries by MAC address. Must
+      be a colon-delimited six-octet MAC address, for example '00 11 22 a0 b1 c2'.
+      Matching is case-insensitive.
+    type: str
   serial:
     description: Serial path parameter.
     type: str
@@ -97,6 +102,7 @@ EXAMPLES = r"""
         id: wpt_2100
       sharedSecret: secret
       url: https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031
+    mac: 00:11:22:a0:b1:c2
     serial: string
 """
 RETURN = r"""
@@ -109,7 +115,8 @@ meraki_response:
       "macTableId": "string",
       "url": "string",
       "request": {
-        "serial": "string"
+        "serial": "string",
+        "mac": "string"
       },
       "status": "string",
       "callback": {

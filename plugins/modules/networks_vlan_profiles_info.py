@@ -111,6 +111,7 @@ meraki_response:
       "iname": "string",
       "name": "string",
       "isDefault": true,
+      "activeVlans": "string",
       "vlanNames": [
         {
           "name": "string",

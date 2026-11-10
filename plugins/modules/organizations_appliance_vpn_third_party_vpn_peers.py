@@ -64,6 +64,19 @@ options:
           sourceIp:
             description: Source IP of eBGP neighbor.
             type: str
+          vrf:
+            description: The VRF associated with the BGP neighbor. Required for Catalyst
+              BGP peers, including an explicit default VRF (id 0); optional for existing
+              MX peers, which use the default VRF when omitted.
+            suboptions:
+              id:
+                description: VRF ID for the Catalyst BGP neighbor. Use 0 for the default
+                  VRF.
+                type: str
+              name:
+                description: VRF name for the Catalyst BGP neighbor.
+                type: str
+            type: dict
           weight:
             description: Configures the local metric associated with routes received
               from the remote peer. Routes from peers with lower metrics are will
@@ -181,11 +194,10 @@ options:
             type: list
         type: dict
       ipsecPoliciesPreset:
-        description: One of the following available presets 'default', 'aws', 'azure',
-          'umbrella', 'umbrella_short_lived', 'secure', 'zscaler'. If this is provided,
-          the 'ipsecPolicies' parameter is ignored. Note that 'umbrella_short_lived'
-          maps to the Dashboard UI label 'Umbrella', while 'umbrella' maps to the
-          Dashboard UI label 'Umbrella (Deprecated)'.
+        description: One of the following available presets 'default (insecure)',
+          'secure', 'aws (insecure)', 'aws_v2', 'azure (insecure)', 'azure_v2', 'umbrella
+          (insecure)', 'umbrella_v2', 'umbrella (deprecated)', 'zscaler (insecure)',
+          'zscaler_v2'. If this is provided, the 'ipsecPolicies' parameter is ignored.
         type: str
       isRouteBased:
         description: Optional If true, the VPN peer is route-based. If not included,
@@ -265,7 +277,7 @@ notes:
 
 EXAMPLES = r"""
 - name: Update all
-  cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
+  cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
     meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -301,6 +313,9 @@ EXAMPLES = r"""
             - 2
           remoteAsNumber: 64343
           sourceIp: 10.10.10.22
+          vrf:
+            id: '12345'
+            name: VRF Blue
           weight: 10
         ecmpUplinkConfigs:
           - ebgpNeighbor:
@@ -333,7 +348,7 @@ EXAMPLES = r"""
           ikeLifetime: 28800
           ikePrfAlgo:
             - prfsha1
-        ipsecPoliciesPreset: default
+        ipsecPoliciesPreset: default (insecure)
         isRouteBased: true
         localId: myMXId@meraki.com
         name: Peer Name
@@ -423,7 +438,32 @@ meraki_response:
           "ebgpHoldTimer": 0,
           "ebgpMultihop": 0,
           "sourceIp": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          },
+          "ttlSecurity": {
+            "enabled": true
+          },
+          "authentication": {
+            "password": "string"
+          },
+          "allowTransit": true,
           "receiveLimit": 0,
+          "explicitOutboundRouteAdvertisement": {
+            "enabled": {}
+          },
+          "filter": {
+            "out": [
+              "string"
+            ]
+          },
+          "filterIn": [
+            "string"
+          ],
+          "communityOut": [
+            "string"
+          ],
           "pathPrepend": [
             0
           ],

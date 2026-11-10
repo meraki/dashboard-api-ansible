@@ -9,7 +9,7 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - credentials.yml
+    - vars/credentials.yml
   vars:
     ssid_number: 0
   tasks:

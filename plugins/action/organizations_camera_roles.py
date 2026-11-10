@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -36,11 +36,12 @@ argument_spec.update(dict(
     appliedOnNetworks=dict(type="list"),
     appliedOrgWide=dict(type="list"),
     organizationId=dict(type="str"),
+    roleId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["name", "organizationId"], True),
-    ("state", "absent", ["name", "organizationId"], True),
+    ("state", "present", ["name", "organizationId", "roleId"], True),
+    ("state", "absent", ["name", "organizationId", "roleId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -56,6 +57,7 @@ class OrganizationsCameraRoles(object):
             appliedOnNetworks=params.get("appliedOnNetworks"),
             appliedOrgWide=params.get("appliedOrgWide"),
             organizationId=params.get("organizationId"),
+            roleId=params.get("roleId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -64,6 +66,18 @@ class OrganizationsCameraRoles(object):
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
                 'organizationId') or self.new_object.get('organization_id')
+        return new_object_params
+
+    def get_params_by_id(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('roleId') is not None or self.new_object.get(
+                'role_id') is not None:
+            new_object_params['roleId'] = self.new_object.get('roleId') or \
+                self.new_object.get('role_id')
         return new_object_params
 
     def create_params(self):
@@ -90,6 +104,46 @@ class OrganizationsCameraRoles(object):
                 'organizationId') or self.new_object.get('organization_id')
         return new_object_params
 
+    def delete_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('roleId') is not None or self.new_object.get(
+                'role_id') is not None:
+            new_object_params['roleId'] = self.new_object.get('roleId') or \
+                self.new_object.get('role_id')
+        return new_object_params
+
+    def update_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('appliedOnDevices') is not None or self.new_object.get(
+                'applied_on_devices') is not None:
+            new_object_params['appliedOnDevices'] = self.new_object.get(
+                'appliedOnDevices') or self.new_object.get('applied_on_devices')
+        if self.new_object.get('appliedOnNetworks') is not None or self.new_object.get(
+                'applied_on_networks') is not None:
+            new_object_params['appliedOnNetworks'] = self.new_object.get(
+                'appliedOnNetworks') or self.new_object.get('applied_on_networks')
+        if self.new_object.get('appliedOrgWide') is not None or self.new_object.get(
+                'applied_org_wide') is not None:
+            new_object_params['appliedOrgWide'] = self.new_object.get(
+                'appliedOrgWide') or self.new_object.get('applied_org_wide')
+        if self.new_object.get('organizationId') is not None or self.new_object.get(
+                'organization_id') is not None:
+            new_object_params['organizationId'] = self.new_object.get(
+                'organizationId') or self.new_object.get('organization_id')
+        if self.new_object.get('roleId') is not None or self.new_object.get(
+                'role_id') is not None:
+            new_object_params['roleId'] = self.new_object.get('roleId') or \
+                self.new_object.get('role_id')
+        return new_object_params
+
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method or it is in another action
@@ -112,17 +166,16 @@ class OrganizationsCameraRoles(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
         try:
             items = self.meraki.exec_meraki(
                 family="camera",
-                function="getOrganizationCameraRoles",
-                params=self.get_all_params(id=id),
+                function="getOrganizationCameraRole",
+                params=self.get_params_by_id()
             )
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'id', id)
+            result = get_dict_result(items, 'roleId', id)
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -133,6 +186,8 @@ class OrganizationsCameraRoles(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
+        o_id = o_id or self.new_object.get(
+            "role_id") or self.new_object.get("roleId")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
@@ -142,11 +197,15 @@ class OrganizationsCameraRoles(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("roleId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(roleId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -162,7 +221,7 @@ class OrganizationsCameraRoles(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -179,17 +238,47 @@ class OrganizationsCameraRoles(object):
 
     def update(self):
         id = self.new_object.get("id")
+        id = id or self.new_object.get("roleId")
         name = self.new_object.get("name")
         result = None
-        # NOTE: Does not have update method. What do we do?
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("roleId")
+            if id_:
+                self.new_object.update(dict(roleId=id_))
+        result = self.meraki.exec_meraki(
+            family="camera",
+            function="updateOrganizationCameraRole",
+            params=self.update_by_id_params(),
+            op_modifies=True,
+        )
         return result
 
     def delete(self):
         id = self.new_object.get("id")
+        id = id or self.new_object.get("roleId")
         name = self.new_object.get("name")
         result = None
-        # NOTE: Does not have delete method. What do we do?
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("roleId")
+            if id_:
+                self.new_object.update(dict(roleId=id_))
+        result = self.meraki.exec_meraki(
+            family="camera",
+            function="deleteOrganizationCameraRole",
+            params=self.delete_by_id_params(),
+        )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

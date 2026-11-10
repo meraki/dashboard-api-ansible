@@ -12,6 +12,8 @@ description:
   - Manage operations create, update and delete of the resource networks _appliance
     _rf _profiles.
   - Creates new RF profile for this network.
+  - Delete a RF Profile.
+  - Updates specified RF profile for this network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module
@@ -85,6 +87,9 @@ options:
             type: bool
         type: dict
     type: dict
+  rfProfileId:
+    description: RfProfileId path parameter. Rf profile ID.
+    type: str
   twoFourGhzSettings:
     description: Settings related to 2.4Ghz band.
     suboptions:
@@ -106,11 +111,21 @@ seealso:
   - name: Cisco Meraki documentation for appliance createNetworkApplianceRfProfile
     description: Complete reference of the createNetworkApplianceRfProfile API.
     link: https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-rf-profile
+  - name: Cisco Meraki documentation for appliance deleteNetworkApplianceRfProfile
+    description: Complete reference of the deleteNetworkApplianceRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!delete-network-appliance-rf-profile
+  - name: Cisco Meraki documentation for appliance updateNetworkApplianceRfProfile
+    description: Complete reference of the updateNetworkApplianceRfProfile API.
+    link: https://developer.cisco.com/meraki/api-v1/#!update-network-appliance-rf-profile
 notes:
   - SDK Method used are
     appliance.Appliance.create_network_appliance_rf_profile,
+    appliance.Appliance.delete_network_appliance_rf_profile,
+    appliance.Appliance.update_network_appliance_rf_profile,
   - Paths used are
     post /networks/{networkId}/appliance/rfProfiles,
+    delete /networks/{networkId}/appliance/rfProfiles/{rfProfileId},
+    put /networks/{networkId}/appliance/rfProfiles/{rfProfileId},
 """
 
 EXAMPLES = r"""
@@ -159,6 +174,78 @@ EXAMPLES = r"""
     twoFourGhzSettings:
       axEnabled: true
       minBitrate: 12.0
+- name: Update by id
+  cisco.meraki.networks_appliance_rf_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: present
+    fiveGhzSettings:
+      axEnabled: true
+      minBitrate: 48
+    name: MX RF Profile
+    networkId: string
+    perSsidSettings:
+      '1':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+      '2':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+      '3':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+      '4':
+        bandOperationMode: dual
+        bandSteeringEnabled: true
+    rfProfileId: string
+    twoFourGhzSettings:
+      axEnabled: true
+      minBitrate: 12.0
+- name: Delete by id
+  cisco.meraki.networks_appliance_rf_profiles:
+    meraki_api_key: "{{ meraki_api_key }}"
+    meraki_base_url: "{{ meraki_base_url }}"
+    meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+    meraki_certificate_path: "{{ meraki_certificate_path }}"
+    meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+    meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+    meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+    meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+    meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+    meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+    meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+    meraki_output_log: "{{ meraki_output_log }}"
+    meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+    meraki_log_path: "{{ meraki_log_path }}"
+    meraki_print_console: "{{ meraki_print_console }}"
+    meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+    meraki_simulate: "{{ meraki_simulate }}"
+    meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+    meraki_caller: "{{ meraki_caller }}"
+    meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+    meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    state: absent
+    networkId: string
+    rfProfileId: string
 """
 RETURN = r"""
 meraki_response:

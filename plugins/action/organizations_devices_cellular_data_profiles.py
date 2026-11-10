@@ -48,6 +48,7 @@ required_together = []
 
 
 class OrganizationsDevicesCellularDataProfiles(object):
+    # Begin manually added: __init__
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
@@ -57,6 +58,7 @@ class OrganizationsDevicesCellularDataProfiles(object):
             organizationId=params.get("organizationId"),
             profileId=params.get("profileId"),
         )
+    # End manually added: __init__
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
@@ -269,6 +271,9 @@ class OrganizationsDevicesCellularDataProfiles(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

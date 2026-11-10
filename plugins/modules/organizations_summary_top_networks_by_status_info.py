@@ -171,6 +171,9 @@ meraki_response:
             }
           ]
         },
+        "permissions": {
+          "canWrite": true
+        },
         "productTypes": [
           "string"
         ]

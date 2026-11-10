@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -144,6 +144,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
                 self.new_object.get('entry_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method or it is in another action
@@ -164,6 +165,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None
@@ -184,6 +186,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             result = None
         return result
 
+    # Begin manually added: exists
     def exists(self):
         id_exists = False
         name_exists = False
@@ -209,6 +212,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
                 self.new_object.update(dict(entryId=_id))
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
+    # End manually added: exists
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
@@ -222,7 +226,7 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -277,6 +281,9 @@ class OrganizationsWirelessSsidsFirewallIsolationAllowlistEntries(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

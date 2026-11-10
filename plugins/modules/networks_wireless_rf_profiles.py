@@ -47,6 +47,52 @@ options:
     description: Steers client to best available access point. Can be either true
       or false. Defaults to true.
     type: bool
+  dot11be:
+    description: 802.11be settings.
+    suboptions:
+      enabled:
+        description: Whether 802.11be is enabled on Wi-Fi 7 capable APs.
+        type: bool
+      mode:
+        description: 802.11be is enabled for all SSIDs or per SSID group.
+        type: str
+      ssids:
+        description: 802.11be settings for SSIDs.
+        suboptions:
+          groups:
+            description: 802.11be settings for SSID groups.
+            suboptions:
+              '1':
+                description: SSID group 1 includes SSIDs number 0-3.
+                suboptions:
+                  enabled:
+                    description: Whether 802.11be is enabled for the SSID group.
+                    type: bool
+                type: dict
+              '2':
+                description: SSID group 2 includes SSIDs number 4-7.
+                suboptions:
+                  enabled:
+                    description: Whether 802.11be is enabled for the SSID group.
+                    type: bool
+                type: dict
+              '3':
+                description: SSID group 3 includes SSIDs number 8-11.
+                suboptions:
+                  enabled:
+                    description: Whether 802.11be is enabled for the SSID group.
+                    type: bool
+                type: dict
+              '4':
+                description: SSID group 4 includes SSIDs number 12-14.
+                suboptions:
+                  enabled:
+                    description: Whether 802.11be is enabled for the SSID group.
+                    type: bool
+                type: dict
+            type: dict
+        type: dict
+    type: dict
   fiveGhzSettings:
     description: Settings related to 5Ghz band.
     suboptions:
@@ -54,6 +100,15 @@ options:
         description: Sets channel width (MHz) for 5Ghz band. Can be one of 'auto',
           '20', '40' or '80'. Defaults to auto.
         type: str
+      dot11ax:
+        description: IEEE 802.11ax (Wi-Fi 6) settings.
+        suboptions:
+          enabled:
+            description: Determines whether IEEE 802.11ax (Wi-Fi 6) on the 5 GHz band
+              is enabled. Can be either true or false. If false, we highly recommend
+              disabling band steering. Defaults to true.
+            type: bool
+        type: dict
       maxPower:
         description: Sets max power (dBm) of 5Ghz band. Can be integer between 2 and
           30. Defaults to 30.
@@ -523,10 +578,19 @@ options:
     description: Settings related to 2.4Ghz band.
     suboptions:
       axEnabled:
-        description: Determines whether ax radio on 2.4Ghz band is on or off. Can
-          be either true or false. If false, we highly recommend disabling band steering.
-          Defaults to true.
+        description: Determines whether IEEE 802.11ax (Wi-Fi 6) on the 2.4 GHz band
+          is enabled. Can be either true or false. If false, we highly recommend disabling
+          band steering. Deprecated; use dot11ax.enabled instead. Defaults to true.
         type: bool
+      dot11ax:
+        description: IEEE 802.11ax (Wi-Fi 6) settings.
+        suboptions:
+          enabled:
+            description: Determines whether IEEE 802.11ax (Wi-Fi 6) on the 2.4 GHz
+              band is enabled. Can be either true or false. If false, we highly recommend
+              disabling band steering. Defaults to true.
+            type: bool
+        type: dict
       maxPower:
         description: Sets max power (dBm) of 2.4Ghz band. Can be integer between 2
           and 30. Defaults to 30.
@@ -610,8 +674,23 @@ EXAMPLES = r"""
           - '5'
     bandSelectionType: ap
     clientBalancingEnabled: true
+    dot11be:
+      enabled: false
+      mode: all SSIDs
+      ssids:
+        groups:
+          '1':
+            enabled: true
+          '2':
+            enabled: false
+          '3':
+            enabled: true
+          '4':
+            enabled: false
     fiveGhzSettings:
       channelWidth: auto
+      dot11ax:
+        enabled: true
       maxPower: 30
       minBitrate: 12
       minPower: 8
@@ -841,6 +920,8 @@ EXAMPLES = r"""
       enabled: true
     twoFourGhzSettings:
       axEnabled: true
+      dot11ax:
+        enabled: true
       maxPower: 30
       minBitrate: 11.0
       minPower: 5
@@ -882,8 +963,23 @@ EXAMPLES = r"""
           - '5'
     bandSelectionType: ap
     clientBalancingEnabled: true
+    dot11be:
+      enabled: false
+      mode: all SSIDs
+      ssids:
+        groups:
+          '1':
+            enabled: true
+          '2':
+            enabled: false
+          '3':
+            enabled: true
+          '4':
+            enabled: false
     fiveGhzSettings:
       channelWidth: auto
+      dot11ax:
+        enabled: true
       maxPower: 30
       minBitrate: 12
       minPower: 8
@@ -1116,6 +1212,8 @@ EXAMPLES = r"""
       enabled: true
     twoFourGhzSettings:
       axEnabled: true
+      dot11ax:
+        enabled: true
       maxPower: 30
       minBitrate: 11.0
       minPower: 5
@@ -1181,6 +1279,9 @@ meraki_response:
           0
         ],
         "axEnabled": true,
+        "dot11ax": {
+          "enabled": true
+        },
         "rxsop": {}
       },
       "fiveGhzSettings": {
@@ -1191,7 +1292,10 @@ meraki_response:
           0
         ],
         "channelWidth": "string",
-        "rxsop": {}
+        "rxsop": {},
+        "dot11ax": {
+          "enabled": true
+        }
       },
       "sixGhzSettings": {
         "maxPower": 0,
@@ -1374,6 +1478,9 @@ meraki_response:
         }
       },
       "isIndoorDefault": true,
-      "isOutdoorDefault": true
+      "isOutdoorDefault": true,
+      "dot11be": {
+        "enabled": true
+      }
     }
 """

@@ -28,6 +28,13 @@ options:
     description: Enable DHCP boot options to provide PXE boot options configs for
       the dhcp server running on the switch interface.
     type: bool
+  dhcpDefaultRouterIps:
+    description: The DHCP default router IPs for the DHCP server running on the switch
+      interface.
+    type: str
+  dhcpDomainName:
+    description: The DHCP domain name for the DHCP server running on the switch interface.
+    type: str
   dhcpLeaseTime:
     description: The DHCP lease time config for the dhcp server running on switch
       interface ('30 minutes', '1 hour', '4 hours', '12 hours', '1 day' or '1 week').
@@ -42,7 +49,8 @@ options:
     elements: dict
     suboptions:
       code:
-        description: The code for DHCP option which should be from 2 to 254.
+        description: The code for DHCP option which should be from 2 to 254, excluding
+          option 53 (reserved for DHCP Message Type).
         type: str
       type:
         description: The type of the DHCP option which should be one of ('text', 'ip',
@@ -145,6 +153,8 @@ EXAMPLES = r"""
     bootFileName: home_boot_file
     bootNextServer: 1.2.3.4
     bootOptionsEnabled: true
+    dhcpDefaultRouterIps: 192.168.1.1, 192.168.1.2
+    dhcpDomainName: example.com
     dhcpLeaseTime: 1 day
     dhcpMode: dhcpServer
     dhcpOptions:
@@ -206,6 +216,8 @@ meraki_response:
           "mac": "string",
           "ip": "string"
         }
-      ]
+      ],
+      "dhcpDefaultRouterIps": "string",
+      "dhcpDomainName": {}
     }
 """

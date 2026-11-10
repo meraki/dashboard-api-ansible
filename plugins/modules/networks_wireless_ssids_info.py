@@ -111,6 +111,7 @@ meraki_response:
       "number": 0,
       "name": "string",
       "enabled": true,
+      "wlanIdentifier": 0,
       "splashPage": "string",
       "ssidAdminAccessible": true,
       "localAuth": true,
@@ -169,6 +170,9 @@ meraki_response:
         "enabled": true,
         "adaptive": true
       },
+      "dot11k": {
+        "enabled": true
+      },
       "enterpriseAdminAccess": "string",
       "radiusTestingEnabled": true,
       "radiusCalledStationId": "string",
@@ -194,6 +198,11 @@ meraki_response:
         },
         "key": 0,
         "clientIsolation": true
+      },
+      "campusGateway": {
+        "cluster": {
+          "id": "string"
+        }
       },
       "lanIsolationEnabled": true,
       "oauth": {

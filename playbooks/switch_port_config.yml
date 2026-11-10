@@ -6,6 +6,6 @@
       cisco.meraki.devices_switch_ports:
         meraki_suppress_logging: true
         state: present
-        serial: QBSB-D8ED-9NXT
+        serial: QBSB-VLHZ-JQCN
         vlan: 10
         portId: 1

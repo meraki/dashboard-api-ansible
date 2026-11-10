@@ -161,7 +161,8 @@ meraki_response:
             "number": 0,
             "serial": "string",
             "model": "string",
-            "status": "string"
+            "status": "string",
+            "poe": {}
           }
         ]
       }

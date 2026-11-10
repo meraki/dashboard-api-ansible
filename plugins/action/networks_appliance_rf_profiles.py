@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -36,11 +36,12 @@ argument_spec.update(dict(
     fiveGhzSettings=dict(type="dict"),
     perSsidSettings=dict(type="dict"),
     networkId=dict(type="str"),
+    rfProfileId=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["name", "networkId"], True),
-    ("state", "absent", ["name", "networkId"], True),
+    ("state", "present", ["name", "networkId", "rfProfileId"], True),
+    ("state", "absent", ["name", "networkId", "rfProfileId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -56,6 +57,7 @@ class NetworksApplianceRfProfiles(object):
             fiveGhzSettings=params.get("fiveGhzSettings"),
             perSsidSettings=params.get("perSsidSettings"),
             networkId=params.get("networkId"),
+            rfProfileId=params.get("rfProfileId"),
         )
 
     def get_all_params(self, name=None, id=None):
@@ -64,6 +66,18 @@ class NetworksApplianceRfProfiles(object):
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
                 'networkId') or self.new_object.get('network_id')
+        return new_object_params
+
+    def get_params_by_id(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rfProfileId') is not None or self.new_object.get(
+                'rf_profile_id') is not None:
+            new_object_params['rfProfileId'] = self.new_object.get(
+                'rfProfileId') or self.new_object.get('rf_profile_id')
         return new_object_params
 
     def create_params(self):
@@ -90,6 +104,46 @@ class NetworksApplianceRfProfiles(object):
                 'networkId') or self.new_object.get('network_id')
         return new_object_params
 
+    def delete_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rfProfileId') is not None or self.new_object.get(
+                'rf_profile_id') is not None:
+            new_object_params['rfProfileId'] = self.new_object.get(
+                'rfProfileId') or self.new_object.get('rf_profile_id')
+        return new_object_params
+
+    def update_by_id_params(self):
+        new_object_params = {}
+        if self.new_object.get('name') is not None or self.new_object.get(
+                'name') is not None:
+            new_object_params['name'] = self.new_object.get('name') or \
+                self.new_object.get('name')
+        if self.new_object.get('twoFourGhzSettings') is not None or self.new_object.get(
+                'two_four_ghz_settings') is not None:
+            new_object_params['twoFourGhzSettings'] = self.new_object.get(
+                'twoFourGhzSettings') or self.new_object.get('two_four_ghz_settings')
+        if self.new_object.get('fiveGhzSettings') is not None or self.new_object.get(
+                'five_ghz_settings') is not None:
+            new_object_params['fiveGhzSettings'] = self.new_object.get(
+                'fiveGhzSettings') or self.new_object.get('five_ghz_settings')
+        if self.new_object.get('perSsidSettings') is not None or self.new_object.get(
+                'per_ssid_settings') is not None:
+            new_object_params['perSsidSettings'] = self.new_object.get(
+                'perSsidSettings') or self.new_object.get('per_ssid_settings')
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        if self.new_object.get('rfProfileId') is not None or self.new_object.get(
+                'rf_profile_id') is not None:
+            new_object_params['rfProfileId'] = self.new_object.get(
+                'rfProfileId') or self.new_object.get('rf_profile_id')
+        return new_object_params
+
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method or it is in another action
@@ -112,17 +166,16 @@ class NetworksApplianceRfProfiles(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
         try:
             items = self.meraki.exec_meraki(
                 family="appliance",
-                function="getNetworkApplianceRfProfiles",
-                params=self.get_all_params(id=id),
+                function="getNetworkApplianceRfProfile",
+                params=self.get_params_by_id()
             )
             if isinstance(items, dict):
                 if 'response' in items:
                     items = items.get('response')
-            result = get_dict_result(items, 'id', id)
+            result = get_dict_result(items, 'rfProfileId', id)
         except Exception as e:
             print("Error: ", e)
             result = None
@@ -133,6 +186,8 @@ class NetworksApplianceRfProfiles(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
+        o_id = o_id or self.new_object.get(
+            "rf_profile_id") or self.new_object.get("rfProfileId")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
@@ -142,11 +197,15 @@ class NetworksApplianceRfProfiles(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
+            _id = _id or prev_obj.get("rfProfileId")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+                self.new_object.update(dict(rfProfileId=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -162,7 +221,7 @@ class NetworksApplianceRfProfiles(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -179,17 +238,47 @@ class NetworksApplianceRfProfiles(object):
 
     def update(self):
         id = self.new_object.get("id")
+        id = id or self.new_object.get("rfProfileId")
         name = self.new_object.get("name")
         result = None
-        # NOTE: Does not have update method. What do we do?
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("rfProfileId")
+            if id_:
+                self.new_object.update(dict(rfProfileId=id_))
+        result = self.meraki.exec_meraki(
+            family="appliance",
+            function="updateNetworkApplianceRfProfile",
+            params=self.update_by_id_params(),
+            op_modifies=True,
+        )
         return result
 
     def delete(self):
         id = self.new_object.get("id")
+        id = id or self.new_object.get("rfProfileId")
         name = self.new_object.get("name")
         result = None
-        # NOTE: Does not have delete method. What do we do?
+        if not id:
+            prev_obj_name = self.get_object_by_name(name)
+            id_ = None
+            if prev_obj_name:
+                id_ = prev_obj_name.get("id")
+                id_ = id_ or prev_obj_name.get("rfProfileId")
+            if id_:
+                self.new_object.update(dict(rfProfileId=id_))
+        result = self.meraki.exec_meraki(
+            family="appliance",
+            function="deleteNetworkApplianceRfProfile",
+            params=self.delete_by_id_params(),
+        )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

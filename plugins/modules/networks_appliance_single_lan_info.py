@@ -91,6 +91,10 @@ meraki_response:
             }
           }
         ]
+      },
+      "vrf": {
+        "id": "string",
+        "name": "string"
       }
     }
 """

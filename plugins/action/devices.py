@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -224,6 +224,7 @@ class Devices(object):
             result = None
         return result
 
+    # Begin manually added: exists
     def exists(self):
         prev_obj = None
         id_exists = False
@@ -255,6 +256,7 @@ class Devices(object):
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
+    # End manually added: exists
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
@@ -273,7 +275,7 @@ class Devices(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

@@ -9,4 +9,6 @@
         defaultGateway: 192.168.1.1
         interfaceIp: 192.168.1.2
         name: L3 interface
-        serial: L_828099381482770866
+        serial: QBSB-D5ZD-9CXT
+        subnet: 192.168.1.0/24
+        vlanId: 123

@@ -171,7 +171,7 @@ meraki_response:
   sample: >
     [
       {
-        "adminId": "string",
+        "adminId": {},
         "method": "string",
         "host": "string",
         "path": "string",

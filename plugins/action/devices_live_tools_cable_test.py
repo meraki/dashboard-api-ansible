@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -33,10 +33,11 @@ argument_spec.update(dict(
     ports=dict(type="list"),
     callback=dict(type="dict"),
     serial=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["serial"], True),
+    ("state", "present", ["id", "serial"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -50,7 +51,18 @@ class DevicesLiveToolsCableTest(object):
             ports=params.get("ports"),
             callback=params.get("callback"),
             serial=params.get("serial"),
+            id=params.get("id"),
         )
+
+    def get_params_by_id(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('serial') is not None or self.new_object.get(
+                'serial') is not None:
+            new_object_params['serial'] = self.new_object.get('serial')
+        if self.new_object.get(
+                'id') is not None or self.new_object.get('id') is not None:
+            new_object_params['id'] = self.new_object.get('id')
+        return new_object_params
 
     def create_params(self):
         new_object_params = {}
@@ -75,17 +87,29 @@ class DevicesLiveToolsCableTest(object):
 
     def get_object_by_id(self, id):
         result = None
-        # NOTE: Does not have a get by id method or it is in another action
+        try:
+            items = self.meraki.exec_meraki(
+                family="devices",
+                function="getDeviceLiveToolsCableTest",
+                params=dict(self.get_params_by_id(), id=id)
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = items
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def exists(self):
         prev_obj = None
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("serial")
+        o_id = self.new_object.get("id")  # review it
         name = self.new_object.get("name")
         if o_id:
-            prev_obj = self.get_object_by_name(o_id)
+            prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
@@ -97,6 +121,8 @@ class DevicesLiveToolsCableTest(object):
                     "The 'id' and 'name' params don't refer to the same object")
             if _id:
                 self.new_object.update(dict(id=_id))
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -110,7 +136,7 @@ class DevicesLiveToolsCableTest(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

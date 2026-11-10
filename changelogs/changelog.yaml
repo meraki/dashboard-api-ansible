@@ -1651,3 +1651,267 @@ releases:
           and similar fire-and-forget endpoints do on rejection), instead of letting the calling module report changed=true/failed=false. Responses without a
           \"success\" key, and read operations, are unaffected."
     release_date: "2026-08-18"
+  2.26.0:
+    changes:
+      minor_changes:
+        - "Collection updated to the Cisco Meraki Dashboard API v1.76.0."
+        - "event_query - `facts.device_type` now uses the normalized AAP indirect node counting taxonomy required by ansible-lint: `resource` for
+          `cisco.meraki.devices` and `cisco.meraki.devices_info`, and `organizational_unit` for `cisco.meraki.networks_info`. The Meraki product type is kept
+          in the new `meraki_product_type` fact."
+        - "plugin_utils/meraki - Added the `meraki_caller` connection option (environment variable `MERAKI_PYTHON_SDK_CALLER`) to set the identifier sent to
+          the API for usage tracking; it defaults to `MerakiAnsibleCollection/2.26.0 Cisco`."
+        - "plugin_utils/meraki - Unified `meraki_compare_equality` and `meraki_compare_equality2` into a single comparison used by every module. Fields
+          missing from the API response are now treated as empty values of the requested type, and values that differ only by type (for example `\"1\"` and
+          `1`) are considered equal, which avoids reporting `changed` when nothing differs. `meraki_compare_equality2` is kept as a deprecated alias."
+        - "administered_licensing_subscription_entitlements_info - Added the `subscriptionType` parameter."
+        - "devices_appliance_interfaces_ports_update - Added the `profile` parameter."
+        - "devices_live_tools_arp_table - Added the `arpTableId` parameter."
+        - "devices_live_tools_arp_table_info - Added the `arpTableId`, `serial` parameters."
+        - "devices_live_tools_cable_test - Added the `id` parameter."
+        - "devices_live_tools_cable_test_info - Added the `id`, `serial` parameters."
+        - "devices_live_tools_mac_table - Added the `mac` parameter."
+        - "devices_live_tools_routing_table_lookups - Added the `vrf` parameter."
+        - "devices_live_tools_throughput_test - Added the `throughputTestId` parameter."
+        - "devices_live_tools_throughput_test_info - Added the `serial`, `throughputTestId` parameters."
+        - "devices_live_tools_wake_on_lan - Added the `wakeOnLanId` parameter."
+        - "devices_live_tools_wake_on_lan_info - Added the `serial`, `wakeOnLanId` parameters."
+        - "devices_switch_ports - Added the `fastPoe`, `perpetualPoe` parameters."
+        - "devices_switch_routing_interfaces - Added the `bidirectionalForwardingDetection` parameter."
+        - "devices_switch_routing_interfaces_dhcp - Added the `dhcpDefaultRouterIps`, `dhcpDomainName` parameters."
+        - "networks_appliance_rf_profiles - Added the `rfProfileId` parameter."
+        - "networks_appliance_rf_profiles_info - Added the `rfProfileId` parameter."
+        - "networks_appliance_security_intrusion - Added the `policy` parameter."
+        - "networks_appliance_single_lan - Added the `vrf` parameter."
+        - "networks_appliance_static_routes - Added the `vrf` parameter."
+        - "networks_appliance_traffic_shaping_vpn_exclusions - Added the `applicationCategoryMapping` parameter."
+        - "networks_appliance_vpn_bgp - Added the `ipv6`, `localAsNumber`, `priorityRoute`, `tunnelDownTermination` parameters."
+        - "networks_appliance_vpn_site_to_site_vpn - Added the `confirmed`, `natTraversal` parameters."
+        - "networks_bluetooth_clients_info - Added the `direction`, `endingBefore`, `perPage`, `startingAfter`, `t0`, `timespan`, `total_pages` parameters."
+        - "networks_firmware_upgrades - Added the `featureLossAcknowledgements` parameter."
+        - "networks_sm_profiles_info - Added the `direction`, `endingBefore`, `perPage`, `startingAfter`, `total_pages` parameters."
+        - "networks_switch_settings - Added the `clientTracking` parameter."
+        - "networks_switch_stacks_routing_interfaces - Added the `bidirectionalForwardingDetection` parameter."
+        - "networks_switch_stacks_routing_interfaces_dhcp - Added the `dhcpDefaultRouterIps`, `dhcpDomainName` parameters."
+        - "networks_vlan_profiles - Added the `activeVlans` parameter."
+        - "networks_wireless_rf_profiles - Added the `dot11be` parameter."
+        - "networks_wireless_ssids - Added the `campusGateway`, `dot11k` parameters."
+        - "organizations_action_batches_info - Added the `direction`, `endingBefore`, `perPage`, `sortOrder`, `startingAfter`, `total_pages` parameters."
+        - "organizations_branding_policies - Added the `appearance` parameter."
+        - "organizations_camera_roles - Added the `roleId` parameter."
+        - "organizations_camera_roles_info - Added the `roleId` parameter."
+        - "organizations_config_templates_switch_profiles_ports - Added the `fastPoe`, `perpetualPoe` parameters."
+        - "organizations_policies_global_firewall_rulesets_rules - Added the `logging` parameter."
+        - "organizations_policies_global_group_policies_firewall_rulesets_assignments - Added the `staged` parameter."
+        - "organizations_sase_sites_detach - Added the `items` parameter."
+        - "organizations_sm_admins_roles - Added the `roleId` parameter."
+        - "organizations_sm_admins_roles_info - Added the `roleId` parameter."
+        - "devices_appliance_dhcp_subnets_info - Added new plugin. Return the DHCP subnet information for an appliance."
+        - "devices_appliance_interfaces_ports - Added new plugin. Update configurations for an appliance's specified port."
+        - "devices_appliance_prefixes_delegated_info - Added new plugin. Return current delegated IPv6 prefixes on an appliance."
+        - "devices_appliance_prefixes_delegated_vlan_assignments_info - Added new plugin. Return prefixes assigned to all IPv6 enabled VLANs on an appliance."
+        - "devices_camera_analytics_overview_info - Added new plugin. Returns an overview of aggregate analytics data for a timespan."
+        - "devices_camera_analytics_recent_info - Added new plugin. Returns most recent record for analytics zones."
+        - "devices_camera_analytics_zones_history_info - Added new plugin. Return historical records for analytic zones."
+        - "devices_camera_analytics_zones_info - Added new plugin. Returns all configured analytic zones for this camera."
+        - "devices_camera_sense_object_detection_models_info - Added new plugin. Returns the MV Sense object detection model list for the given camera."
+        - "devices_certificates_revoke - Added new plugin. Revoke a device certificate."
+        - "devices_clients_info - Added new plugin. List the clients of a device, up to a maximum of a month ago."
+        - "devices_live_tools_route_details - Added new plugin. Enqueue a live tool job to fetch route details from a device."
+        - "devices_live_tools_route_details_info - Added new plugin. Return a route details live tool job for a device."
+        - "devices_loss_and_latency_history_info - Added new plugin. Get the uplink loss percentage and latency in milliseconds, and goodput in kilobits per
+          second for MX, MG and Z devices."
+        - "devices_switch_ports_statuses_packets_info - Added new plugin. Return the packet counters for all the ports of a switch."
+        - "devices_wireless_radio_overrides - Added new plugin. Update 2.4 GHz, 5 GHz, and 6 GHz radio settings channel, channel width, power, and
+          enable/disable that override RF profiles."
+        - "devices_wireless_radio_overrides_info - Added new plugin. Return the radio overrides of a device."
+        - "networks_appliance_clients_security_events_info - Added new plugin. List the security events for a client."
+        - "networks_appliance_firewall_inbound_cellular_firewall_rules - Added new plugin. Update the inbound cellular firewall rules of an MX network."
+        - "networks_appliance_firewall_inbound_cellular_firewall_rules_info - Added new plugin. Return the inbound cellular firewall rules for an MX network."
+        - "networks_appliance_security_events_info - Added new plugin. List the security events for a network."
+        - "networks_appliance_security_https_inspection - Added new plugin. Update HTTPS inspection configuration for a network."
+        - "networks_appliance_uplinks_usage_history_info - Added new plugin. Get the sent and received bytes for each uplink of a network."
+        - "networks_camera_schedules_info - Added new plugin. Returns a list of all camera recording schedules."
+        - "networks_campus_gateway_clusters - Added new plugin. Create a cluster and add campus gateways to it."
+        - "networks_campus_gateway_ssids_mdns - Added new plugin. Update the mDNS gateway settings and rules for a SSID and cluster."
+        - "networks_clients_application_usage_info - Added new plugin. Return the application usage data for clients."
+        - "networks_clients_bandwidth_usage_history_info - Added new plugin. Returns a timeseries of total traffic consumption rates for all clients on a
+          network within a given timespan, in megabits per second."
+        - "networks_clients_traffic_history_info - Added new plugin. Return the client's network traffic data over time."
+        - "networks_clients_usage_histories_info - Added new plugin. Return the usage histories for clients."
+        - "networks_clients_usage_history_info - Added new plugin. Return the client's daily usage history."
+        - "networks_network_health_channel_utilization_info - Added new plugin. Get the channel utilization over each radio for all APs in a network."
+        - "networks_sm_devices_restrictions_info - Added new plugin. List the restrictions on a device."
+        - "networks_splash_login_attempts_info - Added new plugin. List the splash login attempts for a network."
+        - "networks_traffic_info - Added new plugin. Return the traffic analysis data for this network."
+        - "networks_wireless_air_marshal_info - Added new plugin. List Air Marshal scan results from a network."
+        - "networks_wireless_clients_connectivity_events_info - Added new plugin. List the wireless connectivity events for a client within a network in the
+          timespan."
+        - "networks_wireless_clients_latency_history_info - Added new plugin. Return the latency history for a client."
+        - "networks_wireless_devices_latency_stats_info - Added new plugin. Aggregated latency info for this network, grouped by node."
+        - "networks_wireless_ssids_overrides - Added new plugin. Update the overrides for this SSID."
+        - "networks_wireless_ssids_overrides_info - Added new plugin. Display the overrides for this SSID."
+        - "networks_wireless_ssids_owe - Added new plugin. Update the OWE transition pairs for a network."
+        - "organizations_api_rest_provisioning_pipelines_info - Added new plugin. List pipelines with operation and status metadata, sorted by pipeline ID.
+          Pipeline IDs are assigned in creation order, so newer pipelines are returned first by default; sortOrder controls that ID order."
+        - "organizations_appliance_devices_interfaces_ports_profiles_assignments_info - Added new plugin. Returns MX port profile assignments."
+        - "organizations_appliance_security_events_info - Added new plugin. List the security events for an organization."
+        - "organizations_appliance_security_https_inspection_by_network_info - Added new plugin. List HTTPS inspection status and configuration for appliances
+          in the organization."
+        - "organizations_appliance_security_httpsi_certificates - Added new plugin. Upload an HTTPS Inspection certificate to MX devices in the same
+          organization."
+        - "organizations_appliance_security_httpsi_info - Added new plugin. Retrieve the HTTPS Inspection state for all security appliances in an
+          organization."
+        - "organizations_appliance_security_intrusion_policies - Added new plugin. Create a new intrusion policy for the organization."
+        - "organizations_appliance_security_intrusion_policies_info - Added new plugin. List the intrusion policies configured for an organization along with
+          base policies."
+        - "organizations_appliance_security_intrusion_policies_overviews_info - Added new plugin. List counts for the intrusion and base policies configured
+          for an organization."
+        - "organizations_appliance_security_intrusion_policies_rule_groups_overrides_declare - Added new plugin. Declare the desired rule group overrides for
+          an intrusion policy."
+        - "organizations_appliance_security_intrusion_policies_rules_overrides_declare - Added new plugin. Declare the desired rule overrides for an intrusion
+          policy."
+        - "organizations_appliance_security_intrusion_rule_groups_info - Added new plugin. List the rule groups that belong to a security policy."
+        - "organizations_appliance_security_intrusion_rule_groups_overrides - Added new plugin. Delete a rule group override for an intrusion policy."
+        - "organizations_appliance_security_intrusion_rule_groups_overrides_info - Added new plugin. List the rule group overrides configured for an intrusion
+          policy."
+        - "organizations_appliance_security_intrusion_rule_groups_overviews_info - Added new plugin. List counts for the child rule groups and rules for each
+          rule group in a security policy."
+        - "organizations_appliance_security_intrusion_rules_info - Added new plugin. List the rules that belong to a security policy."
+        - "organizations_appliance_security_intrusion_rules_overrides - Added new plugin. Delete a rule override for an intrusion policy."
+        - "organizations_appliance_security_intrusion_rules_overrides_info - Added new plugin. List the rule overrides configured for an intrusion policy."
+        - "organizations_appliance_uplink_statuses_info - Added new plugin. List the uplink status of every Meraki MX appliance, Z series appliance, and
+          Secure Router in the organization."
+        - "organizations_appliance_vpn_stats_info - Added new plugin. Show VPN history stats for networks in an organization."
+        - "organizations_appliance_vpn_statuses_info - Added new plugin. Show VPN status for networks in an organization."
+        - "organizations_assurance_alerts_profiles - Added new plugin. Create an alert profile."
+        - "organizations_assurance_alerts_profiles_info - Added new plugin. List the alert profiles for this organization."
+        - "organizations_assurance_impacted_device_wireless_by_network_info - Added new plugin. Returns count of impacted wireless devices per network on a
+          given organization and time range."
+        - "organizations_assurance_wireless_experience_successful_connections_by_network_info - Added new plugin. Returns connection and client counts
+          aggregated by network for the requested time window."
+        - "organizations_camera_onboarding_statuses - Added new plugin. Notify that credential handoff to camera has completed."
+        - "organizations_camera_onboarding_statuses_info - Added new plugin. Fetch onboarding status of cameras."
+        - "organizations_campus_gateway_clients_usage_by_network_by_cluster_info - Added new plugin. Returns client usage details for campus gateway clusters
+          within an organization."
+        - "organizations_campus_gateway_clusters_failover_targets_by_cluster_info - Added new plugin. List the failover targets of the Campus Gateway
+          clusters, grouped by cluster."
+        - "organizations_campus_gateway_clusters_failover_targets_info - Added new plugin. List the details of a Failover Targets for a Campus Gateway
+          cluster."
+        - "organizations_campus_gateway_clusters_networks_overviews_info - Added new plugin. List networks tunneling through Campus Gateway clusters with
+          their AP, ssids and client counts."
+        - "organizations_campus_gateway_clusters_provision - Added new plugin. Provisions a cluster,adds campus gateways to it and associate/dissociate
+          failover targets."
+        - "organizations_campus_gateway_clusters_ssids_info - Added new plugin. List SSIDs tunneling through Campus Gateway clusters."
+        - "organizations_campus_gateway_clusters_tunnelable_info - Added new plugin. List available campus gateway clusters that can be used for wireless
+          network tunneling."
+        - "organizations_campus_gateway_clusters_tunneling_batch_update - Added new plugin. Update MCG cluster-network tunnel settings for multiple networks."
+        - "organizations_campus_gateway_clusters_tunneling_by_cluster_by_network_info - Added new plugin. List all the MCG cluster-network tunnel settings."
+        - "organizations_campus_gateway_connections_info - Added new plugin. List the details of APs tunneling through the Campus Gateway clusters."
+        - "organizations_campus_gateway_connections_overview_info - Added new plugin. List the count of connections APs with tunneling status up and down
+          through the Campus Gateway clusters."
+        - "organizations_campus_gateway_devices_system_cpu_load_info - Added new plugin. Return the latest CPU load averages reported by Campus Gateway
+          devices."
+        - "organizations_certificates_authorities - Added new plugin. Delete a certificate authority."
+        - "organizations_certificates_authorities_info - Added new plugin. List certificate authorities for an organization."
+        - "organizations_certificates_authorities_jobs_info - Added new plugin. Return the status and result of a certificate authority job."
+        - "organizations_certificates_authorities_revoke - Added new plugin. Revoke a trusted feature certificate authority."
+        - "organizations_certificates_revocation_lists_info - Added new plugin. Return full certificate revocation lists CRLs for the organization's
+          certificate authorities."
+        - "organizations_configuration_changes_info - Added new plugin. View the Change Log for your organization."
+        - "organizations_devices_certificates_info - Added new plugin. List device certificates for the organization."
+        - "organizations_inventory_devices_swaps_bulk - Added new plugin. Swap the devices identified by devices.old with a devices.new, then perform the
+          afterAction on the devices.old."
+        - "organizations_inventory_devices_swaps_bulk_info - Added new plugin. List of device swaps for a given request ID {id} ."
+        - "organizations_networks_groups - Added new plugin. Create a network group."
+        - "organizations_networks_groups_bulk_assign - Added new plugin. Add networks to a network group."
+        - "organizations_networks_groups_bulk_unassign - Added new plugin. Remove networks from a network group."
+        - "organizations_networks_groups_info - Added new plugin. List the network groups in an organization."
+        - "organizations_networks_groups_overview_by_group_info - Added new plugin. List the client and status overview information for the network groups in
+          an organization."
+        - "organizations_policies_global_group_policies_firewall_rulesets_assignments_commit - Added new plugin. Commit staged Organization-Wide Policy
+          Ruleset Assignments."
+        - "organizations_policies_global_group_policies_networks_assignments_bulk_assign - Added new plugin. Assign Network Enforcement Targets to an
+          Organization-Wide Policy."
+        - "organizations_policies_global_group_policies_networks_assignments_bulk_delete - Added new plugin. Remove Network Enforcement Targets from an
+          Organization-Wide Policy."
+        - "organizations_policies_global_group_policies_networks_assignments_info - Added new plugin. List Network Enforcement Target Assignments for
+          Organization-Wide policies for the specified organization."
+        - "organizations_policies_global_group_policies_networks_info - Added new plugin. List all available Network Enforcement Targets for an Organization
+          and their associated Organization-Wide Policies if applicable."
+        - "organizations_summary_sustainability_daily_consumer_metrics_networks_info - Added new plugin. Lists daily consumer metrics for networks."
+        - "organizations_summary_sustainability_summary_consumer_metrics_device_categories_aggregated_info - Added new plugin. Lists summary consumer metrics
+          aggregated by device category."
+        - "organizations_summary_sustainability_summary_consumer_metrics_device_categories_info - Added new plugin. Lists available device categories for
+          sustainability metrics with their corresponding device types."
+        - "organizations_summary_sustainability_summary_consumer_metrics_devices_info - Added new plugin. Lists summary consumer metrics for devices."
+        - "organizations_summary_sustainability_summary_consumer_metrics_networks_aggregated_info - Added new plugin. Returns aggregated consumer metrics for
+          all networks in the organization."
+        - "organizations_summary_sustainability_summary_consumer_metrics_networks_info - Added new plugin. Lists summary consumer metrics for networks."
+        - "organizations_summary_switch_power_history_info - Added new plugin. Returns the total PoE power draw for all switch ports in the organization over
+          the requested timespan by default the last 24 hours."
+        - "organizations_webhooks_alert_types_info - Added new plugin. Return a list of alert types to be used with managing webhook alerts."
+        - "organizations_wireless_clients_connections_impacted_by_network_by_ssid_info - Added new plugin. Summarize the number of wireless clients impacted
+          by connection failures on network SSIDs, across an organization."
+        - "organizations_wireless_clients_usage_by_network_by_ssid_info - Added new plugin. Returns client usage details for wireless network SSIDs within an
+          organization."
+        - "organizations_wireless_clients_usage_by_network_info - Added new plugin. Returns client usage details for wireless networks within an
+          organization."
+        - "organizations_wireless_clients_usage_by_ssid_info - Added new plugin. Returns client usage details for SSIDs within an organization."
+        - "organizations_wireless_radio_overrides_by_device_info - Added new plugin. Return a list of radio overrides."
+        - "organizations_wireless_ssids_owe_by_network_info - Added new plugin. Returns an array of objects, each containing OWE transition pairs for the
+          corresponding network."
+        - "organizations_wireless_ssids_profiles - Added new plugin. Create a new SSID profile in an organization."
+        - "organizations_wireless_ssids_profiles_assignments - Added new plugin. Assigns an SSID profile to an SSID in the organization."
+        - "organizations_wireless_ssids_profiles_assignments_by_network_info - Added new plugin. List the SSID profile assignments in an organization, grouped
+          by network."
+        - "organizations_wireless_ssids_profiles_assignments_info - Added new plugin. List the SSID profile assignments in an organization."
+        - "organizations_wireless_ssids_profiles_info - Added new plugin. Returns the SSID profiles for an organization."
+        - "organizations_wireless_ssids_profiles_overviews_info - Added new plugin. Returns the SSID profiles' overview information for an organization."
+      breaking_changes:
+        - "networks_wireless_clients_connection_stats_info - Removed the `vlan` parameter, which is no longer supported by the Dashboard API."
+        - "networks_wireless_connection_stats_info - Removed the `vlan` parameter, which is no longer supported by the Dashboard API."
+        - "networks_wireless_devices_connection_stats_info - Removed the `vlan` parameter, which is no longer supported by the Dashboard API."
+        - "networks_wireless_failed_connections_info - Removed the `vlan` parameter, which is no longer supported by the Dashboard API."
+        - "networks_wireless_location_scanning - Removed the `ruleId` parameter, which is no longer supported by the Dashboard API."
+        - "organizations_sase_sites_attach - Removed the `callback` parameter, which is no longer supported by the Dashboard API."
+        - "organizations_inventory_onboarding_cloud_monitoring_prepare - Removed the module; its endpoint
+          (createOrganizationInventoryOnboardingCloudMonitoringPrepare) was removed from the Dashboard API."
+      bugfixes:
+        - "cellular gateway, campus gateway and wireless controller modules - Fixed the SDK family names (`cellulargateway`, `cellular_gateway`,
+          `campusgateway`, `campus_gateway`, `wireless_controller` to `cellularGateway`, `campusGateway`, `wirelessController`). Every
+          `networks_cellular_gateway_*`, `organizations_cellular_gateway_*`, `networks_campus_gateway_*`, `organizations_campus_gateway_*` and
+          `organizations_wireless_controller_*` module failed with an AttributeError before calling the API."
+        - "organizations_appliance_vpn_third_party_vpn_peers, organizations_appliance_vpn_third_party_vpn_peers_info - Fixed the SDK method names
+          (`getOrganizationApplianceVpnThirdPartyVPNPeers`, `updateOrganizationApplianceVpnThirdPartyVPNPeers`); the previous `...Vpnpeers` names do not exist
+          in any SDK version."
+        - "organizations_appliance_routing_vrfs_settings, organizations_appliance_security_intrusion,
+          organizations_appliance_vpn_site_to_site_ipsec_peers_slas, organizations_appliance_vpn_third_party_vpn_peers,
+          organizations_branding_policies_priorities, organizations_login_security, organizations_saml, organizations_wireless_mqtt_settings - state=present
+          always failed with \"Object does not exists, plugin only has update\" because the current settings were never read; these organization-wide
+          singleton resources now use `organizationId` as their identifier."
+        - "devices_live_tools_cable_test, devices_live_tools_ping, devices_live_tools_ping_device, devices_live_tools_ports_cycle,
+          devices_live_tools_routing_table_lookups, devices_live_tools_routing_table_summaries, networks_sensor_alerts_profiles,
+          organizations_adaptive_policy_groups, organizations_adaptive_policy_policies, organizations_inventory_devices_swaps_bulk,
+          organizations_splash_assets - The lookup of an existing object by id omitted the required path parameter (`serial`, `networkId` or
+          `organizationId`), so it always failed silently and a new object was created on every run."
+        - "networks_vlan_profiles - The lookup by `iname` now sends the required `networkId`, and `iname` (the profile identifier) takes precedence over the
+          display `name` when finding an existing profile."
+        - "networks_vlan_profiles_info - Fixed an AttributeError (missing `get_object` method) when `iname` is provided."
+        - "doc_fragments - Corrected the module notes, which referred to the Cisco DNAC SDK and `dnac_` parameters instead of the Cisco Meraki SDK and
+          `meraki_` parameters."
+        - "meraki_action_batch, meraki_syslog, meraki_webhook - Fixed malformed DOCUMENTATION blocks (option descriptions split across lines with invalid
+          indentation) that could not be parsed by ansible-doc."
+        - "networks_wireless_ssids, organizations_appliance_security_httpsi_certificates - Fixed EXAMPLES that contained unterminated or generator-placeholder
+          certificate strings."
+      known_issues:
+        - "devices_certificates_revoke, devices_live_tools_route_details, devices_live_tools_route_details_info,
+          organizations_assurance_wireless_experience_successful_connections_by_network_info, organizations_certificates_authorities,
+          organizations_certificates_authorities_info, organizations_certificates_authorities_jobs_info, organizations_certificates_authorities_revoke,
+          organizations_certificates_revocation_lists_info, organizations_devices_certificates_info - These endpoints were added in Dashboard API v1.76.0 and
+          are not yet available in any released Meraki Python SDK (the latest, 4.7.0, covers API v1.75.1). The modules fail until an SDK release that includes
+          them is installed."
+        - "organizations_inventory_onboarding_cloud_monitoring_export_events, organizations_inventory_onboarding_cloud_monitoring_imports,
+          organizations_inventory_onboarding_cloud_monitoring_imports_info, organizations_inventory_onboarding_cloud_monitoring_networks_info,
+          organizations_sase_connectors_batch_create - The corresponding endpoints were removed from the Dashboard API (present in v1.69.0, absent since
+          v1.72.0), so these modules can no longer succeed."
+    release_date: "2026-11-09"

@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -174,6 +174,7 @@ class NetworksSwitchQosRulesOrder(object):
                 'qosRuleId') or self.new_object.get('qos_rule_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method or it is in another action
@@ -188,17 +189,18 @@ class NetworksSwitchQosRulesOrder(object):
                     items = items.get('response')
             for item in items:
                 if (item.get("vlan") == self.new_object.get("vlan") and
-                        item.get("protocol") == self.new_object.get("protocol") and
-                        item.get("srcPort") == self.new_object.get("srcPort") and
-                        item.get("dstPort") == self.new_object.get("dstPort") and
-                        item.get("srcPortRange") == self.new_object.get("srcPortRange") and
-                        item.get("dstPortRange") == self.new_object.get("dstPortRange")):
+                        item.get("protocol") == self.new_object.get("protocol")
+                        and item.get("srcPort") == self.new_object.get("srcPort")
+                        and item.get("dstPort") == self.new_object.get("dstPort")
+                        and item.get("srcPortRange") == self.new_object.get("srcPortRange")
+                        and item.get("dstPortRange") == self.new_object.get("dstPortRange")):
                     result = item
                     break
         except Exception as e:
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None
@@ -260,7 +262,7 @@ class NetworksSwitchQosRulesOrder(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -315,6 +317,9 @@ class NetworksSwitchQosRulesOrder(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

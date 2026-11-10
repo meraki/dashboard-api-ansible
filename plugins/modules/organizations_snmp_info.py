@@ -75,8 +75,8 @@ meraki_response:
       "v2CommunityString": "string",
       "v3Enabled": true,
       "v3User": "string",
-      "v3AuthMode": "string",
-      "v3PrivMode": "string",
+      "v3AuthMode": {},
+      "v3PrivMode": {},
       "peerIps": [
         "string"
       ],

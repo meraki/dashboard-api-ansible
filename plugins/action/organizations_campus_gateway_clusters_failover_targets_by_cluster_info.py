@@ -21,13 +21,18 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     meraki_argument_spec,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    devices=dict(type="list"),
-    options=dict(type="dict"),
     organizationId=dict(type="str"),
+    networkIds=dict(type="list"),
+    clusterIds=dict(type="list"),
+    perPage=dict(type="int"),
+    total_pages=dict(type="int"),
+    direction=dict(type="str"),
+    startingAfter=dict(type="str"),
+    endingBefore=dict(type="str"),
 ))
 
 required_if = []
@@ -43,7 +48,7 @@ class ActionModule(ActionBase):
                 "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = False
+        self._supports_check_mode = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -64,12 +69,31 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(self, params):
-        new_object = dict(
-            devices=params.get("devices"),
-            options=params.get("options"),
-            organizationId=params.get("organizationId"),
-        )
+    def get_all(self, params):
+        new_object = {}
+        if params.get("organizationId") is not None:
+            new_object["organizationId"] = params.get(
+                "organizationId")
+        if params.get("networkIds") is not None:
+            new_object["networkIds"] = params.get(
+                "networkIds")
+        if params.get("clusterIds") is not None:
+            new_object["clusterIds"] = params.get(
+                "clusterIds")
+        if params.get("perPage") is not None:
+            new_object["perPage"] = params.get(
+                "perPage")
+        new_object['total_pages'] = params.get(
+            "total_pages") or 1
+        new_object['direction'] = params.get(
+            "direction") or "next"
+        if params.get("startingAfter") is not None:
+            new_object["startingAfter"] = params.get(
+                "startingAfter")
+        if params.get("endingBefore") is not None:
+            new_object["endingBefore"] = params.get(
+                "endingBefore")
+
         return new_object
 
     def run(self, tmp=None, task_vars=None):
@@ -78,13 +102,14 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
+        self._result.update(dict(meraki_response={}))
+
         meraki = MERAKI(params=self._task.args)
 
         response = meraki.exec_meraki(
-            family="organizations",
-            function='createOrganizationInventoryOnboardingCloudMonitoringPrepare',
-            op_modifies=True,
-            params=self.get_object(
+            family="campusGateway",
+            function='getOrganizationCampusGatewayClustersFailoverTargetsByCluster',
+            params=self.get_all(
                 self._task.args),
         )
         self._result.update(dict(meraki_response=response))

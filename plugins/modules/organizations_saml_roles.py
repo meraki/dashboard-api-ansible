@@ -25,8 +25,9 @@ options:
     suboptions:
       access:
         description: The privilege of the SAML administrator on the network. Can be
-          one of 'full', 'read-only', 'guest-ambassador', 'monitor-only', 'ssid-admin'
-          or 'port-tags' or a custom role in the format custom-role ID.
+          one of 'full', 'read-only', 'guest-ambassador', 'monitor-only', 'ssid-admin',
+          'port-tags', 'switchport' or 'switch-port-manager' or a custom role in the
+          format custom-role ID.
         type: str
       id:
         description: The network ID.

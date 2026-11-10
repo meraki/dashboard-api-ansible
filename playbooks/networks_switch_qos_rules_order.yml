@@ -1,15 +1,38 @@
 - name: Play Name
   hosts: localhost
   gather_facts: false
+  vars:
+    network_id: L_828099381482771185
+    rule:
+      vlan: 10
+      protocol: UDP
+      srcPort: 2001
+      dstPortRange: ANY
   tasks:
-    - name: Create
+    # Las reglas QoS no tienen "name": el plugin solo las encuentra por qosRuleId.
+    # Se busca una regla con el mismo selector para actualizarla en vez de
+    # intentar crear un duplicado (la API rechaza selectores repetidos).
+    - name: Get existing QoS rules
+      cisco.meraki.networks_switch_qos_rules_order_info:
+        networkId: "{{ network_id }}"
+      register: qos_rules
+
+    - name: Create or update
       cisco.meraki.networks_switch_qos_rules_order:
         meraki_suppress_logging: false
         state: present
+        networkId: "{{ network_id }}"
+        qosRuleId: "{{ existing[0].id if existing else omit }}"
         dscp: -1
-        # dstPort: 3000
-        dstPortRange: ANY
-        networkId: L_828099381482771185
-        protocol: UDP
-        srcPort: 2001
-        vlan: 10
+        dstPortRange: "{{ rule.dstPortRange }}"
+        protocol: "{{ rule.protocol }}"
+        srcPort: "{{ rule.srcPort }}"
+        vlan: "{{ rule.vlan }}"
+      vars:
+        existing: "{{ qos_rules.meraki_response
+          | selectattr('vlan', 'equalto', rule.vlan)
+          | selectattr('protocol', 'equalto', rule.protocol)
+          | selectattr('srcPort', 'equalto', rule.srcPort)
+          | selectattr('dstPortRange', 'defined')
+          | selectattr('dstPortRange', 'equalto', rule.dstPortRange)
+          | list }}"

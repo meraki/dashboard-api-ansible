@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -37,6 +37,7 @@ argument_spec.update(dict(
     enabled=dict(type="bool"),
     priority=dict(type="int"),
     description=dict(type="str"),
+    logging=dict(type="dict"),
     sources=dict(type="dict"),
     destinations=dict(type="dict"),
     organizationId=dict(type="str"),
@@ -62,6 +63,7 @@ class OrganizationsPoliciesGlobalFirewallRulesetsRules(object):
             enabled=params.get("enabled"),
             priority=params.get("priority"),
             description=params.get("description"),
+            logging=params.get("logging"),
             sources=params.get("sources"),
             destinations=params.get("destinations"),
             organizationId=params.get("organizationId"),
@@ -122,6 +124,10 @@ class OrganizationsPoliciesGlobalFirewallRulesetsRules(object):
                 'description') is not None:
             new_object_params['description'] = self.new_object.get(
                 'description') or self.new_object.get('description')
+        if self.new_object.get('logging') is not None or self.new_object.get(
+                'logging') is not None:
+            new_object_params['logging'] = self.new_object.get('logging') or \
+                self.new_object.get('logging')
         if self.new_object.get('sources') is not None or self.new_object.get(
                 'sources') is not None:
             new_object_params['sources'] = self.new_object.get('sources') or \
@@ -173,6 +179,10 @@ class OrganizationsPoliciesGlobalFirewallRulesetsRules(object):
                 'description') is not None:
             new_object_params['description'] = self.new_object.get(
                 'description') or self.new_object.get('description')
+        if self.new_object.get('logging') is not None or self.new_object.get(
+                'logging') is not None:
+            new_object_params['logging'] = self.new_object.get('logging') or \
+                self.new_object.get('logging')
         if self.new_object.get('sources') is not None or self.new_object.get(
                 'sources') is not None:
             new_object_params['sources'] = self.new_object.get('sources') or \
@@ -265,13 +275,14 @@ class OrganizationsPoliciesGlobalFirewallRulesetsRules(object):
             ("enabled", "enabled"),
             ("priority", "priority"),
             ("description", "description"),
+            ("logging", "logging"),
             ("sources", "sources"),
             ("destinations", "destinations"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -326,6 +337,9 @@ class OrganizationsPoliciesGlobalFirewallRulesetsRules(object):
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

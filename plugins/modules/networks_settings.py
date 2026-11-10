@@ -26,6 +26,8 @@ options:
         suboptions:
           enabled:
             description: Enables / disables the authentication on Local Status page(s).
+              Beta For networks with a Catalyst router, authentication cannot be disabled
+              and must be enabled when localStatusPageEnabled is true.
             type: bool
           password:
             description: The password used for Local Status Page(s). Set this to null
@@ -34,7 +36,8 @@ options:
           username:
             description: The username used for Local Status Page(s). Setting this
               to null or empty string will clear the value, allowing you to use the
-              default of 'admin'.
+              default of 'admin'. Beta For networks with a Catalyst router, only 'admin'
+              or null is accepted.
             type: str
         type: dict
     type: dict
@@ -43,7 +46,7 @@ options:
       href='http //my.meraki.com/'>my.meraki.com, </a><a target='_blank' href='http
       //ap.meraki.com/'>ap.meraki.com, </a><a target='_blank' href='http //switch.meraki.com/'>switch.meraki.com,
       </a><a target='_blank' href='http //wired.meraki.com/'>wired.meraki.com</a>).
-      Optional (defaults to false).
+      Optional (defaults to true).
     type: bool
   namedVlans:
     description: A hash of Named VLANs options applied to the Network.

@@ -19,7 +19,8 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
+    get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
@@ -56,6 +57,14 @@ class NetworksWirelessEthernetPortsProfiles(object):
             networkId=params.get("networkId"),
             profileId=params.get("profileId"),
         )
+
+    def get_all_params(self, name=None, id=None):
+        new_object_params = {}
+        if self.new_object.get('networkId') is not None or self.new_object.get(
+                'network_id') is not None:
+            new_object_params['networkId'] = self.new_object.get(
+                'networkId') or self.new_object.get('network_id')
+        return new_object_params
 
     def get_params_by_id(self, name=None, id=None):
         new_object_params = {}
@@ -107,7 +116,22 @@ class NetworksWirelessEthernetPortsProfiles(object):
 
     def get_object_by_name(self, name):
         result = None
-        # NOTE: Does not have a get by name and get all
+        # NOTE: Does not have a get by name method, using get all
+        try:
+            items = self.meraki.exec_meraki(
+                family="wireless",
+                function="getNetworkWirelessEthernetPortsProfiles",
+                params=self.get_all_params(name=name),
+            )
+            if isinstance(items, dict):
+                if 'response' in items:
+                    items = items.get('response')
+            result = get_dict_result(items, 'name', name)
+            if result is None:
+                result = items
+        except Exception as e:
+            print("Error: ", e)
+            result = None
         return result
 
     def get_object_by_id(self, id):
@@ -167,7 +191,7 @@ class NetworksWirelessEthernetPortsProfiles(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

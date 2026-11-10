@@ -67,7 +67,8 @@ options:
                     suboptions:
                       addresses:
                         description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                          in priority from highest to lowest priority. The addresses
+                          must be unique.
                         elements: str
                         type: list
                     type: dict
@@ -76,8 +77,9 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received
-                      by SLAAC.
+                    description: Static IPv6 address in CIDR notation that overrides
+                      addresses received by SLAAC when PPPoE is disabled. With PPPoE
+                      enabled, use a bare IPv6 address without a prefix.
                     type: str
                   assignmentMode:
                     description: The assignment mode for this SVI. Applies only when
@@ -97,6 +99,144 @@ options:
                         type: list
                     type: dict
                 type: dict
+            type: dict
+          transition:
+            description: Configuration options for IPoE transition IPv4 to IPv6.
+            suboptions:
+              authentication:
+                description: Settings for IPoE transition Authentication.
+                suboptions:
+                  enabled:
+                    description: Whether IPoE transition authentication is enabled.
+                    type: bool
+                  password:
+                    description: Password for IPoE transition authentication. This
+                      parameter is not returned.
+                    type: str
+                  username:
+                    description: Username for IPoE transition authentication.
+                    type: str
+                type: dict
+              enabled:
+                description: Whether the IPoE transition IPv4 to IPv6 is enabled.
+                type: bool
+              ipv4:
+                description: IPv4 specific settings for the IPoE transition.
+                suboptions:
+                  local:
+                    description: Static IPv4 settings for the IPoE transition.
+                    suboptions:
+                      address:
+                        description: Static IPv4 information used for host origination
+                          and NAT44 translation.
+                        type: str
+                    type: dict
+                type: dict
+              ipv6:
+                description: IPv6 specific settings for the IPoE transition.
+                suboptions:
+                  borderRelay:
+                    description: Settings for the border relay for the IPoE transition
+                      Authentication.
+                    suboptions:
+                      address:
+                        description: CIDR for the border relay for the IPoE transition
+                          authentication.
+                        type: str
+                      mode:
+                        description: Mode selection for the border relay for the IPoE
+                          transition.
+                        type: str
+                    type: dict
+                  interfaceId:
+                    description: The 64-bit interface ID (suffix) of the uplink IPv6
+                      address.
+                    type: str
+                type: dict
+              isp:
+                description: ISP selection for the IPoE transition.
+                suboptions:
+                  name:
+                    description: ISP name for the IPoE transition.
+                    type: str
+                type: dict
+              map:
+                description: MAP-E/MAP-T settings for the IPoE transition.
+                suboptions:
+                  draft:
+                    description: MAP-E draft mode.
+                    suboptions:
+                      enabled:
+                        description: Whether MAP-E draft mode is enabled. This field
+                          is accepted only for MAP-E. Null is treated as omitted and
+                          preserves the existing setting.
+                        type: bool
+                    type: dict
+                  rules:
+                    description: MAP rule source and manual rule entries.
+                    suboptions:
+                      entries:
+                        description: Manual MAP rules. At most one entry is supported.
+                        elements: dict
+                        suboptions:
+                          borderRelay:
+                            description: MAP border relay address or prefix.
+                            suboptions:
+                              address:
+                                description: IPv6 border relay address for MAP-E.
+                                type: str
+                              prefix:
+                                description: IPv6 border relay prefix for MAP-T in
+                                  CIDR notation, with a prefix length from 0 to 96.
+                                type: str
+                            type: dict
+                          eaBitLength:
+                            description: Embedded address bit length (0-48).
+                            type: int
+                          ipv4:
+                            description: IPv4 settings used by the MAP rule.
+                            suboptions:
+                              prefix:
+                                description: IPv4 prefix used by the MAP rule.
+                                suboptions:
+                                  address:
+                                    description: IPv4 network address used by the
+                                      MAP rule, without the prefix length.
+                                    type: str
+                                  length:
+                                    description: IPv4 prefix length (0-32).
+                                    type: int
+                                type: dict
+                            type: dict
+                          ipv6:
+                            description: IPv6 settings used by the MAP rule.
+                            suboptions:
+                              prefix:
+                                description: IPv6 prefix used by the MAP rule.
+                                suboptions:
+                                  address:
+                                    description: IPv6 network address used by the
+                                      MAP rule, without the prefix length.
+                                    type: str
+                                  length:
+                                    description: IPv6 prefix length (0-128).
+                                    type: int
+                                type: dict
+                            type: dict
+                          psIdOffset:
+                            description: PSID offset (0-15).
+                            type: int
+                        type: list
+                      source:
+                        description: How MAP rules are obtained. HTTPS requires an
+                          ISP supported for the transition mode.
+                        type: str
+                    type: dict
+                type: dict
+              mode:
+                description: Mode selector for the IPoE transition IPv4 to IPv6 is
+                  enabled.
+                type: str
             type: dict
           vlanTagging:
             description: VLAN tagging settings.
@@ -157,7 +297,8 @@ options:
                     suboptions:
                       addresses:
                         description: Up to 2 nameserver addresses to use, ordered
-                          in priority from highest to lowest priority.
+                          in priority from highest to lowest priority. The addresses
+                          must be unique.
                         elements: str
                         type: list
                     type: dict
@@ -166,8 +307,9 @@ options:
                 description: IPv6 settings for static/dynamic mode.
                 suboptions:
                   address:
-                    description: Static address that will override the one(s) received
-                      by SLAAC.
+                    description: Static IPv6 address in CIDR notation that overrides
+                      addresses received by SLAAC when PPPoE is disabled. With PPPoE
+                      enabled, use a bare IPv6 address without a prefix.
                     type: str
                   assignmentMode:
                     description: The assignment mode for this SVI. Applies only when
@@ -187,6 +329,144 @@ options:
                         type: list
                     type: dict
                 type: dict
+            type: dict
+          transition:
+            description: Configuration options for IPoE transition IPv4 to IPv6.
+            suboptions:
+              authentication:
+                description: Settings for IPoE transition Authentication.
+                suboptions:
+                  enabled:
+                    description: Whether IPoE transition authentication is enabled.
+                    type: bool
+                  password:
+                    description: Password for IPoE transition authentication. This
+                      parameter is not returned.
+                    type: str
+                  username:
+                    description: Username for IPoE transition authentication.
+                    type: str
+                type: dict
+              enabled:
+                description: Whether the IPoE transition IPv4 to IPv6 is enabled.
+                type: bool
+              ipv4:
+                description: IPv4 specific settings for the IPoE transition.
+                suboptions:
+                  local:
+                    description: Static IPv4 settings for the IPoE transition.
+                    suboptions:
+                      address:
+                        description: Static IPv4 information used for host origination
+                          and NAT44 translation.
+                        type: str
+                    type: dict
+                type: dict
+              ipv6:
+                description: IPv6 specific settings for the IPoE transition.
+                suboptions:
+                  borderRelay:
+                    description: Settings for the border relay for the IPoE transition
+                      Authentication.
+                    suboptions:
+                      address:
+                        description: CIDR for the border relay for the IPoE transition
+                          authentication.
+                        type: str
+                      mode:
+                        description: Mode selection for the border relay for the IPoE
+                          transition.
+                        type: str
+                    type: dict
+                  interfaceId:
+                    description: The 64-bit interface ID (suffix) of the uplink IPv6
+                      address.
+                    type: str
+                type: dict
+              isp:
+                description: ISP selection for the IPoE transition.
+                suboptions:
+                  name:
+                    description: ISP name for the IPoE transition.
+                    type: str
+                type: dict
+              map:
+                description: MAP-E/MAP-T settings for the IPoE transition.
+                suboptions:
+                  draft:
+                    description: MAP-E draft mode.
+                    suboptions:
+                      enabled:
+                        description: Whether MAP-E draft mode is enabled. This field
+                          is accepted only for MAP-E. Null is treated as omitted and
+                          preserves the existing setting.
+                        type: bool
+                    type: dict
+                  rules:
+                    description: MAP rule source and manual rule entries.
+                    suboptions:
+                      entries:
+                        description: Manual MAP rules. At most one entry is supported.
+                        elements: dict
+                        suboptions:
+                          borderRelay:
+                            description: MAP border relay address or prefix.
+                            suboptions:
+                              address:
+                                description: IPv6 border relay address for MAP-E.
+                                type: str
+                              prefix:
+                                description: IPv6 border relay prefix for MAP-T in
+                                  CIDR notation, with a prefix length from 0 to 96.
+                                type: str
+                            type: dict
+                          eaBitLength:
+                            description: Embedded address bit length (0-48).
+                            type: int
+                          ipv4:
+                            description: IPv4 settings used by the MAP rule.
+                            suboptions:
+                              prefix:
+                                description: IPv4 prefix used by the MAP rule.
+                                suboptions:
+                                  address:
+                                    description: IPv4 network address used by the
+                                      MAP rule, without the prefix length.
+                                    type: str
+                                  length:
+                                    description: IPv4 prefix length (0-32).
+                                    type: int
+                                type: dict
+                            type: dict
+                          ipv6:
+                            description: IPv6 settings used by the MAP rule.
+                            suboptions:
+                              prefix:
+                                description: IPv6 prefix used by the MAP rule.
+                                suboptions:
+                                  address:
+                                    description: IPv6 network address used by the
+                                      MAP rule, without the prefix length.
+                                    type: str
+                                  length:
+                                    description: IPv6 prefix length (0-128).
+                                    type: int
+                                type: dict
+                            type: dict
+                          psIdOffset:
+                            description: PSID offset (0-15).
+                            type: int
+                        type: list
+                      source:
+                        description: How MAP rules are obtained. HTTPS requires an
+                          ISP supported for the transition mode.
+                        type: str
+                    type: dict
+                type: dict
+              mode:
+                description: Mode selector for the IPoE transition IPv4 to IPv6 is
+                  enabled.
+                type: str
             type: dict
           vlanTagging:
             description: VLAN tagging settings.
@@ -260,13 +540,49 @@ EXAMPLES = r"""
               addresses:
                 - 1.2.3.4
           ipv6:
-            address: 1:2:3::4
+            address: 1:2:3::4/64
             assignmentMode: static
             gateway: 1:2:3::5
             nameservers:
               addresses:
                 - 1001:4860:4860::8888
                 - 1001:4860:4860::8844
+        transition:
+          authentication:
+            enabled: true
+            password: password
+            username: 4o6ddns
+          enabled: true
+          ipv4:
+            local:
+              address: null
+          ipv6:
+            borderRelay:
+              address: null
+              mode: auto
+            interfaceId: null
+          isp:
+            name: OCN IPoE
+          map:
+            draft:
+              enabled: false
+            rules:
+              entries:
+                - borderRelay:
+                    address: 2001:db8:ffff::1
+                    prefix: null
+                  eaBitLength: 20
+                  ipv4:
+                    prefix:
+                      address: 192.0.2.0
+                      length: 18
+                  ipv6:
+                    prefix:
+                      address: '2001:db8:100::'
+                      length: 36
+                  psIdOffset: 6
+              source: manual
+          mode: MAP-E
         vlanTagging:
           enabled: true
           vlanId: 1
@@ -287,16 +603,55 @@ EXAMPLES = r"""
               addresses:
                 - 1.2.3.4
           ipv6:
-            address: 1:2:3::4
+            address: 1:2:3::4/64
             assignmentMode: static
             gateway: 1:2:3::5
             nameservers:
               addresses:
                 - 1001:4860:4860::8888
                 - 1001:4860:4860::8844
+        transition:
+          authentication:
+            enabled: true
+            password: password
+            username: 4o6ddns
+          enabled: true
+          ipv4:
+            local:
+              address: null
+          ipv6:
+            borderRelay:
+              address: null
+              mode: auto
+            interfaceId: null
+          isp:
+            name: OCN IPoE
+          map:
+            draft:
+              enabled: false
+            rules:
+              entries:
+                - borderRelay:
+                    address: 2001:db8:ffff::1
+                    prefix: null
+                  eaBitLength: 20
+                  ipv4:
+                    prefix:
+                      address: 192.0.2.0
+                      length: 18
+                  ipv6:
+                    prefix:
+                      address: '2001:db8:100::'
+                      length: 36
+                  psIdOffset: 6
+              source: manual
+          mode: MAP-E
         vlanTagging:
           enabled: true
           vlanId: 1
+      wan3:
+        mtu:
+          limit: 1500
     serial: string
 """
 RETURN = r"""
@@ -340,6 +695,59 @@ meraki_response:
             "enabled": true,
             "username": "string"
           }
+        },
+        "transition": {
+          "enabled": true,
+          "mode": "string",
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "ipv4": {
+            "local": {
+              "address": {}
+            }
+          },
+          "ipv6": {
+            "borderRelay": {
+              "mode": "string",
+              "address": {}
+            },
+            "interfaceId": {}
+          },
+          "isp": {
+            "name": "string"
+          },
+          "map": {
+            "rules": {
+              "source": {},
+              "entries": [
+                {
+                  "ipv6": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "ipv4": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "borderRelay": {
+                    "address": {},
+                    "prefix": {}
+                  },
+                  "eaBitLength": 0,
+                  "psIdOffset": 0
+                }
+              ]
+            },
+            "draft": {
+              "enabled": {}
+            }
+          }
         }
       },
       "wan2": {
@@ -375,6 +783,59 @@ meraki_response:
           "authentication": {
             "enabled": true,
             "username": "string"
+          }
+        },
+        "transition": {
+          "enabled": true,
+          "mode": "string",
+          "authentication": {
+            "enabled": true,
+            "username": "string"
+          },
+          "ipv4": {
+            "local": {
+              "address": {}
+            }
+          },
+          "ipv6": {
+            "borderRelay": {
+              "mode": "string",
+              "address": {}
+            },
+            "interfaceId": {}
+          },
+          "isp": {
+            "name": "string"
+          },
+          "map": {
+            "rules": {
+              "source": {},
+              "entries": [
+                {
+                  "ipv6": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "ipv4": {
+                    "prefix": {
+                      "address": "string",
+                      "length": 0
+                    }
+                  },
+                  "borderRelay": {
+                    "address": {},
+                    "prefix": {}
+                  },
+                  "eaBitLength": 0,
+                  "psIdOffset": 0
+                }
+              ]
+            },
+            "draft": {
+              "enabled": {}
+            }
           }
         }
       }

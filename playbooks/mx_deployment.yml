@@ -1,7 +1,8 @@
 - name: Play Name
   hosts: localhost
   vars:
-    network_id: L_828099381482771185
+    # Red con MX68W (con WiFi): el endpoint de appliance SSIDs solo aplica a MX inalambricos
+    network_id: L_828099381482778041
   gather_facts: false
   tasks:
     - name: Get all networks _appliance _vlans
@@ -22,11 +23,11 @@
         meraki_suppress_logging: false
         state: present
         authMode: 8021x-radius
-        defaultVlanId: 10
+        defaultVlanId: 1234
         enabled: true
         name: My SSID
         networkId: "{{ network_id }}"
-        number: 1234
+        number: 1
         radiusServers:
           - host: 1.2.3.4
             port: 1000
@@ -47,7 +48,7 @@
         networkId: "{{ network_id }}"
         portId: "4"
         type: trunk
-        vlan: 10
+        vlan: 1
         state: present
     - name: Create FW outbound L3 rules
       cisco.meraki.networks_appliance_firewall_l3_firewall_rules:

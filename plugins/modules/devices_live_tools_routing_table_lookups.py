@@ -83,6 +83,15 @@ options:
             type: str
         type: dict
     type: dict
+  vrf:
+    description: Virtual routing and forwarding (VRF) search criteria.
+    suboptions:
+      names:
+        description: Names of VRFs to include in the lookup. Values must match VRFs
+          configured for the device. Omit this field to search all VRFs.
+        elements: str
+        type: list
+    type: dict
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -140,6 +149,9 @@ EXAMPLES = r"""
     vpn:
       peer:
         id: N_12345678
+    vrf:
+      names:
+        - default
 """
 RETURN = r"""
 meraki_response:
@@ -164,6 +176,11 @@ meraki_response:
           "peer": {
             "id": "string"
           }
+        },
+        "vrf": {
+          "names": [
+            "string"
+          ]
         }
       },
       "status": "string",

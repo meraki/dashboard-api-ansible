@@ -25,6 +25,8 @@ from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
 argument_spec = meraki_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    serial=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -61,6 +63,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(self, params):
+        new_object = {}
+        if params.get("serial") is not None:
+            new_object["serial"] = params.get(
+                "serial")
+        if params.get("id") is not None:
+            new_object["id"] = params.get(
+                "id")
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -71,11 +83,22 @@ class ActionModule(ActionBase):
 
         meraki = MERAKI(params=self._task.args)
 
-        # NOTE: Does not have a get all method or it is in another action
-        response = None
-        meraki.object_modify_result(
-            changed=False,
-            result="Module does not have get all, check arguments of module")
-        self._result.update(dict(meraki_response=response))
-        self._result.update(meraki.exit_json())
-        return self._result
+        id = self._task.args.get("id")
+        if id:
+            response = meraki.exec_meraki(
+                family="devices",
+                function='getDeviceLiveToolsCableTest',
+                params=self.get_object(self._task.args),
+            )
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result
+        if not id:
+            # NOTE: Does not have a get all method or it is in another action
+            response = None
+            meraki.object_modify_result(
+                changed=False,
+                result="Module does not have get all, check arguments of module")
+            self._result.update(dict(meraki_response=response))
+            self._result.update(meraki.exit_json())
+            return self._result

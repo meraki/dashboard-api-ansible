@@ -19,8 +19,11 @@ docs/plugins/
 docs/_build/
 changelogs/.plugin-cache.yaml
 playbooks/credentials.yml
+playbooks/vars/credentials.yml
 .DS_Store
 PLAYBOOKS_EXECUTION_README.md
 run_playbooks_advanced.sh
 run_all_playbooks.py
 run_playbooks.py
+# Created by ansible-lint (local copy of the collection)
+.ansible/

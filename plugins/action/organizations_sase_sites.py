@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -45,6 +45,7 @@ required_together = []
 
 
 class OrganizationsSaseSites(object):
+    # Begin manually added: __init__
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
@@ -52,6 +53,7 @@ class OrganizationsSaseSites(object):
             routing=params.get("routing"),
             organizationId=params.get("organizationId"),
         )
+    # End manually added: __init__
 
     def get_all_params(self, name=None, id=None):
         new_object_params = {}
@@ -161,7 +163,7 @@ class OrganizationsSaseSites(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

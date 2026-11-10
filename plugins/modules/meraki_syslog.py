@@ -63,7 +63,8 @@ options:
       roles:
         description:
           - List of applicable Syslog server roles.
-          - Choices can be one of Wireless Event log, Appliance event log, Switch event log, Air Marshal events, Flows, URLs, IDS alerts, Security events
+          - Choices can be one of Wireless Event log, Appliance event log, Switch event log,
+            Air Marshal events, Flows, URLs, IDS alerts, Security events
         elements: str
         type: list
     type: list

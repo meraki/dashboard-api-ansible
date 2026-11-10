@@ -10,7 +10,8 @@ module: networks_appliance_traffic_shaping_rules_info
 short_description: Information module for networks _appliance _traffic _shaping _rules
 description:
   - Get all networks _appliance _traffic _shaping _rules.
-  - Display the traffic shaping settings rules for an MX network.
+  - Display the traffic shaping settings rules for a Security Appliance or Secure
+    Router network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info

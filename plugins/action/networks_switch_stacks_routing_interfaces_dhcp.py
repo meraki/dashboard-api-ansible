@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -42,6 +42,8 @@ argument_spec.update(dict(
     dhcpOptions=dict(type="list"),
     reservedIpRanges=dict(type="list"),
     fixedIpAssignments=dict(type="list"),
+    dhcpDefaultRouterIps=dict(type="str"),
+    dhcpDomainName=dict(type="str"),
     networkId=dict(type="str"),
     switchStackId=dict(type="str"),
     interfaceId=dict(type="str"),
@@ -70,6 +72,8 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             dhcpOptions=params.get("dhcpOptions"),
             reservedIpRanges=params.get("reservedIpRanges"),
             fixedIpAssignments=params.get("fixedIpAssignments"),
+            dhcpDefaultRouterIps=params.get("dhcpDefaultRouterIps"),
+            dhcpDomainName=params.get("dhcpDomainName"),
             networkId=params.get("networkId"),
             switchStackId=params.get("switchStackId"),
             interfaceId=params.get("interfaceId"),
@@ -137,6 +141,14 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
                 'fixed_ip_assignments') is not None:
             new_object_params['fixedIpAssignments'] = self.new_object.get(
                 'fixedIpAssignments') or self.new_object.get('fixed_ip_assignments')
+        if self.new_object.get('dhcpDefaultRouterIps') is not None or self.new_object.get(
+                'dhcp_default_router_ips') is not None:
+            new_object_params['dhcpDefaultRouterIps'] = self.new_object.get(
+                'dhcpDefaultRouterIps') or self.new_object.get('dhcp_default_router_ips')
+        if self.new_object.get('dhcpDomainName') is not None or self.new_object.get(
+                'dhcp_domain_name') is not None:
+            new_object_params['dhcpDomainName'] = self.new_object.get(
+                'dhcpDomainName') or self.new_object.get('dhcp_domain_name')
         if self.new_object.get('networkId') is not None or self.new_object.get(
                 'network_id') is not None:
             new_object_params['networkId'] = self.new_object.get(
@@ -214,11 +226,13 @@ class NetworksSwitchStacksRoutingInterfacesDhcp(object):
             ("dhcpOptions", "dhcpOptions"),
             ("reservedIpRanges", "reservedIpRanges"),
             ("fixedIpAssignments", "fixedIpAssignments"),
+            ("dhcpDefaultRouterIps", "dhcpDefaultRouterIps"),
+            ("dhcpDomainName", "dhcpDomainName"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

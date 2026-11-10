@@ -35,6 +35,9 @@ options:
   rulesetId:
     description: ID of the ruleset to assign.
     type: str
+  staged:
+    description: Stage an assignment without applying it immediately to the policy.
+    type: bool
 requirements:
   - meraki >= 2.4.9
   - python >= 3.5
@@ -91,6 +94,7 @@ EXAMPLES = r"""
     policyId: '789'
     priority: 1
     rulesetId: '456'
+    staged: false
 - name: Update by id
   cisco.meraki.organizations_policies_global_group_policies_firewall_rulesets_assignments:
     meraki_api_key: "{{ meraki_api_key }}"

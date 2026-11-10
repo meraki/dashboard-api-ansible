@@ -123,6 +123,9 @@ meraki_response:
           "enabled": true,
           "priority": 0,
           "description": "string",
+          "logging": {
+            "enabled": true
+          },
           "sources": {
             "matchCriteria": [
               "string"
@@ -224,6 +227,11 @@ meraki_response:
                       "ipv6": "string"
                     }
                   }
+                }
+              ],
+              "adaptivePolicyGroups": [
+                {
+                  "id": "string"
                 }
               ]
             }

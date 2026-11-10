@@ -103,7 +103,7 @@ class ActionModule(ActionBase):
         meraki = MERAKI(params=self._task.args)
 
         response = meraki.exec_meraki(
-            family="campus_gateway",
+            family="campusGateway",
             function='getOrganizationCampusGatewayClusters',
             params=self.get_all(self._task.args),
         )

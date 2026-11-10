@@ -83,7 +83,9 @@ meraki_response:
         "isOrgScopedOnly": true,
         "documentationLink": "string",
         "supportLink": "string",
-        "privacyLink": "string"
+        "privacyLink": "string",
+        "advantage": true,
+        "advantageTrial": true
       }
     ]
 """

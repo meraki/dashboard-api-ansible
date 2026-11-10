@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -34,6 +34,10 @@ argument_spec.update(dict(
     enabled=dict(type="bool"),
     asNumber=dict(type="int"),
     ibgpHoldTimer=dict(type="int"),
+    ipv6=dict(type="dict"),
+    tunnelDownTermination=dict(type="dict"),
+    localAsNumber=dict(type="int"),
+    priorityRoute=dict(type="str"),
     routerId=dict(type="str"),
     neighbors=dict(type="list"),
     networkId=dict(type="str"),
@@ -54,6 +58,10 @@ class NetworksApplianceVpnBgp(object):
             enabled=params.get("enabled"),
             asNumber=params.get("asNumber"),
             ibgpHoldTimer=params.get("ibgpHoldTimer"),
+            ipv6=params.get("ipv6"),
+            tunnelDownTermination=params.get("tunnelDownTermination"),
+            localAsNumber=params.get("localAsNumber"),
+            priorityRoute=params.get("priorityRoute"),
             routerId=params.get("routerId"),
             neighbors=params.get("neighbors"),
             networkId=params.get("networkId"),
@@ -80,6 +88,22 @@ class NetworksApplianceVpnBgp(object):
                 'ibgp_hold_timer') is not None:
             new_object_params['ibgpHoldTimer'] = self.new_object.get(
                 'ibgpHoldTimer') or self.new_object.get('ibgp_hold_timer')
+        if self.new_object.get('ipv6') is not None or self.new_object.get(
+                'ipv6') is not None:
+            new_object_params['ipv6'] = self.new_object.get('ipv6') or \
+                self.new_object.get('ipv6')
+        if self.new_object.get('tunnelDownTermination') is not None or self.new_object.get(
+                'tunnel_down_termination') is not None:
+            new_object_params['tunnelDownTermination'] = self.new_object.get(
+                'tunnelDownTermination') or self.new_object.get('tunnel_down_termination')
+        if self.new_object.get('localAsNumber') is not None or self.new_object.get(
+                'local_as_number') is not None:
+            new_object_params['localAsNumber'] = self.new_object.get(
+                'localAsNumber') or self.new_object.get('local_as_number')
+        if self.new_object.get('priorityRoute') is not None or self.new_object.get(
+                'priority_route') is not None:
+            new_object_params['priorityRoute'] = self.new_object.get(
+                'priorityRoute') or self.new_object.get('priority_route')
         if self.new_object.get('routerId') is not None or self.new_object.get(
                 'router_id') is not None:
             new_object_params['routerId'] = self.new_object.get(
@@ -149,13 +173,17 @@ class NetworksApplianceVpnBgp(object):
             ("enabled", "enabled"),
             ("asNumber", "asNumber"),
             ("ibgpHoldTimer", "ibgpHoldTimer"),
+            ("ipv6", "ipv6"),
+            ("tunnelDownTermination", "tunnelDownTermination"),
+            ("localAsNumber", "localAsNumber"),
+            ("priorityRoute", "priorityRoute"),
             ("routerId", "routerId"),
             ("neighbors", "neighbors"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

@@ -70,6 +70,7 @@ class NetworksSwitchDscpToCosMappings(object):
                 'networkId') or self.new_object.get('network_id')
         return new_object_params
 
+    # Begin manually added: get_object_by_name
     def get_object_by_name(self, name):
         result = None
         # NOTE: Does not have a get by name method, using get all
@@ -85,6 +86,7 @@ class NetworksSwitchDscpToCosMappings(object):
             print("Error: ", e)
             result = None
         return result
+    # End manually added: get_object_by_name
 
     def get_object_by_id(self, id):
         result = None

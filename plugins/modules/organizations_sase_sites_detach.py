@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: organizations_sase_sites_detach
 short_description: Resource module for organizations _sase _sites _detach
 description:
-  - Manage operation delete of the resource organizations _sase _sites _detach.
+  - Manage operation create of the resource organizations _sase _sites _detach.
   - Detach sites in this organization from Secure Access. This will remove the sites
     from Secure Access.
 version_added: '1.0.0'
@@ -17,6 +17,14 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  items:
+    description: List of Secure Access sites to be detached.
+    elements: dict
+    suboptions:
+      siteId:
+        description: Site IDs of the sites to detach.
+        type: str
+    type: list
   organizationId:
     description: OrganizationId path parameter. Organization ID.
     type: str
@@ -31,11 +39,11 @@ notes:
   - SDK Method used are
     organizations.Organizations.detach_organization_sase_sites,
   - Paths used are
-    delete /organizations/{organizationId}/sase/sites/detach,
+    post /organizations/{organizationId}/sase/sites/detach,
 """
 
 EXAMPLES = r"""
-- name: Delete all
+- name: Create
   cisco.meraki.organizations_sase_sites_detach:
     meraki_api_key: "{{ meraki_api_key }}"
     meraki_base_url: "{{ meraki_base_url }}"
@@ -58,6 +66,8 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    items:
+      - siteId: '1234567890'
     organizationId: string
 """
 RETURN = r"""
@@ -67,32 +77,31 @@ meraki_response:
   type: dict
   sample: >
     {
-      "items": [
-        {
-          "pipelineId": "string",
-          "operation": {
-            "id": "string"
-          },
-          "status": "string",
-          "counts": {
-            "jobs": {
-              "total": 0,
-              "byStatus": {
-                "completed": 0,
-                "failed": 0,
-                "pending": 0
-              }
+      "pipelineId": "string",
+      "operation": {
+        "id": "string"
+      },
+      "status": "string",
+      "counts": {
+        "jobs": {
+          "total": 0,
+          "byStatus": {
+            "completed": 0,
+            "failed": 0,
+            "pending": 0
+          }
+        },
+        "byJobOperation": [
+          {
+            "name": "string",
+            "total": 0,
+            "byStatus": {
+              "completed": 0,
+              "failed": 0,
+              "pending": 0
             }
           }
-        }
-      ],
-      "meta": {
-        "counts": {
-          "items": {
-            "total": 0,
-            "remaining": 0
-          }
-        }
+        ]
       }
     }
 """

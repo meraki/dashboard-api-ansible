@@ -85,7 +85,7 @@ class OrganizationsSplashAssets(object):
             items = self.meraki.exec_meraki(
                 family="organizations",
                 function="getOrganizationSplashAsset",
-                params={"id": id}
+                params=dict(self.get_params_by_id(), id=id)
             )
             if isinstance(items, dict):
                 if 'response' in items:
@@ -120,6 +120,7 @@ class OrganizationsSplashAssets(object):
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
+    # Begin manually added: requires_update
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
@@ -132,6 +133,7 @@ class OrganizationsSplashAssets(object):
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
                 ansible_param) in obj_params)
+    # End manually added: requires_update
 
     def delete(self):
         id = self.new_object.get("id")
@@ -180,6 +182,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    # Begin manually added: run
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -210,3 +213,4 @@ class ActionModule(ActionBase):
         self._result.update(dict(meraki_response=response))
         self._result.update(meraki.exit_json())
         return self._result
+    # End manually added: run

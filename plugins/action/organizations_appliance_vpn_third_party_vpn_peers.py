@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -43,7 +43,7 @@ mutually_exclusive = []
 required_together = []
 
 
-class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
+class OrganizationsApplianceVpnThirdPartyVPNPeers(object):
     def __init__(self, params, meraki):
         self.meraki = meraki
         self.new_object = dict(
@@ -77,7 +77,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         try:
             items = self.meraki.exec_meraki(
                 family="appliance",
-                function="getOrganizationApplianceVpnThirdPartyVpnpeers",
+                function="getOrganizationApplianceVpnThirdPartyVPNPeers",
                 params=self.get_all_params(name=name),
             )
             if isinstance(items, dict):
@@ -101,6 +101,10 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
+        # Begin manually added: singleton resource, the organization is the identifier
+        o_id = o_id or self.new_object.get(
+            "organizationId") or self.new_object.get("organization_id")
+        # End manually added
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_name(o_id)
@@ -127,7 +131,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -139,7 +143,7 @@ class OrganizationsApplianceVpnThirdPartyVpnpeers(object):
         result = None
         result = self.meraki.exec_meraki(
             family="appliance",
-            function="updateOrganizationApplianceVpnThirdPartyVpnpeers",
+            function="updateOrganizationApplianceVpnThirdPartyVPNPeers",
             params=self.update_all_params(),
             op_modifies=True,
         )
@@ -181,7 +185,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         meraki = MERAKI(self._task.args)
-        obj = OrganizationsApplianceVpnThirdPartyVpnpeers(
+        obj = OrganizationsApplianceVpnThirdPartyVPNPeers(
             self._task.args, meraki)
 
         state = self._task.args.get("state")

@@ -11,7 +11,7 @@ short_description: Information module for networks _appliance _vpn _site _to _si
   _vpn
 description:
   - Get all networks _appliance _vpn _site _to _site _vpn.
-  - Return the site-to-site VPN settings of a network. Only valid for MX networks.
+  - Return the site-to-site VPN settings of an MX network or configuration template.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
@@ -76,7 +76,13 @@ meraki_response:
       "hubs": [
         {
           "hubId": "string",
-          "useDefaultRoute": true
+          "useDefaultRoute": true,
+          "vrfs": [
+            {
+              "id": "string",
+              "name": "string"
+            }
+          ]
         }
       ],
       "subnets": [
@@ -85,7 +91,8 @@ meraki_response:
           "useVpn": true,
           "nat": {
             "enabled": true,
-            "remoteSubnet": "string"
+            "remoteSubnet": "string",
+            "legacy": {}
           }
         }
       ],
@@ -107,6 +114,11 @@ meraki_response:
             "address": "string"
           }
         }
-      ]
+      ],
+      "natTraversal": {
+        "mode": "string",
+        "publicIp": "string",
+        "publicPort": 0
+      }
     }
 """

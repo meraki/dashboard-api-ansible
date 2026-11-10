@@ -10,10 +10,20 @@ module: networks_wireless_air_marshal_rules
 short_description: Resource module for networks _wireless _air _marshal _rules
 description:
   - Manage operations create, update and delete of the resource networks _wireless
-    _air _marshal _rules.
-  - Creates a new rule.
-  - Delete an Air Marshal rule.
-  - Update a rule.
+    _air _marshal _rules. - > Creates a new rule. In an action batch, mutations execute
+    in the submitted order and commit atomically; a failure rolls back every mutation
+    and configuration update in that batch. Completed or failed batches cannot be
+    executed again. Air Marshal settings updates may be included in the same batch.
+    The created rule ID is returned in the action batch createdResources list. A later
+    action in the same batch cannot reference that generated ID. - > Delete an Air
+    Marshal rule. In an action batch, mutations execute in the submitted order and
+    commit atomically; a failure rolls back every mutation and configuration update
+    in that batch. Completed or failed batches cannot be executed again. Air Marshal
+    settings updates may be included in the same batch. - > Update a rule. In an action
+    batch, mutations execute in the submitted order and commit atomically; a failure
+    rolls back every mutation and configuration update in that batch. Completed or
+    failed batches cannot be executed again. Air Marshal settings updates may be included
+    in the same batch.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module

@@ -18,6 +18,10 @@ extends_documentation_fragment:
   - cisco.meraki.module
 author: Francisco Munoz (@fmunoz)
 options:
+  activeVlans:
+    description: The active VLANs for the VLAN profile. Only applicable to trunk ports.
+      The given range must be inclusive of all named VLANs.
+    type: str
   iname:
     description: IName of the profile.
     type: str
@@ -105,6 +109,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    activeVlans: 1-1000
     iname: Profile1
     name: My VLAN profile name
     networkId: string
@@ -140,6 +145,7 @@ EXAMPLES = r"""
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
     state: present
+    activeVlans: 1-1000
     iname: string
     name: My VLAN profile name
     networkId: string
@@ -188,6 +194,7 @@ meraki_response:
       "iname": "string",
       "name": "string",
       "isDefault": true,
+      "activeVlans": "string",
       "vlanNames": [
         {
           "name": "string",

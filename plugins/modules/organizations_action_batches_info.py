@@ -16,6 +16,7 @@ description:
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.meraki.module_info
+  - cisco.meraki.module_info_pagination
 author: Francisco Munoz (@fmunoz)
 options:
   headers:
@@ -24,6 +25,35 @@ options:
   organizationId:
     description:
       - OrganizationId path parameter. Organization ID.
+    type: str
+  perPage:
+    description:
+      - PerPage query parameter. The number of entries per page returned. Acceptable
+        range is 3 - 1000. Default is 100.
+    type: int
+  startingAfter:
+    description:
+      - >
+        StartingAfter query parameter. A token used by the server to indicate the
+        start of the page. Often this is a timestamp or an ID but it is not limited
+        to those. This parameter should not be defined by client applications. The
+        link for the first, last, prev, or next page in the HTTP Link header should
+        define it.
+    type: str
+  endingBefore:
+    description:
+      - >
+        EndingBefore query parameter. A token used by the server to indicate the end
+        of the page. Often this is a timestamp or an ID but it is not limited to those.
+        This parameter should not be defined by client applications. The link for
+        the first, last, prev, or next page in the HTTP Link header should define
+        it.
+    type: str
+  sortOrder:
+    description:
+      - >
+        SortOrder query parameter. Sorted order of entries. Order options are 'ascending'
+        and 'descending'. Default is 'ascending'.
     type: str
   status:
     description:
@@ -77,8 +107,14 @@ EXAMPLES = r"""
     meraki_caller: "{{ meraki_caller }}"
     meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
     meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+    perPage: 0
+    startingAfter: string
+    endingBefore: string
+    sortOrder: string
     status: string
     organizationId: string
+    total_pages: -1
+    direction: next
   register: result
 - name: Get organizations _action _batches by id
   cisco.meraki.organizations_action_batches_info:

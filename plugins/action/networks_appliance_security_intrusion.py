@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -33,6 +33,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
     mode=dict(type="str"),
     idsRulesets=dict(type="str"),
+    policy=dict(type="dict"),
     protectedNetworks=dict(type="dict"),
     networkId=dict(type="str"),
 ))
@@ -51,6 +52,7 @@ class NetworksApplianceSecurityIntrusion(object):
         self.new_object = dict(
             mode=params.get("mode"),
             idsRulesets=params.get("idsRulesets"),
+            policy=params.get("policy"),
             protectedNetworks=params.get("protectedNetworks"),
             networkId=params.get("networkId"),
         )
@@ -73,6 +75,10 @@ class NetworksApplianceSecurityIntrusion(object):
                 'ids_rulesets') is not None:
             new_object_params['idsRulesets'] = self.new_object.get(
                 'idsRulesets') or self.new_object.get('ids_rulesets')
+        if self.new_object.get('policy') is not None or self.new_object.get(
+                'policy') is not None:
+            new_object_params['policy'] = self.new_object.get('policy') or \
+                self.new_object.get('policy')
         if self.new_object.get('protectedNetworks') is not None or self.new_object.get(
                 'protected_networks') is not None:
             new_object_params['protectedNetworks'] = self.new_object.get(
@@ -137,12 +143,13 @@ class NetworksApplianceSecurityIntrusion(object):
         obj_params = [
             ("mode", "mode"),
             ("idsRulesets", "idsRulesets"),
+            ("policy", "policy"),
             ("protectedNetworks", "protectedNetworks"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,

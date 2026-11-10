@@ -171,6 +171,14 @@ meraki_response:
                 "password": "string"
               }
             }
+          ],
+          "ips": [
+            {
+              "translation": {
+                "type": "string",
+                "status": "string"
+              }
+            }
           ]
         }
       ],

@@ -110,6 +110,9 @@ meraki_response:
     {
       "name": "string",
       "enabled": true,
+      "appearance": {
+        "dashboardMenuTheme": "string"
+      },
       "adminSettings": {
         "appliesTo": "string",
         "values": [

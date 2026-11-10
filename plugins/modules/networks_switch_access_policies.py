@@ -143,18 +143,33 @@ options:
     elements: dict
     suboptions:
       host:
-        description: Public IP address of the RADIUS accounting server.
+        description: Public IP address or fully-qualified domain name of the RADIUS
+          accounting server.
         type: str
       organizationRadiusServerId:
-        description: Organization wide RADIUS server ID. If this field is provided,
-          the host, port and secret field will be ignored.
+        description: Organization wide RADIUS server ID. Omit host, port and secret
+          when this field is provided. If supplied, host and port must match the organization-wide
+          server; secret is ignored.
         type: str
       port:
-        description: UDP port that the RADIUS Accounting server listens on for access
+        description: Port that the RADIUS Accounting server listens on for access
           requests.
         type: int
+      radsec:
+        description: RadSec settings for this RADIUS accounting server assignment.
+          If omitted, a copied server preserves its current transport and a new server
+          uses RADIUS over UDP.
+        suboptions:
+          enabled:
+            description: Whether this RADIUS accounting server assignment is configured
+              to use RadSec.
+            type: bool
+        type: dict
       secret:
         description: RADIUS client shared secret.
+        type: str
+      serverId:
+        description: Unique ID of an existing Access Policy accounting server to copy.
         type: str
     type: list
   radiusCoaSupportEnabled:
@@ -170,17 +185,33 @@ options:
     elements: dict
     suboptions:
       host:
-        description: Public IP address of the RADIUS server.
+        description: Public IP address or fully-qualified domain name of the RADIUS
+          server.
         type: str
       organizationRadiusServerId:
-        description: Organization wide RADIUS server ID. If this field is provided,
-          the host, port and secret field will be ignored.
+        description: Organization wide RADIUS server ID. Omit host, port and secret
+          when this field is provided. If supplied, host and port must match the organization-wide
+          server; secret is ignored.
         type: str
       port:
-        description: UDP port that the RADIUS server listens on for access requests.
+        description: Port that the RADIUS server listens on for access requests.
         type: int
+      radsec:
+        description: RadSec settings for this RADIUS server assignment. If omitted,
+          a copied server preserves its current transport and a new server uses RADIUS
+          over UDP.
+        suboptions:
+          enabled:
+            description: Whether this RADIUS server assignment is configured to use
+              RadSec.
+            type: bool
+        type: dict
       secret:
         description: RADIUS client shared secret.
+        type: str
+      serverId:
+        description: Unique ID of an existing Access Policy authentication server
+          to copy.
         type: str
     type: list
   radiusTestingEnabled:
@@ -284,14 +315,20 @@ EXAMPLES = r"""
       - host: 1.2.3.4
         organizationRadiusServerId: '42'
         port: 22
+        radsec:
+          enabled: true
         secret: secret
+        serverId: '2'
     radiusCoaSupportEnabled: false
     radiusGroupAttribute: '11'
     radiusServers:
       - host: 1.2.3.4
         organizationRadiusServerId: '42'
         port: 22
+        radsec:
+          enabled: false
         secret: secret
+        serverId: '1'
     radiusTestingEnabled: false
     urlRedirectWalledGardenEnabled: true
     urlRedirectWalledGardenRanges:
@@ -357,6 +394,8 @@ EXAMPLES = r"""
       - host: 1.2.3.4
         organizationRadiusServerId: '42'
         port: 22
+        radsec:
+          enabled: true
         secret: secret
         serverId: '2'
     radiusCoaSupportEnabled: false
@@ -365,6 +404,8 @@ EXAMPLES = r"""
       - host: 1.2.3.4
         organizationRadiusServerId: '42'
         port: 22
+        radsec:
+          enabled: false
         secret: secret
         serverId: '1'
     radiusTestingEnabled: false
@@ -413,7 +454,10 @@ meraki_response:
           "serverId": "string",
           "organizationRadiusServerId": "string",
           "host": "string",
-          "port": 0
+          "port": 0,
+          "radsec": {
+            "enabled": true
+          }
         }
       ],
       "radius": {
@@ -437,7 +481,7 @@ meraki_response:
         "authentication": {
           "mode": "string"
         },
-        "preAuthenticationGroupPolicyId": "string"
+        "preAuthenticationGroupPolicyId": {}
       },
       "enforceRadiusMonitoring": true,
       "guestPortBouncing": true,
@@ -449,7 +493,10 @@ meraki_response:
           "serverId": "string",
           "organizationRadiusServerId": "string",
           "host": "string",
-          "port": 0
+          "port": 0,
+          "radsec": {
+            "enabled": true
+          }
         }
       ],
       "radiusGroupAttribute": "string",

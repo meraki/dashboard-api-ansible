@@ -151,6 +151,15 @@ options:
                 type: dict
             type: dict
         type: list
+      vrf:
+        description: VRF settings for this uplink preference rule. Omit this field
+          to use the default VRF for the rule. Only 'vrf.id' may be set by the client.
+        suboptions:
+          id:
+            description: VRF ID for this uplink preference rule. Use 0 for the default
+              VRF.
+            type: str
+        type: dict
     type: list
   wanTrafficUplinkPreferences:
     description: Array of uplink preference rules for WAN traffic.
@@ -210,6 +219,15 @@ options:
                 type: dict
             type: dict
         type: list
+      vrf:
+        description: VRF settings for this uplink preference rule. Omit this field
+          to use the default VRF for the rule. Only 'vrf.id' may be set by the client.
+        suboptions:
+          id:
+            description: VRF ID for this uplink preference rule. Use 0 for the default
+              VRF.
+            type: str
+        type: dict
     type: list
 requirements:
   - meraki >= 2.4.9
@@ -283,6 +301,8 @@ EXAMPLES = r"""
                 network: L_23456789
                 port: any
                 vlan: 20
+        vrf:
+          id: '12345'
     wanTrafficUplinkPreferences:
       - preferredUplink: wan1
         trafficFilters:
@@ -297,6 +317,8 @@ EXAMPLES = r"""
                 host: 254
                 port: 1-1024
                 vlan: 10
+        vrf:
+          id: '12345'
 """
 RETURN = r"""
 meraki_response:
@@ -340,7 +362,11 @@ meraki_response:
               }
             }
           ],
-          "preferredUplink": "string"
+          "preferredUplink": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          }
         }
       ],
       "vpnTrafficUplinkPreferences": [
@@ -370,6 +396,10 @@ meraki_response:
             }
           ],
           "preferredUplink": "string",
+          "vrf": {
+            "id": "string",
+            "name": "string"
+          },
           "failOverCriterion": "string",
           "performanceClass": {
             "type": "string",

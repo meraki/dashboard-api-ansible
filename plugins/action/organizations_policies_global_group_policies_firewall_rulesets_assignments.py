@@ -19,7 +19,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.meraki.plugins.plugin_utils.meraki import (
     MERAKI,
     meraki_argument_spec,
-    meraki_compare_equality2,
+    meraki_compare_equality,
     get_dict_result,
 )
 from ansible_collections.cisco.meraki.plugins.plugin_utils.exceptions import (
@@ -34,6 +34,7 @@ argument_spec.update(dict(
     rulesetId=dict(type="str"),
     policyId=dict(type="str"),
     priority=dict(type="int"),
+    staged=dict(type="bool"),
     organizationId=dict(type="str"),
     assignmentId=dict(type="str"),
 ))
@@ -55,6 +56,7 @@ class OrganizationsPoliciesGlobalGroupPoliciesFirewallRulesetsAssignments(
             rulesetId=params.get("rulesetId"),
             policyId=params.get("policyId"),
             priority=params.get("priority"),
+            staged=params.get("staged"),
             organizationId=params.get("organizationId"),
             assignmentId=params.get("assignmentId"),
         )
@@ -106,6 +108,9 @@ class OrganizationsPoliciesGlobalGroupPoliciesFirewallRulesetsAssignments(
                 'priority') is not None:
             new_object_params['priority'] = self.new_object.get(
                 'priority') or self.new_object.get('priority')
+        if self.new_object.get('staged') is not None or self.new_object.get(
+                'staged') is not None:
+            new_object_params['staged'] = self.new_object.get('staged')
         if self.new_object.get('organizationId') is not None or self.new_object.get(
                 'organization_id') is not None:
             new_object_params['organizationId'] = self.new_object.get(
@@ -221,11 +226,12 @@ class OrganizationsPoliciesGlobalGroupPoliciesFirewallRulesetsAssignments(
             ("rulesetId", "rulesetId"),
             ("policyId", "policyId"),
             ("priority", "priority"),
+            ("staged", "staged"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (DNAC) params
         # If any does not have eq params, it requires update
         return any(
-            not meraki_compare_equality2(
+            not meraki_compare_equality(
                 current_obj.get(meraki_param),
                 requested_obj.get(ansible_param)) for (
                 meraki_param,
@@ -280,6 +286,9 @@ class OrganizationsPoliciesGlobalGroupPoliciesFirewallRulesetsAssignments(
             params=self.delete_by_id_params(),
         )
         return result
+
+    # Begin manually added: extra_methods
+    # End manually added: extra_methods
 
 
 class ActionModule(ActionBase):

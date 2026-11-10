@@ -116,7 +116,10 @@ meraki_response:
           "serverId": "string",
           "organizationRadiusServerId": "string",
           "host": "string",
-          "port": 0
+          "port": 0,
+          "radsec": {
+            "enabled": true
+          }
         }
       ],
       "radius": {
@@ -140,7 +143,7 @@ meraki_response:
         "authentication": {
           "mode": "string"
         },
-        "preAuthenticationGroupPolicyId": "string"
+        "preAuthenticationGroupPolicyId": {}
       },
       "enforceRadiusMonitoring": true,
       "guestPortBouncing": true,
@@ -152,7 +155,10 @@ meraki_response:
           "serverId": "string",
           "organizationRadiusServerId": "string",
           "host": "string",
-          "port": 0
+          "port": 0,
+          "radsec": {
+            "enabled": true
+          }
         }
       ],
       "radiusGroupAttribute": "string",
