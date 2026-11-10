@@ -3,7 +3,7 @@
 # when a GitHub release is published.
 #
 # Requires a GitHub environment named "release" with two secrets:
-#   AH_TOKEN                Automation Hub token (console.redhat.com > Connect to Hub > Load token)
+#   AAP_TOKEN                Automation Hub token (console.redhat.com > Connect to Hub > Load token)
 #   ANSIBLE_GALAXY_API_KEY  Ansible Galaxy API key
 #
 # The reusable workflow is pinned to a commit SHA (ansible/team-devtools v26.4.0)
@@ -23,5 +23,5 @@ jobs:
     with:
       environment: release
     secrets:
-      ah_token: ${{ secrets.AH_TOKEN }}
+      ah_token: ${{ secrets.AAP_TOKEN }}
       ansible_galaxy_api_key: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}

@@ -1,6 +1,6 @@
 ---
 # Keeps the Automation Hub token alive: it expires after 30 days without use.
-# Uses the AH_TOKEN secret of the "release" environment (see release.yml).
+# Uses the AAP_TOKEN secret of the "release" environment (see release.yml).
 name: Refresh the automation hub token
 
 permissions:
@@ -17,4 +17,4 @@ jobs:
     with:
       environment: release
     secrets:
-      ah_token: ${{ secrets.AH_TOKEN }}
+      ah_token: ${{ secrets.AAP_TOKEN }}

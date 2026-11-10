@@ -47,6 +47,6 @@ jobs:
     #   collection-deps: ''
     #   automation-hub: true
     # Uncomment the lines below if you have 'automation-hub: true' and need to install collections from Red Hat Ansible Automation Hub.
-    # This requires setting a repository secret called 'AH_TOKEN' which value contains a Red Hat Ansible Automation Hub token.
+    # This requires setting a repository secret called 'AAP_TOKEN' which value contains a Red Hat Ansible Automation Hub token.
     # secrets:
-    #   AH_TOKEN: ${{ secrets.AH_TOKEN }}
+    #   AAP_TOKEN: ${{ secrets.AAP_TOKEN }}
